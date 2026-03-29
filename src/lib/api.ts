@@ -2,7 +2,8 @@ import { createServerSupabaseClient } from "./supabase"
 import type { Candidato, FichaCandidato, CandidatoComparavel } from "./types"
 import { MOCK_CANDIDATOS, MOCK_PATRIMONIO, MOCK_PROCESSOS } from "@/data/mock"
 
-const USE_MOCK = process.env.NEXT_PUBLIC_SUPABASE_URL?.includes("placeholder")
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const USE_MOCK = !supabaseUrl || supabaseUrl.includes("placeholder")
 
 export async function getCandidatos(): Promise<Candidato[]> {
   if (USE_MOCK) return MOCK_CANDIDATOS
