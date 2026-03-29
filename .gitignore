@@ -46,4 +46,6 @@ data/tse/
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-supabase/
+# supabase local files (migrations tracked separately)
+supabase/.temp/
+supabase/.branches/

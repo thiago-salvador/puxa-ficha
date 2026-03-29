@@ -24,7 +24,8 @@ export interface Candidato {
   cargo_disputado: 'Presidente' | 'Governador';
   estado: string | null; // UF pra governadores
 
-  status: 'pre-candidato' | 'candidato' | 'indeferido' | 'desistente';
+  status: 'pre-candidato' | 'candidato' | 'indeferido' | 'desistente' | 'removido';
+  biografia?: string | null;
 
   // Mídia
   foto_url: string | null;
@@ -141,7 +142,9 @@ export interface PontoAtencao {
     | 'financiamento_suspeito'
     | 'mudança_partido'
     | 'processo_grave'
-    | 'patrimonio_incompativel';
+    | 'patrimonio_incompativel'
+    | 'feito_positivo'
+    | 'escandalo';
   titulo: string;
   descricao: string;
   fontes: FonteReferencia[];

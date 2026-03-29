@@ -13,6 +13,8 @@ import {
   FileText,
   Vote,
   ArrowLeft,
+  ThumbsUp,
+  Newspaper,
 } from "lucide-react"
 import Link from "next/link"
 import type { Metadata } from "next"
@@ -114,35 +116,78 @@ export default async function CandidatoPage({
         )}
       </section>
 
-      {/* Pontos de atencao */}
-      {ficha.pontos_atencao.length > 0 && (
+      {/* Biografia */}
+      {ficha.biografia && (
+        <section className="mb-8">
+          <SectionTitle icon={User} title="Quem e" />
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            {ficha.biografia}
+          </p>
+        </section>
+      )}
+
+      {/* Feitos positivos */}
+      {ficha.pontos_atencao.filter((p) => p.categoria === "feito_positivo").length > 0 && (
+        <section className="mb-8">
+          <SectionTitle icon={ThumbsUp} title="Principais feitos" />
+          <div className="grid gap-3">
+            {ficha.pontos_atencao
+              .filter((p) => p.categoria === "feito_positivo")
+              .map((p) => (
+                <Card key={p.id} className="border-primary/30">
+                  <CardContent className="p-4">
+                    <div className="flex items-start gap-3">
+                      <ThumbsUp className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <div>
+                        <p className="font-medium">{p.titulo}</p>
+                        <p className="mt-1 text-sm text-muted-foreground">{p.descricao}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+          </div>
+        </section>
+      )}
+
+      {/* Pontos de atencao (negativos/escandalos) */}
+      {ficha.pontos_atencao.filter((p) => p.categoria !== "feito_positivo").length > 0 && (
         <section className="mb-8">
           <SectionTitle icon={AlertTriangle} title="Pontos de atencao" />
           <div className="grid gap-3">
-            {ficha.pontos_atencao.map((p) => (
-              <Card key={p.id} className="border-destructive/30">
-                <CardContent className="p-4">
-                  <div className="flex items-start gap-3">
-                    <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
-                    <div>
-                      <p className="font-medium">{p.titulo}</p>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        {p.descricao}
-                      </p>
-                      <Badge
-                        variant={
-                          (gravidadeColor[p.gravidade] as "destructive" | "secondary" | "outline") ??
-                          "secondary"
-                        }
-                        className="mt-2 text-xs"
-                      >
-                        {p.gravidade}
-                      </Badge>
+            {ficha.pontos_atencao
+              .filter((p) => p.categoria !== "feito_positivo")
+              .map((p) => (
+                <Card key={p.id} className="border-destructive/30">
+                  <CardContent className="p-4">
+                    <div className="flex items-start gap-3">
+                      {p.categoria === "escandalo" ? (
+                        <Newspaper className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
+                      ) : (
+                        <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
+                      )}
+                      <div>
+                        <p className="font-medium">{p.titulo}</p>
+                        <p className="mt-1 text-sm text-muted-foreground">{p.descricao}</p>
+                        <div className="mt-2 flex gap-2">
+                          <Badge
+                            variant={
+                              (gravidadeColor[p.gravidade] as "destructive" | "secondary" | "outline") ??
+                              "secondary"
+                            }
+                            className="text-xs"
+                          >
+                            {p.gravidade}
+                          </Badge>
+                          <Badge variant="outline" className="text-xs">
+                            {p.categoria.replace(/_/g, " ")}
+                          </Badge>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
           </div>
         </section>
       )}
