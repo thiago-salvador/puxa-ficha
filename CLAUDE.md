@@ -12,9 +12,39 @@ npm run dev          # Dev server com Turbopack (localhost:3000)
 npm run build        # Build de producao
 npm run start        # Serve build de producao
 npm run lint         # ESLint
-npx tsx scripts/ingest-camara.ts   # Ingestao API Camara (WIP)
-npx tsx scripts/ingest-tse.ts      # Ingestao dados TSE (WIP)
+
+# Pipeline de dados (requer SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY)
+npx tsx scripts/ingest-all.ts                    # Todas as fontes
+npx tsx scripts/ingest-all.ts camara senado      # So REST APIs (rapido)
+npx tsx scripts/ingest-all.ts tse                # So CSV do TSE (lento, baixa ZIPs)
+npx tsx scripts/ingest-all.ts transparencia      # Portal da Transparencia (requer API key)
 ```
+
+## Pipeline de dados
+
+Automatizado via GitHub Actions (cron diario REST, semanal CSV) ou manual via CLI.
+
+### Como funciona
+1. Le `data/candidatos.json` (lista curada com IDs das APIs)
+2. Pra cada candidato, busca dados nas 4 fontes
+3. Faz upsert no Supabase (idempotente, pode rodar multiplas vezes)
+
+### Como adicionar um candidato
+Editar `data/candidatos.json`, adicionar entrada com slug e IDs:
+- `ids.camara`: buscar em `https://dadosabertos.camara.leg.br/api/v2/deputados?nome=NOME`
+- `ids.senado`: buscar em `https://legis.senado.leg.br/dadosabertos/senador/lista/atual`
+- `ids.tse_sq_candidato`: extrair dos CSVs do TSE por ano
+
+### Fontes → Tabelas
+| Fonte | Tabelas populadas | Metodo | Frequencia |
+|-------|-------------------|--------|------------|
+| Camara | candidatos, gastos_parlamentares, votos_candidato, projetos_lei | REST | Diario |
+| Senado | candidatos, historico_politico, votos_candidato, projetos_lei | REST | Diario |
+| TSE | patrimonio, financiamento | CSV bulk | Semanal |
+| Transparencia | dados complementares | REST | Semanal |
+
+### GitHub Actions
+Secrets necessarios: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `TRANSPARENCIA_API_KEY` (opcional)
 
 ## Stack
 
@@ -66,10 +96,21 @@ puxa-ficha/
 │   │   ├── types.ts                 # TypeScript types (espelha schema)
 │   │   └── utils.ts                 # cn(), formatBRL(), formatDate()
 ├── scripts/
+│   ├── ingest-all.ts                # Orquestrador do pipeline
 │   ├── schema.sql                   # Schema Supabase (11 tabelas, 2 views)
 │   ├── seed.sql                     # Seed com 10 pre-candidatos
-│   ├── ingest-camara.ts             # Ingestao API Camara (WIP)
-│   └── ingest-tse.ts                # Ingestao dados TSE (WIP)
+│   └── lib/
+│       ├── types.ts                 # Types do pipeline (CandidatoConfig, IngestResult)
+│       ├── supabase.ts              # Client service-role pra scripts
+│       ├── helpers.ts               # loadCandidatos, fetchJSON, fetchAllPages
+│       ├── logger.ts                # Log com timestamp
+│       ├── ingest-camara.ts         # Camara REST: perfil, gastos, votos, projetos
+│       ├── ingest-senado.ts         # Senado REST: perfil, mandatos, votos, autorias
+│       ├── ingest-tse.ts            # TSE CSV: patrimonio, financiamento
+│       └── ingest-transparencia.ts  # Portal da Transparencia (opcional)
+├── data/
+│   ├── candidatos.json              # Lista curada de candidatos com IDs das APIs
+│   └── tse/                         # CSVs baixados (gitignored)
 ├── docs/
 │   ├── arquitetura.md               # Blueprint tecnico
 │   └── APIs-e-fontes.md             # Mapa de APIs publicas
@@ -125,12 +166,21 @@ Schema completo: `scripts/schema.sql`
 - [ ] Pagina Home com lista de candidatos
 - [ ] Ficha Corrida basica (dados do seed)
 
+### Sprint 0.5 (concluido): Pipeline de dados
+- [x] Infraestrutura compartilhada (types, helpers, supabase, logger)
+- [x] Lista curada de candidatos com IDs reais (candidatos.json)
+- [x] Modulo Camara (perfil, gastos, votos, projetos)
+- [x] Modulo Senado (perfil, mandatos, votos, autorias)
+- [x] Modulo TSE (patrimonio, financiamento via CSV)
+- [x] Modulo Transparencia (opcional)
+- [x] Orquestrador (ingest-all.ts)
+- [x] GitHub Actions (cron diario + semanal)
+
 ### Sprint 2: Dados reais
-- [ ] Corrigir e completar ingest-camara.ts
-- [ ] Criar ingest-senado.ts
-- [ ] Corrigir e completar ingest-tse.ts
-- [ ] Popular votacoes-chave com dados reais
-- [ ] Popular dados financeiros e patrimoniais
+- [ ] Criar projeto Supabase + rodar schema + seed
+- [ ] Rodar pipeline completo pela primeira vez
+- [ ] Popular votacoes-chave (curadoria editorial)
+- [ ] Validar dados de patrimonio e financiamento
 
 ### Sprint 3: Comparador + UI
 - [ ] Comparador funcional (2-3 candidatos)
@@ -146,34 +196,25 @@ Schema completo: `scripts/schema.sql`
 - [ ] Deploy Vercel + dominio puxaficha.com.br
 - [ ] Lancamento sincronizado com artigo CartaCapital
 
-## Known Issues (Templates)
-
-Os scripts de ingestao em `scripts/` sao rascunhos do Claude.ai com bugs conhecidos. NAO rodar sem corrigir:
-
-**ingest-camara.ts:**
-- `DEPUTADOS_ALVO` esta vazio (script nao faz nada)
-- `candidato_id` usa slug em vez de UUID (vai falhar no INSERT)
-- Votacoes sao buscadas mas nunca salvas no banco
-- Usa `any` extensivamente
-
-**ingest-tse.ts:**
-- TODO o codigo de processamento CSV esta comentado
-- `baixarCSV()` e um stub (nao baixa nada)
-- `candidato_id` usa slug em vez de UUID
-- `NOME_PARA_SLUG` hardcoded, nao escalavel
+## Known Issues
 
 **seed.sql:**
 - Apenas 10 candidatos a presidente (sem governadores)
 - Sem pontos_atencao, historico, dados financeiros ou votacoes
+
+**Pipeline (requer Supabase configurado):**
+- Primeira execucao precisa de seed.sql rodado antes (candidatos devem existir no banco)
+- TSE CSV download pode ser lento (~100MB por ano)
+- votacoes_chave precisa de curadoria manual antes dos votos serem cruzados
 
 ## Anti-Patterns
 
 - **NAO usar SSR.** Dados mudam pouco. ISR com revalidate 1h.
 - **NAO expor SUPABASE_SERVICE_ROLE_KEY** em Client Components. Usar apenas em Server Components e scripts.
 - **NAO usar IA pra gerar analises editoriais** no MVP (fase 1). Risco reputacional de alucinacao sobre politicos. Curadoria humana.
-- **NAO rodar scripts de ingestao** sem corrigir os bugs documentados acima.
 - **NAO deletar Templates/.** Referencia dos arquivos originais.
 - **NAO commitar .env.local.** Usar .env.example como template.
+- **NAO editar `data/candidatos.json` sem verificar IDs nas APIs.** IDs errados = dados de outro politico.
 
 ## Code Style
 

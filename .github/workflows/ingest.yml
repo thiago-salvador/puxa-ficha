@@ -1,0 +1,60 @@
+name: Ingestao de dados
+
+on:
+  schedule:
+    - cron: "0 8 * * 1-6" # Seg-Sab 8h UTC (5h BRT) — REST APIs
+    - cron: "0 6 * * 0" # Domingo 6h UTC (3h BRT) — TSE CSV
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: "Fontes (separadas por espaco): camara senado tse transparencia"
+        required: false
+        default: "camara senado"
+
+jobs:
+  ingest-rest:
+    name: REST APIs (Camara + Senado)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.event.schedule != '0 6 * * 0'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Ingestao REST
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          TRANSPARENCIA_API_KEY: ${{ secrets.TRANSPARENCIA_API_KEY }}
+        run: |
+          SOURCES="${{ github.event.inputs.sources || 'camara senado' }}"
+          npx tsx scripts/ingest-all.ts $SOURCES
+
+  ingest-tse:
+    name: TSE CSV (semanal)
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    if: github.event.schedule == '0 6 * * 0' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.sources, 'tse'))
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Ingestao TSE
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npx tsx scripts/ingest-all.ts tse
