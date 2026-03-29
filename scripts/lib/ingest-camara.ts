@@ -136,10 +136,16 @@ async function ingestVotos(idCamara: number, candidatoId: string, slug: string):
 
   const proposicaoMap = new Map(votacoesChave.map((v) => [v.proposicao_id, v.id]))
 
-  const votacoes = await fetchPaginated<Record<string, unknown>>(
-    `${API}/deputados/${idCamara}/votacoes`,
-    { ordem: "DESC", ordenarPor: "dataHoraInicio" }
-  )
+  let votacoes: Record<string, unknown>[]
+  try {
+    votacoes = await fetchPaginated<Record<string, unknown>>(
+      `${API}/deputados/${idCamara}/votacoes`,
+      { ordem: "DESC", ordenarPor: "dataHoraInicio" }
+    )
+  } catch {
+    warn("camara", `  ${slug}: votacoes nao disponiveis (ex-deputado?)`)
+    return 0
+  }
 
   let matched = 0
   for (const v of votacoes) {
