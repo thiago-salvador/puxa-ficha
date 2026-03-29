@@ -11,13 +11,13 @@
     }
   },
   {
-    "slug": "jair-bolsonaro",
-    "nome_completo": "Jair Messias Bolsonaro",
-    "nome_urna": "Jair Bolsonaro",
+    "slug": "flavio-bolsonaro",
+    "nome_completo": "Flavio Nantes Bolsonaro",
+    "nome_urna": "Flavio Bolsonaro",
     "cargo_disputado": "Presidente",
     "ids": {
-      "camara": 74847,
-      "senado": null,
+      "camara": null,
+      "senado": 5894,
       "tse_sq_candidato": {}
     }
   },
@@ -25,6 +25,61 @@
     "slug": "tarcisio",
     "nome_completo": "Tarcisio Gomes de Freitas",
     "nome_urna": "Tarcisio de Freitas",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "romeu-zema",
+    "nome_completo": "Romeu Zema Neto",
+    "nome_urna": "Romeu Zema",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "ronaldo-caiado",
+    "nome_completo": "Ronaldo Ramos Caiado",
+    "nome_urna": "Ronaldo Caiado",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": 74813,
+      "senado": 456,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "ratinho-junior",
+    "nome_completo": "Carlos Roberto Massa Junior",
+    "nome_urna": "Ratinho Junior",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "aldo-rebelo",
+    "nome_completo": "Jose Aldo Rebelo Figueiredo",
+    "nome_urna": "Aldo Rebelo",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": 73428,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "renan-santos",
+    "nome_completo": "Renan Santos",
+    "nome_urna": "Renan Santos",
     "cargo_disputado": "Presidente",
     "ids": {
       "camara": null,
@@ -44,42 +99,9 @@
     }
   },
   {
-    "slug": "simone-tebet",
-    "nome_completo": "Simone Nassar Tebet",
-    "nome_urna": "Simone Tebet",
-    "cargo_disputado": "Presidente",
-    "ids": {
-      "camara": null,
-      "senado": 5527,
-      "tse_sq_candidato": {}
-    }
-  },
-  {
-    "slug": "flavio-bolsonaro",
-    "nome_completo": "Flavio Nantes Bolsonaro",
-    "nome_urna": "Flavio Bolsonaro",
-    "cargo_disputado": "Presidente",
-    "ids": {
-      "camara": null,
-      "senado": 5894,
-      "tse_sq_candidato": {}
-    }
-  },
-  {
-    "slug": "ronaldo-caiado",
-    "nome_completo": "Ronaldo Ramos Caiado",
-    "nome_urna": "Ronaldo Caiado",
-    "cargo_disputado": "Presidente",
-    "ids": {
-      "camara": 74813,
-      "senado": 456,
-      "tse_sq_candidato": {}
-    }
-  },
-  {
-    "slug": "pablo-marcal",
-    "nome_completo": "Pablo Henrique Costa Marçal",
-    "nome_urna": "Pablo Marçal",
+    "slug": "hertz-dias",
+    "nome_completo": "Hertz Dias",
+    "nome_urna": "Hertz Dias",
     "cargo_disputado": "Presidente",
     "ids": {
       "camara": null,
@@ -88,20 +110,31 @@
     }
   },
   {
-    "slug": "marina-silva",
-    "nome_completo": "Maria Osmarina Marina Silva Vaz de Lima",
-    "nome_urna": "Marina Silva",
+    "slug": "eduardo-leite",
+    "nome_completo": "Eduardo Figueiredo Cavalheiro Leite",
+    "nome_urna": "Eduardo Leite",
     "cargo_disputado": "Presidente",
     "ids": {
       "camara": null,
-      "senado": 59,
+      "senado": null,
       "tse_sq_candidato": {}
     }
   },
   {
-    "slug": "guilherme-boulos",
-    "nome_completo": "Guilherme Castro Boulos",
-    "nome_urna": "Guilherme Boulos",
+    "slug": "rui-costa-pimenta",
+    "nome_completo": "Rui Costa Pimenta",
+    "nome_urna": "Rui Costa Pimenta",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "samara-martins",
+    "nome_completo": "Samara Martins",
+    "nome_urna": "Samara Martins",
     "cargo_disputado": "Presidente",
     "ids": {
       "camara": null,

@@ -12,6 +12,7 @@ export async function getCandidatos(): Promise<Candidato[]> {
   const { data, error } = await supabase
     .from("candidatos")
     .select("*")
+    .neq("status", "removido")
     .order("nome_urna")
 
   if (error || !data) return MOCK_CANDIDATOS
@@ -100,6 +101,14 @@ export async function getCandidatosComparaveis(): Promise<CandidatoComparavel[]>
   }
 
   const supabase = createServerSupabaseClient()
+  // Get active candidate IDs first
+  const { data: active } = await supabase
+    .from("candidatos")
+    .select("id")
+    .neq("status", "removido")
+
+  const activeIds = new Set((active ?? []).map((c) => c.id))
+
   const { data } = await supabase.from("v_comparador").select("*")
-  return data ?? []
+  return (data ?? []).filter((c) => activeIds.has(c.id))
 }
