@@ -271,16 +271,49 @@ export default async function CandidatoPage({
         </section>
       )}
 
-      {/* Sem dados */}
+      {/* Mudancas de partido */}
+      {ficha.mudancas_partido.length > 0 && (
+        <section className="mb-8">
+          <SectionTitle icon={History} title="Mudancas de partido" />
+          <div className="space-y-2">
+            {ficha.mudancas_partido.map((m) => (
+              <div
+                key={m.id}
+                className="flex items-center gap-4 rounded-md border p-3"
+              >
+                <div className="text-sm">
+                  <span className="font-medium">{m.partido_anterior}</span>
+                  <span className="text-muted-foreground"> &rarr; </span>
+                  <span className="font-medium">{m.partido_novo}</span>
+                  {m.contexto && (
+                    <span className="text-muted-foreground"> &middot; {m.contexto}</span>
+                  )}
+                </div>
+                <span className="ml-auto shrink-0 text-xs text-muted-foreground">
+                  {m.ano}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Sem dados detalhados */}
       {ficha.patrimonio.length === 0 &&
         ficha.processos.length === 0 &&
         ficha.historico.length === 0 &&
-        ficha.votos.length === 0 && (
+        ficha.votos.length === 0 &&
+        ficha.mudancas_partido.length === 0 &&
+        ficha.pontos_atencao.length === 0 && (
           <Card className="mt-4">
             <CardContent className="py-12 text-center">
               <FileText className="mx-auto h-8 w-8 text-muted-foreground" />
               <p className="mt-3 text-muted-foreground">
-                Dados detalhados serao populados em breve pelo pipeline automatizado.
+                Ainda nao temos dados detalhados sobre este candidato.
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Nosso pipeline coleta dados de fontes publicas oficiais (TSE, Camara, Senado).
+                Candidatos sem historico parlamentar tem menos dados disponiveis.
               </p>
             </CardContent>
           </Card>
