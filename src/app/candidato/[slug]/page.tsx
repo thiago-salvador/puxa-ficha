@@ -287,7 +287,7 @@ export default async function CandidatoPage({
         )}
 
       <p className="mt-8 text-xs text-muted-foreground">
-        Fonte dos dados: {ficha.fonte_dados.join(", ")}. Ultima atualizacao:{" "}
+        Fonte dos dados: {(ficha.fonte_dados ?? []).join(", ") || "TSE"}. Ultima atualizacao:{" "}
         {formatDate(ficha.ultima_atualizacao)}.
       </p>
     </main>
