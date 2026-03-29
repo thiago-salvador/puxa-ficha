@@ -2,6 +2,8 @@ import type {
   Candidato,
   Patrimonio,
   Processo,
+  PontoAtencao,
+  VotoCandidato,
 } from "@/lib/types"
 
 export const MOCK_CANDIDATOS: Candidato[] = [
