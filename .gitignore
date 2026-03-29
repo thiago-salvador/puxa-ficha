@@ -47,3 +47,4 @@ data/tse/*.zip
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+supabase/

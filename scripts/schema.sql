@@ -4,14 +4,13 @@
 -- ============================================
 
 -- Extensões necessárias
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE EXTENSION IF NOT EXISTS "pg_trgm"; -- busca fuzzy por nome
 
 -- ============================================
 -- 1. CANDIDATOS (tabela central)
 -- ============================================
 CREATE TABLE candidatos (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   nome_completo TEXT NOT NULL,
   nome_urna TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL, -- URL-friendly: "lula", "flavio-bolsonaro"
@@ -19,9 +18,7 @@ CREATE TABLE candidatos (
   
   -- Dados pessoais
   data_nascimento DATE,
-  idade INTEGER GENERATED ALWAYS AS (
-    EXTRACT(YEAR FROM age(CURRENT_DATE, data_nascimento))
-  ) STORED,
+  idade INTEGER, -- calculado pelo pipeline: EXTRACT(YEAR FROM age(CURRENT_DATE, data_nascimento))
   naturalidade TEXT, -- cidade/estado
   formacao TEXT, -- grau de instrução declarado ao TSE
   profissao_declarada TEXT, -- o que declarou ao TSE
@@ -56,7 +53,7 @@ CREATE INDEX idx_candidatos_cargo ON candidatos (cargo_disputado, estado);
 -- 2. HISTÓRICO POLÍTICO (cargos anteriores)
 -- ============================================
 CREATE TABLE historico_politico (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   candidato_id UUID REFERENCES candidatos(id) ON DELETE CASCADE,
   
   cargo TEXT NOT NULL, -- "Deputado Federal", "Senador", "Prefeito", etc.
@@ -77,7 +74,7 @@ CREATE INDEX idx_historico_candidato ON historico_politico (candidato_id);
 -- 3. MUDANÇAS DE PARTIDO (histórico de filiação)
 -- ============================================
 CREATE TABLE mudancas_partido (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   candidato_id UUID REFERENCES candidatos(id) ON DELETE CASCADE,
   
   partido_anterior TEXT NOT NULL,
@@ -95,7 +92,7 @@ CREATE INDEX idx_mudancas_candidato ON mudancas_partido (candidato_id);
 -- 4. PATRIMÔNIO DECLARADO
 -- ============================================
 CREATE TABLE patrimonio (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   candidato_id UUID REFERENCES candidatos(id) ON DELETE CASCADE,
   
   ano_eleicao INTEGER NOT NULL,
@@ -112,7 +109,7 @@ CREATE INDEX idx_patrimonio_candidato ON patrimonio (candidato_id, ano_eleicao);
 -- 5. FINANCIAMENTO DE CAMPANHA
 -- ============================================
 CREATE TABLE financiamento (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   candidato_id UUID REFERENCES candidatos(id) ON DELETE CASCADE,
   
   ano_eleicao INTEGER NOT NULL,
@@ -137,7 +134,7 @@ CREATE INDEX idx_financiamento_candidato ON financiamento (candidato_id, ano_ele
 -- 6. VOTAÇÕES-CHAVE (pra quem é/foi congressista)
 -- ============================================
 CREATE TABLE votacoes_chave (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   
   -- Dados da votação
   titulo TEXT NOT NULL, -- "Reforma Trabalhista", "Teto de Gastos", etc.
@@ -154,7 +151,7 @@ CREATE TABLE votacoes_chave (
 );
 
 CREATE TABLE votos_candidato (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   candidato_id UUID REFERENCES candidatos(id) ON DELETE CASCADE,
   votacao_id UUID REFERENCES votacoes_chave(id) ON DELETE CASCADE,
   
@@ -175,7 +172,7 @@ CREATE INDEX idx_votos_votacao ON votos_candidato (votacao_id);
 -- 7. PROJETOS DE LEI (autoria)
 -- ============================================
 CREATE TABLE projetos_lei (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   candidato_id UUID REFERENCES candidatos(id) ON DELETE CASCADE,
   
   tipo TEXT, -- "PL", "PEC", "PLP", etc.
@@ -202,7 +199,7 @@ CREATE INDEX idx_projetos_candidato ON projetos_lei (candidato_id);
 -- 8. PROCESSOS JUDICIAIS
 -- ============================================
 CREATE TABLE processos (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   candidato_id UUID REFERENCES candidatos(id) ON DELETE CASCADE,
   
   tipo TEXT NOT NULL, -- "criminal", "improbidade", "eleitoral", "civil"
@@ -229,7 +226,7 @@ CREATE INDEX idx_processos_candidato ON processos (candidato_id);
 -- ============================================
 -- Esses são os "alertas" que diferenciam a ferramenta
 CREATE TABLE pontos_atencao (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   candidato_id UUID REFERENCES candidatos(id) ON DELETE CASCADE,
   
   categoria TEXT NOT NULL, -- "corrupção", "contradição", "financiamento_suspeito", "mudança_partido", "processo_grave", "patrimonio_incompativel"
@@ -257,7 +254,7 @@ CREATE INDEX idx_pontos_gravidade ON pontos_atencao (gravidade);
 -- 10. GASTOS PARLAMENTARES (CEAP / Cota)
 -- ============================================
 CREATE TABLE gastos_parlamentares (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   candidato_id UUID REFERENCES candidatos(id) ON DELETE CASCADE,
   
   ano INTEGER NOT NULL,
