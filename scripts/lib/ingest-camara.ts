@@ -58,8 +58,9 @@ async function ingestPerfil(idCamara: number, candidatoId: string, slug: string)
 }
 
 async function ingestGastos(idCamara: number, candidatoId: string, slug: string): Promise<number> {
-  // Fetch expenses from 2015 onwards to cover ex-deputies' mandates
-  const anos = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]
+  // Fetch expenses from 2019 onwards (current + previous legislature)
+  // Note: API returns 504 for older years on ex-deputies
+  const anos = [2019, 2020, 2021, 2022, 2023, 2024, 2025]
   let totalRows = 0
 
   for (const ano of anos) {
