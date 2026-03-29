@@ -80,6 +80,45 @@ export async function getCandidatoBySlug(slug: string): Promise<FichaCandidato |
   }
 }
 
+export interface CandidatoResumo {
+  candidato: Candidato
+  patrimonio: number | null
+  processos: number
+  pontos_atencao: number
+}
+
+export async function getCandidatosComResumo(): Promise<CandidatoResumo[]> {
+  const candidatos = await getCandidatos()
+  if (USE_MOCK) {
+    return candidatos.map((c) => ({
+      candidato: c,
+      patrimonio: null,
+      processos: 0,
+      pontos_atencao: 0,
+    }))
+  }
+
+  const supabase = createServerSupabaseClient()
+  const results: CandidatoResumo[] = []
+
+  for (const c of candidatos) {
+    const [pat, proc, pontos] = await Promise.all([
+      supabase.from("patrimonio").select("valor_total").eq("candidato_id", c.id).order("ano_eleicao", { ascending: false }).limit(1),
+      supabase.from("processos").select("id", { count: "exact", head: true }).eq("candidato_id", c.id),
+      supabase.from("pontos_atencao").select("id", { count: "exact", head: true }).eq("candidato_id", c.id).eq("visivel", true),
+    ])
+
+    results.push({
+      candidato: c,
+      patrimonio: pat.data?.[0]?.valor_total ?? null,
+      processos: proc.count ?? 0,
+      pontos_atencao: pontos.count ?? 0,
+    })
+  }
+
+  return results
+}
+
 export async function getCandidatosComparaveis(): Promise<CandidatoComparavel[]> {
   if (USE_MOCK) {
     return MOCK_CANDIDATOS.map((c) => ({

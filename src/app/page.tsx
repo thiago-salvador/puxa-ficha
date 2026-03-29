@@ -1,17 +1,17 @@
-import { getCandidatos } from "@/lib/api"
+import { getCandidatosComResumo } from "@/lib/api"
 import { CandidatoGrid } from "@/components/CandidatoGrid"
-import { MOCK_PATRIMONIO, MOCK_PROCESSOS } from "@/data/mock"
 
 export const revalidate = 3600
 
 export default async function Home() {
-  const candidatos = await getCandidatos()
+  const resumos = await getCandidatosComResumo()
 
+  const candidatos = resumos.map((r) => r.candidato)
   const processos: Record<string, number> = {}
   const patrimonios: Record<string, number | null> = {}
-  for (const c of candidatos) {
-    processos[c.slug] = (MOCK_PROCESSOS[c.slug] ?? []).length
-    patrimonios[c.slug] = MOCK_PATRIMONIO[c.slug]?.[0]?.valor_total ?? null
+  for (const r of resumos) {
+    processos[r.candidato.slug] = r.processos
+    patrimonios[r.candidato.slug] = r.patrimonio
   }
 
   return (

@@ -34,9 +34,26 @@ export async function generateMetadata({
   const { slug } = await params
   const ficha = await getCandidatoBySlug(slug)
   if (!ficha) return {}
+  const desc = ficha.biografia
+    ? ficha.biografia.slice(0, 155) + "..."
+    : `Ficha completa de ${ficha.nome_urna} (${ficha.partido_sigla}): patrimonio, processos, votacoes, financiamento.`
+
   return {
     title: `${ficha.nome_urna} (${ficha.partido_sigla}) — Puxa Ficha`,
-    description: `Ficha completa de ${ficha.nome_urna}: patrimonio, processos, votacoes, financiamento.`,
+    description: desc,
+    openGraph: {
+      title: `${ficha.nome_urna} (${ficha.partido_sigla}) — Puxa Ficha`,
+      description: desc,
+      url: `https://puxa-ficha.vercel.app/candidato/${slug}`,
+      siteName: "Puxa Ficha",
+      locale: "pt_BR",
+      type: "profile",
+    },
+    twitter: {
+      card: "summary",
+      title: `${ficha.nome_urna} (${ficha.partido_sigla})`,
+      description: desc,
+    },
   }
 }
 
@@ -215,6 +232,64 @@ export default async function CandidatoPage({
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </section>
+      )}
+
+      {/* Financiamento */}
+      {ficha.financiamento.length > 0 && (
+        <section className="mb-8">
+          <SectionTitle icon={Banknote} title="Financiamento de campanha" />
+          <div className="grid gap-3 sm:grid-cols-2">
+            {ficha.financiamento.map((f) => {
+              const total = f.total_arrecadado || 1
+              const items = [
+                { label: "Fundo Eleitoral", value: f.total_fundo_eleitoral, color: "bg-primary" },
+                { label: "Fundo Partidario", value: f.total_fundo_partidario, color: "bg-chart-2" },
+                { label: "Pessoa Fisica", value: f.total_pessoa_fisica, color: "bg-chart-4" },
+                { label: "Recursos Proprios", value: f.total_recursos_proprios, color: "bg-chart-5" },
+              ].filter((i) => i.value > 0)
+
+              return (
+                <Card key={f.id}>
+                  <CardContent className="p-4">
+                    <p className="text-sm text-muted-foreground">Eleicao {f.ano_eleicao}</p>
+                    <p className="text-2xl font-bold">{formatBRL(f.total_arrecadado)}</p>
+                    <div className="mt-3 space-y-2">
+                      {items.map((item) => (
+                        <div key={item.label} className="space-y-1">
+                          <div className="flex justify-between text-xs">
+                            <span className="text-muted-foreground">{item.label}</span>
+                            <span>{formatBRL(item.value)}</span>
+                          </div>
+                          <div className="h-2 w-full rounded-full bg-muted">
+                            <div
+                              className={`h-2 rounded-full ${item.color}`}
+                              style={{ width: `${Math.min(100, (item.value / total) * 100)}%` }}
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    {f.maiores_doadores && Array.isArray(f.maiores_doadores) && f.maiores_doadores.length > 0 && (
+                      <details className="mt-3">
+                        <summary className="cursor-pointer text-xs text-muted-foreground hover:text-foreground">
+                          Top doadores ({f.maiores_doadores.length})
+                        </summary>
+                        <div className="mt-2 space-y-1 text-xs">
+                          {f.maiores_doadores.slice(0, 5).map((d, i) => (
+                            <div key={i} className="flex justify-between">
+                              <span className="truncate text-muted-foreground">{d.nome || "Nao identificado"}</span>
+                              <span className="shrink-0 ml-2">{formatBRL(d.valor)}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </details>
+                    )}
+                  </CardContent>
+                </Card>
+              )
+            })}
           </div>
         </section>
       )}
