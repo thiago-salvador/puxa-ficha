@@ -126,55 +126,115 @@ async function ingestGastos(idCamara: number, candidatoId: string, slug: string)
   return totalRows
 }
 
+function parseVoto(raw: string): string {
+  const s = raw.toLowerCase()
+  if (s.includes("sim")) return "sim"
+  if (s.includes("não") || s.includes("nao")) return "não"
+  if (s.includes("abstenção") || s.includes("abstencao")) return "abstenção"
+  if (s.includes("obstrução") || s.includes("obstrucao")) return "obstrução"
+  return "ausente"
+}
+
 async function ingestVotos(idCamara: number, candidatoId: string, slug: string): Promise<number> {
-  const { data: votacoesChave } = await supabase.from("votacoes_chave").select("id, proposicao_id")
+  const { data: votacoesChave } = await supabase
+    .from("votacoes_chave")
+    .select("id, proposicao_id, casa")
 
   if (!votacoesChave || votacoesChave.length === 0) {
     log("camara", `  ${slug}: votacoes_chave vazia, pulando votos`)
     return 0
   }
 
-  const proposicaoMap = new Map(votacoesChave.map((v) => [v.proposicao_id, v.id]))
+  const camaraChaves = votacoesChave.filter(
+    (v) => v.proposicao_id && (v.casa === "Câmara" || v.casa === "Camara")
+  )
+  const proposicaoMap = new Map(camaraChaves.map((v) => [v.proposicao_id, v.id]))
 
-  let votacoes: Record<string, unknown>[]
+  // Attempt 1: fetch deputy's votacoes directly (works for current deputies)
+  let matched = 0
   try {
-    votacoes = await fetchPaginated<Record<string, unknown>>(
+    const votacoes = await fetchPaginated<Record<string, unknown>>(
       `${API}/deputados/${idCamara}/votacoes`,
       { ordem: "DESC", ordenarPor: "dataHoraInicio" }
     )
+
+    for (const v of votacoes) {
+      const prop = v.proposicao as Record<string, unknown> | undefined
+      if (!prop) continue
+      const propId = String(prop.id || "")
+      const votacaoChaveId = proposicaoMap.get(propId)
+      if (!votacaoChaveId) continue
+
+      await supabase.from("votos_candidato").upsert(
+        { candidato_id: candidatoId, votacao_id: votacaoChaveId, voto: parseVoto(String(v.voto || "")) },
+        { onConflict: "candidato_id,votacao_id" }
+      )
+      matched++
+    }
+
+    log("camara", `  ${slug}: ${votacoes.length} votacoes, ${matched} matched com chave`)
   } catch {
-    warn("camara", `  ${slug}: votacoes nao disponiveis (ex-deputado?)`)
-    return 0
+    log("camara", `  ${slug}: votacoes por deputado indisponiveis, tentando por proposicao...`)
   }
 
-  let matched = 0
-  for (const v of votacoes) {
-    const prop = v.proposicao as Record<string, unknown> | undefined
-    if (!prop) continue
-    const propId = String(prop.id || "")
-    const votacaoChaveId = proposicaoMap.get(propId)
-    if (!votacaoChaveId) continue
+  // Attempt 2: for unmatched chaves, search votes by proposicao (works for ex-deputies)
+  const { data: existingVotos } = await supabase
+    .from("votos_candidato")
+    .select("votacao_id")
+    .eq("candidato_id", candidatoId)
 
-    const votoStr = String(v.voto || "").toLowerCase()
-    let voto: string
-    if (votoStr.includes("sim")) voto = "sim"
-    else if (votoStr.includes("não") || votoStr.includes("nao")) voto = "não"
-    else if (votoStr.includes("abstenção") || votoStr.includes("abstencao")) voto = "abstenção"
-    else if (votoStr.includes("obstrução") || votoStr.includes("obstrucao")) voto = "obstrução"
-    else voto = "ausente"
+  const existingSet = new Set((existingVotos || []).map((v) => v.votacao_id))
+  const missing = camaraChaves.filter((v) => !existingSet.has(v.id))
 
-    await supabase.from("votos_candidato").upsert(
-      {
-        candidato_id: candidatoId,
-        votacao_id: votacaoChaveId,
-        voto,
-      },
-      { onConflict: "candidato_id,votacao_id" }
-    )
-    matched++
+  if (missing.length === 0) return matched
+
+  log("camara", `  ${slug}: buscando ${missing.length} votacoes por proposicao...`)
+
+  for (const chave of missing) {
+    try {
+      const votacoesResp = await fetchJSON<CamaraResponse<Record<string, unknown>[]>>(
+        `${API}/proposicoes/${chave.proposicao_id}/votacoes`
+      )
+      const votacoesProp = votacoesResp.dados || []
+
+      // Find a votacao with individual vote data (try largest/most recent plenario vote)
+      const plenVotacoes = votacoesProp.filter((v) => v.siglaOrgao === "PLEN")
+
+      for (const votacao of plenVotacoes) {
+        const votacaoId = String(votacao.id)
+        const votosResp = await fetchJSON<CamaraResponse<Record<string, unknown>[]>>(
+          `${API}/votacoes/${votacaoId}/votos`
+        )
+        const votos = votosResp.dados || []
+        if (votos.length === 0) continue
+
+        const deputadoVoto = votos.find((v) => {
+          const dep = v.deputado_ as Record<string, unknown> | undefined
+          return dep && Number(dep.id) === idCamara
+        })
+
+        if (deputadoVoto) {
+          const voto = parseVoto(String(deputadoVoto.tipoVoto || ""))
+          await supabase.from("votos_candidato").upsert(
+            { candidato_id: candidatoId, votacao_id: chave.id, voto },
+            { onConflict: "candidato_id,votacao_id" }
+          )
+          matched++
+          log("camara", `  ${slug}: encontrado voto "${voto}" em ${votacaoId}`)
+          break
+        }
+
+        await sleep(200)
+      }
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err)
+      warn("camara", `  ${slug}: erro buscando proposicao ${chave.proposicao_id}: ${msg}`)
+    }
+
+    await sleep(300)
   }
 
-  log("camara", `  ${slug}: ${votacoes.length} votacoes, ${matched} matched com chave`)
+  log("camara", `  ${slug}: total ${matched} votos matched`)
   return matched
 }
 

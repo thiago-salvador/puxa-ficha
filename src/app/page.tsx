@@ -1,13 +1,18 @@
 import { getCandidatos } from "@/lib/api"
-import { CandidatoCard } from "@/components/CandidatoCard"
+import { CandidatoGrid } from "@/components/CandidatoGrid"
 import { MOCK_PATRIMONIO, MOCK_PROCESSOS } from "@/data/mock"
-import { Input } from "@/components/ui/input"
-import { Search } from "lucide-react"
 
 export const revalidate = 3600
 
 export default async function Home() {
   const candidatos = await getCandidatos()
+
+  const processos: Record<string, number> = {}
+  const patrimonios: Record<string, number | null> = {}
+  for (const c of candidatos) {
+    processos[c.slug] = (MOCK_PROCESSOS[c.slug] ?? []).length
+    patrimonios[c.slug] = MOCK_PATRIMONIO[c.slug]?.[0]?.valor_total ?? null
+  }
 
   return (
     <main>
@@ -21,29 +26,11 @@ export default async function Home() {
         </p>
       </section>
 
-      <div className="relative mb-6">
-        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-        <Input
-          type="search"
-          placeholder="Buscar candidato por nome ou partido..."
-          className="pl-10"
-          disabled
-        />
-        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground">
-          Em breve
-        </span>
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {candidatos.map((c) => (
-          <CandidatoCard
-            key={c.id}
-            candidato={c}
-            processos={(MOCK_PROCESSOS[c.slug] ?? []).length}
-            patrimonio={MOCK_PATRIMONIO[c.slug]?.[0]?.valor_total}
-          />
-        ))}
-      </div>
+      <CandidatoGrid
+        candidatos={candidatos}
+        processos={processos}
+        patrimonios={patrimonios}
+      />
 
       <p className="mt-8 text-center text-xs text-muted-foreground">
         Dados de fontes publicas oficiais. Ultima atualizacao: {new Date().toLocaleDateString("pt-BR")}.

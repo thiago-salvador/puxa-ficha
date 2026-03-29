@@ -1,5 +1,6 @@
 import { getCandidatosComparaveis } from "@/lib/api"
 import { Badge } from "@/components/ui/badge"
+import { Card, CardContent } from "@/components/ui/card"
 import { formatBRL } from "@/lib/utils"
 import { User, AlertTriangle } from "lucide-react"
 import Link from "next/link"
@@ -22,8 +23,9 @@ export default async function CompararPage() {
         Compare candidatos lado a lado. Clique em um candidato pra ver a ficha completa.
       </p>
 
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[640px] text-sm">
+      {/* Desktop table */}
+      <div className="hidden md:block overflow-x-auto">
+        <table className="w-full text-sm">
           <thead>
             <tr className="border-b">
               <th className="p-3 text-left font-medium text-muted-foreground">Candidato</th>
@@ -81,6 +83,56 @@ export default async function CompararPage() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Mobile cards */}
+      <div className="md:hidden space-y-3">
+        {candidatos.map((c) => (
+          <Link key={c.id} href={`/candidato/${c.slug}`}>
+            <Card className="hover:border-foreground/20 transition-colors">
+              <CardContent className="p-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted">
+                    {c.foto_url ? (
+                      <img src={c.foto_url} alt={c.nome_urna} className="h-10 w-10 rounded-full object-cover" />
+                    ) : (
+                      <User className="h-5 w-5 text-muted-foreground" />
+                    )}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-semibold">{c.nome_urna}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {c.partido_sigla} {c.idade ? `· ${c.idade} anos` : ""}
+                    </p>
+                  </div>
+                  <div className="flex gap-1.5">
+                    {c.total_processos > 0 && (
+                      <Badge variant="destructive" className="text-xs">
+                        {c.total_processos} proc.
+                      </Badge>
+                    )}
+                    {c.alertas_graves > 0 && (
+                      <Badge variant="destructive" className="text-xs">
+                        <AlertTriangle className="mr-1 h-3 w-3" />
+                        {c.alertas_graves}
+                      </Badge>
+                    )}
+                  </div>
+                </div>
+                <div className="mt-3 grid grid-cols-2 gap-2 text-xs text-muted-foreground">
+                  <div>
+                    <span className="block font-medium text-foreground">Patrimonio</span>
+                    {c.patrimonio_declarado ? formatBRL(c.patrimonio_declarado) : "Sem dados"}
+                  </div>
+                  <div>
+                    <span className="block font-medium text-foreground">Formacao</span>
+                    {c.formacao ?? "Sem dados"}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+        ))}
       </div>
 
       <p className="mt-8 text-center text-xs text-muted-foreground">

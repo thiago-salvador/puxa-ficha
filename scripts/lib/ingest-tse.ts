@@ -56,16 +56,15 @@ function extractZip(zipPath: string, extractDir: string) {
   execSync(`unzip -o "${zipPath}" -d "${extractDir}"`, { stdio: "pipe" })
 }
 
-function findCSV(dir: string, pattern: string): string | null {
+function findCSVs(dir: string, pattern: string): string[] {
   const { readdirSync } = require("fs")
   try {
     const files = readdirSync(dir) as string[]
-    const match = files.find(
-      (f: string) => f.toLowerCase().includes(pattern.toLowerCase()) && f.endsWith(".csv")
-    )
-    return match ? resolve(dir, match) : null
+    return files
+      .filter((f: string) => f.toLowerCase().includes(pattern.toLowerCase()) && f.endsWith(".csv"))
+      .map((f: string) => resolve(dir, f))
   } catch {
-    return null
+    return []
   }
 }
 
@@ -81,6 +80,43 @@ function buildCandidateNameMap(candidatos: CandidatoConfig[]): Map<string, Candi
     map.set(normalizeForMatch(c.nome_urna), c)
   }
   return map
+}
+
+/**
+ * Download and parse consulta_cand to build SQ_CANDIDATO → slug mapping.
+ * The bens CSV only has SQ_CANDIDATO (no name), so we need this cross-reference.
+ */
+async function buildSQMap(
+  ano: number,
+  candidatos: CandidatoConfig[]
+): Promise<Map<string, CandidatoConfig>> {
+  const candZip = resolve(DATA_DIR, `consulta_cand_${ano}.zip`)
+  const candDir = resolve(DATA_DIR, `consulta_cand_${ano}`)
+  const url = `https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_${ano}.zip`
+
+  const ok = await downloadFile(url, candZip)
+  if (!ok) return new Map()
+
+  extractZip(candZip, candDir)
+
+  const brPaths = findCSVs(candDir, "_BR").concat(findCSVs(candDir, "_BRASIL"))
+  if (brPaths.length === 0) return new Map()
+
+  const nameMap = buildCandidateNameMap(candidatos)
+  const sqMap = new Map<string, CandidatoConfig>()
+
+  for (const csvPath of brPaths) {
+    await parseCSV(csvPath, (row) => {
+      const nome = normalizeForMatch(row.NM_CANDIDATO || "")
+      const cand = nameMap.get(nome)
+      if (!cand) return
+      const sq = row.SQ_CANDIDATO || ""
+      if (sq) sqMap.set(sq, cand)
+    })
+  }
+
+  log("tse", `  SQ map ${ano}: ${sqMap.size} candidatos mapeados`)
+  return sqMap
 }
 
 async function parseCSV(
@@ -109,23 +145,30 @@ async function parseCSV(
 async function processPatrimonio(
   ano: number,
   candidatos: CandidatoConfig[],
-  extractDir: string
+  extractDir: string,
+  sqMap: Map<string, CandidatoConfig>
 ): Promise<IngestResult[]> {
-  const csvPath = findCSV(extractDir, `bem_candidato_${ano}`)
-    ?? findCSV(extractDir, "bem_candidato")
+  // Presidential candidates are in BR/BRASIL files; state candidates in UF files
+  // For now, only process BR files (all candidates are presidential)
+  const brPaths = findCSVs(extractDir, "_BR").concat(findCSVs(extractDir, "_BRASIL"))
+  const csvPaths = brPaths.length > 0
+    ? brPaths
+    : findCSVs(extractDir, `bem_candidato_${ano}`).concat(findCSVs(extractDir, "bem_candidato"))
+  const uniquePaths = csvPaths.filter((v, i, a) => a.indexOf(v) === i)
 
-  if (!csvPath) {
+  if (uniquePaths.length === 0) {
     warn("tse", `  CSV de bens nao encontrado para ${ano}`)
     return []
   }
 
-  const nameMap = buildCandidateNameMap(candidatos)
   const aggregated = new Map<string, { bens: { tipo: string; descricao: string; valor: number }[]; total: number }>()
 
-  log("tse", `  Parseando patrimonio ${ano}: ${csvPath}`)
+  log("tse", `  Parseando patrimonio ${ano}: ${uniquePaths.length} arquivos CSV (BR)`)
+  for (const csvPath of uniquePaths) {
   await parseCSV(csvPath, (row) => {
-    const nome = normalizeForMatch(row.NM_CANDIDATO || "")
-    const cand = nameMap.get(nome)
+    // bens CSV has SQ_CANDIDATO but no NM_CANDIDATO
+    const sq = row.SQ_CANDIDATO || ""
+    const cand = sqMap.get(sq)
     if (!cand) return
 
     const existing = aggregated.get(cand.slug) ?? { bens: [], total: 0 }
@@ -138,6 +181,7 @@ async function processPatrimonio(
     existing.total += valor
     aggregated.set(cand.slug, existing)
   })
+  }
 
   const results: IngestResult[] = []
   for (const [slug, data] of aggregated) {
@@ -184,11 +228,16 @@ async function processFinanciamento(
   candidatos: CandidatoConfig[],
   extractDir: string
 ): Promise<IngestResult[]> {
-  const csvPath = findCSV(extractDir, `receitas_candidatos_${ano}`)
-    ?? findCSV(extractDir, "receitas_candidatos")
-    ?? findCSV(extractDir, "receita_candidato")
+  // Presidential candidates in BR files
+  const brPaths = findCSVs(extractDir, "_BR").concat(findCSVs(extractDir, "_BRASIL"))
+  const csvPaths = brPaths.length > 0
+    ? brPaths
+    : findCSVs(extractDir, `receitas_candidatos_${ano}`)
+        .concat(findCSVs(extractDir, "receitas_candidatos"))
+        .concat(findCSVs(extractDir, "receita_candidato"))
+  const uniquePaths = csvPaths.filter((v, i, a) => a.indexOf(v) === i)
 
-  if (!csvPath) {
+  if (uniquePaths.length === 0) {
     warn("tse", `  CSV de receitas nao encontrado para ${ano}`)
     return []
   }
@@ -206,7 +255,8 @@ async function processFinanciamento(
 
   const aggregated = new Map<string, FinData>()
 
-  log("tse", `  Parseando financiamento ${ano}: ${csvPath}`)
+  log("tse", `  Parseando financiamento ${ano}: ${uniquePaths.length} arquivos CSV (BR)`)
+  for (const csvPath of uniquePaths) {
   await parseCSV(csvPath, (row) => {
     const nome = normalizeForMatch(row.NM_CANDIDATO || "")
     const cand = nameMap.get(nome)
@@ -247,6 +297,7 @@ async function processFinanciamento(
 
     aggregated.set(cand.slug, existing)
   })
+  }
 
   const results: IngestResult[] = []
   for (const [slug, data] of aggregated) {
@@ -312,13 +363,16 @@ export async function ingestTSE(): Promise<IngestResult[]> {
     const receitasZip = resolve(DATA_DIR, `receitas_candidatos_${ano}.zip`)
     const receitasDir = resolve(DATA_DIR, `receitas_${ano}`)
 
+    // Build SQ_CANDIDATO -> slug mapping from consulta_cand
+    const sqMap = await buildSQMap(ano, candidatos)
+
     // Download bens
     const bensUrl = `https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_${ano}.zip`
     const bensOk = await downloadFile(bensUrl, bensZip)
     if (bensOk) {
       try {
         extractZip(bensZip, bensDir)
-        const patrimonioResults = await processPatrimonio(ano, candidatos, bensDir)
+        const patrimonioResults = await processPatrimonio(ano, candidatos, bensDir, sqMap)
         allResults.push(...patrimonioResults)
       } catch (err) {
         error("tse", `  Erro patrimonio ${ano}: ${err}`)

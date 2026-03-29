@@ -35,8 +35,7 @@ yarn-error.log*
 .env.*.local
 
 # TSE data downloads (large CSV/ZIP files)
-data/tse/*.csv
-data/tse/*.zip
+data/tse/
 
 # Templates (reference only, not part of the build)
 /Templates/

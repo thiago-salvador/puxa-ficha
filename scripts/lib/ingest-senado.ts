@@ -144,7 +144,7 @@ async function ingestVotos(codigo: number, candidatoId: string, slug: string): P
   for (const v of votacoes) {
     const materia = v.Materia as Record<string, unknown> | undefined
     if (!materia) continue
-    const materiaId = String(materia.CodigoMateria || "")
+    const materiaId = String(materia.Codigo || materia.CodigoMateria || "")
     const votacaoChaveId = proposicaoMap.get(materiaId)
     if (!votacaoChaveId) continue
 
@@ -181,7 +181,7 @@ async function ingestAutorias(codigo: number, candidatoId: string, slug: string)
     const indicadorPrincipal = String(a.IndicadorAutorPrincipal || "")
     if (indicadorPrincipal === "Nao") continue
 
-    const materiaId = String(materia.CodigoMateria || "")
+    const materiaId = String(materia.Codigo || materia.CodigoMateria || "")
     const sigla = String(materia.SiglaSubtipoMateria || materia.DescricaoSubtipoMateria || "")
     const numero = String(materia.NumeroMateria || "")
     const ano = Number(materia.AnoMateria) || null
