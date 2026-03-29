@@ -1,0 +1,112 @@
+[
+  {
+    "slug": "lula",
+    "nome_completo": "Luiz Inacio Lula da Silva",
+    "nome_urna": "Lula",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "jair-bolsonaro",
+    "nome_completo": "Jair Messias Bolsonaro",
+    "nome_urna": "Jair Bolsonaro",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": 74847,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "tarcisio",
+    "nome_completo": "Tarcisio Gomes de Freitas",
+    "nome_urna": "Tarcisio de Freitas",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "ciro-gomes",
+    "nome_completo": "Ciro Ferreira Gomes",
+    "nome_urna": "Ciro Gomes",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": 141406,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "simone-tebet",
+    "nome_completo": "Simone Nassar Tebet",
+    "nome_urna": "Simone Tebet",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": 5527,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "flavio-bolsonaro",
+    "nome_completo": "Flavio Nantes Bolsonaro",
+    "nome_urna": "Flavio Bolsonaro",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": 5894,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "ronaldo-caiado",
+    "nome_completo": "Ronaldo Ramos Caiado",
+    "nome_urna": "Ronaldo Caiado",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": 74813,
+      "senado": 456,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "pablo-marcal",
+    "nome_completo": "Pablo Henrique Costa Marçal",
+    "nome_urna": "Pablo Marçal",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "marina-silva",
+    "nome_completo": "Maria Osmarina Marina Silva Vaz de Lima",
+    "nome_urna": "Marina Silva",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": 59,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "guilherme-boulos",
+    "nome_completo": "Guilherme Castro Boulos",
+    "nome_urna": "Guilherme Boulos",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  }
+]
