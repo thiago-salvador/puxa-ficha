@@ -148,6 +148,6 @@ export async function getCandidatosComparaveis(): Promise<CandidatoComparavel[]>
 
   const activeIds = new Set((active ?? []).map((c) => c.id))
 
-  const { data } = await supabase.from("v_comparador").select("*")
+  const { data } = await supabase.from("v_comparador").select("*").order("nome_urna")
   return (data ?? []).filter((c) => activeIds.has(c.id))
 }
