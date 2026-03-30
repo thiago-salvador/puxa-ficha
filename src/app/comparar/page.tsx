@@ -1,143 +1,169 @@
 import { getCandidatosComparaveis } from "@/lib/api"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
 import { formatBRL } from "@/lib/utils"
-import { User, AlertTriangle } from "lucide-react"
 import Link from "next/link"
 import type { Metadata } from "next"
+import { SlashDivider } from "@/components/SlashDivider"
+import { Footer } from "@/components/Footer"
 
 export const metadata: Metadata = {
   title: "Comparador de candidatos — Puxa Ficha",
-  description: "Compare 2 ou mais candidatos lado a lado: patrimonio, processos, partido, formacao.",
+  description:
+    "Compare 2 ou mais candidatos lado a lado: patrimonio, processos, partido, formacao.",
 }
 
 export const revalidate = 3600
+
+function formatCompact(value: number): string {
+  if (value >= 1_000_000) return `R$ ${(value / 1_000_000).toFixed(1)}M`
+  if (value >= 1_000) return `R$ ${(value / 1_000).toFixed(0)}K`
+  return formatBRL(value)
+}
 
 export default async function CompararPage() {
   const candidatos = await getCandidatosComparaveis()
 
   return (
-    <main>
-      <h1 className="text-3xl font-bold tracking-tight">Comparador</h1>
-      <p className="mt-2 mb-6 text-muted-foreground">
-        Compare candidatos lado a lado. Clique em um candidato pra ver a ficha completa.
-      </p>
+    <div className="min-h-screen bg-white">
+      <section className="mx-auto max-w-7xl px-5 pb-6 pt-24 sm:pb-10 sm:pt-28 md:px-12 lg:pt-32">
+        <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-black/40">
+          Comparador
+        </p>
+        <h1
+          className="mt-2 font-heading uppercase leading-[0.85] text-black"
+          style={{ fontSize: "clamp(36px, 8vw, 80px)" }}
+        >
+          Lado a lado
+        </h1>
+        <p className="mt-3 max-w-lg text-[14px] font-medium text-black/50 sm:text-[15px]">
+          Compare candidatos. Clique em um nome pra ver a ficha completa.
+        </p>
+      </section>
 
-      {/* Desktop table */}
-      <div className="hidden md:block overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b">
-              <th className="p-3 text-left font-medium text-muted-foreground">Candidato</th>
-              <th className="p-3 text-left font-medium text-muted-foreground">Partido</th>
-              <th className="p-3 text-left font-medium text-muted-foreground">Idade</th>
-              <th className="p-3 text-left font-medium text-muted-foreground">Formacao</th>
-              <th className="p-3 text-right font-medium text-muted-foreground">Patrimonio</th>
-              <th className="p-3 text-center font-medium text-muted-foreground">Processos</th>
-              <th className="p-3 text-center font-medium text-muted-foreground">Alertas</th>
-            </tr>
-          </thead>
-          <tbody>
-            {candidatos.map((c) => (
-              <tr key={c.id} className="border-b hover:bg-muted/50 transition-colors">
-                <td className="p-3">
-                  <Link href={`/candidato/${c.slug}`} className="flex items-center gap-3 hover:underline">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted">
-                      {c.foto_url ? (
-                        <img src={c.foto_url} alt={c.nome_urna} className="h-8 w-8 rounded-full object-cover" />
-                      ) : (
-                        <User className="h-4 w-4 text-muted-foreground" />
-                      )}
-                    </div>
-                    <span className="font-medium">{c.nome_urna}</span>
-                  </Link>
-                </td>
-                <td className="p-3">
-                  <Badge variant="outline">{c.partido_sigla}</Badge>
-                </td>
-                <td className="p-3 text-muted-foreground">{c.idade ?? "—"}</td>
-                <td className="p-3 text-muted-foreground">{c.formacao ?? "—"}</td>
-                <td className="p-3 text-right font-medium">
-                  {c.patrimonio_declarado ? formatBRL(c.patrimonio_declarado) : "—"}
-                </td>
-                <td className="p-3 text-center">
-                  {c.total_processos > 0 ? (
-                    <Badge variant="destructive" className="text-xs">
-                      {c.total_processos}
-                    </Badge>
-                  ) : (
-                    <span className="text-muted-foreground">0</span>
-                  )}
-                </td>
-                <td className="p-3 text-center">
-                  {c.alertas_graves > 0 ? (
-                    <Badge variant="destructive" className="text-xs">
-                      <AlertTriangle className="mr-1 h-3 w-3" />
-                      {c.alertas_graves}
-                    </Badge>
-                  ) : (
-                    <span className="text-muted-foreground">0</span>
-                  )}
-                </td>
+      <div className="mx-auto max-w-7xl px-5 md:px-12">
+        <SlashDivider />
+      </div>
+
+      {/* Mobile: card-based layout */}
+      <section className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:hidden md:px-12">
+        <div className="space-y-3">
+          {candidatos.map((c) => (
+            <Link
+              key={c.id}
+              href={`/candidato/${c.slug}`}
+              className="block rounded-[12px] border border-black/8 px-4 py-3.5 transition-colors hover:border-black/15"
+            >
+              <div className="flex items-center justify-between">
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-black/40">
+                      {c.partido_sigla}
+                    </span>
+                  </div>
+                  <p className="mt-0.5 truncate font-heading text-[18px] uppercase leading-tight text-black">
+                    {c.nome_urna}
+                  </p>
+                </div>
+                {c.foto_url && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={c.foto_url}
+                    alt=""
+                    className="ml-3 size-12 shrink-0 rounded-full object-cover object-top"
+                  />
+                )}
+              </div>
+              <div className="mt-2.5 flex flex-wrap gap-3 text-[11px] font-bold text-black/40">
+                {c.patrimonio_declarado != null && c.patrimonio_declarado > 0 && (
+                  <span>{formatCompact(c.patrimonio_declarado)}</span>
+                )}
+                <span>{c.total_processos} processos</span>
+                {c.idade && <span>{c.idade} anos</span>}
+                {c.alertas_graves > 0 && (
+                  <span>{c.alertas_graves} alertas</span>
+                )}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Desktop: table layout */}
+      <section className="mx-auto hidden max-w-7xl px-5 py-12 md:block md:px-12 lg:py-16">
+        <div className="overflow-x-auto">
+          <table className="w-full text-left">
+            <thead>
+              <tr className="border-b border-black/10">
+                {["Candidato", "Partido", "Idade", "Formacao", "Patrimonio", "Processos", "Alertas"].map(
+                  (h) => (
+                    <th
+                      key={h}
+                      className="pb-3 text-[11px] font-bold uppercase tracking-[0.08em] text-black/40"
+                    >
+                      {h}
+                    </th>
+                  )
+                )}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {candidatos.map((c) => (
+                <tr
+                  key={c.id}
+                  className="border-b border-black/5 transition-colors hover:bg-black/[0.02]"
+                >
+                  <td className="py-3 pr-4">
+                    <Link
+                      href={`/candidato/${c.slug}`}
+                      className="flex items-center gap-3"
+                    >
+                      {c.foto_url && (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={c.foto_url}
+                          alt=""
+                          className="size-10 shrink-0 rounded-full object-cover object-top"
+                        />
+                      )}
+                      <span className="font-heading text-[16px] uppercase leading-tight text-black">
+                        {c.nome_urna}
+                      </span>
+                    </Link>
+                  </td>
+                  <td className="py-3 pr-4 text-[13px] font-bold text-black/50">
+                    {c.partido_sigla}
+                  </td>
+                  <td className="py-3 pr-4 text-[13px] font-semibold tabular-nums text-black/50">
+                    {c.idade ?? "--"}
+                  </td>
+                  <td className="max-w-[200px] truncate py-3 pr-4 text-[13px] font-medium text-black/40">
+                    {c.formacao ?? "--"}
+                  </td>
+                  <td className="py-3 pr-4 text-[13px] font-bold tabular-nums text-black">
+                    {c.patrimonio_declarado
+                      ? formatCompact(c.patrimonio_declarado)
+                      : "--"}
+                  </td>
+                  <td className="py-3 pr-4 text-[13px] font-bold tabular-nums text-black">
+                    {c.total_processos}
+                  </td>
+                  <td className="py-3 text-[13px] font-bold tabular-nums text-black">
+                    {c.alertas_graves}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div className="mx-auto max-w-7xl px-5 pb-4 md:px-12">
+        <p className="text-[11px] font-semibold text-black/20">
+          Dados de fontes publicas oficiais (TSE, Camara, Senado). Patrimonio refere-se a ultima
+          declaracao disponivel.
+        </p>
       </div>
 
-      {/* Mobile cards */}
-      <div className="md:hidden space-y-3">
-        {candidatos.map((c) => (
-          <Link key={c.id} href={`/candidato/${c.slug}`}>
-            <Card className="hover:border-foreground/20 transition-colors">
-              <CardContent className="p-4">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted">
-                    {c.foto_url ? (
-                      <img src={c.foto_url} alt={c.nome_urna} className="h-10 w-10 rounded-full object-cover" />
-                    ) : (
-                      <User className="h-5 w-5 text-muted-foreground" />
-                    )}
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="font-semibold">{c.nome_urna}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {c.partido_sigla} {c.idade ? `· ${c.idade} anos` : ""}
-                    </p>
-                  </div>
-                  <div className="flex gap-1.5">
-                    {c.total_processos > 0 && (
-                      <Badge variant="destructive" className="text-xs">
-                        {c.total_processos} proc.
-                      </Badge>
-                    )}
-                    {c.alertas_graves > 0 && (
-                      <Badge variant="destructive" className="text-xs">
-                        <AlertTriangle className="mr-1 h-3 w-3" />
-                        {c.alertas_graves}
-                      </Badge>
-                    )}
-                  </div>
-                </div>
-                <div className="mt-3 grid grid-cols-2 gap-2 text-xs text-muted-foreground">
-                  <div>
-                    <span className="block font-medium text-foreground">Patrimonio</span>
-                    {c.patrimonio_declarado ? formatBRL(c.patrimonio_declarado) : "Sem dados"}
-                  </div>
-                  <div>
-                    <span className="block font-medium text-foreground">Formacao</span>
-                    {c.formacao ?? "Sem dados"}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </Link>
-        ))}
-      </div>
-
-      <p className="mt-8 text-center text-xs text-muted-foreground">
-        Dados de fontes publicas oficiais (TSE, Camara, Senado). Patrimonio refere-se a ultima declaracao disponivel.
-      </p>
-    </main>
+      <Footer />
+    </div>
   )
 }

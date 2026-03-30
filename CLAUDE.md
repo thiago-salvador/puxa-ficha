@@ -1,15 +1,18 @@
-# CLAUDE.md — Puxa Ficha
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 Plataforma de consulta publica sobre candidatos das eleicoes brasileiras de 2026. Dois modos: Ficha Corrida (perfil completo) e Comparador (lado a lado). Tom editorial critico, perspectiva de classe, linguagem acessivel. Marca pessoal do Thiago Salvador.
 
 Dominio: puxaficha.com.br (registrado)
-Lancamento ideal: maio-julho 2026 (antes das convencoes partidarias)
+Deploy: https://puxa-ficha.vercel.app
+Repo: https://github.com/thiago-salvador/puxa-ficha
 
 ## Commands
 
 ```bash
 npm run dev          # Dev server com Turbopack (localhost:3000)
-npm run build        # Build de producao
+npm run build        # Build de producao (usa Turbopack)
 npm run start        # Serve build de producao
 npm run lint         # ESLint
 
@@ -19,32 +22,6 @@ npx tsx scripts/ingest-all.ts camara senado      # So REST APIs (rapido)
 npx tsx scripts/ingest-all.ts tse                # So CSV do TSE (lento, baixa ZIPs)
 npx tsx scripts/ingest-all.ts transparencia      # Portal da Transparencia (requer API key)
 ```
-
-## Pipeline de dados
-
-Automatizado via GitHub Actions (cron diario REST, semanal CSV) ou manual via CLI.
-
-### Como funciona
-1. Le `data/candidatos.json` (lista curada com IDs das APIs)
-2. Pra cada candidato, busca dados nas 4 fontes
-3. Faz upsert no Supabase (idempotente, pode rodar multiplas vezes)
-
-### Como adicionar um candidato
-Editar `data/candidatos.json`, adicionar entrada com slug e IDs:
-- `ids.camara`: buscar em `https://dadosabertos.camara.leg.br/api/v2/deputados?nome=NOME`
-- `ids.senado`: buscar em `https://legis.senado.leg.br/dadosabertos/senador/lista/atual`
-- `ids.tse_sq_candidato`: extrair dos CSVs do TSE por ano
-
-### Fontes → Tabelas
-| Fonte | Tabelas populadas | Metodo | Frequencia |
-|-------|-------------------|--------|------------|
-| Camara | candidatos, gastos_parlamentares, votos_candidato, projetos_lei | REST | Diario |
-| Senado | candidatos, historico_politico, votos_candidato, projetos_lei | REST | Diario |
-| TSE | patrimonio, financiamento | CSV bulk | Semanal |
-| Transparencia | dados complementares | REST | Semanal |
-
-### GitHub Actions
-Secrets necessarios: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `TRANSPARENCIA_API_KEY` (opcional)
 
 ## Stack
 
@@ -56,6 +33,7 @@ Secrets necessarios: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `TRANSPARENCIA
 | Componentes | shadcn/ui | latest |
 | Database | Supabase (PostgreSQL) | — |
 | Charts | recharts | 3.x |
+| Animation | Motion (ex-Framer Motion) + GSAP | motion 12.x, gsap 3.x |
 | Icons | lucide-react | 1.x |
 | Validation | Zod | 4.x |
 | Deploy | Vercel | — |
@@ -73,60 +51,78 @@ Scripts de ingestao (TypeScript, CLI)
 Supabase (PostgreSQL, 11 tabelas)
         |
         v
-Next.js API Routes / Server Components
+src/lib/api.ts (data layer, mock fallback)
         |
         v
-Frontend (ISR, revalidate 1h)
+Server Components (ISR, revalidate 1h)
+        |
+        v
+Profile components (bento grid, animations)
 ```
 
-## Estrutura do projeto
+### Data layer (`src/lib/api.ts`)
 
-```
-puxa-ficha/
-├── src/
-│   ├── app/
-│   │   ├── page.tsx                 # Home
-│   │   ├── layout.tsx               # Root layout (pt-BR)
-│   │   ├── candidato/[slug]/page.tsx # Ficha Corrida (ISR 1h)
-│   │   ├── comparar/page.tsx        # Comparador
-│   │   └── sobre/page.tsx           # Sobre/Metodologia
-│   ├── components/ui/               # shadcn/ui components
-│   ├── lib/
-│   │   ├── supabase.ts              # Supabase clients (browser + server)
-│   │   ├── types.ts                 # TypeScript types (espelha schema)
-│   │   └── utils.ts                 # cn(), formatBRL(), formatDate()
-├── scripts/
-│   ├── ingest-all.ts                # Orquestrador do pipeline
-│   ├── schema.sql                   # Schema Supabase (11 tabelas, 2 views)
-│   ├── seed.sql                     # Seed com 10 pre-candidatos
-│   └── lib/
-│       ├── types.ts                 # Types do pipeline (CandidatoConfig, IngestResult)
-│       ├── supabase.ts              # Client service-role pra scripts
-│       ├── helpers.ts               # loadCandidatos, fetchJSON, fetchAllPages
-│       ├── logger.ts                # Log com timestamp
-│       ├── ingest-camara.ts         # Camara REST: perfil, gastos, votos, projetos
-│       ├── ingest-senado.ts         # Senado REST: perfil, mandatos, votos, autorias
-│       ├── ingest-tse.ts            # TSE CSV: patrimonio, financiamento
-│       └── ingest-transparencia.ts  # Portal da Transparencia (opcional)
-├── data/
-│   ├── candidatos.json              # Lista curada de candidatos com IDs das APIs
-│   └── tse/                         # CSVs baixados (gitignored)
-├── docs/
-│   ├── arquitetura.md               # Blueprint tecnico
-│   └── APIs-e-fontes.md             # Mapa de APIs publicas
-├── data/tse/                        # CSVs baixados (gitignored)
-├── public/fotos/                    # Fotos candidatos (fallback)
-├── Templates/                       # Arquivos originais do Claude.ai (referencia, gitignored)
-└── .env.example                     # Template de env vars
-```
+Camada central de acesso a dados. Funciona em dois modos:
+
+- **Supabase real**: quando `NEXT_PUBLIC_SUPABASE_URL` esta configurado e nao contem "placeholder"
+- **Mock fallback**: quando Supabase nao esta configurado, usa `src/data/mock.ts` com dados estaticos
+
+Todas as pages usam `api.ts`, nunca acessam Supabase diretamente. Funcoes principais: `getCandidatos()`, `getCandidatoBySlug(slug)`, `getCandidatosComResumo()`, `getCandidatosComparaveis()`.
+
+### Partido color theming (`src/lib/utils.ts`)
+
+Sistema de cores por partido via HSL. `getPartidoColors(sigla)` retorna `{ accent, muted, glow }` como CSS values. 13 partidos mapeados, com fallback cinza. Usado no ProfileHero e BentoGrid como CSS variables dinamicas (`--partido-accent`).
+
+### Profile page architecture (`src/components/profile/`)
+
+A pagina `/candidato/[slug]` usa layout "Civic Neo-Editorial" com 9 componentes:
+
+- **ProfileHero**: foto full-bleed 100vw x 85vh, gradient overlay, stats em glass bar, watermark da sigla
+- **BentoGrid**: grid assimetrico com PatrimonioChart, FinanciamentoDonut, ProcessosSummary, VotingGrid, PoliticalTimeline
+- **AlertsSection**: pontos de atencao em glass cards
+- **SocialLinksGrid**: links e redes sociais
+
+Animacoes usam `motion` (entrada, hover) e GSAP ScrollTrigger (number counters, parallax). Todos respeitam `prefers-reduced-motion`.
+
+### ISR pattern
+
+Todas as paginas com dados usam `export const revalidate = 3600` (ISR 1h). A Home e o Comparador tambem seguem esse padrao. O `generateStaticParams` na ficha gera rotas estaticas pra todos os candidatos ativos.
+
+## Pipeline de dados
+
+Automatizado via GitHub Actions (cron diario REST, semanal CSV) ou manual via CLI.
+
+### Como funciona
+1. Le `data/candidatos.json` (lista curada com IDs das APIs)
+2. Pra cada candidato, busca dados nas 4 fontes
+3. Faz upsert no Supabase (idempotente, pode rodar multiplas vezes)
+
+### Como adicionar um candidato
+Editar `data/candidatos.json`, adicionar entrada com slug e IDs:
+- `ids.camara`: buscar em `https://dadosabertos.camara.leg.br/api/v2/deputados?nome=NOME`
+- `ids.senado`: buscar em `https://legis.senado.leg.br/dadosabertos/senador/lista/atual`
+- `ids.tse_sq_candidato`: extrair dos CSVs do TSE por ano
+
+### Fontes e tabelas
+| Fonte | Tabelas populadas | Metodo | Frequencia |
+|-------|-------------------|--------|------------|
+| Camara | candidatos, gastos_parlamentares, votos_candidato, projetos_lei | REST | Diario |
+| Senado | candidatos, historico_politico, votos_candidato, projetos_lei | REST | Diario |
+| TSE | patrimonio, financiamento | CSV bulk | Semanal |
+| Transparencia | dados complementares | REST | Semanal |
+
+### GitHub Actions
+Secrets necessarios: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `TRANSPARENCIA_API_KEY` (opcional)
+
+TSE ingest extrai apenas arquivos `*_BR*`/`*_BRASIL*` dos ZIPs (candidatos nacionais) e limpa CSVs/ZIPs apos cada etapa pra evitar acumulo de GBs.
 
 ## Database (Supabase)
 
-11 tabelas + 2 views:
+11 tabelas + 2 views. Schema completo: `scripts/schema.sql`
 
 | Tabela | O que guarda |
 |--------|-------------|
-| candidatos | Perfil basico, partido, cargo, status |
+| candidatos | Perfil basico, partido, cargo, status, biografia |
 | historico_politico | Cargos anteriores, periodos |
 | mudancas_partido | Timeline de trocas de partido |
 | patrimonio | Bens declarados por eleicao |
@@ -136,11 +132,11 @@ puxa-ficha/
 | projetos_lei | Projetos de lei de autoria |
 | processos | Processos judiciais (criminal, improbidade, eleitoral) |
 | pontos_atencao | Alertas editoriais curados (contradicoes, suspeitas) |
-| gastos_parlamentares | Gastos CEAP (Camara) |
+| gastos_parlamentares | Gastos CEAP (Camara), 2019-2025 |
 
 Views: `v_ficha_candidato` (ficha completa), `v_comparador` (dados pra comparacao)
 
-Schema completo: `scripts/schema.sql`
+Candidatos com `status: 'removido'` sao filtrados em todas as queries.
 
 ## Environment Variables
 
@@ -152,60 +148,13 @@ Schema completo: `scripts/schema.sql`
 | `TRANSPARENCIA_API_KEY` | Nao | Server only |
 | `ANTHROPIC_API_KEY` | Nao (fase 2) | Server only |
 
-## Sprint Plan
-
-### Sprint 0 (concluido): Setup
-- [x] Scaffold Next.js 15 + Tailwind + shadcn/ui
-- [x] Schema SQL + seed + types
-- [x] Git + GitHub repo
-- [x] CLAUDE.md
-
-### Sprint 1: Fundacao
-- [ ] Criar projeto Supabase + rodar schema.sql + seed.sql
-- [ ] Componente CandidatoCard (card resumo)
-- [ ] Pagina Home com lista de candidatos
-- [ ] Ficha Corrida basica (dados do seed)
-
-### Sprint 0.5 (concluido): Pipeline de dados
-- [x] Infraestrutura compartilhada (types, helpers, supabase, logger)
-- [x] Lista curada de candidatos com IDs reais (candidatos.json)
-- [x] Modulo Camara (perfil, gastos, votos, projetos)
-- [x] Modulo Senado (perfil, mandatos, votos, autorias)
-- [x] Modulo TSE (patrimonio, financiamento via CSV)
-- [x] Modulo Transparencia (opcional)
-- [x] Orquestrador (ingest-all.ts)
-- [x] GitHub Actions (cron diario + semanal)
-
-### Sprint 2: Dados reais
-- [ ] Criar projeto Supabase + rodar schema + seed
-- [ ] Rodar pipeline completo pela primeira vez
-- [ ] Popular votacoes-chave (curadoria editorial)
-- [ ] Validar dados de patrimonio e financiamento
-
-### Sprint 3: Comparador + UI
-- [ ] Comparador funcional (2-3 candidatos)
-- [ ] Curadoria pontos de atencao (5-10/candidato)
-- [ ] Design responsivo mobile-first
-- [ ] Pagina Sobre com metodologia
-
-### Sprint 4: Polish + Launch
-- [ ] Beta com 50-100 testadores
-- [ ] SEO (meta tags, OG images dinamicas)
-- [ ] Performance (ISR/SSG)
-- [ ] Press kit + parceiros institucionais
-- [ ] Deploy Vercel + dominio puxaficha.com.br
-- [ ] Lancamento sincronizado com artigo CartaCapital
-
 ## Known Issues
 
-**seed.sql:**
-- Apenas 10 candidatos a presidente (sem governadores)
-- Sem pontos_atencao, historico, dados financeiros ou votacoes
-
-**Pipeline (requer Supabase configurado):**
-- Primeira execucao precisa de seed.sql rodado antes (candidatos devem existir no banco)
-- TSE CSV download pode ser lento (~100MB por ano)
+- TSE CSV download pode ser lento (~100MB por ano, pico ~1.5GB durante run, 0 apos cleanup)
 - votacoes_chave precisa de curadoria manual antes dos votos serem cruzados
+- Gastos parlamentares so funcionam a partir de 2019 (API retorna 504 em anos anteriores)
+- Ex-deputados sem dados na API da Camara (votos, gastos) por mandatos antigos
+- pontos_atencao todos com `verificado: false` (aguardando revisao humana)
 
 ## Anti-Patterns
 

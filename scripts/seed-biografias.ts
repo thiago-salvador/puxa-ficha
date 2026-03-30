@@ -52,11 +52,11 @@ const biografias: { slug: string; biografia: string }[] = [
   },
   {
     slug: "hertz-dias",
-    biografia: "Pre-candidato a presidencia pelo PDT nas eleicoes de 2026. Informacoes biograficas detalhadas serao atualizadas quando disponiveis em fontes publicas oficiais.",
+    biografia: "Hertz da Conceicao Dias nasceu em 1970 em Sao Luis, Maranhao. Formado em Historia pela Universidade Federal do Maranhao (UFMA) e mestre em Educacao, e professor da rede publica estadual e municipal. Ativista do movimento negro, rapper e vocalista do grupo Giria Vermelha. Cofundador do Movimento Hip Hop Quilombo Urbano em 1992, uma das organizacoes de hip-hop mais antigas do Brasil, que combina cultura periferica e mobilizacao social contra o racismo. Foi candidato a vice-presidente em 2018 na chapa de Vera Lucia (PSTU), candidato a prefeito de Sao Luis em 2020 e candidato a governador do Maranhao em 2022.",
   },
   {
     slug: "samara-martins",
-    biografia: "Pre-candidata a presidencia pelo Patriota nas eleicoes de 2026. Informacoes biograficas detalhadas serao atualizadas quando disponiveis em fontes publicas oficiais.",
+    biografia: "Samara Martins da Silva nasceu em 1987 em Belo Horizonte, Minas Gerais. Mudou-se para o Rio Grande do Norte onde cursou Odontologia na UFRN. Trabalha como dentista no SUS. De origem humilde, filha de mae professora e pai motorista, e ativista do Movimento de Luta nos Bairros, Vilas e Favelas (MLB) e do Movimento de Mulheres Olga Benario. Coordenadora nacional da Frente Negra Revolucionaria e vice-presidenta nacional da Unidade Popular (UP). Foi candidata a vice-presidenta em 2022 na chapa de Leo Pericles e candidata a vereadora em Natal em 2020.",
   },
 ]
 

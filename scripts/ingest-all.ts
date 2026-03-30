@@ -2,10 +2,11 @@ import { ingestCamara } from "./lib/ingest-camara"
 import { ingestSenado } from "./lib/ingest-senado"
 import { ingestTSE } from "./lib/ingest-tse"
 import { ingestTransparencia } from "./lib/ingest-transparencia"
+import { enrichWikipedia } from "./lib/enrich-wikipedia"
 import { log, error } from "./lib/logger"
 import type { IngestResult } from "./lib/types"
 
-const VALID_SOURCES = ["camara", "senado", "tse", "transparencia"] as const
+const VALID_SOURCES = ["camara", "senado", "tse", "transparencia", "wikipedia"] as const
 
 const args = process.argv.slice(2).filter((a) => !a.startsWith("-"))
 const sources = args.length > 0 ? args : [...VALID_SOURCES]
@@ -55,6 +56,15 @@ async function main() {
       allResults.push(...(await ingestTransparencia()))
     } catch (err) {
       error("pipeline", `Transparencia falhou: ${err}`)
+    }
+  }
+
+  if (sources.includes("wikipedia")) {
+    log("pipeline", "--- Wikipedia / Wikidata ---")
+    try {
+      allResults.push(...(await enrichWikipedia()))
+    } catch (err) {
+      error("pipeline", `Wikipedia falhou: ${err}`)
     }
   }
 

@@ -25,3 +25,4 @@ const dateFormatter = new Intl.DateTimeFormat("pt-BR", {
 export function formatDate(date: string | Date): string {
   return dateFormatter.format(typeof date === "string" ? new Date(date) : date)
 }
+

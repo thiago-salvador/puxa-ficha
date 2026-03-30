@@ -1,0 +1,289 @@
+import { supabase } from "./supabase"
+import { loadCandidatos, fetchJSON, sleep } from "./helpers"
+import { log, warn, error } from "./logger"
+import type { IngestResult } from "./types"
+
+// Slug → Portuguese Wikipedia article title (manually verified)
+const WIKI_TITLES: Record<string, string> = {
+  "lula": "Luiz_Inácio_Lula_da_Silva",
+  "flavio-bolsonaro": "Flávio_Bolsonaro",
+  "tarcisio": "Tarcísio_de_Freitas",
+  "romeu-zema": "Romeu_Zema",
+  "ronaldo-caiado": "Ronaldo_Caiado",
+  "ratinho-junior": "Ratinho_Júnior",
+  "aldo-rebelo": "Aldo_Rebelo",
+  "renan-santos": "Renan_Santos",
+  "ciro-gomes": "Ciro_Gomes",
+  "eduardo-leite": "Eduardo_Leite",
+  "rui-costa-pimenta": "Rui_Costa_Pimenta",
+}
+
+// Fallback data for candidates without Wikipedia pages.
+// Photo files must exist in public/candidates/{slug}.jpg
+// Data sourced from TSE, party sites, and news outlets.
+const FALLBACK_DATA: Record<string, {
+  foto_url: string
+  data_nascimento?: string
+  naturalidade?: string
+  formacao?: string
+  profissao_declarada?: string
+}> = {
+  "hertz-dias": {
+    foto_url: "/candidates/hertz-dias.jpg",
+    data_nascimento: "1970-10-20",
+    naturalidade: "Sao Luis/MA",
+    formacao: "Superior completo (Historia, UFMA; Mestrado em Educacao)",
+    profissao_declarada: "Professor",
+  },
+  "samara-martins": {
+    foto_url: "/candidates/samara-martins.jpg",
+    data_nascimento: "1987-08-31",
+    naturalidade: "Belo Horizonte/MG",
+    formacao: "Superior completo (Odontologia, UFRN)",
+    profissao_declarada: "Dentista",
+  },
+}
+
+const WIKI_API = "https://pt.wikipedia.org/w/api.php"
+const WIKIDATA_SPARQL = "https://query.wikidata.org/sparql"
+
+interface WikiPage {
+  pageid?: number
+  title: string
+  thumbnail?: { source: string; width: number; height: number }
+  original?: { source: string; width: number; height: number }
+  pageimage?: string
+  pageprops?: { wikibase_item?: string }
+  missing?: string
+}
+
+// Fetch photo URL (800px) + Wikidata QID from Wikipedia in a single API call
+async function fetchWikiPage(title: string): Promise<{ photoUrl: string | null; wikidataId: string | null }> {
+  const params = new URLSearchParams({
+    action: "query",
+    titles: title,
+    prop: "pageimages|pageprops",
+    piprop: "thumbnail|original",
+    pithumbsize: "800",
+    ppprop: "wikibase_item",
+    format: "json",
+    origin: "*",
+  })
+
+  const json = await fetchJSON<{ query: { pages: Record<string, WikiPage> } }>(`${WIKI_API}?${params}`)
+  const page = Object.values(json.query?.pages ?? {})[0]
+
+  if (!page || page.missing !== undefined) {
+    return { photoUrl: null, wikidataId: null }
+  }
+
+  // Prefer 800px thumbnail (properly sized); fall back to original
+  const photoUrl = page.thumbnail?.source ?? page.original?.source ?? null
+
+  return {
+    photoUrl,
+    wikidataId: page.pageprops?.wikibase_item ?? null,
+  }
+}
+
+// Fetch structured data from Wikidata via SPARQL
+async function fetchWikidataStructured(qid: string): Promise<{
+  dataNascimento: string | null
+  naturalidade: string | null
+  formacao: string | null
+}> {
+  const sparql = `
+    SELECT ?birthDate ?birthPlaceLabel ?educationLabel WHERE {
+      OPTIONAL { wd:${qid} wdt:P569 ?birthDate }
+      OPTIONAL { wd:${qid} wdt:P19 ?birthPlace }
+      OPTIONAL { wd:${qid} wdt:P69 ?education }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "pt,en" }
+    }
+    LIMIT 1
+  `
+
+  try {
+    const params = new URLSearchParams({ query: sparql, format: "json" })
+    const res = await fetch(`${WIKIDATA_SPARQL}?${params}`, {
+      headers: {
+        Accept: "application/sparql-results+json",
+        "User-Agent": "PuxaFicha/1.0 (https://puxaficha.com.br; contact@puxaficha.com.br)",
+      },
+    })
+
+    if (!res.ok) {
+      warn("wikipedia", `  Wikidata SPARQL HTTP ${res.status}`)
+      return { dataNascimento: null, naturalidade: null, formacao: null }
+    }
+
+    const json = (await res.json()) as {
+      results: { bindings: Array<Record<string, { value: string }>> }
+    }
+    const row = json.results?.bindings?.[0]
+    if (!row) return { dataNascimento: null, naturalidade: null, formacao: null }
+
+    const birthRaw = row.birthDate?.value
+    const dataNascimento = birthRaw ? birthRaw.split("T")[0] : null
+    const naturalidade = row.birthPlaceLabel?.value ?? null
+    const formacao = row.educationLabel?.value ?? null
+
+    return { dataNascimento, naturalidade, formacao }
+  } catch (err) {
+    warn("wikipedia", `  Wikidata SPARQL error: ${err instanceof Error ? err.message : err}`)
+    return { dataNascimento: null, naturalidade: null, formacao: null }
+  }
+}
+
+// Apply fallback data for candidates without Wikipedia pages
+async function applyFallback(slug: string, candidatoId: string, existing: Record<string, unknown>): Promise<number> {
+  const fb = FALLBACK_DATA[slug]
+  if (!fb) return 0
+
+  const updates: Record<string, unknown> = {}
+
+  if (fb.foto_url && !existing.foto_url) updates.foto_url = fb.foto_url
+  if (fb.data_nascimento && !existing.data_nascimento) updates.data_nascimento = fb.data_nascimento
+  if (fb.naturalidade && !existing.naturalidade) updates.naturalidade = fb.naturalidade
+  if (fb.formacao && !existing.formacao) updates.formacao = fb.formacao
+  if (fb.profissao_declarada && !existing.profissao_declarada) updates.profissao_declarada = fb.profissao_declarada
+
+  if (Object.keys(updates).length === 0) {
+    log("wikipedia", `  ${slug}: fallback - nada para atualizar (campos ja preenchidos)`)
+    return 0
+  }
+
+  updates.ultima_atualizacao = new Date().toISOString()
+  const { error: err } = await supabase.from("candidatos").update(updates).eq("id", candidatoId)
+
+  if (err) {
+    error("wikipedia", `  ${slug}: fallback erro: ${err.message}`)
+    return 0
+  }
+
+  const fields = Object.keys(updates).filter((k) => k !== "ultima_atualizacao")
+  log("wikipedia", `  ${slug}: fallback OK (${fields.join(", ")})`)
+  return 1
+}
+
+export async function enrichWikipedia(): Promise<IngestResult[]> {
+  const candidatos = loadCandidatos()
+  const results: IngestResult[] = []
+
+  for (const cand of candidatos) {
+    const start = Date.now()
+    const result: IngestResult = {
+      source: "wikipedia",
+      candidato: cand.slug,
+      tables_updated: [],
+      rows_upserted: 0,
+      errors: [],
+      duration_ms: 0,
+    }
+
+    // Check current state of candidate in DB
+    const { data: existing, error: dbErr } = await supabase
+      .from("candidatos")
+      .select("id, foto_url, data_nascimento, naturalidade, formacao, profissao_declarada")
+      .eq("slug", cand.slug)
+      .single()
+
+    if (dbErr || !existing) {
+      result.errors.push(`Candidato ${cand.slug} nao encontrado no Supabase`)
+      error("wikipedia", `  ${cand.slug}: nao encontrado no banco`)
+      results.push(result)
+      continue
+    }
+
+    const wikiTitle = WIKI_TITLES[cand.slug]
+
+    // --- Path A: Wikipedia + Wikidata ---
+    if (wikiTitle) {
+      log("wikipedia", `Processando ${cand.slug} → ${wikiTitle}`)
+
+      const { photoUrl, wikidataId } = await fetchWikiPage(wikiTitle)
+      await sleep(300)
+
+      const updates: Record<string, unknown> = {}
+
+      if (photoUrl) {
+        updates.foto_url = photoUrl
+        log("wikipedia", `  ${cand.slug}: foto OK`)
+      } else {
+        warn("wikipedia", `  ${cand.slug}: sem foto na Wikipedia`)
+      }
+
+      // Fetch structured data from Wikidata (only if fields are missing)
+      const needsStructured = !existing.data_nascimento || !existing.naturalidade || !existing.formacao
+      if (wikidataId && needsStructured) {
+        log("wikipedia", `  ${cand.slug}: buscando Wikidata ${wikidataId}`)
+        const wd = await fetchWikidataStructured(wikidataId)
+        await sleep(500)
+
+        if (!existing.data_nascimento && wd.dataNascimento) {
+          updates.data_nascimento = wd.dataNascimento
+          log("wikipedia", `  ${cand.slug}: data_nascimento = ${wd.dataNascimento}`)
+        }
+        if (!existing.naturalidade && wd.naturalidade) {
+          updates.naturalidade = wd.naturalidade
+          log("wikipedia", `  ${cand.slug}: naturalidade = ${wd.naturalidade}`)
+        }
+        if (!existing.formacao && wd.formacao) {
+          updates.formacao = wd.formacao
+          log("wikipedia", `  ${cand.slug}: formacao = ${wd.formacao}`)
+        }
+      }
+
+      if (Object.keys(updates).length > 0) {
+        updates.ultima_atualizacao = new Date().toISOString()
+        const { error: updateErr } = await supabase
+          .from("candidatos")
+          .update(updates)
+          .eq("id", existing.id)
+
+        if (updateErr) {
+          result.errors.push(updateErr.message)
+          error("wikipedia", `  ${cand.slug}: erro ao atualizar: ${updateErr.message}`)
+        } else {
+          result.tables_updated.push("candidatos")
+          result.rows_upserted++
+        }
+      } else {
+        log("wikipedia", `  ${cand.slug}: nada para atualizar`)
+      }
+
+    // --- Path B: Fallback for candidates without Wikipedia ---
+    } else if (FALLBACK_DATA[cand.slug]) {
+      log("wikipedia", `${cand.slug}: sem Wikipedia, usando fallback`)
+      const updated = await applyFallback(cand.slug, existing.id as string, existing as Record<string, unknown>)
+      if (updated > 0) {
+        result.tables_updated.push("candidatos")
+        result.rows_upserted++
+      }
+
+    } else {
+      warn("wikipedia", `${cand.slug}: sem Wikipedia e sem fallback configurado`)
+    }
+
+    result.duration_ms = Date.now() - start
+    results.push(result)
+    await sleep(500)
+  }
+
+  return results
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  enrichWikipedia().then((results) => {
+    const updated = results.filter((r) => r.rows_upserted > 0).length
+    const errors = results.reduce((s, r) => s + r.errors.length, 0)
+    console.log(`\n=== Wikipedia Enrichment ===`)
+    console.log(`Candidatos processados: ${results.length}`)
+    console.log(`Atualizados: ${updated}`)
+    console.log(`Erros: ${errors}`)
+    if (errors > 0) {
+      for (const r of results.filter((r) => r.errors.length > 0)) {
+        console.log(`  ${r.candidato}: ${r.errors.join("; ")}`)
+      }
+    }
+  })
+}

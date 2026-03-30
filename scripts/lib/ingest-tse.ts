@@ -1,4 +1,4 @@
-import { createReadStream, existsSync, mkdirSync, createWriteStream } from "fs"
+import { createReadStream, existsSync, mkdirSync, createWriteStream, rmSync } from "fs"
 import { parse } from "csv-parse"
 import { resolve } from "path"
 import { execSync } from "child_process"
@@ -53,7 +53,31 @@ async function downloadFile(url: string, dest: string): Promise<boolean> {
 
 function extractZip(zipPath: string, extractDir: string) {
   mkdirSync(extractDir, { recursive: true })
-  execSync(`unzip -o "${zipPath}" -d "${extractDir}"`, { stdio: "pipe" })
+  // Only extract BR/BRASIL files to save disk space (national-level candidates only)
+  try {
+    execSync(`unzip -o "${zipPath}" '*_BR*' '*_BRASIL*' -d "${extractDir}"`, { stdio: "pipe" })
+  } catch {
+    // Fallback: extract everything if pattern match fails (some ZIPs have different naming)
+    execSync(`unzip -o "${zipPath}" -d "${extractDir}"`, { stdio: "pipe" })
+  }
+}
+
+function cleanupDir(dir: string) {
+  try {
+    rmSync(dir, { recursive: true, force: true })
+    log("tse", `  Cleanup: ${dir}`)
+  } catch {
+    warn("tse", `  Nao conseguiu limpar: ${dir}`)
+  }
+}
+
+function cleanupFile(filePath: string) {
+  try {
+    rmSync(filePath, { force: true })
+    log("tse", `  Cleanup: ${filePath}`)
+  } catch {
+    warn("tse", `  Nao conseguiu limpar: ${filePath}`)
+  }
 }
 
 function findCSVs(dir: string, pattern: string): string[] {
@@ -365,6 +389,9 @@ export async function ingestTSE(): Promise<IngestResult[]> {
 
     // Build SQ_CANDIDATO -> slug mapping from consulta_cand
     const sqMap = await buildSQMap(ano, candidatos)
+    // Cleanup consulta_cand immediately (only needed for SQ mapping)
+    cleanupDir(resolve(DATA_DIR, `consulta_cand_${ano}`))
+    cleanupFile(resolve(DATA_DIR, `consulta_cand_${ano}.zip`))
 
     // Download bens
     const bensUrl = `https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_${ano}.zip`
@@ -377,6 +404,9 @@ export async function ingestTSE(): Promise<IngestResult[]> {
       } catch (err) {
         error("tse", `  Erro patrimonio ${ano}: ${err}`)
       }
+      // Cleanup bens after processing
+      cleanupDir(bensDir)
+      cleanupFile(bensZip)
     }
 
     await sleep(1000)
@@ -392,9 +422,23 @@ export async function ingestTSE(): Promise<IngestResult[]> {
       } catch (err) {
         error("tse", `  Erro financiamento ${ano}: ${err}`)
       }
+      // Cleanup receitas after processing
+      cleanupDir(receitasDir)
+      cleanupFile(receitasZip)
     }
 
     await sleep(1000)
+  }
+
+  // Final cleanup: remove tse dir if empty
+  try {
+    const { readdirSync } = require("fs")
+    const remaining = readdirSync(DATA_DIR).filter((f: string) => f !== ".DS_Store")
+    if (remaining.length === 0) {
+      cleanupDir(DATA_DIR)
+    }
+  } catch {
+    // ignore
   }
 
   return allResults

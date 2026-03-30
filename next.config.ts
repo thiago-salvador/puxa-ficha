@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: "divulgacandcontas.tse.jus.br",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        pathname: "/wikipedia/**",
+      },
     ],
   },
 };

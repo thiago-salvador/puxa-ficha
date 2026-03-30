@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { CandidatoCard } from "@/components/CandidatoCard"
-import { Input } from "@/components/ui/input"
 import { Search, X } from "lucide-react"
 import type { Candidato } from "@/lib/types"
 
@@ -12,7 +11,11 @@ interface CandidatoGridProps {
   patrimonios: Record<string, number | null>
 }
 
-export function CandidatoGrid({ candidatos, processos, patrimonios }: CandidatoGridProps) {
+export function CandidatoGrid({
+  candidatos,
+  processos,
+  patrimonios,
+}: CandidatoGridProps) {
   const [query, setQuery] = useState("")
 
   const filtered = query.trim()
@@ -29,37 +32,39 @@ export function CandidatoGrid({ candidatos, processos, patrimonios }: CandidatoG
 
   return (
     <>
-      <div className="relative mb-6">
-        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-        <Input
+      <div className="relative mb-10 max-w-md">
+        <Search className="absolute left-4 top-1/2 size-4 -translate-y-1/2 text-black/25" />
+        <input
           type="search"
-          placeholder="Buscar candidato por nome ou partido..."
-          className="pl-10 pr-10"
+          placeholder="Buscar por nome ou partido..."
+          className="w-full rounded-full border border-black/10 bg-transparent px-4 py-2.5 pl-11 pr-10 text-[14px] font-medium text-black outline-none transition-colors placeholder:font-medium placeholder:text-black/30 focus:border-black/20 focus:ring-2 focus:ring-black/5"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
         {query && (
           <button
             onClick={() => setQuery("")}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-black/30 hover:text-black"
+            aria-label="Limpar busca"
           >
-            <X className="h-4 w-4" />
+            <X className="size-4" />
           </button>
         )}
       </div>
 
       {filtered.length === 0 ? (
-        <p className="py-12 text-center text-muted-foreground">
+        <p className="py-20 text-center text-[14px] text-black/40">
           Nenhum candidato encontrado para &ldquo;{query}&rdquo;
         </p>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((c) => (
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 lg:gap-5">
+          {filtered.map((c, i) => (
             <CandidatoCard
               key={c.id}
               candidato={c}
               processos={processos[c.slug] ?? 0}
               patrimonio={patrimonios[c.slug]}
+              index={i}
             />
           ))}
         </div>
