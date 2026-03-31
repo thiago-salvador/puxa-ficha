@@ -160,6 +160,9 @@ Candidatos com `status: 'removido'` sao filtrados em todas as queries.
 
 - **NAO usar SSR.** Dados mudam pouco. ISR com revalidate 1h.
 - **NAO expor SUPABASE_SERVICE_ROLE_KEY** em Client Components. Usar apenas em Server Components e scripts.
+- **NAO gerar pontos_atencao com `gerado_por: "curadoria"` se foi gerado por IA.** Usar `gerado_por: "ia"` e `verificado: false`. Curadoria e revisao humana.
+- **NAO hardcodar nomes de partidos em textos de pontos_atencao.** Sempre buscar do campo `partido_sigla` da tabela `candidatos` para evitar inconsistencia.
+- **NAO rodar pipeline APOS deploy sem forcar redeploy.** ISR gera paginas na hora do deploy. Se dados mudam depois, forcar empty commit ou usar revalidation API.
 - **NAO usar IA pra gerar analises editoriais** no MVP (fase 1). Risco reputacional de alucinacao sobre politicos. Curadoria humana.
 - **NAO deletar Templates/.** Referencia dos arquivos originais.
 - **NAO commitar .env.local.** Usar .env.example como template.

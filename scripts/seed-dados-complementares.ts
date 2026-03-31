@@ -220,18 +220,18 @@ async function main() {
   await upsertPonto("hertz-dias", {
     categoria: "contradição",
     titulo: "Candidato pouco conhecido, sem mandato previo",
-    descricao: "Sem historico de mandato eletivo ou cargo publico relevante. Candidatura pelo PDT sem base eleitoral propria expressiva.",
+    descricao: "Sem historico de mandato eletivo ou cargo publico relevante. Candidatura pelo PSTU sem base eleitoral propria expressiva.",
     gravidade: "baixa",
-    fontes: [{ titulo: "Pre-candidatos PDT 2026", url: "https://www.pdt.org.br", data: "2026-03-01" }],
+    fontes: [{ titulo: "Pre-candidatos PSTU 2026", url: "https://www.pstu.org.br", data: "2026-03-01" }],
   })
 
   // Samara Martins
   await upsertPonto("samara-martins", {
     categoria: "contradição",
     titulo: "Candidata sem historico politico ou mandato previo",
-    descricao: "Sem mandato eletivo anterior ou experiencia em gestao publica. Candidatura pelo Patriota sem base eleitoral consolidada.",
+    descricao: "Sem mandato eletivo anterior ou experiencia em gestao publica. Candidatura pela UP sem base eleitoral consolidada.",
     gravidade: "baixa",
-    fontes: [{ titulo: "Pre-candidatos Patriota 2026", url: "https://www.patriota51.org.br", data: "2026-03-01" }],
+    fontes: [{ titulo: "Pre-candidatos UP 2026", url: "https://unidadepopular.org.br", data: "2026-03-01" }],
   })
 
   // Summary
