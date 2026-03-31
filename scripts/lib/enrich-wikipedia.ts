@@ -5,6 +5,7 @@ import type { IngestResult } from "./types"
 
 // Slug → Portuguese Wikipedia article title (manually verified)
 const WIKI_TITLES: Record<string, string> = {
+  // Presidenciais
   "lula": "Luiz_Inácio_Lula_da_Silva",
   "flavio-bolsonaro": "Flávio_Bolsonaro",
   "tarcisio": "Tarcísio_de_Freitas",
@@ -16,6 +17,139 @@ const WIKI_TITLES: Record<string, string> = {
   "ciro-gomes": "Ciro_Gomes",
   "eduardo-leite": "Eduardo_Leite",
   "rui-costa-pimenta": "Rui_Costa_Pimenta",
+  // SP Governadores
+  "tarcisio-gov-sp": "Tarcísio_de_Freitas",
+  "haddad-gov-sp": "Fernando_Haddad",
+  "erika-hilton": "Érika_Hilton",
+  "felicio-ramuth": "Felício_Ramuth",
+  "ricardo-nunes": "Ricardo_Nunes_(político)",
+  "geraldo-alckmin": "Geraldo_Alckmin",
+  "gilberto-kassab": "Gilberto_Kassab",
+  "andre-do-prado": "André_do_Prado",
+  "marcio-franca": "Márcio_França",
+  "guilherme-derrite": "Guilherme_Derrite",
+  // PR Governadores
+  "sergio-moro-gov-pr": "Sergio_Moro",
+  "guto-silva": "Guto_Silva",
+  "alexandre-curi": "Alexandre_Curi",
+  "rafael-greca": "Rafael_Greca",
+  "requiao-filho": "Requião_Filho",
+  "paulo-martins-gov-pr": "Paulo_Martins_(político)",
+  // SC Governadores
+  "jorginho-mello": "Jorginho_Mello",
+  "joao-rodrigues": "João_Rodrigues_(político_de_Santa_Catarina)",
+  "decio-lima": "Décio_Lima",
+  "marcos-vieira": "Marcos_Vieira_(político)",
+  // RS Governadores
+  "luciano-zucco": "Luciano_Zucco",
+  "juliana-brizola": "Juliana_Brizola",
+  "edegar-pretto": "Edegar_Pretto",
+  "gabriel-souza": "Gabriel_Souza_(político)",
+  "marcelo-maranata": "Marcelo_Maranata",
+  // RJ Governadores
+  "eduardo-paes": "Eduardo_Paes",
+  "douglas-ruas": "Douglas_Ruas",
+  "rodrigo-bacellar": "Rodrigo_Bacellar",
+  "washington-reis": "Washington_Reis",
+  "garotinho": "Anthony_Garotinho",
+  "tarcisio-motta": "Tarcísio_Motta",
+  // MG Governadores
+  "cleitinho": "Cleitinho_Azevedo",
+  "nikolas-ferreira": "Nikolas_Ferreira",
+  "mateus-simoes": "Mateus_Simões",
+  "rodrigo-pacheco": "Rodrigo_Pacheco_(político)",
+  "gabriel-azevedo": "Gabriel_Azevedo_(político)",
+  "maria-da-consolacao": "Maria_da_Consolação",
+  // ES Governadores
+  "pazolini": "Lorenzo_Pazolini",
+  "ricardo-ferraco": "Ricardo_Ferraço",
+  "paulo-hartung": "Paulo_Hartung",
+  "sergio-vidigal": "Sérgio_Vidigal",
+  "arnaldinho-borgo": "Arnaldinho_Borgo",
+  "helder-salomao": "Hélder_Salomão",
+  "da-vitoria": "Da_Vitória",
+  // BA Governadores
+  "jeronimo": "Jerônimo_Rodrigues",
+  "acm-neto": "ACM_Neto",
+  "joao-roma": "João_Roma",
+  "jose-carlos-aleluia": "José_Carlos_Aleluia",
+  // CE Governadores
+  "elmano-de-freitas": "Elmano_de_Freitas",
+  "ciro-gomes-gov-ce": "Ciro_Gomes",
+  "roberto-claudio": "Roberto_Cláudio",
+  "eduardo-girao": "Eduardo_Girão",
+  "capitao-wagner": "Capitão_Wagner",
+  // MA Governadores
+  "eduardo-braide": "Eduardo_Braide",
+  "felipe-camarao": "Felipe_Camarão_(político)",
+  "lahesio-bonfim": "Lahesio_Bonfim",
+  // PE Governadores
+  "joao-campos": "João_Campos_(político)",
+  "raquel-lyra": "Raquel_Lyra",
+  "gilson-machado": "Gilson_Machado_Neto",
+  "anderson-ferreira": "Anderson_Ferreira_(político)",
+  // PB Governadores
+  "cicero-lucena": "Cícero_Lucena",
+  "efraim-filho": "Efraim_Filho",
+  "pedro-cunha-lima": "Pedro_Cunha_Lima",
+  // PI Governadores
+  "rafael-fonteles": "Rafael_Fonteles",
+  "silvio-mendes": "Sílvio_Mendes",
+  "margarete-coelho": "Margarete_Coelho",
+  // RN Governadores
+  "alysson-bezerra": "Alysson_Bezerra",
+  "alvaro-dias-rn": "Álvaro_Dias_(político_do_Rio_Grande_do_Norte)",
+  // SE Governadores
+  "fabio-mitidieri": "Fábio_Mitidieri",
+  "valmir-de-francisquinho": "Valmir_de_Francisquinho",
+  // AL Governadores
+  "jhc": "João_Henrique_Caldas",
+  "renan-filho": "Renan_Filho",
+  // DF Governadores
+  "celina-leao": "Celina_Leão",
+  "leandro-grass": "Leandro_Grass",
+  "paula-belmonte": "Paula_Belmonte",
+  "ricardo-cappelli": "Ricardo_Cappelli",
+  // GO Governadores
+  "daniel-vilela": "Daniel_Vilela",
+  "marconi-perillo": "Marconi_Perillo",
+  "adriana-accorsi": "Adriana_Accorsi",
+  "wilder-morais": "Wilder_Morais",
+  "jose-eliton": "José_Eliton",
+  // MS Governadores
+  "eduardo-riedel": "Eduardo_Riedel",
+  "fabio-trad": "Fábio_Trad",
+  // MT Governadores
+  "wellington-fagundes": "Wellington_Fagundes",
+  "janaina-riva": "Janaína_Riva",
+  "otaviano-pivetta": "Otaviano_Pivetta",
+  // AC Governadores
+  "alan-rick": "Alan_Rick",
+  "mailza-assis": "Mailza_Assis",
+  "tiao-bocalom": "Tião_Bocalom",
+  // AM Governadores
+  "omar-aziz": "Omar_Aziz",
+  "eduardo-braga": "Eduardo_Braga",
+  "david-almeida": "David_Almeida",
+  // AP Governadores
+  "dr-furlan": "Dr._Furlan",
+  "clecio-luis": "Clécio_Luís",
+  "joao-capiberibe": "João_Capiberibe",
+  // PA Governadores
+  "hana-ghassan": "Hana_Ghassan",
+  "delegado-eder-mauro": "Delegado_Éder_Mauro",
+  "beto-faro": "Beto_Faro",
+  "simao-jatene": "Simão_Jatene",
+  // RO Governadores
+  "marcos-rogerio": "Marcos_Rogério",
+  "hildon-chaves": "Hildon_Chaves",
+  "confucio-moura": "Confúcio_Moura",
+  // RR Governadores
+  "teresa-surita": "Teresa_Surita",
+  // TO Governadores
+  "professora-dorinha": "Professora_Dorinha",
+  "laurez-moreira": "Laurez_Moreira",
+  "ataides-oliveira": "Ataídes_Oliveira",
 }
 
 // Fallback data for candidates without Wikipedia pages.
@@ -41,6 +175,12 @@ const FALLBACK_DATA: Record<string, {
     naturalidade: "Belo Horizonte/MG",
     formacao: "Superior completo (Odontologia, UFRN)",
     profissao_declarada: "Dentista",
+  },
+  "alysson-bezerra": {
+    foto_url: "/candidates/alysson-bezerra.jpg",
+  },
+  "evandro-augusto": {
+    foto_url: "/candidates/evandro-augusto.jpg",
   },
 }
 

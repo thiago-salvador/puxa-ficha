@@ -221,5 +221,271 @@
     "cargo_disputado": "Governador",
     "estado": "SP",
     "ids": { "camara": 204531, "senado": null, "tse_sq_candidato": {} }
-  }
+  },
+
+  {
+    "slug": "sergio-moro-gov-pr",
+    "nome_completo": "Sergio Fernando Moro",
+    "nome_urna": "Sergio Moro",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": { "camara": null, "senado": 6476, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "guto-silva",
+    "nome_completo": "Luiz Augusto Silva",
+    "nome_urna": "Guto Silva",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "alexandre-curi",
+    "nome_completo": "Alexandre Curi",
+    "nome_urna": "Alexandre Curi",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "rafael-greca",
+    "nome_completo": "Rafael Valdomiro Greca de Macedo",
+    "nome_urna": "Rafael Greca",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": { "camara": 73486, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "requiao-filho",
+    "nome_completo": "Mauricio Thadeu de Mello e Silva",
+    "nome_urna": "Requiao Filho",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "paulo-martins-gov-pr",
+    "nome_completo": "Paulo Martins",
+    "nome_urna": "Paulo Martins",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+
+  {
+    "slug": "jorginho-mello",
+    "nome_completo": "Jorge Jose de Mello",
+    "nome_urna": "Jorginho Mello",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": { "camara": 160570, "senado": 5979, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "joao-rodrigues",
+    "nome_completo": "Joao Rodrigues",
+    "nome_urna": "Joao Rodrigues",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": { "camara": 178914, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "decio-lima",
+    "nome_completo": "Decio Nery de Lima",
+    "nome_urna": "Decio Lima",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": { "camara": 73893, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "marcos-vieira",
+    "nome_completo": "Marcos Vieira",
+    "nome_urna": "Marcos Vieira",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "marcelo-brigadeiro",
+    "nome_completo": "Marcelo Brigadeiro",
+    "nome_urna": "Marcelo Brigadeiro",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+
+  {
+    "slug": "luciano-zucco",
+    "nome_completo": "Luciano Lorenzini Zucco",
+    "nome_urna": "Luciano Zucco",
+    "cargo_disputado": "Governador",
+    "estado": "RS",
+    "ids": { "camara": 204379, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "juliana-brizola",
+    "nome_completo": "Juliana Daudt Brizola",
+    "nome_urna": "Juliana Brizola",
+    "cargo_disputado": "Governador",
+    "estado": "RS",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "edegar-pretto",
+    "nome_completo": "Edegar Pretto",
+    "nome_urna": "Edegar Pretto",
+    "cargo_disputado": "Governador",
+    "estado": "RS",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "gabriel-souza",
+    "nome_completo": "Gabriel Souza",
+    "nome_urna": "Gabriel Souza",
+    "cargo_disputado": "Governador",
+    "estado": "RS",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "marcelo-maranata",
+    "nome_completo": "Marcelo Maranata",
+    "nome_urna": "Marcelo Maranata",
+    "cargo_disputado": "Governador",
+    "estado": "RS",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "evandro-augusto",
+    "nome_completo": "Evandro Augusto",
+    "nome_urna": "Evandro Augusto",
+    "cargo_disputado": "Governador",
+    "estado": "RS",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+
+  { "slug": "eduardo-paes", "nome_completo": "Eduardo da Costa Paes", "nome_urna": "Eduardo Paes", "cargo_disputado": "Governador", "estado": "RJ", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "douglas-ruas", "nome_completo": "Douglas Ruas", "nome_urna": "Douglas Ruas", "cargo_disputado": "Governador", "estado": "RJ", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "rodrigo-bacellar", "nome_completo": "Rodrigo Bacellar", "nome_urna": "Rodrigo Bacellar", "cargo_disputado": "Governador", "estado": "RJ", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "washington-reis", "nome_completo": "Washington Reis de Oliveira", "nome_urna": "Washington Reis", "cargo_disputado": "Governador", "estado": "RJ", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "garotinho", "nome_completo": "Anthony William Matheus de Oliveira", "nome_urna": "Garotinho", "cargo_disputado": "Governador", "estado": "RJ", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "tarcisio-motta", "nome_completo": "Tarcisio Motta de Carvalho", "nome_urna": "Tarcisio Motta", "cargo_disputado": "Governador", "estado": "RJ", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "cleitinho", "nome_completo": "Cleitinho Azevedo", "nome_urna": "Cleitinho", "cargo_disputado": "Governador", "estado": "MG", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "nikolas-ferreira", "nome_completo": "Nikolas Ferreira Oliveira", "nome_urna": "Nikolas Ferreira", "cargo_disputado": "Governador", "estado": "MG", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "mateus-simoes", "nome_completo": "Mateus Simoes", "nome_urna": "Mateus Simoes", "cargo_disputado": "Governador", "estado": "MG", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "rodrigo-pacheco", "nome_completo": "Rodrigo Pacheco Amaral", "nome_urna": "Rodrigo Pacheco", "cargo_disputado": "Governador", "estado": "MG", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "gabriel-azevedo", "nome_completo": "Gabriel Azevedo", "nome_urna": "Gabriel Azevedo", "cargo_disputado": "Governador", "estado": "MG", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "maria-da-consolacao", "nome_completo": "Maria da Consolacao Soares", "nome_urna": "Maria da Consolacao", "cargo_disputado": "Governador", "estado": "MG", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "pazolini", "nome_completo": "Lorenzo Pazolini", "nome_urna": "Pazolini", "cargo_disputado": "Governador", "estado": "ES", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "ricardo-ferraco", "nome_completo": "Ricardo de Rezende Ferraco", "nome_urna": "Ricardo Ferraco", "cargo_disputado": "Governador", "estado": "ES", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "paulo-hartung", "nome_completo": "Paulo Cesar Hartung Gomes", "nome_urna": "Paulo Hartung", "cargo_disputado": "Governador", "estado": "ES", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "sergio-vidigal", "nome_completo": "Sergio Vidigal", "nome_urna": "Sergio Vidigal", "cargo_disputado": "Governador", "estado": "ES", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "arnaldinho-borgo", "nome_completo": "Arnaldinho Borgo", "nome_urna": "Arnaldinho Borgo", "cargo_disputado": "Governador", "estado": "ES", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "helder-salomao", "nome_completo": "Helder Ignacio Salomao", "nome_urna": "Helder Salomao", "cargo_disputado": "Governador", "estado": "ES", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "da-vitoria", "nome_completo": "Josias da Vitoria", "nome_urna": "Da Vitoria", "cargo_disputado": "Governador", "estado": "ES", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "jeronimo", "nome_completo": "Jeronimo Rodrigues de Jesus", "nome_urna": "Jeronimo", "cargo_disputado": "Governador", "estado": "BA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "acm-neto", "nome_completo": "Antonio Carlos Peixoto de Magalhaes Neto", "nome_urna": "ACM Neto", "cargo_disputado": "Governador", "estado": "BA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "joao-roma", "nome_completo": "Joao Carlos Bacelar Batista", "nome_urna": "Joao Roma", "cargo_disputado": "Governador", "estado": "BA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "jose-carlos-aleluia", "nome_completo": "Jose Carlos Aleluia Costa", "nome_urna": "Jose Carlos Aleluia", "cargo_disputado": "Governador", "estado": "BA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "ronaldo-mansur", "nome_completo": "Ronaldo Mansur", "nome_urna": "Ronaldo Mansur", "cargo_disputado": "Governador", "estado": "BA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "elmano-de-freitas", "nome_completo": "Elmano de Freitas da Costa", "nome_urna": "Elmano de Freitas", "cargo_disputado": "Governador", "estado": "CE", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "ciro-gomes-gov-ce", "nome_completo": "Ciro Ferreira Gomes", "nome_urna": "Ciro Gomes", "cargo_disputado": "Governador", "estado": "CE", "ids": { "camara": 141406, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "roberto-claudio", "nome_completo": "Roberto Claudio Rodrigues Bezerra", "nome_urna": "Roberto Claudio", "cargo_disputado": "Governador", "estado": "CE", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "eduardo-girao", "nome_completo": "Eduardo Girao Monteiro Filho", "nome_urna": "Eduardo Girao", "cargo_disputado": "Governador", "estado": "CE", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "capitao-wagner", "nome_completo": "Wagner Sousa Gomes", "nome_urna": "Capitao Wagner", "cargo_disputado": "Governador", "estado": "CE", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "eduardo-braide", "nome_completo": "Eduardo Costa Braide", "nome_urna": "Eduardo Braide", "cargo_disputado": "Governador", "estado": "MA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "orleans-brandao", "nome_completo": "Orleans Torres Ribeiro Brandao", "nome_urna": "Orleans Brandao", "cargo_disputado": "Governador", "estado": "MA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "felipe-camarao", "nome_completo": "Felipe Costa Camarao", "nome_urna": "Felipe Camarao", "cargo_disputado": "Governador", "estado": "MA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "lahesio-bonfim", "nome_completo": "Lahesio Rodrigues Bonfim", "nome_urna": "Lahesio Bonfim", "cargo_disputado": "Governador", "estado": "MA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "enilton-rodrigues", "nome_completo": "Enilton Rodrigues", "nome_urna": "Enilton Rodrigues", "cargo_disputado": "Governador", "estado": "MA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "joao-campos", "nome_completo": "Joao Henrique de Andrade Lima Campos", "nome_urna": "Joao Campos", "cargo_disputado": "Governador", "estado": "PE", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "raquel-lyra", "nome_completo": "Raquel Teixeira Lyra Lucena", "nome_urna": "Raquel Lyra", "cargo_disputado": "Governador", "estado": "PE", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "gilson-machado", "nome_completo": "Gilson Machado Guimaraes Neto", "nome_urna": "Gilson Machado", "cargo_disputado": "Governador", "estado": "PE", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "anderson-ferreira", "nome_completo": "Anderson Ferreira de Alencar", "nome_urna": "Anderson Ferreira", "cargo_disputado": "Governador", "estado": "PE", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "ivan-moraes", "nome_completo": "Ivan Moraes Filho", "nome_urna": "Ivan Moraes", "cargo_disputado": "Governador", "estado": "PE", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "cicero-lucena", "nome_completo": "Cicero de Lucena Filho", "nome_urna": "Cicero Lucena", "cargo_disputado": "Governador", "estado": "PB", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "lucas-ribeiro", "nome_completo": "Lucas Ribeiro", "nome_urna": "Lucas Ribeiro", "cargo_disputado": "Governador", "estado": "PB", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "efraim-filho", "nome_completo": "Efraim de Araujo Morais Filho", "nome_urna": "Efraim Filho", "cargo_disputado": "Governador", "estado": "PB", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "pedro-cunha-lima", "nome_completo": "Pedro Cunha Lima", "nome_urna": "Pedro Cunha Lima", "cargo_disputado": "Governador", "estado": "PB", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "rafael-fonteles", "nome_completo": "Rafael Tajra Fonteles", "nome_urna": "Rafael Fonteles", "cargo_disputado": "Governador", "estado": "PI", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "silvio-mendes", "nome_completo": "Silvio Mendes de Oliveira Filho", "nome_urna": "Silvio Mendes", "cargo_disputado": "Governador", "estado": "PI", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "joel-rodrigues", "nome_completo": "Joel Rodrigues de Castro", "nome_urna": "Joel Rodrigues", "cargo_disputado": "Governador", "estado": "PI", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "margarete-coelho", "nome_completo": "Margarete de Castro Coelho", "nome_urna": "Margarete Coelho", "cargo_disputado": "Governador", "estado": "PI", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "alysson-bezerra", "nome_completo": "Alysson Leandro Barbate Bezerra", "nome_urna": "Alysson Bezerra", "cargo_disputado": "Governador", "estado": "RN", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "alvaro-dias-rn", "nome_completo": "Alvaro Fernandes Dias", "nome_urna": "Alvaro Dias", "cargo_disputado": "Governador", "estado": "RN", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "cadu-xavier", "nome_completo": "Carlos Eduardo Xavier", "nome_urna": "Cadu Xavier", "cargo_disputado": "Governador", "estado": "RN", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "fabio-mitidieri", "nome_completo": "Fabio Mitidieri de Amorim", "nome_urna": "Fabio Mitidieri", "cargo_disputado": "Governador", "estado": "SE", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "valmir-de-francisquinho", "nome_completo": "Valmir dos Santos Costa", "nome_urna": "Valmir de Francisquinho", "cargo_disputado": "Governador", "estado": "SE", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "thiago-de-joaldo", "nome_completo": "Thiago Rezende de Oliveira", "nome_urna": "Thiago de Joaldo", "cargo_disputado": "Governador", "estado": "SE", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "jhc", "nome_completo": "Joao Henrique Caldas", "nome_urna": "JHC", "cargo_disputado": "Governador", "estado": "AL", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "renan-filho", "nome_completo": "Renan Calheiros Filho", "nome_urna": "Renan Filho", "cargo_disputado": "Governador", "estado": "AL", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "alan-rick", "nome_completo": "Alan Rick Pereira da Silva", "nome_urna": "Alan Rick", "cargo_disputado": "Governador", "estado": "AC", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "mailza-assis", "nome_completo": "Mailza Gomes Assis", "nome_urna": "Mailza Assis", "cargo_disputado": "Governador", "estado": "AC", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "tiao-bocalom", "nome_completo": "Sebastiao Bocalom Rodrigues", "nome_urna": "Tiao Bocalom", "cargo_disputado": "Governador", "estado": "AC", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "andre-kamai", "nome_completo": "Andre Luiz Oliveira Kamai", "nome_urna": "Andre Kamai", "cargo_disputado": "Governador", "estado": "AC", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "omar-aziz", "nome_completo": "Omar Jose Abdel Aziz", "nome_urna": "Omar Aziz", "cargo_disputado": "Governador", "estado": "AM", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "maria-do-carmo", "nome_completo": "Maria do Carmo Seffair", "nome_urna": "Maria do Carmo", "cargo_disputado": "Governador", "estado": "AM", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "tadeu-de-souza", "nome_completo": "Tadeu de Souza Lima", "nome_urna": "Tadeu de Souza", "cargo_disputado": "Governador", "estado": "AM", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "david-almeida", "nome_completo": "David Antonio de Abreu Almeida", "nome_urna": "David Almeida", "cargo_disputado": "Governador", "estado": "AM", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "eduardo-braga", "nome_completo": "Eduardo Braga Granata", "nome_urna": "Eduardo Braga", "cargo_disputado": "Governador", "estado": "AM", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "dr-furlan", "nome_completo": "Jose Antonio D Almeida Furlan", "nome_urna": "Dr. Furlan", "cargo_disputado": "Governador", "estado": "AP", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "clecio-luis", "nome_completo": "Clecio Luis Vilhena Vieira", "nome_urna": "Clecio Luis", "cargo_disputado": "Governador", "estado": "AP", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "joao-capiberibe", "nome_completo": "Joao Alberto Rodrigues Capiberibe", "nome_urna": "Joao Capiberibe", "cargo_disputado": "Governador", "estado": "AP", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "hana-ghassan", "nome_completo": "Hana Ghassan Tuma", "nome_urna": "Hana Ghassan", "cargo_disputado": "Governador", "estado": "PA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "dr-daniel", "nome_completo": "Daniel Barbosa Santos", "nome_urna": "Dr. Daniel", "cargo_disputado": "Governador", "estado": "PA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "delegado-eder-mauro", "nome_completo": "Eder Braga Mauro", "nome_urna": "Delegado Eder Mauro", "cargo_disputado": "Governador", "estado": "PA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "beto-faro", "nome_completo": "Jose Beto Faro Pereira", "nome_urna": "Beto Faro", "cargo_disputado": "Governador", "estado": "PA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "simao-jatene", "nome_completo": "Simao Robison Oliveira Jatene", "nome_urna": "Simao Jatene", "cargo_disputado": "Governador", "estado": "PA", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "marcos-rogerio", "nome_completo": "Marcos Rogerio da Silva Brito", "nome_urna": "Marcos Rogerio", "cargo_disputado": "Governador", "estado": "RO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "adailton-furia", "nome_completo": "Adailton de Souza Furia", "nome_urna": "Adailton Furia", "cargo_disputado": "Governador", "estado": "RO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "hildon-chaves", "nome_completo": "Hildon de Lima Chaves", "nome_urna": "Hildon Chaves", "cargo_disputado": "Governador", "estado": "RO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "dr-fernando-maximo", "nome_completo": "Fernando Maximo de Oliveira", "nome_urna": "Dr. Fernando Maximo", "cargo_disputado": "Governador", "estado": "RO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "confucio-moura", "nome_completo": "Jose Confucio Aires Moura", "nome_urna": "Confucio Moura", "cargo_disputado": "Governador", "estado": "RO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "expedito-netto", "nome_completo": "Expedito Goncalves Ferreira Netto", "nome_urna": "Expedito Netto", "cargo_disputado": "Governador", "estado": "RO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "arthur-henrique", "nome_completo": "Arthur Cesar Guedes Henrique", "nome_urna": "Arthur Henrique", "cargo_disputado": "Governador", "estado": "RR", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "edilson-damiao", "nome_completo": "Edilson Damiao da Silva", "nome_urna": "Edilson Damiao", "cargo_disputado": "Governador", "estado": "RR", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "teresa-surita", "nome_completo": "Teresa Juca Surita", "nome_urna": "Teresa Surita", "cargo_disputado": "Governador", "estado": "RR", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "soldado-sampaio", "nome_completo": "Soldado Sampaio", "nome_urna": "Soldado Sampaio", "cargo_disputado": "Governador", "estado": "RR", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "professora-dorinha", "nome_completo": "Maria Auxiliadora Seabra Rezende", "nome_urna": "Professora Dorinha", "cargo_disputado": "Governador", "estado": "TO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "laurez-moreira", "nome_completo": "Laurez da Rocha Moreira", "nome_urna": "Laurez Moreira", "cargo_disputado": "Governador", "estado": "TO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "amelio-cayres", "nome_completo": "Amelio Antunes Cayres", "nome_urna": "Amelio Cayres", "cargo_disputado": "Governador", "estado": "TO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "vicentinho-junior", "nome_completo": "Vicente Lopes de Oliveira Junior", "nome_urna": "Vicentinho Junior", "cargo_disputado": "Governador", "estado": "TO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "ataides-oliveira", "nome_completo": "Ataides de Oliveira Leite", "nome_urna": "Ataides Oliveira", "cargo_disputado": "Governador", "estado": "TO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "celina-leao", "nome_completo": "Celina Leao Rocha de Siqueira Campos", "nome_urna": "Celina Leao", "cargo_disputado": "Governador", "estado": "DF", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "leandro-grass", "nome_completo": "Leandro Grass Peixoto", "nome_urna": "Leandro Grass", "cargo_disputado": "Governador", "estado": "DF", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "ricardo-cappelli", "nome_completo": "Ricardo Ribeiro Cappelli", "nome_urna": "Ricardo Cappelli", "cargo_disputado": "Governador", "estado": "DF", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "paula-belmonte", "nome_completo": "Paula Francinete Belmonte da Silva", "nome_urna": "Paula Belmonte", "cargo_disputado": "Governador", "estado": "DF", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "daniel-vilela", "nome_completo": "Daniel Goulart Vilela", "nome_urna": "Daniel Vilela", "cargo_disputado": "Governador", "estado": "GO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "marconi-perillo", "nome_completo": "Marconi Ferreira Perillo Junior", "nome_urna": "Marconi Perillo", "cargo_disputado": "Governador", "estado": "GO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "adriana-accorsi", "nome_completo": "Adriana Accorsi de Queiroz", "nome_urna": "Adriana Accorsi", "cargo_disputado": "Governador", "estado": "GO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "wilder-morais", "nome_completo": "Wilder Gomes de Morais", "nome_urna": "Wilder Morais", "cargo_disputado": "Governador", "estado": "GO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "jose-eliton", "nome_completo": "Jose Eliton de Figueredo Telles Junior", "nome_urna": "Jose Eliton", "cargo_disputado": "Governador", "estado": "GO", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "eduardo-riedel", "nome_completo": "Eduardo Correa Riedel", "nome_urna": "Eduardo Riedel", "cargo_disputado": "Governador", "estado": "MS", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "fabio-trad", "nome_completo": "Fabio Trad", "nome_urna": "Fabio Trad", "cargo_disputado": "Governador", "estado": "MS", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "joao-henrique-catan", "nome_completo": "Joao Henrique Catan", "nome_urna": "Joao Henrique Catan", "cargo_disputado": "Governador", "estado": "MS", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "lucien-rezende", "nome_completo": "Lucien Miranda de Rezende", "nome_urna": "Lucien Rezende", "cargo_disputado": "Governador", "estado": "MS", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+
+  { "slug": "otaviano-pivetta", "nome_completo": "Otaviano Pivetta", "nome_urna": "Otaviano Pivetta", "cargo_disputado": "Governador", "estado": "MT", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "wellington-fagundes", "nome_completo": "Wellington Fagundes", "nome_urna": "Wellington Fagundes", "cargo_disputado": "Governador", "estado": "MT", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "janaina-riva", "nome_completo": "Janaina Riva", "nome_urna": "Janaina Riva", "cargo_disputado": "Governador", "estado": "MT", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } },
+  { "slug": "natasha-slhessarenko", "nome_completo": "Natasha Slhessarenko", "nome_urna": "Natasha Slhessarenko", "cargo_disputado": "Governador", "estado": "MT", "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} } }
 ]
