@@ -52,7 +52,7 @@ export function CandidatoCard({
           )}
 
           {/* Glass overlay - slides up on hover */}
-          <div className="absolute inset-x-0 bottom-0 sm:translate-y-[calc(100%-4rem)] sm:transition-transform sm:duration-500 sm:ease-[cubic-bezier(0.16,1,0.3,1)] sm:group-hover:translate-y-0">
+          <div className="absolute inset-x-0 bottom-0 sm:translate-y-[calc(100%-5rem)] sm:transition-transform sm:duration-500 sm:ease-[cubic-bezier(0.16,1,0.3,1)] sm:group-hover:translate-y-0">
             <div className="glass-dark px-3 pb-3 pt-2.5 sm:px-5 sm:pb-5 sm:pt-4">
 
               {/* Party logo + sigla — always visible */}
