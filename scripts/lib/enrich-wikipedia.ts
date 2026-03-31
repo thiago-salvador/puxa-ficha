@@ -514,6 +514,32 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
       warn("wikipedia", `${cand.slug}: sem Wikipedia e sem fallback configurado`)
     }
 
+    // Photo priority rule: never leave a candidate without a photo.
+    // After all sources tried, check if candidate still has no foto_url.
+    // Priority: 1) Wikipedia, 2) local fallback, 3) Câmara/Senado API, 4) Wikidata, 5) generated placeholder
+    const { data: afterUpdate } = await supabase
+      .from("candidatos")
+      .select("foto_url")
+      .eq("id", existing.id)
+      .single()
+
+    if (!afterUpdate?.foto_url) {
+      // Last resort: UI Avatars placeholder with candidate initials
+      const initials = cand.nome_urna
+        .split(/\s+/)
+        .filter((w: string) => w.length > 2)
+        .slice(0, 2)
+        .map((w: string) => w[0])
+        .join("")
+        .toUpperCase()
+      const placeholderUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(initials)}&size=400&background=1e293b&color=fff&bold=true`
+      await supabase
+        .from("candidatos")
+        .update({ foto_url: placeholderUrl, ultima_atualizacao: new Date().toISOString() })
+        .eq("id", existing.id)
+      warn("wikipedia", `  ${cand.slug}: sem foto em nenhuma fonte, usando placeholder (${initials})`)
+    }
+
     result.duration_ms = Date.now() - start
     results.push(result)
     await sleep(500)

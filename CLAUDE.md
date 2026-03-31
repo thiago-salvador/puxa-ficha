@@ -111,6 +111,18 @@ Editar `data/candidatos.json`, adicionar entrada com slug e IDs:
 | TSE | patrimonio, financiamento | CSV bulk | Semanal |
 | Transparencia | dados complementares | REST | Semanal |
 
+### Hierarquia de fotos (foto_url)
+
+Nenhum candidato pode ficar sem foto. Prioridade de fontes (quem sobrescreve quem):
+
+1. **Wikipedia** (enrich-wikipedia.ts) — sempre sobrescreve. Fonte preferida.
+2. **Fallback local** (`public/candidates/{slug}.jpg`, via FALLBACK_DATA) — so se Wikipedia nao tiver foto.
+3. **Camara/Senado API** (ingest-camara.ts, ingest-senado.ts) — so se `foto_url` estiver vazio no banco.
+4. **Wikidata** (ingest-wikidata.ts) — so se `foto_url` estiver vazio no banco.
+5. **Placeholder gerado** (UI Avatars com iniciais) — ultima instancia, gerado automaticamente no enrich-wikipedia.
+
+Regra: scripts da Camara/Senado NUNCA sobrescrevem foto existente. So o enrich-wikipedia tem permissao de sobrescrever.
+
 ### GitHub Actions
 Secrets necessarios: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `TRANSPARENCIA_API_KEY` (opcional)
 
@@ -167,6 +179,7 @@ Candidatos com `status: 'removido'` sao filtrados em todas as queries.
 - **NAO deletar Templates/.** Referencia dos arquivos originais.
 - **NAO commitar .env.local.** Usar .env.example como template.
 - **NAO editar `data/candidatos.json` sem verificar IDs nas APIs.** IDs errados = dados de outro politico.
+- **NAO sobrescrever foto_url com fontes de menor prioridade.** Camara/Senado/Wikidata so setam se vazio. So Wikipedia pode sobrescrever. Ver "Hierarquia de fotos".
 
 ## Code Style
 

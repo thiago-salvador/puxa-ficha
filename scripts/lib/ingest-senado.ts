@@ -39,7 +39,11 @@ async function ingestPerfil(codigo: number, candidatoId: string, slug: string) {
   }
 
   if (ident) {
-    if (ident.UrlFotoParlamentar) updates.foto_url = ident.UrlFotoParlamentar
+    // Only set photo if candidate doesn't already have one (Wikipedia photos preferred)
+    if (ident.UrlFotoParlamentar) {
+      const { data: current } = await supabase.from("candidatos").select("foto_url").eq("id", candidatoId).single()
+      if (!current?.foto_url) updates.foto_url = ident.UrlFotoParlamentar as string
+    }
     if (ident.SiglaPartidoParlamentar) updates.partido_sigla = ident.SiglaPartidoParlamentar
     if (ident.NomeCompletoParlamentar) updates.partido_atual = ident.SiglaPartidoParlamentar
   }
