@@ -252,6 +252,7 @@ export interface FichaCandidato extends Candidato {
   gastos_parlamentares: GastoParlamentar[];
   sancoes_administrativas: SancaoAdministrativa[];
   noticias: NoticiaCandidato[];
+  indicadores_estaduais?: IndicadorEstadual[];
 
   // Contadores
   total_processos: number;

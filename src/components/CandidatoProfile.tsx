@@ -13,6 +13,7 @@ import { NewsSection } from "./NewsSection"
 import { SectionLabel, SectionTitle } from "./SectionHeader"
 import { ProfileOverview } from "./ProfileOverview"
 import { DataCompleteness } from "./DataCompleteness"
+import { StateIndicators } from "./StateIndicators"
 import { CandidateSnapshot } from "./CandidateSnapshot"
 import { VotingDots } from "./VotingDots"
 import {
@@ -209,6 +210,9 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
             {activeTab === "geral" && (
               <div className="space-y-12">
                 <ProfileOverview ficha={ficha} onNavigateTab={setActiveTab} />
+                {ficha.cargo_disputado === "Governador" && (ficha.indicadores_estaduais ?? []).length > 0 && (
+                  <StateIndicators indicadores={ficha.indicadores_estaduais!} estado={ficha.estado ?? ""} />
+                )}
                 {ficha.noticias && ficha.noticias.length > 0 && (
                   <NewsSection noticias={ficha.noticias} />
                 )}

@@ -11,6 +11,7 @@ import { ingestCeapsSenado } from "./lib/ingest-ceaps-senado"
 import { ingestWikidata } from "./lib/ingest-wikidata"
 import { enrichInstagram } from "./lib/enrich-instagram"
 import { ingestGoogleNews } from "./lib/ingest-google-news"
+import { enrichWikiHistorico } from "./lib/enrich-wiki-historico"
 import { ingestJarbas } from "./lib/ingest-jarbas"
 import { ingestSiconfi } from "./lib/ingest-siconfi"
 import { ingestCapag } from "./lib/ingest-capag"
@@ -22,9 +23,10 @@ import { log, error } from "./lib/logger"
 import type { IngestResult } from "./lib/types"
 
 const VALID_SOURCES = [
-  "camara", "senado", "tse", "transparencia", "wikipedia",
-  "tcu", "sancoes", "tse-situacao", "filiacao", "ceaps-senado",
-  "wikidata", "instagram", "jarbas",
+  // Ordem correta: tse-situacao primeiro (CPF), depois APIs federais, depois enriquecimento
+  "tse-situacao", "camara", "senado", "tse", "transparencia",
+  "tcu", "sancoes", "filiacao", "ceaps-senado", "jarbas",
+  "wikipedia", "wiki-historico", "wikidata", "instagram",
   "siconfi", "capag", "atlas-violencia", "ibge", "ideb", "ipea",
   "google-news",
 ] as const
@@ -44,6 +46,18 @@ async function main() {
   const start = Date.now()
   const allResults: IngestResult[] = []
 
+  // 1. TSE Situacao PRIMEIRO: extrai CPF, dados demograficos do CSV
+  // Sem CPF no banco, tcu e sancoes pulam o candidato
+  if (sources.includes("tse-situacao")) {
+    log("pipeline", "--- TSE Situacao da Candidatura + CPF ---")
+    try {
+      allResults.push(...(await ingestTSESituacao()))
+    } catch (err) {
+      error("pipeline", `TSE Situacao falhou: ${err}`)
+    }
+  }
+
+  // 2. APIs federais (precisam de IDs em candidatos.json)
   if (sources.includes("camara")) {
     log("pipeline", "--- Camara dos Deputados ---")
     try {
@@ -62,6 +76,7 @@ async function main() {
     }
   }
 
+  // 3. TSE CSV bulk (patrimonio, financiamento)
   if (sources.includes("tse")) {
     log("pipeline", "--- TSE (CSV) ---")
     try {
@@ -80,8 +95,9 @@ async function main() {
     }
   }
 
+  // 4. Enriquecimento: Wikipedia bio + redes + historico
   if (sources.includes("wikipedia")) {
-    log("pipeline", "--- Wikipedia / Wikidata ---")
+    log("pipeline", "--- Wikipedia (bio, foto, redes) ---")
     try {
       allResults.push(...(await enrichWikipedia()))
     } catch (err) {
@@ -89,17 +105,16 @@ async function main() {
     }
   }
 
-  // tse-situacao ANTES de tcu/sancoes: extrai CPF do CSV do TSE (2022/2024/2026)
-  // sem CPF no banco, tcu e sancoes pulam o candidato
-  if (sources.includes("tse-situacao")) {
-    log("pipeline", "--- TSE Situacao da Candidatura + CPF ---")
+  if (sources.includes("wiki-historico")) {
+    log("pipeline", "--- Wikipedia Historico (categorias) ---")
     try {
-      allResults.push(...(await ingestTSESituacao()))
+      await enrichWikiHistorico()
     } catch (err) {
-      error("pipeline", `TSE Situacao falhou: ${err}`)
+      error("pipeline", `Wiki Historico falhou: ${err}`)
     }
   }
 
+  // 5. Compliance e fiscalizacao
   if (sources.includes("tcu")) {
     log("pipeline", "--- TCU (Inabilitados + CADIRREG) ---")
     try {

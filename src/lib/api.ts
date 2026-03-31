@@ -54,6 +54,7 @@ export async function getCandidatoBySlug(slug: string): Promise<FichaCandidato |
       gastos_parlamentares: MOCK_GASTOS[slug] ?? [],
       sancoes_administrativas: MOCK_SANCOES[slug] ?? [],
       noticias: MOCK_NOTICIAS[slug] ?? [],
+      indicadores_estaduais: [],
       total_processos: (MOCK_PROCESSOS[slug] ?? []).length,
       processos_criminais: (MOCK_PROCESSOS[slug] ?? []).filter(p => p.tipo === "criminal").length,
       total_mudancas_partido: (MOCK_MUDANCAS[slug] ?? []).length,
@@ -75,7 +76,7 @@ export async function getCandidatoBySlug(slug: string): Promise<FichaCandidato |
 
   const id = candidato.id
 
-  const [historico, mudancas, patrimonio, financiamento, votos, processos, pontos, projetos, gastos, sancoes, noticias] =
+  const [historico, mudancas, patrimonio, financiamento, votos, processos, pontos, projetos, gastos, sancoes, noticias, indicadores] =
     await Promise.all([
       supabase.from("historico_politico").select("*").eq("candidato_id", id).order("periodo_inicio", { ascending: false }),
       supabase.from("mudancas_partido").select("*").eq("candidato_id", id).order("ano", { ascending: false }),
@@ -88,6 +89,9 @@ export async function getCandidatoBySlug(slug: string): Promise<FichaCandidato |
       supabase.from("gastos_parlamentares").select("*").eq("candidato_id", id).order("ano", { ascending: false }),
       supabase.from("sancoes_administrativas").select("*").eq("candidato_id", id).order("data_inicio", { ascending: false }),
       supabase.from("noticias_candidato").select("*").eq("candidato_id", id).order("data_publicacao", { ascending: false }).limit(20),
+      candidato.cargo_disputado === "Governador" && candidato.estado
+        ? supabase.from("indicadores_estaduais").select("*").ilike("estado", candidato.estado).order("ano", { ascending: false })
+        : Promise.resolve({ data: [] as IndicadorEstadual[] }),
     ])
 
   return {
@@ -103,6 +107,7 @@ export async function getCandidatoBySlug(slug: string): Promise<FichaCandidato |
     gastos_parlamentares: gastos.data ?? [],
     sancoes_administrativas: sancoes.data ?? [],
     noticias: noticias.data ?? [],
+    indicadores_estaduais: indicadores.data ?? [],
     total_processos: (processos.data ?? []).length,
     processos_criminais: (processos.data ?? []).filter((p) => p.tipo === "criminal").length,
     total_mudancas_partido: (mudancas.data ?? []).length,

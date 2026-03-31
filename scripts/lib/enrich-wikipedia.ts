@@ -150,6 +150,26 @@ const WIKI_TITLES: Record<string, string> = {
   "professora-dorinha": "Professora_Dorinha",
   "laurez-moreira": "Laurez_Moreira",
   "ataides-oliveira": "Ataídes_Oliveira",
+  "vicentinho-junior": "Vicentinho_Júnior",
+  "amelio-cayres": "Amério_Cayres",
+  // Missing from previous mapping
+  "orleans-brandao": "Carlos_Brandão_(político)",
+  "anderson-ferreira": "Anderson_Ferreira_(político)",
+  "ivan-moraes": "Ivan_Moraes_Filho",
+  "joel-rodrigues": "Joel_Rodrigues_(político)",
+  "cadu-xavier": "Cadu_Xavier",
+  "thiago-de-joaldo": "Thiago_de_Joaldo",
+  "expedito-netto": "Expedito_Netto",
+  "dr-fernando-maximo": "Fernando_Máximo",
+  "arthur-henrique": "Arthur_Henrique_(político)",
+  "natasha-slhessarenko": "Natasha_Slhessarenko",
+  "soldado-sampaio": "Soldado_Sampaio",
+  "andre-kamai": "André_Kamai",
+  "ronaldo-mansur": "Ronaldo_Mansur_(político)",
+  "enilton-rodrigues": "Enilton_Rodrigues",
+  "lucas-ribeiro": "Lucas_Ribeiro_(político_da_Paraíba)",
+  "adailton-furia": "Adailton_Fúria",
+  "silvio-mendes": "Sílvio_Mendes",
 }
 
 // Fallback data for candidates without Wikipedia pages.
@@ -267,19 +287,24 @@ async function fetchWikiPage(title: string): Promise<{ photoUrl: string | null; 
     origin: "*",
   })
 
-  const json = await fetchJSON<{ query: { pages: Record<string, WikiPage> } }>(`${WIKI_API}?${params}`)
-  const page = Object.values(json.query?.pages ?? {})[0]
+  try {
+    const json = await fetchJSON<{ query: { pages: Record<string, WikiPage> } }>(`${WIKI_API}?${params}`)
+    const page = Object.values(json.query?.pages ?? {})[0]
 
-  if (!page || page.missing !== undefined) {
+    if (!page || page.missing !== undefined) {
+      return { photoUrl: null, wikidataId: null }
+    }
+
+    // Prefer 800px thumbnail (properly sized); fall back to original
+    const photoUrl = page.thumbnail?.source ?? page.original?.source ?? null
+
+    return {
+      photoUrl,
+      wikidataId: page.pageprops?.wikibase_item ?? null,
+    }
+  } catch {
+    warn("wikipedia", `  fetchWikiPage failed for ${title}`)
     return { photoUrl: null, wikidataId: null }
-  }
-
-  // Prefer 800px thumbnail (properly sized); fall back to original
-  const photoUrl = page.thumbnail?.source ?? page.original?.source ?? null
-
-  return {
-    photoUrl,
-    wikidataId: page.pageprops?.wikibase_item ?? null,
   }
 }
 
