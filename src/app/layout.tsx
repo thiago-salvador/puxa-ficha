@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   title: "Puxa Ficha — Radiografia dos candidatos 2026",
   description:
     "Consulta publica sobre candidatos das eleicoes brasileiras de 2026. Ficha completa, comparador e pontos de atencao.",
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Puxa Ficha — Radiografia dos candidatos 2026",
     description:
@@ -28,6 +35,14 @@ export const metadata: Metadata = {
     siteName: "Puxa Ficha",
     locale: "pt_BR",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Puxa Ficha",
+      },
+    ],
   },
 }
 
