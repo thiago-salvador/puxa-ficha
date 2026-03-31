@@ -37,8 +37,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className={`${inter.variable} ${anton.variable}`}>
+    <html lang="pt-BR" className={`${inter.variable} ${anton.variable}`}>
+      <body>
         <Navbar />
         <main>{children}</main>
       </body>

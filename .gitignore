@@ -40,6 +40,12 @@ data/tse/
 # Templates (reference only, not part of the build)
 /Templates/
 
+# Claude Code project memory (local only)
+.claude/
+
+# Design reference components (local only)
+/assets/
+
 # firecrawl cache
 .firecrawl/
 

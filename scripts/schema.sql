@@ -291,7 +291,7 @@ FROM candidatos c;
 
 -- View: Comparação entre candidatos
 CREATE VIEW v_comparador AS
-SELECT 
+SELECT
   c.id,
   c.nome_urna,
   c.slug,
@@ -299,7 +299,7 @@ SELECT
   c.cargo_disputado,
   c.estado,
   c.foto_url,
-  c.idade,
+  COALESCE(c.idade, EXTRACT(YEAR FROM age(CURRENT_DATE, c.data_nascimento))::INTEGER) as idade,
   c.formacao,
   (SELECT COUNT(*) FROM processos p WHERE p.candidato_id = c.id) as total_processos,
   (SELECT COUNT(*) FROM mudancas_partido mp WHERE mp.candidato_id = c.id) as mudancas_partido,

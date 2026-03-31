@@ -1,10 +1,12 @@
-export function SlashDivider({ className = "" }: { className?: string }) {
+const SLASHES = "/ ".repeat(200)
+
+export function SlashDivider({ className = "", color }: { className?: string; color?: string }) {
   return (
     <div
-      className={`select-none overflow-hidden whitespace-nowrap text-[11px] leading-none text-black/10 ${className}`}
+      className={`select-none overflow-hidden whitespace-nowrap text-[11px] leading-none ${color ?? "text-black"} ${className}`}
       aria-hidden="true"
     >
-      {"/ ".repeat(200)}
+      {SLASHES}
     </div>
   )
 }

@@ -2,26 +2,20 @@
 
 import { useEffect, useRef, useState, useCallback } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 
 const NAV_ITEMS = [
   { href: "/", label: "Presidencia" },
   { href: "/governadores", label: "Governadores" },
+  { href: "/comparar", label: "Comparar" },
   { href: "/sobre", label: "Sobre" },
 ]
 
 export function Navbar() {
-  const pathname = usePathname()
   const containerRef = useRef<HTMLDivElement>(null)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const hasOpened = useRef(false)
   const tlRef = useRef<ReturnType<typeof import("gsap")["gsap"]["timeline"]> | null>(null)
-
-  function isActive(href: string) {
-    if (href === "/") return pathname === "/"
-    return pathname.startsWith(href)
-  }
 
   // Scroll detection for header transparency
   useEffect(() => {
@@ -100,6 +94,16 @@ export function Navbar() {
     }
   }, [isMenuOpen])
 
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+    return () => { document.body.style.overflow = "" }
+  }, [isMenuOpen])
+
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isMenuOpen) setIsMenuOpen(false)
@@ -111,57 +115,53 @@ export function Navbar() {
   const toggleMenu = useCallback(() => setIsMenuOpen((prev) => !prev), [])
   const closeMenu = useCallback(() => setIsMenuOpen(false), [])
 
+  // Text should be dark (black) when scrolled OR when menu is open (white bg panel)
+  const useDarkText = scrolled || isMenuOpen
+
   return (
     <div ref={containerRef}>
       {/* Header: transparent -> glass on scroll */}
       <header
         className={`fixed top-0 z-[60] w-full transition-all duration-300 ${
           scrolled
-            ? "border-b border-black/5 bg-white/80 backdrop-blur-md"
+            ? "glass-nav"
             : "border-b border-transparent bg-transparent"
         }`}
       >
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:px-12">
           <Link
             href="/"
-            className="font-heading text-[18px] uppercase tracking-[-0.01em] text-black"
+            className={`flex items-center gap-2 font-heading text-[18px] uppercase tracking-[-0.01em] transition-colors duration-300 ${
+              useDarkText ? "text-black" : "text-white"
+            }`}
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/logo-icon-sm.png"
+              alt="Puxa Ficha logo"
+              className={`size-7 transition-all duration-300 ${useDarkText ? "" : "invert"}`}
+            />
             Puxa Ficha
           </Link>
 
-          {/* Desktop nav links */}
-          <nav className="hidden items-center gap-8 md:flex">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-[12px] font-semibold uppercase tracking-[0.12em] transition-colors ${
-                  isActive(item.href) ? "text-black" : "text-black/40 hover:text-black"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
           {/* Menu button */}
           <button
-            className="menu-btn relative z-[60] flex items-center gap-3 overflow-hidden"
+            className="menu-btn relative z-[70] flex items-center gap-3 overflow-hidden"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
           >
             <div className="h-[20px] overflow-hidden">
-              <p className="text-[12px] font-bold uppercase tracking-[0.08em] leading-[20px] text-black">Menu</p>
-              <p className="text-[12px] font-bold uppercase tracking-[0.08em] leading-[20px] text-black">Fechar</p>
+              <p className={`font-heading text-[13px] uppercase tracking-[0.05em] leading-[20px] transition-colors duration-300 ${useDarkText ? "text-black" : "text-white"}`}>Menu</p>
+              <p className={`font-heading text-[13px] uppercase tracking-[0.05em] leading-[20px] transition-colors duration-300 ${useDarkText ? "text-black" : "text-white"}`}>Fechar</p>
             </div>
-            <div className="flex size-8 items-center justify-center rounded-full border border-black/10">
+            <div className={`flex size-8 items-center justify-center rounded-full border transition-colors duration-300 ${useDarkText ? "border-black/15" : "border-white/20"}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
                 height="14"
                 viewBox="0 0 16 16"
                 fill="none"
-                className="menu-button-icon text-black"
+                className={`menu-button-icon transition-colors duration-300 ${useDarkText ? "text-black" : "text-white"}`}
               >
                 <path d="M7.33333 16L7.33333 -3.2055e-07L8.66667 -3.78832e-07L8.66667 16L7.33333 16Z" fill="currentColor" />
                 <path d="M16 8.66667L-2.62269e-07 8.66667L-3.78832e-07 7.33333L16 7.33333L16 8.66667Z" fill="currentColor" />
@@ -175,11 +175,14 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Fullscreen menu overlay */}
-      <div className="nav-overlay-wrapper fixed inset-0 z-[55]" style={{ display: "none" }}>
+      {/* Fullscreen menu overlay — z-65 so it covers the header (z-60) */}
+      <div className="nav-overlay-wrapper fixed inset-0 z-[65]" style={{ display: "none" }}>
         <div
           className="overlay absolute inset-0 bg-black/40"
           onClick={closeMenu}
+          role="button"
+          aria-label="Fechar menu"
+          tabIndex={-1}
           style={{ visibility: "hidden", opacity: 0 }}
         />
 
@@ -190,8 +193,25 @@ export function Navbar() {
             <div className="backdrop-layer absolute inset-0 bg-card" />
           </div>
 
-          <div className="relative flex h-full flex-col justify-center px-6 md:px-12">
-            <ul className="flex flex-col">
+          <div className="relative flex h-full flex-col px-8 pt-20 pb-10 sm:px-12 md:px-16">
+            {/* Close button inside menu panel */}
+            <button
+              onClick={closeMenu}
+              className="absolute right-8 top-5 z-10 flex items-center gap-3 sm:right-12 md:right-16"
+              aria-label="Fechar menu"
+            >
+              <span className="font-heading text-[13px] uppercase tracking-[0.05em] text-black">
+                Fechar
+              </span>
+              <div className="flex size-8 items-center justify-center rounded-full border border-black/15">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="text-black">
+                  <path d="M3 3L13 13M13 3L3 13" stroke="currentColor" strokeWidth="1.5" />
+                </svg>
+              </div>
+            </button>
+
+            {/* Nav links */}
+            <ul className="mt-auto mb-auto flex flex-col gap-1">
               {NAV_ITEMS.map((item) => (
                 <li key={item.href} className="overflow-hidden">
                   <Link
@@ -200,7 +220,7 @@ export function Navbar() {
                     className="nav-link menu-nav-link"
                   >
                     <div className="link-stripe" />
-                    <span className="link-text font-heading text-[clamp(2rem,6vw,3.2rem)]">
+                    <span className="link-text font-heading text-[clamp(2.2rem,7vw,3.5rem)]">
                       {item.label}
                     </span>
                     <svg
@@ -219,13 +239,17 @@ export function Navbar() {
               ))}
             </ul>
 
-            <div className="mt-16 flex items-center justify-between" data-menu-fade>
-              <p className="text-xs text-muted-foreground">
-                Puxa Ficha 2026
-                <br />
-                Dados publicos oficiais
-              </p>
-              <p className="text-xs text-muted-foreground">
+            {/* Footer */}
+            <div className="flex items-end justify-between border-t border-black/8 pt-6" data-menu-fade>
+              <div>
+                <p className="font-heading text-[14px] uppercase tracking-[0.02em] text-black">
+                  Puxa Ficha
+                </p>
+                <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.1em] text-black">
+                  Eleicoes 2026
+                </p>
+              </div>
+              <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-black">
                 TSE &middot; Camara &middot; Senado
               </p>
             </div>

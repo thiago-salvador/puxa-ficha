@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export const revalidate = 3600
 
 export default async function ExplorarPage() {
-  const resumos = await getCandidatosComResumo()
+  const resumos = await getCandidatosComResumo("Presidente")
 
   resumos.sort((a, b) =>
     a.candidato.nome_urna.localeCompare(b.candidato.nome_urna, "pt-BR")

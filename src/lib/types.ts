@@ -159,6 +159,44 @@ export interface FonteReferencia {
   data: string;
 }
 
+// --- Projetos de Lei ---
+export interface ProjetoLei {
+  id: string;
+  candidato_id: string;
+  tipo: string; // "PL", "PEC", "PLP", etc.
+  numero: string | null;
+  ano: number | null;
+  ementa: string | null;
+  tema: string | null;
+  situacao: string | null; // "tramitando", "aprovado", "arquivado", "vetado"
+  url_inteiro_teor: string | null;
+  destaque: boolean;
+  destaque_motivo: string | null;
+  fonte: string;
+}
+
+// --- Gastos Parlamentares ---
+export interface GastoParlamentar {
+  id: string;
+  candidato_id: string;
+  ano: number;
+  total_gasto: number;
+  detalhamento: GastoCategoria[];
+  gastos_destaque: GastoDestaque[];
+}
+
+export interface GastoCategoria {
+  categoria: string;
+  valor: number;
+  fornecedor?: string;
+}
+
+export interface GastoDestaque {
+  descricao: string;
+  valor: number;
+  categoria: string;
+}
+
 // --- Views compostas ---
 
 export interface FichaCandidato extends Candidato {
@@ -169,6 +207,8 @@ export interface FichaCandidato extends Candidato {
   votos: VotoCandidato[];
   processos: Processo[];
   pontos_atencao: PontoAtencao[];
+  projetos_lei: ProjetoLei[];
+  gastos_parlamentares: GastoParlamentar[];
 
   // Contadores
   total_processos: number;

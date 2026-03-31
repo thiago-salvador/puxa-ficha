@@ -141,5 +141,85 @@
       "senado": null,
       "tse_sq_candidato": {}
     }
+  },
+  {
+    "slug": "tarcisio-gov-sp",
+    "nome_completo": "Tarcisio Gomes de Freitas",
+    "nome_urna": "Tarcisio de Freitas",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "haddad-gov-sp",
+    "nome_completo": "Fernando Haddad",
+    "nome_urna": "Fernando Haddad",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "erika-hilton",
+    "nome_completo": "Erika Santos Silva",
+    "nome_urna": "Erika Hilton",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "felicio-ramuth",
+    "nome_completo": "Felicio Ramuth",
+    "nome_urna": "Felicio Ramuth",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "ricardo-nunes",
+    "nome_completo": "Ricardo Luis Reis Nunes",
+    "nome_urna": "Ricardo Nunes",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "geraldo-alckmin",
+    "nome_completo": "Geraldo Jose Rodrigues Alckmin Filho",
+    "nome_urna": "Geraldo Alckmin",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "gilberto-kassab",
+    "nome_completo": "Gilberto Kassab",
+    "nome_urna": "Gilberto Kassab",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "andre-do-prado",
+    "nome_completo": "Andre Luis do Prado",
+    "nome_urna": "Andre do Prado",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "marcio-franca",
+    "nome_completo": "Marcio Luiz Franca Gomes",
+    "nome_urna": "Marcio Franca",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": { "camara": null, "senado": null, "tse_sq_candidato": {} }
+  },
+  {
+    "slug": "guilherme-derrite",
+    "nome_completo": "Guilherme Muraro Derrite",
+    "nome_urna": "Guilherme Derrite",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": { "camara": 204531, "senado": null, "tse_sq_candidato": {} }
   }
 ]

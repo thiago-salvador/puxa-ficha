@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { formatBRL } from "@/lib/utils"
+import { formatCompact, getInitials, FALLBACK_GRADIENT, getPartyLogoUrl } from "@/lib/utils"
 import type { Candidato } from "@/lib/types"
 import { Scale, Landmark } from "lucide-react"
 
@@ -10,20 +10,6 @@ interface CandidatoCardProps {
   index: number
 }
 
-const FALLBACK_GRADIENT = "linear-gradient(160deg, #1a1a1a 0%, #000000 100%)"
-
-function getInitials(name: string): string {
-  const words = name.split(" ")
-  if (words.length === 1) return words[0].slice(0, 2).toUpperCase()
-  return (words[0][0] + words[words.length - 1][0]).toUpperCase()
-}
-
-function formatCompact(value: number): string {
-  if (value >= 1_000_000) return `R$ ${(value / 1_000_000).toFixed(1)}M`
-  if (value >= 1_000) return `R$ ${(value / 1_000).toFixed(0)}K`
-  return formatBRL(value)
-}
-
 export function CandidatoCard({
   candidato,
   processos,
@@ -32,6 +18,7 @@ export function CandidatoCard({
 }: CandidatoCardProps) {
   const gradient = FALLBACK_GRADIENT
   const hasPhoto = !!candidato.foto_url
+  const partyLogo = getPartyLogoUrl(candidato.partido_sigla)
 
   return (
     <Link
@@ -39,7 +26,7 @@ export function CandidatoCard({
       className="stagger-item group block"
       style={{ animationDelay: `${index * 60}ms` }}
     >
-      <div className="relative overflow-hidden rounded-[20px] transition-transform duration-500 ease-out group-hover:-translate-y-1.5 sm:rounded-[24px]">
+      <div className="relative overflow-hidden rounded-[20px] shadow-sm transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:shadow-xl group-hover:shadow-black/10 sm:rounded-[24px]">
         <div
           className="relative w-full overflow-hidden"
           style={{
@@ -58,65 +45,69 @@ export function CandidatoCard({
             />
           ) : (
             <div className="flex h-full items-center justify-center">
-              <span className="select-none text-[72px] font-bold leading-none tracking-tighter text-white/[0.12] sm:text-[90px]">
+              <span className="select-none text-[72px] font-bold leading-none tracking-tighter text-white sm:text-[90px]">
                 {getInitials(candidato.nome_urna)}
               </span>
             </div>
           )}
 
-          {/* Glass overlay */}
-          <div className="absolute inset-x-0 bottom-0">
-            <div
-              className="pointer-events-none h-16 sm:h-20"
-              style={{
-                background:
-                  "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 100%)",
-              }}
-            />
-            <div
-              className="px-3 pb-3 pt-0 sm:px-5 sm:pb-5"
-              style={{
-                backdropFilter: "blur(20px) saturate(1.4)",
-                WebkitBackdropFilter: "blur(20px) saturate(1.4)",
-                background: "rgba(0, 0, 0, 0.25)",
-              }}
-            >
-              {/* Eyebrow: partido */}
-              <span className="text-[9px] font-bold uppercase tracking-[0.08em] text-white/50 sm:text-[10px]">
-                {candidato.partido_sigla}
-              </span>
+          {/* Glass overlay - slides up on hover */}
+          <div className="absolute inset-x-0 bottom-0 sm:translate-y-[calc(100%-5.5rem)] sm:transition-transform sm:duration-500 sm:ease-[cubic-bezier(0.16,1,0.3,1)] sm:group-hover:translate-y-0">
+            <div className="glass-dark px-4 pb-4 pt-3 sm:px-5 sm:pb-5 sm:pt-4">
 
-              {/* Name */}
-              <h3 className="mt-0.5 truncate font-heading text-[16px] leading-[1.1] tracking-[-0.01em] text-white sm:text-[20px] lg:text-[24px]">
+              {/* Party logo + sigla — always visible */}
+              <div className="flex items-center gap-2">
+                {partyLogo && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={partyLogo}
+                    alt=""
+                    className="size-6 rounded-sm object-contain sm:size-7"
+                    loading="lazy"
+                  />
+                )}
+                <span className="font-sans text-[13px] font-bold uppercase tracking-[0.08em] text-white sm:text-[14px]">
+                  {candidato.partido_sigla}
+                </span>
+              </div>
+
+              {/* Name — always visible */}
+              <h3 className="mt-1.5 truncate font-heading text-[20px] leading-[1.05] tracking-[-0.01em] text-white sm:text-[24px] lg:text-[28px]">
                 {candidato.nome_urna}
               </h3>
 
-              {/* Cargo */}
-              <p className="mt-0.5 truncate text-[11px] font-medium leading-normal text-white/60 sm:text-[12px]">
-                {candidato.cargo_atual || candidato.cargo_disputado}
-              </p>
+              {/* Widget panel — revealed on hover */}
+              <div className="sm:opacity-0 sm:transition-opacity sm:delay-75 sm:duration-300 sm:group-hover:opacity-100">
+                <div className="my-3 h-px bg-white/20" />
 
-              {/* Stats + CTA row */}
-              <div className="mt-2 flex items-center justify-between sm:mt-3">
-                <div className="flex items-center gap-1.5 sm:gap-2.5">
-                  {processos > 0 && (
-                    <span className="flex items-center gap-0.5 text-[9px] font-bold text-white/50 sm:gap-1 sm:text-[10px]">
-                      <Scale className="size-2.5 sm:size-3" />
+                <div className="grid grid-cols-2 gap-x-4">
+                  <div>
+                    <p className="font-heading text-[22px] leading-none text-white sm:text-[26px]">
+                      {patrimonio != null && patrimonio > 0 ? formatCompact(patrimonio) : "N/D"}
+                    </p>
+                    <p className="mt-1 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-white/60">
+                      <Landmark className="size-3 shrink-0" />
+                      Patrimônio
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-heading text-[22px] leading-none text-white sm:text-[26px]">
                       {processos}
-                    </span>
-                  )}
-                  {patrimonio != null && patrimonio > 0 && (
-                    <span className="flex items-center gap-0.5 text-[9px] font-bold text-white/50 sm:gap-1 sm:text-[10px]">
-                      <Landmark className="size-2.5 sm:size-3" />
-                      {formatCompact(patrimonio)}
-                    </span>
-                  )}
+                    </p>
+                    <p className="mt-1 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-white/60">
+                      <Scale className="size-3 shrink-0" />
+                      Processo{processos !== 1 ? "s" : ""}
+                    </p>
+                  </div>
                 </div>
 
-                <span className="flex h-[24px] items-center rounded-full border border-white/20 bg-white/10 px-2.5 text-[10px] font-medium text-white transition-all duration-300 group-hover:bg-white group-hover:text-black sm:h-[30px] sm:px-4 sm:text-[12px]">
-                  Ficha
-                </span>
+                <div className="mt-3">
+                  <span className="flex h-9 w-full items-center justify-center rounded-lg border border-white/30 bg-white/10 text-[12px] font-semibold tracking-wide text-white backdrop-blur-sm transition-colors duration-200 group-hover:bg-white group-hover:text-black">
+                    Ver Ficha &rarr;
+                  </span>
+                </div>
               </div>
+
             </div>
           </div>
         </div>

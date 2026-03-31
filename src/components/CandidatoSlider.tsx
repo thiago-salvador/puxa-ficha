@@ -3,9 +3,9 @@
 
 import * as React from "react"
 import Link from "next/link"
-import type { Candidato } from "@/lib/types"
-import { formatBRL } from "@/lib/utils"
+import { formatCompact, getInitials, FALLBACK_GRADIENT } from "@/lib/utils"
 import { Scale, Landmark } from "lucide-react"
+import s from "./CandidatoSlider.module.css"
 
 interface SliderCandidate {
   slug: string
@@ -31,20 +31,6 @@ const CONFIG = {
 
 const lerp = (start: number, end: number, factor: number) =>
   start + (end - start) * factor
-
-const FALLBACK_GRADIENT = "linear-gradient(160deg, #1a1a1a 0%, #000000 100%)"
-
-function getInitials(name: string): string {
-  const words = name.split(" ")
-  if (words.length === 1) return words[0].slice(0, 2).toUpperCase()
-  return (words[0][0] + words[words.length - 1][0]).toUpperCase()
-}
-
-function formatCompact(value: number): string {
-  if (value >= 1_000_000) return `R$ ${(value / 1_000_000).toFixed(1)}M`
-  if (value >= 1_000) return `R$ ${(value / 1_000).toFixed(0)}K`
-  return formatBRL(value)
-}
 
 export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
   const count = candidatos.length
@@ -259,9 +245,9 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
   const activeCandidato = candidatos[activeIndex]
 
   return (
-    <div ref={containerRef} className="slider-container">
+    <div ref={containerRef} className={s.container}>
       {/* Fullscreen slides */}
-      <div className="slider-slides">
+      <div className={s.slides}>
         {indices.map((i) => {
           const data = getData(i)
           const gradient =
@@ -269,7 +255,7 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
           return (
             <div
               key={i}
-              className="slider-slide"
+              className={s.slide}
               ref={(el) => {
                 if (el) projectsRef.current.set(i, el)
                 else projectsRef.current.delete(i)
@@ -279,7 +265,7 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
                 <img src={data.foto_url} alt={data.nome_urna} />
               ) : (
                 <div
-                  className="slider-slide-placeholder"
+                  className={s.slidePlaceholder}
                   style={{ background: gradient }}
                 >
                   <span>{getInitials(data.nome_urna)}</span>
@@ -291,42 +277,42 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
       </div>
 
       {/* Bottom info overlay */}
-      <div className="slider-info">
+      <div className={s.info}>
         <Link
           href={`/candidato/${activeCandidato.slug}`}
-          className="slider-info-inner"
+          className={s.infoInner}
         >
-          <div className="slider-info-left">
-            <span className="slider-info-num">
+          <div>
+            <span className={s.infoNum}>
               {(activeIndex + 1).toString().padStart(2, "0")}/{count.toString().padStart(2, "0")}
             </span>
-            <h2 className="slider-info-name font-heading">
+            <h2 className={`${s.infoName} font-heading`}>
               {activeCandidato.nome_urna}
             </h2>
-            <div className="slider-info-meta">
-              <span className="slider-info-badge">
+            <div className={s.infoMeta}>
+              <span className={s.infoBadge}>
                 {activeCandidato.partido_sigla}
               </span>
               <span>{activeCandidato.cargo}</span>
             </div>
           </div>
-          <div className="slider-info-right">
-            <div className="slider-info-stats">
+          <div className={s.infoRight}>
+            <div className={s.infoStats}>
               {activeCandidato.processos > 0 && (
-                <span className="slider-info-stat">
+                <span className={s.infoStat}>
                   <Scale className="size-4" />
                   {activeCandidato.processos} processo{activeCandidato.processos > 1 ? "s" : ""}
                 </span>
               )}
               {activeCandidato.patrimonio != null &&
                 activeCandidato.patrimonio > 0 && (
-                  <span className="slider-info-stat">
+                  <span className={s.infoStat}>
                     <Landmark className="size-4" />
                     {formatCompact(activeCandidato.patrimonio)}
                   </span>
                 )}
             </div>
-            <span className="slider-info-cta">
+            <span className={s.infoCta}>
               Ver ficha completa →
             </span>
           </div>
@@ -334,9 +320,9 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
       </div>
 
       {/* Minimap */}
-      <div className="slider-minimap">
-        <div className="slider-minimap-inner">
-          <div className="slider-minimap-previews">
+      <div className={s.minimap}>
+        <div className={s.minimapInner}>
+          <div className={s.minimapPreviews}>
             {indices.map((i) => {
               const data = getData(i)
               const gradient =
@@ -344,7 +330,7 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
               return (
                 <div
                   key={i}
-                  className="slider-minimap-thumb"
+                  className={s.minimapThumb}
                   ref={(el) => {
                     if (el) minimapRef.current.set(i, el)
                     else minimapRef.current.delete(i)
@@ -354,7 +340,7 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
                     <img src={data.foto_url} alt={data.nome_urna} />
                   ) : (
                     <div
-                      className="slider-minimap-placeholder"
+                      className={s.minimapPlaceholder}
                       style={{ background: gradient }}
                     />
                   )}
@@ -362,22 +348,22 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
               )
             })}
           </div>
-          <div className="slider-minimap-infos">
+          <div className={s.minimapInfos}>
             {indices.map((i) => {
               const data = getData(i)
               const num = getNum(i)
               return (
                 <div
                   key={i}
-                  className="slider-minimap-info"
+                  className={s.minimapInfo}
                   ref={(el) => {
                     if (el) infoRef.current.set(i, el)
                     else infoRef.current.delete(i)
                   }}
                 >
-                  <p className="slider-minimap-info-num">{num}</p>
-                  <p className="slider-minimap-info-name">{data.nome_urna}</p>
-                  <p className="slider-minimap-info-partido">
+                  <p className={s.minimapInfoNum}>{num}</p>
+                  <p className={s.minimapInfoName}>{data.nome_urna}</p>
+                  <p className={s.minimapInfoPartido}>
                     {data.partido_sigla}
                   </p>
                 </div>

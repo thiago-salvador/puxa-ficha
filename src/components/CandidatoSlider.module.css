@@ -1,0 +1,246 @@
+/* ========================================
+   CANDIDATE SLIDER (/explorar)
+   ======================================== */
+
+.container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--gray-950);
+  z-index: 40;
+}
+
+.slides {
+  position: absolute;
+  inset: 0;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide img {
+  position: absolute;
+  top: -25%;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.slidePlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slidePlaceholder span {
+  font-size: clamp(120px, 25vw, 300px);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.08);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  user-select: none;
+}
+
+/* Bottom info overlay */
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 0 2rem 2rem;
+  pointer-events: none;
+}
+
+.infoInner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 2.5rem;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  background: var(--glass-bg-light);
+  border: 1px solid var(--glass-border-light);
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  pointer-events: auto;
+  transition: background var(--duration-normal) ease;
+}
+
+.infoInner:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.infoNum {
+  font-size: var(--text-caption);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 4px;
+}
+
+.infoName {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.infoMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  font-size: var(--text-body);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.infoBadge {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: var(--text-eyebrow);
+  font-weight: 600;
+  color: #fff;
+}
+
+.infoRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.infoStats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--text-body-sm);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.infoStat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.infoCta {
+  font-size: var(--text-body-sm);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color var(--duration-fast) ease;
+}
+
+.infoInner:hover .infoCta {
+  color: #fff;
+}
+
+/* Minimap */
+.minimap {
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  height: 250px;
+  overflow: hidden;
+  z-index: 10;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .minimap {
+    display: block;
+  }
+}
+
+.minimapInner {
+  display: flex;
+  gap: 12px;
+  height: 100%;
+}
+
+.minimapPreviews {
+  position: relative;
+  width: 60px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.minimapThumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.minimapThumb img {
+  position: absolute;
+  top: -25%;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.minimapPlaceholder {
+  width: 100%;
+  height: 100%;
+}
+
+.minimapInfos {
+  position: relative;
+  width: 120px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.minimapInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.minimapInfoNum {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.1em;
+}
+
+.minimapInfoName {
+  font-size: var(--text-body-sm);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.minimapInfoPartido {
+  font-size: var(--text-eyebrow);
+  color: rgba(255, 255, 255, 0.4);
+}
