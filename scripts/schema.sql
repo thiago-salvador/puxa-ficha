@@ -32,12 +32,23 @@ CREATE TABLE candidatos (
   
   -- Status
   status TEXT DEFAULT 'pre-candidato', -- pre-candidato | candidato | indeferido | desistente
-  
+  situacao_candidatura TEXT, -- DS_SITUACAO_CANDIDATURA do TSE: DEFERIDO | INDEFERIDO | CASSADO | etc.
+
   -- Fotos e links
   foto_url TEXT,
   site_campanha TEXT,
-  redes_sociais JSONB DEFAULT '{}', -- {"instagram": "...", "twitter": "...", ...}
-  
+  redes_sociais JSONB DEFAULT '{}', -- {"instagram": {"username": "...", "followers": N, "url": "..."}, "twitter": "...", "facebook": "...", "site_oficial": "..."}
+
+  -- Dados eleitorais (TSE)
+  cpf TEXT, -- CPF completo do candidato (dado público por lei eleitoral)
+
+  -- Checks de idoneidade
+  tcu_inabilitado BOOLEAN DEFAULT FALSE, -- inabilitado pelo TCU para cargo público
+  tcu_contas_irregulares BOOLEAN DEFAULT FALSE, -- contas julgadas irregulares no CADIRREG/TCU
+
+  -- Wikidata
+  wikidata_id TEXT, -- ex: Q12345
+
   -- Metadata
   fonte_dados TEXT[], -- ["TSE", "Câmara", "Senado", "curadoria"]
   ultima_atualizacao TIMESTAMPTZ DEFAULT NOW(),
@@ -271,7 +282,56 @@ CREATE TABLE gastos_parlamentares (
 CREATE INDEX idx_gastos_candidato ON gastos_parlamentares (candidato_id, ano);
 
 -- ============================================
--- 11. VIEWS ÚTEIS
+-- 11. SANÇÕES ADMINISTRATIVAS
+-- ============================================
+-- Sanções do Portal da Transparência: CEIS, CNEP, CEAF, CEPIM
+CREATE TABLE sancoes_administrativas (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  candidato_id UUID REFERENCES candidatos(id) ON DELETE CASCADE,
+  tipo TEXT NOT NULL,            -- 'CEIS', 'CNEP', 'CEAF', 'CEPIM'
+  descricao TEXT,
+  orgao_sancionador TEXT,
+  data_inicio DATE,
+  data_fim DATE,
+  fundamentacao TEXT,
+  vinculo TEXT DEFAULT 'direto', -- 'direto' ou 'empresa_associada'
+  cnpj_empresa TEXT,
+  numero_processo TEXT,
+  ativo BOOLEAN DEFAULT TRUE,
+  fonte TEXT DEFAULT 'Portal da Transparencia',
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX idx_sancoes_candidato ON sancoes_administrativas (candidato_id);
+CREATE INDEX idx_sancoes_tipo ON sancoes_administrativas (tipo);
+
+-- ============================================
+-- 12. INDICADORES ESTADUAIS
+-- ============================================
+-- SICONFI, Atlas da Violência, IBGE, IDEB, IPEA, CAPAG
+-- Usados para contextualizar fichas de governadores
+CREATE TABLE indicadores_estaduais (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  estado CHAR(2) NOT NULL,
+  ano INTEGER NOT NULL,
+  fonte TEXT NOT NULL,        -- 'siconfi', 'atlas_violencia', 'ibge', 'ideb', 'ipea', 'capag'
+  indicador TEXT NOT NULL,    -- 'divida_rcl', 'homicidios_100k', 'pib_per_capita', 'ideb_em', 'gini', 'nota_capag', etc.
+  valor NUMERIC,
+  valor_texto TEXT,           -- para ratings como CAPAG A/B/C/D
+  unidade TEXT,               -- 'reais', 'percentual', 'por_100k_hab', 'indice', etc.
+  metadata JSONB,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (estado, ano, fonte, indicador)
+);
+
+CREATE INDEX idx_indicadores_estado ON indicadores_estaduais (estado);
+CREATE INDEX idx_indicadores_fonte ON indicadores_estaduais (fonte);
+CREATE INDEX idx_indicadores_estado_ano ON indicadores_estaduais (estado, ano);
+
+-- ============================================
+-- 13. VIEWS ÚTEIS
 -- ============================================
 
 -- View: Ficha completa do candidato (pra Ficha Corrida)
@@ -345,3 +405,9 @@ CREATE POLICY "Leitura pública" ON pontos_atencao FOR SELECT USING (true);
 
 ALTER TABLE gastos_parlamentares ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON gastos_parlamentares FOR SELECT USING (true);
+
+ALTER TABLE sancoes_administrativas ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Leitura pública" ON sancoes_administrativas FOR SELECT USING (true);
+
+ALTER TABLE indicadores_estaduais ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Leitura pública" ON indicadores_estaduais FOR SELECT USING (true);

@@ -197,6 +197,33 @@ export interface GastoDestaque {
   categoria: string;
 }
 
+// --- Sancoes Administrativas ---
+export interface SancaoAdministrativa {
+  id: string;
+  candidato_id: string;
+  tipo: 'CEIS' | 'CNEP' | 'CEAF' | 'CEPIM';
+  descricao: string | null;
+  orgao_sancionador: string | null;
+  data_inicio: string | null;
+  data_fim: string | null;
+  fundamentacao: string | null;
+  vinculo: 'direto' | 'empresa_associada';
+  cnpj_empresa: string | null;
+}
+
+// --- Indicadores Estaduais ---
+export interface IndicadorEstadual {
+  id: string;
+  estado: string;
+  ano: number;
+  fonte: string;
+  indicador: string;
+  valor: number | null;
+  valor_texto: string | null;
+  unidade: string | null;
+  metadata: Record<string, unknown> | null;
+}
+
 // --- Views compostas ---
 
 export interface FichaCandidato extends Candidato {
@@ -209,6 +236,7 @@ export interface FichaCandidato extends Candidato {
   pontos_atencao: PontoAtencao[];
   projetos_lei: ProjetoLei[];
   gastos_parlamentares: GastoParlamentar[];
+  sancoes_administrativas: SancaoAdministrativa[];
 
   // Contadores
   total_processos: number;
@@ -216,6 +244,7 @@ export interface FichaCandidato extends Candidato {
   total_mudancas_partido: number;
   total_pontos_atencao: number;
   pontos_criticos: number;
+  total_sancoes: number;
 }
 
 export interface CandidatoComparavel {

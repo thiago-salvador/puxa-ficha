@@ -9,6 +9,7 @@ import type {
   PontoAtencao,
   ProjetoLei,
   GastoParlamentar,
+  SancaoAdministrativa,
 } from "@/lib/types"
 
 export const MOCK_CANDIDATOS: Candidato[] = [
@@ -1398,6 +1399,18 @@ export const MOCK_GASTOS: Record<string, GastoParlamentar[]> = {
       gastos_destaque: [
         { descricao: "Gasto com divulgacao 3x acima da media do Senado", valor: 320000, categoria: "Divulgacao de atividade" },
       ],
+    },
+  ],
+}
+
+// --- SANCOES ADMINISTRATIVAS ---
+export const MOCK_SANCOES: Record<string, SancaoAdministrativa[]> = {
+  "flavio-bolsonaro": [
+    {
+      id: "sa1", candidato_id: "2", tipo: "CEIS",
+      descricao: "Inabilitacao para contratar com administracao publica por irregularidades em licitacao",
+      orgao_sancionador: "CGU", data_inicio: "2021-03-01", data_fim: null,
+      fundamentacao: "Lei 12.846/2013", vinculo: "direto", cnpj_empresa: null,
     },
   ],
 }
