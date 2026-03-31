@@ -104,6 +104,9 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
   const gastos = ficha.gastos_parlamentares ?? []
   const redesSociais = ficha.redes_sociais ?? {}
 
+  // Count alertas graves = critica + alta (matches ProfileOverview behavior)
+  const alertasGraves = pontosAtencao.filter((p) => p.gravidade === "critica" || p.gravidade === "alta")
+
   // Tab definitions
   const tabDefs = [
     { id: "geral", label: "Visao Geral", dataCount: 0 },
@@ -112,7 +115,7 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
     { id: "votos", label: "Votos", dataCount: votos.length },
     { id: "trajetoria", label: "Trajetoria", dataCount: historico.length + mudancas.length },
     { id: "legislacao", label: "Legislacao", dataCount: projetosLei.length },
-    { id: "alertas", label: "Alertas", dataCount: pontosAtencao.length },
+    { id: "alertas", label: "Alertas", dataCount: alertasGraves.length },
   ]
 
   const [activeTab, setActiveTab] = useState("geral")
@@ -171,10 +174,10 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
             />
             <StatCard value={ficha.total_mudancas_partido ?? 0} label="Trocas de partido" icon={ArrowRightLeft} />
             <StatCard
-              value={ficha.pontos_criticos ?? 0}
-              label="Alertas criticos"
+              value={alertasGraves.length}
+              label="Alertas graves"
               icon={AlertTriangle}
-              alert={(ficha.pontos_criticos ?? 0) > 0}
+              alert={alertasGraves.length > 0}
             />
             <StatCard
               value={projetosLei.length > 0 ? projetosLei.length : totalGastos != null ? formatCompact(totalGastos) : "N/D"}
@@ -186,8 +189,8 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
         </div>
       </section>
 
-      {/* Alert banner for critical items */}
-      {pontosAtencao.some((p) => p.gravidade === "critica") && (
+      {/* Alert banner for grave items (critica + alta) */}
+      {alertasGraves.length > 0 && (
         <div className="mx-auto max-w-7xl px-5 pb-4 md:px-12">
           <AlertBanner pontos={pontosAtencao} />
         </div>
@@ -584,32 +587,41 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
                         key={p.id}
                         className={`rounded-[12px] border px-5 py-4 ${p.destaque ? "border-foreground bg-muted" : "border-border/50"}`}
                       >
-                        <div className="flex flex-wrap items-center gap-2">
-                          <span className="text-[length:var(--text-body)] font-bold text-foreground">
-                            {p.tipo} {p.numero}/{p.ano}
-                          </span>
-                          <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.05em] ${
-                            p.situacao === "aprovado" ? "bg-green-100 text-green-800" :
-                            p.situacao === "tramitando" ? "bg-blue-100 text-blue-800" :
-                            p.situacao === "vetado" ? "bg-red-100 text-red-800" :
-                            "bg-gray-100 text-gray-600"
-                          }`}>
-                            {p.situacao}
-                          </span>
-                          {p.destaque && (
-                            <span className="rounded-full bg-foreground px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.05em] text-background">
-                              Destaque
-                            </span>
-                          )}
-                          {p.tema && (
-                            <span className="text-[10px] font-semibold text-muted-foreground">{p.tema}</span>
-                          )}
-                        </div>
-                        {p.ementa && (
-                          <p className="mt-2 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-foreground">
-                            {p.ementa}
-                          </p>
-                        )}
+                        {(() => {
+                          const identifier = [p.tipo, p.numero && p.ano ? `${p.numero}/${p.ano}` : p.numero || p.ano].filter(Boolean).join(" ")
+                          return (
+                            <>
+                              <div className="flex flex-wrap items-center gap-2">
+                                <span className="text-[length:var(--text-body)] font-bold text-foreground">
+                                  {identifier || (p.ementa ? p.ementa.slice(0, 80) + (p.ementa.length > 80 ? "..." : "") : "Projeto de lei")}
+                                </span>
+                                {p.situacao && (
+                                  <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.05em] ${
+                                    p.situacao === "aprovado" ? "bg-green-100 text-green-800" :
+                                    p.situacao === "tramitando" ? "bg-blue-100 text-blue-800" :
+                                    p.situacao === "vetado" ? "bg-red-100 text-red-800" :
+                                    "bg-gray-100 text-gray-600"
+                                  }`}>
+                                    {p.situacao}
+                                  </span>
+                                )}
+                                {p.destaque && (
+                                  <span className="rounded-full bg-foreground px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.05em] text-background">
+                                    Destaque
+                                  </span>
+                                )}
+                                {p.tema && (
+                                  <span className="text-[10px] font-semibold text-muted-foreground">{p.tema}</span>
+                                )}
+                              </div>
+                              {p.ementa && identifier && (
+                                <p className="mt-2 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-foreground">
+                                  {p.ementa}
+                                </p>
+                              )}
+                            </>
+                          )
+                        })()}
                         {p.destaque_motivo && (
                           <p className="mt-1 text-[length:var(--text-caption)] font-semibold text-muted-foreground">
                             {p.destaque_motivo}

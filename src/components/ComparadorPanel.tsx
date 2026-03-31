@@ -1,10 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { formatCompact } from "@/lib/utils"
 import type { CandidatoComparavel } from "@/lib/types"
-import { X, Check, Scale, Landmark, AlertTriangle, ArrowRightLeft } from "lucide-react"
+import { X, Check, Scale, Landmark, AlertTriangle, ArrowRightLeft, ChevronDown } from "lucide-react"
 
 interface Props {
   candidatos: CandidatoComparavel[]
@@ -29,6 +29,13 @@ export function ComparadorPanel({ candidatos }: Props) {
 
   const selectedCandidatos = candidatos.filter((c) => selected.has(c.id))
   const isComparing = selectedCandidatos.length >= 2
+  const comparisonRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (isComparing && comparisonRef.current) {
+      comparisonRef.current.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }, [isComparing])
 
   return (
     <>
@@ -51,6 +58,14 @@ export function ComparadorPanel({ candidatos }: Props) {
                 </button>
               ))}
             </div>
+            {isComparing && (
+              <button
+                onClick={() => comparisonRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}
+                className="flex shrink-0 items-center gap-1 rounded-full border border-foreground px-3 py-1 text-[length:var(--text-caption)] font-bold text-foreground transition-colors hover:bg-foreground hover:text-background"
+              >
+                Ver comparacao <ChevronDown className="size-3" />
+              </button>
+            )}
             <button
               onClick={clearAll}
               className="text-[length:var(--text-caption)] font-semibold text-muted-foreground transition-colors hover:text-foreground"
@@ -206,7 +221,7 @@ export function ComparadorPanel({ candidatos }: Props) {
 
       {/* Comparison panel */}
       {isComparing && (
-        <section className="mx-auto max-w-7xl px-5 pb-12 md:px-12">
+        <section ref={comparisonRef} className="mx-auto max-w-7xl px-5 pb-12 md:px-12">
           <div className="rounded-[20px] border border-foreground/10 bg-muted/50 p-6 sm:p-8">
             <div className="mb-6 flex items-center justify-between">
               <h2 className="font-heading text-[length:var(--text-heading-sm)] uppercase leading-[0.95] text-foreground sm:text-[length:var(--text-heading)]">
@@ -269,13 +284,14 @@ export function ComparadorPanel({ candidatos }: Props) {
                       const values = selectedCandidatos.map((x) => x.patrimonio_declarado ?? 0)
                       const max = Math.max(...values)
                       const val = c.patrimonio_declarado ?? 0
-                      const isMax = val === max && val > 0
+                      const allEqual = values.every((v) => v === max)
+                      const isMax = val === max && val > 0 && !allEqual
                       return (
                         <td key={c.id} className="py-3 text-center">
                           <span className={`text-[length:var(--text-body)] font-bold tabular-nums ${isMax ? "text-destructive" : "text-foreground"}`}>
                             {val > 0 ? formatCompact(val) : "--"}
                           </span>
-                          {isMax && val > 0 && (
+                          {isMax && (
                             <span className="ml-1.5 inline-block rounded-full bg-foreground/10 px-1.5 py-0.5 text-[9px] font-bold uppercase text-muted-foreground">
                               maior
                             </span>
@@ -289,13 +305,14 @@ export function ComparadorPanel({ candidatos }: Props) {
                     {selectedCandidatos.map((c) => {
                       const values = selectedCandidatos.map((x) => x.total_processos)
                       const max = Math.max(...values)
-                      const isMax = c.total_processos === max && c.total_processos > 0
+                      const allEqual = values.every((v) => v === max)
+                      const isMax = c.total_processos === max && c.total_processos > 0 && !allEqual
                       return (
                         <td key={c.id} className="py-3 text-center">
                           <span className="text-[length:var(--text-body)] font-bold tabular-nums text-foreground">
                             {c.total_processos}
                           </span>
-                          {isMax && c.total_processos > 0 && (
+                          {isMax && (
                             <span className="ml-1.5 inline-block rounded-full bg-destructive/10 px-1.5 py-0.5 text-[9px] font-bold uppercase text-destructive">
                               maior
                             </span>
@@ -317,13 +334,14 @@ export function ComparadorPanel({ candidatos }: Props) {
                     {selectedCandidatos.map((c) => {
                       const values = selectedCandidatos.map((x) => x.alertas_graves)
                       const max = Math.max(...values)
-                      const isMax = c.alertas_graves === max && c.alertas_graves > 0
+                      const allEqual = values.every((v) => v === max)
+                      const isMax = c.alertas_graves === max && c.alertas_graves > 0 && !allEqual
                       return (
                         <td key={c.id} className="py-3 text-center">
                           <span className="text-[length:var(--text-body)] font-bold tabular-nums text-foreground">
                             {c.alertas_graves}
                           </span>
-                          {isMax && c.alertas_graves > 0 && (
+                          {isMax && (
                             <span className="ml-1.5 inline-block rounded-full bg-destructive/10 px-1.5 py-0.5 text-[9px] font-bold uppercase text-destructive">
                               maior
                             </span>
