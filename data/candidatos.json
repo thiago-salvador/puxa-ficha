@@ -7,7 +7,9 @@
     "ids": {
       "camara": 139289,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "280001607829"
+      }
     }
   },
   {
@@ -18,7 +20,9 @@
     "ids": {
       "camara": null,
       "senado": 5894,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "190000614721"
+      }
     }
   },
   {
@@ -40,7 +44,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "130000600702",
+        "2022": "130001701690"
+      }
     }
   },
   {
@@ -51,7 +58,10 @@
     "ids": {
       "camara": 74813,
       "senado": 456,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "90000613470",
+        "2022": "90001646326"
+      }
     }
   },
   {
@@ -62,7 +72,11 @@
     "ids": {
       "camara": 141403,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "160000609226",
+        "2020": "140001196705",
+        "2022": "160001614467"
+      }
     }
   },
   {
@@ -84,7 +98,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "210001620463"
+      }
     }
   },
   {
@@ -106,7 +122,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2020": "100000718146",
+        "2022": "100001600008"
+      }
     }
   },
   {
@@ -117,7 +136,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "210001609847"
+      }
     }
   },
   {
@@ -139,7 +160,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "280001602703"
+      }
     }
   },
   {
@@ -151,7 +174,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "250001615967"
+      }
     }
   },
   {
@@ -163,7 +188,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "250001612465"
+      }
     }
   },
   {
@@ -175,7 +202,10 @@
     "ids": {
       "camara": 220645,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2020": "250000686838",
+        "2022": "250001613814"
+      }
     }
   },
   {
@@ -187,7 +217,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2020": "250000693253",
+        "2022": "250001615968"
+      }
     }
   },
   {
@@ -199,7 +232,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "250000604021"
+      }
     }
   },
   {
@@ -211,7 +246,10 @@
     "ids": {
       "camara": 65480,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "280000602477",
+        "2022": "280001607830"
+      }
     }
   },
   {
@@ -235,7 +273,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "250000619454",
+        "2022": "250001610161"
+      }
     }
   },
   {
@@ -247,7 +288,11 @@
     "ids": {
       "camara": 141497,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "250000615141",
+        "2020": "250001012981",
+        "2022": "250001615891"
+      }
     }
   },
   {
@@ -259,7 +304,10 @@
     "ids": {
       "camara": 204531,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "250000605452",
+        "2022": "250001611359"
+      }
     }
   },
   {
@@ -271,7 +319,9 @@
     "ids": {
       "camara": null,
       "senado": 6476,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "160001621846"
+      }
     }
   },
   {
@@ -283,7 +333,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "160000619860"
+      }
     }
   },
   {
@@ -295,7 +347,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "160000623295",
+        "2022": "160001623100"
+      }
     }
   },
   {
@@ -319,7 +374,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "160000612511",
+        "2022": "160001615006"
+      }
     }
   },
   {
@@ -343,7 +401,10 @@
     "ids": {
       "camara": 160570,
       "senado": 5979,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "240000609539",
+        "2022": "240001611127"
+      }
     }
   },
   {
@@ -367,7 +428,10 @@
     "ids": {
       "camara": 73893,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "240000624336",
+        "2022": "240001647445"
+      }
     }
   },
   {
@@ -391,7 +455,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "240000609728"
+      }
     }
   },
   {
@@ -403,7 +469,10 @@
     "ids": {
       "camara": 204379,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "210000603583",
+        "2022": "210001601587"
+      }
     }
   },
   {
@@ -415,7 +484,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "210000604676",
+        "2022": "210001621265"
+      }
     }
   },
   {
@@ -427,7 +499,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "210000611352",
+        "2022": "210001604469"
+      }
     }
   },
   {
@@ -439,7 +514,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "210000605318",
+        "2022": "210001609848"
+      }
     }
   },
   {
@@ -451,7 +529,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "210000605932",
+        "2020": "210000884394"
+      }
     }
   },
   {
@@ -487,7 +568,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "190001596741"
+      }
     }
   },
   {
@@ -499,7 +582,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "190000603307",
+        "2022": "190001596728"
+      }
     }
   },
   {
@@ -511,7 +597,10 @@
     "ids": {
       "camara": 160620,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2020": "190001114997",
+        "2022": "190001615754"
+      }
     }
   },
   {
@@ -535,7 +624,11 @@
     "ids": {
       "camara": 220598,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "190000602065",
+        "2020": "190000684953",
+        "2022": "190001600488"
+      }
     }
   },
   {
@@ -547,7 +640,10 @@
     "ids": {
       "camara": null,
       "senado": 6337,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "130000613136",
+        "2022": "130001671677"
+      }
     }
   },
   {
@@ -559,7 +655,10 @@
     "ids": {
       "camara": 209787,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2020": "130001175469",
+        "2022": "130001611005"
+      }
     }
   },
   {
@@ -583,7 +682,9 @@
     "ids": {
       "camara": 178897,
       "senado": 5732,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "130000604556"
+      }
     }
   },
   {
@@ -607,7 +708,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "130000606676",
+        "2022": "130001615215"
+      }
     }
   },
   {
@@ -631,7 +735,10 @@
     "ids": {
       "camara": null,
       "senado": 635,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "80000625509",
+        "2022": "80001649124"
+      }
     }
   },
   {
@@ -655,7 +762,10 @@
     "ids": {
       "camara": 178874,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "80000622443",
+        "2020": "80001189870"
+      }
     }
   },
   {
@@ -667,7 +777,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "80000625047",
+        "2020": "80000713125"
+      }
     }
   },
   {
@@ -679,7 +792,10 @@
     "ids": {
       "camara": 178873,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "80000626736",
+        "2022": "80001719429"
+      }
     }
   },
   {
@@ -691,7 +807,10 @@
     "ids": {
       "camara": 204355,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "80000611885",
+        "2022": "80001650200"
+      }
     }
   },
   {
@@ -715,7 +834,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "50001609248"
+      }
     }
   },
   {
@@ -727,7 +848,9 @@
     "ids": {
       "camara": 204576,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2020": "50001261068"
+      }
     }
   },
   {
@@ -739,7 +862,9 @@
     "ids": {
       "camara": 74553,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "50000608633"
+      }
     }
   },
   {
@@ -751,7 +876,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "50001600528"
+      }
     }
   },
   {
@@ -763,7 +890,11 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "60000612023",
+        "2020": "60000983767",
+        "2022": "60001633585"
+      }
     }
   },
   {
@@ -775,7 +906,10 @@
     "ids": {
       "camara": 141406,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "280000605589",
+        "2022": "280001612393"
+      }
     }
   },
   {
@@ -787,7 +921,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "60001612926"
+      }
     }
   },
   {
@@ -799,7 +935,9 @@
     "ids": {
       "camara": null,
       "senado": 5976,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "60000611597"
+      }
     }
   },
   {
@@ -811,7 +949,11 @@
     "ids": {
       "camara": 204487,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "60000601233",
+        "2020": "60000653316",
+        "2022": "60001608845"
+      }
     }
   },
   {
@@ -823,7 +965,10 @@
     "ids": {
       "camara": 204552,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "100000615044",
+        "2020": "100000756891"
+      }
     }
   },
   {
@@ -847,7 +992,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "100001667488"
+      }
     }
   },
   {
@@ -859,7 +1006,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "100001609046"
+      }
     }
   },
   {
@@ -871,7 +1020,11 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "100000618779",
+        "2020": "100000996020",
+        "2022": "100001713289"
+      }
     }
   },
   {
@@ -883,7 +1036,9 @@
     "ids": {
       "camara": 204429,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "90001647805"
+      }
     }
   },
   {
@@ -895,7 +1050,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2020": "170001032564",
+        "2022": "170001604087"
+      }
     }
   },
   {
@@ -907,7 +1065,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "170001604083"
+      }
     }
   },
   {
@@ -919,7 +1079,9 @@
     "ids": {
       "camara": 160551,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "190000625124"
+      }
     }
   },
   {
@@ -931,7 +1093,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "170000607357",
+        "2022": "170001618403"
+      }
     }
   },
   {
@@ -943,7 +1108,9 @@
     "ids": {
       "camara": null,
       "senado": 4529,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2020": "150000976695"
+      }
     }
   },
   {
@@ -967,7 +1134,10 @@
     "ids": {
       "camara": 141422,
       "senado": 4642,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "150000608820",
+        "2022": "150001621390"
+      }
     }
   },
   {
@@ -979,7 +1149,10 @@
     "ids": {
       "camara": 178912,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "150000612364",
+        "2022": "150001621388"
+      }
     }
   },
   {
@@ -991,7 +1164,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "180001604027"
+      }
     }
   },
   {
@@ -1003,7 +1178,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "180001600497"
+      }
     }
   },
   {
@@ -1015,7 +1192,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "180001600654"
+      }
     }
   },
   {
@@ -1027,7 +1206,11 @@
     "ids": {
       "camara": 204430,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "180000613924",
+        "2020": "190000805069",
+        "2022": "180001602512"
+      }
     }
   },
   {
@@ -1051,7 +1234,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "280000618462",
+        "2022": "160001614980"
+      }
     }
   },
   {
@@ -1063,7 +1249,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2020": "200000998862"
+      }
     }
   },
   {
@@ -1075,7 +1263,9 @@
     "ids": {
       "camara": 178969,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "260000623594"
+      }
     }
   },
   {
@@ -1087,7 +1277,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "260001690206"
+      }
     }
   },
   {
@@ -1099,7 +1291,9 @@
     "ids": {
       "camara": 220560,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "260001633055"
+      }
     }
   },
   {
@@ -1111,7 +1305,10 @@
     "ids": {
       "camara": 178842,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "20000616803",
+        "2020": "20000842791"
+      }
     }
   },
   {
@@ -1135,7 +1332,10 @@
     "ids": {
       "camara": 178836,
       "senado": 5672,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "10000602509",
+        "2022": "10001714547"
+      }
     }
   },
   {
@@ -1159,7 +1359,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "10000600232",
+        "2020": "10001003637"
+      }
     }
   },
   {
@@ -1183,7 +1386,10 @@
     "ids": {
       "camara": null,
       "senado": 5525,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "40000603709",
+        "2022": "40001618514"
+      }
     }
   },
   {
@@ -1207,7 +1413,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "40001619527"
+      }
     }
   },
   {
@@ -1219,7 +1427,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "40000604136"
+      }
     }
   },
   {
@@ -1231,7 +1441,10 @@
     "ids": {
       "camara": null,
       "senado": 4994,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "40000618261",
+        "2022": "40001610345"
+      }
     }
   },
   {
@@ -1243,7 +1456,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "30000611703"
+      }
     }
   },
   {
@@ -1255,7 +1470,9 @@
     "ids": {
       "camara": null,
       "senado": 5044,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "30001619676"
+      }
     }
   },
   {
@@ -1267,7 +1484,11 @@
     "ids": {
       "camara": null,
       "senado": 3394,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "30000620049",
+        "2020": "30001034733",
+        "2022": "30001608736"
+      }
     }
   },
   {
@@ -1279,7 +1500,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "140001651992"
+      }
     }
   },
   {
@@ -1291,7 +1514,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "50001614695"
+      }
     }
   },
   {
@@ -1303,7 +1528,10 @@
     "ids": {
       "camara": 178908,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "140000606383",
+        "2022": "140001598311"
+      }
     }
   },
   {
@@ -1315,7 +1543,10 @@
     "ids": {
       "camara": 141335,
       "senado": 4639,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "140000627198",
+        "2022": "140001611661"
+      }
     }
   },
   {
@@ -1339,7 +1570,10 @@
     "ids": {
       "camara": 167722,
       "senado": 5422,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "220000609853",
+        "2022": "220001647595"
+      }
     }
   },
   {
@@ -1351,7 +1585,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "220000609645",
+        "2020": "220001025502"
+      }
     }
   },
   {
@@ -1363,7 +1600,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2020": "220001051415"
+      }
     }
   },
   {
@@ -1375,7 +1614,9 @@
     "ids": {
       "camara": 220610,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2020": "90001088736"
+      }
     }
   },
   {
@@ -1387,7 +1628,9 @@
     "ids": {
       "camara": 74097,
       "senado": 475,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "220000618467"
+      }
     }
   },
   {
@@ -1399,7 +1642,10 @@
     "ids": {
       "camara": 178953,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "220000609735",
+        "2022": "220001635101"
+      }
     }
   },
   {
@@ -1411,7 +1657,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "230000602332"
+      }
     }
   },
   {
@@ -1423,7 +1671,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "230001604254"
+      }
     }
   },
   {
@@ -1435,7 +1685,9 @@
     "ids": {
       "camara": 160608,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "230001602186"
+      }
     }
   },
   {
@@ -1447,7 +1699,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "230000616424",
+        "2022": "230001600061"
+      }
     }
   },
   {
@@ -1459,7 +1714,10 @@
     "ids": {
       "camara": 160639,
       "senado": 5386,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "270000618831",
+        "2022": "270001649254"
+      }
     }
   },
   {
@@ -1471,7 +1729,9 @@
     "ids": {
       "camara": 141479,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "270001652199"
+      }
     }
   },
   {
@@ -1483,7 +1743,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "270000618859",
+        "2022": "270001654140"
+      }
     }
   },
   {
@@ -1495,7 +1758,10 @@
     "ids": {
       "camara": 137070,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "270000610948",
+        "2022": "270001643407"
+      }
     }
   },
   {
@@ -1507,7 +1773,9 @@
     "ids": {
       "camara": null,
       "senado": 5164,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "270000602793"
+      }
     }
   },
   {
@@ -1519,7 +1787,10 @@
     "ids": {
       "camara": 204380,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "70000614533",
+        "2022": "70001651045"
+      }
     }
   },
   {
@@ -1531,7 +1802,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "70000612417",
+        "2022": "70001597108"
+      }
     }
   },
   {
@@ -1555,7 +1829,10 @@
     "ids": {
       "camara": 204377,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "70000618962",
+        "2022": "70001728079"
+      }
     }
   },
   {
@@ -1567,7 +1844,10 @@
     "ids": {
       "camara": 144523,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "90000609231",
+        "2022": "90001646327"
+      }
     }
   },
   {
@@ -1579,7 +1859,10 @@
     "ids": {
       "camara": 73668,
       "senado": 4535,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "90000609445",
+        "2022": "90001615126"
+      }
     }
   },
   {
@@ -1603,7 +1886,11 @@
     "ids": {
       "camara": null,
       "senado": 5070,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "90000613469",
+        "2020": "90001220915",
+        "2022": "90001652051"
+      }
     }
   },
   {
@@ -1627,7 +1914,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2022": "120001635628"
+      }
     }
   },
   {
@@ -1639,7 +1928,10 @@
     "ids": {
       "camara": 160587,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "120000613463",
+        "2022": "120001650734"
+      }
     }
   },
   {
@@ -1663,7 +1955,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "120000612726"
+      }
     }
   },
   {
@@ -1675,7 +1969,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "110000612720",
+        "2022": "110001643542"
+      }
     }
   },
   {
@@ -1687,7 +1984,10 @@
     "ids": {
       "camara": 73653,
       "senado": 1173,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "110000609942",
+        "2022": "110001676176"
+      }
     }
   },
   {
@@ -1699,7 +1999,10 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2018": "110000623368",
+        "2022": "110001623186"
+      }
     }
   },
   {
