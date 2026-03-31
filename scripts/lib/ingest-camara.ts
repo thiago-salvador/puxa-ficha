@@ -202,7 +202,8 @@ async function ingestVotos(idCamara: number, candidatoId: string, slug: string):
       // Find a votacao with individual vote data (try largest/most recent plenario vote)
       const plenVotacoes = votacoesProp.filter((v) => v.siglaOrgao === "PLEN")
 
-      for (const votacao of plenVotacoes) {
+      // Limit to 3 plenario votacoes to avoid hanging
+      for (const votacao of plenVotacoes.slice(0, 3)) {
         const votacaoId = String(votacao.id)
         const votosResp = await fetchJSON<CamaraResponse<Record<string, unknown>[]>>(
           `${API}/votacoes/${votacaoId}/votos`
@@ -311,25 +312,39 @@ export async function ingestCamara(): Promise<IngestResult[]> {
       continue
     }
 
-    try {
-      await ingestPerfil(cand.ids.camara, candidatoId, cand.slug)
+    // Per-candidato timeout: 2 minutes max
+    const candidatoTimeout = new Promise<"timeout">((resolve) =>
+      setTimeout(() => resolve("timeout"), 120_000)
+    )
+
+    const candidatoWork = (async () => {
+      await ingestPerfil(cand.ids.camara!, candidatoId, cand.slug)
       result.tables_updated.push("candidatos")
       result.rows_upserted++
       await sleep(300)
 
-      const gastoRows = await ingestGastos(cand.ids.camara, candidatoId, cand.slug)
+      const gastoRows = await ingestGastos(cand.ids.camara!, candidatoId, cand.slug)
       if (gastoRows > 0) result.tables_updated.push("gastos_parlamentares")
       result.rows_upserted += gastoRows
       await sleep(300)
 
-      const votoRows = await ingestVotos(cand.ids.camara, candidatoId, cand.slug)
+      const votoRows = await ingestVotos(cand.ids.camara!, candidatoId, cand.slug)
       if (votoRows > 0) result.tables_updated.push("votos_candidato")
       result.rows_upserted += votoRows
       await sleep(300)
 
-      const projetoRows = await ingestProjetos(cand.ids.camara, candidatoId, cand.slug)
+      const projetoRows = await ingestProjetos(cand.ids.camara!, candidatoId, cand.slug)
       if (projetoRows > 0) result.tables_updated.push("projetos_lei")
       result.rows_upserted += projetoRows
+      return "done" as const
+    })()
+
+    try {
+      const outcome = await Promise.race([candidatoWork, candidatoTimeout])
+      if (outcome === "timeout") {
+        result.errors.push("Timeout (2min) - skipped remaining work")
+        warn("camara", `  ${cand.slug}: TIMEOUT 2min, pulando...`)
+      }
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err)
       result.errors.push(msg)

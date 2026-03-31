@@ -521,7 +521,7 @@
     "cargo_disputado": "Governador",
     "estado": "RJ",
     "ids": {
-      "camara": 178939,
+      "camara": null,
       "senado": null,
       "tse_sq_candidato": {}
     }
@@ -701,7 +701,7 @@
     "cargo_disputado": "Governador",
     "estado": "BA",
     "ids": {
-      "camara": 160570,
+      "camara": null,
       "senado": null,
       "tse_sq_candidato": {}
     }
@@ -809,7 +809,7 @@
     "cargo_disputado": "Governador",
     "estado": "CE",
     "ids": {
-      "camara": null,
+      "camara": 204487,
       "senado": null,
       "tse_sq_candidato": {}
     }
@@ -881,7 +881,7 @@
     "cargo_disputado": "Governador",
     "estado": "PE",
     "ids": {
-      "camara": 74366,
+      "camara": 204429,
       "senado": null,
       "tse_sq_candidato": {}
     }
@@ -978,7 +978,7 @@
     "estado": "PB",
     "ids": {
       "camara": 178912,
-      "senado": 1757,
+      "senado": null,
       "tse_sq_candidato": {}
     }
   },
@@ -1050,7 +1050,7 @@
     "estado": "RN",
     "ids": {
       "camara": null,
-      "senado": 945,
+      "senado": null,
       "tse_sq_candidato": {}
     }
   },
@@ -1194,7 +1194,7 @@
     "estado": "AM",
     "ids": {
       "camara": null,
-      "senado": 1023,
+      "senado": null,
       "tse_sq_candidato": {}
     }
   },
@@ -1289,7 +1289,7 @@
     "cargo_disputado": "Governador",
     "estado": "PA",
     "ids": {
-      "camara": 220614,
+      "camara": null,
       "senado": null,
       "tse_sq_candidato": {}
     }

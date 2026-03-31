@@ -12,7 +12,7 @@ const DATA_DIR = resolve(process.cwd(), "data/tse-situacao")
 // Tenta anos em ordem decrescente. 2026 ainda nao existe (campanha formal comeca em agosto/2026).
 // 2022 tem todos os candidatos nacionais (presidente, governadores, senadores, deputados).
 // 2024 e municipal (prefeitos/vereadores), pouco util para nosso escopo, mas incluido como fallback.
-const ANOS_TENTATIVA = [2026, 2024, 2022]
+const ANOS_TENTATIVA = [2026, 2024, 2022, 2020]
 
 const JUNK_EMAIL_VALUES = new Set([
   "NAO DIVULGAVEL",
