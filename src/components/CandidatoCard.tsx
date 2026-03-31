@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { formatCompact, getInitials, FALLBACK_GRADIENT, getPartyLogoUrl } from "@/lib/utils"
 import type { Candidato } from "@/lib/types"
-import { Scale, Landmark } from "lucide-react"
+import { Scale, Landmark, ArrowRight } from "lucide-react"
 
 interface CandidatoCardProps {
   candidato: Candidato
@@ -52,8 +52,8 @@ export function CandidatoCard({
           )}
 
           {/* Glass overlay - slides up on hover */}
-          <div className="absolute inset-x-0 bottom-0 sm:translate-y-[calc(100%-5.5rem)] sm:transition-transform sm:duration-500 sm:ease-[cubic-bezier(0.16,1,0.3,1)] sm:group-hover:translate-y-0">
-            <div className="glass-dark px-4 pb-4 pt-3 sm:px-5 sm:pb-5 sm:pt-4">
+          <div className="absolute inset-x-0 bottom-0 sm:translate-y-[calc(100%-4rem)] sm:transition-transform sm:duration-500 sm:ease-[cubic-bezier(0.16,1,0.3,1)] sm:group-hover:translate-y-0">
+            <div className="glass-dark px-3 pb-3 pt-2.5 sm:px-5 sm:pb-5 sm:pt-4">
 
               {/* Party logo + sigla — always visible */}
               <div className="flex items-center gap-2">
@@ -62,27 +62,26 @@ export function CandidatoCard({
                   <img
                     src={partyLogo}
                     alt=""
-                    className="size-6 rounded-sm object-contain sm:size-7"
+                    className="size-5 rounded-sm object-contain sm:size-7"
                     loading="lazy"
                   />
                 )}
-                <span className="font-sans text-[13px] font-bold uppercase tracking-[0.08em] text-white sm:text-[14px]">
+                <span className="font-sans text-[11px] font-bold uppercase tracking-[0.08em] text-white sm:text-[14px]">
                   {candidato.partido_sigla}
                 </span>
               </div>
 
               {/* Name — always visible */}
-              <h3 className="mt-1.5 truncate font-heading text-[20px] leading-[1.05] tracking-[-0.01em] text-white sm:text-[24px] lg:text-[28px]">
+              <h3 className="mt-1 line-clamp-2 font-heading text-[18px] leading-[1.05] tracking-[-0.01em] text-white sm:mt-1.5 sm:line-clamp-1 sm:text-[24px] lg:text-[28px]">
                 {candidato.nome_urna}
               </h3>
 
-              {/* Widget panel — revealed on hover */}
-              <div className="sm:opacity-0 sm:transition-opacity sm:delay-75 sm:duration-300 sm:group-hover:opacity-100">
+              {/* Stats widget — desktop hover only */}
+              <div className="hidden sm:block sm:opacity-0 sm:transition-opacity sm:delay-75 sm:duration-300 sm:group-hover:opacity-100">
                 <div className="my-3 h-px bg-white/20" />
-
                 <div className="grid grid-cols-2 gap-x-4">
                   <div>
-                    <p className="font-heading text-[22px] leading-none text-white sm:text-[26px]">
+                    <p className="font-heading text-[26px] leading-none text-white">
                       {patrimonio != null && patrimonio > 0 ? formatCompact(patrimonio) : "N/D"}
                     </p>
                     <p className="mt-1 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-white/60">
@@ -91,7 +90,7 @@ export function CandidatoCard({
                     </p>
                   </div>
                   <div>
-                    <p className="font-heading text-[22px] leading-none text-white sm:text-[26px]">
+                    <p className="font-heading text-[26px] leading-none text-white">
                       {processos}
                     </p>
                     <p className="mt-1 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-white/60">
@@ -100,12 +99,13 @@ export function CandidatoCard({
                     </p>
                   </div>
                 </div>
+              </div>
 
-                <div className="mt-3">
-                  <span className="flex h-9 w-full items-center justify-center rounded-lg border border-white/30 bg-white/10 text-[12px] font-semibold tracking-wide text-white backdrop-blur-sm transition-colors duration-200 group-hover:bg-white group-hover:text-black">
-                    Ver Ficha &rarr;
-                  </span>
-                </div>
+              {/* CTA — always visible on mobile, part of hover on desktop */}
+              <div className="mt-2 sm:mt-3 sm:opacity-0 sm:transition-opacity sm:delay-75 sm:duration-300 sm:group-hover:opacity-100">
+                <span className="flex items-center gap-1 text-[11px] font-semibold tracking-wide text-white/80 transition-colors duration-200 group-hover:text-white sm:text-[12px]">
+                  Ver Ficha <ArrowRight className="size-3 transition-transform duration-200 group-hover:translate-x-0.5" />
+                </span>
               </div>
 
             </div>
