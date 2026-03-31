@@ -14,6 +14,15 @@ const DATA_DIR = resolve(process.cwd(), "data/tse-situacao")
 // 2024 e municipal (prefeitos/vereadores), pouco util para nosso escopo, mas incluido como fallback.
 const ANOS_TENTATIVA = [2026, 2024, 2022]
 
+const JUNK_EMAIL_VALUES = new Set([
+  "NAO DIVULGAVEL",
+  "NÃO DIVULGÁVEL",
+  "NAO DIVULGAVEL",
+  "#NULO#",
+  "#NE#",
+  "",
+])
+
 async function resolveCandidatoId(slug: string): Promise<string | null> {
   const { data } = await supabase.from("candidatos").select("id").eq("slug", slug).single()
   return data?.id ?? null
@@ -58,11 +67,8 @@ async function downloadFile(url: string, dest: string): Promise<boolean> {
 
 function extractZip(zipPath: string, extractDir: string) {
   mkdirSync(extractDir, { recursive: true })
-  try {
-    execSync(`unzip -o "${zipPath}" '*_BR*' '*_BRASIL*' -d "${extractDir}"`, { stdio: "pipe" })
-  } catch {
-    execSync(`unzip -o "${zipPath}" -d "${extractDir}"`, { stdio: "pipe" })
-  }
+  // Extract ALL files (including state CSVs for governors)
+  execSync(`unzip -o "${zipPath}" -d "${extractDir}"`, { stdio: "pipe" })
 }
 
 function cleanupDir(dir: string) {
@@ -83,12 +89,12 @@ function cleanupFile(filePath: string) {
   }
 }
 
-function findCSVs(dir: string, pattern: string): string[] {
+function findAllCSVs(dir: string): string[] {
   const { readdirSync } = require("fs")
   try {
     const files = readdirSync(dir) as string[]
     return files
-      .filter((f: string) => f.toLowerCase().includes(pattern.toLowerCase()) && f.endsWith(".csv"))
+      .filter((f: string) => f.endsWith(".csv") && f.startsWith("consulta_cand_"))
       .map((f: string) => resolve(dir, f))
   } catch {
     return []
@@ -127,12 +133,45 @@ function buildCandidateNameMap(candidatos: CandidatoConfig[]): Map<string, Candi
   return map
 }
 
+/**
+ * Convert DD/MM/YYYY to YYYY-MM-DD. Returns empty string if invalid.
+ */
+function convertDateBR(dateStr: string): string {
+  if (!dateStr || dateStr.length < 8) return ""
+  const parts = dateStr.split("/")
+  if (parts.length !== 3) return ""
+  const [dd, mm, yyyy] = parts
+  if (!dd || !mm || !yyyy || yyyy.length !== 4) return ""
+  // Basic sanity check
+  const numDay = parseInt(dd, 10)
+  const numMonth = parseInt(mm, 10)
+  const numYear = parseInt(yyyy, 10)
+  if (isNaN(numDay) || isNaN(numMonth) || isNaN(numYear)) return ""
+  if (numMonth < 1 || numMonth > 12 || numDay < 1 || numDay > 31) return ""
+  return `${yyyy}-${mm.padStart(2, "0")}-${dd.padStart(2, "0")}`
+}
+
+function cleanEmail(raw: string): string {
+  if (!raw) return ""
+  const upper = raw.toUpperCase().trim()
+  if (JUNK_EMAIL_VALUES.has(upper)) return ""
+  return raw.trim()
+}
+
 interface MatchedData {
   cpf: string
   situacao: string
   detalhe: string
   ano: number
   cand: CandidatoConfig
+  uf_nascimento: string
+  data_nascimento: string
+  genero: string
+  grau_instrucao: string
+  estado_civil: string
+  cor_raca: string
+  ocupacao: string
+  email: string
 }
 
 /**
@@ -163,10 +202,10 @@ async function processAno(
     return { matched: existingMatches, success: false }
   }
 
-  const csvPaths = findCSVs(extractDir, "_BR").concat(findCSVs(extractDir, "_BRASIL"))
+  const csvPaths = findAllCSVs(extractDir)
 
   if (csvPaths.length === 0) {
-    warn("tse-situacao", `Nenhum CSV BR/BRASIL encontrado no ZIP ${ano}`)
+    warn("tse-situacao", `Nenhum CSV encontrado no ZIP ${ano}`)
     cleanupDir(extractDir)
     cleanupFile(zipPath)
     return { matched: existingMatches, success: false }
@@ -182,7 +221,7 @@ async function processAno(
 
       const existing = existingMatches.get(cand.slug)
 
-      // Prefere match de ano mais recente (ja no mapa) mas aceita CPF de ano mais antigo se ainda nao tem
+      // Prefere match de ano mais recente (ja no mapa) mas aceita dados de ano mais antigo se ainda nao tem
       if (existing && existing.ano > ano) return
       // Prefere entrada com CPF sobre sem CPF no mesmo ano
       if (existing && existing.ano === ano && existing.cpf && !row.NR_CPF_CANDIDATO) return
@@ -193,6 +232,14 @@ async function processAno(
         detalhe: row.DS_DETALHE_SITUACAO_CAND || existing?.detalhe || "",
         ano,
         cand,
+        uf_nascimento: row.SG_UF_NASCIMENTO || existing?.uf_nascimento || "",
+        data_nascimento: convertDateBR(row.DT_NASCIMENTO || "") || existing?.data_nascimento || "",
+        genero: row.DS_GENERO || existing?.genero || "",
+        grau_instrucao: row.DS_GRAU_INSTRUCAO || existing?.grau_instrucao || "",
+        estado_civil: row.DS_ESTADO_CIVIL || existing?.estado_civil || "",
+        cor_raca: row.DS_COR_RACA || existing?.cor_raca || "",
+        ocupacao: row.DS_OCUPACAO || existing?.ocupacao || "",
+        email: cleanEmail(row.DS_EMAIL || "") || existing?.email || "",
       })
     })
   }
@@ -260,20 +307,48 @@ export async function ingestTSESituacao(): Promise<IngestResult[]> {
         continue
       }
 
+      // Fetch current DB values to avoid overwriting manually curated data
+      const { data: dbCand } = await supabase
+        .from("candidatos")
+        .select("naturalidade, data_nascimento, formacao, profissao_declarada, genero, estado_civil, cor_raca, email_campanha")
+        .eq("id", candidatoId)
+        .single()
+
       const updatePayload: Record<string, string> = {}
 
       if (info.cpf) {
         updatePayload.cpf = info.cpf
       }
 
-      // Situacao_candidatura: so sobrescreve se veio do ano mais recente disponivel
-      // (evita gravar situacao de 2022 como "atual" quando 2026 ainda nao existe)
-      if (info.situacao && info.ano === Math.min(...ANOS_TENTATIVA.filter((a) => a <= 2024))) {
-        // Nao sobrescreve situacao com dados de eleicoes passadas se 2026 nao disponivel
-        // apenas salva como metadata
-      }
+      // Situacao_candidatura: always save with year annotation
       if (info.situacao) {
         updatePayload.situacao_candidatura = `${info.situacao}${info.detalhe ? ` (${info.detalhe})` : ""} [${info.ano}]`
+      }
+
+      // Only fill if DB field is null (never overwrite curated data)
+      if (!dbCand?.naturalidade && info.uf_nascimento) {
+        updatePayload.naturalidade = info.uf_nascimento
+      }
+      if (!dbCand?.data_nascimento && info.data_nascimento) {
+        updatePayload.data_nascimento = info.data_nascimento
+      }
+      if (!dbCand?.genero && info.genero) {
+        updatePayload.genero = info.genero
+      }
+      if (!dbCand?.formacao && info.grau_instrucao) {
+        updatePayload.formacao = info.grau_instrucao
+      }
+      if (!dbCand?.estado_civil && info.estado_civil) {
+        updatePayload.estado_civil = info.estado_civil
+      }
+      if (!dbCand?.cor_raca && info.cor_raca) {
+        updatePayload.cor_raca = info.cor_raca
+      }
+      if (!dbCand?.profissao_declarada && info.ocupacao) {
+        updatePayload.profissao_declarada = info.ocupacao
+      }
+      if (!dbCand?.email_campanha && info.email) {
+        updatePayload.email_campanha = info.email
       }
 
       if (Object.keys(updatePayload).length === 0) {
@@ -292,9 +367,10 @@ export async function ingestTSESituacao(): Promise<IngestResult[]> {
       } else {
         result.tables_updated.push("candidatos")
         result.rows_upserted++
+        const fields = Object.keys(updatePayload).join(", ")
         log(
           "tse-situacao",
-          `  ${slug}: CPF=${info.cpf || "nao encontrado"} situacao="${info.situacao}" [${info.ano}]`
+          `  ${slug}: atualizado [${fields}] do ano ${info.ano}`
         )
       }
     } catch (err) {

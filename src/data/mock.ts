@@ -10,6 +10,7 @@ import type {
   ProjetoLei,
   GastoParlamentar,
   SancaoAdministrativa,
+  NoticiaCandidato,
 } from "@/lib/types"
 
 export const MOCK_CANDIDATOS: Candidato[] = [
@@ -1411,6 +1412,54 @@ export const MOCK_SANCOES: Record<string, SancaoAdministrativa[]> = {
       descricao: "Inabilitacao para contratar com administracao publica por irregularidades em licitacao",
       orgao_sancionador: "CGU", data_inicio: "2021-03-01", data_fim: null,
       fundamentacao: "Lei 12.846/2013", vinculo: "direto", cnpj_empresa: null,
+    },
+  ],
+}
+
+// --- NOTICIAS ---
+export const MOCK_NOTICIAS: Record<string, NoticiaCandidato[]> = {
+  lula: [
+    {
+      id: "n1", candidato_id: "1",
+      titulo: "Lula anuncia pacote de investimentos em infraestrutura",
+      fonte: "Folha de S.Paulo",
+      url: "https://www1.folha.uol.com.br/exemplo",
+      data_publicacao: "2026-03-28T14:00:00Z",
+      snippet: null,
+    },
+    {
+      id: "n2", candidato_id: "1",
+      titulo: "Pesquisa mostra aprovacao do governo em queda",
+      fonte: "G1",
+      url: "https://g1.globo.com/exemplo",
+      data_publicacao: "2026-03-25T10:30:00Z",
+      snippet: null,
+    },
+    {
+      id: "n3", candidato_id: "1",
+      titulo: "PT define estrategia eleitoral para 2026",
+      fonte: "UOL",
+      url: "https://uol.com.br/exemplo",
+      data_publicacao: "2026-03-20T08:00:00Z",
+      snippet: null,
+    },
+  ],
+  "flavio-bolsonaro": [
+    {
+      id: "n4", candidato_id: "2",
+      titulo: "Flavio Bolsonaro lidera articulacao no Senado",
+      fonte: "O Globo",
+      url: "https://oglobo.globo.com/exemplo",
+      data_publicacao: "2026-03-27T16:00:00Z",
+      snippet: null,
+    },
+    {
+      id: "n5", candidato_id: "2",
+      titulo: "PL confirma pre-candidatura de Flavio a presidente",
+      fonte: "Estadao",
+      url: "https://estadao.com.br/exemplo",
+      data_publicacao: "2026-03-22T11:00:00Z",
+      snippet: null,
     },
   ],
 }

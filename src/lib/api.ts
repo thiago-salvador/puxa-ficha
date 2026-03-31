@@ -1,5 +1,5 @@
 import { createServerSupabaseClient } from "./supabase"
-import type { Candidato, FichaCandidato, CandidatoComparavel, SancaoAdministrativa, IndicadorEstadual } from "./types"
+import type { Candidato, FichaCandidato, CandidatoComparavel, SancaoAdministrativa, IndicadorEstadual, NoticiaCandidato } from "./types"
 import {
   MOCK_CANDIDATOS,
   MOCK_PATRIMONIO,
@@ -12,6 +12,7 @@ import {
   MOCK_PROJETOS,
   MOCK_GASTOS,
   MOCK_SANCOES,
+  MOCK_NOTICIAS,
 } from "@/data/mock"
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -52,6 +53,7 @@ export async function getCandidatoBySlug(slug: string): Promise<FichaCandidato |
       projetos_lei: MOCK_PROJETOS[slug] ?? [],
       gastos_parlamentares: MOCK_GASTOS[slug] ?? [],
       sancoes_administrativas: MOCK_SANCOES[slug] ?? [],
+      noticias: MOCK_NOTICIAS[slug] ?? [],
       total_processos: (MOCK_PROCESSOS[slug] ?? []).length,
       processos_criminais: (MOCK_PROCESSOS[slug] ?? []).filter(p => p.tipo === "criminal").length,
       total_mudancas_partido: (MOCK_MUDANCAS[slug] ?? []).length,
@@ -73,7 +75,7 @@ export async function getCandidatoBySlug(slug: string): Promise<FichaCandidato |
 
   const id = candidato.id
 
-  const [historico, mudancas, patrimonio, financiamento, votos, processos, pontos, projetos, gastos, sancoes] =
+  const [historico, mudancas, patrimonio, financiamento, votos, processos, pontos, projetos, gastos, sancoes, noticias] =
     await Promise.all([
       supabase.from("historico_politico").select("*").eq("candidato_id", id).order("periodo_inicio", { ascending: false }),
       supabase.from("mudancas_partido").select("*").eq("candidato_id", id).order("ano", { ascending: false }),
@@ -85,6 +87,7 @@ export async function getCandidatoBySlug(slug: string): Promise<FichaCandidato |
       supabase.from("projetos_lei").select("*").eq("candidato_id", id).order("ano", { ascending: false }),
       supabase.from("gastos_parlamentares").select("*").eq("candidato_id", id).order("ano", { ascending: false }),
       supabase.from("sancoes_administrativas").select("*").eq("candidato_id", id).order("data_inicio", { ascending: false }),
+      supabase.from("noticias_candidato").select("*").eq("candidato_id", id).order("data_publicacao", { ascending: false }).limit(20),
     ])
 
   return {
@@ -99,6 +102,7 @@ export async function getCandidatoBySlug(slug: string): Promise<FichaCandidato |
     projetos_lei: projetos.data ?? [],
     gastos_parlamentares: gastos.data ?? [],
     sancoes_administrativas: sancoes.data ?? [],
+    noticias: noticias.data ?? [],
     total_processos: (processos.data ?? []).length,
     processos_criminais: (processos.data ?? []).filter((p) => p.tipo === "criminal").length,
     total_mudancas_partido: (mudancas.data ?? []).length,
@@ -199,6 +203,20 @@ const UF_NAMES: Record<string, string> = {
   rj: "Rio de Janeiro", rn: "Rio Grande do Norte", ro: "Rondônia", rr: "Roraima",
   rs: "Rio Grande do Sul", sc: "Santa Catarina", se: "Sergipe", sp: "São Paulo",
   to: "Tocantins",
+}
+
+export async function getNoticiasCandidato(candidatoId: string): Promise<NoticiaCandidato[]> {
+  if (USE_MOCK) return []
+
+  const supabase = createServerSupabaseClient()
+  const { data } = await supabase
+    .from("noticias_candidato")
+    .select("*")
+    .eq("candidato_id", candidatoId)
+    .order("data_publicacao", { ascending: false })
+    .limit(20)
+
+  return data ?? []
 }
 
 export async function getSancoesAdministrativas(candidatoId: string): Promise<SancaoAdministrativa[]> {

@@ -10,6 +10,7 @@ import { ingestFiliacao } from "./lib/ingest-filiacao"
 import { ingestCeapsSenado } from "./lib/ingest-ceaps-senado"
 import { ingestWikidata } from "./lib/ingest-wikidata"
 import { enrichInstagram } from "./lib/enrich-instagram"
+import { ingestGoogleNews } from "./lib/ingest-google-news"
 import { ingestJarbas } from "./lib/ingest-jarbas"
 import { ingestSiconfi } from "./lib/ingest-siconfi"
 import { ingestCapag } from "./lib/ingest-capag"
@@ -25,6 +26,7 @@ const VALID_SOURCES = [
   "tcu", "sancoes", "tse-situacao", "filiacao", "ceaps-senado",
   "wikidata", "instagram", "jarbas",
   "siconfi", "capag", "atlas-violencia", "ibge", "ideb", "ipea",
+  "google-news",
 ] as const
 
 const args = process.argv.slice(2).filter((a) => !a.startsWith("-"))
@@ -212,6 +214,15 @@ async function main() {
       allResults.push(...(await ingestIpea()))
     } catch (err) {
       error("pipeline", `IPEA falhou: ${err}`)
+    }
+  }
+
+  if (sources.includes("google-news")) {
+    log("pipeline", "--- Google News RSS ---")
+    try {
+      allResults.push(...(await ingestGoogleNews()))
+    } catch (err) {
+      error("pipeline", `Google News falhou: ${err}`)
     }
   }
 

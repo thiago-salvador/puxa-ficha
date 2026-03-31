@@ -197,6 +197,63 @@ interface WikiPage {
   missing?: string
 }
 
+// Fetch article summary/biography via Wikipedia REST API
+async function fetchWikiSummary(title: string): Promise<string | null> {
+  try {
+    const url = `https://pt.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`
+    const res = await fetch(url, {
+      headers: { "User-Agent": "PuxaFicha/1.0 (puxaficha.com.br)" },
+    })
+    if (!res.ok) return null
+    const data = await res.json()
+    return data.extract || null // 1-2 paragraphs of article intro
+  } catch {
+    return null
+  }
+}
+
+// Fetch social media links from Wikipedia external links
+async function fetchWikiSocialLinks(title: string): Promise<Record<string, string>> {
+  const params = new URLSearchParams({
+    action: "query",
+    titles: title,
+    prop: "extlinks",
+    ellimit: "500",
+    format: "json",
+    origin: "*",
+  })
+
+  try {
+    const json = await fetchJSON<any>(`${WIKI_API}?${params}`)
+    const pages = json.query?.pages ?? {}
+    const page = Object.values(pages)[0] as any
+    const links: string[] = (page?.extlinks ?? []).map((l: any) => l["*"] || l.url || "")
+
+    const socials: Record<string, string> = {}
+    for (const link of links) {
+      if (link.includes("instagram.com/")) {
+        const match = link.match(/instagram\.com\/([^/?]+)/)
+        if (match) socials.instagram = match[1]
+      } else if (link.includes("twitter.com/") || link.includes("x.com/")) {
+        const match = link.match(/(?:twitter|x)\.com\/([^/?]+)/)
+        if (match && match[1] !== "intent" && match[1] !== "share") socials.twitter = match[1]
+      } else if (link.includes("facebook.com/")) {
+        const match = link.match(/facebook\.com\/([^/?]+)/)
+        if (match && match[1] !== "sharer") socials.facebook = match[1]
+      } else if (link.includes("youtube.com/")) {
+        const match = link.match(/youtube\.com\/@?([^/?]+)/)
+        if (match) socials.youtube = match[1]
+      } else if (link.includes("tiktok.com/")) {
+        const match = link.match(/tiktok\.com\/@?([^/?]+)/)
+        if (match) socials.tiktok = match[1]
+      }
+    }
+    return socials
+  } catch {
+    return {}
+  }
+}
+
 // Fetch photo URL (800px) + Wikidata QID from Wikipedia in a single API call
 async function fetchWikiPage(title: string): Promise<{ photoUrl: string | null; wikidataId: string | null }> {
   const params = new URLSearchParams({
@@ -323,7 +380,7 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
     // Check current state of candidate in DB
     const { data: existing, error: dbErr } = await supabase
       .from("candidatos")
-      .select("id, foto_url, data_nascimento, naturalidade, formacao, profissao_declarada")
+      .select("id, foto_url, data_nascimento, naturalidade, formacao, profissao_declarada, biografia, redes_sociais")
       .eq("slug", cand.slug)
       .single()
 
@@ -371,6 +428,34 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
           updates.formacao = wd.formacao
           log("wikipedia", `  ${cand.slug}: formacao = ${wd.formacao}`)
         }
+      }
+
+      // Fetch article summary for biography (only if biografia is null)
+      if (!existing.biografia) {
+        const summary = await fetchWikiSummary(wikiTitle)
+        if (summary) {
+          updates.biografia = summary
+          log("wikipedia", `  ${cand.slug}: biografia OK (${summary.length} chars)`)
+        }
+        await sleep(300)
+      }
+
+      // Fetch social links from Wikipedia external links
+      const currentRedes = (existing.redes_sociais as Record<string, unknown>) ?? {}
+      const isEmpty = Object.keys(currentRedes).length === 0
+      if (isEmpty || !currentRedes.instagram) {
+        const wikiSocials = await fetchWikiSocialLinks(wikiTitle)
+        if (Object.keys(wikiSocials).length > 0) {
+          // Merge: don't overwrite existing social links
+          // Handle nested objects (instagram can be { username, url, followers } from Wikidata)
+          const merged: Record<string, unknown> = { ...wikiSocials }
+          for (const [k, v] of Object.entries(currentRedes)) {
+            if (v) merged[k] = v // Existing data takes priority
+          }
+          updates.redes_sociais = merged
+          log("wikipedia", `  ${cand.slug}: redes sociais (${Object.keys(wikiSocials).join(", ")})`)
+        }
+        await sleep(300)
       }
 
       if (Object.keys(updates).length > 0) {

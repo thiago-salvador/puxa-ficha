@@ -46,6 +46,15 @@ CREATE TABLE candidatos (
   tcu_inabilitado BOOLEAN DEFAULT FALSE, -- inabilitado pelo TCU para cargo público
   tcu_contas_irregulares BOOLEAN DEFAULT FALSE, -- contas julgadas irregulares no CADIRREG/TCU
 
+  -- Dados demograficos (TSE CSV)
+  genero TEXT, -- "MASCULINO", "FEMININO"
+  estado_civil TEXT, -- "SOLTEIRO(A)", "CASADO(A)", etc.
+  cor_raca TEXT, -- "BRANCA", "PARDA", "PRETA", etc.
+  email_campanha TEXT, -- email de campanha declarado ao TSE
+
+  -- Biografia
+  biografia TEXT, -- resumo biografico (Wikipedia ou curadoria)
+
   -- Wikidata
   wikidata_id TEXT, -- ex: Q12345
 
@@ -411,3 +420,24 @@ CREATE POLICY "Leitura pública" ON sancoes_administrativas FOR SELECT USING (tr
 
 ALTER TABLE indicadores_estaduais ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON indicadores_estaduais FOR SELECT USING (true);
+
+-- ============================================
+-- 14. NOTÍCIAS (Google News RSS)
+-- ============================================
+CREATE TABLE noticias_candidato (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  candidato_id UUID REFERENCES candidatos(id) ON DELETE CASCADE,
+  titulo TEXT NOT NULL,
+  fonte TEXT,                   -- nome do veiculo (CNN Brasil, Folha, etc.)
+  url TEXT NOT NULL,
+  data_publicacao TIMESTAMPTZ,
+  snippet TEXT,                 -- trecho da noticia
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(candidato_id, url)
+);
+
+CREATE INDEX idx_noticias_candidato_id ON noticias_candidato(candidato_id);
+CREATE INDEX idx_noticias_data ON noticias_candidato(data_publicacao DESC);
+
+ALTER TABLE noticias_candidato ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Leitura pública" ON noticias_candidato FOR SELECT USING (true);

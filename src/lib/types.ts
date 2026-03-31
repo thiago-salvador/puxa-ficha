@@ -16,6 +16,9 @@ export interface Candidato {
   naturalidade: string | null;
   formacao: string | null;
   profissao_declarada: string | null;
+  genero?: string | null;
+  estado_civil?: string | null;
+  cor_raca?: string | null;
 
   // Político
   partido_atual: string;
@@ -224,6 +227,17 @@ export interface IndicadorEstadual {
   metadata: Record<string, unknown> | null;
 }
 
+// --- Noticias ---
+export interface NoticiaCandidato {
+  id: string;
+  candidato_id: string;
+  titulo: string;
+  fonte: string | null;
+  url: string;
+  data_publicacao: string;
+  snippet: string | null;
+}
+
 // --- Views compostas ---
 
 export interface FichaCandidato extends Candidato {
@@ -237,6 +251,7 @@ export interface FichaCandidato extends Candidato {
   projetos_lei: ProjetoLei[];
   gastos_parlamentares: GastoParlamentar[];
   sancoes_administrativas: SancaoAdministrativa[];
+  noticias: NoticiaCandidato[];
 
   // Contadores
   total_processos: number;

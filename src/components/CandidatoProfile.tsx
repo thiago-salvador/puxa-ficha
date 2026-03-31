@@ -9,6 +9,7 @@ import { GravityBadge } from "./GravityBadge"
 import { PatrimonioChart, StackedBar, HorizontalBars } from "./BarChart"
 import { ExpandableCard } from "./ExpandableCard"
 import { SocialLinks } from "./SocialLinks"
+import { NewsSection } from "./NewsSection"
 import { SectionLabel, SectionTitle } from "./SectionHeader"
 import { ProfileOverview } from "./ProfileOverview"
 import { DataCompleteness } from "./DataCompleteness"
@@ -206,7 +207,12 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
           <div className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:px-12 lg:py-16">
             {/* VISAO GERAL TAB */}
             {activeTab === "geral" && (
-              <ProfileOverview ficha={ficha} onNavigateTab={setActiveTab} />
+              <div className="space-y-12">
+                <ProfileOverview ficha={ficha} onNavigateTab={setActiveTab} />
+                {ficha.noticias && ficha.noticias.length > 0 && (
+                  <NewsSection noticias={ficha.noticias} />
+                )}
+              </div>
             )}
 
             {/* DINHEIRO TAB */}
