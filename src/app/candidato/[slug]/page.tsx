@@ -59,16 +59,24 @@ export default async function CandidatoPage({
   const prev = currentIdx > 0 ? sorted[currentIdx - 1] : null
   const next = currentIdx < sorted.length - 1 ? sorted[currentIdx + 1] : null
 
+  const isGovernador = ficha.cargo_disputado === "Governador"
+  const backHref = isGovernador && ficha.estado
+    ? `/governadores/${ficha.estado.toLowerCase()}`
+    : "/"
+  const backLabel = isGovernador && ficha.estado
+    ? `Governadores ${ficha.estado.toUpperCase()}`
+    : "Candidatos"
+
   return (
     <div className="min-h-screen bg-background">
       {/* Back link */}
       <div className="mx-auto max-w-7xl px-5 pt-20 sm:pt-24 md:px-12">
         <Link
-          href="/"
+          href={backHref}
           className="inline-flex items-center gap-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground transition-colors hover:text-foreground sm:text-[length:var(--text-caption)]"
         >
           <ArrowLeft className="size-3 sm:size-3.5" />
-          Candidatos
+          {backLabel}
         </Link>
       </div>
 

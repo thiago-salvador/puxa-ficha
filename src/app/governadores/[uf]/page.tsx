@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation"
-import { getEstadoNome, getEstadoUFs, getCandidatosComResumo } from "@/lib/api"
+import { getEstadoNome, getEstadoUFs, getCandidatosComResumo, getCandidatosComparaveis } from "@/lib/api"
 import { CandidatoGrid } from "@/components/CandidatoGrid"
+import { ComparadorPanel } from "@/components/ComparadorPanel"
 import { SlashDivider } from "@/components/SlashDivider"
 import { Footer } from "@/components/Footer"
 import Link from "next/link"
@@ -36,7 +37,10 @@ export default async function EstadoPage({
   const nome = getEstadoNome(uf)
   if (!nome) notFound()
 
-  const resumos = await getCandidatosComResumo("Governador")
+  const [resumos, comparaveis] = await Promise.all([
+    getCandidatosComResumo("Governador"),
+    getCandidatosComparaveis("Governador", uf),
+  ])
   const estadoResumos = resumos.filter(r => r.candidato.estado?.toLowerCase() === uf.toLowerCase())
   const candidatos = estadoResumos.map(r => r.candidato)
 
@@ -111,6 +115,30 @@ export default async function EstadoPage({
               patrimonios={patrimonios}
             />
           </section>
+
+          {/* Comparador */}
+          {comparaveis.length >= 2 && (
+            <>
+              <div className="mx-auto max-w-7xl px-5 md:px-12">
+                <SlashDivider />
+              </div>
+              <section className="mx-auto max-w-7xl px-5 pt-12 sm:pt-16 md:px-12 lg:pt-20">
+                <div className="section-reveal">
+                  <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-foreground">
+                    02 Comparador
+                  </p>
+                  <h2
+                    className="mt-1 font-heading uppercase leading-[0.95] text-foreground"
+                    style={{ fontSize: "clamp(28px, 5vw, 48px)" }}
+                  >
+                    Lado a lado
+                  </h2>
+                </div>
+                <SlashDivider className="mt-6 mb-8 sm:mt-8 sm:mb-10" />
+              </section>
+              <ComparadorPanel candidatos={comparaveis} />
+            </>
+          )}
         </>
       ) : (
         <section className="mx-auto max-w-7xl px-5 py-20 text-center md:px-12">

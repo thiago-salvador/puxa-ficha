@@ -174,9 +174,10 @@ export async function getCandidatosComResumo(cargo?: string): Promise<CandidatoR
   }))
 }
 
-export async function getCandidatosComparaveis(): Promise<CandidatoComparavel[]> {
+export async function getCandidatosComparaveis(cargo?: string, estado?: string): Promise<CandidatoComparavel[]> {
+  const cargoFilter = cargo ?? "Presidente"
   if (USE_MOCK) {
-    return MOCK_CANDIDATOS.filter(c => c.cargo_disputado === "Presidente").map((c) => ({
+    return MOCK_CANDIDATOS.filter(c => c.cargo_disputado === cargoFilter && (!estado || c.estado?.toLowerCase() === estado.toLowerCase())).map((c) => ({
       id: c.id,
       nome_urna: c.nome_urna,
       slug: c.slug,
@@ -195,12 +196,17 @@ export async function getCandidatosComparaveis(): Promise<CandidatoComparavel[]>
   }
 
   const supabase = createServerSupabaseClient()
-  // Get active candidate IDs first
-  const { data: active } = await supabase
+  let query = supabase
     .from("candidatos")
     .select("id")
     .neq("status", "removido")
-    .eq("cargo_disputado", "Presidente")
+    .eq("cargo_disputado", cargoFilter)
+
+  if (estado) {
+    query = query.ilike("estado", estado)
+  }
+
+  const { data: active } = await query
 
   const activeIds = new Set((active ?? []).map((c) => c.id))
 
