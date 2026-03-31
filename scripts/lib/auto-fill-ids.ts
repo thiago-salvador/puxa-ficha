@@ -8,7 +8,7 @@
 import { readFileSync, writeFileSync } from "fs"
 import { resolve } from "path"
 import type { CandidatoConfig } from "./types"
-import { normalizeForMatch, sleep, fetchJSON } from "./helpers"
+import { normalizeForMatch, sleep } from "./helpers"
 
 // ── Types ──────────────────────────────────────────────────────────
 
@@ -36,6 +36,38 @@ interface SenadoParlamentar {
 
 const CAMARA_BASE = "https://dadosabertos.camara.leg.br/api/v2/deputados"
 const SENADO_BASE = "https://legis.senado.leg.br/dadosabertos/senador"
+
+let apiErrors = 0
+
+/** Fetch with 15s timeout and retry on 429/timeout (up to 3 attempts) */
+async function quickFetch<T>(url: string, timeoutMs = 15000): Promise<T | null> {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const controller = new AbortController()
+    const timer = setTimeout(() => controller.abort(), timeoutMs)
+    try {
+      const res = await fetch(url, { signal: controller.signal })
+      if (res.status === 429) {
+        clearTimeout(timer)
+        await sleep(2000 * (attempt + 1))
+        continue
+      }
+      if (!res.ok) return null
+      return (await res.json()) as T
+    } catch {
+      clearTimeout(timer)
+      if (attempt < 2) {
+        await sleep(1500 * (attempt + 1))
+        continue
+      }
+      apiErrors++
+      return null
+    } finally {
+      clearTimeout(timer)
+    }
+  }
+  apiErrors++
+  return null
+}
 
 function loadCandidatosRaw(): CandidatoConfig[] {
   const path = resolve(process.cwd(), "data/candidatos.json")
@@ -89,7 +121,13 @@ function extractSenadores(jsonText: string): SenadoParlamentar[] {
 function namesMatch(apiName: string, targetName: string): boolean {
   const a = normalizeForMatch(apiName)
   const b = normalizeForMatch(targetName)
-  return a === b || a.includes(b) || b.includes(a)
+  if (a === b) return true
+  // For substring matching, require the shorter string to be at least 8 chars
+  // to avoid false positives like "LULA" matching "LULA DA FONTE"
+  const shorter = a.length < b.length ? a : b
+  const longer = a.length < b.length ? b : a
+  if (shorter.length >= 8 && longer.includes(shorter)) return true
+  return false
 }
 
 // ── Camara Search ──────────────────────────────────────────────────
@@ -107,65 +145,76 @@ async function searchCamara(
 
   for (const nome of namesToTry) {
     for (const leg of legislaturas) {
-      try {
-        const params = new URLSearchParams({ nome, ordenarPor: "nome" })
-        if (leg) params.set("idLegislatura", leg)
-        const url = `${CAMARA_BASE}?${params}`
+      const params = new URLSearchParams({ nome, ordenarPor: "nome" })
+      if (leg) params.set("idLegislatura", leg)
+      const url = `${CAMARA_BASE}?${params}`
 
-        const data = await fetchJSON<CamaraResponse>(url)
-        const results = data.dados ?? []
+      const data = await quickFetch<CamaraResponse>(url)
+      if (!data) {
+        await sleep(300)
+        continue
+      }
+      const results = data.dados ?? []
 
-        if (results.length === 0) continue
+      if (results.length === 0) {
+        await sleep(300)
+        continue
+      }
 
-        if (results.length === 1) {
-          const dep = results[0]
+      if (results.length === 1) {
+        const dep = results[0]
+        // Validate: the result name should actually match our candidate
+        if (
+          namesMatch(dep.nome, candidato.nome_completo) ||
+          namesMatch(dep.nome, candidato.nome_urna)
+        ) {
           return {
             id: dep.id,
             match: `${dep.nome} (${dep.siglaPartido}/${dep.siglaUf})`,
             details: `searched "${nome}"${leg ? ` leg=${leg}` : ""}`,
           }
         }
-
-        // Multiple results: try to find exact match by nome_completo or nome_urna
-        const exactMatch = results.find(
-          (r) =>
-            namesMatch(r.nome, candidato.nome_completo) ||
-            namesMatch(r.nome, candidato.nome_urna)
-        )
-        if (exactMatch) {
-          return {
-            id: exactMatch.id,
-            match: `${exactMatch.nome} (${exactMatch.siglaPartido}/${exactMatch.siglaUf})`,
-            details: `exact match from ${results.length} results, searched "${nome}"${leg ? ` leg=${leg}` : ""}`,
-          }
-        }
-
-        // If state is available, filter by UF
-        if (candidato.estado) {
-          const ufMatches = results.filter(
-            (r) => r.siglaUf === candidato.estado
-          )
-          if (ufMatches.length === 1) {
-            return {
-              id: ufMatches[0].id,
-              match: `${ufMatches[0].nome} (${ufMatches[0].siglaPartido}/${ufMatches[0].siglaUf})`,
-              details: `UF filter from ${results.length} results, searched "${nome}"${leg ? ` leg=${leg}` : ""}`,
-            }
-          }
-        }
-
-        // Ambiguous: log all and stop searching
-        console.log(
-          `  ⚠ AMBIGUOUS Camara for "${candidato.nome_urna}" (${results.length} results):`
-        )
-        for (const r of results) {
-          console.log(`    - id=${r.id} ${r.nome} (${r.siglaPartido}/${r.siglaUf})`)
-        }
-        return "ambiguous"
-      } catch (err) {
-        // API error, try next
+        // Single result but name doesn't match well, skip
+        await sleep(300)
+        continue
       }
-      await sleep(500)
+
+      // Multiple results: try to find exact match by nome_completo or nome_urna
+      const exactMatch = results.find(
+        (r) =>
+          namesMatch(r.nome, candidato.nome_completo) ||
+          namesMatch(r.nome, candidato.nome_urna)
+      )
+      if (exactMatch) {
+        return {
+          id: exactMatch.id,
+          match: `${exactMatch.nome} (${exactMatch.siglaPartido}/${exactMatch.siglaUf})`,
+          details: `exact match from ${results.length} results, searched "${nome}"${leg ? ` leg=${leg}` : ""}`,
+        }
+      }
+
+      // If state is available, filter by UF
+      if (candidato.estado) {
+        const ufMatches = results.filter(
+          (r) => r.siglaUf === candidato.estado
+        )
+        if (ufMatches.length === 1) {
+          return {
+            id: ufMatches[0].id,
+            match: `${ufMatches[0].nome} (${ufMatches[0].siglaPartido}/${ufMatches[0].siglaUf})`,
+            details: `UF filter from ${results.length} results, searched "${nome}"${leg ? ` leg=${leg}` : ""}`,
+          }
+        }
+      }
+
+      // Ambiguous: log all and stop searching this candidate
+      console.log(
+        `  ⚠ AMBIGUOUS Camara for "${candidato.nome_urna}" (${results.length} results):`
+      )
+      for (const r of results) {
+        console.log(`    - id=${r.id} ${r.nome} (${r.siglaPartido}/${r.siglaUf})`)
+      }
+      return "ambiguous"
     }
   }
   return null
@@ -238,9 +287,9 @@ function searchSenado(
       normCompleto === normNome ||
       normCompleto === normUrna ||
       // Partial: nome_urna is contained in parlamentar name or vice versa
-      (normUrna.length > 5 && normParlamentar.includes(normUrna)) ||
-      (normUrna.length > 5 && normUrna.includes(normParlamentar)) ||
-      (normNome.length > 10 && normCompleto.includes(normNome))
+      (normUrna.length >= 8 && normParlamentar.includes(normUrna)) ||
+      (normParlamentar.length >= 8 && normUrna.includes(normParlamentar)) ||
+      (normNome.length >= 10 && normCompleto.includes(normNome))
     )
   })
 
@@ -309,7 +358,7 @@ async function main() {
       candidato.ids.camara = result.id
       camaraFound++
     }
-    await sleep(500)
+    await sleep(300)
   }
 
   console.log(`\nCamara: found ${camaraFound}, ambiguous ${camaraAmbiguous}\n`)
@@ -352,6 +401,9 @@ async function main() {
   console.log(`Senado IDs filled: ${senadoFound}`)
   console.log(`Still missing Camara: ${stillMissingCamara.length}`)
   console.log(`Still missing Senado: ${stillMissingSenado.length}`)
+  if (apiErrors > 0) {
+    console.log(`\n⚠ API errors (timeout/network): ${apiErrors} — some IDs may have been missed, consider re-running`)
+  }
 
   if (stillMissingCamara.length > 0) {
     console.log("\nCandidates still without Camara ID:")
