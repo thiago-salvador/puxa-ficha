@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: "0 8 * * 1-6" # Seg-Sab 8h UTC (5h BRT) — REST APIs
     - cron: "0 6 * * 0" # Domingo 6h UTC (3h BRT) — TSE CSV
+    - cron: "0 12 * * *" # Diario 12h UTC (9h BRT) — Google News
   workflow_dispatch:
     inputs:
       sources:
@@ -62,3 +63,25 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: npx tsx scripts/ingest-all.ts tse
+
+  ingest-news:
+    name: Google News (diario)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: github.event.schedule == '0 12 * * *' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.sources, 'google-news'))
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Google News RSS
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npx tsx scripts/ingest-all.ts google-news
