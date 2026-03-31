@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer"
 import Link from "next/link"
 import type { Metadata } from "next"
 import { ArrowLeft } from "lucide-react"
+import { formatBRL } from "@/lib/utils"
 
 export const revalidate = 3600
 
@@ -51,6 +52,13 @@ export default async function EstadoPage({
     patrimonios[r.candidato.slug] = r.patrimonio
   }
 
+  // Aggregate stats for hero data bar
+  const totalCandidatos = candidatos.length
+  const totalPatrimonio = estadoResumos.reduce((sum, r) => sum + (r.patrimonio ?? 0), 0)
+  const totalProcessos = estadoResumos.reduce((sum, r) => sum + r.processos, 0)
+  const partidos = new Set(candidatos.map(c => c.partido_sigla).filter(Boolean))
+  const totalPartidos = partidos.size
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
@@ -82,6 +90,52 @@ export default async function EstadoPage({
               {nome}
             </h1>
           </div>
+
+          {/* Data bar */}
+          {totalCandidatos > 0 && (
+            <div className="mt-6 flex flex-wrap gap-6 pb-4 sm:gap-12 lg:gap-20">
+              <div>
+                <p className="text-[22px] font-bold leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                  {totalCandidatos}
+                </p>
+                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                  pre-candidatos
+                </p>
+              </div>
+              {totalPatrimonio > 0 && (
+                <div>
+                  <p className="text-[22px] font-bold leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                    {totalPatrimonio >= 1_000_000
+                      ? `R$ ${(totalPatrimonio / 1_000_000).toFixed(0)}M`
+                      : formatBRL(totalPatrimonio)}
+                  </p>
+                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                    patrimonio declarado
+                  </p>
+                </div>
+              )}
+              {totalProcessos > 0 && (
+                <div>
+                  <p className="text-[22px] font-bold leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                    {totalProcessos}
+                  </p>
+                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                    processos
+                  </p>
+                </div>
+              )}
+              {totalPartidos > 0 && totalPatrimonio === 0 && totalProcessos === 0 && (
+                <div>
+                  <p className="text-[22px] font-bold leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                    {totalPartidos}
+                  </p>
+                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                    partidos
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </section>
 

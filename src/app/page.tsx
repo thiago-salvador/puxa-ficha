@@ -1,6 +1,7 @@
-import { getCandidatosComResumo } from "@/lib/api"
+import { getCandidatosComResumo, getCandidatosComparaveis } from "@/lib/api"
 import Link from "next/link"
 import { CandidatoGrid } from "@/components/CandidatoGrid"
+import { ComparadorPanel } from "@/components/ComparadorPanel"
 import { SlashDivider } from "@/components/SlashDivider"
 import { Footer } from "@/components/Footer"
 import { formatBRL } from "@/lib/utils"
@@ -8,7 +9,10 @@ import { formatBRL } from "@/lib/utils"
 export const revalidate = 3600
 
 export default async function Home() {
-  const resumos = await getCandidatosComResumo("Presidente")
+  const [resumos, comparaveis] = await Promise.all([
+    getCandidatosComResumo("Presidente"),
+    getCandidatosComparaveis("Presidente"),
+  ])
 
   resumos.sort((a, b) =>
     a.candidato.nome_urna.localeCompare(b.candidato.nome_urna, "pt-BR")
@@ -131,6 +135,30 @@ export default async function Home() {
           patrimonios={patrimonios}
         />
       </section>
+
+      {/* Comparador */}
+      {comparaveis.length >= 2 && (
+        <>
+          <div className="mx-auto max-w-7xl px-5 md:px-12">
+            <SlashDivider />
+          </div>
+          <section className="mx-auto max-w-7xl px-5 pt-12 sm:pt-16 md:px-12 lg:pt-20">
+            <div className="section-reveal">
+              <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-foreground">
+                02 Comparador
+              </p>
+              <h2
+                className="mt-1 font-heading uppercase leading-[0.95] text-foreground"
+                style={{ fontSize: "clamp(28px, 5vw, 48px)" }}
+              >
+                Lado a lado
+              </h2>
+            </div>
+            <SlashDivider className="mt-6 mb-8 sm:mt-8 sm:mb-10" />
+          </section>
+          <ComparadorPanel candidatos={comparaveis} />
+        </>
+      )}
 
       {/* Footer */}
       <Footer />
