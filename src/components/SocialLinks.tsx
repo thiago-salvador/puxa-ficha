@@ -31,9 +31,17 @@ export function SocialLinks({
           Site
         </a>
       )}
-      {entries.map(([platform, handle]) => {
+      {entries.map(([platform, rawHandle]) => {
         const info = SOCIAL_ICONS[platform]
         if (!info) return null
+        // redes_sociais pode guardar instagram como objeto { username, url }
+        const handle: string =
+          typeof rawHandle === "object" && rawHandle !== null
+            ? (rawHandle as { url?: string; username?: string }).url ??
+              (rawHandle as { username?: string }).username ??
+              ""
+            : String(rawHandle)
+        if (!handle) return null
         const url = handle.startsWith("http") ? handle : `${info.urlPrefix}${handle}`
         return (
           <a
@@ -43,7 +51,7 @@ export function SocialLinks({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-[length:var(--text-caption)] font-semibold text-foreground transition-colors hover:bg-secondary"
           >
-            @{handle.replace(/^@/, "")}
+            @{handle.replace(/^https?:\/\/[^/]+\/?/, "").replace(/^@/, "")}
           </a>
         )
       })}
