@@ -72,7 +72,7 @@ export function CandidatoCard({
               </div>
 
               {/* Name — always visible */}
-              <h3 className="mt-1 line-clamp-2 font-heading text-[18px] leading-[1.05] tracking-[-0.01em] text-white sm:mt-1.5 sm:line-clamp-1 sm:text-[24px] lg:text-[28px]">
+              <h3 className="mt-1 line-clamp-2 font-heading text-[18px] leading-[1.05] tracking-[-0.01em] text-white sm:mt-1.5 sm:mb-2 sm:line-clamp-1 sm:text-[24px] lg:text-[28px]">
                 {candidato.nome_urna}
               </h3>
 
