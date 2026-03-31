@@ -111,8 +111,7 @@ export async function ingestIdeb(): Promise<IngestResult[]> {
       const items = await fetchIdebFromApi(ano)
 
       if (items.length === 0) {
-        warn("ideb", `  Nenhum dado retornado para ${ano}`)
-        result.errors.push(`Nenhum dado para ano ${ano} - API pode estar indisponivel`)
+        warn("ideb", `  Nenhum dado retornado para ${ano} (API pode estar fora do ar, pulando)`)
         result.duration_ms = Date.now() - start
         results.push(result)
         continue

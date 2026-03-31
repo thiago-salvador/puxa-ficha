@@ -8,18 +8,19 @@ const ESTADOS = ["AC","AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT
 const BASE_URL = "https://www.ipea.gov.br/atlasviolencia/api/v1"
 
 // ID da serie -> nome do indicador
+// Serie 107 (letalidade_policial_100k) removida: retorna [] no nivel estadual
 const SERIES: Record<number, string> = {
   40: "homicidios_100k",
   48: "homicidios_arma_fogo_100k",
   62: "feminicidios_100k",
-  107: "letalidade_policial_100k",
   8: "homicidios_jovens_100k",
 }
 
 interface AtlasValor {
-  localidade: string
-  ano: number
-  valor: number
+  cod: string      // codigo IBGE do estado ("29")
+  sigla: string    // UF ("BA")
+  valor: string    // valor como string ("80")
+  periodo: string  // data ISO ("1989-01-15")
 }
 
 async function upsertIndicador(
@@ -85,22 +86,28 @@ export async function ingestAtlasViolencia(): Promise<IngestResult[]> {
 
       for (const item of dados) {
         try {
-          const localidade = item.localidade?.trim().toUpperCase()
-          if (!localidade || !ESTADOS.includes(localidade)) continue
-          if (item.ano == null || item.valor == null) continue
+          const uf = item.sigla?.trim().toUpperCase()
+          if (!uf || !ESTADOS.includes(uf)) continue
+          if (!item.periodo || !item.valor) continue
+
+          const ano = new Date(item.periodo).getFullYear()
+          if (isNaN(ano) || ano < 2015 || ano > 2030) continue
+
+          const valor = parseFloat(item.valor)
+          if (isNaN(valor)) continue
 
           await upsertIndicador(
-            localidade,
-            item.ano,
+            uf,
+            ano,
             "atlas_violencia",
             indicador,
-            item.valor,
+            valor,
             undefined,
             "por_100k_hab"
           )
           result.rows_upserted++
         } catch (itemErr) {
-          result.errors.push(`${item.localidade}/${item.ano}: ${itemErr instanceof Error ? itemErr.message : String(itemErr)}`)
+          result.errors.push(`${item.sigla}/${item.periodo}: ${itemErr instanceof Error ? itemErr.message : String(itemErr)}`)
         }
       }
 

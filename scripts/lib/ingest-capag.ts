@@ -103,7 +103,7 @@ export async function ingestCapag(): Promise<IngestResult[]> {
     const csvText = await downloadCsv()
 
     if (!csvText) {
-      result.errors.push("Nao foi possivel baixar o CSV do CAPAG de nenhuma das URLs tentadas")
+      warn("capag", "CSV indisponivel em todas as URLs (CKAN pode estar restrito). Pulando.")
       result.duration_ms = Date.now() - start
       results.push(result)
       return results

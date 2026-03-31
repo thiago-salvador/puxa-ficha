@@ -40,14 +40,7 @@ async function resolveCandidatoId(slug: string): Promise<string | null> {
   return data?.id ?? null
 }
 
-async function queryWikidata(nome: string): Promise<SparqlBinding | null> {
-  const query = `
-SELECT ?item ?itemLabel ?instagram ?twitter ?facebook ?site ?foto ?nascimento ?profissao ?idCamara ?idSenado WHERE {
-  ?item wdt:P31 wd:Q5 .
-  ?item wdt:P27 wd:Q155 .
-  ?item rdfs:label ?itemLabel .
-  FILTER(LANG(?itemLabel) = "pt")
-  FILTER(CONTAINS(LCASE(?itemLabel), LCASE("${nome}")))
+const OPTIONAL_PROPS = `
   OPTIONAL { ?item wdt:P2003 ?instagram }
   OPTIONAL { ?item wdt:P2002 ?twitter }
   OPTIONAL { ?item wdt:P2013 ?facebook }
@@ -58,12 +51,41 @@ SELECT ?item ?itemLabel ?instagram ?twitter ?facebook ?site ?foto ?nascimento ?p
   OPTIONAL { ?item wdt:P6947 ?idCamara }
   OPTIONAL { ?item wdt:P7662 ?idSenado }
   SERVICE wikibase:label { bd:serviceParam wikibase:language "pt,en" }
+`
+
+async function queryWikidataById(wikidataId: string): Promise<SparqlBinding | null> {
+  const query = `
+SELECT ?item ?itemLabel ?instagram ?twitter ?facebook ?site ?foto ?nascimento ?profissao ?idCamara ?idSenado WHERE {
+  BIND(wd:${wikidataId} AS ?item)
+  ${OPTIONAL_PROPS}
 }
 LIMIT 1
 `
-
   const url = `${SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}`
-  const resp = await fetchJSON<SparqlResponse>(url, HEADERS)
+  const resp = await fetchJSON<SparqlResponse>(url, HEADERS, 3, 20000)
+  const bindings = resp?.results?.bindings ?? []
+  return bindings.length > 0 ? bindings[0] : null
+}
+
+async function queryWikidataByName(nome: string): Promise<SparqlBinding | null> {
+  // Usar mwapi EntitySearch (indice de busca) em vez de CONTAINS (scan completo)
+  const query = `
+SELECT ?item ?itemLabel ?instagram ?twitter ?facebook ?site ?foto ?nascimento ?profissao ?idCamara ?idSenado WHERE {
+  SERVICE wikibase:mwapi {
+    bd:serviceParam wikibase:endpoint "www.wikidata.org";
+                    wikibase:api "EntitySearch";
+                    mwapi:search "${nome.replace(/"/g, '\\"')}";
+                    mwapi:language "pt".
+    ?item wikibase:apiOutputItem mwapi:item.
+  }
+  ?item wdt:P31 wd:Q5 .
+  ?item wdt:P27 wd:Q155 .
+  ${OPTIONAL_PROPS}
+}
+LIMIT 1
+`
+  const url = `${SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}`
+  const resp = await fetchJSON<SparqlResponse>(url, HEADERS, 3, 20000)
   const bindings = resp?.results?.bindings ?? []
   return bindings.length > 0 ? bindings[0] : null
 }
@@ -96,7 +118,22 @@ export async function ingestWikidata(): Promise<IngestResult[]> {
         continue
       }
 
-      const binding = await queryWikidata(cand.nome_urna)
+      // Busca dados atuais do candidato para merge (e wikidata_id se ja existir)
+      const { data: dbCand } = await supabase
+        .from("candidatos")
+        .select("redes_sociais, wikidata_id, foto_url, data_nascimento, profissao_declarada")
+        .eq("id", candidatoId)
+        .single()
+
+      // Se ja tem wikidata_id, query direta por ID (instantanea)
+      // Senao, usar EntitySearch (muito mais rapido que CONTAINS)
+      let binding: SparqlBinding | null = null
+      if (dbCand?.wikidata_id) {
+        log("wikidata", `  ${cand.slug}: query por ID (${dbCand.wikidata_id})`)
+        binding = await queryWikidataById(dbCand.wikidata_id)
+      } else {
+        binding = await queryWikidataByName(cand.nome_urna)
+      }
 
       if (!binding) {
         warn("wikidata", `  ${cand.slug}: nao encontrado no Wikidata`)
@@ -105,13 +142,6 @@ export async function ingestWikidata(): Promise<IngestResult[]> {
         await sleep(1000)
         continue
       }
-
-      // Busca dados atuais do candidato para merge
-      const { data: dbCand } = await supabase
-        .from("candidatos")
-        .select("redes_sociais, wikidata_id, foto_url, data_nascimento, profissao_declarada")
-        .eq("id", candidatoId)
-        .single()
 
       const updates: Record<string, unknown> = {}
 

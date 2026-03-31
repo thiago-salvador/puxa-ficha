@@ -26,10 +26,10 @@ function resolveUf(tercodigo: string): string | null {
 const BASE_URL = "http://ipeadata.gov.br/api/odata4"
 
 interface IpeaValor {
-  ANOCODE: number
+  VALDATA: string // "2012-01-01T00:00:00-02:00"
   TERCODIGO: string
   VALVALOR: number
-  // campos alternativos
+  NIVNOME: string
   SERCODIGO?: string
 }
 
@@ -46,19 +46,19 @@ interface SerieConfig {
 
 const SERIES: SerieConfig[] = [
   {
-    codigo: "PNADCA_GINI",
+    codigo: "PNADCA_GINIUF",
     indicador: "gini",
     unidade: "indice",
     filtro: "NIVNOME eq 'Estados'",
   },
   {
-    codigo: "PNADCA_POBRE",
+    codigo: "PNADCA_TXPNUF",
     indicador: "taxa_pobreza",
     unidade: "percentual",
     filtro: "NIVNOME eq 'Estados'",
   },
   {
-    codigo: "PNADCA_DESEMP",
+    codigo: "PNADCT_TXDSCUPUF",
     indicador: "taxa_desemprego",
     unidade: "percentual",
     filtro: "NIVNOME eq 'Estados'",
@@ -128,13 +128,15 @@ export async function ingestIpea(): Promise<IngestResult[]> {
 
       for (const item of dados.value) {
         try {
-          if (!item.TERCODIGO || item.ANOCODE == null || item.VALVALOR == null) continue
+          if (!item.TERCODIGO || !item.VALDATA || item.VALVALOR == null) continue
+          // Filtrar apenas nivel estadual (OData filter nem sempre funciona)
+          if (item.NIVNOME && item.NIVNOME !== "Estados") continue
 
           const uf = resolveUf(String(item.TERCODIGO))
           if (!uf) continue
 
-          const ano = item.ANOCODE
-          if (ano < 2015 || ano > 2030) continue
+          const ano = new Date(item.VALDATA).getFullYear()
+          if (isNaN(ano) || ano < 2015 || ano > 2030) continue
 
           const valor = item.VALVALOR
           if (typeof valor !== "number" || isNaN(valor)) continue

@@ -16,23 +16,24 @@ const IBGE_PARA_UF: Record<string, string> = {
 
 const BASE_URL = "https://servicodados.ibge.gov.br/api/v3/agregados"
 
-interface IbgeLocalidade {
-  id: string
-  nome: string
-}
-
-interface IbgeSerie {
-  periodo: string
-  serie: Record<string, string>
+interface IbgeSerieItem {
+  localidade: {
+    id: string
+    nivel: { id: string; nome: string }
+    nome: string
+  }
+  serie: Record<string, string> // { "2021": "58170096" }
 }
 
 interface IbgeResultado {
-  localidades: IbgeLocalidade[]
-  series: IbgeSerie[]
+  classificacoes: unknown[]
+  series: IbgeSerieItem[]
 }
 
 interface IbgeAgregado {
   id: string
+  variavel: string
+  unidade: string
   resultados: IbgeResultado[]
 }
 
@@ -74,15 +75,15 @@ interface AggConfig {
 const AGREGADOS: AggConfig[] = [
   {
     agregado: 5938,
-    variaveis: [37670],
-    periodos: "2020|2021|2022",
-    indicador: "pib_per_capita",
-    unidade: "reais",
+    variaveis: [37],
+    periodos: "2020|2021|2022|2023",
+    indicador: "pib_total",
+    unidade: "mil_reais",
   },
   {
     agregado: 6579,
     variaveis: [9324],
-    periodos: "2022|2023|2024",
+    periodos: "2021|2022|2023",
     indicador: "populacao_estimada",
     unidade: "habitantes",
   },
@@ -121,17 +122,15 @@ export async function ingestIbge(): Promise<IngestResult[]> {
 
       for (const agregado of dados) {
         for (const resultado of agregado.resultados ?? []) {
-          // Cada resultado tem uma localidade e uma series com periodos
-          for (const localidade of resultado.localidades ?? []) {
-            const uf = IBGE_PARA_UF[localidade.id]
+          for (const serieItem of resultado.series ?? []) {
+            const locId = serieItem.localidade?.id
+            if (!locId) continue
+            const uf = IBGE_PARA_UF[locId]
             if (!uf) continue
 
-            for (const serie of resultado.series ?? []) {
-              const anoStr = serie.periodo
+            for (const [anoStr, valorRaw] of Object.entries(serieItem.serie ?? {})) {
               const ano = parseInt(anoStr)
               if (isNaN(ano)) continue
-
-              const valorRaw = serie.serie?.[localidade.id]
               if (!valorRaw || valorRaw === "-" || valorRaw === "...") continue
 
               const valor = parseFloat(String(valorRaw).replace(/\./g, "").replace(",", "."))
