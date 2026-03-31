@@ -28,7 +28,7 @@ interface HistoricoPolitico {
 
 interface Patrimonio {
   ano_eleicao: number
-  total_bens: number
+  valor_total: number
 }
 
 async function main() {
@@ -134,21 +134,21 @@ async function main() {
     // 2. Check patrimonio
     const { data: patrimonio } = await supabase
       .from("patrimonio")
-      .select("ano_eleicao, total_bens")
+      .select("ano_eleicao, valor_total")
       .eq("candidato_id", c.id)
       .order("ano_eleicao", { ascending: false })
 
     if (patrimonio && patrimonio.length >= 2) {
       const mais_recente = patrimonio[0]
       const mais_antigo = patrimonio[patrimonio.length - 1]
-      if (mais_recente.total_bens > 0 && mais_antigo.total_bens > 0) {
-        const variacao = ((mais_recente.total_bens - mais_antigo.total_bens) / mais_antigo.total_bens) * 100
+      if (mais_recente.valor_total > 0 && mais_antigo.valor_total > 0) {
+        const variacao = ((mais_recente.valor_total - mais_antigo.valor_total) / mais_antigo.valor_total) * 100
         if (variacao > 200) {
           pontos.push({
             candidato_id: c.id,
             categoria: "patrimonio_incompativel",
             titulo: `Patrimonio cresceu ${Math.round(variacao)}% entre ${mais_antigo.ano_eleicao} e ${mais_recente.ano_eleicao}`,
-            descricao: `Patrimonio declarado ao TSE foi de R$ ${mais_antigo.total_bens.toLocaleString("pt-BR")} em ${mais_antigo.ano_eleicao} para R$ ${mais_recente.total_bens.toLocaleString("pt-BR")} em ${mais_recente.ano_eleicao} (variacao de ${Math.round(variacao)}%).`,
+            descricao: `Patrimonio declarado ao TSE foi de R$ ${mais_antigo.valor_total.toLocaleString("pt-BR")} em ${mais_antigo.ano_eleicao} para R$ ${mais_recente.valor_total.toLocaleString("pt-BR")} em ${mais_recente.ano_eleicao} (variacao de ${Math.round(variacao)}%).`,
             fontes: [{ url: "https://divulgacandcontas.tse.jus.br", titulo: "TSE - Divulgacao de Candidaturas" }],
             gravidade: variacao > 500 ? "alta" : "media",
             verificado: false,

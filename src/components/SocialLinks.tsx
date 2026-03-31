@@ -1,4 +1,5 @@
 import { Globe } from "lucide-react"
+import { safeHref } from "@/lib/utils"
 
 const SOCIAL_ICONS: Record<string, { label: string; urlPrefix: string }> = {
   instagram: { label: "Instagram", urlPrefix: "https://instagram.com/" },
@@ -20,9 +21,9 @@ export function SocialLinks({
 
   return (
     <div className="flex flex-wrap gap-2">
-      {site && (
+      {safeHref(site) && (
         <a
-          href={site}
+          href={safeHref(site)!}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-[length:var(--text-caption)] font-semibold text-foreground transition-colors hover:bg-secondary"
@@ -42,7 +43,9 @@ export function SocialLinks({
               ""
             : String(rawHandle)
         if (!handle) return null
-        const url = handle.startsWith("http") ? handle : `${info.urlPrefix}${handle}`
+        const rawUrl = handle.startsWith("http") ? handle : `${info.urlPrefix}${handle}`
+        const url = safeHref(rawUrl)
+        if (!url) return null
         return (
           <a
             key={platform}

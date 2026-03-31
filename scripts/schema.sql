@@ -441,3 +441,12 @@ CREATE INDEX idx_noticias_data ON noticias_candidato(data_publicacao DESC);
 
 ALTER TABLE noticias_candidato ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON noticias_candidato FOR SELECT USING (true);
+
+-- ============================================
+-- UNIQUE CONSTRAINTS (idempotent pipelines)
+-- ============================================
+ALTER TABLE patrimonio ADD CONSTRAINT uq_patrimonio_candidato_ano UNIQUE (candidato_id, ano_eleicao);
+ALTER TABLE financiamento ADD CONSTRAINT uq_financiamento_candidato_ano UNIQUE (candidato_id, ano_eleicao);
+ALTER TABLE gastos_parlamentares ADD CONSTRAINT uq_gastos_candidato_ano UNIQUE (candidato_id, ano);
+ALTER TABLE votos_candidato ADD CONSTRAINT uq_votos_candidato_votacao UNIQUE (candidato_id, votacao_id);
+ALTER TABLE historico_politico ADD CONSTRAINT uq_historico_candidato_cargo_periodo UNIQUE (candidato_id, cargo, periodo_inicio);

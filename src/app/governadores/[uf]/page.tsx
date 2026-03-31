@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getCandidatosPorEstado, getEstadoNome, getEstadoUFs } from "@/lib/api"
+import { getEstadoNome, getEstadoUFs, getCandidatosComResumo } from "@/lib/api"
 import { CandidatoGrid } from "@/components/CandidatoGrid"
 import { SlashDivider } from "@/components/SlashDivider"
 import { Footer } from "@/components/Footer"
@@ -36,16 +36,15 @@ export default async function EstadoPage({
   const nome = getEstadoNome(uf)
   if (!nome) notFound()
 
-  const candidatos = await getCandidatosPorEstado(uf)
+  const resumos = await getCandidatosComResumo("Governador")
+  const estadoResumos = resumos.filter(r => r.candidato.estado?.toLowerCase() === uf.toLowerCase())
+  const candidatos = estadoResumos.map(r => r.candidato)
 
-  // Build processos/patrimonios maps (same pattern as home)
   const processos: Record<string, number> = {}
   const patrimonios: Record<string, number | null> = {}
-
-  // For now, set defaults. When candidates exist, we'll populate from resumos.
-  for (const c of candidatos) {
-    processos[c.slug] = 0
-    patrimonios[c.slug] = null
+  for (const r of estadoResumos) {
+    processos[r.candidato.slug] = r.processos
+    patrimonios[r.candidato.slug] = r.patrimonio
   }
 
   return (

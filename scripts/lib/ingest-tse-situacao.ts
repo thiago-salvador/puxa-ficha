@@ -219,6 +219,29 @@ async function processAno(
       const cand = nameMap.get(nomeNorm)
       if (!cand) return
 
+      // Safety filter: check cargo compatibility to reduce homonym collisions
+      const dsCargo = (row.DS_CARGO || "").toUpperCase()
+      if (dsCargo && cand.cargo_disputado) {
+        const cargoMap: Record<string, string[]> = {
+          "Presidente": ["PRESIDENTE"],
+          "Governador": ["GOVERNADOR"],
+        }
+        const validTseCargos = cargoMap[cand.cargo_disputado]
+        if (validTseCargos && !validTseCargos.some((c) => dsCargo.includes(c))) {
+          warn("tse-situacao", `  ${cand.slug}: match ignorado (cargo TSE="${dsCargo}" vs esperado="${cand.cargo_disputado}")`)
+          return
+        }
+      }
+
+      // Safety filter: check UF compatibility
+      const sgUf = (row.SG_UF || "").toUpperCase()
+      if (sgUf && cand.estado) {
+        if (sgUf !== cand.estado.toUpperCase()) {
+          warn("tse-situacao", `  ${cand.slug}: match ignorado (UF TSE="${sgUf}" vs esperado="${cand.estado}")`)
+          return
+        }
+      }
+
       const existing = existingMatches.get(cand.slug)
 
       // Prefere match de ano mais recente (ja no mapa) mas aceita dados de ano mais antigo se ainda nao tem

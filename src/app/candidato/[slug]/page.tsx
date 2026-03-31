@@ -1,7 +1,11 @@
+import { cache } from "react"
 import { notFound } from "next/navigation"
 import { getCandidatoBySlug, getCandidatos } from "@/lib/api"
 import Link from "next/link"
 import type { Metadata } from "next"
+
+// Memoize per-request so generateMetadata and the page share one DB round-trip
+const getFicha = cache((slug: string) => getCandidatoBySlug(slug))
 import { SectionDivider } from "@/components/SectionHeader"
 import { Footer } from "@/components/Footer"
 import { CandidatoProfile } from "@/components/CandidatoProfile"
@@ -20,7 +24,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const ficha = await getCandidatoBySlug(slug)
+  const ficha = await getFicha(slug)
   if (!ficha) return {}
   const desc = ficha.biografia
     ? ficha.biografia.slice(0, 155) + "..."
@@ -46,7 +50,7 @@ export default async function CandidatoPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const ficha = await getCandidatoBySlug(slug)
+  const ficha = await getFicha(slug)
   if (!ficha) notFound()
 
   const allCandidatos = await getCandidatos(ficha.cargo_disputado)

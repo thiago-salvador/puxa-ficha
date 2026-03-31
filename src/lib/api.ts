@@ -17,14 +17,18 @@ import {
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
 const USE_MOCK = !supabaseUrl || supabaseUrl.includes("placeholder")
+const IS_DEV = process.env.NODE_ENV === "development"
+
+// Public columns only: excludes cpf, email_campanha, cpf_hash, tcu flags, wikidata_id
+const CANDIDATO_COLUMNS = "id, nome_completo, nome_urna, slug, data_nascimento, idade, naturalidade, formacao, profissao_declarada, genero, estado_civil, cor_raca, partido_atual, partido_sigla, cargo_atual, cargo_disputado, estado, status, situacao_candidatura, biografia, foto_url, site_campanha, redes_sociais, fonte_dados, ultima_atualizacao"
 
 export async function getCandidatos(cargo?: string): Promise<Candidato[]> {
-  if (USE_MOCK) return MOCK_CANDIDATOS
+  if (USE_MOCK) return cargo ? MOCK_CANDIDATOS.filter(c => c.cargo_disputado === cargo) : MOCK_CANDIDATOS
 
   const supabase = createServerSupabaseClient()
   let query = supabase
     .from("candidatos")
-    .select("*")
+    .select(CANDIDATO_COLUMNS)
     .neq("status", "removido")
 
   if (cargo) {
@@ -33,7 +37,11 @@ export async function getCandidatos(cargo?: string): Promise<Candidato[]> {
 
   const { data, error } = await query.order("nome_urna")
 
-  if (error || !data) return MOCK_CANDIDATOS
+  if (error || !data) {
+    if (IS_DEV) return cargo ? MOCK_CANDIDATOS.filter(c => c.cargo_disputado === cargo) : MOCK_CANDIDATOS
+    console.error("getCandidatos failed:", error?.message)
+    return []
+  }
   return data
 }
 
@@ -68,7 +76,7 @@ export async function getCandidatoBySlug(slug: string): Promise<FichaCandidato |
 
   const { data: candidato } = await supabase
     .from("candidatos")
-    .select("*")
+    .select(CANDIDATO_COLUMNS)
     .eq("slug", slug)
     .single()
 
@@ -168,7 +176,7 @@ export async function getCandidatosComResumo(cargo?: string): Promise<CandidatoR
 
 export async function getCandidatosComparaveis(): Promise<CandidatoComparavel[]> {
   if (USE_MOCK) {
-    return MOCK_CANDIDATOS.map((c) => ({
+    return MOCK_CANDIDATOS.filter(c => c.cargo_disputado === "Presidente").map((c) => ({
       id: c.id,
       nome_urna: c.nome_urna,
       slug: c.slug,
@@ -268,7 +276,7 @@ export async function getCandidatosPorEstado(uf: string): Promise<Candidato[]> {
   const supabase = createServerSupabaseClient()
   const { data, error } = await supabase
     .from("candidatos")
-    .select("*")
+    .select(CANDIDATO_COLUMNS)
     .neq("status", "removido")
     .eq("cargo_disputado", "Governador")
     .ilike("estado", uf)

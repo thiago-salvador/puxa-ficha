@@ -5,7 +5,7 @@
     "nome_urna": "Lula",
     "cargo_disputado": "Presidente",
     "ids": {
-      "camara": null,
+      "camara": 139289,
       "senado": null,
       "tse_sq_candidato": {}
     }
@@ -209,7 +209,7 @@
     "cargo_disputado": "Governador",
     "estado": "SP",
     "ids": {
-      "camara": null,
+      "camara": 65480,
       "senado": null,
       "tse_sq_candidato": {}
     }
@@ -221,7 +221,7 @@
     "cargo_disputado": "Governador",
     "estado": "SP",
     "ids": {
-      "camara": null,
+      "camara": 74778,
       "senado": null,
       "tse_sq_candidato": {}
     }
@@ -1385,7 +1385,7 @@
     "cargo_disputado": "Governador",
     "estado": "RO",
     "ids": {
-      "camara": null,
+      "camara": 74097,
       "senado": 475,
       "tse_sq_candidato": {}
     }
@@ -1577,7 +1577,7 @@
     "cargo_disputado": "Governador",
     "estado": "GO",
     "ids": {
-      "camara": null,
+      "camara": 73668,
       "senado": 4535,
       "tse_sq_candidato": {}
     }

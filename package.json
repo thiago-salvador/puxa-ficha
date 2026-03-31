@@ -8,7 +8,8 @@
     "dev:raw": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:scripts": "tsc --project tsconfig.scripts.json"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",

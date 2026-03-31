@@ -1,3 +1,8 @@
+/**
+ * STUB: este modulo consulta a API do Portal da Transparencia mas NAO persiste dados no banco.
+ * Os resultados sao apenas logados. Contribuicao com insert/upsert para tabelas relevantes e bem-vinda.
+ */
+
 import { supabase } from "./supabase"
 import { loadCandidatos, fetchJSON, sleep } from "./helpers"
 import { log, warn } from "./logger"
@@ -11,6 +16,8 @@ export async function ingestTransparencia(): Promise<IngestResult[]> {
     warn("transparencia", "TRANSPARENCIA_API_KEY nao definida, pulando")
     return []
   }
+
+  warn("transparencia", "STUB: este modulo consulta a API mas NAO persiste dados. Contribuicao com insert/upsert bem-vinda.")
 
   const headers = { "chave-api-dados": apiKey, Accept: "application/json" }
   const candidatos = loadCandidatos()
@@ -50,8 +57,7 @@ export async function ingestTransparencia(): Promise<IngestResult[]> {
       ).catch(() => [] as Record<string, unknown>[])
 
       if (Array.isArray(servidores) && servidores.length > 0) {
-        log("transparencia", `  ${cand.slug}: ${servidores.length} registro(s) de servidor federal`)
-        result.rows_upserted++
+        log("transparencia", `  ${cand.slug}: ${servidores.length} registro(s) encontrado(s) (nao persistido)`)
       }
 
       await sleep(1000)

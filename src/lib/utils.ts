@@ -23,6 +23,13 @@ const dateFormatter = new Intl.DateTimeFormat("pt-BR", {
 })
 
 export function formatDate(date: string | Date): string {
+  if (typeof date === "string") {
+    // Bare YYYY-MM-DD strings are parsed as UTC by JS, causing off-by-one in negative timezones (e.g. BRT)
+    const match = date.match(/^(\d{4})-(\d{2})-(\d{2})$/)
+    if (match) {
+      return dateFormatter.format(new Date(+match[1], +match[2] - 1, +match[3]))
+    }
+  }
   return dateFormatter.format(typeof date === "string" ? new Date(date) : date)
 }
 
@@ -41,6 +48,18 @@ export function getInitials(name: string): string {
 export const FALLBACK_GRADIENT = "linear-gradient(160deg, #1a1a1a 0%, #000000 100%)"
 
 const KNOWN_PARTIES = ["pt", "pl", "psb", "psd", "psol", "mdb", "pp", "republicanos", "novo", "pcdob", "dem", "pstu", "pco", "missao", "up"]
+
+/** Returns the URL only if it uses http or https protocol. Blocks javascript: and other schemes. */
+export function safeHref(url: string | null | undefined): string | null {
+  if (!url) return null
+  try {
+    const parsed = new URL(url, "https://placeholder.invalid")
+    if (parsed.protocol === "http:" || parsed.protocol === "https:") return url
+    return null
+  } catch {
+    return null
+  }
+}
 
 export function getPartyLogoUrl(sigla: string): string | null {
   const normalized = sigla.toLowerCase().replace(/\s/g, "")

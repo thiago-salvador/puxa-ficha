@@ -30,14 +30,12 @@ npx tsx scripts/ingest-all.ts transparencia      # Portal da Transparencia (requ
 | Framework | Next.js (App Router) | 15.5.14 |
 | Linguagem | TypeScript | 5.x |
 | Styling | Tailwind CSS | 4.x |
-| Componentes | shadcn/ui | latest |
-| Database | Supabase (PostgreSQL) | — |
-| Charts | recharts | 3.x |
-| Animation | Motion (ex-Framer Motion) + GSAP | motion 12.x, gsap 3.x |
+| Componentes | shadcn/ui (base-ui) | latest |
+| Database | Supabase (PostgreSQL) | - |
+| Animation | GSAP | 3.x |
 | Icons | lucide-react | 1.x |
-| Validation | Zod | 4.x |
-| Deploy | Vercel | — |
-| Package Manager | npm | — |
+| Deploy | Vercel | - |
+| Package Manager | npm | - |
 
 ## Arquitetura
 
@@ -48,7 +46,7 @@ APIs publicas (TSE, Camara, Senado)
 Scripts de ingestao (TypeScript, CLI)
         |
         v
-Supabase (PostgreSQL, 11 tabelas)
+Supabase (PostgreSQL, 14 tabelas)
         |
         v
 src/lib/api.ts (data layer, mock fallback)
@@ -57,7 +55,7 @@ src/lib/api.ts (data layer, mock fallback)
 Server Components (ISR, revalidate 1h)
         |
         v
-Profile components (bento grid, animations)
+UI components (src/components/)
 ```
 
 ### Data layer (`src/lib/api.ts`)
@@ -68,21 +66,6 @@ Camada central de acesso a dados. Funciona em dois modos:
 - **Mock fallback**: quando Supabase nao esta configurado, usa `src/data/mock.ts` com dados estaticos
 
 Todas as pages usam `api.ts`, nunca acessam Supabase diretamente. Funcoes principais: `getCandidatos()`, `getCandidatoBySlug(slug)`, `getCandidatosComResumo()`, `getCandidatosComparaveis()`.
-
-### Partido color theming (`src/lib/utils.ts`)
-
-Sistema de cores por partido via HSL. `getPartidoColors(sigla)` retorna `{ accent, muted, glow }` como CSS values. 13 partidos mapeados, com fallback cinza. Usado no ProfileHero e BentoGrid como CSS variables dinamicas (`--partido-accent`).
-
-### Profile page architecture (`src/components/profile/`)
-
-A pagina `/candidato/[slug]` usa layout "Civic Neo-Editorial" com 9 componentes:
-
-- **ProfileHero**: foto full-bleed 100vw x 85vh, gradient overlay, stats em glass bar, watermark da sigla
-- **BentoGrid**: grid assimetrico com PatrimonioChart, FinanciamentoDonut, ProcessosSummary, VotingGrid, PoliticalTimeline
-- **AlertsSection**: pontos de atencao em glass cards
-- **SocialLinksGrid**: links e redes sociais
-
-Animacoes usam `motion` (entrada, hover) e GSAP ScrollTrigger (number counters, parallax). Todos respeitam `prefers-reduced-motion`.
 
 ### ISR pattern
 
@@ -118,7 +101,7 @@ TSE ingest extrai apenas arquivos `*_BR*`/`*_BRASIL*` dos ZIPs (candidatos nacio
 
 ## Database (Supabase)
 
-11 tabelas + 2 views. Schema completo: `scripts/schema.sql`
+14 tabelas + 2 views. Schema completo: `scripts/schema.sql`
 
 | Tabela | O que guarda |
 |--------|-------------|
@@ -133,6 +116,9 @@ TSE ingest extrai apenas arquivos `*_BR*`/`*_BRASIL*` dos ZIPs (candidatos nacio
 | processos | Processos judiciais (criminal, improbidade, eleitoral) |
 | pontos_atencao | Alertas editoriais curados (contradicoes, suspeitas) |
 | gastos_parlamentares | Gastos CEAP (Camara), 2019-2025 |
+| sancoes_administrativas | Sancoes do CEIS/CNEP/TCU |
+| indicadores_estaduais | IDH, seguranca, saude, educacao por UF |
+| noticias_candidato | Noticias recentes via Google News RSS |
 
 Views: `v_ficha_candidato` (ficha completa), `v_comparador` (dados pra comparacao)
 

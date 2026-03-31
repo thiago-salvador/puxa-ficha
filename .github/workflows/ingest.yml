@@ -11,6 +11,10 @@ on:
         required: false
         default: "camara senado"
 
+concurrency:
+  group: ingest-pipeline
+  cancel-in-progress: false
+
 jobs:
   ingest-rest:
     name: REST APIs (Camara + Senado)

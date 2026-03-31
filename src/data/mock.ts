@@ -131,7 +131,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   },
   {
     id: "6",
-    nome_completo: "Carlos Lupi",
+    nome_completo: "Carlos Roberto Massa Junior",
     nome_urna: "Ratinho Junior",
     slug: "ratinho-junior",
     data_nascimento: "1981-02-12",

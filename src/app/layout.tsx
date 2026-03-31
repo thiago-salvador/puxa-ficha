@@ -17,6 +17,7 @@ const anton = Anton({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://puxaficha.com.br"),
   title: "Puxa Ficha — Radiografia dos candidatos 2026",
   description:
     "Consulta publica sobre candidatos das eleicoes brasileiras de 2026. Ficha completa, comparador e pontos de atencao.",

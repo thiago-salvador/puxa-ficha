@@ -51,11 +51,12 @@ async function downloadFile(url: string, dest: string): Promise<boolean> {
   }
 }
 
-function extractZip(zipPath: string, extractDir: string) {
+function extractZip(zipPath: string, extractDir: string, extraPatterns?: string[]) {
   mkdirSync(extractDir, { recursive: true })
-  // Only extract BR/BRASIL files to save disk space (national-level candidates only)
+  // Extract BR/BRASIL files (national-level candidates) + any extra patterns (e.g. UF files for governors)
+  const patterns = ["'*_BR*'", "'*_BRASIL*'", ...(extraPatterns || []).map((p) => `'*_${p}*'`)]
   try {
-    execSync(`unzip -o "${zipPath}" '*_BR*' '*_BRASIL*' -d "${extractDir}"`, { stdio: "pipe" })
+    execSync(`unzip -o "${zipPath}" ${patterns.join(" ")} -d "${extractDir}"`, { stdio: "pipe" })
   } catch {
     // Fallback: extract everything if pattern match fails (some ZIPs have different naming)
     execSync(`unzip -o "${zipPath}" -d "${extractDir}"`, { stdio: "pipe" })
@@ -121,15 +122,20 @@ async function buildSQMap(
   const ok = await downloadFile(url, candZip)
   if (!ok) return new Map()
 
-  extractZip(candZip, candDir)
+  // Extract BR + UF files for governor candidates
+  const governorUFs = [...new Set(candidatos.filter((c) => c.cargo_disputado === "Governador" && c.estado).map((c) => c.estado!.toUpperCase()))]
+  extractZip(candZip, candDir, governorUFs)
 
   const brPaths = findCSVs(candDir, "_BR").concat(findCSVs(candDir, "_BRASIL"))
-  if (brPaths.length === 0) return new Map()
+  // Also include UF-level files so governor SQ_CANDIDATO values are mapped
+  const ufPaths = governorUFs.flatMap((uf) => findCSVs(candDir, `_${uf}`))
+  const allPaths = [...brPaths, ...ufPaths].filter((v, i, a) => a.indexOf(v) === i)
+  if (allPaths.length === 0) return new Map()
 
   const nameMap = buildCandidateNameMap(candidatos)
   const sqMap = new Map<string, CandidatoConfig>()
 
-  for (const csvPath of brPaths) {
+  for (const csvPath of allPaths) {
     await parseCSV(csvPath, (row) => {
       const nome = normalizeForMatch(row.NM_CANDIDATO || "")
       const cand = nameMap.get(nome)
@@ -172,11 +178,13 @@ async function processPatrimonio(
   extractDir: string,
   sqMap: Map<string, CandidatoConfig>
 ): Promise<IngestResult[]> {
-  // Presidential candidates are in BR/BRASIL files; state candidates in UF files
-  // For now, only process BR files (all candidates are presidential)
+  // Presidential candidates are in BR/BRASIL files; governor candidates need UF-level files too
   const brPaths = findCSVs(extractDir, "_BR").concat(findCSVs(extractDir, "_BRASIL"))
-  const csvPaths = brPaths.length > 0
-    ? brPaths
+  const governorUFs = [...new Set(candidatos.filter((c) => c.cargo_disputado === "Governador" && c.estado).map((c) => c.estado!.toUpperCase()))]
+  const ufPaths = governorUFs.flatMap((uf) => findCSVs(extractDir, `_${uf}`))
+  const allSourcePaths = [...brPaths, ...ufPaths]
+  const csvPaths = allSourcePaths.length > 0
+    ? allSourcePaths
     : findCSVs(extractDir, `bem_candidato_${ano}`).concat(findCSVs(extractDir, "bem_candidato"))
   const uniquePaths = csvPaths.filter((v, i, a) => a.indexOf(v) === i)
 
@@ -187,7 +195,7 @@ async function processPatrimonio(
 
   const aggregated = new Map<string, { bens: { tipo: string; descricao: string; valor: number }[]; total: number }>()
 
-  log("tse", `  Parseando patrimonio ${ano}: ${uniquePaths.length} arquivos CSV (BR)`)
+  log("tse", `  Parseando patrimonio ${ano}: ${uniquePaths.length} arquivos CSV (BR${governorUFs.length > 0 ? " + " + governorUFs.length + " UFs" : ""})`)
   for (const csvPath of uniquePaths) {
   await parseCSV(csvPath, (row) => {
     // bens CSV has SQ_CANDIDATO but no NM_CANDIDATO
@@ -252,10 +260,13 @@ async function processFinanciamento(
   candidatos: CandidatoConfig[],
   extractDir: string
 ): Promise<IngestResult[]> {
-  // Presidential candidates in BR files
+  // Presidential candidates in BR files; governor candidates need UF-level files too
   const brPaths = findCSVs(extractDir, "_BR").concat(findCSVs(extractDir, "_BRASIL"))
-  const csvPaths = brPaths.length > 0
-    ? brPaths
+  const governorUFs = [...new Set(candidatos.filter((c) => c.cargo_disputado === "Governador" && c.estado).map((c) => c.estado!.toUpperCase()))]
+  const ufPaths = governorUFs.flatMap((uf) => findCSVs(extractDir, `_${uf}`))
+  const allSourcePaths = [...brPaths, ...ufPaths]
+  const csvPaths = allSourcePaths.length > 0
+    ? allSourcePaths
     : findCSVs(extractDir, `receitas_candidatos_${ano}`)
         .concat(findCSVs(extractDir, "receitas_candidatos"))
         .concat(findCSVs(extractDir, "receita_candidato"))
@@ -279,7 +290,7 @@ async function processFinanciamento(
 
   const aggregated = new Map<string, FinData>()
 
-  log("tse", `  Parseando financiamento ${ano}: ${uniquePaths.length} arquivos CSV (BR)`)
+  log("tse", `  Parseando financiamento ${ano}: ${uniquePaths.length} arquivos CSV (BR${governorUFs.length > 0 ? " + " + governorUFs.length + " UFs" : ""})`)
   for (const csvPath of uniquePaths) {
   await parseCSV(csvPath, (row) => {
     const nome = normalizeForMatch(row.NM_CANDIDATO || "")
@@ -387,6 +398,9 @@ export async function ingestTSE(): Promise<IngestResult[]> {
     const receitasZip = resolve(DATA_DIR, `receitas_candidatos_${ano}.zip`)
     const receitasDir = resolve(DATA_DIR, `receitas_${ano}`)
 
+    // Governor UF patterns: extract state-level files alongside BR files
+    const governorUFs = [...new Set(candidatos.filter((c) => c.cargo_disputado === "Governador" && c.estado).map((c) => c.estado!.toUpperCase()))]
+
     // Build SQ_CANDIDATO -> slug mapping from consulta_cand
     const sqMap = await buildSQMap(ano, candidatos)
     // Cleanup consulta_cand immediately (only needed for SQ mapping)
@@ -398,7 +412,7 @@ export async function ingestTSE(): Promise<IngestResult[]> {
     const bensOk = await downloadFile(bensUrl, bensZip)
     if (bensOk) {
       try {
-        extractZip(bensZip, bensDir)
+        extractZip(bensZip, bensDir, governorUFs)
         const patrimonioResults = await processPatrimonio(ano, candidatos, bensDir, sqMap)
         allResults.push(...patrimonioResults)
       } catch (err) {
@@ -416,7 +430,7 @@ export async function ingestTSE(): Promise<IngestResult[]> {
     const receitasOk = await downloadFile(receitasUrl, receitasZip)
     if (receitasOk) {
       try {
-        extractZip(receitasZip, receitasDir)
+        extractZip(receitasZip, receitasDir, governorUFs)
         const finResults = await processFinanciamento(ano, candidatos, receitasDir)
         allResults.push(...finResults)
       } catch (err) {

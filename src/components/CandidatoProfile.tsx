@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import type { FichaCandidato } from "@/lib/types"
-import { formatBRL, formatCompact, formatDate } from "@/lib/utils"
+import { formatBRL, formatCompact, formatDate, safeHref } from "@/lib/utils"
 import { ProfileTabs, type Tab } from "./ProfileTabs"
 import { AlertBanner } from "./AlertBanner"
 import { GravityBadge } from "./GravityBadge"
@@ -615,9 +615,9 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
                             {p.destaque_motivo}
                           </p>
                         )}
-                        {p.url_inteiro_teor && (
+                        {safeHref(p.url_inteiro_teor) && (
                           <a
-                            href={p.url_inteiro_teor}
+                            href={safeHref(p.url_inteiro_teor)!}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="mt-2 inline-flex items-center gap-1 text-[length:var(--text-caption)] font-semibold text-foreground underline"
@@ -670,10 +670,10 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
                         </p>
                         {(p.fontes ?? []).length > 0 && (
                           <div className="mt-2 flex flex-wrap gap-2">
-                            {(p.fontes ?? []).map((f, i) => (
+                            {(p.fontes ?? []).filter(f => safeHref(f.url)).map((f, i) => (
                               <a
                                 key={i}
-                                href={f.url}
+                                href={safeHref(f.url)!}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-1 text-[length:var(--text-caption)] font-semibold text-foreground underline decoration-muted-foreground"

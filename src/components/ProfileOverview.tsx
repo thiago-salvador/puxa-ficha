@@ -349,7 +349,7 @@ export function ProfileOverview({
                 <span className="text-[15px] font-semibold text-foreground">
                   Processos judiciais
                 </span>
-                <SectionLink label="Todos" onClick={() => onNavigateTab("processos")} />
+                <SectionLink label="Todos" onClick={() => onNavigateTab("justica")} />
               </CardHeader>
               <CardContent className="space-y-2">
                 {processos.slice(0, 4).map((p) => (
