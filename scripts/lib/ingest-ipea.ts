@@ -30,6 +30,7 @@ interface IpeaValor {
   TERCODIGO: string
   VALVALOR: number
   NIVNOME: string
+  ANOCODE?: string | number
   SERCODIGO?: string
 }
 

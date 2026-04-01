@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-03-31T22:00:45.705Z",
+  "generated_at": "2026-04-01T00:16:24.048Z",
   "summary": {
     "total_json": 144,
     "total_db": 144,
-    "com_patrimonio": 125,
-    "com_financiamento": 104,
+    "com_patrimonio": 123,
+    "com_financiamento": 117,
     "com_votos": 47,
     "com_gastos": 19,
     "com_historico": 95,
     "com_processos": 19,
     "com_projetos": 21,
-    "com_cargo_atual": 62,
-    "com_cpf": 68
+    "com_cargo_atual": 67,
+    "com_cpf": 116
   },
   "missing_in_db": [],
   "camara_sem_cargo_atual": [
@@ -22,7 +22,6 @@
     "ciro-gomes-gov-ce",
     "capitao-wagner",
     "eduardo-braide",
-    "joao-campos",
     "anderson-ferreira",
     "pedro-cunha-lima",
     "margarete-coelho",
@@ -46,10 +45,11 @@
       "ids_camara": 139289,
       "ids_senado": null,
       "tse_sq_candidato": {
+        "2018": "280000625869",
         "2022": "280001607829"
       },
       "counts": {
-        "patrimonio": 3,
+        "patrimonio": 2,
         "financiamento": 2,
         "votos": 0,
         "gastos": 0,
@@ -61,7 +61,7 @@
     {
       "slug": "flavio-bolsonaro",
       "id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
-      "cargo_atual": "Senador(a)",
+      "cargo_atual": "Senador",
       "cpf": null,
       "ids_camara": null,
       "ids_senado": 5894,
@@ -85,7 +85,9 @@
       "cpf": null,
       "ids_camara": null,
       "ids_senado": null,
-      "tse_sq_candidato": {},
+      "tse_sq_candidato": {
+        "2022": "250001615967"
+      },
       "counts": {
         "patrimonio": 1,
         "financiamento": 1,
@@ -152,7 +154,7 @@
       },
       "counts": {
         "patrimonio": 3,
-        "financiamento": 2,
+        "financiamento": 3,
         "votos": 0,
         "gastos": 0,
         "historico": 3,
@@ -167,7 +169,9 @@
       "cpf": "16412150463",
       "ids_camara": 73428,
       "ids_senado": null,
-      "tse_sq_candidato": {},
+      "tse_sq_candidato": {
+        "2022": "250001639699"
+      },
       "counts": {
         "patrimonio": 1,
         "financiamento": 1,
@@ -182,15 +186,16 @@
       "slug": "renan-santos",
       "id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
       "cargo_atual": "Sem cargo publico",
-      "cpf": null,
+      "cpf": "87199653034",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
+        "2020": "210000981947",
         "2022": "210001620463"
       },
       "counts": {
         "patrimonio": 0,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -205,7 +210,10 @@
       "cpf": null,
       "ids_camara": 141406,
       "ids_senado": null,
-      "tse_sq_candidato": {},
+      "tse_sq_candidato": {
+        "2018": "280000605589",
+        "2022": "280001612393"
+      },
       "counts": {
         "patrimonio": 2,
         "financiamento": 2,
@@ -220,16 +228,17 @@
       "slug": "hertz-dias",
       "id": "79b84a18-1a4e-4123-a831-8aefda253dc6",
       "cargo_atual": "Sem cargo publico",
-      "cpf": null,
+      "cpf": "42805813391",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
+        "2018": "280000601174",
         "2020": "100000718146",
         "2022": "100001600008"
       },
       "counts": {
-        "patrimonio": 0,
-        "financiamento": 1,
+        "patrimonio": 1,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -245,10 +254,11 @@
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
+        "2018": "210000622367",
         "2022": "210001609847"
       },
       "counts": {
-        "patrimonio": 3,
+        "patrimonio": 2,
         "financiamento": 2,
         "votos": 0,
         "gastos": 0,
@@ -279,15 +289,16 @@
       "slug": "samara-martins",
       "id": "b3988a51-2776-4172-a73b-e326365b0c04",
       "cargo_atual": "Sem cargo publico",
-      "cpf": null,
+      "cpf": "07787166606",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
+        "2020": "200000724019",
         "2022": "280001602703"
       },
       "counts": {
         "patrimonio": 1,
-        "financiamento": 0,
+        "financiamento": 1,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -302,12 +313,10 @@
       "cpf": "18077783805",
       "ids_camara": null,
       "ids_senado": null,
-      "tse_sq_candidato": {
-        "2022": "250001615967"
-      },
+      "tse_sq_candidato": {},
       "counts": {
-        "patrimonio": 1,
-        "financiamento": 1,
+        "patrimonio": 0,
+        "financiamento": 0,
         "votos": 0,
         "gastos": 0,
         "historico": 5,
@@ -326,8 +335,8 @@
         "2022": "250001612465"
       },
       "counts": {
-        "patrimonio": 3,
-        "financiamento": 2,
+        "patrimonio": 2,
+        "financiamento": 1,
         "votos": 0,
         "gastos": 0,
         "historico": 5,
@@ -348,7 +357,7 @@
       },
       "counts": {
         "patrimonio": 1,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 2,
         "gastos": 3,
         "historico": 2,
@@ -369,7 +378,7 @@
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 0,
+        "financiamento": 1,
         "votos": 0,
         "gastos": 0,
         "historico": 2,
@@ -381,14 +390,15 @@
       "slug": "ricardo-nunes",
       "id": "ea956348-d748-4d6d-ad39-7564dfd20e7d",
       "cargo_atual": "Prefeito de Sao Paulo",
-      "cpf": "-4",
+      "cpf": "08893025884",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
-        "2018": "250000604021"
+        "2018": "250000604021",
+        "2020": "250000896547"
       },
       "counts": {
-        "patrimonio": 3,
+        "patrimonio": 2,
         "financiamento": 1,
         "votos": 0,
         "gastos": 0,
@@ -471,7 +481,7 @@
       },
       "counts": {
         "patrimonio": 3,
-        "financiamento": 2,
+        "financiamento": 3,
         "votos": 0,
         "gastos": 0,
         "historico": 10,
@@ -544,7 +554,7 @@
       "slug": "alexandre-curi",
       "id": "97da0964-be25-4abb-8b8c-29c65727f617",
       "cargo_atual": "Presidente da Assembleia Legislativa do Parana",
-      "cpf": null,
+      "cpf": "02744383996",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -568,10 +578,12 @@
       "cpf": "23224231904",
       "ids_camara": 73486,
       "ids_senado": null,
-      "tse_sq_candidato": {},
+      "tse_sq_candidato": {
+        "2020": "160000657203"
+      },
       "counts": {
         "patrimonio": 1,
-        "financiamento": 0,
+        "financiamento": 1,
         "votos": 5,
         "gastos": 4,
         "historico": 5,
@@ -604,13 +616,17 @@
       "slug": "paulo-martins-gov-pr",
       "id": "cde129a9-1219-4c79-b2a4-f4f43557c89a",
       "cargo_atual": "Vice-prefeito de Curitiba",
-      "cpf": "-4",
+      "cpf": "28192122808",
       "ids_camara": 193726,
       "ids_senado": null,
-      "tse_sq_candidato": {},
+      "tse_sq_candidato": {
+        "2018": "160000619724",
+        "2020": "210001085840",
+        "2022": "160001621868"
+      },
       "counts": {
         "patrimonio": 3,
-        "financiamento": 0,
+        "financiamento": 3,
         "votos": 1,
         "gastos": 0,
         "historico": 0,
@@ -621,8 +637,8 @@
     {
       "slug": "jorginho-mello",
       "id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
-      "cargo_atual": "Senador(a)",
-      "cpf": null,
+      "cargo_atual": "Governador de Santa Catarina",
+      "cpf": "25084119904",
       "ids_camara": 160570,
       "ids_senado": 5979,
       "tse_sq_candidato": {
@@ -643,13 +659,16 @@
       "slug": "joao-rodrigues",
       "id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
       "cargo_atual": "Ex-prefeito de Chapeco",
-      "cpf": "-4",
+      "cpf": "46970045072",
       "ids_camara": 178914,
       "ids_senado": null,
-      "tse_sq_candidato": {},
+      "tse_sq_candidato": {
+        "2018": "210000604698",
+        "2022": "210001596122"
+      },
       "counts": {
-        "patrimonio": 3,
-        "financiamento": 1,
+        "patrimonio": 1,
+        "financiamento": 2,
         "votos": 2,
         "gastos": 0,
         "historico": 0,
@@ -682,13 +701,16 @@
       "slug": "marcos-vieira",
       "id": "0394c7a4-6311-4eeb-a0aa-9d3b996b4aae",
       "cargo_atual": "Deputado Estadual",
-      "cpf": "-4",
+      "cpf": "15507440972",
       "ids_camara": null,
       "ids_senado": null,
-      "tse_sq_candidato": {},
+      "tse_sq_candidato": {
+        "2018": "240000609608",
+        "2022": "240001612502"
+      },
       "counts": {
-        "patrimonio": 3,
-        "financiamento": 0,
+        "patrimonio": 2,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -741,16 +763,17 @@
       "slug": "juliana-brizola",
       "id": "7a6a6475-0691-4823-9104-5055ca589405",
       "cargo_atual": "Ex-deputada Estadual",
-      "cpf": "-4",
+      "cpf": "07031379725",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
         "2018": "210000604676",
+        "2020": "210001189949",
         "2022": "210001621265"
       },
       "counts": {
         "patrimonio": 3,
-        "financiamento": 2,
+        "financiamento": 3,
         "votos": 0,
         "gastos": 0,
         "historico": 2,
@@ -762,7 +785,7 @@
       "slug": "edegar-pretto",
       "id": "c2787afe-44e4-48c6-9e64-250eacb1ad0d",
       "cargo_atual": "Presidente da Conab",
-      "cpf": null,
+      "cpf": "63090422034",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -783,7 +806,7 @@
       "slug": "gabriel-souza",
       "id": "b01d3b26-32d0-48c3-9242-6c6b324b249d",
       "cargo_atual": "Vice-governador do Rio Grande do Sul",
-      "cpf": null,
+      "cpf": "00058535080",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -791,7 +814,7 @@
         "2022": "210001609848"
       },
       "counts": {
-        "patrimonio": 3,
+        "patrimonio": 2,
         "financiamento": 1,
         "votos": 0,
         "gastos": 0,
@@ -804,7 +827,7 @@
       "slug": "marcelo-maranata",
       "id": "59582609-1f9b-4363-9e36-08fd6d07b6c4",
       "cargo_atual": "Prefeito de Guaiba",
-      "cpf": null,
+      "cpf": "89923570010",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -813,7 +836,7 @@
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -842,14 +865,17 @@
     {
       "slug": "eduardo-paes",
       "id": "242af65c-dae1-447c-b4b0-c26095f7384d",
-      "cargo_atual": null,
+      "cargo_atual": "Prefeito do Rio de Janeiro",
       "cpf": "-4",
       "ids_camara": null,
       "ids_senado": null,
-      "tse_sq_candidato": {},
+      "tse_sq_candidato": {
+        "2018": "190000609934",
+        "2020": "190000688286"
+      },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 3,
@@ -861,7 +887,7 @@
       "slug": "douglas-ruas",
       "id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "12272749712",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -881,7 +907,7 @@
       "slug": "rodrigo-bacellar",
       "id": "dd05c95d-931a-4b79-b235-c545aaa45791",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "08661032792",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -911,7 +937,7 @@
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 0,
+        "financiamento": 1,
         "votos": 0,
         "gastos": 0,
         "historico": 3,
@@ -923,13 +949,16 @@
       "slug": "garotinho",
       "id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "69839727753",
       "ids_camara": null,
       "ids_senado": null,
-      "tse_sq_candidato": {},
+      "tse_sq_candidato": {
+        "2018": "190000621818",
+        "2022": "190001619506"
+      },
       "counts": {
-        "patrimonio": 2,
-        "financiamento": 0,
+        "patrimonio": 1,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 4,
@@ -941,7 +970,7 @@
       "slug": "tarcisio-motta",
       "id": "c6e67535-d3b9-47ca-a678-499170339f53",
       "cargo_atual": "Deputado(a) Federal",
-      "cpf": "-4",
+      "cpf": "02045962709",
       "ids_camara": 220598,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -951,7 +980,7 @@
       },
       "counts": {
         "patrimonio": 3,
-        "financiamento": 2,
+        "financiamento": 3,
         "votos": 2,
         "gastos": 3,
         "historico": 1,
@@ -963,7 +992,7 @@
       "slug": "cleitinho",
       "id": "ff7f433f-70b4-420c-885d-c0401a901790",
       "cargo_atual": "Senador(a)",
-      "cpf": null,
+      "cpf": "22060312809",
       "ids_camara": null,
       "ids_senado": 6337,
       "tse_sq_candidato": {
@@ -971,7 +1000,7 @@
         "2022": "130001671677"
       },
       "counts": {
-        "patrimonio": 3,
+        "patrimonio": 2,
         "financiamento": 2,
         "votos": 2,
         "gastos": 0,
@@ -984,7 +1013,7 @@
       "slug": "nikolas-ferreira",
       "id": "6febf430-f9c1-48a5-9b25-7f953e5852b2",
       "cargo_atual": "Deputado(a) Federal",
-      "cpf": null,
+      "cpf": "11701442680",
       "ids_camara": 209787,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -993,7 +1022,7 @@
       },
       "counts": {
         "patrimonio": 1,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 2,
         "gastos": 3,
         "historico": 2,
@@ -1027,11 +1056,12 @@
       "ids_camara": 178897,
       "ids_senado": 5732,
       "tse_sq_candidato": {
-        "2018": "130000604556"
+        "2018": "130000604556",
+        "2020": "160000720084"
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 6,
         "gastos": 0,
         "historico": 1,
@@ -1061,16 +1091,17 @@
       "slug": "maria-da-consolacao",
       "id": "92699f1a-6206-44fd-b761-5d86f9fd2c37",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "63649756668",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
         "2018": "130000606676",
+        "2020": "130000686201",
         "2022": "130001615215"
       },
       "counts": {
         "patrimonio": 3,
-        "financiamento": 2,
+        "financiamento": 3,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -1139,7 +1170,7 @@
       "slug": "sergio-vidigal",
       "id": "e2891655-33c3-42a6-a07e-f31daa50a7c7",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "52549810759",
       "ids_camara": 178874,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -1148,7 +1179,7 @@
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 2,
         "gastos": 0,
         "historico": 3,
@@ -1160,7 +1191,7 @@
       "slug": "arnaldinho-borgo",
       "id": "b3c5e3c6-e59e-4655-97f8-f52e5ef11c13",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "09684749775",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -1169,7 +1200,7 @@
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -1202,7 +1233,7 @@
       "slug": "da-vitoria",
       "id": "b61cc10d-2cb6-47f5-a489-17b66401a1ec",
       "cargo_atual": "Deputado(a) Federal",
-      "cpf": null,
+      "cpf": "98042734700",
       "ids_camara": 204355,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -1222,14 +1253,17 @@
     {
       "slug": "jeronimo",
       "id": "db711ee0-fcfa-47f7-85d2-a3686956cf06",
-      "cargo_atual": null,
-      "cpf": null,
+      "cargo_atual": "Governador da Bahia",
+      "cpf": "21602387320",
       "ids_camara": null,
       "ids_senado": null,
-      "tse_sq_candidato": {},
+      "tse_sq_candidato": {
+        "2020": "50001165142",
+        "2022": "100001606606"
+      },
       "counts": {
-        "patrimonio": 2,
-        "financiamento": 0,
+        "patrimonio": 1,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 2,
@@ -1265,11 +1299,13 @@
       "ids_camara": 204576,
       "ids_senado": null,
       "tse_sq_candidato": {
-        "2020": "50001261068"
+        "2018": "50000607822",
+        "2020": "50001261068",
+        "2022": "50001605351"
       },
       "counts": {
         "patrimonio": 3,
-        "financiamento": 2,
+        "financiamento": 3,
         "votos": 1,
         "gastos": 1,
         "historico": 1,
@@ -1301,15 +1337,16 @@
       "slug": "ronaldo-mansur",
       "id": "d5ece407-2e2a-4e76-91a9-c2b7db826430",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "78956889520",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
+        "2018": "50000600889",
         "2022": "50001600528"
       },
       "counts": {
         "patrimonio": 1,
-        "financiamento": 0,
+        "financiamento": 1,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -1320,7 +1357,7 @@
     {
       "slug": "elmano-de-freitas",
       "id": "f126204e-1f28-4200-9468-9144eddbb6e4",
-      "cargo_atual": null,
+      "cargo_atual": "Governador do Ceara",
       "cpf": "50674854349",
       "ids_camara": null,
       "ids_senado": null,
@@ -1331,7 +1368,7 @@
       },
       "counts": {
         "patrimonio": 3,
-        "financiamento": 2,
+        "financiamento": 3,
         "votos": 0,
         "gastos": 0,
         "historico": 2,
@@ -1346,13 +1383,10 @@
       "cpf": "12005509353",
       "ids_camara": 141406,
       "ids_senado": null,
-      "tse_sq_candidato": {
-        "2018": "280000605589",
-        "2022": "280001612393"
-      },
+      "tse_sq_candidato": {},
       "counts": {
-        "patrimonio": 2,
-        "financiamento": 2,
+        "patrimonio": 0,
+        "financiamento": 0,
         "votos": 0,
         "gastos": 0,
         "historico": 4,
@@ -1414,7 +1448,7 @@
       },
       "counts": {
         "patrimonio": 3,
-        "financiamento": 2,
+        "financiamento": 3,
         "votos": 1,
         "gastos": 0,
         "historico": 2,
@@ -1426,7 +1460,7 @@
       "slug": "eduardo-braide",
       "id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "55068480304",
       "ids_camara": 204552,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -1435,7 +1469,7 @@
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 1,
         "gastos": 0,
         "historico": 2,
@@ -1485,15 +1519,16 @@
       "slug": "lahesio-bonfim",
       "id": "c8aa346b-c839-4e0d-a5e3-4a833d5a414c",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "87558149304",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
+        "2020": "100000825685",
         "2022": "100001609046"
       },
       "counts": {
-        "patrimonio": 1,
-        "financiamento": 1,
+        "patrimonio": 2,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 1,
@@ -1505,7 +1540,7 @@
       "slug": "enilton-rodrigues",
       "id": "17fa576f-b79d-4177-8814-29f5236f8def",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "63775808353",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -1515,7 +1550,7 @@
       },
       "counts": {
         "patrimonio": 3,
-        "financiamento": 2,
+        "financiamento": 3,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -1526,15 +1561,16 @@
     {
       "slug": "joao-campos",
       "id": "cc2dbc88-aae0-4c75-a112-bcc6bfc3189b",
-      "cargo_atual": null,
-      "cpf": "-4",
+      "cargo_atual": "Prefeito do Recife",
+      "cpf": "24254401191",
       "ids_camara": 204429,
       "ids_senado": null,
       "tse_sq_candidato": {
+        "2018": "90000610070",
         "2022": "90001647805"
       },
       "counts": {
-        "patrimonio": 3,
+        "patrimonio": 2,
         "financiamento": 2,
         "votos": 1,
         "gastos": 0,
@@ -1546,7 +1582,7 @@
     {
       "slug": "raquel-lyra",
       "id": "022d27e8-2832-4156-9bc7-7eac817ac901",
-      "cargo_atual": null,
+      "cargo_atual": "Governadora de Pernambuco",
       "cpf": "02792979470",
       "ids_camara": null,
       "ids_senado": null,
@@ -1556,7 +1592,7 @@
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 4,
@@ -1568,14 +1604,14 @@
       "slug": "gilson-machado",
       "id": "bc606476-268a-4702-b405-e5334e72c883",
       "cargo_atual": null,
-      "cpf": "-4",
+      "cpf": "68672667468",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
         "2022": "170001604083"
       },
       "counts": {
-        "patrimonio": 2,
+        "patrimonio": 1,
         "financiamento": 1,
         "votos": 0,
         "gastos": 0,
@@ -1588,15 +1624,17 @@
       "slug": "anderson-ferreira",
       "id": "3721c0c9-3b8b-4258-b453-6350b51dc0c8",
       "cargo_atual": null,
-      "cpf": "-4",
+      "cpf": "82501173449",
       "ids_camara": 160551,
       "ids_senado": null,
       "tse_sq_candidato": {
-        "2018": "190000625124"
+        "2018": "190000625124",
+        "2020": "170000718941",
+        "2022": "170001602587"
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 1,
+        "financiamento": 3,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -1608,16 +1646,17 @@
       "slug": "ivan-moraes",
       "id": "8a59da03-a2ad-4385-9516-eb738f970df0",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "02044990466",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
         "2018": "170000607357",
+        "2020": "170001062173",
         "2022": "170001618403"
       },
       "counts": {
         "patrimonio": 3,
-        "financiamento": 2,
+        "financiamento": 3,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -1629,7 +1668,7 @@
       "slug": "cicero-lucena",
       "id": "76a6620b-1fd4-46df-806f-5101bd660f7f",
       "cargo_atual": null,
-      "cpf": "-4",
+      "cpf": "14248832453",
       "ids_camara": null,
       "ids_senado": 4529,
       "tse_sq_candidato": {
@@ -1637,7 +1676,7 @@
       },
       "counts": {
         "patrimonio": 1,
-        "financiamento": 0,
+        "financiamento": 1,
         "votos": 0,
         "gastos": 0,
         "historico": 5,
@@ -1649,12 +1688,15 @@
       "slug": "lucas-ribeiro",
       "id": "b8ad0e9c-eb0f-4b37-bdf9-840c5d167016",
       "cargo_atual": null,
-      "cpf": "-4",
+      "cpf": "08447960420",
       "ids_camara": null,
       "ids_senado": null,
-      "tse_sq_candidato": {},
+      "tse_sq_candidato": {
+        "2020": "150000774537",
+        "2022": "150001613756"
+      },
       "counts": {
-        "patrimonio": 3,
+        "patrimonio": 2,
         "financiamento": 0,
         "votos": 0,
         "gastos": 0,
@@ -1688,7 +1730,7 @@
       "slug": "pedro-cunha-lima",
       "id": "aa9ca0e4-794c-409d-91fe-4d18c13a449a",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "08430005463",
       "ids_camara": 178912,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -1733,11 +1775,12 @@
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
+        "2020": "180000634397",
         "2022": "180001600497"
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -1749,15 +1792,16 @@
       "slug": "joel-rodrigues",
       "id": "63de6cc4-aebc-49f6-88ab-25c93dde0a58",
       "cargo_atual": null,
-      "cpf": "-4",
+      "cpf": "38677660372",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
+        "2020": "180000952432",
         "2022": "180001600654"
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -1779,7 +1823,7 @@
       },
       "counts": {
         "patrimonio": 3,
-        "financiamento": 2,
+        "financiamento": 3,
         "votos": 1,
         "gastos": 0,
         "historico": 2,
@@ -1814,11 +1858,12 @@
       "ids_senado": null,
       "tse_sq_candidato": {
         "2018": "280000618462",
+        "2020": "200001194163",
         "2022": "160001614980"
       },
       "counts": {
         "patrimonio": 3,
-        "financiamento": 2,
+        "financiamento": 3,
         "votos": 2,
         "gastos": 0,
         "historico": 4,
@@ -1838,7 +1883,7 @@
       },
       "counts": {
         "patrimonio": 1,
-        "financiamento": 0,
+        "financiamento": 1,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -1890,7 +1935,7 @@
       "slug": "thiago-de-joaldo",
       "id": "f0cedf5e-9bda-4a73-b377-315a626acd01",
       "cargo_atual": "Deputado(a) Federal",
-      "cpf": null,
+      "cpf": "78723345500",
       "ids_camara": 220560,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -1910,7 +1955,7 @@
       "slug": "jhc",
       "id": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "01117690199",
       "ids_camara": 178842,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -1919,7 +1964,7 @@
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 3,
         "gastos": 0,
         "historico": 3,
@@ -1931,13 +1976,16 @@
       "slug": "renan-filho",
       "id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
       "cargo_atual": "Senador(a)",
-      "cpf": null,
+      "cpf": "51319993249",
       "ids_camara": 160623,
       "ids_senado": 5207,
-      "tse_sq_candidato": {},
+      "tse_sq_candidato": {
+        "2018": "230000603179",
+        "2022": "230001643506"
+      },
       "counts": {
-        "patrimonio": 2,
-        "financiamento": 0,
+        "patrimonio": 0,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 4,
@@ -1949,7 +1997,7 @@
       "slug": "alan-rick",
       "id": "c7e3a004-99ba-426b-af65-206e3066c496",
       "cargo_atual": "Senador(a)",
-      "cpf": null,
+      "cpf": "44726570234",
       "ids_camara": 178836,
       "ids_senado": 5672,
       "tse_sq_candidato": {
@@ -1988,7 +2036,7 @@
       "slug": "tiao-bocalom",
       "id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
       "cargo_atual": null,
-      "cpf": "-4",
+      "cpf": "17357152987",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -1997,7 +2045,7 @@
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 3,
@@ -2051,10 +2099,13 @@
       "cpf": "47671998753",
       "ids_camara": null,
       "ids_senado": null,
-      "tse_sq_candidato": {},
+      "tse_sq_candidato": {
+        "2020": "190000785134",
+        "2022": "40001650567"
+      },
       "counts": {
-        "patrimonio": 3,
-        "financiamento": 0,
+        "patrimonio": 2,
+        "financiamento": 1,
         "votos": 2,
         "gastos": 0,
         "historico": 3,
@@ -2066,7 +2117,7 @@
       "slug": "tadeu-de-souza",
       "id": "fabb0b69-5157-496d-89ab-d90c4bcc54ec",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "41334132291",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -2086,15 +2137,16 @@
       "slug": "david-almeida",
       "id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "09913753430",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
-        "2018": "40000604136"
+        "2018": "40000604136",
+        "2020": "170001127614"
       },
       "counts": {
-        "patrimonio": 2,
-        "financiamento": 1,
+        "patrimonio": 1,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 3,
@@ -2106,7 +2158,7 @@
       "slug": "eduardo-braga",
       "id": "96dd2cb2-3ae8-44fc-b169-93a722247f9d",
       "cargo_atual": "Senador(a)",
-      "cpf": null,
+      "cpf": "07810423215",
       "ids_camara": null,
       "ids_senado": 4994,
       "tse_sq_candidato": {
@@ -2114,7 +2166,7 @@
         "2022": "40001610345"
       },
       "counts": {
-        "patrimonio": 3,
+        "patrimonio": 2,
         "financiamento": 2,
         "votos": 4,
         "gastos": 0,
@@ -2177,7 +2229,7 @@
       },
       "counts": {
         "patrimonio": 3,
-        "financiamento": 2,
+        "financiamento": 3,
         "votos": 0,
         "gastos": 0,
         "historico": 4,
@@ -2209,15 +2261,17 @@
       "slug": "dr-daniel",
       "id": "dcc4a93e-4114-43e9-b067-4581ed12cfd5",
       "cargo_atual": null,
-      "cpf": "-4",
+      "cpf": "06380685502",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
+        "2018": "140000614283",
+        "2020": "140001027099",
         "2022": "50001614695"
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 2,
+        "financiamento": 3,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -2229,7 +2283,7 @@
       "slug": "delegado-eder-mauro",
       "id": "6d89f284-e148-454e-85e1-c77996c132b5",
       "cargo_atual": "Deputado(a) Federal",
-      "cpf": null,
+      "cpf": "13405551234",
       "ids_camara": 178908,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -2250,7 +2304,7 @@
       "slug": "beto-faro",
       "id": "48fc69a5-8bad-4c36-9356-0ea6ff66afe9",
       "cargo_atual": "Senador(a)",
-      "cpf": null,
+      "cpf": "40070565287",
       "ids_camara": 141335,
       "ids_senado": 4639,
       "tse_sq_candidato": {
@@ -2297,7 +2351,7 @@
         "2022": "220001647595"
       },
       "counts": {
-        "patrimonio": 3,
+        "patrimonio": 2,
         "financiamento": 2,
         "votos": 6,
         "gastos": 0,
@@ -2310,7 +2364,7 @@
       "slug": "adailton-furia",
       "id": "e9cf3bd3-4ab9-4928-b652-558c5e8d8ce4",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "89845277268",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -2319,7 +2373,7 @@
       },
       "counts": {
         "patrimonio": 2,
-        "financiamento": 1,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -2339,7 +2393,7 @@
       },
       "counts": {
         "patrimonio": 1,
-        "financiamento": 0,
+        "financiamento": 1,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -2359,7 +2413,7 @@
       },
       "counts": {
         "patrimonio": 1,
-        "financiamento": 0,
+        "financiamento": 1,
         "votos": 2,
         "gastos": 3,
         "historico": 2,
@@ -2412,15 +2466,16 @@
       "slug": "arthur-henrique",
       "id": "049a5051-e7c9-4729-8853-14753d2993e1",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "50859692272",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
-        "2018": "230000602332"
+        "2018": "230000602332",
+        "2020": "230000679861"
       },
       "counts": {
-        "patrimonio": 2,
-        "financiamento": 1,
+        "patrimonio": 1,
+        "financiamento": 2,
         "votos": 0,
         "gastos": 0,
         "historico": 0,
@@ -2432,7 +2487,7 @@
       "slug": "edilson-damiao",
       "id": "9f72e526-c72d-4fc5-8e08-0a965c03b712",
       "cargo_atual": null,
-      "cpf": "-4",
+      "cpf": "59538058291",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -2452,7 +2507,7 @@
       "slug": "teresa-surita",
       "id": "73283baa-a3b0-4422-9e02-4ee50c5c3fc6",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "38534460191",
       "ids_camara": 160608,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -2472,7 +2527,7 @@
       "slug": "soldado-sampaio",
       "id": "3b825b8d-32fd-42d2-af6e-6caf1135a3e3",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "68371764200",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -2501,7 +2556,7 @@
         "2022": "270001649254"
       },
       "counts": {
-        "patrimonio": 3,
+        "patrimonio": 2,
         "financiamento": 2,
         "votos": 4,
         "gastos": 0,
@@ -2534,7 +2589,7 @@
       "slug": "amelio-cayres",
       "id": "75d2da17-ddd3-45f2-9bde-07ed8655034a",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "39476316187",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -2555,7 +2610,7 @@
       "slug": "vicentinho-junior",
       "id": "3e0885c9-ae59-424a-8a99-9367801c5740",
       "cargo_atual": "Deputado(a) Federal",
-      "cpf": null,
+      "cpf": "99898659149",
       "ids_camara": 137070,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -2596,7 +2651,7 @@
       "slug": "celina-leao",
       "id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "79981488100",
       "ids_camara": 204380,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -2617,7 +2672,7 @@
       "slug": "leandro-grass",
       "id": "3b724874-8769-44f3-aab3-06c0155dc155",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "00014360152",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -2656,7 +2711,7 @@
       "slug": "paula-belmonte",
       "id": "17472d91-6cfc-453d-8481-4fac47d07f36",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "57867100172",
       "ids_camara": 204377,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -2677,7 +2732,7 @@
       "slug": "daniel-vilela",
       "id": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "98166638134",
       "ids_camara": 144523,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -2737,7 +2792,7 @@
       "slug": "wilder-morais",
       "id": "af18411e-e979-4a30-9a1c-c64927b50442",
       "cargo_atual": "Senador(a)",
-      "cpf": null,
+      "cpf": "45434581172",
       "ids_camara": null,
       "ids_senado": 5070,
       "tse_sq_candidato": {
@@ -2797,7 +2852,7 @@
       "slug": "fabio-trad",
       "id": "e10f4186-0132-48f3-be4c-5397642eecd4",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "98303651749",
       "ids_camara": 160587,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -2856,7 +2911,7 @@
       "slug": "otaviano-pivetta",
       "id": "a8a86164-4000-4bbe-ac11-c02b90955ea5",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "27462773015",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -2877,7 +2932,7 @@
       "slug": "wellington-fagundes",
       "id": "febc4a12-c352-448a-99dc-671c77e8d57d",
       "cargo_atual": "Senador(a)",
-      "cpf": null,
+      "cpf": "23019093104",
       "ids_camara": 73653,
       "ids_senado": 1173,
       "tse_sq_candidato": {
@@ -2898,7 +2953,7 @@
       "slug": "janaina-riva",
       "id": "e8f8c25c-e121-4b7a-8049-b5b68a8ec7f0",
       "cargo_atual": null,
-      "cpf": null,
+      "cpf": "02648597158",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {

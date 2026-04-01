@@ -5,7 +5,13 @@ import { supabase } from "./supabase"
 import { loadCandidatos, parseCSV, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import type { IngestResult, CandidatoConfig } from "./types"
-import { createTSEResolver, type TSEResolver } from "./tse-resolver"
+import {
+  createTSEResolver,
+  getResolveMethodPriority,
+  shouldSkipWeakMatchForAno,
+  type ResolveMethod,
+  type TSEResolver,
+} from "./tse-resolver"
 
 const DATA_DIR = resolve(process.cwd(), "data/tse")
 const DEFAULT_ANOS = [2018, 2020, 2022, 2024]
@@ -134,34 +140,71 @@ async function buildSQMap(
   if (allPaths.length === 0) return new Map()
 
   const candidatosBySlug = new Map(candidatos.map((candidato) => [candidato.slug, candidato]))
-  const sqMap = new Map<string, CandidatoConfig>()
-  let preloaded = 0
-  let resolved = 0
+  const selectedBySlug = new Map<
+    string,
+    { candidato: CandidatoConfig; sq: string; method: ResolveMethod; priority: number }
+  >()
+  const callerAmbiguousPriority = new Map<string, number>()
 
   for (const candidato of candidatos) {
     const sq = candidato.ids.tse_sq_candidato?.[String(ano)]?.trim()
     if (!sq) continue
-    sqMap.set(sq, candidato)
-    preloaded++
+    selectedBySlug.set(candidato.slug, {
+      candidato,
+      sq,
+      method: "sq-preloaded",
+      priority: getResolveMethodPriority("sq-preloaded"),
+    })
   }
 
   for (const csvPath of allPaths) {
     await parseCSV(csvPath, (row) => {
       const sq = (row.SQ_CANDIDATO || "").trim()
-      if (!sq || sqMap.has(sq)) return
+      if (!sq) return
 
       const match = resolver.resolveRow(row)
       if (!match) return
+      if (shouldSkipWeakMatchForAno(ano, match.method)) return
 
       const candidato = candidatosBySlug.get(match.slug)
       if (!candidato) return
 
-      sqMap.set(sq, candidato)
-      resolved++
+      const priority = getResolveMethodPriority(match.method)
+      const existing = selectedBySlug.get(match.slug)
+      if (!existing) {
+        selectedBySlug.set(match.slug, { candidato, sq, method: match.method, priority })
+        return
+      }
+
+      if (priority > existing.priority) {
+        selectedBySlug.set(match.slug, { candidato, sq, method: match.method, priority })
+        callerAmbiguousPriority.delete(match.slug)
+        return
+      }
+
+      if (priority < existing.priority || existing.sq === sq) {
+        return
+      }
+
+      callerAmbiguousPriority.set(match.slug, priority)
     })
   }
 
+  const sqMap = new Map<string, CandidatoConfig>()
+  let preloaded = 0
+  let resolved = 0
+
+  for (const [slug, selection] of selectedBySlug) {
+    if (callerAmbiguousPriority.has(slug)) continue
+    sqMap.set(selection.sq, selection.candidato)
+    if (selection.method === "sq-preloaded") preloaded++
+    else resolved++
+  }
+
   log("tse", `  SQ map ${ano}: ${sqMap.size} candidatos mapeados (${preloaded} preloaded, ${resolved} via resolver)`)
+  if (callerAmbiguousPriority.size > 0) {
+    warn("tse", `  Ambiguos SQ map ${ano}: ${[...callerAmbiguousPriority.keys()].join(", ")}`)
+  }
   return sqMap
 }
 
@@ -250,7 +293,7 @@ async function processFinanciamento(
   ano: number,
   candidatos: CandidatoConfig[],
   extractDir: string,
-  resolver: TSEResolver
+  sqMap: Map<string, CandidatoConfig>
 ): Promise<IngestResult[]> {
   const brPaths = findCSVs(extractDir, "_BR").concat(findCSVs(extractDir, "_BRASIL"))
   const governorUFs = getGovernorUFs(candidatos)
@@ -282,10 +325,13 @@ async function processFinanciamento(
   log("tse", `  Parseando financiamento ${ano}: ${uniquePaths.length} arquivos CSV (BR${governorUFs.length > 0 ? " + " + governorUFs.length + " UFs" : ""})`)
   for (const csvPath of uniquePaths) {
     await parseCSV(csvPath, (row) => {
-      const match = resolver.resolveRow(row)
-      if (!match) return
+      const sq = (row.SQ_CANDIDATO || "").trim()
+      if (!sq) return
 
-      const existing = aggregated.get(match.slug) ?? {
+      const candidato = sqMap.get(sq)
+      if (!candidato) return
+
+      const existing = aggregated.get(candidato.slug) ?? {
         total: 0,
         fundo_partidario: 0,
         fundo_eleitoral: 0,
@@ -318,7 +364,7 @@ async function processFinanciamento(
                 : "PJ",
       })
 
-      aggregated.set(match.slug, existing)
+      aggregated.set(candidato.slug, existing)
     })
   }
 
@@ -425,7 +471,7 @@ export async function ingestTSE(anos = DEFAULT_ANOS): Promise<IngestResult[]> {
     if (receitasOk) {
       try {
         extractZip(receitasZip, receitasDir, governorUFs)
-        const finResults = await processFinanciamento(ano, candidatos, receitasDir, resolver)
+        const finResults = await processFinanciamento(ano, candidatos, receitasDir, sqMap)
         allResults.push(...finResults)
       } catch (err) {
         error("tse", `  Erro financiamento ${ano}: ${err}`)

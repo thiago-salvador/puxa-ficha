@@ -93,8 +93,8 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     naturalidade: "Pindamonhangaba/SP",
     formacao: "Direito",
     profissao_declarada: "Advogado",
-    partido_atual: "Partido Democratico Trabalhista",
-    partido_sigla: "PDT",
+    partido_atual: "Partido da Social Democracia Brasileira",
+    partido_sigla: "PSDB",
     cargo_atual: null,
     cargo_disputado: "Presidente",
     estado: null,
@@ -116,8 +116,8 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     naturalidade: "Goiania/GO",
     formacao: "Medicina",
     profissao_declarada: "Medico",
-    partido_atual: "Uniao Brasil",
-    partido_sigla: "UNIAO",
+    partido_atual: "Partido Social Democratico",
+    partido_sigla: "PSD",
     cargo_atual: "Governador de GO",
     cargo_disputado: "Presidente",
     estado: null,
@@ -178,23 +178,23 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "14", nome_completo: "Tarcisio Gomes de Freitas", nome_urna: "Tarcisio de Freitas", slug: "tarcisio-gov-sp",
     data_nascimento: "1975-01-07", idade: 51, naturalidade: "Rio de Janeiro/RJ", formacao: "Engenharia", profissao_declarada: "Engenheiro",
-    partido_atual: "Republicanos", partido_sigla: "REPUBLICANOS", cargo_atual: "Governador de SP", cargo_disputado: "Governador", estado: "SP",
+    partido_atual: "Republicanos", partido_sigla: "REPUBLICANOS", cargo_atual: "Governador de Sao Paulo", cargo_disputado: "Governador", estado: "SP",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "15", nome_completo: "Fernando Haddad", nome_urna: "Fernando Haddad", slug: "haddad-gov-sp",
     data_nascimento: "1963-01-25", idade: 63, naturalidade: "Sao Paulo/SP", formacao: "Direito e Filosofia", profissao_declarada: "Professor",
     partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: "Ministro da Fazenda", cargo_disputado: "Governador", estado: "SP",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "16", nome_completo: "Erika Santos Silva", nome_urna: "Erika Hilton", slug: "erika-hilton",
     data_nascimento: "1993-05-12", idade: 32, naturalidade: "Sao Paulo/SP", formacao: null, profissao_declarada: "Politica",
-    partido_atual: "Partido Socialismo e Liberdade", partido_sigla: "PSOL", cargo_atual: "Deputada Federal", cargo_disputado: "Governador", estado: "SP",
+    partido_atual: "Partido Socialismo e Liberdade", partido_sigla: "PSOL", cargo_atual: "Deputado(a) Federal", cargo_disputado: "Governador", estado: "SP",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "17", nome_completo: "Felicio Ramuth", nome_urna: "Felicio Ramuth", slug: "felicio-ramuth",
@@ -206,16 +206,16 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "18", nome_completo: "Ricardo Luis Reis Nunes", nome_urna: "Ricardo Nunes", slug: "ricardo-nunes",
     data_nascimento: "1977-11-08", idade: 48, naturalidade: "Sao Paulo/SP", formacao: "Direito", profissao_declarada: "Empresario",
-    partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: "Prefeito de SP", cargo_disputado: "Governador", estado: "SP",
+    partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: "Prefeito de Sao Paulo", cargo_disputado: "Governador", estado: "SP",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "19", nome_completo: "Geraldo Jose Rodrigues Alckmin Filho", nome_urna: "Geraldo Alckmin", slug: "geraldo-alckmin",
     data_nascimento: "1952-11-07", idade: 73, naturalidade: "Pindamonhangaba/SP", formacao: "Medicina", profissao_declarada: "Medico",
-    partido_atual: "Partido Socialista Brasileiro", partido_sigla: "PSB", cargo_atual: "Vice-Presidente", cargo_disputado: "Governador", estado: "SP",
+    partido_atual: "Partido Socialista Brasileiro", partido_sigla: "PSB", cargo_atual: "Vice-Presidente da Republica", cargo_disputado: "Governador", estado: "SP",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "20", nome_completo: "Gilberto Kassab", nome_urna: "Gilberto Kassab", slug: "gilberto-kassab",
@@ -250,9 +250,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "24", nome_completo: "Sergio Fernando Moro", nome_urna: "Sergio Moro", slug: "sergio-moro-gov-pr",
     data_nascimento: "1972-08-01", idade: 53, naturalidade: "Maringa/PR", formacao: "Direito", profissao_declarada: "Advogado",
-    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: "Senador", cargo_disputado: "Governador", estado: "PR",
+    partido_atual: "Uniao Brasil", partido_sigla: "UNIAO", cargo_atual: "Senador(a)", cargo_disputado: "Governador", estado: "PR",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "25", nome_completo: "Luiz Augusto Silva", nome_urna: "Guto Silva", slug: "guto-silva",
@@ -292,11 +292,11 @@ export const MOCK_CANDIDATOS: Candidato[] = [
 
   // ======= GOVERNADORES SC =======
   {
-    id: "30", nome_completo: "Jorge Jose de Mello", nome_urna: "Jorginho Mello", slug: "jorginho-mello",
+    id: "30", nome_completo: "Jorginho dos Santos Mello", nome_urna: "Jorginho Mello", slug: "jorginho-mello",
     data_nascimento: "1958-01-10", idade: 68, naturalidade: "Xanxere/SC", formacao: null, profissao_declarada: "Empresario",
-    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: "Governador de SC", cargo_disputado: "Governador", estado: "SC",
+    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: "Governador de Santa Catarina", cargo_disputado: "Governador", estado: "SC",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "31", nome_completo: "Joao Rodrigues", nome_urna: "Joao Rodrigues", slug: "joao-rodrigues",
@@ -375,9 +375,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "41", nome_completo: "Eduardo da Costa Paes", nome_urna: "Eduardo Paes", slug: "eduardo-paes",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: null, cargo_disputado: "Governador", estado: "RJ",
+    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: "Prefeito do Rio de Janeiro", cargo_disputado: "Governador", estado: "RJ",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "42", nome_completo: "Douglas Ruas", nome_urna: "Douglas Ruas", slug: "douglas-ruas",
@@ -415,18 +415,18 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
   {
-    id: "47", nome_completo: "Cleitinho Azevedo", nome_urna: "Cleitinho", slug: "cleitinho",
+    id: "47", nome_completo: "Cleiton Gontijo de Azevedo", nome_urna: "Cleitinho", slug: "cleitinho",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Republicanos", partido_sigla: "REPUBLICANOS", cargo_atual: null, cargo_disputado: "Governador", estado: "MG",
+    partido_atual: "Republicanos", partido_sigla: "REPUBLICANOS", cargo_atual: "Senador(a)", cargo_disputado: "Governador", estado: "MG",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "48", nome_completo: "Nikolas Ferreira Oliveira", nome_urna: "Nikolas Ferreira", slug: "nikolas-ferreira",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: null, cargo_disputado: "Governador", estado: "MG",
+    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: "Deputado(a) Federal", cargo_disputado: "Governador", estado: "MG",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "49", nome_completo: "Mateus Simoes", nome_urna: "Mateus Simoes", slug: "mateus-simoes",
@@ -438,9 +438,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "50", nome_completo: "Rodrigo Pacheco Amaral", nome_urna: "Rodrigo Pacheco", slug: "rodrigo-pacheco",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: null, cargo_disputado: "Governador", estado: "MG",
+    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: "Senador(a)", cargo_disputado: "Governador", estado: "MG",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "51", nome_completo: "Gabriel Azevedo", nome_urna: "Gabriel Azevedo", slug: "gabriel-azevedo",
@@ -508,9 +508,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "60", nome_completo: "Jeronimo Rodrigues de Jesus", nome_urna: "Jeronimo", slug: "jeronimo",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: null, cargo_disputado: "Governador", estado: "BA",
+    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: "Governador da Bahia", cargo_disputado: "Governador", estado: "BA",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "61", nome_completo: "Antonio Carlos Peixoto de Magalhaes Neto", nome_urna: "ACM Neto", slug: "acm-neto",
@@ -543,16 +543,16 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "65", nome_completo: "Elmano de Freitas da Costa", nome_urna: "Elmano de Freitas", slug: "elmano-de-freitas",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: null, cargo_disputado: "Governador", estado: "CE",
+    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: "Governador do Ceara", cargo_disputado: "Governador", estado: "CE",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "66", nome_completo: "Ciro Ferreira Gomes", nome_urna: "Ciro Gomes", slug: "ciro-gomes-gov-ce",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Partido da Social Democracia Brasileira", partido_sigla: "PSDB", cargo_atual: null, cargo_disputado: "Governador", estado: "CE",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "67", nome_completo: "Roberto Claudio Rodrigues Bezerra", nome_urna: "Roberto Claudio", slug: "roberto-claudio",
@@ -613,16 +613,16 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "75", nome_completo: "Joao Henrique de Andrade Lima Campos", nome_urna: "Joao Campos", slug: "joao-campos",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Socialista Brasileiro", partido_sigla: "PSB", cargo_atual: null, cargo_disputado: "Governador", estado: "PE",
+    partido_atual: "Partido Socialista Brasileiro", partido_sigla: "PSB", cargo_atual: "Prefeito do Recife", cargo_disputado: "Governador", estado: "PE",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "76", nome_completo: "Raquel Teixeira Lyra Lucena", nome_urna: "Raquel Lyra", slug: "raquel-lyra",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: null, cargo_disputado: "Governador", estado: "PE",
+    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: "Governadora de Pernambuco", cargo_disputado: "Governador", estado: "PE",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
     id: "77", nome_completo: "Gilson Machado Guimaraes Neto", nome_urna: "Gilson Machado", slug: "gilson-machado",

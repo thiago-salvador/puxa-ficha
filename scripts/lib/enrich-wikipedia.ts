@@ -154,7 +154,6 @@ const WIKI_TITLES: Record<string, string> = {
   "amelio-cayres": "Amério_Cayres",
   // Missing from previous mapping
   "orleans-brandao": "Carlos_Brandão_(político)",
-  "anderson-ferreira": "Anderson_Ferreira_(político)",
   "ivan-moraes": "Ivan_Moraes_Filho",
   "joel-rodrigues": "Joel_Rodrigues_(político)",
   "cadu-xavier": "Cadu_Xavier",
@@ -169,7 +168,6 @@ const WIKI_TITLES: Record<string, string> = {
   "enilton-rodrigues": "Enilton_Rodrigues",
   "lucas-ribeiro": "Lucas_Ribeiro_(político_da_Paraíba)",
   "adailton-furia": "Adailton_Fúria",
-  "silvio-mendes": "Sílvio_Mendes",
 }
 
 // Fallback data for candidates without Wikipedia pages.

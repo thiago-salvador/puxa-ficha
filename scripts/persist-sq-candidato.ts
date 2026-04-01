@@ -4,7 +4,12 @@ import { execSync } from "child_process"
 import { fileURLToPath } from "url"
 import { parseCSV } from "./lib/helpers"
 import { log, warn, error } from "./lib/logger"
-import { createTSEResolver } from "./lib/tse-resolver"
+import {
+  createTSEResolver,
+  getResolveMethodPriority,
+  shouldSkipWeakMatchForAno,
+  type ResolveMethod,
+} from "./lib/tse-resolver"
 import type { CandidatoConfig } from "./lib/types"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -126,8 +131,11 @@ async function persistForAno(candidatos: CandidatoConfig[], ano: number) {
   }
 
   const resolver = await createTSEResolver(candidatos, ano)
-  const bySlug = new Map<string, string>()
-  const callerAmbiguous = new Set<string>()
+  const selectedBySlug = new Map<
+    string,
+    { sq: string; method: ResolveMethod; priority: number }
+  >()
+  const callerAmbiguousPriority = new Map<string, number>()
 
   for (const csvPath of csvPaths) {
     await parseCSV(csvPath, (row) => {
@@ -136,20 +144,28 @@ async function persistForAno(candidatos: CandidatoConfig[], ano: number) {
 
       const match = resolver.resolveRow(row)
       if (!match) return
-      if (callerAmbiguous.has(match.slug)) return
+      if (shouldSkipWeakMatchForAno(ano, match.method)) {
+        return
+      }
 
-      const existing = bySlug.get(match.slug)
+      const priority = getResolveMethodPriority(match.method)
+      const existing = selectedBySlug.get(match.slug)
       if (!existing) {
-        bySlug.set(match.slug, sq)
+        selectedBySlug.set(match.slug, { sq, method: match.method, priority })
         return
       }
 
-      if (existing === sq) {
+      if (priority > existing.priority) {
+        selectedBySlug.set(match.slug, { sq, method: match.method, priority })
+        callerAmbiguousPriority.delete(match.slug)
         return
       }
 
-      bySlug.delete(match.slug)
-      callerAmbiguous.add(match.slug)
+      if (priority < existing.priority || existing.sq === sq) {
+        return
+      }
+
+      callerAmbiguousPriority.set(match.slug, priority)
     })
   }
 
@@ -159,7 +175,7 @@ async function persistForAno(candidatos: CandidatoConfig[], ano: number) {
   for (const candidato of candidatos) {
     candidato.ids.tse_sq_candidato ??= {}
 
-    if (callerAmbiguous.has(candidato.slug)) {
+    if (callerAmbiguousPriority.has(candidato.slug)) {
       if (candidato.ids.tse_sq_candidato[String(ano)]) {
         delete candidato.ids.tse_sq_candidato[String(ano)]
         removed++
@@ -167,22 +183,22 @@ async function persistForAno(candidatos: CandidatoConfig[], ano: number) {
       continue
     }
 
-    const sq = bySlug.get(candidato.slug)
-    if (!sq) continue
+    const selected = selectedBySlug.get(candidato.slug)
+    if (!selected) continue
 
-    if (candidato.ids.tse_sq_candidato[String(ano)] !== sq) {
-      candidato.ids.tse_sq_candidato[String(ano)] = sq
+    if (candidato.ids.tse_sq_candidato[String(ano)] !== selected.sq) {
+      candidato.ids.tse_sq_candidato[String(ano)] = selected.sq
       persisted++
     }
   }
 
   log(
     "persist-sq",
-    `Ano ${ano}: persistidos=${persisted}, ambiguos-caller=${callerAmbiguous.size}, removidos=${removed}, ambiguos-resolver=${resolver.ambiguousSlugs.length}`
+    `Ano ${ano}: persistidos=${persisted}, ambiguos-caller=${callerAmbiguousPriority.size}, removidos=${removed}, ambiguos-resolver=${resolver.ambiguousSlugs.length}`
   )
 
-  if (callerAmbiguous.size > 0) {
-    warn("persist-sq", `  Ambiguos caller ${ano}: ${[...callerAmbiguous].join(", ")}`)
+  if (callerAmbiguousPriority.size > 0) {
+    warn("persist-sq", `  Ambiguos caller ${ano}: ${[...callerAmbiguousPriority.keys()].join(", ")}`)
   }
   if (resolver.ambiguousSlugs.length > 0) {
     warn("persist-sq", `  Ambiguos resolver ${ano}: ${resolver.ambiguousSlugs.join(", ")}`)

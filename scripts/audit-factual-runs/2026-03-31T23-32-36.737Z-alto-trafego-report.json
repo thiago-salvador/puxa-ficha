@@ -1,0 +1,5272 @@
+{
+  "gerado_em": "2026-03-31T23:32:36.735Z",
+  "total_candidatos": 29,
+  "filtros": {
+    "cohort": "alto-trafego",
+    "dry_run": false
+  },
+  "resumo": {
+    "auditados": 29,
+    "pendentes": 0,
+    "reprovados": 0,
+    "podem_publicar": 29,
+    "nao_podem_publicar": 0,
+    "com_falha_critica": 0,
+    "com_warning": 0,
+    "itens_revisao_manual": 0,
+    "com_assertions": 29,
+    "sem_assertions": 0
+  },
+  "candidatos": [
+    {
+      "slug": "ronaldo-caiado",
+      "nome_urna": "Ronaldo Caiado",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Ronaldo Ramos Caiado",
+          "valor_esperado": "Ronaldo Ramos Caiado",
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Ronaldo Caiado",
+          "valor_esperado": "Ronaldo Caiado",
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PSD",
+          "valor_esperado": "PSD",
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido Social Democratico",
+          "valor_esperado": "Partido Social Democratico",
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Governador de Goias",
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Presidente",
+          "valor_esperado": "Presidente",
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Estado nao se aplica a candidaturas presidenciais"
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 49748872.38,
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 19685154.34,
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Foto_oficial_do_governador_de_Goi%C3%A1s%2C_Ronaldo_Caiado_em_2023_%28ombros%29.jpg/960px-Foto_oficial_do_governador_de_Goi%C3%A1s%2C_Ronaldo_Caiado_em_2023_%28ombros%29.jpg",
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1949-09-25",
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Anápolis/GO",
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior completo (Medicina)",
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-01-28",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "nome_urna": "Rui Costa Pimenta",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Rui Costa Pimenta",
+          "valor_esperado": "Rui Costa Pimenta",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Rui Costa Pimenta",
+          "valor_esperado": "Rui Costa Pimenta",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PCO",
+          "valor_esperado": "PCO",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido da Causa Operaria",
+          "valor_esperado": "Partido da Causa Operaria",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Sem cargo publico",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Presidente",
+          "valor_esperado": "Presidente",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Estado nao se aplica a candidaturas presidenciais"
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Vazio aceito: situacao nao disponivel"
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Vazio aceito: sem declaracao encontrada"
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Vazio aceito: sem declaracao encontrada"
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Rui_Costa_Pimenta_Close.jpg/960px-Rui_Costa_Pimenta_Close.jpg",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1957-06-25",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "São Paulo",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Universidade de São Paulo",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "nome_urna": "Elmano de Freitas",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Elmano de Freitas da Costa",
+          "valor_esperado": "Elmano de Freitas da Costa",
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Elmano de Freitas",
+          "valor_esperado": "Elmano de Freitas",
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PT",
+          "valor_esperado": "PT",
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido dos Trabalhadores",
+          "valor_esperado": "Partido dos Trabalhadores",
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Governador do Ceara",
+          "valor_esperado": "Governador do Ceara",
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "CE",
+          "valor_esperado": "CE",
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 144325.52,
+          "valor_esperado": null,
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 23429000,
+          "valor_esperado": null,
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Plen%C3%A1rio_do_Congresso_%2854441463325%29.jpg/960px-Plen%C3%A1rio_do_Congresso_%2854441463325%29.jpg",
+          "valor_esperado": null,
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1970-04-12",
+          "valor_esperado": null,
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Baturité",
+          "valor_esperado": null,
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Faculdade de Direito da Universidade Federal do Ceará",
+          "valor_esperado": null,
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "Governo do Ceara + PT Ceara 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "aldo-rebelo",
+      "nome_urna": "Aldo Rebelo",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Jose Aldo Rebelo Figueiredo",
+          "valor_esperado": "Jose Aldo Rebelo Figueiredo",
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Aldo Rebelo",
+          "valor_esperado": "Aldo Rebelo",
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "DC",
+          "valor_esperado": "DC",
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Democracia Crista",
+          "valor_esperado": "Democracia Crista",
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Sem cargo publico",
+          "valor_esperado": null,
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Presidente",
+          "valor_esperado": "Presidente",
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Estado nao se aplica a candidaturas presidenciais"
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 1559276.02,
+          "valor_esperado": null,
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 6759686.02,
+          "valor_esperado": null,
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Ministro_Aldo_Rebelo_2015.jpg/960px-Ministro_Aldo_Rebelo_2015.jpg",
+          "valor_esperado": null,
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1956-02-23",
+          "valor_esperado": null,
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Viçosa/AL",
+          "valor_esperado": null,
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior completo (Jornalismo)",
+          "valor_esperado": null,
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "DC oficial 2026-02-02",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "ratinho-junior",
+      "nome_urna": "Ratinho Junior",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Carlos Roberto Massa Junior",
+          "valor_esperado": "Carlos Roberto Massa Junior",
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Ratinho Junior",
+          "valor_esperado": "Ratinho Junior",
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PSD",
+          "valor_esperado": "PSD",
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido Social Democratico",
+          "valor_esperado": "Partido Social Democratico",
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Ex-Governador do Parana",
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Presidente",
+          "valor_esperado": "Presidente",
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Estado nao se aplica a candidaturas presidenciais"
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 17680282.38,
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 22075894.16,
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/3/31/Ratinho_J%C3%BAnior_as_governor_of_Paran%C3%A1%2C_January_2023_%28cropped%29.jpg",
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1981-04-19",
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Jandaia do Sul/PR",
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior completo (Jornalismo)",
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "PSD oficial 2026-03-12",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "jorginho-mello",
+      "nome_urna": "Jorginho Mello",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Jorginho dos Santos Mello",
+          "valor_esperado": "Jorginho dos Santos Mello",
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Jorginho Mello",
+          "valor_esperado": "Jorginho Mello",
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PL",
+          "valor_esperado": "PL",
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido Liberal",
+          "valor_esperado": "Partido Liberal",
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Governador de Santa Catarina",
+          "valor_esperado": "Governador de Santa Catarina",
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "SC",
+          "valor_esperado": "SC",
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 4828520.82,
+          "valor_esperado": null,
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 25231742.88,
+          "valor_esperado": null,
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Governador_Jorginho_Mello_-_Foto_Eduardo_Valente_-_GOVSC-7.jpg/960px-Governador_Jorginho_Mello_-_Foto_Eduardo_Valente_-_GOVSC-7.jpg",
+          "valor_esperado": null,
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1976-01-20",
+          "valor_esperado": null,
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Palmeira das Missões/RS",
+          "valor_esperado": null,
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior",
+          "valor_esperado": null,
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Governo de Santa Catarina + ALESC oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "hertz-dias",
+      "nome_urna": "Hertz Dias",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Hertz da Conceicao Dias",
+          "valor_esperado": "Hertz da Conceicao Dias",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Hertz Dias",
+          "valor_esperado": "Hertz Dias",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PSTU",
+          "valor_esperado": "PSTU",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido Socialista dos Trabalhadores Unificado",
+          "valor_esperado": "Partido Socialista dos Trabalhadores Unificado",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Sem cargo publico",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Presidente",
+          "valor_esperado": "Presidente",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Estado nao se aplica a candidaturas presidenciais"
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 200000,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 52000,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "/candidates/hertz-dias.jpg",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1970-10-20",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Sao Luis/MA",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior completo (Historia, UFMA; Mestrado em Educacao)",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "samara-martins",
+      "nome_urna": "Samara Martins",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Samara Martins",
+          "valor_esperado": "Samara Martins",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Samara Martins",
+          "valor_esperado": "Samara Martins",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "UP",
+          "valor_esperado": "UP",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Unidade Popular",
+          "valor_esperado": "Unidade Popular",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Sem cargo publico",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Presidente",
+          "valor_esperado": "Presidente",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Estado nao se aplica a candidaturas presidenciais"
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 6729.1,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Vazio aceito: sem declaracao encontrada"
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "/candidates/samara-martins.jpg",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1987-08-31",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Belo Horizonte/MG",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior completo (Odontologia, UFRN)",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "lula",
+      "nome_urna": "Lula",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Luiz Inacio Lula da Silva",
+          "valor_esperado": "Luiz Inacio Lula da Silva",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Lula",
+          "valor_esperado": "Lula",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PT",
+          "valor_esperado": "PT",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido dos Trabalhadores",
+          "valor_esperado": "Partido dos Trabalhadores",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Presidente da Republica",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Presidente",
+          "valor_esperado": "Presidente",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Estado nao se aplica a candidaturas presidenciais"
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 14847451.56,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 135539287.82,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 2,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Foto_oficial_de_Luiz_In%C3%A1cio_Lula_da_Silva_%28ombros%29_denoise.jpg/960px-Foto_oficial_de_Luiz_In%C3%A1cio_Lula_da_Silva_%28ombros%29_denoise.jpg",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1945-10-06",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Garanhuns/PE",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Ensino fundamental incompleto",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "ciro-gomes",
+      "nome_urna": "Ciro Gomes",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Ciro Ferreira Gomes",
+          "valor_esperado": "Ciro Ferreira Gomes",
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Ciro Gomes",
+          "valor_esperado": "Ciro Gomes",
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PSDB",
+          "valor_esperado": "PSDB",
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido da Social Democracia Brasileira",
+          "valor_esperado": "Partido da Social Democracia Brasileira",
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Sem cargo publico",
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Presidente",
+          "valor_esperado": "Presidente",
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Estado nao se aplica a candidaturas presidenciais"
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Vazio aceito: situacao nao disponivel"
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 6079523.94,
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 36013770.24,
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 1,
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/3/34/Presidente_Ciro_Gomes.png",
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1957-11-06",
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Pindamonhangaba/SP",
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior completo (Direito)",
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "nome_urna": "Flavio Bolsonaro",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Flavio Nantes Bolsonaro",
+          "valor_esperado": "Flavio Nantes Bolsonaro",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Flavio Bolsonaro",
+          "valor_esperado": "Flavio Bolsonaro",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PL",
+          "valor_esperado": "PL",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido Liberal",
+          "valor_esperado": "Partido Liberal",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Senador",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Presidente",
+          "valor_esperado": "Presidente",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Estado nao se aplica a candidaturas presidenciais"
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Vazio aceito: situacao nao disponivel"
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 3483516.3,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 1424424,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 1,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Foto_oficial_do_senador_Fl%C3%A1vio_Bolsonaro_%28v._AgSen%29_%283x4%29.jpg/960px-Foto_oficial_do_senador_Fl%C3%A1vio_Bolsonaro_%28v._AgSen%29_%283x4%29.jpg",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1981-04-30",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Rio de Janeiro/RJ",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior completo (Direito)",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "ricardo-nunes",
+      "nome_urna": "Ricardo Nunes",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Ricardo Luis Reis Nunes",
+          "valor_esperado": "Ricardo Luis Reis Nunes",
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Ricardo Nunes",
+          "valor_esperado": "Ricardo Nunes",
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "MDB",
+          "valor_esperado": "MDB",
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Movimento Democratico Brasileiro",
+          "valor_esperado": "Movimento Democratico Brasileiro",
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Prefeito de Sao Paulo",
+          "valor_esperado": "Prefeito de Sao Paulo",
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "SP",
+          "valor_esperado": "SP",
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2020]",
+          "valor_esperado": null,
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 9696701.82,
+          "valor_esperado": null,
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 1332737.34,
+          "valor_esperado": null,
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 3,
+          "valor_esperado": null,
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "/candidates/ricardo-nunes.jpg",
+          "valor_esperado": null,
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1967-11-13",
+          "valor_esperado": null,
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Sao Paulo/SP",
+          "valor_esperado": null,
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Ensino medio completo",
+          "valor_esperado": null,
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "Prefeitura de Sao Paulo 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "romeu-zema",
+      "nome_urna": "Romeu Zema",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Romeu Zema Neto",
+          "valor_esperado": "Romeu Zema Neto",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Romeu Zema",
+          "valor_esperado": "Romeu Zema",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "NOVO",
+          "valor_esperado": "NOVO",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido Novo",
+          "valor_esperado": "Partido Novo",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Governador de Minas Gerais",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Presidente",
+          "valor_esperado": "Presidente",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Estado nao se aplica a candidaturas presidenciais"
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 259590627.4,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 34601109.32,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Romeu_Zema%2C_December_2024_%28cropped%29.jpg/960px-Romeu_Zema%2C_December_2024_%28cropped%29.jpg",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1964-10-28",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Araxá",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior completo (Engenharia de Producao)",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "tarcisio",
+      "nome_urna": "Tarcisio de Freitas",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Tarcisio Gomes de Freitas",
+          "valor_esperado": "Tarcisio Gomes de Freitas",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Tarcisio de Freitas",
+          "valor_esperado": "Tarcisio de Freitas",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "REPUBLICANOS",
+          "valor_esperado": "REPUBLICANOS",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Republicanos",
+          "valor_esperado": "Republicanos",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Governador de Sao Paulo",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Presidente",
+          "valor_esperado": "Presidente",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Estado nao se aplica a candidaturas presidenciais"
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Vazio aceito: situacao nao disponivel"
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 2342161.77,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 38608188.69,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Governador_do_Estado_de_S%C3%A3o_Paulo%2C_Tarc%C3%ADsio_de_Freitas_-_Foto_Oficial_%28cropped%29.jpg/960px-Governador_do_Estado_de_S%C3%A3o_Paulo%2C_Tarc%C3%ADsio_de_Freitas_-_Foto_Oficial_%28cropped%29.jpg",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1975-08-19",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Rio de Janeiro",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior completo (Engenharia Civil)",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "nome_urna": "Sergio Moro",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Sergio Fernando Moro",
+          "valor_esperado": "Sergio Fernando Moro",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Sergio Moro",
+          "valor_esperado": "Sergio Moro",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "UNIAO",
+          "valor_esperado": "UNIAO",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Uniao Brasil",
+          "valor_esperado": "Uniao Brasil",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Senador(a)",
+          "valor_esperado": "Senador(a)",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "PR",
+          "valor_esperado": "PR",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 3178739.88,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 10533622.52,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Senador_da_Rep%C3%BAblica_S%C3%A9rgio_Moro.jpg",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1981-08-25",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Maringá",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Universidade Federal do Paraná",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "nikolas-ferreira",
+      "nome_urna": "Nikolas Ferreira",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Nikolas Ferreira Oliveira",
+          "valor_esperado": "Nikolas Ferreira Oliveira",
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Nikolas Ferreira",
+          "valor_esperado": "Nikolas Ferreira",
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PL",
+          "valor_esperado": "PL",
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido Liberal",
+          "valor_esperado": "Partido Liberal",
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Deputado(a) Federal",
+          "valor_esperado": "Deputado(a) Federal",
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "MG",
+          "valor_esperado": "MG",
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 73640.92,
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 573055.28,
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Nikolas_Ferreira_in_2023_%28cropped%29.jpg/960px-Nikolas_Ferreira_in_2023_%28cropped%29.jpg",
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1996-05-30",
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Belo Horizonte/MG",
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior",
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "renan-santos",
+      "nome_urna": "Renan Santos",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Renan Santos",
+          "valor_esperado": "Renan Santos",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Renan Santos",
+          "valor_esperado": "Renan Santos",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "MISSAO",
+          "valor_esperado": "MISSAO",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Missao",
+          "valor_esperado": "Missao",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Sem cargo publico",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Presidente",
+          "valor_esperado": "Presidente",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Estado nao se aplica a candidaturas presidenciais"
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Vazio aceito: sem declaracao encontrada"
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 361984,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/2026-01-11_Renan_Santos_%2855036684938%29_%283x4%29.jpg/960px-2026-01-11_Renan_Santos_%2855036684938%29_%283x4%29.jpg",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1984-02-14",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "São Paulo",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Universidade de São Paulo",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "nome_urna": "Ciro Gomes",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Ciro Ferreira Gomes",
+          "valor_esperado": "Ciro Ferreira Gomes",
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Ciro Gomes",
+          "valor_esperado": "Ciro Gomes",
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PSDB",
+          "valor_esperado": "PSDB",
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido da Social Democracia Brasileira",
+          "valor_esperado": "Partido da Social Democracia Brasileira",
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Vazio aceito: sem mandato ativo confirmado"
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "CE",
+          "valor_esperado": "CE",
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 6079523.94,
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 36013770.24,
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/3/34/Presidente_Ciro_Gomes.png",
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1957-11-06",
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Pindamonhangaba/SP",
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior",
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "PSDB oficial 2025-10-22",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "joao-campos",
+      "nome_urna": "Joao Campos",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Joao Henrique de Andrade Lima Campos",
+          "valor_esperado": "Joao Henrique de Andrade Lima Campos",
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Joao Campos",
+          "valor_esperado": "Joao Campos",
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PSB",
+          "valor_esperado": "PSB",
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido Socialista Brasileiro",
+          "valor_esperado": "Partido Socialista Brasileiro",
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Prefeito do Recife",
+          "valor_esperado": "Prefeito do Recife",
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "PE",
+          "valor_esperado": "PE",
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 5394777.56,
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 3803484.56,
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://www.camara.leg.br/internet/deputado/bandep/204429.jpg",
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1993-11-26",
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Recife/PE",
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior",
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Recife + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "eduardo-leite",
+      "nome_urna": "Eduardo Leite",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Eduardo Figueiredo Cavalheiro Leite",
+          "valor_esperado": "Eduardo Figueiredo Cavalheiro Leite",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Eduardo Leite",
+          "valor_esperado": "Eduardo Leite",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PSD",
+          "valor_esperado": "PSD",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido Social Democratico",
+          "valor_esperado": "Partido Social Democratico",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Governador do Rio Grande do Sul",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Presidente",
+          "valor_esperado": "Presidente",
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": null,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": "Estado nao se aplica a candidaturas presidenciais"
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 562749.08,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 29429516.5,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 1,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/09.02.2026_%E2%80%93_Eduardo_Leite_in_February_2026_-_55087496770_%283x4%29.jpg/960px-09.02.2026_%E2%80%93_Eduardo_Leite_in_February_2026_-_55087496770_%283x4%29.jpg",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1985-03-10",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Pelotas",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior completo (Direito)",
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "curadoria presidenciaveis",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "nome_urna": "Tarcisio de Freitas",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Tarcisio Gomes de Freitas",
+          "valor_esperado": "Tarcisio Gomes de Freitas",
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Tarcisio de Freitas",
+          "valor_esperado": "Tarcisio de Freitas",
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "REPUBLICANOS",
+          "valor_esperado": "REPUBLICANOS",
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Republicanos",
+          "valor_esperado": "Republicanos",
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Governador de Sao Paulo",
+          "valor_esperado": "Governador de Sao Paulo",
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "SP",
+          "valor_esperado": "SP",
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 4684323.54,
+          "valor_esperado": null,
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 77216377.38,
+          "valor_esperado": null,
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 1,
+          "valor_esperado": null,
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Governador_do_Estado_de_S%C3%A3o_Paulo%2C_Tarc%C3%ADsio_de_Freitas_-_Foto_Oficial_%28cropped%29.jpg/960px-Governador_do_Estado_de_S%C3%A3o_Paulo%2C_Tarc%C3%ADsio_de_Freitas_-_Foto_Oficial_%28cropped%29.jpg",
+          "valor_esperado": null,
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1975-08-19",
+          "valor_esperado": null,
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Rio de Janeiro/RJ",
+          "valor_esperado": null,
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior completo (Engenharia Civil)",
+          "valor_esperado": null,
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "Governo de SP + Republicanos oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "rodrigo-pacheco",
+      "nome_urna": "Rodrigo Pacheco",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Rodrigo Pacheco Amaral",
+          "valor_esperado": "Rodrigo Pacheco Amaral",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Rodrigo Pacheco",
+          "valor_esperado": "Rodrigo Pacheco",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PSD",
+          "valor_esperado": "PSD",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido Social Democratico",
+          "valor_esperado": "Partido Social Democratico",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Senador(a)",
+          "valor_esperado": "Senador(a)",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "MG",
+          "valor_esperado": "MG",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2020]",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 111840,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 7639661.7,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://www.camara.leg.br/internet/deputado/bandep/178897.jpg",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1976-11-03",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Porto Velho/RO",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "erika-hilton",
+      "nome_urna": "Erika Hilton",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Erika Santos Silva",
+          "valor_esperado": "Erika Santos Silva",
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Erika Hilton",
+          "valor_esperado": "Erika Hilton",
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PSOL",
+          "valor_esperado": "PSOL",
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido Socialismo e Liberdade",
+          "valor_esperado": "Partido Socialismo e Liberdade",
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Deputado(a) Federal",
+          "valor_esperado": "Deputado(a) Federal",
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "SP",
+          "valor_esperado": "SP",
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 39979.92,
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 3041873.18,
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 1,
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://www.camara.leg.br/internet/deputado/bandep/220645.jpg",
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1992-12-09",
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Franco da Rocha/SP",
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior",
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Camara dos Deputados 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "nome_urna": "Fernando Haddad",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Fernando Haddad",
+          "valor_esperado": "Fernando Haddad",
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Fernando Haddad",
+          "valor_esperado": "Fernando Haddad",
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PT",
+          "valor_esperado": "PT",
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido dos Trabalhadores",
+          "valor_esperado": "Partido dos Trabalhadores",
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Ministro da Fazenda",
+          "valor_esperado": "Ministro da Fazenda",
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "SP",
+          "valor_esperado": "SP",
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 1190118.58,
+          "valor_esperado": null,
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 67159571.92,
+          "valor_esperado": null,
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 2,
+          "valor_esperado": null,
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/5/52/Fernando_Haddad_posse_min._da_Fazenda.jpg",
+          "valor_esperado": null,
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1963-01-25",
+          "valor_esperado": null,
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Sao Paulo/SP",
+          "valor_esperado": null,
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Direito (USP), Mestrado em Economia (USP), Doutorado em Filosofia (USP)",
+          "valor_esperado": null,
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "gov.br Fazenda + PT oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "cleitinho",
+      "nome_urna": "Cleitinho",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Cleiton Gontijo de Azevedo",
+          "valor_esperado": "Cleiton Gontijo de Azevedo",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Cleitinho",
+          "valor_esperado": "Cleitinho",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "REPUBLICANOS",
+          "valor_esperado": "REPUBLICANOS",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Republicanos",
+          "valor_esperado": "Republicanos",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Senador(a)",
+          "valor_esperado": "Senador(a)",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "MG",
+          "valor_esperado": "MG",
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 5955846.2,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 1418318.18,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Senadores_da_57%C2%AA_Legislatura_%2852689522963%29.jpg/960px-Senadores_da_57%C2%AA_Legislatura_%2852689522963%29.jpg",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1982-04-15",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Divinópolis/MG",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "ENSINO MÉDIO COMPLETO",
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "Senado Federal 2026-03-31",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "geraldo-alckmin",
+      "nome_urna": "Geraldo Alckmin",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Geraldo Jose Rodrigues Alckmin Filho",
+          "valor_esperado": "Geraldo Jose Rodrigues Alckmin Filho",
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Geraldo Alckmin",
+          "valor_esperado": "Geraldo Alckmin",
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PSB",
+          "valor_esperado": "PSB",
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido Socialista Brasileiro",
+          "valor_esperado": "Partido Socialista Brasileiro",
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Vice-Presidente da Republica",
+          "valor_esperado": "Vice-Presidente da Republica",
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "SP",
+          "valor_esperado": "SP",
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 2011456.84,
+          "valor_esperado": null,
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 54061398.97,
+          "valor_esperado": null,
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 2,
+          "valor_esperado": null,
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Alckmin_2024.jpg/960px-Alckmin_2024.jpg",
+          "valor_esperado": null,
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1952-11-07",
+          "valor_esperado": null,
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Pindamonhangaba/SP",
+          "valor_esperado": null,
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Superior",
+          "valor_esperado": null,
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "Vice-Presidencia + PSB oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "eduardo-paes",
+      "nome_urna": "Eduardo Paes",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Eduardo da Costa Paes",
+          "valor_esperado": "Eduardo da Costa Paes",
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Eduardo Paes",
+          "valor_esperado": "Eduardo Paes",
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PSD",
+          "valor_esperado": "PSD",
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido Social Democratico",
+          "valor_esperado": "Partido Social Democratico",
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Prefeito do Rio de Janeiro",
+          "valor_esperado": "Prefeito do Rio de Janeiro",
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "RJ",
+          "valor_esperado": "RJ",
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "#NE [2024]",
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 371337.48,
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 15651600,
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Eduardo_Paes%2C_October_2024.jpg/960px-Eduardo_Paes%2C_October_2024.jpg",
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1969-11-14",
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Rio de Janeiro",
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Pontifícia Universidade Católica do Rio de Janeiro",
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "Prefeitura do Rio + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "raquel-lyra",
+      "nome_urna": "Raquel Lyra",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Raquel Teixeira Lyra Lucena",
+          "valor_esperado": "Raquel Teixeira Lyra Lucena",
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Raquel Lyra",
+          "valor_esperado": "Raquel Lyra",
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PSD",
+          "valor_esperado": "PSD",
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido Social Democratico",
+          "valor_esperado": "Partido Social Democratico",
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Governadora de Pernambuco",
+          "valor_esperado": "Governadora de Pernambuco",
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "PE",
+          "valor_esperado": "PE",
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 681153.98,
+          "valor_esperado": null,
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 34285987.3,
+          "valor_esperado": null,
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/RL45_14-09.jpg/960px-RL45_14-09.jpg",
+          "valor_esperado": null,
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1978-12-02",
+          "valor_esperado": null,
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Recife",
+          "valor_esperado": null,
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Faculdade de Direito da Universidade Federal de Pernambuco",
+          "valor_esperado": null,
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "Governo de Pernambuco + PSD oficial 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    },
+    {
+      "slug": "jeronimo",
+      "nome_urna": "Jeronimo",
+      "timestamp": "2026-03-31T23:32:36.735Z",
+      "auditoria_status": "auditado",
+      "campos": [
+        {
+          "campo": "nome_completo",
+          "severidade": "S0",
+          "valor_publicado": "Jeronimo Rodrigues de Jesus",
+          "valor_esperado": "Jeronimo Rodrigues de Jesus",
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "nome_urna",
+          "severidade": "S0",
+          "valor_publicado": "Jeronimo",
+          "valor_esperado": "Jeronimo",
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_sigla",
+          "severidade": "S0",
+          "valor_publicado": "PT",
+          "valor_esperado": "PT",
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "partido_atual",
+          "severidade": "S0",
+          "valor_publicado": "Partido dos Trabalhadores",
+          "valor_esperado": "Partido dos Trabalhadores",
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_atual",
+          "severidade": "S0",
+          "valor_publicado": "Governador da Bahia",
+          "valor_esperado": "Governador da Bahia",
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "cargo_disputado",
+          "severidade": "S0",
+          "valor_publicado": "Governador",
+          "valor_esperado": "Governador",
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "estado",
+          "severidade": "S0",
+          "valor_publicado": "BA",
+          "valor_esperado": "BA",
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "situacao_candidatura",
+          "severidade": "S0",
+          "valor_publicado": "APTO [2022]",
+          "valor_esperado": null,
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "patrimonio_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 500000,
+          "valor_esperado": null,
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "financiamento_mais_recente",
+          "severidade": "S0",
+          "valor_publicado": 98989.2,
+          "valor_esperado": null,
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "total_processos",
+          "severidade": "S0",
+          "valor_publicado": 0,
+          "valor_esperado": null,
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": true,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "foto_url",
+          "severidade": "S1",
+          "valor_publicado": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/18_01_2023_-_Visita_de_Cortesia_Jer%C3%B4nimo_Rodrigues_%28Governador_do_Estado_da_Bahia-BA%29_%2852635213362%29_%28cropped%29.jpg/960px-18_01_2023_-_Visita_de_Cortesia_Jer%C3%B4nimo_Rodrigues_%28Governador_do_Estado_da_Bahia-BA%29_%2852635213362%29_%28cropped%29.jpg",
+          "valor_esperado": null,
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "data_nascimento",
+          "severidade": "S1",
+          "valor_publicado": "1965-04-03",
+          "valor_esperado": null,
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "naturalidade",
+          "severidade": "S1",
+          "valor_publicado": "Aiquara",
+          "valor_esperado": null,
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "formacao",
+          "severidade": "S1",
+          "valor_publicado": "Universidade Federal da Bahia",
+          "valor_esperado": null,
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "historico_politico",
+          "severidade": "S1",
+          "valor_publicado": true,
+          "valor_esperado": null,
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        },
+        {
+          "campo": "gastos_parlamentares",
+          "severidade": "S1",
+          "valor_publicado": false,
+          "valor_esperado": null,
+          "fonte": "Governo da Bahia + PT Bahia 2026-03",
+          "requer_revisao_manual": false,
+          "resultado": "pass",
+          "motivo": null
+        }
+      ],
+      "tem_falha_critica": false,
+      "tem_warning": false,
+      "itens_revisao_manual": []
+    }
+  ],
+  "fila_revisao": []
+}

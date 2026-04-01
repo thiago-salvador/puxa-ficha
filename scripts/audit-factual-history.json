@@ -1,0 +1,211 @@
+[
+  {
+    "run_id": "a8060a7c-d9af-4d2f-9ff1-682517abf535",
+    "executado_em": "2026-03-31T23:12:07.309Z",
+    "filtros": {
+      "cohort": "governadores-prioritarios",
+      "dry_run": true
+    },
+    "total_candidatos": 8,
+    "resumo": {
+      "auditados": 8,
+      "pendentes": 0,
+      "reprovados": 0,
+      "podem_publicar": 8,
+      "nao_podem_publicar": 0,
+      "com_falha_critica": 0,
+      "com_warning": 0,
+      "itens_revisao_manual": 0,
+      "com_assertions": 8,
+      "sem_assertions": 0
+    }
+  },
+  {
+    "run_id": "7e3e4e03-821b-43ef-b88d-988b83d78b7f",
+    "executado_em": "2026-03-31T23:12:24.000Z",
+    "filtros": {
+      "cohort": "presidenciaveis",
+      "dry_run": false
+    },
+    "total_candidatos": 13,
+    "resumo": {
+      "auditados": 13,
+      "pendentes": 0,
+      "reprovados": 0,
+      "podem_publicar": 13,
+      "nao_podem_publicar": 0,
+      "com_falha_critica": 0,
+      "com_warning": 0,
+      "itens_revisao_manual": 0,
+      "com_assertions": 13,
+      "sem_assertions": 0
+    }
+  },
+  {
+    "run_id": "edfa5990-4f7f-4cdd-9430-ef7e31f1efe7",
+    "executado_em": "2026-03-31T23:12:24.009Z",
+    "filtros": {
+      "cohort": "governadores-prioritarios",
+      "dry_run": false
+    },
+    "total_candidatos": 8,
+    "resumo": {
+      "auditados": 8,
+      "pendentes": 0,
+      "reprovados": 0,
+      "podem_publicar": 8,
+      "nao_podem_publicar": 0,
+      "com_falha_critica": 0,
+      "com_warning": 0,
+      "itens_revisao_manual": 0,
+      "com_assertions": 8,
+      "sem_assertions": 0
+    }
+  },
+  {
+    "run_id": "1f057abc-a28b-4c61-ad7c-6bc993599f24",
+    "executado_em": "2026-03-31T23:13:52.577Z",
+    "filtros": {
+      "cohort": "presidenciaveis",
+      "dry_run": false
+    },
+    "total_candidatos": 13,
+    "resumo": {
+      "auditados": 13,
+      "pendentes": 0,
+      "reprovados": 0,
+      "podem_publicar": 13,
+      "nao_podem_publicar": 0,
+      "com_falha_critica": 0,
+      "com_warning": 0,
+      "itens_revisao_manual": 0,
+      "com_assertions": 13,
+      "sem_assertions": 0
+    }
+  },
+  {
+    "run_id": "1ed52dba-d8cc-4d68-a02c-8103dba18c22",
+    "executado_em": "2026-03-31T23:13:52.578Z",
+    "filtros": {
+      "cohort": "governadores-prioritarios",
+      "dry_run": false
+    },
+    "total_candidatos": 8,
+    "resumo": {
+      "auditados": 8,
+      "pendentes": 0,
+      "reprovados": 0,
+      "podem_publicar": 8,
+      "nao_podem_publicar": 0,
+      "com_falha_critica": 0,
+      "com_warning": 0,
+      "itens_revisao_manual": 0,
+      "com_assertions": 8,
+      "sem_assertions": 0
+    }
+  },
+  {
+    "run_id": "2fbbc37f-8b32-44e0-bf56-be40db1c67d5",
+    "executado_em": "2026-03-31T23:32:27.932Z",
+    "scope": "governadores-prioritarios",
+    "filtros": {
+      "cohort": "governadores-prioritarios",
+      "dry_run": false
+    },
+    "total_candidatos": 16,
+    "resumo": {
+      "auditados": 16,
+      "pendentes": 0,
+      "reprovados": 0,
+      "podem_publicar": 16,
+      "nao_podem_publicar": 0,
+      "com_falha_critica": 0,
+      "com_warning": 0,
+      "itens_revisao_manual": 0,
+      "com_assertions": 16,
+      "sem_assertions": 0
+    },
+    "report_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-governadores-prioritarios-report.json",
+    "queue_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-governadores-prioritarios-queue.json",
+    "summary_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-governadores-prioritarios-summary.md",
+    "run_report_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-runs/2026-03-31T23-32-27.932Z-governadores-prioritarios-report.json"
+  },
+  {
+    "run_id": "b150e803-779d-47c7-a320-815070db3599",
+    "executado_em": "2026-03-31T23:32:36.737Z",
+    "scope": "alto-trafego",
+    "filtros": {
+      "cohort": "alto-trafego",
+      "dry_run": false
+    },
+    "total_candidatos": 29,
+    "resumo": {
+      "auditados": 29,
+      "pendentes": 0,
+      "reprovados": 0,
+      "podem_publicar": 29,
+      "nao_podem_publicar": 0,
+      "com_falha_critica": 0,
+      "com_warning": 0,
+      "itens_revisao_manual": 0,
+      "com_assertions": 29,
+      "sem_assertions": 0
+    },
+    "report_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-alto-trafego-report.json",
+    "queue_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-alto-trafego-queue.json",
+    "summary_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-alto-trafego-summary.md",
+    "run_report_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-runs/2026-03-31T23-32-36.737Z-alto-trafego-report.json"
+  },
+  {
+    "run_id": "4fd69254-bf35-4367-840f-056670bdae3d",
+    "executado_em": "2026-03-31T23:32:46.635Z",
+    "scope": "presidenciaveis",
+    "filtros": {
+      "cohort": "presidenciaveis",
+      "dry_run": false
+    },
+    "total_candidatos": 13,
+    "resumo": {
+      "auditados": 13,
+      "pendentes": 0,
+      "reprovados": 0,
+      "podem_publicar": 13,
+      "nao_podem_publicar": 0,
+      "com_falha_critica": 0,
+      "com_warning": 0,
+      "itens_revisao_manual": 0,
+      "com_assertions": 13,
+      "sem_assertions": 0
+    },
+    "report_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-presidenciaveis-report.json",
+    "queue_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-presidenciaveis-queue.json",
+    "summary_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-presidenciaveis-summary.md",
+    "run_report_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-runs/2026-03-31T23-32-46.635Z-presidenciaveis-report.json"
+  },
+  {
+    "run_id": "36a3e5f5-2231-4f56-9421-9f3198b810f5",
+    "executado_em": "2026-03-31T23:47:12.408Z",
+    "scope": "alto-trafego-editorial",
+    "filtros": {
+      "cohort": "alto-trafego-editorial",
+      "dry_run": false
+    },
+    "total_candidatos": 29,
+    "resumo": {
+      "auditados": 29,
+      "pendentes": 0,
+      "reprovados": 0,
+      "podem_publicar": 29,
+      "nao_podem_publicar": 0,
+      "com_falha_critica": 0,
+      "com_warning": 1,
+      "itens_revisao_manual": 0,
+      "com_assertions": 29,
+      "sem_assertions": 0
+    },
+    "report_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-alto-trafego-editorial-report.json",
+    "queue_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-alto-trafego-editorial-queue.json",
+    "summary_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-alto-trafego-editorial-summary.md",
+    "run_report_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-runs/2026-03-31T23-47-12.408Z-alto-trafego-editorial-report.json"
+  }
+]

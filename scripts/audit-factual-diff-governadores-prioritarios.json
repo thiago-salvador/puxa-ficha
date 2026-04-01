@@ -1,0 +1,311 @@
+{
+  "gerado_em": "2026-03-31T23:33:00.495Z",
+  "before_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-runs/2026-03-31T00-00-00.000Z-governadores-prioritarios-report.json",
+  "after_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-runs/2026-03-31T23-32-27.932Z-governadores-prioritarios-report.json",
+  "resumo": {
+    "candidatos_comparados": 16,
+    "improved": 0,
+    "regressed": 0,
+    "changed": 3,
+    "unchanged": 5,
+    "added": 8,
+    "removed": 0
+  },
+  "candidatos": [
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "before_status": null,
+      "after_status": "auditado",
+      "before_pode_publicar": null,
+      "after_pode_publicar": true,
+      "change_type": "added",
+      "changed_fields": [
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_atual",
+        "cargo_disputado",
+        "estado",
+        "situacao_candidatura",
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "total_processos",
+        "foto_url",
+        "data_nascimento",
+        "naturalidade",
+        "formacao",
+        "historico_politico",
+        "gastos_parlamentares"
+      ]
+    },
+    {
+      "slug": "cleitinho",
+      "before_status": null,
+      "after_status": "auditado",
+      "before_pode_publicar": null,
+      "after_pode_publicar": true,
+      "change_type": "added",
+      "changed_fields": [
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_atual",
+        "cargo_disputado",
+        "estado",
+        "situacao_candidatura",
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "total_processos",
+        "foto_url",
+        "data_nascimento",
+        "naturalidade",
+        "formacao",
+        "historico_politico",
+        "gastos_parlamentares"
+      ]
+    },
+    {
+      "slug": "eduardo-paes",
+      "before_status": "auditado",
+      "after_status": "auditado",
+      "before_pode_publicar": true,
+      "after_pode_publicar": true,
+      "change_type": "changed",
+      "changed_fields": [
+        "patrimonio_mais_recente"
+      ]
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "before_status": "auditado",
+      "after_status": "auditado",
+      "before_pode_publicar": true,
+      "after_pode_publicar": true,
+      "change_type": "unchanged",
+      "changed_fields": []
+    },
+    {
+      "slug": "erika-hilton",
+      "before_status": null,
+      "after_status": "auditado",
+      "before_pode_publicar": null,
+      "after_pode_publicar": true,
+      "change_type": "added",
+      "changed_fields": [
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_atual",
+        "cargo_disputado",
+        "estado",
+        "situacao_candidatura",
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "total_processos",
+        "foto_url",
+        "data_nascimento",
+        "naturalidade",
+        "formacao",
+        "historico_politico",
+        "gastos_parlamentares"
+      ]
+    },
+    {
+      "slug": "geraldo-alckmin",
+      "before_status": null,
+      "after_status": "auditado",
+      "before_pode_publicar": null,
+      "after_pode_publicar": true,
+      "change_type": "added",
+      "changed_fields": [
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_atual",
+        "cargo_disputado",
+        "estado",
+        "situacao_candidatura",
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "total_processos",
+        "foto_url",
+        "data_nascimento",
+        "naturalidade",
+        "formacao",
+        "historico_politico",
+        "gastos_parlamentares"
+      ]
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "before_status": null,
+      "after_status": "auditado",
+      "before_pode_publicar": null,
+      "after_pode_publicar": true,
+      "change_type": "added",
+      "changed_fields": [
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_atual",
+        "cargo_disputado",
+        "estado",
+        "situacao_candidatura",
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "total_processos",
+        "foto_url",
+        "data_nascimento",
+        "naturalidade",
+        "formacao",
+        "historico_politico",
+        "gastos_parlamentares"
+      ]
+    },
+    {
+      "slug": "jeronimo",
+      "before_status": "auditado",
+      "after_status": "auditado",
+      "before_pode_publicar": true,
+      "after_pode_publicar": true,
+      "change_type": "changed",
+      "changed_fields": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente"
+      ]
+    },
+    {
+      "slug": "joao-campos",
+      "before_status": "auditado",
+      "after_status": "auditado",
+      "before_pode_publicar": true,
+      "after_pode_publicar": true,
+      "change_type": "changed",
+      "changed_fields": [
+        "patrimonio_mais_recente"
+      ]
+    },
+    {
+      "slug": "jorginho-mello",
+      "before_status": null,
+      "after_status": "auditado",
+      "before_pode_publicar": null,
+      "after_pode_publicar": true,
+      "change_type": "added",
+      "changed_fields": [
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_atual",
+        "cargo_disputado",
+        "estado",
+        "situacao_candidatura",
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "total_processos",
+        "foto_url",
+        "data_nascimento",
+        "naturalidade",
+        "formacao",
+        "historico_politico",
+        "gastos_parlamentares"
+      ]
+    },
+    {
+      "slug": "nikolas-ferreira",
+      "before_status": "auditado",
+      "after_status": "auditado",
+      "before_pode_publicar": true,
+      "after_pode_publicar": true,
+      "change_type": "unchanged",
+      "changed_fields": []
+    },
+    {
+      "slug": "raquel-lyra",
+      "before_status": "auditado",
+      "after_status": "auditado",
+      "before_pode_publicar": true,
+      "after_pode_publicar": true,
+      "change_type": "unchanged",
+      "changed_fields": []
+    },
+    {
+      "slug": "ricardo-nunes",
+      "before_status": null,
+      "after_status": "auditado",
+      "before_pode_publicar": null,
+      "after_pode_publicar": true,
+      "change_type": "added",
+      "changed_fields": [
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_atual",
+        "cargo_disputado",
+        "estado",
+        "situacao_candidatura",
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "total_processos",
+        "foto_url",
+        "data_nascimento",
+        "naturalidade",
+        "formacao",
+        "historico_politico",
+        "gastos_parlamentares"
+      ]
+    },
+    {
+      "slug": "rodrigo-pacheco",
+      "before_status": "auditado",
+      "after_status": "auditado",
+      "before_pode_publicar": true,
+      "after_pode_publicar": true,
+      "change_type": "unchanged",
+      "changed_fields": []
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "before_status": null,
+      "after_status": "auditado",
+      "before_pode_publicar": null,
+      "after_pode_publicar": true,
+      "change_type": "added",
+      "changed_fields": [
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_atual",
+        "cargo_disputado",
+        "estado",
+        "situacao_candidatura",
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "total_processos",
+        "foto_url",
+        "data_nascimento",
+        "naturalidade",
+        "formacao",
+        "historico_politico",
+        "gastos_parlamentares"
+      ]
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "before_status": "auditado",
+      "after_status": "auditado",
+      "before_pode_publicar": true,
+      "after_pode_publicar": true,
+      "change_type": "unchanged",
+      "changed_fields": []
+    }
+  ]
+}

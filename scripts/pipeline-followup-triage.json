@@ -1,0 +1,258 @@
+{
+  "generated_at": "2026-04-01T00:16:23.863Z",
+  "summary": {
+    "total_missing_sq": 19,
+    "duplicata": 2,
+    "tem_dinheiro_sem_sq_validado": 0,
+    "tem_dinheiro_sem_sq_sob_revisao": 1,
+    "vazio_real": 16
+  },
+  "entries": [
+    {
+      "slug": "adriana-accorsi",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "GO"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "alysson-bezerra",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "RN"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "andre-kamai",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "AC"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "classification": "duplicata",
+      "priority": "media",
+      "rationale": "Mesmo nome ja possui slug correlato com SQ_CANDIDATO persistido.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "related_slugs_with_sq": [
+          {
+            "slug": "ciro-gomes",
+            "cargo_disputado": "Presidente",
+            "sq_years": [
+              "2018",
+              "2022"
+            ]
+          }
+        ]
+      },
+      "modeling_decision": {
+        "canonical_slug": "ciro-gomes",
+        "primary_action": "consolidar-historico-tse-no-slug-canonico",
+        "secondary_action": "deprecar-ou-redirecionar-slug-duplicado-apos-migracao"
+      }
+    },
+    {
+      "slug": "evandro-augusto",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "RS"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "MG"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "gilberto-kassab",
+      "classification": "tem-dinheiro-sem-sq-sob-revisao",
+      "priority": "alta",
+      "rationale": "Ha registros TSE no banco, mas falta SQ_CANDIDATO e tambem falta CPF no cadastro; o match continua sem amarra forte.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "has_cpf": false,
+        "patrimonio_years": [
+          1998,
+          2014
+        ],
+        "financiamento_years": [],
+        "created_at": {
+          "patrimonio": [
+            "2026-03-30T21:11:48.22381+00:00",
+            "2026-03-30T21:11:48.22381+00:00"
+          ],
+          "financiamento": []
+        }
+      },
+      "recommended_action": "promover-para-revisao-junto-com-os-casos-sem-amarracao-forte"
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "MS"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "jose-eliton",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "GO"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "mailza-assis",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "AC"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "mateus-simoes",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "MG"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "MT"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "orleans-brandao",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "MA"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "paulo-hartung",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "ES"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "pazolini",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "ES"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "DF"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "classification": "vazio-real",
+      "priority": "alta",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Presidente",
+        "estado": null
+      },
+      "recommended_action": "depurar-primeiro-na-fase-2"
+    },
+    {
+      "slug": "simao-jatene",
+      "classification": "vazio-real",
+      "priority": "media",
+      "rationale": "Nao ha SQ_CANDIDATO persistido e nao ha patrimonio nem financiamento no banco.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "estado": "PA"
+      },
+      "recommended_action": "depurar-apos-os-presidenciaveis"
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "classification": "duplicata",
+      "priority": "media",
+      "rationale": "Mesmo nome ja possui slug correlato com SQ_CANDIDATO persistido.",
+      "evidence": {
+        "cargo_disputado": "Governador",
+        "related_slugs_with_sq": [
+          {
+            "slug": "tarcisio",
+            "cargo_disputado": "Presidente",
+            "sq_years": [
+              "2022"
+            ]
+          }
+        ]
+      },
+      "modeling_decision": {
+        "canonical_slug": "tarcisio",
+        "primary_action": "consolidar-historico-tse-no-slug-canonico",
+        "secondary_action": "deprecar-ou-redirecionar-slug-duplicado-apos-migracao"
+      }
+    }
+  ]
+}

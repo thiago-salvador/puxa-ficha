@@ -150,7 +150,7 @@ export async function ingestCapag(): Promise<IngestResult[]> {
 
         if (nota) {
           const notaNorm = nota.trim().toUpperCase()
-          await upsertIndicador(ufNorm, ano, "capag", "nota_capag", notaParaValor(notaNorm), notaNorm, null, {
+          await upsertIndicador(ufNorm, ano, "capag", "nota_capag", notaParaValor(notaNorm), notaNorm, undefined, {
             indicador_1: ind1 ?? null,
             indicador_2: ind2 ?? null,
             indicador_3: ind3 ?? null,

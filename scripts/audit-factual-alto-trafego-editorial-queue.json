@@ -1,0 +1,17 @@
+[
+  {
+    "id": "120430f0-7342-45c7-bfd5-c445c6bbf4a3",
+    "candidato_slug": "haddad-gov-sp",
+    "campo": "patrimonio_mais_recente",
+    "valor_publicado": 473000,
+    "valor_esperado": null,
+    "fonte": "gov.br Fazenda + PT oficial 2026-03",
+    "severidade": "S0",
+    "status": "aberto",
+    "responsavel": null,
+    "prazo": "2026-03-31",
+    "criado_em": "2026-03-31T23:47:12.404Z",
+    "resolvido_em": null,
+    "notas": "Patrimônio muito antigo (2012). Verificar se há declaração mais recente."
+  }
+]

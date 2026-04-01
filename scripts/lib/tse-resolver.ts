@@ -2,9 +2,11 @@ import { supabase } from "./supabase"
 import { normalizeForMatch } from "./helpers"
 import type { CandidatoConfig } from "./types"
 
+export type ResolveMethod = "sq-preloaded" | "cpf" | "name-unique" | "name-uf"
+
 export interface ResolveResult {
   slug: string
-  method: "sq-preloaded" | "cpf" | "name-unique" | "name-uf"
+  method: ResolveMethod
 }
 
 export interface ResolverStats {
@@ -27,8 +29,30 @@ interface CandidatoDBRow {
   cpf: string | null
 }
 
+export function getResolveMethodPriority(method: ResolveMethod): number {
+  switch (method) {
+    case "sq-preloaded":
+      return 4
+    case "cpf":
+      return 3
+    case "name-unique":
+      return 2
+    case "name-uf":
+      return 1
+  }
+}
+
+export function isWeakNameMatch(method: ResolveMethod): boolean {
+  return method === "name-unique" || method === "name-uf"
+}
+
+export function shouldSkipWeakMatchForAno(ano: number, method: ResolveMethod): boolean {
+  return ano === 2024 && isWeakNameMatch(method)
+}
+
 function normalizeCPF(value: string): string {
-  return value.replace(/\D/g, "")
+  const normalized = value.replace(/\D/g, "")
+  return normalized.length === 11 ? normalized : ""
 }
 
 function addNameMatch(
@@ -63,22 +87,35 @@ function getCandidateMatches(
   row: Record<string, string>,
   nameMap: Map<string, CandidatoConfig[]>
 ): CandidatoConfig[] {
-  const matches = new Map<string, CandidatoConfig>()
-  const rowNames = [
-    row.NM_CANDIDATO || "",
-    row.NM_URNA_CANDIDATO || "",
-  ]
+  const fullName = normalizeForMatch(row.NM_CANDIDATO || "")
+  const urnaName = normalizeForMatch(row.NM_URNA_CANDIDATO || "")
+  const rowUf = (row.SG_UF || "").trim().toUpperCase()
 
-  for (const rawName of rowNames) {
-    const normalized = normalizeForMatch(rawName)
-    if (!normalized) continue
+  if (fullName) {
+    const fullMatches = (nameMap.get(fullName) ?? []).filter(
+      (candidato) => normalizeForMatch(candidato.nome_completo) === fullName
+    )
 
-    for (const candidato of nameMap.get(normalized) ?? []) {
-      matches.set(candidato.slug, candidato)
+    if (fullMatches.length > 0) {
+      return [...new Map(fullMatches.map((candidato) => [candidato.slug, candidato])).values()]
     }
   }
 
-  return [...matches.values()]
+  if (!urnaName) {
+    return []
+  }
+
+  const urnaMatches = (nameMap.get(urnaName) ?? []).filter(
+    (candidato) => normalizeForMatch(candidato.nome_urna) === urnaName
+  )
+
+  if (!rowUf) {
+    return []
+  }
+
+  return urnaMatches.filter(
+    (candidato) => (candidato.estado || "").trim().toUpperCase() === rowUf
+  )
 }
 
 export async function createTSEResolver(

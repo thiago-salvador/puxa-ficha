@@ -1,0 +1,587 @@
+{
+  "atualizado_em": "2026-03-31T23:47:12.408Z",
+  "candidatos": {
+    "tarcisio-gov-sp": {
+      "slug": "tarcisio-gov-sp",
+      "nome_urna": "Tarcisio de Freitas",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "Governo de SP + Republicanos oficial 2026-03",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Governo de SP + Republicanos oficial 2026-03",
+        "last_reviewed_at": null
+      }
+    },
+    "eduardo-paes": {
+      "slug": "eduardo-paes",
+      "nome_urna": "Eduardo Paes",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "Prefeitura do Rio + PSD oficial 2026-03",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Prefeitura do Rio + PSD oficial 2026-03",
+        "last_reviewed_at": null
+      }
+    },
+    "nikolas-ferreira": {
+      "slug": "nikolas-ferreira",
+      "nome_urna": "Nikolas Ferreira",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "Camara dos Deputados 2026-03-31",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Camara dos Deputados 2026-03-31",
+        "last_reviewed_at": null
+      }
+    },
+    "rodrigo-pacheco": {
+      "slug": "rodrigo-pacheco",
+      "nome_urna": "Rodrigo Pacheco",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "Senado Federal 2026-03-31",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Senado Federal 2026-03-31",
+        "last_reviewed_at": null
+      }
+    },
+    "jeronimo": {
+      "slug": "jeronimo",
+      "nome_urna": "Jeronimo",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "Governo da Bahia + PT Bahia 2026-03",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Governo da Bahia + PT Bahia 2026-03",
+        "last_reviewed_at": null
+      }
+    },
+    "elmano-de-freitas": {
+      "slug": "elmano-de-freitas",
+      "nome_urna": "Elmano de Freitas",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "Governo do Ceara + PT Ceara 2026-03",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Governo do Ceara + PT Ceara 2026-03",
+        "last_reviewed_at": null
+      }
+    },
+    "joao-campos": {
+      "slug": "joao-campos",
+      "nome_urna": "Joao Campos",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "Prefeitura do Recife + PSB oficial 2026-03",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Prefeitura do Recife + PSB oficial 2026-03",
+        "last_reviewed_at": null
+      }
+    },
+    "raquel-lyra": {
+      "slug": "raquel-lyra",
+      "nome_urna": "Raquel Lyra",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "Governo de Pernambuco + PSD oficial 2026-03",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Governo de Pernambuco + PSD oficial 2026-03",
+        "last_reviewed_at": null
+      }
+    },
+    "ronaldo-caiado": {
+      "slug": "ronaldo-caiado",
+      "nome_urna": "Ronaldo Caiado",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.403Z",
+      "cohorts": [
+        "presidenciaveis",
+        "alto-trafego"
+      ],
+      "source": "PSD oficial 2026-01-28",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "PSD oficial 2026-01-28",
+        "last_reviewed_at": null
+      }
+    },
+    "rui-costa-pimenta": {
+      "slug": "rui-costa-pimenta",
+      "nome_urna": "Rui Costa Pimenta",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.403Z",
+      "cohorts": [
+        "presidenciaveis",
+        "alto-trafego"
+      ],
+      "source": "curadoria presidenciaveis",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "curadoria presidenciaveis",
+        "last_reviewed_at": null
+      }
+    },
+    "aldo-rebelo": {
+      "slug": "aldo-rebelo",
+      "nome_urna": "Aldo Rebelo",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "presidenciaveis",
+        "alto-trafego"
+      ],
+      "source": "DC oficial 2026-02-02",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "DC oficial 2026-02-02",
+        "last_reviewed_at": null
+      }
+    },
+    "ratinho-junior": {
+      "slug": "ratinho-junior",
+      "nome_urna": "Ratinho Junior",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "presidenciaveis",
+        "alto-trafego"
+      ],
+      "source": "PSD oficial 2026-03-12",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "PSD oficial 2026-03-12",
+        "last_reviewed_at": null
+      }
+    },
+    "hertz-dias": {
+      "slug": "hertz-dias",
+      "nome_urna": "Hertz Dias",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "presidenciaveis",
+        "alto-trafego"
+      ],
+      "source": "curadoria presidenciaveis",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "curadoria presidenciaveis",
+        "last_reviewed_at": null
+      }
+    },
+    "samara-martins": {
+      "slug": "samara-martins",
+      "nome_urna": "Samara Martins",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "presidenciaveis",
+        "alto-trafego"
+      ],
+      "source": "curadoria presidenciaveis",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "curadoria presidenciaveis",
+        "last_reviewed_at": null
+      }
+    },
+    "lula": {
+      "slug": "lula",
+      "nome_urna": "Lula",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "presidenciaveis",
+        "alto-trafego"
+      ],
+      "source": "curadoria presidenciaveis",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "curadoria presidenciaveis",
+        "last_reviewed_at": null
+      }
+    },
+    "ciro-gomes": {
+      "slug": "ciro-gomes",
+      "nome_urna": "Ciro Gomes",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "presidenciaveis",
+        "alto-trafego"
+      ],
+      "source": "PSDB oficial 2025-10-22",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "PSDB oficial 2025-10-22",
+        "last_reviewed_at": null
+      }
+    },
+    "flavio-bolsonaro": {
+      "slug": "flavio-bolsonaro",
+      "nome_urna": "Flavio Bolsonaro",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "presidenciaveis",
+        "alto-trafego"
+      ],
+      "source": "curadoria presidenciaveis",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "curadoria presidenciaveis",
+        "last_reviewed_at": null
+      }
+    },
+    "romeu-zema": {
+      "slug": "romeu-zema",
+      "nome_urna": "Romeu Zema",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "presidenciaveis",
+        "alto-trafego"
+      ],
+      "source": "curadoria presidenciaveis",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "curadoria presidenciaveis",
+        "last_reviewed_at": null
+      }
+    },
+    "tarcisio": {
+      "slug": "tarcisio",
+      "nome_urna": "Tarcisio de Freitas",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "presidenciaveis",
+        "alto-trafego"
+      ],
+      "source": "curadoria presidenciaveis",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "curadoria presidenciaveis",
+        "last_reviewed_at": null
+      }
+    },
+    "renan-santos": {
+      "slug": "renan-santos",
+      "nome_urna": "Renan Santos",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "presidenciaveis",
+        "alto-trafego"
+      ],
+      "source": "curadoria presidenciaveis",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "curadoria presidenciaveis",
+        "last_reviewed_at": null
+      }
+    },
+    "eduardo-leite": {
+      "slug": "eduardo-leite",
+      "nome_urna": "Eduardo Leite",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "presidenciaveis",
+        "alto-trafego"
+      ],
+      "source": "curadoria presidenciaveis",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "curadoria presidenciaveis",
+        "last_reviewed_at": null
+      }
+    },
+    "jorginho-mello": {
+      "slug": "jorginho-mello",
+      "nome_urna": "Jorginho Mello",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "Governo de Santa Catarina + ALESC oficial 2026-03",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Governo de Santa Catarina + ALESC oficial 2026-03",
+        "last_reviewed_at": null
+      }
+    },
+    "ricardo-nunes": {
+      "slug": "ricardo-nunes",
+      "nome_urna": "Ricardo Nunes",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "Prefeitura de Sao Paulo 2026-03-31",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Prefeitura de Sao Paulo 2026-03-31",
+        "last_reviewed_at": null
+      }
+    },
+    "sergio-moro-gov-pr": {
+      "slug": "sergio-moro-gov-pr",
+      "nome_urna": "Sergio Moro",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "Senado Federal 2026-03-31",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Senado Federal 2026-03-31",
+        "last_reviewed_at": null
+      }
+    },
+    "ciro-gomes-gov-ce": {
+      "slug": "ciro-gomes-gov-ce",
+      "nome_urna": "Ciro Gomes",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "PSDB oficial 2025-10-22",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "PSDB oficial 2025-10-22",
+        "last_reviewed_at": null
+      }
+    },
+    "erika-hilton": {
+      "slug": "erika-hilton",
+      "nome_urna": "Erika Hilton",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "Camara dos Deputados 2026-03-31",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Camara dos Deputados 2026-03-31",
+        "last_reviewed_at": null
+      }
+    },
+    "haddad-gov-sp": {
+      "slug": "haddad-gov-sp",
+      "nome_urna": "Fernando Haddad",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "gov.br Fazenda + PT oficial 2026-03",
+      "campos_com_fail": [],
+      "campos_com_warning": [
+        "patrimonio_mais_recente"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "gov.br Fazenda + PT oficial 2026-03",
+        "last_reviewed_at": null
+      }
+    },
+    "cleitinho": {
+      "slug": "cleitinho",
+      "nome_urna": "Cleitinho",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "Senado Federal 2026-03-31",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Senado Federal 2026-03-31",
+        "last_reviewed_at": null
+      }
+    },
+    "geraldo-alckmin": {
+      "slug": "geraldo-alckmin",
+      "nome_urna": "Geraldo Alckmin",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "cohorts": [
+        "governadores-prioritarios",
+        "alto-trafego"
+      ],
+      "source": "Vice-Presidencia + PSB oficial 2026-03",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Vice-Presidencia + PSB oficial 2026-03",
+        "last_reviewed_at": null
+      }
+    }
+  }
+}
