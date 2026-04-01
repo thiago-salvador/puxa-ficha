@@ -1,0 +1,64 @@
+name: Auditoria factual
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/auditoria-factual.yml"
+      - "scripts/audit-factual.ts"
+      - "scripts/audit-factual-diff.ts"
+      - "scripts/check-audit-gate.ts"
+      - "scripts/sync-audit-assertions.ts"
+      - "scripts/sync-mock-from-assertions.ts"
+      - "scripts/lib/audit-*.ts"
+      - "scripts/lib/factual-assertions.ts"
+      - "scripts/lib/party-canonical.ts"
+      - "src/data/mock.ts"
+  workflow_dispatch:
+
+jobs:
+  audit-presidenciaveis:
+    name: Gate factual (presidenciaveis)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Rodar auditoria factual
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npx tsx scripts/audit-factual.ts --cohort presidenciaveis --output-prefix presidenciaveis
+
+      - name: Auditar governadores prioritarios
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npx tsx scripts/audit-factual.ts --cohort governadores-prioritarios --output-prefix governadores-prioritarios
+
+      - name: Gate leve de publicacao
+        run: npx tsx scripts/check-audit-gate.ts --report scripts/audit-factual-presidenciaveis-report.json --max-blocked 0 --min-assertions 13
+
+      - name: Publicar artefatos
+        uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-factual
+          path: |
+            scripts/audit-factual-presidenciaveis-report.json
+            scripts/audit-factual-presidenciaveis-queue.json
+            scripts/audit-factual-presidenciaveis-summary.md
+            scripts/audit-factual-governadores-prioritarios-report.json
+            scripts/audit-factual-governadores-prioritarios-queue.json
+            scripts/audit-factual-governadores-prioritarios-summary.md
+            scripts/audit-factual-state.json
+            scripts/audit-factual-history.json
+            scripts/audit-factual-runs

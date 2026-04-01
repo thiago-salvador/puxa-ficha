@@ -1,13 +1,14 @@
-import { createReadStream, existsSync, mkdirSync, createWriteStream, rmSync } from "fs"
-import { parse } from "csv-parse"
+import { existsSync, mkdirSync, createWriteStream, rmSync, writeFileSync } from "fs"
 import { resolve } from "path"
 import { execSync } from "child_process"
 import { supabase } from "./supabase"
-import { loadCandidatos, normalizeForMatch, sleep } from "./helpers"
+import { loadCandidatos, parseCSV, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import type { IngestResult, CandidatoConfig } from "./types"
+import { createTSEResolver, shouldSkipWeakMatchForAno, type ResolveResult } from "./tse-resolver"
 
 const DATA_DIR = resolve(process.cwd(), "data/tse-situacao")
+const AUDIT_PATH = resolve(process.cwd(), "scripts/tse-situacao-audit.json")
 
 // Tenta anos em ordem decrescente. 2026 ainda nao existe (campanha formal comeca em agosto/2026).
 // 2022 tem todos os candidatos nacionais (presidente, governadores, senadores, deputados).
@@ -101,38 +102,6 @@ function findAllCSVs(dir: string): string[] {
   }
 }
 
-async function parseCSV(
-  filePath: string,
-  onRow: (row: Record<string, string>) => Promise<void> | void
-): Promise<number> {
-  let count = 0
-  const parser = createReadStream(filePath, { encoding: "latin1" }).pipe(
-    parse({
-      delimiter: ";",
-      columns: true,
-      skip_empty_lines: true,
-      relax_column_count: true,
-      cast: (value) => value.trim(),
-    })
-  )
-
-  for await (const row of parser) {
-    await onRow(row as Record<string, string>)
-    count++
-  }
-
-  return count
-}
-
-function buildCandidateNameMap(candidatos: CandidatoConfig[]): Map<string, CandidatoConfig> {
-  const map = new Map<string, CandidatoConfig>()
-  for (const c of candidatos) {
-    map.set(normalizeForMatch(c.nome_completo), c)
-    map.set(normalizeForMatch(c.nome_urna), c)
-  }
-  return map
-}
-
 /**
  * Convert DD/MM/YYYY to YYYY-MM-DD. Returns empty string if invalid.
  */
@@ -164,6 +133,9 @@ interface MatchedData {
   detalhe: string
   ano: number
   cand: CandidatoConfig
+  match_method: ResolveResult["method"]
+  ds_cargo: string
+  sg_uf: string
   uf_nascimento: string
   data_nascimento: string
   genero: string
@@ -174,13 +146,55 @@ interface MatchedData {
   email: string
 }
 
+interface IngestTSESituacaoOptions {
+  dryRun?: boolean
+  auditPath?: string
+}
+
+interface CandidateSnapshot {
+  cpf: string | null
+  situacao_candidatura: string | null
+  naturalidade: string | null
+  data_nascimento: string | null
+  formacao: string | null
+  profissao_declarada: string | null
+  genero: string | null
+  estado_civil: string | null
+  cor_raca: string | null
+  email_campanha: string | null
+}
+
+interface AuditEntry {
+  slug: string
+  ano: number
+  match_method: ResolveResult["method"]
+  source_row: {
+    ds_cargo: string
+    sg_uf: string
+    cpf_present: boolean
+  }
+  before: CandidateSnapshot | null
+  proposed_update: Record<string, string>
+  blocked_reasons: string[]
+  persisted: boolean
+}
+
+function normalizeCPF(value: string): string {
+  return value.replace(/\D/g, "")
+}
+
+function getValidCPF(value: string | null | undefined): string {
+  const normalized = normalizeCPF(value || "")
+  return normalized.length === 11 ? normalized : ""
+}
+
 /**
  * Tenta baixar e parsear o ZIP de consulta_cand para um dado ano.
  * Retorna um mapa slug -> MatchedData para candidatos encontrados.
  */
 async function processAno(
   ano: number,
-  nameMap: Map<string, CandidatoConfig>,
+  candidatos: CandidatoConfig[],
   existingMatches: Map<string, MatchedData>
 ): Promise<{ matched: Map<string, MatchedData>; success: boolean }> {
   const zipUrl = `https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_${ano}.zip`
@@ -212,35 +226,19 @@ async function processAno(
   }
 
   log("tse-situacao", `  Parseando ${csvPaths.length} arquivo(s) CSV do ano ${ano}`)
+  const resolver = await createTSEResolver(candidatos, ano)
+  const candidatosBySlug = new Map(candidatos.map((candidato) => [candidato.slug, candidato]))
 
   for (const csvPath of csvPaths) {
     await parseCSV(csvPath, (row) => {
-      const nomeNorm = normalizeForMatch(row.NM_CANDIDATO || "")
-      const cand = nameMap.get(nomeNorm)
+      const match = resolver.resolveRow(row)
+      if (!match) return
+      if (shouldSkipWeakMatchForAno(ano, match.method)) {
+        return
+      }
+
+      const cand = candidatosBySlug.get(match.slug)
       if (!cand) return
-
-      // Safety filter: check cargo compatibility to reduce homonym collisions
-      const dsCargo = (row.DS_CARGO || "").toUpperCase()
-      if (dsCargo && cand.cargo_disputado) {
-        const cargoMap: Record<string, string[]> = {
-          "Presidente": ["PRESIDENTE"],
-          "Governador": ["GOVERNADOR"],
-        }
-        const validTseCargos = cargoMap[cand.cargo_disputado]
-        if (validTseCargos && !validTseCargos.some((c) => dsCargo.includes(c))) {
-          warn("tse-situacao", `  ${cand.slug}: match ignorado (cargo TSE="${dsCargo}" vs esperado="${cand.cargo_disputado}")`)
-          return
-        }
-      }
-
-      // Safety filter: check UF compatibility
-      const sgUf = (row.SG_UF || "").toUpperCase()
-      if (sgUf && cand.estado) {
-        if (sgUf !== cand.estado.toUpperCase()) {
-          warn("tse-situacao", `  ${cand.slug}: match ignorado (UF TSE="${sgUf}" vs esperado="${cand.estado}")`)
-          return
-        }
-      }
 
       const existing = existingMatches.get(cand.slug)
 
@@ -255,6 +253,9 @@ async function processAno(
         detalhe: row.DS_DETALHE_SITUACAO_CAND || existing?.detalhe || "",
         ano,
         cand,
+        match_method: match.method,
+        ds_cargo: (row.DS_CARGO || "").toUpperCase(),
+        sg_uf: (row.SG_UF || "").toUpperCase(),
         uf_nascimento: row.SG_UF_NASCIMENTO || existing?.uf_nascimento || "",
         data_nascimento: convertDateBR(row.DT_NASCIMENTO || "") || existing?.data_nascimento || "",
         genero: row.DS_GENERO || existing?.genero || "",
@@ -271,14 +272,22 @@ async function processAno(
   cleanupDir(extractDir)
   cleanupFile(zipPath)
 
+  log(
+    "tse-situacao",
+    `  Stats ${ano}: sq=${resolver.stats.sqPreloaded}, cpf=${resolver.stats.cpf}, nome-unico=${resolver.stats.nameUnique}, nome-uf=${resolver.stats.nameUf}, ambiguo=${resolver.stats.ambiguous}, sem-match=${resolver.stats.noMatch}`
+  )
+  if (resolver.ambiguousSlugs.length > 0) {
+    warn("tse-situacao", `  Ambiguos ${ano}: ${resolver.ambiguousSlugs.join(", ")}`)
+  }
+
   return { matched: existingMatches, success: true }
 }
 
-export async function ingestTSESituacao(): Promise<IngestResult[]> {
+export async function ingestTSESituacao(
+  options: IngestTSESituacaoOptions = {}
+): Promise<IngestResult[]> {
   const candidatos = loadCandidatos()
   mkdirSync(DATA_DIR, { recursive: true })
-
-  const nameMap = buildCandidateNameMap(candidatos)
   const matched = new Map<string, MatchedData>()
 
   // Tenta cada ano ate ter CPF para todos os candidatos ou esgotar opcoes
@@ -294,7 +303,7 @@ export async function ingestTSESituacao(): Promise<IngestResult[]> {
     }
 
     log("tse-situacao", `${semCPF.length} candidatos ainda sem CPF, buscando no ano ${ano}`)
-    await processAno(ano, nameMap, matched)
+    await processAno(ano, candidatos, matched)
   }
 
   log("tse-situacao", `Total encontrado: ${matched.size} candidatos`)
@@ -308,6 +317,7 @@ export async function ingestTSESituacao(): Promise<IngestResult[]> {
 
   // Persiste no banco
   const allResults: IngestResult[] = []
+  const auditEntries: AuditEntry[] = []
 
   for (const [slug, info] of matched) {
     const result: IngestResult = {
@@ -333,14 +343,36 @@ export async function ingestTSESituacao(): Promise<IngestResult[]> {
       // Fetch current DB values to avoid overwriting manually curated data
       const { data: dbCand } = await supabase
         .from("candidatos")
-        .select("naturalidade, data_nascimento, formacao, profissao_declarada, genero, estado_civil, cor_raca, email_campanha")
+        .select("cpf, situacao_candidatura, naturalidade, data_nascimento, formacao, profissao_declarada, genero, estado_civil, cor_raca, email_campanha")
         .eq("id", candidatoId)
         .single()
 
-      const updatePayload: Record<string, string> = {}
+      const before: CandidateSnapshot | null = dbCand
+        ? {
+            cpf: dbCand.cpf ?? null,
+            situacao_candidatura: dbCand.situacao_candidatura ?? null,
+            naturalidade: dbCand.naturalidade ?? null,
+            data_nascimento: dbCand.data_nascimento ?? null,
+            formacao: dbCand.formacao ?? null,
+            profissao_declarada: dbCand.profissao_declarada ?? null,
+            genero: dbCand.genero ?? null,
+            estado_civil: dbCand.estado_civil ?? null,
+            cor_raca: dbCand.cor_raca ?? null,
+            email_campanha: dbCand.email_campanha ?? null,
+          }
+        : null
 
-      if (info.cpf) {
-        updatePayload.cpf = info.cpf
+      const updatePayload: Record<string, string> = {}
+      const blockedReasons: string[] = []
+
+      const currentCPF = getValidCPF(before?.cpf)
+      const matchedCPF = getValidCPF(info.cpf)
+
+      if (matchedCPF) {
+        if (currentCPF && currentCPF !== matchedCPF) {
+          blockedReasons.push(`cpf-inconsistente:${currentCPF}->${matchedCPF}`)
+        }
+        updatePayload.cpf = matchedCPF
       }
 
       // Situacao_candidatura: always save with year annotation
@@ -374,7 +406,43 @@ export async function ingestTSESituacao(): Promise<IngestResult[]> {
         updatePayload.email_campanha = info.email
       }
 
+      const auditEntry: AuditEntry = {
+        slug,
+        ano: info.ano,
+        match_method: info.match_method,
+        source_row: {
+          ds_cargo: info.ds_cargo,
+          sg_uf: info.sg_uf,
+          cpf_present: Boolean(info.cpf),
+        },
+        before,
+        proposed_update: updatePayload,
+        blocked_reasons: blockedReasons,
+        persisted: false,
+      }
+
       if (Object.keys(updatePayload).length === 0) {
+        auditEntries.push(auditEntry)
+        result.duration_ms = Date.now() - start
+        allResults.push(result)
+        continue
+      }
+
+      if (blockedReasons.length > 0) {
+        warn("tse-situacao", `  ${slug}: persistencia bloqueada (${blockedReasons.join(", ")})`)
+        auditEntries.push(auditEntry)
+        result.errors.push(`Persistencia bloqueada: ${blockedReasons.join(", ")}`)
+        result.duration_ms = Date.now() - start
+        allResults.push(result)
+        continue
+      }
+
+      if (options.dryRun) {
+        log(
+          "tse-situacao",
+          `  ${slug}: dry-run [${Object.keys(updatePayload).join(", ")}] do ano ${info.ano} via ${info.match_method}`
+        )
+        auditEntries.push(auditEntry)
         result.duration_ms = Date.now() - start
         allResults.push(result)
         continue
@@ -388,6 +456,7 @@ export async function ingestTSESituacao(): Promise<IngestResult[]> {
       if (updateErr) {
         result.errors.push(`Erro ao atualizar: ${updateErr.message}`)
       } else {
+        auditEntry.persisted = true
         result.tables_updated.push("candidatos")
         result.rows_upserted++
         const fields = Object.keys(updatePayload).join(", ")
@@ -396,6 +465,8 @@ export async function ingestTSESituacao(): Promise<IngestResult[]> {
           `  ${slug}: atualizado [${fields}] do ano ${info.ano}`
         )
       }
+
+      auditEntries.push(auditEntry)
     } catch (err) {
       result.errors.push(err instanceof Error ? err.message : String(err))
     }
@@ -404,6 +475,28 @@ export async function ingestTSESituacao(): Promise<IngestResult[]> {
     allResults.push(result)
     await sleep(100)
   }
+
+  const auditSummary = {
+    generated_at: new Date().toISOString(),
+    dry_run: Boolean(options.dryRun),
+    summary: {
+      matched: matched.size,
+      audit_entries: auditEntries.length,
+      persisted: auditEntries.filter((entry) => entry.persisted).length,
+      blocked: auditEntries.filter((entry) => entry.blocked_reasons.length > 0).length,
+      proposed_cpf_updates: auditEntries.filter((entry) => Boolean(entry.proposed_update.cpf)).length,
+      methods: {
+        sq_preloaded: auditEntries.filter((entry) => entry.match_method === "sq-preloaded").length,
+        cpf: auditEntries.filter((entry) => entry.match_method === "cpf").length,
+        name_unique: auditEntries.filter((entry) => entry.match_method === "name-unique").length,
+        name_uf: auditEntries.filter((entry) => entry.match_method === "name-uf").length,
+      },
+    },
+    entries: auditEntries,
+  }
+
+  writeFileSync(options.auditPath ?? AUDIT_PATH, `${JSON.stringify(auditSummary, null, 2)}\n`)
+  log("tse-situacao", `Auditoria salva em ${options.auditPath ?? AUDIT_PATH}`)
 
   // Limpa DATA_DIR se vazio
   try {
@@ -418,5 +511,9 @@ export async function ingestTSESituacao(): Promise<IngestResult[]> {
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  ingestTSESituacao().then((r) => console.log(JSON.stringify(r, null, 2)))
+  const dryRun = process.argv.includes("--dry-run")
+  const auditPathArg = process.argv.find((arg) => arg.startsWith("--audit-path="))
+  const auditPath = auditPathArg?.split("=")[1]
+
+  ingestTSESituacao({ dryRun, auditPath }).then((r) => console.log(JSON.stringify(r, null, 2)))
 }

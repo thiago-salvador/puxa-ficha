@@ -1,0 +1,2992 @@
+{
+  "generated_at": "2026-04-01T00:16:24.048Z",
+  "summary": {
+    "total_json": 144,
+    "total_db": 144,
+    "com_patrimonio": 123,
+    "com_financiamento": 117,
+    "com_votos": 47,
+    "com_gastos": 19,
+    "com_historico": 95,
+    "com_processos": 19,
+    "com_projetos": 21,
+    "com_cargo_atual": 67,
+    "com_cpf": 116
+  },
+  "missing_in_db": [],
+  "camara_sem_cargo_atual": [
+    "washington-reis",
+    "sergio-vidigal",
+    "joao-roma",
+    "jose-carlos-aleluia",
+    "ciro-gomes-gov-ce",
+    "capitao-wagner",
+    "eduardo-braide",
+    "anderson-ferreira",
+    "pedro-cunha-lima",
+    "margarete-coelho",
+    "fabio-mitidieri",
+    "jhc",
+    "expedito-netto",
+    "teresa-surita",
+    "laurez-moreira",
+    "celina-leao",
+    "paula-belmonte",
+    "daniel-vilela",
+    "marconi-perillo",
+    "fabio-trad"
+  ],
+  "detalhes": [
+    {
+      "slug": "lula",
+      "id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+      "cargo_atual": "Presidente da Republica",
+      "cpf": "07068093868",
+      "ids_camara": 139289,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "280000625869",
+        "2022": "280001607829"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 2,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+      "cargo_atual": "Senador",
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": 5894,
+      "tse_sq_candidato": {
+        "2018": "190000614721"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 4,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 1,
+        "projetos": 166
+      }
+    },
+    {
+      "slug": "tarcisio",
+      "id": "0f552442-26cf-406f-a82a-447c9c16ff4f",
+      "cargo_atual": "Governador de Sao Paulo",
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "250001615967"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "romeu-zema",
+      "id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+      "cargo_atual": "Governador de Minas Gerais",
+      "cpf": "44906161634",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "130000600702",
+        "2022": "130001701690"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+      "cargo_atual": "Governador de Goias",
+      "cpf": "26472058768",
+      "ids_camara": 74813,
+      "ids_senado": 456,
+      "tse_sq_candidato": {
+        "2018": "90000613470",
+        "2022": "90001646326"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 0,
+        "projetos": 220
+      }
+    },
+    {
+      "slug": "ratinho-junior",
+      "id": "7865af54-41d8-4f26-b8bc-c4622489f06f",
+      "cargo_atual": "Ex-Governador do Parana",
+      "cpf": "03208448970",
+      "ids_camara": 141403,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "160000609226",
+        "2020": "140001196705",
+        "2022": "160001614467"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 3,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "aldo-rebelo",
+      "id": "16bb5e0e-4315-4dff-b0a9-b0ff54f2f2ae",
+      "cargo_atual": "Sem cargo publico",
+      "cpf": "16412150463",
+      "ids_camara": 73428,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "250001639699"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 5,
+        "processos": 0,
+        "projetos": 77
+      }
+    },
+    {
+      "slug": "renan-santos",
+      "id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
+      "cargo_atual": "Sem cargo publico",
+      "cpf": "87199653034",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "210000981947",
+        "2022": "210001620463"
+      },
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "ciro-gomes",
+      "id": "b1c3d3e1-36d0-4026-82d2-ece83072967c",
+      "cargo_atual": "Sem cargo publico",
+      "cpf": null,
+      "ids_camara": 141406,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "280000605589",
+        "2022": "280001612393"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 4,
+        "processos": 1,
+        "projetos": 70
+      }
+    },
+    {
+      "slug": "hertz-dias",
+      "id": "79b84a18-1a4e-4123-a831-8aefda253dc6",
+      "cargo_atual": "Sem cargo publico",
+      "cpf": "42805813391",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "280000601174",
+        "2020": "100000718146",
+        "2022": "100001600008"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "eduardo-leite",
+      "id": "08b8bfe9-131b-4690-a2d7-953d868a308a",
+      "cargo_atual": "Governador do Rio Grande do Sul",
+      "cpf": "01094775029",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "210000622367",
+        "2022": "210001609847"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 1,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "id": "1eec3569-c202-4f16-a60a-d67125c51f95",
+      "cargo_atual": "Sem cargo publico",
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "samara-martins",
+      "id": "b3988a51-2776-4172-a73b-e326365b0c04",
+      "cargo_atual": "Sem cargo publico",
+      "cpf": "07787166606",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "200000724019",
+        "2022": "280001602703"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+      "cargo_atual": "Governador de Sao Paulo",
+      "cpf": "18077783805",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 5,
+        "processos": 1,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+      "cargo_atual": "Ministro da Fazenda",
+      "cpf": "05233117886",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "250001612465"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 5,
+        "processos": 2,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "erika-hilton",
+      "id": "ca5cff9c-196a-4c57-9a34-680c4d08b750",
+      "cargo_atual": "Deputado(a) Federal",
+      "cpf": "39756493801",
+      "ids_camara": 220645,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "250000686838",
+        "2022": "250001613814"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 2,
+        "votos": 2,
+        "gastos": 3,
+        "historico": 2,
+        "processos": 1,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "felicio-ramuth",
+      "id": "7738536c-3432-4762-97e5-f91e812550f4",
+      "cargo_atual": "Vice-Governador de Sao Paulo",
+      "cpf": "11330375858",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "250000693253",
+        "2022": "250001615968"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 2,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "ricardo-nunes",
+      "id": "ea956348-d748-4d6d-ad39-7564dfd20e7d",
+      "cargo_atual": "Prefeito de Sao Paulo",
+      "cpf": "08893025884",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "250000604021",
+        "2020": "250000896547"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 3,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "geraldo-alckmin",
+      "id": "44cab11c-c1b7-456c-ae28-74499734ecf1",
+      "cargo_atual": "Vice-Presidente da Republica",
+      "cpf": "54914906872",
+      "ids_camara": 65480,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "280000602477",
+        "2022": "280001607830"
+      },
+      "counts": {
+        "patrimonio": 4,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 11,
+        "processos": 2,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "gilberto-kassab",
+      "id": "48f7ba87-460c-4dd9-9ee5-534a15ddde4d",
+      "cargo_atual": "Secretario de Governo de SP",
+      "cpf": null,
+      "ids_camara": 74778,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 10,
+        "processos": 2,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "andre-do-prado",
+      "id": "6309444e-5359-496a-8731-e24b6e222ec0",
+      "cargo_atual": "Presidente da Alesp",
+      "cpf": "08518353840",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "250000619454",
+        "2022": "250001610161"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 7,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "marcio-franca",
+      "id": "64a957bd-7bc8-489e-a337-05f68e041d5f",
+      "cargo_atual": "Ministro do Empreendedorismo",
+      "cpf": "04751068814",
+      "ids_camara": 141497,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "250000615141",
+        "2020": "250001012981",
+        "2022": "250001615891"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 3,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 10,
+        "processos": 2,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "guilherme-derrite",
+      "id": "fdc34507-9bdb-4fbd-96c0-f04c69cac6b1",
+      "cargo_atual": "Deputado(a) Federal",
+      "cpf": "31200606825",
+      "ids_camara": 204531,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "250000605452",
+        "2022": "250001611359"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 1,
+        "gastos": 3,
+        "historico": 3,
+        "processos": 2,
+        "projetos": 73
+      }
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "id": "6025cfb5-d1a7-4ad0-baa7-c131b381e8fa",
+      "cargo_atual": "Senador(a)",
+      "cpf": "86327062920",
+      "ids_camara": null,
+      "ids_senado": 6476,
+      "tse_sq_candidato": {
+        "2022": "160001621846"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "guto-silva",
+      "id": "d0947366-428b-4ffc-b303-5a421d1cf2da",
+      "cargo_atual": "Secretario das Cidades do Parana",
+      "cpf": "-4",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "160000619860"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "alexandre-curi",
+      "id": "97da0964-be25-4abb-8b8c-29c65727f617",
+      "cargo_atual": "Presidente da Assembleia Legislativa do Parana",
+      "cpf": "02744383996",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "160000623295",
+        "2022": "160001623100"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "rafael-greca",
+      "id": "adb2ed0d-e7d6-4726-b310-a32bf6e3478a",
+      "cargo_atual": "Deputado(a) Federal",
+      "cpf": "23224231904",
+      "ids_camara": 73486,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "160000657203"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 5,
+        "gastos": 4,
+        "historico": 5,
+        "processos": 0,
+        "projetos": 84
+      }
+    },
+    {
+      "slug": "requiao-filho",
+      "id": "36ec7b14-9da3-4324-820d-6318ce535d01",
+      "cargo_atual": "Deputado Estadual",
+      "cpf": "87607328149",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "160000612511",
+        "2022": "160001615006"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "paulo-martins-gov-pr",
+      "id": "cde129a9-1219-4c79-b2a4-f4f43557c89a",
+      "cargo_atual": "Vice-prefeito de Curitiba",
+      "cpf": "28192122808",
+      "ids_camara": 193726,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "160000619724",
+        "2020": "210001085840",
+        "2022": "160001621868"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 3,
+        "votos": 1,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "jorginho-mello",
+      "id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
+      "cargo_atual": "Governador de Santa Catarina",
+      "cpf": "25084119904",
+      "ids_camara": 160570,
+      "ids_senado": 5979,
+      "tse_sq_candidato": {
+        "2018": "240000609539",
+        "2022": "240001611127"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 7,
+        "gastos": 1,
+        "historico": 5,
+        "processos": 0,
+        "projetos": 87
+      }
+    },
+    {
+      "slug": "joao-rodrigues",
+      "id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+      "cargo_atual": "Ex-prefeito de Chapeco",
+      "cpf": "46970045072",
+      "ids_camara": 178914,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "210000604698",
+        "2022": "210001596122"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 2,
+        "votos": 2,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 28
+      }
+    },
+    {
+      "slug": "decio-lima",
+      "id": "49cba311-98bd-45c2-8158-c931b429a77c",
+      "cargo_atual": "Presidente do Sebrae Nacional",
+      "cpf": "38858240944",
+      "ids_camara": 73893,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "240000624336",
+        "2022": "240001647445"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "marcos-vieira",
+      "id": "0394c7a4-6311-4eeb-a0aa-9d3b996b4aae",
+      "cargo_atual": "Deputado Estadual",
+      "cpf": "15507440972",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "240000609608",
+        "2022": "240001612502"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "marcelo-brigadeiro",
+      "id": "e1e7801e-ba65-4175-b9e3-e614e09905d0",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "240000609728"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "luciano-zucco",
+      "id": "53af44cf-7f66-44d3-b733-1114c5143e6a",
+      "cargo_atual": "Deputado(a) Federal",
+      "cpf": "72434325068",
+      "ids_camara": 204379,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "210000603583",
+        "2022": "210001601587"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 3,
+        "gastos": 3,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "juliana-brizola",
+      "id": "7a6a6475-0691-4823-9104-5055ca589405",
+      "cargo_atual": "Ex-deputada Estadual",
+      "cpf": "07031379725",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "210000604676",
+        "2020": "210001189949",
+        "2022": "210001621265"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 3,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "edegar-pretto",
+      "id": "c2787afe-44e4-48c6-9e64-250eacb1ad0d",
+      "cargo_atual": "Presidente da Conab",
+      "cpf": "63090422034",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "210000611352",
+        "2022": "210001604469"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "gabriel-souza",
+      "id": "b01d3b26-32d0-48c3-9242-6c6b324b249d",
+      "cargo_atual": "Vice-governador do Rio Grande do Sul",
+      "cpf": "00058535080",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "210000605318",
+        "2022": "210001609848"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "marcelo-maranata",
+      "id": "59582609-1f9b-4363-9e36-08fd6d07b6c4",
+      "cargo_atual": "Prefeito de Guaiba",
+      "cpf": "89923570010",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "210000605932",
+        "2020": "210000884394"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "evandro-augusto",
+      "id": "7f1d234a-b34d-4c41-9fcc-66ef3b3d0fa2",
+      "cargo_atual": "Policial Rodoviario Federal",
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "eduardo-paes",
+      "id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+      "cargo_atual": "Prefeito do Rio de Janeiro",
+      "cpf": "-4",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "190000609934",
+        "2020": "190000688286"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "douglas-ruas",
+      "id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
+      "cargo_atual": null,
+      "cpf": "12272749712",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "190001596741"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "rodrigo-bacellar",
+      "id": "dd05c95d-931a-4b79-b235-c545aaa45791",
+      "cargo_atual": null,
+      "cpf": "08661032792",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "190000603307",
+        "2022": "190001596728"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 1,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "washington-reis",
+      "id": "b5985e27-88f9-4e6c-978a-439e6488f176",
+      "cargo_atual": null,
+      "cpf": "01311846794",
+      "ids_camara": 160620,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "190001114997",
+        "2022": "190001615754"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 1,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "garotinho",
+      "id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+      "cargo_atual": null,
+      "cpf": "69839727753",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "190000621818",
+        "2022": "190001619506"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 4,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "tarcisio-motta",
+      "id": "c6e67535-d3b9-47ca-a678-499170339f53",
+      "cargo_atual": "Deputado(a) Federal",
+      "cpf": "02045962709",
+      "ids_camara": 220598,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "190000602065",
+        "2020": "190000684953",
+        "2022": "190001600488"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 3,
+        "votos": 2,
+        "gastos": 3,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "cleitinho",
+      "id": "ff7f433f-70b4-420c-885d-c0401a901790",
+      "cargo_atual": "Senador(a)",
+      "cpf": "22060312809",
+      "ids_camara": null,
+      "ids_senado": 6337,
+      "tse_sq_candidato": {
+        "2018": "130000613136",
+        "2022": "130001671677"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 2,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "nikolas-ferreira",
+      "id": "6febf430-f9c1-48a5-9b25-7f953e5852b2",
+      "cargo_atual": "Deputado(a) Federal",
+      "cpf": "11701442680",
+      "ids_camara": 209787,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "130001175469",
+        "2022": "130001611005"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 2,
+        "votos": 2,
+        "gastos": 3,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "mateus-simoes",
+      "id": "6e37f628-6335-4009-8e49-80aa421650a0",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 4,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "rodrigo-pacheco",
+      "id": "bf7ca6fe-42cc-482e-a2f4-556c978c4f29",
+      "cargo_atual": "Senador(a)",
+      "cpf": "04009087943",
+      "ids_camara": 178897,
+      "ids_senado": 5732,
+      "tse_sq_candidato": {
+        "2018": "130000604556",
+        "2020": "160000720084"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 6,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "id": "2081565f-e38d-4246-81d6-4f28979e8136",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "maria-da-consolacao",
+      "id": "92699f1a-6206-44fd-b761-5d86f9fd2c37",
+      "cargo_atual": null,
+      "cpf": "63649756668",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "130000606676",
+        "2020": "130000686201",
+        "2022": "130001615215"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 3,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "pazolini",
+      "id": "8d4eb423-5fa3-401f-883d-d70f4c0c64d8",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "id": "e79ddaf5-f86c-40c6-a54c-10535cb5514d",
+      "cargo_atual": null,
+      "cpf": "77488040791",
+      "ids_camara": null,
+      "ids_senado": 635,
+      "tse_sq_candidato": {
+        "2018": "80000625509",
+        "2022": "80001649124"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 5,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "paulo-hartung",
+      "id": "b59a6c1b-762c-4c29-8d2e-45d4038d84b8",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "sergio-vidigal",
+      "id": "e2891655-33c3-42a6-a07e-f31daa50a7c7",
+      "cargo_atual": null,
+      "cpf": "52549810759",
+      "ids_camara": 178874,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "80000622443",
+        "2020": "80001189870"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 2,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 0,
+        "projetos": 84
+      }
+    },
+    {
+      "slug": "arnaldinho-borgo",
+      "id": "b3c5e3c6-e59e-4655-97f8-f52e5ef11c13",
+      "cargo_atual": null,
+      "cpf": "09684749775",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "80000625047",
+        "2020": "80000713125"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "helder-salomao",
+      "id": "270a8b55-145a-400f-b371-38809653eea8",
+      "cargo_atual": "Deputado(a) Federal",
+      "cpf": "76808742715",
+      "ids_camara": 178873,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "80000626736",
+        "2022": "80001719429"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 5,
+        "gastos": 3,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "da-vitoria",
+      "id": "b61cc10d-2cb6-47f5-a489-17b66401a1ec",
+      "cargo_atual": "Deputado(a) Federal",
+      "cpf": "98042734700",
+      "ids_camara": 204355,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "80000611885",
+        "2022": "80001650200"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 3,
+        "gastos": 3,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "jeronimo",
+      "id": "db711ee0-fcfa-47f7-85d2-a3686956cf06",
+      "cargo_atual": "Governador da Bahia",
+      "cpf": "21602387320",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "50001165142",
+        "2022": "100001606606"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "acm-neto",
+      "id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+      "cargo_atual": null,
+      "cpf": "56583400553",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "50001609248"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "joao-roma",
+      "id": "5917dbbe-0fff-4988-848b-d3519eadd540",
+      "cargo_atual": null,
+      "cpf": "10626409500",
+      "ids_camara": 204576,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "50000607822",
+        "2020": "50001261068",
+        "2022": "50001605351"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 3,
+        "votos": 1,
+        "gastos": 1,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "jose-carlos-aleluia",
+      "id": "483d4865-b5e9-471c-b278-9c2b47ad53d4",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": 74553,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "50000608633"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 2,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "ronaldo-mansur",
+      "id": "d5ece407-2e2a-4e76-91a9-c2b7db826430",
+      "cargo_atual": null,
+      "cpf": "78956889520",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "50000600889",
+        "2022": "50001600528"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "id": "f126204e-1f28-4200-9468-9144eddbb6e4",
+      "cargo_atual": "Governador do Ceara",
+      "cpf": "50674854349",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "60000612023",
+        "2020": "60000983767",
+        "2022": "60001633585"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 3,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "id": "2df15aa1-0bd3-4bab-89bf-13d780645e54",
+      "cargo_atual": null,
+      "cpf": "12005509353",
+      "ids_camara": 141406,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 4,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "roberto-claudio",
+      "id": "1a6c43cd-c70d-4b61-8d8b-44f93c517c96",
+      "cargo_atual": null,
+      "cpf": "54211638300",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "60001612926"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "eduardo-girao",
+      "id": "492699f7-d3ce-45b7-9f5d-f0a1fd775b09",
+      "cargo_atual": "Senador(a)",
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": 5976,
+      "tse_sq_candidato": {
+        "2018": "60000611597"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 4,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 11
+      }
+    },
+    {
+      "slug": "capitao-wagner",
+      "id": "0dd4020e-8f38-4440-8fc4-a7518fd14f76",
+      "cargo_atual": null,
+      "cpf": "61496880382",
+      "ids_camara": 204487,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "60000601233",
+        "2020": "60000653316",
+        "2022": "60001608845"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 3,
+        "votos": 1,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "eduardo-braide",
+      "id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
+      "cargo_atual": null,
+      "cpf": "55068480304",
+      "ids_camara": 204552,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "100000615044",
+        "2020": "100000756891"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 1,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 4
+      }
+    },
+    {
+      "slug": "orleans-brandao",
+      "id": "47a1de10-1cf7-47f8-837b-dbbf94480421",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "felipe-camarao",
+      "id": "0c0e1b6a-cfa6-4da7-82ab-a8ea90b55200",
+      "cargo_atual": null,
+      "cpf": "83641998387",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "100001667488"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 1,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "lahesio-bonfim",
+      "id": "c8aa346b-c839-4e0d-a5e3-4a833d5a414c",
+      "cargo_atual": null,
+      "cpf": "87558149304",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "100000825685",
+        "2022": "100001609046"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "enilton-rodrigues",
+      "id": "17fa576f-b79d-4177-8814-29f5236f8def",
+      "cargo_atual": null,
+      "cpf": "63775808353",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "100000618779",
+        "2020": "100000996020",
+        "2022": "100001713289"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 3,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "joao-campos",
+      "id": "cc2dbc88-aae0-4c75-a112-bcc6bfc3189b",
+      "cargo_atual": "Prefeito do Recife",
+      "cpf": "24254401191",
+      "ids_camara": 204429,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "90000610070",
+        "2022": "90001647805"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 1,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "raquel-lyra",
+      "id": "022d27e8-2832-4156-9bc7-7eac817ac901",
+      "cargo_atual": "Governadora de Pernambuco",
+      "cpf": "02792979470",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "170001032564",
+        "2022": "170001604087"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 4,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "gilson-machado",
+      "id": "bc606476-268a-4702-b405-e5334e72c883",
+      "cargo_atual": null,
+      "cpf": "68672667468",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "170001604083"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 1,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "anderson-ferreira",
+      "id": "3721c0c9-3b8b-4258-b453-6350b51dc0c8",
+      "cargo_atual": null,
+      "cpf": "82501173449",
+      "ids_camara": 160551,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "190000625124",
+        "2020": "170000718941",
+        "2022": "170001602587"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 3,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 2
+      }
+    },
+    {
+      "slug": "ivan-moraes",
+      "id": "8a59da03-a2ad-4385-9516-eb738f970df0",
+      "cargo_atual": null,
+      "cpf": "02044990466",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "170000607357",
+        "2020": "170001062173",
+        "2022": "170001618403"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 3,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "cicero-lucena",
+      "id": "76a6620b-1fd4-46df-806f-5101bd660f7f",
+      "cargo_atual": null,
+      "cpf": "14248832453",
+      "ids_camara": null,
+      "ids_senado": 4529,
+      "tse_sq_candidato": {
+        "2020": "150000976695"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 5,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "id": "b8ad0e9c-eb0f-4b37-bdf9-840c5d167016",
+      "cargo_atual": null,
+      "cpf": "08447960420",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "150000774537",
+        "2022": "150001613756"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "efraim-filho",
+      "id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+      "cargo_atual": "Senador(a)",
+      "cpf": "00770338410",
+      "ids_camara": 141422,
+      "ids_senado": 4642,
+      "tse_sq_candidato": {
+        "2018": "150000608820",
+        "2022": "150001621390"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 5,
+        "gastos": 1,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "pedro-cunha-lima",
+      "id": "aa9ca0e4-794c-409d-91fe-4d18c13a449a",
+      "cargo_atual": null,
+      "cpf": "08430005463",
+      "ids_camara": 178912,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "150000612364",
+        "2022": "150001621388"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 3,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 60
+      }
+    },
+    {
+      "slug": "rafael-fonteles",
+      "id": "57b743d5-db7b-4048-862d-9378a9fff366",
+      "cargo_atual": null,
+      "cpf": "99236842372",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "180001604027"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "silvio-mendes",
+      "id": "1191e8d3-da51-4724-a1b6-ed577406cf9d",
+      "cargo_atual": null,
+      "cpf": "08228663404",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "180000634397",
+        "2022": "180001600497"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "joel-rodrigues",
+      "id": "63de6cc4-aebc-49f6-88ab-25c93dde0a58",
+      "cargo_atual": null,
+      "cpf": "38677660372",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "180000952432",
+        "2022": "180001600654"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "margarete-coelho",
+      "id": "59a62920-621e-4df0-9149-35b1fe1957d1",
+      "cargo_atual": null,
+      "cpf": "18341160315",
+      "ids_camara": 204430,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "180000613924",
+        "2020": "190000805069",
+        "2022": "180001602512"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 3,
+        "votos": 1,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "alysson-bezerra",
+      "id": "71129af6-3c6d-4b0a-9030-b97984fc1e0b",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+      "cargo_atual": null,
+      "cpf": "00274003953",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "280000618462",
+        "2020": "200001194163",
+        "2022": "160001614980"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 3,
+        "votos": 2,
+        "gastos": 0,
+        "historico": 4,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "cadu-xavier",
+      "id": "afb87309-0aee-4ecc-9ac6-e8402902321a",
+      "cargo_atual": null,
+      "cpf": "07908568408",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "200000998862"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": 178969,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "260000623594"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 2,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 3
+      }
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "id": "8e6f8d4c-7981-499e-b03b-5778e1db704d",
+      "cargo_atual": null,
+      "cpf": "48819298520",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "260001690206"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "thiago-de-joaldo",
+      "id": "f0cedf5e-9bda-4a73-b377-315a626acd01",
+      "cargo_atual": "Deputado(a) Federal",
+      "cpf": "78723345500",
+      "ids_camara": 220560,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "260001633055"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 2,
+        "gastos": 3,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "jhc",
+      "id": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+      "cargo_atual": null,
+      "cpf": "01117690199",
+      "ids_camara": 178842,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "20000616803",
+        "2020": "20000842791"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 3,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 0,
+        "projetos": 6
+      }
+    },
+    {
+      "slug": "renan-filho",
+      "id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+      "cargo_atual": "Senador(a)",
+      "cpf": "51319993249",
+      "ids_camara": 160623,
+      "ids_senado": 5207,
+      "tse_sq_candidato": {
+        "2018": "230000603179",
+        "2022": "230001643506"
+      },
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 4,
+        "processos": 0,
+        "projetos": 2
+      }
+    },
+    {
+      "slug": "alan-rick",
+      "id": "c7e3a004-99ba-426b-af65-206e3066c496",
+      "cargo_atual": "Senador(a)",
+      "cpf": "44726570234",
+      "ids_camara": 178836,
+      "ids_senado": 5672,
+      "tse_sq_candidato": {
+        "2018": "10000602509",
+        "2022": "10001714547"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 5,
+        "gastos": 1,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "mailza-assis",
+      "id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "tiao-bocalom",
+      "id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
+      "cargo_atual": null,
+      "cpf": "17357152987",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "10000600232",
+        "2020": "10001003637"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "andre-kamai",
+      "id": "479ee717-3b31-47d4-aa6e-e59819e430f5",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "omar-aziz",
+      "id": "9fe469dc-058f-487d-b888-ba113f5535ae",
+      "cargo_atual": "Senador(a)",
+      "cpf": "07588615249",
+      "ids_camara": null,
+      "ids_senado": 5525,
+      "tse_sq_candidato": {
+        "2018": "40000603709",
+        "2022": "40001618514"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 4,
+        "gastos": 0,
+        "historico": 7,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "maria-do-carmo",
+      "id": "9ea4f811-3d51-48b2-a297-e4fccb0ddc14",
+      "cargo_atual": null,
+      "cpf": "47671998753",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "190000785134",
+        "2022": "40001650567"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 1,
+        "votos": 2,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "tadeu-de-souza",
+      "id": "fabb0b69-5157-496d-89ab-d90c4bcc54ec",
+      "cargo_atual": null,
+      "cpf": "41334132291",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "40001619527"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "david-almeida",
+      "id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+      "cargo_atual": null,
+      "cpf": "09913753430",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "40000604136",
+        "2020": "170001127614"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "eduardo-braga",
+      "id": "96dd2cb2-3ae8-44fc-b169-93a722247f9d",
+      "cargo_atual": "Senador(a)",
+      "cpf": "07810423215",
+      "ids_camara": null,
+      "ids_senado": 4994,
+      "tse_sq_candidato": {
+        "2018": "40000618261",
+        "2022": "40001610345"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 4,
+        "gastos": 0,
+        "historico": 8,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "dr-furlan",
+      "id": "9f2c557f-7c5a-459b-b0f5-faa6d561a4ce",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "30000611703"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "clecio-luis",
+      "id": "d97908e9-5b30-4d0e-a01b-c0348682949d",
+      "cargo_atual": null,
+      "cpf": "34175504249",
+      "ids_camara": null,
+      "ids_senado": 5044,
+      "tse_sq_candidato": {
+        "2022": "30001619676"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 5,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "joao-capiberibe",
+      "id": "7cdc0ed6-e013-4ed5-a26c-2d49cdf2c8c3",
+      "cargo_atual": null,
+      "cpf": "27880575472",
+      "ids_camara": null,
+      "ids_senado": 3394,
+      "tse_sq_candidato": {
+        "2018": "30000620049",
+        "2020": "30001034733",
+        "2022": "30001608736"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 3,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 4,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "hana-ghassan",
+      "id": "13c6d8ac-fee3-49f7-b1cf-c1a80c69fcea",
+      "cargo_atual": null,
+      "cpf": "29729220263",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "140001651992"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "dr-daniel",
+      "id": "dcc4a93e-4114-43e9-b067-4581ed12cfd5",
+      "cargo_atual": null,
+      "cpf": "06380685502",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "140000614283",
+        "2020": "140001027099",
+        "2022": "50001614695"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 3,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 1,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "delegado-eder-mauro",
+      "id": "6d89f284-e148-454e-85e1-c77996c132b5",
+      "cargo_atual": "Deputado(a) Federal",
+      "cpf": "13405551234",
+      "ids_camara": 178908,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "140000606383",
+        "2022": "140001598311"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 5,
+        "gastos": 3,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "beto-faro",
+      "id": "48fc69a5-8bad-4c36-9356-0ea6ff66afe9",
+      "cargo_atual": "Senador(a)",
+      "cpf": "40070565287",
+      "ids_camara": 141335,
+      "ids_senado": 4639,
+      "tse_sq_candidato": {
+        "2018": "140000627198",
+        "2022": "140001611661"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 5,
+        "gastos": 1,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "simao-jatene",
+      "id": "cd644f9b-2109-4921-9b11-942e32a02679",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "marcos-rogerio",
+      "id": "a9ce3c0b-9fa4-4e28-9c2e-809b1fa5e639",
+      "cargo_atual": "Senador(a)",
+      "cpf": "60232064253",
+      "ids_camara": 167722,
+      "ids_senado": 5422,
+      "tse_sq_candidato": {
+        "2018": "220000609853",
+        "2022": "220001647595"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 6,
+        "gastos": 0,
+        "historico": 4,
+        "processos": 0,
+        "projetos": 1
+      }
+    },
+    {
+      "slug": "adailton-furia",
+      "id": "e9cf3bd3-4ab9-4928-b652-558c5e8d8ce4",
+      "cargo_atual": null,
+      "cpf": "89845277268",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "220000609645",
+        "2020": "220001025502"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "hildon-chaves",
+      "id": "5a325c79-3414-4d70-8926-673e91cbd578",
+      "cargo_atual": null,
+      "cpf": "47651822404",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "220001051415"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "dr-fernando-maximo",
+      "id": "e617ca2f-52b2-474c-a138-055898daced2",
+      "cargo_atual": "Deputado(a) Federal",
+      "cpf": "00125414196",
+      "ids_camara": 220610,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2020": "90001088736"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 2,
+        "gastos": 3,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 2
+      }
+    },
+    {
+      "slug": "confucio-moura",
+      "id": "8b6a4aa1-95f7-4ec9-a535-d19b54b6e0b2",
+      "cargo_atual": "Senador(a)",
+      "cpf": null,
+      "ids_camara": 74097,
+      "ids_senado": 475,
+      "tse_sq_candidato": {
+        "2018": "220000618467"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 4,
+        "gastos": 0,
+        "historico": 5,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "expedito-netto",
+      "id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+      "cargo_atual": null,
+      "cpf": "93279493234",
+      "ids_camara": 178953,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "220000609735",
+        "2022": "220001635101"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 3,
+        "gastos": 2,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 4
+      }
+    },
+    {
+      "slug": "arthur-henrique",
+      "id": "049a5051-e7c9-4729-8853-14753d2993e1",
+      "cargo_atual": null,
+      "cpf": "50859692272",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "230000602332",
+        "2020": "230000679861"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "edilson-damiao",
+      "id": "9f72e526-c72d-4fc5-8e08-0a965c03b712",
+      "cargo_atual": null,
+      "cpf": "59538058291",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "230001604254"
+      },
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "teresa-surita",
+      "id": "73283baa-a3b0-4422-9e02-4ee50c5c3fc6",
+      "cargo_atual": null,
+      "cpf": "38534460191",
+      "ids_camara": 160608,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "230001602186"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "soldado-sampaio",
+      "id": "3b825b8d-32fd-42d2-af6e-6caf1135a3e3",
+      "cargo_atual": null,
+      "cpf": "68371764200",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "230000616424",
+        "2022": "230001600061"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "professora-dorinha",
+      "id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+      "cargo_atual": "Senador(a)",
+      "cpf": "43196926168",
+      "ids_camara": 160639,
+      "ids_senado": 5386,
+      "tse_sq_candidato": {
+        "2018": "270000618831",
+        "2022": "270001649254"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 4,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "laurez-moreira",
+      "id": "e4a0bfc6-586c-491f-8580-e43c6d30f7a1",
+      "cargo_atual": null,
+      "cpf": "22019090163",
+      "ids_camara": 141479,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "270001652199"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "amelio-cayres",
+      "id": "75d2da17-ddd3-45f2-9bde-07ed8655034a",
+      "cargo_atual": null,
+      "cpf": "39476316187",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "270000618859",
+        "2022": "270001654140"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "vicentinho-junior",
+      "id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+      "cargo_atual": "Deputado(a) Federal",
+      "cpf": "99898659149",
+      "ids_camara": 137070,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "270000610948",
+        "2022": "270001643407"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 4,
+        "gastos": 3,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 13
+      }
+    },
+    {
+      "slug": "ataides-oliveira",
+      "id": "131fa6ef-ec83-40fc-8cb8-d01c79dd30cd",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": 5164,
+      "tse_sq_candidato": {
+        "2018": "270000602793"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "celina-leao",
+      "id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
+      "cargo_atual": null,
+      "cpf": "79981488100",
+      "ids_camara": 204380,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "70000614533",
+        "2022": "70001651045"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 1,
+        "votos": 1,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 3
+      }
+    },
+    {
+      "slug": "leandro-grass",
+      "id": "3b724874-8769-44f3-aab3-06c0155dc155",
+      "cargo_atual": null,
+      "cpf": "00014360152",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "70000612417",
+        "2022": "70001597108"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 1,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "id": "dd57b875-65c4-44bb-954b-bfac352d7ead",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "paula-belmonte",
+      "id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+      "cargo_atual": null,
+      "cpf": "57867100172",
+      "ids_camara": 204377,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "70000618962",
+        "2022": "70001728079"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 1,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "daniel-vilela",
+      "id": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
+      "cargo_atual": null,
+      "cpf": "98166638134",
+      "ids_camara": 144523,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "90000609231",
+        "2022": "90001646327"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 1,
+        "votos": 2,
+        "gastos": 0,
+        "historico": 4,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "marconi-perillo",
+      "id": "95fc116b-4c1e-4332-9c52-948bc1775a57",
+      "cargo_atual": null,
+      "cpf": "03553821809",
+      "ids_camara": 73668,
+      "ids_senado": 4535,
+      "tse_sq_candidato": {
+        "2018": "90000609445",
+        "2022": "90001615126"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 5,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "adriana-accorsi",
+      "id": "a41f93a6-2fc4-4c7c-907f-bebdcd0c132b",
+      "cargo_atual": "Deputado(a) Federal",
+      "cpf": null,
+      "ids_camara": 220565,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 2,
+        "gastos": 3,
+        "historico": 3,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "wilder-morais",
+      "id": "af18411e-e979-4a30-9a1c-c64927b50442",
+      "cargo_atual": "Senador(a)",
+      "cpf": "45434581172",
+      "ids_camara": null,
+      "ids_senado": 5070,
+      "tse_sq_candidato": {
+        "2018": "90000613469",
+        "2020": "90001220915",
+        "2022": "90001652051"
+      },
+      "counts": {
+        "patrimonio": 3,
+        "financiamento": 2,
+        "votos": 2,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "jose-eliton",
+      "id": "0cf41b7d-95e4-431e-b318-bc4e9df54e03",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 2,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "eduardo-riedel",
+      "id": "27f37162-6a32-4e9b-8f41-f30a9e569384",
+      "cargo_atual": null,
+      "cpf": "00898464781",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2022": "120001635628"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "fabio-trad",
+      "id": "e10f4186-0132-48f3-be4c-5397642eecd4",
+      "cargo_atual": null,
+      "cpf": "98303651749",
+      "ids_camara": 160587,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "120000613463",
+        "2022": "120001650734"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 1,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "id": "29dbd8e2-6ebb-4261-bf53-be3b4df63718",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "lucien-rezende",
+      "id": "9f8bdf27-8e4e-4f67-ae08-1519fc941412",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "120000612726"
+      },
+      "counts": {
+        "patrimonio": 1,
+        "financiamento": 1,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "id": "a8a86164-4000-4bbe-ac11-c02b90955ea5",
+      "cargo_atual": null,
+      "cpf": "27462773015",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "110000612720",
+        "2022": "110001643542"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 3,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "wellington-fagundes",
+      "id": "febc4a12-c352-448a-99dc-671c77e8d57d",
+      "cargo_atual": "Senador(a)",
+      "cpf": "23019093104",
+      "ids_camara": 73653,
+      "ids_senado": 1173,
+      "tse_sq_candidato": {
+        "2018": "110000609942",
+        "2022": "110001676176"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 4,
+        "gastos": 0,
+        "historico": 4,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "janaina-riva",
+      "id": "e8f8c25c-e121-4b7a-8049-b5b68a8ec7f0",
+      "cargo_atual": null,
+      "cpf": "02648597158",
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {
+        "2018": "110000623368",
+        "2022": "110001623186"
+      },
+      "counts": {
+        "patrimonio": 2,
+        "financiamento": 2,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 1,
+        "processos": 0,
+        "projetos": 0
+      }
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "id": "63ab5e8d-4255-431a-8eac-536ae13e876f",
+      "cargo_atual": null,
+      "cpf": null,
+      "ids_camara": null,
+      "ids_senado": null,
+      "tse_sq_candidato": {},
+      "counts": {
+        "patrimonio": 0,
+        "financiamento": 0,
+        "votos": 0,
+        "gastos": 0,
+        "historico": 0,
+        "processos": 0,
+        "projetos": 0
+      }
+    }
+  ]
+}

@@ -1,13 +1,30 @@
-import { createReadStream, existsSync, mkdirSync, createWriteStream, rmSync } from "fs"
-import { parse } from "csv-parse"
+import { existsSync, mkdirSync, createWriteStream, rmSync } from "fs"
 import { resolve } from "path"
 import { execSync } from "child_process"
 import { supabase } from "./supabase"
-import { loadCandidatos, normalizeForMatch, sleep } from "./helpers"
+import { loadCandidatos, parseCSV, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import type { IngestResult, CandidatoConfig } from "./types"
+import {
+  createTSEResolver,
+  getResolveMethodPriority,
+  shouldSkipWeakMatchForAno,
+  type ResolveMethod,
+  type TSEResolver,
+} from "./tse-resolver"
 
 const DATA_DIR = resolve(process.cwd(), "data/tse")
+const DEFAULT_ANOS = [2018, 2020, 2022, 2024]
+
+function getGovernorUFs(candidatos: CandidatoConfig[]): string[] {
+  return [
+    ...new Set(
+      candidatos
+        .filter((candidato) => candidato.cargo_disputado === "Governador" && candidato.estado)
+        .map((candidato) => candidato.estado!.toUpperCase())
+    ),
+  ]
+}
 
 function parseBRL(value: string): number {
   if (!value || value === "#NULO#" || value === "#NE#" || value === "-1") return 0
@@ -98,22 +115,14 @@ async function resolveCandidatoId(slug: string): Promise<string | null> {
   return data?.id ?? null
 }
 
-function buildCandidateNameMap(candidatos: CandidatoConfig[]): Map<string, CandidatoConfig> {
-  const map = new Map<string, CandidatoConfig>()
-  for (const c of candidatos) {
-    map.set(normalizeForMatch(c.nome_completo), c)
-    map.set(normalizeForMatch(c.nome_urna), c)
-  }
-  return map
-}
-
 /**
  * Download and parse consulta_cand to build SQ_CANDIDATO → slug mapping.
  * The bens CSV only has SQ_CANDIDATO (no name), so we need this cross-reference.
  */
 async function buildSQMap(
   ano: number,
-  candidatos: CandidatoConfig[]
+  candidatos: CandidatoConfig[],
+  resolver: TSEResolver
 ): Promise<Map<string, CandidatoConfig>> {
   const candZip = resolve(DATA_DIR, `consulta_cand_${ano}.zip`)
   const candDir = resolve(DATA_DIR, `consulta_cand_${ano}`)
@@ -122,54 +131,81 @@ async function buildSQMap(
   const ok = await downloadFile(url, candZip)
   if (!ok) return new Map()
 
-  // Extract BR + UF files for governor candidates
-  const governorUFs = [...new Set(candidatos.filter((c) => c.cargo_disputado === "Governador" && c.estado).map((c) => c.estado!.toUpperCase()))]
+  const governorUFs = getGovernorUFs(candidatos)
   extractZip(candZip, candDir, governorUFs)
 
   const brPaths = findCSVs(candDir, "_BR").concat(findCSVs(candDir, "_BRASIL"))
-  // Also include UF-level files so governor SQ_CANDIDATO values are mapped
   const ufPaths = governorUFs.flatMap((uf) => findCSVs(candDir, `_${uf}`))
   const allPaths = [...brPaths, ...ufPaths].filter((v, i, a) => a.indexOf(v) === i)
   if (allPaths.length === 0) return new Map()
 
-  const nameMap = buildCandidateNameMap(candidatos)
-  const sqMap = new Map<string, CandidatoConfig>()
+  const candidatosBySlug = new Map(candidatos.map((candidato) => [candidato.slug, candidato]))
+  const selectedBySlug = new Map<
+    string,
+    { candidato: CandidatoConfig; sq: string; method: ResolveMethod; priority: number }
+  >()
+  const callerAmbiguousPriority = new Map<string, number>()
+
+  for (const candidato of candidatos) {
+    const sq = candidato.ids.tse_sq_candidato?.[String(ano)]?.trim()
+    if (!sq) continue
+    selectedBySlug.set(candidato.slug, {
+      candidato,
+      sq,
+      method: "sq-preloaded",
+      priority: getResolveMethodPriority("sq-preloaded"),
+    })
+  }
 
   for (const csvPath of allPaths) {
     await parseCSV(csvPath, (row) => {
-      const nome = normalizeForMatch(row.NM_CANDIDATO || "")
-      const cand = nameMap.get(nome)
-      if (!cand) return
-      const sq = row.SQ_CANDIDATO || ""
-      if (sq) sqMap.set(sq, cand)
+      const sq = (row.SQ_CANDIDATO || "").trim()
+      if (!sq) return
+
+      const match = resolver.resolveRow(row)
+      if (!match) return
+      if (shouldSkipWeakMatchForAno(ano, match.method)) return
+
+      const candidato = candidatosBySlug.get(match.slug)
+      if (!candidato) return
+
+      const priority = getResolveMethodPriority(match.method)
+      const existing = selectedBySlug.get(match.slug)
+      if (!existing) {
+        selectedBySlug.set(match.slug, { candidato, sq, method: match.method, priority })
+        return
+      }
+
+      if (priority > existing.priority) {
+        selectedBySlug.set(match.slug, { candidato, sq, method: match.method, priority })
+        callerAmbiguousPriority.delete(match.slug)
+        return
+      }
+
+      if (priority < existing.priority || existing.sq === sq) {
+        return
+      }
+
+      callerAmbiguousPriority.set(match.slug, priority)
     })
   }
 
-  log("tse", `  SQ map ${ano}: ${sqMap.size} candidatos mapeados`)
+  const sqMap = new Map<string, CandidatoConfig>()
+  let preloaded = 0
+  let resolved = 0
+
+  for (const [slug, selection] of selectedBySlug) {
+    if (callerAmbiguousPriority.has(slug)) continue
+    sqMap.set(selection.sq, selection.candidato)
+    if (selection.method === "sq-preloaded") preloaded++
+    else resolved++
+  }
+
+  log("tse", `  SQ map ${ano}: ${sqMap.size} candidatos mapeados (${preloaded} preloaded, ${resolved} via resolver)`)
+  if (callerAmbiguousPriority.size > 0) {
+    warn("tse", `  Ambiguos SQ map ${ano}: ${[...callerAmbiguousPriority.keys()].join(", ")}`)
+  }
   return sqMap
-}
-
-async function parseCSV(
-  filePath: string,
-  onRow: (row: Record<string, string>) => Promise<void> | void
-): Promise<number> {
-  let count = 0
-  const parser = createReadStream(filePath, { encoding: "latin1" }).pipe(
-    parse({
-      delimiter: ";",
-      columns: true,
-      skip_empty_lines: true,
-      relax_column_count: true,
-      cast: (value) => value.trim(),
-    })
-  )
-
-  for await (const row of parser) {
-    await onRow(row as Record<string, string>)
-    count++
-  }
-
-  return count
 }
 
 async function processPatrimonio(
@@ -178,9 +214,8 @@ async function processPatrimonio(
   extractDir: string,
   sqMap: Map<string, CandidatoConfig>
 ): Promise<IngestResult[]> {
-  // Presidential candidates are in BR/BRASIL files; governor candidates need UF-level files too
   const brPaths = findCSVs(extractDir, "_BR").concat(findCSVs(extractDir, "_BRASIL"))
-  const governorUFs = [...new Set(candidatos.filter((c) => c.cargo_disputado === "Governador" && c.estado).map((c) => c.estado!.toUpperCase()))]
+  const governorUFs = getGovernorUFs(candidatos)
   const ufPaths = governorUFs.flatMap((uf) => findCSVs(extractDir, `_${uf}`))
   const allSourcePaths = [...brPaths, ...ufPaths]
   const csvPaths = allSourcePaths.length > 0
@@ -197,22 +232,21 @@ async function processPatrimonio(
 
   log("tse", `  Parseando patrimonio ${ano}: ${uniquePaths.length} arquivos CSV (BR${governorUFs.length > 0 ? " + " + governorUFs.length + " UFs" : ""})`)
   for (const csvPath of uniquePaths) {
-  await parseCSV(csvPath, (row) => {
-    // bens CSV has SQ_CANDIDATO but no NM_CANDIDATO
-    const sq = row.SQ_CANDIDATO || ""
-    const cand = sqMap.get(sq)
-    if (!cand) return
+    await parseCSV(csvPath, (row) => {
+      const sq = (row.SQ_CANDIDATO || "").trim()
+      const cand = sqMap.get(sq)
+      if (!cand) return
 
-    const existing = aggregated.get(cand.slug) ?? { bens: [], total: 0 }
-    const valor = parseBRL(row.VR_BEM_CANDIDATO || "0")
-    existing.bens.push({
-      tipo: row.DS_TIPO_BEM_CANDIDATO || "",
-      descricao: row.DS_BEM_CANDIDATO || "",
-      valor,
+      const existing = aggregated.get(cand.slug) ?? { bens: [], total: 0 }
+      const valor = parseBRL(row.VR_BEM_CANDIDATO || "0")
+      existing.bens.push({
+        tipo: row.DS_TIPO_BEM_CANDIDATO || "",
+        descricao: row.DS_BEM_CANDIDATO || "",
+        valor,
+      })
+      existing.total += valor
+      aggregated.set(cand.slug, existing)
     })
-    existing.total += valor
-    aggregated.set(cand.slug, existing)
-  })
   }
 
   const results: IngestResult[] = []
@@ -258,11 +292,11 @@ async function processPatrimonio(
 async function processFinanciamento(
   ano: number,
   candidatos: CandidatoConfig[],
-  extractDir: string
+  extractDir: string,
+  sqMap: Map<string, CandidatoConfig>
 ): Promise<IngestResult[]> {
-  // Presidential candidates in BR files; governor candidates need UF-level files too
   const brPaths = findCSVs(extractDir, "_BR").concat(findCSVs(extractDir, "_BRASIL"))
-  const governorUFs = [...new Set(candidatos.filter((c) => c.cargo_disputado === "Governador" && c.estado).map((c) => c.estado!.toUpperCase()))]
+  const governorUFs = getGovernorUFs(candidatos)
   const ufPaths = governorUFs.flatMap((uf) => findCSVs(extractDir, `_${uf}`))
   const allSourcePaths = [...brPaths, ...ufPaths]
   const csvPaths = allSourcePaths.length > 0
@@ -277,8 +311,6 @@ async function processFinanciamento(
     return []
   }
 
-  const nameMap = buildCandidateNameMap(candidatos)
-
   interface FinData {
     total: number
     fundo_partidario: number
@@ -292,46 +324,48 @@ async function processFinanciamento(
 
   log("tse", `  Parseando financiamento ${ano}: ${uniquePaths.length} arquivos CSV (BR${governorUFs.length > 0 ? " + " + governorUFs.length + " UFs" : ""})`)
   for (const csvPath of uniquePaths) {
-  await parseCSV(csvPath, (row) => {
-    const nome = normalizeForMatch(row.NM_CANDIDATO || "")
-    const cand = nameMap.get(nome)
-    if (!cand) return
+    await parseCSV(csvPath, (row) => {
+      const sq = (row.SQ_CANDIDATO || "").trim()
+      if (!sq) return
 
-    const existing = aggregated.get(cand.slug) ?? {
-      total: 0,
-      fundo_partidario: 0,
-      fundo_eleitoral: 0,
-      pessoa_fisica: 0,
-      recursos_proprios: 0,
-      doadores: [],
-    }
+      const candidato = sqMap.get(sq)
+      if (!candidato) return
 
-    const valor = parseBRL(row.VR_RECEITA || "0")
-    const origem = (row.DS_ORIGEM_RECEITA || "").toUpperCase()
+      const existing = aggregated.get(candidato.slug) ?? {
+        total: 0,
+        fundo_partidario: 0,
+        fundo_eleitoral: 0,
+        pessoa_fisica: 0,
+        recursos_proprios: 0,
+        doadores: [],
+      }
 
-    existing.total += valor
+      const valor = parseBRL(row.VR_RECEITA || "0")
+      const origem = (row.DS_ORIGEM_RECEITA || "").toUpperCase()
 
-    if (origem.includes("FUNDO PARTID")) existing.fundo_partidario += valor
-    else if (origem.includes("FUNDO ESPECIAL") || origem.includes("FEFC")) existing.fundo_eleitoral += valor
-    else if (origem.includes("PESSOA F")) existing.pessoa_fisica += valor
-    else if (origem.includes("RECURSO") && origem.includes("PROPRIO")) existing.recursos_proprios += valor
+      existing.total += valor
 
-    existing.doadores.push({
-      nome: row.NM_DOADOR || row.NM_DOADOR_RFB || "",
-      valor,
-      tipo: origem.includes("PESSOA F")
-        ? "PF"
-        : origem.includes("FUNDO PARTID")
-          ? "fundo_partidario"
-          : origem.includes("FUNDO ESPECIAL") || origem.includes("FEFC")
-            ? "fundo_eleitoral"
-            : origem.includes("PROPRIO")
-              ? "recursos_proprios"
-              : "PJ",
+      if (origem.includes("FUNDO PARTID")) existing.fundo_partidario += valor
+      else if (origem.includes("FUNDO ESPECIAL") || origem.includes("FEFC")) existing.fundo_eleitoral += valor
+      else if (origem.includes("PESSOA F")) existing.pessoa_fisica += valor
+      else if (origem.includes("RECURSO") && origem.includes("PROPRIO")) existing.recursos_proprios += valor
+
+      existing.doadores.push({
+        nome: row.NM_DOADOR || row.NM_DOADOR_RFB || "",
+        valor,
+        tipo: origem.includes("PESSOA F")
+          ? "PF"
+          : origem.includes("FUNDO PARTID")
+            ? "fundo_partidario"
+            : origem.includes("FUNDO ESPECIAL") || origem.includes("FEFC")
+              ? "fundo_eleitoral"
+              : origem.includes("PROPRIO")
+                ? "recursos_proprios"
+                : "PJ",
+      })
+
+      aggregated.set(candidato.slug, existing)
     })
-
-    aggregated.set(cand.slug, existing)
-  })
   }
 
   const results: IngestResult[] = []
@@ -383,10 +417,21 @@ async function processFinanciamento(
   return results
 }
 
-export async function ingestTSE(): Promise<IngestResult[]> {
+function logResolverStats(ano: number, resolver: TSEResolver) {
+  const { stats } = resolver
+  log(
+    "tse",
+    `  Resolver ${ano}: sq-preloaded=${stats.sqPreloaded}, cpf=${stats.cpf}, name-unique=${stats.nameUnique}, name-uf=${stats.nameUf}, ambiguous=${stats.ambiguous}, no-match=${stats.noMatch}`
+  )
+
+  if (resolver.ambiguousSlugs.length > 0) {
+    log("tse", `  Ambiguos ${ano}: ${resolver.ambiguousSlugs.join(", ")}`)
+  }
+}
+
+export async function ingestTSE(anos = DEFAULT_ANOS): Promise<IngestResult[]> {
   const candidatos = loadCandidatos()
   const allResults: IngestResult[] = []
-  const anos = [2018, 2022]
 
   mkdirSync(DATA_DIR, { recursive: true })
 
@@ -398,16 +443,13 @@ export async function ingestTSE(): Promise<IngestResult[]> {
     const receitasZip = resolve(DATA_DIR, `receitas_candidatos_${ano}.zip`)
     const receitasDir = resolve(DATA_DIR, `receitas_${ano}`)
 
-    // Governor UF patterns: extract state-level files alongside BR files
-    const governorUFs = [...new Set(candidatos.filter((c) => c.cargo_disputado === "Governador" && c.estado).map((c) => c.estado!.toUpperCase()))]
+    const governorUFs = getGovernorUFs(candidatos)
+    const resolver = await createTSEResolver(candidatos, ano)
 
-    // Build SQ_CANDIDATO -> slug mapping from consulta_cand
-    const sqMap = await buildSQMap(ano, candidatos)
-    // Cleanup consulta_cand immediately (only needed for SQ mapping)
+    const sqMap = await buildSQMap(ano, candidatos, resolver)
     cleanupDir(resolve(DATA_DIR, `consulta_cand_${ano}`))
     cleanupFile(resolve(DATA_DIR, `consulta_cand_${ano}.zip`))
 
-    // Download bens
     const bensUrl = `https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_${ano}.zip`
     const bensOk = await downloadFile(bensUrl, bensZip)
     if (bensOk) {
@@ -418,29 +460,27 @@ export async function ingestTSE(): Promise<IngestResult[]> {
       } catch (err) {
         error("tse", `  Erro patrimonio ${ano}: ${err}`)
       }
-      // Cleanup bens after processing
       cleanupDir(bensDir)
       cleanupFile(bensZip)
     }
 
     await sleep(1000)
 
-    // Download receitas
     const receitasUrl = `https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_de_contas_eleitorais_candidatos_${ano}.zip`
     const receitasOk = await downloadFile(receitasUrl, receitasZip)
     if (receitasOk) {
       try {
         extractZip(receitasZip, receitasDir, governorUFs)
-        const finResults = await processFinanciamento(ano, candidatos, receitasDir)
+        const finResults = await processFinanciamento(ano, candidatos, receitasDir, sqMap)
         allResults.push(...finResults)
       } catch (err) {
         error("tse", `  Erro financiamento ${ano}: ${err}`)
       }
-      // Cleanup receitas after processing
       cleanupDir(receitasDir)
       cleanupFile(receitasZip)
     }
 
+    logResolverStats(ano, resolver)
     await sleep(1000)
   }
 
@@ -459,7 +499,12 @@ export async function ingestTSE(): Promise<IngestResult[]> {
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  ingestTSE().then((results) => {
+  const anos = process.argv
+    .slice(2)
+    .map((value) => Number(value))
+    .filter((value) => Number.isInteger(value) && value > 0)
+
+  ingestTSE(anos.length > 0 ? anos : DEFAULT_ANOS).then((results) => {
     console.log(JSON.stringify(results, null, 2))
   })
 }

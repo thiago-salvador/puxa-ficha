@@ -1,6 +1,8 @@
 import type { CandidatoConfig } from "./types"
 import { readFileSync } from "fs"
+import { createReadStream } from "fs"
 import { resolve } from "path"
+import { parse } from "csv-parse"
 
 export function loadCandidatos(): CandidatoConfig[] {
   const path = resolve(process.cwd(), "data/candidatos.json")
@@ -99,4 +101,27 @@ export async function fetchAllPages<T>(
   }
 
   return all
+}
+
+export async function parseCSV(
+  filePath: string,
+  onRow: (row: Record<string, string>) => Promise<void> | void
+): Promise<number> {
+  let count = 0
+  const parser = createReadStream(filePath, { encoding: "latin1" }).pipe(
+    parse({
+      delimiter: ";",
+      columns: true,
+      skip_empty_lines: true,
+      relax_column_count: true,
+      cast: (value) => value.trim(),
+    })
+  )
+
+  for await (const row of parser) {
+    await onRow(row as Record<string, string>)
+    count++
+  }
+
+  return count
 }

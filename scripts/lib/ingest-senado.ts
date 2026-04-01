@@ -46,6 +46,7 @@ async function ingestPerfil(codigo: number, candidatoId: string, slug: string) {
     }
     if (ident.SiglaPartidoParlamentar) updates.partido_sigla = ident.SiglaPartidoParlamentar
     if (ident.NomeCompletoParlamentar) updates.partido_atual = ident.SiglaPartidoParlamentar
+    if (ident.CodigoPublicoNaLegAtual) updates.cargo_atual = "Senador(a)"
   }
 
   const dadosBasicos = parlamentar.DadosBasicosParlamentar as Record<string, unknown> | undefined

@@ -50,6 +50,11 @@ async function ingestPerfil(idCamara: number, candidatoId: string, slug: string)
     }
     if (status.siglaPartido) updates.partido_sigla = status.siglaPartido
     if (status.nomeEleitoral) updates.partido_atual = status.siglaPartido
+
+    const situacaoAtual = String(status.situacao || "").toLowerCase()
+    if (situacaoAtual.includes("exerc")) {
+      updates.cargo_atual = "Deputado(a) Federal"
+    }
   }
   if (dep.escolaridade) updates.formacao = dep.escolaridade
   if (dep.municipioNascimento && dep.ufNascimento) {
