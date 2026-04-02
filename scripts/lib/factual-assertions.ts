@@ -1188,8 +1188,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "lucien-rezende",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Correio do Estado 2026-01-25 + Midiamax 2026-01-25",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Lucien Miranda de Rezende",
@@ -1216,8 +1217,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "natasha-slhessarenko",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "PNB Online 2026-03-15 + MidiaNews 2025-10-28",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Natasha Slhessarenko",
@@ -1230,14 +1232,16 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "otaviano-pivetta",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "ALMT posse 2026-03-31 + Republicanos10 2026-03-31",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Otaviano Pivetta",
       nome_urna: "Otaviano Pivetta",
       partido_atual: "Republicanos",
       partido_sigla: "REPUBLICANOS",
+      cargo_atual: "Governador de Mato Grosso",
       cargo_disputado: "Governador",
       estado: "MT",
     },

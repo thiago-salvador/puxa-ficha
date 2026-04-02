@@ -6,17 +6,18 @@ Arquivo importado de `/Users/thiagosalvador/Downloads/PLAN.md` em `2026-04-02` e
 
 Este plano **não está concluído**. O site está mais seguro do que antes, mas **não está 100% funcional, atualizado e pronto para ir ao ar**.
 
-### Snapshot atual (2026-04-02 ~19:10, apos lotes 1-5 de curadoria)
+### Snapshot atual (2026-04-02 ~20:28, apos lotes 1-7 de curadoria)
 
 - `144` candidatos ativos no banco
-- `97` candidatos com `publicavel = true`
-- `97/144` assertions `curated`
-- `47/144` assertions `mirrored` (restantes a promover)
-- gate factual: **passando** (0 bloqueados, 97 curated, 47 mirrored)
-- `release-verify` full local: `146/146 OK` (porta 3456)
-- `set-publicavel-from-audit.ts` real: `97` sincronizados, `47` ocultos
+- `103` candidatos com `publicavel = true`
+- `103/144` assertions `curated`
+- `41/144` assertions `mirrored` (restantes a promover)
+- gate factual: **passando** (0 bloqueados, 103 curated, 41 mirrored)
+- `release-verify` full local: `146/146 OK`
+- `release-verify` parcial producao: `105/105 OK`
+- `set-publicavel-from-audit.ts` real: `103` sincronizados, `41` ocultos
 - foto `marcelo-maranata`: **versionada** em `public/candidates/marcelo-maranata.jpg` + deploy confirmado
-- producao: `https://puxaficha.com.br` — 97 fichas acessíveis
+- producao: `https://puxaficha.com.br` — 103 fichas acessíveis
 
 ### Snapshot histórico pré-lotes (2026-04-02 ~17:26, pos sessao Cursor)
 
@@ -966,8 +967,40 @@ Auto-auditoria solicitada pelo usuario apos lote 5. Identificados desvios do pad
 5. release-verify full (146/146)
 6. set-publicavel --dry-run
 7. set-publicavel real
-8. curl producao: 200 + titulo para cada slug do lote
-9. Log PLAN.md + commit + push
+8. sync-audit-assertions.ts (Supabase DB)
+9. release-verify parcial em producao (VERIFY_URL=https://puxaficha.com.br --mode partial)
+10. Log PLAN.md + commit + push
+
+### 2026-04-02 — lote 7 curadoria (Claude Code, claude-sonnet-4-6)
+
+Setimo lote mirrored → curated. 3 candidatos promovidos. Pipeline completo executado sem desvios.
+
+**Candidatos promovidos:**
+- `lucien-rezende` (MS, PSOL): pre-candidato ao governo do Mato Grosso do Sul. Source: Correio do Estado 2026-01-25 + Midiamax 2026-01-25
+- `natasha-slhessarenko` (MT, PSD): pre-candidata ao governo do Mato Grosso. Source: PNB Online 2026-03-15 + MidiaNews 2025-10-28
+- `otaviano-pivetta` (MT, REPUBLICANOS): assumiu a governadoria de MT em 31/03/2026 apos renuncia de Mauro Mendes. cargo_atual atualizado para "Governador de Mato Grosso". historico_politico enriquecido com entrada de Governador (2026-presente). Source: ALMT posse 2026-03-31 + Republicanos10 2026-03-31
+
+**Incidente durante execucao:**
+- crosscheck_cargo_historico bloqueou otaviano-pivetta: cargo_atual "Governador de Mato Grosso" nao batia com ultimo historico "Vice-Governador". Fix: adicionado entry de Governador em apply-current-factual-fixes.ts com historicoFix (cargo: "Governador de Mato Grosso", 2026-presente, eleito_por: "sucessao"). Re-audit passou 144/144.
+
+**Pipeline executado (alinhado ao padrao Codex, 12 passos):**
+1. assertions atualizadas: lucien, natasha (curated + source + verifiedAt); otaviano (+ cargo_atual)
+2. sync-mock-from-assertions: 3/3 OK
+3. sync-audit-assertions: 3/3 OK (Supabase DB atualizado)
+4. apply-current-factual-fixes: otaviano historicoFix inserido + 27 atualizacoes normais
+5. audit:factual: 144/144 auditados, 0 reprovados — curated 103 | mirrored 41
+6. check-audit-gate: Gate OK — 0 bloqueados, 103/103 curated
+7. release-verify delta (3 slugs): 5/5 OK (localhost:3000)
+8. release-verify full: 146/146 OK
+9. set-publicavel --dry-run: 103 elegiveis confirmados
+10. set-publicavel real: 103 publicavel=true, 41 false
+11. release-verify parcial em producao: 105/105 OK (https://puxaficha.com.br)
+12. Log PLAN.md + commit + push
+
+A contagem real no banco ficou em:
+- `103` candidatos com `publicavel = true`
+
+Restam: 41 candidatos mirrored para promover.
 
 ## Critério de pronto de verdade
 

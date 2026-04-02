@@ -556,6 +556,20 @@ const FIXES: CandidateFix[] = [
       observacoes: "cargo atual verificado manualmente (Correio Braziliense 2025-11-01)",
     },
   },
+  {
+    slug: "otaviano-pivetta",
+    source: "ALMT posse 2026-03-31 + Republicanos10 2026-03-31",
+    candidateUpdate: {},
+    historicoFix: {
+      cargo: "Governador de Mato Grosso",
+      periodo_inicio: 2026,
+      periodo_fim: null,
+      partido: "REPUBLICANOS",
+      estado: "MT",
+      eleito_por: "sucessao",
+      observacoes: "assumiu governadoria em 31/03/2026 apos renúncia de Mauro Mendes (ALMT posse 2026-03-31)",
+    },
+  },
 ]
 
 function mergeFonteDados(existing: string[] | null | undefined): string[] {

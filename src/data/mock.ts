@@ -1070,14 +1070,14 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Partido Socialismo e Liberdade", partido_sigla: "PSOL", cargo_atual: null, cargo_disputado: "Governador", estado: "MS",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "141", nome_completo: "Otaviano Pivetta", nome_urna: "Otaviano Pivetta", slug: "otaviano-pivetta",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Republicanos", partido_sigla: "REPUBLICANOS", cargo_atual: null, cargo_disputado: "Governador", estado: "MT",
+    partido_atual: "Republicanos", partido_sigla: "REPUBLICANOS", cargo_atual: "Governador de Mato Grosso", cargo_disputado: "Governador", estado: "MT",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "142", nome_completo: "Wellington Fagundes", nome_urna: "Wellington Fagundes", slug: "wellington-fagundes",
@@ -1098,7 +1098,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: null, cargo_disputado: "Governador", estado: "MT",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
 ]
 
