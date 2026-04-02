@@ -592,16 +592,16 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "72", nome_completo: "Felipe Costa Camarao", nome_urna: "Felipe Camarao", slug: "felipe-camarao",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: null, cargo_disputado: "Governador", estado: "MA",
+    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: "Vice-Governador do Maranhao", cargo_disputado: "Governador", estado: "MA",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "73", nome_completo: "Lahesio Rodrigues Bonfim", nome_urna: "Lahesio Bonfim", slug: "lahesio-bonfim",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Partido Novo", partido_sigla: "NOVO", cargo_atual: null, cargo_disputado: "Governador", estado: "MA",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "74", nome_completo: "Enilton Rodrigues", nome_urna: "Enilton Rodrigues", slug: "enilton-rodrigues",
@@ -1042,7 +1042,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Partido Socialista Brasileiro", partido_sigla: "PSB", cargo_atual: null, cargo_disputado: "Governador", estado: "GO",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "137", nome_completo: "Eduardo Correa Riedel", nome_urna: "Eduardo Riedel", slug: "eduardo-riedel",

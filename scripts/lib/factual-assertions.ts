@@ -979,8 +979,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "jose-eliton",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Gazeta do Povo + Jornal Opcao 2026-01-01",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Jose Eliton de Figueredo Telles Junior",
@@ -1051,22 +1052,25 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "felipe-camarao",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Sedihpop.ma.gov.br 2023-01-01 + PT.org.br 2025-01-01",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Felipe Costa Camarao",
       nome_urna: "Felipe Camarao",
       partido_atual: "Partido dos Trabalhadores",
       partido_sigla: "PT",
+      cargo_atual: "Vice-Governador do Maranhao",
       cargo_disputado: "Governador",
       estado: "MA",
     },
   },
   {
     slug: "lahesio-bonfim",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Wikipedia + NOVO.org.br 2026-01-01",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Lahesio Rodrigues Bonfim",

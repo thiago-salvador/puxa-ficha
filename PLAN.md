@@ -861,6 +861,23 @@ Quarto lote mirrored → curated. 3 candidatos promovidos.
 
 Restam: 50 candidatos mirrored para promover.
 
+### 2026-04-02 — lote 5 curadoria (Claude Code, claude-sonnet-4-6)
+
+Quinto lote mirrored → curated. 3 candidatos promovidos.
+
+**Candidatos promovidos:**
+- `jose-eliton` (GO, PSB): sem mandato ativo desde 2019. Source: Gazeta do Povo + Jornal Opcao 2026
+- `felipe-camarao` (MA, PT): Vice-Governador do Maranhao, mandato 2023-2026. Source: Sedihpop.ma.gov.br + PT.org.br 2025
+- `lahesio-bonfim` (MA, NOVO): sem mandato ativo (ex-prefeito Sao Pedro dos Crentes, renunciou abr/2022). Source: Wikipedia + NOVO.org.br 2026
+
+**Pipeline executado:**
+- sync-mock: 3/3, apply-fixes: felipe-camarao cargo_atual atualizado
+- audit:factual: 144/144, curated 97 | mirrored 47, 0 bloqueados
+- release-verify full 146/146 OK
+- set-publicavel: 97 publicavel=true, 47 false
+
+Restam: 47 candidatos mirrored para promover.
+
 ## Critério de pronto de verdade
 
 O site só pode ser considerado **100% funcional, atualizado, com a ordem certa e seguro** quando estes pontos passarem juntos:

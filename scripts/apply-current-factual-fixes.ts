@@ -440,6 +440,22 @@ const FIXES: CandidateFix[] = [
     },
   },
   {
+    slug: "felipe-camarao",
+    source: "Sedihpop.ma.gov.br 2023-01-01 + PT.org.br 2025-01-01",
+    candidateUpdate: {
+      cargo_atual: "Vice-Governador do Maranhao",
+    },
+    historicoFix: {
+      cargo: "Vice-Governador",
+      periodo_inicio: 2023,
+      periodo_fim: null,
+      partido: "PT",
+      estado: "MA",
+      eleito_por: "voto direto",
+      observacoes: "cargo atual verificado manualmente (Sedihpop.ma.gov.br 2023 + PT.org.br 2025)",
+    },
+  },
+  {
     slug: "adriana-accorsi",
     source: "Camara dos Deputados oficial 2026-04-02",
     candidateUpdate: {
