@@ -1666,11 +1666,12 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "alysson-bezerra",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Diario Oficial Mossoro DOM 2024 + Agora RN 2026-03",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Alysson Leandro Barbate Bezerra",
+      nome_completo: "Allyson Leandro Bezerra Silva",
       nome_urna: "Alysson Bezerra",
       partido_atual: "Uniao Brasil",
       partido_sigla: "UNIAO",
@@ -1752,14 +1753,15 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "hildon-chaves",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Portal364 2026-03 + News Rondonia 2026-03-20",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Hildon de Lima Chaves",
       nome_urna: "Hildon Chaves",
-      partido_atual: "Partido da Social Democracia Brasileira",
-      partido_sigla: "PSDB",
+      partido_atual: "Uniao Brasil",
+      partido_sigla: "UNIAO",
       cargo_disputado: "Governador",
       estado: "RO",
     },
@@ -1942,8 +1944,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "joao-rodrigues",
-    source: "banco auditado 2026-04-02",
-    confidence: "mirrored",
+    source: "NDMais 2026-04-02 + O Janelao SC 2026",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Joao Rodrigues",

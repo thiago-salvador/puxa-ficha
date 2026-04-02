@@ -303,7 +303,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: "Chapeco/SC", formacao: null, profissao_declarada: "Politico",
     partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: null, cargo_disputado: "Governador", estado: "SC",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "32", nome_completo: "Decio Nery de Lima", nome_urna: "Decio Lima", slug: "decio-lima",
@@ -702,11 +702,11 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
-    id: "88", nome_completo: "Alysson Leandro Barbate Bezerra", nome_urna: "Alysson Bezerra", slug: "alysson-bezerra",
+    id: "88", nome_completo: "Allyson Leandro Bezerra Silva", nome_urna: "Alysson Bezerra", slug: "alysson-bezerra",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Uniao Brasil", partido_sigla: "UNIAO", cargo_atual: null, cargo_disputado: "Governador", estado: "RN",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "89", nome_completo: "Alvaro Fernandes Dias", nome_urna: "Alvaro Dias", slug: "alvaro-dias-rn",
@@ -893,9 +893,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "115", nome_completo: "Hildon de Lima Chaves", nome_urna: "Hildon Chaves", slug: "hildon-chaves",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido da Social Democracia Brasileira", partido_sigla: "PSDB", cargo_atual: null, cargo_disputado: "Governador", estado: "RO",
+    partido_atual: "Uniao Brasil", partido_sigla: "UNIAO", cargo_atual: null, cargo_disputado: "Governador", estado: "RO",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "116", nome_completo: "Fernando Maximo de Oliveira", nome_urna: "Dr. Fernando Maximo", slug: "dr-fernando-maximo",

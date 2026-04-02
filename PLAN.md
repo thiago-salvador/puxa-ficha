@@ -6,16 +6,16 @@ Arquivo importado de `/Users/thiagosalvador/Downloads/PLAN.md` em `2026-04-02` e
 
 Este plano **não está concluído**. O site está mais seguro do que antes, mas **não está 100% funcional, atualizado e pronto para ir ao ar**.
 
-### Snapshot atual (2026-04-02 ~21:27, apos lotes 1-10 de curadoria)
+### Snapshot atual (2026-04-02 ~21:39, apos lotes 1-11 de curadoria)
 
 - `144` candidatos ativos no banco
-- `112` candidatos com `publicavel = true`
-- `112/144` assertions `curated`
-- `32/144` assertions `mirrored` (restantes a promover)
-- gate factual: **passando** (0 bloqueados, 112 curated, 32 mirrored)
+- `115` candidatos com `publicavel = true`
+- `115/144` assertions `curated`
+- `29/144` assertions `mirrored` (restantes a promover)
+- gate factual: **passando** (0 bloqueados, 115 curated, 29 mirrored)
 - `release-verify` full local: `146/146 OK`
-- `release-verify` parcial producao: `114/114 OK`
-- `set-publicavel-from-audit.ts` real: `112` sincronizados, `32` ocultos
+- `release-verify` parcial producao: `117/117 OK`
+- `set-publicavel-from-audit.ts` real: `115` sincronizados, `29` ocultos
 - foto `marcelo-maranata`: **versionada** em `public/candidates/marcelo-maranata.jpg` + deploy confirmado
 - producao: `https://puxaficha.com.br` — 106 fichas acessíveis
 
@@ -1101,6 +1101,41 @@ Décimo lote mirrored → curated. 3 candidatos promovidos. Pipeline completo ex
 12. Log PLAN.md + commit + push
 
 Restam: 32 candidatos mirrored para promover.
+
+### 2026-04-02 — lote 11 curadoria (Claude Code, claude-sonnet-4-6)
+
+Décimo primeiro lote mirrored → curated. 3 candidatos promovidos. Pipeline completo executado sem desvios.
+
+**Candidatos promovidos:**
+- `alysson-bezerra` (RN, UNIAO): prefeito de Mossoró, renunciou em 03/2026 para disputar gov. RN. Nome corrigido "Alysson Leandro Barbate Bezerra"→"Allyson Leandro Bezerra Silva" (DOM Mossoró). Lidera pesquisas com 36%. Source: DOM Mossoró 2024 + Agora RN 2026-03
+- `hildon-chaves` (RO, UNIAO): ex-prefeito de Porto Velho. Partido corrigido PSDB→UNIAO BRASIL (filiação 03/2026). Running para gov. RO. Source: Portal364 2026-03 + News Rondônia 2026-03-20
+- `joao-rodrigues` (SC, PSD): ex-prefeito de Chapecó (renunciou 02/04/2026 para disputar gov. SC). Entrada prévia em apply-fixes já tratava DB (cargo_atual, historicoFix). Source: NDMais 2026-04-02
+
+**Candidatos pulados neste lote:**
+- `garotinho` (RJ, REPUBLICANOS): anunciou pré-candidatura a dep. federal; disputa pelo governo "deixada em aberto". Manter mirrored.
+- `rodrigo-bacellar` (RJ, UNIAO): preso em dez/2025 por vazamento de info ao CV. Candidatura em xeque. Manter mirrored.
+- `tarcisio-motta` (RJ, PSOL): candidatura ao gov. RJ não confirmada (lidera bancada PSOL na Câmara). Manter mirrored.
+- `washington-reis` (RJ, MDB): declarou que não será candidato em 2026 (STF/inelegibilidade). Manter mirrored.
+- `silvio-mendes` (PI, UNIAO): descartou candidatura jan/2026. Manter mirrored.
+
+**Incidentes durante execução:**
+1. Duplicata de `joao-rodrigues` em apply-fixes: já existia entrada na linha 353 com cargo_atual e historicoFix. Removida entrada duplicada do lote 11.
+
+**Pipeline executado (12 passos):**
+1. assertions: alysson-bezerra (nome fix + source), hildon-chaves (PSDB→UNIAO + source), joao-rodrigues (source)
+2. sync-mock: 3/3 OK (sequencial)
+3. sync-audit: 3/3 OK (sequencial)
+4. apply-fixes: alysson-bezerra (nome_completo), hildon-chaves (partido + ensureCurrentPartyTimeline), joao-rodrigues (via entrada preexistente linha 353)
+5. audit:factual: 144/144, 0 reprovados — curated 115 | mirrored 29
+6. check-audit-gate: Gate OK — 115/115 curated
+7. release-verify delta: 5/5 OK
+8. release-verify full: 146/146 OK
+9. set-publicavel --dry-run: 115 elegiveis
+10. set-publicavel real: 115 publicavel=true, 29 false
+11. release-verify parcial producao: 117/117 OK
+12. Log PLAN.md + commit + push
+
+Restam: 29 candidatos mirrored para promover.
 
 ### 2026-04-02 — double-check race condition sync-mock (Claude Code, claude-sonnet-4-6)
 

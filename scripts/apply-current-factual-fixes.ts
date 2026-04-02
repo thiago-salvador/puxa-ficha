@@ -598,6 +598,23 @@ const FIXES: CandidateFix[] = [
       observacoes: "Deputada Estadual MT (18a, 19a e 20a legislatura, MDB). Source: O Livre 2025",
     },
   },
+  // lote 11
+  {
+    slug: "alysson-bezerra",
+    source: "Diario Oficial Mossoro DOM 2024 + Agora RN 2026-03",
+    candidateUpdate: {
+      nome_completo: "Allyson Leandro Bezerra Silva",
+    },
+  },
+  {
+    slug: "hildon-chaves",
+    source: "Portal364 2026-03 + News Rondonia 2026-03-20",
+    candidateUpdate: {
+      partido_atual: "Uniao Brasil",
+      partido_sigla: "UNIAO",
+    },
+    ensureCurrentPartyTimeline: true,
+  },
   // lote 10
   {
     slug: "joel-rodrigues",
