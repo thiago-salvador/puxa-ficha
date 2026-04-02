@@ -61,67 +61,6 @@
     ]
   },
   {
-    "slug": "marcelo-maranata",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Marcelo Maranata"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSDB"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "522320"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Marcelo Maranata (PSDB) e pre-candidato(a) ao governo de RS. Atualmente e Prefei"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
     "slug": "vicentinho-junior",
     "ok": true,
     "checks": [
@@ -174,6 +113,67 @@
         "check": "trajetoria_count",
         "ok": true,
         "details": "2"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "marcelo-maranata",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Marcelo Maranata"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSDB"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "522320"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Marcelo Maranata (PSDB) e pre-candidato(a) ao governo de RS. Atualmente e Prefei"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "1"
       },
       {
         "check": "partidos_count",
@@ -529,6 +529,57 @@
     ]
   },
   {
+    "slug": "natasha-slhessarenko",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Natasha Slhessarenko"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSD"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Natasha Slhessarenko e medica pediatra, patologista clinica e empresaria brasile"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
     "slug": "leandro-grass",
     "ok": true,
     "checks": [
@@ -570,12 +621,17 @@
       {
         "check": "bio",
         "ok": true,
-        "details": "Leandro Antonio Grass Peixoto é um professor e político brasileiro e atual presi"
+        "details": "Leandro Grass Peixoto e politico e militante brasileiro, filiado ao Partido dos "
       },
       {
         "check": "freshness_perfil_atual",
         "ok": true,
         "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "1"
       },
       {
         "check": "partidos_count",
@@ -637,57 +693,6 @@
         "check": "trajetoria_count",
         "ok": true,
         "details": "2"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "natasha-slhessarenko",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Natasha Slhessarenko"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSD"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Natasha Slhessarenko e medica pediatra, patologista clinica e empresaria brasile"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
       },
       {
         "check": "partidos_count",
@@ -1063,67 +1068,6 @@
     ]
   },
   {
-    "slug": "cadu-xavier",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Cadu Xavier"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PT"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "15691.04"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Carlos Eduardo Xavier e auditor fiscal e gestor publico brasileiro, filiado ao P"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
     "slug": "marcio-franca",
     "ok": true,
     "checks": [
@@ -1176,6 +1120,67 @@
         "check": "trajetoria_count",
         "ok": true,
         "details": "7"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "cadu-xavier",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Cadu Xavier"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PT"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "15691.04"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Carlos Eduardo Xavier e auditor fiscal e gestor publico brasileiro, filiado ao P"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "1"
       },
       {
         "check": "partidos_count",
@@ -1307,7 +1312,7 @@
     ]
   },
   {
-    "slug": "eduardo-braide",
+    "slug": "juliana-brizola",
     "ok": true,
     "checks": [
       {
@@ -1318,12 +1323,12 @@
       {
         "check": "hero_name",
         "ok": true,
-        "details": "Eduardo Braide"
+        "details": "Juliana Brizola"
       },
       {
         "check": "hero_party",
         "ok": true,
-        "details": "PSD"
+        "details": "PDT"
       },
       {
         "check": "hero_role",
@@ -1338,17 +1343,17 @@
       {
         "check": "overview_mudancas",
         "ok": true,
-        "details": "6"
+        "details": "1"
       },
       {
         "check": "overview_patrimonio",
         "ok": true,
-        "details": "2135241.24"
+        "details": "984284.84"
       },
       {
         "check": "bio",
         "ok": true,
-        "details": "Eduardo Costa Braide e advogado e politico brasileiro, filiado ao Partido Social"
+        "details": "Juliana Daudt Brizola e advogada e politica brasileira, filiada ao Partido Democ"
       },
       {
         "check": "freshness_perfil_atual",
@@ -1358,12 +1363,12 @@
       {
         "check": "trajetoria_count",
         "ok": true,
-        "details": "4"
+        "details": "1"
       },
       {
         "check": "partidos_count",
         "ok": true,
-        "details": "6"
+        "details": "1"
       }
     ]
   },
@@ -1480,7 +1485,7 @@
     ]
   },
   {
-    "slug": "juliana-brizola",
+    "slug": "eduardo-braide",
     "ok": true,
     "checks": [
       {
@@ -1491,12 +1496,12 @@
       {
         "check": "hero_name",
         "ok": true,
-        "details": "Juliana Brizola"
+        "details": "Eduardo Braide"
       },
       {
         "check": "hero_party",
         "ok": true,
-        "details": "PDT"
+        "details": "PSD"
       },
       {
         "check": "hero_role",
@@ -1511,17 +1516,17 @@
       {
         "check": "overview_mudancas",
         "ok": true,
-        "details": "1"
+        "details": "6"
       },
       {
         "check": "overview_patrimonio",
         "ok": true,
-        "details": "984284.84"
+        "details": "2135241.24"
       },
       {
         "check": "bio",
         "ok": true,
-        "details": "Juliana Daudt Brizola e advogada e politica brasileira, filiada ao Partido Democ"
+        "details": "Eduardo Costa Braide e advogado e politico brasileiro, filiado ao Partido Social"
       },
       {
         "check": "freshness_perfil_atual",
@@ -1531,12 +1536,12 @@
       {
         "check": "trajetoria_count",
         "ok": true,
-        "details": "1"
+        "details": "4"
       },
       {
         "check": "partidos_count",
         "ok": true,
-        "details": "1"
+        "details": "6"
       }
     ]
   },
@@ -2121,6 +2126,62 @@
     ]
   },
   {
+    "slug": "renan-filho",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Renan Filho"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "MDB"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Jose Renan Vasconcelos Calheiros Filho e economista e politico brasileiro, filia"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "4"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
     "slug": "andre-kamai",
     "ok": true,
     "checks": [
@@ -2326,62 +2387,6 @@
         "check": "freshness_perfil_atual",
         "ok": true,
         "details": "current"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "renan-filho",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Renan Filho"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "MDB"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Jose Renan Vasconcelos Calheiros Filho e economista e politico brasileiro, filia"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "4"
       },
       {
         "check": "partidos_count",
@@ -3296,6 +3301,67 @@
     ]
   },
   {
+    "slug": "ratinho-junior",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Ratinho Junior"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSD"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Presidente"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "4"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "17680282.38"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Carlos Roberto Massa Junior nasceu em 1981 em Jandaia do Sul, Parana. Empresario"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "4"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "4"
+      }
+    ]
+  },
+  {
     "slug": "laurez-moreira",
     "ok": true,
     "checks": [
@@ -3414,67 +3480,6 @@
         "check": "partidos_count",
         "ok": true,
         "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "ratinho-junior",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Ratinho Junior"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSD"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Presidente"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "4"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "17680282.38"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Carlos Roberto Massa Junior nasceu em 1981 em Jandaia do Sul, Parana. Empresario"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "4"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "4"
       }
     ]
   },
@@ -3647,67 +3652,6 @@
     ]
   },
   {
-    "slug": "efraim-filho",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Efraim Filho"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "UNIAO"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "1570699.32"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Efraim de Araujo Morais Filho e advogado e politico brasileiro, filiado ao Uniao"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "3"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
     "slug": "fabio-trad",
     "ok": true,
     "checks": [
@@ -3760,6 +3704,67 @@
         "check": "trajetoria_count",
         "ok": true,
         "details": "1"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "efraim-filho",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Efraim Filho"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "UNIAO"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "1570699.32"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Efraim de Araujo Morais Filho e advogado e politico brasileiro, filiado ao Uniao"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "3"
       },
       {
         "check": "partidos_count",
@@ -4364,6 +4369,67 @@
     ]
   },
   {
+    "slug": "paula-belmonte",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Paula Belmonte"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSDB"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "2"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "17183838.02"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Paula Francinete Belmonte da Silva e empresaria e politica brasileira, filiada a"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "2"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "2"
+      }
+    ]
+  },
+  {
     "slug": "alexandre-curi",
     "ok": true,
     "checks": [
@@ -4547,67 +4613,6 @@
     ]
   },
   {
-    "slug": "paula-belmonte",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Paula Belmonte"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSDB"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "2"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "17183838.02"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Paula Francinete Belmonte da Silva e empresaria e politica brasileira, filiada a"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "2"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "2"
-      }
-    ]
-  },
-  {
     "slug": "cicero-lucena",
     "ok": true,
     "checks": [
@@ -4669,57 +4674,6 @@
     ]
   },
   {
-    "slug": "renan-santos",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Renan Santos"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "MISSAO"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Presidente"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Renan Antonio Ferreira dos Santos nasceu em 1984 em Sao Paulo. Ativista politico"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
     "slug": "tarcisio",
     "ok": true,
     "checks": [
@@ -4772,6 +4726,57 @@
         "check": "trajetoria_count",
         "ok": true,
         "details": "5"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "renan-santos",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Renan Santos"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "MISSAO"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Presidente"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Renan Antonio Ferreira dos Santos nasceu em 1984 em Sao Paulo. Ativista politico"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
       },
       {
         "check": "partidos_count",
@@ -5498,67 +5503,6 @@
     ]
   },
   {
-    "slug": "alvaro-dias-rn",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Alvaro Dias"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "REPUBLICANOS"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "8"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "4441904.32"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Alvaro Costa Dias e medico e politico brasileiro, filiado ao Republicanos. Foi v"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "4"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "8"
-      }
-    ]
-  },
-  {
     "slug": "daniel-vilela",
     "ok": true,
     "checks": [
@@ -5616,6 +5560,67 @@
         "check": "partidos_count",
         "ok": true,
         "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "alvaro-dias-rn",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Alvaro Dias"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "REPUBLICANOS"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "8"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "4441904.32"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Alvaro Costa Dias e medico e politico brasileiro, filiado ao Republicanos. Foi v"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "4"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "8"
       }
     ]
   },
@@ -6454,6 +6459,67 @@
     ]
   },
   {
+    "slug": "luciano-zucco",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Luciano Zucco"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PL"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "778696"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Luciano Lorenzini Zucco, conhecido como Luciano Zucco, e militar e politico bras"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
     "slug": "romeu-zema",
     "ok": true,
     "checks": [
@@ -6576,7 +6642,7 @@
     ]
   },
   {
-    "slug": "luciano-zucco",
+    "slug": "dr-daniel",
     "ok": true,
     "checks": [
       {
@@ -6587,12 +6653,12 @@
       {
         "check": "hero_name",
         "ok": true,
-        "details": "Luciano Zucco"
+        "details": "Dr. Daniel"
       },
       {
         "check": "hero_party",
         "ok": true,
-        "details": "PL"
+        "details": "PSB"
       },
       {
         "check": "hero_role",
@@ -6602,7 +6668,7 @@
       {
         "check": "overview_processos",
         "ok": true,
-        "details": "0"
+        "details": "1"
       },
       {
         "check": "overview_mudancas",
@@ -6612,12 +6678,12 @@
       {
         "check": "overview_patrimonio",
         "ok": true,
-        "details": "778696"
+        "details": "4079788.24"
       },
       {
         "check": "bio",
         "ok": true,
-        "details": "Luciano Lorenzini Zucco, conhecido como Luciano Zucco, e militar e politico bras"
+        "details": "Daniel Barbosa Santos, conhecido como Dr. Daniel, e medico e politico brasileiro"
       },
       {
         "check": "freshness_perfil_atual",
@@ -6679,67 +6745,6 @@
         "check": "bio",
         "ok": true,
         "details": "Jerônimo Rodrigues Souza é um professor universitário, engenheiro agrônomo e pol"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "dr-daniel",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Dr. Daniel"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSB"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "4079788.24"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Daniel Barbosa Santos, conhecido como Dr. Daniel, e medico e politico brasileiro"
       },
       {
         "check": "freshness_perfil_atual",

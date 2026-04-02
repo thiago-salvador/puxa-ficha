@@ -522,9 +522,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "62", nome_completo: "Joao Carlos Bacelar Batista", nome_urna: "Joao Roma", slug: "joao-roma",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: null, cargo_disputado: "Governador", estado: "BA",
+    partido_atual: "PL", partido_sigla: "PL", cargo_atual: null, cargo_disputado: "Governador", estado: "BA",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "63", nome_completo: "Jose Carlos Aleluia Costa", nome_urna: "Jose Carlos Aleluia", slug: "jose-carlos-aleluia",
@@ -573,7 +573,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Uniao Brasil", partido_sigla: "UNIAO", cargo_atual: null, cargo_disputado: "Governador", estado: "CE",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "70", nome_completo: "Eduardo Costa Braide", nome_urna: "Eduardo Braide", slug: "eduardo-braide",
@@ -991,9 +991,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "129", nome_completo: "Leandro Grass Peixoto", nome_urna: "Leandro Grass", slug: "leandro-grass",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: null, cargo_disputado: "Governador", estado: "DF",
+    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: "Presidente do IPHAN", cargo_disputado: "Governador", estado: "DF",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "130", nome_completo: "Ricardo Ribeiro Cappelli", nome_urna: "Ricardo Cappelli", slug: "ricardo-cappelli",

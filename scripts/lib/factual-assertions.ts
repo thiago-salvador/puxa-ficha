@@ -685,8 +685,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "joao-roma",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Camara.leg.br + Bahia Noticias 2025-02-01",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Joao Carlos Bacelar Batista",
@@ -727,8 +728,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "capitao-wagner",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Camara.leg.br + O Povo 2026-03-01",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Wagner Sousa Gomes",
@@ -787,14 +789,16 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "leandro-grass",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Correio Braziliense 2025-11-01",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Leandro Grass Peixoto",
       nome_urna: "Leandro Grass",
       partido_atual: "Partido dos Trabalhadores",
       partido_sigla: "PT",
+      cargo_atual: "Presidente do IPHAN",
       cargo_disputado: "Governador",
       estado: "DF",
     },

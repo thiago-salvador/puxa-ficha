@@ -439,6 +439,24 @@ const FIXES: CandidateFix[] = [
       foto_url: "/candidates/marcelo-maranata.jpg",
     },
   },
+  {
+    slug: "leandro-grass",
+    source: "Correio Braziliense 2025-11-01",
+    candidateUpdate: {
+      cargo_atual: "Presidente do IPHAN",
+      biografia:
+        "Leandro Grass Peixoto e politico e militante brasileiro, filiado ao Partido dos Trabalhadores (PT). Presidente do Instituto do Patrimonio Historico e Artistico Nacional (IPHAN) desde 2023.",
+    },
+    historicoFix: {
+      cargo: "Presidente do IPHAN",
+      periodo_inicio: 2023,
+      periodo_fim: null,
+      partido: "PT",
+      estado: "DF",
+      eleito_por: "indicacao",
+      observacoes: "cargo atual verificado manualmente (Correio Braziliense 2025-11-01)",
+    },
+  },
 ]
 
 function mergeFonteDados(existing: string[] | null | undefined): string[] {

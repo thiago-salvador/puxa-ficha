@@ -784,6 +784,29 @@ Esta entrada completa os passos que a sessao Cursor omitiu. Executado por Claude
   - `144` total (status != 'removido')
 - **Pendencia remanescente**: `public/candidates/marcelo-maranata.jpg` esta untracked no git — foto nao aparece em producao ate o commit + deploy do JPG
 
+### 2026-04-02 — lote 1 curadoria (Claude Code, claude-sonnet-4-6)
+
+Primeira promocao mirrored → curated. 3 candidatos promovidos.
+
+**Candidatos promovidos:**
+- `joao-roma` (BA, PL): ex-Deputado Federal / ex-Ministro. Sem mandato em exercicio. Source: Camara.leg.br + Bahia Noticias fev/2025
+- `capitao-wagner` (CE, UNIAO): ex-Deputado Federal. Sem mandato em exercicio. Source: Camara.leg.br + O Povo mar/2026
+- `leandro-grass` (DF, PT): Presidente do IPHAN desde 2023 (cargo comissionado). `cargo_atual` atualizado no DB. Source: Correio Braziliense nov/2025
+
+**Pipeline executado:**
+- sync-mock-from-assertions: 3/3 sincronizados
+- apply-current-factual-fixes: leandro-grass cargo_atual atualizado no DB
+- audit:factual: 144/144, curated 85 | mirrored 59, 0 bloqueados
+- release-verify full (porta 3456): 146/146 OK
+- set-publicavel dry-run: 85 elegíveis (joao-roma, capitao-wagner, leandro-grass inclusos)
+- set-publicavel real: 85 publicavel=true, 59 false
+- Producao confirmada:
+  - joao-roma: 200, Joao Roma (PL) — Puxa Ficha
+  - capitao-wagner: 200, Capitao Wagner (UNIAO) — Puxa Ficha
+  - leandro-grass: 200, Leandro Grass (PT) — Puxa Ficha
+
+Restam: 59 candidatos mirrored para promover.
+
 ## Critério de pronto de verdade
 
 O site só pode ser considerado **100% funcional, atualizado, com a ordem certa e seguro** quando estes pontos passarem juntos:
