@@ -440,6 +440,57 @@ const FIXES: CandidateFix[] = [
     },
   },
   {
+    slug: "andre-kamai",
+    source: "ac24horas.com 2024-10-07 + SAPL Camara de Rio Branco",
+    candidateUpdate: {
+      cargo_atual: "Vereador de Rio Branco (AC)",
+    },
+    historicoFix: {
+      cargo: "Vereador",
+      periodo_inicio: 2025,
+      periodo_fim: null,
+      partido: "PT",
+      estado: "AC",
+      eleito_por: "voto direto",
+      observacoes: "cargo atual verificado manualmente (ac24horas.com 2024-10-07)",
+    },
+  },
+  {
+    slug: "mailza-assis",
+    source: "Agencia de Noticias do Acre 2026-04-02",
+    candidateUpdate: {
+      cargo_atual: "Governadora do Estado do Acre",
+      biografia:
+        "Mailza Gomes Assis e politica brasileira, filiada ao Progressistas (PP). Foi senadora pelo Acre (2019-2022), vice-governadora eleita em 2022 e, desde 2 de abril de 2026, governadora do Acre apos a renuncia de Gladson Cameli.",
+    },
+    historicoFix: {
+      cargo: "Governadora",
+      periodo_inicio: 2026,
+      periodo_fim: null,
+      partido: "PP",
+      estado: "AC",
+      eleito_por: "sucessao constitucional",
+      observacoes: "assumiu apos renuncia de Gladson Cameli em mar/2026 (Agencia de Noticias do Acre 2026-04-02)",
+    },
+  },
+  {
+    slug: "eduardo-braga",
+    source: "Senado Federal oficial + Em Tempo 2026-03-01",
+    candidateUpdate: {
+      cargo_atual: "Senador(a)",
+    },
+    historicoFix: {
+      cargo: "Senador",
+      periodo_inicio: 2019,
+      periodo_fim: null,
+      partido: "MDB",
+      estado: "AM",
+      eleito_por: "voto direto",
+      observacoes: "cargo atual verificado manualmente (Senado Federal oficial + Em Tempo 2026-03-01)",
+    },
+    ensureCurrentPartyTimeline: true,
+  },
+  {
     slug: "leandro-grass",
     source: "Correio Braziliense 2025-11-01",
     candidateUpdate: {

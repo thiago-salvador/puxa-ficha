@@ -807,6 +807,25 @@ Primeira promocao mirrored → curated. 3 candidatos promovidos.
 
 Restam: 59 candidatos mirrored para promover.
 
+### 2026-04-02 — lote 2 curadoria (Claude Code, claude-sonnet-4-6)
+
+Segundo lote mirrored → curated. 3 candidatos promovidos.
+
+**Candidatos promovidos:**
+- `andre-kamai` (AC, PT): Vereador de Rio Branco eleito out/2024, mandato 2025-2028. Source: ac24horas.com 2024-10-07 + SAPL Camara de Rio Branco
+- `mailza-assis` (AC, PP): Governadora do Estado do Acre desde 02/04/2026 (assumiu apos renuncia de Gladson Cameli). Source: Agencia de Noticias do Acre 2026-04-02
+- `eduardo-braga` (AM, MDB): Senador Federal pelo Amazonas, mandato ativo ate 2027. Source: Senado Federal oficial + Em Tempo 2026-03-01
+
+**Pipeline executado:**
+- sync-mock-from-assertions: 3/3 sincronizados
+- apply-current-factual-fixes: 3/3 cargo_atual atualizados no DB (historico duplicado para eduardo-braga ignorado, campo ja existia)
+- audit:factual: 144/144, curated 88 | mirrored 56, 0 bloqueados
+- release-verify full (porta 3456): 146/146 OK
+- set-publicavel real: 88 publicavel=true, 56 false
+- Producao confirmada: 3/3 com 200
+
+Restam: 56 candidatos mirrored para promover.
+
 ## Critério de pronto de verdade
 
 O site só pode ser considerado **100% funcional, atualizado, com a ordem certa e seguro** quando estes pontos passarem juntos:

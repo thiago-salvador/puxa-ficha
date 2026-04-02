@@ -1,6 +1,6 @@
 # Auditoria Factual
 
-Gerado em: 2026-04-02T18:41:07.672Z
+Gerado em: 2026-04-02T18:47:56.940Z
 
 ## Resumo
 
@@ -11,5 +11,5 @@ Gerado em: 2026-04-02T18:41:07.672Z
 - Podem publicar: 144
 - Nao podem publicar: 0
 - Itens na fila de revisao: 0
-- Assertions curadas: 85/144
-- Assertions mirrored: 59/144
+- Assertions curadas: 88/144
+- Assertions mirrored: 56/144

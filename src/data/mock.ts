@@ -767,9 +767,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "97", nome_completo: "Mailza Gomes Assis", nome_urna: "Mailza Assis", slug: "mailza-assis",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Progressistas", partido_sigla: "PP", cargo_atual: null, cargo_disputado: "Governador", estado: "AC",
+    partido_atual: "Progressistas", partido_sigla: "PP", cargo_atual: "Governadora do Estado do Acre", cargo_disputado: "Governador", estado: "AC",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "98", nome_completo: "Sebastiao Bocalom Rodrigues", nome_urna: "Tiao Bocalom", slug: "tiao-bocalom",
@@ -781,9 +781,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "99", nome_completo: "Andre Luiz Oliveira Kamai", nome_urna: "Andre Kamai", slug: "andre-kamai",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: null, cargo_disputado: "Governador", estado: "AC",
+    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: "Vereador de Rio Branco (AC)", cargo_disputado: "Governador", estado: "AC",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "100", nome_completo: "Omar Jose Abdel Aziz", nome_urna: "Omar Aziz", slug: "omar-aziz",
@@ -816,9 +816,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "104", nome_completo: "Eduardo Braga Granata", nome_urna: "Eduardo Braga", slug: "eduardo-braga",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: null, cargo_disputado: "Governador", estado: "AM",
+    partido_atual: "MDB", partido_sigla: "MDB", cargo_atual: "Senador(a)", cargo_disputado: "Governador", estado: "AM",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "105", nome_completo: "Jose Antonio D Almeida Furlan", nome_urna: "Dr. Furlan", slug: "dr-furlan",
