@@ -538,7 +538,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Partido Socialismo e Liberdade", partido_sigla: "PSOL", cargo_atual: null, cargo_disputado: "Governador", estado: "BA",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "65", nome_completo: "Elmano de Freitas da Costa", nome_urna: "Elmano de Freitas", slug: "elmano-de-freitas",
@@ -837,9 +837,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "107", nome_completo: "Joao Alberto Rodrigues Capiberibe", nome_urna: "Joao Capiberibe", slug: "joao-capiberibe",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Socialista Brasileiro", partido_sigla: "PSB", cargo_atual: null, cargo_disputado: "Governador", estado: "AP",
+    partido_atual: "PSB", partido_sigla: "PSB", cargo_atual: null, cargo_disputado: "Governador", estado: "AP",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "108", nome_completo: "Hana Ghassan Tuma", nome_urna: "Hana Ghassan", slug: "hana-ghassan",
@@ -1026,9 +1026,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "134", nome_completo: "Adriana Accorsi de Queiroz", nome_urna: "Adriana Accorsi", slug: "adriana-accorsi",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: null, cargo_disputado: "Governador", estado: "GO",
+    partido_atual: "PT", partido_sigla: "PT", cargo_atual: "Deputada Federal por Goias", cargo_disputado: "Governador", estado: "GO",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "135", nome_completo: "Wilder Gomes de Morais", nome_urna: "Wilder Morais", slug: "wilder-morais",

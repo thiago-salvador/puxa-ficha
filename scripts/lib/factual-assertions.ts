@@ -666,8 +666,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "joao-capiberibe",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Senado Federal perfil + Ricardo Antunes 2026-02-01",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Joao Alberto Rodrigues Capiberibe",
@@ -724,8 +725,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "ronaldo-mansur",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Bahia Noticias 2025-09-01 + A Tarde 2025-12-01",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Ronaldo Mansur",
@@ -945,14 +947,16 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "adriana-accorsi",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Camara dos Deputados oficial 2026-04-02",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Adriana Accorsi de Queiroz",
       nome_urna: "Adriana Accorsi",
       partido_atual: "PT",
       partido_sigla: "PT",
+      cargo_atual: "Deputada Federal por Goias",
       cargo_disputado: "Governador",
       estado: "GO",
     },

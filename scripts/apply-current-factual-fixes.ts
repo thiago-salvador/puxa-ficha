@@ -440,6 +440,22 @@ const FIXES: CandidateFix[] = [
     },
   },
   {
+    slug: "adriana-accorsi",
+    source: "Camara dos Deputados oficial 2026-04-02",
+    candidateUpdate: {
+      cargo_atual: "Deputada Federal por Goias",
+    },
+    historicoFix: {
+      cargo: "Deputado Federal",
+      periodo_inicio: 2023,
+      periodo_fim: null,
+      partido: "PT",
+      estado: "GO",
+      eleito_por: "voto direto",
+      observacoes: "cargo atual verificado manualmente (Camara dos Deputados 2026-04-02)",
+    },
+  },
+  {
     slug: "tadeu-de-souza",
     source: "Diario da Capital + Credited 2026-03-11",
     candidateUpdate: {

@@ -844,6 +844,23 @@ Terceiro lote mirrored → curated. 3 candidatos promovidos.
 
 Restam: 53 candidatos mirrored para promover.
 
+### 2026-04-02 — lote 4 curadoria (Claude Code, claude-sonnet-4-6)
+
+Quarto lote mirrored → curated. 3 candidatos promovidos.
+
+**Candidatos promovidos:**
+- `joao-capiberibe` (AP, PSB): sem mandato ativo. Mandato de senador encerrou fev/2019. Source: Senado Federal perfil + Ricardo Antunes 2026-02-01
+- `ronaldo-mansur` (BA, PSOL): sem mandato ativo. Militante/presidente estadual PSOL-BA. Source: Bahia Noticias set/2025 + A Tarde dez/2025
+- `adriana-accorsi` (GO, PT): Deputada Federal por Goias, 57a Legislatura 2023-2027. Source: Camara dos Deputados oficial 2026-04-02
+
+**Pipeline executado:**
+- sync-mock: 3/3, apply-fixes: adriana-accorsi cargo_atual atualizado no DB
+- audit:factual: 144/144, curated 94 | mirrored 50, 0 bloqueados
+- release-verify full 146/146 OK
+- set-publicavel: 94 publicavel=true, 50 false
+
+Restam: 50 candidatos mirrored para promover.
+
 ## Critério de pronto de verdade
 
 O site só pode ser considerado **100% funcional, atualizado, com a ordem certa e seguro** quando estes pontos passarem juntos:
