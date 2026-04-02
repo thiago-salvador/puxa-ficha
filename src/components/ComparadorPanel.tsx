@@ -179,6 +179,15 @@ export function ComparadorPanel({ candidatos }: Props) {
                   return (
                     <tr
                       key={candidato.id}
+                      data-pf-comparador-row
+                      data-pf-comparador-slug={candidato.slug}
+                      data-pf-comparador-name={candidato.nome_urna}
+                      data-pf-comparador-party={candidato.partido_sigla}
+                      data-pf-comparador-age={candidato.idade ?? ""}
+                      data-pf-comparador-formacao={candidato.formacao ?? ""}
+                      data-pf-comparador-patrimonio={candidato.patrimonio_declarado ?? ""}
+                      data-pf-comparador-processos={candidato.total_processos}
+                      data-pf-comparador-alertas={candidato.alertas_graves}
                       className={`border-b transition-colors ${
                         isSelected
                           ? "border-border/50 bg-foreground/[0.03]"
@@ -256,7 +265,12 @@ export function ComparadorPanel({ candidatos }: Props) {
       </section>
 
       {isComparing && (
-        <section ref={comparisonRef} className="mx-auto max-w-7xl px-5 pb-12 md:px-12">
+        <section
+          ref={comparisonRef}
+          className="mx-auto max-w-7xl px-5 pb-12 md:px-12"
+          data-pf-comparacao-root
+          data-pf-comparacao-count={selectedCandidatos.length}
+        >
           <div className="rounded-[20px] border border-foreground/10 bg-muted/50 p-6 sm:p-8">
             <div className="mb-6 flex items-center justify-between">
               <h2 className="font-heading text-[length:var(--text-heading-sm)] uppercase leading-[0.95] text-foreground sm:text-[length:var(--text-heading)]">
@@ -273,7 +287,12 @@ export function ComparadorPanel({ candidatos }: Props) {
                   <tr>
                     <th className="w-32 pb-4 text-left text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground" />
                     {selectedCandidatos.map((candidato) => (
-                      <th key={candidato.id} className="pb-4 text-center">
+                      <th
+                        key={candidato.id}
+                        className="pb-4 text-center"
+                        data-pf-comparacao-candidato={candidato.slug}
+                        data-pf-comparacao-party={candidato.partido_sigla}
+                      >
                         <Link href={`/candidato/${candidato.slug}`} className="group inline-block">
                           {candidato.foto_url && (
                             <Image

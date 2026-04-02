@@ -264,7 +264,12 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
   const activeCandidato = candidatos[activeIndex]
 
   return (
-    <div ref={containerRef} className={s.container}>
+    <div
+      ref={containerRef}
+      className={s.container}
+      data-pf-explorar-root
+      data-pf-explorar-total={count}
+    >
       {/* Fullscreen slides */}
       <div className={s.slides}>
         {indices.map((i) => {
@@ -300,32 +305,43 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
         <Link
           href={`/candidato/${activeCandidato.slug}`}
           className={s.infoInner}
+          data-pf-explorar-active
+          data-pf-explorar-slug={activeCandidato.slug}
         >
           <div>
             <span className={s.infoNum}>
               {(activeIndex + 1).toString().padStart(2, "0")}/{count.toString().padStart(2, "0")}
             </span>
-            <h2 className={`${s.infoName} font-heading`}>
+            <h2 className={`${s.infoName} font-heading`} data-pf-explorar-name>
               {activeCandidato.nome_urna}
             </h2>
             <div className={s.infoMeta}>
-              <span className={s.infoBadge}>
+              <span
+                className={s.infoBadge}
+                data-pf-explorar-party={activeCandidato.partido_sigla}
+              >
                 {activeCandidato.partido_sigla}
               </span>
-              <span>{activeCandidato.cargo}</span>
+              <span data-pf-explorar-role={activeCandidato.cargo}>{activeCandidato.cargo}</span>
             </div>
           </div>
           <div className={s.infoRight}>
             <div className={s.infoStats}>
               {activeCandidato.processos > 0 && (
-                <span className={s.infoStat}>
+                <span
+                  className={s.infoStat}
+                  data-pf-explorar-processos={activeCandidato.processos}
+                >
                   <Scale className="size-4" />
                   {activeCandidato.processos} processo{activeCandidato.processos > 1 ? "s" : ""}
                 </span>
               )}
               {activeCandidato.patrimonio != null &&
                 activeCandidato.patrimonio > 0 && (
-                  <span className={s.infoStat}>
+                  <span
+                    className={s.infoStat}
+                    data-pf-explorar-patrimonio={activeCandidato.patrimonio}
+                  >
                     <Landmark className="size-4" />
                     {formatCompact(activeCandidato.patrimonio)}
                   </span>
