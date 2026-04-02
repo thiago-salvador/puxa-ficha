@@ -643,7 +643,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Partido Socialismo e Liberdade", partido_sigla: "PSOL", cargo_atual: null, cargo_disputado: "Governador", estado: "PE",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "80", nome_completo: "Cicero de Lucena Filho", nome_urna: "Cicero Lucena", slug: "cicero-lucena",
@@ -1061,9 +1061,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "139", nome_completo: "Joao Henrique Catan", nome_urna: "Joao Henrique Catan", slug: "joao-henrique-catan",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: null, cargo_disputado: "Governador", estado: "MS",
+    partido_atual: "Partido Novo", partido_sigla: "NOVO", cargo_atual: null, cargo_disputado: "Governador", estado: "MS",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "140", nome_completo: "Lucien Miranda de Rezende", nome_urna: "Lucien Rezende", slug: "lucien-rezende",
@@ -1091,7 +1091,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: null, cargo_disputado: "Governador", estado: "MT",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "144", nome_completo: "Natasha Slhessarenko", nome_urna: "Natasha Slhessarenko", slug: "natasha-slhessarenko",

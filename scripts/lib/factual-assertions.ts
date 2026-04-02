@@ -1176,14 +1176,15 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "joao-henrique-catan",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Capital News 2026-03-08 + NOVO oficial 2026",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Joao Henrique Catan",
       nome_urna: "Joao Henrique Catan",
-      partido_atual: "Partido Liberal",
-      partido_sigla: "PL",
+      partido_atual: "Partido Novo",
+      partido_sigla: "NOVO",
       cargo_disputado: "Governador",
       estado: "MS",
     },
@@ -1205,8 +1206,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "janaina-riva",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "O Livre 2025 + PNB Online 2026",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Janaina Riva",
@@ -1427,8 +1429,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "ivan-moraes",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "PSOL PE 2026 + CBN Recife 2026-03-24",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Ivan Moraes Filho",

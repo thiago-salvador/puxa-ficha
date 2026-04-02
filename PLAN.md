@@ -6,16 +6,16 @@ Arquivo importado de `/Users/thiagosalvador/Downloads/PLAN.md` em `2026-04-02` e
 
 Este plano **não está concluído**. O site está mais seguro do que antes, mas **não está 100% funcional, atualizado e pronto para ir ao ar**.
 
-### Snapshot atual (2026-04-02 ~20:43, apos lotes 1-8 de curadoria)
+### Snapshot atual (2026-04-02 ~21:08, apos lotes 1-9 de curadoria)
 
 - `144` candidatos ativos no banco
-- `106` candidatos com `publicavel = true`
-- `106/144` assertions `curated`
-- `38/144` assertions `mirrored` (restantes a promover)
-- gate factual: **passando** (0 bloqueados, 106 curated, 38 mirrored)
+- `109` candidatos com `publicavel = true`
+- `109/144` assertions `curated`
+- `35/144` assertions `mirrored` (restantes a promover)
+- gate factual: **passando** (0 bloqueados, 109 curated, 35 mirrored)
 - `release-verify` full local: `146/146 OK`
-- `release-verify` parcial producao: `108/108 OK`
-- `set-publicavel-from-audit.ts` real: `106` sincronizados, `38` ocultos
+- `release-verify` parcial producao: `111/111 OK`
+- `set-publicavel-from-audit.ts` real: `109` sincronizados, `35` ocultos
 - foto `marcelo-maranata`: **versionada** em `public/candidates/marcelo-maranata.jpg` + deploy confirmado
 - producao: `https://puxaficha.com.br` — 106 fichas acessíveis
 
@@ -1035,6 +1035,66 @@ Oitavo lote mirrored → curated. 3 candidatos promovidos. Pipeline completo exe
 12. Log PLAN.md + commit + push
 
 Restam: 38 candidatos mirrored para promover.
+
+### 2026-04-02 — lote 9 curadoria (Claude Code, claude-sonnet-4-6)
+
+Nono lote mirrored → curated. 3 candidatos promovidos. Pipeline completo executado sem desvios.
+
+**Candidatos promovidos:**
+- `joao-henrique-catan` (MS, NOVO): deputado federal, pré-candidato ao governo do MS. Partido corrigido PL→NOVO (filiação NOVO em 2023). `cargo_atual` não assertado (ids.camara: null — ingest pendente). Source: Capital News 2026-03-08 + NOVO oficial 2026
+- `janaina-riva` (MT, MDB): deputada estadual (MT), pré-candidata ao governo do MT. `cargo_atual` não assertado (ingest pendente). Source: O Livre 2025 + PNB Online 2026
+- `ivan-moraes` (PE, PSOL): pré-candidato ao governo de PE pelo PSOL. Source: PSOL PE 2026 + CBN Recife 2026-03-24
+
+**Candidatos pulados neste lote:**
+- `simao-jatene` (PSDB, PA): INELEGÍVEL — mandato cassado em 2020 (TCE-PA), inelegível até 2028. Manter como mirrored até decisão editorial.
+- `anderson-ferreira` (PL, PE): candidato ao Senado, não ao governo estadual. Assertion de cargo_disputado incorreta. Manter mirrored.
+- `gilson-machado` (ex-PL, PE): saiu do PL, filiado ao Podemos, candidato a deputado federal. Fora do escopo governadores. Manter mirrored.
+
+**Incidentes durante execução:**
+1. `joao-henrique-catan` bloqueado por `deputado_federal_em_exercicio` profile: assertar `cargo_atual: "Deputado Federal"` disparou profile que exige projetos_lei/votos/gastos (dados ausentes por ids.camara: null). Fix: removido cargo_atual da assertion; candidateUpdate: { cargo_atual: null } + historicoFix (Deputado Federal, 2023-present, NOVO, MS).
+2. `janaina-riva` bloqueada por `executivo_em_exercicio` profile: assertar `cargo_atual: "Deputada Estadual"` disparou hasCurrentPublicOffice() → profile errado. Fix: removido cargo_atual da assertion + historicoFix (Deputada Estadual, 2019-present, MDB, MT).
+3. `release-verify --full` pós-step 8 retornou `orleans-brandao: 404` — transiente. Curl imediato retornou 200. Re-executado no início de lote 9: `146/146 OK`.
+
+**Pipeline executado (12 passos):**
+1. assertions: joao-henrique-catan (party PL→NOVO, sem cargo_atual), janaina-riva (sem cargo_atual), ivan-moraes (source)
+2. sync-mock: 3/3 OK (sequencial, 1 slug por vez)
+3. sync-audit: 3/3 OK (sequencial)
+4. apply-fixes: joao-henrique-catan (party NOVO + cargo_atual null + historicoFix Dep. Federal), janaina-riva (historicoFix Dep. Estadual)
+5. audit:factual: 144/144, 0 reprovados — curated 109 | mirrored 35
+6. check-audit-gate: Gate OK — 109/109 curated
+7. release-verify delta: 3/3 OK
+8. release-verify full: 146/146 OK
+9. set-publicavel --dry-run: 109 elegiveis
+10. set-publicavel real: 109 publicavel=true, 35 false
+11. release-verify parcial producao: 111/111 OK
+12. Log PLAN.md + commit + push
+
+Restam: 35 candidatos mirrored para promover.
+
+### 2026-04-02 — double-check race condition sync-mock (Claude Code, claude-sonnet-4-6)
+
+Double-check solicitado pelo usuário após identificação de race condition em lote 8.
+
+**Causa raiz confirmada:**
+- sync-mock-from-assertions.ts escreve o arquivo `src/data/mock.ts` inteiro a cada execução
+- Ao rodar 3 instâncias em paralelo (via `&` no shell ou 3 tool calls simultâneos), as escritas concorrem e uma sobrescreve parcialmente as outras
+- Lote 8: uso explícito de `&` causou corrupção estrutural (extra `],\n}` no final) + perda de `cargo_atual: "Senador"` em beto-faro
+
+**Impacto por lote:**
+| Lote | Paralelo? | Dano no mock.ts | Supabase afetado? |
+|------|-----------|-----------------|-------------------|
+| 1-6  | Não (sequencial) | Nenhum | Não |
+| 7    | Sim (3 tool calls paralelos) | Sem perda (nenhum candidato tinha cargo_atual novo) | Não |
+| 8    | Sim (shell `&`) | `beto-faro.cargo_atual` null em vez de "Senador" + corrupção estrutural | Não |
+
+**Correção aplicada:**
+- Estrutura do mock.ts corrigida (remoção de `],\n}` duplicado)
+- `beto-faro.cargo_atual` re-sincronizado sequencialmente → "Senador" ✓
+- TypeScript validado: sem erros
+- Supabase não necessitou correção (sync-audit sempre rodou sequencialmente)
+
+**Regra permanente a partir daqui:**
+> `sync-mock-from-assertions.ts` DEVE rodar sequencialmente, 1 slug por vez, nunca em paralelo. O script não tem lock de arquivo e sobrescreve o mock.ts inteiro a cada execução.
 
 ## Critério de pronto de verdade
 
