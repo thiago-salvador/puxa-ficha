@@ -1444,11 +1444,12 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "joel-rodrigues",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Parlamento Piaui 2026 + Cidades em Foco 2026",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Joel Rodrigues de Castro",
+      nome_completo: "Joel Rodrigues da Silva",
       nome_urna: "Joel Rodrigues",
       partido_atual: "Progressistas",
       partido_sigla: "PP",
@@ -1565,8 +1566,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "requiao-filho",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Brasil de Fato 2025-05-09 + Brasil de Fato 2026-03-31",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Mauricio Thadeu de Mello e Silva",
@@ -1579,11 +1581,12 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "douglas-ruas",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Agencia Brasil 2026-03 + Portal Multiplix 2026-02-24",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
-      nome_completo: "Douglas Ruas",
+      nome_completo: "Douglas Ruas dos Santos",
       nome_urna: "Douglas Ruas",
       partido_atual: "Partido Liberal",
       partido_sigla: "PL",

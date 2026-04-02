@@ -598,6 +598,26 @@ const FIXES: CandidateFix[] = [
       observacoes: "Deputada Estadual MT (18a, 19a e 20a legislatura, MDB). Source: O Livre 2025",
     },
   },
+  // lote 10
+  {
+    slug: "joel-rodrigues",
+    source: "Parlamento Piaui 2026 + Cidades em Foco 2026",
+    candidateUpdate: {
+      nome_completo: "Joel Rodrigues da Silva",
+    },
+  },
+  {
+    slug: "requiao-filho",
+    source: "Brasil de Fato 2025-05-09 + Brasil de Fato 2026-03-31",
+    candidateUpdate: {},
+  },
+  {
+    slug: "douglas-ruas",
+    source: "Agencia Brasil 2026-03 + Portal Multiplix 2026-02-24",
+    candidateUpdate: {
+      nome_completo: "Douglas Ruas dos Santos",
+    },
+  },
   {
     slug: "otaviano-pivetta",
     source: "ALMT posse 2026-03-31 + Republicanos10 2026-03-31",

@@ -278,9 +278,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "28", nome_completo: "Mauricio Thadeu de Mello e Silva", nome_urna: "Requiao Filho", slug: "requiao-filho",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: "Politico",
-    partido_atual: "Partido Democratico Trabalhista", partido_sigla: "PDT", cargo_atual: "Deputado Estadual", cargo_disputado: "Governador", estado: "PR",
+    partido_atual: "Partido Democratico Trabalhista", partido_sigla: "PDT", cargo_atual: null, cargo_disputado: "Governador", estado: "PR",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "29", nome_completo: "Paulo Martins", nome_urna: "Paulo Martins", slug: "paulo-martins-gov-pr",
@@ -380,11 +380,11 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-31",
   },
   {
-    id: "42", nome_completo: "Douglas Ruas", nome_urna: "Douglas Ruas", slug: "douglas-ruas",
+    id: "42", nome_completo: "Douglas Ruas dos Santos", nome_urna: "Douglas Ruas", slug: "douglas-ruas",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: null, cargo_disputado: "Governador", estado: "RJ",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "43", nome_completo: "Rodrigo Bacellar", nome_urna: "Rodrigo Bacellar", slug: "rodrigo-bacellar",
@@ -688,11 +688,11 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
   {
-    id: "86", nome_completo: "Joel Rodrigues de Castro", nome_urna: "Joel Rodrigues", slug: "joel-rodrigues",
+    id: "86", nome_completo: "Joel Rodrigues da Silva", nome_urna: "Joel Rodrigues", slug: "joel-rodrigues",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Progressistas", partido_sigla: "PP", cargo_atual: null, cargo_disputado: "Governador", estado: "PI",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "87", nome_completo: "Margarete de Castro Coelho", nome_urna: "Margarete Coelho", slug: "margarete-coelho",

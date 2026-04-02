@@ -6,16 +6,16 @@ Arquivo importado de `/Users/thiagosalvador/Downloads/PLAN.md` em `2026-04-02` e
 
 Este plano **não está concluído**. O site está mais seguro do que antes, mas **não está 100% funcional, atualizado e pronto para ir ao ar**.
 
-### Snapshot atual (2026-04-02 ~21:08, apos lotes 1-9 de curadoria)
+### Snapshot atual (2026-04-02 ~21:27, apos lotes 1-10 de curadoria)
 
 - `144` candidatos ativos no banco
-- `109` candidatos com `publicavel = true`
-- `109/144` assertions `curated`
-- `35/144` assertions `mirrored` (restantes a promover)
-- gate factual: **passando** (0 bloqueados, 109 curated, 35 mirrored)
+- `112` candidatos com `publicavel = true`
+- `112/144` assertions `curated`
+- `32/144` assertions `mirrored` (restantes a promover)
+- gate factual: **passando** (0 bloqueados, 112 curated, 32 mirrored)
 - `release-verify` full local: `146/146 OK`
-- `release-verify` parcial producao: `111/111 OK`
-- `set-publicavel-from-audit.ts` real: `109` sincronizados, `35` ocultos
+- `release-verify` parcial producao: `114/114 OK`
+- `set-publicavel-from-audit.ts` real: `112` sincronizados, `32` ocultos
 - foto `marcelo-maranata`: **versionada** em `public/candidates/marcelo-maranata.jpg` + deploy confirmado
 - producao: `https://puxaficha.com.br` — 106 fichas acessíveis
 
@@ -1070,6 +1070,37 @@ Nono lote mirrored → curated. 3 candidatos promovidos. Pipeline completo execu
 12. Log PLAN.md + commit + push
 
 Restam: 35 candidatos mirrored para promover.
+
+### 2026-04-02 — lote 10 curadoria (Claude Code, claude-sonnet-4-6)
+
+Décimo lote mirrored → curated. 3 candidatos promovidos. Pipeline completo executado sem desvios.
+
+**Candidatos promovidos:**
+- `joel-rodrigues` (PI, PP): ex-prefeito de Floriano, presidente do PP-PI, pré-candidato ao governo do PI pela oposição. Nome corrigido "de Castro"→"da Silva". Source: Parlamento Piaui 2026 + Cidades em Foco 2026
+- `requiao-filho` (PR, PDT): deputado estadual PR, filho de Roberto Requião, candidato ao gov. PR pelo PDT + Federação Brasil da Esperança. Saiu do PT em 2025 (decisão judicial), ingressou no PDT. Gleisi (PT) endossou candidatura. Source: Brasil de Fato 2025-05-09 + 2026-03-31
+- `douglas-ruas` (RJ, PL): presidente da ALERJ (eleito 26/03/2026), exercendo função de governador do RJ. Nome corrigido "Douglas Ruas"→"Douglas Ruas dos Santos". Source: Agencia Brasil 2026-03 + Portal Multiplix 2026-02-24
+
+**Candidatos pulados neste lote:**
+- `silvio-mendes` (PI, UNIAO): descartou candidatura em jan/2026 categoricamente. Manter mirrored.
+
+**Incidentes durante execução:**
+1. Dev server 500 ao iniciar release-verify delta: `agent-react-devtools` importava `react-devtools-core` (peer dep ausente). Fix: `npm install react-devtools-core --save-dev`. Servidor reiniciado e verificado.
+
+**Pipeline executado (12 passos):**
+1. assertions: joel-rodrigues (nome "da Silva" + source), requiao-filho (source), douglas-ruas (nome "dos Santos" + source)
+2. sync-mock: 3/3 OK (sequencial)
+3. sync-audit: 3/3 OK (sequencial)
+4. apply-fixes: joel-rodrigues (nome_completo fix), requiao-filho (candidateUpdate vazio), douglas-ruas (nome_completo fix)
+5. audit:factual: 144/144, 0 reprovados — curated 112 | mirrored 32
+6. check-audit-gate: Gate OK — 112/112 curated
+7. release-verify delta: 5/5 OK
+8. release-verify full: 146/146 OK
+9. set-publicavel --dry-run: 112 elegiveis
+10. set-publicavel real: 112 publicavel=true, 32 false
+11. release-verify parcial producao: 114/114 OK
+12. Log PLAN.md + commit + push
+
+Restam: 32 candidatos mirrored para promover.
 
 ### 2026-04-02 — double-check race condition sync-mock (Claude Code, claude-sonnet-4-6)
 
