@@ -6,18 +6,18 @@ Arquivo importado de `/Users/thiagosalvador/Downloads/PLAN.md` em `2026-04-02` e
 
 Este plano **não está concluído**. O site está mais seguro do que antes, mas **não está 100% funcional, atualizado e pronto para ir ao ar**.
 
-### Snapshot atual (2026-04-02 ~20:28, apos lotes 1-7 de curadoria)
+### Snapshot atual (2026-04-02 ~20:43, apos lotes 1-8 de curadoria)
 
 - `144` candidatos ativos no banco
-- `103` candidatos com `publicavel = true`
-- `103/144` assertions `curated`
-- `41/144` assertions `mirrored` (restantes a promover)
-- gate factual: **passando** (0 bloqueados, 103 curated, 41 mirrored)
+- `106` candidatos com `publicavel = true`
+- `106/144` assertions `curated`
+- `38/144` assertions `mirrored` (restantes a promover)
+- gate factual: **passando** (0 bloqueados, 106 curated, 38 mirrored)
 - `release-verify` full local: `146/146 OK`
-- `release-verify` parcial producao: `105/105 OK`
-- `set-publicavel-from-audit.ts` real: `103` sincronizados, `41` ocultos
+- `release-verify` parcial producao: `108/108 OK`
+- `set-publicavel-from-audit.ts` real: `106` sincronizados, `38` ocultos
 - foto `marcelo-maranata`: **versionada** em `public/candidates/marcelo-maranata.jpg` + deploy confirmado
-- producao: `https://puxaficha.com.br` — 103 fichas acessíveis
+- producao: `https://puxaficha.com.br` — 106 fichas acessíveis
 
 ### Snapshot histórico pré-lotes (2026-04-02 ~17:26, pos sessao Cursor)
 
@@ -1001,6 +1001,40 @@ A contagem real no banco ficou em:
 - `103` candidatos com `publicavel = true`
 
 Restam: 41 candidatos mirrored para promover.
+
+### 2026-04-02 — lote 8 curadoria (Claude Code, claude-sonnet-4-6)
+
+Oitavo lote mirrored → curated. 3 candidatos promovidos. Pipeline completo executado sem desvios.
+
+**Candidatos promovidos:**
+- `orleans-brandao` (MA, MDB): pré-candidato ao governo do Maranhão. Exonerou-se de Secretário de Assuntos Municipalistas em 04/2026 para desincompatibilização. Partido corrigido PSB→MDB (mudança verificada em 2025). Source: Gilberto Leda 2026-04-01 + O Imparcial MA 2026-03
+- `maria-da-consolacao` (MG, PSOL): fundadora do PSOL, lançada formalmente como pré-candidata ao governo de MG. Source: O Tempo 2026-01-07
+- `beto-faro` (PA, PT): Senador (cargo_atual atualizado), pré-candidato ao governo do Pará. Source: O Liberal PA + Brasil 247 2026
+
+**Candidatos ES pulados (mirrored mantidos):**
+- `da-vitoria` (PP): desistiu, apoia Ricardo Ferraço (MDB)
+- `sergio-vidigal` (PDT): desistiu, no "projeto de Ricardo Ferraço"
+- `paulo-hartung` (PSD): incerto — descartou "em princípio" mas PSD apoiou Pazolini; mantido como mirrored
+
+**Incidentes durante execução:**
+1. Race condition no mock.ts: 3 sync-mock rodaram em paralelo e corromperam o arquivo (],\n} duplicado no final). Fix: removidas as linhas extras, TypeScript validado. Nota: sincronizar mock sequencialmente em lotes futuros.
+2. orleans-brandao bloqueado por crosscheck_partido_timeline: PSB→MDB não estava na timeline. Fix: adicionado fix em apply-current-factual-fixes.ts com ensureCurrentPartyTimeline: true.
+
+**Pipeline executado (12 passos):**
+1. assertions: orleans (partido PSB→MDB + source), maria-da-consolacao (source), beto-faro (cargo_atual=Senador + source)
+2. sync-mock: 3/3 OK (rodados em paralelo — causou race condition, corrigido manualmente)
+3. sync-audit: 3/3 OK
+4. apply-fixes: orleans party timeline inserida + fixes normais
+5. audit:factual: 144/144, 0 reprovados — curated 106 | mirrored 38
+6. check-audit-gate: Gate OK — 106/106 curated
+7. release-verify delta: 5/5 OK
+8. release-verify full: 146/146 OK
+9. set-publicavel --dry-run: 106 elegiveis
+10. set-publicavel real: 106 publicavel=true, 38 false
+11. release-verify parcial producao: 108/108 OK
+12. Log PLAN.md + commit + push
+
+Restam: 38 candidatos mirrored para promover.
 
 ## Critério de pronto de verdade
 

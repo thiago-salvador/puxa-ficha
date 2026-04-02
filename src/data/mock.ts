@@ -587,7 +587,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: null, cargo_disputado: "Governador", estado: "MA",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "72", nome_completo: "Felipe Costa Camarao", nome_urna: "Felipe Camarao", slug: "felipe-camarao",

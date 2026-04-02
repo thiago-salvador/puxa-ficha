@@ -557,6 +557,15 @@ const FIXES: CandidateFix[] = [
     },
   },
   {
+    slug: "orleans-brandao",
+    source: "Gilberto Leda 2026-04-01 + O Imparcial MA 2026-03",
+    candidateUpdate: {
+      partido_sigla: "MDB",
+      partido_atual: "Movimento Democratico Brasileiro",
+    },
+    ensureCurrentPartyTimeline: true,
+  },
+  {
     slug: "otaviano-pivetta",
     source: "ALMT posse 2026-03-31 + Republicanos10 2026-03-31",
     candidateUpdate: {},
