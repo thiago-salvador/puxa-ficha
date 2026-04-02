@@ -18,9 +18,96 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card"
 
 /* ─── Helpers ──────────────────────────────────── */
 
+function normalizePartyToken(value: string | null | undefined) {
+  if (!value) return null
+
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-zA-Z0-9]/g, "")
+    .toLowerCase()
+}
+
+function isInitialPartyAnchorToken(value: string | null | undefined) {
+  const normalized = normalizePartyToken(value)
+  return normalized != null && [
+    "sempartido",
+    "semfiliacaopartidaria",
+    "semfiliacao",
+    "naofiliado",
+    "naofiliadopartido",
+    "independente",
+    "historicoanteriornaodeterminado",
+    "historicoanteriorindeterminado",
+  ].includes(normalized)
+}
+
+function isObservedCurrentPartyAnchor(
+  item: FichaCandidato["mudancas_partido"][number] | null | undefined
+) {
+  return (
+    item?.contexto != null &&
+    item.contexto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes("filiacao atual observada")
+  )
+}
+
+function isInitialPartyAnchor(
+  item: FichaCandidato["mudancas_partido"][number],
+  index: number,
+) {
+  return index === 0 && isInitialPartyAnchorToken(item.partido_anterior) && !!item.partido_novo
+}
+
+function countPartySwitches(mudancas: FichaCandidato["mudancas_partido"]) {
+  return [...mudancas]
+    .sort((a, b) => a.ano - b.ano)
+    .filter((item, index) => !isInitialPartyAnchor(item, index))
+    .length
+}
+
+function buildPartyJourney(
+  mudancas: FichaCandidato["mudancas_partido"],
+  partidoSigla: string | null | undefined,
+) {
+  if (mudancas.length === 0) return "Sem mudancas"
+
+  const ordered = [...mudancas].sort((a, b) => a.ano - b.ano)
+  const chain: string[] = []
+  const firstAnchor = ordered.find((item, index) => isInitialPartyAnchor(item, index)) ?? null
+  const switchCount = countPartySwitches(ordered)
+
+  for (const [index, item] of ordered.entries()) {
+    const isAnchor = isInitialPartyAnchor(item, index)
+
+    if (chain.length === 0 && item.partido_anterior && !isAnchor) {
+      chain.push(item.partido_anterior)
+    }
+
+    if (item.partido_novo && normalizePartyToken(chain.at(-1)) !== normalizePartyToken(item.partido_novo)) {
+      chain.push(item.partido_novo)
+    }
+  }
+
+  if (partidoSigla && normalizePartyToken(chain.at(-1)) !== normalizePartyToken(partidoSigla)) {
+    chain.push(partidoSigla)
+  }
+
+  if (
+    switchCount === 0 &&
+    chain.length === 1 &&
+    firstAnchor?.ano &&
+    !isObservedCurrentPartyAnchor(firstAnchor)
+  ) {
+    return `${chain[0]} desde ${firstAnchor.ano}`
+  }
+
+  return chain.join(" → ")
+}
+
 function SectionLink({ label, onClick }: { label: string; onClick: () => void }) {
   return (
     <button
+      type="button"
       onClick={onClick}
       className="inline-flex items-center gap-0.5 text-[12px] font-bold uppercase tracking-[0.06em] text-neutral-400 transition-colors hover:text-foreground"
     >
@@ -136,6 +223,7 @@ export function ProfileOverview({
     : null
   const contradicoes = votos.filter((v) => v.contradicao)
   const criminais = processos.filter((p) => p.tipo === "criminal")
+  const partySwitchCount = countPartySwitches(mudancas)
 
   const patrimonioSorted = [...patrimonio].sort((a, b) => a.ano_eleicao - b.ano_eleicao)
   const latestPatrimonio = patrimonioSorted.at(-1) ?? null
@@ -236,17 +324,14 @@ export function ProfileOverview({
         />
         <StatCard
           icon={<ArrowRightLeft className="size-4" />}
-          value={String(mudancas.length)}
+          value={String(partySwitchCount)}
           label="Trocas de partido"
           sub={
             mudancas.length > 0
-              ? [...mudancas]
-                  .sort((a, b) => a.ano - b.ano)
-                  .map((m) => m.partido_novo)
-                  .join(" → ")
+              ? buildPartyJourney(mudancas, ficha.partido_sigla)
               : "Sem mudancas"
           }
-          trend={mudancas.length >= 3 ? "up" : null}
+          trend={partySwitchCount >= 3 ? "up" : null}
         />
         <StatCard
           icon={<FileText className="size-4" />}
@@ -460,7 +545,7 @@ export function ProfileOverview({
                 <MetricRow
                   key={h.id}
                   label={h.cargo}
-                  sublabel={`${h.partido} — ${h.estado}`}
+                  sublabel={[h.partido, h.estado].filter(Boolean).join(" · ")}
                   value={`${h.periodo_inicio}${h.periodo_fim ? `–${h.periodo_fim}` : "–atual"}`}
                   indicator="#0a0a0a"
                 />

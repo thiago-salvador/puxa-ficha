@@ -1,5 +1,12 @@
+import Image from "next/image"
 import Link from "next/link"
-import { formatCompact, getInitials, FALLBACK_GRADIENT, getPartyLogoUrl } from "@/lib/utils"
+import {
+  formatCompact,
+  getInitials,
+  FALLBACK_GRADIENT,
+  getPartyLogoUrl,
+  shouldBypassImageOptimization,
+} from "@/lib/utils"
 import type { Candidato } from "@/lib/types"
 import { Scale, Landmark, ArrowRight, Briefcase, GraduationCap } from "lucide-react"
 
@@ -18,6 +25,7 @@ export function CandidatoCard({
 }: CandidatoCardProps) {
   const gradient = FALLBACK_GRADIENT
   const hasPhoto = !!candidato.foto_url
+  const bypassPhotoOptimization = shouldBypassImageOptimization(candidato.foto_url)
   const partyLogo = getPartyLogoUrl(candidato.partido_sigla)
   const hasMainStats = (patrimonio != null && patrimonio > 0) || processos > 0
 
@@ -37,12 +45,13 @@ export function CandidatoCard({
           }}
         >
           {hasPhoto ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
               src={candidato.foto_url!}
               alt={`Foto de ${candidato.nome_urna}`}
+              fill
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              unoptimized={bypassPhotoOptimization}
               className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-              loading="lazy"
             />
           ) : (
             <div className="flex h-full items-center justify-center">
@@ -59,12 +68,13 @@ export function CandidatoCard({
               {/* Party logo + sigla — always visible */}
               <div className="flex items-center gap-2">
                 {partyLogo && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src={partyLogo}
                     alt=""
+                    width={28}
+                    height={28}
+                    sizes="28px"
                     className="size-5 rounded-sm object-contain sm:size-7"
-                    loading="lazy"
                   />
                 )}
                 <span className="font-sans text-[11px] font-bold uppercase tracking-[0.08em] text-white sm:text-[14px]">

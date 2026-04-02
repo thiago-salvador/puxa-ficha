@@ -329,7 +329,7 @@
     "estado": "PR",
     "ids": {
       "camara": null,
-      "senado": 6476,
+      "senado": 6331,
       "tse_sq_candidato": {
         "2022": "160001621846"
       }
@@ -1272,7 +1272,7 @@
   },
   {
     "slug": "alvaro-dias-rn",
-    "nome_completo": "Alvaro Fernandes Dias",
+    "nome_completo": "Alvaro Costa Dias",
     "nome_urna": "Alvaro Dias",
     "cargo_disputado": "Governador",
     "estado": "RN",

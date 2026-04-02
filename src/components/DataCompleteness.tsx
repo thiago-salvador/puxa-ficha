@@ -12,7 +12,6 @@ function getDimensions(ficha: FichaCandidato): Dimension[] {
   const votos = ficha.votos ?? []
   const processos = ficha.processos ?? []
   const historico = ficha.historico ?? []
-  const pontosAtencao = ficha.pontos_atencao ?? []
 
   return [
     {

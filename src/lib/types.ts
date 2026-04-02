@@ -238,6 +238,42 @@ export interface NoticiaCandidato {
   snippet: string | null;
 }
 
+// --- Estado da fonte de dados ---
+export type DataSourceStatus = 'live' | 'mock' | 'degraded';
+
+export interface DataResource<T> {
+  data: T;
+  sourceStatus: DataSourceStatus;
+  sourceMessage?: string | null;
+}
+
+export type SectionFreshnessStatus =
+  | "current"
+  | "historical"
+  | "stale"
+  | "missing";
+
+export type SectionFreshnessKey =
+  | "perfil_atual"
+  | "historico_politico"
+  | "mudancas_partido"
+  | "patrimonio"
+  | "financiamento"
+  | "projetos_lei"
+  | "votos_candidato"
+  | "gastos_parlamentares";
+
+export interface SectionFreshnessInfo {
+  key: SectionFreshnessKey;
+  label: string;
+  status: SectionFreshnessStatus;
+  verifiedAt?: string | null;
+  referenceDate: string | null;
+  referenceYear: number | null;
+  sourceLabel?: string | null;
+  message: string;
+}
+
 // --- Views compostas ---
 
 export interface FichaCandidato extends Candidato {
@@ -261,6 +297,12 @@ export interface FichaCandidato extends Candidato {
   total_pontos_atencao: number;
   pontos_criticos: number;
   total_sancoes: number;
+
+  // Integridade factual da superficie publicada
+  historico_descartado?: number;
+  historico_em_revisao?: boolean;
+  timeline_partidaria_incompleta?: boolean;
+  section_freshness?: Partial<Record<SectionFreshnessKey, SectionFreshnessInfo>>;
 }
 
 export interface CandidatoComparavel {

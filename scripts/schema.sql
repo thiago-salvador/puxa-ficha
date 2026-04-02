@@ -61,7 +61,8 @@ CREATE TABLE candidatos (
   -- Metadata
   fonte_dados TEXT[], -- ["TSE", "Câmara", "Senado", "curadoria"]
   ultima_atualizacao TIMESTAMPTZ DEFAULT NOW(),
-  created_at TIMESTAMPTZ DEFAULT NOW()
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  publicavel BOOLEAN DEFAULT FALSE -- fail-closed gate: false = invisible on site
 );
 
 -- Índice pra busca por nome
@@ -343,10 +344,64 @@ CREATE INDEX idx_indicadores_estado_ano ON indicadores_estaduais (estado, ano);
 -- 13. VIEWS ÚTEIS
 -- ============================================
 
+-- View: Projeção pública mínima de candidatos
+CREATE VIEW candidatos_publico AS
+SELECT
+  c.id,
+  c.nome_completo,
+  c.nome_urna,
+  c.slug,
+  c.data_nascimento,
+  c.idade,
+  c.naturalidade,
+  c.formacao,
+  c.profissao_declarada,
+  c.genero,
+  c.estado_civil,
+  c.cor_raca,
+  c.partido_atual,
+  c.partido_sigla,
+  c.cargo_atual,
+  c.cargo_disputado,
+  c.estado,
+  c.status,
+  c.situacao_candidatura,
+  c.biografia,
+  c.foto_url,
+  c.site_campanha,
+  c.redes_sociais,
+  c.fonte_dados,
+  c.ultima_atualizacao
+FROM candidatos c;
+
 -- View: Ficha completa do candidato (pra Ficha Corrida)
 CREATE VIEW v_ficha_candidato AS
-SELECT 
-  c.*,
+SELECT
+  c.id,
+  c.nome_completo,
+  c.nome_urna,
+  c.slug,
+  c.data_nascimento,
+  c.idade,
+  c.naturalidade,
+  c.formacao,
+  c.profissao_declarada,
+  c.genero,
+  c.estado_civil,
+  c.cor_raca,
+  c.partido_atual,
+  c.partido_sigla,
+  c.cargo_atual,
+  c.cargo_disputado,
+  c.estado,
+  c.status,
+  c.situacao_candidatura,
+  c.biografia,
+  c.foto_url,
+  c.site_campanha,
+  c.redes_sociais,
+  c.fonte_dados,
+  c.ultima_atualizacao,
   -- Contadores
   (SELECT COUNT(*) FROM processos p WHERE p.candidato_id = c.id) as total_processos,
   (SELECT COUNT(*) FROM processos p WHERE p.candidato_id = c.id AND p.tipo = 'criminal') as processos_criminais,
@@ -356,7 +411,7 @@ SELECT
   -- Último patrimônio
   (SELECT valor_total FROM patrimonio pat WHERE pat.candidato_id = c.id ORDER BY ano_eleicao DESC LIMIT 1) as ultimo_patrimonio,
   (SELECT ano_eleicao FROM patrimonio pat WHERE pat.candidato_id = c.id ORDER BY ano_eleicao DESC LIMIT 1) as ano_ultimo_patrimonio
-FROM candidatos c;
+FROM candidatos_publico c;
 
 -- View: Comparação entre candidatos
 CREATE VIEW v_comparador AS
@@ -377,7 +432,13 @@ SELECT
   (SELECT json_agg(json_build_object('titulo', pa.titulo, 'categoria', pa.categoria, 'gravidade', pa.gravidade))
    FROM pontos_atencao pa WHERE pa.candidato_id = c.id AND pa.visivel = TRUE
   ) as pontos_atencao
-FROM candidatos c;
+FROM candidatos_publico c;
+
+-- Grants: app pública lê views, não a tabela base
+GRANT SELECT ON candidatos_publico TO anon, authenticated;
+GRANT SELECT ON v_ficha_candidato TO anon, authenticated;
+GRANT SELECT ON v_comparador TO anon, authenticated;
+REVOKE SELECT ON candidatos FROM anon, authenticated;
 
 -- ============================================
 -- Row Level Security (RLS) - dados públicos, leitura aberta

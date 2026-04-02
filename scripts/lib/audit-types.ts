@@ -7,10 +7,49 @@ export type AuditResult = "pass" | "warning" | "fail" | "manual_review"
 export type Severidade = "S0" | "S1" | "S2"
 export type Criticidade = "critica" | "relevante" | "editorial"
 export type TipoComparacao = "igualdade_exata" | "valor_e_ano" | "existencia" | "contagem" | "revisao_humana"
+export type CandidateAuditProfile =
+  | "deputado_federal_em_exercicio"
+  | "senador_em_exercicio"
+  | "executivo_em_exercicio"
+  | "ex_mandatario_sem_cargo_atual"
+  | "sem_mandato_previo"
+
+export type CandidateSection =
+  | "biografia"
+  | "historico_politico"
+  | "mudancas_partido"
+  | "patrimonio"
+  | "financiamento"
+  | "processos"
+  | "projetos_lei"
+  | "votos_candidato"
+  | "gastos_parlamentares"
+
+export type SnapshotFreshnessStatus = "current" | "historical" | "stale" | "missing"
+export type SnapshotFreshnessKey =
+  | "perfil_atual"
+  | "historico_politico"
+  | "mudancas_partido"
+  | "patrimonio"
+  | "financiamento"
+  | "projetos_lei"
+  | "votos_candidato"
+  | "gastos_parlamentares"
+
+export interface SnapshotFreshnessInfo {
+  key: SnapshotFreshnessKey
+  status: SnapshotFreshnessStatus
+  verified_at: string | null
+  reference_date: string | null
+  reference_year: number | null
+  message: string
+}
 
 // DTO público estável do candidato — fonte de verdade para auditoria
 export interface CandidatePublicSnapshot {
   slug: string
+  canonical_person_slug: string
+  related_person_slugs: string[]
   nome_completo: string
   nome_urna: string
   partido_sigla: string | null
@@ -19,17 +58,33 @@ export interface CandidatePublicSnapshot {
   cargo_disputado: string
   estado: string | null
   situacao_candidatura: string | null
+  biografia: string | null
   patrimonio_mais_recente: number | null
   patrimonio_ano: number | null
+  total_patrimonio_registros: number
   financiamento_mais_recente: number | null
   financiamento_ano: number | null
+  total_financiamento_registros: number
   total_processos: number
   foto_url: string | null
   data_nascimento: string | null
   naturalidade: string | null
   formacao: string | null
-  historico_politico: boolean
-  gastos_parlamentares: boolean
+  total_historico_politico: number
+  total_mudancas_partido: number
+  total_projetos_lei: number
+  total_votos: number
+  total_gastos_parlamentares: number
+  ultimo_historico_cargo: string | null
+  ultimo_historico_periodo_inicio: number | null
+  ultimo_historico_periodo_fim: number | null
+  ultimo_partido_timeline: string | null
+  ultima_eleicao_disputada: number | null
+  has_tse_anchor: boolean
+  has_camara_anchor: boolean
+  has_senado_anchor: boolean
+  audit_profile: CandidateAuditProfile
+  section_freshness: Partial<Record<SnapshotFreshnessKey, SnapshotFreshnessInfo>>
   // status de auditoria interno — não exibido publicamente
   auditoria_status: AuditoriaStatus
   auditoria_revisado_em: string | null // ISO date
@@ -51,6 +106,10 @@ export interface AuditFieldResult {
 // Resultado de auditoria por candidato
 export interface AuditCandidateResult {
   slug: string
+  canonical_person_slug: string
+  related_person_slugs: string[]
+  audit_profile: CandidateAuditProfile
+  secoes_obrigatorias: CandidateSection[]
   nome_urna: string
   timestamp: string // ISO datetime
   auditoria_status: AuditoriaStatus
@@ -93,6 +152,7 @@ export interface AuditPersistentStateItem {
   ultima_execucao: string
   cohorts: string[]
   source: string | null
+  verified_at: string | null
   campos_com_fail: string[]
   campos_com_warning: string[]
   provenance: ProvenanceMetadata

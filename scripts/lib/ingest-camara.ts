@@ -1,7 +1,7 @@
 import { supabase } from "./supabase"
-import { loadCandidatos, fetchJSON, sleep } from "./helpers"
+import { loadCandidatos, fetchJSON, normalizeForMatch, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
-import type { IngestResult, CandidatoConfig } from "./types"
+import type { IngestResult } from "./types"
 
 const API = "https://dadosabertos.camara.leg.br/api/v2"
 
@@ -33,26 +33,68 @@ async function resolveCandidatoId(slug: string): Promise<string | null> {
   return data?.id ?? null
 }
 
-async function ingestPerfil(idCamara: number, candidatoId: string, slug: string) {
+function namesLookCompatible(
+  expectedNames: Array<string | null | undefined>,
+  observedNames: Array<string | null | undefined>
+): boolean {
+  const expected = expectedNames.map((value) => normalizeForMatch(value ?? "")).filter(Boolean)
+  const observed = observedNames.map((value) => normalizeForMatch(value ?? "")).filter(Boolean)
+
+  if (expected.length === 0 || observed.length === 0) return true
+
+  return observed.some((candidateName) =>
+    expected.some(
+      (expectedName) =>
+        candidateName === expectedName ||
+        candidateName.includes(expectedName) ||
+        expectedName.includes(candidateName)
+    )
+  )
+}
+
+async function ingestPerfil(
+  idCamara: number,
+  candidatoId: string,
+  slug: string,
+  expectedNomeCompleto: string,
+  expectedNomeUrna: string
+) {
   const json = await fetchJSON<CamaraResponse<Record<string, unknown>>>(`${API}/deputados/${idCamara}`)
   const dep = json.dados as Record<string, unknown>
   const status = dep.ultimoStatus as Record<string, unknown> | undefined
+  const observedNames = [
+    dep.nomeCivil ? String(dep.nomeCivil) : null,
+    dep.nomeEleitoral ? String(dep.nomeEleitoral) : null,
+    status?.nome ? String(status.nome) : null,
+  ]
+
+  if (!namesLookCompatible([expectedNomeCompleto, expectedNomeUrna], observedNames)) {
+    throw new Error(
+      `ID Camara inconsistente para ${slug}: retornou ${observedNames.filter(Boolean).join(" / ")}`
+    )
+  }
 
   const updates: Record<string, unknown> = {
     ultima_atualizacao: new Date().toISOString(),
   }
 
   if (status) {
+    const situacaoAtual = String(status.situacao || "").toLowerCase()
+    const isDeputyInExercise = situacaoAtual.includes("exerc")
+
     // Only set photo if candidate doesn't already have one (Wikipedia photos preferred)
     if (status.urlFoto) {
       const { data: current } = await supabase.from("candidatos").select("foto_url").eq("id", candidatoId).single()
       if (!current?.foto_url) updates.foto_url = status.urlFoto
     }
-    if (status.siglaPartido) updates.partido_sigla = status.siglaPartido
-    if (status.nomeEleitoral) updates.partido_atual = status.siglaPartido
+    // The Camara profile reflects the deputy's last mandate there. For ex-deputies it is
+    // frequently stale and must not override current-party curation.
+    if (isDeputyInExercise && status.siglaPartido) {
+      updates.partido_sigla = status.siglaPartido
+      updates.partido_atual = status.siglaPartido
+    }
 
-    const situacaoAtual = String(status.situacao || "").toLowerCase()
-    if (situacaoAtual.includes("exerc")) {
+    if (isDeputyInExercise) {
       updates.cargo_atual = "Deputado(a) Federal"
     }
   }
@@ -295,8 +337,11 @@ async function ingestProjetos(idCamara: number, candidatoId: string, slug: strin
   return count
 }
 
-export async function ingestCamara(): Promise<IngestResult[]> {
-  const candidatos = loadCandidatos()
+export async function ingestCamara(targetSlugs?: string[]): Promise<IngestResult[]> {
+  const selectedSlugs = targetSlugs != null ? new Set(targetSlugs) : null
+  const candidatos = loadCandidatos().filter((cand) =>
+    selectedSlugs ? selectedSlugs.has(cand.slug) : true
+  )
   const results: IngestResult[] = []
 
   for (const cand of candidatos) {
@@ -327,7 +372,13 @@ export async function ingestCamara(): Promise<IngestResult[]> {
     )
 
     const candidatoWork = (async () => {
-      await ingestPerfil(cand.ids.camara!, candidatoId, cand.slug)
+      await ingestPerfil(
+        cand.ids.camara!,
+        candidatoId,
+        cand.slug,
+        cand.nome_completo,
+        cand.nome_urna
+      )
       result.tables_updated.push("candidatos")
       result.rows_upserted++
       await sleep(300)
@@ -369,7 +420,19 @@ export async function ingestCamara(): Promise<IngestResult[]> {
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  ingestCamara().then((results) => {
+  const targetSlugs = process.argv
+    .slice(2)
+    .flatMap((value, index, args) => {
+      if (value === "--slugs") {
+        return (args[index + 1] ?? "")
+          .split(",")
+          .map((item) => item.trim())
+          .filter(Boolean)
+      }
+      return []
+    })
+
+  ingestCamara(targetSlugs.length > 0 ? targetSlugs : undefined).then((results) => {
     console.log(JSON.stringify(results, null, 2))
   })
 }

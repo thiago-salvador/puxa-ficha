@@ -1119,18 +1119,13 @@ export const MOCK_PATRIMONIO: Record<string, Patrimonio[]> = {
     { id: "p2c", candidato_id: "1", ano_eleicao: 2002, valor_total: 422973, bens: [] },
   ],
   "flavio-bolsonaro": [
-    {
-      id: "p3", candidato_id: "2", ano_eleicao: 2022, valor_total: 4316507,
-      bens: [
-        { tipo: "Imovel", descricao: "Mansao em Brasilia", valor: 3200000 },
-        { tipo: "Imovel", descricao: "Apartamento Copacabana", valor: 850000 },
-        { tipo: "Veiculo", descricao: "Range Rover 2021", valor: 266507 },
-      ],
-    },
     { id: "p4", candidato_id: "2", ano_eleicao: 2018, valor_total: 1686779, bens: [] },
   ],
   tarcisio: [
-    { id: "p5", candidato_id: "3", ano_eleicao: 2022, valor_total: 1892340, bens: [] },
+    { id: "p5", candidato_id: "3", ano_eleicao: 2022, valor_total: 4684323.54, bens: [] },
+  ],
+  "tarcisio-gov-sp": [
+    { id: "p5b", candidato_id: "14", ano_eleicao: 2022, valor_total: 4684323.54, bens: [] },
   ],
   "ciro-gomes": [
     { id: "p6", candidato_id: "4", ano_eleicao: 2022, valor_total: 2450000, bens: [] },
@@ -1170,6 +1165,14 @@ export const MOCK_PROCESSOS: Record<string, Processo[]> = {
       status: "absolvido", data_inicio: "2022-06-10", data_decisao: "2022-08-15", gravidade: "baixa",
     },
   ],
+  "ciro-gomes-gov-ce": [
+    {
+      id: "proc4b", candidato_id: "66", tipo: "eleitoral", tribunal: "TRE-CE",
+      numero_processo: null,
+      descricao: "Representacao por propaganda eleitoral antecipada em 2022",
+      status: "absolvido", data_inicio: "2022-06-10", data_decisao: "2022-08-15", gravidade: "baixa",
+    },
+  ],
 }
 
 // --- HISTORICO POLITICO ---
@@ -1187,25 +1190,80 @@ export const MOCK_HISTORICO: Record<string, HistoricoPolitico[]> = {
     { id: "h6", candidato_id: "3", cargo: "Governador de SP", periodo_inicio: 2023, periodo_fim: null, partido: "Republicanos", estado: "SP", eleito_por: "Voto popular", observacoes: null },
     { id: "h7", candidato_id: "3", cargo: "Ministro da Infraestrutura", periodo_inicio: 2019, periodo_fim: 2022, partido: "sem partido", estado: "", eleito_por: "Nomeacao", observacoes: "Governo Bolsonaro" },
   ],
+  "romeu-zema": [
+    { id: "h7a", candidato_id: "7", cargo: "Governador de Minas Gerais", periodo_inicio: 2019, periodo_fim: null, partido: "NOVO", estado: "MG", eleito_por: "Voto popular", observacoes: "Reeleito em 2022" },
+  ],
   "ciro-gomes": [
-    { id: "h8", candidato_id: "4", cargo: "Governador do Ceara", periodo_inicio: 1991, periodo_fim: 1994, partido: "PSDB", estado: "CE", eleito_por: "Voto popular", observacoes: null },
-    { id: "h9", candidato_id: "4", cargo: "Ministro da Fazenda", periodo_inicio: 1994, periodo_fim: 1994, partido: "PSDB", estado: "", eleito_por: "Nomeacao", observacoes: "Governo Itamar" },
-    { id: "h10", candidato_id: "4", cargo: "Ministro da Integracao Nacional", periodo_inicio: 2003, periodo_fim: 2006, partido: "PPS", estado: "", eleito_por: "Nomeacao", observacoes: "Governo Lula 1" },
+    { id: "h8", candidato_id: "4", cargo: "Prefeito de Fortaleza", periodo_inicio: 1989, periodo_fim: 1990, partido: "PMDB", estado: "CE", eleito_por: "Voto popular", observacoes: "Renunciou para disputar o governo do Ceara" },
+    { id: "h9", candidato_id: "4", cargo: "Governador do Ceara", periodo_inicio: 1991, periodo_fim: 1994, partido: "PSDB", estado: "CE", eleito_por: "Voto popular", observacoes: null },
+    { id: "h10", candidato_id: "4", cargo: "Ministro da Fazenda", periodo_inicio: 1994, periodo_fim: 1995, partido: "PSDB", estado: "", eleito_por: "Nomeacao", observacoes: "Governo Itamar Franco" },
+    { id: "h11", candidato_id: "4", cargo: "Ministro da Integracao Nacional", periodo_inicio: 2003, periodo_fim: 2006, partido: "PPS", estado: "", eleito_por: "Nomeacao", observacoes: "Governo Lula 1" },
+    { id: "h12", candidato_id: "4", cargo: "Deputado Federal", periodo_inicio: 2007, periodo_fim: 2011, partido: "PSB", estado: "CE", eleito_por: "Voto popular", observacoes: null },
+  ],
+  "ciro-gomes-gov-ce": [
+    { id: "h8b", candidato_id: "66", cargo: "Prefeito de Fortaleza", periodo_inicio: 1989, periodo_fim: 1990, partido: "PMDB", estado: "CE", eleito_por: "Voto popular", observacoes: "Renunciou para disputar o governo do Ceara" },
+    { id: "h9b", candidato_id: "66", cargo: "Governador do Ceara", periodo_inicio: 1991, periodo_fim: 1994, partido: "PSDB", estado: "CE", eleito_por: "Voto popular", observacoes: null },
+    { id: "h10b", candidato_id: "66", cargo: "Ministro da Fazenda", periodo_inicio: 1994, periodo_fim: 1995, partido: "PSDB", estado: "", eleito_por: "Nomeacao", observacoes: "Governo Itamar Franco" },
+    { id: "h11b", candidato_id: "66", cargo: "Ministro da Integracao Nacional", periodo_inicio: 2003, periodo_fim: 2006, partido: "PPS", estado: "", eleito_por: "Nomeacao", observacoes: "Governo Lula 1" },
+    { id: "h12b", candidato_id: "66", cargo: "Deputado Federal", periodo_inicio: 2007, periodo_fim: 2011, partido: "PSB", estado: "CE", eleito_por: "Voto popular", observacoes: null },
   ],
   "ronaldo-caiado": [
-    { id: "h11", candidato_id: "5", cargo: "Governador de GO", periodo_inicio: 2019, periodo_fim: null, partido: "Uniao Brasil", estado: "GO", eleito_por: "Voto popular", observacoes: "Reeleito em 2022" },
+    { id: "h11", candidato_id: "5", cargo: "Governador de GO", periodo_inicio: 2019, periodo_fim: null, partido: "PSD", estado: "GO", eleito_por: "Voto popular", observacoes: "Reeleito em 2022 e filiado ao PSD em 2026" },
     { id: "h12", candidato_id: "5", cargo: "Senador", periodo_inicio: 2003, periodo_fim: 2018, partido: "DEM", estado: "GO", eleito_por: "Voto popular", observacoes: "2 mandatos" },
     { id: "h13", candidato_id: "5", cargo: "Deputado Federal", periodo_inicio: 1999, periodo_fim: 2002, partido: "PFL", estado: "GO", eleito_por: "Voto popular", observacoes: null },
+  ],
+  "ratinho-junior": [
+    { id: "h13a", candidato_id: "6", cargo: "Governador do Parana", periodo_inicio: 2019, periodo_fim: 2026, partido: "PSD", estado: "PR", eleito_por: "Voto popular", observacoes: "Dois mandatos consecutivos" },
+  ],
+  "eduardo-leite": [
+    { id: "h13b", candidato_id: "mock-eduardo-leite", cargo: "Governador do Rio Grande do Sul", periodo_inicio: 2023, periodo_fim: null, partido: "PSD", estado: "RS", eleito_por: "Voto popular", observacoes: "Retornou ao governo e migrou para o PSD em 2025" },
+    { id: "h13c", candidato_id: "mock-eduardo-leite", cargo: "Governador do Rio Grande do Sul", periodo_inicio: 2019, periodo_fim: 2022, partido: "PSDB", estado: "RS", eleito_por: "Voto popular", observacoes: null },
+    { id: "h13d", candidato_id: "mock-eduardo-leite", cargo: "Prefeito de Pelotas", periodo_inicio: 2013, periodo_fim: 2016, partido: "PSDB", estado: "RS", eleito_por: "Voto popular", observacoes: null },
+  ],
+  "aldo-rebelo": [
+    { id: "h13e", candidato_id: "mock-aldo-rebelo", cargo: "Ministro da Defesa", periodo_inicio: 2015, periodo_fim: 2016, partido: "PCdoB", estado: "", eleito_por: "Nomeacao", observacoes: "Governo Dilma Rousseff" },
+    { id: "h13f", candidato_id: "mock-aldo-rebelo", cargo: "Ministro do Esporte", periodo_inicio: 2011, periodo_fim: 2015, partido: "PCdoB", estado: "", eleito_por: "Nomeacao", observacoes: "Governos Lula e Dilma" },
+    { id: "h13g", candidato_id: "mock-aldo-rebelo", cargo: "Deputado Federal", periodo_inicio: 1991, periodo_fim: 2011, partido: "PCdoB", estado: "SP", eleito_por: "Voto popular", observacoes: null },
   ],
 }
 
 // --- MUDANCAS DE PARTIDO ---
 export const MOCK_MUDANCAS: Record<string, MudancaPartido[]> = {
+  lula: [
+    { id: "m0", candidato_id: "1", partido_anterior: "Sem filiacao partidaria", partido_novo: "PT", data_mudanca: null, ano: 1980, contexto: "Fundador do Partido dos Trabalhadores" },
+  ],
+  tarcisio: [
+    { id: "m0t", candidato_id: "3", partido_anterior: "Sem filiacao partidaria", partido_novo: "REPUBLICANOS", data_mudanca: null, ano: 2022, contexto: "Filiou-se ao Republicanos para disputar o governo de Sao Paulo em 2022" },
+  ],
+  "tarcisio-gov-sp": [
+    { id: "m0tg", candidato_id: "14", partido_anterior: "Sem filiacao partidaria", partido_novo: "REPUBLICANOS", data_mudanca: null, ano: 2022, contexto: "Filiou-se ao Republicanos para disputar o governo de Sao Paulo em 2022" },
+  ],
+  "haddad-gov-sp": [
+    { id: "m0h", candidato_id: "15", partido_anterior: "Sem filiacao partidaria", partido_novo: "PT", data_mudanca: null, ano: 1983, contexto: "Filiado ao Partido dos Trabalhadores desde 1983" },
+  ],
+  "romeu-zema": [
+    { id: "m0z", candidato_id: "7", partido_anterior: "Sem filiacao partidaria", partido_novo: "NOVO", data_mudanca: null, ano: 2018, contexto: "Filiou-se ao Novo para disputar o governo de Minas Gerais em 2018" },
+  ],
+  "ratinho-junior": [
+    { id: "m0r", candidato_id: "6", partido_anterior: "PSC", partido_novo: "PSD", data_mudanca: null, ano: 2016, contexto: "Migrou para o PSD antes de disputar o governo do Parana" },
+  ],
   "ciro-gomes": [
     { id: "m1", candidato_id: "4", partido_anterior: "PMDB", partido_novo: "PSDB", data_mudanca: null, ano: 1990, contexto: "Saiu do PMDB para disputar o governo do Ceara" },
-    { id: "m2", candidato_id: "4", partido_anterior: "PSDB", partido_novo: "PPS", data_mudanca: null, ano: 2001, contexto: "Rompeu com FHC" },
-    { id: "m3", candidato_id: "4", partido_anterior: "PPS", partido_novo: "PROS", data_mudanca: null, ano: 2013, contexto: null },
-    { id: "m4", candidato_id: "4", partido_anterior: "PROS", partido_novo: "PDT", data_mudanca: null, ano: 2015, contexto: "Alianca com Brizola para projeto nacional" },
+    { id: "m2", candidato_id: "4", partido_anterior: "PSDB", partido_novo: "PPS", data_mudanca: null, ano: 1997, contexto: "Rompeu com FHC" },
+    { id: "m3", candidato_id: "4", partido_anterior: "PPS", partido_novo: "PSB", data_mudanca: null, ano: 2005, contexto: null },
+    { id: "m4", candidato_id: "4", partido_anterior: "PSB", partido_novo: "PROS", data_mudanca: null, ano: 2013, contexto: null },
+    { id: "m4b", candidato_id: "4", partido_anterior: "PROS", partido_novo: "PDT", data_mudanca: null, ano: 2015, contexto: "Alianca com Brizola para projeto nacional" },
+    { id: "m4c", candidato_id: "4", partido_anterior: "PDT", partido_novo: "Sem partido", data_mudanca: null, ano: 2022, contexto: "Desfiliou-se apos o segundo turno" },
+    { id: "m4d", candidato_id: "4", partido_anterior: "Sem partido", partido_novo: "PSDB", data_mudanca: null, ano: 2025, contexto: "Retomou filiacao partidaria para articular candidatura em 2026" },
+  ],
+  "ciro-gomes-gov-ce": [
+    { id: "m1b", candidato_id: "66", partido_anterior: "PMDB", partido_novo: "PSDB", data_mudanca: null, ano: 1990, contexto: "Saiu do PMDB para disputar o governo do Ceara" },
+    { id: "m2b", candidato_id: "66", partido_anterior: "PSDB", partido_novo: "PPS", data_mudanca: null, ano: 1997, contexto: "Rompeu com FHC" },
+    { id: "m3b", candidato_id: "66", partido_anterior: "PPS", partido_novo: "PSB", data_mudanca: null, ano: 2005, contexto: null },
+    { id: "m4e", candidato_id: "66", partido_anterior: "PSB", partido_novo: "PROS", data_mudanca: null, ano: 2013, contexto: null },
+    { id: "m4f", candidato_id: "66", partido_anterior: "PROS", partido_novo: "PDT", data_mudanca: null, ano: 2015, contexto: "Alianca com Brizola para projeto nacional" },
+    { id: "m4g", candidato_id: "66", partido_anterior: "PDT", partido_novo: "Sem partido", data_mudanca: null, ano: 2022, contexto: "Desfiliou-se apos o segundo turno" },
+    { id: "m4h", candidato_id: "66", partido_anterior: "Sem partido", partido_novo: "PSDB", data_mudanca: null, ano: 2025, contexto: "Retomou filiacao partidaria para articular candidatura em 2026" },
   ],
   "flavio-bolsonaro": [
     { id: "m5", candidato_id: "2", partido_anterior: "PPB", partido_novo: "PSC", data_mudanca: null, ano: 2005, contexto: null },
@@ -1215,6 +1273,7 @@ export const MOCK_MUDANCAS: Record<string, MudancaPartido[]> = {
   "ronaldo-caiado": [
     { id: "m8", candidato_id: "5", partido_anterior: "PFL", partido_novo: "DEM", data_mudanca: null, ano: 2007, contexto: "Refundacao do PFL como DEM" },
     { id: "m9", candidato_id: "5", partido_anterior: "DEM", partido_novo: "Uniao Brasil", data_mudanca: null, ano: 2022, contexto: "Fusao DEM + PSL" },
+    { id: "m9b", candidato_id: "5", partido_anterior: "Uniao Brasil", partido_novo: "PSD", data_mudanca: null, ano: 2026, contexto: "Filiacao ao PSD para articular a disputa presidencial de 2026" },
   ],
 }
 
@@ -1239,6 +1298,22 @@ export const MOCK_FINANCIAMENTO: Record<string, Financiamento[]> = {
       maiores_doadores: [
         { nome: "Fundo Eleitoral PSL", valor: 1600000, tipo: "fundo_eleitoral" },
       ],
+    },
+  ],
+  tarcisio: [
+    {
+      id: "f2b", candidato_id: "3", ano_eleicao: 2022, total_arrecadado: 77216377.38,
+      total_fundo_partidario: 0, total_fundo_eleitoral: 0,
+      total_pessoa_fisica: 0, total_recursos_proprios: 0,
+      maiores_doadores: [],
+    },
+  ],
+  "tarcisio-gov-sp": [
+    {
+      id: "f2c", candidato_id: "14", ano_eleicao: 2022, total_arrecadado: 77216377.38,
+      total_fundo_partidario: 0, total_fundo_eleitoral: 0,
+      total_pessoa_fisica: 0, total_recursos_proprios: 0,
+      maiores_doadores: [],
     },
   ],
 }
@@ -1300,13 +1375,6 @@ export const MOCK_PONTOS: Record<string, PontoAtencao[]> = {
       descricao: "Investigado por organizacao criminosa e lavagem de dinheiro envolvendo desvio de salarios de assessores parlamentares durante seu mandato como deputado estadual.",
       fontes: [{ titulo: "MP-RJ denuncia Flavio", url: "https://example.com", data: "2020-11-04" }],
       gravidade: "critica", verificado: true, gerado_por: "curadoria",
-    },
-    {
-      id: "pa2", candidato_id: "2", categoria: "patrimonio_incompativel",
-      titulo: "Crescimento patrimonial de 156% em 4 anos",
-      descricao: "Patrimonio declarado saltou de R$ 1,6M em 2018 para R$ 4,3M em 2022, aumento incompativel com rendimentos declarados de senador.",
-      fontes: [{ titulo: "TSE - declaracao de bens", url: "https://example.com", data: "2022-08-15" }],
-      gravidade: "alta", verificado: true, gerado_por: "curadoria",
     },
   ],
   lula: [

@@ -5,6 +5,7 @@ import { execSync } from "child_process"
 import { supabase } from "./supabase"
 import { loadCandidatos, normalizeForMatch, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
+import { resolveCanonicalParty } from "./party-canonical"
 import type { IngestResult, CandidatoConfig } from "./types"
 
 const DATA_DIR = resolve(process.cwd(), "data/filiacao")
@@ -119,11 +120,16 @@ async function resolveCandidatoId(slug: string): Promise<string | null> {
   return data?.id ?? null
 }
 
-function buildCandidateNameMap(candidatos: CandidatoConfig[]): Map<string, CandidatoConfig> {
-  const map = new Map<string, CandidatoConfig>()
+function buildCandidateNameMap(candidatos: CandidatoConfig[]): Map<string, CandidatoConfig[]> {
+  const map = new Map<string, CandidatoConfig[]>()
   for (const c of candidatos) {
-    map.set(normalizeForMatch(c.nome_completo), c)
-    map.set(normalizeForMatch(c.nome_urna), c)
+    for (const key of [normalizeForMatch(c.nome_completo), normalizeForMatch(c.nome_urna)]) {
+      const existing = map.get(key) ?? []
+      if (!existing.some((item) => item.slug === c.slug)) {
+        existing.push(c)
+      }
+      map.set(key, existing)
+    }
   }
   return map
 }
@@ -137,9 +143,114 @@ interface FiliacaoEntry {
   uf: string
 }
 
+interface TimelineEntry {
+  partido_anterior: string
+  partido_novo: string
+  data_mudanca: string
+  ano: number
+  contexto: string
+}
+
 function detectContexto(ano: number): string {
   if (ano === 2022 || ano === 2026) return "janela partidaria"
   return ""
+}
+
+function normalizePartySigla(value: string): string {
+  const canonical = resolveCanonicalParty(value)
+  return canonical?.sigla ?? value.trim().toUpperCase()
+}
+
+function buildTimelineEntries(filiacoes: FiliacaoEntry[]): TimelineEntry[] {
+  const ordered = [...filiacoes]
+    .filter((entry) => entry.partido && (entry.dt_filiacao || entry.dt_desfiliacao))
+    .sort((left, right) => {
+      const leftDate = left.dt_filiacao ?? left.dt_desfiliacao ?? "9999-12-31"
+      const rightDate = right.dt_filiacao ?? right.dt_desfiliacao ?? "9999-12-31"
+      return leftDate.localeCompare(rightDate)
+    })
+
+  const deduped: FiliacaoEntry[] = []
+  const seen = new Set<string>()
+
+  for (const entry of ordered) {
+    const canonicalParty = normalizePartySigla(entry.partido)
+    const key = [
+      canonicalParty,
+      entry.dt_filiacao ?? "",
+      entry.dt_desfiliacao ?? "",
+    ].join("|")
+
+    if (seen.has(key)) continue
+    seen.add(key)
+    deduped.push({
+      ...entry,
+      partido: canonicalParty,
+    })
+  }
+
+  const timeline: TimelineEntry[] = []
+  let currentParty: string | null = null
+
+  for (const entry of deduped) {
+    const dataMudanca = entry.dt_filiacao ?? entry.dt_desfiliacao
+    if (!dataMudanca) continue
+
+    const ano = Number.parseInt(dataMudanca.slice(0, 4), 10)
+    if (Number.isNaN(ano)) continue
+
+    if (currentParty === null) {
+      currentParty = entry.partido
+      timeline.push({
+        partido_anterior: "Sem partido",
+        partido_novo: entry.partido,
+        data_mudanca: dataMudanca,
+        ano,
+        contexto: "filiacao inicial conhecida",
+      })
+      continue
+    }
+
+    if (currentParty === entry.partido) continue
+
+    timeline.push({
+      partido_anterior: currentParty,
+      partido_novo: entry.partido,
+      data_mudanca: dataMudanca,
+      ano,
+      contexto: detectContexto(ano),
+    })
+    currentParty = entry.partido
+  }
+
+  return timeline
+}
+
+function pickCurrentParty(filiacoes: FiliacaoEntry[]): string | null {
+  const canonicalRows = filiacoes
+    .filter((entry) => entry.partido)
+    .map((entry) => ({
+      ...entry,
+      partido: normalizePartySigla(entry.partido),
+    }))
+
+  const activeRows = canonicalRows
+    .filter((entry) => !entry.dt_desfiliacao)
+    .sort((left, right) => {
+      const leftDate = left.dt_filiacao ?? "0000-00-00"
+      const rightDate = right.dt_filiacao ?? "0000-00-00"
+      return rightDate.localeCompare(leftDate)
+    })
+
+  if (activeRows.length > 0) return activeRows[0].partido
+
+  const latestRows = canonicalRows.sort((left, right) => {
+    const leftDate = left.dt_filiacao ?? left.dt_desfiliacao ?? "0000-00-00"
+    const rightDate = right.dt_filiacao ?? right.dt_desfiliacao ?? "0000-00-00"
+    return rightDate.localeCompare(leftDate)
+  })
+
+  return latestRows[0]?.partido ?? null
 }
 
 export async function ingestFiliacao(): Promise<IngestResult[]> {
@@ -189,8 +300,8 @@ export async function ingestFiliacao(): Promise<IngestResult[]> {
       await parseCSV(csvFile, (row) => {
         const nomeRaw = row.NM_ELEITOR || ""
         const nomeNorm = normalizeForMatch(nomeRaw)
-        const cand = nameMap.get(nomeNorm)
-        if (!cand) return
+        const candidates = nameMap.get(nomeNorm)
+        if (!candidates || candidates.length === 0) return
 
         const entry: FiliacaoEntry = {
           partido: (row.SG_PARTIDO || "").trim(),
@@ -201,9 +312,11 @@ export async function ingestFiliacao(): Promise<IngestResult[]> {
           uf: (row.SG_UF || "").trim(),
         }
 
-        const existing = filiacoesPorCandidato.get(cand.slug) ?? []
-        existing.push(entry)
-        filiacoesPorCandidato.set(cand.slug, existing)
+        for (const cand of candidates) {
+          const existing = filiacoesPorCandidato.get(cand.slug) ?? []
+          existing.push(entry)
+          filiacoesPorCandidato.set(cand.slug, existing)
+        }
       })
     } catch (err) {
       warn("filiacao", `  Erro ao parsear ${csvFile}: ${err}`)
@@ -247,69 +360,69 @@ export async function ingestFiliacao(): Promise<IngestResult[]> {
         continue
       }
 
-      // Ordena por data de filiacao ascendente para gerar timeline correta
-      const ordenadas = [...filiacoes].sort((a, b) => {
-        if (!a.dt_filiacao) return 1
-        if (!b.dt_filiacao) return -1
-        return a.dt_filiacao.localeCompare(b.dt_filiacao)
-      })
+      const timeline = buildTimelineEntries(filiacoes)
+      const currentParty = pickCurrentParty(filiacoes)
 
-      // Gera mudancas de partido: cada vez que o partido muda de uma filiacao para outra
-      let partidoAnterior: string | null = null
-      let dataAnterior: string | null = null
+      if (currentParty) {
+        const { error: updateErr } = await supabase
+          .from("candidatos")
+          .update({
+            partido_sigla: currentParty,
+            partido_atual: currentParty,
+            ultima_atualizacao: new Date().toISOString(),
+          })
+          .eq("id", candidatoId)
 
-      for (const filiacao of ordenadas) {
-        if (!filiacao.partido) continue
-
-        // So registra mudanca quando o partido muda
-        if (partidoAnterior !== null && partidoAnterior !== filiacao.partido) {
-          const dataMudanca = filiacao.dt_filiacao ?? dataAnterior
-          if (!dataMudanca) {
-            partidoAnterior = filiacao.partido
-            dataAnterior = filiacao.dt_filiacao
-            continue
-          }
-
-          const ano = parseInt(dataMudanca.substring(0, 4), 10)
-          const contexto = detectContexto(ano)
-
-          // Checa se ja existe (idempotente)
-          const { data: existing } = await supabase
-            .from("mudancas_partido")
-            .select("id")
-            .eq("candidato_id", candidatoId)
-            .eq("ano", ano)
-            .eq("partido_novo", filiacao.partido)
-            .single()
-
-          if (!existing) {
-            const row: Record<string, unknown> = {
-              candidato_id: candidatoId,
-              partido_anterior: partidoAnterior,
-              partido_novo: filiacao.partido,
-              data_mudanca: dataMudanca,
-              ano,
-            }
-            if (contexto) row.contexto = contexto
-
-            const { error: insertErr } = await supabase.from("mudancas_partido").insert(row)
-            if (insertErr) {
-              result.errors.push(`Erro ao inserir mudanca de partido: ${insertErr.message}`)
-            } else {
-              result.rows_upserted++
-              result.tables_updated = ["mudancas_partido"]
-              log(
-                "filiacao",
-                `  ${cand.slug}: ${partidoAnterior} -> ${filiacao.partido} (${dataMudanca}${contexto ? `, ${contexto}` : ""})`
-              )
-            }
-          } else {
-            log("filiacao", `  ${cand.slug}: mudanca ${partidoAnterior} -> ${filiacao.partido} ja existe, pulando`)
+        if (updateErr) {
+          result.errors.push(`Erro ao sincronizar partido atual: ${updateErr.message}`)
+        } else {
+          result.rows_upserted++
+          if (!result.tables_updated.includes("candidatos")) {
+            result.tables_updated.push("candidatos")
           }
         }
+      }
 
-        partidoAnterior = filiacao.partido
-        dataAnterior = filiacao.dt_filiacao
+      for (const mudanca of timeline) {
+        const { data: existing } = await supabase
+          .from("mudancas_partido")
+          .select("id")
+          .eq("candidato_id", candidatoId)
+          .eq("ano", mudanca.ano)
+          .eq("partido_novo", mudanca.partido_novo)
+          .single()
+
+        if (existing) {
+          log(
+            "filiacao",
+            `  ${cand.slug}: mudanca ${mudanca.partido_anterior} -> ${mudanca.partido_novo} ja existe, pulando`
+          )
+          continue
+        }
+
+        const row: Record<string, unknown> = {
+          candidato_id: candidatoId,
+          partido_anterior: mudanca.partido_anterior,
+          partido_novo: mudanca.partido_novo,
+          data_mudanca: mudanca.data_mudanca,
+          ano: mudanca.ano,
+        }
+        if (mudanca.contexto) row.contexto = mudanca.contexto
+
+        const { error: insertErr } = await supabase.from("mudancas_partido").insert(row)
+        if (insertErr) {
+          result.errors.push(`Erro ao inserir mudanca de partido: ${insertErr.message}`)
+          continue
+        }
+
+        result.rows_upserted++
+        if (!result.tables_updated.includes("mudancas_partido")) {
+          result.tables_updated.push("mudancas_partido")
+        }
+        log(
+          "filiacao",
+          `  ${cand.slug}: ${mudanca.partido_anterior} -> ${mudanca.partido_novo} (${mudanca.data_mudanca}${mudanca.contexto ? `, ${mudanca.contexto}` : ""})`
+        )
       }
     } catch (err) {
       result.errors.push(err instanceof Error ? err.message : String(err))

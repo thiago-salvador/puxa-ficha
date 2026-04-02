@@ -30,6 +30,36 @@ async function upsertMudanca(slug: string, row: { partido_anterior: string; part
   console.log(`OK mudanca: ${slug} ${row.partido_anterior} -> ${row.partido_novo} (${row.ano})`)
 }
 
+async function upsertHistorico(slug: string, row: {
+  cargo: string
+  periodo_inicio: number
+  periodo_fim?: number | null
+  partido?: string
+  estado?: string
+  eleito_por?: string
+  observacoes?: string | null
+}) {
+  const id = await getIdBySlug(slug)
+  if (!id) return console.log(`SKIP historico: ${slug} not found`)
+
+  const { data: existing } = await supabase
+    .from("historico_politico")
+    .select("id")
+    .eq("candidato_id", id)
+    .eq("cargo", row.cargo)
+    .eq("periodo_inicio", row.periodo_inicio)
+    .single()
+
+  if (existing) {
+    await supabase.from("historico_politico").update(row).eq("id", existing.id)
+    console.log(`OK historico update: ${slug} ${row.cargo} (${row.periodo_inicio})`)
+    return
+  }
+
+  await supabase.from("historico_politico").insert({ candidato_id: id, ...row })
+  console.log(`OK historico: ${slug} ${row.cargo} (${row.periodo_inicio})`)
+}
+
 async function upsertProcesso(slug: string, row: {
   tipo: string; tribunal: string; descricao: string; status: string; gravidade: string;
   numero_processo?: string; data_inicio?: string; fonte?: string; url_fonte?: string
@@ -78,16 +108,21 @@ async function main() {
   // ================================================
   console.log("\n=== MUDANCAS DE PARTIDO ===\n")
 
-  // Ciro Gomes: PSDB -> PPS -> PSB -> PROS -> PDT -> sem partido -> PDT
-  await upsertMudanca("ciro-gomes", { partido_anterior: "PSDB", partido_novo: "PPS", ano: 1997, contexto: "Rompeu com FHC" })
-  await upsertMudanca("ciro-gomes", { partido_anterior: "PPS", partido_novo: "PSB", ano: 2005 })
-  await upsertMudanca("ciro-gomes", { partido_anterior: "PSB", partido_novo: "PROS", ano: 2013 })
-  await upsertMudanca("ciro-gomes", { partido_anterior: "PROS", partido_novo: "PDT", ano: 2015 })
-  await upsertMudanca("ciro-gomes", { partido_anterior: "PDT", partido_novo: "Sem partido", ano: 2022, contexto: "Desfiliou-se apos 2o turno" })
+  // Ciro Gomes: PMDB -> PSDB -> PPS -> PSB -> PROS -> PDT -> Sem partido -> PSDB
+  for (const slug of ["ciro-gomes", "ciro-gomes-gov-ce"]) {
+    await upsertMudanca(slug, { partido_anterior: "PMDB", partido_novo: "PSDB", ano: 1990, contexto: "Saiu do PMDB para disputar o governo do Ceara" })
+    await upsertMudanca(slug, { partido_anterior: "PSDB", partido_novo: "PPS", ano: 1997, contexto: "Rompeu com FHC" })
+    await upsertMudanca(slug, { partido_anterior: "PPS", partido_novo: "PSB", ano: 2005 })
+    await upsertMudanca(slug, { partido_anterior: "PSB", partido_novo: "PROS", ano: 2013 })
+    await upsertMudanca(slug, { partido_anterior: "PROS", partido_novo: "PDT", ano: 2015 })
+    await upsertMudanca(slug, { partido_anterior: "PDT", partido_novo: "Sem partido", ano: 2022, contexto: "Desfiliou-se apos 2o turno" })
+    await upsertMudanca(slug, { partido_anterior: "Sem partido", partido_novo: "PSDB", ano: 2025, contexto: "Retomou filiacao partidaria para articular candidatura em 2026" })
+  }
 
-  // Caiado: PFL -> DEM -> PSD -> Uniao Brasil
+  // Caiado: PFL -> DEM -> Uniao Brasil -> PSD
   await upsertMudanca("ronaldo-caiado", { partido_anterior: "PFL", partido_novo: "DEM", ano: 2007, contexto: "PFL virou DEM" })
   await upsertMudanca("ronaldo-caiado", { partido_anterior: "DEM", partido_novo: "Uniao Brasil", ano: 2021, contexto: "Fusao DEM + PSL" })
+  await upsertMudanca("ronaldo-caiado", { partido_anterior: "Uniao Brasil", partido_novo: "PSD", ano: 2026, contexto: "Filiou-se ao PSD para a articulacao presidencial de 2026" })
 
   // Flavio Bolsonaro: PP -> PSC -> PSL -> PL
   await upsertMudanca("flavio-bolsonaro", { partido_anterior: "PSC", partido_novo: "PSL", ano: 2018, contexto: "Acompanhou o pai na mudanca" })
@@ -105,6 +140,55 @@ async function main() {
   await upsertMudanca("aldo-rebelo", { partido_anterior: "PCdoB", partido_novo: "PSB", ano: 2017, contexto: "Saiu do PCdoB apos 30 anos" })
   await upsertMudanca("aldo-rebelo", { partido_anterior: "PSB", partido_novo: "Solidariedade", ano: 2019 })
   await upsertMudanca("aldo-rebelo", { partido_anterior: "Solidariedade", partido_novo: "DC", ano: 2025, contexto: "Filiou-se ao DC para disputar presidencia" })
+
+  // ================================================
+  // HISTORICO POLITICO
+  // ================================================
+  console.log("\n=== HISTORICO POLITICO ===\n")
+
+  for (const slug of ["ciro-gomes", "ciro-gomes-gov-ce"]) {
+    await upsertHistorico(slug, {
+      cargo: "Prefeito de Fortaleza",
+      periodo_inicio: 1989,
+      periodo_fim: 1990,
+      partido: "PMDB",
+      estado: "CE",
+      eleito_por: "Voto popular",
+      observacoes: "Renunciou para disputar o governo do Ceara",
+    })
+    await upsertHistorico(slug, {
+      cargo: "Governador do Ceara",
+      periodo_inicio: 1991,
+      periodo_fim: 1994,
+      partido: "PSDB",
+      estado: "CE",
+      eleito_por: "Voto popular",
+    })
+    await upsertHistorico(slug, {
+      cargo: "Ministro da Fazenda",
+      periodo_inicio: 1994,
+      periodo_fim: 1995,
+      partido: "PSDB",
+      eleito_por: "Nomeacao",
+      observacoes: "Governo Itamar Franco",
+    })
+    await upsertHistorico(slug, {
+      cargo: "Ministro da Integracao Nacional",
+      periodo_inicio: 2003,
+      periodo_fim: 2006,
+      partido: "PPS",
+      eleito_por: "Nomeacao",
+      observacoes: "Governo Lula 1",
+    })
+    await upsertHistorico(slug, {
+      cargo: "Deputado Federal",
+      periodo_inicio: 2007,
+      periodo_fim: 2011,
+      partido: "PSB",
+      estado: "CE",
+      eleito_por: "Voto popular",
+    })
+  }
 
   // ================================================
   // PROCESSOS JUDICIAIS
@@ -237,9 +321,11 @@ async function main() {
   // Summary
   console.log("\n=== RESUMO ===\n")
   const { count: mudancas } = await supabase.from("mudancas_partido").select("*", { count: "exact", head: true })
+  const { count: historico } = await supabase.from("historico_politico").select("*", { count: "exact", head: true })
   const { count: processos } = await supabase.from("processos").select("*", { count: "exact", head: true })
   const { count: pontos } = await supabase.from("pontos_atencao").select("*", { count: "exact", head: true })
   console.log(`Mudancas de partido: ${mudancas}`)
+  console.log(`Historico politico: ${historico}`)
   console.log(`Processos judiciais: ${processos}`)
   console.log(`Pontos de atencao: ${pontos}`)
 }

@@ -1,1206 +1,20 @@
 {
-  "generated_at": "2026-03-31T23:11:58.430Z",
-  "dry_run": true,
+  "generated_at": "2026-04-01T00:35:47.089Z",
+  "dry_run": false,
   "summary": {
-    "matched": 122,
-    "audit_entries": 122,
-    "persisted": 0,
-    "blocked": 1,
-    "proposed_cpf_updates": 79,
+    "matched": 115,
+    "audit_entries": 115,
+    "persisted": 112,
+    "blocked": 3,
+    "proposed_cpf_updates": 115,
     "methods": {
-      "sq_preloaded": 75,
-      "cpf": 3,
-      "name_unique": 44,
+      "sq_preloaded": 113,
+      "cpf": 0,
+      "name_unique": 2,
       "name_uf": 0
     }
   },
   "entries": [
-    {
-      "slug": "tiao-bocalom",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "AC",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "17357152987",
-        "situacao_candidatura": "APTO [2020]",
-        "naturalidade": "Bela Vista do Paraíso",
-        "data_nascimento": "1953-05-18",
-        "formacao": "SUPERIOR COMPLETO",
-        "profissao_declarada": "PREFEITO",
-        "genero": "MASCULINO",
-        "estado_civil": "VIÚVO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "andre-kamai",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "AC",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": null,
-        "situacao_candidatura": null,
-        "naturalidade": null,
-        "data_nascimento": null,
-        "formacao": null,
-        "profissao_declarada": null,
-        "genero": "Masculino",
-        "estado_civil": null,
-        "cor_raca": null,
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]",
-        "naturalidade": "AC",
-        "data_nascimento": "1981-10-31",
-        "formacao": "SUPERIOR COMPLETO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "PARDA",
-        "profissao_declarada": "SOCIÓLOGO"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "jhc",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "AL",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "01117690199",
-        "situacao_candidatura": "APTO [2020]",
-        "naturalidade": "Maceió/AL",
-        "data_nascimento": "1987-07-22",
-        "formacao": "Superior",
-        "profissao_declarada": "ADVOGADO",
-        "genero": "Masculino",
-        "estado_civil": "SOLTEIRO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "maria-do-carmo",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "AM",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "47671998753",
-        "situacao_candidatura": "APTO [2020]",
-        "naturalidade": "Cedro de São João/SE",
-        "data_nascimento": "1941-08-23",
-        "formacao": "ENSINO FUNDAMENTAL INCOMPLETO",
-        "profissao_declarada": "OUTROS",
-        "genero": "FEMININO",
-        "estado_civil": "VIÚVO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "eduardo-braga",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "AM",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "07810423215",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "Belém/PA",
-        "data_nascimento": "1960-12-06",
-        "formacao": "Universidade Federal do Amazonas",
-        "profissao_declarada": "Q82955",
-        "genero": "Masculino",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "david-almeida",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "AM",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "09913753430",
-        "situacao_candidatura": "APTO [2020]",
-        "naturalidade": "Manaus",
-        "data_nascimento": "1969-02-08",
-        "formacao": "Universidade Luterana do Brasil",
-        "profissao_declarada": "Q40348",
-        "genero": "Masculino",
-        "estado_civil": "SOLTEIRO(A)",
-        "cor_raca": "PRETA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "jeronimo",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "BA",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "21602387320",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "Aiquara",
-        "data_nascimento": "1965-04-03",
-        "formacao": "Universidade Federal da Bahia",
-        "profissao_declarada": "Q937857",
-        "genero": "Masculino",
-        "estado_civil": "VIÚVO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "edilson-damiao",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "PE",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "59538058291",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "PE",
-        "data_nascimento": "1993-05-29",
-        "formacao": "ENSINO FUNDAMENTAL COMPLETO",
-        "profissao_declarada": "AGRICULTOR",
-        "genero": "MASCULINO",
-        "estado_civil": "SOLTEIRO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "cleitinho",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "MG",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "22060312809",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "Divinópolis/MG",
-        "data_nascimento": "1982-04-15",
-        "formacao": "ENSINO MÉDIO COMPLETO",
-        "profissao_declarada": "Q82955",
-        "genero": "Masculino",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "paulo-martins-gov-pr",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "RS",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "28192122808",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "Presidente Venceslau/SP",
-        "data_nascimento": "1981-04-20",
-        "formacao": "Superior",
-        "profissao_declarada": "Q36180",
-        "genero": "MASCULINO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "joao-rodrigues",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "SP",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "46970045072",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "Juazeiro/BA",
-        "data_nascimento": "1958-02-10",
-        "formacao": "Superior",
-        "profissao_declarada": "CABELEIREIRO E BARBEIRO",
-        "genero": "MASCULINO",
-        "estado_civil": "SOLTEIRO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "gabriel-azevedo",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "MG",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": null,
-        "situacao_candidatura": null,
-        "naturalidade": null,
-        "data_nascimento": "1989-02-16",
-        "formacao": null,
-        "profissao_declarada": "Q33999",
-        "genero": "Masculino",
-        "estado_civil": null,
-        "cor_raca": null,
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]",
-        "naturalidade": "MG",
-        "formacao": "SUPERIOR INCOMPLETO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "enilton-rodrigues",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "MA",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "63775808353",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "MA",
-        "data_nascimento": "1980-03-19",
-        "formacao": "SUPERIOR COMPLETO",
-        "profissao_declarada": "ENGENHEIRO",
-        "genero": "Masculino",
-        "estado_civil": "SOLTEIRO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "gilson-machado",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "PE",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "68672667468",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "Recife",
-        "data_nascimento": "1968-05-12",
-        "formacao": "ENSINO FUNDAMENTAL COMPLETO",
-        "profissao_declarada": "Q82955",
-        "genero": "MASCULINO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "cicero-lucena",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "PB",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "14248832453",
-        "situacao_candidatura": "APTO [2020]",
-        "naturalidade": "São José de Piranhas/PB",
-        "data_nascimento": "1957-08-05",
-        "formacao": "ENSINO MÉDIO COMPLETO",
-        "profissao_declarada": "PREFEITO",
-        "genero": "MASCULINO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "arthur-henrique",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "RR",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "50859692272",
-        "situacao_candidatura": "APTO [2020]",
-        "naturalidade": "RR",
-        "data_nascimento": "1982-08-27",
-        "formacao": "SUPERIOR INCOMPLETO",
-        "profissao_declarada": "Q937857",
-        "genero": "Masculino",
-        "estado_civil": "SOLTEIRO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "marcos-vieira",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "SP",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "15507440972",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "SP",
-        "data_nascimento": "1953-08-19",
-        "formacao": "ENSINO FUNDAMENTAL COMPLETO",
-        "profissao_declarada": "Q82955",
-        "genero": "MASCULINO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "mateus-simoes",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "MG",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": null,
-        "situacao_candidatura": null,
-        "naturalidade": "Gurupi",
-        "data_nascimento": "1981-03-09",
-        "formacao": "Faculdade de Direito Milton Campos",
-        "profissao_declarada": null,
-        "genero": "Masculino",
-        "estado_civil": null,
-        "cor_raca": null,
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "PRETA",
-        "profissao_declarada": "MECÂNICO DE MANUTENÇÃO"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "juliana-brizola",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "RS",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "07031379725",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "Porto Alegre",
-        "data_nascimento": "1975-08-03",
-        "formacao": "Pontifícia Universidade Católica do Rio Grande do Sul",
-        "profissao_declarada": "Q40348",
-        "genero": "FEMININO",
-        "estado_civil": "DIVORCIADO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "maria-da-consolacao",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "MG",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "63649756668",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "MG",
-        "data_nascimento": "1963-05-21",
-        "formacao": "SUPERIOR COMPLETO",
-        "profissao_declarada": "OUTROS",
-        "genero": "Feminino",
-        "estado_civil": "VIÚVO(A)",
-        "cor_raca": "PRETA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "tarcisio-motta",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "RJ",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "02045962709",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "Petrópolis/RJ",
-        "data_nascimento": "1975-01-28",
-        "formacao": "Doutorado",
-        "profissao_declarada": "DEPUTADO",
-        "genero": "MASCULINO",
-        "estado_civil": "SOLTEIRO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "delegado-eder-mauro",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "PA",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "13405551234",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "Belém/PA",
-        "data_nascimento": "1960-12-14",
-        "formacao": "Superior",
-        "profissao_declarada": "DEPUTADO",
-        "genero": "Masculino",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "lucien-rezende",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "MS",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": null,
-        "situacao_candidatura": null,
-        "naturalidade": null,
-        "data_nascimento": null,
-        "formacao": null,
-        "profissao_declarada": null,
-        "genero": "Masculino",
-        "estado_civil": null,
-        "cor_raca": null,
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]",
-        "naturalidade": "MS",
-        "data_nascimento": "1964-02-08",
-        "formacao": "SUPERIOR INCOMPLETO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA",
-        "profissao_declarada": "EMPRESÁRIO"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "anderson-ferreira",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "PE",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "82501173449",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "Recife/PE",
-        "data_nascimento": "1972-12-10",
-        "formacao": "Superior Incompleto",
-        "profissao_declarada": "Q937857",
-        "genero": "MASCULINO",
-        "estado_civil": "SOLTEIRO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "capitao-wagner",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "CE",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "61496880382",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "SAO PAULO/SP",
-        "data_nascimento": "1979-01-21",
-        "formacao": "Superior",
-        "profissao_declarada": "POLICIAL MILITAR",
-        "genero": "MASCULINO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "ricardo-nunes",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "SP",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "08893025884",
-        "situacao_candidatura": "APTO [2020]",
-        "naturalidade": "Sao Paulo/SP",
-        "data_nascimento": "1967-11-13",
-        "formacao": "Ensino medio completo",
-        "profissao_declarada": "PREFEITO",
-        "genero": "MASCULINO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "ivan-moraes",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "PE",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "02044990466",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "PE",
-        "data_nascimento": "1976-05-24",
-        "formacao": "SUPERIOR COMPLETO",
-        "profissao_declarada": "VEREADOR",
-        "genero": "Masculino",
-        "estado_civil": "SOLTEIRO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "garotinho",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "RJ",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "69839727753",
-        "situacao_candidatura": "INAPTO [2022]",
-        "naturalidade": "Rio de Janeiro",
-        "data_nascimento": "1960-04-18",
-        "formacao": "SUPERIOR COMPLETO",
-        "profissao_declarada": "Q82955",
-        "genero": "Masculino",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "guto-silva",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "SP",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "-4",
-        "situacao_candidatura": "#NE [2024]",
-        "naturalidade": "Maringá",
-        "data_nascimento": "1977-02-11",
-        "formacao": "SUPERIOR COMPLETO",
-        "profissao_declarada": "Q82955",
-        "genero": "MASCULINO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "adriana-accorsi",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "GO",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": null,
-        "situacao_candidatura": null,
-        "naturalidade": "Itapuranga/GO",
-        "data_nascimento": "1973-03-17",
-        "formacao": "Superior",
-        "profissao_declarada": "Q82955",
-        "genero": "Feminino",
-        "estado_civil": null,
-        "cor_raca": null,
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "marcelo-maranata",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "RS",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "89923570010",
-        "situacao_candidatura": "APTO [2020]",
-        "naturalidade": "RS",
-        "data_nascimento": "1976-05-25",
-        "formacao": "SUPERIOR COMPLETO",
-        "profissao_declarada": "EMPRESÁRIO",
-        "genero": "Masculino",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "dr-daniel",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "PA",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "06380685502",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "MA",
-        "data_nascimento": "1986-08-25",
-        "formacao": "SUPERIOR COMPLETO",
-        "profissao_declarada": "MÉDICO",
-        "genero": "MASCULINO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "silvio-mendes",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "PI",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "08228663404",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "PR",
-        "data_nascimento": "1976-04-02",
-        "formacao": "SUPERIOR COMPLETO",
-        "profissao_declarada": "Q937857",
-        "genero": "MASCULINO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "eduardo-girao",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "CE",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": null,
-        "situacao_candidatura": null,
-        "naturalidade": "Fortaleza/CE",
-        "data_nascimento": "1972-09-25",
-        "formacao": null,
-        "profissao_declarada": null,
-        "genero": "Masculino",
-        "estado_civil": null,
-        "cor_raca": null,
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]",
-        "formacao": "SUPERIOR INCOMPLETO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "PARDA",
-        "profissao_declarada": "SENADOR"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "valmir-de-francisquinho",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "SE",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "48819298520",
-        "situacao_candidatura": "INAPTO [2022]",
-        "naturalidade": "SE",
-        "data_nascimento": "1968-12-03",
-        "formacao": "SUPERIOR COMPLETO",
-        "profissao_declarada": "EMPRESÁRIO",
-        "genero": "MASCULINO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "eduardo-braide",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "MA",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "55068480304",
-        "situacao_candidatura": "APTO [2020]",
-        "naturalidade": "São Luís/MA",
-        "data_nascimento": "1976-01-12",
-        "formacao": "Superior",
-        "profissao_declarada": "Q82955",
-        "genero": "Masculino",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "joao-campos",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "PE",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "24254401191",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "Recife/PE",
-        "data_nascimento": "1993-11-26",
-        "formacao": "Superior",
-        "profissao_declarada": "Q212238",
-        "genero": "MASCULINO",
-        "estado_civil": "SOLTEIRO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "eduardo-paes",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "RJ",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "-4",
-        "situacao_candidatura": "#NE [2024]",
-        "naturalidade": "Rio de Janeiro",
-        "data_nascimento": "1969-11-14",
-        "formacao": "Pontifícia Universidade Católica do Rio de Janeiro",
-        "profissao_declarada": "Q82955",
-        "genero": "MASCULINO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "lucas-ribeiro",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "MG",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "08447960420",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "MG",
-        "data_nascimento": "1983-07-08",
-        "formacao": "ENSINO MÉDIO COMPLETO",
-        "profissao_declarada": "Q36834",
-        "genero": "MASCULINO",
-        "estado_civil": "SOLTEIRO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "adailton-furia",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "RO",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "89845277268",
-        "situacao_candidatura": "APTO [2020]",
-        "naturalidade": "RO",
-        "data_nascimento": "1986-09-24",
-        "formacao": "SUPERIOR COMPLETO",
-        "profissao_declarada": "Q40348",
-        "genero": "Masculino",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "da-vitoria",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VEREADOR",
-        "sg_uf": "ES",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "98042734700",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "Colatina/ES",
-        "data_nascimento": "1971-06-02",
-        "formacao": "Superior",
-        "profissao_declarada": "Q82955",
-        "genero": "Masculino",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "PARDA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "rafael-greca",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "VICE-PREFEITO",
-        "sg_uf": "PR",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "23224231904",
-        "situacao_candidatura": "APTO [2020]",
-        "naturalidade": "Santo Augusto/RS",
-        "data_nascimento": "1958-07-12",
-        "formacao": "Superior",
-        "profissao_declarada": "Q81096",
-        "genero": "MASCULINO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
-    {
-      "slug": "arnaldinho-borgo",
-      "ano": 2024,
-      "match_method": "name-unique",
-      "source_row": {
-        "ds_cargo": "PREFEITO",
-        "sg_uf": "ES",
-        "cpf_present": true
-      },
-      "before": {
-        "cpf": "09684749775",
-        "situacao_candidatura": "APTO [2020]",
-        "naturalidade": "ES",
-        "data_nascimento": "1983-09-20",
-        "formacao": "SUPERIOR COMPLETO",
-        "profissao_declarada": "VEREADOR",
-        "genero": "Masculino",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA",
-        "email_campanha": null
-      },
-      "proposed_update": {
-        "situacao_candidatura": "#NE [2024]"
-      },
-      "blocked_reasons": [],
-      "persisted": false
-    },
     {
       "slug": "alan-rick",
       "ano": 2022,
@@ -1227,12 +41,12 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "renan-filho",
       "ano": 2022,
-      "match_method": "cpf",
+      "match_method": "sq-preloaded",
       "source_row": {
         "ds_cargo": "DEPUTADO ESTADUAL",
         "sg_uf": "RR",
@@ -1255,7 +69,35 @@
         "situacao_candidatura": "INAPTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "eduardo-braga",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "GOVERNADOR",
+        "sg_uf": "AM",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "07810423215",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "Belém/PA",
+        "data_nascimento": "1960-12-06",
+        "formacao": "Universidade Federal do Amazonas",
+        "profissao_declarada": "Q82955",
+        "genero": "Masculino",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "07810423215",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "tadeu-de-souza",
@@ -1283,6 +125,36 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "maria-do-carmo",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "1º SUPLENTE",
+        "sg_uf": "AM",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "47671998753",
+        "situacao_candidatura": "APTO [2020]",
+        "naturalidade": "Cedro de São João/SE",
+        "data_nascimento": "1941-08-23",
+        "formacao": "ENSINO FUNDAMENTAL INCOMPLETO",
+        "profissao_declarada": "OUTROS",
+        "genero": "FEMININO",
+        "estado_civil": "VIÚVO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "11458690253",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [
+        "cpf-inconsistente:47671998753->11458690253"
+      ],
       "persisted": false
     },
     {
@@ -1311,7 +183,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "clecio-luis",
@@ -1339,7 +211,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "joao-capiberibe",
@@ -1367,7 +239,63 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "dr-daniel",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "DEPUTADO ESTADUAL",
+        "sg_uf": "BA",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "06380685502",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "MA",
+        "data_nascimento": "1986-08-25",
+        "formacao": "SUPERIOR COMPLETO",
+        "profissao_declarada": "MÉDICO",
+        "genero": "MASCULINO",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "06380685502",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "jeronimo",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "DEPUTADO ESTADUAL",
+        "sg_uf": "MA",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "21602387320",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "Aiquara",
+        "data_nascimento": "1965-04-03",
+        "formacao": "Universidade Federal da Bahia",
+        "profissao_declarada": "Q937857",
+        "genero": "Masculino",
+        "estado_civil": "VIÚVO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "21602387320",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "acm-neto",
@@ -1395,7 +323,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "joao-roma",
@@ -1453,7 +381,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "lula",
@@ -1481,7 +409,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "geraldo-alckmin",
@@ -1509,10 +437,10 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
-      "slug": "ciro-gomes-gov-ce",
+      "slug": "ciro-gomes",
       "ano": 2022,
       "match_method": "sq-preloaded",
       "source_row": {
@@ -1521,23 +449,25 @@
         "cpf_present": true
       },
       "before": {
-        "cpf": "12005509353",
-        "situacao_candidatura": "APTO [2022]",
+        "cpf": null,
+        "situacao_candidatura": null,
         "naturalidade": "Pindamonhangaba/SP",
         "data_nascimento": "1957-11-06",
-        "formacao": "Superior",
-        "profissao_declarada": "Q40348",
-        "genero": "MASCULINO",
-        "estado_civil": "DIVORCIADO(A)",
-        "cor_raca": "BRANCA",
+        "formacao": "Superior completo (Direito)",
+        "profissao_declarada": "Advogado",
+        "genero": "Masculino",
+        "estado_civil": null,
+        "cor_raca": null,
         "email_campanha": null
       },
       "proposed_update": {
         "cpf": "12005509353",
-        "situacao_candidatura": "APTO [2022]"
+        "situacao_candidatura": "APTO [2022]",
+        "estado_civil": "DIVORCIADO(A)",
+        "cor_raca": "BRANCA"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "samara-martins",
@@ -1565,7 +495,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "rafael-fonteles",
@@ -1593,7 +523,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "washington-reis",
@@ -1621,7 +551,35 @@
         "situacao_candidatura": "INAPTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "cleitinho",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "SENADOR",
+        "sg_uf": "MG",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "22060312809",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "Divinópolis/MG",
+        "data_nascimento": "1982-04-15",
+        "formacao": "ENSINO MÉDIO COMPLETO",
+        "profissao_declarada": "Q82955",
+        "genero": "Masculino",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "22060312809",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "marconi-perillo",
@@ -1649,7 +607,35 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "gilson-machado",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "SENADOR",
+        "sg_uf": "PE",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "68672667468",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "Recife",
+        "data_nascimento": "1968-05-12",
+        "formacao": "ENSINO FUNDAMENTAL COMPLETO",
+        "profissao_declarada": "Q82955",
+        "genero": "MASCULINO",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "68672667468",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "eduardo-riedel",
@@ -1677,7 +663,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "pedro-cunha-lima",
@@ -1705,7 +691,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "sergio-moro-gov-pr",
@@ -1733,7 +719,63 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "paulo-martins-gov-pr",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "SENADOR",
+        "sg_uf": "PR",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "28192122808",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "Presidente Venceslau/SP",
+        "data_nascimento": "1981-04-20",
+        "formacao": "Superior",
+        "profissao_declarada": "Q36180",
+        "genero": "MASCULINO",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "28192122808",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "tarcisio-motta",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "DEPUTADO FEDERAL",
+        "sg_uf": "RJ",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "02045962709",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "Petrópolis/RJ",
+        "data_nascimento": "1975-01-28",
+        "formacao": "Doutorado",
+        "profissao_declarada": "DEPUTADO",
+        "genero": "MASCULINO",
+        "estado_civil": "SOLTEIRO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "02045962709",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "expedito-netto",
@@ -1761,7 +803,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "efraim-filho",
@@ -1789,7 +831,35 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "joao-rodrigues",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "DEPUTADO FEDERAL",
+        "sg_uf": "RS",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "46970045072",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "Juazeiro/BA",
+        "data_nascimento": "1958-02-10",
+        "formacao": "Superior",
+        "profissao_declarada": "CABELEIREIRO E BARBEIRO",
+        "genero": "MASCULINO",
+        "estado_civil": "SOLTEIRO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "46970045072",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "joel-rodrigues",
@@ -1817,7 +887,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "marcos-rogerio",
@@ -1845,7 +915,35 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "joao-campos",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "SENADOR",
+        "sg_uf": "GO",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "24254401191",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "Recife/PE",
+        "data_nascimento": "1993-11-26",
+        "formacao": "Superior",
+        "profissao_declarada": "Q212238",
+        "genero": "MASCULINO",
+        "estado_civil": "SOLTEIRO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "24254401191",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "eduardo-leite",
@@ -1873,7 +971,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "douglas-ruas",
@@ -1901,7 +999,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "jorginho-mello",
@@ -1929,7 +1027,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "decio-lima",
@@ -1957,10 +1055,10 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
-      "slug": "tarcisio-gov-sp",
+      "slug": "tarcisio",
       "ano": 2022,
       "match_method": "sq-preloaded",
       "source_row": {
@@ -1969,23 +1067,25 @@
         "cpf_present": true
       },
       "before": {
-        "cpf": "18077783805",
-        "situacao_candidatura": "APTO [2022]",
-        "naturalidade": "Rio de Janeiro/RJ",
+        "cpf": null,
+        "situacao_candidatura": null,
+        "naturalidade": "Rio de Janeiro",
         "data_nascimento": "1975-08-19",
         "formacao": "Superior completo (Engenharia Civil)",
-        "profissao_declarada": "SERVIDOR PÚBLICO FEDERAL",
-        "genero": "MASCULINO",
-        "estado_civil": "CASADO(A)",
-        "cor_raca": "BRANCA",
+        "profissao_declarada": "Engenheiro",
+        "genero": "Masculino",
+        "estado_civil": null,
+        "cor_raca": null,
         "email_campanha": null
       },
       "proposed_update": {
         "cpf": "18077783805",
-        "situacao_candidatura": "APTO [2022]"
+        "situacao_candidatura": "APTO [2022]",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "BRANCA"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "ratinho-junior",
@@ -2013,7 +1113,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "alvaro-dias-rn",
@@ -2041,7 +1141,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "nikolas-ferreira",
@@ -2069,7 +1169,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "professora-dorinha",
@@ -2097,7 +1197,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "helder-salomao",
@@ -2125,7 +1225,35 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "da-vitoria",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "DEPUTADO FEDERAL",
+        "sg_uf": "ES",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "98042734700",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "Colatina/ES",
+        "data_nascimento": "1971-06-02",
+        "formacao": "Superior",
+        "profissao_declarada": "Q82955",
+        "genero": "Masculino",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "98042734700",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "ronaldo-caiado",
@@ -2153,7 +1281,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "raquel-lyra",
@@ -2181,7 +1309,63 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "anderson-ferreira",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "GOVERNADOR",
+        "sg_uf": "PE",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "82501173449",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "Recife/PE",
+        "data_nascimento": "1972-12-10",
+        "formacao": "Superior Incompleto",
+        "profissao_declarada": "Q937857",
+        "genero": "MASCULINO",
+        "estado_civil": "SOLTEIRO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "82501173449",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "ivan-moraes",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "DEPUTADO ESTADUAL",
+        "sg_uf": "PE",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "02044990466",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "PE",
+        "data_nascimento": "1976-05-24",
+        "formacao": "SUPERIOR COMPLETO",
+        "profissao_declarada": "VEREADOR",
+        "genero": "Masculino",
+        "estado_civil": "SOLTEIRO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "02044990466",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "teresa-surita",
@@ -2209,7 +1393,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "rodrigo-bacellar",
@@ -2237,7 +1421,63 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "enilton-rodrigues",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "GOVERNADOR",
+        "sg_uf": "MA",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "63775808353",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "MA",
+        "data_nascimento": "1980-03-19",
+        "formacao": "SUPERIOR COMPLETO",
+        "profissao_declarada": "ENGENHEIRO",
+        "genero": "Masculino",
+        "estado_civil": "SOLTEIRO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "63775808353",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "VICE-GOVERNADOR",
+        "sg_uf": "PB",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "08447960420",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "MG",
+        "data_nascimento": "1983-07-08",
+        "formacao": "ENSINO MÉDIO COMPLETO",
+        "profissao_declarada": "Q36834",
+        "genero": "MASCULINO",
+        "estado_civil": "SOLTEIRO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "08447960420",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "otaviano-pivetta",
@@ -2265,7 +1505,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "leandro-grass",
@@ -2293,7 +1533,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "marcio-franca",
@@ -2321,7 +1561,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "hertz-dias",
@@ -2349,7 +1589,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "roberto-claudio",
@@ -2377,7 +1617,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "laurez-moreira",
@@ -2405,7 +1645,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "soldado-sampaio",
@@ -2433,7 +1673,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "andre-do-prado",
@@ -2461,7 +1701,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "wilder-morais",
@@ -2489,7 +1729,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "vicentinho-junior",
@@ -2517,7 +1757,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "lahesio-bonfim",
@@ -2545,7 +1785,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "haddad-gov-sp",
@@ -2573,7 +1813,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "amelio-cayres",
@@ -2601,7 +1841,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "renan-santos",
@@ -2629,7 +1869,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "celina-leao",
@@ -2657,7 +1897,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "wellington-fagundes",
@@ -2685,7 +1925,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "guilherme-derrite",
@@ -2713,7 +1953,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "beto-faro",
@@ -2741,7 +1981,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "romeu-zema",
@@ -2769,7 +2009,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "fabio-trad",
@@ -2797,7 +2037,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "margarete-coelho",
@@ -2825,7 +2065,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "thiago-de-joaldo",
@@ -2853,7 +2093,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "paula-belmonte",
@@ -2881,7 +2121,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "elmano-de-freitas",
@@ -2909,7 +2149,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "gabriel-souza",
@@ -2937,7 +2177,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "ricardo-ferraco",
@@ -2965,7 +2205,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "requiao-filho",
@@ -2993,7 +2233,35 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "delegado-eder-mauro",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "DEPUTADO FEDERAL",
+        "sg_uf": "PA",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "13405551234",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "Belém/PA",
+        "data_nascimento": "1960-12-14",
+        "formacao": "Superior",
+        "profissao_declarada": "DEPUTADO",
+        "genero": "Masculino",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "13405551234",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "hana-ghassan",
@@ -3021,7 +2289,63 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "silvio-mendes",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "GOVERNADOR",
+        "sg_uf": "PI",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "08228663404",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "PR",
+        "data_nascimento": "1976-04-02",
+        "formacao": "SUPERIOR COMPLETO",
+        "profissao_declarada": "Q937857",
+        "genero": "MASCULINO",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "08228663404",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "garotinho",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "DEPUTADO FEDERAL",
+        "sg_uf": "RJ",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "69839727753",
+        "situacao_candidatura": "INAPTO [2022]",
+        "naturalidade": "Rio de Janeiro",
+        "data_nascimento": "1960-04-18",
+        "formacao": "SUPERIOR COMPLETO",
+        "profissao_declarada": "Q82955",
+        "genero": "Masculino",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "69839727753",
+        "situacao_candidatura": "INAPTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "erika-hilton",
@@ -3049,7 +2373,63 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "marcos-vieira",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "DEPUTADO ESTADUAL",
+        "sg_uf": "SC",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "15507440972",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "SP",
+        "data_nascimento": "1953-08-19",
+        "formacao": "ENSINO FUNDAMENTAL COMPLETO",
+        "profissao_declarada": "Q82955",
+        "genero": "MASCULINO",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "15507440972",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "capitao-wagner",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "GOVERNADOR",
+        "sg_uf": "CE",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "61496880382",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "SAO PAULO/SP",
+        "data_nascimento": "1979-01-21",
+        "formacao": "Superior",
+        "profissao_declarada": "POLICIAL MILITAR",
+        "genero": "MASCULINO",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "61496880382",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "daniel-vilela",
@@ -3077,7 +2457,35 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "maria-da-consolacao",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "DEPUTADO ESTADUAL",
+        "sg_uf": "MG",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "63649756668",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "MG",
+        "data_nascimento": "1963-05-21",
+        "formacao": "SUPERIOR COMPLETO",
+        "profissao_declarada": "OUTROS",
+        "genero": "Feminino",
+        "estado_civil": "VIÚVO(A)",
+        "cor_raca": "PRETA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "63649756668",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "felicio-ramuth",
@@ -3105,7 +2513,35 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "GOVERNADOR",
+        "sg_uf": "SE",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "48819298520",
+        "situacao_candidatura": "INAPTO [2022]",
+        "naturalidade": "SE",
+        "data_nascimento": "1968-12-03",
+        "formacao": "SUPERIOR COMPLETO",
+        "profissao_declarada": "EMPRESÁRIO",
+        "genero": "MASCULINO",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "48819298520",
+        "situacao_candidatura": "INAPTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "edegar-pretto",
@@ -3133,12 +2569,12 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "aldo-rebelo",
       "ano": 2022,
-      "match_method": "cpf",
+      "match_method": "sq-preloaded",
       "source_row": {
         "ds_cargo": "SENADOR",
         "sg_uf": "SP",
@@ -3161,7 +2597,35 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "edilson-damiao",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "VICE-GOVERNADOR",
+        "sg_uf": "RR",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "59538058291",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "PE",
+        "data_nascimento": "1993-05-29",
+        "formacao": "ENSINO FUNDAMENTAL COMPLETO",
+        "profissao_declarada": "AGRICULTOR",
+        "genero": "MASCULINO",
+        "estado_civil": "SOLTEIRO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "59538058291",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "alexandre-curi",
@@ -3189,7 +2653,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "janaina-riva",
@@ -3217,7 +2681,35 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "juliana-brizola",
+      "ano": 2022,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "DEPUTADO FEDERAL",
+        "sg_uf": "RS",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "07031379725",
+        "situacao_candidatura": "APTO [2022]",
+        "naturalidade": "Porto Alegre",
+        "data_nascimento": "1975-08-03",
+        "formacao": "Pontifícia Universidade Católica do Rio Grande do Sul",
+        "profissao_declarada": "Q40348",
+        "genero": "FEMININO",
+        "estado_civil": "DIVORCIADO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "07031379725",
+        "situacao_candidatura": "APTO [2022]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "luciano-zucco",
@@ -3245,7 +2737,7 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "felipe-camarao",
@@ -3273,12 +2765,96 @@
         "situacao_candidatura": "APTO [2022]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "tiao-bocalom",
+      "ano": 2020,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "PREFEITO",
+        "sg_uf": "AC",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "17357152987",
+        "situacao_candidatura": "APTO [2020]",
+        "naturalidade": "Bela Vista do Paraíso",
+        "data_nascimento": "1953-05-18",
+        "formacao": "SUPERIOR COMPLETO",
+        "profissao_declarada": "PREFEITO",
+        "genero": "MASCULINO",
+        "estado_civil": "VIÚVO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "17357152987",
+        "situacao_candidatura": "APTO [2020]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "jhc",
+      "ano": 2020,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "PREFEITO",
+        "sg_uf": "AL",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "01117690199",
+        "situacao_candidatura": "APTO [2020]",
+        "naturalidade": "Maceió/AL",
+        "data_nascimento": "1987-07-22",
+        "formacao": "Superior",
+        "profissao_declarada": "ADVOGADO",
+        "genero": "Masculino",
+        "estado_civil": "SOLTEIRO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "01117690199",
+        "situacao_candidatura": "APTO [2020]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "david-almeida",
+      "ano": 2020,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "VEREADOR",
+        "sg_uf": "PE",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "09913753430",
+        "situacao_candidatura": "APTO [2020]",
+        "naturalidade": "Manaus",
+        "data_nascimento": "1969-02-08",
+        "formacao": "Universidade Luterana do Brasil",
+        "profissao_declarada": "Q40348",
+        "genero": "Masculino",
+        "estado_civil": "SOLTEIRO(A)",
+        "cor_raca": "PRETA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "09913753430",
+        "situacao_candidatura": "APTO [2020]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "rodrigo-pacheco",
       "ano": 2020,
-      "match_method": "cpf",
+      "match_method": "sq-preloaded",
       "source_row": {
         "ds_cargo": "VEREADOR",
         "sg_uf": "PR",
@@ -3301,7 +2877,35 @@
         "situacao_candidatura": "APTO [2020]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "ricardo-nunes",
+      "ano": 2020,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "VICE-PREFEITO",
+        "sg_uf": "SP",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "08893025884",
+        "situacao_candidatura": "APTO [2020]",
+        "naturalidade": "Sao Paulo/SP",
+        "data_nascimento": "1967-11-13",
+        "formacao": "Ensino medio completo",
+        "profissao_declarada": "PREFEITO",
+        "genero": "MASCULINO",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "08893025884",
+        "situacao_candidatura": "APTO [2020]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "sergio-vidigal",
@@ -3329,7 +2933,7 @@
         "situacao_candidatura": "APTO [2020]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "dr-fernando-maximo",
@@ -3357,7 +2961,7 @@
         "situacao_candidatura": "INAPTO [2020]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
     },
     {
       "slug": "hildon-chaves",
@@ -3385,7 +2989,91 @@
         "situacao_candidatura": "APTO [2020]"
       },
       "blocked_reasons": [],
-      "persisted": false
+      "persisted": true
+    },
+    {
+      "slug": "eduardo-paes",
+      "ano": 2020,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "PREFEITO",
+        "sg_uf": "RJ",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "-4",
+        "situacao_candidatura": "#NE [2024]",
+        "naturalidade": "Rio de Janeiro",
+        "data_nascimento": "1969-11-14",
+        "formacao": "Pontifícia Universidade Católica do Rio de Janeiro",
+        "profissao_declarada": "Q82955",
+        "genero": "MASCULINO",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "01475189702",
+        "situacao_candidatura": "APTO [2020]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "arnaldinho-borgo",
+      "ano": 2020,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "PREFEITO",
+        "sg_uf": "ES",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "09684749775",
+        "situacao_candidatura": "APTO [2020]",
+        "naturalidade": "ES",
+        "data_nascimento": "1983-09-20",
+        "formacao": "SUPERIOR COMPLETO",
+        "profissao_declarada": "VEREADOR",
+        "genero": "Masculino",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "09684749775",
+        "situacao_candidatura": "APTO [2020]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "arthur-henrique",
+      "ano": 2020,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "PREFEITO",
+        "sg_uf": "RR",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "50859692272",
+        "situacao_candidatura": "APTO [2020]",
+        "naturalidade": "RR",
+        "data_nascimento": "1982-08-27",
+        "formacao": "SUPERIOR INCOMPLETO",
+        "profissao_declarada": "Q937857",
+        "genero": "Masculino",
+        "estado_civil": "SOLTEIRO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "50859692272",
+        "situacao_candidatura": "APTO [2020]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     },
     {
       "slug": "cadu-xavier",
@@ -3413,7 +3101,149 @@
         "situacao_candidatura": "APTO [2020]"
       },
       "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "rafael-greca",
+      "ano": 2020,
+      "match_method": "name-unique",
+      "source_row": {
+        "ds_cargo": "VEREADOR",
+        "sg_uf": "PR",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "23224231904",
+        "situacao_candidatura": "APTO [2020]",
+        "naturalidade": "Santo Augusto/RS",
+        "data_nascimento": "1958-07-12",
+        "formacao": "Superior",
+        "profissao_declarada": "Q81096",
+        "genero": "MASCULINO",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "00053533941",
+        "situacao_candidatura": "APTO [2020]"
+      },
+      "blocked_reasons": [
+        "cpf-inconsistente:23224231904->00053533941"
+      ],
       "persisted": false
+    },
+    {
+      "slug": "eduardo-braide",
+      "ano": 2020,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "PREFEITO",
+        "sg_uf": "MA",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "55068480304",
+        "situacao_candidatura": "APTO [2020]",
+        "naturalidade": "São Luís/MA",
+        "data_nascimento": "1976-01-12",
+        "formacao": "Superior",
+        "profissao_declarada": "Q82955",
+        "genero": "Masculino",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "55068480304",
+        "situacao_candidatura": "APTO [2020]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "marcelo-maranata",
+      "ano": 2020,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "PREFEITO",
+        "sg_uf": "RS",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "89923570010",
+        "situacao_candidatura": "APTO [2020]",
+        "naturalidade": "RS",
+        "data_nascimento": "1976-05-25",
+        "formacao": "SUPERIOR COMPLETO",
+        "profissao_declarada": "EMPRESÁRIO",
+        "genero": "Masculino",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "BRANCA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "89923570010",
+        "situacao_candidatura": "APTO [2020]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "cicero-lucena",
+      "ano": 2020,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "PREFEITO",
+        "sg_uf": "PB",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "14248832453",
+        "situacao_candidatura": "APTO [2020]",
+        "naturalidade": "São José de Piranhas/PB",
+        "data_nascimento": "1957-08-05",
+        "formacao": "ENSINO MÉDIO COMPLETO",
+        "profissao_declarada": "PREFEITO",
+        "genero": "MASCULINO",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "14248832453",
+        "situacao_candidatura": "APTO [2020]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
+    },
+    {
+      "slug": "adailton-furia",
+      "ano": 2020,
+      "match_method": "sq-preloaded",
+      "source_row": {
+        "ds_cargo": "PREFEITO",
+        "sg_uf": "RO",
+        "cpf_present": true
+      },
+      "before": {
+        "cpf": "89845277268",
+        "situacao_candidatura": "APTO [2020]",
+        "naturalidade": "RO",
+        "data_nascimento": "1986-09-24",
+        "formacao": "SUPERIOR COMPLETO",
+        "profissao_declarada": "Q40348",
+        "genero": "Masculino",
+        "estado_civil": "CASADO(A)",
+        "cor_raca": "PARDA",
+        "email_campanha": null
+      },
+      "proposed_update": {
+        "cpf": "89845277268",
+        "situacao_candidatura": "APTO [2020]"
+      },
+      "blocked_reasons": [],
+      "persisted": true
     }
   ]
 }

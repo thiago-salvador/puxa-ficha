@@ -11,7 +11,6 @@ interface SnapshotItem {
 function buildSnapshot(ficha: FichaCandidato): SnapshotItem[] {
   const items: SnapshotItem[] = []
   const patrimonio = ficha.patrimonio ?? []
-  const financiamento = ficha.financiamento ?? []
   const processos = ficha.processos ?? []
   const votos = ficha.votos ?? []
   const historico = ficha.historico ?? []

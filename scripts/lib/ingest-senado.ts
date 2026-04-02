@@ -1,7 +1,7 @@
 import { supabase } from "./supabase"
-import { loadCandidatos, fetchJSON, sleep } from "./helpers"
+import { loadCandidatos, fetchJSON, normalizeForMatch, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
-import type { IngestResult, CandidatoConfig } from "./types"
+import type { IngestResult } from "./types"
 
 const API = "https://legis.senado.leg.br/dadosabertos"
 const HEADERS = { Accept: "application/json" }
@@ -25,7 +25,32 @@ async function resolveCandidatoId(slug: string): Promise<string | null> {
   return data?.id ?? null
 }
 
-async function ingestPerfil(codigo: number, candidatoId: string, slug: string) {
+function namesLookCompatible(
+  expectedNames: Array<string | null | undefined>,
+  observedNames: Array<string | null | undefined>
+): boolean {
+  const expected = expectedNames.map((value) => normalizeForMatch(value ?? "")).filter(Boolean)
+  const observed = observedNames.map((value) => normalizeForMatch(value ?? "")).filter(Boolean)
+
+  if (expected.length === 0 || observed.length === 0) return true
+
+  return observed.some((candidateName) =>
+    expected.some(
+      (expectedName) =>
+        candidateName === expectedName ||
+        candidateName.includes(expectedName) ||
+        expectedName.includes(candidateName)
+    )
+  )
+}
+
+async function ingestPerfil(
+  codigo: number,
+  candidatoId: string,
+  slug: string,
+  expectedNomeCompleto: string,
+  expectedNomeUrna: string
+) {
   const json = await fetchJSON<Record<string, unknown>>(`${API}/senador/${codigo}`, HEADERS)
   const parlamentar = dig(json, "DetalheParlamentar", "Parlamentar") as Record<string, unknown> | undefined
   if (!parlamentar) {
@@ -34,22 +59,39 @@ async function ingestPerfil(codigo: number, candidatoId: string, slug: string) {
   }
 
   const ident = parlamentar.IdentificacaoParlamentar as Record<string, unknown> | undefined
+  const dadosBasicos = parlamentar.DadosBasicosParlamentar as Record<string, unknown> | undefined
+  const observedNames = [
+    ident?.NomeParlamentar ? String(ident.NomeParlamentar) : null,
+    dadosBasicos?.NomeCompletoParlamentar ? String(dadosBasicos.NomeCompletoParlamentar) : null,
+  ]
+
+  if (!namesLookCompatible([expectedNomeCompleto, expectedNomeUrna], observedNames)) {
+    throw new Error(
+      `ID Senado inconsistente para ${slug}: retornou ${observedNames.filter(Boolean).join(" / ")}`
+    )
+  }
+
   const updates: Record<string, unknown> = {
     ultima_atualizacao: new Date().toISOString(),
   }
 
   if (ident) {
+    const hasCurrentSenateSeat = Boolean(ident.CodigoPublicoNaLegAtual)
+
     // Only set photo if candidate doesn't already have one (Wikipedia photos preferred)
     if (ident.UrlFotoParlamentar) {
       const { data: current } = await supabase.from("candidatos").select("foto_url").eq("id", candidatoId).single()
       if (!current?.foto_url) updates.foto_url = ident.UrlFotoParlamentar as string
     }
-    if (ident.SiglaPartidoParlamentar) updates.partido_sigla = ident.SiglaPartidoParlamentar
-    if (ident.NomeCompletoParlamentar) updates.partido_atual = ident.SiglaPartidoParlamentar
-    if (ident.CodigoPublicoNaLegAtual) updates.cargo_atual = "Senador(a)"
+    // The Senado detail endpoint reflects the parliamentary profile there. For ex-senators it
+    // should not override current-party curation outside the current legislature.
+    if (hasCurrentSenateSeat && ident.SiglaPartidoParlamentar) {
+      updates.partido_sigla = ident.SiglaPartidoParlamentar
+      updates.partido_atual = ident.SiglaPartidoParlamentar
+    }
+    if (hasCurrentSenateSeat) updates.cargo_atual = "Senador(a)"
   }
 
-  const dadosBasicos = parlamentar.DadosBasicosParlamentar as Record<string, unknown> | undefined
   if (dadosBasicos) {
     if (dadosBasicos.DataNascimento) updates.data_nascimento = dadosBasicos.DataNascimento
     if (dadosBasicos.Naturalidade && dadosBasicos.UfNaturalidade) {
@@ -221,8 +263,11 @@ async function ingestAutorias(codigo: number, candidatoId: string, slug: string)
   return count
 }
 
-export async function ingestSenado(): Promise<IngestResult[]> {
-  const candidatos = loadCandidatos()
+export async function ingestSenado(targetSlugs?: string[]): Promise<IngestResult[]> {
+  const selectedSlugs = targetSlugs != null ? new Set(targetSlugs) : null
+  const candidatos = loadCandidatos().filter((cand) =>
+    selectedSlugs ? selectedSlugs.has(cand.slug) : true
+  )
   const results: IngestResult[] = []
 
   for (const cand of candidatos) {
@@ -248,7 +293,13 @@ export async function ingestSenado(): Promise<IngestResult[]> {
     }
 
     try {
-      await ingestPerfil(cand.ids.senado, candidatoId, cand.slug)
+      await ingestPerfil(
+        cand.ids.senado,
+        candidatoId,
+        cand.slug,
+        cand.nome_completo,
+        cand.nome_urna
+      )
       result.tables_updated.push("candidatos")
       result.rows_upserted++
       await sleep(500)
@@ -281,7 +332,19 @@ export async function ingestSenado(): Promise<IngestResult[]> {
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  ingestSenado().then((results) => {
+  const targetSlugs = process.argv
+    .slice(2)
+    .flatMap((value, index, args) => {
+      if (value === "--slugs") {
+        return (args[index + 1] ?? "")
+          .split(",")
+          .map((item) => item.trim())
+          .filter(Boolean)
+      }
+      return []
+    })
+
+  ingestSenado(targetSlugs.length > 0 ? targetSlugs : undefined).then((results) => {
     console.log(JSON.stringify(results, null, 2))
   })
 }

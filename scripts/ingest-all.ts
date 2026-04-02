@@ -12,6 +12,7 @@ import { ingestWikidata } from "./lib/ingest-wikidata"
 import { enrichInstagram } from "./lib/enrich-instagram"
 import { ingestGoogleNews } from "./lib/ingest-google-news"
 import { enrichWikiHistorico } from "./lib/enrich-wiki-historico"
+import { ingestWikidataPolitico } from "./lib/ingest-wikidata-politico"
 import { ingestJarbas } from "./lib/ingest-jarbas"
 import { ingestSiconfi } from "./lib/ingest-siconfi"
 import { ingestCapag } from "./lib/ingest-capag"
@@ -26,7 +27,7 @@ const VALID_SOURCES = [
   // Ordem correta: tse-situacao primeiro (CPF), depois APIs federais, depois enriquecimento
   "tse-situacao", "camara", "senado", "tse", "transparencia",
   "tcu", "sancoes", "filiacao", "ceaps-senado", "jarbas",
-  "wikipedia", "wiki-historico", "wikidata", "instagram",
+  "wikipedia", "wiki-historico", "wikidata", "wikidata-politico", "instagram",
   "siconfi", "capag", "atlas-violencia", "ibge", "ideb", "ipea",
   "google-news",
 ] as const
@@ -157,6 +158,15 @@ async function main() {
       allResults.push(...(await ingestWikidata()))
     } catch (err) {
       error("pipeline", `Wikidata falhou: ${err}`)
+    }
+  }
+
+  if (sources.includes("wikidata-politico")) {
+    log("pipeline", "--- Wikidata Politico (partidos + cargos) ---")
+    try {
+      allResults.push(...(await ingestWikidataPolitico()))
+    } catch (err) {
+      error("pipeline", `Wikidata Politico falhou: ${err}`)
     }
   }
 

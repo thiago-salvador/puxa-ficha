@@ -1,6 +1,8 @@
 name: Auditoria factual
 
 on:
+  schedule:
+    - cron: "0 9 * * 1"
   push:
     branches:
       - main
@@ -9,19 +11,45 @@ on:
       - "scripts/audit-factual.ts"
       - "scripts/audit-factual-diff.ts"
       - "scripts/check-audit-gate.ts"
+      - "scripts/set-publicavel-from-audit.ts"
       - "scripts/sync-audit-assertions.ts"
       - "scripts/sync-mock-from-assertions.ts"
       - "scripts/lib/audit-*.ts"
       - "scripts/lib/factual-assertions.ts"
       - "scripts/lib/party-canonical.ts"
+      - "scripts/schema.sql"
       - "src/data/mock.ts"
+      - "src/lib/api.ts"
+      - "src/lib/candidate-integrity.ts"
+      - "data/candidatos.json"
+      - "package.json"
+      - "package-lock.json"
+      - "supabase/migrations/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "scripts/**"
+      - "src/lib/api.ts"
+      - "src/lib/candidate-integrity.ts"
+      - "src/data/mock.ts"
+      - "data/candidatos.json"
+      - "package.json"
+      - "package-lock.json"
+      - "supabase/migrations/**"
   workflow_dispatch:
 
 jobs:
-  audit-presidenciaveis:
-    name: Gate factual (presidenciaveis)
+  # Full gate: runs on push to main and internal PRs (secrets available)
+  audit-full:
+    name: Gate factual 144/144
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    # Skip for PRs from forks (no secrets)
+    if: >-
+      github.event_name == 'push' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
 
     steps:
       - uses: actions/checkout@v4
@@ -33,32 +61,52 @@ jobs:
 
       - run: npm ci
 
-      - name: Rodar auditoria factual
+      - name: Rodar auditoria factual 144/144
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: npx tsx scripts/audit-factual.ts --cohort presidenciaveis --output-prefix presidenciaveis
+        run: npx tsx scripts/audit-factual.ts
 
-      - name: Auditar governadores prioritarios
+      - name: Gate de publicacao
+        run: npx tsx scripts/check-audit-gate.ts --max-blocked 0 --min-assertions 144 --min-curated auto
+
+      - name: Sincronizar publicavel no banco
+        if: github.event_name == 'push'
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: npx tsx scripts/audit-factual.ts --cohort governadores-prioritarios --output-prefix governadores-prioritarios
-
-      - name: Gate leve de publicacao
-        run: npx tsx scripts/check-audit-gate.ts --report scripts/audit-factual-presidenciaveis-report.json --max-blocked 0 --min-assertions 13
+        run: npx tsx scripts/set-publicavel-from-audit.ts
 
       - name: Publicar artefatos
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: auditoria-factual
           path: |
-            scripts/audit-factual-presidenciaveis-report.json
-            scripts/audit-factual-presidenciaveis-queue.json
-            scripts/audit-factual-presidenciaveis-summary.md
-            scripts/audit-factual-governadores-prioritarios-report.json
-            scripts/audit-factual-governadores-prioritarios-queue.json
-            scripts/audit-factual-governadores-prioritarios-summary.md
+            scripts/audit-factual-report.json
+            scripts/audit-factual-queue.json
+            scripts/audit-factual-summary.md
             scripts/audit-factual-state.json
             scripts/audit-factual-history.json
-            scripts/audit-factual-runs
+
+  # Lightweight check for fork PRs (no secrets needed)
+  audit-typecheck:
+    name: Type check (fork-safe)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.head.repo.full_name != github.repository
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Type check scripts
+        run: npm run check:scripts

@@ -38,8 +38,6 @@ INSERT INTO candidatos (nome_completo, nome_urna, slug, partido_atual, partido_s
 
 -- Michelle Bolsonaro
 ('Michelle de Paula Firmo Reinaldo Bolsonaro', 'Michelle Bolsonaro', 'michelle-bolsonaro', 'Partido Liberal', 'PL', 'Sem cargo público', 'Presidente', NULL, 'pre-candidato', 'Superior completo (Direito)', 'Advogada');
-
-
 -- ============================================
 -- GOVERNADORES - Top 5 estados
 -- Dados parciais, expandir com pesquisa por estado
@@ -84,8 +82,6 @@ INSERT INTO votacoes_chave (titulo, descricao, data_votacao, casa, tema, impacto
 ('Orçamento Secreto (Emendas de Relator)', 'Emendas RP9 que permitiram distribuição de recursos sem transparência', '2021-12-20', 'Câmara', 'transparencia', 'Permitiu que bilhões fossem distribuídos sem identificação do parlamentar beneficiado. Considerado o maior esquema de compra de votos do Congresso.'),
 
 ('Autonomia do Banco Central', 'PLP 19/2019 que deu autonomia ao Banco Central', '2021-02-04', 'Senado', 'economia', 'Blindou a política monetária de interferência governamental, mas também removeu controle democrático sobre juros e câmbio.');
-
-
 -- ============================================
 -- PONTOS DE ATENÇÃO (exemplos de curadoria)
 -- Estes precisam ser verificados e atualizados manualmente
