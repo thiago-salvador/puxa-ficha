@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next"
+import { Analytics } from "@vercel/analytics/next"
 import { Inter, Anton } from "next/font/google"
 import { Navbar } from "@/components/Navbar"
 import { buildTwitterMetadata, SITE_URL } from "@/lib/metadata"
@@ -83,6 +84,7 @@ export default function RootLayout({
         <main id="main-content" tabIndex={-1}>
           {children}
         </main>
+        <Analytics />
       </body>
     </html>
   )
