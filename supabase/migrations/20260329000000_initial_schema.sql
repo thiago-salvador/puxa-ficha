@@ -43,12 +43,10 @@ CREATE TABLE candidatos (
   ultima_atualizacao TIMESTAMPTZ DEFAULT NOW(),
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
-
 -- Índice pra busca por nome
 CREATE INDEX idx_candidatos_nome ON candidatos USING gin (nome_completo gin_trgm_ops);
 CREATE INDEX idx_candidatos_slug ON candidatos (slug);
 CREATE INDEX idx_candidatos_cargo ON candidatos (cargo_disputado, estado);
-
 -- ============================================
 -- 2. HISTÓRICO POLÍTICO (cargos anteriores)
 -- ============================================
@@ -67,9 +65,7 @@ CREATE TABLE historico_politico (
   
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
-
 CREATE INDEX idx_historico_candidato ON historico_politico (candidato_id);
-
 -- ============================================
 -- 3. MUDANÇAS DE PARTIDO (histórico de filiação)
 -- ============================================
@@ -85,9 +81,7 @@ CREATE TABLE mudancas_partido (
   
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
-
 CREATE INDEX idx_mudancas_candidato ON mudancas_partido (candidato_id);
-
 -- ============================================
 -- 4. PATRIMÔNIO DECLARADO
 -- ============================================
@@ -102,9 +96,7 @@ CREATE TABLE patrimonio (
   fonte TEXT DEFAULT 'TSE',
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
-
 CREATE INDEX idx_patrimonio_candidato ON patrimonio (candidato_id, ano_eleicao);
-
 -- ============================================
 -- 5. FINANCIAMENTO DE CAMPANHA
 -- ============================================
@@ -127,9 +119,7 @@ CREATE TABLE financiamento (
   fonte TEXT DEFAULT 'TSE',
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
-
 CREATE INDEX idx_financiamento_candidato ON financiamento (candidato_id, ano_eleicao);
-
 -- ============================================
 -- 6. VOTAÇÕES-CHAVE (pra quem é/foi congressista)
 -- ============================================
@@ -149,7 +139,6 @@ CREATE TABLE votacoes_chave (
   
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
-
 CREATE TABLE votos_candidato (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   candidato_id UUID REFERENCES candidatos(id) ON DELETE CASCADE,
@@ -164,10 +153,8 @@ CREATE TABLE votos_candidato (
   created_at TIMESTAMPTZ DEFAULT NOW(),
   UNIQUE(candidato_id, votacao_id)
 );
-
 CREATE INDEX idx_votos_candidato ON votos_candidato (candidato_id);
 CREATE INDEX idx_votos_votacao ON votos_candidato (votacao_id);
-
 -- ============================================
 -- 7. PROJETOS DE LEI (autoria)
 -- ============================================
@@ -192,9 +179,7 @@ CREATE TABLE projetos_lei (
   
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
-
 CREATE INDEX idx_projetos_candidato ON projetos_lei (candidato_id);
-
 -- ============================================
 -- 8. PROCESSOS JUDICIAIS
 -- ============================================
@@ -218,9 +203,7 @@ CREATE TABLE processos (
   
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
-
 CREATE INDEX idx_processos_candidato ON processos (candidato_id);
-
 -- ============================================
 -- 9. PONTOS DE ATENÇÃO (flags editoriais)
 -- ============================================
@@ -245,11 +228,9 @@ CREATE TABLE pontos_atencao (
   visivel BOOLEAN DEFAULT TRUE,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
-
 CREATE INDEX idx_pontos_candidato ON pontos_atencao (candidato_id);
 CREATE INDEX idx_pontos_categoria ON pontos_atencao (categoria);
 CREATE INDEX idx_pontos_gravidade ON pontos_atencao (gravidade);
-
 -- ============================================
 -- 10. GASTOS PARLAMENTARES (CEAP / Cota)
 -- ============================================
@@ -267,9 +248,7 @@ CREATE TABLE gastos_parlamentares (
   fonte TEXT DEFAULT 'Câmara',
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
-
 CREATE INDEX idx_gastos_candidato ON gastos_parlamentares (candidato_id, ano);
-
 -- ============================================
 -- 11. VIEWS ÚTEIS
 -- ============================================
@@ -288,7 +267,6 @@ SELECT
   (SELECT valor_total FROM patrimonio pat WHERE pat.candidato_id = c.id ORDER BY ano_eleicao DESC LIMIT 1) as ultimo_patrimonio,
   (SELECT ano_eleicao FROM patrimonio pat WHERE pat.candidato_id = c.id ORDER BY ano_eleicao DESC LIMIT 1) as ano_ultimo_patrimonio
 FROM candidatos c;
-
 -- View: Comparação entre candidatos
 CREATE VIEW v_comparador AS
 SELECT 
@@ -309,39 +287,28 @@ SELECT
    FROM pontos_atencao pa WHERE pa.candidato_id = c.id AND pa.visivel = TRUE
   ) as pontos_atencao
 FROM candidatos c;
-
 -- ============================================
 -- Row Level Security (RLS) - dados públicos, leitura aberta
 -- ============================================
 ALTER TABLE candidatos ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON candidatos FOR SELECT USING (true);
-
 ALTER TABLE historico_politico ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON historico_politico FOR SELECT USING (true);
-
 ALTER TABLE mudancas_partido ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON mudancas_partido FOR SELECT USING (true);
-
 ALTER TABLE patrimonio ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON patrimonio FOR SELECT USING (true);
-
 ALTER TABLE financiamento ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON financiamento FOR SELECT USING (true);
-
 ALTER TABLE votacoes_chave ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON votacoes_chave FOR SELECT USING (true);
-
 ALTER TABLE votos_candidato ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON votos_candidato FOR SELECT USING (true);
-
 ALTER TABLE projetos_lei ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON projetos_lei FOR SELECT USING (true);
-
 ALTER TABLE processos ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON processos FOR SELECT USING (true);
-
 ALTER TABLE pontos_atencao ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON pontos_atencao FOR SELECT USING (true);
-
 ALTER TABLE gastos_parlamentares ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON gastos_parlamentares FOR SELECT USING (true);

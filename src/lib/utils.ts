@@ -66,3 +66,13 @@ export function getPartyLogoUrl(sigla: string): string | null {
   if (KNOWN_PARTIES.includes(normalized)) return `/partidos/${normalized}.png`
   return null
 }
+
+export function shouldBypassImageOptimization(url: string | null | undefined): boolean {
+  if (!url) return false
+
+  try {
+    return new URL(url).hostname === "upload.wikimedia.org"
+  } catch {
+    return false
+  }
+}

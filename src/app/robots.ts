@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/styleguide", "/api/"],
+        disallow: ["/styleguide", "/internaltest", "/api/"],
       },
     ],
     sitemap: "https://puxaficha.com.br/sitemap.xml",

@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-04-01T00:16:24.048Z",
+  "generated_at": "2026-04-01T03:37:24.775Z",
   "summary": {
     "total_json": 144,
     "total_db": 144,
     "com_patrimonio": 123,
     "com_financiamento": 117,
-    "com_votos": 47,
+    "com_votos": 51,
     "com_gastos": 19,
     "com_historico": 95,
     "com_processos": 19,
-    "com_projetos": 21,
+    "com_projetos": 8,
     "com_cargo_atual": 67,
-    "com_cpf": 116
+    "com_cpf": 118
   },
   "missing_in_db": [],
   "camara_sem_cargo_atual": [
@@ -61,7 +61,7 @@
     {
       "slug": "flavio-bolsonaro",
       "id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
-      "cargo_atual": "Senador",
+      "cargo_atual": "Senador(a)",
       "cpf": null,
       "ids_camara": null,
       "ids_senado": 5894,
@@ -75,14 +75,14 @@
         "gastos": 0,
         "historico": 2,
         "processos": 1,
-        "projetos": 166
+        "projetos": 0
       }
     },
     {
       "slug": "tarcisio",
       "id": "0f552442-26cf-406f-a82a-447c9c16ff4f",
       "cargo_atual": "Governador de Sao Paulo",
-      "cpf": null,
+      "cpf": "18077783805",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -133,11 +133,11 @@
       "counts": {
         "patrimonio": 2,
         "financiamento": 2,
-        "votos": 0,
+        "votos": 1,
         "gastos": 0,
         "historico": 3,
         "processos": 0,
-        "projetos": 220
+        "projetos": 0
       }
     },
     {
@@ -179,7 +179,7 @@
         "gastos": 0,
         "historico": 5,
         "processos": 0,
-        "projetos": 77
+        "projetos": 100
       }
     },
     {
@@ -207,7 +207,7 @@
       "slug": "ciro-gomes",
       "id": "b1c3d3e1-36d0-4026-82d2-ece83072967c",
       "cargo_atual": "Sem cargo publico",
-      "cpf": null,
+      "cpf": "12005509353",
       "ids_camara": 141406,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -221,7 +221,7 @@
         "gastos": 0,
         "historico": 4,
         "processos": 1,
-        "projetos": 70
+        "projetos": 0
       }
     },
     {
@@ -507,7 +507,7 @@
         "gastos": 3,
         "historico": 3,
         "processos": 2,
-        "projetos": 73
+        "projetos": 0
       }
     },
     {
@@ -588,7 +588,7 @@
         "gastos": 4,
         "historico": 5,
         "processos": 0,
-        "projetos": 84
+        "projetos": 0
       }
     },
     {
@@ -637,7 +637,7 @@
     {
       "slug": "jorginho-mello",
       "id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
-      "cargo_atual": "Governador de Santa Catarina",
+      "cargo_atual": "Senador(a)",
       "cpf": "25084119904",
       "ids_camara": 160570,
       "ids_senado": 5979,
@@ -652,7 +652,7 @@
         "gastos": 1,
         "historico": 5,
         "processos": 0,
-        "projetos": 87
+        "projetos": 0
       }
     },
     {
@@ -673,7 +673,7 @@
         "gastos": 0,
         "historico": 0,
         "processos": 0,
-        "projetos": 28
+        "projetos": 0
       }
     },
     {
@@ -866,7 +866,7 @@
       "slug": "eduardo-paes",
       "id": "242af65c-dae1-447c-b4b0-c26095f7384d",
       "cargo_atual": "Prefeito do Rio de Janeiro",
-      "cpf": "-4",
+      "cpf": "01475189702",
       "ids_camara": null,
       "ids_senado": null,
       "tse_sq_candidato": {
@@ -1141,7 +1141,7 @@
       "counts": {
         "patrimonio": 2,
         "financiamento": 1,
-        "votos": 0,
+        "votos": 1,
         "gastos": 0,
         "historico": 5,
         "processos": 0,
@@ -1184,7 +1184,7 @@
         "gastos": 0,
         "historico": 3,
         "processos": 0,
-        "projetos": 84
+        "projetos": 0
       }
     },
     {
@@ -1226,7 +1226,7 @@
         "gastos": 3,
         "historico": 0,
         "processos": 0,
-        "projetos": 0
+        "projetos": 100
       }
     },
     {
@@ -1391,7 +1391,7 @@
         "gastos": 0,
         "historico": 4,
         "processos": 0,
-        "projetos": 0
+        "projetos": 95
       }
     },
     {
@@ -1431,7 +1431,7 @@
         "gastos": 0,
         "historico": 1,
         "processos": 0,
-        "projetos": 11
+        "projetos": 0
       }
     },
     {
@@ -1453,7 +1453,7 @@
         "gastos": 0,
         "historico": 2,
         "processos": 0,
-        "projetos": 0
+        "projetos": 100
       }
     },
     {
@@ -1474,7 +1474,7 @@
         "gastos": 0,
         "historico": 2,
         "processos": 0,
-        "projetos": 4
+        "projetos": 0
       }
     },
     {
@@ -1639,7 +1639,7 @@
         "gastos": 0,
         "historico": 0,
         "processos": 0,
-        "projetos": 2
+        "projetos": 52
       }
     },
     {
@@ -1744,7 +1744,7 @@
         "gastos": 0,
         "historico": 2,
         "processos": 0,
-        "projetos": 60
+        "projetos": 0
       }
     },
     {
@@ -1908,7 +1908,7 @@
         "gastos": 0,
         "historico": 2,
         "processos": 0,
-        "projetos": 3
+        "projetos": 0
       }
     },
     {
@@ -1969,7 +1969,7 @@
         "gastos": 0,
         "historico": 3,
         "processos": 0,
-        "projetos": 6
+        "projetos": 0
       }
     },
     {
@@ -1990,7 +1990,7 @@
         "gastos": 0,
         "historico": 4,
         "processos": 0,
-        "projetos": 2
+        "projetos": 0
       }
     },
     {
@@ -2085,7 +2085,7 @@
       "counts": {
         "patrimonio": 2,
         "financiamento": 2,
-        "votos": 4,
+        "votos": 5,
         "gastos": 0,
         "historico": 7,
         "processos": 0,
@@ -2168,7 +2168,7 @@
       "counts": {
         "patrimonio": 2,
         "financiamento": 2,
-        "votos": 4,
+        "votos": 5,
         "gastos": 0,
         "historico": 8,
         "processos": 0,
@@ -2230,7 +2230,7 @@
       "counts": {
         "patrimonio": 3,
         "financiamento": 3,
-        "votos": 0,
+        "votos": 1,
         "gastos": 0,
         "historico": 4,
         "processos": 0,
@@ -2357,7 +2357,7 @@
         "gastos": 0,
         "historico": 4,
         "processos": 0,
-        "projetos": 1
+        "projetos": 0
       }
     },
     {
@@ -2418,7 +2418,7 @@
         "gastos": 3,
         "historico": 2,
         "processos": 0,
-        "projetos": 2
+        "projetos": 0
       }
     },
     {
@@ -2459,7 +2459,7 @@
         "gastos": 2,
         "historico": 1,
         "processos": 0,
-        "projetos": 4
+        "projetos": 0
       }
     },
     {
@@ -2562,7 +2562,7 @@
         "gastos": 0,
         "historico": 1,
         "processos": 0,
-        "projetos": 0
+        "projetos": 276
       }
     },
     {
@@ -2624,7 +2624,7 @@
         "gastos": 3,
         "historico": 0,
         "processos": 0,
-        "projetos": 13
+        "projetos": 0
       }
     },
     {
@@ -2640,11 +2640,11 @@
       "counts": {
         "patrimonio": 1,
         "financiamento": 1,
-        "votos": 0,
+        "votos": 1,
         "gastos": 0,
         "historico": 1,
         "processos": 0,
-        "projetos": 0
+        "projetos": 177
       }
     },
     {
@@ -2665,7 +2665,7 @@
         "gastos": 0,
         "historico": 2,
         "processos": 0,
-        "projetos": 3
+        "projetos": 0
       }
     },
     {
@@ -2725,7 +2725,7 @@
         "gastos": 0,
         "historico": 0,
         "processos": 0,
-        "projetos": 0
+        "projetos": 100
       }
     },
     {
@@ -2803,7 +2803,7 @@
       "counts": {
         "patrimonio": 3,
         "financiamento": 2,
-        "votos": 2,
+        "votos": 3,
         "gastos": 0,
         "historico": 1,
         "processos": 0,
@@ -2923,7 +2923,7 @@
         "financiamento": 0,
         "votos": 0,
         "gastos": 0,
-        "historico": 3,
+        "historico": 4,
         "processos": 0,
         "projetos": 0
       }
@@ -2942,7 +2942,7 @@
       "counts": {
         "patrimonio": 2,
         "financiamento": 2,
-        "votos": 4,
+        "votos": 5,
         "gastos": 0,
         "historico": 4,
         "processos": 0,

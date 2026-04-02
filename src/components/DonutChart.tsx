@@ -1,5 +1,3 @@
-import { formatBRL } from "@/lib/utils"
-
 interface Segment {
   label: string
   value: number

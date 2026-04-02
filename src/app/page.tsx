@@ -1,18 +1,35 @@
-import { getCandidatosComResumo, getCandidatosComparaveis } from "@/lib/api"
+import {
+  getCandidatosComResumoResource,
+  getCandidatosComparaveisResource,
+  mergeSourceMessages,
+  mergeSourceStatuses,
+} from "@/lib/api"
 import Link from "next/link"
 import { CandidatoGrid } from "@/components/CandidatoGrid"
 import { ComparadorPanel } from "@/components/ComparadorPanel"
 import { SlashDivider } from "@/components/SlashDivider"
 import { Footer } from "@/components/Footer"
+import { DataSourceNotice } from "@/components/DataSourceNotice"
+import { JsonLd } from "@/components/JsonLd"
 import { formatBRL } from "@/lib/utils"
 
 export const revalidate = 3600
 
 export default async function Home() {
-  const [resumos, comparaveis] = await Promise.all([
-    getCandidatosComResumo("Presidente"),
-    getCandidatosComparaveis("Presidente"),
+  const [resumosResource, comparaveisResource] = await Promise.all([
+    getCandidatosComResumoResource("Presidente"),
+    getCandidatosComparaveisResource("Presidente"),
   ])
+  const resumos = resumosResource.data
+  const comparaveis = comparaveisResource.data
+  const sourceStatus = mergeSourceStatuses(
+    resumosResource.sourceStatus,
+    comparaveisResource.sourceStatus
+  )
+  const sourceMessage = mergeSourceMessages(
+    resumosResource.sourceMessage,
+    comparaveisResource.sourceMessage
+  )
 
   resumos.sort((a, b) =>
     a.candidato.nome_urna.localeCompare(b.candidato.nome_urna, "pt-BR")
@@ -33,9 +50,31 @@ export default async function Home() {
     0
   )
   const totalProcessos = resumos.reduce((sum, r) => sum + r.processos, 0)
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Puxa Ficha",
+      url: "https://puxaficha.com.br",
+      description:
+        "Consulta publica sobre candidatos das eleicoes brasileiras de 2026 com ficha completa, comparador e contexto editorial.",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "Pre-candidatos a presidente 2026",
+      itemListElement: candidatos.slice(0, 12).map((candidato, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `https://puxaficha.com.br/candidato/${candidato.slug}`,
+        name: candidato.nome_urna,
+      })),
+    },
+  ]
 
   return (
     <div className="min-h-screen bg-background">
+      <JsonLd data={schema} />
       {/* Hero — dossie image background */}
       <section className="relative overflow-hidden bg-black">
         {/* Background image */}
@@ -99,6 +138,37 @@ export default async function Home() {
               </div>
             )}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pt-6 md:px-12">
+        <DataSourceNotice status={sourceStatus} message={sourceMessage} />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pt-8 md:px-12 lg:pt-10">
+        <div className="max-w-3xl">
+          <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
+            O Puxa Ficha cruza dados publicos de TSE, Camara e Senado para
+            ajudar quem busca entender quem sao os candidatos de 2026 antes do
+            periodo eleitoral endurecer a propaganda.
+          </p>
+          <p className="mt-3 text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
+            Aqui voce encontra ficha completa, comparacao lado a lado e uma
+            navegacao mais rapida por nome, partido e estado. Se quiser atalhos
+            imediatos, voce pode ir para{" "}
+            <Link href="/comparar" className="font-semibold text-foreground underline">
+              comparar
+            </Link>
+            ,{" "}
+            <Link href="/explorar" className="font-semibold text-foreground underline">
+              explorar
+            </Link>{" "}
+            ou abrir o mapa de{" "}
+            <Link href="/governadores" className="font-semibold text-foreground underline">
+              governadores
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

@@ -97,7 +97,7 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
     }
   }
 
-  const updateSnap = () => {
+  const updateSnap = React.useCallback(() => {
     const s = state.current
     const progress = Math.min(
       (Date.now() - s.snapStart.time) / CONFIG.SNAP_DURATION,
@@ -106,17 +106,17 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
     const eased = 1 - Math.pow(1 - progress, 3)
     s.targetY = s.snapStart.y + (s.snapStart.target - s.snapStart.y) * eased
     if (progress >= 1) s.isSnapping = false
-  }
+  }, [])
 
-  const snapToProject = () => {
+  const snapToProject = React.useCallback(() => {
     const s = state.current
     const current = Math.round(-s.targetY / s.projectHeight)
     const target = -current * s.projectHeight
     s.isSnapping = true
     s.snapStart = { time: Date.now(), y: s.targetY, target }
-  }
+  }, [])
 
-  const updatePositions = () => {
+  const updatePositions = React.useCallback(() => {
     const s = state.current
     const minimapY = (s.currentY * s.minimapHeight) / s.projectHeight
 
@@ -138,7 +138,7 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
       const y = index * s.minimapHeight + minimapY
       el.style.transform = `translateY(${y}px)`
     })
-  }
+  }, [])
 
   const animationLoop = React.useCallback(() => {
     const s = state.current
@@ -177,7 +177,7 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
     }
 
     requestRef.current = requestAnimationFrame(animationLoop)
-  }, [count])
+  }, [count, snapToProject, updatePositions, updateSnap])
 
   React.useEffect(() => {
     state.current.projectHeight = window.innerHeight
@@ -240,6 +240,25 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
   const indices: number[] = []
   for (let i = visibleRange.min; i <= visibleRange.max; i++) {
     indices.push(i)
+  }
+
+  if (count === 0) {
+    return (
+      <section className="flex min-h-[70vh] items-center justify-center bg-background px-5 py-16 text-center md:px-12">
+        <div className="max-w-2xl">
+          <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+            Explorar candidatos
+          </p>
+          <h1 className="mt-3 font-heading text-4xl uppercase leading-none text-foreground sm:text-6xl">
+            Nenhuma ficha esta publica agora
+          </h1>
+          <p className="mt-4 text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground">
+            O site entrou em hardening factual. As fichas voltam a aparecer
+            quando estiverem completas, coerentes e auditadas.
+          </p>
+        </div>
+      </section>
+    )
   }
 
   const activeCandidato = candidatos[activeIndex]

@@ -1,17 +1,18 @@
 {
-  "atualizado_em": "2026-03-31T23:47:12.408Z",
+  "atualizado_em": "2026-04-02T00:04:19.984Z",
   "candidatos": {
     "tarcisio-gov-sp": {
       "slug": "tarcisio-gov-sp",
       "nome_urna": "Tarcisio de Freitas",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "Governo de SP + Republicanos oficial 2026-03",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -26,12 +27,13 @@
       "nome_urna": "Eduardo Paes",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.971Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "Prefeitura do Rio + PSD oficial 2026-03",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -46,12 +48,13 @@
       "nome_urna": "Nikolas Ferreira",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.965Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "Camara dos Deputados 2026-03-31",
+      "verified_at": "2026-03-31",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -66,12 +69,13 @@
       "nome_urna": "Rodrigo Pacheco",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.963Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "Senado Federal 2026-03-31",
+      "verified_at": "2026-03-31",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -84,15 +88,18 @@
     "jeronimo": {
       "slug": "jeronimo",
       "nome_urna": "Jeronimo",
-      "auditoria_status": "auditado",
-      "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "Governo da Bahia + PT Bahia 2026-03",
-      "campos_com_fail": [],
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "crosscheck_patrimonio_recencia"
+      ],
       "campos_com_warning": [],
       "provenance": {
         "last_edited_by": "automation",
@@ -106,12 +113,13 @@
       "nome_urna": "Elmano de Freitas",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.964Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "Governo do Ceara + PT Ceara 2026-03",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -126,12 +134,13 @@
       "nome_urna": "Joao Campos",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "Prefeitura do Recife + PSB oficial 2026-03",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -146,12 +155,13 @@
       "nome_urna": "Raquel Lyra",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "Governo de Pernambuco + PSD oficial 2026-03",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -166,12 +176,13 @@
       "nome_urna": "Ronaldo Caiado",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.403Z",
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
       ],
       "source": "PSD oficial 2026-01-28",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -184,15 +195,21 @@
     "rui-costa-pimenta": {
       "slug": "rui-costa-pimenta",
       "nome_urna": "Rui Costa Pimenta",
-      "auditoria_status": "auditado",
-      "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.403Z",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
       ],
       "source": "curadoria presidenciaveis",
-      "campos_com_fail": [],
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
       "campos_com_warning": [],
       "provenance": {
         "last_edited_by": "automation",
@@ -206,12 +223,13 @@
       "nome_urna": "Aldo Rebelo",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
       ],
       "source": "DC oficial 2026-02-02",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -226,12 +244,13 @@
       "nome_urna": "Ratinho Junior",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.965Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
       ],
       "source": "PSD oficial 2026-03-12",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -244,15 +263,18 @@
     "hertz-dias": {
       "slug": "hertz-dias",
       "nome_urna": "Hertz Dias",
-      "auditoria_status": "auditado",
-      "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
       ],
       "source": "curadoria presidenciaveis",
-      "campos_com_fail": [],
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "crosscheck_patrimonio_recencia"
+      ],
       "campos_com_warning": [],
       "provenance": {
         "last_edited_by": "automation",
@@ -264,15 +286,18 @@
     "samara-martins": {
       "slug": "samara-martins",
       "nome_urna": "Samara Martins",
-      "auditoria_status": "auditado",
-      "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.964Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
       ],
       "source": "curadoria presidenciaveis",
-      "campos_com_fail": [],
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "crosscheck_financiamento_recencia"
+      ],
       "campos_com_warning": [],
       "provenance": {
         "last_edited_by": "automation",
@@ -286,12 +311,13 @@
       "nome_urna": "Lula",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.963Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
       ],
       "source": "curadoria presidenciaveis",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -306,12 +332,13 @@
       "nome_urna": "Ciro Gomes",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
       ],
       "source": "PSDB oficial 2025-10-22",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -326,12 +353,13 @@
       "nome_urna": "Flavio Bolsonaro",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.964Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
       ],
       "source": "curadoria presidenciaveis",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -346,12 +374,13 @@
       "nome_urna": "Romeu Zema",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.963Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
       ],
       "source": "curadoria presidenciaveis",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -366,12 +395,13 @@
       "nome_urna": "Tarcisio de Freitas",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.964Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
       ],
       "source": "curadoria presidenciaveis",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -384,15 +414,19 @@
     "renan-santos": {
       "slug": "renan-santos",
       "nome_urna": "Renan Santos",
-      "auditoria_status": "auditado",
-      "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.965Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
       ],
       "source": "curadoria presidenciaveis",
-      "campos_com_fail": [],
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "crosscheck_patrimonio_recencia"
+      ],
       "campos_com_warning": [],
       "provenance": {
         "last_edited_by": "automation",
@@ -406,12 +440,13 @@
       "nome_urna": "Eduardo Leite",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
       ],
       "source": "curadoria presidenciaveis",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -426,12 +461,13 @@
       "nome_urna": "Jorginho Mello",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "Governo de Santa Catarina + ALESC oficial 2026-03",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -444,15 +480,18 @@
     "ricardo-nunes": {
       "slug": "ricardo-nunes",
       "nome_urna": "Ricardo Nunes",
-      "auditoria_status": "auditado",
-      "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "Prefeitura de Sao Paulo 2026-03-31",
-      "campos_com_fail": [],
+      "verified_at": "2026-03-31",
+      "campos_com_fail": [
+        "crosscheck_financiamento_recencia"
+      ],
       "campos_com_warning": [],
       "provenance": {
         "last_edited_by": "automation",
@@ -466,33 +505,40 @@
       "nome_urna": "Sergio Moro",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.965Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
-      "source": "Senado Federal 2026-03-31",
+      "source": "Senado Federal 2026-04-01",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
         "last_edited_by": "automation",
         "last_edited_source": "audit-factual",
-        "last_reviewed_by": "Senado Federal 2026-03-31",
+        "last_reviewed_by": "Senado Federal 2026-04-01",
         "last_reviewed_at": null
       }
     },
     "ciro-gomes-gov-ce": {
       "slug": "ciro-gomes-gov-ce",
       "nome_urna": "Ciro Gomes",
-      "auditoria_status": "auditado",
-      "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "PSDB oficial 2025-10-22",
-      "campos_com_fail": [],
+      "verified_at": "2025-10-22",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
       "campos_com_warning": [],
       "provenance": {
         "last_edited_by": "automation",
@@ -506,12 +552,13 @@
       "nome_urna": "Erika Hilton",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.963Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "Camara dos Deputados 2026-03-31",
+      "verified_at": "2026-03-31",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -526,16 +573,15 @@
       "nome_urna": "Fernando Haddad",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "gov.br Fazenda + PT oficial 2026-03",
+      "verified_at": "2026-04-01",
       "campos_com_fail": [],
-      "campos_com_warning": [
-        "patrimonio_mais_recente"
-      ],
+      "campos_com_warning": [],
       "provenance": {
         "last_edited_by": "automation",
         "last_edited_source": "audit-factual",
@@ -548,12 +594,13 @@
       "nome_urna": "Cleitinho",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "ultima_execucao": "2026-04-02T00:04:19.962Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "Senado Federal 2026-03-31",
+      "verified_at": "2026-03-31",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
@@ -566,20 +613,2515 @@
     "geraldo-alckmin": {
       "slug": "geraldo-alckmin",
       "nome_urna": "Geraldo Alckmin",
-      "auditoria_status": "auditado",
-      "pode_publicar": true,
-      "ultima_execucao": "2026-03-31T23:47:12.404Z",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.971Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
       ],
       "source": "Vice-Presidencia + PSB oficial 2026-03",
-      "campos_com_fail": [],
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "crosscheck_financiamento_recencia"
+      ],
       "campos_com_warning": [],
       "provenance": {
         "last_edited_by": "automation",
         "last_edited_source": "audit-factual",
         "last_reviewed_by": "Vice-Presidencia + PSB oficial 2026-03",
+        "last_reviewed_at": null
+      }
+    },
+    "efraim-filho": {
+      "slug": "efraim-filho",
+      "nome_urna": "Efraim Filho",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.964Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "Senado Federal 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Senado Federal 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "edegar-pretto": {
+      "slug": "edegar-pretto",
+      "nome_urna": "Edegar Pretto",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "dr-daniel": {
+      "slug": "dr-daniel",
+      "nome_urna": "Dr. Daniel",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.963Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "O Liberal 2026-03-28",
+      "verified_at": "2026-03-28",
+      "campos_com_fail": [
+        "crosscheck_patrimonio_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "O Liberal 2026-03-28",
+        "last_reviewed_at": null
+      }
+    },
+    "ronaldo-mansur": {
+      "slug": "ronaldo-mansur",
+      "nome_urna": "Ronaldo Mansur",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.958Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "felicio-ramuth": {
+      "slug": "felicio-ramuth",
+      "nome_urna": "Felicio Ramuth",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.958Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "pedro-cunha-lima": {
+      "slug": "pedro-cunha-lima",
+      "nome_urna": "Pedro Cunha Lima",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.963Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "MaisPB 2025-11-01",
+      "verified_at": "2025-11-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "MaisPB 2025-11-01",
+        "last_reviewed_at": null
+      }
+    },
+    "clecio-luis": {
+      "slug": "clecio-luis",
+      "nome_urna": "Clecio Luis",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.958Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "filiacao Uniao Brasil jan/2026 confirmada",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "filiacao Uniao Brasil jan/2026 confirmada",
+        "last_reviewed_at": null
+      }
+    },
+    "edilson-damiao": {
+      "slug": "edilson-damiao",
+      "nome_urna": "Edilson Damiao",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.959Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "paulo-martins-gov-pr": {
+      "slug": "paulo-martins-gov-pr",
+      "nome_urna": "Paulo Martins",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.964Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "decio-lima": {
+      "slug": "decio-lima",
+      "nome_urna": "Decio Lima",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.956Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "filiacao PT confirmada",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "filiacao PT confirmada",
+        "last_reviewed_at": null
+      }
+    },
+    "ricardo-cappelli": {
+      "slug": "ricardo-cappelli",
+      "nome_urna": "Ricardo Cappelli",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "rafael-greca": {
+      "slug": "rafael-greca",
+      "nome_urna": "Rafael Greca",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "filiacao MDB mar/2026 confirmada",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "filiacao MDB mar/2026 confirmada",
+        "last_reviewed_at": null
+      }
+    },
+    "pazolini": {
+      "slug": "pazolini",
+      "nome_urna": "Pazolini",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.964Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "joao-roma": {
+      "slug": "joao-roma",
+      "nome_urna": "Joao Roma",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.962Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "alysson-bezerra": {
+      "slug": "alysson-bezerra",
+      "nome_urna": "Alysson Bezerra",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [
+        "data_nascimento",
+        "naturalidade",
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "ivan-moraes": {
+      "slug": "ivan-moraes",
+      "nome_urna": "Ivan Moraes",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.962Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "confucio-moura": {
+      "slug": "confucio-moura",
+      "nome_urna": "Confucio Moura",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.962Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "eduardo-riedel": {
+      "slug": "eduardo-riedel",
+      "nome_urna": "Eduardo Riedel",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.960Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "alexandre-curi": {
+      "slug": "alexandre-curi",
+      "nome_urna": "Alexandre Curi",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.964Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "felipe-camarao": {
+      "slug": "felipe-camarao",
+      "nome_urna": "Felipe Camarao",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.963Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "financiamento_mais_recente",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "tiao-bocalom": {
+      "slug": "tiao-bocalom",
+      "nome_urna": "Tiao Bocalom",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.962Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "filiacao PSDB mar/2026 confirmada",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "filiacao PSDB mar/2026 confirmada",
+        "last_reviewed_at": null
+      }
+    },
+    "gilson-machado": {
+      "slug": "gilson-machado",
+      "nome_urna": "Gilson Machado",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.960Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "joel-rodrigues": {
+      "slug": "joel-rodrigues",
+      "nome_urna": "Joel Rodrigues",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.964Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "fabio-mitidieri": {
+      "slug": "fabio-mitidieri",
+      "nome_urna": "Fabio Mitidieri",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.962Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "eduardo-braga": {
+      "slug": "eduardo-braga",
+      "nome_urna": "Eduardo Braga",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "valmir-de-francisquinho": {
+      "slug": "valmir-de-francisquinho",
+      "nome_urna": "Valmir de Francisquinho",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.960Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "thiago-de-joaldo": {
+      "slug": "thiago-de-joaldo",
+      "nome_urna": "Thiago de Joaldo",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.961Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "laurez-moreira": {
+      "slug": "laurez-moreira",
+      "nome_urna": "Laurez Moreira",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.963Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "Voz do Bico 2025-12-11",
+      "verified_at": "2025-12-11",
+      "campos_com_fail": [
+        "financiamento_mais_recente",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Voz do Bico 2025-12-11",
+        "last_reviewed_at": null
+      }
+    },
+    "wellington-fagundes": {
+      "slug": "wellington-fagundes",
+      "nome_urna": "Wellington Fagundes",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.960Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "adailton-furia": {
+      "slug": "adailton-furia",
+      "nome_urna": "Adailton Furia",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.965Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "arthur-henrique": {
+      "slug": "arthur-henrique",
+      "nome_urna": "Arthur Henrique",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.965Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "crosscheck_patrimonio_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "professora-dorinha": {
+      "slug": "professora-dorinha",
+      "nome_urna": "Professora Dorinha",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.960Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "wilder-morais": {
+      "slug": "wilder-morais",
+      "nome_urna": "Wilder Morais",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "garotinho": {
+      "slug": "garotinho",
+      "nome_urna": "Garotinho",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "historico_politico",
+        "crosscheck_patrimonio_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "sergio-vidigal": {
+      "slug": "sergio-vidigal",
+      "nome_urna": "Sergio Vidigal",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.957Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "margarete-coelho": {
+      "slug": "margarete-coelho",
+      "nome_urna": "Margarete Coelho",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.961Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "soldado-sampaio": {
+      "slug": "soldado-sampaio",
+      "nome_urna": "Soldado Sampaio",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.962Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "amelio-cayres": {
+      "slug": "amelio-cayres",
+      "nome_urna": "Amelio Cayres",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "joao-henrique-catan": {
+      "slug": "joao-henrique-catan",
+      "nome_urna": "Joao Henrique Catan",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [
+        "data_nascimento",
+        "naturalidade",
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "mateus-simoes": {
+      "slug": "mateus-simoes",
+      "nome_urna": "Mateus Simoes",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "jhc": {
+      "slug": "jhc",
+      "nome_urna": "JHC",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "renan-filho": {
+      "slug": "renan-filho",
+      "nome_urna": "Renan Filho",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.958Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "votos_candidato",
+        "crosscheck_patrimonio_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "mailza-assis": {
+      "slug": "mailza-assis",
+      "nome_urna": "Mailza Assis",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.959Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "leandro-grass": {
+      "slug": "leandro-grass",
+      "nome_urna": "Leandro Grass",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.957Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "orleans-brandao": {
+      "slug": "orleans-brandao",
+      "nome_urna": "Orleans Brandao",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "anderson-ferreira": {
+      "slug": "anderson-ferreira",
+      "nome_urna": "Anderson Ferreira",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "historico_politico"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "andre-do-prado": {
+      "slug": "andre-do-prado",
+      "nome_urna": "Andre do Prado",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.957Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "da-vitoria": {
+      "slug": "da-vitoria",
+      "nome_urna": "Da Vitoria",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.958Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "maria-do-carmo": {
+      "slug": "maria-do-carmo",
+      "nome_urna": "Maria do Carmo",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "beto-faro": {
+      "slug": "beto-faro",
+      "nome_urna": "Beto Faro",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.959Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "delegado-eder-mauro": {
+      "slug": "delegado-eder-mauro",
+      "nome_urna": "Delegado Eder Mauro",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "marcelo-maranata": {
+      "slug": "marcelo-maranata",
+      "nome_urna": "Marcelo Maranata",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "eduardo-braide": {
+      "slug": "eduardo-braide",
+      "nome_urna": "Eduardo Braide",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.961Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "PSD MA 2026-01-19",
+      "verified_at": "2026-01-19",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "PSD MA 2026-01-19",
+        "last_reviewed_at": null
+      }
+    },
+    "tadeu-de-souza": {
+      "slug": "tadeu-de-souza",
+      "nome_urna": "Tadeu de Souza",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.965Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "financiamento_mais_recente",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "simao-jatene": {
+      "slug": "simao-jatene",
+      "nome_urna": "Simao Jatene",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.958Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "vicentinho-junior": {
+      "slug": "vicentinho-junior",
+      "nome_urna": "Vicentinho Junior",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.959Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "lucien-rezende": {
+      "slug": "lucien-rezende",
+      "nome_urna": "Lucien Rezende",
+      "auditoria_status": "pendente",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.959Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [
+        "data_nascimento",
+        "naturalidade",
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "ataides-oliveira": {
+      "slug": "ataides-oliveira",
+      "nome_urna": "Ataides Oliveira",
+      "auditoria_status": "pendente",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "filiacao NOVO set/2025 confirmada",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "filiacao NOVO set/2025 confirmada",
+        "last_reviewed_at": null
+      }
+    },
+    "luciano-zucco": {
+      "slug": "luciano-zucco",
+      "nome_urna": "Luciano Zucco",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.962Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "Camara dos Deputados 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Camara dos Deputados 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "marcelo-brigadeiro": {
+      "slug": "marcelo-brigadeiro",
+      "nome_urna": "Marcelo Brigadeiro",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.960Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "financiamento_mais_recente",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [
+        "data_nascimento",
+        "naturalidade",
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "arnaldinho-borgo": {
+      "slug": "arnaldinho-borgo",
+      "nome_urna": "Arnaldinho Borgo",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.965Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "enilton-rodrigues": {
+      "slug": "enilton-rodrigues",
+      "nome_urna": "Enilton Rodrigues",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "teresa-surita": {
+      "slug": "teresa-surita",
+      "nome_urna": "Teresa Surita",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.960Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "historico_politico"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "paulo-hartung": {
+      "slug": "paulo-hartung",
+      "nome_urna": "Paulo Hartung",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.961Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "juliana-brizola": {
+      "slug": "juliana-brizola",
+      "nome_urna": "Juliana Brizola",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.962Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "historico_politico",
+        "crosscheck_cargo_historico"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "jose-carlos-aleluia": {
+      "slug": "jose-carlos-aleluia",
+      "nome_urna": "Jose Carlos Aleluia",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.963Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "filiacao NOVO confirmada",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "filiacao NOVO confirmada",
+        "last_reviewed_at": null
+      }
+    },
+    "washington-reis": {
+      "slug": "washington-reis",
+      "nome_urna": "Washington Reis",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.970Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "marcio-franca": {
+      "slug": "marcio-franca",
+      "nome_urna": "Marcio Franca",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "tarcisio-motta": {
+      "slug": "tarcisio-motta",
+      "nome_urna": "Tarcisio Motta",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.970Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "gabriel-souza": {
+      "slug": "gabriel-souza",
+      "nome_urna": "Gabriel Souza",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.970Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "douglas-ruas": {
+      "slug": "douglas-ruas",
+      "nome_urna": "Douglas Ruas",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.970Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "helder-salomao": {
+      "slug": "helder-salomao",
+      "nome_urna": "Helder Salomao",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.970Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "dr-furlan": {
+      "slug": "dr-furlan",
+      "nome_urna": "Dr. Furlan",
+      "auditoria_status": "pendente",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.970Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [
+        "naturalidade",
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "capitao-wagner": {
+      "slug": "capitao-wagner",
+      "nome_urna": "Capitao Wagner",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.970Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "marcos-rogerio": {
+      "slug": "marcos-rogerio",
+      "nome_urna": "Marcos Rogerio",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.965Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "joao-rodrigues": {
+      "slug": "joao-rodrigues",
+      "nome_urna": "Joao Rodrigues",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.970Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "historico_politico",
+        "crosscheck_cargo_historico"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "maria-da-consolacao": {
+      "slug": "maria-da-consolacao",
+      "nome_urna": "Maria da Consolacao",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.966Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "roberto-claudio": {
+      "slug": "roberto-claudio",
+      "nome_urna": "Roberto Claudio",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.970Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "hana-ghassan": {
+      "slug": "hana-ghassan",
+      "nome_urna": "Hana Ghassan",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.970Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "financiamento_mais_recente",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "janaina-riva": {
+      "slug": "janaina-riva",
+      "nome_urna": "Janaina Riva",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "natasha-slhessarenko": {
+      "slug": "natasha-slhessarenko",
+      "nome_urna": "Natasha Slhessarenko",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.960Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [
+        "data_nascimento",
+        "naturalidade",
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "guto-silva": {
+      "slug": "guto-silva",
+      "nome_urna": "Guto Silva",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.962Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "marcos-vieira": {
+      "slug": "marcos-vieira",
+      "nome_urna": "Marcos Vieira",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.970Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "lahesio-bonfim": {
+      "slug": "lahesio-bonfim",
+      "nome_urna": "Lahesio Bonfim",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.970Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "historico_politico"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "cicero-lucena": {
+      "slug": "cicero-lucena",
+      "nome_urna": "Cicero Lucena",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "filiacao MDB set/2025 confirmada",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "filiacao MDB set/2025 confirmada",
+        "last_reviewed_at": null
+      }
+    },
+    "david-almeida": {
+      "slug": "david-almeida",
+      "nome_urna": "David Almeida",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.971Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "crosscheck_patrimonio_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "jose-eliton": {
+      "slug": "jose-eliton",
+      "nome_urna": "Jose Eliton",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.965Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "joao-capiberibe": {
+      "slug": "joao-capiberibe",
+      "nome_urna": "Joao Capiberibe",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.965Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "ricardo-ferraco": {
+      "slug": "ricardo-ferraco",
+      "nome_urna": "Ricardo Ferraco",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.962Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "filiacao MDB confirmada",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "filiacao MDB confirmada",
+        "last_reviewed_at": null
+      }
+    },
+    "eduardo-girao": {
+      "slug": "eduardo-girao",
+      "nome_urna": "Eduardo Girao",
+      "auditoria_status": "pendente",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.965Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "andre-kamai": {
+      "slug": "andre-kamai",
+      "nome_urna": "Andre Kamai",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.963Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [
+        "data_nascimento",
+        "naturalidade",
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "omar-aziz": {
+      "slug": "omar-aziz",
+      "nome_urna": "Omar Aziz",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "daniel-vilela": {
+      "slug": "daniel-vilela",
+      "nome_urna": "Daniel Vilela",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "fabio-trad": {
+      "slug": "fabio-trad",
+      "nome_urna": "Fabio Trad",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.960Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "filiacao PT confirmada",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "filiacao PT confirmada",
+        "last_reviewed_at": null
+      }
+    },
+    "alvaro-dias-rn": {
+      "slug": "alvaro-dias-rn",
+      "nome_urna": "Alvaro Dias",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "Agora RN 2026-03-23",
+      "verified_at": "2026-03-23",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "Agora RN 2026-03-23",
+        "last_reviewed_at": null
+      }
+    },
+    "alan-rick": {
+      "slug": "alan-rick",
+      "nome_urna": "Alan Rick",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "celina-leao": {
+      "slug": "celina-leao",
+      "nome_urna": "Celina Leao",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "silvio-mendes": {
+      "slug": "silvio-mendes",
+      "nome_urna": "Silvio Mendes",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "expedito-netto": {
+      "slug": "expedito-netto",
+      "nome_urna": "Expedito Netto",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "filiacao PT jan/2026 confirmada",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "filiacao PT jan/2026 confirmada",
+        "last_reviewed_at": null
+      }
+    },
+    "guilherme-derrite": {
+      "slug": "guilherme-derrite",
+      "nome_urna": "Guilherme Derrite",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.971Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "gilberto-kassab": {
+      "slug": "gilberto-kassab",
+      "nome_urna": "Gilberto Kassab",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.968Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "gabriel-azevedo": {
+      "slug": "gabriel-azevedo",
+      "nome_urna": "Gabriel Azevedo",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.971Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [
+        "naturalidade",
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "lucas-ribeiro": {
+      "slug": "lucas-ribeiro",
+      "nome_urna": "Lucas Ribeiro",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.961Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "financiamento_mais_recente",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "paula-belmonte": {
+      "slug": "paula-belmonte",
+      "nome_urna": "Paula Belmonte",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.965Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "CLDF 2025-12-23",
+      "verified_at": "2025-12-23",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "CLDF 2025-12-23",
+        "last_reviewed_at": null
+      }
+    },
+    "dr-fernando-maximo": {
+      "slug": "dr-fernando-maximo",
+      "nome_urna": "Dr. Fernando Maximo",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "cadu-xavier": {
+      "slug": "cadu-xavier",
+      "nome_urna": "Cadu Xavier",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "requiao-filho": {
+      "slug": "requiao-filho",
+      "nome_urna": "Requiao Filho",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.959Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "hildon-chaves": {
+      "slug": "hildon-chaves",
+      "nome_urna": "Hildon Chaves",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.969Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "evandro-augusto": {
+      "slug": "evandro-augusto",
+      "nome_urna": "Evandro Augusto",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.961Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [
+        "data_nascimento",
+        "naturalidade",
+        "formacao"
+      ],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "rodrigo-bacellar": {
+      "slug": "rodrigo-bacellar",
+      "nome_urna": "Rodrigo Bacellar",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.971Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "marconi-perillo": {
+      "slug": "marconi-perillo",
+      "nome_urna": "Marconi Perillo",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.965Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "rafael-fonteles": {
+      "slug": "rafael-fonteles",
+      "nome_urna": "Rafael Fonteles",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.961Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "acm-neto": {
+      "slug": "acm-neto",
+      "nome_urna": "ACM Neto",
+      "auditoria_status": "auditado",
+      "pode_publicar": true,
+      "ultima_execucao": "2026-04-02T00:04:19.961Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "adriana-accorsi": {
+      "slug": "adriana-accorsi",
+      "nome_urna": "Adriana Accorsi",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.971Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "patrimonio_mais_recente",
+        "financiamento_mais_recente",
+        "crosscheck_patrimonio_recencia",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
+        "last_reviewed_at": null
+      }
+    },
+    "otaviano-pivetta": {
+      "slug": "otaviano-pivetta",
+      "nome_urna": "Otaviano Pivetta",
+      "auditoria_status": "reprovado",
+      "pode_publicar": false,
+      "ultima_execucao": "2026-04-02T00:04:19.967Z",
+      "cohorts": [
+        "governadores"
+      ],
+      "source": "banco auditado 2026-04-01",
+      "verified_at": "2026-04-01",
+      "campos_com_fail": [
+        "financiamento_mais_recente",
+        "crosscheck_financiamento_recencia"
+      ],
+      "campos_com_warning": [],
+      "provenance": {
+        "last_edited_by": "automation",
+        "last_edited_source": "audit-factual",
+        "last_reviewed_by": "banco auditado 2026-04-01",
         "last_reviewed_at": null
       }
     }

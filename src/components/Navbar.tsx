@@ -12,10 +12,35 @@ const NAV_ITEMS = [
 
 export function Navbar() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const panelRef = useRef<HTMLElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const navLinkRefs = useRef<Array<HTMLAnchorElement | null>>([])
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
   const hasOpened = useRef(false)
+  const shouldRestoreFocusRef = useRef(false)
   const tlRef = useRef<ReturnType<typeof import("gsap")["gsap"]["timeline"]> | null>(null)
+
+  const getFocusableElements = useCallback(() => {
+    if (!panelRef.current) return []
+    return Array.from(
+      panelRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    )
+  }, [])
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
+    const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches)
+
+    updatePreference()
+    mediaQuery.addEventListener("change", updatePreference)
+
+    return () => mediaQuery.removeEventListener("change", updatePreference)
+  }, [])
 
   // Scroll detection for header transparency
   useEffect(() => {
@@ -30,22 +55,59 @@ export function Navbar() {
     if (!isMenuOpen && !hasOpened.current) return
     if (isMenuOpen) hasOpened.current = true
 
+    const container = containerRef.current
+    const navWrap = container.querySelector(".nav-overlay-wrapper") as HTMLElement | null
+    const overlay = container.querySelector(".overlay") as HTMLElement | null
+    const bgPanels = container.querySelectorAll(".backdrop-layer")
+    const navLinks = container.querySelectorAll(".nav-link")
+    const fadeTargets = container.querySelectorAll("[data-menu-fade]")
+    const menuBtn = container.querySelector(".menu-btn")
+    const menuTexts = menuBtn ? menuBtn.querySelectorAll("p") : []
+    const menuIcon = menuBtn ? menuBtn.querySelector(".menu-button-icon") : null
+
+    if (!navWrap || !overlay) return
+
+    if (prefersReducedMotion) {
+      tlRef.current?.kill()
+      navWrap.style.display = isMenuOpen ? "block" : "none"
+      overlay.style.visibility = isMenuOpen ? "visible" : "hidden"
+      overlay.style.opacity = isMenuOpen ? "1" : "0"
+
+      bgPanels.forEach((panel) => {
+        ;(panel as HTMLElement).style.transform = isMenuOpen
+          ? "translateX(0%)"
+          : "translateX(101%)"
+      })
+
+      navLinks.forEach((link) => {
+        ;(link as HTMLElement).style.opacity = isMenuOpen ? "1" : "0"
+        ;(link as HTMLElement).style.transform = "none"
+      })
+
+      fadeTargets.forEach((target) => {
+        ;(target as HTMLElement).style.opacity = isMenuOpen ? "1" : "0"
+        ;(target as HTMLElement).style.transform = "none"
+      })
+
+      menuTexts.forEach((text) => {
+        ;(text as HTMLElement).style.transform = isMenuOpen
+          ? "translateY(-100%)"
+          : "translateY(0%)"
+      })
+
+      if (menuIcon) {
+        ;(menuIcon as HTMLElement).style.transform = isMenuOpen
+          ? "rotate(315deg)"
+          : "rotate(0deg)"
+      }
+
+      return
+    }
+
     let cancelled = false
 
     import("gsap").then(({ gsap }) => {
       if (cancelled || !containerRef.current) return
-
-      const container = containerRef.current
-      const navWrap = container.querySelector(".nav-overlay-wrapper") as HTMLElement | null
-      const overlay = container.querySelector(".overlay") as HTMLElement | null
-      const bgPanels = container.querySelectorAll(".backdrop-layer")
-      const navLinks = container.querySelectorAll(".nav-link")
-      const fadeTargets = container.querySelectorAll("[data-menu-fade]")
-      const menuBtn = container.querySelector(".menu-btn")
-      const menuTexts = menuBtn ? menuBtn.querySelectorAll("p") : []
-      const menuIcon = menuBtn ? menuBtn.querySelector(".menu-button-icon") : null
-
-      if (!navWrap || !overlay) return
 
       tlRef.current?.kill()
       const tl = gsap.timeline({ defaults: { ease: "power3.inOut", duration: 0.7 } })
@@ -92,7 +154,7 @@ export function Navbar() {
       cancelled = true
       tlRef.current?.kill()
     }
-  }, [isMenuOpen])
+  }, [isMenuOpen, prefersReducedMotion])
 
   // Lock body scroll when menu is open
   useEffect(() => {
@@ -106,14 +168,72 @@ export function Navbar() {
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isMenuOpen) setIsMenuOpen(false)
+      if (!isMenuOpen) return
+
+      if (e.key === "Escape") {
+        shouldRestoreFocusRef.current = true
+        setIsMenuOpen(false)
+        return
+      }
+
+      if (e.key !== "Tab") return
+
+      const focusable = getFocusableElements()
+      if (focusable.length === 0) return
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      const active = document.activeElement as HTMLElement | null
+
+      if (!active || !panelRef.current?.contains(active)) {
+        e.preventDefault()
+        first.focus()
+        return
+      }
+
+      if (e.shiftKey && active === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault()
+        first.focus()
+      }
     }
     window.addEventListener("keydown", handleEsc)
     return () => window.removeEventListener("keydown", handleEsc)
+  }, [getFocusableElements, isMenuOpen])
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      if (shouldRestoreFocusRef.current) {
+        menuButtonRef.current?.focus()
+        shouldRestoreFocusRef.current = false
+      }
+      return
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      const firstLink = navLinkRefs.current.find(Boolean)
+      firstLink?.focus()
+      if (!firstLink) {
+        closeButtonRef.current?.focus()
+      }
+    })
+
+    return () => window.cancelAnimationFrame(frame)
   }, [isMenuOpen])
 
-  const toggleMenu = useCallback(() => setIsMenuOpen((prev) => !prev), [])
-  const closeMenu = useCallback(() => setIsMenuOpen(false), [])
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen((prev) => {
+      shouldRestoreFocusRef.current = prev
+      return !prev
+    })
+  }, [])
+
+  const closeMenu = useCallback(() => {
+    shouldRestoreFocusRef.current = true
+    setIsMenuOpen(false)
+  }, [])
 
   // Text should be dark (black) when scrolled OR when menu is open (white bg panel)
   const useDarkText = scrolled || isMenuOpen
@@ -146,9 +266,14 @@ export function Navbar() {
 
           {/* Menu button */}
           <button
+            ref={menuButtonRef}
+            type="button"
             className="menu-btn relative z-[70] flex items-center gap-3 overflow-hidden"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="primary-navigation-panel"
+            aria-haspopup="dialog"
           >
             <div className="h-[20px] overflow-hidden">
               <p className={`font-heading text-[13px] uppercase tracking-[0.05em] leading-[20px] transition-colors duration-300 ${useDarkText ? "text-black" : "text-white"}`}>Menu</p>
@@ -186,7 +311,14 @@ export function Navbar() {
           style={{ visibility: "hidden", opacity: 0 }}
         />
 
-        <nav className="menu-content absolute inset-y-0 right-0 w-full sm:w-[560px]">
+        <nav
+          id="primary-navigation-panel"
+          ref={panelRef}
+          className="menu-content absolute inset-y-0 right-0 w-full sm:w-[560px]"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu principal"
+        >
           <div className="absolute inset-0">
             <div className="backdrop-layer absolute inset-0 bg-muted/50" />
             <div className="backdrop-layer absolute inset-0 bg-muted/80" />
@@ -196,6 +328,8 @@ export function Navbar() {
           <div className="relative flex h-full flex-col px-8 pt-20 pb-10 sm:px-12 md:px-16">
             {/* Close button inside menu panel */}
             <button
+              ref={closeButtonRef}
+              type="button"
               onClick={closeMenu}
               className="absolute right-8 top-5 z-10 flex items-center gap-3 sm:right-12 md:right-16"
               aria-label="Fechar menu"
@@ -212,12 +346,15 @@ export function Navbar() {
 
             {/* Nav links */}
             <ul className="mt-auto mb-auto flex flex-col gap-1">
-              {NAV_ITEMS.map((item) => (
+              {NAV_ITEMS.map((item, index) => (
                 <li key={item.href} className="overflow-hidden">
                   <Link
                     href={item.href}
                     onClick={closeMenu}
                     className="nav-link menu-nav-link"
+                    ref={(element) => {
+                      navLinkRefs.current[index] = element
+                    }}
                   >
                     <div className="link-stripe" />
                     <span className="link-text font-heading text-[clamp(2.2rem,7vw,3.5rem)]">

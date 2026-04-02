@@ -57,6 +57,7 @@ export function persistAuditState(params: {
       ultima_execucao: resultado.timestamp,
       cohorts: assertion?.cohorts ?? [],
       source: assertion?.source ?? null,
+      verified_at: assertion?.verifiedAt ?? null,
       campos_com_fail: resultado.campos
         .filter((campo) => campo.resultado === "fail")
         .map((campo) => campo.campo),

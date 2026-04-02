@@ -10,8 +10,18 @@ interface NewsItem {
   data_publicacao: string
 }
 
-function parseRSS(xml: string): NewsItem[] {
+function normalizeNewsUrl(url: string): string | null {
+  try {
+    const parsed = new URL(url)
+    return parsed.protocol === "https:" ? parsed.toString() : null
+  } catch {
+    return null
+  }
+}
+
+function parseRSS(xml: string): { items: NewsItem[]; discardedUrls: number } {
   const items: NewsItem[] = []
+  let discardedUrls = 0
   const itemRegex = /<item>([\s\S]*?)<\/item>/g
   let match
   while ((match = itemRegex.exec(xml)) !== null) {
@@ -25,17 +35,23 @@ function parseRSS(xml: string): NewsItem[] {
     const source = item.match(/<source[^>]*>([\s\S]*?)<\/source>/)?.[1]?.trim()
 
     if (title && link) {
+      const safeUrl = normalizeNewsUrl(link)
+      if (!safeUrl) {
+        discardedUrls += 1
+        continue
+      }
+
       items.push({
         titulo: title,
         fonte: source || "",
-        url: link,
+        url: safeUrl,
         data_publicacao: pubDate
           ? new Date(pubDate).toISOString()
           : new Date().toISOString(),
       })
     }
   }
-  return items
+  return { items, discardedUrls }
 }
 
 async function resolveCandidatoId(
@@ -97,7 +113,12 @@ export async function ingestGoogleNews(): Promise<IngestResult[]> {
         }
 
         const xml = await res.text()
-        const newsItems = parseRSS(xml).slice(0, 20)
+        const { items, discardedUrls } = parseRSS(xml)
+        const newsItems = items.slice(0, 20)
+
+        if (discardedUrls > 0) {
+          warn("google-news", `  ${cand.slug}: ${discardedUrls} URL(s) descartada(s) por esquema invalido`)
+        }
 
         if (newsItems.length === 0) {
           log("google-news", `  ${cand.slug}: nenhuma noticia`)

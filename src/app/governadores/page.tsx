@@ -1,17 +1,43 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { SlashDivider } from "@/components/SlashDivider"
 import { Footer } from "@/components/Footer"
 import { BrazilMap } from "@/components/BrazilMap"
+import { JsonLd } from "@/components/JsonLd"
 
 export const metadata: Metadata = {
   title: "Governadores por estado — Puxa Ficha",
   description:
     "Consulte candidatos a governador em cada estado brasileiro. Mapa interativo com ficha completa.",
+  openGraph: {
+    title: "Governadores por estado — Puxa Ficha",
+    description:
+      "Consulte candidatos a governador em cada estado brasileiro. Mapa interativo com ficha completa.",
+    url: "https://puxaficha.com.br/governadores",
+    images: [
+      {
+        url: "/governadores/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Governadores por estado",
+      },
+    ],
+  },
 }
 
 export default function GovernadorePage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Governadores por estado",
+    url: "https://puxaficha.com.br/governadores",
+    description:
+      "Mapa e diretorio para consultar candidatos a governador em cada estado brasileiro.",
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <JsonLd data={schema} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-black">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -34,6 +60,24 @@ export default function GovernadorePage() {
           </h1>
           <p className="mt-3 max-w-lg text-[length:var(--text-body)] font-medium text-white/80 sm:text-[15px]">
             Selecione um estado pra ver os candidatos a governador.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pt-8 md:px-12">
+        <div className="max-w-3xl">
+          <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
+            O hub de governadores organiza a busca por estado para quem procura
+            candidatos a governador de 2026 sem cair direto em material de
+            campanha. O mapa serve como indice de entrada e cada UF ganha ficha
+            e comparador proprios.
+          </p>
+          <p className="mt-3 text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
+            Se preferir a cobertura nacional, volte para a{" "}
+            <Link href="/" className="font-semibold text-foreground underline">
+              home
+            </Link>
+            .
           </p>
         </div>
       </section>

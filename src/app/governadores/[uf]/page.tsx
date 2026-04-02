@@ -1,9 +1,18 @@
 import { notFound } from "next/navigation"
-import { getEstadoNome, getEstadoUFs, getCandidatosComResumo, getCandidatosComparaveis } from "@/lib/api"
+import {
+  getEstadoNome,
+  getEstadoUFs,
+  getCandidatosComResumoResource,
+  getCandidatosComparaveisResource,
+  mergeSourceMessages,
+  mergeSourceStatuses,
+} from "@/lib/api"
 import { CandidatoGrid } from "@/components/CandidatoGrid"
 import { ComparadorPanel } from "@/components/ComparadorPanel"
 import { SlashDivider } from "@/components/SlashDivider"
 import { Footer } from "@/components/Footer"
+import { DataSourceNotice } from "@/components/DataSourceNotice"
+import { JsonLd } from "@/components/JsonLd"
 import Link from "next/link"
 import type { Metadata } from "next"
 import { ArrowLeft } from "lucide-react"
@@ -26,6 +35,19 @@ export async function generateMetadata({
   return {
     title: `Candidatos a governador: ${nome} (${uf.toUpperCase()}) — Puxa Ficha`,
     description: `Consulte os candidatos a governador de ${nome} nas eleicoes 2026. Ficha completa, patrimonio, processos.`,
+    openGraph: {
+      title: `Candidatos a governador: ${nome} (${uf.toUpperCase()}) — Puxa Ficha`,
+      description: `Consulte os candidatos a governador de ${nome} nas eleicoes 2026. Ficha completa, patrimonio, processos.`,
+      url: `https://puxaficha.com.br/governadores/${uf.toLowerCase()}`,
+      images: [
+        {
+          url: `/governadores/${uf.toLowerCase()}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `Governadores ${nome}`,
+        },
+      ],
+    },
   }
 }
 
@@ -38,12 +60,22 @@ export default async function EstadoPage({
   const nome = getEstadoNome(uf)
   if (!nome) notFound()
 
-  const [resumos, comparaveis] = await Promise.all([
-    getCandidatosComResumo("Governador"),
-    getCandidatosComparaveis("Governador", uf),
+  const [resumosResource, comparaveisResource] = await Promise.all([
+    getCandidatosComResumoResource("Governador"),
+    getCandidatosComparaveisResource("Governador", uf),
   ])
+  const resumos = resumosResource.data
+  const comparaveis = comparaveisResource.data
   const estadoResumos = resumos.filter(r => r.candidato.estado?.toLowerCase() === uf.toLowerCase())
   const candidatos = estadoResumos.map(r => r.candidato)
+  const sourceStatus = mergeSourceStatuses(
+    resumosResource.sourceStatus,
+    comparaveisResource.sourceStatus
+  )
+  const sourceMessage = mergeSourceMessages(
+    resumosResource.sourceMessage,
+    comparaveisResource.sourceMessage
+  )
 
   const processos: Record<string, number> = {}
   const patrimonios: Record<string, number | null> = {}
@@ -58,9 +90,17 @@ export default async function EstadoPage({
   const totalProcessos = estadoResumos.reduce((sum, r) => sum + r.processos, 0)
   const partidos = new Set(candidatos.map(c => c.partido_sigla).filter(Boolean))
   const totalPartidos = partidos.size
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: `Candidatos a governador em ${nome}`,
+    url: `https://puxaficha.com.br/governadores/${uf.toLowerCase()}`,
+    description: `Consulte e compare candidatos a governador de ${nome} nas eleicoes de 2026.`,
+  }
 
   return (
     <div className="min-h-screen bg-background">
+      <JsonLd data={schema} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-black">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -136,6 +176,31 @@ export default async function EstadoPage({
               )}
             </div>
           )}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pt-6 md:px-12">
+        <DataSourceNotice status={sourceStatus} message={sourceMessage} />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pt-8 md:px-12">
+        <div className="max-w-3xl">
+          <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
+            Esta pagina organiza os candidatos a governador de {nome} com foco
+            em busca organica e consulta rapida: ficha completa, comparador e
+            leitura por patrimonio, processos e partidos.
+          </p>
+          <p className="mt-3 text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
+            Se estiver navegando por estado, volte ao{" "}
+            <Link href="/governadores" className="font-semibold text-foreground underline">
+              mapa geral
+            </Link>{" "}
+            ou compare com a cobertura da{" "}
+            <Link href="/" className="font-semibold text-foreground underline">
+              presidencia
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

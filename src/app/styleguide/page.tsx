@@ -12,7 +12,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Skeleton } from "@/components/ui/skeleton"
 import { SlashDivider } from "@/components/SlashDivider"
 import { SectionLabel, SectionTitle } from "@/components/SectionHeader"
-import { AlertTriangle, ArrowRight, Scale, Landmark, Briefcase, ArrowRightLeft } from "lucide-react"
+import { AlertTriangle, ArrowRight, Scale, Landmark } from "lucide-react"
 
 const COLORS = [
   { name: "background", var: "--background", label: "Background" },

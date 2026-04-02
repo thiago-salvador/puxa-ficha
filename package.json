@@ -10,15 +10,23 @@
     "start": "next start",
     "lint": "eslint",
     "check:scripts": "tsc --project tsconfig.scripts.json",
+    "audit:completude": "tsx scripts/audit-completude.ts",
     "audit:factual": "tsx scripts/audit-factual.ts",
     "audit:factual:gate": "tsx scripts/check-audit-gate.ts",
     "audit:factual:diff": "tsx scripts/audit-factual-diff.ts",
-    "sync:mock:assertions": "tsx scripts/sync-mock-from-assertions.ts"
+    "audit:release-verify": "tsx scripts/release-verify.ts",
+    "audit:release-verify:partial": "tsx scripts/release-verify.ts --mode partial",
+    "audit:dossiers": "tsx scripts/build-candidate-dossiers.ts",
+    "persist:sq": "tsx scripts/persist-sq-candidato.ts",
+    "sync:mock:assertions": "tsx scripts/sync-mock-from-assertions.ts",
+    "sync:structured:mock": "tsx scripts/sync-curated-structured-from-mock.ts",
+    "audit:publish": "tsx scripts/audit-factual.ts && tsx scripts/check-audit-gate.ts --max-blocked 0 --min-assertions 144 --min-curated auto"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
     "@supabase/ssr": "^0.9.0",
     "@supabase/supabase-js": "^2.100.1",
+    "@tanstack/react-virtual": "^3.13.23",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gsap": "^3.14.2",
@@ -34,11 +42,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "csv-parse": "^6.2.1",
     "eslint": "^9",
     "eslint-config-next": "15.5.14",
-    "tailwindcss": "^4",
-    "csv-parse": "^6.2.1",
     "shadcn": "^4.1.1",
+    "tailwindcss": "^4",
     "tsx": "^4.21.0",
     "typescript": "^5"
   }

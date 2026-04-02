@@ -8,6 +8,15 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card"
 
 const VISIBLE_LIMIT = 10
 
+function getSafeNewsUrl(url: string): string | null {
+  try {
+    const parsed = new URL(url)
+    return parsed.protocol === "https:" ? parsed.toString() : null
+  } catch {
+    return null
+  }
+}
+
 export function NewsSection({ noticias }: { noticias: NoticiaCandidato[] }) {
   const [expanded, setExpanded] = useState(false)
 
@@ -38,32 +47,54 @@ export function NewsSection({ noticias }: { noticias: NoticiaCandidato[] }) {
         </div>
       </CardHeader>
       <CardContent className="space-y-1.5 pt-4">
-        {visible.map((n) => (
-          <a
-            key={n.id}
-            href={n.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-start gap-3 rounded-md border border-border px-4 py-3 transition-colors hover:bg-secondary"
-          >
-            <div className="min-w-0 flex-1">
-              <p className="text-[13px] font-medium leading-snug text-foreground group-hover:underline">
-                {n.titulo}
-              </p>
-              <div className="mt-1 flex flex-wrap items-center gap-2">
-                {n.fonte && (
-                  <span className="text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground">
-                    {n.fonte}
+        {visible.map((n) => {
+          const safeUrl = getSafeNewsUrl(n.url)
+          const content = (
+            <>
+              <div className="min-w-0 flex-1">
+                <p className="text-[13px] font-medium leading-snug text-foreground group-hover:underline">
+                  {n.titulo}
+                </p>
+                <div className="mt-1 flex flex-wrap items-center gap-2">
+                  {n.fonte && (
+                    <span className="text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground">
+                      {n.fonte}
+                    </span>
+                  )}
+                  <span className="text-[11px] font-medium tabular-nums text-muted-foreground">
+                    {formatDate(n.data_publicacao)}
                   </span>
-                )}
-                <span className="text-[11px] font-medium tabular-nums text-muted-foreground">
-                  {formatDate(n.data_publicacao)}
-                </span>
+                </div>
               </div>
-            </div>
-            <ExternalLink className="mt-1 size-3.5 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
-          </a>
-        ))}
+              {safeUrl ? (
+                <ExternalLink className="mt-1 size-3.5 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+              ) : null}
+            </>
+          )
+
+          if (!safeUrl) {
+            return (
+              <div
+                key={n.id}
+                className="group flex items-start gap-3 rounded-md border border-border px-4 py-3"
+              >
+                {content}
+              </div>
+            )
+          }
+
+          return (
+            <a
+              key={n.id}
+              href={safeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-3 rounded-md border border-border px-4 py-3 transition-colors hover:bg-secondary"
+            >
+              {content}
+            </a>
+          )
+        })}
 
         {hasMore && !expanded && (
           <button
