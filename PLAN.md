@@ -6,7 +6,19 @@ Arquivo importado de `/Users/thiagosalvador/Downloads/PLAN.md` em `2026-04-02` e
 
 Este plano **não está concluído**. O site está mais seguro do que antes, mas **não está 100% funcional, atualizado e pronto para ir ao ar**.
 
-Snapshot medido em `2026-04-02 ~17:26 America/Sao_Paulo` (apos sessao Cursor: pipeline + foto `marcelo-maranata` + sync `publicavel`):
+### Snapshot atual (2026-04-02 ~19:10, apos lotes 1-5 de curadoria)
+
+- `144` candidatos ativos no banco
+- `97` candidatos com `publicavel = true`
+- `97/144` assertions `curated`
+- `47/144` assertions `mirrored` (restantes a promover)
+- gate factual: **passando** (0 bloqueados, 97 curated, 47 mirrored)
+- `release-verify` full local: `146/146 OK` (porta 3456)
+- `set-publicavel-from-audit.ts` real: `97` sincronizados, `47` ocultos
+- foto `marcelo-maranata`: **versionada** em `public/candidates/marcelo-maranata.jpg` + deploy confirmado
+- producao: `https://puxaficha.com.br` — 97 fichas acessíveis
+
+### Snapshot histórico pré-lotes (2026-04-02 ~17:26, pos sessao Cursor)
 
 - `144` candidatos ativos no banco
 - `82` candidatos com `publicavel = true`
@@ -782,7 +794,7 @@ Esta entrada completa os passos que a sessao Cursor omitiu. Executado por Claude
   - `82` candidatos com `publicavel = true`
   - `62` candidatos com `publicavel = false`
   - `144` total (status != 'removido')
-- **Pendencia remanescente**: `public/candidates/marcelo-maranata.jpg` esta untracked no git — foto nao aparece em producao ate o commit + deploy do JPG
+- **Pendencia remanescente** (na epoca): `public/candidates/marcelo-maranata.jpg` estava untracked no git. **Resolvido**: arquivo foi commitado e deployado em seguida (commit `5cb4b6d`). Estado atual: versionado e visivel em producao.
 
 ### 2026-04-02 — lote 1 curadoria (Claude Code, claude-sonnet-4-6)
 
@@ -901,15 +913,16 @@ Restam: 47 candidatos mirrored para promover.
 Auto-auditoria solicitada pelo usuario apos lote 5. Identificados desvios do padrao Codex e corrigidos.
 
 **Desvios identificados (lotes 1-5):**
-- Gate check explícito (`check-audit-gate.ts`) nunca foi invocado diretamente. Usado "0 bloqueados" do audit como substituto (aceitavel mas nao rigoroso).
-- release-verify delta por slug foi pulado em lotes 2-5.
+- Gate check explícito (`check-audit-gate.ts`) nao foi invocado durante a execucao de nenhum dos lotes 1-5. Usado "0 bloqueados" do audit output como substituto tacito.
+- release-verify delta por slug foi pulado em lotes 2-5 (lote 1 tentou mas caiu para full por conflito de porta).
 - set-publicavel dry-run foi pulado em lotes 2-5 (apenas lote 1 rodou dry-run).
-- URLs de producao nao foram confirmadas nos lotes 4 e 5.
+- URLs de producao (200 + titulo) nao foram confirmadas nos lotes 4 e 5; lotes 2-3 confirmaram 200 mas sem titulo.
 
-**Correcoes aplicadas:**
-- Gate check retroativo rodado: `OK — 0 bloqueados, 144 assertions, curated 97/97, mirrored 47`
-- URLs de producao dos lotes 4 e 5 confirmadas: 6/6 com 200 + titulo correto
-- Logs de lotes 4 e 5 atualizados com gate check e producao confirmada
+**Correcoes aplicadas nesta entrada:**
+- Gate check rodado retroativamente apos lote 5: `OK — 0 bloqueados, 144 assertions, curated 97/97, mirrored 47`. Nao substitui gate por lote, mas confirma estado integro do conjunto.
+- URLs de producao dos lotes 4 e 5 confirmadas retroativamente: 6/6 com 200 + titulo correto.
+- Logs individuais dos lotes 1-5 corrigidos: desvios registrados explicitamente em cada entrada.
+- Nota: o gate check retroativo confirma integridade do estado atual, nao das transicoes individuais. A partir do lote 6, gate check roda dentro de cada lote.
 
 **Padrao a seguir daqui em diante (obrigatorio por lote):**
 1. assertions + sync-mock + apply-fixes
