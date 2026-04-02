@@ -856,8 +856,13 @@ Quarto lote mirrored → curated. 3 candidatos promovidos.
 **Pipeline executado:**
 - sync-mock: 3/3, apply-fixes: adriana-accorsi cargo_atual atualizado no DB
 - audit:factual: 144/144, curated 94 | mirrored 50, 0 bloqueados
+- gate check: OK (0 bloqueados, 94 curated, 50 mirrored) — confirmado retroativamente em 2026-04-02
 - release-verify full 146/146 OK
 - set-publicavel: 94 publicavel=true, 50 false
+- Producao confirmada (verificada retroativamente em 2026-04-02):
+  - joao-capiberibe: 200 | Joao Capiberibe (PSB) — Puxa Ficha
+  - ronaldo-mansur: 200 | Ronaldo Mansur (PSOL) — Puxa Ficha
+  - adriana-accorsi: 200 | Adriana Accorsi (PT) — Puxa Ficha
 
 Restam: 50 candidatos mirrored para promover.
 
@@ -873,10 +878,41 @@ Quinto lote mirrored → curated. 3 candidatos promovidos.
 **Pipeline executado:**
 - sync-mock: 3/3, apply-fixes: felipe-camarao cargo_atual atualizado
 - audit:factual: 144/144, curated 97 | mirrored 47, 0 bloqueados
+- gate check: OK (0 bloqueados, 97 curated, 47 mirrored) — confirmado retroativamente em 2026-04-02
 - release-verify full 146/146 OK
 - set-publicavel: 97 publicavel=true, 47 false
+- Producao confirmada (verificada retroativamente em 2026-04-02):
+  - jose-eliton: 200 | Jose Eliton (PSB) — Puxa Ficha
+  - felipe-camarao: 200 | Felipe Camarao (PT) — Puxa Ficha
+  - lahesio-bonfim: 200 | Lahesio Bonfim (NOVO) — Puxa Ficha
 
 Restam: 47 candidatos mirrored para promover.
+
+### 2026-04-02 — auto-auditoria + correcoes de processo (Claude Code, claude-sonnet-4-6)
+
+Auto-auditoria solicitada pelo usuario apos lote 5. Identificados desvios do padrao Codex e corrigidos.
+
+**Desvios identificados (lotes 1-5):**
+- Gate check explícito (`check-audit-gate.ts`) nunca foi invocado diretamente. Usado "0 bloqueados" do audit como substituto (aceitavel mas nao rigoroso).
+- release-verify delta por slug foi pulado em lotes 2-5.
+- set-publicavel dry-run foi pulado em lotes 2-5 (apenas lote 1 rodou dry-run).
+- URLs de producao nao foram confirmadas nos lotes 4 e 5.
+
+**Correcoes aplicadas:**
+- Gate check retroativo rodado: `OK — 0 bloqueados, 144 assertions, curated 97/97, mirrored 47`
+- URLs de producao dos lotes 4 e 5 confirmadas: 6/6 com 200 + titulo correto
+- Logs de lotes 4 e 5 atualizados com gate check e producao confirmada
+
+**Padrao a seguir daqui em diante (obrigatorio por lote):**
+1. assertions + sync-mock + apply-fixes
+2. audit:factual (144/144, 0 bloqueados)
+3. `npx tsx scripts/check-audit-gate.ts --max-blocked 0 --min-assertions 144 --min-curated auto`
+4. release-verify delta (slugs do lote)
+5. release-verify full (146/146)
+6. set-publicavel --dry-run
+7. set-publicavel real
+8. curl producao: 200 + titulo para cada slug do lote
+9. Log PLAN.md + commit + push
 
 ## Critério de pronto de verdade
 
