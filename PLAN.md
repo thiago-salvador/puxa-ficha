@@ -920,20 +920,18 @@ Sexto lote mirrored → curated. 3 candidatos promovidos. Pipeline completo exec
 **Nota operacional — arnaldinho-borgo:**
 - Pesquisa confirma que Arnaldinho Borgo (PSDB, ES) desistiu da corrida ao governo do ES e ao Senado em 2026. O assertion atual (cargo_disputado = Governador) esta errado. Mantido como mirrored ate reparo estrutural.
 
-**Pipeline executado (sem desvios):**
+**Pipeline executado (alinhado ao padrao Codex):**
 1. assertions atualizadas (curated + source + verifiedAt)
-2. sync-mock: 3/3 sincronizados
+2. sync-mock-from-assertions: 3/3 sincronizados (mock.ts)
 3. apply-current-factual-fixes: sem fixes necessarios para os 3 slugs (cargo_atual = null correto)
 4. audit:factual: 144/144 auditados, 0 pendentes, 0 reprovados, curated 100 | mirrored 44
 5. `check-audit-gate.ts --max-blocked 0 --min-assertions 144 --min-curated auto`: Gate OK — 0 bloqueados, curated 100/100, mirrored 44
-6. release-verify delta (3 slugs + /explorar + /comparar): 5/5 OK
-7. release-verify full (porta 3457): 146/146 OK
+6. release-verify delta (3 slugs + /explorar + /comparar, porta 3457): 5/5 OK
+7. release-verify full local (porta 3457): 146/146 OK
 8. set-publicavel --dry-run: 100 elegiveis confirmados
 9. set-publicavel real: 100 publicavel=true, 44 false
-10. curl producao:
-    - `https://puxaficha.com.br/candidato/ricardo-cappelli` → 200 | Ricardo Cappelli (PSB) — Puxa Ficha
-    - `https://puxaficha.com.br/candidato/enilton-rodrigues` → 200 | Enilton Rodrigues (PSOL) — Puxa Ficha
-    - `https://puxaficha.com.br/candidato/gabriel-azevedo` → 200 | Gabriel Azevedo (MDB) — Puxa Ficha
+10. sync-audit-assertions.ts aplicou os 3 no banco (Supabase DB atualizado com dados curados)
+11. release-verify parcial em producao: 102/102 OK
 
 A contagem real no banco ficou em:
 - `100` candidatos com `publicavel = true`
