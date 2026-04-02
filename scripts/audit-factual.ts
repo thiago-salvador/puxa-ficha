@@ -358,6 +358,7 @@ async function buildSnapshots(
   config: ReturnType<typeof loadCandidatos>
 ): Promise<CandidatePublicSnapshot[]> {
   const ids = candidatos.map((c) => c.id)
+  const candidateBySlug = new Map(candidatos.map((c) => [c.slug, c]))
 
   async function fetchAllRows<T>(
     pageFetcher: (from: number, to: number) => Promise<{ data: T[] | null; error: { message: string } | null }>
@@ -479,9 +480,28 @@ async function buildSnapshots(
     gastosCount.set(row.candidato_id, (gastosCount.get(row.candidato_id) ?? 0) + 1)
   }
 
+  function resolveRelatedCandidateIds(slug: string): string[] {
+    return getCanonicalPerson(slug).slugs
+      .map((relatedSlug) => candidateBySlug.get(relatedSlug)?.id ?? null)
+      .filter((id): id is string => Boolean(id))
+  }
+
+  function findLatestPatrimonio(relatedIds: string[]): PatrimonioRow | undefined {
+    return patrimonioRowsData.find((row) => relatedIds.includes(row.candidato_id))
+  }
+
+  function findLatestFinanciamento(relatedIds: string[]): FinanciamentoRow | undefined {
+    return financiamentoRowsData.find((row) => relatedIds.includes(row.candidato_id))
+  }
+
+  function countRowsForIds<T extends { candidato_id: string }>(rows: T[], relatedIds: string[]): number {
+    return rows.filter((row) => relatedIds.includes(row.candidato_id)).length
+  }
+
   return candidatos.map((c) => {
-    const pat = patrimonioMap.get(c.id)
-    const fin = financiamentoMap.get(c.id)
+    const relatedIds = resolveRelatedCandidateIds(c.slug)
+    const pat = patrimonioMap.get(c.id) ?? findLatestPatrimonio(relatedIds)
+    const fin = financiamentoMap.get(c.id) ?? findLatestFinanciamento(relatedIds)
     const latestHistorico = pickLatestHistorico(historicoRows.get(c.id) ?? [], c.cargo_atual)
     const latestMudanca = pickLatestMudanca(
       mudancasRows.get(c.id) ?? [],
@@ -506,10 +526,10 @@ async function buildSnapshots(
       biografia: c.biografia,
       patrimonio_mais_recente: pat?.valor_total ?? null,
       patrimonio_ano: pat?.ano_eleicao ?? null,
-      total_patrimonio_registros: patrimonioRowsData.filter((row) => row.candidato_id === c.id).length,
+      total_patrimonio_registros: countRowsForIds(patrimonioRowsData, relatedIds),
       financiamento_mais_recente: fin?.total_arrecadado ?? null,
       financiamento_ano: fin?.ano_eleicao ?? null,
-      total_financiamento_registros: financiamentoRowsData.filter((row) => row.candidato_id === c.id).length,
+      total_financiamento_registros: countRowsForIds(financiamentoRowsData, relatedIds),
       total_processos: processosCount.get(c.id) ?? 0,
       foto_url: c.foto_url,
       data_nascimento: c.data_nascimento,

@@ -47,6 +47,16 @@ Este plano nao inclui snippets detalhados em todos os steps no formato mais pres
 6. Refatorar `ingest-tse.ts` para usar o mesmo resolvedor e expandir anos.
 7. Rodar rollout completo e validar ganho real de cobertura.
 
+## Status de Execucao em 2026-04-01
+
+- Task 1: concluida
+- Task 2: concluida
+- Task 3: concluida
+- Task 4: concluida
+- Task 5: concluida
+- Task 6: concluida
+- Task 7: concluida
+
 ## File Map
 
 - `scripts/audit-completude.ts`
@@ -99,6 +109,18 @@ Saida esperada:
   - `com_financiamento ~ 60`
 - lista clara de candidatos com `ids.camara` mas `cargo_atual = null`
 
+### Log de Execucao
+
+Status: concluida em `2026-03-31`
+
+- script criado em `scripts/audit-completude.ts`
+- relatorio persistido em `scripts/completude-report.json`
+- baseline real medido:
+  - `patrimonio = 60/144`
+  - `financiamento = 56/144`
+  - `cargo_atual = 39/144`
+  - `com_cpf = 68/144`
+
 ## Task 2 - cargo_atual via Pipeline
 
 Objetivo: corrigir o gap mais visivel sem marcar ex-mandatarios como ativos.
@@ -135,6 +157,23 @@ Checagem minima:
 - `nikolas-ferreira` com `cargo_atual = "Deputado(a) Federal"`
 - ex-deputados continuam com `cargo_atual = null`
 
+### Log de Execucao
+
+Status: concluida em `2026-03-31`
+
+- implementado em `scripts/lib/ingest-camara.ts` e `scripts/lib/ingest-senado.ts`
+- o shape real das APIs divergiu do plano:
+  - Camara usou `ultimoStatus.situacao`
+  - Senado usou `IdentificacaoParlamentar.CodigoPublicoNaLegAtual`
+- resultado inicial do fix:
+  - `cargo_atual = 62/144`
+- resultado apos follow-up:
+  - `cargo_atual = 67/144`
+- validacoes confirmadas no banco:
+  - `nikolas-ferreira -> Deputado(a) Federal`
+  - `cleitinho -> Senador(a)`
+  - `rodrigo-pacheco -> Senador(a)`
+
 ## Task 3 - Exportar parseCSV
 
 Objetivo: remover duplicacao e permitir reuse no script de persistencia.
@@ -155,6 +194,14 @@ Validacao:
 ```bash
 npm run check:scripts
 ```
+
+### Log de Execucao
+
+Status: concluida em `2026-03-31`
+
+- `parseCSV()` foi extraido para `scripts/lib/helpers.ts`
+- `scripts/lib/ingest-tse.ts` passou a importar a funcao compartilhada
+- a remocao de duplicacao foi mantida nas rodadas seguintes
 
 ## Task 4 - Criar o Resolvedor Compartilhado
 
@@ -226,6 +273,18 @@ Validacao:
 npm run check:scripts
 ```
 
+### Log de Execucao
+
+Status: concluida em `2026-03-31`, endurecida em `2026-04-01`
+
+- `scripts/lib/tse-resolver.ts` criado e adotado como fonte unica de resolucao TSE
+- regras adicionais aplicadas no follow-up:
+  - CPF so vale se tiver `11` digitos reais
+  - matches fracos por nome em `2024` foram desabilitados
+  - prioridade explicita de resolucao no caller:
+    - `sq-preloaded > cpf > name-unique > name-uf`
+- a API permaneceu stateless por row, como previsto
+
 ## Task 5 - Persistir tse_sq_candidato
 
 Objetivo: preencher o JSON com `SQ_CANDIDATO` por ano usando o resolvedor compartilhado.
@@ -279,6 +338,25 @@ Checagens:
 - `cleitinho` deve ter pelo menos um ano historico valido
 - `rodrigo-pacheco` deve ter anos historicos validos
 
+### Log de Execucao
+
+Status: concluida em `2026-03-31`, recalibrada em `2026-04-01`
+
+- `scripts/persist-sq-candidato.ts` criado
+- resultado inicial do fix:
+  - `114/144` candidatos com pelo menos um `SQ_CANDIDATO`
+- resultado apos follow-up:
+  - `125/144`
+- casos confirmados:
+  - `nikolas-ferreira` com `2020` e `2022`
+  - `cleitinho` com `2018` e `2022`
+  - `rodrigo-pacheco` com anos historicos persistidos
+- consolidacao de modelagem aplicada:
+  - `tarcisio` virou slug canonico com `2022`
+  - `ciro-gomes` virou slug canonico com `2018` e `2022`
+- caso rebaixado para revisao manual:
+  - `gilberto-kassab`
+
 ## Task 6 - Refatorar ingest-tse.ts
 
 Objetivo: eliminar o caminho paralelo fragil da pipeline.
@@ -328,6 +406,22 @@ Logs esperados:
   - `ambiguous`
   - `no-match`
 
+### Log de Execucao
+
+Status: concluida em `2026-03-31`, refinada em `2026-04-01`
+
+- `scripts/lib/ingest-tse.ts` passou a usar o resolvedor compartilhado
+- anos expandidos para `2018`, `2020`, `2022` e `2024`
+- `processFinanciamento()` deixou de usar o match local por nome
+- follow-up aplicado:
+  - `buildSQMap()` passou a respeitar prioridade por confianca
+  - `processFinanciamento()` passou a consumir `sqMap`, nao resolucao row a row por nome
+  - caches corrompidos de financiamento `2018` e `2024` foram limpos durante o rollout
+- estado final auditado no banco:
+  - `patrimonio = 123/144`
+  - `financiamento = 117/144`
+  - `com_cpf = 116/144`
+
 ## Task 7 - Rollout e Verificacao Final
 
 Comandos:
@@ -346,6 +440,43 @@ Checagem local:
   - hero com `cargo_atual = "Deputado(a) Federal"`
   - aba Dinheiro com patrimonio de 2022
   - aba Dinheiro com financiamento de 2022
+
+### Log de Execucao
+
+Status: concluida em `2026-04-01`
+
+- executado de forma dirigida antes do fechamento:
+  - `ingest-camara.ts`
+  - `ingest-senado.ts`
+  - `persist-sq-candidato.ts`
+  - `ingest-tse.ts`
+  - `audit-completude.ts`
+  - `npm run check:scripts`
+  - `npm run build`
+- `npx tsx scripts/ingest-all.ts` rodou end-to-end em `2026-04-01`
+  - `tempo = 8091.9s`
+  - `rows upserted = 13787`
+  - `errors = 4`
+  - blockers conhecidos no fechamento:
+    - `tse-situacao/maria-do-carmo: cpf-inconsistente`
+    - `tse-situacao/joao-roma: cpf-inconsistente`
+    - `tse-situacao/rafael-greca: cpf-inconsistente`
+    - `camara/confucio-moura: timeout 2min`
+- `npx tsx scripts/audit-completude.ts` rerodado apos o rollout completo
+- validacao final consolidada:
+  - `SQ_CANDIDATO = 125/144`
+  - `patrimonio = 123/144`
+  - `financiamento = 117/144`
+  - `cargo_atual = 67/144`
+  - `com_cpf = 116/144`
+- `npm run check:scripts` passa
+- `npm run build` fecha, mas continua emitindo `ConnectTimeoutError` de `fetch` durante o SSG
+- checagem visual local em `/candidato/nikolas-ferreira` concluida:
+  - pagina carregou sem erros de console
+  - hero mostra `Deputado(a) Federal` na linha de cargo atual
+  - secao `Dinheiro` mostra patrimonio `2022` (`R$ 74K`)
+  - secao `Dinheiro` mostra financiamento `2022` (`R$ 573K`)
+  - o selo menor `PL · Governador` foi confirmado como uso intencional de `cargo_disputado`, nao regressao de `cargo_atual`
 
 ## Criterios de Sucesso
 
@@ -380,3 +511,12 @@ Ao final:
 - a pipeline TSE deixa de depender de match local fragil
 - `cargo_atual` passa a refletir mandato ativo real
 - Nikolas deixa de ser um perfil "meio vazio" apesar de ser deputado federal em exercicio
+
+## Encerramento do Plano Original
+
+Nao ha mais pendencias abertas deste plano original.
+
+- O rollout completo foi executado.
+- A auditoria final foi refeita.
+- A validacao em browser de `nikolas-ferreira` foi registrada.
+- Os quatro erros remanescentes do `ingest-all.ts` pertencem a conflitos e timeouts conhecidos fora do escopo deste plano, nao a steps faltantes.

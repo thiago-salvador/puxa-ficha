@@ -24,6 +24,8 @@ const EXPLICIT_SLUGS = (
 const REPORT_OUTPUT_PATH = resolve(process.cwd(), "scripts", `${OUTPUT_PREFIX}-report.json`)
 const SUMMARY_OUTPUT_PATH = resolve(process.cwd(), "scripts", `${OUTPUT_PREFIX}-summary.md`)
 const GLOBAL_NODE_MODULES = execFileSync("npm", ["root", "-g"], { encoding: "utf8" }).trim()
+const IS_LOCAL_BASE_URL = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(BASE_URL)
+const PREVIEW_TOKEN = process.env.PF_PREVIEW_TOKEN ?? (IS_LOCAL_BASE_URL ? "local-preview" : "")
 
 const supabaseUrl = process.env.SUPABASE_URL
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY
@@ -94,6 +96,26 @@ interface CandidateCheckResult {
   slug: string
   ok: boolean
   checks: Array<{ check: string; ok: boolean; details: string }>
+}
+
+interface CandidatePageSnapshot extends CandidateSnapshot {
+  verify_path: string
+}
+
+async function withQueryRetry<T>(label: string, run: () => Promise<T>, attempts = 3): Promise<T> {
+  let lastError: unknown = null
+
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      return await run()
+    } catch (error) {
+      lastError = error
+      if (attempt === attempts) break
+      await new Promise((resolve) => setTimeout(resolve, attempt * 500))
+    }
+  }
+
+  throw new Error(`${label} failed: ${String(lastError)}`)
 }
 
 function normalizeText(value: string | null | undefined): string {
@@ -245,7 +267,7 @@ async function attr(page, selector, name) {
   const results = []
 
   for (const row of rows) {
-    const response = await page.goto(\`\${baseUrl}/candidato/\${row.slug}\`, {
+    const response = await page.goto(\`\${baseUrl}\${row.verify_path}\`, {
       waitUntil: "domcontentloaded",
     })
     await page.waitForTimeout(300)
@@ -363,10 +385,12 @@ async function attr(page, selector, name) {
 async function verifyCompareView(selectedSnapshots: CandidateSnapshot[]) {
   const slugs = selectedSnapshots.map((snapshot) => snapshot.slug)
   const snapshotMap = new Map(selectedSnapshots.map((snapshot) => [snapshot.slug, snapshot]))
-  const { data, error } = await supabase
-    .from("v_comparador")
-    .select("slug, nome_urna, partido_sigla, cargo_disputado, total_processos")
-    .in("slug", slugs)
+  const { data, error } = await withQueryRetry("v_comparador query", async () =>
+    await supabase
+      .from("v_comparador")
+      .select("slug, nome_urna, partido_sigla, cargo_disputado, total_processos")
+      .in("slug", slugs)
+  )
 
   if (error) {
     throw new Error(`v_comparador query failed: ${error.message}`)
@@ -414,27 +438,33 @@ async function verifyCompareView(selectedSnapshots: CandidateSnapshot[]) {
 }
 
 async function verifyCompararPage(): Promise<CandidateCheckResult> {
-  const { data: activeRows, error: activeError } = await supabase
-    .from("candidatos_publico")
-    .select("id")
-    .neq("status", "removido")
-    .eq("cargo_disputado", "Presidente")
+  const { data: activeRows, error: activeError } = await withQueryRetry(
+    "candidatos_publico query for comparar",
+    async () =>
+      await supabase
+        .from("candidatos_publico")
+        .select("id")
+        .neq("status", "removido")
+        .eq("cargo_disputado", "Presidente")
+  )
 
   if (activeError) {
     throw new Error(`candidatos_publico query for comparar failed: ${activeError.message}`)
   }
 
   const activeIds = new Set((activeRows ?? []).map((row) => row.id))
-  const { data, error } = await supabase
-    .from("v_comparador")
-    .select("id, slug, nome_urna, partido_sigla, idade, formacao, patrimonio_declarado, total_processos, alertas_graves")
-    .order("nome_urna")
+  const { data, error } = await withQueryRetry("v_comparador query for comparar page", async () =>
+    await supabase
+      .from("v_comparador")
+      .select("id, slug, nome_urna, partido_sigla, idade, formacao, patrimonio_declarado, total_processos, alertas_graves")
+      .order("nome_urna")
+  )
 
   if (error) {
     throw new Error(`v_comparador query for comparar page failed: ${error.message}`)
   }
 
-  const expectedRows = ((data ?? []) as ComparePageRow[]).filter((row) => activeIds.has(row.id))
+  const expectedRows = ((data ?? []) as ComparePageRow[]).filter((row: ComparePageRow) => activeIds.has(row.id))
   const expectedBySlug = new Map(expectedRows.map((row) => [row.slug, row]))
 
   const result = runPlaywrightSpec<{
@@ -572,12 +602,14 @@ const outputPath = __OUTPUT_PATH__
 }
 
 async function verifyExplorar(snapshotMap: Map<string, CandidateSnapshot>): Promise<CandidateCheckResult> {
-  const { data, error } = await supabase
-    .from("candidatos_publico")
-    .select("slug, nome_urna, partido_sigla, cargo_disputado")
-    .neq("status", "removido")
-    .eq("cargo_disputado", "Presidente")
-    .order("nome_urna")
+  const { data, error } = await withQueryRetry("candidatos_publico query for explorar", async () =>
+    await supabase
+      .from("candidatos_publico")
+      .select("slug, nome_urna, partido_sigla, cargo_disputado, cargo_atual")
+      .neq("status", "removido")
+      .eq("cargo_disputado", "Presidente")
+      .order("nome_urna")
+  )
 
   if (error) {
     throw new Error(`candidatos_publico query failed: ${error.message}`)
@@ -588,6 +620,7 @@ async function verifyExplorar(snapshotMap: Map<string, CandidateSnapshot>): Prom
     nome_urna: string
     partido_sigla: string | null
     cargo_disputado: string
+    cargo_atual: string | null
   }>
   const visibleSlugs = new Set(visibleRows.map((row) => row.slug))
   const expectedFirst = visibleRows[0] ?? null
@@ -672,8 +705,10 @@ async function attr(page, selector, name) {
           },
           {
             check: "explorar_active_role",
-            ok: normalizeText(result.activeRole) === normalizeText(expectedFirst.cargo_disputado),
-            details: expectedFirst.cargo_disputado,
+            ok:
+              normalizeText(result.activeRole) ===
+              normalizeText(expectedFirst.cargo_atual || expectedFirst.cargo_disputado),
+            details: expectedFirst.cargo_atual || expectedFirst.cargo_disputado,
           },
           ...(firstSnapshot.total_processos > 0
             ? [
@@ -731,26 +766,44 @@ async function main() {
   const report = readAuditReport()
   const selectedSnapshots = resolveSnapshots(report)
   const snapshotMap = new Map(report.snapshots.map((snapshot) => [snapshot.slug, snapshot]))
-  const { data: publicRows, error: publicError } = await supabase
-    .from("candidatos_publico")
-    .select("slug")
-    .neq("status", "removido")
+  const { data: publicRows, error: publicError } = await withQueryRetry(
+    "candidatos_publico query for page verify",
+    async () =>
+      await supabase
+        .from("candidatos_publico")
+        .select("slug")
+        .neq("status", "removido")
+  )
 
   if (publicError) {
     throw new Error(`candidatos_publico query for page verify failed: ${publicError.message}`)
   }
 
-  const publicSlugs = new Set((publicRows ?? []).map((row) => row.slug))
-  const pageSnapshots =
-    EXPLICIT_SLUGS.length > 0
-      ? selectedSnapshots
-      : selectedSnapshots.filter((snapshot) => publicSlugs.has(snapshot.slug))
+  const publicSlugs = new Set(((publicRows ?? []) as Array<{ slug: string }>).map((row) => row.slug))
+  const hiddenSnapshots = selectedSnapshots.filter((snapshot) => !publicSlugs.has(snapshot.slug))
+
+  if (hiddenSnapshots.length > 0 && !PREVIEW_TOKEN) {
+    throw new Error(
+      `Release verify precisa de PF_PREVIEW_TOKEN para ${hiddenSnapshots.length} fichas ocultas.`
+    )
+  }
+
+  const pageSnapshots: CandidatePageSnapshot[] = selectedSnapshots.map((snapshot) => ({
+    ...snapshot,
+    verify_path: publicSlugs.has(snapshot.slug)
+      ? `/candidato/${snapshot.slug}`
+      : `/preview/candidato/${snapshot.slug}?token=${encodeURIComponent(PREVIEW_TOKEN)}`,
+  }))
   const tempDir = mkdtempSync(join(tmpdir(), "puxa-ficha-release-verify-"))
   const inputPath = join(tempDir, "rows.json")
   const outputPath = join(tempDir, "results.json")
   const specPath = join(tempDir, "release-verify.spec.cjs")
 
   try {
+    const compareFailures = await verifyCompareView(selectedSnapshots)
+    const compararResult = await verifyCompararPage()
+    const explorarResult = await verifyExplorar(snapshotMap)
+
     writeFileSync(inputPath, JSON.stringify(pageSnapshots, null, 2), "utf8")
     writeFileSync(specPath, buildCandidatePagesSpec(inputPath, outputPath), "utf8")
 
@@ -766,9 +819,6 @@ async function main() {
     })
 
     const pageResults = JSON.parse(readFileSync(outputPath, "utf8")) as CandidateCheckResult[]
-    const compareFailures = await verifyCompareView(selectedSnapshots)
-    const compararResult = await verifyCompararPage()
-    const explorarResult = await verifyExplorar(snapshotMap)
     const results = [...pageResults, ...compareFailures, compararResult, explorarResult]
 
     writeFileSync(REPORT_OUTPUT_PATH, JSON.stringify(results, null, 2), "utf8")

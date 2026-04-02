@@ -103,10 +103,7 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {
-        "2020": "210000981947",
-        "2022": "210001620463"
-      }
+      "tse_sq_candidato": {}
     }
   },
   {
@@ -1807,7 +1804,7 @@
   },
   {
     "slug": "vicentinho-junior",
-    "nome_completo": "Vicente Lopes de Oliveira Junior",
+    "nome_completo": "Vicente Alves de Oliveira Junior",
     "nome_urna": "Vicentinho Junior",
     "cargo_disputado": "Governador",
     "estado": "TO",

@@ -1,4 +1,4 @@
-import { createServerSupabaseClient } from "./supabase"
+import { createServerSupabaseClient, createServiceRoleSupabaseClient } from "./supabase"
 import type {
   Candidato,
   FichaCandidato,
@@ -35,6 +35,7 @@ import {
 import {
   hasIncompletePartyTimeline,
 } from "@/lib/candidate-integrity"
+import { getCanonicalPerson } from "@/lib/canonical-person-map"
 import { formatDate } from "@/lib/utils"
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -308,10 +309,20 @@ function getMockFicha(slug: string): FichaCandidato | null {
   const candidato = MOCK_CANDIDATOS.find((c) => c.slug === slug)
   if (!candidato) return null
 
+  const canonical = getCanonicalPerson(slug)
+  const relatedSlugs = canonical.slugs
+  const ownPatrimonio = MOCK_PATRIMONIO[slug] ?? []
+  const ownFinanciamento = MOCK_FINANCIAMENTO[slug] ?? []
   const historico = MOCK_HISTORICO[slug] ?? []
   const mudancas = MOCK_MUDANCAS[slug] ?? []
-  const patrimonio = MOCK_PATRIMONIO[slug] ?? []
-  const financiamento = MOCK_FINANCIAMENTO[slug] ?? []
+  const patrimonio =
+    ownPatrimonio.length > 0
+      ? ownPatrimonio
+      : relatedSlugs.flatMap((relatedSlug) => MOCK_PATRIMONIO[relatedSlug] ?? [])
+  const financiamento =
+    ownFinanciamento.length > 0
+      ? ownFinanciamento
+      : relatedSlugs.flatMap((relatedSlug) => MOCK_FINANCIAMENTO[relatedSlug] ?? [])
   const votos = MOCK_VOTOS[slug] ?? []
   const processos = MOCK_PROCESSOS[slug] ?? []
   const pontos = MOCK_PONTOS[slug] ?? []
@@ -466,17 +477,21 @@ export async function getCandidatos(cargo?: string): Promise<Candidato[]> {
   return (await getCandidatosResource(cargo)).data
 }
 
-export async function getCandidatoBySlugResource(
-  slug: string
+async function getCandidatoBySlugFromRelationResource(
+  slug: string,
+  relation: string,
+  useServiceRole = false
 ): Promise<DataResource<FichaCandidato | null>> {
   if (USE_MOCK) {
     return mockResource(getMockFicha(slug))
   }
 
-  const supabase = createServerSupabaseClient()
+  const supabase = useServiceRole
+    ? createServiceRoleSupabaseClient()
+    : createServerSupabaseClient()
 
   const { data: candidato, error: candidatoError } = await supabase
-    .from(CANDIDATO_PUBLIC_RELATION)
+    .from(relation)
     .select(CANDIDATO_COLUMNS)
     .eq("slug", slug)
     .single()
@@ -499,6 +514,26 @@ export async function getCandidatoBySlugResource(
   if (!candidato) return liveResource(null)
 
   const id = candidato.id
+  const canonical = getCanonicalPerson(slug)
+  let personLevelIds = [id]
+
+  if (canonical.slugs.length > 1) {
+    const canonicalLookupRelation = useServiceRole ? "candidatos" : relation
+    const { data: relatedCandidates, error: relatedError } = await supabase
+      .from(canonicalLookupRelation)
+      .select("id, slug")
+      .in("slug", canonical.slugs)
+
+    if (!relatedError && relatedCandidates) {
+      const relatedIds = relatedCandidates
+        .map((item) => item.id)
+        .filter((value): value is string => Boolean(value))
+
+      if (relatedIds.length > 0) {
+        personLevelIds = relatedIds
+      }
+    }
+  }
 
   const [historico, mudancas, patrimonio, financiamento, votos, processos, pontos, projetos, gastos, sancoes, noticias, indicadores] =
     await Promise.all([
@@ -509,8 +544,8 @@ export async function getCandidatoBySlugResource(
         .eq("candidato_id", id)
         .order("data_mudanca", { ascending: false, nullsFirst: false })
         .order("ano", { ascending: false }),
-      supabase.from("patrimonio").select("*").eq("candidato_id", id).order("ano_eleicao", { ascending: false }),
-      supabase.from("financiamento").select("*").eq("candidato_id", id).order("ano_eleicao", { ascending: false }),
+      supabase.from("patrimonio").select("*").in("candidato_id", personLevelIds).order("ano_eleicao", { ascending: false }),
+      supabase.from("financiamento").select("*").in("candidato_id", personLevelIds).order("ano_eleicao", { ascending: false }),
       supabase.from("votos_candidato").select("*, votacao:votacoes_chave(*)").eq("candidato_id", id),
       supabase.from("processos").select("*").eq("candidato_id", id),
       supabase.from("pontos_atencao").select("*").eq("candidato_id", id).eq("visivel", true),
@@ -606,6 +641,18 @@ export async function getCandidatoBySlugResource(
   }
 
   return liveResource(ficha)
+}
+
+export async function getCandidatoBySlugResource(
+  slug: string
+): Promise<DataResource<FichaCandidato | null>> {
+  return getCandidatoBySlugFromRelationResource(slug, CANDIDATO_PUBLIC_RELATION)
+}
+
+export async function getCandidatoBySlugPreviewResource(
+  slug: string
+): Promise<DataResource<FichaCandidato | null>> {
+  return getCandidatoBySlugFromRelationResource(slug, "candidatos", true)
 }
 
 export async function getCandidatoBySlug(slug: string): Promise<FichaCandidato | null> {

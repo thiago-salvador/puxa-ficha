@@ -376,6 +376,130 @@ Escopo implementado:
 - sincronizacao do banco e do fallback local a partir das assertions curadas
 - snapshots versionados por rodada e diff factual entre execucoes
 
+Sequencia cronologica da execucao:
+
+##### Rodada 1 - Bootstrap da infraestrutura factual
+
+Entregue nesta rodada:
+
+- contrato canonico `CandidatePublicSnapshot`
+- tipos auxiliares para `AuditResult`, `FilaRevisaoItem` e `ProvenanceMetadata`
+- matriz de fontes por campo em codigo
+- motor de regras inicial
+- script executavel `scripts/audit-factual.ts`
+- playbook operacional da auditoria factual
+
+Primeiro dry-run relevante:
+
+- auditoria rodada para `144` candidatos
+- resultado bruto esperado: todos reprovados em `partido_sigla`
+- motivo correto para o momento:
+  - o snapshot ainda nao carregava esse campo de forma consistente
+  - a rodada serviu para validar plumbing, nao para aprovar a base
+
+Leitura correta desse marco:
+
+- a infraestrutura passou a existir
+- a auditoria ainda nao media verdade factual fechada da base
+- o resultado negativo do dry-run confirmou lacuna real do snapshot, nao bug do script
+
+##### Rodada 2 - Endurecimento semantico da auditoria
+
+Entregue nesta rodada:
+
+- equivalencia canonica de partidos em `scripts/lib/party-canonical.ts`
+- regra de comparacao factual de partido endurecida em `scripts/lib/audit-rules.ts`
+- correcoes no gerador de saida da auditoria em `scripts/audit-factual.ts`
+- ajuste da assertion factual do `hertz-dias`
+- atualizacao do playbook e do proprio plano para refletir a regra correta de leitura dos resultados
+
+Objetivo desta rodada:
+
+- parar de tratar partido por igualdade literal simples
+- reduzir falso positivo entre sigla e nome completo do mesmo partido
+- deixar a auditoria distinguir divergencia real de incompatibilidade de representacao
+
+Resultado validado:
+
+- `lula` e `flavio-bolsonaro` deixaram de falhar por equivalencia semantica de partido
+- `ciro-gomes` continuou falhando, o que confirmou divergencia factual real
+
+##### Rodada 3 - Curadoria e fechamento dos presidenciaveis
+
+Entregue nesta rodada:
+
+- verificacao factual externa de `ciro-gomes` e `ronaldo-caiado`
+- atualizacao das assertions em `scripts/lib/factual-assertions.ts`
+- sincronizacao curada do banco em `scripts/sync-candidatos.ts`
+- alinhamento do fallback em `src/data/mock.ts`
+- ajuste da regra de `foto_url` para aceitar asset local do site na auditoria de snapshot
+
+Comandos centrais desta rodada:
+
+```bash
+npx tsx scripts/sync-candidatos.ts
+npx tsx scripts/audit-factual.ts --cargo Presidente
+```
+
+Resultado validado:
+
+- `13/13` presidenciaveis auditados
+- `0` reprovados
+- `0` itens na fila de revisao
+
+Observacao metodologica:
+
+- esse verde ainda significava consistencia com assertions curadas
+- ele nao substituia a revisao humana das assertions
+
+##### Rodada 4 - Coortes, persistencia e gate leve
+
+Entregue nesta rodada:
+
+- suporte a coortes em `scripts/audit-factual.ts`
+- persistencia de estado em `scripts/audit-factual-state.json`
+- historico de execucao em `scripts/audit-factual-history.json`
+- sincronizador curado `scripts/sync-audit-assertions.ts`
+- gate leve `scripts/check-audit-gate.ts`
+- workflow dedicado `.github/workflows/auditoria-factual.yml`
+
+Objetivo desta rodada:
+
+- tirar a auditoria do modo ad hoc
+- criar base para reexecucao, diff e gate pre-deploy
+- consolidar uma trilha editorial reproduzivel
+
+##### Rodada 5 - Expansao de coorte e diff entre rodadas
+
+Entregue nesta rodada:
+
+- `governadores-prioritarios` ampliado para `16` nomes
+- coorte editorial `alto-trafego` consolidada com `29` slugs
+- sincronizacao automatica do fallback local a partir das assertions
+- snapshots versionados por rodada em `scripts/audit-factual-runs/`
+- diff factual em `scripts/audit-factual-diff.ts`
+
+Resultado validado:
+
+- `presidenciaveis`: `13/13`
+- `governadores-prioritarios`: `16/16`
+- `alto-trafego`: `29/29`
+- `0` regressões no diff factual da rodada
+
+##### Rodada 6 - Ajustes metodologicos finais do dia
+
+Entregue nesta rodada:
+
+- alias conceitual `alto-trafego-editorial` mantido com compatibilidade para `alto-trafego`
+- registro explicito de que resultado verde em Fase 1 nao equivale a verdade factual independente
+- marcacao do caso especial de `geraldo-alckmin` como excecao editorial monitorada
+
+Objetivo desta rodada:
+
+- deixar a documentacao tecnicamente honesta
+- evitar leitura enganosa de `100% auditado` em coorte curada
+- preparar a transicao limpa para a Fase 2
+
 Arquivos criados ou evoluidos nesta execucao:
 
 - `scripts/lib/audit-types.ts`
@@ -428,6 +552,44 @@ Resultados obtidos:
 - diff de `governadores-prioritarios`: `8` nomes novos na coorte, `3` mudancas nao bloqueantes, `0` regressões
 - `npm run check:scripts`: passou com a trilha factual incluida
 
+Artefatos e saidas persistidas ao fim do dia:
+
+- `scripts/audit-factual-report.json`
+- `scripts/audit-factual-summary.md`
+- `scripts/audit-factual-queue.json`
+- `scripts/audit-factual-presidenciaveis-report.json`
+- `scripts/audit-factual-presidenciaveis-summary.md`
+- `scripts/audit-factual-presidenciaveis-queue.json`
+- `scripts/audit-factual-governadores-prioritarios-report.json`
+- `scripts/audit-factual-governadores-prioritarios-summary.md`
+- `scripts/audit-factual-governadores-prioritarios-queue.json`
+- `scripts/audit-factual-alto-trafego-report.json`
+- `scripts/audit-factual-alto-trafego-summary.md`
+- `scripts/audit-factual-alto-trafego-queue.json`
+- `scripts/audit-factual-state.json`
+- `scripts/audit-factual-history.json`
+- `scripts/audit-factual-runs/`
+
+#### Log de Execucao da Fase 2 em Paralelo ao Front
+
+Data: `2026-04-01`
+
+Decisao tomada:
+
+- separar formalmente a Fase 2 entre `snapshot-first` e `UI publicada`
+- liberar a Trilha A para execucao imediata, mesmo com o plano do front em paralelo
+- manter a Trilha B bloqueada ate estabilizacao das mudancas do front
+
+Primeiro passo iniciado:
+
+- triagem documental assistida dos presidenciaveis no nivel de snapshot
+- artefato inicial aberto em `docs/reviews/2026-04-01-fase2a-presidenciaveis-snapshot.md`
+
+Status desta rodada:
+
+- `11` presidenciaveis com triagem documental assistida concluida
+- `2` presidenciaveis ainda em triagem parcial por falta de fonte primaria mais forte para fechamento automatico
+
 Artefatos gerados:
 
 - `scripts/audit-factual-presidenciaveis-report.json`
@@ -441,32 +603,127 @@ Artefatos gerados:
 - `scripts/audit-factual-state.json`
 - `scripts/audit-factual-history.json`
 - `scripts/audit-factual-runs/`
+- `docs/reviews/2026-04-01-fase2a-presidenciaveis-snapshot.md`
+
+#### Log de Execucao da Fase 2B - UI Publicada
+
+Data: `2026-04-01`
+
+Pre-condicao atendida:
+
+- plano do front em `cursorfront.md` estabilizado o suficiente para validar superficie publicada
+
+Escopo executado:
+
+- home `/`
+- comparador publicado na home
+- ficha individual `/candidato/ciro-gomes`
+- metadata HTML de `/candidato/ciro-gomes`
+- metadata HTML de `/comparar`
+- `robots.txt`
+- `sitemap.xml`
+- home remota `https://puxa-ficha.vercel.app/`
+
+Primeiro achado da Trilha B:
+
+- a UI ainda publicava partidos antigos para `aldo-rebelo`, `ciro-gomes`, `ratinho-junior` e `ronaldo-caiado`
+- o problema estava na base persistida de `candidatos`, nao nos componentes do front
+
+Correcao aplicada:
+
+- sincronizacao factual da coorte `presidenciaveis` com `scripts/sync-audit-assertions.ts`
+
+Segundo achado da Trilha B:
+
+- varias fotos vindas do Wikimedia falhavam com `429` no `next/image`, degradando cards, comparador e ficha
+
+Correcao aplicada:
+
+- helper `shouldBypassImageOptimization()` em `src/lib/utils.ts`
+- `unoptimized` seletivo para URLs do Wikimedia em:
+  - `src/components/CandidatoCard.tsx`
+  - `src/components/CandidatoGrid.tsx`
+  - `src/components/ComparadorPanel.tsx`
+  - `src/app/candidato/[slug]/page.tsx`
+- `priority` na foto hero da ficha individual
+
+Resultado validado:
+
+- home local sem erros de console apos o ajuste de imagens
+- ficha `ciro-gomes` publicada com `PSDB` e sem erros de console
+- metadata de `ciro-gomes` e `/comparar` coerentes
+- `robots.txt` e `sitemap.xml` corretos, incluindo `/explorar`
+- home remota em `https://puxa-ficha.vercel.app/` refletindo as siglas corrigidas
+
+Achado adicional da Trilha B:
+
+- a ficha do `ciro-gomes` expunha um problema estrutural de confianca entre bio, trajetoria e historico partidario
+- havia registros de `historico_politico` gerados por `Wikipedia (categorias)` com `periodo_inicio = 0`, publicados como se fossem mandatos confirmados
+- na base auditada havia `207` registros desse tipo, todos de baixa confianca
+- havia tambem candidatos cuja timeline partidaria nao refletia a filiacao atual publicada
+
+Correcao aplicada:
+
+- filtro de integridade no data layer para ocultar `historico_politico` de baixa confianca
+- flags de integridade na ficha:
+  - `historico_em_revisao`
+  - `timeline_partidaria_incompleta`
+- aviso explicito na UI quando a trajetoria e ocultada ou quando a timeline partidaria nao acompanha a filiacao atual
+
+Resultado validado:
+
+- a aba de trajetoria do `ciro-gomes` deixou de publicar cargos `0 - atual` como fatos consolidados
+- o historico partidario continua visivel, mas agora acompanhado de aviso de incompletude em relacao a filiacao atual `PSDB`
+
+Artefato gerado:
+
+- `docs/reviews/2026-04-01-fase2b-ui-presidenciaveis.md`
 
 ### Fase 2 - Execucao da Auditoria (apos Pipeline Fix concluido)
 
-Pre-requisito: Pipeline Fix Final concluido ate pelo menos Task 7 (rollout completo com `cargo_atual`, `tse_sq_candidato` e cobertura validada).
+Pre-requisito de dados: Pipeline Fix Final concluido ate pelo menos Task 7 (rollout completo com `cargo_atual`, `tse_sq_candidato` e cobertura validada).
 
-Motivo: rodar auditoria antes disso gera ruido, porque dezenas de erros que a pipeline ja vai corrigir apareceriam como falhas factuais. A auditoria deve validar o estado pos-correcao, nao o estado quebrado.
+Separacao operacional a partir de 2026-04-01:
 
-#### Fase 2a - Presidenciaveis
+- **Trilha A: snapshot-first** pode rodar em paralelo ao plano do front em [cursorfront.md](/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/cursorfront.md)
+- **Trilha B: verificacao da UI publicada** deve esperar a arquitetura do front estabilizar
 
-Objetivo: 100% de revisao factual manual e automatizada dos candidatos a presidencia.
+Motivo:
+
+- a Trilha A valida snapshot canonico, banco, assertions e fila editorial
+- a Trilha B valida a superficie publicada, e por isso depende de layout, componentes, headings, metadata e estrutura final do front
+
+#### Fase 2A - Snapshot e Banco (pode rodar em paralelo ao front)
+
+Objetivo: validar a verdade factual do snapshot canonico antes da checagem da UI publicada.
+
+Escopo:
+
+- assertions P0 e P1
+- estado factual do banco
+- coerencia entre snapshot, banco, mock e relatorios da auditoria
+- fila de revisao manual baseada em dados, nao em DOM
+
+##### Fase 2A.1 - Presidenciaveis
+
+Objetivo: 100% de revisao factual manual e automatizada do snapshot dos candidatos a presidencia.
 
 Etapas:
 
 1. Rodar auditoria automatizada (Etapa 3 do workflow) contra os 13 presidenciaveis
-2. Revisao manual dos campos P0 e P1
-3. Marcar `auditoria_status` por candidato
-4. Resolver toda divergencia via fila de revisao
+2. Fazer triagem documental assistida por fontes oficiais
+3. Fazer aprovacao editorial humana dos campos P0 e P1
+4. Marcar `auditoria_status` por candidato
+5. Resolver toda divergencia via fila de revisao
 
 Criterio de conclusao:
 
-- 0 erros P0 nos presidenciaveis
-- 100% com `auditoria_status = "auditado"`
+- 0 erros P0 no snapshot dos presidenciaveis
+- 100% com `auditoria_status = "auditado"` apos aprovacao humana
 
-#### Fase 2b - Governadores Prioritarios
+##### Fase 2A.2 - Governadores Prioritarios
 
-Objetivo: cobrir os estados com maior exposicao e risco reputacional.
+Objetivo: cobrir os estados com maior exposicao e risco reputacional no nivel de snapshot/banco.
 
 Prioridade sugerida:
 
@@ -480,13 +737,30 @@ Prioridade sugerida:
 Foco tecnico:
 
 - expandir a auditoria automatizada para coortes maiores
-- iniciar a camada 3 (verificacao publica) se a nova arquitetura do frontend ja estiver estavel
+- revisar assertions e fontes por candidato
+- manter banco, snapshot e fallback coerentes durante a transicao do front
 
-#### Fase 2c - Todos os Governadores
+##### Fase 2A.3 - Todos os Governadores
 
 Objetivo: expandir a cobertura sem reduzir rigor.
 
-#### Fase 2d - Monitoramento Continuo
+#### Fase 2B - UI Publicada (esperar estabilizacao do front)
+
+Objetivo: validar que o que o usuario le no site bate com o snapshot canonico revisado.
+
+Pre-requisitos:
+
+- plano do front em [cursorfront.md](/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/cursorfront.md) estabilizado nas areas que afetam renderizacao publica
+- rotas, headings, metadata, cards, tabs e componentes principais sem mudancas estruturais em curso
+
+Escopo:
+
+- conferência de textos e rótulos publicados
+- conferência de cards, hero, tabs e comparador
+- conferência de metadata, OG, sitemap e superfícies indexáveis
+- verificação de divergência entre snapshot e DOM publicado
+
+#### Fase 2C - Monitoramento Continuo
 
 Objetivo: transformar a auditoria em rotina.
 

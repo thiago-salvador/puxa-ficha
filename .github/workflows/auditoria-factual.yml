@@ -22,6 +22,7 @@ on:
       - "scripts/schema.sql"
       - "src/data/mock.ts"
       - "src/app/candidato/[slug]/page.tsx"
+      - "src/app/preview/candidato/[slug]/page.tsx"
       - "src/app/comparar/page.tsx"
       - "src/app/explorar/page.tsx"
       - "src/components/CandidatoProfile.tsx"
@@ -31,6 +32,7 @@ on:
       - "src/components/DataFreshnessNotice.tsx"
       - "src/lib/api.ts"
       - "src/lib/candidate-integrity.ts"
+      - "src/lib/supabase.ts"
       - "src/lib/types.ts"
       - "data/candidatos.json"
       - "package.json"
@@ -43,8 +45,10 @@ on:
       - "scripts/**"
       - "src/lib/api.ts"
       - "src/lib/candidate-integrity.ts"
+      - "src/lib/supabase.ts"
       - "src/data/mock.ts"
       - "src/app/candidato/[slug]/page.tsx"
+      - "src/app/preview/candidato/[slug]/page.tsx"
       - "src/app/comparar/page.tsx"
       - "src/app/explorar/page.tsx"
       - "src/components/CandidatoProfile.tsx"
@@ -70,6 +74,12 @@ jobs:
       github.event_name == 'push' ||
       github.event_name == 'workflow_dispatch' ||
       (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
+    env:
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      PF_PREVIEW_TOKEN: ci-preview
 
     steps:
       - uses: actions/checkout@v4
@@ -82,20 +92,40 @@ jobs:
       - run: npm ci
 
       - name: Rodar auditoria factual 144/144
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: npx tsx scripts/audit-factual.ts
 
       - name: Gate de publicacao
         run: npx tsx scripts/check-audit-gate.ts --max-blocked 0 --min-assertions 144 --min-curated auto
 
+      - name: Build da app para verifier
+        run: npm run build
+
+      - name: Subir app local para release verify
+        run: |
+          PORT=3000 npm run start > /tmp/puxa-ficha-start.log 2>&1 &
+          echo $! > /tmp/puxa-ficha-start.pid
+          for i in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:3000/explorar > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/puxa-ficha-start.log
+          exit 1
+
+      - name: Release verify parcial
+        run: VERIFY_URL=http://127.0.0.1:3000 npm run audit:release-verify:partial
+
       - name: Sincronizar publicavel no banco
         if: github.event_name == 'push'
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: npx tsx scripts/set-publicavel-from-audit.ts
+
+      - name: Encerrar app local
+        if: always()
+        run: |
+          if [ -f /tmp/puxa-ficha-start.pid ]; then
+            kill "$(cat /tmp/puxa-ficha-start.pid)" || true
+          fi
 
       - name: Publicar artefatos
         if: always()
@@ -108,6 +138,9 @@ jobs:
             scripts/audit-factual-summary.md
             scripts/audit-factual-state.json
             scripts/audit-factual-history.json
+            scripts/release-verify-report.json
+            scripts/release-verify-summary.md
+            /tmp/puxa-ficha-start.log
 
   # Lightweight check for fork PRs (no secrets needed)
   audit-typecheck:

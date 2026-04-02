@@ -199,7 +199,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "17", nome_completo: "Felicio Ramuth", nome_urna: "Felicio Ramuth", slug: "felicio-ramuth",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: "Politico",
-    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: null, cargo_disputado: "Governador", estado: "SP",
+    partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: "Vice-Governador de Sao Paulo", cargo_disputado: "Governador", estado: "SP",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -257,14 +257,14 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "25", nome_completo: "Luiz Augusto Silva", nome_urna: "Guto Silva", slug: "guto-silva",
     data_nascimento: null, idade: null, naturalidade: "Maringa/PR", formacao: null, profissao_declarada: "Empresario",
-    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: "Secretario das Cidades do PR", cargo_disputado: "Governador", estado: "PR",
+    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: "Secretario das Cidades do Parana", cargo_disputado: "Governador", estado: "PR",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "26", nome_completo: "Alexandre Curi", nome_urna: "Alexandre Curi", slug: "alexandre-curi",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: "Politico",
-    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: "Presidente da ALEP", cargo_disputado: "Governador", estado: "PR",
+    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: "Presidente da Assembleia Legislativa do Parana", cargo_disputado: "Governador", estado: "PR",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -287,7 +287,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: "Politico",
     partido_atual: "Partido Novo", partido_sigla: "NOVO", cargo_atual: "Vice-prefeito de Curitiba", cargo_disputado: "Governador", estado: "PR",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
 
   // ======= GOVERNADORES SC =======
@@ -317,7 +317,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: "Politico",
     partido_atual: "Partido da Social Democracia Brasileira", partido_sigla: "PSDB", cargo_atual: "Deputado Estadual", cargo_disputado: "Governador", estado: "SC",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "34", nome_completo: "Marcelo Brigadeiro", nome_urna: "Marcelo Brigadeiro", slug: "marcelo-brigadeiro",
@@ -352,7 +352,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "38", nome_completo: "Gabriel Souza", nome_urna: "Gabriel Souza", slug: "gabriel-souza",
     data_nascimento: null, idade: null, naturalidade: null, formacao: "Administracao Publica", profissao_declarada: "Politico",
-    partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: "Vice-governador do RS", cargo_disputado: "Governador", estado: "RS",
+    partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: "Vice-Governador do Rio Grande do Sul", cargo_disputado: "Governador", estado: "RS",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -360,7 +360,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     id: "39", nome_completo: "Marcelo Maranata", nome_urna: "Marcelo Maranata", slug: "marcelo-maranata",
     data_nascimento: null, idade: null, naturalidade: "Guaiba/RS", formacao: null, profissao_declarada: "Politico",
     partido_atual: "Partido da Social Democracia Brasileira", partido_sigla: "PSDB", cargo_atual: "Prefeito de Guaiba", cargo_disputado: "Governador", estado: "RS",
-    status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
+    status: "pre-candidato", biografia: null, foto_url: "/candidates/marcelo-maranata.jpg", site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
   {
@@ -431,9 +431,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "49", nome_completo: "Mateus Simoes", nome_urna: "Mateus Simoes", slug: "mateus-simoes",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: null, cargo_disputado: "Governador", estado: "MG",
+    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: "Governador de Minas Gerais", cargo_disputado: "Governador", estado: "MG",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "50", nome_completo: "Rodrigo Pacheco Amaral", nome_urna: "Rodrigo Pacheco", slug: "rodrigo-pacheco",
@@ -494,9 +494,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "58", nome_completo: "Helder Ignacio Salomao", nome_urna: "Helder Salomao", slug: "helder-salomao",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: null, cargo_disputado: "Governador", estado: "ES",
+    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: "Deputado(a) Federal", cargo_disputado: "Governador", estado: "ES",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "59", nome_completo: "Josias da Vitoria", nome_urna: "Da Vitoria", slug: "da-vitoria",
@@ -517,7 +517,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Uniao Brasil", partido_sigla: "UNIAO", cargo_atual: null, cargo_disputado: "Governador", estado: "BA",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "62", nome_completo: "Joao Carlos Bacelar Batista", nome_urna: "Joao Roma", slug: "joao-roma",
@@ -559,12 +559,12 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Uniao Brasil", partido_sigla: "UNIAO", cargo_atual: null, cargo_disputado: "Governador", estado: "CE",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "68", nome_completo: "Eduardo Girao Monteiro Filho", nome_urna: "Eduardo Girao", slug: "eduardo-girao",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Novo", partido_sigla: "NOVO", cargo_atual: null, cargo_disputado: "Governador", estado: "CE",
+    partido_atual: "Partido Novo", partido_sigla: "NOVO", cargo_atual: "Senador(a)", cargo_disputado: "Governador", estado: "CE",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -655,7 +655,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "81", nome_completo: "Lucas Ribeiro", nome_urna: "Lucas Ribeiro", slug: "lucas-ribeiro",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Progressistas", partido_sigla: "PP", cargo_atual: null, cargo_disputado: "Governador", estado: "PB",
+    partido_atual: "Progressistas", partido_sigla: "PP", cargo_atual: "Vice-Governador da Paraiba", cargo_disputado: "Governador", estado: "PB",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -676,7 +676,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "84", nome_completo: "Rafael Tajra Fonteles", nome_urna: "Rafael Fonteles", slug: "rafael-fonteles",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: null, cargo_disputado: "Governador", estado: "PI",
+    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: "Governador do Piaui", cargo_disputado: "Governador", estado: "PI",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -697,9 +697,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "87", nome_completo: "Margarete de Castro Coelho", nome_urna: "Margarete Coelho", slug: "margarete-coelho",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Progressistas", partido_sigla: "PP", cargo_atual: null, cargo_disputado: "Governador", estado: "PI",
+    partido_atual: "PP", partido_sigla: "PP", cargo_atual: null, cargo_disputado: "Governador", estado: "PI",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "88", nome_completo: "Alysson Leandro Barbate Bezerra", nome_urna: "Alysson Bezerra", slug: "alysson-bezerra",
@@ -718,14 +718,14 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "90", nome_completo: "Carlos Eduardo Xavier", nome_urna: "Cadu Xavier", slug: "cadu-xavier",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: null, cargo_disputado: "Governador", estado: "RN",
+    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: "Secretario de Estado da Fazenda do Rio Grande do Norte", cargo_disputado: "Governador", estado: "RN",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "91", nome_completo: "Fabio Mitidieri de Amorim", nome_urna: "Fabio Mitidieri", slug: "fabio-mitidieri",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: null, cargo_disputado: "Governador", estado: "SE",
+    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: "Governador de Sergipe", cargo_disputado: "Governador", estado: "SE",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -746,21 +746,21 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "94", nome_completo: "Joao Henrique Caldas", nome_urna: "JHC", slug: "jhc",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: null, cargo_disputado: "Governador", estado: "AL",
+    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: "Prefeito de Maceio", cargo_disputado: "Governador", estado: "AL",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
   {
     id: "95", nome_completo: "Renan Calheiros Filho", nome_urna: "Renan Filho", slug: "renan-filho",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: null, cargo_disputado: "Governador", estado: "AL",
+    partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: "Ministro dos Transportes", cargo_disputado: "Governador", estado: "AL",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
   {
     id: "96", nome_completo: "Alan Rick Pereira da Silva", nome_urna: "Alan Rick", slug: "alan-rick",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Uniao Brasil", partido_sigla: "UNIAO", cargo_atual: null, cargo_disputado: "Governador", estado: "AC",
+    partido_atual: "Republicanos", partido_sigla: "REPUBLICANOS", cargo_atual: "Senador(a)", cargo_disputado: "Governador", estado: "AC",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -788,7 +788,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "100", nome_completo: "Omar Jose Abdel Aziz", nome_urna: "Omar Aziz", slug: "omar-aziz",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: null, cargo_disputado: "Governador", estado: "AM",
+    partido_atual: "Partido Social Democratico", partido_sigla: "PSD", cargo_atual: "Senador(a)", cargo_disputado: "Governador", estado: "AM",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -809,7 +809,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "103", nome_completo: "David Antonio de Abreu Almeida", nome_urna: "David Almeida", slug: "david-almeida",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Avante", partido_sigla: "AVANTE", cargo_atual: null, cargo_disputado: "Governador", estado: "AM",
+    partido_atual: "Avante", partido_sigla: "AVANTE", cargo_atual: "Prefeito de Manaus", cargo_disputado: "Governador", estado: "AM",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -844,9 +844,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "108", nome_completo: "Hana Ghassan Tuma", nome_urna: "Hana Ghassan", slug: "hana-ghassan",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: null, cargo_disputado: "Governador", estado: "PA",
+    partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: "Vice-Governadora do Para", cargo_disputado: "Governador", estado: "PA",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "109", nome_completo: "Daniel Barbosa Santos", nome_urna: "Dr. Daniel", slug: "dr-daniel",
@@ -858,9 +858,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "110", nome_completo: "Eder Braga Mauro", nome_urna: "Delegado Eder Mauro", slug: "delegado-eder-mauro",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: null, cargo_disputado: "Governador", estado: "PA",
+    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: "Deputado(a) Federal", cargo_disputado: "Governador", estado: "PA",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "111", nome_completo: "Jose Beto Faro Pereira", nome_urna: "Beto Faro", slug: "beto-faro",
@@ -879,7 +879,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "113", nome_completo: "Marcos Rogerio da Silva Brito", nome_urna: "Marcos Rogerio", slug: "marcos-rogerio",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: null, cargo_disputado: "Governador", estado: "RO",
+    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: "Senador(a)", cargo_disputado: "Governador", estado: "RO",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -949,9 +949,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "123", nome_completo: "Maria Auxiliadora Seabra Rezende", nome_urna: "Professora Dorinha", slug: "professora-dorinha",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Uniao Brasil", partido_sigla: "UNIAO", cargo_atual: null, cargo_disputado: "Governador", estado: "TO",
+    partido_atual: "Uniao Brasil", partido_sigla: "UNIAO", cargo_atual: "Senador(a)", cargo_disputado: "Governador", estado: "TO",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "124", nome_completo: "Laurez da Rocha Moreira", nome_urna: "Laurez Moreira", slug: "laurez-moreira",
@@ -968,11 +968,11 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
   {
-    id: "126", nome_completo: "Vicente Lopes de Oliveira Junior", nome_urna: "Vicentinho Junior", slug: "vicentinho-junior",
+    id: "126", nome_completo: "Vicente Alves de Oliveira Junior", nome_urna: "Vicentinho Junior", slug: "vicentinho-junior",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido da Social Democracia Brasileira", partido_sigla: "PSDB", cargo_atual: null, cargo_disputado: "Governador", estado: "TO",
+    partido_atual: "Partido da Social Democracia Brasileira", partido_sigla: "PSDB", cargo_atual: "Deputado(a) Federal", cargo_disputado: "Governador", estado: "TO",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "127", nome_completo: "Ataides de Oliveira Leite", nome_urna: "Ataides Oliveira", slug: "ataides-oliveira",
@@ -984,7 +984,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "128", nome_completo: "Celina Leao Rocha de Siqueira Campos", nome_urna: "Celina Leao", slug: "celina-leao",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Progressistas", partido_sigla: "PP", cargo_atual: null, cargo_disputado: "Governador", estado: "DF",
+    partido_atual: "Progressistas", partido_sigla: "PP", cargo_atual: "Vice-Governadora do Distrito Federal", cargo_disputado: "Governador", estado: "DF",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -1012,7 +1012,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "132", nome_completo: "Daniel Goulart Vilela", nome_urna: "Daniel Vilela", slug: "daniel-vilela",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: null, cargo_disputado: "Governador", estado: "GO",
+    partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: "Vice-Governador de Goias", cargo_disputado: "Governador", estado: "GO",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -1033,7 +1033,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "135", nome_completo: "Wilder Gomes de Morais", nome_urna: "Wilder Morais", slug: "wilder-morais",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: null, cargo_disputado: "Governador", estado: "GO",
+    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: "Senador(a)", cargo_disputado: "Governador", estado: "GO",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -1047,7 +1047,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "137", nome_completo: "Eduardo Correa Riedel", nome_urna: "Eduardo Riedel", slug: "eduardo-riedel",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Progressistas", partido_sigla: "PP", cargo_atual: null, cargo_disputado: "Governador", estado: "MS",
+    partido_atual: "Progressistas", partido_sigla: "PP", cargo_atual: "Governador do Mato Grosso do Sul", cargo_disputado: "Governador", estado: "MS",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },
@@ -1082,7 +1082,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "142", nome_completo: "Wellington Fagundes", nome_urna: "Wellington Fagundes", slug: "wellington-fagundes",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: null, cargo_disputado: "Governador", estado: "MT",
+    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: "Senador(a)", cargo_disputado: "Governador", estado: "MT",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
     fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
   },

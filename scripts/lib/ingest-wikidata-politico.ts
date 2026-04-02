@@ -9,6 +9,13 @@ const HEADERS = {
   Accept: "application/sparql-results+json",
   "User-Agent": "PuxaFicha/1.0 (puxaficha.com.br)",
 }
+const args = process.argv.slice(2)
+const slugArgs = args
+  .filter((arg, index) => args[index - 1] === "--slug")
+  .flatMap((value) => value.split(","))
+  .map((value) => value.trim())
+  .filter(Boolean)
+const filterSlugs = slugArgs.length > 0 ? new Set(slugArgs) : null
 
 interface SparqlBinding {
   party?: { value: string }
@@ -376,7 +383,7 @@ async function upsertHistorico(
 }
 
 export async function ingestWikidataPolitico(): Promise<IngestResult[]> {
-  const candidatos = loadCandidatos()
+  const candidatos = loadCandidatos().filter((cand) => !filterSlugs || filterSlugs.has(cand.slug))
   const results: IngestResult[] = []
 
   for (const cand of candidatos) {

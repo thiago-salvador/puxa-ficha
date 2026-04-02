@@ -16,6 +16,7 @@
     "audit:factual:diff": "tsx scripts/audit-factual-diff.ts",
     "audit:release-verify": "tsx scripts/release-verify.ts",
     "audit:release-verify:partial": "tsx scripts/release-verify.ts --mode partial",
+    "audit:publish:dry-run": "tsx scripts/set-publicavel-from-audit.ts --dry-run",
     "audit:dossiers": "tsx scripts/build-candidate-dossiers.ts",
     "persist:sq": "tsx scripts/persist-sq-candidato.ts",
     "sync:mock:assertions": "tsx scripts/sync-mock-from-assertions.ts",
