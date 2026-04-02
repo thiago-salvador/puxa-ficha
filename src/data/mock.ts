@@ -447,7 +447,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: null, cargo_disputado: "Governador", estado: "MG",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "52", nome_completo: "Maria da Consolacao Soares", nome_urna: "Maria da Consolacao", slug: "maria-da-consolacao",
@@ -608,7 +608,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Partido Socialismo e Liberdade", partido_sigla: "PSOL", cargo_atual: null, cargo_disputado: "Governador", estado: "MA",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "75", nome_completo: "Joao Henrique de Andrade Lima Campos", nome_urna: "Joao Campos", slug: "joao-campos",
@@ -1000,7 +1000,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Partido Socialista Brasileiro", partido_sigla: "PSB", cargo_atual: null, cargo_disputado: "Governador", estado: "DF",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "131", nome_completo: "Paula Francinete Belmonte da Silva", nome_urna: "Paula Belmonte", slug: "paula-belmonte",

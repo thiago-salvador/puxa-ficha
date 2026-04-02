@@ -908,6 +908,42 @@ Quinto lote mirrored → curated. 3 candidatos promovidos.
 
 Restam: 47 candidatos mirrored para promover.
 
+### 2026-04-02 — lote 6 curadoria (Claude Code, claude-sonnet-4-6)
+
+Sexto lote mirrored → curated. 3 candidatos promovidos. Pipeline completo executado sem desvios.
+
+**Candidatos promovidos:**
+- `ricardo-cappelli` (DF, PSB): pre-candidato ao governo do DF. Renunciou a presidencia da ABDI em abril/2026 para desincompatibilizacao eleitoral. Source: Metropoles 2026-04-02 + Correio Braziliense 2026-02-09
+- `enilton-rodrigues` (MA, PSOL): pre-candidato ao governo do Maranhao. Manteve candidatura mesmo apos proposta de federacao com PT ser descartada. Source: Imirante.com 2026-03-09 + PSOL.org.br 2026
+- `gabriel-azevedo` (MG, MDB): pre-candidato ao governo de Minas Gerais. Ex-presidente da Camara Municipal de BH. Source: O Tempo 2025-11-03 + Estado de Minas 2025-11-07
+
+**Nota operacional — arnaldinho-borgo:**
+- Pesquisa confirma que Arnaldinho Borgo (PSDB, ES) desistiu da corrida ao governo do ES e ao Senado em 2026. O assertion atual (cargo_disputado = Governador) esta errado. Mantido como mirrored ate reparo estrutural.
+
+**Pipeline executado (sem desvios):**
+1. assertions atualizadas (curated + source + verifiedAt)
+2. sync-mock: 3/3 sincronizados
+3. apply-current-factual-fixes: sem fixes necessarios para os 3 slugs (cargo_atual = null correto)
+4. audit:factual: 144/144 auditados, 0 pendentes, 0 reprovados, curated 100 | mirrored 44
+5. `check-audit-gate.ts --max-blocked 0 --min-assertions 144 --min-curated auto`: Gate OK — 0 bloqueados, curated 100/100, mirrored 44
+6. release-verify delta (3 slugs + /explorar + /comparar): 5/5 OK
+7. release-verify full (porta 3457): 146/146 OK
+8. set-publicavel --dry-run: 100 elegiveis confirmados
+9. set-publicavel real: 100 publicavel=true, 44 false
+10. curl producao:
+    - `https://puxaficha.com.br/candidato/ricardo-cappelli` → 200 | Ricardo Cappelli (PSB) — Puxa Ficha
+    - `https://puxaficha.com.br/candidato/enilton-rodrigues` → 200 | Enilton Rodrigues (PSOL) — Puxa Ficha
+    - `https://puxaficha.com.br/candidato/gabriel-azevedo` → 200 | Gabriel Azevedo (MDB) — Puxa Ficha
+
+A contagem real no banco ficou em:
+- `100` candidatos com `publicavel = true`
+
+Os dossies operacionais passaram a:
+- `100` em `curated_ready`
+- `44` em `mirrored_needs_curadoria`
+
+Restam: 44 candidatos mirrored para promover.
+
 ### 2026-04-02 — auto-auditoria + correcoes de processo (Claude Code, claude-sonnet-4-6)
 
 Auto-auditoria solicitada pelo usuario apos lote 5. Identificados desvios do padrao Codex e corrigidos.

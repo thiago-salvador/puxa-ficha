@@ -831,8 +831,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "ricardo-cappelli",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Metropoles 2026-04-02 + Correio Braziliense 2026-02-09",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Ricardo Ribeiro Cappelli",
@@ -1038,8 +1039,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "enilton-rodrigues",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Imirante.com 2026-03-09 + PSOL.org.br 2026",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Enilton Rodrigues",
@@ -1097,8 +1099,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "gabriel-azevedo",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "O Tempo 2025-11-03 + Estado de Minas 2025-11-07",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Gabriel Azevedo",
