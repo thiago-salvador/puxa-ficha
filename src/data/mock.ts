@@ -865,9 +865,9 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "111", nome_completo: "Jose Beto Faro Pereira", nome_urna: "Beto Faro", slug: "beto-faro",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: null, cargo_disputado: "Governador", estado: "PA",
+    partido_atual: "Partido dos Trabalhadores", partido_sigla: "PT", cargo_atual: "Senador", cargo_disputado: "Governador", estado: "PA",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "112", nome_completo: "Simao Robison Oliveira Jatene", nome_urna: "Simao Jatene", slug: "simao-jatene",
