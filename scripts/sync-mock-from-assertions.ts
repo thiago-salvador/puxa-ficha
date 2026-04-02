@@ -19,7 +19,7 @@ function getTargetSlugs(): string[] {
 
 function serializeValue(value: string | null | undefined): string {
   if (value === null) return "null"
-  if (value === undefined) return "undefined"
+  if (value === undefined) return "null"
   return JSON.stringify(value)
 }
 

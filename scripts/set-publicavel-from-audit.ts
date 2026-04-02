@@ -6,7 +6,7 @@
 // Usage: npx tsx scripts/set-publicavel-from-audit.ts
 //   Requires: audit-factual-report.json (run audit-factual.ts first)
 
-import { readFileSync } from "fs"
+import { readFileSync, statSync } from "fs"
 import { resolve } from "path"
 import { createClient } from "@supabase/supabase-js"
 import { CANDIDATE_ASSERTIONS } from "./lib/factual-assertions"
@@ -14,13 +14,7 @@ import { log, warn } from "./lib/logger"
 
 const REPORT_PATH = resolve(process.cwd(), "scripts/audit-factual-report.json")
 const VERIFY_REPORT_PATH = resolve(process.cwd(), "scripts/release-verify-report.json")
-
-const supabaseUrl = process.env.SUPABASE_URL
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY")
-}
-const supabase = createClient(supabaseUrl, supabaseKey)
+const DRY_RUN = process.argv.includes("--dry-run")
 
 // Curated slugs from assertions file
 const curatedSlugs = new Set(
@@ -70,15 +64,37 @@ if (reportAge > ONE_HOUR) {
   warn("set-publicavel", `Report is ${mins} min old (generated ${report.gerado_em}). Consider re-running audit-factual.ts first.`)
 }
 
+const verifyAge = Date.now() - statSync(VERIFY_REPORT_PATH).mtimeMs
+if (verifyAge > ONE_HOUR) {
+  const mins = Math.round(verifyAge / 60000)
+  warn(
+    "set-publicavel",
+    `Release verify report is ${mins} min old. Consider re-running scripts/release-verify.ts first.`
+  )
+}
+
 const passedAudit = new Set(
   report.candidatos
     .filter((c) => c.auditoria_status === "auditado" && !c.tem_falha_critica)
     .map((c) => c.slug)
 )
 
+const candidateVerifySlugs = new Set(
+  verifyReport
+    .map((item) => item.slug)
+    .filter((slug) => slug !== "comparar" && slug !== "explorar")
+)
+
+const missingCuratedCoverage = [...curatedSlugs].filter((slug) => !candidateVerifySlugs.has(slug))
+if (missingCuratedCoverage.length > 0) {
+  throw new Error(
+    `Release verify report is missing ${missingCuratedCoverage.length} curated slug(s): ${missingCuratedCoverage.join(", ")}`
+  )
+}
+
 const passedReleaseVerify = new Set(
   verifyReport
-    .filter((item) => item.ok && item.slug !== "explorar")
+    .filter((item) => item.ok && item.slug !== "comparar" && item.slug !== "explorar")
     .map((item) => item.slug)
 )
 
@@ -92,6 +108,21 @@ async function main() {
     "set-publicavel",
     `Curated: ${curatedSlugs.size}, Passed audit: ${passedAudit.size}, Passed release verify: ${passedReleaseVerify.size}, Eligible: ${eligible.size}`
   )
+
+  if (DRY_RUN) {
+    log(
+      "set-publicavel",
+      `Dry-run: ${eligible.size} slug(s) elegiveis para publicacao: ${[...eligible].sort().join(", ")}`
+    )
+    return
+  }
+
+  const supabaseUrl = process.env.SUPABASE_URL
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY")
+  }
+  const supabase = createClient(supabaseUrl, supabaseKey)
 
   // Step 1: Mark ALL as false
   const { error: resetError } = await supabase

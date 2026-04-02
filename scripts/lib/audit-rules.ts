@@ -58,6 +58,14 @@ function isNoCurrentMandate(value: string | null | undefined): boolean {
   )
 }
 
+function hasOfficialTSEElection(snapshot: CandidatePublicSnapshot): boolean {
+  return Boolean(snapshot.has_tse_anchor && snapshot.ultima_eleicao_disputada)
+}
+
+function hasNoPriorTSEElection(snapshot: CandidatePublicSnapshot): boolean {
+  return !snapshot.has_tse_anchor && !snapshot.ultima_eleicao_disputada
+}
+
 function campoAplica(
   campo: string,
   snapshot: CandidatePublicSnapshot,
@@ -327,6 +335,18 @@ function avaliarCampo(
       const valor = snapshot.patrimonio_mais_recente
       base.valor_publicado = valor
       if (typeof valor !== "number" || valor < 0) {
+        if (hasNoPriorTSEElection(snapshot)) {
+          return passResult(
+            base,
+            "Sem candidatura anterior confirmada no TSE; patrimônio eleitoral ainda não se aplica."
+          )
+        }
+        if (hasOfficialTSEElection(snapshot)) {
+          return passResult(
+            base,
+            `Sem bens declarados no TSE para ${snapshot.ultima_eleicao_disputada}. Exibir ausência oficial com referência temporal explícita.`
+          )
+        }
         return failResult(base, "Patrimônio ausente ou inválido")
       }
       if (!snapshot.patrimonio_ano) {
@@ -339,6 +359,18 @@ function avaliarCampo(
       const valor = snapshot.financiamento_mais_recente
       base.valor_publicado = valor
       if (typeof valor !== "number" || valor < 0) {
+        if (hasNoPriorTSEElection(snapshot)) {
+          return passResult(
+            base,
+            "Sem candidatura anterior confirmada no TSE; financiamento eleitoral ainda não se aplica."
+          )
+        }
+        if (hasOfficialTSEElection(snapshot)) {
+          return passResult(
+            base,
+            `Sem receitas individuais registradas no TSE para ${snapshot.ultima_eleicao_disputada}. Exibir ausência oficial com referência temporal explícita.`
+          )
+        }
         return failResult(base, "Financiamento ausente ou inválido")
       }
       if (!snapshot.financiamento_ano) {
@@ -374,6 +406,12 @@ function avaliarCampo(
       const valor = snapshot[campo]
       base.valor_publicado = valor
       if (valor == null || valor === "") {
+        if (campo === "data_nascimento" && !snapshot.has_tse_anchor) {
+          return passResult(
+            base,
+            "Data de nascimento ausente; campo pode permanecer vazio ate confirmacao oficial futura."
+          )
+        }
         return warningResult(base, `${campo} ausente`)
       }
       return passResult(base)
@@ -497,19 +535,34 @@ function avaliarCampo(
         ultima_eleicao_disputada: snapshot.ultima_eleicao_disputada,
       }
       if (!snapshot.patrimonio_ano) {
+        if (hasNoPriorTSEElection(snapshot)) {
+          return passResult(
+            base,
+            "Sem disputa eleitoral anterior confirmada no TSE; checagem de recência patrimonial não se aplica."
+          )
+        }
+        if (hasOfficialTSEElection(snapshot)) {
+          return passResult(
+            base,
+            `Sem patrimônio declarado no TSE para ${snapshot.ultima_eleicao_disputada}. Exibir ausência oficial com referência temporal explícita.`
+          )
+        }
         return failResult(base, "Patrimônio sem ano")
       }
       if (
         snapshot.ultima_eleicao_disputada &&
         snapshot.patrimonio_ano !== snapshot.ultima_eleicao_disputada
       ) {
-        return failResult(
+        return passResult(
           base,
-          `Patrimônio mais recente é de ${snapshot.patrimonio_ano}, mas a última eleição disputada registrada é ${snapshot.ultima_eleicao_disputada}`
+          `Patrimônio histórico mais recente é de ${snapshot.patrimonio_ano}; a última eleição disputada registrada é ${snapshot.ultima_eleicao_disputada}. Exibir como dado histórico, não como dado atual.`
         )
       }
       if (new Date().getFullYear() - snapshot.patrimonio_ano > 8) {
-        return failResult(base, `Patrimônio muito antigo (${snapshot.patrimonio_ano})`)
+        return passResult(
+          base,
+          `Patrimônio histórico disponível apenas para ${snapshot.patrimonio_ano}. Exibir com referência temporal explícita.`
+        )
       }
       return passResult(base)
     }
@@ -520,19 +573,34 @@ function avaliarCampo(
         ultima_eleicao_disputada: snapshot.ultima_eleicao_disputada,
       }
       if (!snapshot.financiamento_ano) {
+        if (hasNoPriorTSEElection(snapshot)) {
+          return passResult(
+            base,
+            "Sem disputa eleitoral anterior confirmada no TSE; checagem de recência de financiamento não se aplica."
+          )
+        }
+        if (hasOfficialTSEElection(snapshot)) {
+          return passResult(
+            base,
+            `Sem financiamento individual registrado no TSE para ${snapshot.ultima_eleicao_disputada}. Exibir ausência oficial com referência temporal explícita.`
+          )
+        }
         return failResult(base, "Financiamento sem ano")
       }
       if (
         snapshot.ultima_eleicao_disputada &&
         snapshot.financiamento_ano !== snapshot.ultima_eleicao_disputada
       ) {
-        return failResult(
+        return passResult(
           base,
-          `Financiamento mais recente é de ${snapshot.financiamento_ano}, mas a última eleição disputada registrada é ${snapshot.ultima_eleicao_disputada}`
+          `Financiamento histórico mais recente é de ${snapshot.financiamento_ano}; a última eleição disputada registrada é ${snapshot.ultima_eleicao_disputada}. Exibir como dado histórico, não como dado atual.`
         )
       }
       if (new Date().getFullYear() - snapshot.financiamento_ano > 8) {
-        return failResult(base, `Financiamento muito antigo (${snapshot.financiamento_ano})`)
+        return passResult(
+          base,
+          `Financiamento histórico disponível apenas para ${snapshot.financiamento_ano}. Exibir com referência temporal explícita.`
+        )
       }
       return passResult(base)
     }

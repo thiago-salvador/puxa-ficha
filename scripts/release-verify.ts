@@ -24,6 +24,8 @@ const EXPLICIT_SLUGS = (
 const REPORT_OUTPUT_PATH = resolve(process.cwd(), "scripts", `${OUTPUT_PREFIX}-report.json`)
 const SUMMARY_OUTPUT_PATH = resolve(process.cwd(), "scripts", `${OUTPUT_PREFIX}-summary.md`)
 const GLOBAL_NODE_MODULES = execFileSync("npm", ["root", "-g"], { encoding: "utf8" }).trim()
+const IS_LOCAL_BASE_URL = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(BASE_URL)
+const PREVIEW_TOKEN = process.env.PF_PREVIEW_TOKEN ?? (IS_LOCAL_BASE_URL ? "local-preview" : "")
 
 const supabaseUrl = process.env.SUPABASE_URL
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY
@@ -78,10 +80,42 @@ interface CompareRow {
   total_processos: number
 }
 
+interface ComparePageRow {
+  id: string
+  slug: string
+  nome_urna: string
+  partido_sigla: string
+  idade: number | null
+  formacao: string | null
+  patrimonio_declarado: number | null
+  total_processos: number
+  alertas_graves: number
+}
+
 interface CandidateCheckResult {
   slug: string
   ok: boolean
   checks: Array<{ check: string; ok: boolean; details: string }>
+}
+
+interface CandidatePageSnapshot extends CandidateSnapshot {
+  verify_path: string
+}
+
+async function withQueryRetry<T>(label: string, run: () => Promise<T>, attempts = 3): Promise<T> {
+  let lastError: unknown = null
+
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      return await run()
+    } catch (error) {
+      lastError = error
+      if (attempt === attempts) break
+      await new Promise((resolve) => setTimeout(resolve, attempt * 500))
+    }
+  }
+
+  throw new Error(`${label} failed: ${String(lastError)}`)
 }
 
 function normalizeText(value: string | null | undefined): string {
@@ -160,7 +194,44 @@ function buildSummary(results: CandidateCheckResult[], mode: "partial" | "full")
   return `${lines.join("\n")}\n`
 }
 
-function buildPlaywrightSpec(inputPath: string, outputPath: string): string {
+function runPlaywrightSpec<T>(prefix: string, specBody: string): T {
+  const tempDir = mkdtempSync(join(tmpdir(), `puxa-ficha-${prefix}-`))
+  const outputPath = join(tempDir, `${prefix}.json`)
+  const specPath = join(tempDir, `${prefix}.spec.cjs`)
+
+  try {
+    writeFileSync(
+      specPath,
+      specBody.replaceAll("__OUTPUT_PATH__", JSON.stringify(outputPath)),
+      "utf8"
+    )
+
+    execFileSync("node", [specPath], {
+      cwd: tempDir,
+      env: {
+        ...process.env,
+        VERIFY_URL: BASE_URL,
+        CI: "1",
+        NODE_PATH: GLOBAL_NODE_MODULES,
+      },
+      stdio: "pipe",
+    })
+
+    return JSON.parse(readFileSync(outputPath, "utf8")) as T
+  } catch (error) {
+    if (error instanceof Error && "stdout" in error) {
+      const stdout = String((error as { stdout?: Buffer }).stdout ?? "")
+      const stderr = String((error as { stderr?: Buffer }).stderr ?? "")
+      if (stdout) console.error(stdout)
+      if (stderr) console.error(stderr)
+    }
+    throw error
+  } finally {
+    rmSync(tempDir, { recursive: true, force: true })
+  }
+}
+
+function buildCandidatePagesSpec(inputPath: string, outputPath: string): string {
   return `
 const { chromium } = require("playwright")
 const { readFileSync, writeFileSync } = require("fs")
@@ -192,14 +263,14 @@ async function attr(page, selector, name) {
 
 ;(async () => {
   const browser = await chromium.launch({ headless: true })
-  const page = await browser.newPage()
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1100 } })
   const results = []
 
   for (const row of rows) {
-    const response = await page.goto(\`\${baseUrl}/candidato/\${row.slug}\`, {
+    const response = await page.goto(\`\${baseUrl}\${row.verify_path}\`, {
       waitUntil: "domcontentloaded",
     })
-    await page.waitForLoadState("networkidle", { timeout: 15000 }).catch(() => {})
+    await page.waitForTimeout(300)
 
     const checks = []
     const status = response ? response.status() : 0
@@ -244,6 +315,7 @@ async function attr(page, selector, name) {
         ok: Number(mudancas || "0") === Number(row.total_mudancas_partido || 0),
         details: String(row.total_mudancas_partido || 0),
       })
+
       if (row.patrimonio_mais_recente != null) {
         checks.push({
           check: "overview_patrimonio",
@@ -251,6 +323,7 @@ async function attr(page, selector, name) {
           details: String(row.patrimonio_mais_recente),
         })
       }
+
       if (row.biografia) {
         checks.push({
           check: "bio",
@@ -258,6 +331,7 @@ async function attr(page, selector, name) {
           details: row.biografia.slice(0, 80),
         })
       }
+
       checks.push({
         check: "freshness_perfil_atual",
         ok: normalizeText(freshnessStatus) === normalizeText(row.section_freshness?.perfil_atual?.status || ""),
@@ -311,10 +385,12 @@ async function attr(page, selector, name) {
 async function verifyCompareView(selectedSnapshots: CandidateSnapshot[]) {
   const slugs = selectedSnapshots.map((snapshot) => snapshot.slug)
   const snapshotMap = new Map(selectedSnapshots.map((snapshot) => [snapshot.slug, snapshot]))
-  const { data, error } = await supabase
-    .from("v_comparador")
-    .select("slug, nome_urna, partido_sigla, cargo_disputado, total_processos")
-    .in("slug", slugs)
+  const { data, error } = await withQueryRetry("v_comparador query", async () =>
+    await supabase
+      .from("v_comparador")
+      .select("slug, nome_urna, partido_sigla, cargo_disputado, total_processos")
+      .in("slug", slugs)
+  )
 
   if (error) {
     throw new Error(`v_comparador query failed: ${error.message}`)
@@ -361,88 +437,375 @@ async function verifyCompareView(selectedSnapshots: CandidateSnapshot[]) {
   return failures
 }
 
-async function verifyExplorar() {
-  const { data, error } = await supabase.from("candidatos_publico").select("slug").order("slug")
-  if (error) {
-    throw new Error(`candidatos_publico query failed: ${error.message}`)
+async function verifyCompararPage(): Promise<CandidateCheckResult> {
+  const { data: activeRows, error: activeError } = await withQueryRetry(
+    "candidatos_publico query for comparar",
+    async () =>
+      await supabase
+        .from("candidatos_publico")
+        .select("id")
+        .neq("status", "removido")
+        .eq("cargo_disputado", "Presidente")
+  )
+
+  if (activeError) {
+    throw new Error(`candidatos_publico query for comparar failed: ${activeError.message}`)
   }
 
-  const visibleSlugs = new Set((data ?? []).map((row) => row.slug))
-  const tempDir = mkdtempSync(join(tmpdir(), "puxa-ficha-release-verify-explorar-"))
-  const outputPath = join(tempDir, "explorar.json")
-  const specPath = join(tempDir, "explorar.spec.cjs")
+  const activeIds = new Set((activeRows ?? []).map((row) => row.id))
+  const { data, error } = await withQueryRetry("v_comparador query for comparar page", async () =>
+    await supabase
+      .from("v_comparador")
+      .select("id, slug, nome_urna, partido_sigla, idade, formacao, patrimonio_declarado, total_processos, alertas_graves")
+      .order("nome_urna")
+  )
 
-  try {
-    writeFileSync(
-      specPath,
-      `
+  if (error) {
+    throw new Error(`v_comparador query for comparar page failed: ${error.message}`)
+  }
+
+  const expectedRows = ((data ?? []) as ComparePageRow[]).filter((row: ComparePageRow) => activeIds.has(row.id))
+  const expectedBySlug = new Map(expectedRows.map((row) => [row.slug, row]))
+
+  const result = runPlaywrightSpec<{
+    status: number
+    rows: Array<{
+      slug: string | null
+      nome_urna: string | null
+      partido_sigla: string | null
+      idade: string | null
+      formacao: string | null
+      patrimonio_declarado: string | null
+      total_processos: string | null
+      alertas_graves: string | null
+    }>
+  }>(
+    "release-verify-comparar",
+    `
 const { chromium } = require("playwright")
 const { writeFileSync } = require("fs")
+const outputPath = __OUTPUT_PATH__
+
 ;(async () => {
   const browser = await chromium.launch({ headless: true })
-  const page = await browser.newPage()
-  const response = await page.goto((process.env.VERIFY_URL || "http://localhost:3000") + "/explorar", { waitUntil: "domcontentloaded" })
-  await page.waitForLoadState("networkidle", { timeout: 15000 }).catch(() => {})
-  const hrefs = await page.locator('a[href^="/candidato/"]').evaluateAll((nodes) =>
-    nodes.map((node) => node.getAttribute("href")).filter(Boolean)
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1100 } })
+  const response = await page.goto((process.env.VERIFY_URL || "http://localhost:3000") + "/comparar", {
+    waitUntil: "domcontentloaded",
+  })
+  await page.waitForTimeout(300)
+  const rows = await page.locator("[data-pf-comparador-row]").evaluateAll((nodes) =>
+    nodes.map((node) => ({
+      slug: node.getAttribute("data-pf-comparador-slug"),
+      nome_urna: node.getAttribute("data-pf-comparador-name"),
+      partido_sigla: node.getAttribute("data-pf-comparador-party"),
+      idade: node.getAttribute("data-pf-comparador-age"),
+      formacao: node.getAttribute("data-pf-comparador-formacao"),
+      patrimonio_declarado: node.getAttribute("data-pf-comparador-patrimonio"),
+      total_processos: node.getAttribute("data-pf-comparador-processos"),
+      alertas_graves: node.getAttribute("data-pf-comparador-alertas"),
+    }))
   )
   await browser.close()
-  writeFileSync(${JSON.stringify(outputPath)}, JSON.stringify({
+  writeFileSync(outputPath, JSON.stringify({
     status: response ? response.status() : 0,
-    slugs: hrefs.map((href) => href.split("/").pop()),
+    rows,
   }, null, 2), "utf8")
 })().catch((error) => {
   console.error(error)
   process.exit(1)
 })
 `,
-      "utf8"
-    )
+  )
 
-    execFileSync("node", [specPath], {
-      cwd: tempDir,
-      env: { ...process.env, VERIFY_URL: BASE_URL, CI: "1", NODE_PATH: GLOBAL_NODE_MODULES },
-      stdio: "pipe",
-    })
+  const seenSlugs = new Set(result.rows.map((row) => row.slug).filter(Boolean) as string[])
+  const missingSlugs = expectedRows.map((row) => row.slug).filter((slug) => !seenSlugs.has(slug))
+  const extraSlugs = result.rows
+    .map((row) => row.slug)
+    .filter((slug): slug is string => Boolean(slug))
+    .filter((slug) => !expectedBySlug.has(slug))
 
-    const result = JSON.parse(readFileSync(outputPath, "utf8")) as {
-      status: number
-      slugs: string[]
+  const mismatches = result.rows.flatMap((row) => {
+    if (!row.slug) {
+      return [
+        {
+          check: "comparar_slug_ausente",
+          ok: false,
+          details: "Linha do comparador sem slug deterministico",
+        },
+      ]
     }
 
-    const extraSlugs = result.slugs.filter((slug) => !visibleSlugs.has(slug))
-    return {
-      slug: "explorar",
-      ok: result.status > 0 && result.status < 400 && extraSlugs.length === 0,
-      checks: [
-        {
-          check: "explorar_status",
-          ok: result.status > 0 && result.status < 400,
-          details: String(result.status),
-        },
-        {
-          check: "explorar_public_only",
-          ok: extraSlugs.length === 0,
-          details: extraSlugs.join(", ") || "ok",
-        },
-      ],
-    } satisfies CandidateCheckResult
-  } finally {
-    rmSync(tempDir, { recursive: true, force: true })
+    const expected = expectedBySlug.get(row.slug)
+    if (!expected) return []
+
+    const checks = [
+      {
+        check: "comparar_nome",
+        ok: normalizeText(row.nome_urna) === normalizeText(expected.nome_urna),
+        details: `${row.slug}: esperado ${expected.nome_urna}`,
+      },
+      {
+        check: "comparar_partido",
+        ok: normalizeText(row.partido_sigla) === normalizeText(expected.partido_sigla),
+        details: `${row.slug}: esperado ${expected.partido_sigla}`,
+      },
+      {
+        check: "comparar_processos",
+        ok: Number(row.total_processos || "0") === Number(expected.total_processos || 0),
+        details: `${row.slug}: esperado ${expected.total_processos || 0}`,
+      },
+      {
+        check: "comparar_alertas",
+        ok: Number(row.alertas_graves || "0") === Number(expected.alertas_graves || 0),
+        details: `${row.slug}: esperado ${expected.alertas_graves || 0}`,
+      },
+    ]
+
+    if (expected.patrimonio_declarado != null) {
+      checks.push({
+        check: "comparar_patrimonio",
+        ok: Number(row.patrimonio_declarado || "0") === Number(expected.patrimonio_declarado || 0),
+        details: `${row.slug}: esperado ${expected.patrimonio_declarado || 0}`,
+      })
+    }
+
+    return checks.filter((check) => !check.ok)
+  })
+
+  return {
+    slug: "comparar",
+    ok:
+      result.status > 0 &&
+      result.status < 400 &&
+      missingSlugs.length === 0 &&
+      extraSlugs.length === 0 &&
+      mismatches.length === 0,
+    checks: [
+      {
+        check: "comparar_status",
+        ok: result.status > 0 && result.status < 400,
+        details: String(result.status),
+      },
+      {
+        check: "comparar_rows_presentes",
+        ok: missingSlugs.length === 0,
+        details: missingSlugs.join(", ") || "ok",
+      },
+      {
+        check: "comparar_rows_extras",
+        ok: extraSlugs.length === 0,
+        details: extraSlugs.join(", ") || "ok",
+      },
+      ...mismatches,
+    ],
+  }
+}
+
+async function verifyExplorar(snapshotMap: Map<string, CandidateSnapshot>): Promise<CandidateCheckResult> {
+  const { data, error } = await withQueryRetry("candidatos_publico query for explorar", async () =>
+    await supabase
+      .from("candidatos_publico")
+      .select("slug, nome_urna, partido_sigla, cargo_disputado, cargo_atual")
+      .neq("status", "removido")
+      .eq("cargo_disputado", "Presidente")
+      .order("nome_urna")
+  )
+
+  if (error) {
+    throw new Error(`candidatos_publico query failed: ${error.message}`)
+  }
+
+  const visibleRows = (data ?? []) as Array<{
+    slug: string
+    nome_urna: string
+    partido_sigla: string | null
+    cargo_disputado: string
+    cargo_atual: string | null
+  }>
+  const visibleSlugs = new Set(visibleRows.map((row) => row.slug))
+  const expectedFirst = visibleRows[0] ?? null
+  const firstSnapshot = expectedFirst ? snapshotMap.get(expectedFirst.slug) : null
+
+  const result = runPlaywrightSpec<{
+    status: number
+    slugs: string[]
+    total: string | null
+    activeSlug: string | null
+    activeName: string | null
+    activeParty: string | null
+    activeRole: string | null
+    activeProcessos: string | null
+    activePatrimonio: string | null
+  }>(
+    "explorar-ui",
+    `
+const { chromium } = require("playwright")
+const { writeFileSync } = require("fs")
+const outputPath = __OUTPUT_PATH__
+
+async function textContent(page, selector) {
+  const locator = page.locator(selector).first()
+  if (!(await locator.count())) return null
+  return (await locator.textContent()) || null
+}
+
+async function attr(page, selector, name) {
+  const locator = page.locator(selector).first()
+  if (!(await locator.count())) return null
+  return await locator.getAttribute(name)
+}
+
+;(async () => {
+  const browser = await chromium.launch({ headless: true })
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1100 } })
+  const response = await page.goto((process.env.VERIFY_URL || "http://localhost:3000") + "/explorar", {
+    waitUntil: "domcontentloaded",
+  })
+  await page.waitForTimeout(300)
+  const hrefs = await page.locator('a[href^="/candidato/"]').evaluateAll((nodes) =>
+    nodes.map((node) => node.getAttribute("href")).filter(Boolean)
+  )
+  writeFileSync(outputPath, JSON.stringify({
+    status: response ? response.status() : 0,
+    slugs: hrefs.map((href) => href.split("/").pop()),
+    total: await attr(page, "[data-pf-explorar-root]", "data-pf-explorar-total"),
+    activeSlug: await attr(page, "[data-pf-explorar-active]", "data-pf-explorar-slug"),
+    activeName: await textContent(page, "[data-pf-explorar-name]"),
+    activeParty: await attr(page, "[data-pf-explorar-party]", "data-pf-explorar-party"),
+    activeRole: await attr(page, "[data-pf-explorar-role]", "data-pf-explorar-role"),
+    activeProcessos: await attr(page, "[data-pf-explorar-processos]", "data-pf-explorar-processos"),
+    activePatrimonio: await attr(page, "[data-pf-explorar-patrimonio]", "data-pf-explorar-patrimonio"),
+  }, null, 2), "utf8")
+  await browser.close()
+})().catch((error) => {
+  console.error(error)
+  process.exit(1)
+})
+`,
+  )
+
+  const extraSlugs = result.slugs.filter((slug) => !visibleSlugs.has(slug))
+  const activeChecks =
+    expectedFirst && firstSnapshot
+      ? [
+          {
+            check: "explorar_active_slug",
+            ok: result.activeSlug === expectedFirst.slug,
+            details: expectedFirst.slug,
+          },
+          {
+            check: "explorar_active_name",
+            ok: normalizeText(result.activeName) === normalizeText(expectedFirst.nome_urna),
+            details: expectedFirst.nome_urna,
+          },
+          {
+            check: "explorar_active_party",
+            ok: normalizeText(result.activeParty) === normalizeText(expectedFirst.partido_sigla),
+            details: String(expectedFirst.partido_sigla),
+          },
+          {
+            check: "explorar_active_role",
+            ok:
+              normalizeText(result.activeRole) ===
+              normalizeText(expectedFirst.cargo_atual || expectedFirst.cargo_disputado),
+            details: expectedFirst.cargo_atual || expectedFirst.cargo_disputado,
+          },
+          ...(firstSnapshot.total_processos > 0
+            ? [
+                {
+                  check: "explorar_active_processos",
+                  ok: Number(result.activeProcessos || "0") === Number(firstSnapshot.total_processos || 0),
+                  details: String(firstSnapshot.total_processos || 0),
+                },
+              ]
+            : []),
+          ...(firstSnapshot.patrimonio_mais_recente != null
+            ? [
+                {
+                  check: "explorar_active_patrimonio",
+                  ok:
+                    Number(result.activePatrimonio || "0") ===
+                    Number(firstSnapshot.patrimonio_mais_recente || 0),
+                  details: String(firstSnapshot.patrimonio_mais_recente || 0),
+                },
+              ]
+            : []),
+        ]
+      : []
+
+  return {
+    slug: "explorar",
+    ok:
+      result.status > 0 &&
+      result.status < 400 &&
+      Number(result.total || "0") === visibleRows.length &&
+      extraSlugs.length === 0 &&
+      activeChecks.every((check) => check.ok),
+    checks: [
+      {
+        check: "explorar_status",
+        ok: result.status > 0 && result.status < 400,
+        details: String(result.status),
+      },
+      {
+        check: "explorar_total",
+        ok: Number(result.total || "0") === visibleRows.length,
+        details: String(visibleRows.length),
+      },
+      {
+        check: "explorar_public_only",
+        ok: extraSlugs.length === 0,
+        details: extraSlugs.join(", ") || "ok",
+      },
+      ...activeChecks,
+    ],
   }
 }
 
 async function main() {
   const report = readAuditReport()
   const selectedSnapshots = resolveSnapshots(report)
+  const snapshotMap = new Map(report.snapshots.map((snapshot) => [snapshot.slug, snapshot]))
+  const { data: publicRows, error: publicError } = await withQueryRetry(
+    "candidatos_publico query for page verify",
+    async () =>
+      await supabase
+        .from("candidatos_publico")
+        .select("slug")
+        .neq("status", "removido")
+  )
+
+  if (publicError) {
+    throw new Error(`candidatos_publico query for page verify failed: ${publicError.message}`)
+  }
+
+  const publicSlugs = new Set(((publicRows ?? []) as Array<{ slug: string }>).map((row) => row.slug))
+  const hiddenSnapshots = selectedSnapshots.filter((snapshot) => !publicSlugs.has(snapshot.slug))
+
+  if (hiddenSnapshots.length > 0 && !PREVIEW_TOKEN) {
+    throw new Error(
+      `Release verify precisa de PF_PREVIEW_TOKEN para ${hiddenSnapshots.length} fichas ocultas.`
+    )
+  }
+
+  const pageSnapshots: CandidatePageSnapshot[] = selectedSnapshots.map((snapshot) => ({
+    ...snapshot,
+    verify_path: publicSlugs.has(snapshot.slug)
+      ? `/candidato/${snapshot.slug}`
+      : `/preview/candidato/${snapshot.slug}?token=${encodeURIComponent(PREVIEW_TOKEN)}`,
+  }))
   const tempDir = mkdtempSync(join(tmpdir(), "puxa-ficha-release-verify-"))
   const inputPath = join(tempDir, "rows.json")
   const outputPath = join(tempDir, "results.json")
   const specPath = join(tempDir, "release-verify.spec.cjs")
 
   try {
-    writeFileSync(inputPath, JSON.stringify(selectedSnapshots, null, 2), "utf8")
-    writeFileSync(specPath, buildPlaywrightSpec(inputPath, outputPath), "utf8")
+    const compareFailures = await verifyCompareView(selectedSnapshots)
+    const compararResult = await verifyCompararPage()
+    const explorarResult = await verifyExplorar(snapshotMap)
+
+    writeFileSync(inputPath, JSON.stringify(pageSnapshots, null, 2), "utf8")
+    writeFileSync(specPath, buildCandidatePagesSpec(inputPath, outputPath), "utf8")
 
     execFileSync("node", [specPath], {
       cwd: tempDir,
@@ -456,9 +819,7 @@ async function main() {
     })
 
     const pageResults = JSON.parse(readFileSync(outputPath, "utf8")) as CandidateCheckResult[]
-    const compareFailures = await verifyCompareView(selectedSnapshots)
-    const explorarResult = await verifyExplorar()
-    const results = [...pageResults, ...compareFailures, explorarResult]
+    const results = [...pageResults, ...compareFailures, compararResult, explorarResult]
 
     writeFileSync(REPORT_OUTPUT_PATH, JSON.stringify(results, null, 2), "utf8")
     writeFileSync(SUMMARY_OUTPUT_PATH, buildSummary(results, MODE), "utf8")

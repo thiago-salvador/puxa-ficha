@@ -21,14 +21,69 @@ interface AuditReport {
   snapshots: CandidatePublicSnapshot[]
 }
 
-function inferBucket(snapshot: CandidatePublicSnapshot, audit: AuditCandidateResult): string {
+type DossierBucket =
+  | "curated_ready"
+  | "mirrored_needs_curadoria"
+  | "manual_needed"
+  | "blocked_no_anchor"
+
+function inferBucket(
+  snapshot: CandidatePublicSnapshot,
+  audit: AuditCandidateResult,
+  assertionConfidence?: string
+): DossierBucket {
+  if (assertionConfidence === "curated" && audit.auditoria_status === "auditado") {
+    return "curated_ready"
+  }
   if (!snapshot.has_tse_anchor && !snapshot.has_camara_anchor && !snapshot.has_senado_anchor) {
     return "blocked_no_anchor"
   }
-  if (audit.auditoria_status === "auditado") {
-    return "auto_pass"
+  if (assertionConfidence === "mirrored") {
+    return "mirrored_needs_curadoria"
+  }
+  if (audit.auditoria_status !== "auditado") {
+    return "manual_needed"
   }
   return "manual_needed"
+}
+
+function inferNextSteps(
+  snapshot: CandidatePublicSnapshot,
+  audit: AuditCandidateResult,
+  assertionConfidence?: string
+): string[] {
+  const steps: string[] = []
+
+  if (!snapshot.has_tse_anchor && !snapshot.has_camara_anchor && !snapshot.has_senado_anchor) {
+    return [
+      "Resolver ancora oficial minima antes de qualquer promocao para curated.",
+      "Confirmar identidade canonica e fonte primaria de partido/cargo atual.",
+    ]
+  }
+
+  if (assertionConfidence === "curated" && audit.auditoria_status === "auditado") {
+    return [
+      "Ja esta curated e auditado.",
+      "Pode entrar no lote operacional de publicacao se gate e release-verify estiverem verdes.",
+    ]
+  }
+
+  if (assertionConfidence === "mirrored") {
+    if (snapshot.has_camara_anchor || snapshot.has_senado_anchor) {
+      steps.push(
+        "Confirmar partido e cargo atual em fonte oficial legislativa ou institucional."
+      )
+    } else {
+      steps.push("Confirmar partido e cargo atual em fonte oficial ou partidaria.")
+    }
+
+    steps.push("Confirmar cargo_disputado/pre-candidatura em imprensa solida recente.")
+    steps.push("Promover assertion de mirrored para curated com verifiedAt e source reais.")
+    return steps
+  }
+
+  steps.push("Revisar lacunas restantes do audit antes de promover para curated.")
+  return steps
 }
 
 function main() {
@@ -50,6 +105,8 @@ function main() {
       const canonicalPerson = getCanonicalPerson(candidate.slug)
       const assertion = ASSERTIONS_MAP.get(candidate.slug)
       const failingFields = candidate.campos.filter((campo) => campo.resultado === "fail")
+      const bucket = inferBucket(snapshot, candidate, assertion?.confidence)
+      const nextSteps = inferNextSteps(snapshot, candidate, assertion?.confidence)
 
       const dossier = {
         slug: candidate.slug,
@@ -57,7 +114,7 @@ function main() {
         related_person_slugs: canonicalPerson.slugs,
         nome_urna: candidate.nome_urna,
         audit_profile: candidate.audit_profile,
-        bucket: inferBucket(snapshot, candidate),
+        bucket,
         auditoria_status: candidate.auditoria_status,
         assertion_confidence: assertion?.confidence ?? "none",
         verified_at: assertion?.verifiedAt ?? null,
@@ -68,6 +125,7 @@ function main() {
         },
         ids: cadastroItem?.ids ?? {},
         secoes_obrigatorias: candidate.secoes_obrigatorias,
+        next_steps: nextSteps,
         snapshot,
         failing_fields: failingFields.map((field) => ({
           campo: field.campo,
@@ -84,11 +142,15 @@ function main() {
         `- Nome: ${candidate.nome_urna}`,
         `- Pessoa canonica: ${canonicalPerson.canonicalSlug}`,
         `- Perfil de auditoria: ${candidate.audit_profile}`,
-        `- Bucket: ${inferBucket(snapshot, candidate)}`,
+        `- Bucket: ${bucket}`,
         `- Status de auditoria: ${candidate.auditoria_status}`,
         `- Assertion: ${assertion?.confidence ?? "sem assertion"} (${assertion?.verifiedAt ?? "sem verifiedAt"})`,
         `- Ancoras: TSE=${snapshot.has_tse_anchor} | Camara=${snapshot.has_camara_anchor} | Senado=${snapshot.has_senado_anchor}`,
         `- Secoes obrigatorias: ${candidate.secoes_obrigatorias.join(", ")}`,
+        "",
+        "## Proximo passo editorial",
+        "",
+        ...nextSteps.map((step) => `- ${step}`),
         "",
         "## Falhas abertas",
         "",
@@ -105,7 +167,7 @@ function main() {
 
       return {
         slug: candidate.slug,
-        bucket: inferBucket(snapshot, candidate),
+        bucket,
         failing: failingFields.length,
       }
     })
@@ -116,7 +178,8 @@ function main() {
     `Gerado em: ${new Date().toISOString()}`,
     "",
     `- Total: ${rows.length}`,
-    `- Auto pass: ${rows.filter((row) => row.bucket === "auto_pass").length}`,
+    `- Curated ready: ${rows.filter((row) => row.bucket === "curated_ready").length}`,
+    `- Mirrored needs curadoria: ${rows.filter((row) => row.bucket === "mirrored_needs_curadoria").length}`,
     `- Manual needed: ${rows.filter((row) => row.bucket === "manual_needed").length}`,
     `- Blocked no anchor: ${rows.filter((row) => row.bucket === "blocked_no_anchor").length}`,
   ].join("\n")
