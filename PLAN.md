@@ -826,6 +826,24 @@ Segundo lote mirrored → curated. 3 candidatos promovidos.
 
 Restam: 56 candidatos mirrored para promover.
 
+### 2026-04-02 — lote 3 curadoria (Claude Code, claude-sonnet-4-6)
+
+Terceiro lote mirrored → curated. 3 candidatos promovidos.
+
+**Candidatos promovidos:**
+- `maria-do-carmo` (AM, PP): sem mandato ativo. Empresaria, reitora da Fametro. Source: Em Tempo + Agencia Cenarium 2025
+- `tadeu-de-souza` (AM, PP): Vice-Governador do Amazonas, mandato ativo (Wilson Lima permanece ate jan/2027). Source: Diario da Capital + Credited 2026-03-11
+- `dr-furlan` (AP, MDB): sem mandato ativo. Ex-prefeito de Macapa, afastado STF mar/2026, renunciou para disputar governo. Source: CNN Brasil + Bacana News 2026-03-01
+
+**Pipeline executado:**
+- sync-mock: 3/3 OK, apply-fixes: tadeu-de-souza atualizado no DB
+- audit:factual: 144/144, curated 91 | mirrored 53, 0 bloqueados
+- release-verify full: 146/146 OK
+- set-publicavel: 91 publicavel=true, 53 false
+- Producao: 3/3 com 200
+
+Restam: 53 candidatos mirrored para promover.
+
 ## Critério de pronto de verdade
 
 O site só pode ser considerado **100% funcional, atualizado, com a ordem certa e seguro** quando estes pontos passarem juntos:

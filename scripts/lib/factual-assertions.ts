@@ -591,8 +591,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "maria-do-carmo",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Em Tempo + Agencia Cenarium 2025-01-01",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Maria do Carmo Seffair",
@@ -620,14 +621,16 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "tadeu-de-souza",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "Diario da Capital + Credited 2026-03-11",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Tadeu de Souza Lima",
       nome_urna: "Tadeu de Souza",
       partido_atual: "Progressistas",
       partido_sigla: "PP",
+      cargo_atual: "Vice-Governador do Amazonas",
       cargo_disputado: "Governador",
       estado: "AM",
     },
@@ -648,8 +651,9 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
   },
   {
     slug: "dr-furlan",
-    source: "banco auditado 2026-04-01",
-    confidence: "mirrored",
+    source: "CNN Brasil + Bacana News 2026-03-01",
+    verifiedAt: "2026-04-02",
+    confidence: "curated",
     cohorts: ["governadores"],
     expected: {
       nome_completo: "Jose Antonio D Almeida Furlan",

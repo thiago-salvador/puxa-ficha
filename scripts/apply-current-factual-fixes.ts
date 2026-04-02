@@ -440,6 +440,22 @@ const FIXES: CandidateFix[] = [
     },
   },
   {
+    slug: "tadeu-de-souza",
+    source: "Diario da Capital + Credited 2026-03-11",
+    candidateUpdate: {
+      cargo_atual: "Vice-Governador do Amazonas",
+    },
+    historicoFix: {
+      cargo: "Vice-Governador",
+      periodo_inicio: 2023,
+      periodo_fim: null,
+      partido: "PP",
+      estado: "AM",
+      eleito_por: "voto direto",
+      observacoes: "cargo atual verificado manualmente (Credited 2026-03-11)",
+    },
+  },
+  {
     slug: "andre-kamai",
     source: "ac24horas.com 2024-10-07 + SAPL Camara de Rio Branco",
     candidateUpdate: {

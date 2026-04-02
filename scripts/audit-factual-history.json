@@ -2239,5 +2239,32 @@
     "queue_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-queue.json",
     "summary_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-summary.md",
     "run_report_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-runs/2026-04-02T18-47-56.950Z-all-report.json"
+  },
+  {
+    "run_id": "8fda2421-88ac-4843-ae8c-47e879d32c5b",
+    "executado_em": "2026-04-02T18:53:24.266Z",
+    "scope": "all",
+    "filtros": {
+      "dry_run": false
+    },
+    "total_candidatos": 144,
+    "resumo": {
+      "auditados": 144,
+      "pendentes": 0,
+      "reprovados": 0,
+      "podem_publicar": 144,
+      "nao_podem_publicar": 0,
+      "com_falha_critica": 0,
+      "com_warning": 0,
+      "itens_revisao_manual": 0,
+      "com_assertions": 144,
+      "com_assertions_curated": 91,
+      "com_assertions_mirrored": 53,
+      "sem_assertions": 0
+    },
+    "report_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-report.json",
+    "queue_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-queue.json",
+    "summary_output_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-summary.md",
+    "run_report_path": "/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/audit-factual-runs/2026-04-02T18-53-24.266Z-all-report.json"
   }
 ]

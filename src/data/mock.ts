@@ -795,16 +795,16 @@ export const MOCK_CANDIDATOS: Candidato[] = [
   {
     id: "101", nome_completo: "Maria do Carmo Seffair", nome_urna: "Maria do Carmo", slug: "maria-do-carmo",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Partido Liberal", partido_sigla: "PL", cargo_atual: null, cargo_disputado: "Governador", estado: "AM",
+    partido_atual: "PP", partido_sigla: "PP", cargo_atual: null, cargo_disputado: "Governador", estado: "AM",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "102", nome_completo: "Tadeu de Souza Lima", nome_urna: "Tadeu de Souza", slug: "tadeu-de-souza",
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
-    partido_atual: "Progressistas", partido_sigla: "PP", cargo_atual: null, cargo_disputado: "Governador", estado: "AM",
+    partido_atual: "Progressistas", partido_sigla: "PP", cargo_atual: "Vice-Governador do Amazonas", cargo_disputado: "Governador", estado: "AM",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "103", nome_completo: "David Antonio de Abreu Almeida", nome_urna: "David Almeida", slug: "david-almeida",
@@ -825,7 +825,7 @@ export const MOCK_CANDIDATOS: Candidato[] = [
     data_nascimento: null, idade: null, naturalidade: null, formacao: null, profissao_declarada: null,
     partido_atual: "Movimento Democratico Brasileiro", partido_sigla: "MDB", cargo_atual: null, cargo_disputado: "Governador", estado: "AP",
     status: "pre-candidato", biografia: null, foto_url: null, site_campanha: null, redes_sociais: {},
-    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-03-30",
+    fonte_dados: ["curadoria"], ultima_atualizacao: "2026-04-02",
   },
   {
     id: "106", nome_completo: "Clecio Luis Vilhena Vieira", nome_urna: "Clecio Luis", slug: "clecio-luis",
