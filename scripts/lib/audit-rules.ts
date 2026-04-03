@@ -14,6 +14,16 @@ import {
 } from "./party-canonical"
 import { CAMPOS_P0, CAMPOS_P1, SOURCE_OF_TRUTH_MAP } from "./source-of-truth"
 
+const EMPTY_FIELD_EXCEPTIONS: ReadonlyMap<string, Readonly<Record<string, string>>> = new Map([
+  [
+    "evandro-augusto",
+    {
+      data_nascimento:
+        "Data de nascimento exata ainda nao confirmada; excecao editorial registrada permite manter o campo vazio ate fonte oficial confiavel.",
+    },
+  ],
+])
+
 function normalizeText(value: string | null | undefined): string {
   return (value ?? "")
     .normalize("NFD")
@@ -64,6 +74,10 @@ function hasOfficialTSEElection(snapshot: CandidatePublicSnapshot): boolean {
 
 function hasNoPriorTSEElection(snapshot: CandidatePublicSnapshot): boolean {
   return !snapshot.has_tse_anchor && !snapshot.ultima_eleicao_disputada
+}
+
+function getEmptyFieldException(snapshot: CandidatePublicSnapshot, campo: string): string | null {
+  return EMPTY_FIELD_EXCEPTIONS.get(snapshot.slug)?.[campo] ?? null
 }
 
 function campoAplica(
@@ -406,6 +420,10 @@ function avaliarCampo(
       const valor = snapshot[campo]
       base.valor_publicado = valor
       if (valor == null || valor === "") {
+        const emptyFieldException = getEmptyFieldException(snapshot, campo)
+        if (emptyFieldException) {
+          return passResult(base, emptyFieldException)
+        }
         if (campo === "data_nascimento" && !snapshot.has_tse_anchor) {
           return passResult(
             base,
