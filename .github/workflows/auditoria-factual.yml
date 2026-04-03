@@ -90,6 +90,9 @@ jobs:
 
       - run: npm ci
 
+      - name: Instalar Chromium para release verify
+        run: npx playwright install --with-deps chromium
+
       - name: Rodar auditoria factual 144/144
         run: npx tsx scripts/audit-factual.ts
 
