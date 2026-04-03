@@ -25,6 +25,11 @@ import type {
 import {
   hasIncompletePartyTimeline,
 } from "@/lib/candidate-integrity"
+import {
+  classifyAttentionPoints,
+  isNegativeCriticalAttentionPoint,
+  isNegativeHighestSeverityAttentionPoint,
+} from "@/lib/attention-points"
 import { sleep } from "@/lib/async-utils"
 import { getCanonicalPerson } from "@/lib/canonical-person-map"
 import { formatDate } from "@/lib/utils"
@@ -404,7 +409,7 @@ async function getMockFicha(slug: string): Promise<FichaCandidato | null> {
     processos_criminais: processos.filter((p) => p.tipo === "criminal").length,
     total_mudancas_partido: mudancas.length,
     total_pontos_atencao: pontos.length,
-    pontos_criticos: pontos.filter((p) => p.gravidade === "critica").length,
+    pontos_criticos: pontos.filter((p) => isNegativeHighestSeverityAttentionPoint(p)).length,
     total_sancoes: sancoes.length,
     historico_descartado: 0,
     historico_em_revisao: false,
@@ -427,7 +432,7 @@ async function getMockComparaveis(
   cargoFilter: string,
   estado?: string
 ): Promise<CandidatoComparavel[]> {
-  const { MOCK_CANDIDATOS, MOCK_PATRIMONIO, MOCK_PROCESSOS } = await loadMockModule()
+  const { MOCK_CANDIDATOS, MOCK_PATRIMONIO, MOCK_PONTOS, MOCK_PROCESSOS } = await loadMockModule()
 
   return MOCK_CANDIDATOS
     .filter((c) => c.cargo_disputado === cargoFilter && (!estado || c.estado?.toLowerCase() === estado.toLowerCase()))
@@ -443,9 +448,9 @@ async function getMockComparaveis(
       formacao: c.formacao,
       total_processos: (MOCK_PROCESSOS[c.slug] ?? []).length,
       mudancas_partido: 0,
-      alertas_graves: 0,
+      alertas_graves: (MOCK_PONTOS[c.slug] ?? []).filter((p) => isNegativeCriticalAttentionPoint(p)).length,
       patrimonio_declarado: MOCK_PATRIMONIO[c.slug]?.[0]?.valor_total ?? null,
-      pontos_atencao: [],
+      pontos_atencao: MOCK_PONTOS[c.slug] ?? [],
     }))
 }
 
@@ -768,7 +773,7 @@ async function getCandidatoBySlugFromRelationResource(
     processos_criminais: (processos.data ?? []).filter((p) => p.tipo === "criminal").length,
     total_mudancas_partido: mudancasRaw.length,
     total_pontos_atencao: (pontos.data ?? []).length,
-    pontos_criticos: (pontos.data ?? []).filter((p) => p.gravidade === "critica").length,
+    pontos_criticos: (pontos.data ?? []).filter((p) => isNegativeHighestSeverityAttentionPoint(p)).length,
     total_sancoes: (sancoes.data ?? []).length,
     historico_descartado: 0,
     historico_em_revisao: false,
@@ -986,7 +991,17 @@ async function getCandidatosComparaveisResourceUncached(
     )
   }
 
-  return liveResource(data ?? [])
+  const normalizedRows = (data ?? []).map((row) => {
+    const pontos = Array.isArray(row.pontos_atencao) ? row.pontos_atencao : []
+    const { alertasGraves } = classifyAttentionPoints(pontos)
+
+    return {
+      ...row,
+      alertas_graves: alertasGraves.length,
+    }
+  })
+
+  return liveResource(normalizedRows)
 }
 
 const getCachedCandidatosComparaveisResource = unstable_cache(

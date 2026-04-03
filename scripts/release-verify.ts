@@ -90,6 +90,10 @@ interface ComparePageRow {
   patrimonio_declarado: number | null
   total_processos: number
   alertas_graves: number
+  pontos_atencao?: Array<{
+    categoria: string | null
+    gravidade: string | null
+  }> | null
 }
 
 interface CandidateCheckResult {
@@ -125,6 +129,14 @@ function normalizeText(value: string | null | undefined): string {
     .replace(/\s+/g, " ")
     .trim()
     .toLowerCase()
+}
+
+function countNegativeCriticalPoints(
+  pontos: ComparePageRow["pontos_atencao"]
+): number {
+  return (pontos ?? []).filter((ponto) => {
+    return ponto.categoria !== "feito_positivo" && (ponto.gravidade === "critica" || ponto.gravidade === "alta")
+  }).length
 }
 
 function readAuditReport(): AuditReport {
@@ -456,7 +468,7 @@ async function verifyCompararPage(): Promise<CandidateCheckResult> {
   const { data, error } = await withQueryRetry("v_comparador query for comparar page", async () =>
     await supabase
       .from("v_comparador")
-      .select("id, slug, nome_urna, partido_sigla, idade, formacao, patrimonio_declarado, total_processos, alertas_graves")
+      .select("id, slug, nome_urna, partido_sigla, idade, formacao, patrimonio_declarado, total_processos, alertas_graves, pontos_atencao")
       .order("nome_urna")
   )
 
@@ -464,7 +476,12 @@ async function verifyCompararPage(): Promise<CandidateCheckResult> {
     throw new Error(`v_comparador query for comparar page failed: ${error.message}`)
   }
 
-  const expectedRows = ((data ?? []) as ComparePageRow[]).filter((row: ComparePageRow) => activeIds.has(row.id))
+  const expectedRows = ((data ?? []) as ComparePageRow[])
+    .filter((row: ComparePageRow) => activeIds.has(row.id))
+    .map((row) => ({
+      ...row,
+      alertas_graves: countNegativeCriticalPoints(row.pontos_atencao),
+    }))
   const expectedBySlug = new Map(expectedRows.map((row) => [row.slug, row]))
 
   const result = runPlaywrightSpec<{

@@ -1390,7 +1390,7 @@ export const MOCK_PONTOS: Record<string, PontoAtencao[]> = {
       titulo: "Bolsa Familia tirou 28 milhoes da pobreza extrema",
       descricao: "Programa de transferencia de renda criado em 2003, consolidando programas anteriores. Reconhecido internacionalmente como referencia em politica social.",
       fontes: [{ titulo: "Banco Mundial", url: "https://example.com", data: "2013-11-01" }],
-      gravidade: "baixa", verificado: true, gerado_por: "curadoria",
+      gravidade: "alta", verificado: true, gerado_por: "curadoria",
     },
   ],
 }

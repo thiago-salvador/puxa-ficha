@@ -407,7 +407,12 @@ SELECT
   (SELECT COUNT(*) FROM processos p WHERE p.candidato_id = c.id AND p.tipo = 'criminal') as processos_criminais,
   (SELECT COUNT(*) FROM mudancas_partido mp WHERE mp.candidato_id = c.id) as total_mudancas_partido,
   (SELECT COUNT(*) FROM pontos_atencao pa WHERE pa.candidato_id = c.id AND pa.visivel = TRUE) as total_pontos_atencao,
-  (SELECT COUNT(*) FROM pontos_atencao pa WHERE pa.candidato_id = c.id AND pa.gravidade = 'critica') as pontos_criticos,
+  (SELECT COUNT(*)
+   FROM pontos_atencao pa
+   WHERE pa.candidato_id = c.id
+     AND pa.visivel = TRUE
+     AND pa.categoria <> 'feito_positivo'
+     AND pa.gravidade = 'critica') as pontos_criticos,
   -- Último patrimônio
   (SELECT valor_total FROM patrimonio pat WHERE pat.candidato_id = c.id ORDER BY ano_eleicao DESC LIMIT 1) as ultimo_patrimonio,
   (SELECT ano_eleicao FROM patrimonio pat WHERE pat.candidato_id = c.id ORDER BY ano_eleicao DESC LIMIT 1) as ano_ultimo_patrimonio
@@ -427,7 +432,12 @@ SELECT
   c.formacao,
   (SELECT COUNT(*) FROM processos p WHERE p.candidato_id = c.id) as total_processos,
   (SELECT COUNT(*) FROM mudancas_partido mp WHERE mp.candidato_id = c.id) as mudancas_partido,
-  (SELECT COUNT(*) FROM pontos_atencao pa WHERE pa.candidato_id = c.id AND pa.gravidade IN ('critica', 'alta')) as alertas_graves,
+  (SELECT COUNT(*)
+   FROM pontos_atencao pa
+   WHERE pa.candidato_id = c.id
+     AND pa.visivel = TRUE
+     AND pa.categoria <> 'feito_positivo'
+     AND pa.gravidade IN ('critica', 'alta')) as alertas_graves,
   (SELECT valor_total FROM patrimonio pat WHERE pat.candidato_id = c.id ORDER BY ano_eleicao DESC LIMIT 1) as patrimonio_declarado,
   (SELECT json_agg(json_build_object('titulo', pa.titulo, 'categoria', pa.categoria, 'gravidade', pa.gravidade))
    FROM pontos_atencao pa WHERE pa.candidato_id = c.id AND pa.visivel = TRUE

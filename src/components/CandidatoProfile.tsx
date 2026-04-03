@@ -2,6 +2,7 @@
 
 import { memo, useState } from "react"
 import type { FichaCandidato } from "@/lib/types"
+import { classifyAttentionPoints } from "@/lib/attention-points"
 import { formatCompact, formatDate, safeHref } from "@/lib/utils"
 import { ProfileTabs, type Tab } from "./ProfileTabs"
 import { AlertBanner } from "./AlertBanner"
@@ -104,9 +105,7 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
   const gastos = ficha.gastos_parlamentares ?? []
   const redesSociais = ficha.redes_sociais ?? {}
   const sectionFreshness = ficha.section_freshness ?? {}
-
-  // Count alertas graves = critica + alta (matches ProfileOverview behavior)
-  const alertasGraves = pontosAtencao.filter((p) => p.gravidade === "critica" || p.gravidade === "alta")
+  const { alertasGraves, alertasNaoPositivos, pontosPositivos } = classifyAttentionPoints(pontosAtencao)
 
   // Tab definitions
   const tabDefs = [
@@ -116,7 +115,7 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
     { id: "votos", label: "Votos", dataCount: votos.length },
     { id: "trajetoria", label: "Trajetoria", dataCount: historico.length + mudancas.length },
     { id: "legislacao", label: "Legislacao", dataCount: projetosLei.length },
-    { id: "alertas", label: "Alertas", dataCount: alertasGraves.length },
+    { id: "alertas", label: "Alertas", dataCount: pontosAtencao.length },
   ]
 
   const [activeTab, setActiveTab] = useState("geral")
@@ -214,7 +213,18 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
       {/* Alert banner for grave items (critica + alta) */}
       {alertasGraves.length > 0 && (
         <div className="mx-auto max-w-7xl px-5 pb-4 md:px-12">
-          <AlertBanner pontos={pontosAtencao} />
+          <AlertBanner pontos={alertasGraves} actionLabel="Ver todos" onAction={() => setActiveTab("alertas")} />
+        </div>
+      )}
+
+      {pontosPositivos.length > 0 && (
+        <div className="mx-auto max-w-7xl px-5 pb-4 md:px-12">
+          <AlertBanner
+            pontos={pontosPositivos}
+            variant="positive"
+            actionLabel="Ver todos"
+            onAction={() => setActiveTab("alertas")}
+          />
         </div>
       )}
 
@@ -414,15 +424,23 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
             {/* ALERTAS TAB */}
             {activeTab === "alertas" && (
               <div>
-                <SectionLabel>Pontos de atencao ({pontosAtencao.length})</SectionLabel>
+                <SectionLabel>Pontos de atencao e feitos ({pontosAtencao.length})</SectionLabel>
                 <SectionTitle>O que voce precisa saber</SectionTitle>
-                <div className="mt-6 space-y-3">
-                  {[...pontosAtencao]
-                    .sort((a, b) => {
-                      const order = { critica: 0, alta: 1, media: 2, baixa: 3 }
-                      return (order[a.gravidade as keyof typeof order] ?? 2) - (order[b.gravidade as keyof typeof order] ?? 2)
-                    })
-                    .map((p) => (
+                <div className="mt-6 space-y-8">
+                  <section className="space-y-3">
+                    <div className="flex items-center justify-between gap-3">
+                      <h3 className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+                        Alertas e pontos de atencao ({alertasNaoPositivos.length})
+                      </h3>
+                    </div>
+                    {alertasNaoPositivos.length === 0 && (
+                      <div className="rounded-[16px] border border-border/50 bg-secondary/40 px-5 py-4">
+                        <p className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
+                          Nenhum alerta negativo visivel registrado no momento.
+                        </p>
+                      </div>
+                    )}
+                    {alertasNaoPositivos.map((p) => (
                       <div
                         key={p.id}
                         className="rounded-[16px] border border-border/50 border-l-[3px] px-5 py-4"
@@ -465,6 +483,59 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
                         )}
                       </div>
                     ))}
+                  </section>
+
+                  <section className="space-y-3">
+                    <div className="flex items-center justify-between gap-3">
+                      <h3 className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-green-700">
+                        Pontos positivos ({pontosPositivos.length})
+                      </h3>
+                    </div>
+                    {pontosPositivos.length === 0 && (
+                      <div className="rounded-[16px] border border-green-200 bg-green-50 px-5 py-4">
+                        <p className="text-[length:var(--text-body-sm)] font-medium text-green-800">
+                          Nenhum ponto positivo destacado no momento.
+                        </p>
+                      </div>
+                    )}
+                    {pontosPositivos.map((p) => (
+                      <div
+                        key={p.id}
+                        className="rounded-[16px] border border-green-200 border-l-[3px] bg-green-50 px-5 py-4"
+                        style={{ borderLeftColor: "#16a34a" }}
+                      >
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.05em] text-green-800">
+                            Ponto positivo
+                          </span>
+                          {p.verificado && (
+                            <span className="text-[10px] font-semibold text-green-700">Verificado</span>
+                          )}
+                        </div>
+                        <h4 className="mt-2 text-[length:var(--text-body)] font-bold text-green-950 sm:text-[15px]">
+                          {p.titulo}
+                        </h4>
+                        <p className="mt-1 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-green-900">
+                          {p.descricao}
+                        </p>
+                        {(p.fontes ?? []).length > 0 && (
+                          <div className="mt-2 flex flex-wrap gap-2">
+                            {(p.fontes ?? []).filter(f => safeHref(f.url)).map((f, i) => (
+                              <a
+                                key={i}
+                                href={safeHref(f.url)!}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 text-[length:var(--text-caption)] font-semibold text-green-900 underline decoration-green-500/60"
+                              >
+                                {f.titulo} <ExternalLink className="size-2.5" />
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </section>
                 </div>
               </div>
             )}

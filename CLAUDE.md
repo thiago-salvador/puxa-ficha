@@ -8,6 +8,31 @@ Dominio: puxaficha.com.br (registrado)
 Deploy: https://puxa-ficha.vercel.app
 Repo: https://github.com/thiago-salvador/puxa-ficha
 
+## Session Workflow
+
+Regras estaveis ficam neste arquivo. Fluxo operacional de sessao, matriz de validacao por tipo de mudanca e fechamento ficam em `docs/dev-playbook.md`.
+
+Antes de editar:
+
+1. ler este arquivo e `docs/dev-playbook.md`
+2. fazer uma passada em `git status --short`
+3. classificar a mudanca: UI publica, data layer, schema/Supabase, auditoria/pipeline ou deploy
+
+## Gemma
+
+Para trabalho limitado, mecanico e de baixo risco, preferir Gemma conforme a regra global. Quando a tarefa for roteada para Gemma, a regra neste repo e:
+
+1. subir/verificar com `/Users/thiagosalvador/Documents/Apps/Tools/gemma-ensure.sh`
+2. esperar o retorno do Gemma antes de desistir ou cair para o modelo principal
+3. so abandonar o fluxo se houver falha clara, timeout repetido ou output inutilizavel
+4. validar manualmente a resposta antes de aplicar
+
+Em tarefas complexas e caras em contexto, usar o fluxo:
+
+1. Codex faz o enquadramento e o plano
+2. Gemma executa a parte mecanica ou investigativa delimitada
+3. Codex revisa e decide a acao final
+
 ## Commands
 
 ```bash
