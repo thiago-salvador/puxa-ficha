@@ -1,5 +1,5 @@
 import { supabase } from "./supabase"
-import { loadCandidatos, fetchJSON, sleep } from "./helpers"
+import { loadCandidatos, fetchJSON, resolveCandidatoId, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import type { IngestResult } from "./types"
 
@@ -54,11 +54,6 @@ interface GastoDestaque {
   tipo: string
   valor: number
   data: string | null
-}
-
-async function resolveCandidatoId(slug: string): Promise<string | null> {
-  const { data } = await supabase.from("candidatos").select("id").eq("slug", slug).single()
-  return data?.id ?? null
 }
 
 async function fetchDespesasAno(

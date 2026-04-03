@@ -1,6 +1,6 @@
 [
   {
-    "slug": "cadu-xavier",
+    "slug": "valmir-de-francisquinho",
     "ok": true,
     "checks": [
       {
@@ -11,68 +11,7 @@
       {
         "check": "hero_name",
         "ok": true,
-        "details": "Cadu Xavier"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PT"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "15691.04"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Carlos Eduardo Xavier e auditor fiscal e gestor publico brasileiro, filiado ao P"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "pazolini",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Pazolini"
+        "details": "Valmir de Francisquinho"
       },
       {
         "check": "hero_party",
@@ -92,12 +31,17 @@
       {
         "check": "overview_mudancas",
         "ok": true,
-        "details": "1"
+        "details": "2"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "520000"
       },
       {
         "check": "bio",
         "ok": true,
-        "details": "Lorenzo Silva de Pazolini e delegado de policia, advogado e politico brasileiro,"
+        "details": "Valmir dos Santos Costa, conhecido como Valmir de Francisquinho, e empresario e "
       },
       {
         "check": "freshness_perfil_atual",
@@ -107,12 +51,12 @@
       {
         "check": "trajetoria_count",
         "ok": true,
-        "details": "3"
+        "details": "1"
       },
       {
         "check": "partidos_count",
         "ok": true,
-        "details": "1"
+        "details": "2"
       }
     ]
   },

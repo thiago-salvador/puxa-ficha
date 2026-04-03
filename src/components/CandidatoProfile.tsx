@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { memo, useState } from "react"
 import type { FichaCandidato } from "@/lib/types"
 import { formatCompact, formatDate, safeHref } from "@/lib/utils"
 import { ProfileTabs, type Tab } from "./ProfileTabs"
@@ -33,7 +33,7 @@ import {
   ExternalLink,
 } from "lucide-react"
 
-function StatCard({
+const StatCard = memo(function StatCard({
   value,
   label,
   icon: Icon,
@@ -87,7 +87,7 @@ function StatCard({
       )}
     </div>
   )
-}
+})
 
 export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
   // Null-safe arrays (Supabase can return null for empty relations)

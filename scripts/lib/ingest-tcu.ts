@@ -9,11 +9,6 @@ function stripCPF(cpf: string): string {
   return cpf.replace(/[.\-]/g, "")
 }
 
-async function resolveCandidatoId(slug: string): Promise<string | null> {
-  const { data } = await supabase.from("candidatos").select("id").eq("slug", slug).single()
-  return data?.id ?? null
-}
-
 interface TCUInabilitado {
   nome?: string
   cpf?: string

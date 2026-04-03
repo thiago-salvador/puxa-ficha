@@ -302,12 +302,11 @@ export function Navbar() {
 
       {/* Fullscreen menu overlay — z-65 so it covers the header (z-60) */}
       <div className="nav-overlay-wrapper fixed inset-0 z-[65]" style={{ display: "none" }}>
-        <div
+        <button
+          type="button"
           className="overlay absolute inset-0 bg-black/40"
           onClick={closeMenu}
-          role="button"
           aria-label="Fechar menu"
-          tabIndex={-1}
           style={{ visibility: "hidden", opacity: 0 }}
         />
 

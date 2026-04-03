@@ -11,6 +11,7 @@ const VISIBLE_LIMIT = 10
 function getSafeNewsUrl(url: string): string | null {
   try {
     const parsed = new URL(url)
+    // News links stay https-only on purpose, even though safeHref allows http for legacy profile links.
     return parsed.protocol === "https:" ? parsed.toString() : null
   } catch {
     return null

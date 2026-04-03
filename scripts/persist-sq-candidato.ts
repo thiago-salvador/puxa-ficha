@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, createWriteStream, readFileSync, rmSync, writeFileSync } from "fs"
+import { existsSync, mkdirSync, createWriteStream, readFileSync, readdirSync, rmSync, writeFileSync } from "fs"
 import path, { dirname, resolve } from "path"
 import { execSync } from "child_process"
 import { fileURLToPath } from "url"
@@ -95,7 +95,6 @@ function cleanupFile(filePath: string) {
 }
 
 function findCSVs(dir: string, pattern: string): string[] {
-  const { readdirSync } = require("fs")
   try {
     const files = readdirSync(dir) as string[]
     return files

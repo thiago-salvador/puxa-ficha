@@ -24,10 +24,11 @@ export interface Candidato {
   partido_atual: string;
   partido_sigla: string;
   cargo_atual: string | null;
-  cargo_disputado: 'Presidente' | 'Governador';
+  cargo_disputado: 'Presidente' | 'Governador' | 'Senador';
   estado: string | null; // UF pra governadores
 
   status: 'pre-candidato' | 'candidato' | 'indeferido' | 'desistente' | 'removido';
+  situacao_candidatura?: string | null;
   biografia?: string | null;
 
   // Mídia

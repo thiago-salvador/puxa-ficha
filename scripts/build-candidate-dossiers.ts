@@ -3,6 +3,10 @@ import { resolve } from "path"
 import { loadCandidatos } from "./lib/helpers"
 import { getCanonicalPerson } from "./lib/canonical-person-map"
 import { ASSERTIONS_MAP } from "./lib/factual-assertions"
+import {
+  FROZEN_PUBLICATION_REASON_MAP,
+  FROZEN_PUBLICATION_SLUGS,
+} from "./lib/frozen-publication"
 import { SOURCE_OF_TRUTH_MAP } from "./lib/source-of-truth"
 import type { AuditCandidateResult, CandidatePublicSnapshot } from "./lib/audit-types"
 
@@ -23,6 +27,7 @@ interface AuditReport {
 
 type DossierBucket =
   | "curated_ready"
+  | "frozen_hidden"
   | "mirrored_needs_curadoria"
   | "manual_needed"
   | "blocked_no_anchor"
@@ -32,6 +37,9 @@ function inferBucket(
   audit: AuditCandidateResult,
   assertionConfidence?: string
 ): DossierBucket {
+  if (FROZEN_PUBLICATION_SLUGS.has(snapshot.slug)) {
+    return "frozen_hidden"
+  }
   if (assertionConfidence === "curated" && audit.auditoria_status === "auditado") {
     return "curated_ready"
   }
@@ -53,6 +61,14 @@ function inferNextSteps(
   assertionConfidence?: string
 ): string[] {
   const steps: string[] = []
+
+  if (FROZEN_PUBLICATION_SLUGS.has(snapshot.slug)) {
+    return [
+      "Manter oculto por politica editorial.",
+      FROZEN_PUBLICATION_REASON_MAP.get(snapshot.slug) ??
+        "Aguardar confirmacao forte do cargo realmente disputado antes de qualquer promocao.",
+    ]
+  }
 
   if (!snapshot.has_tse_anchor && !snapshot.has_camara_anchor && !snapshot.has_senado_anchor) {
     return [
@@ -179,6 +195,7 @@ function main() {
     "",
     `- Total: ${rows.length}`,
     `- Curated ready: ${rows.filter((row) => row.bucket === "curated_ready").length}`,
+    `- Frozen hidden: ${rows.filter((row) => row.bucket === "frozen_hidden").length}`,
     `- Mirrored needs curadoria: ${rows.filter((row) => row.bucket === "mirrored_needs_curadoria").length}`,
     `- Manual needed: ${rows.filter((row) => row.bucket === "manual_needed").length}`,
     `- Blocked no anchor: ${rows.filter((row) => row.bucket === "blocked_no_anchor").length}`,

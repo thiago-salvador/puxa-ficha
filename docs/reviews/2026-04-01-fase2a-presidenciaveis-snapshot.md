@@ -275,17 +275,19 @@ Status:
 Leitura:
 
 - o partido `MISSAO` esta confirmado oficialmente no TSE
-- a vinculacao de Renan Santos como principal nome presidencial da legenda aparece em fontes de apoio e cobertura politica, mas ainda falta uma fonte primaria mais robusta da propria estrutura do partido para fechamento automatico
+- a vinculacao de Renan Santos como nome presidencial da legenda aparece em fontes de apoio, em cobertura politica e em imprensa nacional; a CNN Brasil ja o trata explicitamente como "pre-candidato a Presidencia" pelo partido Missao, mas ainda falta uma fonte primaria mais robusta da propria estrutura do partido para fechamento automatico como pre-candidatura formal
 
 Fontes ja reunidas:
 
 - [TSE / Partido Missao](https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-missao)
 - [TSE / TSE aprova registro e homologa estatuto do Partido Missao](https://www.tse.jus.br/comunicacao/noticias/2025/Novembro/tse-aprova-registro-e-homologa-estatuto-do-partido-missao)
 - [Missao Apoio / Partido Missao se consolida e planeja lancar candidato a presidencia em 2026](https://missaoapoio.com.br/noticia/partido-missao-define-rumos-e-planeja-candidatura-presidencial-2026)
+- [G1 / Quem sao os pre-candidatos a Presidencia da Republica em 2026](https://g1.globo.com/politica/eleicoes/2026/noticia/2026/03/31/quem-sao-os-pre-candidatos-a-presidencia-da-republica-2026.ghtml)
+- [CNN Brasil / Renan Santos ganha onde a politica tradicional perde](https://www.cnnbrasil.com.br/colunas/renato-dolci/eleicoes/renan-santos-ganha-onde-a-politica-tradicional-perde/)
 
 Acao pendente:
 
-- buscar fonte primaria adicional da propria estrutura partidaria ou equivalente institucional para fechar a assertion com menos dependencia de site de apoio
+- buscar fonte primaria adicional da propria estrutura partidaria ou equivalente institucional para fechar a assertion com menos dependencia de site de apoio e menos dependencia de imprensa como ancora secundaria
 
 ### `hertz-dias`
 

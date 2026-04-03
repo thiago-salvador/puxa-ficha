@@ -4,15 +4,21 @@ import { SlashDivider } from "@/components/SlashDivider"
 import { Footer } from "@/components/Footer"
 import { BrazilMap } from "@/components/BrazilMap"
 import { JsonLd } from "@/components/JsonLd"
+import { buildTwitterMetadata } from "@/lib/metadata"
+
+const title = "Governadores por estado — Puxa Ficha"
+const description =
+  "Consulte candidatos a governador em cada estado brasileiro. Mapa interativo com ficha completa."
 
 export const metadata: Metadata = {
-  title: "Governadores por estado — Puxa Ficha",
-  description:
-    "Consulte candidatos a governador em cada estado brasileiro. Mapa interativo com ficha completa.",
+  title,
+  description,
+  alternates: {
+    canonical: "/governadores",
+  },
   openGraph: {
-    title: "Governadores por estado — Puxa Ficha",
-    description:
-      "Consulte candidatos a governador em cada estado brasileiro. Mapa interativo com ficha completa.",
+    title,
+    description,
     url: "https://puxaficha.com.br/governadores",
     images: [
       {
@@ -23,6 +29,11 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: buildTwitterMetadata({
+    title,
+    description,
+    image: "/governadores/opengraph-image",
+  }),
 }
 
 export default function GovernadorePage() {

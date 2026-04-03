@@ -11,7 +11,8 @@
         "2018": "280000625869",
         "2022": "280001607829"
       }
-    }
+    },
+    "wikipedia_title": "Luiz_Inácio_Lula_da_Silva"
   },
   {
     "slug": "flavio-bolsonaro",
@@ -24,7 +25,8 @@
       "tse_sq_candidato": {
         "2018": "190000614721"
       }
-    }
+    },
+    "wikipedia_title": "Flávio_Bolsonaro"
   },
   {
     "slug": "tarcisio",
@@ -37,7 +39,8 @@
       "tse_sq_candidato": {
         "2022": "250001615967"
       }
-    }
+    },
+    "wikipedia_title": "Tarcísio_de_Freitas"
   },
   {
     "slug": "romeu-zema",
@@ -51,7 +54,8 @@
         "2018": "130000600702",
         "2022": "130001701690"
       }
-    }
+    },
+    "wikipedia_title": "Romeu_Zema"
   },
   {
     "slug": "ronaldo-caiado",
@@ -65,7 +69,8 @@
         "2018": "90000613470",
         "2022": "90001646326"
       }
-    }
+    },
+    "wikipedia_title": "Ronaldo_Caiado"
   },
   {
     "slug": "ratinho-junior",
@@ -80,7 +85,8 @@
         "2020": "140001196705",
         "2022": "160001614467"
       }
-    }
+    },
+    "wikipedia_title": "Ratinho_Júnior"
   },
   {
     "slug": "aldo-rebelo",
@@ -93,18 +99,20 @@
       "tse_sq_candidato": {
         "2022": "250001639699"
       }
-    }
+    },
+    "wikipedia_title": "Aldo_Rebelo"
   },
   {
     "slug": "renan-santos",
-    "nome_completo": "Renan Santos",
+    "nome_completo": "Renan Antonio Ferreira dos Santos",
     "nome_urna": "Renan Santos",
     "cargo_disputado": "Presidente",
     "ids": {
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {}
-    }
+    },
+    "wikipedia_title": "Renan_Santos"
   },
   {
     "slug": "ciro-gomes",
@@ -118,7 +126,8 @@
         "2018": "280000605589",
         "2022": "280001612393"
       }
-    }
+    },
+    "wikipedia_title": "Ciro_Gomes"
   },
   {
     "slug": "hertz-dias",
@@ -147,7 +156,8 @@
         "2018": "210000622367",
         "2022": "210001609847"
       }
-    }
+    },
+    "wikipedia_title": "Eduardo_Leite"
   },
   {
     "slug": "rui-costa-pimenta",
@@ -158,7 +168,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {}
-    }
+    },
+    "wikipedia_title": "Rui_Costa_Pimenta"
   },
   {
     "slug": "samara-martins",
@@ -183,8 +194,11 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
-    }
+      "tse_sq_candidato": {
+        "2022": "250001615967"
+      }
+    },
+    "wikipedia_title": "Tarcísio_de_Freitas"
   },
   {
     "slug": "haddad-gov-sp",
@@ -198,7 +212,8 @@
       "tse_sq_candidato": {
         "2022": "250001612465"
       }
-    }
+    },
+    "wikipedia_title": "Fernando_Haddad"
   },
   {
     "slug": "erika-hilton",
@@ -213,7 +228,8 @@
         "2020": "250000686838",
         "2022": "250001613814"
       }
-    }
+    },
+    "wikipedia_title": "Érika_Hilton"
   },
   {
     "slug": "felicio-ramuth",
@@ -228,7 +244,8 @@
         "2020": "250000693253",
         "2022": "250001615968"
       }
-    }
+    },
+    "wikipedia_title": "Felício_Ramuth"
   },
   {
     "slug": "ricardo-nunes",
@@ -243,7 +260,8 @@
         "2018": "250000604021",
         "2020": "250000896547"
       }
-    }
+    },
+    "wikipedia_title": "Ricardo_Nunes_(político)"
   },
   {
     "slug": "geraldo-alckmin",
@@ -258,7 +276,8 @@
         "2018": "280000602477",
         "2022": "280001607830"
       }
-    }
+    },
+    "wikipedia_title": "Geraldo_Alckmin"
   },
   {
     "slug": "gilberto-kassab",
@@ -270,7 +289,8 @@
       "camara": 74778,
       "senado": null,
       "tse_sq_candidato": {}
-    }
+    },
+    "wikipedia_title": "Gilberto_Kassab"
   },
   {
     "slug": "andre-do-prado",
@@ -285,7 +305,8 @@
         "2018": "250000619454",
         "2022": "250001610161"
       }
-    }
+    },
+    "wikipedia_title": "André_do_Prado"
   },
   {
     "slug": "marcio-franca",
@@ -301,7 +322,8 @@
         "2020": "250001012981",
         "2022": "250001615891"
       }
-    }
+    },
+    "wikipedia_title": "Márcio_França"
   },
   {
     "slug": "guilherme-derrite",
@@ -316,7 +338,8 @@
         "2018": "250000605452",
         "2022": "250001611359"
       }
-    }
+    },
+    "wikipedia_title": "Guilherme_Derrite"
   },
   {
     "slug": "sergio-moro-gov-pr",
@@ -330,7 +353,8 @@
       "tse_sq_candidato": {
         "2022": "160001621846"
       }
-    }
+    },
+    "wikipedia_title": "Sergio_Moro"
   },
   {
     "slug": "guto-silva",
@@ -344,7 +368,8 @@
       "tse_sq_candidato": {
         "2018": "160000619860"
       }
-    }
+    },
+    "wikipedia_title": "Guto_Silva"
   },
   {
     "slug": "alexandre-curi",
@@ -359,7 +384,8 @@
         "2018": "160000623295",
         "2022": "160001623100"
       }
-    }
+    },
+    "wikipedia_title": "Alexandre_Curi"
   },
   {
     "slug": "rafael-greca",
@@ -373,7 +399,8 @@
       "tse_sq_candidato": {
         "2020": "160000657203"
       }
-    }
+    },
+    "wikipedia_title": "Rafael_Greca"
   },
   {
     "slug": "requiao-filho",
@@ -388,7 +415,8 @@
         "2018": "160000612511",
         "2022": "160001615006"
       }
-    }
+    },
+    "wikipedia_title": "Requião_Filho"
   },
   {
     "slug": "paulo-martins-gov-pr",
@@ -404,7 +432,8 @@
         "2020": "210001085840",
         "2022": "160001621868"
       }
-    }
+    },
+    "wikipedia_title": "Paulo_Martins_(político)"
   },
   {
     "slug": "jorginho-mello",
@@ -419,7 +448,8 @@
         "2018": "240000609539",
         "2022": "240001611127"
       }
-    }
+    },
+    "wikipedia_title": "Jorginho_Mello"
   },
   {
     "slug": "joao-rodrigues",
@@ -434,7 +464,8 @@
         "2018": "210000604698",
         "2022": "210001596122"
       }
-    }
+    },
+    "wikipedia_title": "João_Rodrigues_(político_de_Santa_Catarina)"
   },
   {
     "slug": "decio-lima",
@@ -449,7 +480,8 @@
         "2018": "240000624336",
         "2022": "240001647445"
       }
-    }
+    },
+    "wikipedia_title": "Décio_Lima"
   },
   {
     "slug": "marcos-vieira",
@@ -464,7 +496,8 @@
         "2018": "240000609608",
         "2022": "240001612502"
       }
-    }
+    },
+    "wikipedia_title": "Marcos_Vieira_(político)"
   },
   {
     "slug": "marcelo-brigadeiro",
@@ -493,7 +526,8 @@
         "2018": "210000603583",
         "2022": "210001601587"
       }
-    }
+    },
+    "wikipedia_title": "Luciano_Zucco"
   },
   {
     "slug": "juliana-brizola",
@@ -509,7 +543,8 @@
         "2020": "210001189949",
         "2022": "210001621265"
       }
-    }
+    },
+    "wikipedia_title": "Juliana_Brizola"
   },
   {
     "slug": "edegar-pretto",
@@ -524,7 +559,8 @@
         "2018": "210000611352",
         "2022": "210001604469"
       }
-    }
+    },
+    "wikipedia_title": "Edegar_Pretto"
   },
   {
     "slug": "gabriel-souza",
@@ -539,7 +575,8 @@
         "2018": "210000605318",
         "2022": "210001609848"
       }
-    }
+    },
+    "wikipedia_title": "Gabriel_Souza_(político)"
   },
   {
     "slug": "marcelo-maranata",
@@ -554,7 +591,8 @@
         "2018": "210000605932",
         "2020": "210000884394"
       }
-    }
+    },
+    "wikipedia_title": "Marcelo_Maranata"
   },
   {
     "slug": "evandro-augusto",
@@ -565,7 +603,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2024": "130002114686"
+      }
     }
   },
   {
@@ -581,7 +621,8 @@
         "2018": "190000609934",
         "2020": "190000688286"
       }
-    }
+    },
+    "wikipedia_title": "Eduardo_Paes"
   },
   {
     "slug": "douglas-ruas",
@@ -595,7 +636,8 @@
       "tse_sq_candidato": {
         "2022": "190001596741"
       }
-    }
+    },
+    "wikipedia_title": "Douglas_Ruas"
   },
   {
     "slug": "rodrigo-bacellar",
@@ -610,7 +652,8 @@
         "2018": "190000603307",
         "2022": "190001596728"
       }
-    }
+    },
+    "wikipedia_title": "Rodrigo_Bacellar"
   },
   {
     "slug": "washington-reis",
@@ -625,7 +668,8 @@
         "2020": "190001114997",
         "2022": "190001615754"
       }
-    }
+    },
+    "wikipedia_title": "Washington_Reis"
   },
   {
     "slug": "garotinho",
@@ -634,13 +678,14 @@
     "cargo_disputado": "Governador",
     "estado": "RJ",
     "ids": {
-      "camara": null,
+      "camara": 178939,
       "senado": null,
       "tse_sq_candidato": {
         "2018": "190000621818",
         "2022": "190001619506"
       }
-    }
+    },
+    "wikipedia_title": "Anthony_Garotinho"
   },
   {
     "slug": "tarcisio-motta",
@@ -656,7 +701,8 @@
         "2020": "190000684953",
         "2022": "190001600488"
       }
-    }
+    },
+    "wikipedia_title": "Tarcísio_Motta"
   },
   {
     "slug": "cleitinho",
@@ -671,7 +717,8 @@
         "2018": "130000613136",
         "2022": "130001671677"
       }
-    }
+    },
+    "wikipedia_title": "Cleitinho_Azevedo"
   },
   {
     "slug": "nikolas-ferreira",
@@ -686,7 +733,8 @@
         "2020": "130001175469",
         "2022": "130001611005"
       }
-    }
+    },
+    "wikipedia_title": "Nikolas_Ferreira"
   },
   {
     "slug": "mateus-simoes",
@@ -697,8 +745,11 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
-    }
+      "tse_sq_candidato": {
+        "2022": "130001701691"
+      }
+    },
+    "wikipedia_title": "Mateus_Simões"
   },
   {
     "slug": "rodrigo-pacheco",
@@ -713,7 +764,8 @@
         "2018": "130000604556",
         "2020": "160000720084"
       }
-    }
+    },
+    "wikipedia_title": "Rodrigo_Pacheco_(político)"
   },
   {
     "slug": "gabriel-azevedo",
@@ -724,7 +776,9 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
+      "tse_sq_candidato": {
+        "2024": "130002114686"
+      }
     }
   },
   {
@@ -741,7 +795,8 @@
         "2020": "130000686201",
         "2022": "130001615215"
       }
-    }
+    },
+    "wikipedia_title": "Maria_da_Consolação"
   },
   {
     "slug": "pazolini",
@@ -752,8 +807,13 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
-    }
+      "tse_sq_candidato": {
+        "2018": "80000624435",
+        "2020": "80001188308",
+        "2024": "80002366610"
+      }
+    },
+    "wikipedia_title": "Lorenzo_Pazolini"
   },
   {
     "slug": "ricardo-ferraco",
@@ -768,7 +828,8 @@
         "2018": "80000625509",
         "2022": "80001649124"
       }
-    }
+    },
+    "wikipedia_title": "Ricardo_Ferraço"
   },
   {
     "slug": "paulo-hartung",
@@ -780,7 +841,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {}
-    }
+    },
+    "wikipedia_title": "Paulo_Hartung"
   },
   {
     "slug": "sergio-vidigal",
@@ -795,7 +857,8 @@
         "2018": "80000622443",
         "2020": "80001189870"
       }
-    }
+    },
+    "wikipedia_title": "Sérgio_Vidigal"
   },
   {
     "slug": "arnaldinho-borgo",
@@ -810,7 +873,8 @@
         "2018": "80000625047",
         "2020": "80000713125"
       }
-    }
+    },
+    "wikipedia_title": "Arnaldinho_Borgo"
   },
   {
     "slug": "helder-salomao",
@@ -825,7 +889,8 @@
         "2018": "80000626736",
         "2022": "80001719429"
       }
-    }
+    },
+    "wikipedia_title": "Hélder_Salomão"
   },
   {
     "slug": "da-vitoria",
@@ -840,7 +905,8 @@
         "2018": "80000611885",
         "2022": "80001650200"
       }
-    }
+    },
+    "wikipedia_title": "Da_Vitória"
   },
   {
     "slug": "jeronimo",
@@ -849,13 +915,14 @@
     "cargo_disputado": "Governador",
     "estado": "BA",
     "ids": {
-      "camara": null,
+      "camara": 160570,
       "senado": null,
       "tse_sq_candidato": {
         "2020": "50001165142",
         "2022": "100001606606"
       }
-    }
+    },
+    "wikipedia_title": "Jerônimo_Rodrigues"
   },
   {
     "slug": "acm-neto",
@@ -869,7 +936,8 @@
       "tse_sq_candidato": {
         "2022": "50001609248"
       }
-    }
+    },
+    "wikipedia_title": "ACM_Neto"
   },
   {
     "slug": "joao-roma",
@@ -885,7 +953,8 @@
         "2020": "50001261068",
         "2022": "50001605351"
       }
-    }
+    },
+    "wikipedia_title": "João_Roma"
   },
   {
     "slug": "jose-carlos-aleluia",
@@ -899,7 +968,8 @@
       "tse_sq_candidato": {
         "2018": "50000608633"
       }
-    }
+    },
+    "wikipedia_title": "José_Carlos_Aleluia"
   },
   {
     "slug": "ronaldo-mansur",
@@ -914,7 +984,8 @@
         "2018": "50000600889",
         "2022": "50001600528"
       }
-    }
+    },
+    "wikipedia_title": "Ronaldo_Mansur_(político)"
   },
   {
     "slug": "elmano-de-freitas",
@@ -930,7 +1001,8 @@
         "2020": "60000983767",
         "2022": "60001633585"
       }
-    }
+    },
+    "wikipedia_title": "Elmano_de_Freitas"
   },
   {
     "slug": "ciro-gomes-gov-ce",
@@ -941,8 +1013,11 @@
     "ids": {
       "camara": 141406,
       "senado": null,
-      "tse_sq_candidato": {}
-    }
+      "tse_sq_candidato": {
+        "2022": "280001612393"
+      }
+    },
+    "wikipedia_title": "Ciro_Gomes"
   },
   {
     "slug": "roberto-claudio",
@@ -956,7 +1031,8 @@
       "tse_sq_candidato": {
         "2022": "60001612926"
       }
-    }
+    },
+    "wikipedia_title": "Roberto_Cláudio"
   },
   {
     "slug": "eduardo-girao",
@@ -970,7 +1046,8 @@
       "tse_sq_candidato": {
         "2018": "60000611597"
       }
-    }
+    },
+    "wikipedia_title": "Eduardo_Girão"
   },
   {
     "slug": "capitao-wagner",
@@ -986,7 +1063,8 @@
         "2020": "60000653316",
         "2022": "60001608845"
       }
-    }
+    },
+    "wikipedia_title": "Capitão_Wagner"
   },
   {
     "slug": "eduardo-braide",
@@ -1001,7 +1079,8 @@
         "2018": "100000615044",
         "2020": "100000756891"
       }
-    }
+    },
+    "wikipedia_title": "Eduardo_Braide"
   },
   {
     "slug": "orleans-brandao",
@@ -1027,7 +1106,8 @@
       "tse_sq_candidato": {
         "2022": "100001667488"
       }
-    }
+    },
+    "wikipedia_title": "Felipe_Camarão_(político)"
   },
   {
     "slug": "lahesio-bonfim",
@@ -1042,7 +1122,8 @@
         "2020": "100000825685",
         "2022": "100001609046"
       }
-    }
+    },
+    "wikipedia_title": "Lahesio_Bonfim"
   },
   {
     "slug": "enilton-rodrigues",
@@ -1058,7 +1139,8 @@
         "2020": "100000996020",
         "2022": "100001713289"
       }
-    }
+    },
+    "wikipedia_title": "Enilton_Rodrigues"
   },
   {
     "slug": "joao-campos",
@@ -1073,7 +1155,8 @@
         "2018": "90000610070",
         "2022": "90001647805"
       }
-    }
+    },
+    "wikipedia_title": "João_Campos_(político)"
   },
   {
     "slug": "raquel-lyra",
@@ -1088,7 +1171,8 @@
         "2020": "170001032564",
         "2022": "170001604087"
       }
-    }
+    },
+    "wikipedia_title": "Raquel_Lyra"
   },
   {
     "slug": "gilson-machado",
@@ -1102,7 +1186,8 @@
       "tse_sq_candidato": {
         "2022": "170001604083"
       }
-    }
+    },
+    "wikipedia_title": "Gilson_Machado_Neto"
   },
   {
     "slug": "anderson-ferreira",
@@ -1118,7 +1203,8 @@
         "2020": "170000718941",
         "2022": "170001602587"
       }
-    }
+    },
+    "wikipedia_title": "Anderson_Ferreira_(político)"
   },
   {
     "slug": "ivan-moraes",
@@ -1134,7 +1220,8 @@
         "2020": "170001062173",
         "2022": "170001618403"
       }
-    }
+    },
+    "wikipedia_title": "Ivan_Moraes_Filho"
   },
   {
     "slug": "cicero-lucena",
@@ -1148,7 +1235,8 @@
       "tse_sq_candidato": {
         "2020": "150000976695"
       }
-    }
+    },
+    "wikipedia_title": "Cícero_Lucena"
   },
   {
     "slug": "lucas-ribeiro",
@@ -1163,7 +1251,8 @@
         "2020": "150000774537",
         "2022": "150001613756"
       }
-    }
+    },
+    "wikipedia_title": "Lucas_Ribeiro_(político_da_Paraíba)"
   },
   {
     "slug": "efraim-filho",
@@ -1178,7 +1267,8 @@
         "2018": "150000608820",
         "2022": "150001621390"
       }
-    }
+    },
+    "wikipedia_title": "Efraim_Filho"
   },
   {
     "slug": "pedro-cunha-lima",
@@ -1188,12 +1278,13 @@
     "estado": "PB",
     "ids": {
       "camara": 178912,
-      "senado": null,
+      "senado": 1757,
       "tse_sq_candidato": {
         "2018": "150000612364",
         "2022": "150001621388"
       }
-    }
+    },
+    "wikipedia_title": "Pedro_Cunha_Lima"
   },
   {
     "slug": "rafael-fonteles",
@@ -1207,7 +1298,8 @@
       "tse_sq_candidato": {
         "2022": "180001604027"
       }
-    }
+    },
+    "wikipedia_title": "Rafael_Fonteles"
   },
   {
     "slug": "silvio-mendes",
@@ -1222,7 +1314,8 @@
         "2020": "180000634397",
         "2022": "180001600497"
       }
-    }
+    },
+    "wikipedia_title": "Sílvio_Mendes"
   },
   {
     "slug": "joel-rodrigues",
@@ -1237,7 +1330,8 @@
         "2020": "180000952432",
         "2022": "180001600654"
       }
-    }
+    },
+    "wikipedia_title": "Joel_Rodrigues_(político)"
   },
   {
     "slug": "margarete-coelho",
@@ -1253,7 +1347,8 @@
         "2020": "190000805069",
         "2022": "180001602512"
       }
-    }
+    },
+    "wikipedia_title": "Margarete_Coelho"
   },
   {
     "slug": "alysson-bezerra",
@@ -1264,8 +1359,13 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
-    }
+      "tse_sq_candidato": {
+        "2018": "200000600342",
+        "2020": "200000661444",
+        "2024": "200001959098"
+      }
+    },
+    "wikipedia_title": "Allyson_Bezerra"
   },
   {
     "slug": "alvaro-dias-rn",
@@ -1275,13 +1375,14 @@
     "estado": "RN",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 945,
       "tse_sq_candidato": {
         "2018": "280000618462",
         "2020": "200001194163",
         "2022": "160001614980"
       }
-    }
+    },
+    "wikipedia_title": "Álvaro_Dias_(político_do_Rio_Grande_do_Norte)"
   },
   {
     "slug": "cadu-xavier",
@@ -1295,7 +1396,8 @@
       "tse_sq_candidato": {
         "2020": "200000998862"
       }
-    }
+    },
+    "wikipedia_title": "Cadu_Xavier"
   },
   {
     "slug": "fabio-mitidieri",
@@ -1309,7 +1411,8 @@
       "tse_sq_candidato": {
         "2018": "260000623594"
       }
-    }
+    },
+    "wikipedia_title": "Fábio_Mitidieri"
   },
   {
     "slug": "valmir-de-francisquinho",
@@ -1323,7 +1426,8 @@
       "tse_sq_candidato": {
         "2022": "260001690206"
       }
-    }
+    },
+    "wikipedia_title": "Valmir_de_Francisquinho"
   },
   {
     "slug": "thiago-de-joaldo",
@@ -1337,7 +1441,8 @@
       "tse_sq_candidato": {
         "2022": "260001633055"
       }
-    }
+    },
+    "wikipedia_title": "Thiago_de_Joaldo"
   },
   {
     "slug": "jhc",
@@ -1352,7 +1457,8 @@
         "2018": "20000616803",
         "2020": "20000842791"
       }
-    }
+    },
+    "wikipedia_title": "João_Henrique_Caldas"
   },
   {
     "slug": "renan-filho",
@@ -1367,7 +1473,8 @@
         "2018": "230000603179",
         "2022": "230001643506"
       }
-    }
+    },
+    "wikipedia_title": "Renan_Filho"
   },
   {
     "slug": "alan-rick",
@@ -1382,7 +1489,8 @@
         "2018": "10000602509",
         "2022": "10001714547"
       }
-    }
+    },
+    "wikipedia_title": "Alan_Rick"
   },
   {
     "slug": "mailza-assis",
@@ -1392,9 +1500,12 @@
     "estado": "AC",
     "ids": {
       "camara": null,
-      "senado": null,
-      "tse_sq_candidato": {}
-    }
+      "senado": 5557,
+      "tse_sq_candidato": {
+        "2022": "10001612477"
+      }
+    },
+    "wikipedia_title": "Mailza_Assis"
   },
   {
     "slug": "tiao-bocalom",
@@ -1409,7 +1520,8 @@
         "2018": "10000600232",
         "2020": "10001003637"
       }
-    }
+    },
+    "wikipedia_title": "Tião_Bocalom"
   },
   {
     "slug": "andre-kamai",
@@ -1421,7 +1533,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {}
-    }
+    },
+    "wikipedia_title": "André_Kamai"
   },
   {
     "slug": "omar-aziz",
@@ -1436,7 +1549,8 @@
         "2018": "40000603709",
         "2022": "40001618514"
       }
-    }
+    },
+    "wikipedia_title": "Omar_Aziz"
   },
   {
     "slug": "maria-do-carmo",
@@ -1446,7 +1560,7 @@
     "estado": "AM",
     "ids": {
       "camara": null,
-      "senado": null,
+      "senado": 1023,
       "tse_sq_candidato": {
         "2020": "190000785134",
         "2022": "40001650567"
@@ -1480,7 +1594,8 @@
         "2018": "40000604136",
         "2020": "170001127614"
       }
-    }
+    },
+    "wikipedia_title": "David_Almeida"
   },
   {
     "slug": "eduardo-braga",
@@ -1495,7 +1610,8 @@
         "2018": "40000618261",
         "2022": "40001610345"
       }
-    }
+    },
+    "wikipedia_title": "Eduardo_Braga"
   },
   {
     "slug": "dr-furlan",
@@ -1509,7 +1625,8 @@
       "tse_sq_candidato": {
         "2018": "30000611703"
       }
-    }
+    },
+    "wikipedia_title": "Antônio_Furlan"
   },
   {
     "slug": "clecio-luis",
@@ -1523,7 +1640,8 @@
       "tse_sq_candidato": {
         "2022": "30001619676"
       }
-    }
+    },
+    "wikipedia_title": "Clécio_Luís"
   },
   {
     "slug": "joao-capiberibe",
@@ -1539,7 +1657,8 @@
         "2020": "30001034733",
         "2022": "30001608736"
       }
-    }
+    },
+    "wikipedia_title": "João_Capiberibe"
   },
   {
     "slug": "hana-ghassan",
@@ -1553,7 +1672,8 @@
       "tse_sq_candidato": {
         "2022": "140001651992"
       }
-    }
+    },
+    "wikipedia_title": "Hana_Ghassan"
   },
   {
     "slug": "dr-daniel",
@@ -1562,7 +1682,7 @@
     "cargo_disputado": "Governador",
     "estado": "PA",
     "ids": {
-      "camara": null,
+      "camara": 220614,
       "senado": null,
       "tse_sq_candidato": {
         "2018": "140000614283",
@@ -1584,7 +1704,8 @@
         "2018": "140000606383",
         "2022": "140001598311"
       }
-    }
+    },
+    "wikipedia_title": "Delegado_Éder_Mauro"
   },
   {
     "slug": "beto-faro",
@@ -1599,7 +1720,8 @@
         "2018": "140000627198",
         "2022": "140001611661"
       }
-    }
+    },
+    "wikipedia_title": "Beto_Faro"
   },
   {
     "slug": "simao-jatene",
@@ -1611,7 +1733,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {}
-    }
+    },
+    "wikipedia_title": "Simão_Jatene"
   },
   {
     "slug": "marcos-rogerio",
@@ -1626,7 +1749,8 @@
         "2018": "220000609853",
         "2022": "220001647595"
       }
-    }
+    },
+    "wikipedia_title": "Marcos_Rogério"
   },
   {
     "slug": "adailton-furia",
@@ -1641,7 +1765,8 @@
         "2018": "220000609645",
         "2020": "220001025502"
       }
-    }
+    },
+    "wikipedia_title": "Adailton_Fúria"
   },
   {
     "slug": "hildon-chaves",
@@ -1655,7 +1780,8 @@
       "tse_sq_candidato": {
         "2020": "220001051415"
       }
-    }
+    },
+    "wikipedia_title": "Hildon_Chaves"
   },
   {
     "slug": "dr-fernando-maximo",
@@ -1669,7 +1795,8 @@
       "tse_sq_candidato": {
         "2020": "90001088736"
       }
-    }
+    },
+    "wikipedia_title": "Fernando_Máximo"
   },
   {
     "slug": "confucio-moura",
@@ -1683,7 +1810,8 @@
       "tse_sq_candidato": {
         "2018": "220000618467"
       }
-    }
+    },
+    "wikipedia_title": "Confúcio_Moura"
   },
   {
     "slug": "expedito-netto",
@@ -1698,7 +1826,8 @@
         "2018": "220000609735",
         "2022": "220001635101"
       }
-    }
+    },
+    "wikipedia_title": "Expedito_Netto"
   },
   {
     "slug": "arthur-henrique",
@@ -1713,7 +1842,8 @@
         "2018": "230000602332",
         "2020": "230000679861"
       }
-    }
+    },
+    "wikipedia_title": "Arthur_Henrique_(político)"
   },
   {
     "slug": "edilson-damiao",
@@ -1741,7 +1871,8 @@
       "tse_sq_candidato": {
         "2022": "230001602186"
       }
-    }
+    },
+    "wikipedia_title": "Teresa_Surita"
   },
   {
     "slug": "soldado-sampaio",
@@ -1756,7 +1887,8 @@
         "2018": "230000616424",
         "2022": "230001600061"
       }
-    }
+    },
+    "wikipedia_title": "Soldado_Sampaio"
   },
   {
     "slug": "professora-dorinha",
@@ -1771,7 +1903,8 @@
         "2018": "270000618831",
         "2022": "270001649254"
       }
-    }
+    },
+    "wikipedia_title": "Professora_Dorinha"
   },
   {
     "slug": "laurez-moreira",
@@ -1785,7 +1918,8 @@
       "tse_sq_candidato": {
         "2022": "270001652199"
       }
-    }
+    },
+    "wikipedia_title": "Laurez_Moreira"
   },
   {
     "slug": "amelio-cayres",
@@ -1800,7 +1934,8 @@
         "2018": "270000618859",
         "2022": "270001654140"
       }
-    }
+    },
+    "wikipedia_title": "Amério_Cayres"
   },
   {
     "slug": "vicentinho-junior",
@@ -1815,7 +1950,8 @@
         "2018": "270000610948",
         "2022": "270001643407"
       }
-    }
+    },
+    "wikipedia_title": "Vicentinho_Júnior"
   },
   {
     "slug": "ataides-oliveira",
@@ -1829,7 +1965,8 @@
       "tse_sq_candidato": {
         "2018": "270000602793"
       }
-    }
+    },
+    "wikipedia_title": "Ataídes_Oliveira"
   },
   {
     "slug": "celina-leao",
@@ -1844,7 +1981,8 @@
         "2018": "70000614533",
         "2022": "70001651045"
       }
-    }
+    },
+    "wikipedia_title": "Celina_Leão"
   },
   {
     "slug": "leandro-grass",
@@ -1859,7 +1997,8 @@
         "2018": "70000612417",
         "2022": "70001597108"
       }
-    }
+    },
+    "wikipedia_title": "Leandro_Grass"
   },
   {
     "slug": "ricardo-cappelli",
@@ -1871,7 +2010,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {}
-    }
+    },
+    "wikipedia_title": "Ricardo_Cappelli"
   },
   {
     "slug": "paula-belmonte",
@@ -1886,7 +2026,8 @@
         "2018": "70000618962",
         "2022": "70001728079"
       }
-    }
+    },
+    "wikipedia_title": "Paula_Belmonte"
   },
   {
     "slug": "daniel-vilela",
@@ -1901,7 +2042,8 @@
         "2018": "90000609231",
         "2022": "90001646327"
       }
-    }
+    },
+    "wikipedia_title": "Daniel_Vilela"
   },
   {
     "slug": "marconi-perillo",
@@ -1916,7 +2058,8 @@
         "2018": "90000609445",
         "2022": "90001615126"
       }
-    }
+    },
+    "wikipedia_title": "Marconi_Perillo"
   },
   {
     "slug": "adriana-accorsi",
@@ -1927,8 +2070,11 @@
     "ids": {
       "camara": 220565,
       "senado": null,
-      "tse_sq_candidato": {}
-    }
+      "tse_sq_candidato": {
+        "2022": "90001648110"
+      }
+    },
+    "wikipedia_title": "Adriana_Accorsi"
   },
   {
     "slug": "wilder-morais",
@@ -1944,7 +2090,8 @@
         "2020": "90001220915",
         "2022": "90001652051"
       }
-    }
+    },
+    "wikipedia_title": "Wilder_Morais"
   },
   {
     "slug": "jose-eliton",
@@ -1955,8 +2102,11 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
-    }
+      "tse_sq_candidato": {
+        "2018": "90000609446"
+      }
+    },
+    "wikipedia_title": "José_Eliton"
   },
   {
     "slug": "eduardo-riedel",
@@ -1970,7 +2120,8 @@
       "tse_sq_candidato": {
         "2022": "120001635628"
       }
-    }
+    },
+    "wikipedia_title": "Eduardo_Riedel"
   },
   {
     "slug": "fabio-trad",
@@ -1985,7 +2136,8 @@
         "2018": "120000613463",
         "2022": "120001650734"
       }
-    }
+    },
+    "wikipedia_title": "Fábio_Trad"
   },
   {
     "slug": "joao-henrique-catan",
@@ -1996,8 +2148,12 @@
     "ids": {
       "camara": null,
       "senado": null,
-      "tse_sq_candidato": {}
-    }
+      "tse_sq_candidato": {
+        "2018": "120000624894",
+        "2022": "120001614724"
+      }
+    },
+    "wikipedia_title": "João_Henrique_Catan"
   },
   {
     "slug": "lucien-rezende",
@@ -2026,7 +2182,8 @@
         "2018": "110000612720",
         "2022": "110001643542"
       }
-    }
+    },
+    "wikipedia_title": "Otaviano_Pivetta"
   },
   {
     "slug": "wellington-fagundes",
@@ -2041,7 +2198,8 @@
         "2018": "110000609942",
         "2022": "110001676176"
       }
-    }
+    },
+    "wikipedia_title": "Wellington_Fagundes"
   },
   {
     "slug": "janaina-riva",
@@ -2056,7 +2214,8 @@
         "2018": "110000623368",
         "2022": "110001623186"
       }
-    }
+    },
+    "wikipedia_title": "Janaína_Riva"
   },
   {
     "slug": "natasha-slhessarenko",
@@ -2068,6 +2227,7 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {}
-    }
+    },
+    "wikipedia_title": "Natasha_Slhessarenko"
   }
 ]

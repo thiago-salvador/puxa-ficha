@@ -10,6 +10,26 @@ Hoje o PuxaFicha opera em regime **fail-closed**:
 - mas o site só mostra quem está com `publicavel = true`
 - se ninguém estiver `publicavel = true`, o site fica vazio por escolha de segurança, não por bug visual
 
+## Guardrails operacionais duraveis
+
+Estas regras nao sao detalhe de implementacao; fazem parte do funcionamento seguro do projeto e devem continuar valendo em proximos prompts, chats e rodadas de curadoria.
+
+- **Nao editar `data/candidatos.json` sem validar IDs nas APIs oficiais.**
+  - `ids.camara`, `ids.senado` e `ids.tse_sq_candidato` errados fazem o pipeline puxar dados de outro politico.
+- **`sync-mock-from-assertions.ts` deve rodar sempre em modo sequencial.**
+  - O script reescreve `src/data/mock.ts` inteiro.
+  - Rodadas paralelas podem sobrescrever parcialmente o mock e gerar regressao silenciosa.
+- **`foto_url` obedece hierarquia fixa de prioridade.**
+  - `Wikipedia` e a unica fonte autorizada a sobrescrever foto existente.
+  - fallback local em `public/candidates/{slug}.jpg` entra quando necessario.
+  - `Camara`, `Senado` e `Wikidata` so podem preencher `foto_url` se o campo estiver vazio.
+  - Correcao manual curada, como a de `marcelo-maranata`, nao deve ser perdida por ingestao futura.
+- **Corrida incerta continua oculta.**
+  - Se a cobertura recente indicar que o nome saiu da disputa originalmente modelada, mudou de corrida ou ficou ambíguo demais, o projeto nao promove por aproximacao.
+  - Nesses casos, o candidato permanece oculto ate confirmacao factual mais dura.
+- **Corrida ao Senado continua oculta por politica editorial atual.**
+  - Se a curadoria concluir que a corrida real passou a ser para `Senador`, o perfil permanece oculto ate decisao editorial explicita sobre incluir ou nao senadores na superficie publica.
+
 ## Fluxograma Geral
 
 ```mermaid
@@ -61,6 +81,21 @@ O projeto usa fontes diferentes conforme o tipo de informação.
 - `Wikipedia/Wikidata`: base de pesquisa e preenchimento de contexto geral, foto, biografia inicial e alguns metadados.
 - `Imprensa sólida + site oficial + site partidário`: confirmação de partido atual, cargo atual e fatos políticos recentes quando as APIs oficiais não resolvem.
 - `Google News`: detector de mudança. Serve para abrir fila de revisão, não para publicar sozinho um fato.
+
+### 1.6. Regra especifica para `foto_url`
+
+Foto e um campo sensivel porque a ingestao mistura fontes de qualidade desigual.
+
+Hierarquia operacional:
+
+1. `Wikipedia` pode sobrescrever foto existente.
+2. fallback local em `public/candidates/{slug}.jpg` entra quando houver curadoria local ou quando a foto remota for inadequada.
+3. `Camara`, `Senado` e `Wikidata` so podem preencher `foto_url` se o campo estiver vazio.
+
+Regra de seguranca:
+
+- uma foto curada manualmente nao deve regredir por ingestao posterior de fonte mais fraca
+- se um host remoto quebrar a UI, o fix local tem prioridade ate nova curadoria segura
 
 ### 1.1. Regra operacional de "imprensa sólida"
 
@@ -376,12 +411,14 @@ Ele faz:
 1. lê o relatório factual
 2. cruza com as assertions `curated`
 3. cruza com o `release-verify`
-4. marca todo mundo como `false`
-5. marca `true` só quem passou tudo
+4. exclui explicitamente a fila `frozen_hidden`
+5. marca todo mundo como `false`
+6. marca `true` só quem passou tudo
 
 Observação importante:
 
 - o gate decide visibilidade
+- a fila `frozen_hidden` fica fora do gate por política editorial, mesmo se houver curadoria parcial ou cobertura sugestiva
 - mas ele não protege sozinho contra regressão anterior de ingestão
 - se um campo já entrou regressivo no banco antes do audit, o gate só reage depois
 

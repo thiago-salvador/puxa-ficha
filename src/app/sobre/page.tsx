@@ -1,11 +1,36 @@
 import type { Metadata } from "next"
 import { SectionLabel, SectionTitle, SectionDivider } from "@/components/SectionHeader"
 import { Footer } from "@/components/Footer"
+import { buildTwitterMetadata } from "@/lib/metadata"
+
+const title = "Sobre o projeto — Puxa Ficha"
+const description =
+  "Como funciona o Puxa Ficha, fontes de dados, metodologia e quem esta por tras."
 
 export const metadata: Metadata = {
-  title: "Sobre o projeto — Puxa Ficha",
-  description:
-    "Como funciona o Puxa Ficha, fontes de dados, metodologia e quem esta por tras.",
+  title,
+  description,
+  alternates: {
+    canonical: "/sobre",
+  },
+  openGraph: {
+    title,
+    description,
+    url: "https://puxaficha.com.br/sobre",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Sobre o Puxa Ficha",
+      },
+    ],
+  },
+  twitter: buildTwitterMetadata({
+    title,
+    description,
+    image: "/opengraph-image",
+  }),
 }
 
 export default function SobrePage() {

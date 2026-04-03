@@ -1,3 +1,5 @@
+import { safeJsonLdStringify } from "@/lib/json-ld"
+
 interface JsonLdProps {
   data: Record<string, unknown> | Array<Record<string, unknown>>
 }
@@ -6,7 +8,7 @@ export function JsonLd({ data }: JsonLdProps) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLdStringify(data) }}
     />
   )
 }

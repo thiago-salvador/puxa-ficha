@@ -47,11 +47,6 @@ interface CEPIMRecord {
   ativo?: boolean
 }
 
-async function resolveCandidatoId(slug: string): Promise<string | null> {
-  const { data } = await supabase.from("candidatos").select("id").eq("slug", slug).single()
-  return data?.id ?? null
-}
-
 function stripDoc(doc: string): string {
   return doc.replace(/[.\-\/]/g, "")
 }

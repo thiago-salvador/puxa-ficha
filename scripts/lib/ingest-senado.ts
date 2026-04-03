@@ -1,10 +1,11 @@
 import { supabase } from "./supabase"
-import { loadCandidatos, fetchJSON, normalizeForMatch, sleep } from "./helpers"
+import { loadCandidatos, fetchJSON, normalizeForMatch, resolveCandidatoId, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import type { IngestResult } from "./types"
 
 const API = "https://legis.senado.leg.br/dadosabertos"
 const HEADERS = { Accept: "application/json" }
+const SENADO_CANDIDATE_TIMEOUT_MS = 2 * 60 * 1000
 
 function ensureArray<T>(val: T | T[] | undefined | null): T[] {
   if (!val) return []
@@ -20,9 +21,21 @@ function dig(obj: unknown, ...keys: string[]): unknown {
   return current
 }
 
-async function resolveCandidatoId(slug: string): Promise<string | null> {
-  const { data } = await supabase.from("candidatos").select("id").eq("slug", slug).single()
-  return data?.id ?? null
+async function withTimeout<T>(promise: Promise<T>, timeoutMs: number, label: string): Promise<T> {
+  let timer: ReturnType<typeof setTimeout> | null = null
+
+  try {
+    return await Promise.race([
+      promise,
+      new Promise<T>((_, reject) => {
+        timer = setTimeout(() => {
+          reject(new Error(`${label} excedeu ${timeoutMs}ms`))
+        }, timeoutMs)
+      }),
+    ])
+  } finally {
+    if (timer) clearTimeout(timer)
+  }
 }
 
 function namesLookCompatible(
@@ -234,13 +247,6 @@ async function ingestAutorias(codigo: number, candidatoId: string, slug: string)
     const ano = Number(materia.AnoMateria) || null
     const ementa = String(materia.EmentaMateria || a.DescricaoTextoMateria || "")
 
-    const { data: existing } = await supabase
-      .from("projetos_lei")
-      .select("id")
-      .eq("proposicao_id_api", materiaId)
-      .eq("candidato_id", candidatoId)
-      .single()
-
     const row = {
       candidato_id: candidatoId,
       tipo: sigla,
@@ -251,11 +257,9 @@ async function ingestAutorias(codigo: number, candidatoId: string, slug: string)
       proposicao_id_api: materiaId,
     }
 
-    if (existing) {
-      await supabase.from("projetos_lei").update(row).eq("id", existing.id)
-    } else {
-      await supabase.from("projetos_lei").insert(row)
-    }
+    await supabase
+      .from("projetos_lei")
+      .upsert(row, { onConflict: "candidato_id,proposicao_id_api" })
     count++
   }
 
@@ -293,30 +297,36 @@ export async function ingestSenado(targetSlugs?: string[]): Promise<IngestResult
     }
 
     try {
-      await ingestPerfil(
-        cand.ids.senado,
-        candidatoId,
-        cand.slug,
-        cand.nome_completo,
-        cand.nome_urna
+      await withTimeout(
+        (async () => {
+          await ingestPerfil(
+            cand.ids.senado!,
+            candidatoId,
+            cand.slug,
+            cand.nome_completo,
+            cand.nome_urna
+          )
+          result.tables_updated.push("candidatos")
+          result.rows_upserted++
+          await sleep(500)
+
+          const mandatoRows = await ingestMandatos(cand.ids.senado!, candidatoId, cand.slug)
+          if (mandatoRows > 0) result.tables_updated.push("historico_politico")
+          result.rows_upserted += mandatoRows
+          await sleep(500)
+
+          const votoRows = await ingestVotos(cand.ids.senado!, candidatoId, cand.slug)
+          if (votoRows > 0) result.tables_updated.push("votos_candidato")
+          result.rows_upserted += votoRows
+          await sleep(500)
+
+          const autoriaRows = await ingestAutorias(cand.ids.senado!, candidatoId, cand.slug)
+          if (autoriaRows > 0) result.tables_updated.push("projetos_lei")
+          result.rows_upserted += autoriaRows
+        })(),
+        SENADO_CANDIDATE_TIMEOUT_MS,
+        `Ingestao Senado de ${cand.slug}`
       )
-      result.tables_updated.push("candidatos")
-      result.rows_upserted++
-      await sleep(500)
-
-      const mandatoRows = await ingestMandatos(cand.ids.senado, candidatoId, cand.slug)
-      if (mandatoRows > 0) result.tables_updated.push("historico_politico")
-      result.rows_upserted += mandatoRows
-      await sleep(500)
-
-      const votoRows = await ingestVotos(cand.ids.senado, candidatoId, cand.slug)
-      if (votoRows > 0) result.tables_updated.push("votos_candidato")
-      result.rows_upserted += votoRows
-      await sleep(500)
-
-      const autoriaRows = await ingestAutorias(cand.ids.senado, candidatoId, cand.slug)
-      if (autoriaRows > 0) result.tables_updated.push("projetos_lei")
-      result.rows_upserted += autoriaRows
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err)
       result.errors.push(msg)

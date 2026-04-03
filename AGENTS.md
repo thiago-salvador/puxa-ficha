@@ -62,7 +62,7 @@ UI components (src/components/)
 
 Camada central de acesso a dados. Funciona em dois modos:
 
-- **Supabase real**: quando `NEXT_PUBLIC_SUPABASE_URL` esta configurado e nao contem "placeholder"
+- **Supabase real**: quando `SUPABASE_URL` esta configurado e nao contem "placeholder" (ou, em modo legado, `NEXT_PUBLIC_SUPABASE_URL`)
 - **Mock fallback**: quando Supabase nao esta configurado, usa `src/data/mock.ts` com dados estaticos
 
 Todas as pages usam `api.ts`, nunca acessam Supabase diretamente. Funcoes principais: `getCandidatos()`, `getCandidatoBySlug(slug)`, `getCandidatosComResumo()`, `getCandidatosComparaveis()`.
@@ -128,9 +128,14 @@ Candidatos com `status: 'removido'` sao filtrados em todas as queries.
 
 | Variavel | Required | Scope |
 |----------|----------|-------|
-| `NEXT_PUBLIC_SUPABASE_URL` | Sim | Browser + Server |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Sim | Browser + Server |
+| `SUPABASE_URL` | Sim | Server only |
+| `SUPABASE_ANON_KEY` | Sim | Server only |
 | `SUPABASE_SERVICE_ROLE_KEY` | Sim (scripts) | Server only |
+| `NEXT_PUBLIC_SUPABASE_URL` | Legado | Browser + Server |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Legado | Browser + Server |
+| `PF_PREVIEW_TOKEN` | Sim (preview em producao) | Server only |
+| `INSTAGRAM_APP_ID` | Nao | Server only |
+| `NEXT_PUBLIC_X_HANDLE` | Nao | Browser + Server |
 | `TRANSPARENCIA_API_KEY` | Nao | Server only |
 | `ANTHROPIC_API_KEY` | Nao (fase 2) | Server only |
 

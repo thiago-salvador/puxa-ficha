@@ -2,328 +2,194 @@
 
 Arquivo importado de `/Users/thiagosalvador/Downloads/PLAN.md` em `2026-04-02` e atualizado para refletir a execução real no código e no banco.
 
-## Status real hoje
+## Status atual
 
-Este plano **não está concluído**. O site está mais seguro do que antes, mas **não está 100% funcional, atualizado e pronto para ir ao ar**.
+Este plano entrou em **modo operacional estavel**. O site tem superficie publica segura, o gate esta verde e nao existe mais backlog ativo de promocao. Os `15` casos restantes estao congelados por politica editorial e permanecem ocultos ate confirmacao forte.
 
-### Snapshot atual (2026-04-02 ~21:39, apos lotes 1-11 de curadoria)
+### Snapshot vivo
 
-- `144` candidatos ativos no banco
-- `115` candidatos com `publicavel = true`
-- `115/144` assertions `curated`
-- `29/144` assertions `mirrored` (restantes a promover)
-- gate factual: **passando** (0 bloqueados, 115 curated, 29 mirrored)
-- `release-verify` full local: `146/146 OK`
-- `release-verify` parcial producao: `117/117 OK`
-- `set-publicavel-from-audit.ts` real: `115` sincronizados, `29` ocultos
-- foto `marcelo-maranata`: **versionada** em `public/candidates/marcelo-maranata.jpg` + deploy confirmado
-- producao: `https://puxaficha.com.br` — 106 fichas acessíveis
+Fonte deste snapshot:
 
-### Snapshot histórico pré-lotes (2026-04-02 ~17:26, pos sessao Cursor)
+- `scripts/audit-factual-summary.md`
+- `scripts/release-verify-summary.md`
+- `scripts/release-verify-delta-summary.md`
+- `scripts/candidate-dossiers/SUMMARY.md`
+- banco Supabase (`publicavel`)
+
+Estado atual consolidado:
 
 - `144` candidatos ativos no banco
-- `82` candidatos com `publicavel = true`
-- `144/144` candidatos com status `auditado`
-- `0/144` candidatos com status `pendente`
-- `0/144` candidatos com status `reprovado`
-- `82/144` assertions `curated`
-- `62/144` assertions `mirrored`
-- gate factual final: **passando**
+- `129` candidatos com `publicavel = true`
+- `129/144` assertions `curated`
+- `15/144` assertions `mirrored`
+- fila congelada e oculta por politica editorial:
+  - `15` em `frozen_hidden`
+  - `0` em `mirrored_needs_curadoria`
+  - `0` em `blocked_no_anchor`
+- gate factual: **passando**
   - `0` bloqueados
-  - `82` curated passaram
-  - mínimo exigido pelo gate hoje: `82`
-- `release-verify` parcial local (ultima rodada valida): `84/84 OK`
-  - `82` fichas de candidatos curated no verifier (rotas publicas e/ou preview com token)
-  - `/explorar` e `/comparar`
-  - base URL local usada: `http://127.0.0.1:3560` (dev PuxaFicha; evitar porta `3000` se outro app estiver escutando)
-- `release-verify` full local: **nao reexecutado nesta sessao**; ultimo registro historico no log abaixo: `146/146 OK` com corte anterior
-- `set-publicavel-from-audit.ts --dry-run`: `82` elegiveis (alinhado ao verify fresco)
-- `set-publicavel-from-audit.ts` real: `82` sincronizados no banco (`62` fora da superficie publica)
-- preview remoto alinhado com Supabase:
-  - `/explorar`: `13` presidenciaveis
-  - `/comparar`: `13` linhas
-- producao redeployada e aliased:
-  - `https://puxaficha.com.br`
-  - `https://www.puxaficha.com.br`
-- `release-verify` parcial em producao: **nao reexecutado nesta sessao**; ultimo registro historico: `83/83 OK` com `81` fichas (antes do corte `82`)
-  - apos deploy com `public/candidates/marcelo-maranata.jpg`, repetir verify em producao se quiser prova no ar
-- nota operacional:
-  - a coluna `status` em `candidatos` hoje guarda valores editoriais como `pre-candidato`, nao `ativo/removido`
-  - por isso contagens de publicacao precisam usar `publicavel` diretamente ou filtrar `status != 'removido'`, nunca `status = 'ativo'`
+  - `129` `curated`
+  - `15` `mirrored`
+- `release-verify` full local: `146/146 OK`
+- `release-verify` parcial local: `131/131 OK`
+- `release-verify` delta producao: `3/3 OK`
+- `set-publicavel-from-audit.ts` real: `129` sincronizados, `15` ocultos
+- producao: `https://puxaficha.com.br`
+  - `129` fichas publicas
+  - delta remoto validado para `valmir-de-francisquinho`
+- `foto_url` de `marcelo-maranata`: fechada com asset local em `public/candidates/marcelo-maranata.jpg`
 
-Conclusão honesta:
+### Blocos locais em aberto
 
-- **segurança fail-closed**: sim
-- **site público mostrando fichas corretas**: sim, para os `82` abertos no banco apos sync; producao so reflete depois de deploy/revalidacao ISR
-- **site público mostrando zero candidatos**: nao mais
-- **144/144 atualizados e confiáveis no nível factual base**: sim no audit atual; `foto_url` do `marcelo-maranata` fechada com arquivo local curado (`/candidates/marcelo-maranata.jpg`)
-- **release-verify de superfície 144/144**: parcial local `84/84` nesta sessao; full nao rerodado aqui
-- **pronto para lançamento editorial**: nao; o backlog editorial real hoje e `50` candidatos em `mirrored_needs_curadoria`, `12` em `blocked_no_anchor` (contagens editoriais a realinhar apos promocoes)
+As mudancas locais que ainda nao foram publicadas se dividem em dois blocos tecnicos distintos:
 
-## Por que o site ainda nao esta pronto
+- **Bloco A: cache/retry hardening**
+  - foco em [api.ts](/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/src/lib/api.ts), [supabase.ts](/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/src/lib/supabase.ts) e scripts auxiliares de ingestao
+  - objetivo: reduzir fragilidade do Supabase, sair do `no-store` global e manter ISR sem servir dado stale
+  - estado local atual:
+    - retry de leitura aplicado no data layer
+    - `createServerSupabaseClient()` voltou a operar em modo ISR real por default
+    - `no-store` ficou restrito aos casos que precisam dele, como preview oculto
+    - `next build` voltou a sair limpo, sem warnings de `dynamic server usage` por `revalidate: 0`
+    - `release-verify` parcial local permaneceu verde apos a troca
+- **Bloco B: fila congelada + hardening de fotos**
+  - foco em [frozen-publication.ts](/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/lib/frozen-publication.ts), [set-publicavel-from-audit.ts](/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/set-publicavel-from-audit.ts), [build-candidate-dossiers.ts](/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/scripts/build-candidate-dossiers.ts) e [CandidatePhoto.tsx](/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/src/components/CandidatePhoto.tsx)
+  - objetivo: impedir publicacao acidental dos `15` congelados e manter a UI integra quando foto remota falhar
 
-O problema de publicacao zerada foi resolvido nesta rodada. O que impede chamar o site de pronto agora e outro conjunto de fatores:
+Limpeza de obsoleto ja aplicada nesta fase:
 
-- apenas `82/144` candidatos estao em bucket `curated_ready` (sync `publicavel` alinhado ao gate)
-- `50/144` ainda estao em `mirrored_needs_curadoria` (meta operacional; conferir dossies apos mudancas)
-- `12/144` seguem em `blocked_no_anchor`
-- pendencia de foto do `marcelo-maranata` **fechada** nesta sessao (asset + `foto_url` no banco + trilha em `apply-current-factual-fixes.ts`)
-- o corte no banco foi atualizado para `82` abertos; producao segue dependente de deploy do JPG e revalidacao
-- a app voltou a responder corretamente em producao, mas o caminho de dados ficou mais dinamico do que o ideal por causa do `no-store` no cliente Supabase
+- removido `scripts/lib/generate-pontos-factuais.ts`
+  - estava fora do fluxo e contrariava a politica atual de `pontos_atencao`
+- removido `scripts/sync-candidatos.ts`
+  - estava fora do fluxo e podia reintroduzir dados hardcoded stale no banco
 
-Em outras palavras:
+### Leitura honesta do estado
 
-- a superficie publica agora existe e foi verificada
-- o risco de expor ficha errada caiu muito
-- o risco remanescente deixou de ser de cutover e voltou a ser de cobertura editorial incompleta
+- `fail-closed`: **implementado e funcionando**
+- superficie publica: **aberta e verificada**
+- audit factual: **verde em 144/144**
+- release verifier: **verde local full, verde local partial e verde em delta de producao**
+- backlog ativo de promocao: **zerado**
+- fila congelada: **15 ocultos por politica editorial**
+- pronto operacional sob a politica atual: **sim**
 
-Isso e melhor do que manter tudo fechado ou abrir cedo demais, mas ainda nao satisfaz o criterio de `144/144` realmente fechados.
+O que continua aberto em manutencao:
 
-## O que já foi implementado
+- manter os `15` restantes ocultos ate confirmacao forte
+- manter corrida ao Senado fora da superficie publica ate decisao editorial explicita
+- manter a superficie publica dos `129` ja abertos sem regressao
+- reduzir o uso global de `no-store` sem voltar a servir dado stale
 
-### 1. Fail-closed real
+## Estado do plano
 
-Já existe uma única coluna binária de publicação: `publicavel`.
+### Guardrails para proximas sessoes
 
-Já foi implementado:
+Estas regras continuam valendo mesmo quando o projeto mudar de lote, branch ou agente.
 
-- gate `fail-closed` no banco e nas views públicas
-- `set-publicavel-from-audit.ts` como mecanismo central de publicação
-- uso de `candidatos_publico` na app, em vez de ler a tabela bruta
-- regra de que assertions `mirrored` não contam para publicação
+- **Nao editar `data/candidatos.json` sem validar IDs nas APIs oficiais.**
+  - `ids.camara`, `ids.senado` e `ids.tse_sq_candidato` errados puxam dados de outra pessoa.
+- **`sync-mock-from-assertions.ts` deve rodar sempre de forma sequencial.**
+  - O script reescreve `src/data/mock.ts` inteiro.
+  - Rodar em paralelo cria race condition e pode sobrescrever parcialmente o arquivo.
+- **Nao sobrescrever `foto_url` com fonte de menor prioridade.**
+  - Hierarquia operacional:
+    1. `Wikipedia` pode sobrescrever
+    2. fallback local em `public/candidates/{slug}.jpg` entra quando necessario
+    3. `Camara`, `Senado` e `Wikidata` so preenchem se `foto_url` estiver vazio
+  - Casos resolvidos manualmente, como `marcelo-maranata`, nao devem regredir em runs futuros.
+- **`cargo_disputado` pode ser ajustado por curadoria factual quando a corrida real mudar.**
+  - Hoje o projeto aceita `Presidente`, `Governador` e `Senador`.
+  - Mudancas desse tipo exigem assertion curada, fix reexecutavel e verifier antes de abrir `publicavel`.
+- **Quando a corrida real ficar incerta, o candidato deve permanecer oculto.**
+  - Se a cobertura recente indicar que o nome saiu da disputa original, mudou de cargo disputado ou ficou ambíguo demais, ele não deve ser promovido por aproximação editorial.
+  - Nesses casos, o candidato permanece `mirrored` e `publicavel = false` até confirmação mais dura.
+- **Candidatos ao Senado permanecem ocultos até decisão editorial explícita.**
+  - Mesmo quando a curadoria concluir que a corrida real deixou de ser para `Governador` e passou a ser `Senador`, o perfil deve permanecer oculto até decisão sua sobre incluir ou não senadores no site.
+- **Os `15` casos restantes estão congelados por política editorial.**
+  - Eles não fazem mais parte do backlog ativo de promoção.
+  - Permanecem `mirrored` e `publicavel = false` até confirmação forte do cargo realmente disputado.
 
-Status: **implementado**
+### Infraestrutura ja implementada
 
-Observação: o site ja foi reaberto parcialmente para `81` candidatos que atravessaram audit, gate e verifier.
+- `publicavel` como unico gate binario de publicacao
+- `set-publicavel-from-audit.ts` como sincronizador central
+- assertions com `confidence` e `verifiedAt`
+- matriz de aplicabilidade em `scripts/lib/audit-profiles.ts`
+- freshness em `scripts/lib/freshness-annotator.ts`
+- canonical person map em `scripts/lib/canonical-person-map.ts`
+- `release-verify` com modos `partial` e `full`
+- workflow de auditoria factual no GitHub Actions
+- rota de preview para validar fichas escondidas sem abrir o site
 
-### 2. Assertions e metadados mínimos
-
-Já foi implementado:
-
-- `confidence: "curated" | "mirrored"`
-- `verifiedAt`
-- manutenção de `source`, `cohorts` e `expected`
-
-Status: **implementado**
-
-### 3. Matriz de aplicabilidade
-
-O plano original falava em 4 perfis abstratos. A implementação real foi corrigida para perfis concretos em `scripts/lib/audit-profiles.ts`.
-
-Perfis hoje no código:
-
-- `deputado_federal_em_exercicio`
-- `senador_em_exercicio`
-- `executivo_em_exercicio`
-- `ex_mandatario_sem_cargo_atual`
-- `sem_mandato_previo`
-
-Status: **implementado, com ajuste em relação ao plano original**
-
-### 4. Freshness
-
-Já foi implementado em `scripts/lib/freshness-annotator.ts`:
-
-- `verifiedAt` obrigatório para curadoria
-- distinção entre `hardening` e `launched`
-- regra de stale só após lançamento real
-- seções com estado `current`, `historical`, `stale` ou `missing`
-
-Status: **implementado**
-
-### 5. Canonical person map
-
-Já foi implementado em `scripts/lib/canonical-person-map.ts`.
-
-Hoje cobre explicitamente:
-
-- `ciro-gomes` + `ciro-gomes-gov-ce`
-- `tarcisio` + `tarcisio-gov-sp`
-
-Status: **implementado, ainda mínimo**
-
-### 6. Verificação de superfície pública
-
-Já foi implementado e endurecido:
-
-- seletores estáveis na ficha
-- seletores estáveis em `/explorar`
-- seletores estáveis em `/comparar`
-- `release-verify` com modo `partial` e `full`
-- workflow acionando o verifier e os arquivos críticos da superfície pública
-
-Status: **implementado para superfície; ainda não prova 144/144**
-
-### 7. Workflow de auditoria
-
-Já foi implementado:
-
-- workflow GitHub Actions para auditoria factual
-- paths de trigger ampliados para scripts, views e UI crítica
-- proteção para PRs internos vs forks
-
-Status: **implementado**
-
-## O que já foi corrigido na base
-
-### Correções estruturais já executadas
-
-Já foram feitos, em diferentes rodadas:
+### Correcao estrutural ja consolidada
 
 - limpeza do lixo de `Wikipedia (categorias)` na origem
-- remoção de filtros runtime que mascaravam dado ruim
 - endurecimento do gate factual
-- separação entre assertions `curated` e `mirrored`
-- fechamento do site em modo `fail-closed`
-- correções em timeline partidária, histórico político e P0 factual de candidatos específicos
+- separacao entre assertions `curated` e `mirrored`
+- fechamento real do site em modo `fail-closed`
+- reabertura controlada somente apos audit + gate + verifier
+- correcoes reexecutaveis em timeline partidaria, historico politico e P0 factual
 
-### Correções factuais pontuais já aplicadas
+### Riscos e observacoes abertas
 
-Entre as correções relevantes já feitas:
+- `evandro-augusto` segue sem `data_nascimento`; hoje isso nao bloqueia o audit por ausencia de ancora oficial suficiente
+- `marcelo-maranata` foi resolvido com asset local; o enrich nao deve voltar a sobrescrever essa `foto_url`
+- o estado do banco usa valores editoriais em `status`; contagens operacionais devem usar `publicavel`, nao `status = 'ativo'`
+- o release verifier funciona, mas a prova completa de superficie publicada continua sendo parcial em producao enquanto parte das fichas segue oculta
 
-- `ciro-gomes`: trajetória e timeline partidária reconstituídas
-- `ronaldo-caiado`: correção de partido atual
-- `alvaro-dias-rn`: correção de identidade canônica
-- `luciano-zucco`: partido atual corrigido para `PL`
-- `eduardo-braide`: partido e cargo atual corrigidos
-- `pedro-cunha-lima`: partido atual corrigido
-- `paula-belmonte`: partido e cargo atual corrigidos
-- `laurez-moreira`: partido e cargo atual corrigidos
-- `efraim-filho`: bio e timeline partidária saneadas
-- `dr-daniel`: bio e cargo atual corrigidos
-- `ataides-oliveira`: formação completada com fonte oficial do Senado
-- `renan-santos`: remoção de `SQ_CANDIDATO` incorreto do TSE e limpeza do financiamento contaminado
-- `renan-santos` e `rui-costa-pimenta`: seções TSE passaram a distinguir `N/A oficial` de falta de curadoria quando não existe candidatura anterior confirmada
-- `laurez-moreira`: ausência de financiamento individual do TSE passou a ser tratada como ausência oficial, não como buraco de ingestão
+## Ordem operacional daqui
 
-Essas correções melhoraram a auditoria, mas não fecharam o conjunto completo dos `144`.
+### 1. Nao abrir candidato sem prova
 
-## O que ainda bloqueia o plano
-
-O bloqueio factual duro deixou de existir nesta rodada.
-
-Tradução prática:
-
-- o lote de histórico político deixou de ser gargalo
-- o audit factual segue verde no núcleo factual em `144/144` apos fechar `foto_url` do `marcelo-maranata` com arquivo local curado
-- o gate factual ficou verde
-- o que falta agora já não é “descobrir erro factual duro”, e sim:
-  - converter `50` candidatos em `mirrored_needs_curadoria` para `curated`
-  - resolver `12` candidatos ainda sem ancora estruturada suficiente para fechar a trilha de curadoria
-  - revisar e manter a superfície pública dos `82` com `publicavel = true` (pos sync desta sessao)
-  - manter a superfície pública e o gate verdes enquanto novos candidatos entram
-
-## Estado real do gate final
-
-O gate factual final foi executado novamente em `2026-04-02` e passou (e foi revalidado na sessao Cursor com `144/144` auditados):
-
-- `0` candidatos seguem bloqueados
-- `82/82` assertions `curated` passam hoje o gate
-- `set-publicavel-from-audit.ts` sincronizou `82` candidatos como públicos na ultima rodada desta sessao
-- `marcelo-maranata` voltou a fechar o audit apos `foto_url` = `/candidates/marcelo-maranata.jpg` no banco e asset em `public/`
-- `natasha-slhessarenko` deixou a fila pendente apos validacao e preenchimento de `data_nascimento`
-- os `7` casos reprovados anteriores foram fechados com historico politico estruturado e correcao de P0 onde necessario:
-  - `renan-filho`
-  - `teresa-surita`
-  - `juliana-brizola`
-  - `anderson-ferreira`
-  - `garotinho`
-  - `joao-rodrigues`
-  - `lahesio-bonfim`
-
-Isso significa que o gargalo factual duro desapareceu. As flexibilizacoes editoriais que seguem abertas sao:
-
-- `evandro-augusto`, que permanece sem `data_nascimento` ate confirmacao oficial futura
-- `marcelo-maranata`: foto resolvida com arquivo local; atencao a hierarquia Wikipedia no enrich (pode sobrescrever `foto_url` em runs futuros)
-
-## Ordem certa a partir daqui
-
-Esta é a ordem operacional correta para chegar a um site 100% funcional, atualizado e seguro.
-
-### Etapa 1. Reabrir só quando houver prova
-
-Não reabrir candidatos em lote por ansiedade.
-
-Só marcar `publicavel = true` quando o candidato:
+Continuar marcando `publicavel = true` somente quando o candidato:
 
 - tiver assertion `curated`
 - passar audit factual
-- passar cross-checks obrigatórios
-- passar verifier da superfície pública
+- passar cross-checks obrigatorios
+- passar `release-verify`
 
-Status: **implementado para os `73` candidatos ja curados; manter a disciplina para os proximos lotes**
+Status: **ja aplicado aos `126` publicos**
 
-### Etapa 2. Reabrir só depois de sincronizar publicação
-Os `73 curated` já atravessam o gate factual, já passam no `release-verify` parcial e já foram sincronizados no banco como `publicavel = true`.
+### 2. Fila congelada fora do backlog ativo
 
-Foco:
+Os `15` candidatos restantes nao fazem mais parte da fila normal de promocao:
 
-- manter a ordem operacional correta de reabertura:
-  - redeployar/revalidar na ordem certa
-  - conferir que `/explorar`, `/comparar` e as fichas publicadas batem com o snapshot
-- reabrir produção de forma controlada
+- todos aparecem em `scripts/candidate-dossiers/SUMMARY.md` como `frozen_hidden`
+- o gate de `publicavel` ignora explicitamente essa fila
+- nenhum deles deve ser promovido por aproximacao editorial
 
-Status: **implementado para `73` candidatos, com superficie local e remota validadas**
+Fluxo para reabrir um caso congelado:
 
-### Etapa 3. Resolver recência TSE
+1. obter confirmacao forte do cargo realmente disputado
+2. decidir se o cargo entra na superficie publica atual
+3. atualizar assertion e fix reexecutavel
+4. rodar `audit-factual`
+5. rodar `release-verify`
+6. sincronizar `publicavel`
+7. registrar a mudanca neste arquivo
 
-Essa deixou de ser a frente mais crítica, mas continua importante para consistência histórica.
+### 3. Manutencao da superficie publica
 
-Precisa:
+Enquanto a fila congelada permanecer oculta:
 
-- localizar a eleição mais recente disputada por cada candidato
-- garantir que patrimônio e financiamento publicados correspondam à eleição correta
-- marcar dado histórico com ano visível quando o melhor dado disponível for antigo
+- manter `/explorar`, `/comparar` e fichas publicas verdes
+- evitar regressao de cache/stale
+- validar qualquer candidato novo ou reaberto com delta remoto antes de considerar a operacao fechada
 
-Status: **avançou bastante**
+### 4. Pronto de verdade
 
-Nesta rodada foi corrigido um erro grave:
+Sob a politica editorial atual, o projeto esta operacionalmente pronto quando estes pontos estiverem simultaneamente verdadeiros:
 
-- `renan-santos` estava apontando para `SQ_CANDIDATO` de outras pessoas no TSE (`2020` e `2022`)
-- esses IDs foram removidos do cadastro curado
-- o financiamento contaminado foi removido do banco
-- o audit agora diferencia corretamente:
-  - ausência oficial de bens/receitas no TSE
-  - dado histórico antigo mas válido
-  - falta real de curadoria
+- `129` candidatos confirmados com `publicavel = true`
+- `15` candidatos restantes mantidos em `frozen_hidden`
+- `0` candidatos em `mirrored_needs_curadoria`
+- `0` candidatos em `blocked_no_anchor`
+- audit factual verde
+- release verifier verde
 
-### Etapa 4. Fechar histórico político faltante
+Se a politica editorial mudar no futuro, o criterio volta a ser recalculado para incluir os casos hoje congelados.
 
-Os casos ainda sem `historico_politico` suficiente precisam ser completados ou marcados como realmente `N/A` quando o perfil permitir.
-
-Status: **concluida para o audit factual atual**
-
-Ordem imediata dentro desta etapa:
-
-- manter os historicos politicos recem-corrigidos como fixes reexecutaveis, nao como ajuste manual solto no banco
-- manter `evandro-augusto` sem `data_nascimento` ate surgir confirmacao oficial futura
-
-### Etapa 5. Converter mirrored -> curated
-
-Hoje ainda faltam `51` candidatos saírem de `mirrored_needs_curadoria` para `curated`, e outros `13` ainda dependem de ancora estruturada suficiente antes de entrar nessa fila final.
-
-Esse continua sendo o gargalo editorial central do plano.
-
-Status: **pendente**
-
-### Etapa 6. Rodar verifier full 144/144
-
-O verifier full já passou localmente em modo preview:
-
-- `146/146 OK`
-- `144` fichas
-- `/explorar`
-- `/comparar`
-
-O que falta agora não é mais infraestrutura do verifier nem cutover inicial. O foco passou a ser:
-
-- manter `publicavel`, audit e verifier sincronizados enquanto novos curados entram
-- ampliar a cobertura editorial sem quebrar a superfície pública já aberta
-- reduzir o uso global de `no-store` sem voltar a servir dado stale
-
-Status: **implementado para o corte atual; manutenção contínua daqui para frente**
-
-## Log de execução
+## Log cronologico
 
 ### 2026-04-01
 
@@ -1137,6 +1003,379 @@ Décimo primeiro lote mirrored → curated. 3 candidatos promovidos. Pipeline co
 
 Restam: 29 candidatos mirrored para promover.
 
+### 2026-04-02 — lote 12 curadoria (Codex)
+
+Decimo segundo lote mirrored → curated. 2 candidatos promovidos. Houve correcao factual estrutural antes da promocao.
+
+**Candidatos promovidos:**
+- `amelio-cayres` (TO, REPUBLICANOS): presidente da Assembleia Legislativa do Tocantins, pre-candidato ao governo do TO. A promocao permaneceu valida, mas a filiacao final foi revalidada depois e mantida em `REPUBLICANOS` com base em fonte oficial da ALETO. Source: ALETO oficial 2023-02-13 + diario oficial ALETO 2026-03
+- `soldado-sampaio` (RR, REPUBLICANOS): presidente da Assembleia Legislativa de Roraima, pre-candidato ao governo de RR. Partido atual corrigido de `PL` para `REPUBLICANOS`. Source: ALE-RR oficial 2026-02-24 + Folha BV 2025-10-06
+
+**Correcoes estruturais aplicadas antes da promocao:**
+- `amelio-cayres`:
+  - `partido_sigla/partido_atual`: revalidado e mantido em `REPUBLICANOS`
+  - `cargo_atual`: `null` → `Presidente da Assembleia Legislativa do Tocantins`
+  - `biografia`: texto generico/stale → bio factual atualizada
+  - `mudancas_partido`: removida timeline stale incorreta e mantida timeline atual curada coerente com `REPUBLICANOS`
+  - `historico_politico`: adicionada entrada atual de presidencia da ALETO (`2025-presente`)
+- `soldado-sampaio`:
+  - `partido_sigla/partido_atual`: `PL` → `REPUBLICANOS`
+  - `cargo_atual`: `null` → `Presidente da Assembleia Legislativa de Roraima`
+  - `biografia`: texto curto/insuficiente → bio factual atualizada
+  - `mudancas_partido`: removida timeline stale de `PL` e inserida timeline atual curada de `REPUBLICANOS`
+  - `historico_politico`: adicionada entrada atual de presidencia da ALE-RR (`2021-presente`)
+
+**Pipeline executado nesta rodada:**
+1. assertions: `amelio-cayres` e `soldado-sampaio` promovidos para `curated`
+2. sync-mock-from-assertions: 2/2 OK (sequencial)
+3. apply-current-factual-fixes: 2/2 OK para o lote novo
+4. audit:factual: `144/144`, `0` reprovados — curated `117` | mirrored `27`
+5. check-audit-gate: Gate OK — `117/117` curated
+6. release-verify delta local: `4/4 OK`
+7. release-verify parcial local: `119/119 OK`
+8. set-publicavel real: `117` `publicavel=true`, `27` ocultos
+9. build local: OK
+10. deploy producao: `https://puxa-ficha-7k45e4ikr-thiagosalvador.vercel.app` aliased em `https://puxaficha.com.br`
+11. release-verify delta producao: `4/4 OK`
+12. release-verify parcial producao: `119/119 OK`
+
+**Incidente operacional desta rodada:**
+- a primeira tentativa do `release-verify` parcial em producao travou sem escrever o report final
+- apos limpar o processo e reexecutar, o verifier concluiu com `119/119 OK`
+- `curl` tambem confirmou `200` para:
+  - `/candidato/amelio-cayres`
+  - `/candidato/soldado-sampaio`
+
+Restam: `27` candidatos mirrored para promover (`24 mirrored_needs_curadoria` + `3 blocked_no_anchor`).
+
+### 2026-04-02 — lote 13 curadoria (Codex)
+
+Decimo terceiro lote mirrored -> curated. 3 candidatos promovidos. O lote exigiu bootstrap local do verifier antes da reabertura, porque as 3 fichas ainda estavam ocultas em producao no momento da prova.
+
+**Candidatos promovidos:**
+- `adailton-furia` (RO, PSD): prefeito de Cacoal e pre-candidato ao governo de Rondonia. `cargo_atual` corrigido de `null` para `Prefeito de Cacoal`, com biografia, data de nascimento, formacao e foto alinhadas. Source: `TCE-RO 2025-12-15 + Rondonia Dinamica 2026-02-26`
+- `juliana-brizola` (RS, PDT): ex-deputada estadual e pre-candidata do PDT ao governo do Rio Grande do Sul. Source: `PDT oficial 2025-11-15 + ABC+ 2026-03-10`
+- `thiago-de-joaldo` (SE, PP): deputado federal e nome mantido a disposicao para a disputa ao governo de Sergipe. `cargo_atual` reforcado como `Deputado(a) Federal`, com biografia, data de nascimento, formacao e foto alinhadas. Source: `Camara dos Deputados oficial 2026-04-02 + ITNet 2025-11-12`
+
+**Correcoes estruturais aplicadas antes da promocao:**
+- `adailton-furia`:
+  - `cargo_atual`: `null` -> `Prefeito de Cacoal`
+  - `historico_politico`: reforco da linha atual de prefeito (`2021-presente`)
+  - `biografia`, `data_nascimento`, `formacao` e `foto_url`: alinhados a fontes verificadas
+- `juliana-brizola`:
+  - trilha reexecutavel deixou de depender de `Wikipedia` como source principal e passou a referenciar cobertura partidaria/jornalistica recente
+  - `data_nascimento`, `formacao` e `foto_url`: alinhados
+- `thiago-de-joaldo`:
+  - `cargo_atual`: `null` -> `Deputado(a) Federal` no fallback local e reforco no banco
+  - `historico_politico`: linha atual de mandato federal normalizada (`2023-presente`)
+  - `biografia`, `data_nascimento`, `formacao` e `foto_url`: alinhados
+
+**Pipeline executado nesta rodada:**
+1. assertions: `adailton-furia`, `juliana-brizola` e `thiago-de-joaldo` promovidos para `curated`
+2. mock fallback alinhado manualmente para os 3 candidatos
+3. apply-current-factual-fixes: `3/3 OK` para o lote
+4. `check:scripts` e `eslint` dos arquivos tocados: OK
+5. audit:factual: `144/144`, `0` reprovados — curated `120` | mirrored `24`
+6. check-audit-gate: Gate OK — `120/120` curated
+7. build-candidate-dossiers: `120 curated_ready`, `21 mirrored_needs_curadoria`, `3 blocked_no_anchor`
+8. `release-verify` parcial local: `122/122 OK`
+9. set-publicavel --dry-run: `120` elegiveis
+10. set-publicavel real: `120 publicavel=true`, `24 false`
+11. release-verify delta producao: `5/5 OK`
+
+**Incidente operacional desta rodada:**
+- o `release-verify` parcial remoto completo ficou lento demais para servir como bootstrap de lote
+- o fluxo correto aqui foi:
+  1. validar localmente as fichas ocultas via preview com `local-preview`
+  2. sincronizar `publicavel`
+  3. validar em producao apenas o delta remoto dos 3 novos candidatos
+
+**Estado ao final do lote:**
+- `120/144` `curated`
+- `24/144` `mirrored`
+- `120` candidatos com `publicavel = true`
+- backlog editorial: `21 mirrored_needs_curadoria` + `3 blocked_no_anchor`
+
+### 2026-04-03 — lote 14 curadoria (Codex)
+
+Decimo quarto lote mirrored -> curated. 2 candidatos promovidos. Esta rodada introduziu um ajuste de modelagem: o projeto passou a aceitar `cargo_disputado = "Senador"` quando a curadoria factual prova que a corrida real deixou de ser ao governo.
+
+**Candidatos promovidos:**
+- `anderson-ferreira` (PE, PL): ex-prefeito de Jaboatao dos Guararapes. A corrida principal foi atualizada de `Governador` para `Senador`, com base em cobertura recente de articulacao do PL em Pernambuco. Source: `JC 2025-03-21 + Diario de Pernambuco 2026-02-06`
+- `guilherme-derrite` (SP, PP): deputado federal e ex-secretario da Seguranca Publica de Sao Paulo. A corrida principal foi atualizada de `Governador` para `Senador`, com retorno ao mandato federal e novo enquadramento eleitoral. Source: `Camara dos Deputados oficial 2026-04-02 + UOL 2025-05-19`
+
+**Correcoes estruturais aplicadas antes da promocao:**
+- tipagem aberta em `src/lib/types.ts`: `cargo_disputado` agora aceita `Presidente`, `Governador` e `Senador`
+- `anderson-ferreira`:
+  - `cargo_disputado`: `Governador` -> `Senador`
+  - `biografia`: atualizada para refletir a corrida ao Senado
+- `guilherme-derrite`:
+  - `partido_atual`: `PL` -> `PP`
+  - `cargo_atual`: `Secretario de Seguranca Publica de SP` -> `Deputado(a) Federal`
+  - `cargo_disputado`: `Governador` -> `Senador`
+  - `biografia`: atualizada para refletir retorno ao mandato federal e foco no Senado
+  - `historico_politico`: reforco da linha atual de deputado federal (`2025-presente`)
+
+**Pipeline executado nesta rodada:**
+1. assertions: `anderson-ferreira` e `guilherme-derrite` promovidos para `curated`
+2. mock fallback alinhado manualmente para os 2 candidatos
+3. apply-current-factual-fixes: `2/2 OK` para o lote
+4. `check:scripts` e `eslint` dos arquivos tocados: OK
+5. audit:factual: `144/144`, `0` reprovados — curated `122` | mirrored `22`
+6. check-audit-gate: Gate OK — `122/122` curated
+7. build-candidate-dossiers: `122 curated_ready`, `19 mirrored_needs_curadoria`, `3 blocked_no_anchor`
+8. `release-verify` parcial local: `124/124 OK`
+9. set-publicavel --dry-run: `122` elegiveis
+10. set-publicavel real: `122 publicavel=true`, `22 false`
+11. release-verify delta producao: `4/4 OK`
+
+**Incidente operacional desta rodada:**
+- a mudanca de `cargo_disputado` para `Senador` falhou no primeiro typecheck porque o tipo do app ainda so aceitava `Presidente | Governador`
+- o ajuste foi tratado como mudanca estrutural minima do produto, nao como gambiarra local
+
+**Estado ao final do lote:**
+- `122/144` `curated`
+- `22/144` `mirrored`
+- `122` candidatos com `publicavel = true`
+- backlog editorial: `19 mirrored_needs_curadoria` + `3 blocked_no_anchor`
+
+### 2026-04-03 — lote 15 curadoria (Codex)
+
+Mini-lote seguro focado em Rondônia e Roraima, com promoção de três nomes ainda `mirrored`:
+
+- `confucio-moura`:
+  - assertion promovida para `curated`
+  - `cargo_atual`: confirmado como `Senador(a)`
+  - `cargo_disputado`: `Governador` -> `Senador`
+  - biografia atualizada para refletir a corrida de reeleição ao Senado
+- `teresa-surita`:
+  - assertion promovida para `curated`
+  - `cargo_disputado`: `Governador` -> `Senador`
+  - biografia atualizada para refletir a pre-candidatura ao Senado em RR
+- `edilson-damiao`:
+  - assertion promovida para `curated`
+  - `partido_atual`: `Progressistas` -> `Uniao Brasil`
+  - `partido_sigla`: `PP` -> `UNIAO`
+  - `cargo_atual`: `null` -> `Governador de Roraima`
+  - `historico_politico`: linha atual reforcada como governador por sucessao constitucional
+  - `mudancas_partido`: timeline atual saneada para evitar regressao do `PP`
+
+**Pipeline executado nesta rodada:**
+1. assertions: `confucio-moura`, `teresa-surita` e `edilson-damiao` promovidos para `curated`
+2. mock fallback alinhado manualmente para os 3 candidatos
+3. apply-current-factual-fixes: `3/3 OK` para o lote
+4. `check:scripts` e `eslint` dos arquivos tocados: OK
+5. audit:factual: `144/144`, `0` reprovados — curated `125` | mirrored `19`
+6. check-audit-gate: Gate OK — `125/125` curated
+7. build-candidate-dossiers: `125 curated_ready`, `16 mirrored_needs_curadoria`, `3 blocked_no_anchor`
+8. `release-verify` parcial local: `127/127 OK`
+9. set-publicavel --dry-run: `125` elegiveis
+10. set-publicavel real: `125 publicavel=true`, `19 false`
+11. release-verify delta producao: `5/5 OK`
+
+**Incidente operacional desta rodada:**
+- o primeiro `audit-factual` saiu com snapshot misto porque foi disparado antes do `apply-current-factual-fixes` terminar
+- o audit foi rerodado com o banco estabilizado antes de qualquer decisao de publicacao
+- o `set-publicavel-from-audit --dry-run` tambem recusou abrir cedo demais, porque o `release-verify` ainda nao tinha coberto os 3 novos slugs; o gate travou corretamente
+
+**Estado ao final do lote:**
+- `125/144` `curated`
+- `19/144` `mirrored`
+- `125` candidatos com `publicavel = true`
+- backlog editorial: `16 mirrored_needs_curadoria` + `3 blocked_no_anchor`
+
+### 2026-04-03 — lote 16 curadoria (Codex)
+
+Mini-lote enxuto e seguro focado em Rondônia, com promoção de `dr-fernando-maximo`:
+
+- `dr-fernando-maximo`:
+  - assertion promovida para `curated`
+  - `cargo_atual`: confirmado como `Deputado(a) Federal`
+  - `cargo_disputado`: mantido em `Governador`
+  - biografia reescrita para refletir o mandato federal atual e a presença entre os nomes testados para o governo de RO em 2026
+  - mock fallback preenchido com biodata, foto oficial da Câmara e última atualização
+
+**Pipeline executado nesta rodada:**
+1. assertion: `dr-fernando-maximo` promovido para `curated`
+2. mock fallback alinhado manualmente para o candidato
+3. apply-current-factual-fixes: `1/1 OK` para o lote
+4. `check:scripts` e `eslint` dos arquivos tocados: OK
+5. audit:factual: `144/144`, `0` reprovados — curated `126` | mirrored `18`
+6. check-audit-gate: Gate OK — `126/126` curated
+7. build-candidate-dossiers: `126 curated_ready`, `15 mirrored_needs_curadoria`, `3 blocked_no_anchor`
+8. `release-verify` parcial local: `128/128 OK`
+9. set-publicavel --dry-run: `126` elegiveis
+10. set-publicavel real: `126 publicavel=true`, `18 false`
+11. release-verify delta producao: `3/3 OK`
+
+**Incidente operacional desta rodada:**
+- o `set-publicavel-from-audit --dry-run` falhou no primeiro disparo porque o `release-verify` ainda nao tinha incorporado o novo slug curado
+- o gate travou corretamente e o sync real so foi executado depois do partial local ficar verde
+
+**Estado ao final do lote:**
+- `126/144` `curated`
+- `18/144` `mirrored`
+- `126` candidatos com `publicavel = true`
+- backlog editorial: `15 mirrored_needs_curadoria` + `3 blocked_no_anchor`
+
+### 2026-04-03 — lote 17 curadoria (Codex)
+
+Mini-lote cirurgico em Santa Catarina, com promocao de `marcelo-brigadeiro` e reversao do rascunho incorreto de `arnaldinho-borgo`.
+
+- `marcelo-brigadeiro`:
+  - assertion promovida para `curated`
+  - partido confirmado como `Partido Missao`
+  - `cargo_atual`: mantido em `null`
+  - `cargo_disputado`: mantido em `Governador`
+  - biografia preenchida com base em cobertura recente da pre-candidatura em SC
+- `arnaldinho-borgo`:
+  - tentativa local de promocao revertida antes do gate
+  - mantido em `mirrored`
+  - motivo: cobertura mais recente indica retirada da corrida majoritaria em 2026, entao o assertion antigo segue estruturalmente errado e precisa de reparo antes de qualquer promocao
+
+**Pipeline executado nesta rodada:**
+1. assertions ajustadas: `marcelo-brigadeiro` -> `curated`; `arnaldinho-borgo` revertido para `mirrored`
+2. apply-current-factual-fixes: `marcelo-brigadeiro` aplicado no banco; lote completo reexecutado sem falha bloqueante
+3. `check:scripts` e `eslint` dos arquivos tocados: OK
+4. audit:factual: `144/144`, `0` reprovados — curated `127` | mirrored `17`
+5. check-audit-gate: Gate OK — `127/127` curated
+6. build-candidate-dossiers: `127 curated_ready`, `14 mirrored_needs_curadoria`, `3 blocked_no_anchor`
+7. `release-verify` parcial local: `129/129 OK`
+8. set-publicavel --dry-run: `127` elegiveis
+9. set-publicavel real: `127 publicavel=true`, `17 false`
+10. `release-verify` delta producao: `3/3 OK` para `marcelo-brigadeiro`
+
+**Estado ao final do lote:**
+- `127/144` `curated`
+- `17/144` `mirrored`
+- `127` candidatos com `publicavel = true`
+- backlog editorial: `14 mirrored_needs_curadoria` + `3 blocked_no_anchor`
+
+### 2026-04-03 — lote 18 curadoria (Codex)
+
+Mini-lote focado em Sao Paulo, com promocao de `gilberto-kassab`:
+
+- `gilberto-kassab`:
+  - assertion promovida para `curated`
+  - `cargo_atual`: confirmado como `Secretario de Governo e Relacoes Institucionais de Sao Paulo`
+  - `cargo_disputado`: mantido em `Governador`
+  - biografia reescrita para refletir o cargo atual e a articulacao eleitoral do PSD em 2026
+  - historico atual preenchido como cargo de nomeacao para evitar drift entre bio, hero e timeline
+
+**Pipeline executado nesta rodada:**
+1. assertion: `gilberto-kassab` promovido para `curated`
+2. apply-current-factual-fixes: `gilberto-kassab` aplicado no banco com cargo atual + historico
+3. `check:scripts` e `eslint` dos arquivos tocados: OK
+4. audit:factual: `144/144`, `0` reprovados — curated `128` | mirrored `16`
+5. check-audit-gate: Gate OK — `128/128` curated
+6. build-candidate-dossiers: `128 curated_ready`, `13 mirrored_needs_curadoria`, `3 blocked_no_anchor`
+7. `release-verify` parcial local: `130/130 OK`
+8. set-publicavel --dry-run: `128` elegiveis
+9. set-publicavel real: `128 publicavel=true`, `16 false`
+10. `release-verify` delta producao: `3/3 OK` para `gilberto-kassab`
+
+**Estado ao final do lote:**
+- `128/144` `curated`
+- `16/144` `mirrored`
+- `128` candidatos com `publicavel = true`
+- backlog editorial: `13 mirrored_needs_curadoria` + `3 blocked_no_anchor`
+
+### 2026-04-03 — lote 19 curadoria (Codex)
+
+Mini-lote focado em Sergipe, com promocao de `valmir-de-francisquinho`:
+
+- `valmir-de-francisquinho`:
+  - assertion promovida para `curated`
+  - `partido_atual`: corrigido de `PL` para `Republicanos`
+  - `cargo_atual`: mantido em `null` apos a renuncia a Prefeitura de Itabaiana em `2 de abril de 2026`
+  - `cargo_disputado`: mantido em `Governador`
+  - biografia reescrita para refletir a troca partidaria recente e a corrida estadual
+  - historico atual fechado como ultimo mandato de prefeito ate a renuncia eleitoral
+
+**Pipeline executado nesta rodada:**
+1. assertion: `valmir-de-francisquinho` promovido para `curated`
+2. apply-current-factual-fixes: `valmir-de-francisquinho` aplicado no banco com partido novo + bio + historico final do mandato
+3. `check:scripts` e `eslint` dos arquivos tocados: OK
+4. audit:factual final: `144/144`, `0` reprovados — curated `129` | mirrored `15`
+5. check-audit-gate final: Gate OK — `129/129` curated
+6. build-candidate-dossiers: `129 curated_ready`, `12 mirrored_needs_curadoria`, `3 blocked_no_anchor`
+7. `release-verify` parcial local: `131/131 OK`
+8. set-publicavel --dry-run: `129` elegiveis
+9. set-publicavel real: `129 publicavel=true`, `15 false`
+10. `release-verify` delta producao: `3/3 OK` para `valmir-de-francisquinho`
+
+**Incidentes operacionais desta rodada:**
+- Um primeiro `audit-factual` leu o estado antigo porque saiu em paralelo com `apply-current-factual-fixes`.
+- Um primeiro `release-verify` delta producao leu o estado antigo porque saiu em paralelo com `set-publicavel`.
+- Ambos foram descartados e rerodados na ordem correta, sem impacto no estado final.
+
+**Estado ao final do lote:**
+- `129/144` `curated`
+- `15/144` `mirrored`
+- `129` candidatos com `publicavel = true`
+- backlog editorial: `12 mirrored_needs_curadoria` + `3 blocked_no_anchor`
+
+### 2026-04-03 — fila congelada em codigo + hardening de fotos (Codex)
+
+Rodada estrutural para consolidar a politica editorial dos `15` ocultos e endurecer a superficie publica contra fotos remotas quebradas.
+
+**Mudancas aplicadas:**
+- criada a fonte unica da fila congelada em `scripts/lib/frozen-publication.ts`
+- `set-publicavel-from-audit.ts` passou a excluir explicitamente a fila congelada do gate real
+- `build-candidate-dossiers.ts` passou a classificar os `15` remanescentes como `frozen_hidden`
+- `PLAN.md` e `docs/fluxo-funcionamento-site.md` passaram a tratar esses `15` como fila congelada, nao como backlog ativo
+- criada a infraestrutura de fallback de foto em `src/components/CandidatePhoto.tsx`
+- fallback aplicado em:
+  - `src/components/CandidatoCard.tsx`
+  - `src/components/CandidatoGrid.tsx`
+  - `src/components/ComparadorPanel.tsx`
+  - `src/app/candidato/[slug]/page.tsx`
+  - `src/app/preview/candidato/[slug]/page.tsx`
+  - `src/components/CandidatoSlider.tsx`
+- `src/lib/utils.ts` passou a bypassar a otimizacao do `next/image` para qualquer URL remota valida
+
+**Pipeline executado nesta rodada:**
+1. `npm run check:scripts`: OK
+2. `npm run lint` dos arquivos tocados: OK
+3. `npm run build`: OK
+4. `audit-factual`: `144/144`, `0` pendentes, `0` reprovados
+5. `check-audit-gate`: `129/129` curated passando
+6. `build-candidate-dossiers`: `129 curated_ready`, `15 frozen_hidden`, `0` backlog ativo
+7. `release-verify` parcial local: `131/131 OK`
+8. `set-publicavel --dry-run`: `129` elegiveis
+9. `set-publicavel` real: `129 publicos`, `15 ocultos`
+
+**Estado consolidado apos a rodada:**
+- `129/144` `curated`
+- `15/144` `mirrored`
+- `129` candidatos com `publicavel = true`
+- `15` candidatos em `frozen_hidden`
+- `0` candidatos em `mirrored_needs_curadoria`
+- `0` candidatos em `blocked_no_anchor`
+
+### 2026-04-03 — cache/retry hardening consolidado localmente (Codex)
+
+Rodada estrutural para fechar o `Bloco A` do workspace.
+
+**Mudancas aplicadas:**
+- [src/lib/supabase.ts](/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/src/lib/supabase.ts)
+  - `cacheMode: "isr"` passou a forcar `cache: "force-cache"` em vez de preservar `init.cache`
+  - `no-store` ficou restrito a caminhos explicitos, como preview
+- [src/lib/api.ts](/Users/thiagosalvador/Documents/Apps/Pessoal/PuxaFicha/src/lib/api.ts)
+  - leitura via Supabase segue com retry estruturado, sem recair para `no-store` global
+- limpeza de obsoleto:
+  - removido `scripts/lib/generate-pontos-factuais.ts`
+  - removido `scripts/sync-candidatos.ts`
+
+**Validacao desta rodada:**
+1. `npm run lint -- src/lib/supabase.ts src/lib/api.ts`: OK
+2. `npm run build`: OK
+3. `release-verify` parcial local: `131/131 OK`
+
+**Ganho concreto:**
+- o build de producao voltou a completar sem warnings de `dynamic server usage` causados por `revalidate: 0` nas paginas publicas com ISR
+- o app manteve a superficie publica verde apos sair do `no-store` global
+
 ### 2026-04-02 — double-check race condition sync-mock (Claude Code, claude-sonnet-4-6)
 
 Double-check solicitado pelo usuário após identificação de race condition em lote 8.
@@ -1164,22 +1403,23 @@ Double-check solicitado pelo usuário após identificação de race condition em
 
 ## Critério de pronto de verdade
 
-O site só pode ser considerado **100% funcional, atualizado, com a ordem certa e seguro** quando estes pontos passarem juntos:
+Sob a politica editorial atual, o site pode ser considerado **funcional, atualizado, com a ordem certa e seguro** quando estes pontos passarem juntos:
 
-- `144/144` com assertion `curated`
-- `144/144` com `verifiedAt`
-- `144/144` com seções obrigatórias completas conforme o perfil
+- `129` candidatos confirmados com assertion `curated`
+- `129` candidatos confirmados com `publicavel = true`
+- `15` candidatos mantidos em `frozen_hidden`
+- `0` candidatos em backlog ativo de promoção
 - `0` falhas P0
 - `0` cross-checks obrigatórios falhando
 - `0` divergências entre snapshot e UI
 - `release-verify full` passando
-- candidatos relevantes reabertos em produção com `publicavel = true`
+- candidatos públicos coerentes em produção com `publicavel = true`
 
-Hoje esse critério **não** foi atingido.
+Hoje esse critério foi atingido **dentro da politica editorial vigente**. Se a politica mudar no futuro, o critério volta a ser recalculado para incluir os nomes hoje congelados.
 
 ## Assumptions
 
 - Wikipedia/Wikidata continuam úteis como base de pesquisa, mas não fecham sozinhas fato político atual sensível
 - `publicavel` continua sendo o único gate binário
-- o site permanece em hardening até `144/144` passarem
+- o site permanece em hardening para os casos congelados até que surja confirmação forte
 - fatos atuais e fatos históricos precisam aparecer explicitamente diferenciados na UI

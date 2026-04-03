@@ -4,16 +4,22 @@ import { Footer } from "@/components/Footer"
 import { DataSourceNotice } from "@/components/DataSourceNotice"
 import { JsonLd } from "@/components/JsonLd"
 import { getCandidatosComResumoResource } from "@/lib/api"
+import { buildTwitterMetadata } from "@/lib/metadata"
 import type { Metadata } from "next"
 
+const title = "Explorar candidatos — Puxa Ficha"
+const description =
+  "Navegue pelos pre-candidatos a presidente 2026 em tela cheia. Dados publicos oficiais."
+
 export const metadata: Metadata = {
-  title: "Explorar candidatos — Puxa Ficha",
-  description:
-    "Navegue pelos pre-candidatos a presidente 2026 em tela cheia. Dados publicos oficiais.",
+  title,
+  description,
+  alternates: {
+    canonical: "/explorar",
+  },
   openGraph: {
-    title: "Explorar candidatos — Puxa Ficha",
-    description:
-      "Navegue pelos pre-candidatos a presidente 2026 em tela cheia. Dados publicos oficiais.",
+    title,
+    description,
     url: "https://puxaficha.com.br/explorar",
     images: [
       {
@@ -24,6 +30,11 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: buildTwitterMetadata({
+    title,
+    description,
+    image: "/explorar/opengraph-image",
+  }),
 }
 
 export const revalidate = 3600

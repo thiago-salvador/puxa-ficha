@@ -1,7 +1,6 @@
 "use client"
 
 import { useCallback, useEffect, useRef, useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import {
   X,
@@ -13,7 +12,8 @@ import {
   ChevronDown,
 } from "lucide-react"
 
-import { formatCompact, shouldBypassImageOptimization } from "@/lib/utils"
+import { CandidatePhoto } from "@/components/CandidatePhoto"
+import { formatCompact } from "@/lib/utils"
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
 import type { CandidatoComparavel } from "@/lib/types"
 
@@ -100,13 +100,14 @@ export function ComparadorPanel({ candidatos }: Props) {
         <div className="space-y-3 md:hidden">
           {candidatos.map((candidato) => {
             const isSelected = selected.has(candidato.id)
-            const bypassPhotoOptimization = shouldBypassImageOptimization(candidato.foto_url)
 
             return (
               <button
                 key={candidato.id}
                 type="button"
                 onClick={() => toggle(candidato.id)}
+                aria-pressed={isSelected}
+                aria-label={`${isSelected ? "Remover" : "Adicionar"} ${candidato.nome_urna} da comparacao`}
                 className={`flex w-full items-center gap-3 rounded-[12px] border px-4 py-3.5 text-left transition-all ${
                   isSelected
                     ? "border-foreground bg-foreground/[0.03]"
@@ -124,14 +125,16 @@ export function ComparadorPanel({ candidatos }: Props) {
                 </div>
 
                 {candidato.foto_url && (
-                  <Image
+                  <CandidatePhoto
                     src={candidato.foto_url}
                     alt={candidato.nome_urna}
+                    name={candidato.nome_urna}
                     width={40}
                     height={40}
                     sizes="40px"
-                    unoptimized={bypassPhotoOptimization}
                     className="size-10 shrink-0 rounded-full object-cover object-top"
+                    fallbackClassName="size-10 shrink-0 rounded-full"
+                    initialsClassName="text-xs"
                   />
                 )}
                 <div className="min-w-0 flex-1">
@@ -174,7 +177,6 @@ export function ComparadorPanel({ candidatos }: Props) {
               <tbody>
                 {candidatos.map((candidato) => {
                   const isSelected = selected.has(candidato.id)
-                  const bypassPhotoOptimization = shouldBypassImageOptimization(candidato.foto_url)
 
                   return (
                     <tr
@@ -220,14 +222,16 @@ export function ComparadorPanel({ candidatos }: Props) {
                           className="flex items-center gap-3 text-left"
                         >
                           {candidato.foto_url && (
-                            <Image
+                            <CandidatePhoto
                               src={candidato.foto_url}
                               alt={candidato.nome_urna}
+                              name={candidato.nome_urna}
                               width={40}
                               height={40}
                               sizes="40px"
-                              unoptimized={bypassPhotoOptimization}
                               className="size-10 shrink-0 rounded-full object-cover object-top"
+                              fallbackClassName="size-10 shrink-0 rounded-full"
+                              initialsClassName="text-xs"
                             />
                           )}
                           <span className="font-heading text-[16px] uppercase leading-tight text-foreground">
@@ -295,14 +299,16 @@ export function ComparadorPanel({ candidatos }: Props) {
                       >
                         <Link href={`/candidato/${candidato.slug}`} className="group inline-block">
                           {candidato.foto_url && (
-                            <Image
+                            <CandidatePhoto
                               src={candidato.foto_url}
                               alt={candidato.nome_urna}
+                              name={candidato.nome_urna}
                               width={80}
                               height={80}
                               sizes="(max-width: 640px) 64px, 80px"
-                              unoptimized={shouldBypassImageOptimization(candidato.foto_url)}
                               className="mx-auto mb-2 size-16 rounded-full object-cover object-top transition-transform group-hover:scale-105 sm:size-20"
+                              fallbackClassName="mx-auto mb-2 size-16 rounded-full sm:size-20"
+                              initialsClassName="text-lg"
                             />
                           )}
                           <span className="block font-heading text-[length:var(--text-body-lg)] uppercase text-foreground group-hover:underline">

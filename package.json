@@ -9,6 +9,7 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
+    "test": "tsx --test tests/**/*.test.ts",
     "check:scripts": "tsc --project tsconfig.scripts.json",
     "audit:completude": "tsx scripts/audit-completude.ts",
     "audit:factual": "tsx scripts/audit-factual.ts",

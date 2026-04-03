@@ -1,5 +1,5 @@
 import { supabase } from "./supabase"
-import { loadCandidatos, sleep } from "./helpers"
+import { loadCandidatos, resolveCandidatoId, sleep } from "./helpers"
 import { log, warn } from "./logger"
 import type { IngestResult } from "./types"
 
@@ -19,11 +19,6 @@ interface JarbasReimbursement {
 interface JarbasResponse {
   count: number
   results: JarbasReimbursement[]
-}
-
-async function resolveCandidatoId(slug: string): Promise<string | null> {
-  const { data } = await supabase.from("candidatos").select("id").eq("slug", slug).single()
-  return data?.id ?? null
 }
 
 function formatValor(values: number[]): number {

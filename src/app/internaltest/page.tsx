@@ -135,8 +135,9 @@ export default function InternalTestPage() {
                 A documentacao do Next.js recomenda <code className="text-foreground">Image</code> para URLs remotas com{" "}
                 <code className="text-foreground">remotePatterns</code>: otimizacao de formato/tamanho,{" "}
                 <code className="text-foreground">sizes</code> para layout responsivo e menos trabalho para o navegador no LCP.
-                Hoje as fichas usam <code className="text-foreground">&lt;img&gt;</code> com eslint desligado. Abaixo o mesmo arquivo local; para{" "}
-                <code className="text-foreground">foto_url</code> de candidatos (remotas), o ganho e maior (tamanhos, formatos, LCP).
+                Hoje as fichas publicas e o comparador principal ja usam <code className="text-foreground">CandidatePhoto</code> com{" "}
+                <code className="text-foreground">next/image</code>. Esta demo ficou como referencia dos poucos casos restantes em que{" "}
+                <code className="text-foreground">&lt;img&gt;</code> ainda pode aparecer por escolha de implementacao ou por uso decorativo.
               </p>
             </Explain>
             <Compare
@@ -222,8 +223,8 @@ export default function InternalTestPage() {
             <Explain>
               <p>
                 O <code className="text-foreground">globals.css</code> ja desliga <code className="text-foreground">hero-fade</code>,{" "}
-                <code className="text-foreground">stagger-item</code> etc. quando o usuario pede menos movimento. Falta alinhar{" "}
-                <strong className="text-foreground">GSAP no menu</strong> e <strong className="text-foreground">scrollIntoView suave</strong> no comparador ao mesmo criterio.
+                <code className="text-foreground">stagger-item</code> etc. quando o usuario pede menos movimento. O menu com{" "}
+                <strong className="text-foreground">GSAP</strong> e o <strong className="text-foreground">scrollIntoView</strong> do comparador ja seguem essa preferencia; este bloco virou demo de comportamento esperado para regressao visual.
               </p>
             </Explain>
             <div className="flex flex-wrap items-center gap-8 rounded-xl border border-border bg-card p-6">
@@ -246,7 +247,9 @@ export default function InternalTestPage() {
           <Block id="scroll-smooth" title="5. Scroll suave no comparador">
             <Explain>
               <p>
-                Ao selecionar candidatos, o painel usa <code className="text-foreground">scrollIntoView(&#123; behavior: &quot;smooth&quot; &#125;)</code>. Para respeitar acessibilidade, o comportamento suave deve ser condicional.
+                Ao selecionar candidatos, o painel usa <code className="text-foreground">scrollIntoView</code> com comportamento condicional entre{" "}
+                <code className="text-foreground">smooth</code> e <code className="text-foreground">auto</code>, de acordo com{" "}
+                <code className="text-foreground">prefers-reduced-motion</code>. Esta demo permanece como guarda de regressao.
               </p>
             </Explain>
             <ScrollBehaviorDemo />

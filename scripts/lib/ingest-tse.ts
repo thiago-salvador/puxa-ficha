@@ -1,8 +1,8 @@
-import { existsSync, mkdirSync, createWriteStream, rmSync } from "fs"
+import { existsSync, mkdirSync, createWriteStream, readdirSync, rmSync } from "fs"
 import { resolve } from "path"
 import { execSync } from "child_process"
 import { supabase } from "./supabase"
-import { loadCandidatos, parseCSV, sleep } from "./helpers"
+import { loadCandidatos, parseCSV, resolveCandidatoId, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import type { IngestResult, CandidatoConfig } from "./types"
 import {
@@ -15,6 +15,7 @@ import {
 
 const DATA_DIR = resolve(process.cwd(), "data/tse")
 const DEFAULT_ANOS = [2018, 2020, 2022, 2024]
+const KEEP_TSE_DOWNLOADS = process.env.PF_KEEP_TSE_DOWNLOADS === "1"
 
 function getGovernorUFs(candidatos: CandidatoConfig[]): string[] {
   return [
@@ -26,9 +27,14 @@ function getGovernorUFs(candidatos: CandidatoConfig[]): string[] {
   ]
 }
 
-function parseBRL(value: string): number {
+function parseBRL(value: string, context: string): number {
   if (!value || value === "#NULO#" || value === "#NE#" || value === "-1") return 0
-  return parseFloat(value.replace(/\./g, "").replace(",", ".")) || 0
+  const parsed = parseFloat(value.replace(/\./g, "").replace(",", "."))
+  if (Number.isNaN(parsed)) {
+    warn("tse", `  Valor monetario invalido em ${context}: "${value}"`)
+    return 0
+  }
+  return parsed
 }
 
 async function downloadFile(url: string, dest: string): Promise<boolean> {
@@ -98,8 +104,16 @@ function cleanupFile(filePath: string) {
   }
 }
 
+function cleanupDownloadedZip(filePath: string) {
+  if (KEEP_TSE_DOWNLOADS) {
+    log("tse", `  Cache preservado: ${filePath}`)
+    return
+  }
+
+  cleanupFile(filePath)
+}
+
 function findCSVs(dir: string, pattern: string): string[] {
-  const { readdirSync } = require("fs")
   try {
     const files = readdirSync(dir) as string[]
     return files
@@ -108,11 +122,6 @@ function findCSVs(dir: string, pattern: string): string[] {
   } catch {
     return []
   }
-}
-
-async function resolveCandidatoId(slug: string): Promise<string | null> {
-  const { data } = await supabase.from("candidatos").select("id").eq("slug", slug).single()
-  return data?.id ?? null
 }
 
 /**
@@ -238,7 +247,10 @@ async function processPatrimonio(
       if (!cand) return
 
       const existing = aggregated.get(cand.slug) ?? { bens: [], total: 0 }
-      const valor = parseBRL(row.VR_BEM_CANDIDATO || "0")
+      const valor = parseBRL(
+        row.VR_BEM_CANDIDATO || "0",
+        `patrimonio ${ano} ${cand.slug}`
+      )
       existing.bens.push({
         tipo: row.DS_TIPO_BEM_CANDIDATO || "",
         descricao: row.DS_BEM_CANDIDATO || "",
@@ -340,7 +352,10 @@ async function processFinanciamento(
         doadores: [],
       }
 
-      const valor = parseBRL(row.VR_RECEITA || "0")
+      const valor = parseBRL(
+        row.VR_RECEITA || "0",
+        `financiamento ${ano} ${candidato.slug}`
+      )
       const origem = (row.DS_ORIGEM_RECEITA || "").toUpperCase()
 
       existing.total += valor
@@ -434,6 +449,9 @@ export async function ingestTSE(anos = DEFAULT_ANOS): Promise<IngestResult[]> {
   const allResults: IngestResult[] = []
 
   mkdirSync(DATA_DIR, { recursive: true })
+  if (KEEP_TSE_DOWNLOADS) {
+    log("tse", "Cache de downloads TSE ativo (PF_KEEP_TSE_DOWNLOADS=1)")
+  }
 
   for (const ano of anos) {
     log("tse", `=== Processando eleicao ${ano} ===`)
@@ -448,7 +466,7 @@ export async function ingestTSE(anos = DEFAULT_ANOS): Promise<IngestResult[]> {
 
     const sqMap = await buildSQMap(ano, candidatos, resolver)
     cleanupDir(resolve(DATA_DIR, `consulta_cand_${ano}`))
-    cleanupFile(resolve(DATA_DIR, `consulta_cand_${ano}.zip`))
+    cleanupDownloadedZip(resolve(DATA_DIR, `consulta_cand_${ano}.zip`))
 
     const bensUrl = `https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_${ano}.zip`
     const bensOk = await downloadFile(bensUrl, bensZip)
@@ -461,7 +479,7 @@ export async function ingestTSE(anos = DEFAULT_ANOS): Promise<IngestResult[]> {
         error("tse", `  Erro patrimonio ${ano}: ${err}`)
       }
       cleanupDir(bensDir)
-      cleanupFile(bensZip)
+      cleanupDownloadedZip(bensZip)
     }
 
     await sleep(1000)
@@ -477,7 +495,7 @@ export async function ingestTSE(anos = DEFAULT_ANOS): Promise<IngestResult[]> {
         error("tse", `  Erro financiamento ${ano}: ${err}`)
       }
       cleanupDir(receitasDir)
-      cleanupFile(receitasZip)
+      cleanupDownloadedZip(receitasZip)
     }
 
     logResolverStats(ano, resolver)
@@ -486,7 +504,6 @@ export async function ingestTSE(anos = DEFAULT_ANOS): Promise<IngestResult[]> {
 
   // Final cleanup: remove tse dir if empty
   try {
-    const { readdirSync } = require("fs")
     const remaining = readdirSync(DATA_DIR).filter((f: string) => f !== ".DS_Store")
     if (remaining.length === 0) {
       cleanupDir(DATA_DIR)

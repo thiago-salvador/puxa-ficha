@@ -10,6 +10,10 @@ import { readFileSync, statSync } from "fs"
 import { resolve } from "path"
 import { createClient } from "@supabase/supabase-js"
 import { CANDIDATE_ASSERTIONS } from "./lib/factual-assertions"
+import {
+  FROZEN_PUBLICATION_REASON_MAP,
+  FROZEN_PUBLICATION_SLUGS,
+} from "./lib/frozen-publication"
 import { log, warn } from "./lib/logger"
 
 const REPORT_PATH = resolve(process.cwd(), "scripts/audit-factual-report.json")
@@ -19,6 +23,9 @@ const DRY_RUN = process.argv.includes("--dry-run")
 // Curated slugs from assertions file
 const curatedSlugs = new Set(
   CANDIDATE_ASSERTIONS.filter((a) => a.confidence === "curated").map((a) => a.slug)
+)
+const gatedCuratedSlugs = new Set(
+  [...curatedSlugs].filter((slug) => !FROZEN_PUBLICATION_SLUGS.has(slug))
 )
 
 // Read and validate audit report
@@ -85,7 +92,9 @@ const candidateVerifySlugs = new Set(
     .filter((slug) => slug !== "comparar" && slug !== "explorar")
 )
 
-const missingCuratedCoverage = [...curatedSlugs].filter((slug) => !candidateVerifySlugs.has(slug))
+const missingCuratedCoverage = [...gatedCuratedSlugs].filter(
+  (slug) => !candidateVerifySlugs.has(slug)
+)
 if (missingCuratedCoverage.length > 0) {
   throw new Error(
     `Release verify report is missing ${missingCuratedCoverage.length} curated slug(s): ${missingCuratedCoverage.join(", ")}`
@@ -100,14 +109,27 @@ const passedReleaseVerify = new Set(
 
 // Eligible = curated AND passed full audit AND passed release verify
 const eligible = new Set(
-  [...curatedSlugs].filter((slug) => passedAudit.has(slug) && passedReleaseVerify.has(slug))
+  [...gatedCuratedSlugs].filter(
+    (slug) => passedAudit.has(slug) && passedReleaseVerify.has(slug)
+  )
 )
 
 async function main() {
+  const frozenCurated = [...curatedSlugs].filter((slug) => FROZEN_PUBLICATION_SLUGS.has(slug))
+
   log(
     "set-publicavel",
-    `Curated: ${curatedSlugs.size}, Passed audit: ${passedAudit.size}, Passed release verify: ${passedReleaseVerify.size}, Eligible: ${eligible.size}`
+    `Curated: ${curatedSlugs.size}, Frozen: ${frozenCurated.length}, Passed audit: ${passedAudit.size}, Passed release verify: ${passedReleaseVerify.size}, Eligible: ${eligible.size}`
   )
+
+  if (frozenCurated.length > 0) {
+    warn(
+      "set-publicavel",
+      `Curated mantidos ocultos por politica editorial: ${frozenCurated
+        .map((slug) => `${slug} (${FROZEN_PUBLICATION_REASON_MAP.get(slug) ?? "sem motivo"})`)
+        .join("; ")}`
+    )
+  }
 
   if (DRY_RUN) {
     log(
@@ -151,7 +173,10 @@ async function main() {
   const pubCount = countData?.length ?? 0
 
   const notEligible = [...curatedSlugs].filter(
-    (slug) => !passedAudit.has(slug) || !passedReleaseVerify.has(slug)
+    (slug) =>
+      FROZEN_PUBLICATION_SLUGS.has(slug) ||
+      !passedAudit.has(slug) ||
+      !passedReleaseVerify.has(slug)
   )
   if (notEligible.length > 0) {
     warn(

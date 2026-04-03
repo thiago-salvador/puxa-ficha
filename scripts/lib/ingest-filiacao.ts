@@ -1,9 +1,9 @@
-import { createReadStream, existsSync, mkdirSync, createWriteStream, rmSync } from "fs"
+import { createReadStream, existsSync, mkdirSync, createWriteStream, readdirSync, rmSync } from "fs"
 import { parse } from "csv-parse"
 import { resolve } from "path"
 import { execSync } from "child_process"
 import { supabase } from "./supabase"
-import { loadCandidatos, normalizeForMatch, sleep } from "./helpers"
+import { loadCandidatos, normalizeForMatch, resolveCandidatoId } from "./helpers"
 import { log, warn, error } from "./logger"
 import { resolveCanonicalParty } from "./party-canonical"
 import type { IngestResult, CandidatoConfig } from "./types"
@@ -81,7 +81,6 @@ function cleanupFile(filePath: string) {
 }
 
 function findCSVs(dir: string): string[] {
-  const { readdirSync } = require("fs")
   try {
     const files = readdirSync(dir) as string[]
     return files
@@ -113,11 +112,6 @@ async function parseCSV(
   }
 
   return count
-}
-
-async function resolveCandidatoId(slug: string): Promise<string | null> {
-  const { data } = await supabase.from("candidatos").select("id").eq("slug", slug).single()
-  return data?.id ?? null
 }
 
 function buildCandidateNameMap(candidatos: CandidatoConfig[]): Map<string, CandidatoConfig[]> {
@@ -384,22 +378,6 @@ export async function ingestFiliacao(): Promise<IngestResult[]> {
       }
 
       for (const mudanca of timeline) {
-        const { data: existing } = await supabase
-          .from("mudancas_partido")
-          .select("id")
-          .eq("candidato_id", candidatoId)
-          .eq("ano", mudanca.ano)
-          .eq("partido_novo", mudanca.partido_novo)
-          .single()
-
-        if (existing) {
-          log(
-            "filiacao",
-            `  ${cand.slug}: mudanca ${mudanca.partido_anterior} -> ${mudanca.partido_novo} ja existe, pulando`
-          )
-          continue
-        }
-
         const row: Record<string, unknown> = {
           candidato_id: candidatoId,
           partido_anterior: mudanca.partido_anterior,
@@ -409,7 +387,9 @@ export async function ingestFiliacao(): Promise<IngestResult[]> {
         }
         if (mudanca.contexto) row.contexto = mudanca.contexto
 
-        const { error: insertErr } = await supabase.from("mudancas_partido").insert(row)
+        const { error: insertErr } = await supabase
+          .from("mudancas_partido")
+          .upsert(row, { onConflict: "candidato_id,ano,partido_novo" })
         if (insertErr) {
           result.errors.push(`Erro ao inserir mudanca de partido: ${insertErr.message}`)
           continue
@@ -434,7 +414,6 @@ export async function ingestFiliacao(): Promise<IngestResult[]> {
 
   // Cleanup data dir se vazio
   try {
-    const { readdirSync } = require("fs")
     const remaining = (readdirSync(DATA_DIR) as string[]).filter((f) => f !== ".DS_Store")
     if (remaining.length === 0) {
       cleanupDir(DATA_DIR)

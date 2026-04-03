@@ -3,6 +3,7 @@ import { readFileSync } from "fs"
 import { createReadStream } from "fs"
 import { resolve } from "path"
 import { parse } from "csv-parse"
+import { supabase } from "./supabase"
 
 export function loadCandidatos(): CandidatoConfig[] {
   const path = resolve(process.cwd(), "data/candidatos.json")
@@ -21,13 +22,25 @@ export function normalizeForMatch(text: string): string {
     .trim()
 }
 
-export function slugify(text: string): string {
-  return text
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")
+export async function resolveCandidatoId(slug: string): Promise<string | null> {
+  const { data } = await supabase.from("candidatos").select("id").eq("slug", slug).single()
+  return data?.id ?? null
+}
+
+function parseRetryAfterMs(value: string | null): number | null {
+  if (!value) return null
+
+  const asSeconds = Number(value)
+  if (Number.isFinite(asSeconds) && asSeconds >= 0) {
+    return asSeconds * 1000
+  }
+
+  const retryAt = Date.parse(value)
+  if (!Number.isNaN(retryAt)) {
+    return Math.max(retryAt - Date.now(), 0)
+  }
+
+  return null
 }
 
 export async function fetchJSON<T>(
@@ -42,7 +55,8 @@ export async function fetchJSON<T>(
     try {
       const res = await fetch(url, { headers, signal: controller.signal })
       if (res.status === 429) {
-        const wait = Math.min(5000, 1000 * (i + 1))
+        const retryAfter = parseRetryAfterMs(res.headers.get("retry-after"))
+        const wait = retryAfter ?? Math.min(5000, 1000 * (i + 1))
         await sleep(wait)
         continue
       }
@@ -61,46 +75,6 @@ export async function fetchJSON<T>(
     }
   }
   throw new Error("unreachable")
-}
-
-export async function fetchAllPages<T>(
-  baseUrl: string,
-  params: Record<string, string> = {},
-  timeoutMs = 15000
-): Promise<T[]> {
-  const all: T[] = []
-  let page = 1
-  const pageSize = 100
-
-  while (true) {
-    const searchParams = new URLSearchParams({
-      ...params,
-      itens: String(pageSize),
-      pagina: String(page),
-    })
-    const url = `${baseUrl}?${searchParams}`
-    const controller = new AbortController()
-    const timer = setTimeout(() => controller.abort(), timeoutMs)
-    try {
-      const res = await fetch(url, { signal: controller.signal })
-      if (!res.ok) break
-
-      const json = await res.json()
-      const items = json.dados ?? json.data ?? json
-      if (!Array.isArray(items) || items.length === 0) break
-
-      all.push(...items)
-      if (items.length < pageSize) break
-      page++
-      await sleep(300)
-    } catch {
-      break
-    } finally {
-      clearTimeout(timer)
-    }
-  }
-
-  return all
 }
 
 export async function parseCSV(

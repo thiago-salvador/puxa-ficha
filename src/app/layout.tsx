@@ -1,7 +1,9 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter, Anton } from "next/font/google"
 import { Navbar } from "@/components/Navbar"
+import { buildTwitterMetadata, SITE_URL } from "@/lib/metadata"
 import "./globals.css"
+import DevToolsInit from "@/components/DevToolsInit"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -17,10 +19,13 @@ const anton = Anton({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://puxaficha.com.br"),
+  metadataBase: SITE_URL,
   title: "Puxa Ficha — Radiografia dos candidatos 2026",
   description:
     "Consulta publica sobre candidatos das eleicoes brasileiras de 2026. Ficha completa, comparador e pontos de atencao.",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -45,6 +50,18 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: buildTwitterMetadata({
+    title: "Puxa Ficha — Radiografia dos candidatos 2026",
+    description:
+      "Consulta publica sobre candidatos das eleicoes brasileiras de 2026. Ficha completa, comparador e pontos de atencao.",
+    image: "/opengraph-image",
+  }),
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0a0a0a",
 }
 
 export default function RootLayout({
@@ -61,6 +78,7 @@ export default function RootLayout({
         >
           Ir para o conteudo
         </a>
+        {process.env.NODE_ENV === "development" && <DevToolsInit />}
         <Navbar />
         <main id="main-content" tabIndex={-1}>
           {children}

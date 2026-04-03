@@ -7,15 +7,15 @@ import {
   useRef,
   useState,
 } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { useVirtualizer } from "@tanstack/react-virtual"
 import { Search, X, LayoutGrid, List, Scale, Landmark } from "lucide-react"
 
 import { CandidatoCard } from "@/components/CandidatoCard"
+import { CandidatePhoto } from "@/components/CandidatePhoto"
 import { CandidateCommand } from "@/components/CandidateCommand"
 import { PartyCombobox } from "@/components/PartyCombobox"
-import { formatCompact, shouldBypassImageOptimization } from "@/lib/utils"
+import { formatCompact } from "@/lib/utils"
 import type { Candidato } from "@/lib/types"
 
 interface CandidatoGridProps {
@@ -42,8 +42,6 @@ function CandidatoListItem({
   processos,
   index,
 }: ListItemProps) {
-  const bypassPhotoOptimization = shouldBypassImageOptimization(candidato.foto_url)
-
   return (
     <Link
       href={`/candidato/${candidato.slug}`}
@@ -51,14 +49,16 @@ function CandidatoListItem({
       style={{ animationDelay: `${index * 40}ms` }}
     >
       {candidato.foto_url && (
-        <Image
+        <CandidatePhoto
           src={candidato.foto_url}
           alt={candidato.nome_urna}
+          name={candidato.nome_urna}
           width={56}
           height={56}
           sizes="56px"
-          unoptimized={bypassPhotoOptimization}
           className="size-12 shrink-0 rounded-full object-cover object-top sm:size-14"
+          fallbackClassName="size-12 shrink-0 rounded-full sm:size-14"
+          initialsClassName="text-sm"
         />
       )}
       <div className="min-w-0 flex-1">
@@ -180,7 +180,7 @@ export function CandidatoGrid({
             <input
               type="search"
               placeholder="Buscar por nome, partido ou estado..."
-              className="w-full rounded-full border border-foreground bg-transparent px-4 py-2.5 pl-11 pr-10 text-[14px] font-medium text-foreground outline-none transition-colors placeholder:font-medium placeholder:text-foreground focus:ring-2 focus:ring-foreground/20"
+              className="w-full rounded-full border border-foreground bg-transparent px-4 py-2.5 pl-11 pr-10 text-[14px] font-medium text-foreground outline-none transition-colors placeholder:font-medium placeholder:text-foreground focus:border-foreground focus:ring-2 focus:ring-foreground/50"
               value={query}
               onChange={(event) => {
                 const nextValue = event.target.value

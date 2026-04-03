@@ -1,9 +1,10 @@
+import { loadCandidatos, resolveCandidatoId, sleep } from "./helpers"
 import { supabase } from "./supabase"
-import { loadCandidatos, sleep } from "./helpers"
 import { log, warn } from "./logger"
 import type { IngestResult } from "./types"
 
-const IG_APP_ID = "936619743392459"
+const IG_APP_ID = process.env.INSTAGRAM_APP_ID?.trim() || null
+let warnedMissingInstagramAppId = false
 
 interface InstagramUser {
   edge_followed_by?: { count: number }
@@ -25,37 +26,37 @@ interface RedesSociais {
   site_oficial?: string
 }
 
-async function resolveCandidatoId(slug: string): Promise<string | null> {
-  const { data } = await supabase.from("candidatos").select("id").eq("slug", slug).single()
-  return data?.id ?? null
-}
-
 async function fetchInstagramFollowers(username: string): Promise<number | null> {
   // Tentativa 1: endpoint oficial da web
-  try {
-    const url = `https://www.instagram.com/api/v1/users/web_profile_info/?username=${username}`
-    const res = await fetch(url, {
-      headers: {
-        "x-ig-app-id": IG_APP_ID,
-        "User-Agent":
-          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        Accept: "*/*",
-        "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8",
-        Referer: `https://www.instagram.com/${username}/`,
-      },
-    })
+  if (IG_APP_ID) {
+    try {
+      const url = `https://www.instagram.com/api/v1/users/web_profile_info/?username=${username}`
+      const res = await fetch(url, {
+        headers: {
+          "x-ig-app-id": IG_APP_ID,
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+          Accept: "*/*",
+          "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8",
+          Referer: `https://www.instagram.com/${username}/`,
+        },
+      })
 
-    if (res.ok) {
-      const json = (await res.json()) as InstagramProfileResponse
-      const count = json?.data?.user?.edge_followed_by?.count
-      if (typeof count === "number") return count
-    }
+      if (res.ok) {
+        const json = (await res.json()) as InstagramProfileResponse
+        const count = json?.data?.user?.edge_followed_by?.count
+        if (typeof count === "number") return count
+      }
 
-    if (res.status !== 403 && res.status !== 401) {
-      warn("instagram", `  Endpoint principal retornou ${res.status} para @${username}`)
+      if (res.status !== 403 && res.status !== 401) {
+        warn("instagram", `  Endpoint principal retornou ${res.status} para @${username}`)
+      }
+    } catch {
+      // Silencioso, vai tentar fallback
     }
-  } catch {
-    // Silencioso, vai tentar fallback
+  } else if (!warnedMissingInstagramAppId) {
+    warnedMissingInstagramAppId = true
+    warn("instagram", "INSTAGRAM_APP_ID ausente. Pulando endpoint principal e usando apenas fallback publico.")
   }
 
   // Tentativa 2: fallback com __a=1

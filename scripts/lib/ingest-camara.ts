@@ -1,5 +1,5 @@
 import { supabase } from "./supabase"
-import { loadCandidatos, fetchJSON, normalizeForMatch, sleep } from "./helpers"
+import { loadCandidatos, fetchJSON, normalizeForMatch, resolveCandidatoId, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import type { IngestResult } from "./types"
 
@@ -22,15 +22,10 @@ async function fetchPaginated<T>(baseUrl: string, params: Record<string, string>
     all.push(...json.dados)
     if (json.dados.length < 100) break
     page++
-    await sleep(300)
+    await sleep(1000)
   }
 
   return all
-}
-
-async function resolveCandidatoId(slug: string): Promise<string | null> {
-  const { data } = await supabase.from("candidatos").select("id").eq("slug", slug).single()
-  return data?.id ?? null
 }
 
 function namesLookCompatible(
@@ -302,13 +297,6 @@ async function ingestProjetos(idCamara: number, candidatoId: string, slug: strin
   for (const p of proposicoes.slice(0, 100)) {
     const propId = String(p.id)
 
-    const { data: existing } = await supabase
-      .from("projetos_lei")
-      .select("id")
-      .eq("proposicao_id_api", propId)
-      .eq("candidato_id", candidatoId)
-      .single()
-
     const row = {
       candidato_id: candidatoId,
       tipo: String(p.siglaTipo || ""),
@@ -323,11 +311,9 @@ async function ingestProjetos(idCamara: number, candidatoId: string, slug: strin
       proposicao_id_api: propId,
     }
 
-    if (existing) {
-      await supabase.from("projetos_lei").update(row).eq("id", existing.id)
-    } else {
-      await supabase.from("projetos_lei").insert(row)
-    }
+    await supabase
+      .from("projetos_lei")
+      .upsert(row, { onConflict: "candidato_id,proposicao_id_api" })
     count++
 
     if (count % 20 === 0) await sleep(300)
