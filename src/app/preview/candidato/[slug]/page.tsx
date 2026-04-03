@@ -12,26 +12,6 @@ import { SectionDivider } from "@/components/SectionHeader"
 import { getCandidatoBySlugPreviewResource } from "@/lib/api"
 
 const getFichaPreview = cache((slug: string) => getCandidatoBySlugPreviewResource(slug))
-const MIN_PRODUCTION_PREVIEW_TOKEN_LENGTH = 24
-
-function resolvePreviewToken(): string | null {
-  const configuredToken = process.env.PF_PREVIEW_TOKEN?.trim()
-
-  if (process.env.VERCEL_ENV === "production") {
-    if (!configuredToken || configuredToken.length < MIN_PRODUCTION_PREVIEW_TOKEN_LENGTH) {
-      return null
-    }
-    return configuredToken
-  }
-
-  if (configuredToken) return configuredToken
-  return "local-preview"
-}
-
-function previewAuthorized(token: string | undefined): boolean {
-  const expected = resolvePreviewToken()
-  return Boolean(expected && token && token === expected)
-}
 
 export const dynamic = "force-dynamic"
 export const revalidate = 0
@@ -45,17 +25,10 @@ export const metadata: Metadata = {
 
 export default async function PreviewCandidatoPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ slug: string }>
-  searchParams: Promise<{ token?: string }>
 }) {
   const { slug } = await params
-  const { token } = await searchParams
-
-  if (!previewAuthorized(token)) {
-    notFound()
-  }
 
   const fichaResource = await getFichaPreview(slug)
   const ficha = fichaResource.data

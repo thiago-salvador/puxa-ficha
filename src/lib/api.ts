@@ -39,7 +39,6 @@ const USE_MOCK = !supabaseUrl || supabaseUrl.includes("placeholder")
 const IS_DEV = process.env.NODE_ENV === "development"
 const IS_PRODUCTION_DEPLOY = process.env.VERCEL_ENV === "production"
 const IS_LAUNCH_PHASE = process.env.PF_CURATION_PHASE === "launched"
-const HAS_SERVICE_ROLE = Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY?.trim())
 const CANDIDATO_PUBLIC_RELATION = "candidatos_publico"
 const APP_DATA_REVALIDATE_SECONDS = 3600
 const PROFILE_FRESHNESS_WINDOW_DAYS = 30
@@ -627,7 +626,7 @@ async function getCandidatoBySlugFromRelationResource(
     return mockResource(await getMockFicha(slug))
   }
 
-  const shouldUseServiceRole = useServiceRole || (IS_PRODUCTION_DEPLOY && HAS_SERVICE_ROLE)
+  const shouldUseServiceRole = useServiceRole
 
   const supabase = shouldUseServiceRole
     ? createServiceRoleSupabaseClient({ cacheMode: "no-store" })

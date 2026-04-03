@@ -5,6 +5,8 @@ on:
     workflows:
       - Ingestao de dados
       - Auditoria factual
+      - Auditoria de completude
+      - Monitoramento de producao
     types:
       - completed
 
