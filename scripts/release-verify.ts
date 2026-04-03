@@ -833,7 +833,9 @@ async function main() {
         ...process.env,
         VERIFY_URL: BASE_URL,
         CI: "1",
-        NODE_PATH: GLOBAL_NODE_MODULES,
+        NODE_PATH: [LOCAL_NODE_MODULES, GLOBAL_NODE_MODULES, process.env.NODE_PATH]
+          .filter(Boolean)
+          .join(delimiter),
       },
       stdio: "pipe",
     })
