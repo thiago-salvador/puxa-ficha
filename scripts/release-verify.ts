@@ -1,7 +1,7 @@
 import { execFileSync } from "child_process"
 import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "fs"
 import { tmpdir } from "os"
-import { join, resolve } from "path"
+import { delimiter, join, resolve } from "path"
 import { createClient } from "@supabase/supabase-js"
 import { CANDIDATE_ASSERTIONS } from "./lib/factual-assertions"
 
@@ -24,6 +24,7 @@ const EXPLICIT_SLUGS = (
 const REPORT_OUTPUT_PATH = resolve(process.cwd(), "scripts", `${OUTPUT_PREFIX}-report.json`)
 const SUMMARY_OUTPUT_PATH = resolve(process.cwd(), "scripts", `${OUTPUT_PREFIX}-summary.md`)
 const GLOBAL_NODE_MODULES = execFileSync("npm", ["root", "-g"], { encoding: "utf8" }).trim()
+const LOCAL_NODE_MODULES = resolve(process.cwd(), "node_modules")
 const IS_LOCAL_BASE_URL = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(BASE_URL)
 const PREVIEW_TOKEN = process.env.PF_PREVIEW_TOKEN ?? (IS_LOCAL_BASE_URL ? "local-preview" : "")
 
@@ -224,7 +225,9 @@ function runPlaywrightSpec<T>(prefix: string, specBody: string): T {
         ...process.env,
         VERIFY_URL: BASE_URL,
         CI: "1",
-        NODE_PATH: GLOBAL_NODE_MODULES,
+        NODE_PATH: [LOCAL_NODE_MODULES, GLOBAL_NODE_MODULES, process.env.NODE_PATH]
+          .filter(Boolean)
+          .join(delimiter),
       },
       stdio: "pipe",
     })
