@@ -77,3 +77,4 @@ scripts/release-verify-prod-delta-report.json
 scripts/release-verify-prod-delta-summary.md
 cursorfront.md
 review.md
+search.md

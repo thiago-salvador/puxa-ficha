@@ -169,7 +169,6 @@ cd puxa-ficha
 ### Passo 2: Instalar dependências
 ```bash
 npm install @supabase/supabase-js
-npm install @supabase/ssr
 npm install recharts            # gráficos (patrimônio, financiamento)
 npm install lucide-react         # ícones
 npm install date-fns             # formatação de datas
