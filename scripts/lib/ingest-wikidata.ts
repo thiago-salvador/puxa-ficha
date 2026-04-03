@@ -1,5 +1,5 @@
 import { supabase } from "./supabase"
-import { loadCandidatos, fetchJSON, sleep } from "./helpers"
+import { loadCandidatos, fetchJSON, resolveCandidatoId, sleep } from "./helpers"
 import { log, warn } from "./logger"
 import type { IngestResult } from "./types"
 
@@ -33,11 +33,6 @@ interface RedesSociais {
   twitter?: string
   facebook?: string
   site_oficial?: string
-}
-
-async function resolveCandidatoId(slug: string): Promise<string | null> {
-  const { data } = await supabase.from("candidatos").select("id").eq("slug", slug).single()
-  return data?.id ?? null
 }
 
 const OPTIONAL_PROPS = `

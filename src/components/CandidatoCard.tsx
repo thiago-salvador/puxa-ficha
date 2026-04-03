@@ -1,12 +1,12 @@
+import { memo } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {
   formatCompact,
-  getInitials,
-  FALLBACK_GRADIENT,
   getPartyLogoUrl,
-  shouldBypassImageOptimization,
+  FALLBACK_GRADIENT,
 } from "@/lib/utils"
+import { CandidatePhoto } from "@/components/CandidatePhoto"
 import type { Candidato } from "@/lib/types"
 import { Scale, Landmark, ArrowRight, Briefcase, GraduationCap } from "lucide-react"
 
@@ -17,15 +17,13 @@ interface CandidatoCardProps {
   index: number
 }
 
-export function CandidatoCard({
+export const CandidatoCard = memo(function CandidatoCard({
   candidato,
   processos,
   patrimonio,
   index,
 }: CandidatoCardProps) {
   const gradient = FALLBACK_GRADIENT
-  const hasPhoto = !!candidato.foto_url
-  const bypassPhotoOptimization = shouldBypassImageOptimization(candidato.foto_url)
   const partyLogo = getPartyLogoUrl(candidato.partido_sigla)
   const hasMainStats = (patrimonio != null && patrimonio > 0) || processos > 0
 
@@ -36,30 +34,24 @@ export function CandidatoCard({
       style={{ animationDelay: `${index * 60}ms` }}
     >
       <div className="relative overflow-hidden rounded-[20px] shadow-sm transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:shadow-xl group-hover:shadow-black/10 sm:rounded-[24px]">
-        <div
-          className="relative w-full overflow-hidden"
-          style={{
-            aspectRatio: "3 / 4",
-            ...(hasPhoto ? {} : { background: gradient }),
-            borderRadius: "inherit",
-          }}
-        >
-          {hasPhoto ? (
-            <Image
-              src={candidato.foto_url!}
-              alt={`Foto de ${candidato.nome_urna}`}
-              fill
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              unoptimized={bypassPhotoOptimization}
-              className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-            />
-          ) : (
-            <div className="flex h-full items-center justify-center">
-              <span className="select-none text-[72px] font-bold leading-none tracking-tighter text-white sm:text-[90px]">
-                {getInitials(candidato.nome_urna)}
-              </span>
-            </div>
-          )}
+          <div
+            className="relative w-full overflow-hidden"
+            style={{
+              aspectRatio: "3 / 4",
+              ...(!candidato.foto_url ? { background: gradient } : {}),
+              borderRadius: "inherit",
+            }}
+          >
+          <CandidatePhoto
+            src={candidato.foto_url}
+            alt={`Foto de ${candidato.nome_urna}`}
+            name={candidato.nome_urna}
+            fill
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+            fallbackClassName="absolute inset-0 h-full w-full"
+            initialsClassName="text-[72px] sm:text-[90px]"
+          />
 
           {/* Glass overlay - slides up on hover */}
           <div className="absolute inset-x-0 bottom-0 sm:translate-y-[calc(100%-5.5rem)] sm:transition-transform sm:duration-500 sm:ease-[cubic-bezier(0.16,1,0.3,1)] sm:group-hover:translate-y-0">
@@ -180,4 +172,4 @@ export function CandidatoCard({
       </div>
     </Link>
   )
-}
+})

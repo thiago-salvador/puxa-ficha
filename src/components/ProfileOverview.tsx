@@ -1,6 +1,7 @@
 "use client"
 
 import type { FichaCandidato } from "@/lib/types"
+import { classifyAttentionPoints } from "@/lib/attention-points"
 import { formatCompact } from "@/lib/utils"
 import { PatrimonioChart } from "./BarChart"
 import { DonutChart } from "./DonutChart"
@@ -13,6 +14,7 @@ import {
   FileText,
   Landmark,
   Scale,
+  TrendingUp,
 } from "lucide-react"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 
@@ -213,8 +215,8 @@ export function ProfileOverview({
   const pontosAtencao = ficha.pontos_atencao ?? []
   const projetosLei = ficha.projetos_lei ?? []
   const gastos = ficha.gastos_parlamentares ?? []
+  const { alertasGraves, pontosPositivos } = classifyAttentionPoints(pontosAtencao)
 
-  const criticos = pontosAtencao.filter((p) => p.gravidade === "critica" || p.gravidade === "alta")
   const latestFin = financiamento.length > 0
     ? [...financiamento].sort((a, b) => b.ano_eleicao - a.ano_eleicao)[0]
     : null
@@ -265,13 +267,13 @@ export function ProfileOverview({
     <div className="space-y-6">
 
       {/* ═══ ALERT BANNER ═══ */}
-      {criticos.length > 0 && (
+      {alertasGraves.length > 0 && (
         <Card className="bg-foreground text-background">
           <CardHeader className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <AlertTriangle className="size-5 shrink-0 text-background/70" />
               <span className="font-heading text-[28px] leading-none uppercase tracking-tight">
-                {criticos.length} alerta{criticos.length > 1 ? "s" : ""} grave{criticos.length > 1 ? "s" : ""}
+                {alertasGraves.length} alerta{alertasGraves.length > 1 ? "s" : ""} grave{alertasGraves.length > 1 ? "s" : ""}
               </span>
             </div>
             <button
@@ -282,13 +284,42 @@ export function ProfileOverview({
             </button>
           </CardHeader>
           <CardContent className="space-y-1.5">
-            {criticos.slice(0, 3).map((p) => (
+            {alertasGraves.slice(0, 3).map((p) => (
               <p key={p.id} className="text-[14px] font-medium leading-snug text-background/70">
                 {p.titulo}
               </p>
             ))}
-            {criticos.length > 3 && (
-              <p className="text-[13px] font-bold text-background/50">+{criticos.length - 3} mais</p>
+            {alertasGraves.length > 3 && (
+              <p className="text-[13px] font-bold text-background/50">+{alertasGraves.length - 3} mais</p>
+            )}
+          </CardContent>
+        </Card>
+      )}
+
+      {pontosPositivos.length > 0 && (
+        <Card className="border-green-200 bg-green-50 text-green-950">
+          <CardHeader className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <TrendingUp className="size-5 shrink-0 text-green-700" />
+              <span className="font-heading text-[28px] leading-none uppercase tracking-tight">
+                {pontosPositivos.length} ponto{pontosPositivos.length > 1 ? "s" : ""} positivo{pontosPositivos.length > 1 ? "s" : ""}
+              </span>
+            </div>
+            <button
+              onClick={() => onNavigateTab("alertas")}
+              className="shrink-0 rounded-full border border-green-200 px-4 py-1.5 text-[12px] font-bold uppercase tracking-wider text-green-800 transition-colors hover:border-green-300 hover:bg-green-100 hover:text-green-900"
+            >
+              Ver todos
+            </button>
+          </CardHeader>
+          <CardContent className="space-y-1.5">
+            {pontosPositivos.slice(0, 3).map((p) => (
+              <p key={p.id} className="text-[14px] font-medium leading-snug text-green-800">
+                {p.titulo}
+              </p>
+            ))}
+            {pontosPositivos.length > 3 && (
+              <p className="text-[13px] font-bold text-green-700">+{pontosPositivos.length - 3} mais</p>
             )}
           </CardContent>
         </Card>

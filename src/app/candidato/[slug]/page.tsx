@@ -1,26 +1,27 @@
 import { cache } from "react"
 import { notFound } from "next/navigation"
-import Image from "next/image"
+import Link from "next/link"
+import type { Metadata } from "next"
 import {
+  getCandidatoMetadataResource,
   getCandidatoBySlugResource,
   getCandidatos,
   getCandidatosResource,
   mergeSourceMessages,
   mergeSourceStatuses,
 } from "@/lib/api"
-import Link from "next/link"
-import type { Metadata } from "next"
-
-// Memoize per-request so generateMetadata and the page share one DB round-trip
-const getFicha = cache((slug: string) => getCandidatoBySlugResource(slug))
+import { buildTwitterMetadata } from "@/lib/metadata"
 import { SectionDivider } from "@/components/SectionHeader"
 import { Footer } from "@/components/Footer"
+import { CandidatePhoto } from "@/components/CandidatePhoto"
 import { CandidatoProfile } from "@/components/CandidatoProfile"
 import { DataSourceNotice } from "@/components/DataSourceNotice"
 import { DataUnavailableState } from "@/components/DataUnavailableState"
 import { JsonLd } from "@/components/JsonLd"
 import { ArrowLeft, ArrowRight } from "lucide-react"
-import { shouldBypassImageOptimization } from "@/lib/utils"
+
+// Memoize the heavy ficha load for the page render itself.
+const getFicha = cache((slug: string) => getCandidatoBySlugResource(slug))
 
 export const revalidate = 3600
 export const dynamicParams = false
@@ -36,18 +37,22 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const fichaResource = await getFicha(slug)
-  const ficha = fichaResource.data
-  if (!ficha) return {}
-  const desc = ficha.biografia
-    ? ficha.biografia.slice(0, 155) + "..."
-    : `Ficha completa de ${ficha.nome_urna} (${ficha.partido_sigla}): patrimonio, processos, votacoes, financiamento.`
+  const candidatoResource = await getCandidatoMetadataResource(slug)
+  const candidato = candidatoResource.data
+  if (!candidato) return {}
+  const desc = candidato.biografia
+    ? candidato.biografia.slice(0, 155) + "..."
+    : `Ficha completa de ${candidato.nome_urna} (${candidato.partido_sigla}): patrimonio, processos, votacoes, financiamento.`
+  const title = `${candidato.nome_urna} (${candidato.partido_sigla}) — Puxa Ficha`
 
   return {
-    title: `${ficha.nome_urna} (${ficha.partido_sigla}) — Puxa Ficha`,
+    title,
     description: desc,
+    alternates: {
+      canonical: `/candidato/${slug}`,
+    },
     openGraph: {
-      title: `${ficha.nome_urna} (${ficha.partido_sigla}) — Puxa Ficha`,
+      title,
       description: desc,
       url: `https://puxaficha.com.br/candidato/${slug}`,
       siteName: "Puxa Ficha",
@@ -58,10 +63,15 @@ export async function generateMetadata({
           url: `/candidato/${slug}/opengraph-image`,
           width: 1200,
           height: 630,
-          alt: `Ficha de ${ficha.nome_urna}`,
+          alt: `Ficha de ${candidato.nome_urna}`,
         },
       ],
     },
+    twitter: buildTwitterMetadata({
+      title,
+      description: desc,
+      image: `/candidato/${slug}/opengraph-image`,
+    }),
   }
 }
 
@@ -170,15 +180,17 @@ export default async function CandidatoPage({
           {/* Photo */}
           {ficha.foto_url && (
             <div className="shrink-0 self-start">
-              <Image
+              <CandidatePhoto
                 src={ficha.foto_url}
                 alt={`Foto de ${ficha.nome_urna}`}
+                name={ficha.nome_urna}
                 width={315}
                 height={420}
                 sizes="(max-width: 640px) 210px, (max-width: 1024px) 270px, 315px"
                 priority
-                unoptimized={shouldBypassImageOptimization(ficha.foto_url)}
                 className="h-[280px] w-[210px] rounded-[16px] object-cover object-top sm:h-[360px] sm:w-[270px] sm:rounded-[20px] lg:h-[420px] lg:w-[315px]"
+                fallbackClassName="h-[280px] w-[210px] rounded-[16px] sm:h-[360px] sm:w-[270px] sm:rounded-[20px] lg:h-[420px] lg:w-[315px]"
+                initialsClassName="text-5xl sm:text-6xl"
               />
             </div>
           )}

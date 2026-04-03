@@ -5,16 +5,22 @@ import { Footer } from "@/components/Footer"
 import { ComparadorPanel } from "@/components/ComparadorPanel"
 import { DataSourceNotice } from "@/components/DataSourceNotice"
 import { JsonLd } from "@/components/JsonLd"
+import { buildTwitterMetadata } from "@/lib/metadata"
 import Link from "next/link"
 
+const title = "Comparador de candidatos — Puxa Ficha"
+const description =
+  "Compare 2 ou mais candidatos lado a lado: patrimonio, processos, partido, formacao."
+
 export const metadata: Metadata = {
-  title: "Comparador de candidatos — Puxa Ficha",
-  description:
-    "Compare 2 ou mais candidatos lado a lado: patrimonio, processos, partido, formacao.",
+  title,
+  description,
+  alternates: {
+    canonical: "/comparar",
+  },
   openGraph: {
-    title: "Comparador de candidatos — Puxa Ficha",
-    description:
-      "Compare 2 ou mais candidatos lado a lado: patrimonio, processos, partido e formacao.",
+    title,
+    description,
     url: "https://puxaficha.com.br/comparar",
     images: [
       {
@@ -25,6 +31,11 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: buildTwitterMetadata({
+    title,
+    description,
+    image: "/comparar/opengraph-image",
+  }),
 }
 
 export const revalidate = 3600

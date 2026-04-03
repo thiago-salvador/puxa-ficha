@@ -32,6 +32,23 @@ interface SenadoParlamentar {
   UfParlamentar?: string
 }
 
+interface SenadoWrappedParlamentar {
+  IdentificacaoParlamentar?: SenadoParlamentar
+}
+
+function unwrapSenadoParlamentar(
+  value: SenadoParlamentar | SenadoWrappedParlamentar
+): SenadoParlamentar {
+  if ("CodigoParlamentar" in value) {
+    return value
+  }
+
+  return value.IdentificacaoParlamentar ?? {
+    CodigoParlamentar: "",
+    NomeParlamentar: "",
+  }
+}
+
 // ── Helpers ────────────────────────────────────────────────────────
 
 const CAMARA_BASE = "https://dadosabertos.camara.leg.br/api/v2/deputados"
@@ -103,8 +120,8 @@ function extractSenadores(jsonText: string): SenadoParlamentar[] {
       data?.ListaParlamentarEmExercicio?.Parlamentares?.Parlamentar ??
       []
     if (!Array.isArray(lista)) return [lista].filter(Boolean)
-    return lista.map((p: any) => {
-      const id = p.IdentificacaoParlamentar ?? p
+    return (lista as SenadoWrappedParlamentar[]).map((p) => {
+      const id = unwrapSenadoParlamentar(p)
       return {
         CodigoParlamentar: String(id.CodigoParlamentar ?? ""),
         NomeParlamentar: String(id.NomeParlamentar ?? ""),

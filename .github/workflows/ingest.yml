@@ -21,7 +21,16 @@ jobs:
     name: REST APIs (Camara + Senado)
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    if: github.event.schedule != '0 6 * * 0'
+    if: |
+      (github.event_name == 'schedule' && github.event.schedule == '0 8 * * 1-6') ||
+      (
+        github.event_name == 'workflow_dispatch' &&
+        (
+          contains(github.event.inputs.sources, 'camara') ||
+          contains(github.event.inputs.sources, 'senado') ||
+          contains(github.event.inputs.sources, 'transparencia')
+        )
+      )
 
     steps:
       - uses: actions/checkout@v4
@@ -56,12 +65,19 @@ jobs:
           node-version: "22"
           cache: "npm"
 
+      - name: Cache TSE downloads
+        uses: actions/cache@v4
+        with:
+          path: data/tse
+          key: tse-downloads-${{ runner.os }}-v1
+
       - run: npm ci
 
       - name: Ingestao TSE
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          PF_KEEP_TSE_DOWNLOADS: "1"
         run: npx tsx scripts/ingest-all.ts tse
 
   ingest-news:

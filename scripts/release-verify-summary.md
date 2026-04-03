@@ -1,9 +1,9 @@
 # Release Verify
 
-Base URL: http://localhost:3456
-Modo: full
-Auditado em: 2026-04-02T17:54:11.901Z
+Base URL: http://localhost:3014
+Modo: partial
+Auditado em: 2026-04-03T04:03:21.402Z
 
-- Paginas verificadas: 146
-- Passaram: 146
+- Paginas verificadas: 131
+- Passaram: 131
 - Falharam: 0

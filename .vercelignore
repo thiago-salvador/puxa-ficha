@@ -1,0 +1,15 @@
+.git
+.next
+node_modules
+.playwright-cli
+test-results
+docs/plans
+docs/reviews
+scripts/audit-factual-runs
+scripts/candidate-dossiers
+data/tse
+CLAUDE.md
+cursorfront.md
+review.md
+PENDENCIAS-USUARIO.md
+PLAN.md

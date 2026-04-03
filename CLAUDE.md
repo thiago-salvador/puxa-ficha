@@ -8,6 +8,31 @@ Dominio: puxaficha.com.br (registrado)
 Deploy: https://puxa-ficha.vercel.app
 Repo: https://github.com/thiago-salvador/puxa-ficha
 
+## Session Workflow
+
+Regras estaveis ficam neste arquivo. Fluxo operacional de sessao, matriz de validacao por tipo de mudanca e fechamento ficam em `docs/dev-playbook.md`.
+
+Antes de editar:
+
+1. ler este arquivo e `docs/dev-playbook.md`
+2. fazer uma passada em `git status --short`
+3. classificar a mudanca: UI publica, data layer, schema/Supabase, auditoria/pipeline ou deploy
+
+## Gemma
+
+Para trabalho limitado, mecanico e de baixo risco, preferir Gemma conforme a regra global. Quando a tarefa for roteada para Gemma, a regra neste repo e:
+
+1. subir/verificar com `/Users/thiagosalvador/Documents/Apps/Tools/gemma-ensure.sh`
+2. esperar o retorno do Gemma antes de desistir ou cair para o modelo principal
+3. so abandonar o fluxo se houver falha clara, timeout repetido ou output inutilizavel
+4. validar manualmente a resposta antes de aplicar
+
+Em tarefas complexas e caras em contexto, usar o fluxo:
+
+1. Codex faz o enquadramento e o plano
+2. Gemma executa a parte mecanica ou investigativa delimitada
+3. Codex revisa e decide a acao final
+
 ## Commands
 
 ```bash
@@ -62,7 +87,7 @@ UI components (src/components/)
 
 Camada central de acesso a dados. Funciona em dois modos:
 
-- **Supabase real**: quando `NEXT_PUBLIC_SUPABASE_URL` esta configurado e nao contem "placeholder"
+- **Supabase real**: quando `SUPABASE_URL` esta configurado e nao contem "placeholder" (ou, em modo legado, `NEXT_PUBLIC_SUPABASE_URL`)
 - **Mock fallback**: quando Supabase nao esta configurado, usa `src/data/mock.ts` com dados estaticos
 
 Todas as pages usam `api.ts`, nunca acessam Supabase diretamente. Funcoes principais: `getCandidatos()`, `getCandidatoBySlug(slug)`, `getCandidatosComResumo()`, `getCandidatosComparaveis()`.
@@ -75,9 +100,13 @@ As pages podem usar tambem as variantes `*Resource()` quando precisam distinguir
 
 Isso permite renderizar avisos de origem dos dados e evitar `404` falso quando a fonte falha temporariamente.
 
-### Partido color theming (`src/lib/utils.ts`)
+### Metadata e hardening (`src/lib/metadata.ts`, `src/lib/json-ld.ts`)
 
-Sistema de cores por partido via HSL. `getPartidoColors(sigla)` retorna `{ accent, muted, glow }` como CSS values. Usado nos componentes de perfil e cards como CSS variables dinamicas (`--partido-accent`).
+Helpers centrais para metadata e serializacao segura:
+
+- `buildTwitterMetadata()` padroniza card/site/creator
+- `parseMetadataDate()` valida datas antes de expor `lastModified`
+- `safeJsonLdStringify()` escapa caracteres que poderiam quebrar o contexto do `<script>`
 
 ### Front architecture (`src/components/`)
 
@@ -178,9 +207,14 @@ Candidatos com `status: 'removido'` sao filtrados em todas as queries.
 
 | Variavel | Required | Scope |
 |----------|----------|-------|
-| `NEXT_PUBLIC_SUPABASE_URL` | Sim | Browser + Server |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Sim | Browser + Server |
+| `SUPABASE_URL` | Sim | Server only |
+| `SUPABASE_ANON_KEY` | Sim | Server only |
 | `SUPABASE_SERVICE_ROLE_KEY` | Sim (scripts) | Server only |
+| `NEXT_PUBLIC_SUPABASE_URL` | Legado | Browser + Server |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Legado | Browser + Server |
+| `PF_PREVIEW_TOKEN` | Sim (preview em producao) | Server only |
+| `INSTAGRAM_APP_ID` | Nao | Server only |
+| `NEXT_PUBLIC_X_HANDLE` | Nao | Browser + Server |
 | `TRANSPARENCIA_API_KEY` | Nao | Server only |
 | `ANTHROPIC_API_KEY` | Nao (fase 2) | Server only |
 
@@ -204,6 +238,49 @@ Candidatos com `status: 'removido'` sao filtrados em todas as queries.
 - **NAO commitar .env.local.** Usar .env.example como template.
 - **NAO editar `data/candidatos.json` sem verificar IDs nas APIs.** IDs errados = dados de outro politico.
 - **NAO sobrescrever foto_url com fontes de menor prioridade.** Camara/Senado/Wikidata so setam se vazio. So Wikipedia pode sobrescrever. Ver "Hierarquia de fotos".
+
+## React DevTools (agent-react-devtools)
+
+Instalado como dev dependency. Conecta automaticamente ao daemon quando o dev server estiver rodando (`src/components/DevToolsInit.tsx` injeta o conector no `layout.tsx` apenas em `NODE_ENV=development`).
+
+### Setup (uma vez por sessao)
+
+```bash
+# Terminal 1: dev server
+npm run dev
+
+# Terminal 2: daemon do devtools
+agent-react-devtools start
+
+# Verificar conexao (aguardar ~5s apos npm run dev)
+agent-react-devtools status
+```
+
+### Comandos disponiveis
+
+```bash
+agent-react-devtools get tree                  # Component tree completo
+agent-react-devtools get component @c1         # Inspecionar componente por ref
+agent-react-devtools find CandidatoProfile     # Buscar componente por nome
+agent-react-devtools errors                    # Componentes com warning/error
+agent-react-devtools profile start             # Iniciar profiling de re-renders
+agent-react-devtools profile stop              # Parar e ver resultados
+agent-react-devtools profile slow              # Mostrar so componentes lentos
+```
+
+### Quando usar
+
+- **Re-renders inesperados**: `profile start` > interagir > `profile slow`. Identifica qual componente esta re-renderizando mais que o necessario.
+- **Props erradas em runtime**: `find <NomeComponente>` > `get component @ref` para ver props e state reais, nao o que o codigo sugere.
+- **Bugs de estado**: inspecionar o state real de `CandidatoProfile`, `ComparadorPanel`, `CandidatoGrid` apos interacao.
+- **Errors silenciosos**: `errors` revela components com warnings que nao aparecem no console do Next.js.
+- **Debug de hydration**: ver quais componentes foram hidratados e com quais props no client.
+
+### Nao usar para
+
+- Scripts de ingestao (sao Node.js, nao React)
+- Debugging de queries Supabase (usar logs do servidor ou Supabase dashboard)
+- Build de producao (nao conecta, `NODE_ENV=production`)
 
 ## Code Style
 

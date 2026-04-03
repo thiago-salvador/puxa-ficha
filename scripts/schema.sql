@@ -407,7 +407,12 @@ SELECT
   (SELECT COUNT(*) FROM processos p WHERE p.candidato_id = c.id AND p.tipo = 'criminal') as processos_criminais,
   (SELECT COUNT(*) FROM mudancas_partido mp WHERE mp.candidato_id = c.id) as total_mudancas_partido,
   (SELECT COUNT(*) FROM pontos_atencao pa WHERE pa.candidato_id = c.id AND pa.visivel = TRUE) as total_pontos_atencao,
-  (SELECT COUNT(*) FROM pontos_atencao pa WHERE pa.candidato_id = c.id AND pa.gravidade = 'critica') as pontos_criticos,
+  (SELECT COUNT(*)
+   FROM pontos_atencao pa
+   WHERE pa.candidato_id = c.id
+     AND pa.visivel = TRUE
+     AND pa.categoria <> 'feito_positivo'
+     AND pa.gravidade = 'critica') as pontos_criticos,
   -- Último patrimônio
   (SELECT valor_total FROM patrimonio pat WHERE pat.candidato_id = c.id ORDER BY ano_eleicao DESC LIMIT 1) as ultimo_patrimonio,
   (SELECT ano_eleicao FROM patrimonio pat WHERE pat.candidato_id = c.id ORDER BY ano_eleicao DESC LIMIT 1) as ano_ultimo_patrimonio
@@ -427,7 +432,12 @@ SELECT
   c.formacao,
   (SELECT COUNT(*) FROM processos p WHERE p.candidato_id = c.id) as total_processos,
   (SELECT COUNT(*) FROM mudancas_partido mp WHERE mp.candidato_id = c.id) as mudancas_partido,
-  (SELECT COUNT(*) FROM pontos_atencao pa WHERE pa.candidato_id = c.id AND pa.gravidade IN ('critica', 'alta')) as alertas_graves,
+  (SELECT COUNT(*)
+   FROM pontos_atencao pa
+   WHERE pa.candidato_id = c.id
+     AND pa.visivel = TRUE
+     AND pa.categoria <> 'feito_positivo'
+     AND pa.gravidade IN ('critica', 'alta')) as alertas_graves,
   (SELECT valor_total FROM patrimonio pat WHERE pat.candidato_id = c.id ORDER BY ano_eleicao DESC LIMIT 1) as patrimonio_declarado,
   (SELECT json_agg(json_build_object('titulo', pa.titulo, 'categoria', pa.categoria, 'gravidade', pa.gravidade))
    FROM pontos_atencao pa WHERE pa.candidato_id = c.id AND pa.visivel = TRUE
@@ -440,44 +450,74 @@ GRANT SELECT ON v_ficha_candidato TO anon, authenticated;
 GRANT SELECT ON v_comparador TO anon, authenticated;
 REVOKE SELECT ON candidatos FROM anon, authenticated;
 
+CREATE OR REPLACE FUNCTION is_public_candidate(target_candidate_id uuid)
+RETURNS boolean
+LANGUAGE sql
+STABLE
+SECURITY DEFINER
+SET search_path = public
+AS $$
+  SELECT EXISTS (
+    SELECT 1
+    FROM public.candidatos c
+    WHERE c.id = target_candidate_id
+      AND c.publicavel = true
+      AND c.status <> 'removido'
+  );
+$$;
+
+REVOKE ALL ON FUNCTION public.is_public_candidate(uuid) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.is_public_candidate(uuid) TO anon, authenticated, service_role;
+
 -- ============================================
--- Row Level Security (RLS) - dados públicos, leitura aberta
+-- Row Level Security (RLS) - dados públicos, leitura alinhada ao gate publicavel
 -- ============================================
 ALTER TABLE candidatos ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Leitura pública" ON candidatos FOR SELECT USING (true);
+CREATE POLICY "Leitura pública" ON candidatos
+  FOR SELECT USING (publicavel = true AND status <> 'removido');
 
 ALTER TABLE historico_politico ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Leitura pública" ON historico_politico FOR SELECT USING (true);
+CREATE POLICY "Leitura pública" ON historico_politico
+  FOR SELECT USING (is_public_candidate(candidato_id));
 
 ALTER TABLE mudancas_partido ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Leitura pública" ON mudancas_partido FOR SELECT USING (true);
+CREATE POLICY "Leitura pública" ON mudancas_partido
+  FOR SELECT USING (is_public_candidate(candidato_id));
 
 ALTER TABLE patrimonio ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Leitura pública" ON patrimonio FOR SELECT USING (true);
+CREATE POLICY "Leitura pública" ON patrimonio
+  FOR SELECT USING (is_public_candidate(candidato_id));
 
 ALTER TABLE financiamento ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Leitura pública" ON financiamento FOR SELECT USING (true);
+CREATE POLICY "Leitura pública" ON financiamento
+  FOR SELECT USING (is_public_candidate(candidato_id));
 
 ALTER TABLE votacoes_chave ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON votacoes_chave FOR SELECT USING (true);
 
 ALTER TABLE votos_candidato ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Leitura pública" ON votos_candidato FOR SELECT USING (true);
+CREATE POLICY "Leitura pública" ON votos_candidato
+  FOR SELECT USING (is_public_candidate(candidato_id));
 
 ALTER TABLE projetos_lei ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Leitura pública" ON projetos_lei FOR SELECT USING (true);
+CREATE POLICY "Leitura pública" ON projetos_lei
+  FOR SELECT USING (is_public_candidate(candidato_id));
 
 ALTER TABLE processos ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Leitura pública" ON processos FOR SELECT USING (true);
+CREATE POLICY "Leitura pública" ON processos
+  FOR SELECT USING (is_public_candidate(candidato_id));
 
 ALTER TABLE pontos_atencao ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Leitura pública" ON pontos_atencao FOR SELECT USING (true);
+CREATE POLICY "Leitura pública" ON pontos_atencao
+  FOR SELECT USING (visivel = TRUE AND is_public_candidate(candidato_id));
 
 ALTER TABLE gastos_parlamentares ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Leitura pública" ON gastos_parlamentares FOR SELECT USING (true);
+CREATE POLICY "Leitura pública" ON gastos_parlamentares
+  FOR SELECT USING (is_public_candidate(candidato_id));
 
 ALTER TABLE sancoes_administrativas ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Leitura pública" ON sancoes_administrativas FOR SELECT USING (true);
+CREATE POLICY "Leitura pública" ON sancoes_administrativas
+  FOR SELECT USING (is_public_candidate(candidato_id));
 
 ALTER TABLE indicadores_estaduais ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON indicadores_estaduais FOR SELECT USING (true);
@@ -501,7 +541,22 @@ CREATE INDEX idx_noticias_candidato_id ON noticias_candidato(candidato_id);
 CREATE INDEX idx_noticias_data ON noticias_candidato(data_publicacao DESC);
 
 ALTER TABLE noticias_candidato ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Leitura pública" ON noticias_candidato FOR SELECT USING (true);
+CREATE POLICY "Leitura pública" ON noticias_candidato
+  FOR SELECT USING (is_public_candidate(candidato_id));
+
+GRANT SELECT ON historico_politico TO anon, authenticated;
+GRANT SELECT ON mudancas_partido TO anon, authenticated;
+GRANT SELECT ON patrimonio TO anon, authenticated;
+GRANT SELECT ON financiamento TO anon, authenticated;
+GRANT SELECT ON votacoes_chave TO anon, authenticated;
+GRANT SELECT ON votos_candidato TO anon, authenticated;
+GRANT SELECT ON projetos_lei TO anon, authenticated;
+GRANT SELECT ON processos TO anon, authenticated;
+GRANT SELECT ON pontos_atencao TO anon, authenticated;
+GRANT SELECT ON gastos_parlamentares TO anon, authenticated;
+GRANT SELECT ON sancoes_administrativas TO anon, authenticated;
+GRANT SELECT ON indicadores_estaduais TO anon, authenticated;
+GRANT SELECT ON noticias_candidato TO anon, authenticated;
 
 -- ============================================
 -- UNIQUE CONSTRAINTS (idempotent pipelines)
@@ -511,3 +566,5 @@ ALTER TABLE financiamento ADD CONSTRAINT uq_financiamento_candidato_ano UNIQUE (
 ALTER TABLE gastos_parlamentares ADD CONSTRAINT uq_gastos_candidato_ano UNIQUE (candidato_id, ano);
 ALTER TABLE votos_candidato ADD CONSTRAINT uq_votos_candidato_votacao UNIQUE (candidato_id, votacao_id);
 ALTER TABLE historico_politico ADD CONSTRAINT uq_historico_candidato_cargo_periodo UNIQUE (candidato_id, cargo, periodo_inicio);
+ALTER TABLE projetos_lei ADD CONSTRAINT uq_projetos_lei_candidato_proposicao UNIQUE (candidato_id, proposicao_id_api);
+ALTER TABLE mudancas_partido ADD CONSTRAINT uq_mudancas_partido_candidato_ano_partido UNIQUE NULLS NOT DISTINCT (candidato_id, ano, partido_novo);

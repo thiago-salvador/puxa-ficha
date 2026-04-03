@@ -1,11 +1,15 @@
-import { createServerSupabaseClient, createServiceRoleSupabaseClient } from "./supabase"
+import "server-only"
+import { unstable_cache } from "next/cache"
+import {
+  createServerSupabaseClient,
+  createServiceRoleSupabaseClient,
+  getAppSupabaseUrl,
+} from "./supabase"
 import type {
   Candidato,
   FichaCandidato,
   CandidatoComparavel,
-  SancaoAdministrativa,
   IndicadorEstadual,
-  NoticiaCandidato,
   DataResource,
   DataSourceStatus,
   Financiamento,
@@ -19,36 +23,33 @@ import type {
   VotoCandidato,
 } from "./types"
 import {
-  MOCK_CANDIDATOS,
-  MOCK_PATRIMONIO,
-  MOCK_PROCESSOS,
-  MOCK_HISTORICO,
-  MOCK_MUDANCAS,
-  MOCK_FINANCIAMENTO,
-  MOCK_VOTOS,
-  MOCK_PONTOS,
-  MOCK_PROJETOS,
-  MOCK_GASTOS,
-  MOCK_SANCOES,
-  MOCK_NOTICIAS,
-} from "@/data/mock"
-import {
   hasIncompletePartyTimeline,
 } from "@/lib/candidate-integrity"
+import {
+  classifyAttentionPoints,
+  isNegativeCriticalAttentionPoint,
+  isNegativeHighestSeverityAttentionPoint,
+} from "@/lib/attention-points"
+import { sleep } from "@/lib/async-utils"
 import { getCanonicalPerson } from "@/lib/canonical-person-map"
 import { formatDate } from "@/lib/utils"
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const supabaseUrl = getAppSupabaseUrl()
 const USE_MOCK = !supabaseUrl || supabaseUrl.includes("placeholder")
 const IS_DEV = process.env.NODE_ENV === "development"
 const IS_PRODUCTION_DEPLOY = process.env.VERCEL_ENV === "production"
 const IS_LAUNCH_PHASE = process.env.PF_CURATION_PHASE === "launched"
 const CANDIDATO_PUBLIC_RELATION = "candidatos_publico"
+const APP_DATA_REVALIDATE_SECONDS = 3600
 const PROFILE_FRESHNESS_WINDOW_DAYS = 30
+const SUPABASE_RETRY_ATTEMPTS = 3
+type MockModule = typeof import("@/data/mock")
+
+let mockModulePromise: Promise<MockModule> | null = null
 
 if (USE_MOCK && IS_PRODUCTION_DEPLOY) {
   throw new Error(
-    "Producao nao pode usar fallback mock. Configure NEXT_PUBLIC_SUPABASE_URL e as credenciais públicas antes do deploy."
+    "Producao nao pode usar fallback mock. Configure SUPABASE_URL/SUPABASE_ANON_KEY para o app e SUPABASE_SERVICE_ROLE_KEY para preview/scripts."
   )
 }
 
@@ -59,6 +60,45 @@ function parseDate(value: string | null | undefined): Date | null {
   if (!value) return null
   const parsed = new Date(value)
   return Number.isNaN(parsed.getTime()) ? null : parsed
+}
+
+function loadMockModule() {
+  if (!mockModulePromise) {
+    mockModulePromise = import("@/data/mock")
+  }
+
+  return mockModulePromise
+}
+
+async function withSupabaseRetry<T>(
+  label: string,
+  run: () => Promise<{ data: T | null; error: { message?: string } | null }>
+): Promise<{ data: T | null; error: { message?: string } | null }> {
+  let lastResult: { data: T | null; error: { message?: string } | null } | null = null
+  let lastThrown: unknown = null
+
+  for (let attempt = 1; attempt <= SUPABASE_RETRY_ATTEMPTS; attempt += 1) {
+    try {
+      const result = await run()
+      if (!result.error) {
+        return result
+      }
+      lastResult = result
+    } catch (error) {
+      lastThrown = error
+    }
+
+    if (attempt < SUPABASE_RETRY_ATTEMPTS) {
+      await sleep(attempt * 250)
+    }
+  }
+
+  if (lastResult) {
+    console.error(`${label} failed after retries:`, lastResult.error?.message)
+    return lastResult
+  }
+
+  throw lastThrown instanceof Error ? lastThrown : new Error(`${label} failed after retries`)
 }
 
 function ageInDays(date: Date): number {
@@ -301,11 +341,31 @@ function buildSectionFreshness(
   }
 }
 
-function getMockCandidatos(cargo?: string): Candidato[] {
-  return cargo ? MOCK_CANDIDATOS.filter((c) => c.cargo_disputado === cargo) : MOCK_CANDIDATOS
+async function getMockCandidatos(cargo?: string, estado?: string): Promise<Candidato[]> {
+  const { MOCK_CANDIDATOS } = await loadMockModule()
+
+  return MOCK_CANDIDATOS.filter((candidato) => {
+    if (cargo && candidato.cargo_disputado !== cargo) return false
+    if (estado && candidato.estado?.toLowerCase() !== estado.toLowerCase()) return false
+    return true
+  })
 }
 
-function getMockFicha(slug: string): FichaCandidato | null {
+async function getMockFicha(slug: string): Promise<FichaCandidato | null> {
+  const {
+    MOCK_CANDIDATOS,
+    MOCK_FINANCIAMENTO,
+    MOCK_GASTOS,
+    MOCK_HISTORICO,
+    MOCK_MUDANCAS,
+    MOCK_NOTICIAS,
+    MOCK_PATRIMONIO,
+    MOCK_PONTOS,
+    MOCK_PROCESSOS,
+    MOCK_PROJETOS,
+    MOCK_SANCOES,
+    MOCK_VOTOS,
+  } = await loadMockModule()
   const candidato = MOCK_CANDIDATOS.find((c) => c.slug === slug)
   if (!candidato) return null
 
@@ -349,7 +409,7 @@ function getMockFicha(slug: string): FichaCandidato | null {
     processos_criminais: processos.filter((p) => p.tipo === "criminal").length,
     total_mudancas_partido: mudancas.length,
     total_pontos_atencao: pontos.length,
-    pontos_criticos: pontos.filter((p) => p.gravidade === "critica").length,
+    pontos_criticos: pontos.filter((p) => isNegativeHighestSeverityAttentionPoint(p)).length,
     total_sancoes: sancoes.length,
     historico_descartado: 0,
     historico_em_revisao: false,
@@ -368,7 +428,12 @@ function getMockFicha(slug: string): FichaCandidato | null {
   }
 }
 
-function getMockComparaveis(cargoFilter: string, estado?: string): CandidatoComparavel[] {
+async function getMockComparaveis(
+  cargoFilter: string,
+  estado?: string
+): Promise<CandidatoComparavel[]> {
+  const { MOCK_CANDIDATOS, MOCK_PATRIMONIO, MOCK_PONTOS, MOCK_PROCESSOS } = await loadMockModule()
+
   return MOCK_CANDIDATOS
     .filter((c) => c.cargo_disputado === cargoFilter && (!estado || c.estado?.toLowerCase() === estado.toLowerCase()))
     .map((c) => ({
@@ -383,9 +448,9 @@ function getMockComparaveis(cargoFilter: string, estado?: string): CandidatoComp
       formacao: c.formacao,
       total_processos: (MOCK_PROCESSOS[c.slug] ?? []).length,
       mudancas_partido: 0,
-      alertas_graves: 0,
+      alertas_graves: (MOCK_PONTOS[c.slug] ?? []).filter((p) => isNegativeCriticalAttentionPoint(p)).length,
       patrimonio_declarado: MOCK_PATRIMONIO[c.slug]?.[0]?.valor_total ?? null,
-      pontos_atencao: [],
+      pontos_atencao: MOCK_PONTOS[c.slug] ?? [],
     }))
 }
 
@@ -437,30 +502,37 @@ export function mergeSourceMessages(
   return messages.find(Boolean) ?? null
 }
 
-export async function getCandidatosResource(
-  cargo?: string
+async function getCandidatosResourceUncached(
+  cargo?: string,
+  estado?: string
 ): Promise<DataResource<Candidato[]>> {
   if (USE_MOCK) {
-    return mockResource(getMockCandidatos(cargo))
+    return mockResource(await getMockCandidatos(cargo, estado))
   }
 
   const supabase = createServerSupabaseClient()
-  let query = supabase
-    .from(CANDIDATO_PUBLIC_RELATION)
-    .select(CANDIDATO_COLUMNS)
-    .neq("status", "removido")
+  const { data, error } = await withSupabaseRetry("getCandidatos", async () => {
+    let query = supabase
+      .from(CANDIDATO_PUBLIC_RELATION)
+      .select(CANDIDATO_COLUMNS)
+      .neq("status", "removido")
 
-  if (cargo) {
-    query = query.eq("cargo_disputado", cargo)
-  }
+    if (cargo) {
+      query = query.eq("cargo_disputado", cargo)
+    }
 
-  const { data, error } = await query.order("nome_urna")
+    if (estado) {
+      query = query.ilike("estado", estado)
+    }
+
+    return query.order("nome_urna")
+  })
 
   if (error || !data) {
     if (IS_DEV) {
       warnDevMockFallback("getCandidatos", error)
       return degradedResource(
-        getMockCandidatos(cargo),
+        await getMockCandidatos(cargo, estado),
         "A fonte principal falhou. Exibindo fallback local para continuar a navegacao."
       )
     }
@@ -473,8 +545,76 @@ export async function getCandidatosResource(
   return liveResource(data)
 }
 
-export async function getCandidatos(cargo?: string): Promise<Candidato[]> {
-  return (await getCandidatosResource(cargo)).data
+const getCachedCandidatosResource = unstable_cache(
+  async (cargo?: string, estado?: string) => getCandidatosResourceUncached(cargo, estado),
+  ["public-candidatos-resource"],
+  {
+    revalidate: APP_DATA_REVALIDATE_SECONDS,
+    tags: ["public-candidatos"],
+  }
+)
+
+export async function getCandidatosResource(
+  cargo?: string,
+  estado?: string
+): Promise<DataResource<Candidato[]>> {
+  return getCachedCandidatosResource(cargo, estado)
+}
+
+export async function getCandidatos(cargo?: string, estado?: string): Promise<Candidato[]> {
+  return (await getCandidatosResource(cargo, estado)).data
+}
+
+async function getCandidatoMetadataResourceUncached(
+  slug: string
+): Promise<DataResource<Candidato | null>> {
+  if (USE_MOCK) {
+    return mockResource((await getMockCandidatos()).find((candidato) => candidato.slug === slug) ?? null)
+  }
+
+  const supabase = createServerSupabaseClient()
+  const { data, error } = await withSupabaseRetry<Candidato>(
+    `getCandidatoMetadata(${slug})`,
+    async () =>
+      supabase
+        .from(CANDIDATO_PUBLIC_RELATION)
+        .select(CANDIDATO_COLUMNS)
+        .eq("slug", slug)
+        .single()
+  )
+
+  if (error) {
+    if (IS_DEV) {
+      warnDevMockFallback("getCandidatoMetadata", error)
+      return degradedResource(
+        (await getMockCandidatos()).find((candidato) => candidato.slug === slug) ?? null,
+        "A ficha nao respondeu da fonte principal. Metadata reduzida pode ficar indisponivel."
+      )
+    }
+
+    console.error("getCandidatoMetadata failed:", error.message)
+    return degradedResource(
+      null,
+      "Nao foi possivel carregar os metadados desta ficha agora."
+    )
+  }
+
+  return liveResource(data ?? null)
+}
+
+const getCachedCandidatoMetadataResource = unstable_cache(
+  async (slug: string) => getCandidatoMetadataResourceUncached(slug),
+  ["public-candidato-metadata-resource"],
+  {
+    revalidate: APP_DATA_REVALIDATE_SECONDS,
+    tags: ["public-candidato-metadata"],
+  }
+)
+
+export async function getCandidatoMetadataResource(
+  slug: string
+): Promise<DataResource<Candidato | null>> {
+  return getCachedCandidatoMetadataResource(slug)
 }
 
 async function getCandidatoBySlugFromRelationResource(
@@ -483,24 +623,30 @@ async function getCandidatoBySlugFromRelationResource(
   useServiceRole = false
 ): Promise<DataResource<FichaCandidato | null>> {
   if (USE_MOCK) {
-    return mockResource(getMockFicha(slug))
+    return mockResource(await getMockFicha(slug))
   }
 
-  const supabase = useServiceRole
-    ? createServiceRoleSupabaseClient()
+  const shouldUseServiceRole = useServiceRole
+
+  const supabase = shouldUseServiceRole
+    ? createServiceRoleSupabaseClient({ cacheMode: "no-store" })
     : createServerSupabaseClient()
 
-  const { data: candidato, error: candidatoError } = await supabase
-    .from(relation)
-    .select(CANDIDATO_COLUMNS)
-    .eq("slug", slug)
-    .single()
+  const { data: candidato, error: candidatoError } = await withSupabaseRetry<Candidato>(
+    `getCandidatoBySlug(${slug})`,
+    async () =>
+      supabase
+        .from(relation)
+        .select(CANDIDATO_COLUMNS)
+        .eq("slug", slug)
+        .single()
+  )
 
   if (candidatoError) {
     if (IS_DEV) {
       warnDevMockFallback("getCandidatoBySlug", candidatoError)
       return degradedResource(
-        getMockFicha(slug),
+        await getMockFicha(slug),
         "A ficha nao respondeu da fonte principal. Exibindo fallback local quando disponivel."
       )
     }
@@ -518,11 +664,15 @@ async function getCandidatoBySlugFromRelationResource(
   let personLevelIds = [id]
 
   if (canonical.slugs.length > 1) {
-    const canonicalLookupRelation = useServiceRole ? "candidatos" : relation
-    const { data: relatedCandidates, error: relatedError } = await supabase
-      .from(canonicalLookupRelation)
-      .select("id, slug")
-      .in("slug", canonical.slugs)
+    const canonicalLookupRelation = shouldUseServiceRole ? "candidatos" : relation
+    const { data: relatedCandidates, error: relatedError } = await withSupabaseRetry(
+      `getCanonicalCandidates(${slug})`,
+      async () =>
+        supabase
+          .from(canonicalLookupRelation)
+          .select("id, slug")
+          .in("slug", canonical.slugs)
+    )
 
     if (!relatedError && relatedCandidates) {
       const relatedIds = relatedCandidates
@@ -537,24 +687,48 @@ async function getCandidatoBySlugFromRelationResource(
 
   const [historico, mudancas, patrimonio, financiamento, votos, processos, pontos, projetos, gastos, sancoes, noticias, indicadores] =
     await Promise.all([
-      supabase.from("historico_politico").select("*").eq("candidato_id", id).order("periodo_inicio", { ascending: false }),
-      supabase
-        .from("mudancas_partido")
-        .select("*")
-        .eq("candidato_id", id)
-        .order("data_mudanca", { ascending: false, nullsFirst: false })
-        .order("ano", { ascending: false }),
-      supabase.from("patrimonio").select("*").in("candidato_id", personLevelIds).order("ano_eleicao", { ascending: false }),
-      supabase.from("financiamento").select("*").in("candidato_id", personLevelIds).order("ano_eleicao", { ascending: false }),
-      supabase.from("votos_candidato").select("*, votacao:votacoes_chave(*)").eq("candidato_id", id),
-      supabase.from("processos").select("*").eq("candidato_id", id),
-      supabase.from("pontos_atencao").select("*").eq("candidato_id", id).eq("visivel", true),
-      supabase.from("projetos_lei").select("*").eq("candidato_id", id).order("ano", { ascending: false }),
-      supabase.from("gastos_parlamentares").select("*").eq("candidato_id", id).order("ano", { ascending: false }),
-      supabase.from("sancoes_administrativas").select("*").eq("candidato_id", id).order("data_inicio", { ascending: false }),
-      supabase.from("noticias_candidato").select("*").eq("candidato_id", id).order("data_publicacao", { ascending: false }).limit(20),
+      withSupabaseRetry(`historico_politico(${slug})`, async () =>
+        supabase.from("historico_politico").select("*").eq("candidato_id", id).order("periodo_inicio", { ascending: false })
+      ),
+      withSupabaseRetry(`mudancas_partido(${slug})`, async () =>
+        supabase
+          .from("mudancas_partido")
+          .select("*")
+          .eq("candidato_id", id)
+          .order("data_mudanca", { ascending: false, nullsFirst: false })
+          .order("ano", { ascending: false })
+      ),
+      withSupabaseRetry(`patrimonio(${slug})`, async () =>
+        supabase.from("patrimonio").select("*").in("candidato_id", personLevelIds).order("ano_eleicao", { ascending: false })
+      ),
+      withSupabaseRetry(`financiamento(${slug})`, async () =>
+        supabase.from("financiamento").select("*").in("candidato_id", personLevelIds).order("ano_eleicao", { ascending: false })
+      ),
+      withSupabaseRetry(`votos_candidato(${slug})`, async () =>
+        supabase.from("votos_candidato").select("*, votacao:votacoes_chave(*)").eq("candidato_id", id)
+      ),
+      withSupabaseRetry(`processos(${slug})`, async () =>
+        supabase.from("processos").select("*").eq("candidato_id", id)
+      ),
+      withSupabaseRetry(`pontos_atencao(${slug})`, async () =>
+        supabase.from("pontos_atencao").select("*").eq("candidato_id", id).eq("visivel", true)
+      ),
+      withSupabaseRetry(`projetos_lei(${slug})`, async () =>
+        supabase.from("projetos_lei").select("*").eq("candidato_id", id).order("ano", { ascending: false })
+      ),
+      withSupabaseRetry(`gastos_parlamentares(${slug})`, async () =>
+        supabase.from("gastos_parlamentares").select("*").eq("candidato_id", id).order("ano", { ascending: false })
+      ),
+      withSupabaseRetry(`sancoes_administrativas(${slug})`, async () =>
+        supabase.from("sancoes_administrativas").select("*").eq("candidato_id", id).order("data_inicio", { ascending: false })
+      ),
+      withSupabaseRetry(`noticias_candidato(${slug})`, async () =>
+        supabase.from("noticias_candidato").select("*").eq("candidato_id", id).order("data_publicacao", { ascending: false }).limit(20)
+      ),
       candidato.cargo_disputado === "Governador" && candidato.estado
-        ? supabase.from("indicadores_estaduais").select("*").ilike("estado", candidato.estado).order("ano", { ascending: false })
+        ? withSupabaseRetry(`indicadores_estaduais(${slug})`, async () =>
+            supabase.from("indicadores_estaduais").select("*").ilike("estado", candidato.estado!).order("ano", { ascending: false })
+          )
         : Promise.resolve({ data: [] as IndicadorEstadual[] }),
     ])
 
@@ -601,7 +775,7 @@ async function getCandidatoBySlugFromRelationResource(
     processos_criminais: (processos.data ?? []).filter((p) => p.tipo === "criminal").length,
     total_mudancas_partido: mudancasRaw.length,
     total_pontos_atencao: (pontos.data ?? []).length,
-    pontos_criticos: (pontos.data ?? []).filter((p) => p.gravidade === "critica").length,
+    pontos_criticos: (pontos.data ?? []).filter((p) => isNegativeHighestSeverityAttentionPoint(p)).length,
     total_sancoes: (sancoes.data ?? []).length,
     historico_descartado: 0,
     historico_em_revisao: false,
@@ -646,7 +820,7 @@ async function getCandidatoBySlugFromRelationResource(
 export async function getCandidatoBySlugResource(
   slug: string
 ): Promise<DataResource<FichaCandidato | null>> {
-  return getCandidatoBySlugFromRelationResource(slug, CANDIDATO_PUBLIC_RELATION)
+  return getCachedCandidatoBySlugResource(slug)
 }
 
 export async function getCandidatoBySlugPreviewResource(
@@ -654,6 +828,21 @@ export async function getCandidatoBySlugPreviewResource(
 ): Promise<DataResource<FichaCandidato | null>> {
   return getCandidatoBySlugFromRelationResource(slug, "candidatos", true)
 }
+
+async function getCandidatoBySlugResourceUncached(
+  slug: string
+): Promise<DataResource<FichaCandidato | null>> {
+  return getCandidatoBySlugFromRelationResource(slug, CANDIDATO_PUBLIC_RELATION)
+}
+
+const getCachedCandidatoBySlugResource = unstable_cache(
+  async (slug: string) => getCandidatoBySlugResourceUncached(slug),
+  ["public-candidato-ficha-resource"],
+  {
+    revalidate: APP_DATA_REVALIDATE_SECONDS,
+    tags: ["public-candidato-ficha"],
+  }
+)
 
 export async function getCandidatoBySlug(slug: string): Promise<FichaCandidato | null> {
   return (await getCandidatoBySlugResource(slug)).data
@@ -666,13 +855,16 @@ export interface CandidatoResumo {
   pontos_atencao: number
 }
 
-export async function getCandidatosComResumoResource(
-  cargo?: string
+async function getCandidatosComResumoResourceUncached(
+  cargo?: string,
+  estado?: string
 ): Promise<DataResource<CandidatoResumo[]>> {
-  const candidatosResource = await getCandidatosResource(cargo)
+  const candidatosResource = await getCandidatosResource(cargo, estado)
   const candidatos = candidatosResource.data
 
   if (candidatosResource.sourceStatus !== "live") {
+    const { MOCK_PATRIMONIO, MOCK_PONTOS, MOCK_PROCESSOS } = await loadMockModule()
+
     return {
       ...candidatosResource,
       data: candidatos.map((c) => ({
@@ -689,36 +881,45 @@ export async function getCandidatosComResumoResource(
   }
 
   const supabase = createServerSupabaseClient()
-  const ids = candidatos.map((c) => c.id)
+  const { data: compareRows, error: compareError } = await withSupabaseRetry(
+    "v_comparador(resumo)",
+    async () => {
+      let query = supabase
+        .from("v_comparador")
+        .select("id, cargo_disputado, estado, total_processos, patrimonio_declarado, pontos_atencao")
 
-  const [patRes, procRes, pontosRes] = await Promise.all([
-    supabase.from("patrimonio").select("candidato_id, valor_total, ano_eleicao").in("candidato_id", ids).order("ano_eleicao", { ascending: false }),
-    supabase.from("processos").select("candidato_id").in("candidato_id", ids),
-    supabase.from("pontos_atencao").select("candidato_id").in("candidato_id", ids).eq("visivel", true),
-  ])
+      if (cargo) {
+        query = query.eq("cargo_disputado", cargo)
+      }
 
-  // Build lookup maps
-  const patMap = new Map<string, number>()
-  for (const p of patRes.data ?? []) {
-    if (!patMap.has(p.candidato_id)) patMap.set(p.candidato_id, p.valor_total)
-  }
-  const procMap = new Map<string, number>()
-  for (const p of procRes.data ?? []) {
-    procMap.set(p.candidato_id, (procMap.get(p.candidato_id) ?? 0) + 1)
-  }
-  const pontosMap = new Map<string, number>()
-  for (const p of pontosRes.data ?? []) {
-    pontosMap.set(p.candidato_id, (pontosMap.get(p.candidato_id) ?? 0) + 1)
+      if (estado) {
+        query = query.ilike("estado", estado)
+      }
+
+      return query
+    }
+  )
+
+  const compareMap = new Map<
+    string,
+    { patrimonio: number | null; processos: number; pontosAtencao: number }
+  >()
+  for (const row of compareRows ?? []) {
+    compareMap.set(row.id, {
+      patrimonio: row.patrimonio_declarado ?? null,
+      processos: row.total_processos ?? 0,
+      pontosAtencao: Array.isArray(row.pontos_atencao) ? row.pontos_atencao.length : 0,
+    })
   }
 
   const data = candidatos.map((c) => ({
     candidato: c,
-    patrimonio: patMap.get(c.id) ?? null,
-    processos: procMap.get(c.id) ?? 0,
-    pontos_atencao: pontosMap.get(c.id) ?? 0,
+    patrimonio: compareMap.get(c.id)?.patrimonio ?? null,
+    processos: compareMap.get(c.id)?.processos ?? 0,
+    pontos_atencao: compareMap.get(c.id)?.pontosAtencao ?? 0,
   }))
 
-  if (patRes.error || procRes.error || pontosRes.error) {
+  if (compareError) {
     return degradedResource(
       data,
       "Nem todos os resumos puderam ser enriquecidos. Alguns totais podem estar zerados temporariamente."
@@ -728,54 +929,60 @@ export async function getCandidatosComResumoResource(
   return liveResource(data)
 }
 
-export async function getCandidatosComResumo(cargo?: string): Promise<CandidatoResumo[]> {
-  return (await getCandidatosComResumoResource(cargo)).data
+const getCachedCandidatosComResumoResource = unstable_cache(
+  async (cargo?: string, estado?: string) =>
+    getCandidatosComResumoResourceUncached(cargo, estado),
+  ["public-candidatos-resumo-resource"],
+  {
+    revalidate: APP_DATA_REVALIDATE_SECONDS,
+    tags: ["public-candidatos-resumo"],
+  }
+)
+
+export async function getCandidatosComResumoResource(
+  cargo?: string,
+  estado?: string
+): Promise<DataResource<CandidatoResumo[]>> {
+  return getCachedCandidatosComResumoResource(cargo, estado)
 }
 
-export async function getCandidatosComparaveisResource(
+export async function getCandidatosComResumo(
+  cargo?: string,
+  estado?: string
+): Promise<CandidatoResumo[]> {
+  return (await getCandidatosComResumoResource(cargo, estado)).data
+}
+
+async function getCandidatosComparaveisResourceUncached(
   cargo?: string,
   estado?: string
 ): Promise<DataResource<CandidatoComparavel[]>> {
   const cargoFilter = cargo ?? "Presidente"
   if (USE_MOCK) {
-    return mockResource(getMockComparaveis(cargoFilter, estado))
+    return mockResource(await getMockComparaveis(cargoFilter, estado))
   }
 
   const supabase = createServerSupabaseClient()
-  let query = supabase
-    .from(CANDIDATO_PUBLIC_RELATION)
-    .select("id")
-    .neq("status", "removido")
-    .eq("cargo_disputado", cargoFilter)
+  const { data, error: compareError } = await withSupabaseRetry(
+    `v_comparador(${cargoFilter}${estado ? `:${estado}` : ""})`,
+    async () => {
+      let query = supabase
+        .from("v_comparador")
+        .select("*")
+        .eq("cargo_disputado", cargoFilter)
 
-  if (estado) {
-    query = query.ilike("estado", estado)
-  }
+      if (estado) {
+        query = query.ilike("estado", estado)
+      }
 
-  const { data: active, error: activeError } = await query
-  if (activeError) {
-    if (IS_DEV) {
-      warnDevMockFallback("getCandidatosComparaveis", activeError)
-      return degradedResource(
-        getMockComparaveis(cargoFilter, estado),
-        "A comparacao nao respondeu da fonte principal. Exibindo fallback local quando possivel."
-      )
+      return query.order("nome_urna")
     }
-    console.error("getCandidatosComparaveis failed:", activeError.message)
-    return degradedResource(
-      [],
-      "Nao foi possivel carregar os candidatos comparaveis agora."
-    )
-  }
-
-  const activeIds = new Set((active ?? []).map((c) => c.id))
-
-  const { data, error: compareError } = await supabase.from("v_comparador").select("*").order("nome_urna")
+  )
   if (compareError) {
     if (IS_DEV) {
       warnDevMockFallback("getCandidatosComparaveis", compareError)
       return degradedResource(
-        getMockComparaveis(cargoFilter, estado),
+        await getMockComparaveis(cargoFilter, estado),
         "A view de comparacao falhou. Exibindo fallback local quando possivel."
       )
     }
@@ -786,7 +993,34 @@ export async function getCandidatosComparaveisResource(
     )
   }
 
-  return liveResource((data ?? []).filter((c) => activeIds.has(c.id)))
+  const normalizedRows = (data ?? []).map((row) => {
+    const pontos = Array.isArray(row.pontos_atencao) ? row.pontos_atencao : []
+    const { alertasGraves } = classifyAttentionPoints(pontos)
+
+    return {
+      ...row,
+      alertas_graves: alertasGraves.length,
+    }
+  })
+
+  return liveResource(normalizedRows)
+}
+
+const getCachedCandidatosComparaveisResource = unstable_cache(
+  async (cargo?: string, estado?: string) =>
+    getCandidatosComparaveisResourceUncached(cargo, estado),
+  ["public-candidatos-comparaveis-resource"],
+  {
+    revalidate: APP_DATA_REVALIDATE_SECONDS,
+    tags: ["public-candidatos-comparaveis"],
+  }
+)
+
+export async function getCandidatosComparaveisResource(
+  cargo?: string,
+  estado?: string
+): Promise<DataResource<CandidatoComparavel[]>> {
+  return getCachedCandidatosComparaveisResource(cargo, estado)
 }
 
 export async function getCandidatosComparaveis(
@@ -806,76 +1040,10 @@ const UF_NAMES: Record<string, string> = {
   to: "Tocantins",
 }
 
-export async function getNoticiasCandidato(candidatoId: string): Promise<NoticiaCandidato[]> {
-  if (USE_MOCK) return []
-
-  const supabase = createServerSupabaseClient()
-  const { data } = await supabase
-    .from("noticias_candidato")
-    .select("*")
-    .eq("candidato_id", candidatoId)
-    .order("data_publicacao", { ascending: false })
-    .limit(20)
-
-  return data ?? []
-}
-
-export async function getSancoesAdministrativas(candidatoId: string): Promise<SancaoAdministrativa[]> {
-  if (USE_MOCK) return []
-
-  const supabase = createServerSupabaseClient()
-  const { data } = await supabase
-    .from("sancoes_administrativas")
-    .select("*")
-    .eq("candidato_id", candidatoId)
-    .order("data_inicio", { ascending: false })
-
-  return data ?? []
-}
-
-export async function getIndicadoresEstaduais(estado: string): Promise<IndicadorEstadual[]> {
-  if (USE_MOCK) return []
-
-  const supabase = createServerSupabaseClient()
-  const { data } = await supabase
-    .from("indicadores_estaduais")
-    .select("*")
-    .ilike("estado", estado)
-    .order("ano", { ascending: false })
-
-  return data ?? []
-}
-
 export function getEstadoNome(uf: string): string | null {
   return UF_NAMES[uf.toLowerCase()] ?? null
 }
 
 export function getEstadoUFs(): string[] {
   return Object.keys(UF_NAMES)
-}
-
-export async function getCandidatosPorEstado(uf: string): Promise<Candidato[]> {
-  if (USE_MOCK) {
-    return MOCK_CANDIDATOS.filter(
-      (c) => c.estado?.toLowerCase() === uf.toLowerCase()
-    )
-  }
-
-  const supabase = createServerSupabaseClient()
-  const { data, error } = await supabase
-    .from(CANDIDATO_PUBLIC_RELATION)
-    .select(CANDIDATO_COLUMNS)
-    .neq("status", "removido")
-    .eq("cargo_disputado", "Governador")
-    .ilike("estado", uf)
-    .order("nome_urna")
-
-  if (error || !data) {
-    if (IS_DEV) {
-      warnDevMockFallback("getCandidatosPorEstado", error)
-      return MOCK_CANDIDATOS.filter((c) => c.estado?.toLowerCase() === uf.toLowerCase())
-    }
-    return []
-  }
-  return data
 }

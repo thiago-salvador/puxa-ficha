@@ -31,6 +31,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files
+.env
 .env.local
 .env.*.local
 
@@ -51,6 +52,8 @@ data/tse/
 
 # playwright MCP
 .playwright-mcp/
+.playwright-cli/
+test-results/
 
 # vercel
 .vercel
@@ -61,3 +64,17 @@ next-env.d.ts
 # supabase local files (migrations tracked separately)
 supabase/.temp/
 supabase/.branches/
+
+# local agent / generated audit artifacts
+scripts/audit-factual-runs/
+scripts/candidate-dossiers/
+scripts/audit-factual-*.json
+scripts/release-verify-*.json
+scripts/release-verify-*.md
+scripts/completude-report.json
+scripts/tse-situacao-audit.json
+scripts/release-verify-prod-delta-report.json
+scripts/release-verify-prod-delta-summary.md
+cursorfront.md
+review.md
+search.md

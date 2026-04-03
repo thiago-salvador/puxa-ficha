@@ -1,4 +1,5 @@
 import type { FichaCandidato } from "@/lib/types"
+import { classifyAttentionPoints } from "@/lib/attention-points"
 import { formatCompact } from "@/lib/utils"
 import { AlertTriangle, TrendingUp, TrendingDown, Scale, Landmark, ArrowRightLeft, FileText, Vote, Briefcase } from "lucide-react"
 
@@ -17,6 +18,7 @@ function buildSnapshot(ficha: FichaCandidato): SnapshotItem[] {
   const mudancas = ficha.mudancas_partido ?? []
   const pontosAtencao = ficha.pontos_atencao ?? []
   const projetosLei = ficha.projetos_lei ?? []
+  const { alertasGraves, pontosPositivos } = classifyAttentionPoints(pontosAtencao)
 
   // Trajetoria
   if (historico.length > 0) {
@@ -102,13 +104,22 @@ function buildSnapshot(ficha: FichaCandidato): SnapshotItem[] {
     })
   }
 
-  // Pontos criticos
-  const criticos = pontosAtencao.filter((p) => p.gravidade === "critica" || p.gravidade === "alta")
-  if (criticos.length > 0 && items.every(i => i.type !== "critical")) {
+  if (alertasGraves.length > 0 && items.every(i => i.type !== "critical")) {
     items.push({
       icon: AlertTriangle,
-      text: `${criticos.length} alerta${criticos.length > 1 ? "s" : ""} de alta gravidade registrado${criticos.length > 1 ? "s" : ""}`,
+      text: `${alertasGraves.length} alerta${alertasGraves.length > 1 ? "s" : ""} de alta gravidade registrado${alertasGraves.length > 1 ? "s" : ""}`,
       type: "critical",
+    })
+  }
+
+  if (pontosPositivos.length > 0) {
+    items.push({
+      icon: TrendingUp,
+      text:
+        pontosPositivos.length === 1
+          ? `Ponto positivo em destaque: ${pontosPositivos[0].titulo}`
+          : `${pontosPositivos.length} pontos positivos em destaque`,
+      type: "positive",
     })
   }
 

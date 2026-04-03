@@ -47,7 +47,28 @@ export function getInitials(name: string): string {
 
 export const FALLBACK_GRADIENT = "linear-gradient(160deg, #1a1a1a 0%, #000000 100%)"
 
-const KNOWN_PARTIES = ["pt", "pl", "psb", "psd", "psol", "mdb", "pp", "republicanos", "novo", "pcdob", "dem", "pstu", "pco", "missao", "up"]
+const KNOWN_PARTIES = [
+  "pt",
+  "pl",
+  "psb",
+  "psd",
+  "psol",
+  "mdb",
+  "pp",
+  "republicanos",
+  "novo",
+  "pcdob",
+  "dem",
+  "pstu",
+  "pco",
+  "missao",
+  "up",
+  "avante",
+  "dc",
+  "pdt",
+  "psdb",
+  "uniao",
+]
 
 /** Returns the URL only if it uses http or https protocol. Blocks javascript: and other schemes. */
 export function safeHref(url: string | null | undefined): string | null {
@@ -71,7 +92,8 @@ export function shouldBypassImageOptimization(url: string | null | undefined): b
   if (!url) return false
 
   try {
-    return new URL(url).hostname === "upload.wikimedia.org"
+    const parsed = new URL(url, "https://placeholder.invalid")
+    return parsed.hostname !== "placeholder.invalid"
   } catch {
     return false
   }

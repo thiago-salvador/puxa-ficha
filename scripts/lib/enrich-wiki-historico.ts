@@ -1,6 +1,6 @@
 import { supabase } from "./supabase"
 import { loadCandidatos, sleep } from "./helpers"
-import { log, warn, error } from "./logger"
+import { log, error } from "./logger"
 
 // Slug → Portuguese Wikipedia article title (reuse from enrich-wikipedia.ts)
 // We import only the titles we need by re-reading the main file
@@ -38,6 +38,20 @@ const STATE_NAMES: Record<string, string> = {
   "tocantins": "TO",
 }
 
+interface WikiCategory {
+  title?: string
+}
+
+interface WikiPage {
+  categories?: WikiCategory[]
+}
+
+interface WikiQueryResponse {
+  query?: {
+    pages?: Record<string, WikiPage>
+  }
+}
+
 function normalizeEstado(name: string): string {
   const lower = name.toLowerCase().trim()
   return STATE_NAMES[lower] ?? name
@@ -58,11 +72,11 @@ async function fetchWikiCategories(title: string): Promise<string[]> {
       headers: { "User-Agent": "PuxaFicha/1.0 (puxaficha.com.br)" },
     })
     if (!res.ok) return []
-    const json = await res.json()
+    const json = (await res.json()) as WikiQueryResponse
     const pages = json.query?.pages ?? {}
-    const page = Object.values(pages)[0] as any
+    const page = Object.values(pages)[0]
     return (page?.categories ?? [])
-      .map((c: any) => c.title?.replace("Categoria:", "") ?? "")
+      .map((c) => c.title?.replace("Categoria:", "") ?? "")
       .filter(Boolean)
   } catch {
     return []
@@ -89,18 +103,6 @@ function extractCargosFromCategories(categories: string[]): Array<{
   }
 
   return cargos
-}
-
-// Dynamically import WIKI_TITLES from enrich-wikipedia.ts
-async function getWikiTitles(): Promise<Record<string, string>> {
-  try {
-    const mod = await import("./enrich-wikipedia")
-    // The WIKI_TITLES is not exported, so we need to read the file
-    // Instead, let's use a simpler approach: query DB for candidates and match with known titles
-    return {}
-  } catch {
-    return {}
-  }
 }
 
 export async function enrichWikiHistorico() {

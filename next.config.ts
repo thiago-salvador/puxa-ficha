@@ -1,4 +1,4 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const REMOTE_IMAGE_HOSTS = [
   "adrianannogueira.com.br",
@@ -29,14 +29,68 @@ const REMOTE_IMAGE_HOSTS = [
   "www.senado.leg.br",
 ]
 
+const isDevelopment = process.env.NODE_ENV !== "production"
+
+function getSupabaseHostname() {
+  const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL
+  if (!supabaseUrl || supabaseUrl.includes("placeholder")) return null
+
+  try {
+    return new URL(supabaseUrl).hostname
+  } catch {
+    return null
+  }
+}
+
+const supabaseHostname = getSupabaseHostname()
+
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ""} https:`,
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "img-src 'self' data: blob: https:",
+  "font-src 'self' data: https://fonts.gstatic.com",
+  "connect-src 'self' https: wss: ws:",
+  "media-src 'self' data: blob: https:",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+  ...(isDevelopment ? [] : ["upgrade-insecure-requests"]),
+].join("; ")
+
+const securityHeaders = [
+  { key: "Content-Security-Policy", value: contentSecurityPolicy },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "X-Frame-Options", value: "DENY" },
+  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+  ...(isDevelopment
+    ? []
+    : [
+        {
+          key: "Strict-Transport-Security",
+          value: "max-age=63072000; includeSubDomains; preload",
+        },
+      ]),
+]
+
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
   images: {
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "*.supabase.co",
-        pathname: "/storage/**",
-      },
+      ...(supabaseHostname
+        ? [
+            {
+              protocol: "https" as const,
+              hostname: supabaseHostname,
+              pathname: "/storage/**",
+            },
+          ]
+        : []),
       ...REMOTE_IMAGE_HOSTS.flatMap((hostname) => {
         const protocols: Array<"https" | "http"> =
           hostname === "www.senado.leg.br" ? ["https", "http"] : ["https"]
@@ -49,6 +103,23 @@ const nextConfig: NextConfig = {
       }),
     ],
   },
-};
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: securityHeaders,
+      },
+      {
+        source: "/preview/:path*",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow, noarchive",
+          },
+        ],
+      },
+    ]
+  },
+}
 
-export default nextConfig;
+export default nextConfig

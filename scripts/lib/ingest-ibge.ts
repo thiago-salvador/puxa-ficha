@@ -3,8 +3,6 @@ import { fetchJSON, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import type { IngestResult } from "./types"
 
-const ESTADOS = ["AC","AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RO","RR","RS","SC","SE","SP","TO"]
-
 const IBGE_PARA_UF: Record<string, string> = {
   "12": "AC", "27": "AL", "13": "AM", "16": "AP", "29": "BA",
   "23": "CE", "53": "DF", "32": "ES", "52": "GO", "21": "MA",

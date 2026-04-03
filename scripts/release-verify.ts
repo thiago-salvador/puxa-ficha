@@ -1,7 +1,7 @@
 import { execFileSync } from "child_process"
 import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "fs"
 import { tmpdir } from "os"
-import { join, resolve } from "path"
+import { delimiter, join, resolve } from "path"
 import { createClient } from "@supabase/supabase-js"
 import { CANDIDATE_ASSERTIONS } from "./lib/factual-assertions"
 
@@ -24,6 +24,7 @@ const EXPLICIT_SLUGS = (
 const REPORT_OUTPUT_PATH = resolve(process.cwd(), "scripts", `${OUTPUT_PREFIX}-report.json`)
 const SUMMARY_OUTPUT_PATH = resolve(process.cwd(), "scripts", `${OUTPUT_PREFIX}-summary.md`)
 const GLOBAL_NODE_MODULES = execFileSync("npm", ["root", "-g"], { encoding: "utf8" }).trim()
+const LOCAL_NODE_MODULES = resolve(process.cwd(), "node_modules")
 const IS_LOCAL_BASE_URL = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(BASE_URL)
 const PREVIEW_TOKEN = process.env.PF_PREVIEW_TOKEN ?? (IS_LOCAL_BASE_URL ? "local-preview" : "")
 
@@ -90,6 +91,10 @@ interface ComparePageRow {
   patrimonio_declarado: number | null
   total_processos: number
   alertas_graves: number
+  pontos_atencao?: Array<{
+    categoria: string | null
+    gravidade: string | null
+  }> | null
 }
 
 interface CandidateCheckResult {
@@ -125,6 +130,14 @@ function normalizeText(value: string | null | undefined): string {
     .replace(/\s+/g, " ")
     .trim()
     .toLowerCase()
+}
+
+function countNegativeCriticalPoints(
+  pontos: ComparePageRow["pontos_atencao"]
+): number {
+  return (pontos ?? []).filter((ponto) => {
+    return ponto.categoria !== "feito_positivo" && (ponto.gravidade === "critica" || ponto.gravidade === "alta")
+  }).length
 }
 
 function readAuditReport(): AuditReport {
@@ -212,7 +225,9 @@ function runPlaywrightSpec<T>(prefix: string, specBody: string): T {
         ...process.env,
         VERIFY_URL: BASE_URL,
         CI: "1",
-        NODE_PATH: GLOBAL_NODE_MODULES,
+        NODE_PATH: [LOCAL_NODE_MODULES, GLOBAL_NODE_MODULES, process.env.NODE_PATH]
+          .filter(Boolean)
+          .join(delimiter),
       },
       stdio: "pipe",
     })
@@ -456,7 +471,7 @@ async function verifyCompararPage(): Promise<CandidateCheckResult> {
   const { data, error } = await withQueryRetry("v_comparador query for comparar page", async () =>
     await supabase
       .from("v_comparador")
-      .select("id, slug, nome_urna, partido_sigla, idade, formacao, patrimonio_declarado, total_processos, alertas_graves")
+      .select("id, slug, nome_urna, partido_sigla, idade, formacao, patrimonio_declarado, total_processos, alertas_graves, pontos_atencao")
       .order("nome_urna")
   )
 
@@ -464,7 +479,12 @@ async function verifyCompararPage(): Promise<CandidateCheckResult> {
     throw new Error(`v_comparador query for comparar page failed: ${error.message}`)
   }
 
-  const expectedRows = ((data ?? []) as ComparePageRow[]).filter((row: ComparePageRow) => activeIds.has(row.id))
+  const expectedRows = ((data ?? []) as ComparePageRow[])
+    .filter((row: ComparePageRow) => activeIds.has(row.id))
+    .map((row) => ({
+      ...row,
+      alertas_graves: countNegativeCriticalPoints(row.pontos_atencao),
+    }))
   const expectedBySlug = new Map(expectedRows.map((row) => [row.slug, row]))
 
   const result = runPlaywrightSpec<{
@@ -813,7 +833,9 @@ async function main() {
         ...process.env,
         VERIFY_URL: BASE_URL,
         CI: "1",
-        NODE_PATH: GLOBAL_NODE_MODULES,
+        NODE_PATH: [LOCAL_NODE_MODULES, GLOBAL_NODE_MODULES, process.env.NODE_PATH]
+          .filter(Boolean)
+          .join(delimiter),
       },
       stdio: "pipe",
     })

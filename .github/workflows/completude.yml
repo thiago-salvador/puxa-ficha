@@ -1,0 +1,54 @@
+name: Auditoria de completude
+
+on:
+  schedule:
+    - cron: "45 13 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/completude.yml"
+      - "scripts/audit-completude.ts"
+      - "scripts/check-completude-gate.ts"
+      - "scripts/lib/helpers.ts"
+      - "scripts/lib/supabase.ts"
+      - "data/candidatos.json"
+      - "scripts/schema.sql"
+      - "supabase/migrations/**"
+  workflow_dispatch:
+
+concurrency:
+  group: auditoria-completude
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    name: Baseline de completude
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Gerar relatorio de completude
+        run: npm run audit:completude
+
+      - name: Gate de regressao de completude
+        run: npm run audit:completude:gate
+
+      - name: Publicar relatorio
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-completude
+          path: scripts/completude-report.json

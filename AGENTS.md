@@ -8,6 +8,31 @@ Dominio: puxaficha.com.br (registrado)
 Deploy: https://puxa-ficha.vercel.app
 Repo: https://github.com/thiago-salvador/puxa-ficha
 
+## Session Workflow
+
+Regras estaveis ficam neste arquivo. Fluxo operacional de sessao, matriz de validacao por tipo de mudanca e fechamento ficam em `docs/dev-playbook.md`.
+
+Antes de editar:
+
+1. ler este arquivo e `docs/dev-playbook.md`
+2. fazer uma passada em `git status --short`
+3. classificar a mudanca: UI publica, data layer, schema/Supabase, auditoria/pipeline ou deploy
+
+## Gemma
+
+Para trabalho limitado, mecanico e de baixo risco, preferir Gemma conforme a regra global. Quando a tarefa for roteada para Gemma, a regra neste repo e:
+
+1. subir/verificar com `/Users/thiagosalvador/Documents/Apps/Tools/gemma-ensure.sh`
+2. esperar o retorno do Gemma antes de desistir ou cair para o modelo principal
+3. so abandonar o fluxo se houver falha clara, timeout repetido ou output inutilizavel
+4. validar manualmente a resposta antes de aplicar
+
+Em tarefas complexas e caras em contexto, usar o fluxo:
+
+1. Codex faz o enquadramento e o plano
+2. Gemma executa a parte mecanica ou investigativa delimitada
+3. Codex revisa e decide a acao final
+
 ## Commands
 
 ```bash
@@ -62,7 +87,7 @@ UI components (src/components/)
 
 Camada central de acesso a dados. Funciona em dois modos:
 
-- **Supabase real**: quando `NEXT_PUBLIC_SUPABASE_URL` esta configurado e nao contem "placeholder"
+- **Supabase real**: quando `SUPABASE_URL` esta configurado e nao contem "placeholder" (ou, em modo legado, `NEXT_PUBLIC_SUPABASE_URL`)
 - **Mock fallback**: quando Supabase nao esta configurado, usa `src/data/mock.ts` com dados estaticos
 
 Todas as pages usam `api.ts`, nunca acessam Supabase diretamente. Funcoes principais: `getCandidatos()`, `getCandidatoBySlug(slug)`, `getCandidatosComResumo()`, `getCandidatosComparaveis()`.
@@ -95,7 +120,13 @@ Editar `data/candidatos.json`, adicionar entrada com slug e IDs:
 | Transparencia | dados complementares | REST | Semanal |
 
 ### GitHub Actions
-Secrets necessarios: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `TRANSPARENCIA_API_KEY` (opcional)
+Secrets necessarios: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `TRANSPARENCIA_API_KEY` (opcional), `SMTP_HOST`, `SMTP_PORT`, `SMTP_USERNAME`, `SMTP_PASSWORD`, `SMTP_FROM` (alerta de falha)
+
+Workflows operacionais:
+- `Ingestao de dados`: alimenta o banco via cron/manual
+- `Auditoria factual`: gate factual e release verify
+- `Auditoria de completude`: monitora regressao de cobertura no banco
+- `Monitoramento de producao`: smoke checks periodicos no dominio publico e nas rotas protegidas
 
 TSE ingest extrai apenas arquivos `*_BR*`/`*_BRASIL*` dos ZIPs (candidatos nacionais) e limpa CSVs/ZIPs apos cada etapa pra evitar acumulo de GBs.
 
@@ -128,9 +159,15 @@ Candidatos com `status: 'removido'` sao filtrados em todas as queries.
 
 | Variavel | Required | Scope |
 |----------|----------|-------|
-| `NEXT_PUBLIC_SUPABASE_URL` | Sim | Browser + Server |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Sim | Browser + Server |
+| `SUPABASE_URL` | Sim | Server only |
+| `SUPABASE_ANON_KEY` | Sim | Server only |
 | `SUPABASE_SERVICE_ROLE_KEY` | Sim (scripts) | Server only |
+| `NEXT_PUBLIC_SUPABASE_URL` | Legado | Browser + Server |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Legado | Browser + Server |
+| `PF_PREVIEW_TOKEN` | Sim (preview em producao) | Server only |
+| `PF_INTERNAL_TOKEN` | Sim (rotas internas fora de development) | Server only |
+| `INSTAGRAM_APP_ID` | Nao | Server only |
+| `NEXT_PUBLIC_X_HANDLE` | Nao | Browser + Server |
 | `TRANSPARENCIA_API_KEY` | Nao | Server only |
 | `ANTHROPIC_API_KEY` | Nao (fase 2) | Server only |
 

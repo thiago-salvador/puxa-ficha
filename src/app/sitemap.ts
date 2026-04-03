@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 import { getCandidatosResource, getEstadoUFs } from "@/lib/api"
+import { parseMetadataDate } from "@/lib/metadata"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const candidatos = (await getCandidatosResource()).data
@@ -7,7 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const candidatoUrls = candidatos.map((c) => ({
     url: `https://puxaficha.com.br/candidato/${c.slug}`,
-    lastModified: new Date(c.ultima_atualizacao),
+    lastModified: parseMetadataDate(c.ultima_atualizacao) ?? new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }))

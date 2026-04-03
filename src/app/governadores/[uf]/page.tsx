@@ -17,6 +17,7 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import { ArrowLeft } from "lucide-react"
 import { formatBRL } from "@/lib/utils"
+import { buildTwitterMetadata } from "@/lib/metadata"
 
 export const revalidate = 3600
 
@@ -32,12 +33,17 @@ export async function generateMetadata({
   const { uf } = await params
   const nome = getEstadoNome(uf)
   if (!nome) return {}
+  const title = `Candidatos a governador: ${nome} (${uf.toUpperCase()}) — Puxa Ficha`
+  const description = `Consulte os candidatos a governador de ${nome} nas eleicoes 2026. Ficha completa, patrimonio, processos.`
   return {
-    title: `Candidatos a governador: ${nome} (${uf.toUpperCase()}) — Puxa Ficha`,
-    description: `Consulte os candidatos a governador de ${nome} nas eleicoes 2026. Ficha completa, patrimonio, processos.`,
+    title,
+    description,
+    alternates: {
+      canonical: `/governadores/${uf.toLowerCase()}`,
+    },
     openGraph: {
-      title: `Candidatos a governador: ${nome} (${uf.toUpperCase()}) — Puxa Ficha`,
-      description: `Consulte os candidatos a governador de ${nome} nas eleicoes 2026. Ficha completa, patrimonio, processos.`,
+      title,
+      description,
       url: `https://puxaficha.com.br/governadores/${uf.toLowerCase()}`,
       images: [
         {
@@ -48,6 +54,11 @@ export async function generateMetadata({
         },
       ],
     },
+    twitter: buildTwitterMetadata({
+      title,
+      description,
+      image: `/governadores/${uf.toLowerCase()}/opengraph-image`,
+    }),
   }
 }
 
@@ -61,12 +72,12 @@ export default async function EstadoPage({
   if (!nome) notFound()
 
   const [resumosResource, comparaveisResource] = await Promise.all([
-    getCandidatosComResumoResource("Governador"),
+    getCandidatosComResumoResource("Governador", uf),
     getCandidatosComparaveisResource("Governador", uf),
   ])
   const resumos = resumosResource.data
   const comparaveis = comparaveisResource.data
-  const estadoResumos = resumos.filter(r => r.candidato.estado?.toLowerCase() === uf.toLowerCase())
+  const estadoResumos = resumos
   const candidatos = estadoResumos.map(r => r.candidato)
   const sourceStatus = mergeSourceStatuses(
     resumosResource.sourceStatus,

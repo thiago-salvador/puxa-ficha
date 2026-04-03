@@ -3,7 +3,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { formatCompact, getInitials, FALLBACK_GRADIENT } from "@/lib/utils"
+import { formatCompact, getInitials, FALLBACK_GRADIENT, safeHref } from "@/lib/utils"
 import { Scale, Landmark } from "lucide-react"
 import s from "./CandidatoSlider.module.css"
 
@@ -39,6 +39,17 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
     max: CONFIG.BUFFER_SIZE,
   })
   const [activeIndex, setActiveIndex] = React.useState(0)
+  const [failedPhotoUrls, setFailedPhotoUrls] = React.useState<Set<string>>(new Set())
+
+  const markPhotoAsFailed = React.useCallback((url: string | null) => {
+    if (!url) return
+    setFailedPhotoUrls((prev) => {
+      if (prev.has(url)) return prev
+      const next = new Set(prev)
+      next.add(url)
+      return next
+    })
+  }, [])
 
   const getData = React.useCallback(
     (index: number) => {
@@ -274,8 +285,9 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
       <div className={s.slides}>
         {indices.map((i) => {
           const data = getData(i)
-          const gradient =
-            FALLBACK_GRADIENT
+          const gradient = FALLBACK_GRADIENT
+          const safePhotoUrl = safeHref(data.foto_url)
+          const showPhoto = Boolean(safePhotoUrl) && !failedPhotoUrls.has(data.foto_url!)
           return (
             <div
               key={i}
@@ -285,8 +297,14 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
                 else projectsRef.current.delete(i)
               }}
             >
-              {data.foto_url ? (
-                <img src={data.foto_url} alt={data.nome_urna} />
+              {showPhoto ? (
+                <img
+                  src={safePhotoUrl!}
+                  alt={data.nome_urna}
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                  onError={() => markPhotoAsFailed(data.foto_url)}
+                />
               ) : (
                 <div
                   className={s.slidePlaceholder}
@@ -360,8 +378,9 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
           <div className={s.minimapPreviews}>
             {indices.map((i) => {
               const data = getData(i)
-              const gradient =
-                FALLBACK_GRADIENT
+              const gradient = FALLBACK_GRADIENT
+              const safePhotoUrl = safeHref(data.foto_url)
+              const showPhoto = Boolean(safePhotoUrl) && !failedPhotoUrls.has(data.foto_url!)
               return (
                 <div
                   key={i}
@@ -371,8 +390,14 @@ export function CandidatoSlider({ candidatos }: CandidatoSliderProps) {
                     else minimapRef.current.delete(i)
                   }}
                 >
-                  {data.foto_url ? (
-                    <img src={data.foto_url} alt={data.nome_urna} />
+                  {showPhoto ? (
+                    <img
+                      src={safePhotoUrl!}
+                      alt={data.nome_urna}
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                      onError={() => markPhotoAsFailed(data.foto_url)}
+                    />
                   ) : (
                     <div
                       className={s.minimapPlaceholder}

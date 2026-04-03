@@ -1,0 +1,47 @@
+name: Monitoramento de producao
+
+on:
+  schedule:
+    - cron: "17 */2 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: monitoramento-producao
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    name: Smoke runtime publico
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SMOKE_URL: https://puxaficha.com.br
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Smoke basico de producao
+        run: |
+          set -o pipefail
+          npm run smoke:runtime | tee /tmp/smoke-runtime.log
+
+      - name: Smoke de candidatos criticos
+        run: |
+          set -o pipefail
+          npm run smoke:criticos | tee /tmp/smoke-criticos.log
+
+      - name: Publicar logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: monitoramento-producao-logs
+          path: |
+            /tmp/smoke-runtime.log
+            /tmp/smoke-criticos.log

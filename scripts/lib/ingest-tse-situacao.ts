@@ -1,8 +1,8 @@
-import { existsSync, mkdirSync, createWriteStream, rmSync, writeFileSync } from "fs"
+import { existsSync, mkdirSync, createWriteStream, readdirSync, rmSync, writeFileSync } from "fs"
 import { resolve } from "path"
 import { execSync } from "child_process"
 import { supabase } from "./supabase"
-import { loadCandidatos, parseCSV, sleep } from "./helpers"
+import { loadCandidatos, parseCSV, resolveCandidatoId, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import type { IngestResult, CandidatoConfig } from "./types"
 import { createTSEResolver, shouldSkipWeakMatchForAno, type ResolveResult } from "./tse-resolver"
@@ -23,11 +23,6 @@ const JUNK_EMAIL_VALUES = new Set([
   "#NE#",
   "",
 ])
-
-async function resolveCandidatoId(slug: string): Promise<string | null> {
-  const { data } = await supabase.from("candidatos").select("id").eq("slug", slug).single()
-  return data?.id ?? null
-}
 
 async function downloadFile(url: string, dest: string): Promise<boolean> {
   if (existsSync(dest)) {
@@ -91,7 +86,6 @@ function cleanupFile(filePath: string) {
 }
 
 function findAllCSVs(dir: string): string[] {
-  const { readdirSync } = require("fs")
   try {
     const files = readdirSync(dir) as string[]
     return files
@@ -500,7 +494,6 @@ export async function ingestTSESituacao(
 
   // Limpa DATA_DIR se vazio
   try {
-    const { readdirSync } = require("fs")
     const remaining = readdirSync(DATA_DIR).filter((f: string) => f !== ".DS_Store")
     if (remaining.length === 0) cleanupDir(DATA_DIR)
   } catch {

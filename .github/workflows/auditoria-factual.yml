@@ -75,9 +75,8 @@ jobs:
       github.event_name == 'workflow_dispatch' ||
       (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
     env:
-      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
       PF_PREVIEW_TOKEN: ci-preview
 
@@ -90,6 +89,9 @@ jobs:
           cache: "npm"
 
       - run: npm ci
+
+      - name: Instalar Chromium para release verify
+        run: npx playwright install --with-deps chromium
 
       - name: Rodar auditoria factual 144/144
         run: npx tsx scripts/audit-factual.ts

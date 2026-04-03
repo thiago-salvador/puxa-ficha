@@ -4,6 +4,7 @@ export interface CandidatoConfig {
   nome_urna: string
   cargo_disputado: "Presidente" | "Governador"
   estado?: string
+  wikipedia_title?: string
   ids: {
     camara: number | null
     senado: number | null

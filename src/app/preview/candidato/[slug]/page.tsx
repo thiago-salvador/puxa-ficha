@@ -1,29 +1,17 @@
 import { cache } from "react"
 import { notFound } from "next/navigation"
-import Image from "next/image"
 import Link from "next/link"
 import type { Metadata } from "next"
 import { ArrowLeft } from "lucide-react"
+import { CandidatePhoto } from "@/components/CandidatePhoto"
 import { Footer } from "@/components/Footer"
 import { CandidatoProfile } from "@/components/CandidatoProfile"
 import { DataSourceNotice } from "@/components/DataSourceNotice"
 import { DataUnavailableState } from "@/components/DataUnavailableState"
 import { SectionDivider } from "@/components/SectionHeader"
-import { shouldBypassImageOptimization } from "@/lib/utils"
 import { getCandidatoBySlugPreviewResource } from "@/lib/api"
 
 const getFichaPreview = cache((slug: string) => getCandidatoBySlugPreviewResource(slug))
-
-function resolvePreviewToken(): string | null {
-  if (process.env.PF_PREVIEW_TOKEN) return process.env.PF_PREVIEW_TOKEN
-  if (process.env.VERCEL_ENV === "production") return null
-  return "local-preview"
-}
-
-function previewAuthorized(token: string | undefined): boolean {
-  const expected = resolvePreviewToken()
-  return Boolean(expected && token && token === expected)
-}
 
 export const dynamic = "force-dynamic"
 export const revalidate = 0
@@ -37,17 +25,10 @@ export const metadata: Metadata = {
 
 export default async function PreviewCandidatoPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ slug: string }>
-  searchParams: Promise<{ token?: string }>
 }) {
   const { slug } = await params
-  const { token } = await searchParams
-
-  if (!previewAuthorized(token)) {
-    notFound()
-  }
 
   const fichaResource = await getFichaPreview(slug)
   const ficha = fichaResource.data
@@ -88,15 +69,17 @@ export default async function PreviewCandidatoPage({
         <div className="flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-center lg:gap-12">
           {ficha.foto_url && (
             <div className="shrink-0 self-start">
-              <Image
+              <CandidatePhoto
                 src={ficha.foto_url}
                 alt={`Foto de ${ficha.nome_urna}`}
+                name={ficha.nome_urna}
                 width={315}
                 height={420}
                 sizes="(max-width: 640px) 210px, (max-width: 1024px) 270px, 315px"
                 priority
-                unoptimized={shouldBypassImageOptimization(ficha.foto_url)}
                 className="h-[280px] w-[210px] rounded-[16px] object-cover object-top sm:h-[360px] sm:w-[270px] sm:rounded-[20px] lg:h-[420px] lg:w-[315px]"
+                fallbackClassName="h-[280px] w-[210px] rounded-[16px] sm:h-[360px] sm:w-[270px] sm:rounded-[20px] lg:h-[420px] lg:w-[315px]"
+                initialsClassName="text-5xl sm:text-6xl"
               />
             </div>
           )}
