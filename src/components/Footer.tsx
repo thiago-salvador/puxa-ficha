@@ -47,6 +47,8 @@ export function Footer() {
                   { href: "https://dadosabertos.tse.jus.br", label: "TSE" },
                   { href: "https://dadosabertos.camara.leg.br", label: "Camara" },
                   { href: "https://legis.senado.leg.br/dadosabertos", label: "Senado" },
+                  { href: "https://portaldatransparencia.gov.br", label: "Transparencia" },
+                  { href: "https://pt.wikipedia.org", label: "Wikipedia" },
                 ].map((link) => (
                   <li key={link.href}>
                     <a

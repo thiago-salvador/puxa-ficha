@@ -104,6 +104,21 @@ export default function SobrePage() {
               url: "https://portaldatransparencia.gov.br",
               desc: "Dados complementares de gastos e contratos.",
             },
+            {
+              name: "Wikipedia / Wikidata",
+              url: "https://pt.wikipedia.org",
+              desc: "Biografias, fotos, dados demograficos, redes sociais, historico politico.",
+            },
+            {
+              name: "Google News",
+              url: "https://news.google.com",
+              desc: "Noticias recentes sobre cada candidato, atualizadas semanalmente.",
+            },
+            {
+              name: "IBGE / IPEA / Tesouro Nacional",
+              url: "https://www.ibge.gov.br",
+              desc: "Indicadores estaduais: IDH, seguranca, saude, educacao, situacao fiscal.",
+            },
           ].map((source) => (
             <a
               key={source.name}
