@@ -15,7 +15,7 @@ export function Footer() {
               Projeto de Thiago Salvador
             </p>
           </div>
-          <nav className="grid grid-cols-2 gap-6 sm:flex sm:gap-8">
+          <nav className="grid grid-cols-3 gap-4 sm:flex sm:gap-8">
             <div className="space-y-2">
               <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
                 Paginas

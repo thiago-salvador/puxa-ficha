@@ -18,7 +18,7 @@ export function ProfileTabs({
   onTabChange: (id: string) => void
 }) {
   return (
-    <div className="sticky top-[56px] z-30 border-b border-border bg-background/95 backdrop-blur-sm sm:top-[60px]">
+    <div className="sticky top-16 z-30 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="mx-auto max-w-7xl px-5 md:px-12">
         <nav className="-mb-px flex gap-0 overflow-x-auto scrollbar-none" aria-label="Secoes do perfil">
           {tabs.map((tab) => (

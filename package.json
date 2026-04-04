@@ -10,6 +10,8 @@
     "start": "next start",
     "lint": "eslint",
     "test": "tsx --test tests/**/*.test.ts",
+    "test:visual": "playwright test tests/visual/interactions.spec.ts",
+    "test:visual:mobile": "playwright test --project=mobile tests/visual/interactions.spec.ts",
     "check:scripts": "tsc --project tsconfig.scripts.json",
     "smoke:runtime": "tsx scripts/smoke-check-runtime.ts",
     "smoke:criticos": "tsx scripts/smoke-check-criticos.ts",

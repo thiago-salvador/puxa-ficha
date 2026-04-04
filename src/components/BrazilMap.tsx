@@ -4,6 +4,7 @@ import { useState, useRef, useCallback } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { BRAZIL_STATES, REGIONS } from "@/data/brazil-states"
+import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
 
 const LARGE_STATES = new Set([
   "AM", "PA", "MT", "BA", "MG", "GO", "MA", "MS", "RS", "PR", "SP",
@@ -38,9 +39,16 @@ const HOVER_EXTRUDE_Y = 12
 
 export function BrazilMap() {
   const router = useRouter()
+  const prefersReducedMotion = usePrefersReducedMotion()
   const [hovered, setHovered] = useState<string | null>(null)
   const [mouse, setMouse] = useState({ x: 0, y: 0 })
   const mapRef = useRef<HTMLDivElement>(null)
+  // Touch: track which state was tapped for first-tap tooltip / second-tap navigate
+  const touchedRef = useRef<string | null>(null)
+
+  const stateTransition = prefersReducedMotion
+    ? "none"
+    : "transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), fill 0.3s ease"
 
   const hoveredState = hovered
     ? BRAZIL_STATES.find((s) => s.sigla === hovered)
@@ -92,9 +100,29 @@ export function BrazilMap() {
                 <g
                   key={state.sigla}
                   className="cursor-pointer"
-                  onMouseEnter={() => setHovered(state.sigla)}
+                  onMouseEnter={() => {
+                    touchedRef.current = null
+                    setHovered(state.sigla)
+                  }}
                   onMouseLeave={() => setHovered(null)}
-                  onClick={() => router.push(`/governadores/${state.sigla.toLowerCase()}`)}
+                  onTouchStart={(e) => {
+                    if (touchedRef.current !== state.sigla) {
+                      // First tap: show tooltip, block the subsequent click
+                      e.preventDefault()
+                      if (mapRef.current) {
+                        const rect = mapRef.current.getBoundingClientRect()
+                        const t = e.touches[0]
+                        setMouse({ x: t.clientX - rect.left, y: t.clientY - rect.top })
+                      }
+                      touchedRef.current = state.sigla
+                      setHovered(state.sigla)
+                    }
+                    // Second tap: don't preventDefault → click fires → navigate
+                  }}
+                  onClick={() => {
+                    touchedRef.current = null
+                    router.push(`/governadores/${state.sigla.toLowerCase()}`)
+                  }}
                   role="link"
                   aria-label={`${state.name} (${state.sigla})`}
                   tabIndex={0}
@@ -114,7 +142,7 @@ export function BrazilMap() {
                     strokeLinejoin="round"
                     style={{
                       transform: `translate(${ex}px, ${ey + liftY}px)`,
-                      transition: "transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), fill 0.3s ease",
+                      transition: stateTransition,
                     }}
                   />
 
@@ -127,7 +155,7 @@ export function BrazilMap() {
                     strokeLinejoin="round"
                     style={{
                       transform: `translate(0, ${liftY}px)`,
-                      transition: "transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), fill 0.3s ease",
+                      transition: stateTransition,
                     }}
                   />
 
@@ -147,7 +175,7 @@ export function BrazilMap() {
                           fontWeight: 700,
                           letterSpacing: "0.05em",
                           fill: isHovered ? "var(--gray-900)" : "var(--gray-500)",
-                          transition: "fill 0.3s ease",
+                          transition: prefersReducedMotion ? "none" : "fill 0.3s ease",
                         }}
                       >
                         {state.sigla}

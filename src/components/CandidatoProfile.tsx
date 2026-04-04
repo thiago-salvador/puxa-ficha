@@ -166,7 +166,7 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
 
       {/* Stats strip */}
       <section className="mx-auto max-w-7xl px-5 py-4 sm:py-6 md:px-12">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5 [&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
             <StatCard
               value={ficha.total_processos ?? 0}
               label="Processos"

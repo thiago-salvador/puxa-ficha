@@ -270,8 +270,10 @@
 
 /* Card stagger entrance */
 .stagger-item {
-  animation: fadeSlideUp 0.5s ease-out forwards;
-  opacity: 0;
+  animation: fadeSlideUp 0.5s ease-out both;
+  /* opacity: 0 intentionally omitted — animation-fill-mode: backwards (part of "both")
+     applies the from-keyframe during delay, keeping items hidden until their turn.
+     If the animation is blocked (extensions, print), items fall back to natural opacity: 1. */
 }
 
 /* Hero staggered entrance */
