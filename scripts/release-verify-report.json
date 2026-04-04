@@ -61,6 +61,67 @@
     ]
   },
   {
+    "slug": "gilberto-kassab",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Gilberto Kassab"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSD"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "2"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "2"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "6500000"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Gilberto Kassab e engenheiro civil, economista, empresario e politico brasileiro"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "7"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "2"
+      }
+    ]
+  },
+  {
     "slug": "amelio-cayres",
     "ok": true,
     "checks": [
@@ -468,113 +529,6 @@
     ]
   },
   {
-    "slug": "orleans-brandao",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Orleans Brandao"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "MDB"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "2"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Carlos Orleans Brandão Junior é um empresário e político brasileiro. Atualmente "
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "2"
-      }
-    ]
-  },
-  {
-    "slug": "maria-da-consolacao",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Maria da Consolacao"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSOL"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "1022599.04"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Maria da Consolacao Soares (PSOL) e pre-candidato(a) ao governo de MG."
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
     "slug": "otaviano-pivetta",
     "ok": true,
     "checks": [
@@ -636,7 +590,7 @@
     ]
   },
   {
-    "slug": "vicentinho-junior",
+    "slug": "maria-da-consolacao",
     "ok": true,
     "checks": [
       {
@@ -647,12 +601,12 @@
       {
         "check": "hero_name",
         "ok": true,
-        "details": "Vicentinho Junior"
+        "details": "Maria da Consolacao"
       },
       {
         "check": "hero_party",
         "ok": true,
-        "details": "PSDB"
+        "details": "PSOL"
       },
       {
         "check": "hero_role",
@@ -672,12 +626,12 @@
       {
         "check": "overview_patrimonio",
         "ok": true,
-        "details": "7425359.24"
+        "details": "1022599.04"
       },
       {
         "check": "bio",
         "ok": true,
-        "details": "Vicente Alves de Oliveira Júnior, mais conhecido como Vicentinho Júnior é um emp"
+        "details": "Maria da Consolacao Soares (PSOL) e pre-candidato(a) ao governo de MG."
       },
       {
         "check": "freshness_perfil_atual",
@@ -685,14 +639,60 @@
         "details": "current"
       },
       {
-        "check": "trajetoria_count",
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "orleans-brandao",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Orleans Brandao"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "MDB"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
         "ok": true,
         "details": "2"
       },
       {
+        "check": "bio",
+        "ok": true,
+        "details": "Carlos Orleans Brandão Junior é um empresário e político brasileiro. Atualmente "
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
         "check": "partidos_count",
         "ok": true,
-        "details": "1"
+        "details": "2"
       }
     ]
   },
@@ -814,6 +814,67 @@
     ]
   },
   {
+    "slug": "tiao-bocalom",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Tiao Bocalom"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSDB"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "2480000"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Sebastião Bocalom Rodrigues mais conhecido como Tião Bocalom é um matemático e p"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "3"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
     "slug": "valmir-de-francisquinho",
     "ok": true,
     "checks": [
@@ -875,62 +936,6 @@
     ]
   },
   {
-    "slug": "lucien-rezende",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Lucien Rezende"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSOL"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "201600"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Lucien Miranda de Rezende (PSOL) e pre-candidato(a) ao governo de MS."
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
     "slug": "nikolas-ferreira",
     "ok": true,
     "checks": [
@@ -983,6 +988,123 @@
         "check": "trajetoria_count",
         "ok": true,
         "details": "3"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "alan-rick",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Alan Rick"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "REPUBLICANOS"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "4242948.6"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Alan Rick Miranda é um político acreano, jornalista, administrador de empresas e"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "3"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "lucien-rezende",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Lucien Rezende"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSOL"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "201600"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Lucien Miranda de Rezende (PSOL) e pre-candidato(a) ao governo de MS."
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
       },
       {
         "check": "partidos_count",
@@ -1170,6 +1292,67 @@
     ]
   },
   {
+    "slug": "eduardo-braide",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Eduardo Braide"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSD"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "6"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "2135241.24"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Eduardo Costa Braide e advogado e politico brasileiro, filiado ao Partido Social"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "4"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "6"
+      }
+    ]
+  },
+  {
     "slug": "lula",
     "ok": true,
     "checks": [
@@ -1353,67 +1536,6 @@
     ]
   },
   {
-    "slug": "requiao-filho",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Requiao Filho"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PDT"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "3524175.52"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Maurício Thadeu de Mello e Silva, mais conhecido como Requião Filho, é um advoga"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
     "slug": "ratinho-junior",
     "ok": true,
     "checks": [
@@ -1475,7 +1597,7 @@
     ]
   },
   {
-    "slug": "guto-silva",
+    "slug": "requiao-filho",
     "ok": true,
     "checks": [
       {
@@ -1486,12 +1608,12 @@
       {
         "check": "hero_name",
         "ok": true,
-        "details": "Guto Silva"
+        "details": "Requiao Filho"
       },
       {
         "check": "hero_party",
         "ok": true,
-        "details": "PSD"
+        "details": "PDT"
       },
       {
         "check": "hero_role",
@@ -1511,12 +1633,12 @@
       {
         "check": "overview_patrimonio",
         "ok": true,
-        "details": "1008775.82"
+        "details": "3524175.52"
       },
       {
         "check": "bio",
         "ok": true,
-        "details": "Luiz Augusto Silva, conhecido como Guto Silva, é um empresário, político e consu"
+        "details": "Maurício Thadeu de Mello e Silva, mais conhecido como Requião Filho, é um advoga"
       },
       {
         "check": "freshness_perfil_atual",
@@ -1536,7 +1658,7 @@
     ]
   },
   {
-    "slug": "tarcisio",
+    "slug": "thiago-de-joaldo",
     "ok": true,
     "checks": [
       {
@@ -1547,17 +1669,17 @@
       {
         "check": "hero_name",
         "ok": true,
-        "details": "Tarcisio de Freitas"
+        "details": "Thiago de Joaldo"
       },
       {
         "check": "hero_party",
         "ok": true,
-        "details": "REPUBLICANOS"
+        "details": "PP"
       },
       {
         "check": "hero_role",
         "ok": true,
-        "details": "Presidente"
+        "details": "Governador"
       },
       {
         "check": "overview_processos",
@@ -1572,12 +1694,12 @@
       {
         "check": "overview_patrimonio",
         "ok": true,
-        "details": "4684323.54"
+        "details": "192761.18"
       },
       {
         "check": "bio",
         "ok": true,
-        "details": "Nascido em 1975 no Rio de Janeiro, Tarcisio Gomes de Freitas e engenheiro civil "
+        "details": "Jose Thiago Alves de Carvalho e advogado e politico brasileiro, filiado ao Progr"
       },
       {
         "check": "freshness_perfil_atual",
@@ -1587,73 +1709,12 @@
       {
         "check": "trajetoria_count",
         "ok": true,
-        "details": "5"
+        "details": "2"
       },
       {
         "check": "partidos_count",
         "ok": true,
         "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "ronaldo-caiado",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Ronaldo Caiado"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSD"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Presidente"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "5"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "49748872.38"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Ronaldo Ramos Caiado nasceu em 1949 em Anapolis, Goias. Medico ortopedista filia"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "7"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "5"
       }
     ]
   },
@@ -1719,6 +1780,67 @@
     ]
   },
   {
+    "slug": "eduardo-riedel",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Eduardo Riedel"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PP"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "2"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "41488576.84"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Eduardo Corrêa Riedel é um político, empresário e produtor rural brasileiro. Ele"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "4"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "2"
+      }
+    ]
+  },
+  {
     "slug": "alexandre-curi",
     "ok": true,
     "checks": [
@@ -1780,6 +1902,245 @@
     ]
   },
   {
+    "slug": "marcelo-brigadeiro",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Marcelo Brigadeiro"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "MISSAO"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "600000"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Marcelo Brigadeiro e empresario, ex-lutador de MMA e influenciador digital, fili"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "vicentinho-junior",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Vicentinho Junior"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSDB"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "7425359.24"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Vicente Alves de Oliveira Júnior, mais conhecido como Vicentinho Júnior é um emp"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "2"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "elmano-de-freitas",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Elmano de Freitas"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PT"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "144325.52"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Elmano de Freitas da Costa é um advogado e político brasileiro filiado ao Partid"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "2"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "marcos-rogerio",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Marcos Rogerio"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PL"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "4654000"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Marcos Rogério da Silva Brito é um jornalista, radialista e político brasileiro,"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "2"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
     "slug": "professora-dorinha",
     "ok": true,
     "checks": [
@@ -1832,6 +2193,67 @@
         "check": "trajetoria_count",
         "ok": true,
         "details": "3"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "cicero-lucena",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Cicero Lucena"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "MDB"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "3735656.92"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Cícero Lucena Filho GOMM é um político brasileiro atualmente filiado ao Moviment"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "6"
       },
       {
         "check": "partidos_count",
@@ -2075,362 +2497,6 @@
     ]
   },
   {
-    "slug": "joel-rodrigues",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Joel Rodrigues"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PP"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "2379745.14"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Joel Rodrigues de Castro (PP) e pre-candidato(a) ao governo de PI. funcionario p"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "marcelo-brigadeiro",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Marcelo Brigadeiro"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "MISSAO"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "600000"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Marcelo Brigadeiro e empresario, ex-lutador de MMA e influenciador digital, fili"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "elmano-de-freitas",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Elmano de Freitas"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PT"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "144325.52"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Elmano de Freitas da Costa é um advogado e político brasileiro filiado ao Partid"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "2"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "marcos-rogerio",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Marcos Rogerio"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PL"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "4654000"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Marcos Rogério da Silva Brito é um jornalista, radialista e político brasileiro,"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "2"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "cicero-lucena",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Cicero Lucena"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "MDB"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "3735656.92"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Cícero Lucena Filho GOMM é um político brasileiro atualmente filiado ao Moviment"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "6"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "teresa-surita",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Teresa Surita"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "MDB"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Senador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "1844462.86"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Maria Teresa Saenz Surita Guimaraes e turismologa e politica brasileira, filiada"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
     "slug": "delegado-eder-mauro",
     "ok": true,
     "checks": [
@@ -2492,7 +2558,7 @@
     ]
   },
   {
-    "slug": "juliana-brizola",
+    "slug": "teresa-surita",
     "ok": true,
     "checks": [
       {
@@ -2503,17 +2569,17 @@
       {
         "check": "hero_name",
         "ok": true,
-        "details": "Juliana Brizola"
+        "details": "Teresa Surita"
       },
       {
         "check": "hero_party",
         "ok": true,
-        "details": "PDT"
+        "details": "MDB"
       },
       {
         "check": "hero_role",
         "ok": true,
-        "details": "Governador"
+        "details": "Senador"
       },
       {
         "check": "overview_processos",
@@ -2528,12 +2594,12 @@
       {
         "check": "overview_patrimonio",
         "ok": true,
-        "details": "984284.84"
+        "details": "1844462.86"
       },
       {
         "check": "bio",
         "ok": true,
-        "details": "Juliana Daudt Brizola e advogada e politica brasileira, filiada ao Partido Democ"
+        "details": "Maria Teresa Saenz Surita Guimaraes e turismologa e politica brasileira, filiada"
       },
       {
         "check": "freshness_perfil_atual",
@@ -2605,6 +2671,362 @@
         "check": "trajetoria_count",
         "ok": true,
         "details": "1"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "juliana-brizola",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Juliana Brizola"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PDT"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "984284.84"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Juliana Daudt Brizola e advogada e politica brasileira, filiada ao Partido Democ"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "soldado-sampaio",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Soldado Sampaio"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "REPUBLICANOS"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "8462368.42"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Francisco dos Santos Sampaio, conhecido como Soldado Sampaio, e policial militar"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "raquel-lyra",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Raquel Lyra"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSD"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "681153.98"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Raquel Teixeira Lyra Lucena é uma advogada e política brasileira filiada ao Part"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "3"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "edegar-pretto",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Edegar Pretto"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PT"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "1332943.58"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "João Edegar Pretto é um político brasileiro, filiado ao Partido dos Trabalhadore"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "flavio-bolsonaro",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Flavio Bolsonaro"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PL"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Presidente"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "6"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "3483516.3"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Flavio Nantes Bolsonaro nasceu em 1981 em Resende, Rio de Janeiro. Formado em Di"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "3"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "6"
+      }
+    ]
+  },
+  {
+    "slug": "rui-costa-pimenta",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Rui Costa Pimenta"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PCO"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Presidente"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Nascido em 1957 em Sao Paulo, Rui Costa Pimenta e jornalista e politico brasilei"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
       },
       {
         "check": "partidos_count",
@@ -2797,250 +3219,6 @@
     ]
   },
   {
-    "slug": "soldado-sampaio",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Soldado Sampaio"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "REPUBLICANOS"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "8462368.42"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Francisco dos Santos Sampaio, conhecido como Soldado Sampaio, e policial militar"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "gilberto-kassab",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Gilberto Kassab"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSD"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "2"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "2"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "6500000"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Gilberto Kassab e engenheiro civil, economista, empresario e politico brasileiro"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "7"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "2"
-      }
-    ]
-  },
-  {
-    "slug": "raquel-lyra",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Raquel Lyra"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSD"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "681153.98"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Raquel Teixeira Lyra Lucena é uma advogada e política brasileira filiada ao Part"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "3"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "edegar-pretto",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Edegar Pretto"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PT"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "1332943.58"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "João Edegar Pretto é um político brasileiro, filiado ao Partido dos Trabalhadore"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
     "slug": "ricardo-nunes",
     "ok": true,
     "checks": [
@@ -3098,179 +3276,6 @@
         "check": "partidos_count",
         "ok": true,
         "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "flavio-bolsonaro",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Flavio Bolsonaro"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PL"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Presidente"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "6"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "3483516.3"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Flavio Nantes Bolsonaro nasceu em 1981 em Resende, Rio de Janeiro. Formado em Di"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "3"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "6"
-      }
-    ]
-  },
-  {
-    "slug": "rui-costa-pimenta",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Rui Costa Pimenta"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PCO"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Presidente"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Nascido em 1957 em Sao Paulo, Rui Costa Pimenta e jornalista e politico brasilei"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "omar-aziz",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Omar Aziz"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSD"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "3"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "1980266.78"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Omar José Abdel Aziz ComMM é um engenheiro civil e político brasileiro. Foi o 46"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "9"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "3"
       }
     ]
   },
@@ -3514,67 +3519,6 @@
     ]
   },
   {
-    "slug": "capitao-wagner",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Capitao Wagner"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "UNIAO"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "2114244.9"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Wagner Sousa Gomes, também conhecido como Capitão Wagner, é um capitão da Reserv"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
     "slug": "hertz-dias",
     "ok": true,
     "checks": [
@@ -3692,306 +3636,6 @@
     ]
   },
   {
-    "slug": "tiao-bocalom",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Tiao Bocalom"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSDB"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "2480000"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Sebastião Bocalom Rodrigues mais conhecido como Tião Bocalom é um matemático e p"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "3"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "decio-lima",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Decio Lima"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PT"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "2981961.1"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Décio Nery de Lima é um político, advogado e professor brasileiro, filiado ao Pa"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "alan-rick",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Alan Rick"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "REPUBLICANOS"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "4242948.6"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Alan Rick Miranda é um político acreano, jornalista, administrador de empresas e"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "3"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "wilder-morais",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Wilder Morais"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PL"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "82970092.04"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Wilder Pedro de Morais é um empresário, empreendedor, engenheiro e político bras"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "2"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "ivan-moraes",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Ivan Moraes"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSOL"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "160000"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Ivan Moraes Filho (PSOL) e pre-candidato(a) ao governo de PE."
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
     "slug": "tarcisio-gov-sp",
     "ok": true,
     "checks": [
@@ -4053,7 +3697,7 @@
     ]
   },
   {
-    "slug": "erika-hilton",
+    "slug": "jose-carlos-aleluia",
     "ok": true,
     "checks": [
       {
@@ -4064,185 +3708,7 @@
       {
         "check": "hero_name",
         "ok": true,
-        "details": "Erika Hilton"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSOL"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "39979.92"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Primeira mulher trans eleita vereadora em Sao Paulo em 2020 com mais de 50 mil v"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "5"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "lucas-ribeiro",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Lucas Ribeiro"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PP"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "1094214.54"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Lucas Ribeiro e advogado e politico brasileiro, filiado ao Progressistas (PP). E"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "pazolini",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Pazolini"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "REPUBLICANOS"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Lorenzo Silva de Pazolini e delegado de policia, advogado e politico brasileiro,"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "3"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "paulo-martins-gov-pr",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Paulo Martins"
+        "details": "Jose Carlos Aleluia"
       },
       {
         "check": "hero_party",
@@ -4267,12 +3733,12 @@
       {
         "check": "overview_patrimonio",
         "ok": true,
-        "details": "605980"
+        "details": "12810083.72"
       },
       {
         "check": "bio",
         "ok": true,
-        "details": "Paulo Eduardo Martins e jornalista e politico brasileiro, filiado ao Partido Nov"
+        "details": "José Carlos Aleluia Costa GOMM é um professor, engenheiro eletricista e político"
       },
       {
         "check": "freshness_perfil_atual",
@@ -4282,190 +3748,7 @@
       {
         "check": "trajetoria_count",
         "ok": true,
-        "details": "2"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "eduardo-braide",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Eduardo Braide"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSD"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "6"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "2135241.24"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Eduardo Costa Braide e advogado e politico brasileiro, filiado ao Partido Social"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "4"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "6"
-      }
-    ]
-  },
-  {
-    "slug": "adailton-furia",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Adailton Furia"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSD"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "3"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "1368207.12"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Adailton de Souza Furia e advogado e politico brasileiro, filiado ao Partido Soc"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "3"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "3"
-      }
-    ]
-  },
-  {
-    "slug": "thiago-de-joaldo",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Thiago de Joaldo"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PP"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "192761.18"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Jose Thiago Alves de Carvalho e advogado e politico brasileiro, filiado ao Progr"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "2"
+        "details": "8"
       },
       {
         "check": "partidos_count",
@@ -4658,179 +3941,6 @@
     ]
   },
   {
-    "slug": "eduardo-riedel",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Eduardo Riedel"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PP"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "2"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "41488576.84"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Eduardo Corrêa Riedel é um político, empresário e produtor rural brasileiro. Ele"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "4"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "2"
-      }
-    ]
-  },
-  {
-    "slug": "jose-carlos-aleluia",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Jose Carlos Aleluia"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "NOVO"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "12810083.72"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "José Carlos Aleluia Costa GOMM é um professor, engenheiro eletricista e político"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "8"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "alysson-bezerra",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Alysson Bezerra"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "UNIAO"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Alysson Leandro Barbate Bezerra (UNIAO) e pre-candidato(a) ao governo de RN."
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
     "slug": "jhc",
     "ok": true,
     "checks": [
@@ -5014,6 +4124,240 @@
     ]
   },
   {
+    "slug": "alysson-bezerra",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Alysson Bezerra"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "UNIAO"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Alysson Leandro Barbate Bezerra (UNIAO) e pre-candidato(a) ao governo de RN."
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "capitao-wagner",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Capitao Wagner"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "UNIAO"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "2114244.9"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Wagner Sousa Gomes, também conhecido como Capitão Wagner, é um capitão da Reserv"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "omar-aziz",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Omar Aziz"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSD"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "3"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "1980266.78"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Omar José Abdel Aziz ComMM é um engenheiro civil e político brasileiro. Foi o 46"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "9"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "3"
+      }
+    ]
+  },
+  {
+    "slug": "decio-lima",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Decio Lima"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PT"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "2981961.1"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Décio Nery de Lima é um político, advogado e professor brasileiro, filiado ao Pa"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
     "slug": "eduardo-leite",
     "ok": true,
     "checks": [
@@ -5127,6 +4471,123 @@
         "check": "trajetoria_count",
         "ok": true,
         "details": "1"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "wilder-morais",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Wilder Morais"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PL"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "82970092.04"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Wilder Pedro de Morais é um empresário, empreendedor, engenheiro e político bras"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "2"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "ivan-moraes",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Ivan Moraes"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSOL"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "160000"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Ivan Moraes Filho (PSOL) e pre-candidato(a) ao governo de PE."
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
       },
       {
         "check": "partidos_count",
@@ -5258,6 +4719,67 @@
     ]
   },
   {
+    "slug": "lucas-ribeiro",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Lucas Ribeiro"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PP"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "1094214.54"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Lucas Ribeiro e advogado e politico brasileiro, filiado ao Progressistas (PP). E"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
     "slug": "ataides-oliveira",
     "ok": true,
     "checks": [
@@ -5371,6 +4893,67 @@
         "check": "trajetoria_count",
         "ok": true,
         "details": "6"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "erika-hilton",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Erika Hilton"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSOL"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "39979.92"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Primeira mulher trans eleita vereadora em Sao Paulo em 2020 com mais de 50 mil v"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "5"
       },
       {
         "check": "partidos_count",
@@ -5619,67 +5202,6 @@
     ]
   },
   {
-    "slug": "expedito-netto",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Expedito Netto"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PT"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "107605.22"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Expedito Gonçalves Ferreira Netto é um bacharel em direito, empresário e polític"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
     "slug": "ciro-gomes-gov-ce",
     "ok": true,
     "checks": [
@@ -5737,6 +5259,67 @@
         "check": "partidos_count",
         "ok": true,
         "details": "12"
+      }
+    ]
+  },
+  {
+    "slug": "expedito-netto",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Expedito Netto"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PT"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "107605.22"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Expedito Gonçalves Ferreira Netto é um bacharel em direito, empresário e polític"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
       }
     ]
   },
@@ -5858,6 +5441,128 @@
     ]
   },
   {
+    "slug": "marcelo-maranata",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Marcelo Maranata"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSDB"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "522320"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Marcelo Maranata (PSDB) e pre-candidato(a) ao governo de RS. Atualmente e Prefei"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "rafael-greca",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Rafael Greca"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "MDB"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "1729441.2"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Rafael Valdomiro Greca de Macedo, mais conhecido como Rafael Greca ou simplesmen"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "2"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
     "slug": "aldo-rebelo",
     "ok": true,
     "checks": [
@@ -5919,7 +5624,7 @@
     ]
   },
   {
-    "slug": "rafael-greca",
+    "slug": "pazolini",
     "ok": true,
     "checks": [
       {
@@ -5930,12 +5635,12 @@
       {
         "check": "hero_name",
         "ok": true,
-        "details": "Rafael Greca"
+        "details": "Pazolini"
       },
       {
         "check": "hero_party",
         "ok": true,
-        "details": "MDB"
+        "details": "REPUBLICANOS"
       },
       {
         "check": "hero_role",
@@ -5953,14 +5658,9 @@
         "details": "1"
       },
       {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "1729441.2"
-      },
-      {
         "check": "bio",
         "ok": true,
-        "details": "Rafael Valdomiro Greca de Macedo, mais conhecido como Rafael Greca ou simplesmen"
+        "details": "Lorenzo Silva de Pazolini e delegado de policia, advogado e politico brasileiro,"
       },
       {
         "check": "freshness_perfil_atual",
@@ -5970,7 +5670,7 @@
       {
         "check": "trajetoria_count",
         "ok": true,
-        "details": "2"
+        "details": "3"
       },
       {
         "check": "partidos_count",
@@ -6041,7 +5741,7 @@
     ]
   },
   {
-    "slug": "marcelo-maranata",
+    "slug": "adailton-furia",
     "ok": true,
     "checks": [
       {
@@ -6052,12 +5752,73 @@
       {
         "check": "hero_name",
         "ok": true,
-        "details": "Marcelo Maranata"
+        "details": "Adailton Furia"
       },
       {
         "check": "hero_party",
         "ok": true,
-        "details": "PSDB"
+        "details": "PSD"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "3"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "1368207.12"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Adailton de Souza Furia e advogado e politico brasileiro, filiado ao Partido Soc"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "3"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "3"
+      }
+    ]
+  },
+  {
+    "slug": "paulo-martins-gov-pr",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Paulo Martins"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "NOVO"
       },
       {
         "check": "hero_role",
@@ -6077,12 +5838,12 @@
       {
         "check": "overview_patrimonio",
         "ok": true,
-        "details": "522320"
+        "details": "605980"
       },
       {
         "check": "bio",
         "ok": true,
-        "details": "Marcelo Maranata (PSDB) e pre-candidato(a) ao governo de RS. Atualmente e Prefei"
+        "details": "Paulo Eduardo Martins e jornalista e politico brasileiro, filiado ao Partido Nov"
       },
       {
         "check": "freshness_perfil_atual",
@@ -6092,7 +5853,7 @@
       {
         "check": "trajetoria_count",
         "ok": true,
-        "details": "1"
+        "details": "2"
       },
       {
         "check": "partidos_count",
@@ -6224,6 +5985,67 @@
     ]
   },
   {
+    "slug": "guto-silva",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Guto Silva"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSD"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "1008775.82"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Luiz Augusto Silva, conhecido como Guto Silva, é um empresário, político e consu"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
     "slug": "pedro-cunha-lima",
     "ok": true,
     "checks": [
@@ -6342,67 +6164,6 @@
         "check": "partidos_count",
         "ok": true,
         "details": "1"
-      }
-    ]
-  },
-  {
-    "slug": "rodrigo-pacheco",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Rodrigo Pacheco"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSD"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "3"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "11840"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Rodrigo Pacheco e advogado e politico brasileiro, filiado ao PSD. Foi presidente"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "5"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "3"
       }
     ]
   },
@@ -6529,6 +6290,189 @@
     ]
   },
   {
+    "slug": "rodrigo-pacheco",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Rodrigo Pacheco"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSD"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "3"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "11840"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Rodrigo Pacheco e advogado e politico brasileiro, filiado ao PSD. Foi presidente"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "5"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "3"
+      }
+    ]
+  },
+  {
+    "slug": "tarcisio",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Tarcisio de Freitas"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "REPUBLICANOS"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Presidente"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "4684323.54"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Nascido em 1975 no Rio de Janeiro, Tarcisio Gomes de Freitas e engenheiro civil "
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "5"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
+      }
+    ]
+  },
+  {
+    "slug": "ronaldo-caiado",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Ronaldo Caiado"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSD"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Presidente"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "5"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "49748872.38"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Ronaldo Ramos Caiado nasceu em 1949 em Anapolis, Goias. Medico ortopedista filia"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "7"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "5"
+      }
+    ]
+  },
+  {
     "slug": "laurez-moreira",
     "ok": true,
     "checks": [
@@ -6586,6 +6530,62 @@
         "check": "partidos_count",
         "ok": true,
         "details": "2"
+      }
+    ]
+  },
+  {
+    "slug": "joel-rodrigues",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Joel Rodrigues"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PP"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "2379745.14"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Joel Rodrigues de Castro (PP) e pre-candidato(a) ao governo de PI. funcionario p"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
       }
     ]
   },
@@ -7587,67 +7587,6 @@
     ]
   },
   {
-    "slug": "eduardo-paes",
-    "ok": true,
-    "checks": [
-      {
-        "check": "http_status",
-        "ok": true,
-        "details": "200"
-      },
-      {
-        "check": "hero_name",
-        "ok": true,
-        "details": "Eduardo Paes"
-      },
-      {
-        "check": "hero_party",
-        "ok": true,
-        "details": "PSD"
-      },
-      {
-        "check": "hero_role",
-        "ok": true,
-        "details": "Governador"
-      },
-      {
-        "check": "overview_processos",
-        "ok": true,
-        "details": "0"
-      },
-      {
-        "check": "overview_mudancas",
-        "ok": true,
-        "details": "1"
-      },
-      {
-        "check": "overview_patrimonio",
-        "ok": true,
-        "details": "956716.84"
-      },
-      {
-        "check": "bio",
-        "ok": true,
-        "details": "Eduardo da Costa Paes GOMA é um bacharel em direito e político brasileiro, filia"
-      },
-      {
-        "check": "freshness_perfil_atual",
-        "ok": true,
-        "details": "current"
-      },
-      {
-        "check": "trajetoria_count",
-        "ok": true,
-        "details": "7"
-      },
-      {
-        "check": "partidos_count",
-        "ok": true,
-        "details": "1"
-      }
-    ]
-  },
-  {
     "slug": "geraldo-alckmin",
     "ok": true,
     "checks": [
@@ -7705,6 +7644,67 @@
         "check": "partidos_count",
         "ok": true,
         "details": "3"
+      }
+    ]
+  },
+  {
+    "slug": "eduardo-paes",
+    "ok": true,
+    "checks": [
+      {
+        "check": "http_status",
+        "ok": true,
+        "details": "200"
+      },
+      {
+        "check": "hero_name",
+        "ok": true,
+        "details": "Eduardo Paes"
+      },
+      {
+        "check": "hero_party",
+        "ok": true,
+        "details": "PSD"
+      },
+      {
+        "check": "hero_role",
+        "ok": true,
+        "details": "Governador"
+      },
+      {
+        "check": "overview_processos",
+        "ok": true,
+        "details": "0"
+      },
+      {
+        "check": "overview_mudancas",
+        "ok": true,
+        "details": "1"
+      },
+      {
+        "check": "overview_patrimonio",
+        "ok": true,
+        "details": "956716.84"
+      },
+      {
+        "check": "bio",
+        "ok": true,
+        "details": "Eduardo da Costa Paes GOMA é um bacharel em direito e político brasileiro, filia"
+      },
+      {
+        "check": "freshness_perfil_atual",
+        "ok": true,
+        "details": "current"
+      },
+      {
+        "check": "trajetoria_count",
+        "ok": true,
+        "details": "7"
+      },
+      {
+        "check": "partidos_count",
+        "ok": true,
+        "details": "1"
       }
     ]
   },

@@ -30,6 +30,10 @@ npx tsx scripts/ingest-all.ts camara senado   # REST APIs
 npx tsx scripts/ingest-all.ts tse             # CSV do TSE
 ```
 
+## Documentacao
+
+- [Matriz de compliance (LGPD + ISO)](docs/compliance-iso-matriz.md)
+
 ## Licenca
 
 Dados publicos (Lei de Acesso a Informacao). Codigo sob avaliacao de licenca.

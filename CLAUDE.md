@@ -233,7 +233,9 @@ Candidatos com `status: 'removido'` sao filtrados em todas as queries.
 - **NAO gerar pontos_atencao com `gerado_por: "curadoria"` se foi gerado por IA.** Usar `gerado_por: "ia"` e `verificado: false`. Curadoria e revisao humana.
 - **NAO hardcodar nomes de partidos em textos de pontos_atencao.** Sempre buscar do campo `partido_sigla` da tabela `candidatos` para evitar inconsistencia.
 - **NAO rodar pipeline APOS deploy sem forcar redeploy.** ISR gera paginas na hora do deploy. Se dados mudam depois, forcar empty commit ou usar revalidation API.
-- **NAO usar IA pra gerar analises editoriais** no MVP (fase 1). Risco reputacional de alucinacao sobre politicos. Curadoria humana.
+- **NAO tornar publico `pontos_atencao` com `gerado_por: "ia"` enquanto `verificado = false`.** Rascunho automatizado pode existir no banco ou preview interno, mas nao na superficie publica.
+- **NAO publicar saida editorial gerada por IA como se fosse curadoria humana ou revisao final.** Se houver uso de IA em `pontos_atencao`, manter `gerado_por: "ia"`, fontes verificaveis, badge visivel na UI e trilha clara de revisao humana.
+- **NAO usar IA para ranking, recomendacao de voto ou decisao editorial automatica.** A responsabilidade editorial final e humana.
 - **NAO deletar Templates/.** Referencia dos arquivos originais.
 - **NAO commitar .env.local.** Usar .env.example como template.
 - **NAO editar `data/candidatos.json` sem verificar IDs nas APIs.** IDs errados = dados de outro politico.

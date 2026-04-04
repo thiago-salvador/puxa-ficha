@@ -406,11 +406,14 @@ SELECT
   (SELECT COUNT(*) FROM processos p WHERE p.candidato_id = c.id) as total_processos,
   (SELECT COUNT(*) FROM processos p WHERE p.candidato_id = c.id AND p.tipo = 'criminal') as processos_criminais,
   (SELECT COUNT(*) FROM mudancas_partido mp WHERE mp.candidato_id = c.id) as total_mudancas_partido,
-  (SELECT COUNT(*) FROM pontos_atencao pa WHERE pa.candidato_id = c.id AND pa.visivel = TRUE) as total_pontos_atencao,
   (SELECT COUNT(*)
    FROM pontos_atencao pa
    WHERE pa.candidato_id = c.id
-     AND pa.visivel = TRUE
+     AND is_public_attention_point(pa.visivel, pa.gerado_por, pa.verificado)) as total_pontos_atencao,
+  (SELECT COUNT(*)
+   FROM pontos_atencao pa
+   WHERE pa.candidato_id = c.id
+     AND is_public_attention_point(pa.visivel, pa.gerado_por, pa.verificado)
      AND pa.categoria <> 'feito_positivo'
      AND pa.gravidade = 'critica') as pontos_criticos,
   -- Último patrimônio
@@ -435,12 +438,14 @@ SELECT
   (SELECT COUNT(*)
    FROM pontos_atencao pa
    WHERE pa.candidato_id = c.id
-     AND pa.visivel = TRUE
+     AND is_public_attention_point(pa.visivel, pa.gerado_por, pa.verificado)
      AND pa.categoria <> 'feito_positivo'
      AND pa.gravidade IN ('critica', 'alta')) as alertas_graves,
   (SELECT valor_total FROM patrimonio pat WHERE pat.candidato_id = c.id ORDER BY ano_eleicao DESC LIMIT 1) as patrimonio_declarado,
   (SELECT json_agg(json_build_object('titulo', pa.titulo, 'categoria', pa.categoria, 'gravidade', pa.gravidade))
-   FROM pontos_atencao pa WHERE pa.candidato_id = c.id AND pa.visivel = TRUE
+   FROM pontos_atencao pa
+   WHERE pa.candidato_id = c.id
+     AND is_public_attention_point(pa.visivel, pa.gerado_por, pa.verificado)
   ) as pontos_atencao
 FROM candidatos_publico c;
 
@@ -468,6 +473,27 @@ $$;
 
 REVOKE ALL ON FUNCTION public.is_public_candidate(uuid) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.is_public_candidate(uuid) TO anon, authenticated, service_role;
+
+CREATE OR REPLACE FUNCTION is_public_attention_point(
+  is_visible boolean,
+  generated_by text,
+  is_verified boolean
+)
+RETURNS boolean
+LANGUAGE sql
+IMMUTABLE
+SET search_path = public
+AS $$
+  SELECT
+    COALESCE(is_visible, false)
+    AND (
+      COALESCE(generated_by, 'curadoria') <> 'ia'
+      OR COALESCE(is_verified, false)
+    );
+$$;
+
+REVOKE ALL ON FUNCTION public.is_public_attention_point(boolean, text, boolean) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.is_public_attention_point(boolean, text, boolean) TO anon, authenticated, service_role;
 
 -- ============================================
 -- Row Level Security (RLS) - dados públicos, leitura alinhada ao gate publicavel
@@ -509,7 +535,10 @@ CREATE POLICY "Leitura pública" ON processos
 
 ALTER TABLE pontos_atencao ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON pontos_atencao
-  FOR SELECT USING (visivel = TRUE AND is_public_candidate(candidato_id));
+  FOR SELECT USING (
+    is_public_attention_point(visivel, gerado_por, verificado)
+    AND is_public_candidate(candidato_id)
+  );
 
 ALTER TABLE gastos_parlamentares ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON gastos_parlamentares

@@ -1,12 +1,12 @@
 {
-  "atualizado_em": "2026-04-03T02:48:18.986Z",
+  "atualizado_em": "2026-04-03T23:20:58.881Z",
   "candidatos": {
     "tarcisio-gov-sp": {
       "slug": "tarcisio-gov-sp",
       "nome_urna": "Tarcisio de Freitas",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.863Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -27,7 +27,7 @@
       "nome_urna": "Eduardo Paes",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.976Z",
+      "ultima_execucao": "2026-04-03T23:20:58.868Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -48,7 +48,7 @@
       "nome_urna": "Nikolas Ferreira",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.858Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -69,7 +69,7 @@
       "nome_urna": "Rodrigo Pacheco",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -90,7 +90,7 @@
       "nome_urna": "Jeronimo",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.863Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -111,7 +111,7 @@
       "nome_urna": "Elmano de Freitas",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.861Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -132,7 +132,7 @@
       "nome_urna": "Joao Campos",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -153,7 +153,7 @@
       "nome_urna": "Raquel Lyra",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.972Z",
+      "ultima_execucao": "2026-04-03T23:20:58.862Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -174,7 +174,7 @@
       "nome_urna": "Ronaldo Caiado",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
@@ -195,7 +195,7 @@
       "nome_urna": "Rui Costa Pimenta",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.972Z",
+      "ultima_execucao": "2026-04-03T23:20:58.862Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
@@ -216,7 +216,7 @@
       "nome_urna": "Aldo Rebelo",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.865Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
@@ -237,7 +237,7 @@
       "nome_urna": "Ratinho Junior",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.860Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
@@ -258,7 +258,7 @@
       "nome_urna": "Hertz Dias",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.863Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
@@ -279,7 +279,7 @@
       "nome_urna": "Samara Martins",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.865Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
@@ -300,7 +300,7 @@
       "nome_urna": "Lula",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.860Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
@@ -321,7 +321,7 @@
       "nome_urna": "Ciro Gomes",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
@@ -342,7 +342,7 @@
       "nome_urna": "Flavio Bolsonaro",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.972Z",
+      "ultima_execucao": "2026-04-03T23:20:58.862Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
@@ -363,7 +363,7 @@
       "nome_urna": "Romeu Zema",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.860Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
@@ -384,7 +384,7 @@
       "nome_urna": "Tarcisio de Freitas",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
@@ -405,19 +405,19 @@
       "nome_urna": "Renan Santos",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.968Z",
+      "ultima_execucao": "2026-04-03T23:20:58.856Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
       ],
-      "source": "curadoria presidenciaveis",
-      "verified_at": "2026-04-01",
+      "source": "CNN Brasil 2026-03-30 + TSE Partido Missao",
+      "verified_at": "2026-03-30",
       "campos_com_fail": [],
       "campos_com_warning": [],
       "provenance": {
         "last_edited_by": "automation",
         "last_edited_source": "audit-factual",
-        "last_reviewed_by": "curadoria presidenciaveis",
+        "last_reviewed_by": "CNN Brasil 2026-03-30 + TSE Partido Missao",
         "last_reviewed_at": null
       }
     },
@@ -426,7 +426,7 @@
       "nome_urna": "Eduardo Leite",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "presidenciaveis",
         "alto-trafego"
@@ -447,7 +447,7 @@
       "nome_urna": "Jorginho Mello",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -468,7 +468,7 @@
       "nome_urna": "Ricardo Nunes",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.972Z",
+      "ultima_execucao": "2026-04-03T23:20:58.863Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -489,7 +489,7 @@
       "nome_urna": "Sergio Moro",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.861Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -510,7 +510,7 @@
       "nome_urna": "Ciro Gomes",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.865Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -531,7 +531,7 @@
       "nome_urna": "Erika Hilton",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.865Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -552,7 +552,7 @@
       "nome_urna": "Fernando Haddad",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.865Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -573,7 +573,7 @@
       "nome_urna": "Cleitinho",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.972Z",
+      "ultima_execucao": "2026-04-03T23:20:58.863Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -594,7 +594,7 @@
       "nome_urna": "Geraldo Alckmin",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.976Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores-prioritarios",
         "alto-trafego"
@@ -615,7 +615,7 @@
       "nome_urna": "Efraim Filho",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.968Z",
+      "ultima_execucao": "2026-04-03T23:20:58.855Z",
       "cohorts": [
         "governadores"
       ],
@@ -635,7 +635,7 @@
       "nome_urna": "Edegar Pretto",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.972Z",
+      "ultima_execucao": "2026-04-03T23:20:58.862Z",
       "cohorts": [
         "governadores"
       ],
@@ -655,7 +655,7 @@
       "nome_urna": "Dr. Daniel",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores"
       ],
@@ -675,7 +675,7 @@
       "nome_urna": "Ronaldo Mansur",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.972Z",
+      "ultima_execucao": "2026-04-03T23:20:58.863Z",
       "cohorts": [
         "governadores"
       ],
@@ -695,7 +695,7 @@
       "nome_urna": "Felicio Ramuth",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.861Z",
       "cohorts": [
         "governadores"
       ],
@@ -715,7 +715,7 @@
       "nome_urna": "Pedro Cunha Lima",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores"
       ],
@@ -735,7 +735,7 @@
       "nome_urna": "Clecio Luis",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "governadores"
       ],
@@ -755,7 +755,7 @@
       "nome_urna": "Edilson Damiao",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores"
       ],
@@ -775,7 +775,7 @@
       "nome_urna": "Paulo Martins",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores"
       ],
@@ -795,7 +795,7 @@
       "nome_urna": "Decio Lima",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "governadores"
       ],
@@ -815,7 +815,7 @@
       "nome_urna": "Ricardo Cappelli",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.865Z",
       "cohorts": [
         "governadores"
       ],
@@ -835,7 +835,7 @@
       "nome_urna": "Rafael Greca",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.865Z",
       "cohorts": [
         "governadores"
       ],
@@ -855,7 +855,7 @@
       "nome_urna": "Pazolini",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores"
       ],
@@ -875,7 +875,7 @@
       "nome_urna": "Joao Roma",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "governadores"
       ],
@@ -895,7 +895,7 @@
       "nome_urna": "Alysson Bezerra",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "governadores"
       ],
@@ -915,7 +915,7 @@
       "nome_urna": "Ivan Moraes",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "governadores"
       ],
@@ -935,7 +935,7 @@
       "nome_urna": "Confucio Moura",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.859Z",
       "cohorts": [
         "governadores"
       ],
@@ -955,7 +955,7 @@
       "nome_urna": "Eduardo Riedel",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.860Z",
       "cohorts": [
         "governadores"
       ],
@@ -975,7 +975,7 @@
       "nome_urna": "Alexandre Curi",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.860Z",
       "cohorts": [
         "governadores"
       ],
@@ -995,7 +995,7 @@
       "nome_urna": "Felipe Camarao",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "governadores"
       ],
@@ -1015,7 +1015,7 @@
       "nome_urna": "Tiao Bocalom",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.858Z",
       "cohorts": [
         "governadores"
       ],
@@ -1035,7 +1035,7 @@
       "nome_urna": "Gilson Machado",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.968Z",
+      "ultima_execucao": "2026-04-03T23:20:58.856Z",
       "cohorts": [
         "governadores"
       ],
@@ -1055,7 +1055,7 @@
       "nome_urna": "Joel Rodrigues",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores"
       ],
@@ -1075,7 +1075,7 @@
       "nome_urna": "Fabio Mitidieri",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.863Z",
       "cohorts": [
         "governadores"
       ],
@@ -1095,7 +1095,7 @@
       "nome_urna": "Eduardo Braga",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.865Z",
       "cohorts": [
         "governadores"
       ],
@@ -1115,7 +1115,7 @@
       "nome_urna": "Valmir de Francisquinho",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.858Z",
       "cohorts": [
         "governadores"
       ],
@@ -1135,7 +1135,7 @@
       "nome_urna": "Thiago de Joaldo",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.860Z",
       "cohorts": [
         "governadores"
       ],
@@ -1155,7 +1155,7 @@
       "nome_urna": "Laurez Moreira",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores"
       ],
@@ -1175,7 +1175,7 @@
       "nome_urna": "Wellington Fagundes",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.858Z",
       "cohorts": [
         "governadores"
       ],
@@ -1195,7 +1195,7 @@
       "nome_urna": "Adailton Furia",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores"
       ],
@@ -1215,7 +1215,7 @@
       "nome_urna": "Arthur Henrique",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.968Z",
+      "ultima_execucao": "2026-04-03T23:20:58.856Z",
       "cohorts": [
         "governadores"
       ],
@@ -1235,7 +1235,7 @@
       "nome_urna": "Professora Dorinha",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.861Z",
       "cohorts": [
         "governadores"
       ],
@@ -1255,7 +1255,7 @@
       "nome_urna": "Wilder Morais",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "governadores"
       ],
@@ -1275,7 +1275,7 @@
       "nome_urna": "Garotinho",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.858Z",
       "cohorts": [
         "governadores"
       ],
@@ -1295,7 +1295,7 @@
       "nome_urna": "Sergio Vidigal",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.968Z",
+      "ultima_execucao": "2026-04-03T23:20:58.855Z",
       "cohorts": [
         "governadores"
       ],
@@ -1315,7 +1315,7 @@
       "nome_urna": "Margarete Coelho",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.860Z",
       "cohorts": [
         "governadores"
       ],
@@ -1335,7 +1335,7 @@
       "nome_urna": "Soldado Sampaio",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.862Z",
       "cohorts": [
         "governadores"
       ],
@@ -1355,7 +1355,7 @@
       "nome_urna": "Amelio Cayres",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.967Z",
+      "ultima_execucao": "2026-04-03T23:20:58.855Z",
       "cohorts": [
         "governadores"
       ],
@@ -1375,7 +1375,7 @@
       "nome_urna": "Joao Henrique Catan",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.861Z",
       "cohorts": [
         "governadores"
       ],
@@ -1395,7 +1395,7 @@
       "nome_urna": "Mateus Simoes",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -1415,7 +1415,7 @@
       "nome_urna": "JHC",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "governadores"
       ],
@@ -1435,7 +1435,7 @@
       "nome_urna": "Renan Filho",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -1455,7 +1455,7 @@
       "nome_urna": "Mailza Assis",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.860Z",
       "cohorts": [
         "governadores"
       ],
@@ -1475,7 +1475,7 @@
       "nome_urna": "Leandro Grass",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.968Z",
+      "ultima_execucao": "2026-04-03T23:20:58.856Z",
       "cohorts": [
         "governadores"
       ],
@@ -1495,7 +1495,7 @@
       "nome_urna": "Orleans Brandao",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.857Z",
       "cohorts": [
         "governadores"
       ],
@@ -1515,7 +1515,7 @@
       "nome_urna": "Anderson Ferreira",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.862Z",
       "cohorts": [
         "governadores"
       ],
@@ -1535,7 +1535,7 @@
       "nome_urna": "Andre do Prado",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.858Z",
       "cohorts": [
         "governadores"
       ],
@@ -1555,7 +1555,7 @@
       "nome_urna": "Da Vitoria",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.857Z",
       "cohorts": [
         "governadores"
       ],
@@ -1575,7 +1575,7 @@
       "nome_urna": "Maria do Carmo",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.862Z",
       "cohorts": [
         "governadores"
       ],
@@ -1595,7 +1595,7 @@
       "nome_urna": "Beto Faro",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.968Z",
+      "ultima_execucao": "2026-04-03T23:20:58.857Z",
       "cohorts": [
         "governadores"
       ],
@@ -1615,7 +1615,7 @@
       "nome_urna": "Delegado Eder Mauro",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.862Z",
       "cohorts": [
         "governadores"
       ],
@@ -1635,7 +1635,7 @@
       "nome_urna": "Marcelo Maranata",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.865Z",
       "cohorts": [
         "governadores"
       ],
@@ -1655,7 +1655,7 @@
       "nome_urna": "Eduardo Braide",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.860Z",
       "cohorts": [
         "governadores"
       ],
@@ -1675,7 +1675,7 @@
       "nome_urna": "Tadeu de Souza",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.863Z",
       "cohorts": [
         "governadores"
       ],
@@ -1695,7 +1695,7 @@
       "nome_urna": "Simao Jatene",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.967Z",
+      "ultima_execucao": "2026-04-03T23:20:58.855Z",
       "cohorts": [
         "governadores"
       ],
@@ -1715,7 +1715,7 @@
       "nome_urna": "Vicentinho Junior",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.861Z",
       "cohorts": [
         "governadores"
       ],
@@ -1735,7 +1735,7 @@
       "nome_urna": "Lucien Rezende",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.858Z",
       "cohorts": [
         "governadores"
       ],
@@ -1755,7 +1755,7 @@
       "nome_urna": "Ataides Oliveira",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.865Z",
       "cohorts": [
         "governadores"
       ],
@@ -1775,7 +1775,7 @@
       "nome_urna": "Luciano Zucco",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores"
       ],
@@ -1795,7 +1795,7 @@
       "nome_urna": "Marcelo Brigadeiro",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.861Z",
       "cohorts": [
         "governadores"
       ],
@@ -1815,7 +1815,7 @@
       "nome_urna": "Arnaldinho Borgo",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.860Z",
       "cohorts": [
         "governadores"
       ],
@@ -1835,7 +1835,7 @@
       "nome_urna": "Enilton Rodrigues",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.857Z",
       "cohorts": [
         "governadores"
       ],
@@ -1855,7 +1855,7 @@
       "nome_urna": "Teresa Surita",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.862Z",
       "cohorts": [
         "governadores"
       ],
@@ -1875,7 +1875,7 @@
       "nome_urna": "Paulo Hartung",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.860Z",
       "cohorts": [
         "governadores"
       ],
@@ -1895,7 +1895,7 @@
       "nome_urna": "Juliana Brizola",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.862Z",
       "cohorts": [
         "governadores"
       ],
@@ -1915,7 +1915,7 @@
       "nome_urna": "Jose Carlos Aleluia",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.863Z",
       "cohorts": [
         "governadores"
       ],
@@ -1935,7 +1935,7 @@
       "nome_urna": "Washington Reis",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.863Z",
       "cohorts": [
         "governadores"
       ],
@@ -1955,7 +1955,7 @@
       "nome_urna": "Marcio Franca",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.858Z",
       "cohorts": [
         "governadores"
       ],
@@ -1975,7 +1975,7 @@
       "nome_urna": "Tarcisio Motta",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.862Z",
       "cohorts": [
         "governadores"
       ],
@@ -1995,7 +1995,7 @@
       "nome_urna": "Gabriel Souza",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -2015,7 +2015,7 @@
       "nome_urna": "Douglas Ruas",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -2035,7 +2035,7 @@
       "nome_urna": "Helder Salomao",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.862Z",
       "cohorts": [
         "governadores"
       ],
@@ -2055,7 +2055,7 @@
       "nome_urna": "Dr. Furlan",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.865Z",
       "cohorts": [
         "governadores"
       ],
@@ -2075,7 +2075,7 @@
       "nome_urna": "Capitao Wagner",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "governadores"
       ],
@@ -2095,7 +2095,7 @@
       "nome_urna": "Marcos Rogerio",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.861Z",
       "cohorts": [
         "governadores"
       ],
@@ -2115,7 +2115,7 @@
       "nome_urna": "Joao Rodrigues",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -2135,7 +2135,7 @@
       "nome_urna": "Maria da Consolacao",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.857Z",
       "cohorts": [
         "governadores"
       ],
@@ -2155,7 +2155,7 @@
       "nome_urna": "Roberto Claudio",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -2175,7 +2175,7 @@
       "nome_urna": "Hana Ghassan",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores"
       ],
@@ -2195,7 +2195,7 @@
       "nome_urna": "Janaina Riva",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.968Z",
+      "ultima_execucao": "2026-04-03T23:20:58.856Z",
       "cohorts": [
         "governadores"
       ],
@@ -2215,7 +2215,7 @@
       "nome_urna": "Natasha Slhessarenko",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.857Z",
       "cohorts": [
         "governadores"
       ],
@@ -2235,7 +2235,7 @@
       "nome_urna": "Guto Silva",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores"
       ],
@@ -2255,7 +2255,7 @@
       "nome_urna": "Marcos Vieira",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.863Z",
       "cohorts": [
         "governadores"
       ],
@@ -2275,7 +2275,7 @@
       "nome_urna": "Lahesio Bonfim",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -2295,7 +2295,7 @@
       "nome_urna": "Cicero Lucena",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.861Z",
       "cohorts": [
         "governadores"
       ],
@@ -2315,7 +2315,7 @@
       "nome_urna": "David Almeida",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.865Z",
       "cohorts": [
         "governadores"
       ],
@@ -2335,7 +2335,7 @@
       "nome_urna": "Jose Eliton",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.861Z",
       "cohorts": [
         "governadores"
       ],
@@ -2355,7 +2355,7 @@
       "nome_urna": "Joao Capiberibe",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "governadores"
       ],
@@ -2375,7 +2375,7 @@
       "nome_urna": "Ricardo Ferraco",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.976Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -2395,7 +2395,7 @@
       "nome_urna": "Eduardo Girao",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "governadores"
       ],
@@ -2415,7 +2415,7 @@
       "nome_urna": "Andre Kamai",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -2435,7 +2435,7 @@
       "nome_urna": "Omar Aziz",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.972Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "governadores"
       ],
@@ -2455,7 +2455,7 @@
       "nome_urna": "Daniel Vilela",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.860Z",
       "cohorts": [
         "governadores"
       ],
@@ -2475,7 +2475,7 @@
       "nome_urna": "Fabio Trad",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.971Z",
+      "ultima_execucao": "2026-04-03T23:20:58.862Z",
       "cohorts": [
         "governadores"
       ],
@@ -2495,7 +2495,7 @@
       "nome_urna": "Alvaro Dias",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.860Z",
       "cohorts": [
         "governadores"
       ],
@@ -2515,7 +2515,7 @@
       "nome_urna": "Alan Rick",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.858Z",
       "cohorts": [
         "governadores"
       ],
@@ -2535,7 +2535,7 @@
       "nome_urna": "Celina Leao",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.865Z",
       "cohorts": [
         "governadores"
       ],
@@ -2555,7 +2555,7 @@
       "nome_urna": "Silvio Mendes",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.968Z",
+      "ultima_execucao": "2026-04-03T23:20:58.856Z",
       "cohorts": [
         "governadores"
       ],
@@ -2575,7 +2575,7 @@
       "nome_urna": "Expedito Netto",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.974Z",
+      "ultima_execucao": "2026-04-03T23:20:58.865Z",
       "cohorts": [
         "governadores"
       ],
@@ -2595,7 +2595,7 @@
       "nome_urna": "Guilherme Derrite",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -2615,7 +2615,7 @@
       "nome_urna": "Gilberto Kassab",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.972Z",
+      "ultima_execucao": "2026-04-03T23:20:58.855Z",
       "cohorts": [
         "governadores"
       ],
@@ -2635,7 +2635,7 @@
       "nome_urna": "Gabriel Azevedo",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -2655,7 +2655,7 @@
       "nome_urna": "Lucas Ribeiro",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.973Z",
+      "ultima_execucao": "2026-04-03T23:20:58.864Z",
       "cohorts": [
         "governadores"
       ],
@@ -2675,7 +2675,7 @@
       "nome_urna": "Paula Belmonte",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -2695,7 +2695,7 @@
       "nome_urna": "Dr. Fernando Maximo",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -2715,7 +2715,7 @@
       "nome_urna": "Cadu Xavier",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.967Z",
+      "ultima_execucao": "2026-04-03T23:20:58.854Z",
       "cohorts": [
         "governadores"
       ],
@@ -2735,7 +2735,7 @@
       "nome_urna": "Requiao Filho",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.970Z",
+      "ultima_execucao": "2026-04-03T23:20:58.860Z",
       "cohorts": [
         "governadores"
       ],
@@ -2755,7 +2755,7 @@
       "nome_urna": "Hildon Chaves",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores"
       ],
@@ -2775,7 +2775,7 @@
       "nome_urna": "Evandro Augusto",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.857Z",
       "cohorts": [
         "governadores"
       ],
@@ -2795,7 +2795,7 @@
       "nome_urna": "Rodrigo Bacellar",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.976Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -2815,7 +2815,7 @@
       "nome_urna": "Marconi Perillo",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.972Z",
+      "ultima_execucao": "2026-04-03T23:20:58.863Z",
       "cohorts": [
         "governadores"
       ],
@@ -2835,7 +2835,7 @@
       "nome_urna": "Rafael Fonteles",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -2855,7 +2855,7 @@
       "nome_urna": "ACM Neto",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.975Z",
+      "ultima_execucao": "2026-04-03T23:20:58.866Z",
       "cohorts": [
         "governadores"
       ],
@@ -2875,7 +2875,7 @@
       "nome_urna": "Adriana Accorsi",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.976Z",
+      "ultima_execucao": "2026-04-03T23:20:58.867Z",
       "cohorts": [
         "governadores"
       ],
@@ -2895,7 +2895,7 @@
       "nome_urna": "Otaviano Pivetta",
       "auditoria_status": "auditado",
       "pode_publicar": true,
-      "ultima_execucao": "2026-04-03T02:48:18.969Z",
+      "ultima_execucao": "2026-04-03T23:20:58.857Z",
       "cohorts": [
         "governadores"
       ],
