@@ -186,7 +186,7 @@ Compilar findings no formato:
 - P3: Footer 3a coluna sozinha em mobile (grid-cols-2, 3 items) → CORRIGIDO
 - Limpo: container alignment, clamp() font sizes, overflow-hidden, ComparadorPanel offset
 
-> **Nota — ProfileOverview grid (P2 aberto):** `ProfileOverview.tsx` usa `grid-cols-2 lg:grid-cols-4`, pulando breakpoint intermediário `md`. Em telas 768–1023px o grid vai de 2 para 4 colunas abruptamente. Não foi levado aos 7 findings finais por ter sido considerado impacto visual menor (faixa de viewport estreita, conteúdo legível). Não está em "Não-findings" porque não foi explicitamente descartado — é débito visual de baixa prioridade, sem correção nesta rodada.
+> **Nota — ProfileOverview grid (P2 aberto):** `ProfileOverview.tsx` usa `grid-cols-2 lg:grid-cols-4`, sem breakpoint intermediário `md`. Abaixo de 1024px permanece em 2 colunas; a partir de `lg` (≥1024px) salta direto para 4, sem `md:grid-cols-3` no meio. Não foi levado aos 7 findings finais por ter sido considerado impacto visual menor (faixa de viewport estreita, conteúdo legível). Não está em "Não-findings" porque não foi explicitamente descartado — é débito visual de baixa prioridade, sem correção nesta rodada.
 
 **Agent B (code-quality-reviewer) - Animacoes & Motion:**
 - Checou Navbar.tsx, globals.css, CandidatoCard.tsx, BrazilMap.tsx, CandidatoProfile.tsx
