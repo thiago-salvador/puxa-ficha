@@ -32,6 +32,7 @@ import {
   Banknote,
   FileText,
   ExternalLink,
+  Bot,
 } from "lucide-react"
 
 const StatCard = memo(function StatCard({
@@ -459,6 +460,11 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
                           {p.verificado && (
                             <span className="text-[10px] font-semibold text-green-700">Verificado</span>
                           )}
+                          {p.gerado_por === "ia" && (
+                            <span className="inline-flex items-center gap-1 rounded-full bg-violet-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.05em] text-violet-700">
+                              <Bot className="size-3" /> Gerado por IA
+                            </span>
+                          )}
                         </div>
                         <h4 className="mt-2 text-[length:var(--text-body)] font-bold text-foreground sm:text-[15px]">
                           {p.titulo}
@@ -510,6 +516,11 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
                           </span>
                           {p.verificado && (
                             <span className="text-[10px] font-semibold text-green-700">Verificado</span>
+                          )}
+                          {p.gerado_por === "ia" && (
+                            <span className="inline-flex items-center gap-1 rounded-full bg-violet-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.05em] text-violet-700">
+                              <Bot className="size-3" /> Gerado por IA
+                            </span>
                           )}
                         </div>
                         <h4 className="mt-2 text-[length:var(--text-body)] font-bold text-green-950 sm:text-[15px]">

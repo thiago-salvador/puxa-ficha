@@ -153,6 +153,7 @@ export interface PontoAtencao {
   descricao: string;
   fontes: FonteReferencia[];
   gravidade: 'critica' | 'alta' | 'media' | 'baixa';
+  visivel?: boolean;
   verificado: boolean;
   gerado_por: 'ia' | 'curadoria' | 'automatico';
 }

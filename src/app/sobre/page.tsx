@@ -143,8 +143,10 @@ export default function SobrePage() {
             .
           </p>
           <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[length:var(--text-body-lg)]">
-            Os pontos de atencao (alertas sobre contradicoes, processos, patrimonio incompativel)
-            sao curadoria humana, nao gerados por IA. Cada ponto inclui fontes verificaveis.
+            Os pontos de atencao combinam curadoria humana com entradas estruturadas e, em parte
+            do acervo, apoio de IA. Quando a origem e automatizada, isso aparece na interface e o
+            item so entra na superficie publica depois de revisao humana. A responsabilidade
+            editorial continua humana.
           </p>
         </div>
       </section>

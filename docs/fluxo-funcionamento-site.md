@@ -782,14 +782,16 @@ Esse comportamento já existe no projeto hoje e precisa ser considerado parte do
 Estado real:
 
 - a tabela existe e pode receber seeds/entradas estruturadas
+- parte do acervo usa `gerado_por = "ia"` e aparece com badge de transparencia na ficha individual
 - vários registros ainda seguem com `verificado = false`
+- a superficie publica agora bloqueia `gerado_por = "ia"` enquanto `verificado = false`
 - o projeto ainda não tem um workflow formal completo para:
   - revisão
   - aprovação
   - promoção para `verificado = true`
   - revalidação periódica
 
-Então a tabela existe, mas o processo editorial dela ainda não está fechado.
+Então a tabela existe, mas o processo editorial dela ainda não está fechado. O gate publico ficou mais seguro, mas ainda nao equivale a um workflow editorial completo para todo o acervo.
 
 ## Gaps operacionais reais do fluxo atual
 
@@ -800,7 +802,7 @@ Além da arquitetura principal, estes pontos continuam abertos:
 2. **`processos` ainda não têm ingestão automática no pipeline principal**
    - continuam majoritariamente manuais
 3. **`pontos_atencao` ainda não têm workflow editorial fechado**
-   - a tabela existe, mas a aprovação final não está formalizada
+   - a tabela existe, o gate de IA nao verificada foi fechado, mas a aprovacao final ainda nao esta formalizada para todo o acervo
 4. **`release-verify` opera com cobertura parcial quando o gate fecha tudo**
    - continua útil, mas não cobre fichas individuais reais se nenhuma estiver pública
 5. **ISR pode desalinhar banco e HTML**

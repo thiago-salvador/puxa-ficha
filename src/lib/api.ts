@@ -17,6 +17,7 @@ import type {
   HistoricoPolitico,
   MudancaPartido,
   Patrimonio,
+  PontoAtencao,
   ProjetoLei,
   SectionFreshnessInfo,
   SectionFreshnessKey,
@@ -136,6 +137,14 @@ function rankMudancaPartido(item: Pick<MudancaPartido, "data_mudanca" | "ano">):
     return Date.UTC(item.ano, 11, 31)
   }
   return 0
+}
+
+function isVisibleAttentionPoint(visivel: boolean | null | undefined): boolean {
+  return visivel === true
+}
+
+function isPublicAttentionPoint(ponto: Pick<PontoAtencao, "visivel" | "gerado_por" | "verificado">): boolean {
+  return isVisibleAttentionPoint(ponto.visivel) && (ponto.gerado_por !== "ia" || ponto.verificado)
 }
 
 function buildSectionFreshness(
@@ -757,6 +766,10 @@ async function getCandidatoBySlugFromRelationResource(
     candidato.partido_atual
   )
 
+  const pontosPublicos = shouldUseServiceRole
+    ? (pontos.data ?? [])
+    : (pontos.data ?? []).filter((p) => isPublicAttentionPoint(p))
+
   const ficha: FichaCandidato = {
     ...candidato,
     historico: historicoConfiavel,
@@ -765,7 +778,7 @@ async function getCandidatoBySlugFromRelationResource(
     financiamento: financiamento.data ?? [],
     votos: votos.data ?? [],
     processos: processos.data ?? [],
-    pontos_atencao: pontos.data ?? [],
+    pontos_atencao: pontosPublicos,
     projetos_lei: projetos.data ?? [],
     gastos_parlamentares: gastos.data ?? [],
     sancoes_administrativas: sancoes.data ?? [],
@@ -774,8 +787,8 @@ async function getCandidatoBySlugFromRelationResource(
     total_processos: (processos.data ?? []).length,
     processos_criminais: (processos.data ?? []).filter((p) => p.tipo === "criminal").length,
     total_mudancas_partido: mudancasRaw.length,
-    total_pontos_atencao: (pontos.data ?? []).length,
-    pontos_criticos: (pontos.data ?? []).filter((p) => isNegativeHighestSeverityAttentionPoint(p)).length,
+    total_pontos_atencao: pontosPublicos.length,
+    pontos_criticos: pontosPublicos.filter((p) => isNegativeHighestSeverityAttentionPoint(p)).length,
     total_sancoes: (sancoes.data ?? []).length,
     historico_descartado: 0,
     historico_em_revisao: false,
