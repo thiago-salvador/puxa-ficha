@@ -16,15 +16,22 @@ jobs:
     runs-on: ubuntu-latest
     if: >-
       github.event.workflow_run.conclusion == 'failure' &&
-      github.event.workflow_run.head_branch == 'main' &&
-      secrets.SMTP_HOST != '' &&
-      secrets.SMTP_PORT != '' &&
-      secrets.SMTP_USERNAME != '' &&
-      secrets.SMTP_PASSWORD != '' &&
-      secrets.SMTP_FROM != ''
+      github.event.workflow_run.head_branch == 'main'
 
     steps:
       - name: Enviar email
+        if: >-
+          env.SMTP_HOST != '' &&
+          env.SMTP_PORT != '' &&
+          env.SMTP_USERNAME != '' &&
+          env.SMTP_PASSWORD != '' &&
+          env.SMTP_FROM != ''
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
         uses: dawidd6/action-send-mail@v6
         with:
           server_address: ${{ secrets.SMTP_HOST }}
