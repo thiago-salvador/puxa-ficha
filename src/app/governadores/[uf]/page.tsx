@@ -146,7 +146,7 @@ export default async function EstadoPage({
           {totalCandidatos > 0 && (
             <div className="mt-6 flex flex-wrap gap-6 pb-4 sm:gap-12 lg:gap-20">
               <div>
-                <p className="text-[22px] font-bold leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
                   {totalCandidatos}
                 </p>
                 <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
@@ -155,7 +155,7 @@ export default async function EstadoPage({
               </div>
               {totalPatrimonio > 0 && (
                 <div>
-                  <p className="text-[22px] font-bold leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                  <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
                     {totalPatrimonio >= 1_000_000
                       ? `R$ ${(totalPatrimonio / 1_000_000).toFixed(0)}M`
                       : formatBRL(totalPatrimonio)}
@@ -167,7 +167,7 @@ export default async function EstadoPage({
               )}
               {totalProcessos > 0 && (
                 <div>
-                  <p className="text-[22px] font-bold leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                  <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
                     {totalProcessos}
                   </p>
                   <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
@@ -177,7 +177,7 @@ export default async function EstadoPage({
               )}
               {totalPartidos > 0 && totalPatrimonio === 0 && totalProcessos === 0 && (
                 <div>
-                  <p className="text-[22px] font-bold leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                  <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
                     {totalPartidos}
                   </p>
                   <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">

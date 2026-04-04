@@ -23,8 +23,8 @@ export function Footer() {
               <ul className="space-y-1.5">
                 {[
                   { href: "/", label: "Presidencia" },
+                  { href: "/governadores", label: "Governadores" },
                   { href: "/comparar", label: "Comparador" },
-                  { href: "/explorar", label: "Explorar" },
                   { href: "/sobre", label: "Sobre" },
                 ].map((link) => (
                   <li key={link.href}>

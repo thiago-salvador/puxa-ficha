@@ -137,7 +137,7 @@ function StatCard({
         <div className="flex size-9 shrink-0 items-center justify-center rounded-md border border-border bg-secondary text-foreground">
           {icon}
         </div>
-        <span className="font-heading text-5xl leading-none uppercase tracking-tight text-foreground">
+        <span className="font-heading text-[28px] leading-none uppercase tracking-tight text-foreground sm:text-5xl">
           {value}
         </span>
       </CardHeader>

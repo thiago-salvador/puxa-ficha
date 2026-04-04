@@ -28,12 +28,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
-      url: "https://puxaficha.com.br/explorar",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
       url: "https://puxaficha.com.br/comparar",
       lastModified: new Date(),
       changeFrequency: "weekly",

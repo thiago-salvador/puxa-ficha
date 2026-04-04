@@ -101,9 +101,9 @@ export default async function CompararPage() {
             <Link href="/" className="font-semibold text-foreground underline">
               home
             </Link>{" "}
-            ou abra o modo{" "}
-            <Link href="/explorar" className="font-semibold text-foreground underline">
-              explorar
+ou veja os{" "}
+            <Link href="/governadores" className="font-semibold text-foreground underline">
+              governadores
             </Link>
             .
           </p>

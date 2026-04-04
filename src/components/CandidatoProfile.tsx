@@ -5,7 +5,6 @@ import type { FichaCandidato } from "@/lib/types"
 import { classifyAttentionPoints } from "@/lib/attention-points"
 import { formatCompact, formatDate, safeHref } from "@/lib/utils"
 import { ProfileTabs, type Tab } from "./ProfileTabs"
-import { AlertBanner } from "./AlertBanner"
 import { GravityBadge } from "./GravityBadge"
 import { SocialLinks } from "./SocialLinks"
 import { NewsSection } from "./NewsSection"
@@ -55,7 +54,7 @@ const StatCard = memo(function StatCard({
   dataRawValue?: string | number | null
 }) {
   return (
-    <div className="flex flex-col gap-2.5 px-4 py-4 sm:px-5 sm:py-5">
+    <div className="flex flex-col gap-2.5 rounded-[16px] border border-border/50 bg-card px-4 py-4 sm:rounded-[20px] sm:px-5 sm:py-5">
       <div className="flex items-center gap-1.5">
         <div className={`flex size-9 items-center justify-center rounded-[10px] sm:size-10 ${alert ? "bg-red-100" : "bg-secondary"}`}>
           <Icon className={`size-[18px] sm:size-5 ${alert ? "text-red-600" : "text-foreground"}`} />
@@ -167,8 +166,7 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
 
       {/* Stats strip */}
       <section className="mx-auto max-w-7xl px-5 py-4 sm:py-6 md:px-12">
-        <div className="rounded-[16px] border border-border/50 bg-card sm:rounded-[20px]">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 [&>*:not(:last-child)]:border-r [&>*:not(:last-child)]:border-border/30">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
             <StatCard
               value={ficha.total_processos ?? 0}
               label="Processos"
@@ -207,27 +205,9 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
               icon={projetosLei.length > 0 ? FileText : Banknote}
               sub={projetosLei.length > 0 ? `${projetosLei.filter(p => p.destaque).length} em destaque` : gastos.length > 0 ? `${gastos.length} ano${gastos.length > 1 ? "s" : ""}` : undefined}
             />
-          </div>
         </div>
       </section>
 
-      {/* Alert banner for grave items (critica + alta) */}
-      {alertasGraves.length > 0 && (
-        <div className="mx-auto max-w-7xl px-5 pb-4 md:px-12">
-          <AlertBanner pontos={alertasGraves} actionLabel="Ver todos" onAction={() => setActiveTab("alertas")} />
-        </div>
-      )}
-
-      {pontosPositivos.length > 0 && (
-        <div className="mx-auto max-w-7xl px-5 pb-4 md:px-12">
-          <AlertBanner
-            pontos={pontosPositivos}
-            variant="positive"
-            actionLabel="Ver todos"
-            onAction={() => setActiveTab("alertas")}
-          />
-        </div>
-      )}
 
       {/* Social links */}
       {(Object.keys(redesSociais).length > 0 || ficha.site_campanha) && (

@@ -69,12 +69,6 @@ export function CandidateCommand({
         badge: "Atalho",
       },
       {
-        href: "/explorar",
-        title: "Abrir explorar",
-        subtitle: "Navegar candidatos em tela cheia",
-        badge: "Atalho",
-      },
-      {
         href: "/governadores",
         title: "Ver governadores",
         subtitle: "Abrir o mapa de estados",

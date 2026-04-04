@@ -50,10 +50,10 @@ export function PatrimonioChart({ data }: { data: { ano: number; valor: number }
             <span className="text-[10px] font-bold tabular-nums text-foreground sm:text-[length:var(--text-caption)]">
               {formatCompact(d.valor)}
             </span>
-            <div className="w-full overflow-hidden rounded-t-[4px] bg-secondary" style={{ height: "120px" }}>
+            <div className="flex w-full items-end overflow-hidden rounded-t-[4px] bg-secondary" style={{ height: "120px" }}>
               <div
-                className="mt-auto w-full rounded-t-[4px] bg-foreground transition-all"
-                style={{ height: `${pct}%`, marginTop: `${100 - pct}%` }}
+                className="w-full rounded-t-[4px] bg-foreground transition-all"
+                style={{ height: `${pct}%` }}
               />
             </div>
             <span className="text-[10px] font-bold tabular-nums text-muted-foreground sm:text-[length:var(--text-caption)]">

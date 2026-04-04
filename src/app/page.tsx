@@ -108,7 +108,7 @@ export default async function Home() {
           {/* Data bar */}
           <div className="mt-6 flex flex-wrap gap-6 pb-4 sm:gap-12 lg:gap-20">
             <div className="hero-fade" style={{ animationDelay: "0.4s" }}>
-              <p className="text-[22px] font-bold leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+              <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
                 {totalCandidatos}
               </p>
               <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
@@ -117,7 +117,7 @@ export default async function Home() {
             </div>
             {totalPatrimonio > 0 && (
               <div className="hero-fade" style={{ animationDelay: "0.5s" }}>
-                <p className="text-[22px] font-bold leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
                   {totalPatrimonio >= 1_000_000
                     ? `R$ ${(totalPatrimonio / 1_000_000).toFixed(0)}M`
                     : formatBRL(totalPatrimonio)}
@@ -129,7 +129,7 @@ export default async function Home() {
             )}
             {totalProcessos > 0 && (
               <div className="hero-fade" style={{ animationDelay: "0.6s" }}>
-                <p className="text-[22px] font-bold leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
                   {totalProcessos}
                 </p>
                 <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
@@ -159,11 +159,8 @@ export default async function Home() {
             <Link href="/comparar" className="font-semibold text-foreground underline">
               comparar
             </Link>
-            ,{" "}
-            <Link href="/explorar" className="font-semibold text-foreground underline">
-              explorar
-            </Link>{" "}
-            ou abrir o mapa de{" "}
+
+            {" "}ou abrir o mapa de{" "}
             <Link href="/governadores" className="font-semibold text-foreground underline">
               governadores
             </Link>
