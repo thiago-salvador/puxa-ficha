@@ -62,25 +62,25 @@ Mapa do que existe vs o que falta para as prioridades 0-4.
 
 | Controle | Status | O que falta |
 | --- | --- | --- |
-| Base legal definida por operacao | Parcial | Mapear cada operacao de tratamento e associar base legal (interesse publico, consentimento, etc.) |
-| Registro de operacoes de tratamento (ROPA) | Nao existe | Criar registro formal com finalidade, base legal, retencao e compartilhamento por tabela |
-| Politica de privacidade publica | Nao existe | Redigir e publicar em /privacidade |
-| Direitos do titular (acesso, correcao, exclusao) | Nao implementado | Definir canal e processo de atendimento |
-| Retencao e descarte | Parcial | Regras de retencao existem informalmente. Formalizar por tipo de dado e automatizar descarte |
-| Resposta a incidentes (72h ANPD) | Nao formalizado | Criar playbook minimo de notificacao |
-| DPO / Encarregado | Nao designado | Designar responsavel, mesmo que informal para porte pequeno |
+| Base legal definida por operacao | Feito | Mapeado em `docs/lgpd-ropa.md` (13 tabelas, 3 bases legais) |
+| Registro de operacoes de tratamento (ROPA) | Feito | `docs/lgpd-ropa.md` |
+| Politica de privacidade publica | Feito | `src/app/privacidade/page.tsx` (rota /privacidade, 11 secoes) |
+| Direitos do titular (acesso, correcao, exclusao) | Feito (doc) | Canal definido: privacidade@puxaficha.com.br. Procedimento em `docs/lgpd-incident-playbook.md`. Pendente: criar o email |
+| Retencao e descarte | Parcial | Regras formalizadas no ROPA. CPF permanente (dado publico). Noticias > 12 meses: automacao pendente |
+| Resposta a incidentes (72h ANPD) | Feito | `docs/lgpd-incident-playbook.md` (4 severidades, 5 fases, contatos de emergencia) |
+| DPO / Encarregado | Nao designado | Designar responsavel. Email definido mas ainda nao criado |
 
 ### ISO/IEC 27001:2022 (SGSI)
 
 | Controle | Status | O que falta |
 | --- | --- | --- |
-| Inventario de ativos | Parcial | Schema documentado, mas sem inventario formal de todos os ativos (secrets, tokens, acessos) |
+| Inventario de ativos | Feito | `docs/risk-register.md` (5 ativos, 8 secrets, 4 provedores) |
 | Controle de acesso | Parcial | Supabase RLS ativo, anon audit feito. Falta politica formal de acessos administrativos |
-| Gestao de segredos | Existe | Secrets em Vercel env + GitHub Secrets. Documentado |
+| Gestao de segredos | Feito | Secrets documentados em `docs/risk-register.md`. Script de rotacao em `scripts/rotate-secrets.sh` |
 | Logs e monitoramento | Parcial | Vercel logs existem. Falta alerting e retencao formal |
 | Gestao de mudancas | Parcial | PRs e CI existem. Falta politica formal de change management |
-| Gestao de incidentes | Nao formalizado | Criar playbook basico |
-| Analise de riscos | Nao formalizado | Criar registro de riscos minimo |
+| Gestao de incidentes | Feito | `docs/lgpd-incident-playbook.md` (compartilhado com LGPD) |
+| Analise de riscos | Feito | `docs/risk-register.md` (7 riscos com probabilidade, impacto, controles, acoes) |
 | Auditoria interna | Parcial | Audit factual existe. Falta auditoria de seguranca periodica |
 
 ### ISO/IEC 42001:2023 (IA)
@@ -97,10 +97,10 @@ Mapa do que existe vs o que falta para as prioridades 0-4.
 
 | Controle | Status | O que falta |
 | --- | --- | --- |
-| BIA (analise de impacto no negocio) | Nao existe | Identificar servicos criticos e impacto de indisponibilidade em periodo eleitoral |
-| RTO / RPO definidos | Nao existe | Definir tempos aceitaveis de recuperacao |
-| Plano de continuidade | Nao existe | BCP basico: o que fazer se Vercel cai, se Supabase fica offline, se pipeline quebra |
-| Testes de continuidade | Nao existe | Simular cenarios antes de outubro |
+| BIA (analise de impacto no negocio) | Feito | 4 servicos criticos mapeados em `docs/bcp-continuidade.md` |
+| RTO / RPO definidos | Feito | Definidos por servico em `docs/bcp-continuidade.md` (site 4h, banco 8h, pipeline 48h) |
+| Plano de continuidade | Feito | `docs/bcp-continuidade.md` (6 cenarios com resposta) |
+| Testes de continuidade | Pendente | 5 testes agendados para ate agosto 2026 |
 
 ## Por que isso vale para este projeto
 

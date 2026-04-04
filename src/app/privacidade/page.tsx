@@ -209,8 +209,8 @@ export default function PrivacidadePage() {
             permanentemente como registro historico.
           </P>
           <P>
-            CPF e dados usados apenas para cruzamento entre fontes serao avaliados para descarte
-            apos o periodo eleitoral.
+            CPF de candidatos e dado publico por lei eleitoral (Lei 9.504/97) e e mantido
+            permanentemente para cruzamento entre fontes. Nunca e exposto publicamente.
           </P>
           <P>
             Noticias sao mantidas por ate 12 meses apos a publicacao original.

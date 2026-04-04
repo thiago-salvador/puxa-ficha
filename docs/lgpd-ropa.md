@@ -126,7 +126,7 @@ Documento exigido pela LGPD (Art. 37). Mapeia todas as operacoes de tratamento d
 ## Pendencias identificadas
 
 1. **DPO/Encarregado**: nao designado. Para agente de tratamento de pequeno porte, a ANPD permite dispensa mediante publicacao de justificativa, mas recomenda designacao.
-2. **Canal de direitos do titular**: nao implementado. Precisa de email ou formulario para acesso, correcao, exclusao.
+2. **Canal de direitos do titular**: definido como privacidade@puxaficha.com.br. Procedimento documentado em `docs/lgpd-incident-playbook.md`. Pendente: criar o email no provedor.
 3. **Politica de retencao formal**: definida informalmente neste ROPA. Noticias > 12 meses devem ser descartadas. CPF de candidatos e dado publico por lei eleitoral (Lei 9.504/97), nao requer descarte pos-eleicao.
 4. **email_campanha**: bloqueado via RLS, mas avaliar se deve ser exposto na ficha publica ou nao.
 5. **gerado_por em pontos_atencao**: ja visivel na ficha individual, mas ainda nao coberto de forma uniforme em toda a superficie publica. Gap parcial de transparencia (ISO 42001).
