@@ -20,10 +20,10 @@ const CHECKS: Check[] = [
     contains: ["Puxa Ficha", "Eleicoes 2026"],
   },
   {
-    label: "Explorar",
-    path: "/explorar",
+    label: "Governadores",
+    path: "/governadores",
     expectedStatus: 200,
-    contains: ["O modo explorar existe para descoberta rapida"],
+    contains: ["Governadores"],
   },
   {
     label: "Comparar",

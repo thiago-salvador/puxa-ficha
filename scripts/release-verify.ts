@@ -621,166 +621,6 @@ const outputPath = __OUTPUT_PATH__
   }
 }
 
-async function verifyExplorar(snapshotMap: Map<string, CandidateSnapshot>): Promise<CandidateCheckResult> {
-  const { data, error } = await withQueryRetry("candidatos_publico query for explorar", async () =>
-    await supabase
-      .from("candidatos_publico")
-      .select("slug, nome_urna, partido_sigla, cargo_disputado, cargo_atual")
-      .neq("status", "removido")
-      .eq("cargo_disputado", "Presidente")
-      .order("nome_urna")
-  )
-
-  if (error) {
-    throw new Error(`candidatos_publico query failed: ${error.message}`)
-  }
-
-  const visibleRows = (data ?? []) as Array<{
-    slug: string
-    nome_urna: string
-    partido_sigla: string | null
-    cargo_disputado: string
-    cargo_atual: string | null
-  }>
-  const visibleSlugs = new Set(visibleRows.map((row) => row.slug))
-  const expectedFirst = visibleRows[0] ?? null
-  const firstSnapshot = expectedFirst ? snapshotMap.get(expectedFirst.slug) : null
-
-  const result = runPlaywrightSpec<{
-    status: number
-    slugs: string[]
-    total: string | null
-    activeSlug: string | null
-    activeName: string | null
-    activeParty: string | null
-    activeRole: string | null
-    activeProcessos: string | null
-    activePatrimonio: string | null
-  }>(
-    "explorar-ui",
-    `
-const { chromium } = require("playwright")
-const { writeFileSync } = require("fs")
-const outputPath = __OUTPUT_PATH__
-
-async function textContent(page, selector) {
-  const locator = page.locator(selector).first()
-  if (!(await locator.count())) return null
-  return (await locator.textContent()) || null
-}
-
-async function attr(page, selector, name) {
-  const locator = page.locator(selector).first()
-  if (!(await locator.count())) return null
-  return await locator.getAttribute(name)
-}
-
-;(async () => {
-  const browser = await chromium.launch({ headless: true })
-  const page = await browser.newPage({ viewport: { width: 1440, height: 1100 } })
-  const response = await page.goto((process.env.VERIFY_URL || "http://localhost:3000") + "/explorar", {
-    waitUntil: "domcontentloaded",
-  })
-  await page.waitForTimeout(300)
-  const hrefs = await page.locator('a[href^="/candidato/"]').evaluateAll((nodes) =>
-    nodes.map((node) => node.getAttribute("href")).filter(Boolean)
-  )
-  writeFileSync(outputPath, JSON.stringify({
-    status: response ? response.status() : 0,
-    slugs: hrefs.map((href) => href.split("/").pop()),
-    total: await attr(page, "[data-pf-explorar-root]", "data-pf-explorar-total"),
-    activeSlug: await attr(page, "[data-pf-explorar-active]", "data-pf-explorar-slug"),
-    activeName: await textContent(page, "[data-pf-explorar-name]"),
-    activeParty: await attr(page, "[data-pf-explorar-party]", "data-pf-explorar-party"),
-    activeRole: await attr(page, "[data-pf-explorar-role]", "data-pf-explorar-role"),
-    activeProcessos: await attr(page, "[data-pf-explorar-processos]", "data-pf-explorar-processos"),
-    activePatrimonio: await attr(page, "[data-pf-explorar-patrimonio]", "data-pf-explorar-patrimonio"),
-  }, null, 2), "utf8")
-  await browser.close()
-})().catch((error) => {
-  console.error(error)
-  process.exit(1)
-})
-`,
-  )
-
-  const extraSlugs = result.slugs.filter((slug) => !visibleSlugs.has(slug))
-  const activeChecks =
-    expectedFirst && firstSnapshot
-      ? [
-          {
-            check: "explorar_active_slug",
-            ok: result.activeSlug === expectedFirst.slug,
-            details: expectedFirst.slug,
-          },
-          {
-            check: "explorar_active_name",
-            ok: normalizeText(result.activeName) === normalizeText(expectedFirst.nome_urna),
-            details: expectedFirst.nome_urna,
-          },
-          {
-            check: "explorar_active_party",
-            ok: normalizeText(result.activeParty) === normalizeText(expectedFirst.partido_sigla),
-            details: String(expectedFirst.partido_sigla),
-          },
-          {
-            check: "explorar_active_role",
-            ok:
-              normalizeText(result.activeRole) ===
-              normalizeText(expectedFirst.cargo_atual || expectedFirst.cargo_disputado),
-            details: expectedFirst.cargo_atual || expectedFirst.cargo_disputado,
-          },
-          ...(firstSnapshot.total_processos > 0
-            ? [
-                {
-                  check: "explorar_active_processos",
-                  ok: Number(result.activeProcessos || "0") === Number(firstSnapshot.total_processos || 0),
-                  details: String(firstSnapshot.total_processos || 0),
-                },
-              ]
-            : []),
-          ...(firstSnapshot.patrimonio_mais_recente != null
-            ? [
-                {
-                  check: "explorar_active_patrimonio",
-                  ok:
-                    Number(result.activePatrimonio || "0") ===
-                    Number(firstSnapshot.patrimonio_mais_recente || 0),
-                  details: String(firstSnapshot.patrimonio_mais_recente || 0),
-                },
-              ]
-            : []),
-        ]
-      : []
-
-  return {
-    slug: "explorar",
-    ok:
-      result.status > 0 &&
-      result.status < 400 &&
-      Number(result.total || "0") === visibleRows.length &&
-      extraSlugs.length === 0 &&
-      activeChecks.every((check) => check.ok),
-    checks: [
-      {
-        check: "explorar_status",
-        ok: result.status > 0 && result.status < 400,
-        details: String(result.status),
-      },
-      {
-        check: "explorar_total",
-        ok: Number(result.total || "0") === visibleRows.length,
-        details: String(visibleRows.length),
-      },
-      {
-        check: "explorar_public_only",
-        ok: extraSlugs.length === 0,
-        details: extraSlugs.join(", ") || "ok",
-      },
-      ...activeChecks,
-    ],
-  }
-}
 
 async function main() {
   const report = readAuditReport()
@@ -822,7 +662,6 @@ async function main() {
   try {
     const compareFailures = await verifyCompareView(selectedSnapshots)
     const compararResult = await verifyCompararPage()
-    const explorarResult = await verifyExplorar(snapshotMap)
 
     writeFileSync(inputPath, JSON.stringify(pageSnapshots, null, 2), "utf8")
     writeFileSync(specPath, buildCandidatePagesSpec(inputPath, outputPath), "utf8")
@@ -841,7 +680,7 @@ async function main() {
     })
 
     const pageResults = JSON.parse(readFileSync(outputPath, "utf8")) as CandidateCheckResult[]
-    const results = [...pageResults, ...compareFailures, compararResult, explorarResult]
+    const results = [...pageResults, ...compareFailures, compararResult]
 
     writeFileSync(REPORT_OUTPUT_PATH, JSON.stringify(results, null, 2), "utf8")
     writeFileSync(SUMMARY_OUTPUT_PATH, buildSummary(results, MODE), "utf8")
