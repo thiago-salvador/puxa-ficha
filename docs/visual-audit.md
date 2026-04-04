@@ -164,13 +164,13 @@ Compilar findings no formato:
 - `src/app/page.tsx` - home page
 - `src/app/candidato/[slug]/page.tsx` - perfil page
 
-## Verificacao
+## Verificacao (resultado real)
 
-1. Zero bugs P0 restantes
-2. Lista de P1/P2 priorizada com screenshots
-3. Orphaned CSS identificado
-4. Todas as 6 paginas testadas em 3 viewports
-5. Console limpo (sem erros de runtime em producao)
+1. Zero bugs P0 — confirmado
+2. Lista de P1/P2 priorizada com texto estruturado (screenshots não foram gerados; Preview headless produzia artefatos em branco pós-scroll)
+3. Orphaned CSS identificado e deletado
+4. 6 páginas testadas em 375px e 1440px via Preview + Playwright; 390×844 coberto pelo projeto `mobile` do Playwright mas sem log manual de inspeção
+5. Console limpo — confirmado via Preview e Playwright
 
 ---
 
@@ -180,11 +180,13 @@ Compilar findings no formato:
 
 **Agent A (frontend-ux-specialist) - Layout & Responsividade:**
 - Checou todas as pages, layout, 7 componentes principais, globals.css
-- P1: ProfileTabs sticky top-[56px]/sm:top-[60px] vs Navbar h-16 (64px) = gap de 4-8px
-- P2: Stat cards grid 2-col mobile, 5o card orfao (50% largura sozinho)
-- P2: ProfileOverview grid pula 2->4 cols sem 3-col intermediario
-- P3: Footer 3a coluna sozinha em mobile (grid-cols-2, 3 items)
+- P1: ProfileTabs sticky top-[56px]/sm:top-[60px] vs Navbar h-16 (64px) = gap de 4-8px → CORRIGIDO
+- P2: Stat cards grid 2-col mobile, 5o card orfao (50% largura sozinho) → CORRIGIDO
+- P2: ProfileOverview grid pula 2->4 cols sem 3-col intermediario → ABERTO (ver nota abaixo)
+- P3: Footer 3a coluna sozinha em mobile (grid-cols-2, 3 items) → CORRIGIDO
 - Limpo: container alignment, clamp() font sizes, overflow-hidden, ComparadorPanel offset
+
+> **Nota — ProfileOverview grid (P2 aberto):** `ProfileOverview.tsx` usa `grid-cols-2 lg:grid-cols-4`, pulando breakpoint intermediário `md`. Em telas 768–1023px o grid vai de 2 para 4 colunas abruptamente. Não foi levado aos 7 findings finais por ter sido considerado impacto visual menor (faixa de viewport estreita, conteúdo legível). Não está em "Não-findings" porque não foi explicitamente descartado — é débito visual de baixa prioridade, sem correção nesta rodada.
 
 **Agent B (code-quality-reviewer) - Animacoes & Motion:**
 - Checou Navbar.tsx, globals.css, CandidatoCard.tsx, BrazilMap.tsx, CandidatoProfile.tsx
@@ -388,6 +390,8 @@ O Claude Preview headless nao conseguiu validar:
 4. **Tab switching** - nao testado via interacao
 
 **Resolucao:** Playwright com browser real. `tests/visual/interactions.spec.ts` criado. 32/32 passando contra producao (desktop + mobile). Commit `7f2c2ea`.
+
+**Cobertura do BrazilMap no Playwright:** Os testes de mapa usam links do diretório lateral (`getByRole("link", …)` e `a[href^='/governadores/']`), não o duplo toque no SVG. O fix do `touchedRef` (fluxo touch) não tem teste automatizado — foi validado apenas por code review. O Playwright cobre navegação e presença de links, não o comportamento de `onTouchStart`.
 
 **Lacunas documentais:**
 - Viewport 390×844 (iPhone 14) estava no plano original mas não aparece no log de execução da Fase 2. Os testes Playwright cobrem iPhone 14 via `devices["iPhone 14"]`, mas o log de inspeção manual ficou só em 375 e 1440.
