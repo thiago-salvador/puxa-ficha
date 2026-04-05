@@ -28,6 +28,7 @@ import {
   MoneyTabSection,
   TrajectoryTabSection,
 } from "./CandidatoProfileSections"
+import { FollowCandidateButton } from "./alerts/FollowCandidateButton"
 import {
   Scale,
   Landmark,
@@ -299,6 +300,11 @@ export function CandidatoProfile({
                 {ficha.cargo_disputado === "Governador" && (ficha.indicadores_estaduais ?? []).length > 0 && (
                   <StateIndicators indicadores={ficha.indicadores_estaduais!} estado={ficha.estado ?? ""} />
                 )}
+                <FollowCandidateButton
+                  candidateName={ficha.nome_urna}
+                  candidateSlug={ficha.slug}
+                />
+
                 {ficha.noticias && ficha.noticias.length > 0 && (
                   <NewsSection noticias={ficha.noticias} />
                 )}
@@ -506,6 +512,7 @@ export function CandidatoProfile({
                     {alertasNaoPositivos.map((p) => (
                       <div
                         key={p.id}
+                        data-pf-timeline-ref={`ponto-${p.id}`}
                         className="rounded-[16px] border border-border/50 border-l-[3px] px-5 py-4"
                         style={{
                           borderLeftColor:
@@ -569,6 +576,7 @@ export function CandidatoProfile({
                     {pontosPositivos.map((p) => (
                       <div
                         key={p.id}
+                        data-pf-timeline-ref={`ponto-${p.id}`}
                         className="rounded-[16px] border border-green-200 border-l-[3px] bg-green-50 px-5 py-4"
                         style={{ borderLeftColor: "#16a34a" }}
                       >
