@@ -55,6 +55,37 @@ Registro cronológico das tarefas do plano em `2026-04-05-alignment-sanitization
 
 ---
 
-## Pendências locais
+## T9 — Limpeza de worktrees e branches bloqueadas
+
+- **Ação:** `git worktree remove --force` em 3 worktrees (`silly-khayyam`, `vercel-analytics`, `review-pr5`); depois `git branch -d`/`-D` nas branches associadas.
+- **Resultado:** Removidas todas. Branch `codex/add-vercel-analytics-20260401` usou `-D` (cherry-pick, não merge). Apenas `main` permanece.
+
+---
+
+## T10 — `git rm --cached` de 8 artifacts release-verify
+
+- **Ação:** 8 arquivos `release-verify-*` ainda estavam trackeados apesar do `.gitignore`. Commit `2dc4f50` só removeu 2 dos 10 originais.
+- **Resultado:** Commit `524872b` remove os restantes. Push para `origin/main` concluído.
+
+---
+
+## T11 — Lint e testes pós-cleanup
+
+- **Ação:** `npm run lint` (exit 0), `npm test` (80/80 pass).
+- **Resultado:** Nenhuma regressão introduzida pela remoção dos artifacts.
+
+---
+
+## T12 — Deploy parity preenchido
+
+- **Ação:** Criado `docs/ops/deploy-parity-2026-04-05.md` com SHA, status CI, env vars, migrations.
+- **Resultado:** `origin/main` = `524872b`. Vercel auto-deploy pendente (push recém feito). CI: Auditoria factual falha por 2 candidatos com dados de partido inconsistentes (`dr-daniel`, `dr-fernando-maximo`), não é regressão de código.
+
+---
+
+## Pendências
 
 - **`.vscode/`** permanece não rastreado (decisão do time: commitar settings compartilhados ou ignorar).
+- **Auditoria factual CI:** `dr-daniel` e `dr-fernando-maximo` com `partido_sigla`/`partido_atual` inconsistentes. Requer correção de dados no Supabase ou curadoria manual.
+- **Migrations Supabase prod:** conferir se as 3 mais recentes (`alerts_email_mvp`, `clear_invalid_camara_proposicao_id`, `votacao_chave_marco_temporal_quiz`) foram aplicadas.
+- **Reorganização de `docs/`:** adiada (Parte 4 do plano).
