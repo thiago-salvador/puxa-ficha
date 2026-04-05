@@ -71,7 +71,7 @@ export default function PrivacidadePage() {
             Lei Geral de Protecao de Dados (LGPD, Lei 13.709/2018).
           </P>
           <P>
-            Ultima atualizacao: 3 de abril de 2026.
+            Ultima atualizacao: 5 de abril de 2026.
           </P>
         </div>
       </section>
@@ -88,7 +88,22 @@ export default function PrivacidadePage() {
             o tratamento de dados pessoais publicados nesta plataforma.
           </P>
           <P>
-            Contato do encarregado (DPO): privacidade@puxaficha.com.br
+            Contato do encarregado (DPO):{" "}
+            <a
+              href="mailto:privacidade@puxaficha.com.br"
+              className="font-bold text-foreground underline decoration-foreground/20 underline-offset-2 hover:decoration-foreground/60"
+            >
+              privacidade@puxaficha.com.br
+            </a>
+          </P>
+          <P>
+            Contato geral:{" "}
+            <a
+              href="mailto:contato@puxaficha.com.br"
+              className="font-bold text-foreground underline decoration-foreground/20 underline-offset-2 hover:decoration-foreground/60"
+            >
+              contato@puxaficha.com.br
+            </a>
           </P>
         </div>
       </section>
@@ -102,8 +117,8 @@ export default function PrivacidadePage() {
         <div className="mt-6 max-w-2xl space-y-5 sm:mt-8">
           <P>
             O Puxa Ficha trata exclusivamente dados de candidatos a cargos publicos nas eleicoes
-            brasileiras de 2026. Nao coletamos dados de visitantes do site (nao ha cadastro,
-            login ou formularios de contato).
+            brasileiras de 2026. Tambem podemos tratar dados de visitantes que optam por receber
+            alertas por email sobre fichas acompanhadas, sem criar conta ou login tradicional.
           </P>
           <P>Dados dos candidatos incluem:</P>
           <Ul>
@@ -118,6 +133,13 @@ export default function PrivacidadePage() {
             <li>Noticias de fontes publicas</li>
             <li>Genero, cor/raca e estado civil (declarados ao TSE)</li>
             <li>CPF (usado apenas internamente para cruzamento de fontes, nunca exposto publicamente)</li>
+          </Ul>
+          <P>Quando voce ativa alertas por email, tratamos apenas o minimo necessario:</P>
+          <Ul>
+            <li>Email informado no formulario de acompanhamento</li>
+            <li>Hash do IP do consentimento e timestamp de confirmacao</li>
+            <li>Hashes tecnicos de tokens de verificacao e gestao</li>
+            <li>Lista de fichas acompanhadas e historico basico de envio dos digests</li>
           </Ul>
         </div>
       </section>
@@ -186,6 +208,11 @@ export default function PrivacidadePage() {
             Ambos os provedores possuem certificacao SOC 2 Type II.
           </P>
           <P>
+            Quando o envio de alertas por email esta habilitado, o Puxa Ficha tambem compartilha o
+            endereco de email e o conteudo estritamente necessario da mensagem com o provedor de
+            entrega transacional configurado para disparar confirmacoes e digests.
+          </P>
+          <P>
             Dados sensiveis como CPF sao bloqueados para acesso publico via controles de seguranca
             no banco (Row Level Security). Apenas o pipeline interno de ingestao tem acesso a esses
             campos.
@@ -214,6 +241,11 @@ export default function PrivacidadePage() {
           </P>
           <P>
             Noticias sao mantidas por ate 12 meses apos a publicacao original.
+          </P>
+          <P>
+            Dados de alertas por email sao mantidos enquanto houver assinaturas ativas ou ate o
+            titular apagar o cadastro na area de gestao. Logs minimos de envio podem permanecer
+            pelo tempo necessario para prevencao de abuso, auditoria e resolucao de falhas.
           </P>
         </div>
       </section>
@@ -258,8 +290,20 @@ export default function PrivacidadePage() {
             <li>Oposicao ao tratamento, quando aplicavel</li>
           </Ul>
           <P>
-            Solicitacoes devem ser enviadas para privacidade@puxaficha.com.br. O prazo de
+            Solicitacoes devem ser enviadas para{" "}
+            <a
+              href="mailto:privacidade@puxaficha.com.br"
+              className="font-bold text-foreground underline decoration-foreground/20 underline-offset-2 hover:decoration-foreground/60"
+            >
+              privacidade@puxaficha.com.br
+            </a>
+            . O prazo de
             resposta e de ate 15 dias uteis, conforme Art. 18 da LGPD.
+          </P>
+          <P>
+            Titulares inscritos nos alertas por email tambem podem cancelar assinaturas ou apagar
+            seus dados diretamente pela pagina <strong>/alertas/gerenciar</strong>, acessada pelo
+            link individual enviado por email.
           </P>
           <P>
             Dados de interesse publico sobre candidatos a cargos eletivos podem ter limitacoes
@@ -296,7 +340,14 @@ export default function PrivacidadePage() {
         <div className="mt-6 max-w-2xl space-y-5 sm:mt-8">
           <P>
             O Puxa Ficha nao utiliza cookies de rastreamento, analytics de terceiros ou pixels de
-            conversao. Nao ha coleta de dados de navegacao dos visitantes.
+            conversao. Quando o usuario ativa alertas, o navegador pode armazenar localmente um
+            token tecnico de gestao e a lista das fichas acompanhadas para evitar novo login por
+            email a cada visita.
+          </P>
+          <P>
+            Esse armazenamento local nao e usado para publicidade comportamental nem para perfilacao
+            comercial. Serve apenas para reconhecer o dispositivo que recebeu o link legitimo de
+            gestao dos alertas.
           </P>
         </div>
       </section>

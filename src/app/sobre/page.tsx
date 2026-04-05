@@ -183,6 +183,15 @@ export default function SobrePage() {
           </a>
           , criador de conteudo sobre inteligencia artificial e politica.
         </p>
+        <p className="mt-4 text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[length:var(--text-body-lg)]">
+          Duvidas, sugestoes ou correcoes?{" "}
+          <a
+            href="mailto:contato@puxaficha.com.br"
+            className="font-bold text-foreground underline decoration-foreground/20 underline-offset-2 hover:decoration-foreground/60"
+          >
+            contato@puxaficha.com.br
+          </a>
+        </p>
       </section>
 
       <Footer />

@@ -89,6 +89,14 @@ export function Footer() {
                     Instagram
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="mailto:contato@puxaficha.com.br"
+                    className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    Contato
+                  </a>
+                </li>
               </ul>
             </div>
           </nav>
