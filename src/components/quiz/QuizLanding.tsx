@@ -27,15 +27,19 @@ export function QuizLanding() {
         <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">Quiz</p>
         <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">Quem me representa?</h1>
         <p className="text-lg text-muted-foreground">
-          Responda afirmações sobre temas políticos. No final, mostramos afinidade com pré-candidatos usando votações
-          públicas (quando existem) e um mapa editorial de espectro partidário. Você pode fazer o quiz para presidente
-          ou para governador no seu estado.
+          Responda afirmações sobre temas políticos. No final, calculamos afinidade com pré-candidatos cruzando, quando há
+          dado: votações nominais públicas no Congresso, posições declaradas curadas, autoria de projetos por tema,
+          padrão de financiamento (doadores por setor) e um mapa editorial de espectro partidário. Presidente ou
+          governador no seu estado.
         </p>
       </header>
       <ul className="list-inside list-disc space-y-2 text-sm text-muted-foreground">
         <li>Não é recomendação de voto.</li>
         <li>Suas respostas não são armazenadas no servidor; o resultado é reconstruído a partir do link.</li>
-        <li>Candidatos sem mandato no Congresso podem ter poucos votos mapeados; o peso do partido aumenta nesses casos.</li>
+        <li>
+          Candidatos sem mandato no Congresso podem ter poucos votos mapeados; o modelo redistribui peso para espectro,
+          posições, projetos e financiamento quando existirem.
+        </li>
       </ul>
 
       <div className="space-y-4">

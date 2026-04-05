@@ -1,3 +1,5 @@
+import type { QuizFinanciamentoDoacaoPerfil } from "@/lib/quiz-financiamento"
+
 export type QuizVotoNormalizado = "sim" | "nao" | "abstencao" | "ausente" | "obstrucao"
 
 export type PosicaoDeclaradaTipo = "a_favor" | "contra" | "ambiguo"
@@ -34,6 +36,10 @@ export interface QuizCandidatoData {
   /** Votacoes do quiz marcadas com contradicao no banco. */
   contradicoes_voto?: QuizContradicaoVoto[]
   mudancas_partido_count?: number
+  /** Resumo TSE (maior doador / total). */
+  financiamento_contexto?: string | null
+  /** Centroide editorial dos doadores classificados (ultima declaracao TSE no recorte). */
+  financiamento_doacao_perfil?: QuizFinanciamentoDoacaoPerfil | null
 }
 
 export interface QuizAlignmentDataset {
@@ -58,6 +64,8 @@ export interface QuizScoreExplanation {
   peso_posicoes_usado?: number
   /** Fracao efetiva projetos por tema no blend fase 2. */
   peso_projetos_usado?: number
+  /** Fracao efetiva financiamento (doadores por setor) no blend fase 2. */
+  peso_financiamento_usado?: number
 }
 
 export interface QuizVoteCompareItem {
@@ -85,6 +93,7 @@ export interface QuizScoreResult {
   score_espectro: number
   score_posicoes: number | null
   score_projetos: number | null
+  score_financiamento: number | null
   votos_comparados: number
   confiabilidade: QuizConfiabilidade
   explanation: QuizScoreExplanation

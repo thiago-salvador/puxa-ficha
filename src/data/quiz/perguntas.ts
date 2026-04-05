@@ -139,6 +139,9 @@ export const QUIZ_PERGUNTAS: QuizPergunta[] = [
     ordem: 8,
     texto:
       "O Brasil deveria priorizar preservação ambiental mesmo que desacelere parte do agronegócio.",
+    contexto:
+      "Inclui o debate do marco temporal de terras indígenas no Congresso: voto nominal público quando mapeado na base.",
+    votacao_titulos: ["Marco Temporal Indigena"],
     direcao_voto: "concordo=nao",
     eixo_economico_dir: "concordo=estado",
   },

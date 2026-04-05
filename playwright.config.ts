@@ -4,6 +4,7 @@ const BASE_URL = process.env.PF_BASE_URL ?? "https://puxa-ficha.vercel.app"
 
 export default defineConfig({
   testDir: "./tests/visual",
+  testIgnore: "**/quiz-resultado-og.spec.ts",
   timeout: 30_000,
   retries: 1,
   reporter: [["list"], ["html", { open: "never" }]],
@@ -20,7 +21,6 @@ export default defineConfig({
     },
     {
       name: "mobile",
-      testIgnore: "**/quiz-resultado-og.spec.ts",
       use: { ...devices["iPhone 14"] },
     },
   ],

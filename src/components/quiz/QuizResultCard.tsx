@@ -33,7 +33,7 @@ export function QuizResultCard({ candidato, score }: QuizResultCardProps) {
     <article className="flex gap-4 rounded-xl border border-border bg-card p-4">
       <CandidatePhoto
         src={candidato.foto_url}
-        alt=""
+        alt={candidato.nome_urna}
         name={candidato.nome_urna}
         width={64}
         height={64}
@@ -52,17 +52,26 @@ export function QuizResultCard({ candidato, score }: QuizResultCardProps) {
         <p className="text-xs text-muted-foreground">{tagLabel(score.score_final)}</p>
         <p className="text-xs leading-relaxed text-muted-foreground">{score.explanation.resumo}</p>
         <p className="text-xs text-muted-foreground">{confiabilidadeLabel(score.confiabilidade, score.votos_comparados)}</p>
-        {(score.score_posicoes != null || score.score_projetos != null) && (
+        {(score.score_posicoes != null || score.score_projetos != null || score.score_financiamento != null) && (
           <p className="text-xs text-muted-foreground">
             {score.score_posicoes != null ? (
               <span className="mr-2">Posições declaradas (curadoria): {Math.round(score.score_posicoes * 100)}%</span>
             ) : null}
             {score.score_projetos != null ? (
-              <span>Projetos por tema: {Math.round(score.score_projetos * 100)}%</span>
+              <span className="mr-2">Projetos por tema: {Math.round(score.score_projetos * 100)}%</span>
+            ) : null}
+            {score.score_financiamento != null ? (
+              <span>Financiamento (doadores por setor): {Math.round(score.score_financiamento * 100)}%</span>
             ) : null}
           </p>
         )}
         <div className="flex flex-wrap gap-3">
+          <Link
+            href={`/comparar?c1=${encodeURIComponent(candidato.slug)}`}
+            className="inline-block text-sm font-medium text-foreground underline-offset-4 hover:underline"
+          >
+            Comparar
+          </Link>
           <Link
             href={`/candidato/${candidato.slug}`}
             className="inline-block text-sm font-medium text-foreground underline-offset-4 hover:underline"
@@ -84,6 +93,7 @@ export function QuizResultCard({ candidato, score }: QuizResultCardProps) {
             detalhe={score.detalhe}
             posicoes={candidato.posicoes_declaradas}
             plUrlExemploPorTema={candidato.pl_url_exemplo_por_tema}
+            financiamentoContexto={candidato.financiamento_contexto}
           />
         ) : null}
       </div>

@@ -6,7 +6,7 @@ import { buildTwitterMetadata } from "@/lib/metadata"
 
 const title = "Quem me representa? — Puxa Ficha"
 const description =
-  "Quiz de alinhamento com pré-candidatos a presidente ou governador: votações públicas e espectro partidário. Sem recomendação de voto."
+  "Quiz de alinhamento com pré-candidatos: votações no Congresso (quando mapeadas), espectro partidário, posições declaradas curadas, projetos por tema e financiamento classificado quando há cobertura. Sem recomendação de voto."
 
 export const metadata: Metadata = {
   title,

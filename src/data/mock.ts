@@ -20,7 +20,15 @@ import type {
   QuizContradicaoVoto,
   QuizPosicaoDeclarada,
 } from "@/lib/quiz-types"
+import { buildFinanciamentoContexto, buildFinanciamentoDoacaoPerfil } from "@/lib/quiz-financiamento"
 import { buildVotacaoPublicUrl } from "@/lib/quiz-votacao-url"
+
+/** Doadores fictícios para o mock do quiz (classificação por setor, cobertura acima do mínimo). */
+const MOCK_QUIZ_FIN_LULA_DOADORES = [
+  { nome: "Banco Exemplo SA", valor: 3_000_000, tipo: "PJ" },
+  { nome: "Sindicato Nacional dos Metalurgicos", valor: 1_500_000, tipo: "PJ" },
+  { nome: "Doador Opaco Ltda", valor: 500_000, tipo: "PJ" },
+]
 
 export const MOCK_CANDIDATOS: Candidato[] = [
   {
@@ -1341,13 +1349,16 @@ export const MOCK_VOTOS: Record<string, VotoCandidato[]> = {
       },
     },
     {
-      id: "v2", candidato_id: "2", votacao_id: "vt2", voto: "sim",
+      id: "v2", candidato_id: "2", votacao_id: "quiz-vt-marco-temporal", voto: "sim",
       contradicao: false, contradicao_descricao: null,
       votacao: {
-        id: "vt2", titulo: "Marco Temporal Terras Indigenas",
-        descricao: "Tese que limita demarcacao de terras indigenas",
-        data_votacao: "2023-09-27", casa: "Senado", tema: "Meio Ambiente",
-        impacto_popular: "Afeta diretamente comunidades indigenas e politica ambiental",
+        id: "quiz-vt-marco-temporal",
+        titulo: "Marco Temporal Indigena",
+        descricao: "Tese de demarcacao de terras indigenas; titulo alinhado a votacoes_chave do quiz (q08).",
+        data_votacao: "2023-05-30",
+        casa: "Câmara",
+        tema: "meio_ambiente",
+        impacto_popular: "Afeta comunidades indigenas e tensao com expansao agropecuaria.",
       },
     },
     {
@@ -1587,6 +1598,23 @@ export const MOCK_VOTOS: Record<string, VotoCandidato[]> = {
         impacto_popular: "Substituiu o Bolsa Familia naquele ciclo legislativo.",
       },
     },
+    {
+      id: "vl8",
+      candidato_id: "1",
+      votacao_id: "quiz-vt-marco-temporal",
+      voto: "não",
+      contradicao: false,
+      contradicao_descricao: null,
+      votacao: {
+        id: "quiz-vt-marco-temporal",
+        titulo: "Marco Temporal Indigena",
+        descricao: "Tese de demarcacao de terras indigenas; titulo alinhado a votacoes_chave do quiz (q08).",
+        data_votacao: "2023-05-30",
+        casa: "Câmara",
+        tema: "meio_ambiente",
+        impacto_popular: "Afeta comunidades indigenas e tensao com expansao agropecuaria.",
+      },
+    },
   ],
   "ronaldo-caiado": [
     {
@@ -1620,6 +1648,7 @@ export const MOCK_PONTOS: Record<string, PontoAtencao[]> = {
       descricao: "Condenado na Lava Jato em 3 instancias. Condenacoes anuladas pelo STF em 2021 por incompetencia territorial da vara de Curitiba, nao por inocencia.",
       fontes: [{ titulo: "STF anula condenacoes", url: "https://example.com", data: "2021-03-08" }],
       gravidade: "alta", verificado: true, gerado_por: "curadoria",
+      data_referencia: "2021-03-08",
     },
     {
       id: "pa4", candidato_id: "1", categoria: "feito_positivo",
@@ -1846,6 +1875,7 @@ const MOCK_QUIZ_VOTACAO_PROPOSICAO: Record<string, { casa: string; id: string }>
   "Reforma Trabalhista": { casa: "Câmara", id: "2142862" },
   "Teto de Gastos (EC 95)": { casa: "Câmara", id: "2088358" },
   "Autonomia do Banco Central": { casa: "Senado", id: "135787" },
+  "Marco Temporal Indigena": { casa: "Câmara", id: "345311" },
 }
 
 export function buildMockQuizAlignmentDataset(
@@ -1910,6 +1940,12 @@ export function buildMockQuizAlignmentDataset(
       posicoes_declaradas: pos && pos.length > 0 ? pos : undefined,
       contradicoes_voto: contradicoes.length > 0 ? contradicoes : undefined,
       mudancas_partido_count: mudN,
+      ...(c.slug === "lula"
+        ? {
+            financiamento_contexto: buildFinanciamentoContexto(2022, 5_000_000, MOCK_QUIZ_FIN_LULA_DOADORES),
+            financiamento_doacao_perfil: buildFinanciamentoDoacaoPerfil(MOCK_QUIZ_FIN_LULA_DOADORES, 5_000_000),
+          }
+        : {}),
     }
   })
 

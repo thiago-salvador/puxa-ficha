@@ -9,6 +9,9 @@ interface QuizShareButtonsProps {
 
 export function QuizShareButtons({ shareUrl, title = "Meu resultado no quiz Puxa Ficha" }: QuizShareButtonsProps) {
   const [copied, setCopied] = useState(false)
+  const [shortCopied, setShortCopied] = useState(false)
+  const [shortBusy, setShortBusy] = useState(false)
+  const [shortError, setShortError] = useState<string | null>(null)
 
   const copy = useCallback(async () => {
     try {
@@ -19,6 +22,34 @@ export function QuizShareButtons({ shareUrl, title = "Meu resultado no quiz Puxa
       setCopied(false)
     }
   }, [shareUrl])
+
+  const copyShortLink = useCallback(async () => {
+    setShortError(null)
+    setShortBusy(true)
+    try {
+      const qs =
+        typeof window !== "undefined"
+          ? `${window.location.search.startsWith("?") ? window.location.search.slice(1) : window.location.search}`
+          : ""
+      const res = await fetch("/api/quiz/short-link", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ queryString: qs }),
+      })
+      const data = (await res.json().catch(() => null)) as { url?: string; error?: string } | null
+      if (!res.ok || !data?.url) {
+        setShortError(data?.error === "Too many requests" ? "Limite de links por hora. Tente mais tarde." : "Link curto indisponível.")
+        return
+      }
+      await navigator.clipboard.writeText(data.url)
+      setShortCopied(true)
+      setTimeout(() => setShortCopied(false), 2000)
+    } catch {
+      setShortError("Não foi possível gerar o link curto.")
+    } finally {
+      setShortBusy(false)
+    }
+  }, [])
 
   const nativeShare = useCallback(async () => {
     if (!navigator.share) return
@@ -70,8 +101,20 @@ export function QuizShareButtons({ shareUrl, title = "Meu resultado no quiz Puxa
         >
           {copied ? "Copiado" : "Copiar link"}
         </button>
+        <button
+          type="button"
+          onClick={() => void copyShortLink()}
+          disabled={shortBusy}
+          className="rounded-md border border-border bg-background px-3 py-2 text-xs font-medium text-foreground hover:bg-muted disabled:opacity-50"
+        >
+          {shortBusy ? "Gerando…" : shortCopied ? "Link curto copiado" : "Link curto"}
+        </button>
       </div>
-      <p className="text-xs text-muted-foreground">O link leva suas respostas codificadas; nada é salvo no servidor.</p>
+      {shortError ? <p className="text-xs text-destructive">{shortError}</p> : null}
+      <p className="text-xs text-muted-foreground">
+        O link completo só codifica suas respostas no próprio URL. O link curto grava um redirecionamento no servidor (IP
+        agregado para limite de abuso); veja a metodologia.
+      </p>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { quizPerguntasOrdenadas } from "@/data/quiz/perguntas"
 import { buildQuizResultQuery, type QuizRespostaCodificada } from "@/lib/quiz-encoding"
@@ -18,6 +18,14 @@ export function QuizContainer() {
   const [index, setIndex] = useState(0)
   const [answers, setAnswers] = useState<Map<string, QuizRespostaCodificada>>(new Map())
   const [reducedMotion, setReducedMotion] = useState(false)
+  const [finishing, setFinishing] = useState(false)
+  const navigateTimeoutRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (navigateTimeoutRef.current) window.clearTimeout(navigateTimeoutRef.current)
+    }
+  }, [])
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
@@ -39,17 +47,34 @@ export function QuizContainer() {
     next.set(current.id, { valor, importante })
     setAnswers(next)
     if (index + 1 >= perguntas.length) {
+      setFinishing(true)
       const query = buildQuizResultQuery(next, {
         cargo: cargo !== "Presidente" ? cargo : undefined,
         uf: cargo === "Governador" && uf ? uf : undefined,
       })
-      router.push(`/quiz/resultado?${query}`)
+      const delayMs = reducedMotion ? 0 : 480
+      if (navigateTimeoutRef.current) window.clearTimeout(navigateTimeoutRef.current)
+      navigateTimeoutRef.current = window.setTimeout(() => {
+        navigateTimeoutRef.current = null
+        router.push(`/quiz/resultado?${query}`)
+      }, delayMs)
       return
     }
     setIndex((i) => i + 1)
   }
 
   if (!current) return null
+
+  if (finishing) {
+    return (
+      <div className="mx-auto flex min-h-[40vh] max-w-lg flex-col items-center justify-center gap-3 px-4 py-16">
+        <p className="text-center text-sm font-medium text-foreground" role="status" aria-live="polite">
+          Processando resultado…
+        </p>
+        <p className="text-center text-xs text-muted-foreground">Montando o ranking com base nas suas respostas.</p>
+      </div>
+    )
+  }
 
   return (
     <div className="mx-auto max-w-lg space-y-8 px-4 py-8">

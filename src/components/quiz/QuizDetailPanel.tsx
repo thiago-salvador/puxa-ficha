@@ -23,14 +23,27 @@ interface QuizDetailPanelProps {
   detalhe: QuizScoreDetalhe
   posicoes?: QuizPosicaoDeclarada[]
   plUrlExemploPorTema?: Record<string, string>
+  /** Resumo TSE + nota editorial (inclui se o ranking usa sinal de doadores classificados). */
+  financiamentoContexto?: string | null
 }
 
-export function QuizDetailPanel({ detalhe, posicoes, plUrlExemploPorTema }: QuizDetailPanelProps) {
+export function QuizDetailPanel({
+  detalhe,
+  posicoes,
+  plUrlExemploPorTema,
+  financiamentoContexto,
+}: QuizDetailPanelProps) {
   const eixos = Object.entries(detalhe.por_eixo).filter(([, v]) => v > 0)
   const plEntries = plUrlExemploPorTema ? Object.entries(plUrlExemploPorTema).filter(([, url]) => url.trim()) : []
 
   return (
     <div className="mt-3 space-y-4 border-t border-border pt-3 text-sm">
+      {financiamentoContexto ? (
+        <div className="space-y-1">
+          <p className="text-xs font-semibold text-foreground">Financiamento (contexto)</p>
+          <p className="text-xs leading-relaxed text-muted-foreground">{financiamentoContexto}</p>
+        </div>
+      ) : null}
       {eixos.length > 0 ? (
         <div className="space-y-1">
           <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Alinhamento por eixo (votos)</p>
@@ -52,7 +65,7 @@ export function QuizDetailPanel({ detalhe, posicoes, plUrlExemploPorTema }: Quiz
             {posicoes.map((pd) => (
               <li key={pd.tema}>
                 <span className="font-medium text-foreground">{pd.tema}</span>
-                <span className="text-muted-foreground"> — {POS_LABEL[pd.posicao] ?? pd.posicao}</span>
+                <span className="text-muted-foreground">: {POS_LABEL[pd.posicao] ?? pd.posicao}</span>
                 {pd.descricao ? <span className="mt-0.5 block">{pd.descricao}</span> : null}
                 {pd.url_fonte ? (
                   <a
@@ -157,9 +170,10 @@ export function QuizDetailPanel({ detalhe, posicoes, plUrlExemploPorTema }: Quiz
 
       {detalhe.mudancas_partido_count > 0 ? (
         <p className="text-xs text-muted-foreground">
-          Registro de <span className="font-medium text-foreground">{detalhe.mudancas_partido_count}</span> mudança
-          {detalhe.mudancas_partido_count > 1 ? "s" : ""} de partido na base (índice de trajetória; não entra direto no
-          percentual).
+          Consistência de trajetória (parcial):{" "}
+          <span className="font-medium text-foreground">{detalhe.mudancas_partido_count}</span> mudança
+          {detalhe.mudancas_partido_count > 1 ? "s" : ""} de partido registradas na base. Por ora é só contagem
+          informativa; não compõe o percentual nem um índice ideológico agregado.
         </p>
       ) : null}
     </div>

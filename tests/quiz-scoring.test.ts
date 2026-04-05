@@ -170,5 +170,7 @@ describe("quiz-scoring", () => {
     assert.ok(row.detalhe)
     assert.ok(row.explanation.resumo.includes("posições declaradas") || row.explanation.resumo.includes("projetos"))
     assert.ok(row.score_posicoes != null || row.score_projetos != null)
+    assert.ok(row.score_financiamento != null && row.score_financiamento >= 0 && row.score_financiamento <= 1)
+    assert.ok((row.explanation.peso_financiamento_usado ?? 0) > 0)
   })
 })

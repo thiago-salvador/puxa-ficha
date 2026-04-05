@@ -1,6 +1,8 @@
 # Quiz "Quem Me Representa?" - Feature Completa v2
 
 > **Nota (2026-04-04):** documento historico da entrega v2. O encoding da URL evoluiu para **v3** (Likert + bit de importancia por pergunta). Fonte de verdade: `src/data/quiz/perguntas.ts` (`QUIZ_VERSION`), `src/lib/quiz-encoding.ts`. Exemplos abaixo com `v=2` referem-se ao periodo intermediario; links novos usam `v=3`.
+>
+> **Nota (2026-04-05):** log operacional pos-v2 (8ª votacao no banco, ingest Camara, slugs com ID inconsistente, checklist “falta apenas isso”) esta em [`2026-04-04-quiz-quem-me-representa.md`](./2026-04-04-quiz-quem-me-representa.md) secao **15**, entrada **2026-04-04 a 2026-04-05**.
 
 ## Context
 

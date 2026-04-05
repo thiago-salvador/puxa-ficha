@@ -35,23 +35,34 @@ export function QuizQuestion({ pergunta, onSubmit, reducedMotion }: QuizQuestion
     gsap.fromTo(el, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" })
   }, [pergunta.id, reducedMotion])
 
+  const headingId = `quiz-pergunta-${pergunta.id}`
+
   return (
     <div ref={rootRef} className="space-y-6">
-      <h2 className="text-lg font-medium leading-snug text-foreground md:text-xl">{pergunta.texto}</h2>
+      <h2 id={headingId} className="text-lg font-medium leading-snug text-foreground md:text-xl">
+        {pergunta.texto}
+      </h2>
       {pergunta.contexto ? (
         <details className="rounded-lg border border-border bg-muted/30 px-3 py-2 text-sm">
           <summary className="cursor-pointer font-medium text-foreground">Entenda melhor</summary>
           <p className="mt-2 text-muted-foreground">{pergunta.contexto}</p>
         </details>
       ) : null}
-      <ul className="flex flex-col gap-2">
+      <ul
+        className="flex flex-col gap-2"
+        role="radiogroup"
+        aria-labelledby={headingId}
+        aria-required="true"
+      >
         {OPTIONS.map((opt) => (
           <li key={opt.value}>
             <button
               type="button"
+              role="radio"
+              aria-checked={likert === opt.value}
               onClick={() => setLikert(opt.value)}
               className={cn(
-                "w-full rounded-lg border px-4 py-3 text-left text-sm transition-colors",
+                "flex min-h-11 w-full items-center rounded-lg border px-4 py-3 text-left text-sm transition-colors md:min-h-12",
                 likert === opt.value
                   ? "border-foreground bg-foreground text-background"
                   : "border-border bg-card hover:border-foreground/40"
@@ -77,12 +88,13 @@ export function QuizQuestion({ pergunta, onSubmit, reducedMotion }: QuizQuestion
       <button
         type="button"
         disabled={likert == null}
+        aria-disabled={likert == null}
         onClick={() => {
           if (likert == null) return
           onSubmit(likert, importante)
         }}
         className={cn(
-          "w-full rounded-lg py-3 text-sm font-semibold transition-colors",
+          "min-h-11 w-full rounded-lg py-3 text-sm font-semibold transition-colors md:min-h-12",
           likert == null
             ? "cursor-not-allowed bg-muted text-muted-foreground"
             : "bg-foreground text-background hover:opacity-90"

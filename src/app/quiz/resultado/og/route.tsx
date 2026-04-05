@@ -2,6 +2,7 @@ import type { NextRequest } from "next/server"
 import { getQuizAlignmentDatasetResource } from "@/lib/api"
 import { decodeQuizPayloadForShare } from "@/lib/quiz-encoding"
 import { buildEditorialOg } from "@/lib/og"
+import { resolveQuizShortToken } from "@/lib/quiz-short-link-resolve"
 import { rankearCandidatos } from "@/lib/quiz-scoring"
 
 export const runtime = "nodejs"
@@ -17,10 +18,19 @@ function truncateOgTitle(text: string): string {
 
 export async function GET(request: NextRequest) {
   const url = request.nextUrl
-  const r = url.searchParams.get("r")
-  const v = url.searchParams.get("v")
-  const cargo = url.searchParams.get("cargo")?.trim() || "Presidente"
-  const uf = url.searchParams.get("uf")?.trim()
+  const token = url.searchParams.get("token")
+  let effectiveParams: URLSearchParams
+  if (token != null && token.trim()) {
+    const qs = await resolveQuizShortToken(token.trim())
+    effectiveParams = qs ? new URLSearchParams(qs) : new URLSearchParams()
+  } else {
+    effectiveParams = url.searchParams
+  }
+
+  const r = effectiveParams.get("r")
+  const v = effectiveParams.get("v")
+  const cargo = effectiveParams.get("cargo")?.trim() || "Presidente"
+  const uf = effectiveParams.get("uf")?.trim()
 
   if (cargo === "Governador" && !uf) {
     return buildEditorialOg({

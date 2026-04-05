@@ -8,6 +8,7 @@ import {
   type RespostaLikert,
 } from "@/data/quiz/perguntas"
 import { aggregatePlCountsByQuizEixo } from "@/lib/quiz-tema-map"
+import { computeFinanciamentoAlinhamento01 } from "@/lib/quiz-financiamento"
 import type {
   QuizAlignmentDataset,
   QuizCandidatoData,
@@ -24,10 +25,14 @@ const MAX_EUCLIDEAN = Math.sqrt(162)
 const W_VOTO_MVP = 0.6153846153846154
 const W_ESPECTRO_MVP = 0.38461538461538464
 
-/** Parcela combinada votos+espectro na fase 2 (0.421 + 0.263). */
-const PHASE2_INNER = 0.684
+/**
+ * Blend fase 2 (soma = 1). Financiamento: doadores TSE classificados por setor (ver `financiamento-setores.ts`).
+ * Se algum bloco nao existir para o candidato, o peso volta para o bloco interno (votos+espectro).
+ */
+const PHASE2_INNER = 0.624
 const PHASE2_POS = 0.211
-const PHASE2_PL = 0.105
+const PHASE2_PL = 0.099
+const PHASE2_FIN = 0.066
 
 export function dynamicWeights(votosComparados: number): { wVoto: number; wEspectro: number } {
   if (votosComparados === 0) return { wVoto: 0, wEspectro: 1 }
@@ -217,8 +222,16 @@ function phase2Blend(
   nVotos: number,
   scoreE: number,
   scoreP: number | null,
-  scorePl: number | null
-): { final01: number; wVotoEff: number; wEspEff: number; wPosEff: number; wPlEff: number } {
+  scorePl: number | null,
+  scoreFin: number | null
+): {
+  final01: number
+  wVotoEff: number
+  wEspEff: number
+  wPosEff: number
+  wPlEff: number
+  wFinEff: number
+} {
   const { wVoto, wEspectro } = dynamicWeights(scoreV != null && nVotos > 0 ? nVotos : 0)
   const inner01 =
     scoreV != null && nVotos > 0 ? wVoto * scoreV + wEspectro * scoreE : wEspectro * scoreE
@@ -226,6 +239,7 @@ function phase2Blend(
   let wInner = PHASE2_INNER
   let wPos = PHASE2_POS
   let wPl = PHASE2_PL
+  let wFin = PHASE2_FIN
   if (scoreP == null) {
     wInner += wPos
     wPos = 0
@@ -234,10 +248,15 @@ function phase2Blend(
     wInner += wPl
     wPl = 0
   }
+  if (scoreFin == null) {
+    wInner += wFin
+    wFin = 0
+  }
 
   const parts: { w: number; s: number }[] = [{ w: wInner, s: inner01 }]
   if (scoreP != null && wPos > 0) parts.push({ w: wPos, s: scoreP })
   if (scorePl != null && wPl > 0) parts.push({ w: wPl, s: scorePl })
+  if (scoreFin != null && wFin > 0) parts.push({ w: wFin, s: scoreFin })
 
   const sumW = parts.reduce((a, p) => a + p.w, 0)
   const final01 = sumW > 0 ? parts.reduce((a, p) => a + (p.w / sumW) * p.s, 0) : scoreE
@@ -249,6 +268,7 @@ function phase2Blend(
     wEspEff: scoreV != null && nVotos > 0 ? shareInner * wEspectro : shareInner,
     wPosEff: scoreP != null && wPos > 0 ? wPos / sumW : 0,
     wPlEff: scorePl != null && wPl > 0 ? wPl / sumW : 0,
+    wFinEff: scoreFin != null && wFin > 0 ? wFin / sumW : 0,
   }
 }
 
@@ -265,7 +285,8 @@ function buildExplanation(
   wEspectro: number,
   fase: 1 | 2 | 3,
   wPos?: number,
-  wPl?: number
+  wPl?: number,
+  wFin?: number
 ): QuizScoreExplanation {
   const parts: string[] = []
   const de = Math.abs(userEco - candEco)
@@ -297,9 +318,11 @@ function buildExplanation(
     const pctE = Math.round(wEspectro * 100)
     const pctP = wPos != null && wPos > 0 ? Math.round(wPos * 100) : 0
     const pctPl = wPl != null && wPl > 0 ? Math.round(wPl * 100) : 0
+    const pctFin = wFin != null && wFin > 0 ? Math.round(wFin * 100) : 0
     let peso = `Peso no cálculo: ${pctV}% votos públicos, ${pctE}% espectro do partido`
     if (pctP > 0) peso += `, ${pctP}% posições declaradas`
     if (pctPl > 0) peso += `, ${pctPl}% autoria em projetos por tema`
+    if (pctFin > 0) peso += `, ${pctFin}% financiamento (doadores por setor, TSE)`
     parts.push(peso)
   } else {
     const pctV = Math.round(wVoto * 100)
@@ -315,6 +338,7 @@ function buildExplanation(
     peso_espectro_usado: wEspectro,
     peso_posicoes_usado: fase >= 2 ? wPos : undefined,
     peso_projetos_usado: fase >= 2 ? wPl : undefined,
+    peso_financiamento_usado: fase >= 2 ? wFin : undefined,
   }
 }
 
@@ -404,13 +428,27 @@ export function calcularAlinhamento(
   let score_final: number
   let score_posicoes: number | null = null
   let score_projetos: number | null = null
+  let score_financiamento: number | null = null
   let phase2BlendResult: ReturnType<typeof phase2Blend> | null = null
 
   if (fase >= 2) {
     score_posicoes = computeScorePosicoes(respostas, ordenadas, candidato.posicoes_declaradas)
     const maxPl = maxPlByEixo ?? computeMaxPlByEixo(dataset.candidatos, ordenadas)
     score_projetos = computeScoreProjetos(respostas, ordenadas, candidato, maxPl)
-    phase2BlendResult = phase2Blend(score_votacoes, votosComparados, score_espectro, score_posicoes, score_projetos)
+    const fin01 = computeFinanciamentoAlinhamento01(
+      userEco,
+      userSoc,
+      candidato.financiamento_doacao_perfil ?? null
+    )
+    score_financiamento = fin01
+    phase2BlendResult = phase2Blend(
+      score_votacoes,
+      votosComparados,
+      score_espectro,
+      score_posicoes,
+      score_projetos,
+      fin01
+    )
     score_final = phase2BlendResult.final01 * 100
   } else if (score_votacoes != null && votosComparados > 0) {
     score_final = (wVoto * score_votacoes + wEspectro * score_espectro) * 100
@@ -434,7 +472,8 @@ export function calcularAlinhamento(
       b.wEspEff,
       fase,
       b.wPosEff,
-      b.wPlEff
+      b.wPlEff,
+      b.wFinEff
     )
   } else {
     explanationFixed = buildExplanation(
@@ -475,6 +514,8 @@ export function calcularAlinhamento(
     score_espectro: Math.round(score_espectro * 1000) / 1000,
     score_posicoes: score_posicoes != null ? Math.round(score_posicoes * 1000) / 1000 : null,
     score_projetos: score_projetos != null ? Math.round(score_projetos * 1000) / 1000 : null,
+    score_financiamento:
+      score_financiamento != null ? Math.round(score_financiamento * 1000) / 1000 : null,
     votos_comparados: votosComparados,
     confiabilidade: confiabilidadeFromVotos(votosComparados),
     explanation: explanationFixed,

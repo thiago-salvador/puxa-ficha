@@ -1,8 +1,9 @@
 /**
  * Quiz resultado — rota OG (ImageResponse).
- * Usa APIRequestContext (sem browser). Mobile project ignora este ficheiro no config.
+ * Usa APIRequestContext (sem browser).
  *
- * PF_BASE_URL=https://seu-preview.vercel.app npx playwright test quiz-resultado-og
+ * Rodar: npm run test:visual:quiz-og (build + servidor local + este spec).
+ * Contra URL ja deployada: PF_QUIZ_OG_BASE_URL=https://... npx playwright test -c playwright.quiz-og.config.ts
  */
 
 import { test, expect } from "playwright/test"

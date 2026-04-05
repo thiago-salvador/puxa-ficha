@@ -106,6 +106,10 @@ A tabela proposta de espectro usa siglas em maiusculas; o banco pode divergir. O
 
 ---
 
+## Operacional pos-avaliacao (2026-04-05)
+
+Checklist de execucao recente (8ª votacao Marco Temporal, migration de `proposicao_id` quebrado, ingest Camara) **estao na fonte canonica**: [`2026-04-04-quiz-quem-me-representa.md`](./2026-04-04-quiz-quem-me-representa.md) secao **15**. Os seis `ids.camara` que falhavam na checagem de nome foram **corrigidos** no `data/candidatos.json`; falta operacional tipica: concluir ingest Camara e validar cobertura de votos no banco (`npm run check:quiz-votacoes` + criterio da secao 9.1 do plano principal).
+
 ## Conclusao
 
 O plano e **forte em visao de produto e coerente com o banco e com a stack**. Para executar no repo atual, vale **amarrar** o desenho do dataset agregado em `api.ts`, a estrategia de armazenamento de perguntas/espectro (repo vs Supabase), o contrato de URL de share, e o comportamento em **mock/degraded**. Com isso, a sequencia SDD (`/sdd-research` > break > execute) mencionada no proprio plano faz sentido.

@@ -90,7 +90,16 @@ export function QuizResult({ datasetResource }: QuizResultProps) {
         <h1 className="text-2xl font-bold tracking-tight text-foreground">Seu alinhamento</h1>
         <p className="text-sm text-muted-foreground">
           Não é recomendação de voto. O cálculo mistura votações públicas, posições declaradas curadas (quando existem),
-          autoria de projetos por tema e espectro partidário (revisão editorial pendente em parte do modelo).
+          autoria de projetos por tema, financiamento classificado (quando há cobertura) e espectro partidário (revisão
+          editorial em evolução).
+        </p>
+        <p className="text-xs text-muted-foreground">
+          <Link
+            href="/quiz/metodologia#feedback-espectro"
+            className="font-medium text-foreground underline-offset-4 hover:underline"
+          >
+            Classificação partidária parece errada?
+          </Link>
         </p>
       </header>
       <QuizShareButtons shareUrl={shareUrl} />
