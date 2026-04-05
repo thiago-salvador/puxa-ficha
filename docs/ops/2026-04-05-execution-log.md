@@ -51,7 +51,7 @@ Registro cronológico das tarefas do plano em `2026-04-05-alignment-sanitization
 ## T8 — Paridade deploy (manual + template)
 
 - **Ação:** Criado [`deploy-parity-2026-04-05-TEMPLATE.md`](deploy-parity-2026-04-05-TEMPLATE.md) para preenchimento após `git push` e conferência Vercel/Supabase.
-- **Resultado:** `git push origin main` concluído (duas levas). Tip atual de `origin/main`: `55b81d6` (`docs(ops): registrar push origin main no log`). Conferir no Vercel se Production usa esse SHA e preencher [`deploy-parity-2026-04-05-TEMPLATE.md`](deploy-parity-2026-04-05-TEMPLATE.md).
+- **Resultado:** `git push origin main` concluído (integração do WIP + docs ops). Para paridade: rodar `git fetch && git rev-parse origin/main` e igualar ao SHA exibido no deploy **Production** da Vercel; registrar em [`deploy-parity-2026-04-05-TEMPLATE.md`](deploy-parity-2026-04-05-TEMPLATE.md).
 
 ---
 
