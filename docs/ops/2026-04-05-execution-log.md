@@ -83,9 +83,27 @@ Registro cronológico das tarefas do plano em `2026-04-05-alignment-sanitization
 
 ---
 
-## Pendências
+## T13 — Correção partido dr-daniel e dr-fernando-maximo
 
-- **`.vscode/`** permanece não rastreado (decisão do time: commitar settings compartilhados ou ignorar).
-- **Auditoria factual CI:** `dr-daniel` e `dr-fernando-maximo` com `partido_sigla`/`partido_atual` inconsistentes. Requer correção de dados no Supabase ou curadoria manual.
-- **Migrations Supabase prod:** conferir se as 3 mais recentes (`alerts_email_mvp`, `clear_invalid_camara_proposicao_id`, `votacao_chave_marco_temporal_quiz`) foram aplicadas.
-- **Reorganização de `docs/`:** adiada (Parte 4 do plano).
+- **Ação:** Supabase: `dr-daniel` partido_sigla/partido_atual → PODEMOS, cargo_atual → "Prefeito de Ananindeua", biografia corrigida; `dr-fernando-maximo` biografia corrigida (PL). Inseridos registros em `mudancas_partido` e `historico_politico` para ambos. Assertions atualizadas em `factual-assertions.ts`.
+- **Resultado:** Commits `ece214a` + `76716bc`. CI run #22 → **success** (144/144, 0 blocked).
+
+---
+
+## Fechamento
+
+Todas as 5 partes do plano concluídas:
+
+| Parte | Status |
+|-------|--------|
+| 1 — Paridade Git/Vercel/Supabase | ✅ `deploy-parity-2026-04-05.md` |
+| 2 — Sanitização artifacts | ✅ `524872b` |
+| 3 — Branches/worktrees | ✅ Só `main` |
+| 4 — Agrupamento WIP (4 features) | ✅ T3–T6 |
+| 5 — Trilha de log | ✅ Este arquivo |
+
+### Pendências residuais (fora do escopo deste plano)
+
+- **`.vscode/`** permanece não rastreado (decisão do time).
+- **Migrations Supabase prod:** conferir se as 3 mais recentes (`alerts_email_mvp`, `clear_invalid_camara_proposicao_id`, `votacao_chave_marco_temporal_quiz`) foram aplicadas (requer acesso ao dashboard).
+- **Reorganização de `docs/`:** adiada conforme plano (incremental, uma pasta por vez).
