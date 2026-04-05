@@ -142,7 +142,7 @@ Ou as variantes parciais/coortes quando a mudanca for localizada.
 
 **Ingest Camara incremental (`--skip-camara-validated`):** uso local ou reruns para reduzir chamadas a API. Pula o candidato inteiro so se votos das `votacoes_chave` da Camara (com `proposicao_id`), gastos com linha para **2023, 2024 e 2025** e **>=100** `projetos_lei`; senao roda perfil (1 GET) e so as etapas faltantes. O **cron do GitHub Actions** continua sem essa flag (ingest completa). Ex-deputado sem CEAP em algum desses anos ou autor com menos de 100 proposicoes na API pode refazer gastos ou projetos ate bater o criterio.
 
-**Smoke:** os scripts carregam `SUPABASE_URL` e `SUPABASE_SERVICE_ROLE_KEY` a partir de `.env.local` (ou `.env`) em `scripts/lib/supabase.ts`. Smoke **so banco** (segundos): `npm run smoke:camara-incremental-db -- lula`. Smoke **com API** da Camara (pode demorar e sofrer 504): `npx tsx scripts/lib/ingest-camara.ts --skip-camara-validated --slugs lula`. Catalogo de mensagens de log: indice `docs/ingest-logs-index.md` (Camara, Senado, TSE, demais fontes).
+**Smoke:** os scripts carregam `SUPABASE_URL` e `SUPABASE_SERVICE_ROLE_KEY` a partir de `.env.local` (ou `.env`) em `scripts/lib/supabase.ts`. Smoke **so banco** (segundos): `npm run smoke:camara-incremental-db -- lula`. Smoke **com API** da Camara (pode demorar e sofrer 504): `npx tsx scripts/lib/ingest-camara.ts --skip-camara-validated --slugs lula`. Catalogo de mensagens de log: indice `docs/ops/ingest-logs-index.md` (Camara, Senado, TSE, demais fontes).
 
 ## 4. Regras que sempre valem
 

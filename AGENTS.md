@@ -46,7 +46,7 @@ npx tsx scripts/ingest-all.ts                    # Todas as fontes
 npx tsx scripts/ingest-all.ts camara senado      # So REST APIs (rapido)
 npx tsx scripts/ingest-all.ts camara --skip-camara-validated   # Camara incremental: votos chave + gastos 2023-2025 + >=100 PL; senao so lacunas (CI nao usa)
 npm run smoke:camara-incremental-db -- <slug>                   # Smoke rapido (so Supabase, sem API Camara; .env.local)
-# Logs pipeline: docs/ingest-logs-index.md
+# Logs pipeline: docs/ops/ingest-logs-index.md
 npx tsx scripts/ingest-all.ts tse                # So CSV do TSE (lento, baixa ZIPs)
 npx tsx scripts/ingest-all.ts transparencia      # Portal da Transparencia (requer API key)
 ```
