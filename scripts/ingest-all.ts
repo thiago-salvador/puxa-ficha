@@ -32,7 +32,9 @@ const VALID_SOURCES = [
   "google-news",
 ] as const
 
-const args = process.argv.slice(2).filter((a) => !a.startsWith("-"))
+const rawArgv = process.argv.slice(2)
+const skipCamaraValidated = rawArgv.includes("--skip-camara-validated")
+const args = rawArgv.filter((a) => !a.startsWith("-"))
 const sources = args.length > 0 ? args : [...VALID_SOURCES]
 
 for (const s of sources) {
@@ -61,8 +63,14 @@ async function main() {
   // 2. APIs federais (precisam de IDs em candidatos.json)
   if (sources.includes("camara")) {
     log("pipeline", "--- Camara dos Deputados ---")
+    if (skipCamaraValidated) {
+      log(
+        "pipeline",
+        "Flag --skip-camara-validated: modo incremental (pula candidato so se votos+projetos+gastos recentes ok; senao so etapas faltantes)"
+      )
+    }
     try {
-      allResults.push(...(await ingestCamara()))
+      allResults.push(...(await ingestCamara({ skipValidated: skipCamaraValidated })))
     } catch (err) {
       error("pipeline", `Camara falhou: ${err}`)
     }

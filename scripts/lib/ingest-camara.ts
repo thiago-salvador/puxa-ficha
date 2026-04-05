@@ -1,13 +1,31 @@
 import { supabase } from "./supabase"
+import {
+  GASTOS_RECENT_ANOS,
+  PROJETOS_LEI_INGEST_CAP,
+  hasFullVotacaoIdCoverage,
+  hasGastosRecentYearsComplete,
+  projetosLeiMeetsIngestCap,
+} from "./camara-incremental-guards"
 import { loadCandidatos, fetchJSON, normalizeForMatch, resolveCandidatoId, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import type { IngestResult } from "./types"
 
 const API = "https://dadosabertos.camara.leg.br/api/v2"
 
+/** Camara public API is often slow; 15s default caused frequent AbortError under load. */
+const CAMARA_FETCH_RETRIES = 5
+const CAMARA_FETCH_TIMEOUT_MS = 60_000
+
+/** Wall clock per candidato: votos por proposicao pode gerar dezenas de round-trips. */
+const CANDIDATO_WALL_MS = 600_000
+
 interface CamaraResponse<T> {
   dados: T
   links: { rel: string; href: string }[]
+}
+
+function camaraFetchJSON<T>(url: string): Promise<T> {
+  return fetchJSON<T>(url, undefined, CAMARA_FETCH_RETRIES, CAMARA_FETCH_TIMEOUT_MS)
 }
 
 async function fetchPaginated<T>(baseUrl: string, params: Record<string, string> = {}): Promise<T[]> {
@@ -17,7 +35,7 @@ async function fetchPaginated<T>(baseUrl: string, params: Record<string, string>
   while (true) {
     const searchParams = new URLSearchParams({ ...params, itens: "100", pagina: String(page) })
     const url = `${baseUrl}?${searchParams}`
-    const json = await fetchJSON<CamaraResponse<T[]>>(url)
+    const json = await camaraFetchJSON<CamaraResponse<T[]>>(url)
     if (!json.dados || json.dados.length === 0) break
     all.push(...json.dados)
     if (json.dados.length < 100) break
@@ -54,7 +72,7 @@ async function ingestPerfil(
   expectedNomeCompleto: string,
   expectedNomeUrna: string
 ) {
-  const json = await fetchJSON<CamaraResponse<Record<string, unknown>>>(`${API}/deputados/${idCamara}`)
+  const json = await camaraFetchJSON<CamaraResponse<Record<string, unknown>>>(`${API}/deputados/${idCamara}`)
   const dep = json.dados as Record<string, unknown>
   const status = dep.ultimoStatus as Record<string, unknown> | undefined
   const observedNames = [
@@ -240,7 +258,7 @@ async function ingestVotos(idCamara: number, candidatoId: string, slug: string):
 
   for (const chave of missing) {
     try {
-      const votacoesResp = await fetchJSON<CamaraResponse<Record<string, unknown>[]>>(
+      const votacoesResp = await camaraFetchJSON<CamaraResponse<Record<string, unknown>[]>>(
         `${API}/proposicoes/${chave.proposicao_id}/votacoes`
       )
       const votacoesProp = votacoesResp.dados || []
@@ -251,7 +269,7 @@ async function ingestVotos(idCamara: number, candidatoId: string, slug: string):
       // Limit to 3 plenario votacoes to avoid hanging
       for (const votacao of plenVotacoes.slice(0, 3)) {
         const votacaoId = String(votacao.id)
-        const votosResp = await fetchJSON<CamaraResponse<Record<string, unknown>[]>>(
+        const votosResp = await camaraFetchJSON<CamaraResponse<Record<string, unknown>[]>>(
           `${API}/votacoes/${votacaoId}/votos`
         )
         const votos = votosResp.dados || []
@@ -323,8 +341,71 @@ async function ingestProjetos(idCamara: number, candidatoId: string, slug: strin
   return count
 }
 
-export async function ingestCamara(targetSlugs?: string[]): Promise<IngestResult[]> {
-  const selectedSlugs = targetSlugs != null ? new Set(targetSlugs) : null
+export type IngestCamaraOptions = {
+  targetSlugs?: string[]
+  /**
+   * Modo incremental: reduz chamadas a API da Camara.
+   * - **Pulo total** (zero requests): votos Camara completos + >=100 projetos de lei + gastos com linha para 2023, 2024 e 2025.
+   * - **Senao**: atualiza perfil (1 GET leve) e so as etapas ainda incompletas (gastos / votos / projetos).
+   */
+  skipValidated?: boolean
+  /** @deprecated Preferir `skipValidated`. Mesmo comportamento. */
+  skipIfCamaraVotesComplete?: boolean
+}
+
+async function loadCamaraChaveVotacaoIds(): Promise<string[]> {
+  const { data } = await supabase.from("votacoes_chave").select("id, casa, proposicao_id")
+  const rows = data ?? []
+  return rows
+    .filter(
+      (v) =>
+        Boolean(v.proposicao_id) && (v.casa === "Câmara" || v.casa === "Camara")
+    )
+    .map((v) => v.id)
+}
+
+async function hasFullCamaraVoteCoverage(candidatoId: string, requiredVotacaoIds: string[]): Promise<boolean> {
+  if (requiredVotacaoIds.length === 0) return true
+  const { data } = await supabase
+    .from("votos_candidato")
+    .select("votacao_id")
+    .eq("candidato_id", candidatoId)
+    .in("votacao_id", requiredVotacaoIds)
+  return hasFullVotacaoIdCoverage(requiredVotacaoIds, (data ?? []).map((r) => r.votacao_id))
+}
+
+async function countProjetosLeiForCandidato(candidatoId: string): Promise<number> {
+  const { count, error } = await supabase
+    .from("projetos_lei")
+    .select("*", { count: "exact", head: true })
+    .eq("candidato_id", candidatoId)
+  if (error) return 0
+  return count ?? 0
+}
+
+async function hasGastosRecentComplete(candidatoId: string): Promise<boolean> {
+  const { data } = await supabase
+    .from("gastos_parlamentares")
+    .select("ano")
+    .eq("candidato_id", candidatoId)
+    .in("ano", [...GASTOS_RECENT_ANOS])
+  return hasGastosRecentYearsComplete((data ?? []).map((r) => Number(r.ano)))
+}
+
+export async function ingestCamara(options?: IngestCamaraOptions | string[]): Promise<IngestResult[]> {
+  const opts: IngestCamaraOptions = Array.isArray(options) ? { targetSlugs: options } : (options ?? {})
+  const selectedSlugs = opts.targetSlugs != null ? new Set(opts.targetSlugs) : null
+  const skipValidated = Boolean(opts.skipValidated ?? opts.skipIfCamaraVotesComplete)
+
+  let requiredCamaraVotacaoIds: string[] = []
+  if (skipValidated) {
+    requiredCamaraVotacaoIds = await loadCamaraChaveVotacaoIds()
+    log(
+      "camara",
+      `skip-validated (incremental): ${requiredCamaraVotacaoIds.length} votacao(oes) chave Camara; projetos>=${PROJETOS_LEI_INGEST_CAP}; gastos anos ${GASTOS_RECENT_ANOS.join(",")}`
+    )
+  }
+
   const candidatos = loadCandidatos().filter((cand) =>
     selectedSlugs ? selectedSlugs.has(cand.slug) : true
   )
@@ -342,19 +423,63 @@ export async function ingestCamara(targetSlugs?: string[]): Promise<IngestResult
       duration_ms: 0,
     }
 
-    log("camara", `Processando ${cand.slug} (ID Camara: ${cand.ids.camara})`)
-
     const candidatoId = await resolveCandidatoId(cand.slug)
     if (!candidatoId) {
       result.errors.push(`Candidato ${cand.slug} nao encontrado no Supabase`)
       error("camara", `  ${cand.slug}: nao encontrado no banco`)
+      result.duration_ms = Date.now() - start
       results.push(result)
       continue
     }
 
-    // Per-candidato timeout: 2 minutes max
+    let skipVotes = false
+    let skipGastos = false
+    let skipProjetos = false
+    if (skipValidated) {
+      skipVotes = await hasFullCamaraVoteCoverage(candidatoId, requiredCamaraVotacaoIds)
+      skipGastos = await hasGastosRecentComplete(candidatoId)
+      skipProjetos = projetosLeiMeetsIngestCap(await countProjetosLeiForCandidato(candidatoId))
+    }
+
+    const fullSkip = skipValidated && skipVotes && skipGastos && skipProjetos
+    if (fullSkip) {
+      result.skipped = true
+      result.skip_reason =
+        "Camara ja sincronizado (votos chave + gastos 2023-2025 + projetos>=100)"
+      result.incremental_skipped = ["perfil", "gastos_parlamentares", "votos_candidato", "projetos_lei"]
+      result.duration_ms = Date.now() - start
+      log("camara", `Pulando ${cand.slug} (${result.skip_reason})`)
+      results.push(result)
+      continue
+    }
+
+    const incrementalParts: string[] = []
+    if (skipValidated) {
+      if (skipVotes) incrementalParts.push("votos ok")
+      else incrementalParts.push("votos")
+      if (skipGastos) incrementalParts.push("gastos ok")
+      else incrementalParts.push("gastos")
+      if (skipProjetos) incrementalParts.push("projetos ok")
+      else incrementalParts.push("projetos")
+    }
+    log(
+      "camara",
+      skipValidated
+        ? `Processando ${cand.slug} (ID Camara: ${cand.ids.camara}) incremental: ${incrementalParts.join(", ")}`
+        : `Processando ${cand.slug} (ID Camara: ${cand.ids.camara})`
+    )
+
+    const incrementalSkipped: NonNullable<IngestResult["incremental_skipped"]> = []
+    if (skipValidated) {
+      if (skipVotes) incrementalSkipped.push("votos_candidato")
+      if (skipGastos) incrementalSkipped.push("gastos_parlamentares")
+      if (skipProjetos) incrementalSkipped.push("projetos_lei")
+      if (incrementalSkipped.length > 0) result.incremental_skipped = incrementalSkipped
+    }
+
+    // Per-candidato wall clock (gastos + muitas proposicoes de voto + 100 PLs)
     const candidatoTimeout = new Promise<"timeout">((resolve) =>
-      setTimeout(() => resolve("timeout"), 120_000)
+      setTimeout(() => resolve("timeout"), CANDIDATO_WALL_MS)
     )
 
     const candidatoWork = (async () => {
@@ -369,27 +494,34 @@ export async function ingestCamara(targetSlugs?: string[]): Promise<IngestResult
       result.rows_upserted++
       await sleep(300)
 
-      const gastoRows = await ingestGastos(cand.ids.camara!, candidatoId, cand.slug)
-      if (gastoRows > 0) result.tables_updated.push("gastos_parlamentares")
-      result.rows_upserted += gastoRows
-      await sleep(300)
+      if (!skipGastos) {
+        const gastoRows = await ingestGastos(cand.ids.camara!, candidatoId, cand.slug)
+        if (gastoRows > 0) result.tables_updated.push("gastos_parlamentares")
+        result.rows_upserted += gastoRows
+        await sleep(300)
+      }
 
-      const votoRows = await ingestVotos(cand.ids.camara!, candidatoId, cand.slug)
-      if (votoRows > 0) result.tables_updated.push("votos_candidato")
-      result.rows_upserted += votoRows
-      await sleep(300)
+      if (!skipVotes) {
+        const votoRows = await ingestVotos(cand.ids.camara!, candidatoId, cand.slug)
+        if (votoRows > 0) result.tables_updated.push("votos_candidato")
+        result.rows_upserted += votoRows
+        await sleep(300)
+      }
 
-      const projetoRows = await ingestProjetos(cand.ids.camara!, candidatoId, cand.slug)
-      if (projetoRows > 0) result.tables_updated.push("projetos_lei")
-      result.rows_upserted += projetoRows
+      if (!skipProjetos) {
+        const projetoRows = await ingestProjetos(cand.ids.camara!, candidatoId, cand.slug)
+        if (projetoRows > 0) result.tables_updated.push("projetos_lei")
+        result.rows_upserted += projetoRows
+      }
+
       return "done" as const
     })()
 
     try {
       const outcome = await Promise.race([candidatoWork, candidatoTimeout])
       if (outcome === "timeout") {
-        result.errors.push("Timeout (2min) - skipped remaining work")
-        warn("camara", `  ${cand.slug}: TIMEOUT 2min, pulando...`)
+        result.errors.push(`Timeout (${CANDIDATO_WALL_MS / 60_000}min) - skipped remaining work`)
+        warn("camara", `  ${cand.slug}: TIMEOUT ${CANDIDATO_WALL_MS / 60_000}min, pulando...`)
       }
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err)
@@ -406,19 +538,23 @@ export async function ingestCamara(targetSlugs?: string[]): Promise<IngestResult
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const targetSlugs = process.argv
-    .slice(2)
-    .flatMap((value, index, args) => {
-      if (value === "--slugs") {
-        return (args[index + 1] ?? "")
-          .split(",")
-          .map((item) => item.trim())
-          .filter(Boolean)
-      }
-      return []
-    })
+  const raw = process.argv.slice(2)
+  const skipValidated =
+    raw.includes("--skip-camara-validated") || raw.includes("--skip-validated")
+  const targetSlugs = raw.flatMap((value, index, args) => {
+    if (value === "--slugs") {
+      return (args[index + 1] ?? "")
+        .split(",")
+        .map((item) => item.trim())
+        .filter(Boolean)
+    }
+    return []
+  })
 
-  ingestCamara(targetSlugs.length > 0 ? targetSlugs : undefined).then((results) => {
+  ingestCamara({
+    targetSlugs: targetSlugs.length > 0 ? targetSlugs : undefined,
+    skipValidated,
+  }).then((results) => {
     console.log(JSON.stringify(results, null, 2))
   })
 }

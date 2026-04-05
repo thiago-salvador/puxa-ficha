@@ -46,6 +46,7 @@ data/tse/
 
 # Claude Code project memory (local only)
 .claude/
+.worktrees/
 
 # Design reference components (local only)
 /assets/

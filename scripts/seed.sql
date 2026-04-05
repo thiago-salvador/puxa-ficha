@@ -85,7 +85,9 @@ INSERT INTO votacoes_chave (titulo, descricao, data_votacao, casa, tema, impacto
 
 ('Autonomia do Banco Central', 'PLP 19/2019 que deu autonomia ao Banco Central', '2021-02-04', 'Senado', 'economia', 'Blindou a política monetária de interferência governamental, mas também removeu controle democrático sobre juros e câmbio.'),
 
-('Auxílio Brasil (MP 1.087/2021)', 'Medida provisória que instituiu o Auxílio Brasil no lugar do Bolsa Família. Referência para o quiz (eixo de transferência de renda).', '2021-11-03', 'Câmara', 'direitos_sociais', 'Alterou o desenho do principal programa de transferência de renda do país naquele período.');
+('Auxílio Brasil (MP 1.087/2021)', 'Medida provisória que instituiu o Auxílio Brasil no lugar do Bolsa Família. Referência para o quiz (eixo de transferência de renda).', '2021-11-03', 'Câmara', 'direitos_sociais', 'Alterou o desenho do principal programa de transferência de renda do país naquele período.'),
+
+('Marco Temporal Indigena', 'Tese que condiciona demarcação de terras indígenas à referência da Constituição de 1988; mapeada no quiz (pergunta q08).', '2023-05-30', 'Câmara', 'meio_ambiente', 'Central em conflitos entre territórios tradicionais e expansão agropecuária.');
 
 
 -- ============================================

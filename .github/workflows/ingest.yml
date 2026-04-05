@@ -48,6 +48,7 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           TRANSPARENCIA_API_KEY: ${{ secrets.TRANSPARENCIA_API_KEY }}
         run: |
+          # Sem --skip-camara-validated: no CI queremos ingest completa da Camara (flag e para reruns locais).
           SOURCES="${{ github.event.inputs.sources || 'camara senado' }}"
           npx tsx scripts/ingest-all.ts $SOURCES
 

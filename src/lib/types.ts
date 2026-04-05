@@ -156,6 +156,8 @@ export interface PontoAtencao {
   visivel?: boolean;
   verificado: boolean;
   gerado_por: 'ia' | 'curadoria' | 'automatico';
+  /** Data factual do fato (YYYY-MM-DD); timeline publica usa quando preenchida. */
+  data_referencia?: string | null;
 }
 
 export interface FonteReferencia {

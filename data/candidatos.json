@@ -394,7 +394,7 @@
     "cargo_disputado": "Governador",
     "estado": "PR",
     "ids": {
-      "camara": 73486,
+      "camara": 73465,
       "senado": null,
       "tse_sq_candidato": {
         "2020": "160000657203"
@@ -420,7 +420,7 @@
   },
   {
     "slug": "paulo-martins-gov-pr",
-    "nome_completo": "Paulo Martins",
+    "nome_completo": "Paulo Eduardo Lima Martins",
     "nome_urna": "Paulo Martins",
     "cargo_disputado": "Governador",
     "estado": "PR",
@@ -437,12 +437,12 @@
   },
   {
     "slug": "jorginho-mello",
-    "nome_completo": "Jorge Jose de Mello",
+    "nome_completo": "Jorginho dos Santos Mello",
     "nome_urna": "Jorginho Mello",
     "cargo_disputado": "Governador",
     "estado": "SC",
     "ids": {
-      "camara": 160570,
+      "camara": 160509,
       "senado": 5979,
       "tse_sq_candidato": {
         "2018": "240000609539",
@@ -458,7 +458,7 @@
     "cargo_disputado": "Governador",
     "estado": "SC",
     "ids": {
-      "camara": 178914,
+      "camara": 160571,
       "senado": null,
       "tse_sq_candidato": {
         "2018": "210000604698",
@@ -474,7 +474,7 @@
     "cargo_disputado": "Governador",
     "estado": "SC",
     "ids": {
-      "camara": 73893,
+      "camara": 141413,
       "senado": null,
       "tse_sq_candidato": {
         "2018": "240000624336",
@@ -520,7 +520,7 @@
     "cargo_disputado": "Governador",
     "estado": "RS",
     "ids": {
-      "camara": 204379,
+      "camara": 220552,
       "senado": null,
       "tse_sq_candidato": {
         "2018": "210000603583",

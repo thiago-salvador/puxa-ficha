@@ -19,4 +19,9 @@ export interface IngestResult {
   rows_upserted: number
   errors: string[]
   duration_ms: number
+  /** Quando true, nenhuma escrita foi feita (ex.: ingest opcional que pula candidato ja coberto). */
+  skipped?: boolean
+  skip_reason?: string
+  /** Em ingest incremental Camara: etapas que foram puladas por ja estarem cobertas no banco. */
+  incremental_skipped?: ("perfil" | "gastos_parlamentares" | "votos_candidato" | "projetos_lei")[]
 }
