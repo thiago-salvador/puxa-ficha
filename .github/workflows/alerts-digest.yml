@@ -1,0 +1,46 @@
+name: Digest de alertas
+
+on:
+  schedule:
+    # Diario as 12:00 UTC (09:00 BRT)
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: alerts-digest
+  cancel-in-progress: true
+
+jobs:
+  send-digest:
+    name: Enviar digest de alertas
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Disparar digest
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            -X POST \
+            -H "Authorization: Bearer $CRON_SECRET" \
+            "https://puxaficha.com.br/api/alerts/send-digest?chain=1")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          echo "HTTP $HTTP_CODE"
+          echo "$BODY" | jq . 2>/dev/null || echo "$BODY"
+
+          if [ "$HTTP_CODE" -ge 400 ]; then
+            echo "::error::Digest failed with HTTP $HTTP_CODE"
+            exit 1
+          fi
+
+          SENT=$(echo "$BODY" | jq -r '.sent // 0')
+          FAILED=$(echo "$BODY" | jq -r '.failed // 0')
+          SKIPPED=$(echo "$BODY" | jq -r '.skipped // 0')
+          echo "### Digest Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- Sent: $SENT" >> $GITHUB_STEP_SUMMARY
+          echo "- Failed: $FAILED" >> $GITHUB_STEP_SUMMARY
+          echo "- Skipped: $SKIPPED" >> $GITHUB_STEP_SUMMARY

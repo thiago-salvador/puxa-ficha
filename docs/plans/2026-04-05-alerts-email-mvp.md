@@ -108,3 +108,11 @@ Leitura completa dos 17 arquivos. Testes 6/6 OK. Problemas identificados:
 2. Configurar no Vercel: `RESEND_API_KEY`, `CRON_SECRET`, `PF_ALERTS_TOKEN_ENCRYPTION_KEY`
 3. Criar GitHub Action workflow para digest (cron diario chamando `/api/alerts/send-digest` com `CRON_SECRET`)
 4. Testar fluxo completo em staging: subscribe → email → verify → toggle → digest
+
+### 2026-04-05 16:17 — Operacional
+
+- Vercel env vars: ja configuradas (RESEND_API_KEY, CRON_SECRET, PF_ALERTS_TOKEN_ENCRYPTION_KEY, salts, from email)
+- Supabase: 4 tabelas verificadas OK (0 rows, prontas)
+- Migration: `supabase db push` confirma "up to date" (tabelas ja existiam via schema.sql)
+- GitHub Action `alerts-digest.yml`: cron diario 12:00 UTC (09:00 BRT), chaining habilitado
+- Registrado no `notify-workflow-failure.yml` para alerta de falha
