@@ -116,3 +116,14 @@ Leitura completa dos 17 arquivos. Testes 6/6 OK. Problemas identificados:
 - Migration: `supabase db push` confirma "up to date" (tabelas ja existiam via schema.sql)
 - GitHub Action `alerts-digest.yml`: cron diario 12:00 UTC (09:00 BRT), chaining habilitado
 - Registrado no `notify-workflow-failure.yml` para alerta de falha
+- **Commit `f57a6c6`**: workflow + notificacao
+- Push para GitHub + deploy Vercel **Ready** em producao
+- Rotas verificadas em puxaficha.com.br:
+  - `/alertas/verificar` → 200
+  - `/alertas/gerenciar` → 200
+  - `POST /api/alerts/subscribe` → 400 (validacao correta com body vazio)
+  - `GET /api/alerts/me` → erro esperado sem token
+
+### Pendencia final
+
+- Testar fluxo end-to-end real: subscribe com email valido → receber email → verificar → toggle → digest
