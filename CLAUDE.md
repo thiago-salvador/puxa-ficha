@@ -48,6 +48,9 @@ npm run lint         # ESLint
 # Pipeline de dados (requer SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY)
 npx tsx scripts/ingest-all.ts                    # Todas as fontes
 npx tsx scripts/ingest-all.ts camara senado      # So REST APIs (rapido)
+npx tsx scripts/ingest-all.ts camara --skip-camara-validated   # Camara incremental: votos chave + gastos 2023-2025 + >=100 PL; senao so lacunas (CI nao usa)
+npm run smoke:camara-incremental-db -- <slug>                   # Smoke rapido (so Supabase, sem API Camara; .env.local)
+# Logs pipeline: docs/ingest-logs-index.md
 npx tsx scripts/ingest-all.ts tse                # So CSV do TSE (lento, baixa ZIPs)
 npx tsx scripts/ingest-all.ts transparencia      # Portal da Transparencia (requer API key)
 ```
@@ -221,6 +224,12 @@ Candidatos com `status: 'removido'` sao filtrados em todas as queries.
 | `NEXT_PUBLIC_X_HANDLE` | Nao | Browser + Server |
 | `TRANSPARENCIA_API_KEY` | Nao | Server only |
 | `ANTHROPIC_API_KEY` | Nao (fase 2) | Server only |
+| `RESEND_API_KEY` | Sim (alertas email) | Server only |
+| `CRON_SECRET` | Sim (digest cron) | Server only |
+| `PF_ALERTS_TOKEN_ENCRYPTION_KEY` | Sim (alertas email) | Server only |
+| `PF_ALERTS_TOKEN_SALT` | Nao (tem fallback dev) | Server only |
+| `PF_ALERTS_IP_SALT` | Nao (tem fallback dev) | Server only |
+| `PF_ALERTS_FROM_EMAIL` | Nao (tem default) | Server only |
 
 ## Known Issues
 

@@ -24,6 +24,7 @@ import {
   normalizeCandidateSlug,
   normalizeOpaqueToken,
 } from "@/lib/alerts"
+import { logAlertsApiExit } from "@/lib/alerts-log"
 import { sendTransactionalEmail } from "@/lib/email"
 
 export const runtime = "nodejs"
@@ -41,6 +42,7 @@ export async function POST(req: NextRequest) {
   try {
     body = await req.json()
   } catch {
+    logAlertsApiExit("subscribe", 400, "invalid_json")
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 })
   }
 
@@ -50,11 +52,13 @@ export async function POST(req: NextRequest) {
   const nome = optionalName(body)
 
   if (!email || !candidateSlug) {
+    logAlertsApiExit("subscribe", 400, "invalid_payload")
     return NextResponse.json({ error: "Invalid payload" }, { status: 400 })
   }
 
   const candidate = await findPublicCandidateBySlug(candidateSlug)
   if (!candidate) {
+    logAlertsApiExit("subscribe", 404, "candidate_not_found", { candidateSlug })
     return NextResponse.json({ error: "Candidate not found" }, { status: 404 })
   }
 
@@ -73,6 +77,10 @@ export async function POST(req: NextRequest) {
   if (existingSubscriber?.verified) {
     if (!manageToken) {
       if (cooldownActive) {
+        logAlertsApiExit("subscribe", 200, "verified_manage_link_cooldown", {
+          candidateSlug: candidate.slug,
+          cooldownActive: true,
+        })
         return NextResponse.json({
           ok: true,
           verified: true,
@@ -105,6 +113,7 @@ export async function POST(req: NextRequest) {
         .eq("id", existingSubscriber.id)
 
       if (updateError) {
+        logAlertsApiExit("subscribe", 503, "db_refresh_manage_access_failed")
         return NextResponse.json({ error: "Could not refresh manage access" }, { status: 503 })
       }
 
@@ -116,9 +125,11 @@ export async function POST(req: NextRequest) {
           html: accessEmail.html,
         })
       } catch {
+        logAlertsApiExit("subscribe", 503, "manage_access_email_failed")
         return NextResponse.json({ error: "Manage access email unavailable" }, { status: 503 })
       }
 
+      logAlertsApiExit("subscribe", 200, "verified_manage_link_sent", { candidateSlug: candidate.slug })
       return NextResponse.json({
         ok: true,
         verified: true,
@@ -130,6 +141,7 @@ export async function POST(req: NextRequest) {
 
     const authorizedSubscriber = await findSubscriberByManageToken(manageToken)
     if (!authorizedSubscriber || authorizedSubscriber.id !== existingSubscriber.id) {
+      logAlertsApiExit("subscribe", 403, "invalid_manage_token_verified_flow")
       return NextResponse.json({ error: "Invalid manage token" }, { status: 403 })
     }
 
@@ -142,9 +154,11 @@ export async function POST(req: NextRequest) {
     )
 
     if (upsertError) {
+      logAlertsApiExit("subscribe", 503, "db_upsert_subscription_failed_verified")
       return NextResponse.json({ error: "Could not update subscription" }, { status: 503 })
     }
 
+    logAlertsApiExit("subscribe", 200, "verified_following", { candidateSlug: candidate.slug })
     return NextResponse.json({
       ok: true,
       verified: true,
@@ -165,10 +179,12 @@ export async function POST(req: NextRequest) {
       .gte("created_at", since)
 
     if (countError) {
+      logAlertsApiExit("subscribe", 503, "rate_check_failed")
       return NextResponse.json({ error: "Rate check failed" }, { status: 503 })
     }
 
     if ((count ?? 0) >= MAX_NEW_SUBSCRIBERS_PER_HOUR) {
+      logAlertsApiExit("subscribe", 429, "rate_limit_new_subscribers_hour")
       return NextResponse.json({ error: "Too many requests" }, { status: 429 })
     }
   }
@@ -183,9 +199,11 @@ export async function POST(req: NextRequest) {
     )
 
     if (subscriptionError) {
+      logAlertsApiExit("subscribe", 503, "db_pending_subscription_cooldown_failed")
       return NextResponse.json({ error: "Could not save pending subscription" }, { status: 503 })
     }
 
+    logAlertsApiExit("subscribe", 200, "requires_verification_cooldown", { candidateSlug: candidate.slug })
     return NextResponse.json({
       ok: true,
       requiresVerification: true,
@@ -221,6 +239,7 @@ export async function POST(req: NextRequest) {
       .eq("id", existingSubscriber.id)
 
     if (updateError) {
+      logAlertsApiExit("subscribe", 503, "db_update_subscriber_failed")
       return NextResponse.json({ error: "Could not update subscriber" }, { status: 503 })
     }
 
@@ -243,6 +262,7 @@ export async function POST(req: NextRequest) {
       .single()
 
     if (insertError || !insertedSubscriber) {
+      logAlertsApiExit("subscribe", 503, "db_insert_subscriber_failed")
       return NextResponse.json({ error: "Could not create subscriber" }, { status: 503 })
     }
 
@@ -258,6 +278,7 @@ export async function POST(req: NextRequest) {
   )
 
   if (subscriptionError) {
+    logAlertsApiExit("subscribe", 503, "db_create_subscription_failed")
     return NextResponse.json({ error: "Could not create subscription" }, { status: 503 })
   }
 
@@ -279,9 +300,11 @@ export async function POST(req: NextRequest) {
       html: emailPayload.html,
     })
   } catch {
+    logAlertsApiExit("subscribe", 503, "verification_email_send_failed")
     return NextResponse.json({ error: "Verification email unavailable" }, { status: 503 })
   }
 
+  logAlertsApiExit("subscribe", 200, "requires_verification_email_sent", { candidateSlug: candidate.slug })
   return NextResponse.json({
     ok: true,
     requiresVerification: true,

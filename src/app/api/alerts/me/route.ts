@@ -6,6 +6,7 @@ import {
   maskAlertEmail,
   normalizeOpaqueToken,
 } from "@/lib/alerts"
+import { logAlertsApiExit } from "@/lib/alerts-log"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -13,11 +14,13 @@ export const dynamic = "force-dynamic"
 export async function GET(req: NextRequest) {
   const manageToken = normalizeOpaqueToken(req.nextUrl.searchParams.get("token") ?? "")
   if (!manageToken) {
+    logAlertsApiExit("me", 400, "missing_manage_token")
     return NextResponse.json({ error: "Invalid manage token" }, { status: 400 })
   }
 
   const subscriber = await findSubscriberByManageToken(manageToken)
   if (!subscriber) {
+    logAlertsApiExit("me", 403, "subscriber_not_found")
     return NextResponse.json({ error: "Invalid manage token" }, { status: 403 })
   }
 
@@ -28,6 +31,7 @@ export async function GET(req: NextRequest) {
     .eq("subscriber_id", subscriber.id)
 
   if (subscriptionsError) {
+    logAlertsApiExit("me", 503, "db_load_subscriptions_failed")
     return NextResponse.json({ error: "Could not load subscriptions" }, { status: 503 })
   }
 
@@ -47,12 +51,14 @@ export async function GET(req: NextRequest) {
       .in("id", candidateIds)
 
     if (candidatesError) {
+      logAlertsApiExit("me", 503, "db_load_candidates_failed")
       return NextResponse.json({ error: "Could not load candidate details" }, { status: 503 })
     }
 
     candidates = (rows ?? []).sort((a, b) => a.nome_urna.localeCompare(b.nome_urna, "pt-BR"))
   }
 
+  logAlertsApiExit("me", 200, "ok", { subscriptionCount: candidates.length })
   return NextResponse.json({
     ok: true,
     subscriber: {

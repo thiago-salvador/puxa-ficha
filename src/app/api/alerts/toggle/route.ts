@@ -8,6 +8,7 @@ import {
   normalizeCandidateSlug,
   normalizeOpaqueToken,
 } from "@/lib/alerts"
+import { logAlertsApiExit } from "@/lib/alerts-log"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -17,25 +18,30 @@ export async function POST(req: NextRequest) {
   try {
     body = await req.json()
   } catch {
+    logAlertsApiExit("toggle", 400, "invalid_json")
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 })
   }
 
   const manageToken = normalizeOpaqueToken(alertBodyStringField(body, "manageToken"))
   const candidateSlug = normalizeCandidateSlug(alertBodyStringField(body, "candidateSlug"))
   if (!manageToken || !candidateSlug) {
+    logAlertsApiExit("toggle", 400, "invalid_payload")
     return NextResponse.json({ error: "Invalid payload" }, { status: 400 })
   }
 
   const subscriber = await findSubscriberByManageToken(manageToken)
   if (!subscriber) {
+    logAlertsApiExit("toggle", 403, "subscriber_not_found")
     return NextResponse.json({ error: "Invalid manage token" }, { status: 403 })
   }
   if (!subscriber.verified) {
+    logAlertsApiExit("toggle", 409, "email_not_verified")
     return NextResponse.json({ error: "Email verification required" }, { status: 409 })
   }
 
   const candidate = await findPublicCandidateBySlug(candidateSlug)
   if (!candidate) {
+    logAlertsApiExit("toggle", 404, "candidate_not_found", { candidateSlug })
     return NextResponse.json({ error: "Candidate not found" }, { status: 404 })
   }
 
@@ -48,6 +54,7 @@ export async function POST(req: NextRequest) {
     .maybeSingle()
 
   if (selectError) {
+    logAlertsApiExit("toggle", 503, "db_select_subscription_failed")
     return NextResponse.json({ error: "Could not load subscription" }, { status: 503 })
   }
 
@@ -58,9 +65,11 @@ export async function POST(req: NextRequest) {
       .eq("id", existingSubscription.id)
 
     if (deleteError) {
+      logAlertsApiExit("toggle", 503, "db_delete_subscription_failed")
       return NextResponse.json({ error: "Could not remove subscription" }, { status: 503 })
     }
 
+    logAlertsApiExit("toggle", 200, "unfollow_ok", { candidateSlug: candidate.slug })
     return NextResponse.json({ ok: true, following: false, candidateSlug: candidate.slug })
   }
 
@@ -70,8 +79,10 @@ export async function POST(req: NextRequest) {
   })
 
   if (insertError) {
+    logAlertsApiExit("toggle", 503, "db_insert_subscription_failed")
     return NextResponse.json({ error: "Could not create subscription" }, { status: 503 })
   }
 
+  logAlertsApiExit("toggle", 200, "follow_ok", { candidateSlug: candidate.slug })
   return NextResponse.json({ ok: true, following: true, candidateSlug: candidate.slug })
 }

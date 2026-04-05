@@ -12,6 +12,7 @@ import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import { SectionDivider } from "@/components/SectionHeader"
 import { Footer } from "@/components/Footer"
 import { CandidatePhoto } from "@/components/CandidatePhoto"
+import { FollowCandidateButton } from "@/components/alerts/FollowCandidateButton"
 import { CandidatoProfile } from "@/components/CandidatoProfile"
 import { DataSourceNotice } from "@/components/DataSourceNotice"
 import { DataUnavailableState } from "@/components/DataUnavailableState"
@@ -235,6 +236,7 @@ export async function CandidatoFichaView({
                 {ficha.biografia}
               </p>
             )}
+            <FollowCandidateButton candidateName={ficha.nome_urna} candidateSlug={ficha.slug} />
           </div>
         </div>
       </section>

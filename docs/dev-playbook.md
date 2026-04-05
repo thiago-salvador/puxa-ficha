@@ -117,11 +117,15 @@ Se depender do banco remoto:
 
 - Rota publica no App Router com ISR 1h e OG em `.../timeline/opengraph-image`. O deploy em producao precisa incluir essa rota; ate la, `https://puxa-ficha.vercel.app/candidato/{slug}/timeline` pode responder **404** mesmo com `/candidato/{slug}` em 200.
 - Apos promover deploy: conferir **HTTP 200** em pelo menos um slug publico (ex.: `curl -sI` ou `npm run audit:release-verify` com `VERIFY_URL` da producao). O `release-verify` valida a timeline para cada slug publico do coorte do relatorio factual.
+- Atalho: `VERIFY_URL=https://puxaficha.com.br npm run audit:release-verify:prod` (o script exige `VERIFY_URL` definido).
+- Pontos na timeline: exigem `data_referencia` (DATE) no banco. Para linhas **publicas**, a resolucao a partir de `fontes` usa a **menor data** entre todas as datas validas em `fontes[].data` (ISO, DD/MM/AAAA ou ano) **e** datas extraidas do path da URL (`/AAAA/M/D/`). Pressupoe que as fontes cobrem o mesmo fio temporal; se forem episodios diferentes, definir `data_referencia` na curadoria ou ajustar a lista de fontes. IA visivel continua exigindo `verificado = true`; com evidencia datada: `npm run data:fix-pontos-timeline-gaps` e depois `npm run data:backfill-pontos-data-referencia`. Apos mudar a regra de resolucao, alinhar linhas ja preenchidas: `npm run data:recalc-pontos-data-referencia` (sobrescreve se o min das fontes for diferente do valor guardado; usar `:dry-run` antes).
+- **Contrato:** o gate publico de alertas na ficha usa `isPublicAttentionPoint` em `src/lib/api.ts`. `buildTimelineEvents` (`timeline-utils`) so exige `data_referencia` valida sobre o array ja filtrado; nao duplica o gate.
 
 ### Quiz (`/quiz`) e producao
 
 - Rotas do quiz existem no App Router; o dominio publico so as expoe apos **deploy** da branch correta (nao confundir worktree local com producao ate promover).
 - Tabela `posicoes_declaradas`: migration em `supabase/migrations/` deve estar **aplicada** no projeto Supabase remoto; sem ela o PostgREST pode reportar tabela ausente e o score de posicoes fica degradado.
+- **Links curtos** (`POST /api/quiz/short-link`, `/quiz/r/[token]`): migration `20260405120100_quiz_short_links.sql` (renomeada para nao colidir com outra `20260405120000_*` no historico Supabase). Vercel: `PF_QUIZ_SHORT_LINK_SALT` em Production; em Preview a CLI pode exigir branch especifica ou use o dashboard para todas as previews. `SUPABASE_SERVICE_ROLE_KEY` no server. Detalhe: secao **6.7** do plano do quiz.
 - Testes visuais do quiz com `npm run start` + `http://127.0.0.1`: headers agressivos de HTTPS nao sao aplicados fora da Vercel (ver `next.config.ts`); ainda e necessario `playwright install webkit` para o preset mobile.
 
 ### Pipeline, auditoria factual e release verify
@@ -135,6 +139,10 @@ npm run audit:release-verify
 ```
 
 Ou as variantes parciais/coortes quando a mudanca for localizada.
+
+**Ingest Camara incremental (`--skip-camara-validated`):** uso local ou reruns para reduzir chamadas a API. Pula o candidato inteiro so se votos das `votacoes_chave` da Camara (com `proposicao_id`), gastos com linha para **2023, 2024 e 2025** e **>=100** `projetos_lei`; senao roda perfil (1 GET) e so as etapas faltantes. O **cron do GitHub Actions** continua sem essa flag (ingest completa). Ex-deputado sem CEAP em algum desses anos ou autor com menos de 100 proposicoes na API pode refazer gastos ou projetos ate bater o criterio.
+
+**Smoke:** os scripts carregam `SUPABASE_URL` e `SUPABASE_SERVICE_ROLE_KEY` a partir de `.env.local` (ou `.env`) em `scripts/lib/supabase.ts`. Smoke **so banco** (segundos): `npm run smoke:camara-incremental-db -- lula`. Smoke **com API** da Camara (pode demorar e sofrer 504): `npx tsx scripts/lib/ingest-camara.ts --skip-camara-validated --slugs lula`. Catalogo de mensagens de log: indice `docs/ingest-logs-index.md` (Camara, Senado, TSE, demais fontes).
 
 ## 4. Regras que sempre valem
 

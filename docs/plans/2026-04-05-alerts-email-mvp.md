@@ -80,6 +80,9 @@ FollowCandidateButton (client)
 - [x] Extrair `stringField` duplicado para alerts-shared.ts
 - [x] Lint + build validados
 - [x] Commit consolidado
+- [x] Auditoria completa + logging operacional documentados neste arquivo
+- [x] `src/lib/alerts-log.ts` + logs em todas as respostas das 7 rotas + `sendTransactionalEmail`
+- [x] `tests/alerts-log.test.ts`
 
 ## Log de sessao
 
@@ -127,3 +130,81 @@ Leitura completa dos 17 arquivos. Testes 6/6 OK. Problemas identificados:
 ### Pendencia final
 
 - Testar fluxo end-to-end real: subscribe com email valido → receber email → verificar → toggle → digest
+
+---
+
+## Auditoria completa (inventario 2026-04-05)
+
+### Feature "Alertas por email" — arquivos canonicos
+
+| Area | Caminhos |
+|------|-----------|
+| Plano | `docs/plans/2026-04-05-alerts-email-mvp.md` (este arquivo) |
+| API | `src/app/api/alerts/subscribe/route.ts`, `verify`, `me`, `toggle`, `unsubscribe-all`, `delete-data`, `send-digest` |
+| Lib servidor | `src/lib/alerts.ts`, `src/lib/alerts-shared.ts`, `src/lib/alerts-log.ts`, `src/lib/email.ts` |
+| Lib cliente | `src/lib/alerts-client.ts` |
+| Paginas | `src/app/alertas/gerenciar/page.tsx`, `src/app/alertas/verificar/page.tsx` |
+| UI | `src/components/alerts/FollowCandidateButton.tsx`, `AlertsManageClient.tsx`, `AlertVerifyClient.tsx` |
+| Ficha | `src/components/CandidatoProfile.tsx`, `src/app/candidato/[slug]/CandidatoFichaView.tsx` |
+| Privacidade | `src/app/privacidade/page.tsx` |
+| Dados | `supabase/migrations/20260406150000_alerts_email_mvp.sql`, `scripts/schema.sql` (tabelas + triggers) |
+| Testes | `tests/alerts.test.ts`, `tests/alerts-log.test.ts` |
+| CI | `.github/workflows/alerts-digest.yml`, `notify-workflow-failure.yml` (lista "Digest de alertas") |
+| Config | `.env.example` (`RESEND_API_KEY`, `PF_ALERTS_*`, implicitamente `CRON_SECRET` no digest) |
+
+### O que NAO e esta feature (homonimos "alertas")
+
+| Tema | Onde | Significado |
+|------|------|-------------|
+| Aba ficha "Alertas" | `CandidatoProfile.tsx`, `candidato-profile-tabs.ts` | Pontos de atencao editoriais |
+| `alertas_graves` / comparador | `api.ts`, `ComparadorPanel.tsx`, etc. | Metricas de pontos criticos |
+| Timeline lane "Alertas" | `timeline-utils.ts`, `TimelineTab.tsx` | Pontos com `data_referencia` |
+| Quiz | `quiz-types.ts`, `QuizDetailPanel.tsx` | `alertas_contradicao` |
+| `AlertBanner.tsx`, `ui/alert.tsx` | Componentes UI | Banner pontos / shadcn |
+| Migracao `split_positive_points_from_alerts` | `supabase/migrations/20260403121500_...` | Refatoracao pontos_atencao |
+| SMTP em AGENTS.md | Secrets | Email quando **workflow** GitHub falha |
+
+### Lacunas documentais / produto (sem mudanca obrigatoria)
+
+1. `CLAUDE.md` / `AGENTS.md` nao listam `RESEND_API_KEY`, `CRON_SECRET`, `PF_ALERTS_*` (vale espelhar `.env.example` ou este plano).
+2. `src/app/sitemap.ts` nao inclui `/alertas/gerenciar` nem `/alertas/verificar` (pode ser intencional).
+
+---
+
+## Logging operacional (implementado 2026-04-05)
+
+### Modulo
+
+- `src/lib/alerts-log.ts`: `logAlertsEvent`, `logAlertsApiExit`
+- Formato: **uma linha JSON** por evento no stdout (`console.info` / `warn` / `error`), campo `service: "pf-alerts"` (transporte email usa `route: "email-transport"`).
+- **Nota:** o modulo **nao** usa `import "server-only"` (o pacote npm `server-only` quebra `tsx --test`). Uso restrito a rotas API e `email.ts`, documentado no arquivo.
+
+### Politica de dados
+
+- **Proibido** em `detail`: email integral, tokens, `CRON_SECRET`, chaves API.
+- Permitido: `candidateSlug`, `subscriberId` (UUID), contagens, razoes simbolicas (`reason`), `messageId` do Resend.
+
+### Cobertura
+
+| Rota / modulo | Eventos |
+|---------------|---------|
+| `subscribe` | `http_exit` em **todas** as respostas HTTP (400–503, 200, 429) com `detail.reason` |
+| `verify` | Idem |
+| `me` | Idem |
+| `toggle` | Idem |
+| `delete-data` | Idem |
+| `unsubscribe-all` | Idem |
+| `send-digest` | `http_exit` 401/503/200; `batch_start`; por assinante: `subscriber_skipped`, `subscriber_step_failed`, `digest_email_sent`, `digest_email_failed` |
+| `email-transport` | `resend_missing_api_key`, `resend_request_failed`, `resend_accepted` |
+
+### Onde ler em producao
+
+- Vercel: **Logs** da funcao (Runtime Logs) filtrando `pf-alerts` ou `email-transport`.
+
+### Log de sessao — logging
+
+- **2026-04-05**: Instrumentacao completa das 7 rotas + `sendTransactionalEmail`; testes `tests/alerts-log.test.ts`; plano atualizado com auditoria e esta secao.
+
+### Pendencia final (inalterada)
+
+- E2E real: subscribe → inbox → verify → toggle → digest (validar tambem linhas de log no ambiente alvo).

@@ -1,5 +1,7 @@
 import "server-only"
 
+import { logAlertsEvent } from "@/lib/alerts-log"
+
 export interface SendEmailInput {
   to: string | string[]
   subject: string
@@ -31,6 +33,11 @@ function resolveResendApiKey(): string | null {
 export async function sendTransactionalEmail(input: SendEmailInput): Promise<{ id: string | null }> {
   const apiKey = resolveResendApiKey()
   if (!apiKey) {
+    logAlertsEvent({
+      route: "email-transport",
+      event: "resend_missing_api_key",
+      level: "error",
+    })
     throw new Error("Missing RESEND_API_KEY")
   }
 
@@ -39,6 +46,8 @@ export async function sendTransactionalEmail(input: SendEmailInput): Promise<{ i
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
+      // Resend blocks requests without User-Agent (403, error 1010). SDKs set this; raw fetch must too.
+      "User-Agent": "PuxaFicha/1.0 (+https://puxaficha.com.br)",
     },
     body: JSON.stringify({
       from: resolveAlertsFromEmail(),
@@ -54,8 +63,20 @@ export async function sendTransactionalEmail(input: SendEmailInput): Promise<{ i
   const data = (await response.json().catch(() => null)) as ResendSendEmailResponse | null
   if (!response.ok || !data?.id) {
     const message = data?.error?.message || `Resend responded with ${response.status}`
+    logAlertsEvent({
+      route: "email-transport",
+      event: "resend_request_failed",
+      level: "error",
+      detail: { httpStatus: response.status, message: message.slice(0, 300) },
+    })
     throw new Error(message)
   }
+
+  logAlertsEvent({
+    route: "email-transport",
+    event: "resend_accepted",
+    detail: { messageId: data.id },
+  })
 
   return { id: data.id }
 }

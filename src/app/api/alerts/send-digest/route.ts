@@ -10,6 +10,7 @@ import {
   buildAlertDigestEmail,
   type AlertDigestEmailCandidate,
 } from "@/lib/alerts-shared"
+import { logAlertsApiExit, logAlertsEvent } from "@/lib/alerts-log"
 import { sendTransactionalEmail } from "@/lib/email"
 
 export const runtime = "nodejs"
@@ -65,6 +66,7 @@ export async function POST(req: NextRequest) {
   const providedSecret = getCronSecret(req)
 
   if (!expectedSecret || providedSecret !== expectedSecret) {
+    logAlertsApiExit("send-digest", 401, "unauthorized")
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
   }
 
@@ -89,8 +91,21 @@ export async function POST(req: NextRequest) {
     .range(cursor, cursor + limit - 1)
 
   if (subscribersError) {
+    logAlertsApiExit("send-digest", 503, "db_subscribers_query_failed")
     return NextResponse.json({ error: "Could not load subscribers" }, { status: 503 })
   }
+
+  logAlertsEvent({
+    route: "send-digest",
+    event: "batch_start",
+    detail: {
+      cursor,
+      limit,
+      digestDate,
+      batchSize: subscribers?.length ?? 0,
+      totalSubscribers: count ?? null,
+    },
+  })
 
   let processed = 0
   let sent = 0
@@ -109,11 +124,22 @@ export async function POST(req: NextRequest) {
       .maybeSingle()
 
     if (existingLogError) {
+      logAlertsEvent({
+        route: "send-digest",
+        event: "subscriber_step_failed",
+        level: "warn",
+        detail: { subscriberId: subscriber.id, step: "notification_log_query" },
+      })
       failed += 1
       continue
     }
 
     if (existingLog?.status === "sent") {
+      logAlertsEvent({
+        route: "send-digest",
+        event: "subscriber_skipped",
+        detail: { subscriberId: subscriber.id, reason: "already_sent_today" },
+      })
       skipped += 1
       continue
     }
@@ -124,6 +150,12 @@ export async function POST(req: NextRequest) {
       .eq("subscriber_id", subscriber.id)
 
     if (subscriptionsError) {
+      logAlertsEvent({
+        route: "send-digest",
+        event: "subscriber_step_failed",
+        level: "warn",
+        detail: { subscriberId: subscriber.id, step: "subscriptions_query" },
+      })
       failed += 1
       continue
     }
@@ -133,6 +165,11 @@ export async function POST(req: NextRequest) {
     )
 
     if (candidateIds.length === 0) {
+      logAlertsEvent({
+        route: "send-digest",
+        event: "subscriber_skipped",
+        detail: { subscriberId: subscriber.id, reason: "no_subscriptions" },
+      })
       skipped += 1
       continue
     }
@@ -143,6 +180,12 @@ export async function POST(req: NextRequest) {
       .in("id", candidateIds)
 
     if (candidatesError) {
+      logAlertsEvent({
+        route: "send-digest",
+        event: "subscriber_step_failed",
+        level: "warn",
+        detail: { subscriberId: subscriber.id, step: "candidates_publico_query" },
+      })
       failed += 1
       continue
     }
@@ -160,11 +203,22 @@ export async function POST(req: NextRequest) {
       .limit(40)
 
     if (changesError) {
+      logAlertsEvent({
+        route: "send-digest",
+        event: "subscriber_step_failed",
+        level: "warn",
+        detail: { subscriberId: subscriber.id, step: "candidate_changes_query" },
+      })
       failed += 1
       continue
     }
 
     if (!changeRows || changeRows.length === 0) {
+      logAlertsEvent({
+        route: "send-digest",
+        event: "subscriber_skipped",
+        detail: { subscriberId: subscriber.id, reason: "no_changes_in_window" },
+      })
       skipped += 1
       continue
     }
@@ -189,6 +243,11 @@ export async function POST(req: NextRequest) {
     }
 
     if (grouped.length === 0) {
+      logAlertsEvent({
+        route: "send-digest",
+        event: "subscriber_skipped",
+        detail: { subscriberId: subscriber.id, reason: "no_grouped_changes" },
+      })
       skipped += 1
       continue
     }
@@ -216,6 +275,12 @@ export async function POST(req: NextRequest) {
         .eq("id", logId)
 
       if (pendingLogError) {
+        logAlertsEvent({
+          route: "send-digest",
+          event: "subscriber_step_failed",
+          level: "warn",
+          detail: { subscriberId: subscriber.id, step: "notification_log_pending_update" },
+        })
         failed += 1
         continue
       }
@@ -234,6 +299,12 @@ export async function POST(req: NextRequest) {
         .single()
 
       if (insertLogError || !insertedLog) {
+        logAlertsEvent({
+          route: "send-digest",
+          event: "subscriber_step_failed",
+          level: "warn",
+          detail: { subscriberId: subscriber.id, step: "notification_log_insert" },
+        })
         failed += 1
         continue
       }
@@ -266,13 +337,25 @@ export async function POST(req: NextRequest) {
         .update({ last_digest_sent_at: runStartedAt })
         .eq("id", subscriber.id)
 
+      logAlertsEvent({
+        route: "send-digest",
+        event: "digest_email_sent",
+        detail: { subscriberId: subscriber.id, changeCount: (changeRows as CandidateChangeRow[]).length },
+      })
       sent += 1
     } catch (error) {
+      const errMsg = error instanceof Error ? error.message.slice(0, 500) : "Unknown error"
+      logAlertsEvent({
+        route: "send-digest",
+        event: "digest_email_failed",
+        level: "error",
+        detail: { subscriberId: subscriber.id, errorMessage: errMsg },
+      })
       await supabase
         .from("notification_log")
         .update({
           status: "failed",
-          error_message: error instanceof Error ? error.message.slice(0, 500) : "Unknown error",
+          error_message: errMsg,
         })
         .eq("id", logId)
 
@@ -303,6 +386,17 @@ export async function POST(req: NextRequest) {
       }
     })
   }
+
+  logAlertsApiExit("send-digest", 200, "batch_complete", {
+    processed,
+    sent,
+    failed,
+    skipped,
+    cursor,
+    nextCursor: hasMore ? nextCursor : null,
+    chainScheduled: hasMore && shouldChain,
+    total,
+  })
 
   return NextResponse.json({
     ok: true,

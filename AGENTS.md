@@ -44,6 +44,9 @@ npm run lint         # ESLint
 # Pipeline de dados (requer SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY)
 npx tsx scripts/ingest-all.ts                    # Todas as fontes
 npx tsx scripts/ingest-all.ts camara senado      # So REST APIs (rapido)
+npx tsx scripts/ingest-all.ts camara --skip-camara-validated   # Camara incremental: votos chave + gastos 2023-2025 + >=100 PL; senao so lacunas (CI nao usa)
+npm run smoke:camara-incremental-db -- <slug>                   # Smoke rapido (so Supabase, sem API Camara; .env.local)
+# Logs pipeline: docs/ingest-logs-index.md
 npx tsx scripts/ingest-all.ts tse                # So CSV do TSE (lento, baixa ZIPs)
 npx tsx scripts/ingest-all.ts transparencia      # Portal da Transparencia (requer API key)
 ```
@@ -170,6 +173,12 @@ Candidatos com `status: 'removido'` sao filtrados em todas as queries.
 | `NEXT_PUBLIC_X_HANDLE` | Nao | Browser + Server |
 | `TRANSPARENCIA_API_KEY` | Nao | Server only |
 | `ANTHROPIC_API_KEY` | Nao (fase 2) | Server only |
+| `RESEND_API_KEY` | Sim (alertas email) | Server only |
+| `CRON_SECRET` | Sim (digest cron) | Server only |
+| `PF_ALERTS_TOKEN_ENCRYPTION_KEY` | Sim (alertas email) | Server only |
+| `PF_ALERTS_TOKEN_SALT` | Nao (tem fallback dev) | Server only |
+| `PF_ALERTS_IP_SALT` | Nao (tem fallback dev) | Server only |
+| `PF_ALERTS_FROM_EMAIL` | Nao (tem default) | Server only |
 
 ## Known Issues
 
@@ -204,14 +213,17 @@ Candidatos com `status: 'removido'` sao filtrados em todas as queries.
 ## Learned Workspace Facts
 
 - `npm run lint` pode ainda falhar por warning antigo em `scripts/release-verify.ts` (por exemplo `snapshotMap` nao usado); tratar como debito separado do trabalho em feature.
-- `tests/visual/interactions.spec.ts`: o projeto Playwright `mobile` usa WebKit (preset tipo iPhone); sem `npx playwright install` (ou `playwright install webkit`) os cenarios mobile costumam falhar por executavel ausente, nao por regressao de UI.
+- `tests/visual/interactions.spec.ts`: o projeto Playwright `mobile` usa WebKit (preset tipo iPhone); sem `npx playwright install` (ou `playwright install webkit`) os cenarios mobile costumam falhar por executavel ausente, nao por regressao de UI. `docs/visual-audit.md` e `docs/audit-visual-front-*.md` consolidam runs; contagens totais pressupoem browsers instalados.
 - `next.config.ts`: `upgrade-insecure-requests` e HSTS sao enviados na **Vercel** (`VERCEL=1`) ou se `PF_FORCE_PRODUCTION_SECURITY_HEADERS=1`. `npm run start` em HTTP local nao os aplica (evita WebKit/Playwright preso em Carregando por upgrade para `https://127.0.0.1`). Host proprio com `next start` em HTTPS pode precisar de `PF_FORCE_PRODUCTION_SECURITY_HEADERS=1`.
 - O quiz Fase 2 le `posicoes_declaradas` em `api.ts`; a migration existe em `supabase/migrations/`, mas se o Supabase remoto nao aplicou, o log pode citar tabela ausente no schema cache e o score fica degradado sem esse sinal.
 - Rotas novas (ex.: `/quiz`) podem existir no repo e ainda nao responder em producao ate deploy promovido; validar URL publica ou branch deployada, nao só o worktree local.
-- Planos em `docs/plans/` sobre o quiz podem citar `QUIZ_VERSION` 2 ou escopo antigo; fonte de verdade do encoding e versao: `src/data/quiz/perguntas.ts` e `src/lib/quiz-encoding.ts` (ex.: v3 com bit de importancia).
+- Planos em `docs/plans/` podem citar escopo antigo ou contagens de testes de rodadas passadas; para o quiz, encoding e versao ficam em `src/data/quiz/perguntas.ts` e `src/lib/quiz-encoding.ts`; total agregado atual de testes confirme com `npm test`. Na timeline, se `docs/audit-timeline-*.md` divergir do plano `docs/plans/2026-04-04-timeline-visual.md`, priorizar o plano.
 - Ao rodar `release-verify` ou checagens contra app local, confirmar URL e porta do Puxa Ficha; a porta 3000 pode estar ocupada por outro app, o que invalida a verificacao se o servidor errado responder.
 - OAuth do MCP Supabase no Cursor as vezes retorna `Unrecognized client_id`; operacao com o banco neste repo segue estavel com `.env.local` e `npx tsx scripts/...`.
-- `docs/visual-audit.md` e `docs/audit-visual-front-*.md` consolidam achados e runs Playwright; contagens tipo 32/32 pressupoem browsers Playwright instalados no ambiente.
+- Alertas por email: `src/lib/alerts-log.ts` nao usa `import "server-only"` porque o pacote npm quebra `tsx --test`; manter uso apenas em rotas `src/app/api/alerts/*` e `src/lib/email.ts`. Chamadas `fetch` a `api.resend.com` precisam de header `User-Agent` nao vazio para evitar 403 (erro 1010 na documentacao Resend).
+- Nova `votacoes_chave` ligada ao quiz: aplicar migration no Supabase (`supabase db push` ou SQL no dashboard), rodar ingestao da Camara (ou fluxo que preenche `votos_candidato`) para que votos entrem no dataset live, e validar mapeamento com `npm run check:quiz-votacoes` (`scripts/check-quiz-votacoes-chave.ts`).
+- `scripts/sync-curated-party-timeline.ts` existe no repositorio mas nao esta listado em `package.json`; fica menos visivel que os outros `npm run data:*` de timeline e pontos de atencao.
+- Ate a feature `/rankings` estar mergeada por completo no `main`, os arquivos podem existir so no working tree ou em branch; mudancas em `api.ts`, `sitemap` ou navegacao sem o pacote inteiro (`src/app/rankings/**`, `src/lib/rankings.ts`, definicoes e componentes) tendem a quebrar o build.
 
 ## Code Style
 
