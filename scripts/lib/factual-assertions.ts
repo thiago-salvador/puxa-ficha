@@ -1308,6 +1308,7 @@ const RAW_CANDIDATE_ASSERTIONS: CandidateAssertionInput[] = [
       nome_urna: "Dr. Daniel",
       partido_atual: "Podemos",
       partido_sigla: "PODEMOS",
+      cargo_atual: "Prefeito de Ananindeua",
       cargo_disputado: "Governador",
       estado: "PA",
     },
