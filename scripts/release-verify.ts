@@ -5,6 +5,18 @@ import { delimiter, join, resolve } from "path"
 import { createClient } from "@supabase/supabase-js"
 import { CANDIDATE_ASSERTIONS } from "./lib/factual-assertions"
 
+const envFiles = [".env.local", ".env"]
+for (const file of envFiles) {
+  const hasUrl = Boolean(process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL)
+  const hasKey = Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY)
+  if (hasUrl && hasKey) break
+
+  const envPath = resolve(process.cwd(), file)
+  if (existsSync(envPath)) {
+    process.loadEnvFile(envPath)
+  }
+}
+
 const BASE_URL = process.env.VERIFY_URL ?? "http://localhost:3000"
 const REPORT_PATH =
   process.argv.find((_, i, arr) => arr[i - 1] === "--report") ??
@@ -27,6 +39,7 @@ const GLOBAL_NODE_MODULES = execFileSync("npm", ["root", "-g"], { encoding: "utf
 const LOCAL_NODE_MODULES = resolve(process.cwd(), "node_modules")
 const IS_LOCAL_BASE_URL = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(BASE_URL)
 const PREVIEW_TOKEN = process.env.PF_PREVIEW_TOKEN ?? (IS_LOCAL_BASE_URL ? "local-preview" : "")
+const RANKING_SLUGS = ["gastos-parlamentares", "mudancas-partido", "patrimonio-declarado"] as const
 
 const supabaseUrl = process.env.SUPABASE_URL
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY
@@ -95,6 +108,12 @@ interface ComparePageRow {
     categoria: string | null
     gravidade: string | null
   }> | null
+}
+
+interface RankingPageResult {
+  status: number
+  hrefs?: string[]
+  rowCount?: number
 }
 
 interface CandidateCheckResult {
@@ -690,6 +709,111 @@ const outputPath = __OUTPUT_PATH__
   }
 }
 
+function verifyRankingPages(): CandidateCheckResult[] {
+  const indexResult = runPlaywrightSpec<RankingPageResult>(
+    "release-verify-rankings-index",
+    `
+const { chromium } = require("playwright")
+const { writeFileSync } = require("fs")
+const outputPath = __OUTPUT_PATH__
+
+;(async () => {
+  const browser = await chromium.launch({ headless: true })
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1100 } })
+  const response = await page.goto((process.env.VERIFY_URL || "http://localhost:3000") + "/rankings", {
+    waitUntil: "domcontentloaded",
+  })
+  await page.waitForTimeout(300)
+  const hrefs = await page.locator('a[href^="/rankings/"]').evaluateAll((nodes) =>
+    nodes.map((node) => node.getAttribute("href")).filter(Boolean)
+  )
+  await browser.close()
+  writeFileSync(outputPath, JSON.stringify({
+    status: response ? response.status() : 0,
+    hrefs,
+  }, null, 2), "utf8")
+})().catch((error) => {
+  console.error(error)
+  process.exit(1)
+})
+`
+  )
+
+  const expectedHrefs = RANKING_SLUGS.map((slug) => `/rankings/${slug}`)
+  const hrefSet = new Set(indexResult.hrefs ?? [])
+
+  const results: CandidateCheckResult[] = [
+    {
+      slug: "rankings",
+      ok:
+        indexResult.status > 0 &&
+        indexResult.status < 400 &&
+        expectedHrefs.every((href) => hrefSet.has(href)),
+      checks: [
+        {
+          check: "rankings_index_status",
+          ok: indexResult.status > 0 && indexResult.status < 400,
+          details: String(indexResult.status),
+        },
+        {
+          check: "rankings_index_links",
+          ok: expectedHrefs.every((href) => hrefSet.has(href)),
+          details: expectedHrefs.filter((href) => !hrefSet.has(href)).join(", ") || "ok",
+        },
+      ],
+    },
+  ]
+
+  for (const slug of RANKING_SLUGS) {
+    const detailResult = runPlaywrightSpec<RankingPageResult>(
+      `release-verify-ranking-${slug}`,
+      `
+const { chromium } = require("playwright")
+const { writeFileSync } = require("fs")
+const outputPath = __OUTPUT_PATH__
+
+;(async () => {
+  const browser = await chromium.launch({ headless: true })
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1100 } })
+  const response = await page.goto((process.env.VERIFY_URL || "http://localhost:3000") + ${JSON.stringify(`/rankings/${slug}`)}, {
+    waitUntil: "domcontentloaded",
+  })
+  await page.waitForTimeout(300)
+  const rowCount = await page.locator("[data-pf-ranking-row]").count()
+  await browser.close()
+  writeFileSync(outputPath, JSON.stringify({
+    status: response ? response.status() : 0,
+    rowCount,
+  }, null, 2), "utf8")
+})().catch((error) => {
+  console.error(error)
+  process.exit(1)
+})
+`
+    )
+
+    results.push({
+      slug: `rankings:${slug}`,
+      ok:
+        detailResult.status > 0 && detailResult.status < 400 && Number(detailResult.rowCount || 0) > 0,
+      checks: [
+        {
+          check: "ranking_detail_status",
+          ok: detailResult.status > 0 && detailResult.status < 400,
+          details: String(detailResult.status),
+        },
+        {
+          check: "ranking_detail_rows",
+          ok: Number(detailResult.rowCount || 0) > 0,
+          details: String(detailResult.rowCount || 0),
+        },
+      ],
+    })
+  }
+
+  return results
+}
+
 
 async function main() {
   const report = readAuditReport()
@@ -730,6 +854,7 @@ async function main() {
   try {
     const compareFailures = await verifyCompareView(selectedSnapshots)
     const compararResult = await verifyCompararPage()
+    const rankingResults = verifyRankingPages()
 
     writeFileSync(inputPath, JSON.stringify(pageSnapshots, null, 2), "utf8")
     writeFileSync(specPath, buildCandidatePagesSpec(inputPath, outputPath), "utf8")
@@ -779,7 +904,7 @@ async function main() {
       timelineResults = JSON.parse(readFileSync(timelineOutputPath, "utf8")) as CandidateCheckResult[]
     }
 
-    const results = [...pageResults, ...timelineResults, ...compareFailures, compararResult]
+    const results = [...pageResults, ...timelineResults, ...compareFailures, compararResult, ...rankingResults]
 
     writeFileSync(REPORT_OUTPUT_PATH, JSON.stringify(results, null, 2), "utf8")
     writeFileSync(SUMMARY_OUTPUT_PATH, buildSummary(results, MODE), "utf8")

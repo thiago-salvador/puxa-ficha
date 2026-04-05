@@ -2,6 +2,11 @@ import "server-only"
 import { unstable_cache } from "next/cache"
 import { collectQuizVotacaoTitulos, QUIZ_PERGUNTAS } from "@/data/quiz/perguntas"
 import {
+  buildFinanciamentoContexto,
+  buildFinanciamentoDoacaoPerfil,
+  type QuizFinanciamentoDoacaoPerfil,
+} from "@/lib/quiz-financiamento"
+import {
   createServerSupabaseClient,
   createServiceRoleSupabaseClient,
   getAppSupabaseUrl,
@@ -43,6 +48,18 @@ import { sleep } from "@/lib/async-utils"
 import { getCanonicalPerson } from "@/lib/canonical-person-map"
 import { formatDate } from "@/lib/utils"
 import { buildVotacaoPublicUrl } from "@/lib/quiz-votacao-url"
+import { getRankingDefinitionBySlug } from "@/data/ranking-definitions"
+import {
+  buildAggregateRankingEntries,
+  buildFieldRankingEntries,
+  normalizeRankingFilters,
+  sortRankingEntries,
+  type RankingCandidateSummary,
+  type RankingDataset,
+  type RankingDefinition,
+  type RankingEntry,
+  type RankingFieldCandidate,
+} from "@/lib/rankings"
 
 const supabaseUrl = getAppSupabaseUrl()
 const USE_MOCK = !supabaseUrl || supabaseUrl.includes("placeholder")
@@ -450,7 +467,7 @@ async function getMockComparaveis(
   cargoFilter: string,
   estado?: string
 ): Promise<CandidatoComparavel[]> {
-  const { MOCK_CANDIDATOS, MOCK_PATRIMONIO, MOCK_PONTOS, MOCK_PROCESSOS } = await loadMockModule()
+  const { MOCK_CANDIDATOS, MOCK_MUDANCAS, MOCK_PATRIMONIO, MOCK_PONTOS, MOCK_PROCESSOS } = await loadMockModule()
 
   return MOCK_CANDIDATOS
     .filter((c) => c.cargo_disputado === cargoFilter && (!estado || c.estado?.toLowerCase() === estado.toLowerCase()))
@@ -465,7 +482,7 @@ async function getMockComparaveis(
       idade: c.idade,
       formacao: c.formacao,
       total_processos: (MOCK_PROCESSOS[c.slug] ?? []).length,
-      mudancas_partido: 0,
+      mudancas_partido: (MOCK_MUDANCAS[c.slug] ?? []).length,
       alertas_graves: (MOCK_PONTOS[c.slug] ?? []).filter((p) => isNegativeCriticalAttentionPoint(p)).length,
       patrimonio_declarado: MOCK_PATRIMONIO[c.slug]?.[0]?.valor_total ?? null,
       pontos_atencao: MOCK_PONTOS[c.slug] ?? [],
@@ -1052,6 +1069,196 @@ export async function getCandidatosComparaveis(
   return (await getCandidatosComparaveisResource(cargo, estado)).data
 }
 
+function toRankingCandidateSummary(candidate: Pick<Candidato, 'id' | 'nome_urna' | 'slug' | 'partido_sigla' | 'cargo_disputado' | 'estado' | 'foto_url'>): RankingCandidateSummary {
+  return {
+    id: candidate.id,
+    nome_urna: candidate.nome_urna,
+    slug: candidate.slug,
+    partido_sigla: candidate.partido_sigla,
+    cargo_disputado: candidate.cargo_disputado,
+    estado: candidate.estado,
+    foto_url: candidate.foto_url,
+  }
+}
+
+function toRankingFieldCandidate(candidate: CandidatoComparavel): RankingFieldCandidate {
+  return {
+    id: candidate.id,
+    nome_urna: candidate.nome_urna,
+    slug: candidate.slug,
+    partido_sigla: candidate.partido_sigla,
+    cargo_disputado: candidate.cargo_disputado,
+    estado: candidate.estado,
+    foto_url: candidate.foto_url,
+    mudancas_partido: candidate.mudancas_partido,
+    patrimonio_declarado: candidate.patrimonio_declarado,
+  }
+}
+
+async function getMockAggregateRankingRows(
+  definition: RankingDefinition,
+  candidatos: RankingCandidateSummary[]
+): Promise<Array<{ candidato_id: string; metricValue: number | null }>> {
+  switch (definition.tableName) {
+    case "gastos_parlamentares": {
+      const { MOCK_GASTOS } = await loadMockModule()
+      return candidatos.flatMap((candidato) =>
+        (MOCK_GASTOS[candidato.slug] ?? []).map((gasto) => ({
+          candidato_id: candidato.id,
+          metricValue: gasto.total_gasto ?? null,
+        }))
+      )
+    }
+    default:
+      return []
+  }
+}
+
+async function getFieldRankingEntriesResource(
+  definition: RankingDefinition,
+  cargo: string,
+  estado?: string
+): Promise<DataResource<RankingEntry[]>> {
+  if (!definition.sourceField) {
+    return liveResource([])
+  }
+
+  const comparaveisResource = await getCandidatosComparaveisResource(cargo, estado)
+  // Default desc sort: OG images and index cards read entries[0] as leader
+  const entries = sortRankingEntries(
+    buildFieldRankingEntries({
+      candidatos: comparaveisResource.data.map(toRankingFieldCandidate),
+      sourceField: definition.sourceField,
+    })
+  )
+
+  return {
+    ...comparaveisResource,
+    data: entries,
+  }
+}
+
+async function getAggregateRankingEntriesResource(
+  definition: RankingDefinition,
+  cargo: string,
+  estado?: string
+): Promise<DataResource<RankingEntry[]>> {
+  const candidatosResource = await getCandidatosResource(cargo, estado)
+  const candidatos = candidatosResource.data.map((candidate) =>
+    toRankingCandidateSummary(candidate)
+  )
+  // Default desc sort: OG images and index cards read entries[0] as leader
+  const buildEntries = (rows: Array<{ candidato_id: string; metricValue: number | null }>) =>
+    sortRankingEntries(buildAggregateRankingEntries({ candidatos, rows }))
+
+  if (candidatosResource.sourceStatus !== "live") {
+    return {
+      ...candidatosResource,
+      data: buildEntries(await getMockAggregateRankingRows(definition, candidatos)),
+    }
+  }
+
+  if (candidatos.length === 0) {
+    return liveResource([])
+  }
+
+  const supabase = createServerSupabaseClient()
+  const candidateIds = candidatos.map((candidato) => candidato.id)
+
+  switch (definition.tableName) {
+    case "gastos_parlamentares": {
+      const { data, error } = await withSupabaseRetry(
+        `ranking:${definition.slug}`,
+        async () =>
+          supabase
+            .from("gastos_parlamentares")
+            .select("candidato_id,total_gasto")
+            .in("candidato_id", candidateIds)
+      )
+
+      if (error) {
+        if (IS_DEV) {
+          warnDevMockFallback("getRankingData", error)
+          return degradedResource(
+            buildEntries(await getMockAggregateRankingRows(definition, candidatos)),
+            "A metrica principal do ranking falhou. Exibindo fallback local quando possivel."
+          )
+        }
+
+        return degradedResource(
+          buildEntries([]),
+          "Nao foi possivel calcular esta metrica nesta tentativa."
+        )
+      }
+
+      const rows = (data ?? []).map((row) => ({
+        candidato_id: row.candidato_id as string,
+        metricValue: row.total_gasto != null ? Number(row.total_gasto) : null,
+      }))
+
+      return liveResource(buildEntries(rows))
+    }
+
+    default:
+      return liveResource(buildEntries([]))
+  }
+}
+
+async function getRankingDataResourceUncached(
+  slug: string,
+  cargo?: string,
+  estado?: string
+): Promise<DataResource<RankingDataset>> {
+  const definition = getRankingDefinitionBySlug(slug)
+  if (!definition) {
+    throw new Error(`Unknown ranking slug: ${slug}`)
+  }
+
+  const normalized = normalizeRankingFilters({ cargo, uf: estado })
+  const estadoFilter = definition.supportsUf ? normalized.estado : undefined
+
+  const entriesResource =
+    definition.queryType === "comparador-field"
+      ? await getFieldRankingEntriesResource(definition, normalized.cargo, estadoFilter)
+      : await getAggregateRankingEntriesResource(definition, normalized.cargo, estadoFilter)
+
+  return {
+    ...entriesResource,
+    data: {
+      definition,
+      cargo: normalized.cargo,
+      estado: estadoFilter,
+      entries: entriesResource.data,
+    },
+  }
+}
+
+const getCachedRankingDataResource = unstable_cache(
+  async (slug: string, cargo: string, estado: string) =>
+    getRankingDataResourceUncached(slug, cargo || undefined, estado || undefined),
+  ["ranking-data-resource"],
+  {
+    revalidate: APP_DATA_REVALIDATE_SECONDS,
+    tags: ["ranking-data"],
+  }
+)
+
+export async function getRankingDataResource(
+  slug: string,
+  cargo?: string,
+  estado?: string
+): Promise<DataResource<RankingDataset>> {
+  return getCachedRankingDataResource(slug, cargo ?? "", estado ?? "")
+}
+
+export async function getRankingData(
+  slug: string,
+  cargo?: string,
+  estado?: string
+): Promise<RankingDataset> {
+  return (await getRankingDataResource(slug, cargo, estado)).data
+}
+
 async function getQuizAlignmentDatasetResourceUncached(
   cargo = "Presidente",
   estado?: string
@@ -1200,11 +1407,14 @@ async function getQuizAlignmentDatasetResourceUncached(
   const plUrlPorCandidato = new Map<string, Record<string, string>>()
   const mudancasPorCandidato = new Map<string, number>()
   const posPorCandidato = new Map<string, QuizPosicaoDeclarada[]>()
+  const financiamentoPorCandidato = new Map<string, string | null>()
+  const financiamentoPerfilPorCandidato = new Map<string, QuizFinanciamentoDoacaoPerfil>()
   for (const c of candidatos) {
     plPorCandidato.set(c.id, {})
     plUrlPorCandidato.set(c.id, {})
     mudancasPorCandidato.set(c.id, 0)
     posPorCandidato.set(c.id, [])
+    financiamentoPorCandidato.set(c.id, null)
   }
 
   if (candidatoIds.length > 0) {
@@ -1261,6 +1471,40 @@ async function getQuizAlignmentDatasetResourceUncached(
     } else if (posErr && IS_DEV) {
       console.warn("quiz posicoes_declaradas:", posErr.message)
     }
+
+    const { data: finRows, error: finErr } = await withSupabaseRetry("quiz-financiamento", async () =>
+      supabase
+        .from("financiamento")
+        .select("candidato_id,ano_eleicao,total_arrecadado,maiores_doadores")
+        .in("candidato_id", candidatoIds)
+    )
+    if (!finErr && finRows?.length) {
+      const latestByCandidato = new Map<
+        string,
+        { ano: number; total: number | null; maiores: unknown }
+      >()
+      for (const row of finRows) {
+        const cid = row.candidato_id as string
+        const ano = Number(row.ano_eleicao)
+        if (!Number.isFinite(ano)) continue
+        const prev = latestByCandidato.get(cid)
+        if (!prev || ano > prev.ano) {
+          latestByCandidato.set(cid, {
+            ano,
+            total: row.total_arrecadado != null ? Number(row.total_arrecadado) : null,
+            maiores: row.maiores_doadores,
+          })
+        }
+      }
+      for (const [cid, pack] of latestByCandidato) {
+        const ctx = buildFinanciamentoContexto(pack.ano, pack.total, pack.maiores)
+        financiamentoPorCandidato.set(cid, ctx)
+        const perfil = buildFinanciamentoDoacaoPerfil(pack.maiores, pack.total)
+        if (perfil) financiamentoPerfilPorCandidato.set(cid, perfil)
+      }
+    } else if (finErr && IS_DEV) {
+      console.warn("quiz financiamento:", finErr.message)
+    }
   }
 
   const out: QuizCandidatoData[] = candidatos.map((c) => {
@@ -1268,6 +1512,8 @@ async function getQuizAlignmentDatasetResourceUncached(
     const plUrls = plUrlPorCandidato.get(c.id) ?? {}
     const pos = posPorCandidato.get(c.id) ?? []
     const ctr = contradicoesPorCandidato.get(c.id) ?? []
+    const finCtx = financiamentoPorCandidato.get(c.id) ?? null
+    const finPerfil = financiamentoPerfilPorCandidato.get(c.id)
     return {
       id: c.id,
       slug: c.slug,
@@ -1282,6 +1528,8 @@ async function getQuizAlignmentDatasetResourceUncached(
       posicoes_declaradas: pos.length > 0 ? pos : undefined,
       contradicoes_voto: ctr.length > 0 ? ctr : undefined,
       mudancas_partido_count: mudancasPorCandidato.get(c.id) ?? 0,
+      ...(finCtx ? { financiamento_contexto: finCtx } : {}),
+      ...(finPerfil ? { financiamento_doacao_perfil: finPerfil } : {}),
     }
   })
 

@@ -25,6 +25,7 @@ export function Footer() {
                   { href: "/", label: "Presidencia" },
                   { href: "/governadores", label: "Governadores" },
                   { href: "/comparar", label: "Comparador" },
+                  { href: "/rankings", label: "Rankings" },
                   { href: "/sobre", label: "Sobre" },
                 ].map((link) => (
                   <li key={link.href}>

@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { href: "/", label: "Presidencia" },
   { href: "/governadores", label: "Governadores" },
   { href: "/comparar", label: "Comparar" },
+  { href: "/rankings", label: "Rankings" },
   { href: "/quiz", label: "Quiz" },
   { href: "/sobre", label: "Sobre" },
 ]
