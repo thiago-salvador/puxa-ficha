@@ -51,7 +51,7 @@ Registro cronológico das tarefas do plano em `2026-04-05-alignment-sanitization
 ## T8 — Paridade deploy (manual + template)
 
 - **Ação:** Criado [`deploy-parity-2026-04-05-TEMPLATE.md`](deploy-parity-2026-04-05-TEMPLATE.md) para preenchimento após `git push` e conferência Vercel/Supabase.
-- **Resultado:** `git push origin main` concluído: `6fa2f96..c761e80 main -> main`. Conferir no Vercel se o deploy de Production aponta para `c761e80` (ou merge commit equivalente) e preencher [`deploy-parity-2026-04-05-TEMPLATE.md`](deploy-parity-2026-04-05-TEMPLATE.md).
+- **Resultado:** `git push origin main` concluído (duas levas). Tip atual de `origin/main`: `55b81d6` (`docs(ops): registrar push origin main no log`). Conferir no Vercel se Production usa esse SHA e preencher [`deploy-parity-2026-04-05-TEMPLATE.md`](deploy-parity-2026-04-05-TEMPLATE.md).
 
 ---
 
