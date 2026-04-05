@@ -1,6 +1,6 @@
 # Compliance Execution Log
 
-Registro de execucao da matriz de compliance (`docs/compliance-iso-matriz.md`).
+Registro de execucao da matriz de compliance (`docs/compliance/compliance-iso-matriz.md`).
 Cada lote e logado aqui com data, o que foi feito e arquivos criados/modificados.
 
 ---
@@ -9,7 +9,7 @@ Cada lote e logado aqui com data, o que foi feito e arquivos criados/modificados
 
 ### 1.1 ROPA criado
 
-Arquivo: `docs/lgpd-ropa.md`
+Arquivo: `docs/compliance/lgpd-ropa.md`
 
 Registro de operacoes de tratamento cobrindo todas as 14 tabelas do schema.
 Mapeia: operacao, dados pessoais, base legal, finalidade, retencao, compartilhamento.
@@ -35,7 +35,7 @@ Pagina publica em /privacidade com:
 
 ### 2.1 Playbook de incidentes
 
-Arquivo: `docs/lgpd-incident-playbook.md`
+Arquivo: `docs/compliance/lgpd-incident-playbook.md`
 
 Cobre: definicao, severidade (4 niveis), procedimento em 5 fases (deteccao, contencao, notificacao ANPD 72h, remediacao, pos-incidente), contatos de emergencia.
 
@@ -71,7 +71,7 @@ Ja incluida no lote 1 (secao 07 de /privacidade).
 
 ### 4.1 Registro de riscos
 
-Arquivo: `docs/risk-register.md`
+Arquivo: `docs/compliance/risk-register.md`
 
 - Inventario de ativos: 5 ativos de aplicacao, 8 secrets/tokens, 4 provedores
 - 7 riscos identificados (R01-R07) com probabilidade, impacto, controles e acoes
@@ -83,7 +83,7 @@ Arquivo: `docs/risk-register.md`
 
 ### 5.1 Plano de continuidade
 
-Arquivo: `docs/bcp-continuidade.md`
+Arquivo: `docs/compliance/bcp-continuidade.md`
 
 - 4 servicos criticos mapeados com RTO/RPO
 - 6 cenarios de crise com resposta (Vercel down, Supabase down, pipeline quebra, DDoS, credenciais, dados incorretos)
@@ -116,10 +116,10 @@ Arquivos:
 - `AGENTS.md`
 - `src/app/sobre/page.tsx`
 - `src/app/privacidade/page.tsx`
-- `docs/compliance-iso-matriz.md`
-- `docs/risk-register.md`
+- `docs/compliance/compliance-iso-matriz.md`
+- `docs/compliance/risk-register.md`
 - `docs/fluxo-funcionamento-site.md`
-- `docs/lgpd-ropa.md`
+- `docs/compliance/lgpd-ropa.md`
 
 Feito:
 - Regra do projeto passou a proibir explicitamente publicacao de `pontos_atencao` de IA nao verificada
@@ -143,7 +143,7 @@ Resultado:
 
 ### 7.1 Fila de revisao de pontos de IA
 
-Arquivo: `docs/revisao-pontos-ia.md`
+Arquivo: `docs/compliance/revisao-pontos-ia.md`
 
 - 150 pontos pendentes (8 criticos, 9 altos, 6 medios, 127 baixos)
 - Categorias: 68 feitos positivos, 56 perfis, 8 escandalos, 7 patrimonio incompativel, etc.
@@ -161,11 +161,11 @@ Arquivo: `scripts/rotate-secrets.sh`
 ### 7.3 Decisao sobre CPF
 
 CPF de candidatos e dado publico por lei eleitoral (Lei 9.504/97). Nao requer descarte pos-eleicao.
-Atualizado em `docs/lgpd-ropa.md` (retencao e pendencias).
+Atualizado em `docs/compliance/lgpd-ropa.md` (retencao e pendencias).
 
 ### 7.4 Governanca de IA (classificacao de risco + politica de uso)
 
-Arquivo: `docs/ia-governance.md`
+Arquivo: `docs/compliance/ia-governance.md`
 
 - Inventario de 1 sistema editorial de IA comprovado no repo atual
 - Classificacao de risco: alto (acusacoes), medio (feitos positivos e saidas editoriais menos sensiveis)
@@ -179,12 +179,12 @@ Arquivo: `docs/ia-governance.md`
 ## Resumo da sessao (2026-04-03)
 
 ### Arquivos criados
-- `docs/compliance-iso-matriz.md` (atualizado com LGPD, milestones, gap analysis)
-- `docs/compliance-execution-log.md` (este arquivo)
-- `docs/lgpd-ropa.md` (ROPA completo, 13 tabelas mapeadas)
-- `docs/lgpd-incident-playbook.md` (playbook de incidentes + canal de direitos)
-- `docs/risk-register.md` (7 riscos, inventario de ativos e secrets)
-- `docs/bcp-continuidade.md` (BCP pre-eleicao)
+- `docs/compliance/compliance-iso-matriz.md` (atualizado com LGPD, milestones, gap analysis)
+- `docs/compliance/compliance-execution-log.md` (este arquivo)
+- `docs/compliance/lgpd-ropa.md` (ROPA completo, 13 tabelas mapeadas)
+- `docs/compliance/lgpd-incident-playbook.md` (playbook de incidentes + canal de direitos)
+- `docs/compliance/risk-register.md` (7 riscos, inventario de ativos e secrets)
+- `docs/compliance/bcp-continuidade.md` (BCP pre-eleicao)
 - `src/app/privacidade/page.tsx` (politica de privacidade publica)
 
 ### Arquivos modificados
@@ -193,12 +193,12 @@ Arquivo: `docs/ia-governance.md`
 ### Gaps pendentes (atualizados apos lote 7)
 - Designar DPO / encarregado
 - Criar email privacidade@puxaficha.com.br
-- Completar revisao humana dos pontos de IA. Fila criada em `docs/revisao-pontos-ia.md` (150 pontos). Execucao continua manual.
+- Completar revisao humana dos pontos de IA. Fila criada em `docs/compliance/revisao-pontos-ia.md` (150 pontos). Execucao continua manual.
 - Avaliar se email_campanha deve ser exposto publicamente
 - ~~Implementar automacao de descarte de CPF~~ → decisao: CPF e dado publico, sem descarte. Noticias > 12 meses pendente de automacao.
 - Operacionalizar rotacao de secrets a cada 90 dias. Script criado em `scripts/rotate-secrets.sh`, mas a primeira execucao e o log formal ainda estao pendentes.
 - Executar os 5 testes de continuidade ate agosto
 - Ativar mock fallback em producao como medida de contingencia
 - Adicionar badge de IA na pagina de comparacao tambem
-- ~~Classificacao de risco de IA~~ → formalizada em `docs/ia-governance.md`
-- ~~Politica de uso de IA~~ → criada em `docs/ia-governance.md`
+- ~~Classificacao de risco de IA~~ → formalizada em `docs/compliance/ia-governance.md`
+- ~~Politica de uso de IA~~ → criada em `docs/compliance/ia-governance.md`

@@ -98,7 +98,7 @@ Baseado em ISO 22301:2019, adaptado para o porte do projeto.
 **Probabilidade**: baixa
 **Impacto**: critico (acesso ao banco, dados de CPF)
 
-**Resposta**: ver `docs/lgpd-incident-playbook.md` (playbook de incidentes)
+**Resposta**: ver `docs/compliance/lgpd-incident-playbook.md` (playbook de incidentes)
 
 **Preparacao**:
 - [ ] Rotacionar todos os secrets a cada 90 dias como pratica preventiva

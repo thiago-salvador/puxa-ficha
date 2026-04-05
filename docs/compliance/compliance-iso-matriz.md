@@ -62,44 +62,44 @@ Mapa do que existe vs o que falta para as prioridades 0-4.
 
 | Controle | Status | O que falta |
 | --- | --- | --- |
-| Base legal definida por operacao | Feito | Mapeado em `docs/lgpd-ropa.md` (13 tabelas, 3 bases legais) |
-| Registro de operacoes de tratamento (ROPA) | Feito | `docs/lgpd-ropa.md` |
+| Base legal definida por operacao | Feito | Mapeado em `docs/compliance/lgpd-ropa.md` (13 tabelas, 3 bases legais) |
+| Registro de operacoes de tratamento (ROPA) | Feito | `docs/compliance/lgpd-ropa.md` |
 | Politica de privacidade publica | Feito | `src/app/privacidade/page.tsx` (rota /privacidade, 11 secoes) |
-| Direitos do titular (acesso, correcao, exclusao) | Feito (doc) | Canal definido: privacidade@puxaficha.com.br. Procedimento em `docs/lgpd-incident-playbook.md`. Pendente: criar o email |
+| Direitos do titular (acesso, correcao, exclusao) | Feito (doc) | Canal definido: privacidade@puxaficha.com.br. Procedimento em `docs/compliance/lgpd-incident-playbook.md`. Pendente: criar o email |
 | Retencao e descarte | Parcial | Regras formalizadas no ROPA. CPF permanente (dado publico). Noticias > 12 meses: automacao pendente |
-| Resposta a incidentes (72h ANPD) | Feito | `docs/lgpd-incident-playbook.md` (4 severidades, 5 fases, contatos de emergencia) |
+| Resposta a incidentes (72h ANPD) | Feito | `docs/compliance/lgpd-incident-playbook.md` (4 severidades, 5 fases, contatos de emergencia) |
 | DPO / Encarregado | Nao designado | Designar responsavel. Email definido mas ainda nao criado |
 
 ### ISO/IEC 27001:2022 (SGSI)
 
 | Controle | Status | O que falta |
 | --- | --- | --- |
-| Inventario de ativos | Feito | `docs/risk-register.md` (5 ativos, 8 secrets, 4 provedores) |
+| Inventario de ativos | Feito | `docs/compliance/risk-register.md` (5 ativos, 8 secrets, 4 provedores) |
 | Controle de acesso | Parcial | Supabase RLS ativo, anon audit feito. Falta politica formal de acessos administrativos |
-| Gestao de segredos | Feito | Secrets documentados em `docs/risk-register.md`. Script de rotacao em `scripts/rotate-secrets.sh` |
+| Gestao de segredos | Feito | Secrets documentados em `docs/compliance/risk-register.md`. Script de rotacao em `scripts/rotate-secrets.sh` |
 | Logs e monitoramento | Parcial | Vercel logs existem. Falta alerting e retencao formal |
 | Gestao de mudancas | Parcial | PRs e CI existem. Falta politica formal de change management |
-| Gestao de incidentes | Feito | `docs/lgpd-incident-playbook.md` (compartilhado com LGPD) |
-| Analise de riscos | Feito | `docs/risk-register.md` (7 riscos com probabilidade, impacto, controles, acoes) |
+| Gestao de incidentes | Feito | `docs/compliance/lgpd-incident-playbook.md` (compartilhado com LGPD) |
+| Analise de riscos | Feito | `docs/compliance/risk-register.md` (7 riscos com probabilidade, impacto, controles, acoes) |
 | Auditoria interna | Parcial | Audit factual existe. Falta auditoria de seguranca periodica |
 
 ### ISO/IEC 42001:2023 (IA)
 
 | Controle | Status | O que falta |
 | --- | --- | --- |
-| Inventario de sistemas de IA | Feito | Documentado em `docs/ia-governance.md` secao 1. 1 sistema editorial mapeado no repo atual |
-| Classificacao de risco | Feito | Alto (acusacoes), medio (perfis, feitos positivos). Documentado em `docs/ia-governance.md` secao 2 |
+| Inventario de sistemas de IA | Feito | Documentado em `docs/compliance/ia-governance.md` secao 1. 1 sistema editorial mapeado no repo atual |
+| Classificacao de risco | Feito | Alto (acusacoes), medio (perfis, feitos positivos). Documentado em `docs/compliance/ia-governance.md` secao 2 |
 | Transparencia | Parcial | Badge na ficha individual. Falta cobertura no comparador e outras superficies |
-| Revisao humana | Parcial | Gate ativo. Fila de revisao criada (`docs/revisao-pontos-ia.md`, 150 pontos). Execucao manual pendente |
-| Politica de uso de IA | Feito | Documentada em `docs/ia-governance.md` secao 3. Usos permitidos, proibidos, atribuicao |
+| Revisao humana | Parcial | Gate ativo. Fila de revisao criada (`docs/compliance/revisao-pontos-ia.md`, 150 pontos). Execucao manual pendente |
+| Politica de uso de IA | Feito | Documentada em `docs/compliance/ia-governance.md` secao 3. Usos permitidos, proibidos, atribuicao |
 
 ### ISO 22301:2019 (Continuidade)
 
 | Controle | Status | O que falta |
 | --- | --- | --- |
-| BIA (analise de impacto no negocio) | Feito | 4 servicos criticos mapeados em `docs/bcp-continuidade.md` |
-| RTO / RPO definidos | Feito | Definidos por servico em `docs/bcp-continuidade.md` (site 4h, banco 8h, pipeline 48h) |
-| Plano de continuidade | Feito | `docs/bcp-continuidade.md` (6 cenarios com resposta) |
+| BIA (analise de impacto no negocio) | Feito | 4 servicos criticos mapeados em `docs/compliance/bcp-continuidade.md` |
+| RTO / RPO definidos | Feito | Definidos por servico em `docs/compliance/bcp-continuidade.md` (site 4h, banco 8h, pipeline 48h) |
+| Plano de continuidade | Feito | `docs/compliance/bcp-continuidade.md` (6 cenarios com resposta) |
 | Testes de continuidade | Pendente | 5 testes agendados para ate agosto 2026 |
 
 ## Por que isso vale para este projeto

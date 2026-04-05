@@ -71,7 +71,7 @@ Se o incidente envolver risco ou dano relevante aos titulares:
 
 - [ ] Escrever post-mortem em `docs/incidents/`
 - [ ] Atualizar este playbook se o procedimento foi insuficiente
-- [ ] Atualizar o registro de riscos (`docs/risk-register.md`) se aplicavel
+- [ ] Atualizar o registro de riscos (`docs/compliance/risk-register.md`) se aplicavel
 - [ ] Comunicar ao titular se houve impacto direto
 
 ---

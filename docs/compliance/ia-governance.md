@@ -118,7 +118,7 @@ Banco: gerado_por="ia", verificado=false
 Gate SQL: invisivel na superficie publica
     |
     v
-Revisor humano (docs/revisao-pontos-ia.md)
+Revisor humano (docs/compliance/revisao-pontos-ia.md)
     |
     ├── Aprovar: verificado=true → visivel com badge "Gerado por IA"
     ├── Editar + Aprovar: corrigir texto, verificado=true → visivel corrigido

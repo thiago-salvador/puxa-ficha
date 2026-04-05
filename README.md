@@ -32,7 +32,7 @@ npx tsx scripts/ingest-all.ts tse             # CSV do TSE
 
 ## Documentacao
 
-- [Matriz de compliance (LGPD + ISO)](docs/compliance-iso-matriz.md)
+- [Matriz de compliance (LGPD + ISO)](docs/compliance/compliance-iso-matriz.md)
 
 ## Licenca
 
