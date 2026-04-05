@@ -193,6 +193,26 @@ Candidatos com `status: 'removido'` sao filtrados em todas as queries.
 - **NAO commitar .env.local.** Usar .env.example como template.
 - **NAO editar `data/candidatos.json` sem verificar IDs nas APIs.** IDs errados = dados de outro politico.
 
+## Learned User Preferences
+
+- **Solidez primeiro**: priorizar o resultado mais robusto e confiavel (correcao, seguranca, manutencao, acessibilidade, trilha de verificacao) em detrimento de tempo de execucao ou esforco de implementacao, salvo quando o usuario fixar escopo ou prazo explicitamente. Evitar atalhos que fragilizem producao ou auditoria sem alinhamento explicito.
+- No mapa do Brasil (`BrazilMap`), em viewport pequeno, prefere ocultar siglas de UF nos centroides a permitir sobreposicao visual entre estados.
+- Em auditorias de front ou UI, quando o pedido for modo auditor, entregar relatorio ou documento primeiro e nao aplicar correcoes ate haver pedido explicito de implementacao.
+- No fluxo de publicacao e gates do `PLAN.md`, trabalhar em blocos pequenos com evidencia de comandos ou scripts; nao pular audit factual, release-verify ou dry-run; assertions `mirrored` nao abrem publicacao ate virarem `curated`.
+- Reviews amplos (seguranca, arquitetura) sao complementares a planos por tema; quando o foco for exposicao de dados, alinhar RLS e grants no Postgres com o que o produto chama de superficie publica, nao apenas o filtro em `api.ts`.
+
+## Learned Workspace Facts
+
+- `npm run lint` pode ainda falhar por warning antigo em `scripts/release-verify.ts` (por exemplo `snapshotMap` nao usado); tratar como debito separado do trabalho em feature.
+- `tests/visual/interactions.spec.ts`: o projeto Playwright `mobile` usa WebKit (preset tipo iPhone); sem `npx playwright install` (ou `playwright install webkit`) os cenarios mobile costumam falhar por executavel ausente, nao por regressao de UI.
+- `next.config.ts`: `upgrade-insecure-requests` e HSTS sao enviados na **Vercel** (`VERCEL=1`) ou se `PF_FORCE_PRODUCTION_SECURITY_HEADERS=1`. `npm run start` em HTTP local nao os aplica (evita WebKit/Playwright preso em Carregando por upgrade para `https://127.0.0.1`). Host proprio com `next start` em HTTPS pode precisar de `PF_FORCE_PRODUCTION_SECURITY_HEADERS=1`.
+- O quiz Fase 2 le `posicoes_declaradas` em `api.ts`; a migration existe em `supabase/migrations/`, mas se o Supabase remoto nao aplicou, o log pode citar tabela ausente no schema cache e o score fica degradado sem esse sinal.
+- Rotas novas (ex.: `/quiz`) podem existir no repo e ainda nao responder em producao ate deploy promovido; validar URL publica ou branch deployada, nao só o worktree local.
+- Planos em `docs/plans/` sobre o quiz podem citar `QUIZ_VERSION` 2 ou escopo antigo; fonte de verdade do encoding e versao: `src/data/quiz/perguntas.ts` e `src/lib/quiz-encoding.ts` (ex.: v3 com bit de importancia).
+- Ao rodar `release-verify` ou checagens contra app local, confirmar URL e porta do Puxa Ficha; a porta 3000 pode estar ocupada por outro app, o que invalida a verificacao se o servidor errado responder.
+- OAuth do MCP Supabase no Cursor as vezes retorna `Unrecognized client_id`; operacao com o banco neste repo segue estavel com `.env.local` e `npx tsx scripts/...`.
+- `docs/visual-audit.md` e `docs/audit-visual-front-*.md` consolidam achados e runs Playwright; contagens tipo 32/32 pressupoem browsers Playwright instalados no ambiente.
+
 ## Code Style
 
 - Funcoes, nao classes

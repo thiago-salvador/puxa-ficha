@@ -18,6 +18,10 @@ Antes de editar:
 2. fazer uma passada em `git status --short`
 3. classificar a mudanca: UI publica, data layer, schema/Supabase, auditoria/pipeline ou deploy
 
+## Prioridade de entrega
+
+Priorizar **resultado solido e confiavel** (correcao, seguranca, manutencao, acessibilidade, evidencia de verificacao) em detrimento de tempo de implementacao ou esforco, salvo quando o usuario fixar escopo ou prazo explicitamente. Atalhos que fragilizem producao ou auditoria exigem alinhamento explicito antes de serem escolhidos.
+
 ## Gemma
 
 Para trabalho limitado, mecanico e de baixo risco, preferir Gemma conforme a regra global. Quando a tarefa for roteada para Gemma, a regra neste repo e:

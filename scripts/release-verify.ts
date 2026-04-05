@@ -397,6 +397,75 @@ async function attr(page, selector, name) {
 `
 }
 
+/** Rotas publicas `/candidato/{slug}/timeline` (preview nao tem espelho dedicado). */
+function buildTimelinePagesSpec(inputPath: string, outputPath: string): string {
+  return `
+const { chromium } = require("playwright")
+const { readFileSync, writeFileSync } = require("fs")
+
+const baseUrl = process.env.VERIFY_URL || "http://localhost:3000"
+const rows = JSON.parse(readFileSync(${JSON.stringify(inputPath)}, "utf8"))
+const outputPath = ${JSON.stringify(outputPath)}
+
+function normalizeText(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\\u0300-\\u036f]/g, "")
+    .replace(/\\s+/g, " ")
+    .trim()
+    .toLowerCase()
+}
+
+async function textContent(page, selector) {
+  const locator = page.locator(selector).first()
+  if (!(await locator.count())) return null
+  return (await locator.textContent()) || null
+}
+
+;(async () => {
+  const browser = await chromium.launch({ headless: true })
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1100 } })
+  const results = []
+
+  for (const row of rows) {
+    const response = await page.goto(\`\${baseUrl}\${row.verify_path}\`, {
+      waitUntil: "domcontentloaded",
+    })
+    await page.waitForTimeout(300)
+
+    const checks = []
+    const status = response ? response.status() : 0
+    checks.push({
+      check: "timeline_http_status",
+      ok: status > 0 && status < 400,
+      details: String(status),
+    })
+
+    if (status > 0 && status < 400) {
+      const heroName = await textContent(page, "[data-pf-hero-name]")
+      checks.push({
+        check: "timeline_hero_name",
+        ok: normalizeText(heroName) === normalizeText(row.nome_urna),
+        details: row.nome_urna,
+      })
+    }
+
+    results.push({
+      slug: row.slug,
+      ok: checks.every((check) => check.ok),
+      checks,
+    })
+  }
+
+  await browser.close()
+  writeFileSync(outputPath, JSON.stringify(results, null, 2), "utf8")
+})().catch((error) => {
+  console.error(error)
+  process.exit(1)
+})
+`
+}
+
 async function verifyCompareView(selectedSnapshots: CandidateSnapshot[]) {
   const slugs = selectedSnapshots.map((snapshot) => snapshot.slug)
   const snapshotMap = new Map(selectedSnapshots.map((snapshot) => [snapshot.slug, snapshot]))
@@ -625,7 +694,6 @@ const outputPath = __OUTPUT_PATH__
 async function main() {
   const report = readAuditReport()
   const selectedSnapshots = resolveSnapshots(report)
-  const snapshotMap = new Map(report.snapshots.map((snapshot) => [snapshot.slug, snapshot]))
   const { data: publicRows, error: publicError } = await withQueryRetry(
     "candidatos_publico query for page verify",
     async () =>
@@ -680,7 +748,38 @@ async function main() {
     })
 
     const pageResults = JSON.parse(readFileSync(outputPath, "utf8")) as CandidateCheckResult[]
-    const results = [...pageResults, ...compareFailures, compararResult]
+
+    const timelineRows = selectedSnapshots
+      .filter((snapshot) => publicSlugs.has(snapshot.slug))
+      .map((snapshot) => ({
+        slug: `timeline:${snapshot.slug}`,
+        nome_urna: snapshot.nome_urna,
+        verify_path: `/candidato/${snapshot.slug}/timeline`,
+      }))
+
+    let timelineResults: CandidateCheckResult[] = []
+    if (timelineRows.length > 0) {
+      const timelineInputPath = join(tempDir, "timeline-rows.json")
+      const timelineOutputPath = join(tempDir, "timeline-results.json")
+      const timelineSpecPath = join(tempDir, "release-verify-timeline.spec.cjs")
+      writeFileSync(timelineInputPath, JSON.stringify(timelineRows, null, 2), "utf8")
+      writeFileSync(timelineSpecPath, buildTimelinePagesSpec(timelineInputPath, timelineOutputPath), "utf8")
+      execFileSync("node", [timelineSpecPath], {
+        cwd: tempDir,
+        env: {
+          ...process.env,
+          VERIFY_URL: BASE_URL,
+          CI: "1",
+          NODE_PATH: [LOCAL_NODE_MODULES, GLOBAL_NODE_MODULES, process.env.NODE_PATH]
+            .filter(Boolean)
+            .join(delimiter),
+        },
+        stdio: "pipe",
+      })
+      timelineResults = JSON.parse(readFileSync(timelineOutputPath, "utf8")) as CandidateCheckResult[]
+    }
+
+    const results = [...pageResults, ...timelineResults, ...compareFailures, compararResult]
 
     writeFileSync(REPORT_OUTPUT_PATH, JSON.stringify(results, null, 2), "utf8")
     writeFileSync(SUMMARY_OUTPUT_PATH, buildSummary(results, MODE), "utf8")

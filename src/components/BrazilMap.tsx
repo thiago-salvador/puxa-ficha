@@ -3,7 +3,13 @@
 import { useState, useRef, useCallback } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import { BRAZIL_STATES, REGIONS } from "@/data/brazil-states"
+import {
+  BRAZIL_STATES,
+  MACRO_REGION_CSS_SLUG,
+  REGIONS,
+  getRegionForSigla,
+  type BrazilMacroRegion,
+} from "@/data/brazil-states"
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
 
 const LARGE_STATES = new Set([
@@ -36,6 +42,23 @@ const EXTRUDE_Y = 8
 const HOVER_LIFT = 6
 const HOVER_EXTRUDE_X = 6
 const HOVER_EXTRUDE_Y = 12
+
+const STROKE_COLOR = "var(--map-state-stroke)"
+const STROKE_WIDTH = 1
+const STROKE_WIDTH_DF = 2.4
+
+/** Sem siglas no mapa abaixo de lg (evita sobreposicao). O diretorio lateral mantem todas as UFs. */
+const MAP_LABEL_CLASS = "pointer-events-none select-none hidden lg:inline"
+
+function regionPaint(sigla: string): { top: string; side: string; hover: string } {
+  const macro = getRegionForSigla(sigla)
+  const slug = macro ? MACRO_REGION_CSS_SLUG[macro] : MACRO_REGION_CSS_SLUG.Sul
+  return {
+    top: `var(--map-region-${slug})`,
+    side: `var(--map-region-${slug}-side)`,
+    hover: `var(--map-region-${slug}-hover)`,
+  }
+}
 
 export function BrazilMap() {
   const router = useRouter()
@@ -75,12 +98,15 @@ export function BrazilMap() {
             transform: "rotate(-2deg)",
           }}
           role="img"
-          aria-label="Mapa do Brasil dividido por estados"
+          aria-label="Mapa do Brasil por região e estados"
         >
           <defs>
             {/* Shadow under entire map */}
             <filter id="map-shadow" x="-10%" y="-5%" width="120%" height="115%">
               <feDropShadow dx="6" dy="12" stdDeviation="12" floodColor="#000" floodOpacity="0.08" />
+            </filter>
+            <filter id="map-label-shadow" x="-35%" y="-35%" width="170%" height="170%">
+              <feDropShadow dx="0" dy="0.5" stdDeviation="0.9" floodColor="#000" floodOpacity="0.45" />
             </filter>
           </defs>
 
@@ -95,6 +121,10 @@ export function BrazilMap() {
               const ex = isHovered ? HOVER_EXTRUDE_X : EXTRUDE_X
               const ey = isHovered ? HOVER_EXTRUDE_Y : EXTRUDE_Y
               const liftY = isHovered ? -HOVER_LIFT : 0
+              const paint = regionPaint(state.sigla)
+              const topFill = isHovered ? paint.hover : paint.top
+              const isDf = state.sigla === "DF"
+              const strokeW = isDf ? STROKE_WIDTH_DF : STROKE_WIDTH
 
               return (
                 <g
@@ -136,9 +166,9 @@ export function BrazilMap() {
                   {/* Lateral/extrude face (shadow) */}
                   <path
                     d={state.d}
-                    fill="var(--gray-400)"
-                    stroke="var(--gray-500)"
-                    strokeWidth="0.5"
+                    fill={paint.side}
+                    stroke={STROKE_COLOR}
+                    strokeWidth={strokeW}
                     strokeLinejoin="round"
                     style={{
                       transform: `translate(${ex}px, ${ey + liftY}px)`,
@@ -149,9 +179,9 @@ export function BrazilMap() {
                   {/* Top face (main) */}
                   <path
                     d={state.d}
-                    fill={isHovered ? "var(--gray-50)" : "var(--gray-200)"}
-                    stroke="var(--gray-500)"
-                    strokeWidth="1.2"
+                    fill={topFill}
+                    stroke={STROKE_COLOR}
+                    strokeWidth={strokeW}
                     strokeLinejoin="round"
                     style={{
                       transform: `translate(0, ${liftY}px)`,
@@ -159,29 +189,51 @@ export function BrazilMap() {
                     }}
                   />
 
-                  {/* State label */}
-                  {LARGE_STATES.has(state.sigla) && (() => {
-                    const labelPos = LABEL_POS[state.sigla] ?? { x: state.cx, y: state.cy }
-                    return (
-                      <text
-                        x={labelPos.x}
-                        y={labelPos.y + liftY}
-                        textAnchor="middle"
-                        dominantBaseline="central"
-                        className="pointer-events-none select-none"
-                        style={{
-                          fontSize: "10px",
-                          fontFamily: "Inter, system-ui, sans-serif",
-                          fontWeight: 700,
-                          letterSpacing: "0.05em",
-                          fill: isHovered ? "var(--gray-900)" : "var(--gray-500)",
-                          transition: prefersReducedMotion ? "none" : "fill 0.3s ease",
-                        }}
-                      >
-                        {state.sigla}
-                      </text>
-                    )
-                  })()}
+                  {/* State label — large states: tuned positions; small states: centroid sigla */}
+                  {LARGE_STATES.has(state.sigla) ? (
+                    (() => {
+                      const labelPos = LABEL_POS[state.sigla] ?? { x: state.cx, y: state.cy }
+                      return (
+                        <text
+                          x={labelPos.x}
+                          y={labelPos.y + liftY}
+                          textAnchor="middle"
+                          dominantBaseline="central"
+                          className={MAP_LABEL_CLASS}
+                          filter="url(#map-label-shadow)"
+                          style={{
+                            fontSize: "10px",
+                            fontFamily: "Inter, system-ui, sans-serif",
+                            fontWeight: 700,
+                            letterSpacing: "0.05em",
+                            fill: "rgba(255, 255, 255, 0.96)",
+                            transition: prefersReducedMotion ? "none" : "fill 0.3s ease",
+                          }}
+                        >
+                          {state.sigla}
+                        </text>
+                      )
+                    })()
+                  ) : (
+                    <text
+                      x={state.cx}
+                      y={state.cy + liftY}
+                      textAnchor="middle"
+                      dominantBaseline="central"
+                      className={MAP_LABEL_CLASS}
+                      filter="url(#map-label-shadow)"
+                      style={{
+                        fontSize: "8px",
+                        fontFamily: "Inter, system-ui, sans-serif",
+                        fontWeight: 700,
+                        letterSpacing: "0.04em",
+                        fill: "rgba(255, 255, 255, 0.96)",
+                        transition: prefersReducedMotion ? "none" : "fill 0.3s ease",
+                      }}
+                    >
+                      {state.sigla}
+                    </text>
+                  )}
                 </g>
               )
             })}
@@ -229,35 +281,46 @@ export function BrazilMap() {
 
         {/* Region directory */}
         <div className="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
-          {Object.entries(REGIONS).map(([region, ufs]) => (
-            <div key={region}>
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.1em] text-muted-foreground">
-                {region}
-              </h3>
-              <ul className="mt-1.5 space-y-0.5">
-                {ufs.map((uf) => {
-                  const isActive = hovered === uf
-                  return (
-                    <li key={uf}>
-                      <Link
-                        href={`/governadores/${uf.toLowerCase()}`}
-                        className={`group flex items-baseline gap-1.5 rounded px-1 py-0.5 text-[length:var(--text-body-sm)] transition-colors ${
-                          isActive
-                            ? "bg-foreground/5 text-foreground"
-                            : "text-foreground/70 hover:text-foreground"
-                        }`}
-                        onMouseEnter={() => setHovered(uf)}
-                        onMouseLeave={() => setHovered(null)}
-                      >
-                        <span className="font-bold">{uf}</span>
-                        <span className="font-medium">{STATE_NAMES[uf]}</span>
-                      </Link>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          ))}
+          {Object.entries(REGIONS).map(([region, ufs]) => {
+            const macro = region as BrazilMacroRegion
+            const slug = MACRO_REGION_CSS_SLUG[macro]
+            return (
+              <div key={region}>
+                <h3 className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.1em] text-muted-foreground">
+                  <span
+                    className="size-2.5 shrink-0 rounded-sm border border-border/50"
+                    style={{
+                      backgroundColor: `var(--map-region-${slug})`,
+                    }}
+                    aria-hidden
+                  />
+                  {region}
+                </h3>
+                <ul className="mt-1.5 space-y-0.5">
+                  {ufs.map((uf) => {
+                    const isActive = hovered === uf
+                    return (
+                      <li key={uf}>
+                        <Link
+                          href={`/governadores/${uf.toLowerCase()}`}
+                          className={`group flex items-baseline gap-1.5 rounded px-1 py-0.5 text-[length:var(--text-body-sm)] transition-colors ${
+                            isActive
+                              ? "bg-foreground/5 text-foreground"
+                              : "text-foreground/70 hover:text-foreground"
+                          }`}
+                          onMouseEnter={() => setHovered(uf)}
+                          onMouseLeave={() => setHovered(null)}
+                        >
+                          <span className="font-bold">{uf}</span>
+                          <span className="font-medium">{STATE_NAMES[uf]}</span>
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>

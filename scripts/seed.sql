@@ -83,7 +83,9 @@ INSERT INTO votacoes_chave (titulo, descricao, data_votacao, casa, tema, impacto
 
 ('Orçamento Secreto (Emendas de Relator)', 'Emendas RP9 que permitiram distribuição de recursos sem transparência', '2021-12-20', 'Câmara', 'transparencia', 'Permitiu que bilhões fossem distribuídos sem identificação do parlamentar beneficiado. Considerado o maior esquema de compra de votos do Congresso.'),
 
-('Autonomia do Banco Central', 'PLP 19/2019 que deu autonomia ao Banco Central', '2021-02-04', 'Senado', 'economia', 'Blindou a política monetária de interferência governamental, mas também removeu controle democrático sobre juros e câmbio.');
+('Autonomia do Banco Central', 'PLP 19/2019 que deu autonomia ao Banco Central', '2021-02-04', 'Senado', 'economia', 'Blindou a política monetária de interferência governamental, mas também removeu controle democrático sobre juros e câmbio.'),
+
+('Auxílio Brasil (MP 1.087/2021)', 'Medida provisória que instituiu o Auxílio Brasil no lugar do Bolsa Família. Referência para o quiz (eixo de transferência de renda).', '2021-11-03', 'Câmara', 'direitos_sociais', 'Alterou o desenho do principal programa de transferência de renda do país naquele período.');
 
 
 -- ============================================

@@ -94,6 +94,24 @@
   --gray-800: #262626;
   --gray-900: #171717;
   --gray-950: #0a0a0a;
+
+  /* Brazil map by macro-region (editorial, muted; BrazilMap.tsx) */
+  --map-region-norte: #5c7568;
+  --map-region-norte-side: #415548;
+  --map-region-norte-hover: #6d8a7b;
+  --map-region-nordeste: #5a6785;
+  --map-region-nordeste-side: #3f4a60;
+  --map-region-nordeste-hover: #6b7a9a;
+  --map-region-centro-oeste: #8f6b5c;
+  --map-region-centro-oeste-side: #664a3f;
+  --map-region-centro-oeste-hover: #a17d6d;
+  --map-region-sudeste: #7d7758;
+  --map-region-sudeste-side: #5a5540;
+  --map-region-sudeste-hover: #948c69;
+  --map-region-sul: #5a6169;
+  --map-region-sul-side: #3e444a;
+  --map-region-sul-hover: #6e7680;
+  --map-state-stroke: #ffffff;
 }
 
 @layer base {
@@ -276,16 +294,15 @@
      If the animation is blocked (extensions, print), items fall back to natural opacity: 1. */
 }
 
-/* Hero staggered entrance */
+/* Hero staggered entrance — same resilience as .stagger-item: no hard opacity:0 */
 .hero-fade {
-  opacity: 0;
-  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: 0.2s;
 }
 
 /* Section reveal */
 .section-reveal {
-  animation: sectionReveal 0.6s ease-out forwards;
+  animation: sectionReveal 0.6s ease-out both;
 }
 
 /* List item hover — subtle left accent */

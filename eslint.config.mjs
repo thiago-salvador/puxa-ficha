@@ -21,6 +21,8 @@ const eslintConfig = [
       "Templates/**",
       "assets/**",
       ".claude/**",
+      "playwright-report/**",
+      "test-results/**",
     ],
   },
 ];

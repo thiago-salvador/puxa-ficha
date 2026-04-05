@@ -39,6 +39,8 @@ interface MoneyTabSectionProps {
   gastos: GastoParlamentar[]
   historicoLength: number
   suggestion: SuggestAction | null
+  /** Id do evento na timeline (`patrimonio-…`, `gasto-…`) para abrir card e permitir scroll/highlight. */
+  highlightTimelineRef?: string | null
   freshness?: {
     patrimonio?: SectionFreshnessInfo
     financiamento?: SectionFreshnessInfo
@@ -52,6 +54,7 @@ export function MoneyTabSection({
   gastos,
   historicoLength,
   suggestion,
+  highlightTimelineRef,
   freshness,
 }: MoneyTabSectionProps) {
   return (
@@ -76,10 +79,11 @@ export function MoneyTabSection({
               .sort((a, b) => b.ano_eleicao - a.ano_eleicao)
               .filter((item) => (item.bens ?? []).length > 0)
               .map((item) => (
+                <div key={item.id} data-pf-timeline-ref={`patrimonio-${item.id}`}>
                 <ExpandableCard
-                  key={item.id}
                   title={`${item.ano_eleicao}`}
                   subtitle={formatBRL(item.valor_total)}
+                  defaultOpen={highlightTimelineRef === `patrimonio-${item.id}`}
                 >
                   <div className="space-y-2">
                     {(item.bens ?? []).map((bem, index) => (
@@ -102,6 +106,7 @@ export function MoneyTabSection({
                     ))}
                   </div>
                 </ExpandableCard>
+                </div>
               ))}
           </div>
         </div>
@@ -209,11 +214,11 @@ export function MoneyTabSection({
           </div>
           <div className="mt-6 space-y-4">
             {gastos.map((gasto) => (
+              <div key={gasto.id} data-pf-timeline-ref={`gasto-${gasto.id}`}>
               <ExpandableCard
-                key={gasto.id}
                 title={`${gasto.ano}`}
                 subtitle={formatBRL(gasto.total_gasto)}
-                defaultOpen={gastos.length === 1}
+                defaultOpen={gastos.length === 1 || highlightTimelineRef === `gasto-${gasto.id}`}
               >
                 <div className="space-y-4">
                   {(gasto.detalhamento ?? []).length > 0 && (
@@ -243,6 +248,7 @@ export function MoneyTabSection({
                   )}
                 </div>
               </ExpandableCard>
+              </div>
             ))}
           </div>
         </div>
@@ -347,6 +353,7 @@ export function TrajectoryTabSection({
               .map((item, index) => (
                 <div
                   key={item.id}
+                  data-pf-timeline-ref={`cargo-${item.id}`}
                   className="relative flex gap-4 pb-6 last:pb-0 sm:gap-6"
                 >
                   <div className="flex flex-col items-center">
@@ -390,6 +397,7 @@ export function TrajectoryTabSection({
               .map((item, index) => (
                 <div
                   key={item.id}
+                  data-pf-timeline-ref={`partido-${item.id}`}
                   className={`flex items-baseline gap-4 py-3 sm:gap-6 sm:py-4 ${index > 0 ? "border-t border-border/50" : ""}`}
                 >
                   <span className="w-[50px] shrink-0 text-[length:var(--text-caption)] font-bold tabular-nums text-foreground sm:w-[60px] sm:text-[length:var(--text-body-sm)]">
@@ -453,6 +461,7 @@ export function LegislationTabSection({
           .map((projeto) => (
             <div
               key={projeto.id}
+              data-pf-timeline-ref={`pl-${projeto.id}`}
               className={`rounded-[12px] border px-5 py-4 ${projeto.destaque ? "border-foreground bg-muted" : "border-border/50"}`}
             >
               {(() => {

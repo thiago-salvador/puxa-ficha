@@ -6,12 +6,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const candidatos = (await getCandidatosResource()).data
   const ufs = getEstadoUFs()
 
-  const candidatoUrls = candidatos.map((c) => ({
-    url: `https://puxaficha.com.br/candidato/${c.slug}`,
-    lastModified: parseMetadataDate(c.ultima_atualizacao) ?? new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }))
+  const candidatoUrls = candidatos.flatMap((c) => {
+    const lastModified = parseMetadataDate(c.ultima_atualizacao) ?? new Date()
+    return [
+      {
+        url: `https://puxaficha.com.br/candidato/${c.slug}`,
+        lastModified,
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+      },
+      {
+        url: `https://puxaficha.com.br/candidato/${c.slug}/timeline`,
+        lastModified,
+        changeFrequency: "weekly" as const,
+        priority: 0.75,
+      },
+    ]
+  })
 
   const ufUrls = ufs.map((uf) => ({
     url: `https://puxaficha.com.br/governadores/${uf}`,

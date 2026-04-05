@@ -1,3 +1,4 @@
+import { collectQuizVotacaoTitulos, QUIZ_PERGUNTAS } from "@/data/quiz/perguntas"
 import type {
   Candidato,
   Patrimonio,
@@ -12,6 +13,14 @@ import type {
   SancaoAdministrativa,
   NoticiaCandidato,
 } from "@/lib/types"
+import { normalizeVotoFromApi } from "@/lib/quiz-scoring"
+import type {
+  QuizAlignmentDataset,
+  QuizCandidatoData,
+  QuizContradicaoVoto,
+  QuizPosicaoDeclarada,
+} from "@/lib/quiz-types"
+import { buildVotacaoPublicUrl } from "@/lib/quiz-votacao-url"
 
 export const MOCK_CANDIDATOS: Candidato[] = [
   {
@@ -1342,13 +1351,240 @@ export const MOCK_VOTOS: Record<string, VotoCandidato[]> = {
       },
     },
     {
-      id: "v3", candidato_id: "2", votacao_id: "vt3", voto: "sim",
+      id: "v3", candidato_id: "2", votacao_id: "quiz-vt-bc", voto: "sim",
       contradicao: false, contradicao_descricao: null,
       votacao: {
-        id: "vt3", titulo: "Autonomia do Banco Central",
+        id: "quiz-vt-bc",
+        titulo: "Autonomia do Banco Central",
         descricao: "Mandato fixo para presidente do BC",
-        data_votacao: "2021-02-04", casa: "Senado", tema: "Economia",
+        data_votacao: "2021-02-04",
+        casa: "Senado",
+        tema: "economia",
         impacto_popular: "Define independencia da politica monetaria do governo",
+      },
+    },
+    {
+      id: "vq1",
+      candidato_id: "2",
+      votacao_id: "quiz-vt-reforma",
+      voto: "sim",
+      contradicao: false,
+      contradicao_descricao: null,
+      votacao: {
+        id: "quiz-vt-reforma",
+        titulo: "Reforma Trabalhista",
+        descricao: "PL 6787/2016 que alterou a CLT",
+        data_votacao: "2017-07-11",
+        casa: "Câmara",
+        tema: "trabalho",
+        impacto_popular: "Mudou regras trabalhistas no pais",
+      },
+    },
+    {
+      id: "vq2",
+      candidato_id: "2",
+      votacao_id: "quiz-vt-teto",
+      voto: "sim",
+      contradicao: false,
+      contradicao_descricao: null,
+      votacao: {
+        id: "quiz-vt-teto",
+        titulo: "Teto de Gastos (EC 95)",
+        descricao: "Emenda constitucional de limite de gastos",
+        data_votacao: "2016-12-13",
+        casa: "Câmara",
+        tema: "economia",
+        impacto_popular: "Congelou despesas publicas por anos",
+      },
+    },
+    {
+      id: "vq3",
+      candidato_id: "2",
+      votacao_id: "quiz-vt-prev",
+      voto: "sim",
+      contradicao: false,
+      contradicao_descricao: null,
+      votacao: {
+        id: "quiz-vt-prev",
+        titulo: "Reforma da Previdência",
+        descricao: "PEC 6/2019",
+        data_votacao: "2019-07-10",
+        casa: "Câmara",
+        tema: "previdencia",
+        impacto_popular: "Alterou regras de aposentadoria",
+      },
+    },
+    {
+      id: "vq4",
+      candidato_id: "2",
+      votacao_id: "quiz-vt-eletro",
+      voto: "sim",
+      contradicao: false,
+      contradicao_descricao: null,
+      votacao: {
+        id: "quiz-vt-eletro",
+        titulo: "Privatização da Eletrobras",
+        descricao: "PL 5877/2019",
+        data_votacao: "2021-05-20",
+        casa: "Câmara",
+        tema: "economia",
+        impacto_popular: "Autorizou privatizacao da Eletrobras",
+      },
+    },
+    {
+      id: "vq5",
+      candidato_id: "2",
+      votacao_id: "quiz-vt-orc",
+      voto: "sim",
+      contradicao: true,
+      contradicao_descricao:
+        "Defendeu emendas de relator no Congresso enquanto a midia cobrava transparencia sobre o sigilo dos valores.",
+      votacao: {
+        id: "quiz-vt-orc",
+        titulo: "Orçamento Secreto (Emendas de Relator)",
+        descricao: "Emendas RP9",
+        data_votacao: "2021-12-20",
+        casa: "Câmara",
+        tema: "transparencia",
+        impacto_popular: "Distribuicao opaca de emendas",
+      },
+    },
+    {
+      id: "vq6",
+      candidato_id: "2",
+      votacao_id: "quiz-vt-auxilio",
+      voto: "não",
+      contradicao: false,
+      contradicao_descricao: null,
+      votacao: {
+        id: "quiz-vt-auxilio",
+        titulo: "Auxílio Brasil (MP 1.087/2021)",
+        descricao: "MP que instituiu o Auxilio Brasil; mock alinhado ao eixo do quiz q09.",
+        data_votacao: "2021-11-03",
+        casa: "Câmara",
+        tema: "direitos_sociais",
+        impacto_popular: "Substituiu o Bolsa Familia naquele ciclo legislativo.",
+      },
+    },
+  ],
+  lula: [
+    {
+      id: "vl1",
+      candidato_id: "1",
+      votacao_id: "quiz-vt-reforma",
+      voto: "não",
+      contradicao: false,
+      contradicao_descricao: null,
+      votacao: {
+        id: "quiz-vt-reforma",
+        titulo: "Reforma Trabalhista",
+        descricao: "PL 6787/2016 que alterou a CLT",
+        data_votacao: "2017-07-11",
+        casa: "Câmara",
+        tema: "trabalho",
+        impacto_popular: "Mudou regras trabalhistas no pais",
+      },
+    },
+    {
+      id: "vl2",
+      candidato_id: "1",
+      votacao_id: "quiz-vt-teto",
+      voto: "não",
+      contradicao: false,
+      contradicao_descricao: null,
+      votacao: {
+        id: "quiz-vt-teto",
+        titulo: "Teto de Gastos (EC 95)",
+        descricao: "Emenda constitucional de limite de gastos",
+        data_votacao: "2016-12-13",
+        casa: "Câmara",
+        tema: "economia",
+        impacto_popular: "Congelou despesas publicas por anos",
+      },
+    },
+    {
+      id: "vl3",
+      candidato_id: "1",
+      votacao_id: "quiz-vt-prev",
+      voto: "não",
+      contradicao: false,
+      contradicao_descricao: null,
+      votacao: {
+        id: "quiz-vt-prev",
+        titulo: "Reforma da Previdência",
+        descricao: "PEC 6/2019",
+        data_votacao: "2019-07-10",
+        casa: "Câmara",
+        tema: "previdencia",
+        impacto_popular: "Alterou regras de aposentadoria",
+      },
+    },
+    {
+      id: "vl4",
+      candidato_id: "1",
+      votacao_id: "quiz-vt-eletro",
+      voto: "não",
+      contradicao: false,
+      contradicao_descricao: null,
+      votacao: {
+        id: "quiz-vt-eletro",
+        titulo: "Privatização da Eletrobras",
+        descricao: "PL 5877/2019",
+        data_votacao: "2021-05-20",
+        casa: "Câmara",
+        tema: "economia",
+        impacto_popular: "Autorizou privatizacao da Eletrobras",
+      },
+    },
+    {
+      id: "vl5",
+      candidato_id: "1",
+      votacao_id: "quiz-vt-orc",
+      voto: "não",
+      contradicao: false,
+      contradicao_descricao: null,
+      votacao: {
+        id: "quiz-vt-orc",
+        titulo: "Orçamento Secreto (Emendas de Relator)",
+        descricao: "Emendas RP9",
+        data_votacao: "2021-12-20",
+        casa: "Câmara",
+        tema: "transparencia",
+        impacto_popular: "Distribuicao opaca de emendas",
+      },
+    },
+    {
+      id: "vl6",
+      candidato_id: "1",
+      votacao_id: "quiz-vt-bc",
+      voto: "não",
+      contradicao: false,
+      contradicao_descricao: null,
+      votacao: {
+        id: "quiz-vt-bc",
+        titulo: "Autonomia do Banco Central",
+        descricao: "Mandato fixo para presidente do BC",
+        data_votacao: "2021-02-04",
+        casa: "Senado",
+        tema: "economia",
+        impacto_popular: "Define independencia da politica monetaria do governo",
+      },
+    },
+    {
+      id: "vl7",
+      candidato_id: "1",
+      votacao_id: "quiz-vt-auxilio",
+      voto: "sim",
+      contradicao: false,
+      contradicao_descricao: null,
+      votacao: {
+        id: "quiz-vt-auxilio",
+        titulo: "Auxílio Brasil (MP 1.087/2021)",
+        descricao: "MP que instituiu o Auxilio Brasil; mock alinhado ao eixo do quiz q09.",
+        data_votacao: "2021-11-03",
+        casa: "Câmara",
+        tema: "direitos_sociais",
+        impacto_popular: "Substituiu o Bolsa Familia naquele ciclo legislativo.",
       },
     },
   ],
@@ -1395,8 +1631,81 @@ export const MOCK_PONTOS: Record<string, PontoAtencao[]> = {
   ],
 }
 
+// --- POSICOES DECLARADAS (quiz fase 2, mock) ---
+export const MOCK_QUIZ_POSICOES: Record<string, QuizPosicaoDeclarada[]> = {
+  lula: [
+    {
+      tema: "reforma_trabalhista",
+      posicao: "contra",
+      descricao: "Critico historico da reforma de 2017 e defesa de direitos sindicais.",
+      fonte: "Curadoria Puxa Ficha",
+      url_fonte: null,
+    },
+    {
+      tema: "teto_gastos",
+      posicao: "contra",
+      descricao: "Bancada do PT votou contra a EC 95.",
+      fonte: "Curadoria Puxa Ficha",
+      url_fonte: null,
+    },
+    {
+      tema: "transferencia_renda",
+      posicao: "a_favor",
+      descricao: "Programas de renda sao marca dos governos petistas.",
+      fonte: "Curadoria Puxa Ficha",
+      url_fonte: null,
+    },
+  ],
+  "flavio-bolsonaro": [
+    {
+      tema: "reforma_trabalhista",
+      posicao: "a_favor",
+      descricao: "Aliado da agenda liberal na legislatura.",
+      fonte: "Curadoria Puxa Ficha",
+      url_fonte: null,
+    },
+    {
+      tema: "teto_gastos",
+      posicao: "a_favor",
+      descricao: "Voto favoravel ao arcabouco fiscal de 2016.",
+      fonte: "Curadoria Puxa Ficha",
+      url_fonte: null,
+    },
+  ],
+}
+
 // --- PROJETOS DE LEI ---
 export const MOCK_PROJETOS: Record<string, ProjetoLei[]> = {
+  lula: [
+    {
+      id: "pl-l1",
+      candidato_id: "1",
+      tipo: "PL",
+      numero: "5000",
+      ano: 2024,
+      ementa: "Fortalece politicas de moradia popular e urbanizacao.",
+      tema: "direitos_sociais",
+      situacao: "tramitando",
+      url_inteiro_teor: "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2401554",
+      destaque: false,
+      destaque_motivo: null,
+      fonte: "Camara",
+    },
+    {
+      id: "pl-l2",
+      candidato_id: "1",
+      tipo: "PL",
+      numero: "5001",
+      ano: 2023,
+      ementa: "Altera regras de contratacao trabalhista em setor publico.",
+      tema: "trabalho",
+      situacao: "tramitando",
+      url_inteiro_teor: "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2401555",
+      destaque: false,
+      destaque_motivo: null,
+      fonte: "Camara",
+    },
+  ],
   "flavio-bolsonaro": [
     {
       id: "pl1", candidato_id: "2", tipo: "PL", numero: "879", ano: 2022,
@@ -1530,4 +1839,90 @@ export const MOCK_NOTICIAS: Record<string, NoticiaCandidato[]> = {
       snippet: null,
     },
   ],
+}
+
+/** IDs ilustrativos para links no mock; em producao vêm de `votacoes_chave.proposicao_id`. */
+const MOCK_QUIZ_VOTACAO_PROPOSICAO: Record<string, { casa: string; id: string }> = {
+  "Reforma Trabalhista": { casa: "Câmara", id: "2142862" },
+  "Teto de Gastos (EC 95)": { casa: "Câmara", id: "2088358" },
+  "Autonomia do Banco Central": { casa: "Senado", id: "135787" },
+}
+
+export function buildMockQuizAlignmentDataset(
+  cargo = "Presidente",
+  estado?: string
+): QuizAlignmentDataset {
+  const wanted = new Set(collectQuizVotacaoTitulos(QUIZ_PERGUNTAS))
+  const tituloToId: Record<string, string> = {}
+  for (const slug of Object.keys(MOCK_VOTOS)) {
+    for (const v of MOCK_VOTOS[slug] ?? []) {
+      const t = v.votacao?.titulo
+      if (t && wanted.has(t) && tituloToId[t] == null) {
+        tituloToId[t] = v.votacao_id
+      }
+    }
+  }
+
+  const uf = estado?.trim().toUpperCase()
+  const filtered = MOCK_CANDIDATOS.filter((c) => {
+    if (c.cargo_disputado !== cargo) return false
+    if (uf && (c.estado ?? "").toUpperCase() !== uf) return false
+    return true
+  })
+  const candidatos: QuizCandidatoData[] = filtered.map((c) => {
+    const votos: QuizCandidatoData["votos"] = {}
+    const contradicoes: QuizContradicaoVoto[] = []
+    for (const v of MOCK_VOTOS[c.slug] ?? []) {
+      const t = v.votacao?.titulo
+      if (!t || !wanted.has(t)) continue
+      const n = normalizeVotoFromApi(v.voto)
+      if (n) votos[v.votacao_id] = n
+      if (v.contradicao && v.contradicao_descricao?.trim()) {
+        contradicoes.push({ votacao_titulo: t, descricao: v.contradicao_descricao.trim() })
+      }
+    }
+
+    const pls: Record<string, number> = {}
+    const plUrlPorTema: Record<string, string> = {}
+    for (const pl of MOCK_PROJETOS[c.slug] ?? []) {
+      const tm = pl.tema?.trim()
+      if (!tm) continue
+      pls[tm] = (pls[tm] ?? 0) + 1
+      const u = typeof pl.url_inteiro_teor === "string" ? pl.url_inteiro_teor.trim() : ""
+      if (u && plUrlPorTema[tm] == null) plUrlPorTema[tm] = u
+    }
+
+    const mudN = (MOCK_MUDANCAS[c.slug] ?? []).length
+    const pos = MOCK_QUIZ_POSICOES[c.slug]
+
+    return {
+      id: c.id,
+      slug: c.slug,
+      nome_urna: c.nome_urna,
+      partido_sigla: c.partido_sigla,
+      foto_url: c.foto_url,
+      cargo_disputado: c.cargo_disputado,
+      estado: c.estado ?? null,
+      votos,
+      pls_por_tema: Object.keys(pls).length > 0 ? pls : undefined,
+      pl_url_exemplo_por_tema:
+        Object.keys(plUrlPorTema).length > 0 ? plUrlPorTema : undefined,
+      posicoes_declaradas: pos && pos.length > 0 ? pos : undefined,
+      contradicoes_voto: contradicoes.length > 0 ? contradicoes : undefined,
+      mudancas_partido_count: mudN,
+    }
+  })
+
+  const votacaoFontePorTitulo: Record<string, string | null> = {}
+  for (const titulo of Object.keys(tituloToId)) {
+    const meta = MOCK_QUIZ_VOTACAO_PROPOSICAO[titulo]
+    votacaoFontePorTitulo[titulo] = meta ? buildVotacaoPublicUrl(meta.casa, meta.id) : null
+  }
+
+  return {
+    candidatos,
+    votacoes_mapeadas: [...new Set(Object.values(tituloToId))],
+    votacao_titulo_to_id: tituloToId,
+    votacao_fonte_por_titulo: votacaoFontePorTitulo,
+  }
 }

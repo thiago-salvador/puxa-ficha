@@ -1,10 +1,18 @@
 import "server-only"
 import { unstable_cache } from "next/cache"
+import { collectQuizVotacaoTitulos, QUIZ_PERGUNTAS } from "@/data/quiz/perguntas"
 import {
   createServerSupabaseClient,
   createServiceRoleSupabaseClient,
   getAppSupabaseUrl,
 } from "./supabase"
+import { normalizeVotoFromApi } from "@/lib/quiz-scoring"
+import type {
+  QuizAlignmentDataset,
+  QuizCandidatoData,
+  QuizContradicaoVoto,
+  QuizPosicaoDeclarada,
+} from "@/lib/quiz-types"
 import type {
   Candidato,
   FichaCandidato,
@@ -34,6 +42,7 @@ import {
 import { sleep } from "@/lib/async-utils"
 import { getCanonicalPerson } from "@/lib/canonical-person-map"
 import { formatDate } from "@/lib/utils"
+import { buildVotacaoPublicUrl } from "@/lib/quiz-votacao-url"
 
 const supabaseUrl = getAppSupabaseUrl()
 const USE_MOCK = !supabaseUrl || supabaseUrl.includes("placeholder")
@@ -1041,6 +1050,279 @@ export async function getCandidatosComparaveis(
   estado?: string
 ): Promise<CandidatoComparavel[]> {
   return (await getCandidatosComparaveisResource(cargo, estado)).data
+}
+
+async function getQuizAlignmentDatasetResourceUncached(
+  cargo = "Presidente",
+  estado?: string
+): Promise<DataResource<QuizAlignmentDataset>> {
+  const estadoNorm = estado?.trim() || undefined
+
+  if (USE_MOCK) {
+    const { buildMockQuizAlignmentDataset } = await loadMockModule()
+    return mockResource(buildMockQuizAlignmentDataset(cargo, estadoNorm))
+  }
+
+  const candidatosRes = await getCandidatosResourceUncached(cargo, estadoNorm)
+  const candidatos = candidatosRes.data
+
+  if (candidatos.length === 0) {
+    return {
+      data: {
+        candidatos: [],
+        votacoes_mapeadas: [],
+        votacao_titulo_to_id: {},
+        votacao_fonte_por_titulo: {},
+      },
+      sourceStatus: candidatosRes.sourceStatus,
+      sourceMessage: candidatosRes.sourceMessage,
+    }
+  }
+
+  const titulos = collectQuizVotacaoTitulos(QUIZ_PERGUNTAS)
+  const supabase = createServerSupabaseClient()
+
+  const { data: rowsVotacoes, error: errVotacoes } = await withSupabaseRetry(
+    "quiz-votacoes-chave",
+    async () =>
+      supabase.from("votacoes_chave").select("id,titulo,casa,proposicao_id").in("titulo", titulos)
+  )
+
+  if (errVotacoes || !rowsVotacoes) {
+    if (IS_DEV) {
+      warnDevMockFallback("getQuizAlignmentDatasetResource", errVotacoes)
+      const { buildMockQuizAlignmentDataset } = await loadMockModule()
+      return degradedResource(
+        buildMockQuizAlignmentDataset(cargo, estadoNorm),
+        "Votacoes-chave do quiz indisponiveis. Exibindo mock local."
+      )
+    }
+    console.error("quiz votacoes_chave failed:", errVotacoes?.message)
+    const fallbackCandidatos: QuizCandidatoData[] = candidatos.map((c) => ({
+      id: c.id,
+      slug: c.slug,
+      nome_urna: c.nome_urna,
+      partido_sigla: c.partido_sigla,
+      foto_url: c.foto_url,
+      cargo_disputado: c.cargo_disputado,
+      estado: c.estado ?? null,
+      votos: {},
+    }))
+    return {
+      data: {
+        candidatos: fallbackCandidatos,
+        votacoes_mapeadas: [],
+        votacao_titulo_to_id: {},
+        votacao_fonte_por_titulo: {},
+      },
+      sourceStatus: mergeSourceStatuses(candidatosRes.sourceStatus, "degraded"),
+      sourceMessage: mergeSourceMessages(
+        candidatosRes.sourceMessage,
+        "Mapeamento de votacoes do quiz indisponivel; ranking usa apenas espectro partidario."
+      ),
+    }
+  }
+
+  const tituloToId: Record<string, string> = {}
+  const votacaoFontePorTitulo: Record<string, string | null> = {}
+  for (const row of rowsVotacoes) {
+    tituloToId[row.titulo] = row.id
+    votacaoFontePorTitulo[row.titulo] = buildVotacaoPublicUrl(
+      row.casa as string | null,
+      row.proposicao_id as string | null
+    )
+  }
+  const votacaoIds = [...new Set(Object.values(tituloToId))]
+  const candidatoIds = candidatos.map((c) => c.id)
+
+  let votosRows: {
+    candidato_id: string
+    votacao_id: string
+    voto: string
+    contradicao: boolean | null
+    contradicao_descricao: string | null
+  }[] = []
+  let votosFailed = false
+  if (votacaoIds.length > 0 && candidatoIds.length > 0) {
+    const { data, error: errVotos } = await withSupabaseRetry("quiz-votos-candidato", async () =>
+      supabase
+        .from("votos_candidato")
+        .select("candidato_id,votacao_id,voto,contradicao,contradicao_descricao")
+        .in("candidato_id", candidatoIds)
+        .in("votacao_id", votacaoIds)
+    )
+    if (errVotos) {
+      votosFailed = true
+      if (IS_DEV) {
+        warnDevMockFallback("getQuizAlignmentDatasetResource-votos", errVotos)
+      } else {
+        console.error("quiz votos_candidato failed:", errVotos.message)
+      }
+    } else {
+      votosRows = data ?? []
+    }
+  }
+
+  const votosPorCandidato = new Map<string, QuizCandidatoData["votos"]>()
+  const contradicoesPorCandidato = new Map<string, QuizContradicaoVoto[]>()
+  for (const c of candidatos) {
+    votosPorCandidato.set(c.id, {})
+    contradicoesPorCandidato.set(c.id, [])
+  }
+  for (const row of votosRows) {
+    const n = normalizeVotoFromApi(row.voto)
+    if (!n) continue
+    const bag = votosPorCandidato.get(row.candidato_id)
+    if (bag) {
+      bag[row.votacao_id] = n
+    }
+    if (
+      row.contradicao &&
+      row.contradicao_descricao?.trim() &&
+      votacaoIds.includes(row.votacao_id)
+    ) {
+      let titulo = ""
+      for (const [t, vid] of Object.entries(tituloToId)) {
+        if (vid === row.votacao_id) {
+          titulo = t
+          break
+        }
+      }
+      if (!titulo) continue
+      contradicoesPorCandidato.get(row.candidato_id)?.push({
+        votacao_titulo: titulo,
+        descricao: row.contradicao_descricao.trim(),
+      })
+    }
+  }
+
+  const plPorCandidato = new Map<string, Record<string, number>>()
+  const plUrlPorCandidato = new Map<string, Record<string, string>>()
+  const mudancasPorCandidato = new Map<string, number>()
+  const posPorCandidato = new Map<string, QuizPosicaoDeclarada[]>()
+  for (const c of candidatos) {
+    plPorCandidato.set(c.id, {})
+    plUrlPorCandidato.set(c.id, {})
+    mudancasPorCandidato.set(c.id, 0)
+    posPorCandidato.set(c.id, [])
+  }
+
+  if (candidatoIds.length > 0) {
+    const { data: plData } = await withSupabaseRetry("quiz-projetos-lei", async () =>
+      supabase
+        .from("projetos_lei")
+        .select("candidato_id,tema,url_inteiro_teor")
+        .in("candidato_id", candidatoIds)
+        .not("tema", "is", null)
+    )
+    for (const row of plData ?? []) {
+      const tema = typeof row.tema === "string" ? row.tema.trim() : ""
+      if (!tema) continue
+      const bag = plPorCandidato.get(row.candidato_id) ?? {}
+      bag[tema] = (bag[tema] ?? 0) + 1
+      plPorCandidato.set(row.candidato_id, bag)
+      const urlRaw = typeof row.url_inteiro_teor === "string" ? row.url_inteiro_teor.trim() : ""
+      if (urlRaw) {
+        const urlBag = plUrlPorCandidato.get(row.candidato_id as string) ?? {}
+        if (!urlBag[tema]) {
+          urlBag[tema] = urlRaw
+          plUrlPorCandidato.set(row.candidato_id as string, urlBag)
+        }
+      }
+    }
+
+    const { data: mudData } = await withSupabaseRetry("quiz-mudancas-partido", async () =>
+      supabase.from("mudancas_partido").select("candidato_id").in("candidato_id", candidatoIds)
+    )
+    for (const row of mudData ?? []) {
+      const id = row.candidato_id as string
+      mudancasPorCandidato.set(id, (mudancasPorCandidato.get(id) ?? 0) + 1)
+    }
+
+    const { data: posData, error: posErr } = await withSupabaseRetry("quiz-posicoes-declaradas", async () =>
+      supabase
+        .from("posicoes_declaradas")
+        .select("candidato_id,tema,posicao,descricao,fonte,url_fonte")
+        .in("candidato_id", candidatoIds)
+        .eq("verificado", true)
+    )
+    if (!posErr && posData) {
+      for (const row of posData) {
+        const po = row.posicao as string
+        if (po !== "a_favor" && po !== "contra" && po !== "ambiguo") continue
+        posPorCandidato.get(row.candidato_id as string)?.push({
+          tema: row.tema as string,
+          posicao: po as QuizPosicaoDeclarada["posicao"],
+          descricao: row.descricao as string | null,
+          fonte: row.fonte as string | null,
+          url_fonte: row.url_fonte as string | null,
+        })
+      }
+    } else if (posErr && IS_DEV) {
+      console.warn("quiz posicoes_declaradas:", posErr.message)
+    }
+  }
+
+  const out: QuizCandidatoData[] = candidatos.map((c) => {
+    const pls = plPorCandidato.get(c.id) ?? {}
+    const plUrls = plUrlPorCandidato.get(c.id) ?? {}
+    const pos = posPorCandidato.get(c.id) ?? []
+    const ctr = contradicoesPorCandidato.get(c.id) ?? []
+    return {
+      id: c.id,
+      slug: c.slug,
+      nome_urna: c.nome_urna,
+      partido_sigla: c.partido_sigla,
+      foto_url: c.foto_url,
+      cargo_disputado: c.cargo_disputado,
+      estado: c.estado ?? null,
+      votos: votosPorCandidato.get(c.id) ?? {},
+      pls_por_tema: Object.keys(pls).length > 0 ? pls : undefined,
+      pl_url_exemplo_por_tema: Object.keys(plUrls).length > 0 ? plUrls : undefined,
+      posicoes_declaradas: pos.length > 0 ? pos : undefined,
+      contradicoes_voto: ctr.length > 0 ? ctr : undefined,
+      mudancas_partido_count: mudancasPorCandidato.get(c.id) ?? 0,
+    }
+  })
+
+  const dataset: QuizAlignmentDataset = {
+    candidatos: out,
+    votacoes_mapeadas: votacaoIds,
+    votacao_titulo_to_id: tituloToId,
+    votacao_fonte_por_titulo: votacaoFontePorTitulo,
+  }
+
+  const sourceStatus = mergeSourceStatuses(
+    candidatosRes.sourceStatus,
+    votosFailed ? "degraded" : "live"
+  )
+  const sourceMessage = mergeSourceMessages(
+    candidatosRes.sourceMessage,
+    votosFailed ? "Votos do Congresso para o quiz nao responderam; ranking usa mais o espectro partidario." : null
+  )
+
+  return {
+    data: dataset,
+    sourceStatus,
+    sourceMessage,
+  }
+}
+
+const getCachedQuizAlignmentDatasetResource = unstable_cache(
+  async (cargo: string, estado: string) =>
+    getQuizAlignmentDatasetResourceUncached(cargo, estado || undefined),
+  ["quiz-alignment-dataset-resource", "fase2"],
+  {
+    revalidate: APP_DATA_REVALIDATE_SECONDS,
+    tags: ["quiz-dataset"],
+  }
+)
+
+export async function getQuizAlignmentDatasetResource(
+  cargo = "Presidente",
+  estado?: string
+): Promise<DataResource<QuizAlignmentDataset>> {
+  return getCachedQuizAlignmentDatasetResource(cargo, estado ?? "")
 }
 
 const UF_NAMES: Record<string, string> = {

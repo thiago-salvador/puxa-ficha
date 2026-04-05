@@ -40,7 +40,17 @@ export const metadata: Metadata = {
 
 export const revalidate = 3600
 
-export default async function CompararPage() {
+export default async function CompararPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ c1?: string; c2?: string; c3?: string; c4?: string }>
+}) {
+  const sp = await searchParams
+  const slugParams = [sp.c1, sp.c2, sp.c3, sp.c4]
+    .filter((s): s is string => typeof s === "string" && s.trim().length > 0)
+    .map((s) => s.trim())
+  const initialSelectedSlugs = slugParams.length > 0 ? slugParams.slice(0, 4) : undefined
+
   const candidatosResource = await getCandidatosComparaveisResource()
   const candidatos = candidatosResource.data
   const schema = {
@@ -114,7 +124,7 @@ ou veja os{" "}
         <SlashDivider />
       </div>
 
-      <ComparadorPanel candidatos={candidatos} />
+      <ComparadorPanel candidatos={candidatos} initialSelectedSlugs={initialSelectedSlugs} />
 
       <div className="mx-auto max-w-7xl px-5 pb-4 md:px-12">
         <p className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">

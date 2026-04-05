@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { href: "/", label: "Presidencia" },
   { href: "/governadores", label: "Governadores" },
   { href: "/comparar", label: "Comparar" },
+  { href: "/quiz", label: "Quiz" },
   { href: "/sobre", label: "Sobre" },
 ]
 
@@ -268,7 +269,7 @@ export function Navbar() {
           <button
             ref={menuButtonRef}
             type="button"
-            className="menu-btn relative z-[70] flex items-center gap-3 overflow-hidden"
+            className="menu-btn relative z-[70] flex items-center gap-3 overflow-hidden max-sm:min-h-11 max-sm:min-w-11 max-sm:justify-center"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={isMenuOpen}

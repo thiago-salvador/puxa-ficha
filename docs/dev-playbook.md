@@ -113,6 +113,17 @@ Se depender do banco remoto:
 - so aplicar migration se o historico remoto estiver consistente
 - se houver drift, registrar o bloqueio e garantir fallback seguro no app
 
+### Timeline dedicada (`/candidato/{slug}/timeline`)
+
+- Rota publica no App Router com ISR 1h e OG em `.../timeline/opengraph-image`. O deploy em producao precisa incluir essa rota; ate la, `https://puxa-ficha.vercel.app/candidato/{slug}/timeline` pode responder **404** mesmo com `/candidato/{slug}` em 200.
+- Apos promover deploy: conferir **HTTP 200** em pelo menos um slug publico (ex.: `curl -sI` ou `npm run audit:release-verify` com `VERIFY_URL` da producao). O `release-verify` valida a timeline para cada slug publico do coorte do relatorio factual.
+
+### Quiz (`/quiz`) e producao
+
+- Rotas do quiz existem no App Router; o dominio publico so as expoe apos **deploy** da branch correta (nao confundir worktree local com producao ate promover).
+- Tabela `posicoes_declaradas`: migration em `supabase/migrations/` deve estar **aplicada** no projeto Supabase remoto; sem ela o PostgREST pode reportar tabela ausente e o score de posicoes fica degradado.
+- Testes visuais do quiz com `npm run start` + `http://127.0.0.1`: headers agressivos de HTTPS nao sao aplicados fora da Vercel (ver `next.config.ts`); ainda e necessario `playwright install webkit` para o preset mobile.
+
 ### Pipeline, auditoria factual e release verify
 
 Rodar conforme o caso:

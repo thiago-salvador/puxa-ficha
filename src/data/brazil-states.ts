@@ -35,3 +35,26 @@ export const REGIONS: Record<string, string[]> = {
   Sudeste: ["ES", "MG", "RJ", "SP"],
   Sul: ["PR", "RS", "SC"],
 };
+
+export type BrazilMacroRegion =
+  | "Norte"
+  | "Nordeste"
+  | "Centro-Oeste"
+  | "Sudeste"
+  | "Sul"
+
+/** CSS token suffix: `var(--map-region-${slug})` in globals.css */
+export const MACRO_REGION_CSS_SLUG: Record<BrazilMacroRegion, string> = {
+  Norte: "norte",
+  Nordeste: "nordeste",
+  "Centro-Oeste": "centro-oeste",
+  Sudeste: "sudeste",
+  Sul: "sul",
+}
+
+export function getRegionForSigla(sigla: string): BrazilMacroRegion | null {
+  const u = sigla.toUpperCase()
+  const pairs = Object.entries(REGIONS) as [BrazilMacroRegion, string[]][]
+  const found = pairs.find(([, ufs]) => ufs.includes(u))
+  return found?.[0] ?? null
+}

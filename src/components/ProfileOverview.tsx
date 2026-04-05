@@ -1,6 +1,7 @@
 "use client"
 
 import type { FichaCandidato } from "@/lib/types"
+import { buildTimelineEvents } from "@/lib/timeline-utils"
 import { classifyAttentionPoints } from "@/lib/attention-points"
 import { formatCompact } from "@/lib/utils"
 import { PatrimonioChart } from "./BarChart"
@@ -245,6 +246,8 @@ export function ProfileOverview({
       ].filter((s) => s.value > 0)
     : []
 
+  const timelineEventCount = buildTimelineEvents(ficha).length
+
   const hasAnything =
     patrimonio.length > 0 ||
     processos.length > 0 ||
@@ -325,8 +328,25 @@ export function ProfileOverview({
         </Card>
       )}
 
+      {timelineEventCount > 0 && (
+        <Card className="border-dashed border-border/70 bg-secondary/20">
+          <CardContent className="flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
+              Veja cargos, partidos, patrimonio, processos, votacoes e mais no mesmo eixo temporal.
+            </p>
+            <button
+              type="button"
+              onClick={() => onNavigateTab("timeline")}
+              className="shrink-0 rounded-full border border-foreground bg-transparent px-4 py-2 text-[length:var(--text-caption)] font-bold uppercase tracking-wider text-foreground transition-colors hover:bg-foreground hover:text-background"
+            >
+              Abrir Timeline
+            </button>
+          </CardContent>
+        </Card>
+      )}
+
       {/* ═══ STAT CARDS ═══ */}
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
         <StatCard
           icon={<Landmark className="size-4" />}
           value={latestPatrimonio ? formatCompact(latestPatrimonio.valor_total) : "N/D"}

@@ -31,6 +31,14 @@ const REMOTE_IMAGE_HOSTS = [
 
 const isDevelopment = process.env.NODE_ENV !== "production"
 
+/**
+ * `npm run start` usa NODE_ENV=production sem VERCEL. `upgrade-insecure-requests` + HSTS em HTTP local
+ * quebram assets no WebKit (ex.: Playwright mobile). Na Vercel, VERCEL=1 e o site e HTTPS.
+ * Host proprio com HTTPS pode forcar: PF_FORCE_PRODUCTION_SECURITY_HEADERS=1.
+ */
+const applyProductionHttpsHeaders =
+  process.env.VERCEL === "1" || process.env.PF_FORCE_PRODUCTION_SECURITY_HEADERS === "1"
+
 function getSupabaseHostname() {
   const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL
   if (!supabaseUrl || supabaseUrl.includes("placeholder")) return null
@@ -56,7 +64,7 @@ const contentSecurityPolicy = [
   "base-uri 'self'",
   "form-action 'self'",
   "frame-ancestors 'none'",
-  ...(isDevelopment ? [] : ["upgrade-insecure-requests"]),
+  ...(isDevelopment || !applyProductionHttpsHeaders ? [] : ["upgrade-insecure-requests"]),
 ].join("; ")
 
 const securityHeaders = [
@@ -65,7 +73,7 @@ const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "DENY" },
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
-  ...(isDevelopment
+  ...(isDevelopment || !applyProductionHttpsHeaders
     ? []
     : [
         {

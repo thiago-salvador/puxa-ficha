@@ -20,6 +20,7 @@ export default defineConfig({
     },
     {
       name: "mobile",
+      testIgnore: "**/quiz-resultado-og.spec.ts",
       use: { ...devices["iPhone 14"] },
     },
   ],

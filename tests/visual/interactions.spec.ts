@@ -4,9 +4,9 @@
  * mobile menu cycle, and BrazilMap navigation.
  *
  * Run:
- *   npx playwright test tests/visual/interactions.spec.ts
- *   npx playwright test --project=mobile tests/visual/interactions.spec.ts
- *   PF_BASE_URL=http://localhost:3000 npx playwright test tests/visual/interactions.spec.ts
+ *   npx playwright test
+ *   npx playwright test --project=mobile
+ *   PF_BASE_URL=http://localhost:3000 npx playwright test
  */
 
 import { test, expect } from "playwright/test"
@@ -112,10 +112,10 @@ test.describe("CandidatoGrid", () => {
     await clearBtn.click()
 
     await expect(searchInput).toHaveValue("")
-    // Grid should restore to full count
-    const links = page.locator("main a[href^='/candidato/']")
-    const count = await links.count()
-    expect(count).toBeGreaterThan(1)
+    // Grid should restore to full count (poll: React transition can lag first paint)
+    await expect
+      .poll(async () => page.locator("main a[href^='/candidato/']").count())
+      .toBeGreaterThan(1)
   })
 
   test("view toggle switches between grid and list", async ({ page }) => {
@@ -215,8 +215,8 @@ test.describe("ProfileTabs", () => {
     await page.goto("/candidato/lula")
     await page.waitForLoadState("networkidle")
 
-    // Scroll past the hero
-    await page.mouse.wheel(0, 600)
+    // Scroll past the hero (wheel not supported on mobile WebKit)
+    await page.evaluate(() => window.scrollBy(0, 600))
     await page.waitForTimeout(300)
 
     // Locate the sticky tab bar by its role and content
@@ -272,7 +272,7 @@ test.describe("BrazilMap", () => {
 // ---------------------------------------------------------------------------
 
 test.describe("No horizontal overflow", () => {
-  const pages = ["/", "/comparar", "/governadores", "/sobre", "/candidato/lula"]
+  const pages = ["/", "/comparar", "/governadores", "/sobre", "/candidato/lula", "/quiz"]
 
   for (const path of pages) {
     test(`${path} — no overflow at 375px`, async ({ browser }) => {

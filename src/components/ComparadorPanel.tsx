@@ -19,10 +19,13 @@ import type { CandidatoComparavel } from "@/lib/types"
 
 interface Props {
   candidatos: CandidatoComparavel[]
+  /** Slugs de candidatos a selecionar na montagem (ex.: vindo de `?c1=&c2=` no quiz). */
+  initialSelectedSlugs?: string[]
 }
 
-export function ComparadorPanel({ candidatos }: Props) {
+export function ComparadorPanel({ candidatos, initialSelectedSlugs }: Props) {
   const [selected, setSelected] = useState<Set<string>>(new Set())
+  const appliedInitialSlugsRef = useRef(false)
   const prefersReducedMotion = usePrefersReducedMotion()
   const comparisonRef = useRef<HTMLDivElement>(null)
 
@@ -54,6 +57,20 @@ export function ComparadorPanel({ candidatos }: Props) {
       scrollToComparison()
     }
   }, [isComparing, scrollToComparison])
+
+  useEffect(() => {
+    if (appliedInitialSlugsRef.current) return
+    if (!initialSelectedSlugs?.length || candidatos.length === 0) return
+    const next = new Set<string>()
+    for (const slug of initialSelectedSlugs.slice(0, 4)) {
+      const c = candidatos.find((x) => x.slug === slug)
+      if (c) next.add(c.id)
+    }
+    if (next.size > 0) {
+      setSelected(next)
+      appliedInitialSlugsRef.current = true
+    }
+  }, [candidatos, initialSelectedSlugs])
 
   return (
     <>

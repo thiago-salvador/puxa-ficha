@@ -15,6 +15,7 @@ import { CandidatoCard } from "@/components/CandidatoCard"
 import { CandidatePhoto } from "@/components/CandidatePhoto"
 import { CandidateCommand } from "@/components/CandidateCommand"
 import { PartyCombobox } from "@/components/PartyCombobox"
+import { SortOrderMenu, type SortKey } from "@/components/SortOrderMenu"
 import { formatCompact } from "@/lib/utils"
 import type { Candidato } from "@/lib/types"
 
@@ -25,7 +26,6 @@ interface CandidatoGridProps {
 }
 
 type ViewMode = "grid" | "list"
-type SortKey = "nome" | "patrimonio" | "processos"
 
 const VIRTUALIZATION_THRESHOLD = 24
 
@@ -211,16 +211,7 @@ export function CandidatoGrid({
               onChange={setPartidoFilter}
             />
 
-            <select
-              value={sort}
-              onChange={(event) => setSort(event.target.value as SortKey)}
-              className="h-10 rounded-full border border-foreground bg-transparent px-4 text-[12px] font-semibold uppercase tracking-[0.05em] text-foreground outline-none transition-colors"
-              aria-label="Ordenar candidatos"
-            >
-              <option value="nome">A-Z</option>
-              <option value="patrimonio">Patrimonio</option>
-              <option value="processos">Processos</option>
-            </select>
+            <SortOrderMenu value={sort} onChange={setSort} />
 
             <div className="flex h-10 overflow-hidden rounded-full border border-foreground">
               <button

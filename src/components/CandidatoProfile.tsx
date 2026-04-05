@@ -1,6 +1,6 @@
 "use client"
 
-import { memo, useState } from "react"
+import { memo, useCallback, useLayoutEffect, useState } from "react"
 import type { FichaCandidato } from "@/lib/types"
 import { classifyAttentionPoints } from "@/lib/attention-points"
 import { formatCompact, formatDate, safeHref } from "@/lib/utils"
@@ -18,6 +18,11 @@ import {
   getProcessosEmptyState,
   getVotosEmptyState,
 } from "./EmptyState"
+import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
+import { CANDIDATO_PROFILE_TAB_IDS, normalizeCandidatoProfileTab } from "@/lib/candidato-profile-tabs"
+import { TimelineTab } from "./timeline/TimelineTab"
+import type { TimelineNavigateOptions } from "./timeline/TimelineTooltip"
+import { buildTimelineEvents } from "@/lib/timeline-utils"
 import {
   LegislationTabSection,
   MoneyTabSection,
@@ -90,7 +95,19 @@ const StatCard = memo(function StatCard({
   )
 })
 
-export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
+function resolveInitialTab(tab: CandidatoProfileTabId | undefined): CandidatoProfileTabId {
+  if (tab && (CANDIDATO_PROFILE_TAB_IDS as readonly string[]).includes(tab)) return tab
+  return "geral"
+}
+
+export function CandidatoProfile({
+  ficha,
+  initialTab,
+}: {
+  ficha: FichaCandidato
+  /** Definido no servidor (`?tab=` ou rota `/timeline`). */
+  initialTab?: CandidatoProfileTabId
+}) {
   // Null-safe arrays (Supabase can return null for empty relations)
   const patrimonio = ficha.patrimonio ?? []
   const financiamento = ficha.financiamento ?? []
@@ -107,9 +124,12 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
   const sectionFreshness = ficha.section_freshness ?? {}
   const { alertasGraves, alertasNaoPositivos, pontosPositivos } = classifyAttentionPoints(pontosAtencao)
 
+  const timelineEvents = buildTimelineEvents(ficha)
+
   // Tab definitions
-  const tabDefs = [
+  const tabDefs: { id: CandidatoProfileTabId; label: string; dataCount: number }[] = [
     { id: "geral", label: "Visao Geral", dataCount: 0 },
+    { id: "timeline", label: "Timeline", dataCount: timelineEvents.length },
     { id: "dinheiro", label: "Dinheiro", dataCount: patrimonio.length + financiamento.length + gastos.length },
     { id: "justica", label: "Justica", dataCount: processos.length },
     { id: "votos", label: "Votos", dataCount: votos.length },
@@ -118,7 +138,57 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
     { id: "alertas", label: "Alertas", dataCount: pontosAtencao.length },
   ]
 
-  const [activeTab, setActiveTab] = useState("geral")
+  const [activeTab, setActiveTab] = useState<CandidatoProfileTabId>(() => resolveInitialTab(initialTab))
+  const [tabHighlightRef, setTabHighlightRef] = useState<string | null>(null)
+
+  const navigateToTab = useCallback((tabId: string, opts?: TimelineNavigateOptions) => {
+    const next = normalizeCandidatoProfileTab(tabId)
+    if (!next) return
+    setActiveTab(next)
+    if (opts?.timelineEventId) {
+      setTabHighlightRef(opts.timelineEventId)
+    } else {
+      setTabHighlightRef(null)
+    }
+  }, [])
+
+  useLayoutEffect(() => {
+    if (!tabHighlightRef) return undefined
+    let cancelled = false
+    let timer: number | undefined
+    let targetEl: HTMLElement | null = null
+
+    const run = () => {
+      try {
+        targetEl = document.querySelector(
+          `[data-pf-timeline-ref="${CSS.escape(tabHighlightRef)}"]`,
+        ) as HTMLElement | null
+      } catch {
+        targetEl = document.querySelector(`[data-pf-timeline-ref="${tabHighlightRef}"]`) as HTMLElement | null
+      }
+      if (!targetEl) {
+        if (!cancelled) setTabHighlightRef(null)
+        return
+      }
+      targetEl.scrollIntoView({ behavior: "smooth", block: "center" })
+      targetEl.classList.add("ring-2", "ring-foreground", "ring-offset-2", "rounded-[12px]")
+      timer = window.setTimeout(() => {
+        if (cancelled || !targetEl) return
+        targetEl.classList.remove("ring-2", "ring-foreground", "ring-offset-2", "rounded-[12px]")
+        setTabHighlightRef(null)
+      }, 4200)
+    }
+
+    const id = requestAnimationFrame(() => requestAnimationFrame(run))
+    return () => {
+      cancelled = true
+      cancelAnimationFrame(id)
+      if (timer) clearTimeout(timer)
+      if (targetEl) {
+        targetEl.classList.remove("ring-2", "ring-foreground", "ring-offset-2", "rounded-[12px]")
+      }
+    }
+  }, [activeTab, tabHighlightRef])
 
   const tabs: Tab[] = tabDefs.map((t) => ({
     id: t.id,
@@ -153,7 +223,7 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
       .filter((t) => t.id !== currentTabId && t.dataCount > 0)
       .sort((a, b) => b.dataCount - a.dataCount)[0]
     if (!other) return null
-    return { label: `Ver ${other.label} (${other.dataCount})`, go: () => setActiveTab(other.id) }
+    return { label: `Ver ${other.label} (${other.dataCount})`, go: () => navigateToTab(other.id) }
   }
 
   return (
@@ -219,13 +289,13 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
       {/* Tab navigation */}
       {tabs.length > 0 && (
         <>
-          <ProfileTabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+          <ProfileTabs tabs={tabs} activeTab={activeTab} onTabChange={navigateToTab} />
 
           <div className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:px-12 lg:py-16">
             {/* VISAO GERAL TAB */}
             {activeTab === "geral" && (
               <div className="space-y-12">
-                <ProfileOverview ficha={ficha} onNavigateTab={setActiveTab} />
+                <ProfileOverview ficha={ficha} onNavigateTab={navigateToTab} />
                 {ficha.cargo_disputado === "Governador" && (ficha.indicadores_estaduais ?? []).length > 0 && (
                   <StateIndicators indicadores={ficha.indicadores_estaduais!} estado={ficha.estado ?? ""} />
                 )}
@@ -233,6 +303,15 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
                   <NewsSection noticias={ficha.noticias} />
                 )}
               </div>
+            )}
+
+            {activeTab === "timeline" && (
+              <TimelineTab
+                ficha={ficha}
+                events={timelineEvents}
+                onTabNavigate={navigateToTab}
+                suggest={suggestFor("timeline")}
+              />
             )}
 
             {/* DINHEIRO TAB */}
@@ -243,6 +322,7 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
                 gastos={gastos}
                 historicoLength={historico.length}
                 suggestion={suggestFor("dinheiro")}
+                highlightTimelineRef={tabHighlightRef}
                 freshness={{
                   patrimonio: sectionFreshness.patrimonio,
                   financiamento: sectionFreshness.financiamento,
@@ -270,6 +350,7 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
                         {grouped.map((p) => (
                           <div
                             key={p.id}
+                            data-pf-timeline-ref={`processo-${p.id}`}
                             className="rounded-[12px] border border-border/50 border-l-[3px] px-5 py-4"
                             style={{
                               borderLeftColor: p.gravidade === "alta" ? "#dc2626" : p.gravidade === "media" ? "#f59e0b" : "#d4d4d4",
@@ -319,6 +400,7 @@ export function CandidatoProfile({ ficha }: { ficha: FichaCandidato }) {
                   {votos.map((v) => (
                     <div
                       key={v.id}
+                      data-pf-timeline-ref={`voto-${v.id}`}
                       className={`rounded-[12px] border px-5 py-4 ${v.contradicao ? "border-amber-300 bg-amber-50" : "border-border/50"}`}
                     >
                       <div className="flex items-start justify-between gap-4">

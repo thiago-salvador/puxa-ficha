@@ -217,6 +217,26 @@ CREATE TABLE projetos_lei (
 CREATE INDEX idx_projetos_candidato ON projetos_lei (candidato_id);
 
 -- ============================================
+-- 7b. POSIÇÕES DECLARADAS (quiz fase 2, curadoria)
+-- ============================================
+CREATE TABLE posicoes_declaradas (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  candidato_id UUID REFERENCES candidatos(id) ON DELETE CASCADE,
+  tema TEXT NOT NULL,
+  posicao TEXT NOT NULL CHECK (posicao IN ('a_favor', 'contra', 'ambiguo')),
+  descricao TEXT,
+  fonte TEXT,
+  url_fonte TEXT,
+  verificado BOOLEAN NOT NULL DEFAULT FALSE,
+  gerado_por TEXT NOT NULL DEFAULT 'curadoria',
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (candidato_id, tema)
+);
+
+CREATE INDEX idx_posicoes_declaradas_candidato ON posicoes_declaradas (candidato_id);
+CREATE INDEX idx_posicoes_declaradas_tema ON posicoes_declaradas (tema);
+
+-- ============================================
 -- 8. PROCESSOS JUDICIAIS
 -- ============================================
 CREATE TABLE processos (
@@ -529,6 +549,10 @@ ALTER TABLE projetos_lei ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON projetos_lei
   FOR SELECT USING (is_public_candidate(candidato_id));
 
+ALTER TABLE posicoes_declaradas ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Leitura pública posicoes declaradas" ON posicoes_declaradas
+  FOR SELECT USING (is_public_candidate(candidato_id));
+
 ALTER TABLE processos ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Leitura pública" ON processos
   FOR SELECT USING (is_public_candidate(candidato_id));
@@ -580,6 +604,7 @@ GRANT SELECT ON financiamento TO anon, authenticated;
 GRANT SELECT ON votacoes_chave TO anon, authenticated;
 GRANT SELECT ON votos_candidato TO anon, authenticated;
 GRANT SELECT ON projetos_lei TO anon, authenticated;
+GRANT SELECT ON posicoes_declaradas TO anon, authenticated;
 GRANT SELECT ON processos TO anon, authenticated;
 GRANT SELECT ON pontos_atencao TO anon, authenticated;
 GRANT SELECT ON gastos_parlamentares TO anon, authenticated;
