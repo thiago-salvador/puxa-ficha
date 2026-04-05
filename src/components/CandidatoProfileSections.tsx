@@ -125,6 +125,7 @@ export function MoneyTabSection({
               .map((item) => (
                 <div
                   key={item.id}
+                  data-pf-timeline-ref={`financiamento-${item.id}`}
                   className="space-y-4 rounded-[16px] border border-border/50 px-5 py-5"
                 >
                   <div className="flex items-baseline justify-between">

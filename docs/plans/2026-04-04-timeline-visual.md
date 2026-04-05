@@ -2,37 +2,66 @@
 
 ## Estado atual (snapshot) — 2026-04-04
 
+*Ultima revisao do texto operacional deste snapshot: 2026-04-06 (pos-auditoria Codex: markdown, gate em api, testes de datas).*
+
 **No repositorio, a timeline esta entregue como produto (Fase A + Fase B + refinamentos):**
 
 - Tab **Timeline** na ficha (`CandidatoProfile`), segunda posicao apos Visao Geral.
 - **Rota dedicada** `/candidato/[slug]/timeline` (SSG, ISR 1h), **canonical** e **OG** em `.../timeline/opengraph-image`.
 - **Sitemap** inclui URLs `/candidato/{slug}/timeline`.
-- Desktop: swim lanes, clusters, minimap, zoom (Ctrl/Cmd + scroll, nao passivo), preset 20 anos / carreira completa, **dois cliques** no SVG para janela de ~5 anos, sparklines, export **PNG** (`html2canvas`), animacao de entrada (GSAP + `prefers-reduced-motion`).
-- **Tooltip:** painel **flutuante** no desktop (ancora no marcador) e **folha inferior** no mobile; **Esc** fecha; **Ver em {tab}** com `timelineEventId` e **highlight** (`data-pf-timeline-ref`) na tab de destino.
+- Desktop: swim lanes, clusters, minimap, zoom (Ctrl/Cmd + scroll, nao passivo), preset 20 anos / carreira completa, **dois cliques** no SVG para janela de ~5 anos, sparklines, export **PNG** (`html2canvas`), animacao de entrada (GSAP **ScrollTrigger** ao entrar no viewport + `prefers-reduced-motion`).
+- **Tooltip:** painel **flutuante** no desktop (segue o ponteiro na area do grafico; senao ancora no marcador / teclado) e **folha inferior** no mobile; **Esc** fecha; **Ver em {tab}** com `timelineEventId` e **highlight** (`data-pf-timeline-ref`) na tab de destino.
 - **Copiar link** para URL canonica da timeline (`SITE_ORIGIN`).
 - Modulo `src/lib/timeline-utils.ts` + `tests/timeline-utils.test.ts` (suite em evolucao).
 - Arquivo de visual por tipo: `src/components/timeline/TimelineEvent.tsx` (cores, `voteAbbrev`, etc.).
 
 **Producao (Vercel / dominio publico):** o codigo acima so aparece para usuarios **apos deploy** da branch que contem essas rotas. Enquanto o deploy publico estiver atrasado do `main` local, `https://…/candidato/{slug}/timeline` pode responder **404** mesmo com tudo no repo. Validar com `VERIFY_URL` apontando para producao em `npm run audit:release-verify` (inclui checagem HTTP da rota `/timeline` por slug publico).
 
-**Fora do escopo atual do produto (continua valido o PRD abaixo):** lane de **financiamento** na timeline; **pontos de atencao** sem data factual estruturada.
+**Financiamento e alertas datados:** lane **Financiamento** (`financiamento_campanha`, por `ano_eleicao`, total arrecadado e detalhe de rubricas/doadores) e lane **Alertas** (`ponto_atencao`) quando `pontos_atencao.data_referencia` esta preenchida (migration `20260405120000_pontos_atencao_data_referencia.sql`). Ausencia de data = fora da timeline.
+
+**Gate publico de alertas (contrato):** `isPublicAttentionPoint` filtra pontos na montagem da ficha em `src/lib/api.ts`. `buildTimelineEvents` em `src/lib/timeline-utils.ts` **nao** reaplica esse filtro; so exige `data_referencia` parseavel. Na app publica a ordem correta ja vale; se `buildTimelineEvents` for chamado com payload bruto (interno, service role), e preciso filtrar antes.
+
+**data_referencia** (pontos de atencao), regra no pipeline:
+
+- Agrega **todas** as datas parseaveis de cada item em `fontes[]`: campo `data` quando valido + datas no path da URL (`/AAAA/M/D/` ou `/AAAA/MM/DD/`).
+- Grava a **menor** data em ordem ISO (data mais antiga entre as evidencias).
+- Se as fontes descrevem **fatos em momentos diferentes**, o minimo e heuristica; ajuste manual no banco ou na curadoria de `fontes`.
+- Fluxo sugerido (fix, backfill, recalc com dry-run): `docs/dev-playbook.md`.
+
+**Comandos npm (Supabase com credenciais de servico):**
+
+- `npm run data:fix-pontos-timeline-gaps` e `:dry-run` — normaliza `fontes[].data` (ex.: ano sozinho) e casos pontuais de visibilidade com data resolvivel.
+- `npm run data:backfill-pontos-data-referencia` e `:dry-run` — preenche `data_referencia` onde esta `NULL` e o ponto e publico.
+- `npm run data:recalc-pontos-data-referencia` e `:dry-run` — **reaplica** o minimo das fontes quando o valor guardado difere (use apos mudar a heuristica ou corrigir `fontes`).
+
+**Testes:** `tests/pontos-atencao-dates.test.ts` cobre a heuristica do minimo; `tests/timeline-utils.test.ts` cobre eventos `ponto_atencao` na timeline.
+
+**Tooltip desktop:** segue o ponteiro dentro da area do grafico; sem movimento de ponteiro, mantem ancoragem no marcador ou fallback (teclado).
+
+**Animacao de entrada (desktop):** GSAP **ScrollTrigger** dispara o stagger quando o bloco da timeline entra no viewport (com `refresh` e fallback se ja visivel).
+
+**Verificacao em producao:** `VERIFY_URL=https://puxaficha.com.br npm run audit:release-verify:prod` (falha se `VERIFY_URL` vazio).
+
+**Fora do escopo / opcional:** tooltip estritamente colado ao cursor sem area de grafico (hoje exige `pointermove` na regiao); **ScrollTrigger** para zoom do eixo (o zoom continua Ctrl/Cmd + rolagem + minimap).
 
 ---
 
 ### Como ler este documento
 
-| Parte | Papel |
-|-------|--------|
-| Secoes 1 a 15 | **PRD / especificacao** (intencao, dados, UX, fases originais, riscos). Algumas linhas historicas citam “fora do v1” referindo-se ao plano *antes* da Fase B; o bloco **Estado atual** acima manda. |
-| Secao 16 — Log de execucao | **Changelog / auditoria interna** (ordem cronologica). Nao substitui o snapshot do topo. |
-| `docs/audit-timeline-2026-04-04.md` | **Auditorias pontuais**; o topo desse arquivo aponta para a revisao consolidada. |
+
+| Parte                               | Papel                                                                                                                                                                                               |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Secoes 1 a 15                       | **PRD / especificacao** (intencao, dados, UX, fases originais, riscos). Algumas linhas historicas citam “fora do v1” referindo-se ao plano *antes* da Fase B; o bloco **Estado atual** acima manda. |
+| Secao 16 — Log de execucao          | **Changelog / auditoria interna** (ordem cronologica). Nao substitui o snapshot do topo.                                                                                                            |
+| `docs/audit-timeline-2026-04-04.md` | **Auditorias pontuais**; o topo desse arquivo aponta para a revisao consolidada.                                                                                                                    |
+
 
 > Prioridade: alta (revelador de padroes, diferencial editorial)  
-> Data do plano: 2026-04-04 (revisoes de doc: mesma data)
+> Data do plano: 2026-04-04 (revisoes de doc: ate 2026-04-06)
 
 ## Visao geral
 
-**Esta feature nao e MVP experimental.** O lancamento publico da tab Timeline deve cumprir a promessa editorial do documento: **todas as camadas centrais** da secao 1 (cargos, mudanca de partido, patrimonio, processos, votacoes, projetos de lei, gastos), com filtros, tooltip util e cross-link para as tabs da ficha. O que fica de fora do v1 esta explicitado (financiamento como lane, pontos de atencao sem data, etc.), nao uma meia timeline para validar hipotese.
+**Esta feature nao e MVP experimental.** O lancamento publico da tab Timeline deve cumprir a promessa editorial do documento: **todas as camadas centrais** da secao 1 (cargos, mudanca de partido, patrimonio, processos, votacoes, projetos de lei, gastos), com filtros, tooltip util e cross-link para as tabs da ficha. Extensoes entregues depois do texto original do v1: lane **Financiamento** e **Alertas** com `data_referencia` (ver snapshot no topo). O que ainda fica de fora e explicitado la (ex.: ponto IA nao verificado, sem data resolvivel).
 
 Linha do tempo unificada que cruza no mesmo eixo temporal: cargos, mudancas de partido, patrimonio declarado, processos, votacoes polemicas, projetos de lei e gastos parlamentares. Hoje esses dados estao espalhados em 7 tabs separadas na ficha do candidato. A timeline os sobrepoem visualmente, revelando padroes que ficam invisiveis quando fragmentados.
 
@@ -116,15 +145,15 @@ Cada camada puxa de uma tabela/type existente. Todas ja estao carregadas na `Fic
 ### 1.8 Pontos de atencao (pontos, quando tem data)
 
 - **Fonte**: `pontos_atencao[]`
-- **Campos temporais**: `created_at` (nao ideal, e data de insercao, nao do fato). Muitos nao tem data do fato vinculada.
-- **Decisao**: NAO incluir na timeline por default. So incluir se/quando tiver campo `data_fato` ou cross-reference com processo/votacao que tem data.
-- **Fase futura**: adicionar campo `data_referencia` em `pontos_atencao` para vinculacao temporal.
+- **Campos temporais**: coluna `data_referencia` (date) quando preenchida pelo pipeline ou curadoria; `created_at` e metadata de insercao, nao substitui o fato.
+- **Superficie publica**: regras de `isPublicAttentionPoint` em `src/lib/api.ts` (visivel, IA so se `verificado`, etc.).
+- **Timeline**: `buildTimelineEvents` cria `ponto_atencao` so com `data_referencia` parseavel; assume `pontos_atencao[]` ja filtrado pela camada de API para rotas publicas.
+- **Preenchimento de `data_referencia`**: snapshot no topo (minimo das datas em `fontes[]`) + comandos npm + `docs/dev-playbook.md`.
 
-### 1.9 Financiamento de campanha (fase futura)
+### 1.9 Financiamento de campanha (entregue na timeline)
 
 - **Fonte**: `financiamento[]` em `FichaCandidato` (`ano_eleicao`, totais por rubrica)
-- **Por que fora do v1**: escopo editorial ja amplo com 1.1 a 1.7; financiamento como lane exige desenho proprio (totais por `ano_eleicao`, comparavel ao patrimonio).
-- **Decisao**: tratar como **iteracao futura** (pontos por ano de eleicao, semelhante a patrimonio). Ate la, o pitch do diferencial deve citar "financiamento" apenas se essa lane existir na UI, ou alinhar a "patrimonio + processos + dinheiro (CEAP/patrimonio)" ao que a timeline mostra.
+- **Na UI**: lane **Financiamento** com tipo `financiamento_campanha` (ver snapshot no topo e `timeline-utils`).
 
 ---
 
@@ -221,7 +250,8 @@ Nenhuma query nova necessaria. A `FichaCandidato` ja carrega TODOS os dados que 
 - `ficha.votos`
 - `ficha.projetos_lei`
 - `ficha.gastos_parlamentares`
-- `ficha.financiamento` (ja na ficha; **lane da timeline opcional**, ver secao 1.9)
+- `ficha.financiamento` (lane **entregue** na timeline, ver secao 1.9)
+- `ficha.pontos_atencao` (quando `data_referencia` e valida e o gate publico ja foi aplicado em `src/lib/api.ts`)
 
 A timeline e uma **visualizacao diferente dos mesmos dados**, nao uma fonte nova.
 
@@ -229,15 +259,19 @@ A timeline e uma **visualizacao diferente dos mesmos dados**, nao uma fonte nova
 
 Criar funcao que transforma `FichaCandidato` em lista unificada de eventos temporais:
 
+> Nota de manutencao: o pseudocodigo abaixo preserva a intencao do PRD, mas a fonte de verdade do contrato atual e `src/lib/timeline-utils.ts`, que hoje inclui `financiamento_campanha` e `ponto_atencao` (ver tambem o snapshot do topo).
+
 ```typescript
 export type TimelineEventType =
   | "cargo"
   | "mudanca_partido"
   | "patrimonio"
+  | "financiamento_campanha"
   | "processo"
   | "votacao"
   | "projeto_lei"
   | "gasto_parlamentar"
+  | "ponto_atencao"
 
 export interface TimelineEvent {
   id: string
@@ -258,6 +292,7 @@ export interface TimelineEvent {
   partido_novo?: string            // para mudancas
   contexto?: string                // contexto adicional
   tab_link?: string                // id da tab na ficha para cross-link
+  attention_gravidade?: "critica" | "alta" | "media" | "baixa"  // para pontos de atencao
 }
 
 export interface TimelineRange {
@@ -312,6 +347,20 @@ export function buildTimelineEvents(ficha: FichaCandidato): TimelineEvent[] {
       value: p.valor_total,
       value_formatted: formatBRL(p.valor_total),
       year_start: p.ano_eleicao,
+      tab_link: "dinheiro",
+    })
+  }
+
+  // Financiamento de campanha → pontos com valor por eleicao
+  for (const fin of ficha.financiamento ?? []) {
+    events.push({
+      id: `financiamento-${fin.id}`,
+      type: "financiamento_campanha",
+      label: `Campanha ${fin.ano_eleicao}`,
+      description: financiamentoDescription(fin),
+      value: fin.total_arrecadado || undefined,
+      value_formatted: fin.total_arrecadado ? formatBRL(fin.total_arrecadado) : undefined,
+      year_start: fin.ano_eleicao,
       tab_link: "dinheiro",
     })
   }
@@ -382,11 +431,29 @@ export function buildTimelineEvents(ficha: FichaCandidato): TimelineEvent[] {
     })
   }
 
+  // Pontos de atencao → pontos quando data_referencia e valida
+  for (const pa of ficha.pontos_atencao ?? []) {
+    if (!pa.data_referencia) continue
+    const raw = pa.data_referencia.trim().split("T")[0]
+    const dm = /^(\d{4})-(\d{2})-(\d{2})$/.exec(raw)
+    if (!dm) continue
+    events.push({
+      id: `ponto-${pa.id}`,
+      type: "ponto_atencao",
+      label: pa.titulo,
+      description: pa.descricao,
+      year_start: Number(dm[1]),
+      date: `${dm[1]}-${dm[2]}-${dm[3]}`,
+      tab_link: "alertas",
+      attention_gravidade: pa.gravidade,
+    })
+  }
+
   // Ordenar por year_start, depois por date se existir
   events.sort((a, b) => {
     if (a.year_start !== b.year_start) return a.year_start - b.year_start
     if (a.date && b.date) return a.date.localeCompare(b.date)
-    return 0
+    return a.id.localeCompare(b.id)
   })
 
   return events
@@ -716,7 +783,7 @@ Uma unica entrega no ar: a tab Timeline como produto, nao como versao reduzida p
 
 - `timeline-utils.ts` com `buildTimelineEvents()`, `computeProcessYearFallback`, types e **testes unitarios**
 - `TimelineTab.tsx` (container desktop/mobile)
-- **Desktop**: SVG horizontal com **todas** as swim lanes: cargos (ranges), mudanca de partido (marcadores), patrimonio (pontos), processos (ranges/pontos), votacoes (marcadores), projetos de lei (marcadores; default `destaque` colapsavel conforme secao 1.6), gastos por ano (marcadores)
+- **Desktop**: SVG horizontal com **todas** as swim lanes: cargos (ranges), mudanca de partido (marcadores), patrimonio (pontos), processos (ranges/pontos), votacoes (marcadores), projetos de lei (marcadores; default `destaque` colapsavel conforme secao 1.6), gastos por ano (marcadores), financiamento (pontos)
 - **Mobile**: lista vertical de cards ordenados por data, filtros por tipo (chips)
 - **Filtros de camada** (toggles com contagem)
 - **Tooltip rico** (hover/tap) com link "Ver na tab X"
@@ -724,7 +791,7 @@ Uma unica entrega no ar: a tab Timeline como produto, nao como versao reduzida p
 - Contradicoes em votacoes destacadas; agrupamento basico quando > 5 eventos no mesmo ano na mesma lane (cluster expandivel)
 - Tab "Timeline" como segunda tab (apos Visao Geral), como na secao 3.1
 
-**Fora do v1 original** (ainda valido como limite de produto): lane de financiamento (secao 1.9), pontos de atencao sem data factual. **Nota:** zoom/pan, minimap, sparkline, share PNG e animacoes foram entregues na Fase B (ver log secao 16); o texto antigo do PRD nao foi apagado para preservar historico de decisao.
+**Fora do v1 original** (historico do PRD): zoom/pan, minimap, sparkline, share PNG e animacoes entravam como extensoes posteriores. **Estado atual:** a lane de financiamento ja foi entregue (secao 1.9), e pontos de atencao entram na timeline quando possuem `data_referencia` valida; itens sem data factual resolvivel continuam fora da timeline. O texto antigo do PRD foi preservado para manter o historico de decisao.
 
 **Criterio de done**: v1 validada em 3+ fichas com dados heterogeneos (cargos + partidos + patrimonio + processos + votos + PL + gastos quando existirem). Mock: slugs `lula`, `flavio-bolsonaro`, `ciro-gomes`. Supabase: tres candidatos com cobertura mista. Mobile funcional. **Acessibilidade**: foco/teclado nos eventos interativos (ver secao 4.5). Testes em `buildTimelineEvents` (votacao sem join, processo sem data, PL sem ano, ordenacao).
 
@@ -846,7 +913,7 @@ Timelines editoriais que servem de inspiracao (nao copiar, adaptar ao tom do Pux
 - **Politifact "On the record"**: declaracoes vs votos ao longo do tempo
 - **Wikipedia infobox "Political career"**: simples mas eficaz
 
-O diferencial do PuxaFicha: nao e so cargos e votos; e **patrimonio + processos + (futuro) financiamento e demais camadas de dinheiro** no mesmo eixo. Ate a lane de financiamento existir na UI, comunicar o diferencial com base no que a timeline ja mostra (ver secao 1.9).
+O diferencial do PuxaFicha: nao e so cargos e votos; e **patrimonio + processos + financiamento e demais camadas de dinheiro** no mesmo eixo. Como a lane de financiamento ja existe na UI, comunicar o diferencial com base no que a timeline efetivamente mostra hoje (ver secao 1.9).
 
 ---
 
@@ -925,7 +992,7 @@ Entradas em ordem cronologica. Cada passo indica **o que**, **onde** e **como** 
 - ~~Arquivo `TimelineEvent.tsx`~~: entregue (substitui `TimelineEventPrimitives.tsx`).  
 - ~~Tooltip flutuante (desktop)~~: entregue (`TimelineTooltipFloating`); mobile em folha inferior.  
 - ~~`ProfileOverview` CTA para tab Timeline~~: entregue.  
-- **Iteracoes opcionais restantes:** tooltip rigidamente colado ao cursor (hoje ancora no marcador + fallback); lane financiamento; pontos de atencao com data.
+- **Iteracoes opcionais restantes:** tooltip rigidamente colado ao cursor (hoje ancora no marcador + fallback). ~~Lane Financiamento e pontos de atencao datados~~: entregues (ver snapshot no topo).
 
 ### 2026-04-04 — Correcoes pos-auditoria (agente Cursor)
 
@@ -946,19 +1013,21 @@ Entradas em ordem cronologica. Cada passo indica **o que**, **onde** e **como** 
   - **Reset ao trocar candidato**: `resetViewportKey` (slug) via `useEffect` + `eventsRef` (evita setState durante render e nao reseta ao mudar so filtros).
 3. `**TimelineTab.tsx`**
   - Passa `resetViewportKey={ficha.slug}` para `TimelineDesktop`.
-4. `**ProfileOverview.tsx**`
+4. `**ProfileOverview.tsx`**
   - Card com CTA **Abrir Timeline** quando `buildTimelineEvents(ficha).length > 0`, chamando `onNavigateTab("timeline")`.
 5. ~~**Pendente na Fase B**~~: minimap, zoom e share entregues na entrada **Fase B conclusao** abaixo. ~~OG dedicada~~: entregue na rota `/timeline` (ver log posterior e estado atual no topo do doc).
-6. **Verificacao** (rodada desta sessao): `npm run lint` OK; `npm test` OK (**32** testes no agregado do repo); `npm run build` OK (175 paginas estaticas, Next 15.5.14 Turbopack).
+6. **Verificacao (na rodada)**: `npm run lint` OK; `npm test` OK (**32** testes no agregado naquela execucao); `npm run build` OK (175 paginas estaticas, Next 15.5.14 Turbopack).
 
 ### 2026-04-04 — Animacao de entrada timeline (Fase B, agente Cursor)
 
 **Prioridade escolhida**: animacao de entrada antes de minimap/zoom (escopo fechado, alinhado ao GSAP do projeto e a acessibilidade).
 
+**Status atual**: esta entrada registra a introducao da animacao. O mecanismo desktop foi depois consolidado com `ScrollTrigger` no `TimelineDesktop.tsx`; o snapshot no topo descreve o estado vigente.
+
 1. `**TimelineDesktop.tsx`** — `useLayoutEffect` + `gsap.context` + `gsap.fromTo` em grupos `.js-timeline-intro-item` (eixo + uma camada por lane visivel): `autoAlpha` + `y` leve, stagger curto, `ease: power2.out`. Dispara ao mudar `resetViewportKey` (candidato) ou `viewportMode` (ultimos 20 / carreira completa). Cleanup com `ctx.revert()`.
-2. `**usePrefersReducedMotion()**` — quando reduzido, o efeito nao roda; timeline permanece estatica (mesmo padrao de `Navbar`, `BrazilMap`).
-3. `**TimelineLane.tsx**` — prop opcional `className` no `<g>` raiz para marcar alvos de animacao.
-4. `**TimelineMobile.tsx**` — prop `introKey` (slug); `useLayoutEffect` com stagger nos `li` da lista (`:scope > li`), mesma regra de movimento reduzido.
+2. `**usePrefersReducedMotion()`** — quando reduzido, o efeito nao roda; timeline permanece estatica (mesmo padrao de `Navbar`, `BrazilMap`).
+3. `**TimelineLane.tsx`** — prop opcional `className` no `<g>` raiz para marcar alvos de animacao.
+4. `**TimelineMobile.tsx`** — prop `introKey` (slug); `useLayoutEffect` com stagger nos `li` da lista (`:scope > li`), mesma regra de movimento reduzido.
 5. `**TimelineTab.tsx**` — passa `introKey={ficha.slug}` ao mobile.
 6. **Verificacao**: `npm run lint`, `npm test`, `npm run build` OK apos as mudancas.
 
@@ -967,12 +1036,12 @@ Entradas em ordem cronologica. Cada passo indica **o que**, **onde** e **como** 
 **Objetivo**: fechar o escopo de Fase B do plano (secao 8): minimap, zoom no eixo, share por captura.
 
 1. `**src/lib/timeline-utils.ts`** — `clampTimeWindow()` para manter `[viewMin, viewMax]` dentro de `[extentMin, extentMax]` com span minimo coerente.
-2. `**tests/timeline-utils.test.ts**` — quatro testes para `clampTimeWindow`.
+2. `**tests/timeline-utils.test.ts`** — quatro testes para `clampTimeWindow`.
 3. `**TimelineMinimap.tsx` (novo)** — trilha proporcional a carreira inteira; retangulo = janela visivel; clique na trilha centraliza a janela no ano; arrastar o retangulo faz pan; `pointercapture` + ref de drag para primeiro `pointermove` confiavel.
 4. `**TimelineDesktop.tsx`** — estado `windowOverride` opcional sobre os presets (ultimos 20 / carreira completa); derivacao de `viewMin`/`viewMax` via `clampTimeWindow`; **Ctrl ou Cmd + rolagem** na regiao do grafico (`role="region"`, `tabIndex={0}`) para zoom (sem roubar rolagem da pagina quando a modificadora nao esta pressionada); botoes **Redefinir zoom**, presets limpam override; minimap acoplado acima dos controles.
 5. `**TimelineExportButton.tsx` (novo)** — import dinamico de `**html2canvas`**; gera PNG dos filtros + desktop timeline; nome de arquivo `puxaficha-timeline-{slug}.png`.
-6. `**package.json**` — dependencia `html2canvas`.
-7. `**TimelineTab.tsx**` — `ref` no bloco exportavel (filtros + desktop dentro de card com borda); botao **Baixar PNG** visivel em `lg+` acima do card.
+6. `**package.json`** — dependencia `html2canvas`.
+7. `**TimelineTab.tsx`** — `ref` no bloco exportavel (filtros + desktop dentro de card com borda); botao **Baixar PNG** visivel em `lg+` acima do card.
 8. **Fora de escopo desta entrega (na epoca)**: ScrollTrigger (zoom manual sem plugin). **Atualizacao posterior:** OG e rota dedicada `/timeline` foram adicionados; PNG continua como opcao de compartilhamento visual.
 9. **Verificacao**: `npm test` (inclui novos testes de `clampTimeWindow`); `npm run lint` OK; `npx tsc -p tsconfig.json --noEmit` OK. Build Next completo pode falhar em paginas nao relacionadas conforme ambiente (ex.: prerender com dados).
 
@@ -981,3 +1050,73 @@ Entradas em ordem cronologica. Cada passo indica **o que**, **onde** e **como** 
 **Problema**: `onWheel` no React 19 tende a listener **passivo**; `preventDefault()` nao impede zoom nativo do browser junto com o zoom da timeline.
 
 **Fix**: em `TimelineDesktop.tsx`, remover `onWheel` do JSX; `ref` no `role="region"`; `useEffect` registra `wheel` com `{ passive: false }` e remove no cleanup. Ver `docs/audit-timeline-2026-04-04.md` (P7).
+
+### 2026-04-05 — `data_referencia` e alinhamento documental
+
+1. **Regra no codigo** (`scripts/lib/pontos-atencao-dates.ts`): `resolveDataReferenciaFromFontes` usa a **data mais antiga** entre todas as datas validas extraidas de cada item de `fontes` (`data` + path de URL). Backfill e recalc reutilizam a mesma funcao.
+2. **Scripts**: `scripts/backfill-pontos-atencao-data-referencia.ts`, `scripts/fix-pontos-timeline-gaps.ts`, `scripts/recalc-pontos-data-referencia.ts` (este ultimo atualiza linhas quando o minimo calculado difere do valor no banco; sempre com `:dry-run` antes em producao).
+3. **npm**: `data:backfill-pontos-data-referencia`, `data:fix-pontos-timeline-gaps`, `data:recalc-pontos-data-referencia` (cada um com `:dry-run`). Fluxo documentado em `docs/dev-playbook.md`.
+4. **Testes**: `tests/pontos-atencao-dates.test.ts`.
+5. **Ship (gate local)**: `npm run lint`, `npm test`, `npm run build`; producao: merge/deploy e `VERIFY_URL=... npm run audit:release-verify` conforme playbook.
+
+### 2026-04-05 — Refactor visual forte da timeline (agente Cascade)
+
+1. **Escopo**: corrigir bugs visuais do eixo, do tooltip e da colisao de labels; reforcar a hierarquia visual da timeline e alinhar desktop/mobile ao padrao editorial do site, sem alterar o contrato de `TimelineEvent` ou `FichaCandidato`.
+2. `**src/components/timeline/TimelineEvent.tsx`**
+  - **O que**: helpers visuais compartilhados por lane (`getLaneTheme`) e badges compactos (`markerBadgeLabel`, cores de marcador, glyphs de voto/processo).
+  - **Como**: centralizacao das decisoes de cor e rotulagem para reuso coerente em desktop, mobile e tooltip.
+3. `**src/lib/timeline-utils.ts`**
+  - **O que**: `getTimelineAxisTicks(yearMin, yearMax)` para gerar apenas anos inteiros no eixo.
+  - **Como**: passo adaptativo `1 | 2 | 5 | 10 | 20`, eliminando ticks fracionados e controlando densidade visual por faixa visivel.
+4. `**src/components/timeline/TimelineAxis.tsx`, `TimelineLane.tsx`, `TimelineFilters.tsx`**
+  - **O que**: eixo com leitura mais clara; lanes com pills tematicas e baselines; filtros com icones `lucide-react`, contagens e contraste mais forte.
+  - **Como**: migracao para helper compartilhado de ticks + reforco de hierarquia visual nas trilhas e nos chips de filtro.
+5. `**src/components/timeline/TimelineDesktop.tsx`**
+  - **O que**: refactor visual principal do SVG da timeline.
+  - **Como**: bloco de contexto no topo (contagem de trilhas/eventos), clusters tematicos, barras de `cargo` / `processo` mais legiveis, marcadores diferenciados por tipo (losango, triangulo, retangulo, circulo), badges compactos para reduzir colisao de labels e preservacao das interacoes existentes (selecao, teclado, zoom com Ctrl/Cmd + rolagem, duplo clique, minimap).
+  - **Integracao**: adicao de `data-pf-timeline-chart-region`, `onChartPointerMove` e `onChartPointerLeave` para expor a area real do grafico ao tooltip flutuante.
+6. `**src/components/timeline/TimelineTooltip.tsx` e `TimelineTab.tsx`**
+  - **O que**: painel desktop com hierarquia visual mais forte e posicionamento flutuante contido dentro do chart.
+  - **Como**: chips por trilha, metadata em blocos, badge contextual, `boundaryRect` derivado da regiao interna do grafico e limpeza do cursor ao sair da area para impedir sobreposicao com cabecalho e controles.
+7. `**src/components/timeline/TimelineMinimap.tsx` e `TimelineMobile.tsx`**
+  - **O que**: polish visual fora do desktop principal.
+  - **Como**: minimap com track/brush mais legiveis e leitura explicita da janela visivel; cards mobile com marcador vertical, pill de trilha, pills de metadata e badge contextual, mantendo a folha inferior de detalhe.
+8. **Correcoes de integracao feitas durante a rodada**
+  - `TimelineDesktop.tsx`: `gsap.registerPlugin(ScrollTrigger)` movido para depois dos imports para manter o arquivo compilavel.
+  - `TimelineTooltip.tsx`: ajuste de `prefer-const` apontado pelo lint antes da rodada final de validacao.
+9. **Verificacao desta sessao**
+  - `npm run lint` — primeira passada apontou `prefer-const` em `TimelineTooltip.tsx`; corrigido e rerrodado com sucesso.
+  - `npm run build` — sucesso.
+  - `npm run dev -- --port 3002` — app local pronto.
+  - `GET /candidato/acm-neto/timeline` em `http://127.0.0.1:3002` — **HTTP 200**.
+  - Preview local aberta no IDE para inspecao visual manual da timeline refatorada.
+10. **Observacao**
+  - O `build` ainda exibiu alguns `fetch failed` em rotas/metadados nao diretamente ligados a esta refactor, mas a geracao concluiu com sucesso; tratar como debito separado se persistir.
+
+### 2026-04-05 — Revisao documental do plano (agente Cascade)
+
+1. **Objetivo**: alinhar o plano ao estado atual do codigo e reduzir ruido herdado do PRD e de logs antigos.
+2. **Contagem atual de testes**: `npm test` reportou **75** testes e **8** suites no agregado do repo.
+3. **Leitura do log**: contagens antigas (por exemplo `56` em entrada de 2026-04-06) permanecem como foto da rodada em que foram registradas; quando houver divergencia, a entrada mais nova vale como referencia do agregado atual.
+
+### 2026-04-06 — Pos-auditoria Codex (doc + testes)
+
+1. **Snapshot**: corrigido markdown da secao `data_referencia` (linha que comecava com backtick solto); carimbo *Ultima revisao do snapshot* para distinguir do titulo 2026-04-04.
+2. **Contrato de gate**: texto explicito no snapshot e em §1.8 — filtro publico em `api.ts`; `timeline-utils` so data parseavel.
+3. **Testes**: `tests/pontos-atencao-dates.test.ts` ampliado (nao-array, invalidas misturadas, `data` + URL na mesma fonte, duplicatas).
+4. **Playbook**: `docs/dev-playbook.md` (secao Timeline dedicada) com bullet **Contrato** alinhado ao gate em `api.ts` vs `timeline-utils`.
+5. **Verificacao (na rodada)**: `npm run lint`, `npm test`, `npm run build` (**56** testes no agregado naquela execucao).
+
+---
+
+## Checklist operacional (feature Timeline)
+
+Lista simples para fechamento e deploy; espelha o que o produto precisa ter no ar.
+
+- Tab **Timeline** na ficha e rota dedicada `/candidato/[slug]/timeline` (ISR), OG e entrada no sitemap.
+- Swim lanes ate **Gastos** + lane **Financiamento** + lane **Alertas** com `data_referencia` quando publico.
+- Tooltip (desktop flutuante / mobile folha), copiar link canonico, export PNG, minimap, zoom nao-passivo, animacao de entrada (ScrollTrigger + reduced motion).
+- Migration `data_referencia`, scripts `fix` / `backfill` / `recalc` e comandos `npm run data:*` documentados no playbook.
+- Alertas: gate `isPublicAttentionPoint` em `src/lib/api.ts`; heuristica do minimo das fontes em `scripts/lib/pontos-atencao-dates.ts`.
+- Producao: `VERIFY_URL=https://puxaficha.com.br npm run audit:release-verify:prod` (ou `audit:release-verify` com URL alvo).
+

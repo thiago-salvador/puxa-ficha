@@ -1,6 +1,7 @@
 "use client"
 
 import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
 import {
@@ -12,16 +13,25 @@ import {
 } from "@/lib/timeline-utils"
 import { TimelineAxis } from "./TimelineAxis"
 import { TimelineLane } from "./TimelineLane"
-import { laneMarkerColor, processSeverityFill, voteAbbrev } from "./TimelineEvent"
+import {
+  getLaneTheme,
+  laneMarkerColor,
+  markerBadgeLabel,
+  processSeverityFill,
+  voteGlyph,
+} from "./TimelineEvent"
 import { LaneSparkline } from "./TimelineSparkline"
 import { TimelineMinimap } from "./TimelineMinimap"
 
-const VB_W = 920
-const LEFT_PAD = 112
-const RIGHT_PAD = 20
-const LANE_H = 42
-const TOP_PAD = 6
+gsap.registerPlugin(ScrollTrigger)
+
+const VB_W = 980
+const LEFT_PAD = 126
+const RIGHT_PAD = 28
+const LANE_H = 48
+const TOP_PAD = 10
 const CLUSTER_LIMIT = 5
+const BADGE_MIN_GAP = 82
 
 function anchorFromSvgTarget(target: EventTarget | null): DOMRect | undefined {
   if (!target || !(target instanceof SVGGraphicsElement)) return undefined
@@ -59,6 +69,11 @@ function bucketLaneEvents(
   return out
 }
 
+function shortenLabel(label: string, limit: number) {
+  if (label.length <= limit) return label
+  return `${label.slice(0, Math.max(limit - 1, 1))}…`
+}
+
 export interface TimelineDesktopProps {
   events: TimelineEvent[]
   visibleLanes: Set<TimelineEventType>
@@ -66,6 +81,8 @@ export interface TimelineDesktopProps {
   selectedId: string | null
   /** Segundo argumento: retangulo do marcador para posicionar tooltip flutuante (desktop). */
   onSelectId: (id: string | null, anchorRect?: DOMRect) => void
+  onChartPointerMove?: (point: { x: number; y: number }) => void
+  onChartPointerLeave?: () => void
   /** Troca de candidato: reseta viewport inicial (ultimos 20 anos quando aplicavel). */
   resetViewportKey?: string
 }
@@ -78,10 +95,13 @@ export function TimelineDesktop({
   nomeUrna,
   selectedId,
   onSelectId,
+  onChartPointerMove,
+  onChartPointerLeave,
   resetViewportKey,
 }: TimelineDesktopProps) {
   const prefersReducedMotion = usePrefersReducedMotion()
   const svgRef = useRef<SVGSVGElement>(null)
+  const introRootRef = useRef<HTMLDivElement>(null)
   const chartWheelRegionRef = useRef<HTMLDivElement>(null)
   const [expandedClusters, setExpandedClusters] = useState<Set<string>>(() => new Set())
   const [windowOverride, setWindowOverride] = useState<{ min: number; max: number } | null>(null)
@@ -165,11 +185,16 @@ export function TimelineDesktop({
 
   useLayoutEffect(() => {
     if (prefersReducedMotion) return
+    const root = introRootRef.current
     const svg = svgRef.current
-    if (!svg) return
+    if (!root || !svg) return
     const items = svg.querySelectorAll<SVGGElement>(`.${INTRO_ITEM_CLASS}`)
     if (items.length === 0) return
-    const ctx = gsap.context(() => {
+
+    let played = false
+    const playIntro = () => {
+      if (played) return
+      played = true
       gsap.fromTo(
         items,
         { autoAlpha: 0, y: 8 },
@@ -182,8 +207,24 @@ export function TimelineDesktop({
           overwrite: "auto",
         },
       )
-    }, svg)
-    return () => ctx.revert()
+    }
+
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: root,
+        start: "top 90%",
+        onEnter: () => playIntro(),
+      })
+      requestAnimationFrame(() => {
+        const r = root.getBoundingClientRect()
+        if (r.top < window.innerHeight * 0.9 && r.bottom > 0) playIntro()
+        ScrollTrigger.refresh()
+      })
+    }, root)
+
+    return () => {
+      ctx.revert()
+    }
   }, [resetViewportKey, viewportMode, prefersReducedMotion])
 
   const span = Math.max(viewMax - viewMin, 1)
@@ -212,7 +253,7 @@ export function TimelineDesktop({
 
   const laneCount = Math.max(visibleLaneTypes.length, 1)
   const axisY = TOP_PAD + laneCount * LANE_H
-  const vbHeight = axisY + 30
+  const vbHeight = axisY + 38
 
   function toggleCluster(key: string) {
     setExpandedClusters((prev) => {
@@ -224,22 +265,21 @@ export function TimelineDesktop({
   }
 
   return (
-    <div className="w-full">
-      {showMinimap && (
-        <div className="mb-4">
-          <TimelineMinimap
-            extentMin={extentMin}
-            extentMax={extentMax}
-            viewMin={viewMin}
-            viewMax={viewMax}
-            onWindowChange={(min, max) => applyMinimapWindow(min, max)}
-            label={nomeUrna}
-          />
-        </div>
-      )}
-
-      <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-        <div>
+    <div ref={introRootRef} className="w-full">
+      <div className="mb-4 rounded-[24px] border border-border/50 bg-card/80 p-4 shadow-sm">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <div className="mb-2 flex flex-wrap items-center gap-2">
+              <span className="rounded-full border border-border/60 bg-secondary/40 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-foreground">
+                Mapa da carreira
+              </span>
+              <span className="rounded-full border border-border/50 bg-background px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+                {visibleLaneTypes.length} trilhas
+              </span>
+              <span className="rounded-full border border-border/50 bg-background px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+                {events.length} eventos
+              </span>
+            </div>
           <p className="text-[length:var(--text-caption)] font-semibold text-muted-foreground">
             Eixo visivel: {Math.round(viewMin)} a {Math.round(viewMax)}
           </p>
@@ -249,63 +289,84 @@ export function TimelineDesktop({
               no ponto. Clique ou arraste no mapa acima para mover a janela.
             </p>
           ) : null}
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          {windowOverride != null && (
-            <button
-              type="button"
-              onClick={() => setWindowOverride(null)}
-              className="rounded-full border border-dashed border-foreground/40 px-3 py-1.5 text-[length:var(--text-caption)] font-bold text-foreground transition-colors hover:bg-secondary/60"
-            >
-              Redefinir zoom
-            </button>
-          )}
-          {canNarrow && (
-            <>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {windowOverride != null && (
               <button
                 type="button"
-                onClick={() => {
-                  setWindowOverride(null)
-                  setViewportMode("recent20")
-                }}
-                className={`rounded-full border px-3 py-1.5 text-[length:var(--text-caption)] font-bold transition-colors ${
-                  viewportMode === "recent20" && windowOverride == null
-                    ? "border-foreground bg-foreground text-background"
-                    : "border-border/60 bg-secondary/40 text-foreground hover:border-foreground/30"
-                }`}
+                onClick={() => setWindowOverride(null)}
+                className="rounded-full border border-dashed border-foreground/40 px-3 py-2 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.04em] text-foreground transition-colors hover:bg-secondary/60"
               >
-                Ultimos 20 anos
+                Redefinir zoom
               </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setWindowOverride(null)
-                  setViewportMode("full")
-                }}
-                className={`rounded-full border px-3 py-1.5 text-[length:var(--text-caption)] font-bold transition-colors ${
-                  viewportMode === "full" && windowOverride == null
-                    ? "border-foreground bg-foreground text-background"
-                    : "border-border/60 bg-secondary/40 text-foreground hover:border-foreground/30"
-                }`}
-              >
-                Ver carreira completa
-              </button>
-            </>
-          )}
+            )}
+            {canNarrow && (
+              <>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setWindowOverride(null)
+                    setViewportMode("recent20")
+                  }}
+                  className={`rounded-full border px-3 py-2 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.04em] transition-colors ${
+                    viewportMode === "recent20" && windowOverride == null
+                      ? "border-foreground bg-foreground text-background"
+                      : "border-border/60 bg-secondary/40 text-foreground hover:border-foreground/30"
+                  }`}
+                >
+                  Ultimos 20 anos
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setWindowOverride(null)
+                    setViewportMode("full")
+                  }}
+                  className={`rounded-full border px-3 py-2 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.04em] transition-colors ${
+                    viewportMode === "full" && windowOverride == null
+                      ? "border-foreground bg-foreground text-background"
+                      : "border-border/60 bg-secondary/40 text-foreground hover:border-foreground/30"
+                  }`}
+                >
+                  Ver carreira completa
+                </button>
+              </>
+            )}
+          </div>
         </div>
+
+        {showMinimap && (
+          <div className="mt-4">
+            <TimelineMinimap
+              extentMin={extentMin}
+              extentMax={extentMax}
+              viewMin={viewMin}
+              viewMax={viewMax}
+              onWindowChange={(min, max) => applyMinimapWindow(min, max)}
+              label={nomeUrna}
+            />
+          </div>
+        )}
       </div>
 
       <div
         ref={chartWheelRegionRef}
-        className="w-full overflow-x-auto rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        data-pf-timeline-chart-region="true"
+        className="w-full overflow-x-auto rounded-[24px] border border-border/50 bg-card/70 px-3 py-4 shadow-[0_18px_40px_rgba(10,10,10,0.05)] outline-none focus-visible:ring-2 focus-visible:ring-ring"
         tabIndex={0}
         role="region"
         aria-label={`Area do grafico da timeline de ${nomeUrna}. Com foco aqui, use Ctrl ou Cmd e a rolagem para zoom.`}
+        onPointerMove={(e) => {
+          onChartPointerMove?.({ x: e.clientX, y: e.clientY })
+        }}
+        onPointerLeave={() => {
+          onChartPointerLeave?.()
+        }}
       >
         <svg
           ref={svgRef}
           viewBox={`0 0 ${VB_W} ${vbHeight}`}
-          className="min-w-[640px] w-full text-foreground motion-reduce:transition-none"
+          className="min-w-[720px] w-full text-foreground motion-reduce:transition-none"
           role="group"
           aria-label={`Timeline politica de ${nomeUrna}`}
           onDoubleClick={(e) => {
@@ -337,7 +398,9 @@ export function TimelineDesktop({
 
           {visibleLaneTypes.map((laneType, laneIndex) => {
             const laneY = TOP_PAD + laneIndex * LANE_H
+            const theme = getLaneTheme(laneType)
             const buckets = bucketLaneEvents(events, laneType, expandedClusters)
+            let lastBadgeX = -Infinity
 
             return (
               <TimelineLane
@@ -379,15 +442,14 @@ export function TimelineDesktop({
                         <rect
                           role="button"
                           tabIndex={0}
-                          x={cx - 22}
+                          x={cx - 24}
                           y={cy - 12}
-                          width={44}
+                          width={48}
                           height={24}
-                          rx={6}
-                          fill="currentColor"
-                          fillOpacity={0.12}
-                          stroke="currentColor"
-                          strokeOpacity={0.4}
+                          rx={12}
+                          fill={theme.softFill}
+                          stroke={theme.softStroke}
+                          strokeWidth={1}
                           className="cursor-pointer outline-none"
                           onClick={() => toggleCluster(clusterKey)}
                           onKeyDown={(e) => {
@@ -398,11 +460,13 @@ export function TimelineDesktop({
                           }}
                           aria-label={`Expandir ${b.items.length} eventos em ${b.year}`}
                         />
+                        <circle cx={cx - 11} cy={cy} r={3.5} fill={theme.marker} />
                         <text
-                          x={cx}
+                          x={cx + 2}
                           y={cy + 4}
                           textAnchor="middle"
-                          className="pointer-events-none fill-foreground text-[10px] font-bold"
+                          fill={theme.text}
+                          className="pointer-events-none text-[10px] font-bold"
                           style={{ fontSize: 10 }}
                         >
                           {b.items.length}+
@@ -426,24 +490,26 @@ export function TimelineDesktop({
                     if (x1raw < LEFT_PAD || x0raw > chartRight) return null
                     const x0 = Math.max(LEFT_PAD, x0raw)
                     const x1 = Math.min(chartRight, x1raw)
-                    const fill =
-                      laneType === "processo" ? processSeverityFill(ev.severity) : "currentColor"
-                    const fillOp = laneType === "cargo" ? 0.14 : 0.35
+                    const width = Math.max(x1 - x0, 8)
+                    const fill = laneType === "processo" ? processSeverityFill(ev.severity) : theme.softFill
+                    const stroke = laneType === "processo" ? fill : theme.softStroke
+                    const textFill = laneType === "processo" ? "#171717" : theme.text
                     return (
                       <g key={ev.id}>
                         <rect
                           role="button"
                           tabIndex={0}
                           x={x0}
-                          y={cy - 8}
-                          width={Math.max(x1 - x0, 6)}
-                          height={16}
-                          rx={4}
-                          fill={laneType === "processo" ? fill : "currentColor"}
-                          fillOpacity={laneType === "cargo" ? fillOp : 0.5}
-                          stroke={laneType === "processo" ? fill : "currentColor"}
-                          strokeOpacity={0.45}
-                          strokeWidth={isSel ? 2 : 1}
+                          y={cy - 9}
+                          width={width}
+                          height={18}
+                          rx={7}
+                          fill={fill}
+                          fillOpacity={laneType === "processo" ? 0.18 : 1}
+                          stroke={stroke}
+                          strokeOpacity={0.92}
+                          strokeWidth={isSel ? 2.2 : 1.1}
+                          strokeDasharray={!ev.year_end ? "6 4" : undefined}
                           className="cursor-pointer outline-none"
                           onClick={(e) => {
                             const a = anchorFromSvgTarget(e.currentTarget)
@@ -458,15 +524,28 @@ export function TimelineDesktop({
                           }}
                           aria-label={ev.label}
                         />
-                        {x1 - x0 > 80 && (
+                        {laneType === "cargo" && width > 52 && (
+                          <rect
+                            x={x0 + 2}
+                            y={cy - 7}
+                            width={Math.max(width - 4, 4)}
+                            height={2.5}
+                            rx={1.25}
+                            fill={theme.marker}
+                            fillOpacity={0.9}
+                            className="pointer-events-none"
+                          />
+                        )}
+                        {width > 98 && (
                           <text
-                            x={(x0 + x1) / 2}
+                            x={x0 + 10}
                             y={cy + 3}
-                            textAnchor="middle"
-                            className="pointer-events-none fill-foreground text-[8px] font-semibold"
+                            textAnchor="start"
+                            className="pointer-events-none text-[8px] font-semibold"
+                            fill={textFill}
                             style={{ fontSize: 8 }}
                           >
-                            {ev.label.length > 32 ? `${ev.label.slice(0, 30)}…` : ev.label}
+                            {shortenLabel(ev.label, width > 180 ? 42 : 24)}
                           </text>
                         )}
                       </g>
@@ -478,82 +557,124 @@ export function TimelineDesktop({
                   const cx = xForYear(ev.year_start)
                   if (cx < LEFT_PAD - 10 || cx > chartRight + 10) return null
 
-                  const markerStrokeW =
-                    laneType === "mudanca_partido"
-                      ? isSel
-                        ? 2
-                        : 1
-                      : ev.contradicao
-                        ? 2.5
-                        : isSel
-                          ? 2
-                          : 1
                   const fill = laneMarkerColor(laneType, ev)
-                  const label =
+                  const glyph =
                     laneType === "votacao"
-                      ? voteAbbrev(ev.vote)
-                      : laneType === "patrimonio" || laneType === "gasto_parlamentar"
-                        ? ev.value_formatted ?? "•"
-                        : "●"
-
-                  const markCy = cy
+                      ? voteGlyph(ev.vote)
+                      : laneType === "projeto_lei"
+                        ? "PL"
+                        : laneType === "ponto_atencao"
+                          ? "!"
+                          : laneType === "financiamento_campanha"
+                            ? "$"
+                            : laneType === "patrimonio"
+                              ? "R"
+                              : laneType === "gasto_parlamentar"
+                                ? "G"
+                                : null
+                  const badgeLabel = (() => {
+                    if (isSel && laneType === "mudanca_partido") return shortenLabel(ev.label, 18)
+                    if (isSel && ev.type === "ponto_atencao") return shortenLabel(ev.label, 22)
+                    return markerBadgeLabel(ev)
+                  })()
+                  const badgeGap = laneType === "mudanca_partido" ? BADGE_MIN_GAP + 28 : BADGE_MIN_GAP
+                  const showBadge = Boolean(badgeLabel) && (isSel || cx - lastBadgeX >= badgeGap)
+                  if (showBadge) lastBadgeX = cx
+                  const badgeWidth = badgeLabel ? Math.min(Math.max(badgeLabel.length * 6.4 + 18, 46), 122) : 0
+                  const badgeX = Math.min(Math.max(cx + 12, LEFT_PAD + 8), chartRight - badgeWidth - 4)
+                  const badgeY = cy - 11
 
                   return (
-                    <g key={ev.id}>
+                    <g
+                      key={ev.id}
+                      role="button"
+                      tabIndex={0}
+                      className="cursor-pointer outline-none"
+                      onClick={(e) => {
+                        const a = anchorFromSvgTarget(e.currentTarget)
+                        onSelectId(isSel ? null : ev.id, isSel ? undefined : a)
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault()
+                          const a = anchorFromSvgTarget(e.currentTarget)
+                          onSelectId(isSel ? null : ev.id, isSel ? undefined : a)
+                        }
+                      }}
+                      aria-label={ev.label}
+                    >
+                      <circle
+                        cx={cx}
+                        cy={cy}
+                        r={isSel ? 12 : 10}
+                        fill={theme.softFill}
+                        stroke={ev.contradicao ? "#f59e0b" : theme.softStroke}
+                        strokeWidth={ev.contradicao || isSel ? 1.6 : 1}
+                      />
                       {laneType === "mudanca_partido" ? (
                         <polygon
-                          role="button"
-                          tabIndex={0}
-                          points={`${cx},${markCy - 7} ${cx + 7},${markCy} ${cx},${markCy + 7} ${cx - 7},${markCy}`}
+                          points={`${cx},${cy - 8.5} ${cx + 8.5},${cy} ${cx},${cy + 8.5} ${cx - 8.5},${cy}`}
                           fill={fill}
-                          strokeWidth={markerStrokeW}
-                          className="cursor-pointer outline-none stroke-background"
-                          onClick={(e) => {
-                            const a = anchorFromSvgTarget(e.currentTarget)
-                            onSelectId(isSel ? null : ev.id, isSel ? undefined : a)
-                          }}
-                          onKeyDown={(e) => {
-                            if (e.key === "Enter" || e.key === " ") {
-                              e.preventDefault()
-                              const a = anchorFromSvgTarget(e.currentTarget)
-                              onSelectId(isSel ? null : ev.id, isSel ? undefined : a)
-                            }
-                          }}
-                          aria-label={ev.label}
+                          stroke="#ffffff"
+                          strokeWidth={1.2}
+                        />
+                      ) : laneType === "projeto_lei" ? (
+                        <rect
+                          x={cx - 7}
+                          y={cy - 7}
+                          width={14}
+                          height={14}
+                          rx={4}
+                          fill={fill}
+                          stroke="#ffffff"
+                          strokeWidth={1.2}
+                        />
+                      ) : laneType === "ponto_atencao" ? (
+                        <polygon
+                          points={`${cx},${cy - 8.5} ${cx + 8},${cy + 6.5} ${cx - 8},${cy + 6.5}`}
+                          fill={fill}
+                          stroke="#ffffff"
+                          strokeWidth={1.2}
                         />
                       ) : (
-                        <circle
-                          role="button"
-                          tabIndex={0}
-                          cx={cx}
-                          cy={markCy}
-                          r={5}
-                          fill={fill}
-                          stroke={ev.contradicao ? "#f59e0b" : undefined}
-                          strokeWidth={markerStrokeW}
-                          className={`cursor-pointer outline-none ${ev.contradicao ? "" : "stroke-background"}`}
-                          onClick={(e) => {
-                            const a = anchorFromSvgTarget(e.currentTarget)
-                            onSelectId(isSel ? null : ev.id, isSel ? undefined : a)
-                          }}
-                          onKeyDown={(e) => {
-                            if (e.key === "Enter" || e.key === " ") {
-                              e.preventDefault()
-                              const a = anchorFromSvgTarget(e.currentTarget)
-                              onSelectId(isSel ? null : ev.id, isSel ? undefined : a)
-                            }
-                          }}
-                          aria-label={ev.label}
-                        />
+                        <circle cx={cx} cy={cy} r={6.5} fill={fill} stroke="#ffffff" strokeWidth={1.2} />
                       )}
-                      <text
-                        x={cx + 10}
-                        y={markCy + 3}
-                        className="fill-foreground text-[8px] font-semibold"
-                        style={{ fontSize: 8 }}
-                      >
-                        {label}
-                      </text>
+                      {glyph ? (
+                        <text
+                          x={cx}
+                          y={cy + 2.6}
+                          textAnchor="middle"
+                          className="pointer-events-none text-[6.5px] font-black uppercase"
+                          fill="#ffffff"
+                          style={{ fontSize: laneType === "projeto_lei" ? 5.8 : 6.5 }}
+                        >
+                          {glyph}
+                        </text>
+                      ) : null}
+                      {showBadge && badgeLabel ? (
+                        <g>
+                          <rect
+                            x={badgeX}
+                            y={badgeY}
+                            width={badgeWidth}
+                            height={22}
+                            rx={11}
+                            fill={theme.softFill}
+                            stroke={theme.softStroke}
+                            strokeWidth={1}
+                          />
+                          <text
+                            x={badgeX + badgeWidth / 2}
+                            y={badgeY + 14}
+                            textAnchor="middle"
+                            fill={theme.text}
+                            className="pointer-events-none text-[8px] font-bold"
+                            style={{ fontSize: 8 }}
+                          >
+                            {badgeLabel}
+                          </text>
+                        </g>
+                      ) : null}
                     </g>
                   )
                 })}
@@ -561,7 +682,7 @@ export function TimelineDesktop({
             )
           })}
         </svg>
-      </div>
+        </div>
     </div>
   )
 }

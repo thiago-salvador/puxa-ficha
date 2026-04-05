@@ -309,4 +309,94 @@ describe("timeline-utils", () => {
     assert.equal(c.min, 2020)
     assert.equal(c.max, 2020)
   })
+
+  it("buildTimelineEvents includes financiamento_campanha by ano_eleicao", () => {
+    const ev = buildTimelineEvents(
+      fichaStub({
+        financiamento: [
+          {
+            id: "f1",
+            candidato_id: "1",
+            ano_eleicao: 2022,
+            total_arrecadado: 1_000_000,
+            total_fundo_partidario: 0,
+            total_fundo_eleitoral: 800_000,
+            total_pessoa_fisica: 200_000,
+            total_recursos_proprios: 0,
+            maiores_doadores: [],
+          },
+        ],
+      }),
+    )
+    const f = ev.find((e) => e.type === "financiamento_campanha")
+    assert.ok(f)
+    assert.equal(f?.year_start, 2022)
+    assert.equal(f?.tab_link, "dinheiro")
+    assert.ok(f?.value_formatted)
+  })
+
+  it("buildTimelineEvents includes ponto_atencao only with valid data_referencia", () => {
+    const ev = buildTimelineEvents(
+      fichaStub({
+        pontos_atencao: [
+          {
+            id: "pa1",
+            candidato_id: "1",
+            categoria: "contradição",
+            titulo: "Fato datado",
+            descricao: "Detalhe",
+            fontes: [],
+            gravidade: "media",
+            verificado: true,
+            gerado_por: "curadoria",
+            data_referencia: "2019-06-15",
+          },
+          {
+            id: "pa2",
+            candidato_id: "1",
+            categoria: "escandalo",
+            titulo: "Sem data",
+            descricao: "Nao entra",
+            fontes: [],
+            gravidade: "baixa",
+            verificado: true,
+            gerado_por: "curadoria",
+          },
+        ],
+        total_pontos_atencao: 2,
+      }),
+    )
+    const pts = ev.filter((e) => e.type === "ponto_atencao")
+    assert.equal(pts.length, 1)
+    assert.equal(pts[0]?.id, "ponto-pa1")
+    assert.equal(pts[0]?.date, "2019-06-15")
+    assert.equal(pts[0]?.tab_link, "alertas")
+    assert.equal(pts[0]?.attention_gravidade, "media")
+  })
+
+  it("buildTimelineEvents skips ponto with invalid data_referencia", () => {
+    const ev = buildTimelineEvents(
+      fichaStub({
+        pontos_atencao: [
+          {
+            id: "pa9",
+            candidato_id: "1",
+            categoria: "escandalo",
+            titulo: "X",
+            descricao: "Y",
+            fontes: [],
+            gravidade: "baixa",
+            verificado: true,
+            gerado_por: "curadoria",
+            data_referencia: "not-a-date",
+          },
+        ],
+        total_pontos_atencao: 1,
+      }),
+    )
+    assert.equal(
+      ev.filter((e) => e.type === "ponto_atencao").length,
+      0,
+    )
+  })
 })

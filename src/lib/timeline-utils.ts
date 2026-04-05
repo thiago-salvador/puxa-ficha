@@ -1,14 +1,18 @@
-import type { FichaCandidato, GastoParlamentar } from "@/lib/types"
+import type { FichaCandidato, Financiamento, GastoParlamentar } from "@/lib/types"
 import { formatBRL } from "@/lib/utils"
 
 export type TimelineEventType =
   | "cargo"
   | "mudanca_partido"
   | "patrimonio"
+  | "financiamento_campanha"
   | "processo"
   | "votacao"
   | "projeto_lei"
   | "gasto_parlamentar"
+  | "ponto_atencao"
+
+export type TimelineAttentionGravidade = "critica" | "alta" | "media" | "baixa"
 
 /** Mirrors `VotoCandidato["voto"]` in types.ts (accented literals). */
 export type TimelineVote = "sim" | "não" | "abstenção" | "ausente" | "obstrução"
@@ -32,6 +36,8 @@ export interface TimelineEvent {
   partido_novo?: string
   contexto?: string
   tab_link?: string
+  /** Gravidade editorial (pontos de atencao na timeline). */
+  attention_gravidade?: TimelineAttentionGravidade
 }
 
 export interface TimelineRange {
@@ -43,20 +49,24 @@ export const TIMELINE_EVENT_TYPES: TimelineEventType[] = [
   "cargo",
   "mudanca_partido",
   "patrimonio",
+  "financiamento_campanha",
   "processo",
   "votacao",
   "projeto_lei",
   "gasto_parlamentar",
+  "ponto_atencao",
 ]
 
 export const TIMELANE_LABELS: Record<TimelineEventType, string> = {
   cargo: "Cargos",
   mudanca_partido: "Partido",
   patrimonio: "Patrimonio",
+  financiamento_campanha: "Financiamento",
   processo: "Processos",
   votacao: "Votacoes",
   projeto_lei: "Projetos",
   gasto_parlamentar: "Gastos CEAP",
+  ponto_atencao: "Alertas",
 }
 
 /** Tab ids in CandidatoProfile (not including timeline). */
@@ -69,6 +79,27 @@ export const TIMELINE_TAB_LABELS: Record<string, string> = {
   trajetoria: "Trajetoria",
   legislacao: "Legislacao",
   alertas: "Alertas",
+}
+
+function financiamentoDescription(f: Financiamento): string | undefined {
+  const parts: string[] = []
+  if (f.total_fundo_eleitoral > 0) {
+    parts.push(`Fundo eleitoral ${formatBRL(f.total_fundo_eleitoral)}`)
+  }
+  if (f.total_fundo_partidario > 0) {
+    parts.push(`Fundo partidario ${formatBRL(f.total_fundo_partidario)}`)
+  }
+  if (f.total_pessoa_fisica > 0) {
+    parts.push(`PF ${formatBRL(f.total_pessoa_fisica)}`)
+  }
+  if (f.total_recursos_proprios > 0) {
+    parts.push(`Proprios ${formatBRL(f.total_recursos_proprios)}`)
+  }
+  const top = f.maiores_doadores?.[0]
+  if (top && top.valor > 0) {
+    parts.push(`Maior doador: ${top.nome} (${formatBRL(top.valor)})`)
+  }
+  return parts.length > 0 ? parts.join(" · ") : undefined
 }
 
 function topGastoDescription(g: GastoParlamentar): string | undefined {
@@ -101,6 +132,13 @@ export function computeProcessYearFallback(ficha: FichaCandidato): number {
     if (pl.ano != null) ys.push(pl.ano)
   }
   for (const g of ficha.gastos_parlamentares ?? []) ys.push(g.ano)
+  for (const fin of ficha.financiamento ?? []) ys.push(fin.ano_eleicao)
+  for (const pa of ficha.pontos_atencao ?? []) {
+    if (!pa.data_referencia) continue
+    const raw = pa.data_referencia.trim().split("T")[0]
+    const dm = /^(\d{4})-(\d{2})-(\d{2})$/.exec(raw)
+    if (dm) ys.push(Number(dm[1]))
+  }
   if (ys.length === 0) return 2000
   return Math.min(...ys)
 }
@@ -155,6 +193,21 @@ export function buildTimelineEvents(ficha: FichaCandidato): TimelineEvent[] {
       value: p.valor_total,
       value_formatted: formatBRL(p.valor_total),
       year_start: p.ano_eleicao,
+      tab_link: "dinheiro",
+    })
+  }
+
+  const finSorted = [...(ficha.financiamento ?? [])].sort((a, b) => a.ano_eleicao - b.ano_eleicao)
+  for (const fin of finSorted) {
+    const total = fin.total_arrecadado ?? 0
+    events.push({
+      id: `financiamento-${fin.id}`,
+      type: "financiamento_campanha",
+      label: `Campanha ${fin.ano_eleicao}`,
+      description: financiamentoDescription(fin),
+      value: total > 0 ? total : undefined,
+      value_formatted: total > 0 ? formatBRL(total) : undefined,
+      year_start: fin.ano_eleicao,
       tab_link: "dinheiro",
     })
   }
@@ -224,6 +277,25 @@ export function buildTimelineEvents(ficha: FichaCandidato): TimelineEvent[] {
     })
   }
 
+  for (const pa of ficha.pontos_atencao ?? []) {
+    if (!pa.data_referencia) continue
+    const raw = pa.data_referencia.trim().split("T")[0]
+    const dm = /^(\d{4})-(\d{2})-(\d{2})$/.exec(raw)
+    if (!dm) continue
+    const year = Number(dm[1])
+    const iso = `${dm[1]}-${dm[2]}-${dm[3]}`
+    events.push({
+      id: `ponto-${pa.id}`,
+      type: "ponto_atencao",
+      label: pa.titulo,
+      description: pa.descricao,
+      year_start: year,
+      date: iso,
+      tab_link: "alertas",
+      attention_gravidade: pa.gravidade,
+    })
+  }
+
   events.sort((a, b) => {
     if (a.year_start !== b.year_start) return a.year_start - b.year_start
     if (a.date && b.date) return a.date.localeCompare(b.date)
@@ -245,6 +317,35 @@ export function getTimelineRange(events: TimelineEvent[]): TimelineRange {
     year_min: Math.min(...years),
     year_max: Math.max(...years, nowY),
   }
+}
+
+export function getTimelineAxisTicks(yearMin: number, yearMax: number): number[] {
+  const lo = Math.ceil(Math.min(yearMin, yearMax))
+  const hi = Math.floor(Math.max(yearMin, yearMax))
+
+  if (!Number.isFinite(lo) || !Number.isFinite(hi)) return []
+  if (lo > hi) return [Math.round((yearMin + yearMax) / 2)]
+
+  const span = hi - lo
+  if (span <= 1) return [...new Set([lo, hi])]
+
+  const step = [1, 2, 5, 10, 20].find((candidate) => span / candidate <= 8) ?? 25
+  const first = Math.ceil(lo / step) * step
+  const ticks: number[] = []
+
+  for (let year = first; year <= hi; year += step) {
+    ticks.push(year)
+  }
+
+  if (ticks.length === 0) {
+    ticks.push(lo)
+  }
+
+  const gapThreshold = Math.max(step * 0.6, 1)
+  if (ticks[0] != null && ticks[0] - lo >= gapThreshold) ticks.unshift(lo)
+  if (ticks[ticks.length - 1] != null && hi - ticks[ticks.length - 1] >= gapThreshold) ticks.push(hi)
+
+  return [...new Set(ticks.filter((year) => year >= lo && year <= hi))]
 }
 
 /** Keeps [viewMin, viewMax] inside [extentMin, extentMax], preserving span up to full extent. */

@@ -89,21 +89,33 @@ export function TimelineMinimap({
 
   return (
     <div className="w-full">
-      <p className="mb-1.5 text-[length:var(--text-caption)] font-semibold text-muted-foreground">
-        Mapa da carreira ({extentMin} a {extentMax})
-      </p>
+      <div className="mb-2 flex items-center justify-between gap-3">
+        <p className="text-[length:var(--text-caption)] font-semibold text-muted-foreground">
+          Mapa da carreira ({extentMin} a {extentMax})
+        </p>
+        <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+          Janela: {Math.round(viewMin)} a {Math.round(viewMax)}
+        </p>
+      </div>
       <div
         ref={trackRef}
         role="presentation"
-        className="relative h-7 w-full touch-none rounded-md border border-border/50 bg-secondary/30"
+        className="relative h-8 w-full touch-none overflow-hidden rounded-full border border-border/60 bg-[linear-gradient(90deg,rgba(10,10,10,0.03),rgba(10,10,10,0.08),rgba(10,10,10,0.03))]"
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
         aria-label={`Minimap da timeline de ${label}: janela ${Math.round(viewMin)} a ${Math.round(viewMax)}`}
       >
+        <div className="pointer-events-none absolute inset-y-[7px] left-3 right-3 rounded-full bg-foreground/7" />
+        <div className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[9px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+          {extentMin}
+        </div>
+        <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[9px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+          {extentMax}
+        </div>
         <div
-          className={`absolute inset-y-0 rounded border border-foreground/50 bg-foreground/15 ${
+          className={`absolute inset-y-1.5 rounded-full border border-foreground/50 bg-foreground/15 shadow-[0_8px_20px_rgba(10,10,10,0.12)] ${
             dragging ? "cursor-grabbing" : "cursor-grab"
           }`}
           style={{
@@ -111,7 +123,10 @@ export function TimelineMinimap({
             width: `${wWidth * 100}%`,
             minWidth: 8,
           }}
-        />
+        >
+          <div className="absolute inset-y-0 left-2 w-px bg-foreground/40" />
+          <div className="absolute inset-y-0 right-2 w-px bg-foreground/40" />
+        </div>
       </div>
     </div>
   )

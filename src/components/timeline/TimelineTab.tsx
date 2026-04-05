@@ -37,6 +37,8 @@ export function TimelineTab({ ficha, events, onTabNavigate, suggest }: TimelineT
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [selectionAnchor, setSelectionAnchor] = useState<DOMRect | null>(null)
   const [chartPointRect, setChartPointRect] = useState<DOMRect | null>(null)
+  const [tooltipBoundaryRect, setTooltipBoundaryRect] = useState<DOMRect | null>(null)
+  const [tooltipCursor, setTooltipCursor] = useState<{ x: number; y: number } | null>(null)
 
   const fullCounts = useMemo(() => countEventsByType(events), [events])
   const projectTotalCount = fullCounts.projeto_lei
@@ -62,21 +64,26 @@ export function TimelineTab({ ficha, events, onTabNavigate, suggest }: TimelineT
   function handleSelectId(id: string | null, anchor?: DOMRect) {
     setSelectedId(id)
     setSelectionAnchor(anchor ?? null)
+    setTooltipCursor(null)
   }
 
   useLayoutEffect(() => {
     if (!selectedEvent) {
       setChartPointRect(null)
+      setTooltipBoundaryRect(null)
       return
     }
     const el = desktopChartRef.current
     if (!el) {
       setChartPointRect(null)
+      setTooltipBoundaryRect(null)
       return
     }
-    const r = el.getBoundingClientRect()
+    const region = el.querySelector<HTMLElement>('[data-pf-timeline-chart-region="true"]') ?? el
+    const r = region.getBoundingClientRect()
     const y = r.top + Math.min(r.height * 0.4, 160)
     setChartPointRect(new DOMRect(r.left + r.width / 2 - 1, y - 1, 2, 2))
+    setTooltipBoundaryRect(r)
   }, [selectedEvent])
 
   useEffect(() => {
@@ -121,8 +128,8 @@ export function TimelineTab({ ficha, events, onTabNavigate, suggest }: TimelineT
       <SectionLabel>Timeline ({filteredEvents.length} eventos)</SectionLabel>
       <SectionTitle>Linha do tempo</SectionTitle>
       <p className="mt-2 max-w-3xl text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
-        Cargos, partidos, patrimonio, processos, votacoes, projetos e gastos no mesmo eixo. Use as camadas para
-        filtrar; em telas grandes a visualizacao e horizontal.
+        Cargos, partidos, patrimonio, financiamento de campanha, processos, votacoes, projetos, gastos e alertas com
+        data no mesmo eixo. Use as camadas para filtrar; em telas grandes a visualizacao e horizontal.
       </p>
 
       <div className="mt-8 space-y-6">
@@ -145,7 +152,10 @@ export function TimelineTab({ ficha, events, onTabNavigate, suggest }: TimelineT
             projectVisibleCount={projectVisibleCount}
           />
 
-          <div ref={desktopChartRef} className="hidden lg:block">
+          <div
+            ref={desktopChartRef}
+            className="hidden lg:block"
+          >
             <TimelineDesktop
               resetViewportKey={ficha.slug}
               events={filteredEvents}
@@ -153,6 +163,13 @@ export function TimelineTab({ ficha, events, onTabNavigate, suggest }: TimelineT
               nomeUrna={ficha.nome_urna}
               selectedId={selectedId}
               onSelectId={handleSelectId}
+              onChartPointerMove={(point) => {
+                if (!selectedId) return
+                setTooltipCursor(point)
+              }}
+              onChartPointerLeave={() => {
+                setTooltipCursor(null)
+              }}
             />
           </div>
         </div>
@@ -181,7 +198,12 @@ export function TimelineTab({ ficha, events, onTabNavigate, suggest }: TimelineT
                 onClose={() => handleSelectId(null)}
               />
             </div>
-            <TimelineTooltipFloating anchorRect={selectionAnchor} fallbackRect={chartPointRect}>
+            <TimelineTooltipFloating
+              anchorRect={selectionAnchor}
+              fallbackRect={chartPointRect}
+              boundaryRect={tooltipBoundaryRect}
+              cursorClient={tooltipCursor}
+            >
               <div className="hidden lg:block">
                 <TimelineTooltipPanel
                   event={selectedEvent}

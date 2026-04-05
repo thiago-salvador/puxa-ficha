@@ -1,6 +1,7 @@
 "use client"
 
 import { useMemo } from "react"
+import { getTimelineAxisTicks } from "@/lib/timeline-utils"
 
 export interface TimelineAxisProps {
   yearMin: number
@@ -16,17 +17,7 @@ export function TimelineAxis({ yearMin, yearMax, leftPad, rightPad, width, y }: 
   const innerW = width - leftPad - rightPad
   const span = Math.max(yearMax - yearMin, 1)
 
-  const ticks = useMemo(() => {
-    const out: number[] = []
-    const rawSpan = yearMax - yearMin
-    let step = 1
-    if (rawSpan > 40) step = 10
-    else if (rawSpan > 24) step = 5
-    else if (rawSpan > 14) step = 2
-    for (let yv = yearMin; yv <= yearMax; yv += step) out.push(yv)
-    if (out[out.length - 1] !== yearMax) out.push(yearMax)
-    return out
-  }, [yearMin, yearMax])
+  const ticks = useMemo(() => getTimelineAxisTicks(yearMin, yearMax), [yearMin, yearMax])
 
   function xForYear(yr: number) {
     return leftPad + ((yr - yearMin) / span) * innerW
@@ -50,18 +41,18 @@ export function TimelineAxis({ yearMin, yearMax, leftPad, rightPad, width, y }: 
             x1={xForYear(yr)}
             y1={y}
             x2={xForYear(yr)}
-            y2={y + 6}
+            y2={y + 8}
             stroke="currentColor"
-            strokeOpacity={0.35}
+            strokeOpacity={0.24}
             strokeWidth={1}
             className="text-foreground"
           />
           <text
             x={xForYear(yr)}
-            y={y + 20}
+            y={y + 22}
             textAnchor="middle"
-            className="fill-muted-foreground text-[9px] font-bold uppercase tracking-tight"
-            style={{ fontSize: 9 }}
+            className="fill-muted-foreground text-[10px] font-bold tracking-[0.04em]"
+            style={{ fontSize: 10 }}
           >
             {yr}
           </text>
