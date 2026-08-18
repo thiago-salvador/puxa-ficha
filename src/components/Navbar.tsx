@@ -294,7 +294,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => openSearch("toolbar")}
-            className={`relative z-[70] flex items-center gap-2 rounded-full border px-3 py-2 transition-colors duration-300 max-sm:min-h-11 max-sm:min-w-11 max-sm:justify-center ${
+            className={`relative z-[70] flex min-h-11 items-center gap-2 rounded-full border px-3 py-2 transition-colors duration-300 max-sm:min-w-11 max-sm:justify-center ${
               useDarkText ? "border-black/15 text-black" : "border-white/20 text-white"
             }`}
             aria-label="Abrir busca rápida"
@@ -312,7 +312,7 @@ export function Navbar() {
           <button
             ref={menuButtonRef}
             type="button"
-            className="menu-btn relative z-[70] flex items-center gap-3 overflow-hidden max-sm:min-h-11 max-sm:min-w-11 max-sm:justify-center"
+            className="menu-btn relative z-[70] flex min-h-11 items-center gap-3 overflow-hidden max-sm:min-w-11 max-sm:justify-center"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={isMenuOpen}
