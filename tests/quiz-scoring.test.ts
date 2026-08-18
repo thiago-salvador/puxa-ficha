@@ -20,10 +20,27 @@ function allNeutralAnswers(): Map<string, { valor: RespostaLikert; importante: b
   return m
 }
 
+/**
+ * Respostas que empurram eixo economico a estatal e social a progressista.
+ *
+ * Ate 18/08/2026 esta funcao respondia `concordo_total` em TUDO, e isso nao
+ * produz um perfil de esquerda: as perguntas tem polaridade propria, e concordar
+ * com "a reforma trabalhista beneficiou os trabalhadores" empurra para mercado.
+ * O efeito medido era o inverso do nome: o perfil batia 50,8 com o PL e 41,4 com
+ * o PSOL. O teste de regressao que dependia dela passava por coincidencia, com
+ * folga de 0,1 ponto, e quebrou assim que o espectro do PL ganhou fonte.
+ *
+ * Agora e o espelho exato de extremeRightAnswers, que ja lia a polaridade certo.
+ */
 function extremeLeftAnswers(): Map<string, { valor: RespostaLikert; importante: boolean }> {
   const m = allNeutralAnswers()
   for (const p of quizPerguntasOrdenadas()) {
-    m.set(p.id, { valor: "concordo_total", importante: false })
+    let v: RespostaLikert = "neutro"
+    if (p.eixo_economico_dir === "concordo=mercado") v = "discordo_total"
+    if (p.eixo_economico_dir === "concordo=estado") v = "concordo_total"
+    if (p.eixo_social_dir === "concordo=conservador") v = "discordo_total"
+    if (p.eixo_social_dir === "concordo=progressista") v = "concordo_total"
+    m.set(p.id, { valor: v, importante: false })
   }
   return m
 }

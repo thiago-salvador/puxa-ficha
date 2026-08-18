@@ -27,7 +27,14 @@ describe("Onda P", () => {
       assert.ok(espectro, `espectro ausente para ${sigla}`)
       assert.equal(espectro.eixo_economico, eixoEconomico)
       assert.equal(espectro.eixo_social, eixoSocial)
-      assert.equal(espectro.fonte, "curadoria")
+      // Em 18/08/2026 a procedencia passou a ser por eixo. Estes cinco seguem em
+      // curadoria de proposito: nenhum tem documento programatico aceito. O
+      // DEMOCRATA e o PRD chegaram a ter valor social vindo da coleta, mas a
+      // citacao apontava para a home do site, que muda sem aviso, e foi
+      // rejeitada em favor do rotulo honesto.
+      assert.equal(espectro.fonte_economico.tipo, "curadoria")
+      assert.equal(espectro.fonte_social.tipo, "curadoria")
+      assert.equal(espectro.fonte_economico.url, undefined)
       assert.match(espectro.notas ?? "", /DADOS 2023 \(survey 2018/)
       assert.match(espectro.notas ?? "", /espectro-partidos\.json onda-p 14\/08/)
     }
