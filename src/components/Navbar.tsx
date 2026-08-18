@@ -10,6 +10,7 @@ import { useGlobalSearch, useModKShortcutLabel } from "@/components/GlobalSearch
 const NAV_ITEMS = [
   { href: "/", label: "Presidência" },
   { href: "/governadores", label: "Governadores" },
+  { href: "/parlamentares", label: "Parlamentares" },
   { href: "/comparar", label: "Comparar" },
   { href: "/rankings", label: "Listas" },
   { href: "/doadores", label: "Doadores" },
@@ -368,7 +369,7 @@ export function Navbar() {
             <div className="backdrop-layer absolute inset-0 bg-card" />
           </div>
 
-          <div className="relative flex h-full flex-col px-8 pt-20 pb-10 sm:px-12 md:px-16">
+          <div className="relative flex h-full flex-col px-8 pt-16 pb-6 sm:px-12 sm:pt-20 sm:pb-10 md:px-16">
             {/* Close button inside menu panel */}
             <button
               ref={closeButtonRef}
@@ -388,7 +389,7 @@ export function Navbar() {
             </button>
 
             {/* Nav links */}
-            <ul className="mt-auto mb-auto flex flex-col gap-1">
+            <ul className="mt-auto mb-auto flex min-h-0 flex-col gap-0.5 overflow-y-auto sm:gap-1">
               {NAV_ITEMS.map((item, index) => (
                 <li key={item.href} className="overflow-hidden">
                   <Link

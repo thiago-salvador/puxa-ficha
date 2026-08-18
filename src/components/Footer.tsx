@@ -25,6 +25,7 @@ export function Footer() {
                 {[
                   { href: "/", label: "Presidência" },
                   { href: "/governadores", label: "Governadores" },
+                  { href: "/parlamentares", label: "Parlamentares" },
                   { href: "/comparar", label: "Comparador" },
                   { href: "/rankings", label: "Listas" },
                   { href: "/doadores", label: "Doadores" },
