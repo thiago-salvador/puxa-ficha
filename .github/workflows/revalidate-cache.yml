@@ -1,0 +1,66 @@
+name: Revalidar cache
+
+# Revalida as tags de cache públicas na produção via POST /api/revalidate.
+# Disparo manual. Endpoint-based (nenhum código de PR roda aqui).
+#
+# Secret necessário (Settings → Secrets and variables → Actions):
+#   PF_REVALIDATE_SECRET — idêntico ao configurado na Vercel (Production).
+
+on:
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: "Tags separadas por vírgula, ou 'all' para todas as públicas"
+        required: false
+        default: "all"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: revalidate-cache
+  cancel-in-progress: true
+
+jobs:
+  revalidate:
+    name: Revalidar tags públicas
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      REVALIDATE_URL: https://puxaficha.com.br/api/revalidate
+      REVALIDATE_SECRET: ${{ secrets.PF_REVALIDATE_SECRET }}
+      INPUT_TAGS: ${{ github.event.inputs.tags || 'all' }}
+      DEFAULT_TAGS_JSON: >-
+        ["public-candidatos","public-candidato-metadata","public-candidato-ficha","public-candidatos-resumo","public-candidatos-comparaveis","public-indicadores-all","public-indicadores-estado","quiz-dataset","ranking-data","doador-reverse"]
+    steps:
+      - name: Validar secret
+        run: |
+          set -euo pipefail
+          if [ -z "${REVALIDATE_SECRET:-}" ]; then
+            echo "PF_REVALIDATE_SECRET ausente nos GitHub Actions secrets." >&2
+            exit 1
+          fi
+      - name: Montar payload
+        run: |
+          set -euo pipefail
+          input="${INPUT_TAGS:-all}"
+          if [ "$input" = "all" ] || [ -z "$input" ]; then
+            jq -cn --argjson tags "$DEFAULT_TAGS_JSON" '{tags: $tags}' > /tmp/payload.json
+          else
+            printf '%s\n' "$input" | tr ',' '\n' \
+              | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | awk 'NF > 0' \
+              | jq -R . | jq -s '{tags: .}' > /tmp/payload.json
+          fi
+          jq -c . /tmp/payload.json
+      - name: POST /api/revalidate
+        run: |
+          set -euo pipefail
+          status="$(curl -sS -o /tmp/resp.json -w "%{http_code}" \
+            -X POST "$REVALIDATE_URL" \
+            -H "content-type: application/json" \
+            -H "x-pf-revalidate-secret: ${REVALIDATE_SECRET}" \
+            --data-binary @/tmp/payload.json)"
+          echo "HTTP ${status}"
+          jq -c . /tmp/resp.json || cat /tmp/resp.json
+          echo "HTTP ${status}" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$status" != "200" ]; then exit 1; fi

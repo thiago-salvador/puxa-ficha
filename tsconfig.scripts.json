@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "esModuleInterop": true,
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "scripts/**/*.ts",
+    "src/lib/crypto-utils.ts",
+    "src/lib/financiamento-doador-identifiers.ts",
+    "src/lib/party-utils.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,29 @@
+# URLs de fonte publicadas que retornam HTTP 404
+# Medido em 2026-07-24 por requisicao direta com User-Agent de navegador.
+# Universo testado: 69 URLs distintas com caminho, em pontos_atencao de candidatos
+# com publicavel = true e visivel = true. Resultado: 48 x 200, 18 x 404, 1 x 403, 2 x sem conexao.
+# Cada uma destas 18 e a fonte UNICA do ponto de atencao que sustenta.
+https://g1.globo.com/go/goias/noticia/2020/03/20/caiado-critica-bolsonaro-apos-pronunciamento.ghtml
+https://g1.globo.com/go/goias/noticia/2024/pib-goias-crescimento.ghtml
+https://g1.globo.com/mg/minas-gerais/noticia/2021/02/04/acordo-brumadinho-vale-governo-mg.ghtml
+https://g1.globo.com/mg/minas-gerais/noticia/2023/minas-regime-recuperacao-fiscal.ghtml
+https://g1.globo.com/politica/mensalao/noticia/2012/12/stf-mensalao-condenacoes.ghtml
+https://g1.globo.com/politica/noticia/2023/stf-inquerito-atos.ghtml
+https://news.un.org/pt/story/2013/03/1433701
+https://theintercept.com/2019/mbl-atlas-network.html
+https://www.bbc.com/portuguese/articles/c0we4l1v0d0o
+https://www.bbc.com/portuguese/brasil-57283sjr
+https://www.gov.br/fazenda/pt-br/assuntos/noticias/2023/agosto/novo-arcabouco-fiscal-e-sancionado
+https://www.stf.jus.br/portal/cms/verNoticiaDetalhe.asp?idConteudo=462025
+https://www1.folha.uol.com.br/poder/2018/08/patrimonio-de-lula-cresceu-538-entre-2006-e-2018.shtml
+https://www1.folha.uol.com.br/poder/2019/01/movimentacao-atipica-de-r-12-milhao-na-conta-de-flavio-bolsonaro.shtml
+https://www1.folha.uol.com.br/poder/2019/mbl-financiamento.shtml
+https://www1.folha.uol.com.br/poder/2021/flavio-bolsonaro-mansao-brasilia.shtml
+https://www1.folha.uol.com.br/poder/2022/06/zema-constroi-alianca-com-centrao-em-minas-gerais.shtml
+https://www1.folha.uol.com.br/poder/caiado-udr-terra.shtml
+#
+# Sem conexao (nao confundir com 404, o dominio esta fora do ar):
+# https://web.trf3.jus.br/noticias-sjsp/Noticiar/ExibirNoticia/227-justica-federal-absolve-deputado-federal-aecio-neves
+# https://web.trf3.jus.br/noticias/Noticiar/ExibirNoticia/425021-decima-primeira-turma-mantem-sentenca-que-absolveu
+# 403 (bloqueio de bot, a materia provavelmente existe):
+# https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2025/02/12/gilmar-suspende-investigacao-sobre-marconi-perillo.amp.htm

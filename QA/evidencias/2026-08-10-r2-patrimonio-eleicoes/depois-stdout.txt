@@ -1,0 +1,233 @@
+{
+  "universo": {
+    "fichasPublicas": 194,
+    "fichasMedidas": 194
+  },
+  "fichasComPeloMenosUmaEleicaoDefeituosa": 0,
+  "eleicoesDefeituosas": 0,
+  "ausenciaOficialConfirmada": {
+    "fichas": 39,
+    "eleicoes": 61,
+    "exibidasComFonteEData": 61
+  },
+  "porMotivo": {},
+  "casosNomeados": {
+    "flavio-bolsonaro": {
+      "banco": [
+        {
+          "ano": 2018,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2016,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2014,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2010,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2006,
+          "estado": "publicado"
+        }
+      ],
+      "dto": [
+        {
+          "ano": 2018,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2016,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2014,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2010,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2006,
+          "estado": "publicado"
+        }
+      ],
+      "dom": [
+        {
+          "ano": 2018,
+          "estado": "publicado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2016,
+          "estado": "publicado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2014,
+          "estado": "publicado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2010,
+          "estado": "publicado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2006,
+          "estado": "publicado",
+          "fonte_e_data": false
+        }
+      ],
+      "defeitos": []
+    },
+    "hertz-dias": {
+      "banco": [
+        {
+          "ano": 2022,
+          "estado": "vazio_confirmado"
+        },
+        {
+          "ano": 2020,
+          "estado": "vazio_confirmado"
+        },
+        {
+          "ano": 2018,
+          "estado": "publicado"
+        }
+      ],
+      "dto": [
+        {
+          "ano": 2022,
+          "estado": "vazio_confirmado"
+        },
+        {
+          "ano": 2020,
+          "estado": "vazio_confirmado"
+        },
+        {
+          "ano": 2018,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2010,
+          "estado": "nao_coletado"
+        }
+      ],
+      "dom": [
+        {
+          "ano": 2022,
+          "estado": "vazio_confirmado",
+          "fonte_e_data": true
+        },
+        {
+          "ano": 2020,
+          "estado": "vazio_confirmado",
+          "fonte_e_data": true
+        },
+        {
+          "ano": 2018,
+          "estado": "publicado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2010,
+          "estado": "nao_coletado",
+          "fonte_e_data": false
+        }
+      ],
+      "defeitos": []
+    },
+    "rui-costa-pimenta": {
+      "banco": [
+        {
+          "ano": 2014,
+          "estado": "vazio_confirmado"
+        },
+        {
+          "ano": 2010,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2006,
+          "estado": "publicado"
+        }
+      ],
+      "dto": [
+        {
+          "ano": 2014,
+          "estado": "vazio_confirmado"
+        },
+        {
+          "ano": 2010,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2006,
+          "estado": "publicado"
+        }
+      ],
+      "dom": [
+        {
+          "ano": 2014,
+          "estado": "vazio_confirmado",
+          "fonte_e_data": true
+        },
+        {
+          "ano": 2010,
+          "estado": "publicado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2006,
+          "estado": "publicado",
+          "fonte_e_data": false
+        }
+      ],
+      "defeitos": []
+    },
+    "samara-martins": {
+      "banco": [
+        {
+          "ano": 2022,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2020,
+          "estado": "vazio_confirmado"
+        }
+      ],
+      "dto": [
+        {
+          "ano": 2022,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2020,
+          "estado": "vazio_confirmado"
+        }
+      ],
+      "dom": [
+        {
+          "ano": 2022,
+          "estado": "publicado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2020,
+          "estado": "vazio_confirmado",
+          "fonte_e_data": true
+        }
+      ],
+      "defeitos": []
+    }
+  },
+  "fichasAfetadas": []
+}
+
+Detalhe em QA/evidencias/2026-08-10-r2-patrimonio-eleicoes/depois.json

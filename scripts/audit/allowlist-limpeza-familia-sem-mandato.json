@@ -1,0 +1,35 @@
+{
+  "$schema": "Allowlist EXATA da limpeza da familia 'Sem historico de mandato eletivo registrado' e da troca de fonte da claim do Alvaro Dias, aprovadas por Thiago em 2026-08-03 (payload factcheck-governadores-v1, acoes limpar-33 e trocar-fonte-alvaro).",
+  "gerado_em": "2026-08-03",
+  "branch": "data/presidenciaveis-lacunas",
+  "coorte": [
+    "alvaro-dias-rn"
+  ],
+  "fora_por_construcao": {
+    "slugs": [],
+    "motivo": "A escrita em lote e declarada como referencia, com teto de 33 registros; a unica escrita por slug e a do alvaro-dias-rn."
+  },
+  "referencias": [
+    {
+      "tabela": "pontos_atencao",
+      "ref": "familia-sem-mandato-eletivo",
+      "max_registros": 1,
+      "campos": [
+        "despublicacao_motivo",
+        "despublicado_em"
+      ],
+      "motivo": "Um unico UPDATE em lote sobre os 33 ids listados na migration, todos com visivel = false e despublicacao_motivo nulo. Nao toca visivel."
+    }
+  ],
+  "entries": [
+    {
+      "tabela": "pontos_atencao",
+      "slug": "alvaro-dias-rn",
+      "claim_id": "58db12ca-d6d0-4a01-84d6-b161d8699533",
+      "campos": [
+        "fontes"
+      ],
+      "motivo": "Unica acusacao no ar cuja fonte nao respondia. Conteudo confirmado em fonte viva; a URL do MPRN fica preservada em segundo lugar."
+    }
+  ]
+}

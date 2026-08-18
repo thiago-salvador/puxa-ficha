@@ -1,0 +1,312 @@
+{
+  "_comentario": "Allowlist do recorte de 10/08/2026, item 7: despublicação das 6 linhas de votação-chave da Câmara com afirmação errada (100 pares candidato-voto) e inclusão do dataset editorial v2 com 13 matérias endereçadas por (fonte, votacao_id_api). Janela FECHADA de 20260810090000 a 20260810090200. Sem --ate, toda migration criada depois cairia nesta janela e esta allowlist a reprovaria com razão.",
+  "recorte": "votacoes-chave-v2-20260810",
+  "migrations": [
+    "20260810090000_votacoes_chave_chave_por_votacao.sql",
+    "20260810090100_despublicar_votacoes_chave_defeituosas.sql",
+    "20260810090200_votacoes_chave_dataset_v2.sql"
+  ],
+  "fonte": "Câmara Dados Abertos v2. Auditoria em QA/evidencias/2026-08-10-item7-votacoes/auditoria-votacoes-chave.json; universo e propostas em universo-nominais-{55,57}-legislatura.json e proposta-{55,57}-legislatura.json; decisão editorial em QA/2026-08-10-item7-decisao-editorial-v2.md.",
+  "coorte": [],
+  "fora_por_construcao": {
+    "_comentario": "Coorte vazia de propósito. `votacoes_chave` e `votos_candidato` não pertencem a candidato nenhum da coorte: a primeira é tabela de referência e a segunda é apagada em bloco por votação, não por pessoa. Toda escrita deste recorte é declarada com ref=, no bloco referencias.",
+    "slugs": []
+  },
+  "entries": [],
+  "referencias": [
+    {
+      "_comentario": "Despublicacao dos pares de Teto de Gastos (EC 95), 20 pares.",
+      "tabela": "votos_candidato",
+      "ref": "a7c70604-5116-4545-a2a4-a00a7761af43",
+      "campos": [
+        "candidato_id",
+        "votacao_id"
+      ]
+    },
+    {
+      "_comentario": "Despublicacao dos pares de Reforma Trabalhista, 20 pares.",
+      "tabela": "votos_candidato",
+      "ref": "9c1f05a7-fe8d-4c45-8827-ca23d029b1a0",
+      "campos": [
+        "candidato_id",
+        "votacao_id"
+      ]
+    },
+    {
+      "_comentario": "Despublicacao dos pares de Reforma da Previdencia, 27 pares.",
+      "tabela": "votos_candidato",
+      "ref": "b2aa93fb-faa1-423c-bae7-70ea6ff35fe0",
+      "campos": [
+        "candidato_id",
+        "votacao_id"
+      ]
+    },
+    {
+      "_comentario": "Despublicacao dos pares de Auxilio Brasil, 8 pares.",
+      "tabela": "votos_candidato",
+      "ref": "a539c15d-20a0-4e55-876b-a7bbba7ef0d2",
+      "campos": [
+        "candidato_id",
+        "votacao_id"
+      ]
+    },
+    {
+      "_comentario": "Despublicacao dos pares de Marco Temporal Indigena, 12 pares.",
+      "tabela": "votos_candidato",
+      "ref": "d652e083-aa23-4df9-a66f-433816d330cc",
+      "campos": [
+        "candidato_id",
+        "votacao_id"
+      ]
+    },
+    {
+      "_comentario": "Despublicacao dos pares de PL das Fake News, 13 pares.",
+      "tabela": "votos_candidato",
+      "ref": "86e0edac-52a5-44fe-b699-1c09aaf42a32",
+      "campos": [
+        "candidato_id",
+        "votacao_id"
+      ]
+    },
+    {
+      "_comentario": "Despublicacao da linha Teto de Gastos (EC 95), 20 pares.",
+      "tabela": "votacoes_chave",
+      "ref": "a7c70604-5116-4545-a2a4-a00a7761af43",
+      "campos": [
+        "id"
+      ]
+    },
+    {
+      "_comentario": "Despublicacao da linha Reforma Trabalhista, 20 pares.",
+      "tabela": "votacoes_chave",
+      "ref": "9c1f05a7-fe8d-4c45-8827-ca23d029b1a0",
+      "campos": [
+        "id"
+      ]
+    },
+    {
+      "_comentario": "Despublicacao da linha Reforma da Previdencia, 27 pares.",
+      "tabela": "votacoes_chave",
+      "ref": "b2aa93fb-faa1-423c-bae7-70ea6ff35fe0",
+      "campos": [
+        "id"
+      ]
+    },
+    {
+      "_comentario": "Despublicacao da linha Auxilio Brasil, 8 pares.",
+      "tabela": "votacoes_chave",
+      "ref": "a539c15d-20a0-4e55-876b-a7bbba7ef0d2",
+      "campos": [
+        "id"
+      ]
+    },
+    {
+      "_comentario": "Despublicacao da linha Marco Temporal Indigena, 12 pares.",
+      "tabela": "votacoes_chave",
+      "ref": "d652e083-aa23-4df9-a66f-433816d330cc",
+      "campos": [
+        "id"
+      ]
+    },
+    {
+      "_comentario": "Despublicacao da linha PL das Fake News, 13 pares.",
+      "tabela": "votacoes_chave",
+      "ref": "86e0edac-52a5-44fe-b699-1c09aaf42a32",
+      "campos": [
+        "id"
+      ]
+    },
+    {
+      "_comentario": "Inclusao da materia enderecada pela votacao 14493-503 do dataset editorial v2.",
+      "tabela": "votacoes_chave",
+      "ref": "14493-503",
+      "campos": [
+        "titulo",
+        "descricao",
+        "data_votacao",
+        "casa",
+        "fonte",
+        "votacao_id_api",
+        "proposicao_id",
+        "tema",
+        "impacto_popular"
+      ]
+    },
+    {
+      "_comentario": "Inclusao da materia enderecada pela votacao 2123843-93 do dataset editorial v2.",
+      "tabela": "votacoes_chave",
+      "ref": "2123843-93",
+      "campos": [
+        "titulo",
+        "descricao",
+        "data_votacao",
+        "casa",
+        "fonte",
+        "votacao_id_api",
+        "proposicao_id",
+        "tema",
+        "impacto_popular"
+      ]
+    },
+    {
+      "_comentario": "Inclusao da materia enderecada pela votacao 340812-195 do dataset editorial v2.",
+      "tabela": "votacoes_chave",
+      "ref": "340812-195",
+      "campos": [
+        "titulo",
+        "descricao",
+        "data_votacao",
+        "casa",
+        "fonte",
+        "votacao_id_api",
+        "proposicao_id",
+        "tema",
+        "impacto_popular"
+      ]
+    },
+    {
+      "_comentario": "Inclusao da materia enderecada pela votacao 2270800-135 do dataset editorial v2.",
+      "tabela": "votacoes_chave",
+      "ref": "2270800-135",
+      "campos": [
+        "titulo",
+        "descricao",
+        "data_votacao",
+        "casa",
+        "fonte",
+        "votacao_id_api",
+        "proposicao_id",
+        "tema",
+        "impacto_popular"
+      ]
+    },
+    {
+      "_comentario": "Inclusao da materia enderecada pela votacao 2515648-44 do dataset editorial v2.",
+      "tabela": "votacoes_chave",
+      "ref": "2515648-44",
+      "campos": [
+        "titulo",
+        "descricao",
+        "data_votacao",
+        "casa",
+        "fonte",
+        "votacao_id_api",
+        "proposicao_id",
+        "tema",
+        "impacto_popular"
+      ]
+    },
+    {
+      "_comentario": "Inclusao da materia enderecada pela votacao 2351506-122 do dataset editorial v2.",
+      "tabela": "votacoes_chave",
+      "ref": "2351506-122",
+      "campos": [
+        "titulo",
+        "descricao",
+        "data_votacao",
+        "casa",
+        "fonte",
+        "votacao_id_api",
+        "proposicao_id",
+        "tema",
+        "impacto_popular"
+      ]
+    },
+    {
+      "_comentario": "Inclusao da materia enderecada pela votacao 2383019-54 do dataset editorial v2.",
+      "tabela": "votacoes_chave",
+      "ref": "2383019-54",
+      "campos": [
+        "titulo",
+        "descricao",
+        "data_votacao",
+        "casa",
+        "fonte",
+        "votacao_id_api",
+        "proposicao_id",
+        "tema",
+        "impacto_popular"
+      ]
+    },
+    {
+      "_comentario": "Inclusao da materia enderecada pela votacao 2473389-58 do dataset editorial v2.",
+      "tabela": "votacoes_chave",
+      "ref": "2473389-58",
+      "campos": [
+        "titulo",
+        "descricao",
+        "data_votacao",
+        "casa",
+        "fonte",
+        "votacao_id_api",
+        "proposicao_id",
+        "tema",
+        "impacto_popular"
+      ]
+    },
+    {
+      "_comentario": "Inclusao da materia enderecada pela votacao 2494565-52 do dataset editorial v2.",
+      "tabela": "votacoes_chave",
+      "ref": "2494565-52",
+      "campos": [
+        "titulo",
+        "descricao",
+        "data_votacao",
+        "casa",
+        "fonte",
+        "votacao_id_api",
+        "proposicao_id",
+        "tema",
+        "impacto_popular"
+      ]
+    },
+    {
+      "_comentario": "Inclusao da materia enderecada pela votacao 2430143-140 do dataset editorial v2.",
+      "tabela": "votacoes_chave",
+      "ref": "2430143-140",
+      "campos": [
+        "titulo",
+        "descricao",
+        "data_votacao",
+        "casa",
+        "fonte",
+        "votacao_id_api",
+        "proposicao_id",
+        "tema",
+        "impacto_popular"
+      ]
+    },
+    {
+      "_comentario": "Inclusao da materia enderecada pela votacao 2409076-34 do dataset editorial v2.",
+      "tabela": "votacoes_chave",
+      "ref": "2409076-34",
+      "campos": [
+        "titulo",
+        "descricao",
+        "data_votacao",
+        "casa",
+        "fonte",
+        "votacao_id_api",
+        "proposicao_id",
+        "tema",
+        "impacto_popular"
+      ]
+    },
+    {
+      "_comentario": "Inclusao da materia enderecada pela votacao 2324721-94 do dataset editorial v2.",
+      "tabela": "votacoes_chave",
+      "ref": "2324721-94",
+      "campos": [
+        "titulo",
+        "descricao",
+        "data_votacao",
+        "casa",
+        "fonte",
+        "votacao_id_api",
+        "proposicao_id",
+        "tema",
+        "impacto_popular"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+name: Watchdog de crons
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+# Limitação conhecida: este watchdog também é um cron e pode ser desativado
+# depois de 60 dias de inatividade do repositório. Mitigação deliberada: o dono
+# do repositório deve assisti-lo no GitHub, pois issue nova gera notificação.
+permissions:
+  actions: read
+  contents: read
+  issues: write
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Verificar execuções agendadas
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: bash scripts/cron-watchdog.sh

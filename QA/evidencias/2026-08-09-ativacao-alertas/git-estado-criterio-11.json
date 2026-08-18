@@ -1,0 +1,57 @@
+{
+  "proposito": "Registrar o estado Git recuperavel em torno da janela do ato e provar por que o criterio 11, zero mudanca de codigo, nao e verificavel por terceiro. Este artefato sustenta um FAIL, nao um PASS.",
+  "coletado_em": "2026-08-09T21:45Z",
+  "comando": "git log --since=2026-08-09T20:00:00Z --until=2026-08-09T23:59:00Z --date=iso-strict --format='%H|%cd|%an|%s' 0b08a3b; git worktree list",
+
+  "criterio_original": "Nenhuma entrada nova em git status --porcelain fora de QA/, comparando o baseline capturado antes do ato com o estado depois.",
+
+  "baseline_pre_ato": {
+    "capturado_em": "2026-08-09T21:12Z",
+    "persistido": false,
+    "observacao": "O git status inicial foi lido ao vivo e nao gravado em arquivo. Sem ele, nao existe o lado esquerdo da comparacao que o criterio exige."
+  },
+
+  "commits_que_entraram_na_main_durante_ou_junto_da_janela": [
+    {
+      "sha": "a1ffde9849850000d0974886b7eff53ff03fe8b1",
+      "committer_date": "2026-08-09T17:07:58-03:00",
+      "autor": "Thiago Salvador",
+      "assunto": "feat(#136): proteger identidade da etapa 2, dar contrato ao frescor por campo e separar o schema de verificacao_campos (#146)",
+      "relacao_com_o_ato": "commit servido pelos tres deployments do ato"
+    },
+    {
+      "sha": "208c3e909b44adfd400e7c7ccb5516cc6cf80251",
+      "committer_date": "2026-08-09T18:38:38-03:00",
+      "autor": "Thiago Salvador",
+      "assunto": "fix(#136): exibir a data de calendario gravada no selo de frescor (#147)",
+      "relacao_com_o_ato": "outra sessao, concorrente"
+    },
+    {
+      "sha": "0b08a3b6e763be3cf438f45553062dd57f30244b",
+      "committer_date": "2026-08-09T18:53:36-03:00",
+      "autor": "Thiago Salvador",
+      "assunto": "feat(#136): confirmar identidade por chave independente e datar o perfil pela ultima verificacao (#148)",
+      "relacao_com_o_ato": "outra sessao, concorrente. Varreu para dentro dele a primeira versao do recibo desta janela, que estava untracked no checkout compartilhado."
+    }
+  ],
+
+  "worktrees_ativas_no_momento_da_coleta": [
+    {"caminho": "<repo>", "head": "0b08a3b", "branch": "main", "papel": "checkout compartilhado, usado por outras sessoes"},
+    {"caminho": "<repo>-wt-recibo-alertas", "head": "4f9b6a0", "branch": "docs/recibo-ativacao-alertas", "papel": "worktree desta sessao"},
+    {"caminho": "<repo>-wt-b2", "head": "499d625", "branch": "codex/verificacao-campos-b2", "papel": "outra sessao"},
+    {"caminho": "<tmp>/wt-gate", "head": "b5978c1", "branch": "chore/gate-allowlist-dividas-congeladas", "papel": "outra sessao"},
+    {"caminho": "<repo>/.claude/worktrees/distracted-wozniak-5a5482", "head": "eca33b1", "branch": "detached", "papel": "outra sessao"},
+    {"caminho": "<repo>/.claude/worktrees/recursing-sutherland-65d702", "head": "a1ffde9", "branch": "claude/recursing-sutherland-65d702", "papel": "outra sessao"}
+  ],
+
+  "por_que_nao_e_isolavel": [
+    "O lado esquerdo da comparacao nao existe: o git status pre-ato nao foi persistido.",
+    "Pelo menos duas outras sessoes escreveram e commitaram no mesmo checkout compartilhado dentro da janela, entao qualquer diff posterior mistura tres autores de mudanca.",
+    "O commit 0b08a3b absorveu arquivos que esta sessao havia escrito e deixado untracked, ou seja o proprio rastro desta sessao foi incorporado por outra antes de qualquer medicao.",
+    "git status nao registra autoria de escrita no working tree, entao nem um baseline persistido separaria as sessoes com certeza; separaria apenas o conjunto de arquivos, nao quem os escreveu."
+  ],
+
+  "o_que_permanece_verdadeiro_mas_nao_provado": "Esta sessao nao editou nenhum arquivo sob src/, scripts/, supabase/ ou tests/, e nao aplicou migration nem alterou configuracao de codigo. A afirmacao e verdadeira e nao e conferivel por terceiro a partir deste repositorio, que e exatamente o que o contrato de evidencia rejeita.",
+
+  "veredicto": "FAIL"
+}

@@ -1,0 +1,272 @@
+{
+  "script": "retry-judicial-datajud",
+  "modo": "dry-run",
+  "fuso_dos_instantes": "UTC (ISO 8601, sufixo Z)",
+  "consultado_em": "2026-08-10T14:16:49.625Z",
+  "fonte_adicional": "https://api-publica.datajud.cnj.jus.br (API Pública do DataJud, consulta por número CNJ)",
+  "fonte_original_do_lote": "DJEN/PJe-CNJ, busca por nome (lote de 05/08)",
+  "entrada": "QA/evidencias/2026-08-09-trilha-b/curadoria-judicial-bloqueados.json",
+  "universo": 7,
+  "por_resultado": {
+    "indeterminado": 7
+  },
+  "consultas_com_erro": 0,
+  "datajud_expoe_partes": false,
+  "conclusao_da_frente": "ENCERRADA com bloqueio documentado. A fonte adicional caracteriza o processo e não identifica a parte, então nenhuma ficha sai de indeterminado por via automática. A saída é curadoria manual, com os números já caracterizados abaixo.",
+  "fichas": [
+    {
+      "slug": "augusto-cury",
+      "nome_urna": "Augusto Cury",
+      "cargo": "Presidente",
+      "partido": "AVANTE",
+      "prioridade": 1,
+      "identidade_status": "confirmada",
+      "motivo_original": "10 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+      "ocorrencias_ambiguas_total": 10,
+      "numeros_conferidos": 2,
+      "processos": [
+        {
+          "numero_cnj": "4004910-65.2025.8.26.0506",
+          "tribunal": "TJSP",
+          "status": "caracterizado",
+          "encontrado_no_datajud": true,
+          "classe": "Procedimento Comum Cível",
+          "orgao_julgador": "Juízo Titular I - 3ª Vara Cível da Comarca de Sertãozinho",
+          "grau": "G1",
+          "data_ajuizamento": "20251001145233",
+          "assuntos": [
+            "Indenização por Dano Moral"
+          ],
+          "expoe_partes": false
+        },
+        {
+          "numero_cnj": "4020359-29.2025.8.26.0000",
+          "tribunal": "TJSP",
+          "status": "caracterizado",
+          "encontrado_no_datajud": true,
+          "classe": "Agravo de Instrumento",
+          "orgao_julgador": "Gab. 01 - 27ª Câmara de Direito Privado",
+          "grau": "G2",
+          "data_ajuizamento": "20251203171643",
+          "assuntos": [
+            "Prestação de Serviços"
+          ],
+          "expoe_partes": false
+        }
+      ],
+      "resultado": "indeterminado",
+      "conclusao": "2 de 2 número(s) caracterizado(s) no DataJud (classe, órgão, assunto). NENHUM expõe parte, então a identidade continua não resolvida por via automática: permanece indeterminado, para curadoria manual."
+    },
+    {
+      "slug": "cabo-daciolo",
+      "nome_urna": "Cabo Daciolo",
+      "cargo": "Presidente",
+      "partido": "MOBILIZA",
+      "prioridade": 1,
+      "identidade_status": "confirmada",
+      "motivo_original": "1 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+      "ocorrencias_ambiguas_total": 1,
+      "numeros_conferidos": 1,
+      "processos": [
+        {
+          "numero_cnj": "0013452-95.2021.8.19.0209",
+          "tribunal": "TJRJ",
+          "status": "caracterizado",
+          "encontrado_no_datajud": true,
+          "classe": "Execução de Título Extrajudicial",
+          "orgao_julgador": "BARRA DA TIJUCA REGIONAL 7 VARA CIVEL",
+          "grau": "G1",
+          "data_ajuizamento": "20210429101602",
+          "assuntos": [
+            "Indenização por Dano Material",
+            "Agência e Distribuição"
+          ],
+          "expoe_partes": false
+        }
+      ],
+      "resultado": "indeterminado",
+      "conclusao": "1 de 1 número(s) caracterizado(s) no DataJud (classe, órgão, assunto). NENHUM expõe parte, então a identidade continua não resolvida por via automática: permanece indeterminado, para curadoria manual."
+    },
+    {
+      "slug": "edmilson-costa",
+      "nome_urna": "Edmilson Costa",
+      "cargo": "Presidente",
+      "partido": "PCB",
+      "prioridade": 1,
+      "identidade_status": "confirmada",
+      "motivo_original": "23 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+      "ocorrencias_ambiguas_total": 23,
+      "numeros_conferidos": 2,
+      "processos": [
+        {
+          "numero_cnj": "0000650-87.2018.5.19.0058",
+          "tribunal": "TRT19",
+          "status": "caracterizado",
+          "encontrado_no_datajud": true,
+          "classe": "Ação Trabalhista - Rito Ordinário",
+          "orgao_julgador": "VARA DO TRABALHO DE SANTANA DO IPANEMA",
+          "grau": "G1",
+          "data_ajuizamento": "20180824014524",
+          "assuntos": [
+            "Empregado Público"
+          ],
+          "expoe_partes": false
+        },
+        {
+          "numero_cnj": "8001565-38.2026.8.05.0032",
+          "tribunal": "TJBA",
+          "status": "caracterizado",
+          "encontrado_no_datajud": true,
+          "classe": "Procedimento Comum Cível",
+          "orgao_julgador": "VARA CÍVEL",
+          "grau": "G1",
+          "data_ajuizamento": "20260506000000",
+          "assuntos": [
+            "Urbana (art. 42/44)"
+          ],
+          "expoe_partes": false
+        }
+      ],
+      "resultado": "indeterminado",
+      "conclusao": "2 de 2 número(s) caracterizado(s) no DataJud (classe, órgão, assunto). NENHUM expõe parte, então a identidade continua não resolvida por via automática: permanece indeterminado, para curadoria manual."
+    },
+    {
+      "slug": "renan-santos",
+      "nome_urna": "Renan Santos",
+      "cargo": "Presidente",
+      "partido": "MISSAO",
+      "prioridade": 1,
+      "identidade_status": "bloqueada",
+      "motivo_original": "fonte oficial do partido confirma a identidade como fundador, mas nao identifica cargo ou pre-candidatura; busca processual por nome ficaria ambigua",
+      "ocorrencias_ambiguas_total": 0,
+      "numeros_conferidos": 0,
+      "processos": [],
+      "resultado": "indeterminado",
+      "conclusao": "sem ocorrência ambígua registrada no lote de 05/08; nada a conferir por número"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "nome_urna": "Ronaldo Caiado",
+      "cargo": "Presidente",
+      "partido": "PSD",
+      "prioridade": 1,
+      "identidade_status": "confirmada",
+      "motivo_original": "14 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+      "ocorrencias_ambiguas_total": 14,
+      "numeros_conferidos": 2,
+      "processos": [
+        {
+          "numero_cnj": "5441166-66.2026.8.09.0051",
+          "tribunal": "TJGO",
+          "status": "caracterizado",
+          "encontrado_no_datajud": true,
+          "classe": "Procedimento Comum Cível",
+          "orgao_julgador": "4ª Vara Cível",
+          "grau": "G1",
+          "data_ajuizamento": "20260518213009",
+          "assuntos": [
+            "Direito de Imagem"
+          ],
+          "expoe_partes": false
+        },
+        {
+          "numero_cnj": "5353894-34.2026.8.09.0051",
+          "tribunal": "TJGO",
+          "status": "caracterizado",
+          "encontrado_no_datajud": true,
+          "classe": "Ação Penal - Procedimento Ordinário",
+          "orgao_julgador": "5ª Vara Criminal dos crimes punidos com reclusão e detenção",
+          "grau": "G1",
+          "data_ajuizamento": "20260423161149",
+          "assuntos": [
+            "Calúnia"
+          ],
+          "expoe_partes": false
+        }
+      ],
+      "resultado": "indeterminado",
+      "conclusao": "2 de 2 número(s) caracterizado(s) no DataJud (classe, órgão, assunto). NENHUM expõe parte, então a identidade continua não resolvida por via automática: permanece indeterminado, para curadoria manual."
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "nome_urna": "Rui Costa Pimenta",
+      "cargo": "Presidente",
+      "partido": "PCO",
+      "prioridade": 1,
+      "identidade_status": "confirmada",
+      "motivo_original": "8 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+      "ocorrencias_ambiguas_total": 8,
+      "numeros_conferidos": 2,
+      "processos": [
+        {
+          "numero_cnj": "1011502-36.2025.8.26.0003",
+          "tribunal": "TJSP",
+          "status": "caracterizado",
+          "encontrado_no_datajud": true,
+          "classe": "Procedimento Comum Cível",
+          "orgao_julgador": "05 CIVEL DE CENTRAL",
+          "grau": "G1",
+          "data_ajuizamento": "20250502195419",
+          "assuntos": [
+            "Responsabilidade Civil"
+          ],
+          "expoe_partes": false
+        },
+        {
+          "numero_cnj": "1056927-28.2021.8.26.0100",
+          "tribunal": "TJSP",
+          "status": "caracterizado",
+          "encontrado_no_datajud": true,
+          "classe": "Procedimento Comum Cível",
+          "orgao_julgador": "07 CIVEL DE CENTRAL",
+          "grau": "G1",
+          "data_ajuizamento": "20210602161211",
+          "assuntos": [
+            "Indenização por Dano Moral"
+          ],
+          "expoe_partes": false
+        }
+      ],
+      "resultado": "indeterminado",
+      "conclusao": "2 de 2 número(s) caracterizado(s) no DataJud (classe, órgão, assunto). NENHUM expõe parte, então a identidade continua não resolvida por via automática: permanece indeterminado, para curadoria manual."
+    },
+    {
+      "slug": "samara-martins",
+      "nome_urna": "Samara Martins",
+      "cargo": "Presidente",
+      "partido": "UP",
+      "prioridade": 1,
+      "identidade_status": "confirmada",
+      "motivo_original": "37 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+      "ocorrencias_ambiguas_total": 37,
+      "numeros_conferidos": 2,
+      "processos": [
+        {
+          "numero_cnj": "4001522-64.2026.8.26.0654",
+          "tribunal": "TJSP",
+          "status": "nao_localizado",
+          "encontrado_no_datajud": false,
+          "expoe_partes": false,
+          "detalhe": "número não localizado no acervo público do tribunal"
+        },
+        {
+          "numero_cnj": "0803089-36.2025.8.12.0026",
+          "tribunal": "TJMS",
+          "status": "caracterizado",
+          "encontrado_no_datajud": true,
+          "classe": "Execução de Título Extrajudicial",
+          "orgao_julgador": "Juizado Especial Adjunto",
+          "grau": "JE",
+          "data_ajuizamento": "20251205085046",
+          "assuntos": [
+            "Prestação de Serviços",
+            "Obrigação de Fazer / Não Fazer"
+          ],
+          "expoe_partes": false
+        }
+      ],
+      "resultado": "indeterminado",
+      "conclusao": "1 de 2 número(s) caracterizado(s) no DataJud (classe, órgão, assunto). NENHUM expõe parte, então a identidade continua não resolvida por via automática: permanece indeterminado, para curadoria manual."
+    }
+  ]
+}

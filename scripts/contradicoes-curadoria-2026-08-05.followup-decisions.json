@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "run_id": "contradicoes-curadoria-2026-08-05-followup-6",
+  "submitted_at": "2026-08-05T20:56:48.063Z",
+  "recorded_at": "2026-08-05T20:58:15Z",
+  "status": "decisao_thiago_registrada",
+  "instructions": "",
+  "summary": {
+    "approve_recommendation": 3,
+    "reject_recommendation": 3,
+    "needs_more_review": 0,
+    "publication_or_content_change_applied": false,
+    "supabase_write_applied": false
+  },
+  "decisions": [
+    {
+      "review_id": "existing-ciro-gomes-gov-ce",
+      "decision": "reject_recommendation",
+      "recommendation": "retirar_categoria_contradicao_e_corrigir_descricao"
+    },
+    {
+      "review_id": "existing-flavio-bolsonaro-ponto",
+      "decision": "reject_recommendation",
+      "recommendation": "retirar_categoria_contradicao"
+    },
+    {
+      "review_id": "existing-flavio-bolsonaro-voto",
+      "decision": "approve_recommendation",
+      "recommendation": "remover_marcacao_e_consolidar_registro_duplicado"
+    },
+    {
+      "review_id": "existing-haddad-gov-sp",
+      "decision": "approve_recommendation",
+      "recommendation": "manter_oculto_e_retirar_categoria_contradicao"
+    },
+    {
+      "review_id": "existing-renan-santos",
+      "decision": "approve_recommendation",
+      "recommendation": "manter_oculto_e_rejeitar_publicacao"
+    },
+    {
+      "review_id": "existing-romeu-zema",
+      "decision": "reject_recommendation",
+      "recommendation": "reclassificar_como_mudanca_contextual_e_reescrever"
+    }
+  ]
+}

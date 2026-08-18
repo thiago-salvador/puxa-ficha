@@ -1,0 +1,334 @@
+{
+  "dryRun": true,
+  "results": [
+    {
+      "source": "tse",
+      "candidato": "financiamento-2004",
+      "tables_updated": [],
+      "rows_upserted": 0,
+      "errors": [
+        "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial"
+      ],
+      "duration_ms": 0,
+      "coleta_resultado": "erro",
+      "coleta_detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial"
+    }
+  ],
+  "plannedRows": [
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "tiao-bocalom",
+      "row": {
+        "candidato_id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
+        "ano_eleicao": 2004,
+        "sq_candidato": "27",
+        "uf_candidatura": "AC",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "clecio-luis",
+      "row": {
+        "candidato_id": "d97908e9-5b30-4d0e-a01b-c0348682949d",
+        "ano_eleicao": 2004,
+        "sq_candidato": "156",
+        "uf_candidatura": "AP",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "gustavo-henrique",
+      "row": {
+        "candidato_id": "f793ff5b-678f-4684-97b7-ce0eaf08c0c3",
+        "ano_eleicao": 2004,
+        "sq_candidato": "262",
+        "uf_candidatura": "PI",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "joao-campos",
+      "row": {
+        "candidato_id": "cc2dbc88-aae0-4c75-a112-bcc6bfc3189b",
+        "ano_eleicao": 2004,
+        "sq_candidato": "810",
+        "uf_candidatura": "GO",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "joel-rodrigues",
+      "row": {
+        "candidato_id": "63de6cc4-aebc-49f6-88ab-25c93dde0a58",
+        "ano_eleicao": 2004,
+        "sq_candidato": "34",
+        "uf_candidatura": "PI",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "araceli-lemos",
+      "row": {
+        "candidato_id": "68a1eec9-75c1-4dca-a68c-7a4e64033c9b",
+        "ano_eleicao": 2004,
+        "sq_candidato": "35",
+        "uf_candidatura": "PA",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "helder-salomao",
+      "row": {
+        "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+        "ano_eleicao": 2004,
+        "sq_candidato": "254",
+        "uf_candidatura": "ES",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "valmir-de-francisquinho",
+      "row": {
+        "candidato_id": "8e6f8d4c-7981-499e-b03b-5778e1db704d",
+        "ano_eleicao": 2004,
+        "sq_candidato": "21",
+        "uf_candidatura": "SE",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "baba",
+      "row": {
+        "candidato_id": "dade7402-b3dc-4910-9c21-43c834f21620",
+        "ano_eleicao": 2004,
+        "sq_candidato": "92",
+        "uf_candidatura": "RN",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "dario-barbosa",
+      "row": {
+        "candidato_id": "2c7f19b6-4f91-420a-83ec-866c83a9e027",
+        "ano_eleicao": 2004,
+        "sq_candidato": "115",
+        "uf_candidatura": "RN",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "wellington-fagundes",
+      "row": {
+        "candidato_id": "febc4a12-c352-448a-99dc-671c77e8d57d",
+        "ano_eleicao": 2004,
+        "sq_candidato": "73",
+        "uf_candidatura": "MT",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "geraldo-carvalho",
+      "row": {
+        "candidato_id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
+        "ano_eleicao": 2004,
+        "sq_candidato": "235",
+        "uf_candidatura": "PI",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "mauricio-tonha",
+      "row": {
+        "candidato_id": "3c628b54-5304-480d-a664-be16409e0322",
+        "ano_eleicao": 2004,
+        "sq_candidato": "50",
+        "uf_candidatura": "MT",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "cyro-garcia",
+      "row": {
+        "candidato_id": "6991016f-b50a-4984-b60a-40521bcdf6ee",
+        "ano_eleicao": 2004,
+        "sq_candidato": "707",
+        "uf_candidatura": "RJ",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "marcos-rogerio",
+      "row": {
+        "candidato_id": "a9ce3c0b-9fa4-4e28-9c2e-809b1fa5e639",
+        "ano_eleicao": 2004,
+        "sq_candidato": "86",
+        "uf_candidatura": "RO",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "elizeu-aguiar",
+      "row": {
+        "candidato_id": "914d9904-1c6a-47f9-a25f-017138dc1cef",
+        "ano_eleicao": 2004,
+        "sq_candidato": "172",
+        "uf_candidatura": "PI",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "larissa-rosado",
+      "row": {
+        "candidato_id": "40d9eaa9-2e4e-4e86-b8c1-8374bcc808d5",
+        "ano_eleicao": 2004,
+        "sq_candidato": "44",
+        "uf_candidatura": "RN",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "vera-lucia",
+      "row": {
+        "candidato_id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
+        "ano_eleicao": 2004,
+        "sq_candidato": "367",
+        "uf_candidatura": "SE",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "gilberto-vasconcelos",
+      "row": {
+        "candidato_id": "5dc271fa-9171-484c-a8b3-f366fed10d10",
+        "ano_eleicao": 2004,
+        "sq_candidato": "866",
+        "uf_candidatura": "AM",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "marcus-sodre",
+      "row": {
+        "candidato_id": "5e05e0d3-a64a-41b9-9f9a-bd160f43cec2",
+        "ano_eleicao": 2004,
+        "sq_candidato": "92",
+        "uf_candidatura": "SC",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "luiz-carlos-teodoro",
+      "row": {
+        "candidato_id": "92d96cc2-d413-49ac-bbdd-9834ce7c6418",
+        "ano_eleicao": 2004,
+        "sq_candidato": "159",
+        "uf_candidatura": "RO",
+        "resultado": "erro",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Financiamento 2004: SQ_CANDIDATO ausente no layout oficial",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    }
+  ]
+}

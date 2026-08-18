@@ -1,0 +1,506 @@
+{
+  "script": "rerun-patrimonio-2026",
+  "modo": "dry-run",
+  "fonte": "arquivo local: /private/tmp/pf-ajustes-17.uQo9Kl/patrimonio-delta-sources/bem_candidato_2026.zip",
+  "consultado_em": "2026-08-11T02:45:06.586Z",
+  "fuso_dos_instantes": "UTC (ISO 8601, sufixo Z)",
+  "baseline": "QA/evidencias/2026-08-09-trilha-b/manifesto-patrimonio-20260807-nao-publicados.json",
+  "delta": "QA/evidencias/2026-08-10-migration-patrimonio-rerun/manifesto-delta-patrimonio-2026.json",
+  "universo": 32,
+  "por_estado": {
+    "sem_mudanca": 19,
+    "tse_publicou": 10,
+    "ausencia_sem_evidencia": 2,
+    "valores_mudaram": 1
+  },
+  "operacoes_planejadas_por_tabela": {
+    "patrimonio:insert": 10,
+    "patrimonio_ausencia_oficial:delete": 10,
+    "patrimonio:update": 1
+  },
+  "acao_pendente": "gerar migration nova com as operações planejadas (gate @write/allowlist/recorte); aplicação é ato da Raiz",
+  "celulas": [
+    {
+      "slug": "acm-neto",
+      "ano": 2026,
+      "sq": "50002533190",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 44 bem(ns), total R$ 84888809.63, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "alan-rick",
+      "ano": 2026,
+      "sq": "10002532492",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 25 bem(ns), total R$ 5244567.72, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "ano": 2026,
+      "sq": "200002534442",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 14 bem(ns), total R$ 2917179.51, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "andre-marinho",
+      "ano": 2026,
+      "sq": "190002537524",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 6 bem(ns), total R$ 407503.55; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "andre-marinho",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 407503.55,
+          "n_bens": 6
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "andre-marinho",
+            "ano_eleicao": 2026,
+            "sq_candidato": "190002537524"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "ano": 2026,
+      "sq": "60002531351",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 11 bem(ns), total R$ 1756648.94, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "ano": 2026,
+      "sq": "140002538631",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 1 bem(ns), total R$ 52292; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "cleber-rabelo",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 52292,
+          "n_bens": 1
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "cleber-rabelo",
+            "ano_eleicao": 2026,
+            "sq_candidato": "140002538631"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "david-almeida",
+      "ano": 2026,
+      "sq": "40002536086",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 6 bem(ns), total R$ 1432848.4, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "dr-furlan",
+      "ano": 2026,
+      "sq": "30002530014",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 6 bem(ns), total R$ 1168464.77, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "dr-luisinho",
+      "ano": 2026,
+      "sq": "10002533539",
+      "estado_manifesto": "nao_coletado",
+      "estado_atual": "ausencia_sem_evidencia",
+      "detalhe": "zero linhas no pacote de bens, sem ST_DECLARAR_BENS = N; remover ausencia oficial e manter nao_coletado",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "dr-luisinho",
+            "ano_eleicao": 2026,
+            "sq_candidato": "10002533539"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "eduardo-riedel",
+      "ano": 2026,
+      "sq": "120002536582",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 17 bem(ns), total R$ 16147849.34, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "efraim-filho",
+      "ano": 2026,
+      "sq": "150002538692",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 9 bem(ns), total R$ 1682784.38; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "efraim-filho",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 1682784.38,
+          "n_bens": 9
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "efraim-filho",
+            "ano_eleicao": 2026,
+            "sq_candidato": "150002538692"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "elizeu-aguiar",
+      "ano": 2026,
+      "sq": "180002533958",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 3 bem(ns), total R$ 872808, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "ano": 2026,
+      "sq": "180002537422",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 2 bem(ns), total R$ 200590; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "geraldo-carvalho",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 200590,
+          "n_bens": 2
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "geraldo-carvalho",
+            "ano_eleicao": 2026,
+            "sq_candidato": "180002537422"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "ano": 2026,
+      "sq": "40002535267",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "SQ segue ausente do pacote oficial atual"
+    },
+    {
+      "slug": "guilherme-fonseca",
+      "ano": 2026,
+      "sq": "170002536575",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 1 bem(ns), total R$ 300000, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "ivan-moraes",
+      "ano": 2026,
+      "sq": "170002538097",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 2 bem(ns), total R$ 81452; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "ivan-moraes",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 81452,
+          "n_bens": 2
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "ivan-moraes",
+            "ano_eleicao": 2026,
+            "sq_candidato": "170002538097"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "joao-campos",
+      "ano": 2026,
+      "sq": "170002537230",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 5 bem(ns), total R$ 2892723.46; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "joao-campos",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 2892723.46,
+          "n_bens": 5
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "joao-campos",
+            "ano_eleicao": 2026,
+            "sq_candidato": "170002537230"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "joel-rodrigues",
+      "ano": 2026,
+      "sq": "180002538530",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 10 bem(ns), total R$ 1688256.2; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "joel-rodrigues",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 1688256.2,
+          "n_bens": 10
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "joel-rodrigues",
+            "ano_eleicao": 2026,
+            "sq_candidato": "180002538530"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "jorginho-mello",
+      "ano": 2026,
+      "sq": "240002537073",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 11 bem(ns), total R$ 2818036.89, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "luciana-gurgel",
+      "ano": 2026,
+      "sq": "30002530015",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "SQ segue ausente do pacote oficial atual"
+    },
+    {
+      "slug": "omar-aziz",
+      "ano": 2026,
+      "sq": "40002532272",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 5 bem(ns), total R$ 2070608, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "preta-lu",
+      "ano": 2026,
+      "sq": "100002534191",
+      "estado_manifesto": "nao_coletado",
+      "estado_atual": "ausencia_sem_evidencia",
+      "detalhe": "zero linhas no pacote de bens, sem ST_DECLARAR_BENS = N; remover ausencia oficial e manter nao_coletado",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "preta-lu",
+            "ano_eleicao": 2026,
+            "sq_candidato": "100002534191"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "priscila-voigt",
+      "ano": 2026,
+      "sq": "210002533355",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "valores_mudaram",
+      "detalhe": "composição divergente da aplicada em 07/08: aplicado R$ 1000 em 1 bem(ns); pacote atual R$ 1000 em 1 bem(ns) (agregados iguais, conteúdo dos bens diferente; o agregado sozinho não teria visto)",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "update",
+          "chave": {
+            "slug": "priscila-voigt",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 1000,
+          "n_bens": 1
+        }
+      ]
+    },
+    {
+      "slug": "rafael-fonteles",
+      "ano": 2026,
+      "sq": "180002532987",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 7 bem(ns), total R$ 1799948.6, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "raquel-lyra",
+      "ano": 2026,
+      "sq": "170002537227",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 3 bem(ns), total R$ 359498.33; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "raquel-lyra",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 359498.33,
+          "n_bens": 3
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "raquel-lyra",
+            "ano_eleicao": 2026,
+            "sq_candidato": "170002537227"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "robson-raymundo",
+      "ano": 2026,
+      "sq": "70002535930",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 1 bem(ns), total R$ 900000, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "ronaldo-mansur",
+      "ano": 2026,
+      "sq": "50002532269",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 5 bem(ns), total R$ 91397.22, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "ano": 2026,
+      "sq": "260002532010",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 2 bem(ns), total R$ 258000, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "vera-lucia",
+      "ano": 2026,
+      "sq": "250002536915",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "SQ segue ausente do pacote oficial atual"
+    },
+    {
+      "slug": "william-siri",
+      "ano": 2026,
+      "sq": "190002536162",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 1 bem(ns), total R$ 120000, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "jose-estevao",
+      "ano": 2026,
+      "sq": "50002536579",
+      "estado_manifesto": "nao_coletado",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 1 bem(ns), total R$ 600000; célula ainda não coletada",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "jose-estevao",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 600000,
+          "n_bens": 1
+        }
+      ]
+    },
+    {
+      "slug": "samara-mineiro",
+      "ano": 2026,
+      "sq": "70002537111",
+      "estado_manifesto": "nao_coletado",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 2 bem(ns), total R$ 69196.63; célula ainda não coletada",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "samara-mineiro",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 69196.63,
+          "n_bens": 2
+        }
+      ]
+    }
+  ]
+}

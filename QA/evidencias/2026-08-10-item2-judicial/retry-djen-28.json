@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "script": "retry-judicial-djen-bloqueados",
+  "modo": "dry-run_read_only",
+  "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+  "entrada": "/private/tmp/pf-ajustes-17.uQo9Kl/judicial/QA/evidencias/2026-08-09-trilha-b/curadoria-judicial-bloqueados.json",
+  "entrada_sha256": "5248975e76f7b73360d2e805cfe34ae9f85eb8653e6c58ed4a6d5fa00ff80c8c",
+  "consultado_em": "2026-08-10T22:23:04.360Z",
+  "universo_entrada_bloqueados": 119,
+  "universo_sem_busca_remedido": 28,
+  "buscas_executadas": 28,
+  "buscas_executadas_nesta_rodada": 4,
+  "retomado_de_artefato_anterior": true,
+  "por_resultado": {
+    "bloqueio_editorial": 28
+  },
+  "fichas": [
+    {
+      "slug": "renan-santos",
+      "nome_completo": "Renan Antonio Ferreira dos Santos",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Renan%20Antonio%20Ferreira%20dos%20Santos&pagina=1",
+      "total_api": 136,
+      "ocorrencias_nome_exato": 135,
+      "resultado": "bloqueio_editorial",
+      "motivo": "135 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+    },
+    {
+      "slug": "andre-luis",
+      "nome_completo": "André Luís",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Andr%C3%A9%20Lu%C3%ADs&pagina=1",
+      "total_api": 10000,
+      "ocorrencias_nome_exato": 1,
+      "resultado": "bloqueio_editorial",
+      "motivo": "1 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+    },
+    {
+      "slug": "andre-marinho",
+      "nome_completo": "Andre Bourguignon Marinho",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Andre%20Bourguignon%20Marinho&pagina=1",
+      "total_api": 0,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "aroldo-felix",
+      "nome_completo": "Aroldo Felix de Azevedo Junior",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Aroldo%20Felix%20de%20Azevedo%20Junior&pagina=1",
+      "total_api": 0,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "ben-mendes",
+      "nome_completo": "Benoni Benjamin Cardoso Mendes",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Benoni%20Benjamin%20Cardoso%20Mendes&pagina=1",
+      "total_api": 402,
+      "ocorrencias_nome_exato": 388,
+      "resultado": "bloqueio_editorial",
+      "motivo": "388 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+    },
+    {
+      "slug": "breno-barcelar",
+      "nome_completo": "Breno Barcelos",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Breno%20Barcelos&pagina=1",
+      "total_api": 111,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "camila-falcao",
+      "nome_completo": "Camila Falcão",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Camila%20Falc%C3%A3o&pagina=1",
+      "total_api": 161,
+      "ocorrencias_nome_exato": 10,
+      "resultado": "bloqueio_editorial",
+      "motivo": "10 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+    },
+    {
+      "slug": "carlos-machado",
+      "nome_completo": "Carlos Machado",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Carlos%20Machado&pagina=1",
+      "total_api": 10000,
+      "ocorrencias_nome_exato": 132,
+      "resultado": "bloqueio_editorial",
+      "motivo": "132 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+    },
+    {
+      "slug": "dr-helton-monteiro",
+      "nome_completo": "José Helton Silva Monteiro",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Jos%C3%A9%20Helton%20Silva%20Monteiro&pagina=1",
+      "total_api": 55,
+      "ocorrencias_nome_exato": 55,
+      "resultado": "bloqueio_editorial",
+      "motivo": "55 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+    },
+    {
+      "slug": "elisson-ferreira",
+      "nome_completo": "Elisson Ferreira",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Elisson%20Ferreira&pagina=1",
+      "total_api": 341,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "eudo-raffael",
+      "nome_completo": "Eudo Raffael Lima da Silva",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Eudo%20Raffael%20Lima%20da%20Silva&pagina=1",
+      "total_api": 15,
+      "ocorrencias_nome_exato": 15,
+      "resultado": "bloqueio_editorial",
+      "motivo": "15 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+    },
+    {
+      "slug": "francisco-jurity",
+      "nome_completo": "Francisco Jurity",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Francisco%20Jurity&pagina=1",
+      "total_api": 0,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "gisvaldo-oliveira",
+      "nome_completo": "Gisvaldo Oliveira da Silva",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Gisvaldo%20Oliveira%20da%20Silva&pagina=1",
+      "total_api": 3,
+      "ocorrencias_nome_exato": 3,
+      "resultado": "bloqueio_editorial",
+      "motivo": "3 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+    },
+    {
+      "slug": "henrique-areas",
+      "nome_completo": "Henrique Áreas de Araujo",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Henrique%20%C3%81reas%20de%20Araujo&pagina=1",
+      "total_api": 3,
+      "ocorrencias_nome_exato": 3,
+      "resultado": "bloqueio_editorial",
+      "motivo": "3 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+    },
+    {
+      "slug": "huggo-leonardo",
+      "nome_completo": "Huggo Leonardo",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Huggo%20Leonardo&pagina=1",
+      "total_api": 30,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "jarir-pereira",
+      "nome_completo": "Jarir Pereira",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Jarir%20Pereira&pagina=1",
+      "total_api": 0,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "kiko-caputo",
+      "nome_completo": "Kiko Caputo",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Kiko%20Caputo&pagina=1",
+      "total_api": 0,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "luiz-franca",
+      "nome_completo": "Luiz Felipe Franca",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Luiz%20Felipe%20Franca&pagina=1",
+      "total_api": 198,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "maria-do-carmo",
+      "nome_completo": "Maria do Carmo Seffair",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Maria%20do%20Carmo%20Seffair&pagina=1",
+      "total_api": 430,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "nome_completo": "Natasha Slhessarenko",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Natasha%20Slhessarenko&pagina=1",
+      "total_api": 28,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "pedro-abib",
+      "nome_completo": "Pedro Abib Hecktheuer",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Pedro%20Abib%20Hecktheuer&pagina=1",
+      "total_api": 351,
+      "ocorrencias_nome_exato": 351,
+      "resultado": "bloqueio_editorial",
+      "motivo": "351 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+    },
+    {
+      "slug": "rafaell-milas",
+      "nome_completo": "Rafaell Milas",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Rafaell%20Milas&pagina=1",
+      "total_api": 24,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "renan-hallais",
+      "nome_completo": "Renan Hallais",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Renan%20Hallais&pagina=1",
+      "total_api": 0,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "renato-gomes",
+      "nome_completo": "Renato Gomes",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Renato%20Gomes&pagina=1",
+      "total_api": 10000,
+      "ocorrencias_nome_exato": 270,
+      "resultado": "bloqueio_editorial",
+      "motivo": "270 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+    },
+    {
+      "slug": "samara-mineiro",
+      "nome_completo": "Samara Mineiro",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Samara%20Mineiro&pagina=1",
+      "total_api": 0,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "vera-lucia",
+      "nome_completo": "Vera Lúcia Pereira da Silva Salgado",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Vera%20L%C3%BAcia%20Pereira%20da%20Silva%20Salgado&pagina=1",
+      "total_api": 0,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    },
+    {
+      "slug": "witer-naves",
+      "nome_completo": "Witer Fonseca Naves",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Witer%20Fonseca%20Naves&pagina=1",
+      "total_api": 25,
+      "ocorrencias_nome_exato": 25,
+      "resultado": "bloqueio_editorial",
+      "motivo": "25 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+    },
+    {
+      "slug": "yuri-ezequiel",
+      "nome_completo": "Yuri Ezequiel",
+      "identidade_status": "bloqueada",
+      "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Yuri%20Ezequiel&pagina=1",
+      "total_api": 66,
+      "ocorrencias_nome_exato": 0,
+      "resultado": "bloqueio_editorial",
+      "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+    }
+  ]
+}

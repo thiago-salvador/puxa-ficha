@@ -1,0 +1,102 @@
+{
+  "escopo": "integridade-identidade-timeline-5",
+  "base": "origin/rc-lancamento@84b8a47c76d456d3cc5fb4cca71851c02ddfc59c",
+  "aplicacao_remota": false,
+  "fontes_primarias": [
+    "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip",
+    "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip",
+    "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+    "https://www.al.ma.leg.br/sitealema/discurso/tempo-dos-blocos-iracema-vale-3/",
+    "https://orleansbrandao.com.br/",
+    "https://orleansbrandao.com.br/saiba-mais/",
+    "https://www.seam.ma.gov.br/noticias/orleans-brandao-participa-da-18-cavalgada-de-sao-joao-do-paraiso-e-anuncia-obras-para-o-municipio",
+    "https://pm.ssp.ma.gov.br/wp-content/uploads/2026/04/Publicacao-da-promocao-dos-Oficiais-no-Diario-Oficial-no-059-de-31-de-marco-de-2026.pdf"
+  ],
+  "casos": [
+    {
+      "slug": "joao-rodrigues",
+      "antes": "partido atual PSD, mas timeline terminava em PODE/2022 por SQ 210001596122 de João Carlos Mendonça Rodrigues, UF RS",
+      "depois": "inventário canônico por UUID preservado; toda linha adicional, inclusive ano inesperado, recebe snapshot integral e quarentena reversível",
+      "identidade_rejeitada": { "sq": "210001596122", "uf": "RS", "cargo": "DEPUTADO FEDERAL", "nome_civil": "JOAO CARLOS MENDONÇA RODRIGUES" }
+    },
+    {
+      "slug": "renan-filho",
+      "antes": "partido atual MDB, mas timeline terminava em Solidariedade/2022 pelos SQs de Renan Bekel de Melo Pacheco, UF RR",
+      "depois": "seed aponta para os SQs oficiais de José Renan Vasconcelos Calheiros Filho em AL; toda linha fora do inventário canônico recebe snapshot integral e quarentena reversível",
+      "identidade_correta": { "sq_2018": "20000621744", "sq_2022": "20001698127", "uf": "AL" },
+      "identidade_rejeitada": { "sq_2018": "230000603179", "sq_2022": "230001643506", "uf": "RR", "nome_civil": "RENAN BEKEL DE MELO PACHECO" }
+    },
+    {
+      "slug": "orleans-brandao",
+      "antes": "uma única ficha combinava Carlos Orleans Brandão Júnior, nascido em 1958, com o nome de urna e a trajetória do registro estadual de 2026",
+      "depois": "o perfil do governador é preservado integralmente e despublicado em carlos-brandao-ma-historico; Carlos Orleans Braide Brandão, nascido em 1994, fica separado e publicável como pré-candidato por declaração pública rastreável, cargo_atual nulo após a exoneração oficial de 31/03/2026, sem tratar o SQ #NULO como candidatura registrada ou deferida",
+      "identidade_correta": { "sq_2026": "100002543869", "uf": "MA", "cargo": "GOVERNADOR", "resultado": "#NULO" },
+      "fontes_pre_candidatura": [
+        "https://www.al.ma.leg.br/sitealema/discurso/tempo-dos-blocos-iracema-vale-3/",
+        "https://orleansbrandao.com.br/",
+        "https://orleansbrandao.com.br/saiba-mais/"
+      ],
+      "fontes_exercicio_e_saida_do_cargo": [
+        "https://www.seam.ma.gov.br/noticias/orleans-brandao-participa-da-18-cavalgada-de-sao-joao-do-paraiso-e-anuncia-obras-para-o-municipio",
+        "https://pm.ssp.ma.gov.br/wp-content/uploads/2026/04/Publicacao-da-promocao-dos-Oficiais-no-Diario-Oficial-no-059-de-31-de-marco-de-2026.pdf"
+      ],
+      "fonte_identidade_tse": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+      "limite": "o SQ 2026 ancora nome, nascimento, UF e cargo, mas #NULO não prova pedido, registro ou deferimento; a proveniência pública permanece declaracao_editorial"
+    },
+    {
+      "slug": "coronel-busnello",
+      "antes": "partido atual MISSÃO, mas timeline terminava em PSD/2022",
+      "depois": "aresta PSD para MISSAO em 2026, ancorada no registro TSE oficial",
+      "identidade_correta": { "sq_2026": "190002544120", "uf": "RJ", "cargo": "GOVERNADOR", "resultado": "#NULO" },
+      "limite": "#NULO não é candidatura confirmada"
+    },
+    {
+      "slug": "jeremias-cosmo",
+      "antes": "partido atual D35, mas timeline terminava em AGIR/2024",
+      "depois": "aresta AGIR para D35 em 2026, ancorada no registro TSE oficial DEMOCRATA",
+      "identidade_correta": { "sq_2026": "170002541258", "uf": "PE", "cargo": "GOVERNADOR", "resultado": "#NULO" },
+      "limite": "#NULO não é candidatura confirmada"
+    }
+  ],
+  "contagens": {
+    "universo_publico": 194,
+    "candidatos_seed": 271,
+    "sqs_pre_carregados_validados_tse": 639,
+    "sqs_sem_identidade_suficiente_removidos": 6,
+    "sqs_com_uf_historica_explicitada": 7,
+    "ancoras_tse_2026_materializadas": 3,
+    "manifesto_allowlisted_integral": {
+      "historico_politico": 12,
+      "mudancas_partido": 6,
+      "patrimonio": 4,
+      "financiamento": 4
+    },
+    "timelines_homonimas_publicas_pos": 0,
+    "dinheiro_contaminado_publico_pos": 0,
+    "campos_identidade_testados_por_drift": 13,
+    "compatibilidade_timestamp_volatil": ["forward aceita ultima_atualizacao avançada pelo cron", "readback aceita avanço posterior sem relaxar identidade"],
+    "dependencias_rollback_testadas": ["17 superfícies FK reais por catálogo", "coleta_log ON DELETE SET NULL", "FK futura ON DELETE CASCADE", "notification_log.candidato_ids UUID[]"]
+  },
+  "provas": {
+    "postgres": "PostgreSQL 17, migrations e rollbacks em --single-transaction; fixture usa os mesmos numeric(15,2) de patrimônio e financiamento de produção; public.candidatos_publico canônica com 194 linhas antes, depois e após rollback; forward e readback aceitam somente o avanço volátil de ultima_atualizacao pelo cron; readback recusa fixtures publicáveis indeferida e desistente que elevariam a view a 195; Orleans pre-candidato/publicavel=true com cargo_atual nulo, declaracao_editorial, fontes governamentais de exercício e exoneração, e gate contra cargo stale e URL 404; schema fallback sem categorias_origem=1|6|3|1; 13 drifts estáveis de candidato; manifesto integral 12/6/4/4; migration e readback recusam partido_novo, período, UF, partido e linha ausente, e a migration também recusa categorias_origem; linha 2011; segunda linha mesmo SQ; catálogo FK dinâmico; processos/coleta_log/notification_log/FK futura; igualdade integral antes=depois no rollback",
+    "pg_dump_schema_ledger": "igualdade schema-only incluindo a definição canônica de candidatos_publico, grants e índices, e ledger, com e sem categorias_origem; baselines versionadas ebce2da99eb2950893c67732a21df717d8a1f38ee580bccebf8c0c84cf0fa1d2 e 6e30487f921929be6ab5132d7261359527c61002fa1071b5018e396e2817fa3f",
+    "manifesto_fonte": "tests/fixtures/integridade-identidade-timeline-5-manifest.json, leitura somente produção após as migrations predecessoras 20260810093000, 20260810121000 e 20260811102000 e antes do forward 20260811102100; id+candidato_id+payload integral+SHA-256",
+    "testes": "recorte identidade 6/6 e suíte completa 3027/3027",
+    "typecheck": "pass",
+    "validate_seed": "pass, 271",
+    "allowlist_global": "pass, 27 recortes, 47 migrations anotadas, nenhuma escrita nova sem anotação",
+    "auditoria_tse": "pass, 639/639 SQs por identidade nominal + UF eleitoral + cargo",
+    "schema_replay": "73 aplicadas, 324 puladas, 0 falhas, sha256 8dfa80cc689c4ee2c1403cbbb9b17b7c18de8f0c4940d556a2b81ed6fbde37a1",
+    "replay_linear": "296 aplicadas, 101 falhas previstas, total 397"
+  },
+  "sha256_artefatos": {
+    "migration_102000": "efcdddbed657957b8211810ac376e98ecf4bce7ea7e9541b9c6018a39b7936dc",
+    "migration_102100": "eb4b100da9f37b56d617d8acdbc147db531bd0a6d9ad14f062d0c5181bafaed5",
+    "readback_102000": "e377b46069701580d5741d373f863a84600ff10b54d1ecc42de1c1f786dea070",
+    "readback_102100": "7b332ec4931b1b8ad1f266ab315d47ca8b22a2a66e5d101a45f210926379fc58",
+    "rollback_102000": "cb5c505015299047dadf7a7935a5480b7c41217a2b8d1ba6c75cf0eb767483bf",
+    "rollback_102100": "1b427c25b2a015b9ca358c1fa36c7588ebdaae51d1e0476803b1bb79b5607076",
+    "manifesto_12_6_4_4": "b807affc3693dd6e5d38e69d701c7d7160461114211ad95250d168a020cf4d17",
+    "harness_pg17": "b7c17921a4e97dd52b5a177a94b11f374c03c689cde98afdaa3dd59bb8f56751"
+  }
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "candidato_id": "fixture-eduardo-leite-normalization-only",
+    "historico_politico_id": null,
+    "tipo_relacao": "lei_sancionada",
+    "esfera": "estadual",
+    "uf_norma": "RS",
+    "tipo_norma": "lei",
+    "numero": "16.006",
+    "ano": 2023,
+    "data_norma": "2023-10-25",
+    "ementa": "Dispõe sobre o Sistema Único de Assistência Social - SUAS - no Estado do Rio Grande do Sul e altera a Lei nº 10.719, de 17 de janeiro de 1996, que cria o Fundo Estadual de Assistência Social.",
+    "signatario": "EDUARDO LEITE",
+    "autoridade_papel": "titular",
+    "fonte_primaria_url": "https://www.estado.rs.gov.br/upload/arquivos/lei-do-suas-out23.pdf",
+    "fonte_primaria_titulo": "Portal do Estado do Rio Grande do Sul - Atos do Governador/DOE",
+    "metadata": {
+      "note": "Fixture de dado real estadual mínimo para prova de normalização/validação. candidato_id é sintético; vínculo por mandato (historico_politico_id) requer resolução antes de insert real.",
+      "source": "Fluxo 5B expansão factual RS",
+      "data_real": true,
+      "case_id": "eduardo-leite-rs-lei-16006"
+    }
+  }
+]

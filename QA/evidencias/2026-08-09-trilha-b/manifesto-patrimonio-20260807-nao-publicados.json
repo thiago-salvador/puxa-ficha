@@ -1,0 +1,1042 @@
+{
+ "origem": "pf-patrimonio-20260807T170643Z/a2b/manifest.jsonl",
+ "gerado_em_original": "2026-08-07",
+ "copiado_em": "2026-08-09",
+ "total_no_manifesto": 568,
+ "publicados_omitidos": 463,
+ "linhas": [
+  {
+   "slug": "acm-neto",
+   "ano": 2026,
+   "sq": "50002533190",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 84888809.63,
+   "n_bens": 44,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_BA.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "alan-rick",
+   "ano": 2026,
+   "sq": "10002532492",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 5244567.72,
+   "n_bens": 25,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_AC.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "alvaro-dias-rn",
+   "ano": 2026,
+   "sq": "200002534442",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 2917179.51,
+   "n_bens": 14,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_RN.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "andre-marinho",
+   "ano": 2026,
+   "sq": "190002537524",
+   "estado": "ausencia_oficial",
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
+  },
+  {
+   "slug": "arthur-henrique",
+   "ano": 2020,
+   "sq": "230000679861",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2020.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "cabo-daciolo",
+   "ano": 2018,
+   "sq": "280000602500",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "cicero-lucena",
+   "ano": 2006,
+   "sq": "10057",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 914731,
+   "n_bens": 10,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2006.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2006_BRASIL.csv, bem_candidato_2006_PB.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (RS,CE,DF,MG,PE,RO,AL,PA,MT,SP,MS,PR,MA,TO,AM,ES,RN,SE,PB,RJ,GO), mantida apenas a UF esperada PB)"
+  },
+  {
+   "slug": "cintia-dias",
+   "ano": 2010,
+   "sq": "90000000434",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2010.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "cintia-dias",
+   "ano": 2012,
+   "sq": "90000012450",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2012.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "ciro-gomes-gov-ce",
+   "ano": 2026,
+   "sq": "60002531351",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 1756648.94,
+   "n_bens": 11,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_CE.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "cleber-rabelo",
+   "ano": 2010,
+   "sq": "140000000107",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2010.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "cleber-rabelo",
+   "ano": 2012,
+   "sq": "140000015615",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2012.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "cleber-rabelo",
+   "ano": 2014,
+   "sq": "140000000102",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2014.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "cleber-rabelo",
+   "ano": 2016,
+   "sq": "140000006431",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2016.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "cleber-rabelo",
+   "ano": 2026,
+   "sq": "140002538631",
+   "estado": "ausencia_oficial",
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
+  },
+  {
+   "slug": "clecio-luis",
+   "ano": 2006,
+   "sq": "10063",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 112000,
+   "n_bens": 3,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2006.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2006_AP.csv, bem_candidato_2006_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (RS,CE,AP,DF,MG,AC,PE,RO,AL,PA,MT,SP,MS,PR,MA,TO,GO,RR,ES,AM,SE,PB,SC,RJ), mantida apenas a UF esperada AP)"
+  },
+  {
+   "slug": "clecio-luis",
+   "ano": 2008,
+   "sq": "447",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 187000,
+   "n_bens": 4,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2008.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2008_AP.csv, bem_candidato_2008_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (GO,PI,RN,TO,AP,RR,MG,RO,PA,AL,SC,MA,AC,MS,ES,PR,BA,PB,SP,RS,MT), mantida apenas a UF esperada AP)"
+  },
+  {
+   "slug": "coronel-busnello",
+   "ano": 2018,
+   "sq": "190000626280",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 70000,
+   "n_bens": 1,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2018_BRASIL.csv, bem_candidato_2018_RJ.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR)"
+  },
+  {
+   "slug": "coronel-busnello",
+   "ano": 2022,
+   "sq": "190001603420",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 1502095.73,
+   "n_bens": 6,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2022_BRASIL.csv, bem_candidato_2022_RJ.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR)"
+  },
+  {
+   "slug": "david-almeida",
+   "ano": 2010,
+   "sq": "40000000404",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2010.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "david-almeida",
+   "ano": 2026,
+   "sq": "40002536086",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 1432848.4,
+   "n_bens": 6,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_AM.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "dr-daniel",
+   "ano": 2016,
+   "sq": "140000012852",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2016.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "dr-furlan",
+   "ano": 2026,
+   "sq": "30002530014",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 1168464.77,
+   "n_bens": 6,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_AP.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "dr-luisinho",
+   "ano": 2026,
+   "sq": "10002533539",
+   "estado": "ausencia_oficial",
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
+  },
+  {
+   "slug": "edilson-damiao",
+   "ano": 2022,
+   "sq": "230001604254",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "eduardo-braide",
+   "ano": 2006,
+   "sq": "10331",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 125805.4,
+   "n_bens": 6,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2006.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2006_BRASIL.csv, bem_candidato_2006_MA.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (RS,CE,AP,DF,MG,AC,PE,RO,AL,PA,MT,SP,MA,TO,RR,ES,RN,AM,PB,PR,BA,GO,RJ), mantida apenas a UF esperada MA)"
+  },
+  {
+   "slug": "eduardo-paes",
+   "ano": 2006,
+   "sq": "10421",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 341800.02,
+   "n_bens": 12,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2006.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2006_BRASIL.csv, bem_candidato_2006_RJ.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (PI,RS,CE,AP,DF,MG,AC,RO,AL,SP,PR,GO,RJ,RR,AM,ES,SC,PB,BA,TO), mantida apenas a UF esperada RJ)"
+  },
+  {
+   "slug": "eduardo-paes",
+   "ano": 2008,
+   "sq": "395",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 390372.87,
+   "n_bens": 8,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2008.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2008_RJ.csv, bem_candidato_2008_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (GO,PI,RN,AP,RO,AM,PA,CE,SC,RJ,AC,SE,ES,PR,BA,MT,SP,PB), mantida apenas a UF esperada RJ)"
+  },
+  {
+   "slug": "eduardo-riedel",
+   "ano": 2026,
+   "sq": "120002536582",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 16147849.34,
+   "n_bens": 17,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_MS.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "efraim-filho",
+   "ano": 2026,
+   "sq": "150002538692",
+   "estado": "ausencia_oficial",
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
+  },
+  {
+   "slug": "elizeu-aguiar",
+   "ano": 2026,
+   "sq": "180002533958",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 872808,
+   "n_bens": 3,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_PI.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "gabriel-azevedo",
+   "ano": 2016,
+   "sq": "130000084647",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 432500,
+   "n_bens": 3,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2016.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2016_BRASIL.csv, bem_candidato_2016_MG.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR)"
+  },
+  {
+   "slug": "garotinho",
+   "ano": 2022,
+   "sq": "190001619506",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "gelson-merisio",
+   "ano": 2006,
+   "sq": "10081",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 434191.6,
+   "n_bens": 7,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2006.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2006_BRASIL.csv, bem_candidato_2006_SC.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (PI,CE,AP,DF,MG,AC,PE,RO,AL,PA,MT,SP,MS,GO,PR,MA,RJ,TO,RR,RN,AM,PB,SC,BA,ES), mantida apenas a UF esperada SC)"
+  },
+  {
+   "slug": "geraldo-carvalho",
+   "ano": 2026,
+   "sq": "180002537422",
+   "estado": "ausencia_oficial",
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
+  },
+  {
+   "slug": "gilberto-vasconcelos",
+   "ano": 2026,
+   "sq": "40002535267",
+   "estado": "ausencia_oficial",
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
+  },
+  {
+   "slug": "guilherme-fonseca",
+   "ano": 2026,
+   "sq": "170002536575",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 300000,
+   "n_bens": 1,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_PE.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "gustavo-henrique",
+   "ano": 2012,
+   "sq": "180000006226",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2012.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "gustavo-henrique",
+   "ano": 2014,
+   "sq": "180000000014",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2014.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "gustavo-henrique",
+   "ano": 2022,
+   "sq": "180001643494",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "henrique-areas",
+   "ano": 2016,
+   "sq": "250000077188",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2016.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "henrique-areas",
+   "ano": 2018,
+   "sq": "250000615443",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "henrique-areas",
+   "ano": 2020,
+   "sq": "250001172315",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2020.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "hertz-dias",
+   "ano": 2020,
+   "sq": "100000718146",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2020.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "hertz-dias",
+   "ano": 2022,
+   "sq": "100001600008",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "ivan-moraes",
+   "ano": 2026,
+   "sq": "170002538097",
+   "estado": "ausencia_oficial",
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
+  },
+  {
+   "slug": "izadora-dias",
+   "ano": 2022,
+   "sq": "250001700018",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "jayme-campos",
+   "ano": 2006,
+   "sq": "10321",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 14142116.37,
+   "n_bens": 103,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2006.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2006_MT.csv, bem_candidato_2006_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (PI,RS,CE,DF,AC,PE,RO,AL,PA,MT,SP,PR,MA,RN,AM,ES,PB,SC,BA,RR,GO), mantida apenas a UF esperada MT)"
+  },
+  {
+   "slug": "jeferson-bezerra",
+   "ano": 2020,
+   "sq": "120000850578",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2020.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "jeferson-bezerra",
+   "ano": 2022,
+   "sq": "120001611531",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "jeferson-bezerra",
+   "ano": 2024,
+   "sq": "120002315556",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2024.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "jeremias-cosmo",
+   "ano": 2018,
+   "sq": "170000607399",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 70000,
+   "n_bens": 1,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2018_BRASIL.csv, bem_candidato_2018_PE.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR)"
+  },
+  {
+   "slug": "jeremias-cosmo",
+   "ano": 2020,
+   "sq": "170000735134",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2020.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "jeremias-cosmo",
+   "ano": 2024,
+   "sq": "170002143292",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 155000,
+   "n_bens": 2,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2024.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2024_BRASIL.csv, bem_candidato_2024_PE.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR)"
+  },
+  {
+   "slug": "jeronimo",
+   "ano": 2022,
+   "sq": "50001603638",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 515216.13,
+   "n_bens": 11,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2022_BRASIL.csv, bem_candidato_2022_BA.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR)"
+  },
+  {
+   "slug": "joao-campos",
+   "ano": 2026,
+   "sq": "170002537230",
+   "estado": "ausencia_oficial",
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
+  },
+  {
+   "slug": "joao-henrique-catan",
+   "ano": 2018,
+   "sq": "120000624894",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "joel-rodrigues",
+   "ano": 2026,
+   "sq": "180002538530",
+   "estado": "ausencia_oficial",
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
+  },
+  {
+   "slug": "jorginho-mello",
+   "ano": 2026,
+   "sq": "240002537073",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 2818036.89,
+   "n_bens": 11,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_SC.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "jose-roberto-arruda",
+   "ano": 2006,
+   "sq": "10382",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 598076.98,
+   "n_bens": 9,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2006.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2006_DF.csv, bem_candidato_2006_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (PI,RS,CE,DF,MG,AC,PE,PA,SP,BA,TO,GO,AM,SE,SC,PR,MA), mantida apenas a UF esperada DF)"
+  },
+  {
+   "slug": "juliete-pantoja",
+   "ano": 2020,
+   "sq": "190001128515",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2020.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "juliete-pantoja",
+   "ano": 2024,
+   "sq": "190002135108",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2024.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "laudicerio-aguiar",
+   "ano": 2022,
+   "sq": "110001621192",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "lourdes-melo",
+   "ano": 2006,
+   "sq": "10000",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 35000,
+   "n_bens": 2,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2006.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2006_PI.csv, bem_candidato_2006_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (PI,RS,AP,DF,AC,PE,RO,AL,MT,SP,MS,TO,PR,RR,RN,ES,SE,PB,SC), mantida apenas a UF esperada PI)"
+  },
+  {
+   "slug": "lourdes-melo",
+   "ano": 2008,
+   "sq": "8738",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 50000,
+   "n_bens": 1,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2008.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2008_PI.csv, bem_candidato_2008_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (GO,PI,PE,MG,PA,MA,PR,BA,MT,PB,RS), mantida apenas a UF esperada PI)"
+  },
+  {
+   "slug": "luan-monteiro",
+   "ano": 2020,
+   "sq": "190001092078",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2020.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "luan-monteiro",
+   "ano": 2022,
+   "sq": "190001717287",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "luan-monteiro",
+   "ano": 2024,
+   "sq": "190002346684",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2024.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "luciana-gurgel",
+   "ano": 2026,
+   "sq": "30002530015",
+   "estado": "ausencia_oficial",
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
+  },
+  {
+   "slug": "marcus-sodre",
+   "ano": 2014,
+   "sq": "240000000204",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 89490,
+   "n_bens": 4,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2014.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2014_SC.csv, bem_candidato_2014_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR)"
+  },
+  {
+   "slug": "mauricio-tonha",
+   "ano": 2008,
+   "sq": "3028",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 4992953.17,
+   "n_bens": 43,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2008.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2008_BRASIL.csv, bem_candidato_2008_MT.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (GO,RN,AM,AL,CE,SC,MS,ES,BA,SP,MT,PB), mantida apenas a UF esperada MT)"
+  },
+  {
+   "slug": "omar-aziz",
+   "ano": 2026,
+   "sq": "40002532272",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 2070608,
+   "n_bens": 5,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_AM.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "patrus-ananias",
+   "ano": 2014,
+   "sq": "130000000890",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 236336.09,
+   "n_bens": 8,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2014.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2014_BRASIL.csv, bem_candidato_2014_MG.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR)"
+  },
+  {
+   "slug": "patrus-ananias",
+   "ano": 2018,
+   "sq": "130000626967",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 561673.66,
+   "n_bens": 8,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2018_BRASIL.csv, bem_candidato_2018_MG.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR)"
+  },
+  {
+   "slug": "patrus-ananias",
+   "ano": 2022,
+   "sq": "130001607244",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 1025194.65,
+   "n_bens": 17,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2022_BRASIL.csv, bem_candidato_2022_MG.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR)"
+  },
+  {
+   "slug": "preta-lu",
+   "ano": 2026,
+   "sq": "100002534191",
+   "estado": "ausencia_oficial",
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
+  },
+  {
+   "slug": "priscila-voigt",
+   "ano": 2026,
+   "sq": "210002533355",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 1000,
+   "n_bens": 1,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_RS.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "rafael-fonteles",
+   "ano": 2026,
+   "sq": "180002532987",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 1799948.6,
+   "n_bens": 7,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_PI.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "rafael-greca",
+   "ano": 2006,
+   "sq": "10186",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 483980.68,
+   "n_bens": 24,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2006.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2006_BRASIL.csv, bem_candidato_2006_PR.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (PI,RS,CE,DF,MG,AC,PE,RO,AL,PA,MT,SP,MS,RJ,PR,BA,GO,TO,ES,RN,SE,PB), mantida apenas a UF esperada PR)"
+  },
+  {
+   "slug": "raquel-lyra",
+   "ano": 2026,
+   "sq": "170002537227",
+   "estado": "ausencia_oficial",
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
+  },
+  {
+   "slug": "renan-filho",
+   "ano": 2018,
+   "sq": "230000603179",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "renan-filho",
+   "ano": 2022,
+   "sq": "230001643506",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "robson-raymundo",
+   "ano": 2022,
+   "sq": "70001611377",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "robson-raymundo",
+   "ano": 2026,
+   "sq": "70002535930",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 900000,
+   "n_bens": 1,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_DF.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "ronaldo-mansur",
+   "ano": 2018,
+   "sq": "50000600889",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "ronaldo-mansur",
+   "ano": 2026,
+   "sq": "50002532269",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 91397.22,
+   "n_bens": 5,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_BA.csv, bem_candidato_2026_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "rui-costa-pimenta",
+   "ano": 2014,
+   "sq": "280000000081",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2014.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "samara-martins",
+   "ano": 2020,
+   "sq": "200000724019",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2020.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "samuel-costa",
+   "ano": 2012,
+   "sq": "220000000290",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2012.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "samuel-costa",
+   "ano": 2014,
+   "sq": "220000000176",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2014.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "serley-leal",
+   "ano": 2012,
+   "sq": "60000015399",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2012.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "tiao-bocalom",
+   "ano": 2006,
+   "sq": "10275",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 462000,
+   "n_bens": 3,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2006.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2006_AC.csv, bem_candidato_2006_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (RS,CE,DF,MG,AC,PE,RO,AL,SP,MS,TO,PR,RR,AM,RN,ES,SE,SC,PB,MA,BA), mantida apenas a UF esperada AC)"
+  },
+  {
+   "slug": "tiao-bocalom",
+   "ano": 2008,
+   "sq": "313",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 624000,
+   "n_bens": 6,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2008.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2008_AC.csv, bem_candidato_2008_BRASIL.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; SQ colide entre UFs (TO,AP,PE,MG,RO,AM,PA,AL,MA,RJ,AC,MS,ES,BA,MT,PB,RS), mantida apenas a UF esperada AC)"
+  },
+  {
+   "slug": "tulio-lopes",
+   "ano": 2016,
+   "sq": "130000083665",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2016.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "tulio-lopes",
+   "ano": 2018,
+   "sq": "130000606639",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "valmir-de-francisquinho",
+   "ano": 2026,
+   "sq": "260002532010",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 258000,
+   "n_bens": 2,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_SE.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  },
+  {
+   "slug": "vera-lucia",
+   "ano": 2010,
+   "sq": "260000000021",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2010.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "vera-lucia",
+   "ano": 2012,
+   "sq": "260000001384",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2012.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "vera-lucia",
+   "ano": 2014,
+   "sq": "260000000024",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2014.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "vera-lucia",
+   "ano": 2016,
+   "sq": "260000005540",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2016.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "vera-lucia",
+   "ano": 2020,
+   "sq": "250000744464",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 20000,
+   "n_bens": 1,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2020.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2020_BRASIL.csv, bem_candidato_2020_SP.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR)"
+  },
+  {
+   "slug": "vera-lucia",
+   "ano": 2026,
+   "sq": "250002536915",
+   "estado": "ausencia_oficial",
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato_2026 (snapshot local de 2026-08-04; registros de 2026 ainda em andamento, revalidar quando o TSE publicar pacote novo)"
+  },
+  {
+   "slug": "vittorio-medioli",
+   "ano": 2016,
+   "sq": "130000080259",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 352572936.23,
+   "n_bens": 38,
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2016.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2016_BRASIL.csv, bem_candidato_2016_MG.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR)"
+  },
+  {
+   "slug": "william-siri",
+   "ano": 2018,
+   "sq": "190000602173",
+   "estado": "ausencia_oficial",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "SQ ausente em todos os CSVs do pacote oficial bem_candidato deste ano"
+  },
+  {
+   "slug": "william-siri",
+   "ano": 2026,
+   "sq": "190002536162",
+   "estado": "lacuna_com_dados_tse",
+   "valor_total": 120000,
+   "n_bens": 1,
+   "url": "local:/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha/data/tse/bem_candidato_2026.zip",
+   "verificado_em": "2026-08-07T18:27:03.374Z",
+   "detalhe": "arquivos com bens: bem_candidato_2026_BRASIL.csv, bem_candidato_2026_RJ.csv (valores deduplicados entre arquivos _UF/_BRASIL/_BR; snapshot local de 2026-08-04, registros de 2026 ainda em andamento)"
+  }
+ ]
+}

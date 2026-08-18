@@ -1,0 +1,4284 @@
+[
+  {
+    "slug": "lula",
+    "nome_completo": "Luiz Inacio Lula da Silva",
+    "nome_urna": "Lula",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": 139289,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "280000625869",
+        "2022": "280001607829"
+      }
+    },
+    "wikipedia_title": "Luiz_Inácio_Lula_da_Silva"
+  },
+  {
+    "slug": "flavio-bolsonaro",
+    "nome_completo": "Flavio Nantes Bolsonaro",
+    "nome_urna": "Flavio Bolsonaro",
+    "cargo_disputado": "Presidente",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": 5894,
+      "tse_sq_candidato": {
+        "2002": "851",
+        "2006": "10354",
+        "2010": "190000000070",
+        "2014": "190000000095",
+        "2016": "190000011736",
+        "2018": "190000614721"
+      }
+    },
+    "wikipedia_title": "Flávio_Bolsonaro"
+  },
+  {
+    "slug": "romeu-zema",
+    "nome_completo": "Romeu Zema Neto",
+    "nome_urna": "Romeu Zema",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "130000600702",
+        "2022": "130001701690"
+      }
+    },
+    "wikipedia_title": "Romeu_Zema"
+  },
+  {
+    "slug": "ronaldo-caiado",
+    "nome_completo": "Ronaldo Ramos Caiado",
+    "nome_urna": "Ronaldo Caiado",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": 74813,
+      "senado": 456,
+      "tse_sq_candidato": {
+        "2018": "90000613470",
+        "2022": "90001646326"
+      }
+    },
+    "wikipedia_title": "Ronaldo_Caiado"
+  },
+  {
+    "slug": "ratinho-junior",
+    "nome_completo": "Carlos Roberto Massa Junior",
+    "nome_urna": "Ratinho Junior",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": 141403,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "160000000790",
+        "2012": "160000019324",
+        "2014": "160000000848",
+        "2018": "160000609226",
+        "2022": "160001614467"
+      }
+    },
+    "wikipedia_title": "Ratinho_Júnior"
+  },
+  {
+    "slug": "aldo-rebelo",
+    "nome_completo": "Jose Aldo Rebelo Figueiredo",
+    "nome_urna": "Aldo Rebelo",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": 73428,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "250001639699"
+      }
+    },
+    "wikipedia_title": "Aldo_Rebelo"
+  },
+  {
+    "slug": "joaquim-barbosa",
+    "nome_completo": "Joaquim Benedito Barbosa Gomes",
+    "nome_urna": "Joaquim Barbosa",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    },
+    "wikipedia_title": "Joaquim_Barbosa"
+  },
+  {
+    "slug": "renan-santos",
+    "nome_completo": "Renan Antonio Ferreira dos Santos",
+    "nome_urna": "Renan Santos",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    },
+    "wikipedia_title": "Renan_Santos"
+  },
+  {
+    "slug": "ciro-gomes",
+    "nome_completo": "Ciro Ferreira Gomes",
+    "nome_urna": "Ciro Gomes",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": 141406,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "280000605589",
+        "2022": "280001612393"
+      }
+    },
+    "wikipedia_title": "Ciro_Gomes"
+  },
+  {
+    "slug": "hertz-dias",
+    "nome_completo": "HERTZ DA CONCEICAO DIAS",
+    "nome_urna": "Hertz Dias",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "280000601174",
+        "2020": "100000718146",
+        "2022": "100001600008"
+      }
+    }
+  },
+  {
+    "slug": "augusto-cury",
+    "nome_completo": "Augusto Jorge Cury",
+    "nome_urna": "Augusto Cury",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    },
+    "wikipedia_title": "Augusto_Cury"
+  },
+  {
+    "slug": "cabo-daciolo",
+    "nome_completo": "Benevenuto Daciolo Fonseca dos Santos",
+    "nome_urna": "Cabo Daciolo",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": 178938,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2006": "12132",
+        "2008": "14144",
+        "2018": "280000602500",
+        "2022": "190001643311"
+      },
+      "tse_uf_candidatura": {
+        "2006": "RJ",
+        "2008": "RJ"
+      }
+    },
+    "wikipedia_title": "Cabo_Daciolo"
+  },
+  {
+    "slug": "edmilson-costa",
+    "nome_completo": "Edmilson Silva Costa",
+    "nome_urna": "Edmilson Costa",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "280000000018"
+      }
+    },
+    "wikipedia_title": "Edmilson_Costa"
+  },
+  {
+    "slug": "rui-costa-pimenta",
+    "nome_completo": "Rui Costa Pimenta",
+    "nome_urna": "Rui Costa Pimenta",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2002": "9570",
+        "2006": "27",
+        "2010": "280000000007",
+        "2014": "280000000081"
+      }
+    },
+    "wikipedia_title": "Rui_Costa_Pimenta",
+    "estado": "SP"
+  },
+  {
+    "slug": "samara-martins",
+    "nome_completo": "SAMARA MARTINS DA SILVA",
+    "nome_urna": "Samara Martins",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "200000724019",
+        "2022": "280001602703"
+      }
+    }
+  },
+  {
+    "slug": "aecio-neves",
+    "nome_completo": "Aecio Neves da Cunha",
+    "nome_urna": "Aecio Neves",
+    "cargo_disputado": "Presidente",
+    "estado": "MG",
+    "ids": {
+      "camara": 74646,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "130000000952",
+        "2014": "280000000085",
+        "2018": "130000613206",
+        "2022": "130001613348"
+      }
+    },
+    "wikipedia_title": "Aécio_Neves"
+  },
+  {
+    "slug": "tarcisio-gov-sp",
+    "nome_completo": "Tarcisio Gomes de Freitas",
+    "nome_urna": "Tarcisio de Freitas",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "250001615967"
+      }
+    },
+    "wikipedia_title": "Tarcísio_de_Freitas"
+  },
+  {
+    "slug": "haddad-gov-sp",
+    "nome_completo": "Fernando Haddad",
+    "nome_urna": "Fernando Haddad",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2012": "250000050277",
+        "2016": "250000011576",
+        "2018": "280000629808",
+        "2022": "250001612465"
+      }
+    },
+    "wikipedia_title": "Fernando_Haddad"
+  },
+  {
+    "slug": "erika-hilton",
+    "nome_completo": "Erika Santos Silva",
+    "nome_urna": "Erika Hilton",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": {
+      "camara": 220645,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "250000686838",
+        "2022": "250001613814"
+      }
+    },
+    "wikipedia_title": "Érika_Hilton"
+  },
+  {
+    "slug": "felicio-ramuth",
+    "nome_completo": "Felicio Ramuth",
+    "nome_urna": "Felicio Ramuth",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2016": "250000038921",
+        "2020": "250000693253",
+        "2022": "250001615968"
+      }
+    },
+    "wikipedia_title": "Felício_Ramuth"
+  },
+  {
+    "slug": "ricardo-nunes",
+    "nome_completo": "Ricardo Luis Reis Nunes",
+    "nome_urna": "Ricardo Nunes",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2012": "250000008046",
+        "2014": "250000002150",
+        "2016": "250000020813",
+        "2018": "250000604021",
+        "2020": "250000896547",
+        "2024": "250002098117"
+      }
+    },
+    "wikipedia_title": "Ricardo_Nunes_(político)"
+  },
+  {
+    "slug": "geraldo-alckmin",
+    "nome_completo": "Geraldo Jose Rodrigues Alckmin Filho",
+    "nome_urna": "Geraldo Alckmin",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": {
+      "camara": 65480,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "280000602477",
+        "2022": "280001607830"
+      }
+    },
+    "wikipedia_title": "Geraldo_Alckmin"
+  },
+  {
+    "slug": "gilberto-kassab",
+    "nome_completo": "Gilberto Kassab",
+    "nome_urna": "Gilberto Kassab",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": {
+      "camara": 74778,
+      "senado": null,
+      "tse_sq_candidato": {}
+    },
+    "wikipedia_title": "Gilberto_Kassab"
+  },
+  {
+    "slug": "andre-do-prado",
+    "nome_completo": "Andre Luis do Prado",
+    "nome_urna": "Andre do Prado",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "250000619454",
+        "2022": "250001610161"
+      }
+    },
+    "wikipedia_title": "André_do_Prado"
+  },
+  {
+    "slug": "marcio-franca",
+    "nome_completo": "Marcio Luiz Franca Gomes",
+    "nome_urna": "Marcio Franca",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": {
+      "camara": 141497,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "250000615141",
+        "2020": "250001012981",
+        "2022": "250001615891"
+      }
+    },
+    "wikipedia_title": "Márcio_França"
+  },
+  {
+    "slug": "guilherme-derrite",
+    "nome_completo": "Guilherme Muraro Derrite",
+    "nome_urna": "Guilherme Derrite",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "ids": {
+      "camara": 204531,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "250000605452",
+        "2022": "250001611359"
+      }
+    },
+    "wikipedia_title": "Guilherme_Derrite"
+  },
+  {
+    "slug": "sergio-moro-gov-pr",
+    "nome_completo": "Sergio Fernando Moro",
+    "nome_urna": "Sergio Moro",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": 6331,
+      "tse_sq_candidato": {
+        "2022": "160001621846"
+      }
+    },
+    "wikipedia_title": "Sergio_Moro"
+  },
+  {
+    "slug": "guto-silva",
+    "nome_completo": "Luiz Augusto Silva",
+    "nome_urna": "Guto Silva",
+    "cargo_disputado": "Senador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "160000619860"
+      }
+    },
+    "wikipedia_title": "Guto_Silva"
+  },
+  {
+    "slug": "alexandre-curi",
+    "nome_completo": "Alexandre Curi",
+    "nome_urna": "Alexandre Curi",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "160000623295",
+        "2022": "160001623100"
+      }
+    },
+    "wikipedia_title": "Alexandre_Curi"
+  },
+  {
+    "slug": "rafael-greca",
+    "nome_completo": "Rafael Valdomiro Greca de Macedo",
+    "nome_urna": "Rafael Greca",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": {
+      "camara": 73465,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2002": "68",
+        "2006": "10186",
+        "2010": "160000001041",
+        "2012": "160000010045",
+        "2014": "160000000390",
+        "2016": "160000006466",
+        "2020": "160000657203"
+      }
+    },
+    "wikipedia_title": "Rafael_Greca"
+  },
+  {
+    "slug": "requiao-filho",
+    "nome_completo": "Mauricio Thadeu de Mello e Silva",
+    "nome_urna": "Requiao Filho",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "160000612511",
+        "2022": "160001615006"
+      }
+    },
+    "wikipedia_title": "Requião_Filho"
+  },
+  {
+    "slug": "paulo-martins-gov-pr",
+    "nome_completo": "Paulo Eduardo Lima Martins",
+    "nome_urna": "Paulo Martins",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": {
+      "camara": 193726,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2014": "160000000173",
+        "2018": "160000619724",
+        "2022": "160001621868",
+        "2024": "160001990124"
+      }
+    },
+    "wikipedia_title": "Paulo_Martins_(político)"
+  },
+  {
+    "slug": "sandro-alex",
+    "nome_completo": "Sandro Alex Cruz de Oliveira",
+    "nome_urna": "Sandro Alex",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": {
+      "camara": 160621,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "160000000600",
+        "2014": "160000000207",
+        "2018": "160000619719",
+        "2022": "160001622302"
+      }
+    },
+    "wikipedia_title": "Sandro_Alex"
+  },
+  {
+    "slug": "luiz-franca",
+    "nome_completo": "Luiz Felipe Franca",
+    "nome_urna": "Luiz Franca",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "jorginho-mello",
+    "nome_completo": "Jorginho dos Santos Mello",
+    "nome_urna": "Jorginho Mello",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": {
+      "camara": 160509,
+      "senado": 5350,
+      "tse_sq_candidato": {
+        "2018": "240000609539",
+        "2022": "240001611127",
+        "2026": "240002537073"
+      }
+    },
+    "wikipedia_title": "Jorginho_Mello"
+  },
+  {
+    "slug": "joao-rodrigues",
+    "nome_completo": "Joao Rodrigues",
+    "nome_urna": "Joao Rodrigues",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": {
+      "camara": 160571,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "240000000218",
+        "2014": "240000000213"
+      }
+    },
+    "wikipedia_title": "João_Rodrigues_(político_de_Santa_Catarina)"
+  },
+  {
+    "slug": "decio-lima",
+    "nome_completo": "Decio Nery de Lima",
+    "nome_urna": "Decio Lima",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": {
+      "camara": 141413,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "240000624336",
+        "2022": "240001647445"
+      }
+    },
+    "wikipedia_title": "Décio_Lima"
+  },
+  {
+    "slug": "marcos-vieira",
+    "nome_completo": "Marcos Vieira",
+    "nome_urna": "Marcos Vieira",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "240000000282",
+        "2014": "240000000399",
+        "2018": "240000609608",
+        "2022": "240001612502"
+      }
+    },
+    "wikipedia_title": "Marcos_Vieira_(político)"
+  },
+  {
+    "slug": "marcelo-brigadeiro",
+    "nome_completo": "Marcelo Marcel Franco José da Silva",
+    "nome_urna": "Marcelo Brigadeiro",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "240000609728"
+      }
+    }
+  },
+  {
+    "slug": "luciano-zucco",
+    "nome_completo": "Luciano Lorenzini Zucco",
+    "nome_urna": "Luciano Zucco",
+    "cargo_disputado": "Governador",
+    "estado": "RS",
+    "ids": {
+      "camara": 220552,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "210000603583",
+        "2022": "210001601587"
+      }
+    },
+    "wikipedia_title": "Luciano_Zucco"
+  },
+  {
+    "slug": "juliana-brizola",
+    "nome_completo": "Juliana Daudt Brizola",
+    "nome_urna": "Juliana Brizola",
+    "cargo_disputado": "Governador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "210000000859",
+        "2014": "210000000193",
+        "2018": "210000604676",
+        "2020": "210001189949",
+        "2022": "210001621265",
+        "2024": "210002355259"
+      }
+    },
+    "wikipedia_title": "Juliana_Brizola"
+  },
+  {
+    "slug": "edegar-pretto",
+    "nome_completo": "Edegar Pretto",
+    "nome_urna": "Edegar Pretto",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "210000611352",
+        "2022": "210001604469"
+      }
+    },
+    "wikipedia_title": "Edegar_Pretto"
+  },
+  {
+    "slug": "gabriel-souza",
+    "nome_completo": "Gabriel Souza",
+    "nome_urna": "Gabriel Souza",
+    "cargo_disputado": "Governador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "210000605318",
+        "2022": "210001609848"
+      }
+    },
+    "wikipedia_title": "Gabriel_Souza_(político)"
+  },
+  {
+    "slug": "marcelo-maranata",
+    "nome_completo": "Marcelo Maranata",
+    "nome_urna": "Marcelo Maranata",
+    "cargo_disputado": "Governador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "210000605932",
+        "2020": "210000884394"
+      }
+    },
+    "wikipedia_title": "Marcelo_Maranata"
+  },
+  {
+    "slug": "priscila-voigt",
+    "nome_completo": "Priscila Voigt Severiano",
+    "nome_urna": "Priscila Voigt",
+    "cargo_disputado": "Governador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2016": "210000006967",
+        "2020": "210000636284",
+        "2022": "210001597514",
+        "2024": "210001945324",
+        "2026": "210002533355"
+      }
+    }
+  },
+  {
+    "slug": "rejane-oliveira",
+    "nome_completo": "Rejane Silva de Oliveira",
+    "nome_urna": "Rejane de Oliveira",
+    "cargo_disputado": "Governador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "210001605930"
+      }
+    }
+  },
+  {
+    "slug": "evandro-augusto",
+    "nome_completo": "Evandro Augusto",
+    "nome_urna": "Evandro Augusto",
+    "cargo_disputado": "Governador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "eduardo-paes",
+    "nome_completo": "Eduardo da Costa Paes",
+    "nome_urna": "Eduardo Paes",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2002": "1749",
+        "2006": "10421",
+        "2008": "395",
+        "2012": "190000004018",
+        "2018": "190000609934",
+        "2020": "190000688286",
+        "2024": "190002135253"
+      }
+    },
+    "wikipedia_title": "Eduardo_Paes"
+  },
+  {
+    "slug": "douglas-ruas",
+    "nome_completo": "Douglas Ruas",
+    "nome_urna": "Douglas Ruas",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "190001596741"
+      }
+    },
+    "wikipedia_title": "Douglas_Ruas"
+  },
+  {
+    "slug": "rodrigo-bacellar",
+    "nome_completo": "Rodrigo Bacellar",
+    "nome_urna": "Rodrigo Bacellar",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "190000603307",
+        "2022": "190001596728"
+      }
+    },
+    "wikipedia_title": "Rodrigo_Bacellar"
+  },
+  {
+    "slug": "washington-reis",
+    "nome_completo": "Washington Reis de Oliveira",
+    "nome_urna": "Washington Reis",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": 160620,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "190001114997",
+        "2022": "190001615754"
+      }
+    },
+    "wikipedia_title": "Washington_Reis"
+  },
+  {
+    "slug": "garotinho",
+    "nome_completo": "Anthony William Garotinho Matheus de Oliveira",
+    "nome_urna": "Garotinho",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": 160539,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2014": "190000000585",
+        "2018": "190000621818",
+        "2022": "190001619506",
+        "2024": "190002208866"
+      }
+    },
+    "wikipedia_title": "Anthony_Garotinho"
+  },
+  {
+    "slug": "tarcisio-motta",
+    "nome_completo": "Tarcisio Motta de Carvalho",
+    "nome_urna": "Tarcisio Motta",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": 220598,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2014": "190000000409",
+        "2016": "190000003426",
+        "2018": "190000602065",
+        "2020": "190000684953",
+        "2022": "190001600488",
+        "2024": "190001973562"
+      }
+    },
+    "wikipedia_title": "Tarcísio_Motta"
+  },
+  {
+    "slug": "andre-marinho",
+    "nome_completo": "Andre Bourguignon Marinho",
+    "nome_urna": "Andre Marinho",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "190002537524"
+      }
+    },
+    "wikipedia_title": "André_Marinho_(humorista)"
+  },
+  {
+    "slug": "andre-portugues",
+    "nome_completo": "André Pinto de Afonseca",
+    "nome_urna": "André Português",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2012": "190000025768",
+        "2014": "190000001796",
+        "2016": "190000006287",
+        "2020": "190000874427"
+      }
+    }
+  },
+  {
+    "slug": "cyro-garcia",
+    "nome_completo": "Cyro Garcia",
+    "nome_urna": "Cyro Garcia",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "190000000626",
+        "2012": "190000004022",
+        "2014": "190000000098",
+        "2016": "190000019572",
+        "2018": "190000607900",
+        "2020": "190000858699",
+        "2022": "190001639537",
+        "2024": "190001951101"
+      }
+    },
+    "wikipedia_title": "Cyro_Garcia"
+  },
+  {
+    "slug": "juliete-pantoja",
+    "nome_completo": "Juliete Pantoja Alves",
+    "nome_urna": "Juliete Pantoja",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "190001128515",
+        "2022": "190001609712",
+        "2024": "190002135108"
+      }
+    }
+  },
+  {
+    "slug": "luan-monteiro",
+    "nome_completo": "Luan Monteiro Paschoal Pires",
+    "nome_urna": "Luan Monteiro",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "190001092078",
+        "2022": "190001717287",
+        "2024": "190002346684"
+      }
+    }
+  },
+  {
+    "slug": "william-siri",
+    "nome_completo": "William Carlos Brum Bispo",
+    "nome_urna": "William Siri",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2016": "190000003430",
+        "2018": "190000602173",
+        "2020": "190000684938",
+        "2022": "190001600466",
+        "2024": "190002142537",
+        "2026": "190002536162"
+      }
+    }
+  },
+  {
+    "slug": "cleitinho",
+    "nome_completo": "Cleitinho Azevedo",
+    "nome_urna": "Cleitinho",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": 6337,
+      "tse_sq_candidato": {
+        "2018": "130000613136",
+        "2022": "130001671677"
+      }
+    },
+    "wikipedia_title": "Cleitinho_Azevedo"
+  },
+  {
+    "slug": "nikolas-ferreira",
+    "nome_completo": "Nikolas Ferreira Oliveira",
+    "nome_urna": "Nikolas Ferreira",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": 209787,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "130001175469",
+        "2022": "130001611005"
+      }
+    },
+    "wikipedia_title": "Nikolas_Ferreira"
+  },
+  {
+    "slug": "mateus-simoes",
+    "nome_completo": "Mateus Simoes",
+    "nome_urna": "Mateus Simoes",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2014": "130000000535",
+        "2016": "130000085406",
+        "2022": "130001701691"
+      }
+    },
+    "wikipedia_title": "Mateus_Simões"
+  },
+  {
+    "slug": "rodrigo-pacheco",
+    "nome_completo": "Rodrigo Pacheco Amaral",
+    "nome_urna": "Rodrigo Pacheco",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": 178897,
+      "senado": 5732,
+      "tse_sq_candidato": {
+        "2018": "130000604556"
+      }
+    },
+    "wikipedia_title": "Rodrigo_Pacheco_(político)"
+  },
+  {
+    "slug": "gabriel-azevedo",
+    "nome_completo": "Gabriel Sousa Marques de Azevedo",
+    "nome_urna": "Gabriel Azevedo",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2016": "130000084647",
+        "2020": "130000704273",
+        "2024": "130002074700"
+      }
+    }
+  },
+  {
+    "slug": "maria-da-consolacao",
+    "nome_completo": "Maria da Consolacao Soares",
+    "nome_urna": "Maria da Consolacao",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2006": "10343",
+        "2010": "130000001775",
+        "2012": "130000027325",
+        "2014": "130000000315",
+        "2016": "130000083668",
+        "2018": "130000606676",
+        "2020": "130000686201",
+        "2022": "130001615215"
+      }
+    },
+    "wikipedia_title": "Maria_da_Consolação"
+  },
+  {
+    "slug": "alexandre-kalil",
+    "nome_completo": "Alexandre Kalil",
+    "nome_urna": "Alexandre Kalil",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2014": "130000001203",
+        "2016": "130000083186",
+        "2020": "130000756879",
+        "2022": "130001621812"
+      }
+    },
+    "wikipedia_title": "Alexandre_Kalil"
+  },
+  {
+    "slug": "ben-mendes",
+    "nome_completo": "Benoni Benjamin Cardoso Mendes",
+    "nome_urna": "Ben Mendes",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "tulio-lopes",
+    "nome_completo": "Tulio Cesar Dias Lopes",
+    "nome_urna": "Tulio Lopes",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2014": "130000001766",
+        "2016": "130000083665",
+        "2018": "130000606639"
+      }
+    }
+  },
+  {
+    "slug": "pazolini",
+    "nome_completo": "Lorenzo Pazolini",
+    "nome_urna": "Pazolini",
+    "cargo_disputado": "Governador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "80000624435",
+        "2020": "80001188308",
+        "2024": "80002366610"
+      }
+    },
+    "wikipedia_title": "Lorenzo_Pazolini"
+  },
+  {
+    "slug": "ricardo-ferraco",
+    "nome_completo": "Ricardo de Rezende Ferraco",
+    "nome_urna": "Ricardo Ferraco",
+    "cargo_disputado": "Governador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": 635,
+      "tse_sq_candidato": {
+        "2018": "80000625509",
+        "2022": "80001649124"
+      }
+    },
+    "wikipedia_title": "Ricardo_Ferraço"
+  },
+  {
+    "slug": "paulo-hartung",
+    "nome_completo": "Paulo Cesar Hartung Gomes",
+    "nome_urna": "Paulo Hartung",
+    "cargo_disputado": "Governador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    },
+    "wikipedia_title": "Paulo_Hartung"
+  },
+  {
+    "slug": "sergio-vidigal",
+    "nome_completo": "Sergio Vidigal",
+    "nome_urna": "Sergio Vidigal",
+    "cargo_disputado": "Governador",
+    "estado": "ES",
+    "ids": {
+      "camara": 178874,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "80000622443",
+        "2020": "80001189870"
+      }
+    },
+    "wikipedia_title": "Sérgio_Vidigal"
+  },
+  {
+    "slug": "arnaldinho-borgo",
+    "nome_completo": "Arnaldinho Borgo",
+    "nome_urna": "Arnaldinho Borgo",
+    "cargo_disputado": "Governador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "80000625047",
+        "2020": "80000713125"
+      }
+    },
+    "wikipedia_title": "Arnaldinho_Borgo"
+  },
+  {
+    "slug": "helder-salomao",
+    "nome_completo": "Helder Ignacio Salomao",
+    "nome_urna": "Helder Salomao",
+    "cargo_disputado": "Governador",
+    "estado": "ES",
+    "ids": {
+      "camara": 178873,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "80000626736",
+        "2022": "80001719429"
+      }
+    },
+    "wikipedia_title": "Hélder_Salomão"
+  },
+  {
+    "slug": "da-vitoria",
+    "nome_completo": "Josias da Vitoria",
+    "nome_urna": "Da Vitoria",
+    "cargo_disputado": "Governador",
+    "estado": "ES",
+    "ids": {
+      "camara": 204355,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "80000000554",
+        "2012": "80000003767",
+        "2014": "80000000377",
+        "2018": "80000611885",
+        "2022": "80001650200"
+      }
+    },
+    "wikipedia_title": "Da_Vitória"
+  },
+  {
+    "slug": "jeronimo",
+    "nome_completo": "Jerônimo Rodrigues Souza",
+    "nome_urna": "Jeronimo",
+    "cargo_disputado": "Governador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "50001603638"
+      }
+    },
+    "wikipedia_title": "Jerônimo_Rodrigues"
+  },
+  {
+    "slug": "acm-neto",
+    "nome_completo": "Antônio Carlos Peixoto de Magalhães Neto",
+    "nome_urna": "ACM Neto",
+    "cargo_disputado": "Governador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "50001609248",
+        "2026": "50002533190"
+      }
+    },
+    "wikipedia_title": "ACM_Neto"
+  },
+  {
+    "slug": "joao-roma",
+    "nome_completo": "Joao Inacio Ribeiro Roma Neto",
+    "nome_urna": "Joao Roma",
+    "cargo_disputado": "Senador",
+    "estado": "BA",
+    "ids": {
+      "camara": 204576,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "50000608625",
+        "2022": "50001604884"
+      }
+    },
+    "wikipedia_title": "João_Roma"
+  },
+  {
+    "slug": "jose-carlos-aleluia",
+    "nome_completo": "Jose Carlos Aleluia Costa",
+    "nome_urna": "Jose Carlos Aleluia",
+    "cargo_disputado": "Nenhum",
+    "estado": "BA",
+    "ids": {
+      "camara": 74553,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "50000608633"
+      }
+    },
+    "wikipedia_title": "José_Carlos_Aleluia"
+  },
+  {
+    "slug": "ronaldo-mansur",
+    "nome_completo": "Ronaldo Mansur Santos Silva",
+    "nome_urna": "Ronaldo Mansur",
+    "cargo_disputado": "Governador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "50001600528",
+        "2026": "50002532269"
+      }
+    },
+    "wikipedia_title": "Ronaldo_Mansur_(político)"
+  },
+  {
+    "slug": "elmano-de-freitas",
+    "nome_completo": "Elmano de Freitas da Costa",
+    "nome_urna": "Elmano de Freitas",
+    "cargo_disputado": "Governador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "60000612023",
+        "2020": "60000983767",
+        "2022": "60001633585"
+      }
+    },
+    "wikipedia_title": "Elmano_de_Freitas"
+  },
+  {
+    "slug": "ciro-gomes-gov-ce",
+    "nome_completo": "Ciro Ferreira Gomes",
+    "nome_urna": "Ciro Gomes",
+    "cargo_disputado": "Governador",
+    "estado": "CE",
+    "ids": {
+      "camara": 141406,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "280001612393",
+        "2026": "60002531351"
+      }
+    },
+    "wikipedia_title": "Ciro_Gomes"
+  },
+  {
+    "slug": "roberto-claudio",
+    "nome_completo": "Roberto Claudio Rodrigues Bezerra",
+    "nome_urna": "Roberto Claudio",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "60001612926",
+        "2026": "60002531352"
+      }
+    },
+    "wikipedia_title": "Roberto_Cláudio"
+  },
+  {
+    "slug": "eduardo-girao",
+    "nome_completo": "Eduardo Girao Monteiro Filho",
+    "nome_urna": "Eduardo Girao",
+    "cargo_disputado": "Governador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": 5976,
+      "tse_sq_candidato": {
+        "2018": "60000611597",
+        "2024": "60002029283"
+      }
+    },
+    "wikipedia_title": "Eduardo_Girão"
+  },
+  {
+    "slug": "capitao-wagner",
+    "nome_completo": "Wagner Sousa Gomes",
+    "nome_urna": "Capitão Wagner",
+    "cargo_disputado": "Senador",
+    "estado": "CE",
+    "ids": {
+      "camara": 204487,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "60000000053",
+        "2012": "60000006506",
+        "2014": "60000000545",
+        "2016": "60000001952",
+        "2018": "60000601233",
+        "2020": "60000653316",
+        "2022": "60001608845",
+        "2024": "60001939602"
+      }
+    },
+    "wikipedia_title": "Capitão_Wagner"
+  },
+  {
+    "slug": "eduardo-braide",
+    "nome_completo": "Eduardo Costa Braide",
+    "nome_urna": "Eduardo Braide",
+    "cargo_disputado": "Governador",
+    "estado": "MA",
+    "ids": {
+      "camara": 204552,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2006": "10331",
+        "2010": "100000000463",
+        "2014": "100000000047",
+        "2016": "100000020418",
+        "2018": "100000615044",
+        "2020": "100000756891",
+        "2024": "100002092730"
+      }
+    },
+    "wikipedia_title": "Eduardo_Braide"
+  },
+  {
+    "slug": "orleans-brandao",
+    "nome_completo": "Carlos Orleans Braide Brandão",
+    "nome_urna": "Orleans Brandao",
+    "cargo_disputado": "Governador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "felipe-camarao",
+    "nome_completo": "Felipe Costa Camarao",
+    "nome_urna": "Felipe Camarao",
+    "cargo_disputado": "Governador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "100001667488"
+      }
+    },
+    "wikipedia_title": "Felipe_Camarão_(político)"
+  },
+  {
+    "slug": "lahesio-bonfim",
+    "nome_completo": "Lahesio Rodrigues Bonfim",
+    "nome_urna": "Lahesio Bonfim",
+    "cargo_disputado": "Senador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "100000825685",
+        "2022": "100001609046"
+      }
+    },
+    "wikipedia_title": "Lahesio_Bonfim"
+  },
+  {
+    "slug": "enilton-rodrigues",
+    "nome_completo": "Enilton Rodrigues",
+    "nome_urna": "Enilton Rodrigues",
+    "cargo_disputado": "Governador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "100000618779",
+        "2020": "100000996020",
+        "2022": "100001713289",
+        "2024": "100002106225"
+      }
+    },
+    "wikipedia_title": "Enilton_Rodrigues"
+  },
+  {
+    "slug": "joao-campos",
+    "nome_completo": "Joao Henrique de Andrade Lima Campos",
+    "nome_urna": "Joao Campos",
+    "cargo_disputado": "Governador",
+    "estado": "PE",
+    "ids": {
+      "camara": 204429,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "170000688433",
+        "2026": "170002537230"
+      }
+    },
+    "wikipedia_title": "João_Campos_(político)"
+  },
+  {
+    "slug": "raquel-lyra",
+    "nome_completo": "Raquel Teixeira Lyra Lucena",
+    "nome_urna": "Raquel Lyra",
+    "cargo_disputado": "Governador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "170001032564",
+        "2022": "170001604087",
+        "2026": "170002537227"
+      }
+    },
+    "wikipedia_title": "Raquel_Lyra"
+  },
+  {
+    "slug": "gilson-machado",
+    "nome_completo": "Gilson Machado Guimaraes Neto",
+    "nome_urna": "Gilson Machado",
+    "cargo_disputado": "Senador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "170001604083",
+        "2024": "170002203576"
+      }
+    },
+    "wikipedia_title": "Gilson_Machado_Neto"
+  },
+  {
+    "slug": "anderson-ferreira",
+    "nome_completo": "Anderson Ferreira de Alencar",
+    "nome_urna": "Anderson Ferreira",
+    "cargo_disputado": "Deputado Federal",
+    "estado": "PE",
+    "ids": {
+      "camara": 160551,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "170000000734",
+        "2014": "170000000041",
+        "2016": "170000004304",
+        "2020": "170000718941",
+        "2022": "170001602587"
+      }
+    },
+    "wikipedia_title": "Anderson_Ferreira_(político)"
+  },
+  {
+    "slug": "ivan-moraes",
+    "nome_completo": "Ivan Moraes Filho",
+    "nome_urna": "Ivan Moraes",
+    "cargo_disputado": "Governador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2016": "170000019890",
+        "2018": "170000607357",
+        "2020": "170001062173",
+        "2022": "170001618403",
+        "2026": "170002538097"
+      }
+    },
+    "wikipedia_title": "Ivan_Moraes_Filho"
+  },
+  {
+    "slug": "cicero-lucena",
+    "nome_completo": "Cicero de Lucena Filho",
+    "nome_urna": "Cicero Lucena",
+    "cargo_disputado": "Governador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": 4529,
+      "tse_sq_candidato": {
+        "2006": "10057",
+        "2012": "150000005309",
+        "2020": "150000976695",
+        "2024": "150002036085"
+      }
+    },
+    "wikipedia_title": "Cícero_Lucena"
+  },
+  {
+    "slug": "lucas-ribeiro",
+    "nome_completo": "Lucas Ribeiro",
+    "nome_urna": "Lucas Ribeiro",
+    "cargo_disputado": "Governador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "150000774537",
+        "2022": "150001613756"
+      }
+    },
+    "wikipedia_title": "Lucas_Ribeiro_(político_da_Paraíba)"
+  },
+  {
+    "slug": "efraim-filho",
+    "nome_completo": "Efraim de Araujo Morais Filho",
+    "nome_urna": "Efraim Filho",
+    "cargo_disputado": "Governador",
+    "estado": "PB",
+    "ids": {
+      "camara": 141422,
+      "senado": 4642,
+      "tse_sq_candidato": {
+        "2018": "150000608820",
+        "2022": "150001621390",
+        "2026": "150002538692"
+      }
+    },
+    "wikipedia_title": "Efraim_Filho"
+  },
+  {
+    "slug": "pedro-cunha-lima",
+    "nome_completo": "Pedro Cunha Lima",
+    "nome_urna": "Pedro Cunha Lima",
+    "cargo_disputado": "Nenhum",
+    "estado": "PB",
+    "ids": {
+      "camara": 178912,
+      "senado": 1757,
+      "tse_sq_candidato": {
+        "2018": "150000612364",
+        "2022": "150001621388"
+      }
+    },
+    "wikipedia_title": "Pedro_Cunha_Lima"
+  },
+  {
+    "slug": "rafael-fonteles",
+    "nome_completo": "Rafael Tajra Fonteles",
+    "nome_urna": "Rafael Fonteles",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "180001604027",
+        "2026": "180002532987"
+      }
+    },
+    "wikipedia_title": "Rafael_Fonteles"
+  },
+  {
+    "slug": "silvio-mendes",
+    "nome_completo": "Silvio Mendes de Oliveira Filho",
+    "nome_urna": "Silvio Mendes",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2008": "4683",
+        "2010": "180000000098",
+        "2014": "180000000045",
+        "2022": "180001600497",
+        "2024": "180001882991"
+      }
+    },
+    "wikipedia_title": "Sílvio_Mendes"
+  },
+  {
+    "slug": "joel-rodrigues",
+    "nome_completo": "Joel Rodrigues de Castro",
+    "nome_urna": "Joel Rodrigues",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2014": "180000000250",
+        "2016": "180000004055",
+        "2020": "180000952432",
+        "2022": "180001600654",
+        "2026": "180002538530"
+      }
+    },
+    "wikipedia_title": "Joel_Rodrigues_(político)"
+  },
+  {
+    "slug": "margarete-coelho",
+    "nome_completo": "Margarete de Castro Coelho",
+    "nome_urna": "Margarete Coelho",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": 204430,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "180000613924",
+        "2022": "180001602512"
+      }
+    },
+    "wikipedia_title": "Margarete_Coelho"
+  },
+  {
+    "slug": "alysson-bezerra",
+    "nome_completo": "Allyson Leandro Bezerra Silva",
+    "nome_urna": "Alysson Bezerra",
+    "cargo_disputado": "Governador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "200000600342",
+        "2020": "200000661444",
+        "2024": "200001959098"
+      }
+    },
+    "wikipedia_title": "Allyson_Bezerra"
+  },
+  {
+    "slug": "alvaro-dias-rn",
+    "nome_completo": "Alvaro Costa Dias",
+    "nome_urna": "Alvaro Dias",
+    "cargo_disputado": "Governador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "200001194163",
+        "2026": "200002534442"
+      }
+    },
+    "wikipedia_title": "Álvaro_Costa_Dias"
+  },
+  {
+    "slug": "cadu-xavier",
+    "nome_completo": "Carlos Eduardo Xavier",
+    "nome_urna": "Cadu Xavier",
+    "cargo_disputado": "Governador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    },
+    "wikipedia_title": "Cadu_Xavier"
+  },
+  {
+    "slug": "fabio-mitidieri",
+    "nome_completo": "Fábio Cruz Mitidieri",
+    "nome_urna": "Fabio Mitidieri",
+    "cargo_disputado": "Governador",
+    "estado": "SE",
+    "ids": {
+      "camara": 178969,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2008": "2182",
+        "2010": "260000000203",
+        "2012": "260000005723",
+        "2014": "260000000184",
+        "2018": "260000623594",
+        "2022": "260001612779"
+      }
+    },
+    "wikipedia_title": "Fábio_Mitidieri"
+  },
+  {
+    "slug": "valmir-de-francisquinho",
+    "nome_completo": "Valmir dos Santos Costa",
+    "nome_urna": "Valmir de Francisquinho",
+    "cargo_disputado": "Governador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2008": "1952",
+        "2012": "260000003076",
+        "2016": "260000000783",
+        "2022": "260001690206",
+        "2024": "260001935426",
+        "2026": "260002532010"
+      }
+    },
+    "wikipedia_title": "Valmir_de_Francisquinho"
+  },
+  {
+    "slug": "thiago-de-joaldo",
+    "nome_completo": "Thiago Rezende de Oliveira",
+    "nome_urna": "Thiago de Joaldo",
+    "cargo_disputado": "Governador",
+    "estado": "SE",
+    "ids": {
+      "camara": 220560,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "260001633055"
+      }
+    },
+    "wikipedia_title": "Thiago_de_Joaldo"
+  },
+  {
+    "slug": "jhc",
+    "nome_completo": "Joao Henrique Caldas",
+    "nome_urna": "JHC",
+    "cargo_disputado": "Governador",
+    "estado": "AL",
+    "ids": {
+      "camara": 178842,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2014": "20000000183",
+        "2016": "20000002086",
+        "2018": "20000616803",
+        "2020": "20000842791",
+        "2024": "20002309875"
+      }
+    },
+    "wikipedia_title": "João_Henrique_Caldas"
+  },
+  {
+    "slug": "renan-filho",
+    "nome_completo": "Jose Renan Vasconcelos Calheiros Filho",
+    "nome_urna": "Renan Filho",
+    "cargo_disputado": "Governador",
+    "estado": "AL",
+    "ids": {
+      "camara": 160623,
+      "senado": 5207,
+      "tse_sq_candidato": {
+        "2018": "20000621744",
+        "2022": "20001698127"
+      }
+    },
+    "wikipedia_title": "Renan_Filho"
+  },
+  {
+    "slug": "alan-rick",
+    "nome_completo": "Alan Rick Pereira da Silva",
+    "nome_urna": "Alan Rick",
+    "cargo_disputado": "Governador",
+    "estado": "AC",
+    "ids": {
+      "camara": 178836,
+      "senado": 5672,
+      "tse_sq_candidato": {
+        "2018": "10000602509",
+        "2022": "10001714547",
+        "2026": "10002532492"
+      }
+    },
+    "wikipedia_title": "Alan_Rick"
+  },
+  {
+    "slug": "mailza-assis",
+    "nome_completo": "Mailza Gomes Assis",
+    "nome_urna": "Mailza Assis",
+    "cargo_disputado": "Governador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": 5557,
+      "tse_sq_candidato": {}
+    },
+    "wikipedia_title": "Mailza_Assis"
+  },
+  {
+    "slug": "tiao-bocalom",
+    "nome_completo": "Sebastiao Bocalom Rodrigues",
+    "nome_urna": "Tiao Bocalom",
+    "cargo_disputado": "Governador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2004": "27",
+        "2006": "10275",
+        "2008": "313",
+        "2010": "10000000130",
+        "2012": "10000001227",
+        "2014": "10000000364",
+        "2018": "10000600232",
+        "2020": "10001003637",
+        "2024": "10001908807"
+      }
+    },
+    "wikipedia_title": "Tião_Bocalom"
+  },
+  {
+    "slug": "andre-kamai",
+    "nome_completo": "Andre Luiz Oliveira Kamai",
+    "nome_urna": "Andre Kamai",
+    "cargo_disputado": "Deputado Federal",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2024": "10001984745"
+      }
+    },
+    "wikipedia_title": "André_Kamai"
+  },
+  {
+    "slug": "omar-aziz",
+    "nome_completo": "Omar Jose Abdel Aziz",
+    "nome_urna": "Omar Aziz",
+    "cargo_disputado": "Governador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": 5525,
+      "tse_sq_candidato": {
+        "2018": "40000603709",
+        "2022": "40001618514",
+        "2026": "40002532272"
+      }
+    },
+    "wikipedia_title": "Omar_Aziz"
+  },
+  {
+    "slug": "maria-do-carmo",
+    "nome_completo": "Maria do Carmo Seffair",
+    "nome_urna": "Maria do Carmo",
+    "cargo_disputado": "Governador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "40001650567",
+        "2024": "40002142181"
+      }
+    }
+  },
+  {
+    "slug": "tadeu-de-souza",
+    "nome_completo": "Tadeu de Souza Silva",
+    "nome_urna": "Tadeu de Souza",
+    "cargo_disputado": "Deputado Federal",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "40001619527"
+      }
+    }
+  },
+  {
+    "slug": "david-almeida",
+    "nome_completo": "David Antônio Abisai Pereira de Almeida",
+    "nome_urna": "David Almeida",
+    "cargo_disputado": "Governador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "40000000404",
+        "2014": "40000000498",
+        "2018": "40000604136",
+        "2024": "40001941186",
+        "2026": "40002536086"
+      }
+    },
+    "wikipedia_title": "David_Almeida"
+  },
+  {
+    "slug": "eduardo-braga",
+    "nome_completo": "Eduardo Braga Granata",
+    "nome_urna": "Eduardo Braga",
+    "cargo_disputado": "Senador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": 4994,
+      "tse_sq_candidato": {
+        "2010": "40000000291",
+        "2014": "40000012063",
+        "2018": "40000618261",
+        "2022": "40001610345"
+      }
+    },
+    "wikipedia_title": "Eduardo_Braga"
+  },
+  {
+    "slug": "dr-furlan",
+    "nome_completo": "Antonio Paulo de Oliveira Furlan",
+    "nome_urna": "Dr. Furlan",
+    "cargo_disputado": "Governador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "30000611703",
+        "2020": "30000747583",
+        "2024": "30002098704",
+        "2026": "30002530014"
+      }
+    },
+    "wikipedia_title": "Antônio_Furlan"
+  },
+  {
+    "slug": "clecio-luis",
+    "nome_completo": "Clecio Luis Vilhena Vieira",
+    "nome_urna": "Clecio Luis",
+    "cargo_disputado": "Governador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": 5044,
+      "tse_sq_candidato": {
+        "2004": "156",
+        "2006": "10063",
+        "2008": "447",
+        "2010": "30000000086",
+        "2012": "30000000648",
+        "2016": "30000002139",
+        "2022": "30001619676"
+      }
+    },
+    "wikipedia_title": "Clécio_Luís"
+  },
+  {
+    "slug": "joao-capiberibe",
+    "nome_completo": "Joao Alberto Rodrigues Capiberibe",
+    "nome_urna": "Joao Capiberibe",
+    "cargo_disputado": "Governador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": 3394,
+      "tse_sq_candidato": {
+        "2018": "30000620049",
+        "2020": "30001034733",
+        "2022": "30001608736"
+      }
+    },
+    "wikipedia_title": "João_Capiberibe"
+  },
+  {
+    "slug": "hana-ghassan",
+    "nome_completo": "Hana Ghassan Tuma",
+    "nome_urna": "Hana Ghassan",
+    "cargo_disputado": "Governador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "140001651992"
+      }
+    },
+    "wikipedia_title": "Hana_Ghassan"
+  },
+  {
+    "slug": "dr-daniel",
+    "nome_completo": "Daniel Barbosa Santos",
+    "nome_urna": "Dr. Daniel",
+    "cargo_disputado": "Governador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2012": "140000012315",
+        "2016": "140000012852",
+        "2018": "140000614283",
+        "2020": "140001027099",
+        "2024": "140002359059"
+      }
+    }
+  },
+  {
+    "slug": "delegado-eder-mauro",
+    "nome_completo": "Eder Braga Mauro",
+    "nome_urna": "Delegado Eder Mauro",
+    "cargo_disputado": "Senador",
+    "estado": "PA",
+    "ids": {
+      "camara": 178908,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "140000606383",
+        "2022": "140001598311"
+      }
+    },
+    "wikipedia_title": "Delegado_Éder_Mauro"
+  },
+  {
+    "slug": "beto-faro",
+    "nome_completo": "Jose Beto Faro Pereira",
+    "nome_urna": "Beto Faro",
+    "cargo_disputado": "Governador",
+    "estado": "PA",
+    "ids": {
+      "camara": 141335,
+      "senado": 4639,
+      "tse_sq_candidato": {
+        "2018": "140000627198",
+        "2022": "140001611661"
+      }
+    },
+    "wikipedia_title": "Beto_Faro"
+  },
+  {
+    "slug": "simao-jatene",
+    "nome_completo": "Simao Robison Oliveira Jatene",
+    "nome_urna": "Simao Jatene",
+    "cargo_disputado": "Governador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    },
+    "wikipedia_title": "Simão_Jatene"
+  },
+  {
+    "slug": "araceli-lemos",
+    "nome_completo": "Araceli Maria Pereira Lemos",
+    "nome_urna": "Araceli Lemos",
+    "cargo_disputado": "Governador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "140000000143",
+        "2018": "140000604416"
+      }
+    }
+  },
+  {
+    "slug": "cleber-rabelo",
+    "nome_completo": "Jose Cleber Barros Rabelo",
+    "nome_urna": "Cleber Rabelo",
+    "cargo_disputado": "Governador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "140000000107",
+        "2012": "140000015615",
+        "2014": "140000000102",
+        "2016": "140000006431",
+        "2018": "140000604130",
+        "2020": "140000637323",
+        "2022": "140001650519",
+        "2026": "140002538631"
+      }
+    }
+  },
+  {
+    "slug": "marcos-rogerio",
+    "nome_completo": "Marcos Rogerio da Silva Brito",
+    "nome_urna": "Marcos Rogerio",
+    "cargo_disputado": "Governador",
+    "estado": "RO",
+    "ids": {
+      "camara": 167722,
+      "senado": 5422,
+      "tse_sq_candidato": {
+        "2018": "220000609853",
+        "2022": "220001647595"
+      }
+    },
+    "wikipedia_title": "Marcos_Rogério"
+  },
+  {
+    "slug": "adailton-furia",
+    "nome_completo": "Adailton de Souza Furia",
+    "nome_urna": "Adailton Furia",
+    "cargo_disputado": "Governador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "220000609645",
+        "2020": "220001025502"
+      }
+    },
+    "wikipedia_title": "Adailton_Fúria"
+  },
+  {
+    "slug": "hildon-chaves",
+    "nome_completo": "Hildon de Lima Chaves",
+    "nome_urna": "Hildon Chaves",
+    "cargo_disputado": "Governador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "220001051415"
+      }
+    },
+    "wikipedia_title": "Hildon_Chaves"
+  },
+  {
+    "slug": "dr-fernando-maximo",
+    "nome_completo": "Fernando Maximo de Oliveira",
+    "nome_urna": "Dr. Fernando Maximo",
+    "cargo_disputado": "Senador",
+    "estado": "RO",
+    "ids": {
+      "camara": 220610,
+      "senado": null,
+      "tse_sq_candidato": {}
+    },
+    "wikipedia_title": "Fernando_Máximo"
+  },
+  {
+    "slug": "confucio-moura",
+    "nome_completo": "Jose Confucio Aires Moura",
+    "nome_urna": "Confucio Moura",
+    "cargo_disputado": "Governador",
+    "estado": "RO",
+    "ids": {
+      "camara": 74097,
+      "senado": 475,
+      "tse_sq_candidato": {
+        "2018": "220000618467"
+      }
+    },
+    "wikipedia_title": "Confúcio_Moura"
+  },
+  {
+    "slug": "expedito-netto",
+    "nome_completo": "Expedito Goncalves Ferreira Netto",
+    "nome_urna": "Expedito Netto",
+    "cargo_disputado": "Governador",
+    "estado": "RO",
+    "ids": {
+      "camara": 178953,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "220000609735",
+        "2022": "220001635101"
+      }
+    },
+    "wikipedia_title": "Expedito_Netto"
+  },
+  {
+    "slug": "arthur-henrique",
+    "nome_completo": "Arthur Henrique Brandão Machado",
+    "nome_urna": "Arthur Henrique",
+    "cargo_disputado": "Governador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2016": "230000001882",
+        "2020": "230000679861",
+        "2022": "230002529896"
+      }
+    },
+    "wikipedia_title": "Arthur_Henrique_(político)"
+  },
+  {
+    "slug": "edilson-damiao",
+    "nome_completo": "Edilson Damião Lima",
+    "nome_urna": "Edilson Damiao",
+    "cargo_disputado": "Governador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "230001604254"
+      }
+    }
+  },
+  {
+    "slug": "teresa-surita",
+    "nome_completo": "Maria Teresa Saenz Surita Guimarães",
+    "nome_urna": "Teresa Surita",
+    "cargo_disputado": "Senador",
+    "estado": "RR",
+    "ids": {
+      "camara": 160608,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "230001602186"
+      }
+    },
+    "wikipedia_title": "Teresa_Surita"
+  },
+  {
+    "slug": "soldado-sampaio",
+    "nome_completo": "Soldado Sampaio",
+    "nome_urna": "Soldado Sampaio",
+    "cargo_disputado": "Governador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "230000616424",
+        "2022": "230001600061"
+      }
+    },
+    "wikipedia_title": "Soldado_Sampaio"
+  },
+  {
+    "slug": "professora-dorinha",
+    "nome_completo": "Maria Auxiliadora Seabra Rezende",
+    "nome_urna": "Professora Dorinha",
+    "cargo_disputado": "Governador",
+    "estado": "TO",
+    "ids": {
+      "camara": 160639,
+      "senado": 5386,
+      "tse_sq_candidato": {
+        "2018": "270000618831",
+        "2022": "270001649254"
+      }
+    },
+    "wikipedia_title": "Professora_Dorinha"
+  },
+  {
+    "slug": "laurez-moreira",
+    "nome_completo": "Laurez da Rocha Moreira",
+    "nome_urna": "Laurez Moreira",
+    "cargo_disputado": "Governador",
+    "estado": "TO",
+    "ids": {
+      "camara": 141479,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "270001652199"
+      }
+    },
+    "wikipedia_title": "Laurez_Moreira"
+  },
+  {
+    "slug": "amelio-cayres",
+    "nome_completo": "Amélio Antunes Cayres",
+    "nome_urna": "Amelio Cayres",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "270000618859",
+        "2022": "270001654140"
+      }
+    },
+    "wikipedia_title": "Amério_Cayres"
+  },
+  {
+    "slug": "vicentinho-junior",
+    "nome_completo": "Vicente Alves de Oliveira Junior",
+    "nome_urna": "Vicentinho Junior",
+    "cargo_disputado": "Governador",
+    "estado": "TO",
+    "ids": {
+      "camara": 137070,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "270000610948",
+        "2022": "270001643407"
+      }
+    },
+    "wikipedia_title": "Vicentinho_Júnior"
+  },
+  {
+    "slug": "ataides-oliveira",
+    "nome_completo": "Ataides de Oliveira Leite",
+    "nome_urna": "Ataides Oliveira",
+    "cargo_disputado": "Governador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": 5164,
+      "tse_sq_candidato": {
+        "2018": "270000602793"
+      }
+    },
+    "wikipedia_title": "Ataídes_Oliveira"
+  },
+  {
+    "slug": "celina-leao",
+    "nome_completo": "Celina Leao Rocha de Siqueira Campos",
+    "nome_urna": "Celina Leao",
+    "cargo_disputado": "Governador",
+    "estado": "DF",
+    "ids": {
+      "camara": 204380,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "70000614533",
+        "2022": "70001651045"
+      }
+    },
+    "wikipedia_title": "Celina_Leão"
+  },
+  {
+    "slug": "leandro-grass",
+    "nome_completo": "Leandro Grass Peixoto",
+    "nome_urna": "Leandro Grass",
+    "cargo_disputado": "Governador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "70000612417",
+        "2022": "70001597108"
+      }
+    },
+    "wikipedia_title": "Leandro_Grass"
+  },
+  {
+    "slug": "ricardo-cappelli",
+    "nome_completo": "Ricardo Ribeiro Cappelli",
+    "nome_urna": "Ricardo Cappelli",
+    "cargo_disputado": "Governador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    },
+    "wikipedia_title": "Ricardo_Cappelli"
+  },
+  {
+    "slug": "paula-belmonte",
+    "nome_completo": "Paula Francinete Belmonte da Silva",
+    "nome_urna": "Paula Belmonte",
+    "cargo_disputado": "Governador",
+    "estado": "DF",
+    "ids": {
+      "camara": 204377,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "70000618962",
+        "2022": "70001728079"
+      }
+    },
+    "wikipedia_title": "Paula_Belmonte"
+  },
+  {
+    "slug": "daniel-vilela",
+    "nome_completo": "Daniel Goulart Vilela",
+    "nome_urna": "Daniel Vilela",
+    "cargo_disputado": "Governador",
+    "estado": "GO",
+    "ids": {
+      "camara": 144523,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "90000609231",
+        "2022": "90001646327"
+      }
+    },
+    "wikipedia_title": "Daniel_Vilela"
+  },
+  {
+    "slug": "marconi-perillo",
+    "nome_completo": "Marconi Ferreira Perillo Junior",
+    "nome_urna": "Marconi Perillo",
+    "cargo_disputado": "Governador",
+    "estado": "GO",
+    "ids": {
+      "camara": 73668,
+      "senado": 4535,
+      "tse_sq_candidato": {
+        "2018": "90000609445",
+        "2022": "90001615126"
+      }
+    },
+    "wikipedia_title": "Marconi_Perillo"
+  },
+  {
+    "slug": "adriana-accorsi",
+    "nome_completo": "Adriana Accorsi de Queiroz",
+    "nome_urna": "Adriana Accorsi",
+    "cargo_disputado": "Governador",
+    "estado": "GO",
+    "ids": {
+      "camara": 220565,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2016": "90000013307",
+        "2022": "90001648110",
+        "2024": "90002106547"
+      }
+    },
+    "wikipedia_title": "Adriana_Accorsi"
+  },
+  {
+    "slug": "wilder-morais",
+    "nome_completo": "Wilder Gomes de Morais",
+    "nome_urna": "Wilder Morais",
+    "cargo_disputado": "Governador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": 5070,
+      "tse_sq_candidato": {
+        "2018": "90000613469",
+        "2020": "90001220915",
+        "2022": "90001652051"
+      }
+    },
+    "wikipedia_title": "Wilder_Morais"
+  },
+  {
+    "slug": "jose-eliton",
+    "nome_completo": "Jose Eliton de Figueredo Telles Junior",
+    "nome_urna": "Jose Eliton",
+    "cargo_disputado": "Governador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    },
+    "wikipedia_title": "José_Eliton"
+  },
+  {
+    "slug": "cintia-dias",
+    "nome_completo": "Cintia Aparecida Dias",
+    "nome_urna": "Cintia Dias",
+    "cargo_disputado": "Governador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "90000000434",
+        "2012": "90000012450",
+        "2014": "90000000511",
+        "2020": "90000746350",
+        "2022": "90001674691",
+        "2024": "90002192685"
+      }
+    }
+  },
+  {
+    "slug": "eduardo-riedel",
+    "nome_completo": "Eduardo Correa Riedel",
+    "nome_urna": "Eduardo Riedel",
+    "cargo_disputado": "Governador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "120001635628",
+        "2026": "120002536582"
+      }
+    },
+    "wikipedia_title": "Eduardo_Riedel"
+  },
+  {
+    "slug": "fabio-trad",
+    "nome_completo": "Fabio Trad",
+    "nome_urna": "Fabio Trad",
+    "cargo_disputado": "Governador",
+    "estado": "MS",
+    "ids": {
+      "camara": 160587,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "120000613463",
+        "2022": "120001650734"
+      }
+    },
+    "wikipedia_title": "Fábio_Trad"
+  },
+  {
+    "slug": "joao-henrique-catan",
+    "nome_completo": "Joao Henrique Catan",
+    "nome_urna": "Joao Henrique Catan",
+    "cargo_disputado": "Governador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "120000624894",
+        "2022": "120001614724"
+      }
+    },
+    "wikipedia_title": "João_Henrique_Catan"
+  },
+  {
+    "slug": "lucien-rezende",
+    "nome_completo": "Lucien Miranda de Rezende",
+    "nome_urna": "Lucien Rezende",
+    "cargo_disputado": "Governador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "120000612726"
+      }
+    }
+  },
+  {
+    "slug": "otaviano-pivetta",
+    "nome_completo": "Otaviano Pivetta",
+    "nome_urna": "Otaviano Pivetta",
+    "cargo_disputado": "Governador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "110000612720",
+        "2022": "110001643542"
+      }
+    },
+    "wikipedia_title": "Otaviano_Pivetta"
+  },
+  {
+    "slug": "wellington-fagundes",
+    "nome_completo": "Wellington Fagundes",
+    "nome_urna": "Wellington Fagundes",
+    "cargo_disputado": "Governador",
+    "estado": "MT",
+    "ids": {
+      "camara": 73653,
+      "senado": 1173,
+      "tse_sq_candidato": {
+        "2018": "110000609942",
+        "2022": "110001676176"
+      }
+    },
+    "wikipedia_title": "Wellington_Fagundes"
+  },
+  {
+    "slug": "janaina-riva",
+    "nome_completo": "Janaina Riva",
+    "nome_urna": "Janaina Riva",
+    "cargo_disputado": "Senador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "110000623368",
+        "2022": "110001623186"
+      }
+    },
+    "wikipedia_title": "Janaína_Riva"
+  },
+  {
+    "slug": "natasha-slhessarenko",
+    "nome_completo": "Natasha Slhessarenko",
+    "nome_urna": "Natasha Slhessarenko",
+    "cargo_disputado": "Governador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    },
+    "wikipedia_title": "Natasha_Slhessarenko"
+  },
+  {
+    "slug": "jenilson-leite",
+    "nome_completo": "Janilson Lopes Leite",
+    "nome_urna": "Jenilson Leite",
+    "cargo_disputado": "Governador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2014": "10000000121",
+        "2018": "10000608373",
+        "2022": "10001643446",
+        "2024": "10002171655"
+      }
+    }
+  },
+  {
+    "slug": "isael-munduruku",
+    "nome_completo": "Isael Munduruku",
+    "nome_urna": "Isael Munduruku",
+    "cargo_disputado": "Governador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "jose-roberto-arruda",
+    "nome_completo": "Jose Roberto Arruda",
+    "nome_urna": "Jose Roberto Arruda",
+    "cargo_disputado": "Governador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2002": "463",
+        "2006": "10382",
+        "2014": "70000000153",
+        "2022": "70001615918"
+      }
+    },
+    "wikipedia_title": "José_Roberto_Arruda"
+  },
+  {
+    "slug": "breno-barcelar",
+    "nome_completo": "Breno Barcelos",
+    "nome_urna": "Breno Barcelos",
+    "cargo_disputado": "Governador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "magno-malta",
+    "nome_completo": "Magno Pereira Malta",
+    "nome_urna": "Magno Malta",
+    "cargo_disputado": "Governador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": 631,
+      "tse_sq_candidato": {
+        "2002": "289",
+        "2010": "80000000184",
+        "2018": "80000607499",
+        "2022": "80001720164"
+      }
+    },
+    "wikipedia_title": "Magno_Malta"
+  },
+  {
+    "slug": "alex-pucineli",
+    "nome_completo": "Alex Pedde Pucineli",
+    "nome_urna": "Alex Pucineli",
+    "cargo_disputado": "Governador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2012": "110000010149"
+      }
+    }
+  },
+  {
+    "slug": "caiubi-kuhn",
+    "nome_completo": "Caiubi Emanuel Souza Kuhn",
+    "nome_urna": "Caiubi Kuhn",
+    "cargo_disputado": "Governador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2014": "110000000008",
+        "2024": "110002246420"
+      }
+    }
+  },
+  {
+    "slug": "jayme-campos",
+    "nome_completo": "Jayme Verissimo de Campos",
+    "nome_urna": "Jayme Campos",
+    "cargo_disputado": "Governador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": 4531,
+      "tse_sq_candidato": {
+        "2006": "10321",
+        "2014": "110000000003",
+        "2018": "110000612714"
+      }
+    },
+    "wikipedia_title": "Jayme_Campos"
+  },
+  {
+    "slug": "laudicerio-aguiar",
+    "nome_completo": "Laudicerio Aguiar Machado",
+    "nome_urna": "Laudicerio Aguiar",
+    "cargo_disputado": "Governador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "110000619196",
+        "2020": "110000677466",
+        "2022": "110001621192",
+        "2024": "110002118851"
+      }
+    }
+  },
+  {
+    "slug": "marcelo-maluf",
+    "nome_completo": "Marcelo Benedito Maluf",
+    "nome_urna": "Marcelo Maluf",
+    "cargo_disputado": "Governador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2014": "110000000004"
+      }
+    }
+  },
+  {
+    "slug": "mauricio-coelho",
+    "nome_completo": "Mauricio Coelho Ribeiro da Silva",
+    "nome_urna": "Mauricio Coelho",
+    "cargo_disputado": "Governador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2012": "110000010928",
+        "2020": "110000951550"
+      }
+    }
+  },
+  {
+    "slug": "mauricio-tonha",
+    "nome_completo": "Mauricio Cardoso Tonha",
+    "nome_urna": "Mauricio Tonha",
+    "cargo_disputado": "Governador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2008": "3028",
+        "2020": "110001033922"
+      }
+    }
+  },
+  {
+    "slug": "rafaell-milas",
+    "nome_completo": "Rafaell Milas",
+    "nome_urna": "Rafaell Milas",
+    "cargo_disputado": "Governador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    },
+    "wikipedia_title": "Rafaell_Milas"
+  },
+  {
+    "slug": "lucio-flavio",
+    "nome_completo": "Lucio Flavio",
+    "nome_urna": "Lucio Flavio",
+    "cargo_disputado": "Governador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "lourdes-melo",
+    "nome_completo": "Maria de Lourdes Soares Melo",
+    "nome_urna": "Lourdes Melo",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2006": "10000",
+        "2008": "8738",
+        "2010": "180000000312",
+        "2012": "180000012118",
+        "2014": "180000000138",
+        "2016": "180000008711",
+        "2018": "180000626503",
+        "2020": "180001237871",
+        "2022": "180001713460",
+        "2024": "180002337603"
+      }
+    },
+    "wikipedia_title": "Lourdes_Melo"
+  },
+  {
+    "slug": "lucia-santos",
+    "nome_completo": "Lucia Maria de Sousa Aguiar dos Santos",
+    "nome_urna": "Lucia Santos",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "180000604119",
+        "2020": "180001057808"
+      }
+    }
+  },
+  {
+    "slug": "mainha",
+    "nome_completo": "Jose de Andrade Maia Filho",
+    "nome_urna": "Mainha",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2006": "10423",
+        "2010": "180000000113",
+        "2012": "180000008377",
+        "2014": "180000000234",
+        "2018": "180000613923",
+        "2022": "180001601335"
+      }
+    }
+  },
+  {
+    "slug": "toni-rodrigues",
+    "nome_completo": "Antonio Francisco Rodrigues",
+    "nome_urna": "Toni Rodrigues",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2008": "3344",
+        "2012": "180000012070",
+        "2016": "180000004911"
+      }
+    }
+  },
+  {
+    "slug": "tonny-kerley",
+    "nome_completo": "Tonny Kerley de Alencar Rodrigues",
+    "nome_urna": "Tonny Kerley",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2024": "180001885637"
+      }
+    }
+  },
+  {
+    "slug": "luiz-carlos-teodoro",
+    "nome_completo": "Luiz Carlos Teodoro",
+    "nome_urna": "Luiz Carlos Teodoro",
+    "cargo_disputado": "Governador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "220000977509"
+      }
+    }
+  },
+  {
+    "slug": "samuel-costa",
+    "nome_completo": "Samuel Costa Menezes",
+    "nome_urna": "Samuel Costa",
+    "cargo_disputado": "Governador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2012": "220000000290",
+        "2014": "220000000176",
+        "2020": "220000685117",
+        "2022": "220001612149",
+        "2024": "220002330987"
+      }
+    }
+  },
+  {
+    "slug": "gelson-merisio",
+    "nome_completo": "Gelson Luiz Merisio",
+    "nome_urna": "Gelson Merisio",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2002": "467",
+        "2006": "10081",
+        "2010": "240000000349",
+        "2014": "240000000255",
+        "2018": "240000621321"
+      }
+    },
+    "wikipedia_title": "Gelson_Merísio"
+  },
+  {
+    "slug": "lais-chaud",
+    "nome_completo": "Lais Chaud",
+    "nome_urna": "Lais Chaud",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "ralf-zimmer",
+    "nome_completo": "Ralf Guimaraes Zimmer Junior",
+    "nome_urna": "Ralf Zimmer",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "240000609638",
+        "2022": "240001611148"
+      }
+    }
+  },
+  {
+    "slug": "wanderlei-barbosa",
+    "nome_completo": "Wanderlei Barbosa Castro",
+    "nome_urna": "Wanderlei Barbosa",
+    "cargo_disputado": "Governador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2006": "10333",
+        "2008": "4295",
+        "2010": "270000000074",
+        "2014": "270000010436",
+        "2018": "270000618816",
+        "2022": "270001652198"
+      }
+    },
+    "wikipedia_title": "Wanderlei_Barbosa"
+  },
+  {
+    "slug": "roberto-cidade",
+    "nome_completo": "Roberto Maia Cidade Filho",
+    "nome_urna": "Roberto Cidade",
+    "cargo_disputado": "Governador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2016": "40000001600",
+        "2018": "40000609263",
+        "2022": "40001618472",
+        "2024": "40002079169"
+      }
+    },
+    "wikipedia_title": "Roberto_Cidade"
+  },
+  {
+    "slug": "paulo-serra",
+    "nome_completo": "Paulo Henrique Pinto Serra",
+    "nome_urna": "Paulo Serra",
+    "cargo_disputado": "Deputado Federal",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2008": "35684",
+        "2016": "250000033808",
+        "2020": "250000959444"
+      }
+    },
+    "wikipedia_title": "Paulo_Serra_(político)"
+  },
+  {
+    "slug": "pedro-abib",
+    "nome_completo": "Pedro Abib Hecktheuer",
+    "nome_urna": "Pedro Abib",
+    "cargo_disputado": "Governador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "samara-mineiro",
+    "nome_completo": "Samara Mineiro",
+    "nome_urna": "Samara Mineiro",
+    "cargo_disputado": "Governador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002537111"
+      }
+    }
+  },
+  {
+    "slug": "jarbas-soares",
+    "nome_completo": "Jarbas Soares",
+    "nome_urna": "Jarbas Soares",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "serley-leal",
+    "nome_completo": "Serley Leal",
+    "nome_urna": "Serley Leal",
+    "cargo_disputado": "Governador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2012": "60000015399",
+        "2020": "60000717317",
+        "2022": "60001634109"
+      }
+    }
+  },
+  {
+    "slug": "francisco-dias",
+    "nome_completo": "Francisco de Assis da Costa Dias",
+    "nome_urna": "Francisco Dias",
+    "cargo_disputado": "Governador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "200000724020",
+        "2024": "200002109074"
+      }
+    }
+  },
+  {
+    "slug": "vivian-mendes",
+    "nome_completo": "Vivian Mendes da Silva",
+    "nome_urna": "Vivian Mendes",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "250001602002"
+      }
+    }
+  },
+  {
+    "slug": "jesus-rodrigues",
+    "nome_completo": "Jesus Rodrigues Alves",
+    "nome_urna": "Jesus Rodrigues",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "180000000676",
+        "2018": "180000607150",
+        "2024": "180001955836"
+      }
+    }
+  },
+  {
+    "slug": "elizeu-aguiar",
+    "nome_completo": "Elizeu Morais de Aguiar",
+    "nome_urna": "Elizeu Aguiar",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "180000000237",
+        "2018": "180000625910",
+        "2020": "180000762626",
+        "2022": "180001604040",
+        "2026": "180002533958"
+      }
+    }
+  },
+  {
+    "slug": "geraldo-carvalho",
+    "nome_completo": "Geraldo do Nascimento Carvalho",
+    "nome_urna": "Geraldo Carvalho",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "180000000355",
+        "2014": "180000000003",
+        "2016": "180000007088",
+        "2022": "180001613545",
+        "2024": "180001930348",
+        "2026": "180002537422"
+      }
+    }
+  },
+  {
+    "slug": "francisco-jurity",
+    "nome_completo": "Francisco Jurity",
+    "nome_urna": "Francisco Jurity",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "ravenna-castro",
+    "nome_completo": "Ravenna de Castro Lima Azevedo",
+    "nome_urna": "Ravenna Castro",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "180000608796",
+        "2020": "180001238894",
+        "2022": "180001713732",
+        "2024": "180001905550"
+      }
+    }
+  },
+  {
+    "slug": "gisvaldo-oliveira",
+    "nome_completo": "Gisvaldo Oliveira da Silva",
+    "nome_urna": "Gisvaldo Oliveira",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "gustavo-henrique",
+    "nome_completo": "Gustavo Henrique Leite Feijó",
+    "nome_urna": "Gustavo Henrique",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2012": "180000006226",
+        "2014": "180000000014",
+        "2016": "180000009933",
+        "2020": "180000726521",
+        "2022": "180001643494",
+        "2024": "180001952892"
+      }
+    }
+  },
+  {
+    "slug": "santiago-belizario",
+    "nome_completo": "José Santiago Belizário",
+    "nome_urna": "Santiago Belizário",
+    "cargo_disputado": "Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2024": "180001905702"
+      }
+    }
+  },
+  {
+    "slug": "izalci-lucas",
+    "nome_completo": "Izalci Lucas",
+    "nome_urna": "Izalci Lucas",
+    "cargo_disputado": "Governador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "70000000726",
+        "2014": "70000001075",
+        "2018": "70000625515",
+        "2022": "70001651176"
+      }
+    }
+  },
+  {
+    "slug": "kiko-caputo",
+    "nome_completo": "Kiko Caputo",
+    "nome_urna": "Kiko Caputo",
+    "cargo_disputado": "Governador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "antonia-pedrosa",
+    "nome_completo": "Antônia Pedrosa Vieira",
+    "nome_urna": "Antonia Pedrosa",
+    "cargo_disputado": "Governador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "230001054008",
+        "2022": "230001610860"
+      }
+    }
+  },
+  {
+    "slug": "rafael-duda",
+    "nome_completo": "Rafael Duda",
+    "nome_urna": "Rafael Duda",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "130000788972",
+        "2022": "130001644584",
+        "2024": "130002061506"
+      }
+    }
+  },
+  {
+    "slug": "henrique-areas",
+    "nome_completo": "Henrique Áreas",
+    "nome_urna": "Henrique Áreas",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2016": "250000077188",
+        "2018": "250000615443",
+        "2020": "250001172315"
+      },
+      "tse_uf_candidatura": {
+        "2016": "SP",
+        "2018": "SP",
+        "2020": "SP"
+      }
+    }
+  },
+  {
+    "slug": "indira-xavier",
+    "nome_completo": "Indira Xavier",
+    "nome_urna": "Indira Xavier",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "130001693598",
+        "2024": "130001975891"
+      }
+    }
+  },
+  {
+    "slug": "vittorio-medioli",
+    "nome_completo": "Vittorio Medioli",
+    "nome_urna": "Vittorio Medioli",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2016": "130000080259",
+        "2020": "130000692020"
+      }
+    }
+  },
+  {
+    "slug": "mario-couto",
+    "nome_completo": "Mário Couto Filho",
+    "nome_urna": "Mário Couto",
+    "cargo_disputado": "Governador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2014": "140000000871",
+        "2020": "140001230533",
+        "2022": "140001600249"
+      }
+    }
+  },
+  {
+    "slug": "raquel-bricio",
+    "nome_completo": "Raquel Nonato de Brício",
+    "nome_urna": "Raquel Brício",
+    "cargo_disputado": "Governador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "140000698916",
+        "2022": "140001607779"
+      }
+    }
+  },
+  {
+    "slug": "telemaco-brandao",
+    "nome_completo": "Telêmaco Brandão",
+    "nome_urna": "Telêmaco Brandão",
+    "cargo_disputado": "Governador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "90001221414",
+        "2022": "90001715444"
+      }
+    }
+  },
+  {
+    "slug": "huggo-leonardo",
+    "nome_completo": "Huggo Leonardo",
+    "nome_urna": "Huggo Leonardo",
+    "cargo_disputado": "Governador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "giovanni-sampaio",
+    "nome_completo": "Giovanni Sampaio",
+    "nome_urna": "Giovanni Sampaio",
+    "cargo_disputado": "Governador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "60000000034",
+        "2016": "60000016045",
+        "2020": "60000916886"
+      }
+    }
+  },
+  {
+    "slug": "jarir-pereira",
+    "nome_completo": "Jarir Pereira",
+    "nome_urna": "Jarir Pereira",
+    "cargo_disputado": "Governador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "ze-batista",
+    "nome_completo": "José Batista Neto",
+    "nome_urna": "Zé Batista",
+    "cargo_disputado": "Governador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "60001133056",
+        "2022": "60001608950"
+      }
+    }
+  },
+  {
+    "slug": "olimpio-rocha",
+    "nome_completo": "Olímpio de Moraes Rocha",
+    "nome_urna": "Olímpio Rocha",
+    "cargo_disputado": "Governador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "150001021436",
+        "2022": "150001621568"
+      }
+    }
+  },
+  {
+    "slug": "andre-luis",
+    "nome_completo": "André Luís",
+    "nome_urna": "André Luís",
+    "cargo_disputado": "Governador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "renan-hallais",
+    "nome_completo": "Renan Hallais",
+    "nome_urna": "Renan Hallais",
+    "cargo_disputado": "Governador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "camila-falcao",
+    "nome_completo": "Camila Falcão",
+    "nome_urna": "Camila Falcão",
+    "cargo_disputado": "Governador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "tony-garcia",
+    "nome_completo": "Antônio Celso Garcia",
+    "nome_urna": "Tony Garcia",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "renato-gomes",
+    "nome_completo": "Renato da Silveira Gomes",
+    "nome_urna": "Renato Gomes",
+    "cargo_disputado": "Governador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "jeferson-bezerra",
+    "nome_completo": "Jeferson Bezerra",
+    "nome_urna": "Jeferson Bezerra",
+    "cargo_disputado": "Governador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2016": "120000001730",
+        "2020": "120000850578",
+        "2022": "120001611531",
+        "2024": "120002315556"
+      }
+    }
+  },
+  {
+    "slug": "rafael-luz",
+    "nome_completo": "Rafael Luz",
+    "nome_urna": "Rafael Luz",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "wilson-witzel",
+    "nome_completo": "Wilson Witzel",
+    "nome_urna": "Wilson Witzel",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "190000612301",
+        "2022": "190001714872"
+      }
+    }
+  },
+  {
+    "slug": "ricardo-marques",
+    "nome_completo": "José Ricardo Marques dos Santos",
+    "nome_urna": "Ricardo Marques",
+    "cargo_disputado": "Governador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "260000657536",
+        "2022": "260001600206",
+        "2024": "260001926363"
+      }
+    }
+  },
+  {
+    "slug": "emanuel-cacho",
+    "nome_completo": "Emanuel Messias Oliveira Cacho",
+    "nome_urna": "Emanuel Cacho",
+    "cargo_disputado": "Governador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2006": "10106",
+        "2010": "260000000243",
+        "2014": "260000000285"
+      }
+    }
+  },
+  {
+    "slug": "dr-helton-monteiro",
+    "nome_completo": "Dr. Helton Monteiro",
+    "nome_urna": "Dr. Helton Monteiro",
+    "cargo_disputado": "Governador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "sergio-goncalves",
+    "nome_completo": "Sérgio Gonçalves",
+    "nome_urna": "Sérgio Gonçalves",
+    "cargo_disputado": "Governador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "ricardo-frota",
+    "nome_completo": "Ricardo Furtado da Frota",
+    "nome_urna": "Ricardo Frota",
+    "cargo_disputado": "Governador",
+    "estado": "RO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2012": "220000000288",
+        "2024": "220002116683"
+      }
+    }
+  },
+  {
+    "slug": "thor-dantas",
+    "nome_completo": "Thor Oliveira Dantas",
+    "nome_urna": "Thor Dantas",
+    "cargo_disputado": "Governador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "10001649411"
+      }
+    }
+  },
+  {
+    "slug": "eudo-raffael",
+    "nome_completo": "Eudo Raffael",
+    "nome_urna": "Eudo Raffael",
+    "cargo_disputado": "Governador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "roberio-paulino",
+    "nome_completo": "Robério Paulino Rodrigues",
+    "nome_urna": "Robério Paulino",
+    "cargo_disputado": "Governador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2012": "200000001257",
+        "2014": "200000000083",
+        "2016": "200000010691",
+        "2018": "200000601427",
+        "2020": "200000981908",
+        "2024": "200002231543"
+      }
+    }
+  },
+  {
+    "slug": "dario-barbosa",
+    "nome_completo": "Dário Barbosa de Melo",
+    "nome_urna": "Dário Barbosa",
+    "cargo_disputado": "Governador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2012": "200000001258",
+        "2014": "200000000011",
+        "2016": "200000011476",
+        "2018": "200000611619",
+        "2022": "200001652247"
+      }
+    }
+  },
+  {
+    "slug": "vera-lucia",
+    "nome_completo": "Vera Lúcia Pereira da Silva Salgado",
+    "nome_urna": "Vera Lúcia",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2010": "260000000021",
+        "2012": "260000001384",
+        "2014": "260000000024",
+        "2016": "260000005540",
+        "2018": "280000601173",
+        "2020": "250000744464",
+        "2022": "280001607831",
+        "2026": "250002536915"
+      },
+      "tse_uf_candidatura": {
+        "2010": "SE",
+        "2012": "SE",
+        "2014": "SE",
+        "2016": "SE",
+        "2018": "BR",
+        "2020": "SP",
+        "2022": "BR",
+        "2026": "SP"
+      }
+    }
+  },
+  {
+    "slug": "camilo-terra",
+    "nome_completo": "Eduardo Camilo Terra dos Santos",
+    "nome_urna": "Camilo Terra",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "250001640572"
+      }
+    }
+  },
+  {
+    "slug": "izadora-dias",
+    "nome_completo": "Izadora Cristina Dias da Silva",
+    "nome_urna": "Izadora Dias",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "250001700018"
+      }
+    }
+  },
+  {
+    "slug": "patrus-ananias",
+    "nome_completo": "Patrus Ananias de Souza",
+    "nome_urna": "Patrus Ananias",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": 74160,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2014": "130000000890",
+        "2018": "130000626967",
+        "2022": "130001607244"
+      }
+    }
+  },
+  {
+    "slug": "coronel-busnello",
+    "nome_completo": "João Jacques Soares Busnello",
+    "nome_urna": "Coronel Busnello",
+    "cargo_disputado": "Governador",
+    "estado": "RJ",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "190000626280",
+        "2022": "190001603420",
+        "2026": "190002544120"
+      }
+    }
+  },
+  {
+    "slug": "marcus-sodre",
+    "nome_completo": "Marcus Alexandre Sodré",
+    "nome_urna": "Marcus Sodré",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2014": "240000000204"
+      }
+    }
+  },
+  {
+    "slug": "witer-naves",
+    "nome_completo": "Witer Fonseca Naves",
+    "nome_urna": "Witer Naves",
+    "cargo_disputado": "Governador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "jeremias-cosmo",
+    "nome_completo": "Jeremias Cosmo Silva dos Santos",
+    "nome_urna": "Professor Jeremias",
+    "cargo_disputado": "Governador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2018": "170000607399",
+        "2020": "170000735134",
+        "2024": "170002143292",
+        "2026": "170002541258"
+      }
+    }
+  },
+  {
+    "slug": "lenilda-luna",
+    "nome_completo": "Lenilda Luna de Almeida",
+    "nome_urna": "Lenilda Luna",
+    "cargo_disputado": "Governador",
+    "estado": "AL",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "20001653097"
+      }
+    }
+  },
+  {
+    "slug": "aroldo-felix",
+    "nome_completo": "Aroldo Felix de Azevedo Junior",
+    "nome_urna": "Aroldo Félix",
+    "cargo_disputado": "Governador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "jose-estevao",
+    "nome_completo": "José Estêvão dos Santos Barbosa",
+    "nome_urna": "José Estêvão",
+    "cargo_disputado": "Governador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "50002536579"
+      }
+    }
+  },
+  {
+    "slug": "robson-raymundo",
+    "nome_completo": "Robson Raymundo da Silva",
+    "nome_urna": "Professor Robson Raymundo",
+    "cargo_disputado": "Governador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "70001611377",
+        "2026": "70002535930"
+      }
+    }
+  },
+  {
+    "slug": "luis-cesar-bueno",
+    "nome_completo": "Luis Cesar Bueno e Freitas",
+    "nome_urna": "Luis Cesar Bueno",
+    "cargo_disputado": "Governador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2022": "90001649536"
+      }
+    },
+    "wikipedia_title": "Luis_Cesar_Bueno"
+  },
+  {
+    "slug": "saulo-arcangeli",
+    "nome_completo": "Saulo Costa Arcangeli",
+    "nome_urna": "Saulo Arcangeli",
+    "cargo_disputado": "Governador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "100002534190"
+      }
+    }
+  },
+  {
+    "slug": "dr-luisinho",
+    "nome_completo": "Francisco das Chagas Conceição da Silva",
+    "nome_urna": "Dr. Luisinho",
+    "cargo_disputado": "Governador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "10002533539"
+      }
+    }
+  },
+  {
+    "slug": "gilberto-vasconcelos",
+    "nome_completo": "Gilberto Vasconcelos da Silva",
+    "nome_urna": "Gilberto Vasconcelos",
+    "cargo_disputado": "Governador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "40002535267"
+      }
+    }
+  },
+  {
+    "slug": "elisson-ferreira",
+    "nome_completo": "Elisson Ferreira",
+    "nome_urna": "Elisson Ferreira",
+    "cargo_disputado": "Governador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "yuri-ezequiel",
+    "nome_completo": "Yuri Ezequiel",
+    "nome_urna": "Yuri Ezequiel",
+    "cargo_disputado": "Governador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "carlos-machado",
+    "nome_completo": "Carlos Machado",
+    "nome_urna": "Carlos Machado",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {}
+    }
+  },
+  {
+    "slug": "guilherme-fonseca",
+    "nome_completo": "Guilherme Fonseca",
+    "nome_urna": "Guilherme Fonseca",
+    "cargo_disputado": "Governador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "170002536575"
+      }
+    }
+  },
+  {
+    "slug": "ricardo-leite",
+    "nome_completo": "Fabio Ricardo Leite",
+    "nome_urna": "Ricardo Leite",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "10002532493"
+      }
+    }
+  },
+  {
+    "slug": "daniela-paiva",
+    "nome_completo": "Daniela Paiva de Oliveira",
+    "nome_urna": "Daniela Paiva",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "AC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "10002533538"
+      }
+    }
+  },
+  {
+    "slug": "alessandra-campelo",
+    "nome_completo": "Alessandra Campelo da Silva",
+    "nome_urna": "Alessandra Campelo",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "AM",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "40002532271"
+      }
+    },
+    "wikipedia_title": "Alessandra_Campelo"
+  },
+  {
+    "slug": "luciana-gurgel",
+    "nome_completo": "Luciana Araujo Goes Gurgel",
+    "nome_urna": "Luciana Gurgel",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "30002530015"
+      }
+    },
+    "wikipedia_title": "Luciana_Gurgel"
+  },
+  {
+    "slug": "prof-meire-reis",
+    "nome_completo": "Meire Lucia Alves dos Reis",
+    "nome_urna": "Prof. Meire Reis",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "50002532270"
+      }
+    }
+  },
+  {
+    "slug": "ze-coca",
+    "nome_completo": "Zenildo Brandão Santana",
+    "nome_urna": "Zé Cocá",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "50002533189"
+      }
+    },
+    "wikipedia_title": "Zé_Cocá"
+  },
+  {
+    "slug": "washington-bandeira",
+    "nome_completo": "Francisco Washington Bandeira Santos Filho",
+    "nome_urna": "Washington Bandeira",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002532986"
+      }
+    }
+  },
+  {
+    "slug": "ismar-marques",
+    "nome_completo": "Ismar Aguiar Marques",
+    "nome_urna": "Ismar Marques",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "PI",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "180002533957"
+      }
+    },
+    "wikipedia_title": "Ismar_Marques"
+  },
+  {
+    "slug": "priscila-felizola",
+    "nome_completo": "Priscila Dias Silva Felizola",
+    "nome_urna": "Priscila Felizola",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "260002532011"
+      }
+    }
+  },
+  {
+    "slug": "catherine-teles",
+    "nome_completo": "Catherine Morais Teles",
+    "nome_urna": "Catherine Teles",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "60002533730"
+      }
+    }
+  },
+  {
+    "slug": "naf-nascimento",
+    "nome_completo": "Naftaly Pereira do Nascimento",
+    "nome_urna": "Naf Nascimento",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002533354"
+      }
+    }
+  },
+  {
+    "slug": "prof-enfermeira-kaelly",
+    "nome_completo": "Kaelly Virginia de Oliveira Saraiva",
+    "nome_urna": "Prof. Enfermeira Kaelly",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "120002532256"
+      }
+    }
+  },
+  {
+    "slug": "preta-lu",
+    "nome_completo": "Luciana Costa Correa",
+    "nome_urna": "Preta Lu",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "100002534191"
+      }
+    }
+  },
+  {
+    "slug": "larissa-rosado",
+    "nome_completo": "Larissa Daniela Escossia Rosado",
+    "nome_urna": "Larissa",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002534002"
+      }
+    },
+    "wikipedia_title": "Larissa_Rosado"
+  },
+  {
+    "slug": "baba",
+    "nome_completo": "Anteomar Pereira da Silva",
+    "nome_urna": "Babá",
+    "cargo_disputado": "Vice-Governador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002534441"
+      }
+    },
+    "wikipedia_title": "Babá_Pereira"
+  }
+]

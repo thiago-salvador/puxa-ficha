@@ -1,0 +1,2191 @@
+{
+ "_comentario": "Manifesto CONGELADO das sobreposições de mandato, par a par e por classe. O auditor (auditar-classificacao-eleitoral.ts) compara contra este arquivo e contra a SAÍDA RENDERIZADA, e nunca chama classificarSobreposicoes: par novo, par que sumiu ou classe cuja evidência na tela não bate reprovam. Regenerar com scripts/audit/congelar-sobreposicoes.ts é ato deliberado e o diff mostra o que mudou.",
+ "congelado_em": "2026-08-10",
+ "total": 99,
+ "por_classe": {
+  "C4_conflito": 56,
+  "C5_acumulacao_permitida": 27,
+  "C1_duplicata": 7,
+  "C6_nao_classificada": 9
+ },
+ "pares": [
+  {
+   "chave": "acm-neto | Deputado Federal@2010-2014 X Prefeito@2012-2016",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2012,
+     2016
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2010,
+     2014
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "aldo-rebelo | Deputado Federal@2002-2006 X Ministro da Ciência e Tecnologia@2004-2005",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: pasta ou secretaria de nomeação, com licença do mandato. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Ministro da Ciência e Tecnologia",
+    "periodo": [
+     2004,
+     2005
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2002,
+     2006
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "aldo-rebelo | Deputado Federal@2002-2006 X Presidente da Câmara dos Deputados@2005-2007",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: mesa diretora da própria casa legislativa. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Presidente da Câmara dos Deputados",
+    "periodo": [
+     2005,
+     2007
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2002,
+     2006
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "aldo-rebelo | Deputado Federal@2006-2010 X Presidente da Câmara dos Deputados@2005-2007",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: mesa diretora da própria casa legislativa. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2006,
+     2010
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Presidente da Câmara dos Deputados",
+    "periodo": [
+     2005,
+     2007
+    ],
+    "proveniencia": "manual"
+   }
+  },
+  {
+   "chave": "aldo-rebelo | Deputado Federal@2010-2014 X Ministro do Esporte@2011-2014",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: pasta ou secretaria de nomeação, com licença do mandato. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Ministro do Esporte",
+    "periodo": [
+     2011,
+     2014
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2010,
+     2014
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "alvaro-dias-rn | Deputado Estadual@2003-2010 X Deputado Federal@2002-2006",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2003,
+     2010
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2002,
+     2006
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "alvaro-dias-rn | Deputado Estadual@2014-2018 X Vice-Prefeito@2017-2018",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Vice-Prefeito",
+    "periodo": [
+     2017,
+     2018
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2014,
+     2018
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "amelio-cayres | Deputado Estadual@2022-atual X Presidente da Assembleia Legislativa do Tocantins@2023-2025",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: mesa diretora da própria casa legislativa. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Presidente da Assembleia Legislativa do Tocantins",
+    "periodo": [
+     2023,
+     2025
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2022,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "amelio-cayres | Deputado Estadual@2022-atual X Presidente da Assembleia Legislativa do Tocantins@2025-atual",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: mesa diretora da própria casa legislativa. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Presidente da Assembleia Legislativa do Tocantins",
+    "periodo": [
+     2025,
+     null
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2022,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "amelio-cayres | Presidente da Assembleia Legislativa do Tocantins@2023-2025 X presidente da Assembléia Legislativa do Tocantins@2023-2025",
+   "classe": "C1_duplicata",
+   "campo_decisor": "equivalencia_comprovada",
+   "motivo": "Mesma presidência da ALETO; difere só por caixa e pela grafia antiga com acento.",
+   "linha_a": {
+    "cargo": "Presidente da Assembleia Legislativa do Tocantins",
+    "periodo": [
+     2023,
+     2025
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "presidente da Assembléia Legislativa do Tocantins",
+    "periodo": [
+     2023,
+     2025
+    ],
+    "proveniencia": "wikidata"
+   }
+  },
+  {
+   "chave": "anderson-ferreira | Deputado Federal@2014-2018 X Prefeito@2017-2020",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2017,
+     2020
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2014,
+     2018
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "andre-do-prado | Deputado Estadual@2022-atual X Presidente da Assembleia Legislativa de São Paulo@2023-atual",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: mesa diretora da própria casa legislativa. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Presidente da Assembleia Legislativa de São Paulo",
+    "periodo": [
+     2023,
+     null
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2022,
+     null
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "andre-kamai | Presidente estadual do PT-AC@2025-atual X Vereador@2025-atual",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: direção partidária ou sindical. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Presidente estadual do PT-AC",
+    "periodo": [
+     2025,
+     null
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Vereador",
+    "periodo": [
+     2025,
+     null
+    ],
+    "proveniencia": "manual"
+   }
+  },
+  {
+   "chave": "capitao-wagner | Deputado Estadual@2014-2018 X Vereador@2013-2019",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2014,
+     2018
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Vereador",
+    "periodo": [
+     2013,
+     2019
+    ],
+    "proveniencia": "manual"
+   }
+  },
+  {
+   "chave": "capitao-wagner | Deputado Estadual@2019-2021 X Deputado Federal@2019-2023",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2019,
+     2021
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2019,
+     2023
+    ],
+    "proveniencia": "manual"
+   }
+  },
+  {
+   "chave": "cicero-lucena | Prefeito@2000-2004 X Senador@2003-2006",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Senador",
+    "periodo": [
+     2003,
+     2006
+    ],
+    "proveniencia": "misto"
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2000,
+     2004
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "ciro-gomes-gov-ce | Ministro da Fazenda@1994-1995 X Ministro@1994-1995",
+   "classe": "C1_duplicata",
+   "campo_decisor": "equivalencia_comprovada",
+   "motivo": "Mesma passagem pelo Ministério da Fazenda registrada com rótulo genérico e específico; períodos idênticos na mesma ficha.",
+   "linha_a": {
+    "cargo": "Ministro",
+    "periodo": [
+     1994,
+     1995
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Ministro da Fazenda",
+    "periodo": [
+     1994,
+     1995
+    ],
+    "proveniencia": "manual"
+   }
+  },
+  {
+   "chave": "clecio-luis | Prefeito@2012-2016 X Senador (suplente)@2011-2019",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2012,
+     2016
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Senador (suplente)",
+    "periodo": [
+     2011,
+     2019
+    ],
+    "proveniencia": "misto"
+   }
+  },
+  {
+   "chave": "clecio-luis | Prefeito@2016-2020 X Senador (suplente)@2011-2019",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2016,
+     2020
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Senador (suplente)",
+    "periodo": [
+     2011,
+     2019
+    ],
+    "proveniencia": "misto"
+   }
+  },
+  {
+   "chave": "cleitinho | Deputado Estadual@2018-2022 X Vereador@2020-2022",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Vereador",
+    "periodo": [
+     2020,
+     2022
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2018,
+     2022
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "confucio-moura | Deputado Federal@2002-2010 X Prefeito@2004-2010",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2004,
+     2010
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2002,
+     2010
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "daniel-vilela | Governador@2026-atual X Vice-Governador@2022-atual",
+   "classe": "C6_nao_classificada",
+   "campo_decisor": "nenhum",
+   "motivo": "Par sobreposto sem regra positiva de equivalência, precedência, conflito eletivo ou acumulação permitida. Nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Governador",
+    "periodo": [
+     2026,
+     null
+    ],
+    "proveniencia": "misto"
+   },
+   "linha_b": {
+    "cargo": "Vice-Governador",
+    "periodo": [
+     2022,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "david-almeida | Deputado Estadual@2014-2018 X Presidente da Assembleia Legislativa do Amazonas@2017-2019",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: mesa diretora da própria casa legislativa. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Presidente da Assembleia Legislativa do Amazonas",
+    "periodo": [
+     2017,
+     2019
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2014,
+     2018
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "david-almeida | Presidente da Assembleia Legislativa do Amazonas@2017-2019 X presidente da Assembléia Legislativa do Amazonas@2017-2019",
+   "classe": "C1_duplicata",
+   "campo_decisor": "equivalencia_comprovada",
+   "motivo": "Mesma presidência da ALEAM; difere só por caixa e acento.",
+   "linha_a": {
+    "cargo": "Presidente da Assembleia Legislativa do Amazonas",
+    "periodo": [
+     2017,
+     2019
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "presidente da Assembléia Legislativa do Amazonas",
+    "periodo": [
+     2017,
+     2019
+    ],
+    "proveniencia": "wikidata"
+   }
+  },
+  {
+   "chave": "decio-lima | Deputado Federal@2003-2006 X Prefeito@2000-2004",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2003,
+     2006
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2000,
+     2004
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "douglas-ruas | Deputado Estadual@2022-atual X Presidente da Alerj@2026-atual",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: mesa diretora da própria casa legislativa. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Presidente da Alerj",
+    "periodo": [
+     2026,
+     null
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2022,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "dr-daniel | Deputado Estadual@2019-2023 X Prefeito@2021-2024",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2021,
+     2024
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2019,
+     2023
+    ],
+    "proveniencia": "manual"
+   }
+  },
+  {
+   "chave": "eduardo-braga | Deputado Federal@1991-2002 X Vice-Prefeito de Manaus@1993-1994",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Vice-Prefeito de Manaus",
+    "periodo": [
+     1993,
+     1994
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     1991,
+     2002
+    ],
+    "proveniencia": "manual"
+   }
+  },
+  {
+   "chave": "eduardo-braide | Deputado Federal@2018-2022 X Prefeito@2021-2024",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2021,
+     2024
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2018,
+     2022
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "eduardo-paes | Prefeito@2012-2016 X presidente@2013-2016",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "presidente",
+    "periodo": [
+     2013,
+     2016
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2012,
+     2016
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "geraldo-alckmin | Ministro@2023-atual X Vice-Presidente da República@2023-atual",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: pasta ou secretaria de nomeação, com licença do mandato. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Vice-Presidente da República",
+    "periodo": [
+     2023,
+     null
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Ministro",
+    "periodo": [
+     2023,
+     null
+    ],
+    "proveniencia": "wikidata"
+   }
+  },
+  {
+   "chave": "gilberto-kassab | Ministro da Ciência e Tecnologia@2016-2018 X Ministro da Ciência, Tecnologia, Inovações e Comunicações@2016-2018",
+   "classe": "C6_nao_classificada",
+   "campo_decisor": "nenhum",
+   "motivo": "Par sobreposto sem regra positiva de equivalência, precedência, conflito eletivo ou acumulação permitida. Nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Ministro da Ciência e Tecnologia",
+    "periodo": [
+     2016,
+     2018
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Ministro da Ciência, Tecnologia, Inovações e Comunicações",
+    "periodo": [
+     2016,
+     2018
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "gilberto-kassab | Secretário de Governo de São Paulo@2023-atual X Secretário de Governo e Relações Institucionais de São Paulo@2023-atual",
+   "classe": "C1_duplicata",
+   "campo_decisor": "equivalencia_comprovada",
+   "motivo": "Mesma secretaria, nome curto e nome completo, no mesmo período aberto.",
+   "linha_a": {
+    "cargo": "Secretário de Governo de São Paulo",
+    "periodo": [
+     2023,
+     null
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Secretário de Governo e Relações Institucionais de São Paulo",
+    "periodo": [
+     2023,
+     null
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "guilherme-derrite | Deputado Federal@2022-2025 X Secretário de Segurança Pública de São Paulo@2023-2025",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: pasta ou secretaria de nomeação, com licença do mandato. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Secretário de Segurança Pública de São Paulo",
+    "periodo": [
+     2023,
+     2025
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2022,
+     2025
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "haddad-gov-sp | Ministro da Educação@2005-2011 X ministra(o) da educação do Brasil@2005-2011",
+   "classe": "C1_duplicata",
+   "campo_decisor": "equivalencia_comprovada",
+   "motivo": "Mesmo cargo; o segundo rótulo é a forma neutra importada do Wikidata.",
+   "linha_a": {
+    "cargo": "Ministro da Educação",
+    "periodo": [
+     2005,
+     2011
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "ministra(o) da educação do Brasil",
+    "periodo": [
+     2005,
+     2011
+    ],
+    "proveniencia": "wikidata"
+   }
+  },
+  {
+   "chave": "haddad-gov-sp | Ministro da Educação@2011-2012 X ministra(o) da educação do Brasil@2011-2012",
+   "classe": "C1_duplicata",
+   "campo_decisor": "equivalencia_comprovada",
+   "motivo": "Mesmo cargo, segundo período; mesma duplicação de rótulo do Wikidata.",
+   "linha_a": {
+    "cargo": "Ministro da Educação",
+    "periodo": [
+     2011,
+     2012
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "ministra(o) da educação do Brasil",
+    "periodo": [
+     2011,
+     2012
+    ],
+    "proveniencia": "wikidata"
+   }
+  },
+  {
+   "chave": "haddad-gov-sp | Ministro da Fazenda@2023-atual X Ministro@2023-2026",
+   "classe": "C6_nao_classificada",
+   "campo_decisor": "nenhum",
+   "motivo": "Par sobreposto sem regra positiva de equivalência, precedência, conflito eletivo ou acumulação permitida. Nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Ministro da Fazenda",
+    "periodo": [
+     2023,
+     null
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Ministro",
+    "periodo": [
+     2023,
+     2026
+    ],
+    "proveniencia": "wikidata"
+   }
+  },
+  {
+   "chave": "helder-salomao | Deputado Federal@2011-2014 X Prefeito@2009-2012",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2011,
+     2014
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2009,
+     2012
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "jayme-campos | Prefeito@2000-atual X Senador@2007-2015",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Senador",
+    "periodo": [
+     2007,
+     2015
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2000,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "jayme-campos | Prefeito@2000-atual X Senador@2019-2027",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Senador",
+    "periodo": [
+     2019,
+     2027
+    ],
+    "proveniencia": "misto"
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2000,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "joao-campos | Chefe de Gabinete do Governo de Pernambuco@2016-2018 X Deputado Federal@2002-2018",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: pasta ou secretaria de nomeação, com licença do mandato. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Chefe de Gabinete do Governo de Pernambuco",
+    "periodo": [
+     2016,
+     2018
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2002,
+     2018
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "joao-campos | Chefe de Gabinete do Governo de Pernambuco@2016-2018 X Deputado Federal@2006-2018",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: pasta ou secretaria de nomeação, com licença do mandato. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Chefe de Gabinete do Governo de Pernambuco",
+    "periodo": [
+     2016,
+     2018
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2006,
+     2018
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "joao-campos | Chefe de Gabinete do Governo de Pernambuco@2016-2018 X Deputado Federal@2010-2018",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: pasta ou secretaria de nomeação, com licença do mandato. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Chefe de Gabinete do Governo de Pernambuco",
+    "periodo": [
+     2016,
+     2018
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2010,
+     2018
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "joao-campos | Chefe de Gabinete do Governo de Pernambuco@2016-2018 X Deputado Federal@2014-2018",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: pasta ou secretaria de nomeação, com licença do mandato. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Chefe de Gabinete do Governo de Pernambuco",
+    "periodo": [
+     2016,
+     2018
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2014,
+     2018
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "joao-campos | Deputado Federal@2002-2018 X Deputado Federal@2006-2018",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2006,
+     2018
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2002,
+     2018
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "joao-campos | Deputado Federal@2002-2018 X Deputado Federal@2010-2018",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2010,
+     2018
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2002,
+     2018
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "joao-campos | Deputado Federal@2002-2018 X Deputado Federal@2014-2018",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2014,
+     2018
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2002,
+     2018
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "joao-campos | Deputado Federal@2006-2018 X Deputado Federal@2010-2018",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2010,
+     2018
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2006,
+     2018
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "joao-campos | Deputado Federal@2006-2018 X Deputado Federal@2014-2018",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2014,
+     2018
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2006,
+     2018
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "joao-campos | Deputado Federal@2010-2018 X Deputado Federal@2014-2018",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2014,
+     2018
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2010,
+     2018
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "jose-carlos-aleluia | Deputado Federal@2006-2014 X Secretário@2013-2014",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: pasta ou secretaria de nomeação, com licença do mandato. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Secretário",
+    "periodo": [
+     2013,
+     2014
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2006,
+     2014
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "juliana-brizola | Deputado Estadual@2010-2014 X Vereador@2013-2014",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Vereador",
+    "periodo": [
+     2013,
+     2014
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2010,
+     2014
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "mailza-assis | Governadora@2026-atual X Vice-Governador@2022-atual",
+   "classe": "C6_nao_classificada",
+   "campo_decisor": "nenhum",
+   "motivo": "Par sobreposto sem regra positiva de equivalência, precedência, conflito eletivo ou acumulação permitida. Nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Governadora",
+    "periodo": [
+     2026,
+     null
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Vice-Governador",
+    "periodo": [
+     2022,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "marcio-franca | Deputado Federal@2006-2010 X Prefeito@2000-2014",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2006,
+     2010
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2000,
+     2014
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "marcio-franca | Deputado Federal@2010-2014 X Prefeito@2000-2014",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2010,
+     2014
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2000,
+     2014
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "marconi-perillo | Deputado Estadual@1991-1995 X Deputado Federal@1994-1998",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     1994,
+     1998
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     1991,
+     1995
+    ],
+    "proveniencia": "wikidata"
+   }
+  },
+  {
+   "chave": "marconi-perillo | Governador@2010-2014 X Senador@2006-2014",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Governador",
+    "periodo": [
+     2010,
+     2014
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Senador",
+    "periodo": [
+     2006,
+     2014
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "mateus-simoes | Governador@2026-atual X Secretário@2020-atual",
+   "classe": "C6_nao_classificada",
+   "campo_decisor": "nenhum",
+   "motivo": "Par sobreposto sem regra positiva de equivalência, precedência, conflito eletivo ou acumulação permitida. Nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Governador",
+    "periodo": [
+     2026,
+     null
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Secretário",
+    "periodo": [
+     2020,
+     null
+    ],
+    "proveniencia": "wikidata"
+   }
+  },
+  {
+   "chave": "mateus-simoes | Governador@2026-atual X Vice-Governador@2022-atual",
+   "classe": "C6_nao_classificada",
+   "campo_decisor": "nenhum",
+   "motivo": "Par sobreposto sem regra positiva de equivalência, precedência, conflito eletivo ou acumulação permitida. Nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Governador",
+    "periodo": [
+     2026,
+     null
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Vice-Governador",
+    "periodo": [
+     2022,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "mateus-simoes | Secretário@2020-atual X Vice-Governador@2022-atual",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: pasta ou secretaria de nomeação, com licença do mandato. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Vice-Governador",
+    "periodo": [
+     2022,
+     null
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Secretário",
+    "periodo": [
+     2020,
+     null
+    ],
+    "proveniencia": "wikidata"
+   }
+  },
+  {
+   "chave": "omar-aziz | Deputado Estadual@1994-1998 X deputy mayor of Manas@1997-2000",
+   "classe": "C6_nao_classificada",
+   "campo_decisor": "nenhum",
+   "motivo": "Par sobreposto sem regra positiva de equivalência, precedência, conflito eletivo ou acumulação permitida. Nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "deputy mayor of Manas",
+    "periodo": [
+     1997,
+     2000
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     1994,
+     1998
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "omar-aziz | Deputado Estadual@1994-1998 X Vice-Prefeito@1997-2000",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Vice-Prefeito",
+    "periodo": [
+     1997,
+     2000
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     1994,
+     1998
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "omar-aziz | Vice-Prefeito@1997-2000 X deputy mayor of Manas@1997-2000",
+   "classe": "C6_nao_classificada",
+   "campo_decisor": "nenhum",
+   "motivo": "Par sobreposto sem regra positiva de equivalência, precedência, conflito eletivo ou acumulação permitida. Nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "deputy mayor of Manas",
+    "periodo": [
+     1997,
+     2000
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Vice-Prefeito",
+    "periodo": [
+     1997,
+     2000
+    ],
+    "proveniencia": "manual"
+   }
+  },
+  {
+   "chave": "orleans-brandao | Deputado Federal@2010-atual X Governador@2022-atual",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Governador",
+    "periodo": [
+     2022,
+     null
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2010,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "orleans-brandao | Deputado Federal@2010-atual X Vice-Governador@2015-2018",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Vice-Governador",
+    "periodo": [
+     2015,
+     2018
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2010,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "orleans-brandao | Deputado Federal@2010-atual X Vice-Governador@2018-atual",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Vice-Governador",
+    "periodo": [
+     2018,
+     null
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2010,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "orleans-brandao | Governador@2022-atual X Vice-Governador@2018-atual",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Governador",
+    "periodo": [
+     2022,
+     null
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Vice-Governador",
+    "periodo": [
+     2018,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "otaviano-pivetta | Governador em exercício de Mato Grosso@2025-2026 X Vice-Governador@2022-atual",
+   "classe": "C6_nao_classificada",
+   "campo_decisor": "nenhum",
+   "motivo": "Par sobreposto sem regra positiva de equivalência, precedência, conflito eletivo ou acumulação permitida. Nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Governador em exercício de Mato Grosso",
+    "periodo": [
+     2025,
+     2026
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Vice-Governador",
+    "periodo": [
+     2022,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "paulo-hartung | Governador@2002-2006 X Senador@1998-2006",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Governador",
+    "periodo": [
+     2002,
+     2006
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Senador",
+    "periodo": [
+     1998,
+     2006
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "rafael-greca | Deputado Federal@1998-2002 X Ministro@1999-2000",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: pasta ou secretaria de nomeação, com licença do mandato. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Ministro",
+    "periodo": [
+     1999,
+     2000
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     1998,
+     2002
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "ratinho-junior | Deputado Estadual@2004-2007 X Deputado Federal@2006-2010",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2006,
+     2010
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2004,
+     2007
+    ],
+    "proveniencia": "manual"
+   }
+  },
+  {
+   "chave": "ratinho-junior | Deputado Federal@2011-2014 X Secretário de Estado@2013-2014",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: pasta ou secretaria de nomeação, com licença do mandato. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Secretário de Estado",
+    "periodo": [
+     2013,
+     2014
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2011,
+     2014
+    ],
+    "proveniencia": "manual"
+   }
+  },
+  {
+   "chave": "renan-filho | Deputado Federal@2010-2014 X Prefeito@2008-2012",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2010,
+     2014
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2008,
+     2012
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "renan-filho | Ministro@2023-atual X Senador@2023-atual",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: pasta ou secretaria de nomeação, com licença do mandato. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Ministro",
+    "periodo": [
+     2023,
+     null
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Senador",
+    "periodo": [
+     2023,
+     null
+    ],
+    "proveniencia": "misto"
+   }
+  },
+  {
+   "chave": "ricardo-ferraco | Deputado Federal@1999-2011 X Senador@2010-2018",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Senador",
+    "periodo": [
+     2010,
+     2018
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     1999,
+     2011
+    ],
+    "proveniencia": "manual"
+   }
+  },
+  {
+   "chave": "ricardo-ferraco | Deputado Federal@1999-2011 X Vice-Governador@2006-2010",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Vice-Governador",
+    "periodo": [
+     2006,
+     2010
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     1999,
+     2011
+    ],
+    "proveniencia": "manual"
+   }
+  },
+  {
+   "chave": "ricardo-nunes | Prefeito@2021-atual X Vice-Prefeito de São Paulo@2020-2024",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2021,
+     null
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Vice-Prefeito de São Paulo",
+    "periodo": [
+     2020,
+     2024
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "ricardo-nunes | Vereador@2016-2021 X Vice-Prefeito de São Paulo@2020-2024",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Vice-Prefeito de São Paulo",
+    "periodo": [
+     2020,
+     2024
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Vereador",
+    "periodo": [
+     2016,
+     2021
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "roberto-claudio | Deputado Estadual@2010-atual X Prefeito@2013-2016",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2013,
+     2016
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2010,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "roberto-claudio | Deputado Estadual@2010-atual X Prefeito@2017-2020",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2017,
+     2020
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2010,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "roberto-claudio | Deputado Estadual@2010-atual X Presidente da Assembleia Legislativa do Ceará@2011-2012",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: mesa diretora da própria casa legislativa. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Presidente da Assembleia Legislativa do Ceará",
+    "periodo": [
+     2011,
+     2012
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2010,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "rodrigo-bacellar | Deputado Estadual@2018-2022 X Secretário@2021-2022",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: pasta ou secretaria de nomeação, com licença do mandato. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Secretário",
+    "periodo": [
+     2021,
+     2022
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2018,
+     2022
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "rodrigo-pacheco | Presidente do Senado Federal@2021-2023 X Senador@2021-atual",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: mesa diretora da própria casa legislativa. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Presidente do Senado Federal",
+    "periodo": [
+     2021,
+     2023
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Senador",
+    "periodo": [
+     2021,
+     null
+    ],
+    "proveniencia": "manual"
+   }
+  },
+  {
+   "chave": "rodrigo-pacheco | Presidente do Senado Federal@2023-2025 X Senador@2021-atual",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: mesa diretora da própria casa legislativa. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Presidente do Senado Federal",
+    "periodo": [
+     2023,
+     2025
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Senador",
+    "periodo": [
+     2021,
+     null
+    ],
+    "proveniencia": "manual"
+   }
+  },
+  {
+   "chave": "ronaldo-caiado | Governador@2018-2022 X Senador@2015-2019",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Governador",
+    "periodo": [
+     2018,
+     2022
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Senador",
+    "periodo": [
+     2015,
+     2019
+    ],
+    "proveniencia": "wikidata"
+   }
+  },
+  {
+   "chave": "sergio-vidigal | Deputado Federal@2014-2018 X Prefeito@2008-2020",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2014,
+     2018
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2008,
+     2020
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "sergio-vidigal | Deputado Federal@2018-2022 X Prefeito@2008-2020",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2018,
+     2022
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2008,
+     2020
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "sergio-vidigal | Deputado Federal@2018-2022 X Prefeito@2020-2024",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2020,
+     2024
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2018,
+     2022
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "soldado-sampaio | Deputado Estadual@2018-2022 X Presidente da Assembleia Legislativa de Roraima@2021-atual",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: mesa diretora da própria casa legislativa. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Presidente da Assembleia Legislativa de Roraima",
+    "periodo": [
+     2021,
+     null
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2018,
+     2022
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "soldado-sampaio | Deputado Estadual@2022-atual X Presidente da Assembleia Legislativa de Roraima@2021-atual",
+   "classe": "C5_acumulacao_permitida",
+   "campo_decisor": "forma_de_acumulacao",
+   "motivo": "Acumulação prevista: mesa diretora da própria casa legislativa. O mandato eletivo mantém o período e o outro cargo corre em paralelo.",
+   "linha_a": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2022,
+     null
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Presidente da Assembleia Legislativa de Roraima",
+    "periodo": [
+     2021,
+     null
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "tarcisio-gov-sp | Ministro da Infraestrutura@2019-2022 X Ministro@2019-2022",
+   "classe": "C1_duplicata",
+   "campo_decisor": "equivalencia_comprovada",
+   "motivo": "Rótulo genérico e específico da mesma pasta, períodos idênticos.",
+   "linha_a": {
+    "cargo": "Ministro da Infraestrutura",
+    "periodo": [
+     2019,
+     2022
+    ],
+    "proveniencia": "manual"
+   },
+   "linha_b": {
+    "cargo": "Ministro",
+    "periodo": [
+     2019,
+     2022
+    ],
+    "proveniencia": "wikidata"
+   }
+  },
+  {
+   "chave": "teresa-surita | Deputado Federal@2010-2014 X Prefeito@2012-2016",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2012,
+     2016
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2010,
+     2014
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "washington-reis | Deputado Federal@2010-2014 X Prefeito@2004-2016",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2010,
+     2014
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2004,
+     2016
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "washington-reis | Deputado Federal@2014-2018 X Prefeito@2004-2016",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2014,
+     2018
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2004,
+     2016
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "washington-reis | Deputado Federal@2014-2018 X Prefeito@2016-2020",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2016,
+     2020
+    ],
+    "proveniencia": null
+   },
+   "linha_b": {
+    "cargo": "Deputado Federal",
+    "periodo": [
+     2014,
+     2018
+    ],
+    "proveniencia": null
+   }
+  },
+  {
+   "chave": "ze-coca | Deputado Estadual@2018-atual X Prefeito@2012-2025",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2018,
+     null
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2012,
+     2025
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "ze-coca | Deputado Estadual@2018-atual X Prefeito@2020-2025",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2020,
+     2025
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2018,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "ze-coca | Deputado Estadual@2018-atual X Prefeito@2025-2028",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2025,
+     2028
+    ],
+    "proveniencia": "wikidata"
+   },
+   "linha_b": {
+    "cargo": "Deputado Estadual",
+    "periodo": [
+     2018,
+     null
+    ],
+    "proveniencia": "tse"
+   }
+  },
+  {
+   "chave": "ze-coca | Prefeito@2012-2025 X Prefeito@2020-2025",
+   "classe": "C4_conflito",
+   "campo_decisor": "nenhum",
+   "motivo": "Dois cargos eletivos no mesmo período e nenhuma fonte na ficha decide. Conflito declarado; nenhuma data foi alterada.",
+   "linha_a": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2020,
+     2025
+    ],
+    "proveniencia": "tse"
+   },
+   "linha_b": {
+    "cargo": "Prefeito",
+    "periodo": [
+     2012,
+     2025
+    ],
+    "proveniencia": "tse"
+   }
+  }
+ ]
+}

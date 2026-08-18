@@ -1,0 +1,25 @@
+// FIXTURE DE FALSO POSITIVO. `update` e `delete` fora do Supabase, mais
+// `Array.from`, mais os verbos aparecendo dentro de comentário e de string.
+// O repositório tem 14 sítios deste tipo (crypto-utils, request-rate-limit,
+// TimelineTab, ...). Gate que procura o verbo sozinho acusa os 14 no primeiro
+// dia e é desligado na primeira sexta-feira.
+
+import { createHash } from "node:crypto"
+
+const cache = new Map<string, number>()
+const vistos = new Set<string>()
+
+export function digerir(partes: string[]) {
+  const hash = createHash("sha256")
+  for (const parte of partes) hash.update(parte)
+  return hash.digest("hex")
+}
+
+export function expirar(chave: string) {
+  cache.delete(chave)
+  vistos.delete(chave)
+  return Array.from(cache.entries()).filter(([, v]) => v > 0)
+}
+
+// Comentário mencionando supabase.from("candidatos").delete() de propósito.
+export const AVISO = 'nunca faça supabase.from("candidatos").update({}) aqui'

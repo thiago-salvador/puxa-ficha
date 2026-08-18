@@ -1,0 +1,49 @@
+{
+  "$schema": "Allowlist EXATA da correção de lacunas dos 11 pré-candidatos à Presidência (branch data/presidenciaveis-lacunas, 2026-08-02). Toda migration gerada nesse fluxo é conferida statement a statement contra este arquivo por scripts/audit/check-migrations-allowlist.ts. Escrita fora desta lista é erro, não exceção.",
+  "gerado_em": "2026-08-02",
+  "branch": "data/presidenciaveis-lacunas",
+  "coorte": [
+    "augusto-cury",
+    "cabo-daciolo",
+    "edmilson-costa",
+    "flavio-bolsonaro",
+    "hertz-dias",
+    "lula",
+    "renan-santos",
+    "romeu-zema",
+    "ronaldo-caiado",
+    "rui-costa-pimenta",
+    "samara-martins"
+  ],
+  "fora_por_construcao": {
+    "slugs": ["romeu-zema", "ronaldo-caiado"],
+    "motivo": "Os dois já estão em 100% no índice de cobertura: não têm lacuna corrigível nesta rodada, então nenhuma escrita é permitida para eles."
+  },
+  "entries": [
+    { "tabela": "patrimonio", "slug": "hertz-dias", "ano": 2020, "campos": ["valor_total", "bens"] },
+    { "tabela": "patrimonio", "slug": "hertz-dias", "ano": 2022, "campos": ["valor_total", "bens"] },
+    { "tabela": "financiamento", "slug": "hertz-dias", "ano": 2018, "campos": ["total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral", "total_pessoa_fisica", "total_recursos_proprios", "maiores_doadores"] },
+    { "tabela": "patrimonio", "slug": "samara-martins", "ano": 2020, "campos": ["valor_total", "bens"] },
+    { "tabela": "financiamento", "slug": "samara-martins", "ano": 2022, "campos": ["total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral", "total_pessoa_fisica", "total_recursos_proprios", "maiores_doadores"] },
+    { "tabela": "patrimonio", "slug": "cabo-daciolo", "ano": 2018, "campos": ["valor_total", "bens"] },
+    { "tabela": "financiamento", "slug": "edmilson-costa", "ano": 2010, "campos": ["total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral", "total_pessoa_fisica", "total_recursos_proprios", "maiores_doadores"] },
+    { "tabela": "patrimonio", "slug": "rui-costa-pimenta", "ano": 2014, "campos": ["valor_total", "bens"] },
+    { "tabela": "financiamento", "slug": "rui-costa-pimenta", "ano": 2006, "campos": ["total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral", "total_pessoa_fisica", "total_recursos_proprios", "maiores_doadores"] },
+    { "tabela": "financiamento", "slug": "lula", "ano": 2006, "campos": ["total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral", "total_pessoa_fisica", "total_recursos_proprios", "maiores_doadores"] },
+
+    { "tabela": "posicoes_declaradas", "slug": "augusto-cury", "temas": ["reforma_trabalhista", "teto_gastos", "transferencia_renda"], "campos": ["tema", "posicao", "descricao", "fonte", "url_fonte", "verificado", "gerado_por"] },
+    { "tabela": "posicoes_declaradas", "slug": "cabo-daciolo", "temas": ["reforma_trabalhista", "teto_gastos", "transferencia_renda"], "campos": ["tema", "posicao", "descricao", "fonte", "url_fonte", "verificado", "gerado_por"] },
+    { "tabela": "posicoes_declaradas", "slug": "edmilson-costa", "temas": ["reforma_trabalhista", "teto_gastos", "transferencia_renda"], "campos": ["tema", "posicao", "descricao", "fonte", "url_fonte", "verificado", "gerado_por"] },
+    { "tabela": "posicoes_declaradas", "slug": "hertz-dias", "temas": ["reforma_trabalhista", "teto_gastos", "transferencia_renda"], "campos": ["tema", "posicao", "descricao", "fonte", "url_fonte", "verificado", "gerado_por"] },
+    { "tabela": "posicoes_declaradas", "slug": "renan-santos", "temas": ["reforma_trabalhista", "teto_gastos", "transferencia_renda"], "campos": ["tema", "posicao", "descricao", "fonte", "url_fonte", "verificado", "gerado_por"] },
+    { "tabela": "posicoes_declaradas", "slug": "rui-costa-pimenta", "temas": ["reforma_trabalhista", "teto_gastos", "transferencia_renda"], "campos": ["tema", "posicao", "descricao", "fonte", "url_fonte", "verificado", "gerado_por"] },
+    { "tabela": "posicoes_declaradas", "slug": "samara-martins", "temas": ["reforma_trabalhista", "teto_gastos", "transferencia_renda"], "campos": ["tema", "posicao", "descricao", "fonte", "url_fonte", "verificado", "gerado_por"] },
+    { "tabela": "posicoes_declaradas", "slug": "flavio-bolsonaro", "temas": ["transferencia_renda"], "campos": ["tema", "posicao", "descricao", "fonte", "url_fonte", "verificado", "gerado_por"] },
+
+    { "tabela": "projetos_lei", "slug": "lula", "max_registros": 5, "campos": ["destaque", "destaque_motivo"] },
+    { "tabela": "projetos_lei", "slug": "cabo-daciolo", "max_registros": 5, "campos": ["destaque", "destaque_motivo"] },
+    { "tabela": "projetos_lei", "slug": "flavio-bolsonaro", "max_registros": 5, "campos": ["destaque", "destaque_motivo"] },
+
+    { "tabela": "candidatos", "slug": "renan-santos", "campos": ["profissao_declarada"] }
+  ]
+}

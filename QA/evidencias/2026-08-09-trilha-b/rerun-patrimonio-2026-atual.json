@@ -1,0 +1,654 @@
+{
+  "script": "rerun-patrimonio-2026",
+  "modo": "dry-run",
+  "fonte": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2026.zip",
+  "consultado_em": "2026-08-10T11:51:23.287Z",
+  "baseline": "QA/evidencias/2026-08-09-trilha-b/manifesto-patrimonio-20260807-nao-publicados.json",
+  "universo": 30,
+  "por_estado": {
+    "sem_mudanca": 21,
+    "tse_publicou": 8,
+    "valores_mudaram": 1
+  },
+  "operacoes_planejadas_por_tabela": {
+    "patrimonio:insert": 8,
+    "patrimonio_ausencia_oficial:delete": 8,
+    "patrimonio:update": 1
+  },
+  "acao_pendente": "gerar migration nova com as operações planejadas (gate @write/allowlist/recorte); aplicação é ato da Raiz",
+  "celulas": [
+    {
+      "slug": "acm-neto",
+      "ano": 2026,
+      "sq": "50002533190",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 44 bem(ns), total R$ 84888809.63, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "alan-rick",
+      "ano": 2026,
+      "sq": "10002532492",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 25 bem(ns), total R$ 5244567.72, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "ano": 2026,
+      "sq": "200002534442",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 14 bem(ns), total R$ 2917179.51, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "andre-marinho",
+      "ano": 2026,
+      "sq": "190002537524",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 6 bem(ns), total R$ 407503.55; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "andre-marinho",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 407503.55,
+          "n_bens": 6,
+          "bens": [
+            {
+              "tipo": "Apartamento",
+              "descricao": "APARTAMENTO",
+              "valor": 300000
+            },
+            {
+              "tipo": "Caderneta de poupança",
+              "descricao": "CADERNETA DE POUPANÇA",
+              "valor": 7487.18
+            },
+            {
+              "tipo": "Quotas ou quinhões de capital",
+              "descricao": "QUOTAS OU QUINHÕES DE CAPITAL",
+              "valor": 100000
+            },
+            {
+              "tipo": "Aplicação de renda fixa (CDB, RDB e outros)",
+              "descricao": "APLICAÇÃO DE RENDA FIXA (CDB, RDB E OUTROS)",
+              "valor": 14.37
+            },
+            {
+              "tipo": "Depósito bancário em conta corrente no País",
+              "descricao": "DEPÓSITO BANCÁRIO EM CONTA CORRENTE NO PAÍS",
+              "valor": 1
+            },
+            {
+              "tipo": "Depósito bancário em conta corrente no País",
+              "descricao": "DEPÓSITO BANCÁRIO EM CONTA CORRENTE NO PAÍS",
+              "valor": 1
+            }
+          ]
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "andre-marinho",
+            "ano_eleicao": 2026,
+            "sq_candidato": "190002537524"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "ano": 2026,
+      "sq": "60002531351",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 11 bem(ns), total R$ 1756648.94, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "ano": 2026,
+      "sq": "140002538631",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 1 bem(ns), total R$ 52292; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "cleber-rabelo",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 52292,
+          "n_bens": 1,
+          "bens": [
+            {
+              "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+              "descricao": "FIAT ARGO DRIVE 1.3 2018",
+              "valor": 52292
+            }
+          ]
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "cleber-rabelo",
+            "ano_eleicao": 2026,
+            "sq_candidato": "140002538631"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "david-almeida",
+      "ano": 2026,
+      "sq": "40002536086",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 6 bem(ns), total R$ 1432848.4, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "dr-furlan",
+      "ano": 2026,
+      "sq": "30002530014",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 6 bem(ns), total R$ 1168464.77, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "dr-luisinho",
+      "ano": 2026,
+      "sq": "10002533539",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "SQ segue ausente do pacote oficial atual"
+    },
+    {
+      "slug": "eduardo-riedel",
+      "ano": 2026,
+      "sq": "120002536582",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 17 bem(ns), total R$ 16147849.34, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "efraim-filho",
+      "ano": 2026,
+      "sq": "150002538692",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 9 bem(ns), total R$ 1682784.38; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "efraim-filho",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 1682784.38,
+          "n_bens": 9,
+          "bens": [
+            {
+              "tipo": "Aplicação de renda fixa (CDB, RDB e outros)",
+              "descricao": "BB CDB RENDA FACIL",
+              "valor": 14433.61
+            },
+            {
+              "tipo": "Outros bens imóveis",
+              "descricao": "FLAT EM CABEDELO-PB",
+              "valor": 359083
+            },
+            {
+              "tipo": "Apartamento",
+              "descricao": "APARTAMENTO EM JOÃO PESSOA-PB",
+              "valor": 536349.66
+            },
+            {
+              "tipo": "Outros fundos",
+              "descricao": "CAIXA GIRO IMEDIATO FIC DE CLASSE DE FIF RENDA FIXA",
+              "valor": 149682.12
+            },
+            {
+              "tipo": "OUTROS BENS E DIREITOS",
+              "descricao": "CONSORCIO 25 PARCELAS",
+              "valor": 31696.73
+            },
+            {
+              "tipo": "Outros depósitos à vista e numerário",
+              "descricao": "OURO CAR",
+              "valor": 244.26
+            },
+            {
+              "tipo": "Outros bens imóveis",
+              "descricao": "FAZENDA EM GURINHÉM-PB",
+              "valor": 42000
+            },
+            {
+              "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+              "descricao": "HILUX SW4 ANO 2015",
+              "valor": 93000
+            },
+            {
+              "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+              "descricao": "HILUX SW4 ANO 2025",
+              "valor": 456295
+            }
+          ]
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "efraim-filho",
+            "ano_eleicao": 2026,
+            "sq_candidato": "150002538692"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "elizeu-aguiar",
+      "ano": 2026,
+      "sq": "180002533958",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 3 bem(ns), total R$ 872808, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "ano": 2026,
+      "sq": "180002537422",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 2 bem(ns), total R$ 200590; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "geraldo-carvalho",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 200590,
+          "n_bens": 2,
+          "bens": [
+            {
+              "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+              "descricao": "AUTOMÓVEL NOVO - KWID ZEN 1.0 - 2021/2022 - CHASSI: 93YRBB008NJ916777 CIL 999",
+              "valor": 50590
+            },
+            {
+              "tipo": "Casa",
+              "descricao": "SÍTIO DENOMINADO TRAPIAZIN, N. 5739, COMUNIDADE MATA VELHA, ADQUIRIDO O DIREITO DE USO EM 2012, COM ÁREA DE 3 HECTARES, COM CASA, POÇO ARTESIANO, CERCADO DE ARAME FARPADO E OUTRAS BENFEITORIAS.",
+              "valor": 150000
+            }
+          ]
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "geraldo-carvalho",
+            "ano_eleicao": 2026,
+            "sq_candidato": "180002537422"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "ano": 2026,
+      "sq": "40002535267",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "SQ segue ausente do pacote oficial atual"
+    },
+    {
+      "slug": "guilherme-fonseca",
+      "ano": 2026,
+      "sq": "170002536575",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 1 bem(ns), total R$ 300000, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "ivan-moraes",
+      "ano": 2026,
+      "sq": "170002538097",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 2 bem(ns), total R$ 81452; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "ivan-moraes",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 81452,
+          "n_bens": 2,
+          "bens": [
+            {
+              "tipo": "OUTROS BENS E DIREITOS",
+              "descricao": "CONTA EM BANCO. BANCO 341, AG: 1632, CONTA: 32077-4",
+              "valor": 1452
+            },
+            {
+              "tipo": "Casa",
+              "descricao": "IMÓVEL RESIDENCIAL SITUADO A RUA ESMERALDINO BANDEIRA, ADQUIRIDO VIA FINANCIAMENTO DIRETO JUNTO A CONSTRUTORA, TOTALMENTE QUITADO",
+              "valor": 80000
+            }
+          ]
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "ivan-moraes",
+            "ano_eleicao": 2026,
+            "sq_candidato": "170002538097"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "joao-campos",
+      "ano": 2026,
+      "sq": "170002537230",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 5 bem(ns), total R$ 2892723.46; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "joao-campos",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 2892723.46,
+          "n_bens": 5,
+          "bens": [
+            {
+              "tipo": "Outras aplicações e Investimentos",
+              "descricao": "APLICAÇÕES E INVESTIMENTOS",
+              "valor": 449921.41
+            },
+            {
+              "tipo": "Outras aplicações e Investimentos",
+              "descricao": "APLICAÇÕES E INVESTIMENTOS",
+              "valor": 2284591.73
+            },
+            {
+              "tipo": "OUTROS BENS E DIREITOS",
+              "descricao": "OUTROS BENS E DIREITOS",
+              "valor": 40796.8
+            },
+            {
+              "tipo": "Outras aplicações e Investimentos",
+              "descricao": "APLICAÇÕES E INVESTIMENTOS",
+              "valor": 17413.52
+            },
+            {
+              "tipo": "Quotas ou quinhões de capital",
+              "descricao": "QUOTAS EM EMPRESA",
+              "valor": 100000
+            }
+          ]
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "joao-campos",
+            "ano_eleicao": 2026,
+            "sq_candidato": "170002537230"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "joel-rodrigues",
+      "ano": 2026,
+      "sq": "180002538530",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 10 bem(ns), total R$ 1688256.2; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "joel-rodrigues",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 1688256.2,
+          "n_bens": 10,
+          "bens": [
+            {
+              "tipo": "Depósito bancário em conta corrente no País",
+              "descricao": "CONTA CORRENTE BANCO DO BRASIL",
+              "valor": 8792.67
+            },
+            {
+              "tipo": "Depósito bancário em conta corrente no País",
+              "descricao": "CONTA CORRENTE BANCO NORDESTE",
+              "valor": 1101.3
+            },
+            {
+              "tipo": "Apartamento",
+              "descricao": "RESIDENCIAL",
+              "valor": 300000
+            },
+            {
+              "tipo": "Terreno",
+              "descricao": "FRAÇÃO",
+              "valor": 80000
+            },
+            {
+              "tipo": "Consórcio não contemplado",
+              "descricao": "BANCO DO BRASIL",
+              "valor": 24159.4
+            },
+            {
+              "tipo": "Casa",
+              "descricao": "RESIDENCIAL",
+              "valor": 900000
+            },
+            {
+              "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+              "descricao": "CARRO ANO 2023/24",
+              "valor": 175800
+            },
+            {
+              "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+              "descricao": "CARRO ANO 2021/22",
+              "valor": 175000
+            },
+            {
+              "tipo": "Dinheiro em espécie - moeda nacional",
+              "descricao": "DINHEIRO",
+              "valor": 22000
+            },
+            {
+              "tipo": "Aplicação de renda fixa (CDB, RDB e outros)",
+              "descricao": "OUROCAP",
+              "valor": 1402.83
+            }
+          ]
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "joel-rodrigues",
+            "ano_eleicao": 2026,
+            "sq_candidato": "180002538530"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "jorginho-mello",
+      "ano": 2026,
+      "sq": "240002537073",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 11 bem(ns), total R$ 2818036.89, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "luciana-gurgel",
+      "ano": 2026,
+      "sq": "30002530015",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "SQ segue ausente do pacote oficial atual"
+    },
+    {
+      "slug": "omar-aziz",
+      "ano": 2026,
+      "sq": "40002532272",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 5 bem(ns), total R$ 2070608, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "preta-lu",
+      "ano": 2026,
+      "sq": "100002534191",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "SQ segue ausente do pacote oficial atual"
+    },
+    {
+      "slug": "priscila-voigt",
+      "ano": 2026,
+      "sq": "210002533355",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "valores_mudaram",
+      "detalhe": "composição divergente da aplicada em 07/08: aplicado R$ 1000 em 1 bem(ns); pacote atual R$ 1000 em 1 bem(ns) (agregados iguais, conteúdo dos bens diferente; o agregado sozinho não teria visto)",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "update",
+          "chave": {
+            "slug": "priscila-voigt",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 1000,
+          "n_bens": 1,
+          "bens": [
+            {
+              "tipo": "Depósito bancário em conta corrente no País",
+              "descricao": "DINHEIRO",
+              "valor": 1000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "rafael-fonteles",
+      "ano": 2026,
+      "sq": "180002532987",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 7 bem(ns), total R$ 1799948.6, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "raquel-lyra",
+      "ano": 2026,
+      "sq": "170002537227",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "tse_publicou",
+      "detalhe": "o pacote atual traz 3 bem(ns), total R$ 359498.33; em 04/08 o SQ estava ausente",
+      "operacoes_planejadas": [
+        {
+          "tabela": "patrimonio",
+          "operacao": "insert",
+          "chave": {
+            "slug": "raquel-lyra",
+            "ano_eleicao": 2026
+          },
+          "valor_total": 359498.33,
+          "n_bens": 3,
+          "bens": [
+            {
+              "tipo": "Aplicação de renda fixa (CDB, RDB e outros)",
+              "descricao": "APLICAÇÕES FINANCEIRAS DIVERSAS",
+              "valor": 69923.33
+            },
+            {
+              "tipo": "Depósito bancário em conta corrente no País",
+              "descricao": "DEPÓSITO EM CONTA BANCÁRIA",
+              "valor": 1
+            },
+            {
+              "tipo": "Apartamento",
+              "descricao": "LOCALIZADO EM JABOATÃO DOS GUARARAPES/PE",
+              "valor": 289574
+            }
+          ]
+        },
+        {
+          "tabela": "patrimonio_ausencia_oficial",
+          "operacao": "delete",
+          "chave": {
+            "slug": "raquel-lyra",
+            "ano_eleicao": 2026,
+            "sq_candidato": "170002537227"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "robson-raymundo",
+      "ano": 2026,
+      "sq": "70002535930",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 1 bem(ns), total R$ 900000, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "ronaldo-mansur",
+      "ano": 2026,
+      "sq": "50002532269",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 5 bem(ns), total R$ 91397.22, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "ano": 2026,
+      "sq": "260002532010",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 2 bem(ns), total R$ 258000, comparados bem a bem (tipo, descrição, valor)"
+    },
+    {
+      "slug": "vera-lucia",
+      "ano": 2026,
+      "sq": "250002536915",
+      "estado_manifesto": "ausencia_oficial",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "SQ segue ausente do pacote oficial atual"
+    },
+    {
+      "slug": "william-siri",
+      "ano": 2026,
+      "sq": "190002536162",
+      "estado_manifesto": "lacuna_com_dados_tse",
+      "estado_atual": "sem_mudanca",
+      "detalhe": "composição idêntica à aplicada em 07/08: 1 bem(ns), total R$ 120000, comparados bem a bem (tipo, descrição, valor)"
+    }
+  ]
+}

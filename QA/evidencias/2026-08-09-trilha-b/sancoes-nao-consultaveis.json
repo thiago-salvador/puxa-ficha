@@ -1,0 +1,128 @@
+{
+ "origem": "leitura read-only de candidatos.cpf (blindagem PF_DRY_RUN ativa), validado com cpfEhValido local",
+ "consultado_em": "2026-08-10T02:54:47.592Z",
+ "nota": "Estes candidatos ficam em erro na coleta de sancoes: sem CPF valido nao ha consulta possivel no Portal. Fechar exige o backfill de CPF (scripts/backfill-cpf-tse.ts), ato da Raiz.",
+ "total": 30,
+ "linhas": [
+  {
+   "slug": "alex-pucineli",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "andre-luis",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "andre-marinho",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "augusto-cury",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "ben-mendes",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "breno-barcelar",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "cadu-xavier",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "camila-falcao",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "carlos-machado",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "dr-helton-monteiro",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "elisson-ferreira",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "eudo-raffael",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "francisco-jurity",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "gisvaldo-oliveira",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "huggo-leonardo",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "jarbas-soares",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "jarir-pereira",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "kiko-caputo",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "lais-chaud",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "luiz-franca",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "natasha-slhessarenko",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "pedro-abib",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "rafaell-milas",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "renan-hallais",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "renan-santos",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "renato-gomes",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "ricardo-cappelli",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "santiago-belizario",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "witer-naves",
+   "motivo": "sem CPF no banco"
+  },
+  {
+   "slug": "yuri-ezequiel",
+   "motivo": "sem CPF no banco"
+  }
+ ]
+}

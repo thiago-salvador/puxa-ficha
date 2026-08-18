@@ -1,0 +1,7 @@
+/* Tailwind's base layer marks [hidden] as important, so this must share that
+   layer to win by specificity when hydration cannot move streamed segments. */
+@layer base {
+  div[hidden][id^="S:"] {
+    display: contents !important;
+  }
+}

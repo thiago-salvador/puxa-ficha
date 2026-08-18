@@ -1,0 +1,31 @@
+Eleição em ano sem pleito, em qualquer superfície
+contagem: 28
+
+patrimonio | toni-rodrigues | ano 2013 | nao_coletado
+patrimonio | ricardo-marques | ano 2021 | nao_coletado
+patrimonio | helder-salomao | ano 2019 | nao_coletado
+patrimonio | helder-salomao | ano 2011 | nao_coletado
+patrimonio | helder-salomao | ano 2009 | nao_coletado
+patrimonio | fabio-mitidieri | ano 2009 | nao_coletado
+timeline | ratinho-junior | 2003 | Deputado Estadual | "2003 - Não Eleito" | Eleito deputado estadual em 2002 pelo PSB (TSE consulta_cand_2002_PR, SQ 492; AL
+patrimonio | sandro-alex | ano 2019 | nao_coletado
+patrimonio | sandro-alex | ano 2015 | nao_coletado
+patrimonio | sandro-alex | ano 2011 | nao_coletado
+patrimonio | alysson-bezerra | ano 2025 | nao_coletado
+patrimonio | alysson-bezerra | ano 2021 | nao_coletado
+patrimonio | alysson-bezerra | ano 2019 | nao_coletado
+patrimonio | aecio-neves | ano 2019 | nao_coletado
+patrimonio | aecio-neves | ano 2011 | nao_coletado
+patrimonio | renan-santos | ano 2025 | nao_coletado
+patrimonio | romeu-zema | ano 2023 | nao_coletado
+patrimonio | felicio-ramuth | ano 2021 | nao_coletado
+patrimonio | felicio-ramuth | ano 2017 | nao_coletado
+patrimonio | tarcisio-gov-sp | ano 2023 | nao_coletado
+patrimonio | raquel-lyra | ano 2021 | nao_coletado
+patrimonio | raquel-lyra | ano 2017 | nao_coletado
+patrimonio | raquel-lyra | ano 2011 | nao_coletado
+patrimonio | ivan-moraes | ano 2021 | nao_coletado
+patrimonio | ivan-moraes | ano 2017 | nao_coletado
+patrimonio | valmir-de-francisquinho | ano 2017 | nao_coletado
+patrimonio | valmir-de-francisquinho | ano 2013 | nao_coletado
+patrimonio | valmir-de-francisquinho | ano 2009 | nao_coletado

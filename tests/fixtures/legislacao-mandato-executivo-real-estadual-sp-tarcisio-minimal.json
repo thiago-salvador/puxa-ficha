@@ -1,0 +1,24 @@
+[
+  {
+    "candidato_id": "fixture-tarcisio-gov-sp-normalization-only",
+    "historico_politico_id": null,
+    "tipo_relacao": "lei_sancionada",
+    "esfera": "estadual",
+    "uf_norma": "SP",
+    "tipo_norma": "lei",
+    "numero": "17.735",
+    "ano": 2023,
+    "data_norma": "2023-08-28",
+    "ementa": "Dá denominação ao Grupamento de Bombeiros que especifica",
+    "signatario": "TARCÍSIO DE FREITAS",
+    "autoridade_papel": "titular",
+    "fonte_primaria_url": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2023/lei-17735-28.08.2023.html",
+    "fonte_primaria_titulo": "Assembleia Legislativa do Estado de São Paulo - Repositório de Legislação",
+    "metadata": {
+      "note": "Fixture de dado real estadual mínimo para prova de normalização/validação. candidato_id é sintético; vínculo por mandato (historico_politico_id) requer resolução antes de insert real.",
+      "source": "handoff Fluxo 5B expansão estadual",
+      "data_real": true,
+      "case_id": "tarcisio-gov-sp-lei-17735"
+    }
+  }
+]

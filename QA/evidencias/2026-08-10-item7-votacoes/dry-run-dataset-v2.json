@@ -1,0 +1,202 @@
+{
+  "resumo": {
+    "antes": {
+      "paresPublicados": 181,
+      "paresQueSeraoDespublicados": 100,
+      "fichasComAlgumVoto": 61
+    },
+    "depois": {
+      "paresQueOMatchingNovoProduz": 166,
+      "paresPublicados": 247,
+      "fichasComAlgumVoto": 52
+    },
+    "universo": {
+      "fichas": 280,
+      "fichasComIdCamara": 59,
+      "votacoesAprovadas": 12,
+      "votacoesRecusadasPorProcedimental": 0
+    }
+  },
+  "porVotacao": [
+    {
+      "votacaoId": "14493-503",
+      "titulo": "Redução da maioridade penal (1º turno)",
+      "recusada": false,
+      "classificacao": "nao_classificada",
+      "votosNominais": 485,
+      "pares": 22
+    },
+    {
+      "votacaoId": "2123843-93",
+      "titulo": "Vaquejada (2º turno)",
+      "recusada": false,
+      "classificacao": "merito",
+      "votosNominais": 430,
+      "pares": 20
+    },
+    {
+      "votacaoId": "340812-195",
+      "titulo": "Comissão da Mulher, Idoso, Criança, Juventude e Minorias",
+      "recusada": false,
+      "classificacao": "merito",
+      "votosNominais": 393,
+      "pares": 20
+    },
+    {
+      "votacaoId": "2270800-135",
+      "titulo": "Prerrogativas parlamentares (1º turno)",
+      "recusada": false,
+      "classificacao": "merito",
+      "votosNominais": 488,
+      "pares": 13
+    },
+    {
+      "votacaoId": "2515648-44",
+      "titulo": "Sustação do Decreto 12.466/2025",
+      "recusada": false,
+      "classificacao": "merito",
+      "votosNominais": 482,
+      "pares": 13
+    },
+    {
+      "votacaoId": "2351506-122",
+      "titulo": "Imunidade tributária (2º turno)",
+      "recusada": false,
+      "classificacao": "merito",
+      "votosNominais": 472,
+      "pares": 13
+    },
+    {
+      "votacaoId": "2383019-54",
+      "titulo": "Número de deputados por estado",
+      "recusada": false,
+      "classificacao": "merito",
+      "votosNominais": 478,
+      "pares": 12
+    },
+    {
+      "votacaoId": "2473389-58",
+      "titulo": "Contenção de despesas",
+      "recusada": false,
+      "classificacao": "merito",
+      "votosNominais": 467,
+      "pares": 13
+    },
+    {
+      "votacaoId": "2494565-52",
+      "titulo": "Sustação de ação penal",
+      "recusada": false,
+      "classificacao": "merito",
+      "votosNominais": 463,
+      "pares": 11
+    },
+    {
+      "votacaoId": "2430143-140",
+      "titulo": "Regulamentação da reforma tributária",
+      "recusada": false,
+      "classificacao": "merito",
+      "votosNominais": 450,
+      "pares": 11
+    },
+    {
+      "votacaoId": "2409076-34",
+      "titulo": "Permanência no ensino médio",
+      "recusada": false,
+      "classificacao": "merito",
+      "votosNominais": 452,
+      "pares": 7
+    },
+    {
+      "votacaoId": "2324721-94",
+      "titulo": "Silvicultura e licenciamento ambiental",
+      "recusada": false,
+      "classificacao": "merito",
+      "votosNominais": 443,
+      "pares": 11
+    }
+  ],
+  "distribuicaoAntes": [
+    {
+      "votos": 0,
+      "fichas": 219
+    },
+    {
+      "votos": 1,
+      "fichas": 13
+    },
+    {
+      "votos": 2,
+      "fichas": 21
+    },
+    {
+      "votos": 3,
+      "fichas": 6
+    },
+    {
+      "votos": 4,
+      "fichas": 7
+    },
+    {
+      "votos": 5,
+      "fichas": 5
+    },
+    {
+      "votos": 6,
+      "fichas": 8
+    },
+    {
+      "votos": 7,
+      "fichas": 1
+    }
+  ],
+  "distribuicaoDepois": [
+    {
+      "votos": 0,
+      "fichas": 228
+    },
+    {
+      "votos": 1,
+      "fichas": 6
+    },
+    {
+      "votos": 2,
+      "fichas": 7
+    },
+    {
+      "votos": 3,
+      "fichas": 9
+    },
+    {
+      "votos": 4,
+      "fichas": 4
+    },
+    {
+      "votos": 5,
+      "fichas": 8
+    },
+    {
+      "votos": 6,
+      "fichas": 4
+    },
+    {
+      "votos": 7,
+      "fichas": 6
+    },
+    {
+      "votos": 9,
+      "fichas": 5
+    },
+    {
+      "votos": 10,
+      "fichas": 1
+    },
+    {
+      "votos": 11,
+      "fichas": 1
+    },
+    {
+      "votos": 12,
+      "fichas": 1
+    }
+  ]
+}

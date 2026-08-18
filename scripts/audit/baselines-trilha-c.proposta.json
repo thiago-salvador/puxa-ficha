@@ -1,0 +1,53 @@
+{
+  "$schema": "PROPOSTA de atualização de baselines da Trilha C para o item 7. Não aplicada. Estes quatro pontos são contabilidade da árvore de migrations e pertencem à Raiz, pela mesma razão que `recortes.json` pertence: são baselines que só valem quando alguém com visão do conjunto confere. A trilha mede e propõe; quem aplica é a Raiz.",
+  "gerado_em": "2026-08-10",
+  "trilha": "C",
+  "motivo": "As três migrations do item 7 (20260810090000, 20260810090100, 20260810090200) entram na árvore e movem quatro baselines. Sem elas atualizadas, quatro casos de teste ficam vermelhos por construção neste worktree.",
+  "alteracoes": [
+    {
+      "arquivo": "scripts/audit/falhas-replay-linear.json",
+      "campo": "aplicadas_esperadas",
+      "de": 290,
+      "para": 293,
+      "como_medi": "bash scripts/audit/replay-migrations.sh linear --tolerante, em container efêmero, em 10/08/2026. Saída: 'aplicadas limpo: 293' e 'falhas: 87'. As três migrations do item 7 NÃO aparecem na lista de falhas, ou seja aplicaram limpo. A lista `falhas` fica intacta em 87 únicas.",
+      "invariante": "aplicadas_esperadas + falhas únicas = total de migrations do diretório. 293 + 87 = 380."
+    },
+    {
+      "arquivo": "scripts/audit/lib/migrations-classificacao.ts",
+      "campo": "MEDICAO_REPLAY.schemaReplayTamanho",
+      "de": 67,
+      "para": 68,
+      "como_medi": "classificarTodasComReplaySchema() sobre a árvore de 10/08/2026, filtrando replaySchema. Entra só 20260810090000_votacoes_chave_chave_por_votacao.sql, classificada como `schema`. As outras duas do item 7 são `curadoria` e não pertencem a este conjunto.",
+      "invariante": "o conjunto inteiro precisa aplicar sem uma única falha no replay de schema."
+    },
+    {
+      "arquivo": "tests/migrations-classificacao.test.ts",
+      "campo": "assert.equal(manifesto.aplicadas_esperadas, 290)",
+      "de": 290,
+      "para": 293,
+      "como_medi": "espelha o campo do manifesto acima; a asserção é a que trava o número contra edição silenciosa."
+    },
+    {
+      "arquivo": "tests/candidatos-publico-view-contrato.test.ts",
+      "campo": "POSTERIORES",
+      "de": ["20260809070000_verificacao_campos_b2_cleber_gilberto.sql"],
+      "para": [
+        "20260809070000_verificacao_campos_b2_cleber_gilberto.sql",
+        "20260810090000_votacoes_chave_chave_por_votacao.sql",
+        "20260810090100_despublicar_votacoes_chave_defeituosas.sql",
+        "20260810090200_votacoes_chave_dataset_v2.sql"
+      ],
+      "como_medi": "lista à mão, por construção: são as migrations criadas depois da NOVA e ainda não aplicadas. O teste exige a declaração justamente para que migration nova não passe despercebida.",
+      "invariante": "migration com timestamp MENOR que a NOVA continua sendo reprovada, que é o caso perigoso."
+    }
+  ],
+  "casos_de_teste_vermelhos_sem_estas_alteracoes": [
+    "tests/migrations-classificacao.test.ts :: o gate de replay real existe e compara conjunto, não só posição (rodada 3)",
+    "tests/migrations-classificacao.test.ts :: as cinco mistas aplicadas saem do replay só por substituição aditiva",
+    "tests/candidatos-publico-view-contrato.test.ts :: a migration nova ordena depois de todas as já aplicadas"
+  ],
+  "conferencia_local": {
+    "_comentario": "Aplicadas TEMPORARIAMENTE no worktree, medidas, e revertidas. Nenhuma delas está no commit da trilha.",
+    "resultado": "com as quatro aplicadas, os três casos acima passam; sem elas, reprovam com o número medido no diff."
+  }
+}

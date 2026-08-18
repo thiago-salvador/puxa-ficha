@@ -1,0 +1,1916 @@
+{
+  "dryRun": true,
+  "results": [
+    {
+      "source": "tse",
+      "candidato": "tiao-bocalom",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "omar-aziz",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "clecio-luis",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "ze-coca",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "acm-neto",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "helder-salomao",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "daniel-vilela",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "eduardo-braide",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "lucien-rezende",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "mauricio-tonha",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "joel-rodrigues",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "gustavo-henrique",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "lourdes-melo",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "elizeu-aguiar",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "sandro-alex",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "eduardo-paes",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "cabo-daciolo",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "cyro-garcia",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "larissa-rosado",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "dario-barbosa",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "baba",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "adailton-furia",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "marcos-rogerio",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "juliana-brizola",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "fabio-mitidieri",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "valmir-de-francisquinho",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "edmilson-costa",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "vera-lucia",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "jeremias-cosmo",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "gilberto-vasconcelos",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "geraldo-carvalho",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "vittorio-medioli",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "marcelo-maranata",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    }
+  ],
+  "plannedRows": [
+    {
+      "table": "financiamento",
+      "slug": "tiao-bocalom",
+      "row": {
+        "candidato_id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
+        "ano_eleicao": 2008,
+        "sq_candidato": "313",
+        "uf_candidatura": "AC",
+        "total_arrecadado": 405390,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Comitê Financeiro Municipal Único",
+            "valor": 399390,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SEBASTIÃO BOCALOM RODRIGUES",
+            "valor": 6000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "omar-aziz",
+      "row": {
+        "candidato_id": "9fe469dc-058f-487d-b888-ba113f5535ae",
+        "ano_eleicao": 2008,
+        "sq_candidato": "4490",
+        "uf_candidatura": "AM",
+        "total_arrecadado": 5315000,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Comitê Financeiro Municipal para Prefeito",
+            "valor": 700000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BRAGA VEÍCULOS LTDA.",
+            "valor": 600000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PAULO FRANCISCO TRIPOLONI",
+            "valor": 500000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANTÖNIO SANCHES",
+            "valor": 500000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOÃO SANCHES JUNQUEIRA",
+            "valor": 500000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PROVIEW ELETRÔNICA DO BRASIL LTDA",
+            "valor": 450000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "INDÚSTRIA DE PAPEL SOVEL DA AMAZÔNIA LTDA",
+            "valor": 300000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SOVEL DA AMAZÔNIA LTDA",
+            "valor": 250000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PAULO RENATO ATAYDE GIRARDI",
+            "valor": 210000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RETA SERVIÇOS DE CONSTRUÇÃO CIVIL LTDA",
+            "valor": 200000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "clecio-luis",
+      "row": {
+        "candidato_id": "d97908e9-5b30-4d0e-a01b-c0348682949d",
+        "ano_eleicao": 2008,
+        "sq_candidato": "447",
+        "uf_candidatura": "AP",
+        "total_arrecadado": 73040,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "CLECIO LUIS VILHENA VIEIRA",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CLAUDIOMAR ROSA DA SILVA",
+            "valor": 9000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCISCO AUGUSTO BATISTA DOS SANTOS",
+            "valor": 7500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CLAUDENIRA TEIXEIRA MONTEIRO",
+            "valor": 6000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANA MARIA VILHENA VIEIRA",
+            "valor": 6000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CLICIA HOANA VILHENA VIEIRA DI MICELLI",
+            "valor": 6000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EDICLEUMA NUNES MAGALHAES",
+            "valor": 4000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JORGE GOES DA ROCHA",
+            "valor": 3500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSÉ ENRICO FILGUEIRAS",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALAN CARLOS REIS DA SILVA",
+            "valor": 3000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "ze-coca",
+      "row": {
+        "candidato_id": "551a4c70-3c9e-4a47-ab62-c241b1dcfbd1",
+        "ano_eleicao": 2008,
+        "sq_candidato": "17573",
+        "uf_candidatura": "BA",
+        "total_arrecadado": 15671.67,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "EDVALDO CERQUEIRA DE MATTOS FILHO",
+            "valor": 9000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DERMIVAL LUCENA DA SILVA",
+            "valor": 2350,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JEAN ROBERT VASCONCELOS  MENEZES",
+            "valor": 1070,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RENATO VAZ SAMPAIO",
+            "valor": 1020.3,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "OSVALDO FERREIRA DOS SANTOS",
+            "valor": 752.87,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE FREITAS DE SANTANA JUNIOR",
+            "valor": 520,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FABIA CRISTINA BRANDÃO SANTANA",
+            "valor": 300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALEX NOVAES DA SILVA",
+            "valor": 300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "KATIA LILLIAN LYRA GONÇALVES",
+            "valor": 200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DANIELA LIMA DOS SANTOS",
+            "valor": 100,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "acm-neto",
+      "row": {
+        "candidato_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+        "ano_eleicao": 2008,
+        "sq_candidato": "2357",
+        "uf_candidatura": "BA",
+        "total_arrecadado": 5696003.18,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Comitê Financeiro Municipal Único",
+            "valor": 3982346.78,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JHS F INCORPORACOES S.A",
+            "valor": 300000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BM&F BOVESPA S.A. - BOLSA DE VALORES, MERCADORIAS E FUTUROS",
+            "valor": 150000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BUNGE ALIMENTOS S.A",
+            "valor": 100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GERDAU COMERCIAL DE AÇOS S/A",
+            "valor": 100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ARACRUZ CELULOSE S/A",
+            "valor": 60000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SUZANO PAPEL E CELULOSE S/A",
+            "valor": 55672.28,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BANCO ITAU S.A",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DIGITAL 9 GRAFICA LTDA",
+            "valor": 45600,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FREIRE E FIUZA SERVICOS DE PRODUCOES ARTISTICAS LTDA",
+            "valor": 45000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "helder-salomao",
+      "row": {
+        "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+        "ano_eleicao": 2008,
+        "sq_candidato": "3285",
+        "uf_candidatura": "ES",
+        "total_arrecadado": 96500,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "MARCA CONSTRUTORA E SERVIÇOS LTDA",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SERRABETUME ENGENHARIA LTDA",
+            "valor": 25000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "WEYDSON FERREIRA DO NASCIMENTO",
+            "valor": 5500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GERALDO LUZIA DE OLIVEIRA JUNIOR",
+            "valor": 5500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DALVA LYRIO GUTERRA",
+            "valor": 5500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALEXANDRE ZAMPROGNO",
+            "valor": 5000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "daniel-vilela",
+      "row": {
+        "candidato_id": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
+        "ano_eleicao": 2008,
+        "sq_candidato": "12711",
+        "uf_candidatura": "GO",
+        "total_arrecadado": 282609.36,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "AUTO POSTO MAGALHAES LTDA",
+            "valor": 25000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "A7 MARKETING ESPORTIVO E ARTISTICO LTDA",
+            "valor": 25000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SAMA S.A - MINERAÇÕES ASSOCIADAS",
+            "valor": 25000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BENEDITO ALVES MOREIRA",
+            "valor": 21100,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CONSTRUMIL CONSTRUTORA E TERRAPLANAGEM LTDA",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "A7 CONSTRUÇÕES E INCORPORAÇÕES LTDA",
+            "valor": 15000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LEANDRO VILLELA VELOSO",
+            "valor": 15000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CLAUDEMIR BARBOSA",
+            "valor": 10449.78,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CASA DE SAÚDE MATERNIDADE SYLVIO DE MELLO LTDA.",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSÉ MAGNO PATO",
+            "valor": 9000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "eduardo-braide",
+      "row": {
+        "candidato_id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
+        "ano_eleicao": 2008,
+        "sq_candidato": "8468",
+        "uf_candidatura": "MA",
+        "total_arrecadado": 49361.29,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "ANTONIO CARLOS BRAIDE",
+            "valor": 15000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FERNANDO SALIM BRAIDE",
+            "valor": 10500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EDUARDO SALIM BRAIDE",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANTONIO CARLOS SALIM BRAIDE",
+            "valor": 6200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANTONIA MARIA MARTINS BRAIDE",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SERGIO ANTONIO SERRA MARTINS",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Comitê Financeiro Municipal Único",
+            "valor": 661.29,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "lucien-rezende",
+      "row": {
+        "candidato_id": "9f8bdf27-8e4e-4f67-ae08-1519fc941412",
+        "ano_eleicao": 2008,
+        "sq_candidato": "2772",
+        "uf_candidatura": "MS",
+        "total_arrecadado": 1528.33,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Comitê Financeiro Municipal Único",
+            "valor": 1528.33,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "mauricio-tonha",
+      "row": {
+        "candidato_id": "3c628b54-5304-480d-a664-be16409e0322",
+        "ano_eleicao": 2008,
+        "sq_candidato": "3028",
+        "uf_candidatura": "MT",
+        "total_arrecadado": 492100,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "MAURICIO CARDOSO TONHA",
+            "valor": 326050,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "TONHA & TONHA LTDA",
+            "valor": 33000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ENGENHARIA E COMERCIO BANDEIRANTES LTDA",
+            "valor": 25000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "M C TONHA",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PAULO FRANCISCO JHOMA",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BRASCAN CATTLE S/A",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CEREALISTA SERRA ALTA LTDA",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RIAMA TRATORES E MAQUINAS AGRICOLAS LTDA",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "TARCISIO CARDOSO TONHÁ",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CLEBER JOSE DA SILVA E DIAS",
+            "valor": 8000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "joel-rodrigues",
+      "row": {
+        "candidato_id": "63de6cc4-aebc-49f6-88ab-25c93dde0a58",
+        "ano_eleicao": 2008,
+        "sq_candidato": "4081",
+        "uf_candidatura": "PI",
+        "total_arrecadado": 391007,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "OSCAR SIQUEIRA PROCÓPIO",
+            "valor": 46700,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOEL RODRIGUES DA SILVA",
+            "valor": 34000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA DE FÁTIMA ALENCAR",
+            "valor": 15240,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BENEDITO NETO DE SOUSA FEITOSA LTDA",
+            "valor": 15050,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NILSON FERREIRA DE SOUSA",
+            "valor": 15000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FÁBIO DA SILVA CRUZ",
+            "valor": 12000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOAB CARVALHO CURVINA",
+            "valor": 11000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RAIMUNDO NONATO SANTOS",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RENATO ALMEIDA DA FONSECA BARROS LIMA",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EVALDO SOUSA CARVALHO",
+            "valor": 10000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "gustavo-henrique",
+      "row": {
+        "candidato_id": "f793ff5b-678f-4684-97b7-ce0eaf08c0c3",
+        "ano_eleicao": 2008,
+        "sq_candidato": "8897",
+        "uf_candidatura": "PI",
+        "total_arrecadado": 3700,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "GUSTAVO HENRIQUE LEITE FEIJÓ",
+            "valor": 3300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCISCO ORMEU BRITO CERQUEIRA",
+            "valor": 400,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "lourdes-melo",
+      "row": {
+        "candidato_id": "f5de5375-7258-4164-9f89-45ee8ee442d6",
+        "ano_eleicao": 2008,
+        "sq_candidato": "8738",
+        "uf_candidatura": "PI",
+        "total_arrecadado": 4800,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "BOLIVIA PRISCILA SOARES DE SÁ",
+            "valor": 4000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA DE LOURDES SOARES DE MELO",
+            "valor": 800,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "elizeu-aguiar",
+      "row": {
+        "candidato_id": "914d9904-1c6a-47f9-a25f-017138dc1cef",
+        "ano_eleicao": 2008,
+        "sq_candidato": "6963",
+        "uf_candidatura": "PI",
+        "total_arrecadado": 45004.42,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "ELIZEU MORAIS DE AGUIAR",
+            "valor": 23630,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RESTAURANTE PIZZARIA PLANO PILOTO LTDA.",
+            "valor": 9230.87,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "KATIA REJANE A. SOARES AGUIAR",
+            "valor": 3500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALDAMIR RIBEIRO DE ABREU",
+            "valor": 2800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RAIMUNDO NONATO MONTELES SIMÕES",
+            "valor": 1355.75,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE AUGUSTO DE ALBUQUERQUE MARQUES",
+            "valor": 1200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PAULO FREITAS DE ALBUQUERQUE MARQUES",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SILVIO MENDES DE OLIVEIRA FILHO",
+            "valor": 607.8,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MANOEL MORAIS DE AGUIAR",
+            "valor": 80,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "HELENICE ARAUJO NASCIMENTO MIRANDA",
+            "valor": 80,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "sandro-alex",
+      "row": {
+        "candidato_id": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
+        "ano_eleicao": 2008,
+        "sq_candidato": "30578",
+        "uf_candidatura": "PR",
+        "total_arrecadado": 312273.34,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "MERCADOMOVEIS LTDA",
+            "valor": 57500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARCELO RANGEL CRUZ DE OLIVEIRA",
+            "valor": 26000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SAMANI COMERCIODE ALIMENTOS LTDA",
+            "valor": 21000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NEWTON SLAVIERO ADM.",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SANDRO ALEX CRUZ DE OLIVEIRA",
+            "valor": 17000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GILBERTO ZARDO",
+            "valor": 14000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARCIO ADRIANO PAULIK",
+            "valor": 12700,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CARBONAR ADESIVOS E EMBALAGNS LTDA",
+            "valor": 10500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JACOB BREMER DE BARROS",
+            "valor": 10416.84,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOAO SCHARAN FILHO",
+            "valor": 10000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "eduardo-paes",
+      "row": {
+        "candidato_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+        "ano_eleicao": 2008,
+        "sq_candidato": "395",
+        "uf_candidatura": "RJ",
+        "total_arrecadado": 11408323.52,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Comitê Financeiro Municipal Único",
+            "valor": 2736323.52,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Diretório Estadual",
+            "valor": 1533500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EIT EMPRESA INDUSTRIAL TÉCNICA LTDA.",
+            "valor": 1000000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Diretório Municipal",
+            "valor": 775000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EIKE FUHRKEN BATISTA",
+            "valor": 500000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CENTURY DE INVESTIMENTOS IMOBILIÁRIOS LTDA.",
+            "valor": 350000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CONSTRUTORA OAS LTDA.",
+            "valor": 350000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BANCO ITAÚ SA",
+            "valor": 300000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CARIOCA CHRISTIANI NIELSEN ENGENHARIA S.A",
+            "valor": 300000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MULTIPLAN EMPREENDIMENTOS IMOBILIÁRIOS SA.",
+            "valor": 300000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "cabo-daciolo",
+      "row": {
+        "candidato_id": "b1104f0b-80fb-4082-8356-dfb374e20028",
+        "ano_eleicao": 2008,
+        "sq_candidato": "14144",
+        "uf_candidatura": "RJ",
+        "total_arrecadado": 720,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Comitê Financeiro Municipal Único",
+            "valor": 470,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MANOEL FONSECA DOS SANTOS",
+            "valor": 250,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "cyro-garcia",
+      "row": {
+        "candidato_id": "6991016f-b50a-4984-b60a-40521bcdf6ee",
+        "ano_eleicao": 2008,
+        "sq_candidato": "4859",
+        "uf_candidatura": "RJ",
+        "total_arrecadado": 48451.2,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "CLAYTON COFFY",
+            "valor": 6130,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUIS FERNANDO RODRIGUES DE CARVALHO",
+            "valor": 3750,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CRISTIANO NERY ALMEIDA",
+            "valor": 2500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARCELLO AUGUSTO DINIZ CERQUEIRA",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CYRO GARCIA",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA ELISA WILDHAGEN GUIMARAES",
+            "valor": 1562,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NELSON MARQUES FILHO",
+            "valor": 1360,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DORIVAL CORREIA TELES",
+            "valor": 1325,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EDNA DE OLIVEIRA FELIX",
+            "valor": 1310,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ROBERTO MOSCA JUNIOR",
+            "valor": 1164,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "larissa-rosado",
+      "row": {
+        "candidato_id": "40d9eaa9-2e4e-4e86-b8c1-8374bcc808d5",
+        "ano_eleicao": 2008,
+        "sq_candidato": "1006",
+        "uf_candidatura": "RN",
+        "total_arrecadado": 431133.47,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Diretório Estadual",
+            "valor": 110000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Diretório Nacional",
+            "valor": 75000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "UNIÃO REFINARIA NACIONAL DE SAL LTDA",
+            "valor": 68214.64,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LAÍRE ROSADO FILHO",
+            "valor": 49730,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SALINOR - SALINAS DO NORDESTE S.A.",
+            "valor": 30000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PEDRO ALMEIDA DUARTE",
+            "valor": 16000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LARISSA DANIELA DA ESCOSSIA ROSADO ANDRADE",
+            "valor": 16000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA NATALIA BEZERRA",
+            "valor": 14300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA DE LOURDES B DA ESCOSSIA ROSADO",
+            "valor": 10500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "KLEIBER ANTUNES FURTADO",
+            "valor": 10100,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "dario-barbosa",
+      "row": {
+        "candidato_id": "2c7f19b6-4f91-420a-83ec-866c83a9e027",
+        "ano_eleicao": 2008,
+        "sq_candidato": "733",
+        "uf_candidatura": "RN",
+        "total_arrecadado": 11432.35,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "CAVALCANTI, OLIVEIRA E BATISTA",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VERONICA SIMONE DUTRA VERAS",
+            "valor": 1350,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JUVENCIO HEMETERIO FILHO",
+            "valor": 1040,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JUARY LUIS CHAGAS",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ROSALIA MARIA FERNANDES",
+            "valor": 925,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "AILSON MATIAS DE MELO",
+            "valor": 500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUCIANA LIMA  DA SILVA",
+            "valor": 500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VIVALDO AUGUSTO DANTAS FILHO",
+            "valor": 400,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANTONIA JUSTINO DE MORAIS MARINHO",
+            "valor": 400,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DARIO BARBOSA DE MELO",
+            "valor": 317.35,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "baba",
+      "row": {
+        "candidato_id": "dade7402-b3dc-4910-9c21-43c834f21620",
+        "ano_eleicao": 2008,
+        "sq_candidato": "7015",
+        "uf_candidatura": "RN",
+        "total_arrecadado": 14650,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "ANTEOMAR PEREIRA DA SILVA",
+            "valor": 2750,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOÃO EVANIEL VICENTE",
+            "valor": 2500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MIGUEL SALUSTIANO DE LIMA",
+            "valor": 2500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Comitê Financeiro Municipal para Prefeito",
+            "valor": 2420,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA RODRIGUES DE ARAÚJO E SILVA",
+            "valor": 2250,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EDUARDO BATISTA DE MOURA",
+            "valor": 1500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Comitê Financeiro Municipal Único",
+            "valor": 330,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA DAS VITORIAS DA SILVA CARLOS",
+            "valor": 200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "HERACLITO ANDRADE",
+            "valor": 100,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSÉ JAILSON ANDRADE",
+            "valor": 100,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "adailton-furia",
+      "row": {
+        "candidato_id": "e9cf3bd3-4ab9-4928-b652-558c5e8d8ce4",
+        "ano_eleicao": 2008,
+        "sq_candidato": "3514",
+        "uf_candidatura": "RO",
+        "total_arrecadado": 2387,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "GLAUCIONE MARIA RODRIGUES NERI",
+            "valor": 1387,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANTONIO HISSAKA PIZZO",
+            "valor": 1000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "marcos-rogerio",
+      "row": {
+        "candidato_id": "a9ce3c0b-9fa4-4e28-9c2e-809b1fa5e639",
+        "ano_eleicao": 2008,
+        "sq_candidato": "3086",
+        "uf_candidatura": "RO",
+        "total_arrecadado": 9089.47,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "MARCOS ROGÉRIO DA S. BRITO",
+            "valor": 4035.7,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Comitê Financeiro Municipal Único",
+            "valor": 2925.77,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SERGIO ANDRE F. CAVALCANTE",
+            "valor": 700,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ORLANDO LUIZ DE OLIVEIRA",
+            "valor": 520,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ADIRSON PEDRO DA SILVA",
+            "valor": 520,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GRÁFICA LIDER LTDA",
+            "valor": 388,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "juliana-brizola",
+      "row": {
+        "candidato_id": "7a6a6475-0691-4823-9104-5055ca589405",
+        "ano_eleicao": 2008,
+        "sq_candidato": "26283",
+        "uf_candidatura": "RS",
+        "total_arrecadado": 244582.44,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "GERDAU COMERCIAL DE AÇOS SA",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ARACRUZ CELULOSE SA",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "COMPANHIA ZAFFARI COMÉRCIO E INDÚSTRIA",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Diretório Estadual",
+            "valor": 17480,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JULIANA BRIZOLA",
+            "valor": 15800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JBS SA",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MOTTA & MACHADO ADVOGADOS",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "WOLMAR CASTILHOS SEBASTIÃO",
+            "valor": 5760,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "TITO FÁBIO SCHMIDT",
+            "valor": 4140,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MATHEUS JOSÉ SCHMIDT FILHO",
+            "valor": 4140,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "fabio-mitidieri",
+      "row": {
+        "candidato_id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+        "ano_eleicao": 2008,
+        "sq_candidato": "2182",
+        "uf_candidatura": "SE",
+        "total_arrecadado": 46000,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "PLAMED PLANO DE ASSISTENCIA MEDICA LTDA",
+            "valor": 43000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELEIÇÃO 2008 EDVALDO NOGUEIRA FIRMO",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "STUDIOPLAY LTDA -ME",
+            "valor": 500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FABIO CRUZ MITIDIERI",
+            "valor": 500,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "valmir-de-francisquinho",
+      "row": {
+        "candidato_id": "8e6f8d4c-7981-499e-b03b-5778e1db704d",
+        "ano_eleicao": 2008,
+        "sq_candidato": "1952",
+        "uf_candidatura": "SE",
+        "total_arrecadado": 3541.42,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "VALMIR DOS SANTOS COSTA",
+            "valor": 3112,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SANDRA DE MENEZES CURVELHO",
+            "valor": 400,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Comitê Financeiro Municipal Único",
+            "valor": 29.42,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "edmilson-costa",
+      "row": {
+        "candidato_id": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+        "ano_eleicao": 2008,
+        "sq_candidato": "8882",
+        "uf_candidatura": "SP",
+        "total_arrecadado": 13169.11,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "RAIMUNDO ARAUJO COSTA FILHO",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Comitê Financeiro Municipal Único",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIO TETILLA MANZANO",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOAO PADUA MANZANO",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JANO RIBEIRO",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANGELICA LOVATTO",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FERNANDO A P CANDELARIA",
+            "valor": 900,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SOFIA PADUA MANZANO",
+            "valor": 827.17,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "IVAN BARBOSA HERMINE",
+            "valor": 510,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE ROBERTO SILVA",
+            "valor": 500,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "vera-lucia",
+      "row": {
+        "candidato_id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
+        "ano_eleicao": 2008,
+        "sq_candidato": "1432",
+        "uf_candidatura": "SE",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2008.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "jeremias-cosmo",
+      "row": {
+        "candidato_id": "baf8abd2-9386-48df-876e-1e8b16fa1e7f",
+        "ano_eleicao": 2008,
+        "sq_candidato": "8895",
+        "uf_candidatura": "PE",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2008.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "gilberto-vasconcelos",
+      "row": {
+        "candidato_id": "5dc271fa-9171-484c-a8b3-f366fed10d10",
+        "ano_eleicao": 2008,
+        "sq_candidato": "3235",
+        "uf_candidatura": "AM",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2008.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "geraldo-carvalho",
+      "row": {
+        "candidato_id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
+        "ano_eleicao": 2008,
+        "sq_candidato": "8855",
+        "uf_candidatura": "PI",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2008.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "vittorio-medioli",
+      "row": {
+        "candidato_id": "af4d51ab-ffdd-4898-a240-29ea2e85b8e0",
+        "ano_eleicao": 2008,
+        "sq_candidato": "64713",
+        "uf_candidatura": "MG",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2008.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "marcelo-maranata",
+      "row": {
+        "candidato_id": "59582609-1f9b-4363-9e36-08fd6d07b6c4",
+        "ano_eleicao": 2008,
+        "sq_candidato": "756",
+        "uf_candidatura": "RS",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2008.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    }
+  ]
+}

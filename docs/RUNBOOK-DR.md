@@ -1,0 +1,95 @@
+# Runbook de reconstrução
+
+Uso: perda do projeto Vercel, do projeto Supabase ou do vínculo entre eles.
+Produção continua protegida: restauração, troca de domínio, deploy e ativação de
+cron exigem autorização nomeada antes de executar.
+
+## 1. Inventário sem valores
+
+| Superfície | Onde fica | Nomes | Acesso |
+|---|---|---|---|
+| Vercel, runtime | Project Settings > Environment Variables | `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_SENTRY_DSN`, `SENTRY_DSN`, `SENTRY_TRACES_SAMPLE_RATE`, `NEXT_PUBLIC_SENTRY_TRACES_SAMPLE_RATE`, `SENTRY_ORG`, `SENTRY_PROJECT`, `SENTRY_AUTH_TOKEN`, `NEXT_PUBLIC_X_HANDLE`, `INSTAGRAM_APP_ID`, `PF_REVALIDATE_SECRET`, `PF_PREVIEW_TOKEN`, `PF_INTERNAL_TOKEN`, `PF_FORCE_PRODUCTION_SECURITY_HEADERS`, `PF_CURATION_PHASE`, `PF_QUIZ_SHORT_LINK_SALT`, `NEXT_PUBLIC_ALERTS_EMAIL_ENABLED`, `RESEND_API_KEY`, `CRON_SECRET`, `PF_ALERTS_FROM_EMAIL`, `PF_ALERTS_TOKEN_SALT`, `PF_ALERTS_IP_SALT`, `PF_ALERTS_TOKEN_ENCRYPTION_KEY`, `TRANSPARENCIA_API_KEY`, `PF_DOADOR_CPF_HASH_SALT` | Confirmar no painel: Thiago |
+| GitHub Actions | Repository Settings > Secrets and variables > Actions | `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_DB_URL`, `PF_REVALIDATE_SECRET`, `TRANSPARENCIA_API_KEY`, `BACKUP_ENCRYPTION_KEY` | Confirmar no painel: Thiago |
+| Supabase | Project Settings > API e Database > Connection string | URL do projeto, anon key, service role, Session pooler e senha do banco | Confirmar no painel: Thiago |
+| Provedor de email | Resend > API Keys e Domains | valor usado em `RESEND_API_KEY` e domínio do remetente | Confirmar no painel: Thiago |
+| Observabilidade | Sentry > Project Settings | DSN, organização, projeto e token de source maps | Confirmar no painel: Thiago |
+
+A lista canônica de nomes fica em [`.env.example`](../.env.example) e em
+[`Status/ARQUITETURA.md`](../../Status/ARQUITETURA.md), seções de automação e ambientes.
+Nunca copiar valores para este arquivo, issue, log ou commit.
+
+## 2. Ordem de reconstrução
+
+1. **Criar um projeto Supabase novo.** Não apontar o domínio ou a Vercel para
+   ele antes do readback. Anotar o novo URL/ref somente no gerenciador de
+   segredos autorizado.
+2. **Restaurar o banco.** Preferir o restore gerenciado do Supabase quando o
+   acesso à conta original existir. Para perda de conta ou restauração
+   independente, baixar o artifact cifrado `backup-db-<run_id>` do workflow
+   [`backup-db.yml`](../.github/workflows/backup-db.yml), decifrar e restaurar
+   no projeto novo:
+
+   ```bash
+   openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 \
+     -pass env:BACKUP_ENCRYPTION_KEY \
+     -in puxa-ficha-<data>.dump.enc -out puxa-ficha.dump
+   pg_restore --no-owner --no-privileges \
+     -d "postgresql://<projeto-novo>" puxa-ficha.dump
+   ```
+
+   O procedimento e os cuidados com PII estão em
+   [`scripts/backup-supabase.sh`](../scripts/backup-supabase.sh). Sempre restaurar
+   primeiro em projeto novo, nunca por cima de produção.
+3. **Validar migrations.** O repositório sozinho não reconstrói os dados atuais:
+   o replay linear medido ainda tem falhas históricas. O dump é a fonte de
+   restauração; migrations validam e evoluem o schema. Antes de aplicar qualquer
+   sucessora, executar:
+
+   ```bash
+   scripts/audit/replay-migrations.sh --schema-gate
+   npm run audit:ledger:gate
+   ```
+
+   Aplicar somente migrations ausentes, na ordem, pelo procedimento autorizado
+   de [`Status/ARQUITETURA.md`](../../Status/ARQUITETURA.md), seção de banco. Não usar `db push`
+   amplo para tentar corrigir divergência de ledger.
+4. **Recriar o projeto Vercel.** Importar `thiago-salvador/puxa-ficha-oss`, usar
+   Next.js, Node 24.x e região `gru1`. Repor as variáveis pelo inventário acima,
+   sem copiar entre Production e Preview por suposição. O arquivo
+   [`vercel.json`](../vercel.json) recria os cinco crons da aplicação.
+5. **Ligar domínio.** Adicionar `puxaficha.com.br` ao projeto novo e confirmar
+   DNS/certificado no painel antes da troca. A alteração de DNS e a promoção do
+   deploy exigem autorização nomeada.
+6. **Reativar GitHub Actions.** Repor os secrets, confirmar que os workflows
+   estão ativos e conferir os agendamentos em
+   [`Status/ARQUITETURA.md`](../../Status/ARQUITETURA.md), seções de automação e ambientes.
+   Não disparar ingest, revalidação ou cron de escrita como teste de conectividade.
+
+## 3. Verificação final
+
+Executar depois do deploy autorizado e da troca de domínio:
+
+```bash
+curl -fsS https://puxaficha.com.br/api/deployment-info |
+  jq -e '.ok == true and .environment == "production" and (.commitSha | length == 40)'
+
+curl -fsS https://puxaficha.com.br/api/candidato-slugs |
+  jq -e '.slugs | type == "array" and length > 0'
+
+curl -fsS -H "Authorization: Bearer ${CRON_SECRET}" \
+  https://puxaficha.com.br/api/internal/runtime-smoke |
+  jq -e '.ok == true and .total == 5'
+```
+
+O último comando prova home, ficha, API de perfil, SHA de deploy e 404 real.
+Falha em qualquer um interrompe a promoção do ambiente.
+
+## 4. Confirmar no painel
+
+Responsável por confirmar: **Thiago**.
+
+- Quem mantém acesso administrativo a Vercel, GitHub, Supabase, Resend e Sentry.
+- Se Point in Time Recovery está ativo e qual é a retenção atual do Supabase.
+- Onde existe a segunda cópia de `BACKUP_ENCRYPTION_KEY`, fora do GitHub.
+- Se `puxaficha.com.br` e seus registros DNS estão sob a conta esperada.
+- Se notificações de falha de cron e de novas issues estão habilitadas.

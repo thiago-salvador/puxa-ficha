@@ -1,0 +1,15 @@
+{
+  "_comentario": "PROPOSTA de recorte da Trilha A para a Sessao Raiz. Nao e o arquivo do gate: `scripts/audit/recortes.json` e propriedade da Raiz, e a trilha entrega a entrada separada, como manda QA/2026-08-10-base-lancamento.md. A Raiz acrescenta o objeto de `recorte_proposto` ao array `recortes` de recortes.json, mantendo a ordem cronologica (esta entra depois de verificacao-campos-b2-20260809).",
+  "conferido_pela_trilha": {
+    "comando": "npm run audit:cobertura:allowlist -- --allowlist=scripts/audit/allowlist-trilha-a-20260810.json --desde=20260810085000 --ate=20260810085000",
+    "resultado": "exit 0",
+    "observacao": "As tres flags juntas e na forma com `=`, como exige QA/2026-08-10-base-lancamento.md. A janela e comparacao de prefixo do nome do arquivo, e aqui e fechada numa migration so."
+  },
+  "recorte_proposto": {
+    "nome": "trilha-a-classificacao-20260810",
+    "desde": "20260810085000",
+    "ate": "20260810085000",
+    "allowlist": "scripts/audit/allowlist-trilha-a-20260810.json",
+    "divida": null
+  }
+}

@@ -1,0 +1,105 @@
+name: Re-run de patrimônio (ciclo 2026)
+
+# ATIVADO em 12/08/2026. O cron abaixo está ligado e o primeiro disparo é
+# 16/08/2026, o domingo seguinte ao prazo final de registro de candidatura.
+#
+# ## Por que este workflow existe
+#
+# O backfill de patrimônio de 2006-2024 foi gerado e aplicado em 07/08
+# (migrations 20260807181000/182000/183000, readback em
+# QA/2026-08-07-workflow-patrimonio-eleicoes.md). Ficaram abertas as 30 células
+# do ciclo 2026, porque o snapshot local era de 04/08 e o TSE segue publicando.
+# O item 1 da triagem de 09/08 pede o re-run com data: 16/08.
+#
+# ## O que ele faz, e contra o quê compara
+#
+# `scripts/rerun-patrimonio-2026.ts` BAIXA o pacote oficial bem_candidato_2026
+# ATUAL do CDN do TSE e compara cada célula aberta contra o baseline auditado
+# de 07/08. O diff é contra a FONTE: célula que era ausência e ganhou bens sai
+# como `tse_publicou`, com a linha planejada no relatório. Já na primeira
+# execução real (09/08) isso pegou 8 células publicadas depois do snapshot.
+#
+# ## O que ele NÃO faz, e por que não há segredo nenhum aqui
+#
+# Não escreve no banco e NEM ABRE cliente Supabase: os insumos são o manifesto
+# versionado no repositório e o pacote público do TSE. Por isso este workflow
+# não recebe secret algum — sem service role no ambiente, a classe inteira de
+# acidente deixa de existir. Aplicar o que o relatório mostrar é ato humano,
+# com migration própria passando pelo gate (@write, allowlist, recorte,
+# rollback).
+#
+# O que sustenta a garantia é o próprio script: `rerun-patrimonio-2026.ts` chama
+# `ativarDryRun()` antes de `exigirDryRun()`, então o modo fica ligado dentro do
+# processo e o job roda em dry-run mesmo sem `PF_DRY_RUN` no ambiente. A variável
+# é redundância, não o freio. Dizer que "remover a variável quebra o job" era
+# falso e convidava a confiar num guard que nunca dispara: o freio real é não
+# haver acesso a banco nem secret aqui.
+#
+# ## O que o relatório NÃO faz sozinho
+#
+# O cron produz o diff e para aí. Transformar `tse_publicou` em dado publicado
+# continua exigindo migration com @write, allowlist, recorte e rollback. Ligar o
+# agendamento resolve a metade automática do item 1 da triagem de 09/08; a outra
+# metade é uma sessão humana lendo o relatório de segunda-feira.
+
+on:
+  schedule:
+    # Domingos às 09:00 UTC (06:00 BRT). Primeiro disparo: 16/08/2026.
+    - cron: "0 9 * * 0"
+  workflow_dispatch:
+    inputs:
+      manifesto:
+        description: "Baseline auditado a comparar"
+        required: false
+        default: "QA/evidencias/2026-08-09-trilha-b/manifesto-patrimonio-20260807-nao-publicados.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: patrimonio-rerun
+  cancel-in-progress: false
+
+jobs:
+  dry-run:
+    name: Comparação contra o pacote TSE atual
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PF_DRY_RUN: "1"
+      # O input NUNCA é interpolado em linha de shell: entra como variável de
+      # ambiente e o shell só expande "$MANIFESTO" já como dado, não como
+      # código. Interpolar ${{ inputs.* }} dentro do run é injeção de comando
+      # para quem tiver o botão de dispatch.
+      MANIFESTO: ${{ inputs.manifesto || 'QA/evidencias/2026-08-09-trilha-b/manifesto-patrimonio-20260807-nao-publicados.json' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # O job não faz operação git pós-checkout; não deixar o token no disco.
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - run: npm ci
+
+      # A prova roda ANTES da comparação: se a blindagem regrediu, o job para
+      # aqui, sem ter rodado runner nenhum.
+      - name: Provar que o dry-run não escreve
+        run: node --import tsx --test tests/dry-run-fail-closed.test.ts
+
+      - name: Baixar o pacote TSE atual e comparar
+        run: |
+          npx tsx scripts/rerun-patrimonio-2026.ts \
+            --manifesto="$MANIFESTO" \
+            --out=relatorio-patrimonio.json
+
+      - name: Publicar relatório
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: patrimonio-rerun-${{ github.run_id }}
+          path: relatorio-patrimonio.json
+          retention-days: 30

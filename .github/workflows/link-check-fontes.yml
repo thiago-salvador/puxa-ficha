@@ -1,0 +1,149 @@
+name: Link-check das fontes
+
+# Testa toda URL citada em pontos_atencao.fontes e reporta as que não
+# sustentam mais a afirmação publicada.
+#
+# Por que existe: a auditoria de 2026-07-24 encontrou 18 afirmações graves
+# publicadas cuja única fonte devolvia HTTP 404 (achado V1 de
+# docs/auditoria-integridade-2026-07-24.md). O gate SQL de 20260725160000
+# impede que uma claim grave nasça sem fonte utilizável, mas não impede que a
+# URL morra depois. Este job é a rede que pega isso.
+#
+# O QUE MUDOU NA ETAPA 5B (2026-07-25): status HTTP deixou de ser o critério.
+# O script agora mede também a substância do corpo, e o veredito de uma URL
+# tem cinco valores, dos quais só um autoriza despublicação:
+#
+#   viva            responde e entrega conteúdo legível
+#   sem_substancia  responde 200 mas entrega casca de SPA ou página de índice
+#                   (foi o caso de https://divulgacandcontas.tse.jus.br/divulga/,
+#                   200 com 46 caracteres, sustentando claim de gravidade alta)
+#   indisponivel    fora do ar temporariamente: bloqueio de robô, 5xx, timeout,
+#                   corpo vazio com 2xx, ou vedação eleitoral. NUNCA despublica
+#   morta           404, 410 ou DNS inexistente
+#   sem_caminho     domínio nu ou raiz de portal
+#
+# A vedação eleitoral é o motivo de o job separar "indisponível" de "morta".
+# Em 2026-07-25, agenciaminas.mg.gov.br responde 503 com aviso de legislação
+# eleitoral e páginas de notícia de goias.gov.br respondem 200 com o aviso no
+# lugar da matéria. Sem essa separação, o job despublicaria fonte legítima que
+# volta sozinha ao fim do período de vedação.
+#
+# SEMPRE em modo dry-run: nenhuma execução automática altera o que está
+# publicado. A despublicação (`npm run data:link-check-fontes`) é decisão
+# humana, rodada à mão depois de olhar o relatório. É a falha do job que serve
+# de alerta.
+#
+# MORTE PRECISA SER CONFIRMADA (2026-08-03). Em 03/08 o run 30837180265 marcou
+# como defeituosas duas fontes VIVAS (`revistaforum.com.br` como `morta`,
+# `agorarn.com.br` como `sem_substancia`), e as duas voltaram a passar no run
+# seguinte, 30837640630. A investigação do dia mediu que o 404 falso é a
+# PRÓPRIA página de erro do site, sem marcador de WAF, indistinguível no corpo
+# de um 404 verdadeiro; que o eixo não é geografia (sonda de datacenter saindo
+# do Brasil também levou o 404, enquanto IP residencial brasileiro recebeu o
+# artigo em 12 de 12 tentativas); e que a falha é correlacionada por EXECUÇÃO,
+# porque dois hosts independentes degradaram e voltaram juntos.
+#
+# Como 404 verdadeiro é estável para sempre e bloqueio não sobrevive à troca de
+# runner, `morta` e `sem_substancia` só contam depois de aparecerem em duas
+# execuções distintas. A primeira aparição vira MORTE SUSPEITA: sai no
+# relatório, não derruba o job e não autoriza despublicação. Isso custa até uma
+# rodada semanal a mais para uma morte real virar vermelho, e é a mesma troca
+# já feita nos dois níveis de alarme acima.
+#
+# Consequência operacional: a execução agendada passou a escrever numa tabela,
+# `link_check_url_observacao` (migration 20260803190000). É a única escrita, ela
+# guarda observação sobre URL de terceiro e NUNCA toca `pontos_atencao`. Sem a
+# migration aplicada, o script avisa em log, não confirma nada e portanto não
+# despublica nada.
+#
+# DOIS NÍVEIS DE ALARME (2026-07-29). A primeira execução com credencial
+# reprovou 71 claims e 36 URLs mortas, mas só 7 dessas claims estavam em ficha
+# de candidato publicado, e as 7 tinham TODAS as fontes `indisponivel`, que é
+# justamente o veredito temporário. O job nasceria vermelho toda semana sem
+# nada errado na superfície pública, e gate que grita sem motivo é gate que
+# alguém silencia.
+#
+# Por isso o gate roda com `--gate-somente-publicos`: derruba o job só o que o
+# leitor alcança hoje (candidato em `candidatos_publico`), e só por defeito
+# REAL de fonte (morta, sem caminho ou sem substância), nunca por
+# indisponibilidade temporária. A checagem continua cobrindo o banco inteiro, e
+# o que está fora do recorte público aparece no resumo como FILA DE
+# PUBLICACAO: é dívida a pagar ANTES de publicar aquele candidato, não
+# incidente da semana. Para ver tudo com o critério antigo, existe
+# `npm run data:link-check-fontes:gate:tudo`.
+#
+# Não roda em pull_request: usa SUPABASE_SERVICE_ROLE_KEY, e secret não é
+# exposto a PR de fork.
+#
+# Secrets necessários (Settings → Secrets and variables → Actions):
+#   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY
+
+on:
+  schedule:
+    # Segundas às 09:00 UTC (06:00 em Brasília).
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+    inputs:
+      revalidar:
+        description: >-
+          Slugs separados por vírgula para revalidar ANTES de publicar
+          (ex.: ciro-gomes,aldo-rebelo). Vazio = execução semanal normal.
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: link-check-fontes
+  cancel-in-progress: false
+
+jobs:
+  link-check:
+    name: Fontes de pontos de atenção (dry-run)
+    runs-on: ubuntu-latest
+    # O script serializa as requisições por host com pausa entre elas, porque
+    # rajada contra noticias.stf.jus.br faz o servidor responder 202 com corpo
+    # vazio e o próprio robô fabricar o falso negativo. Isso custa tempo de
+    # relógio, daí a folga no timeout.
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Link-check (dry-run, falha por defeito real de fonte em ficha pública)
+        if: ${{ !inputs.revalidar }}
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run data:link-check-fontes:gate
+
+      # Gate de publicação sob demanda (2026-08-02). Existe para que a
+      # revalidação exigida antes de um candidato entrar (ou voltar) à coorte
+      # possa ser rodada SEM a service role sair do CI. Falha = não publique.
+      #
+      # Roda com `--fail-on-morte-suspeita`, e portanto barra também a morte que
+      # ainda não foi confirmada em segunda execução, ao contrário do gate
+      # semanal acima. A assimetria é de propósito: aqui o dano é publicar claim
+      # com fonte podre, e vermelho falso custa só disparar de novo.
+      # O input NAO e interpolado dentro do `run:`. O GitHub substitui `${{ }}` no
+      # texto do script antes do bash rodar, entao um valor com aspas fecharia a
+      # string e executaria comando arbitrario num step que carrega a service
+      # role. Passando por `env:`, o valor chega como variavel de ambiente e o
+      # bash nunca o trata como codigo. Mesmo padrao que o ingest.yml ja usa.
+      # Review de 2026-08-03.
+      - name: Revalidação pré-publicação dos slugs informados
+        if: ${{ inputs.revalidar }}
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          REVALIDAR: ${{ inputs.revalidar }}
+        run: npm run data:link-check-fontes:revalidar -- "--revalidar=$REVALIDAR"

@@ -1,0 +1,31 @@
+{
+  "comentario": "Fichas ja promovidas ao padrao de superficie do relancamento (GUIA secao 3, regra de 15/08). O gate audit:superficie REPROVA violacao nestes slugs; fichas publicas fora da lista sao backlog informativo (consertos das 153 + Onda G) e nao derrubam o job. Cada estado integrado da Onda G APPENDA seus slugs aqui no mesmo PR da integracao.",
+  "slugs": [
+    "alan-rick",
+    "augusto-cury",
+    "carlos-machado",
+    "clariana-barao",
+    "dr-luisinho",
+    "edmilson-costa",
+    "eudo-raffael",
+    "flavio-bolsonaro",
+    "haddad-gov-sp",
+    "hertz-dias",
+    "izadora-dias",
+    "leonardo-avalanche",
+    "lula",
+    "mailza-assis",
+    "policial-edjane",
+    "renan-santos",
+    "romeu-zema",
+    "ronaldo-caiado",
+    "rui-costa-pimenta",
+    "samara-martins",
+    "tarcisio-gov-sp",
+    "thor-dantas",
+    "tiao-bocalom",
+    "vera-lucia",
+    "vivian-mendes",
+    "wilson-grassi-junior"
+  ]
+}

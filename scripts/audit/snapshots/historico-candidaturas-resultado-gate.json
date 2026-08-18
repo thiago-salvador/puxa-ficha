@@ -1,0 +1,14 @@
+{
+  "ciclo_corrente": 2026,
+  "linhas": [
+    {"id": "eleito", "tipo_evento": "candidatura", "periodo_inicio": 2022, "observacoes": "Candidatura: ELEITO (TSE 2022)"},
+    {"id": "nao-eleito", "tipo_evento": "candidatura", "periodo_inicio": 2022, "observacoes": "Candidatura: NÃO ELEITO (TSE 2022)"},
+    {"id": "media", "tipo_evento": "candidatura", "periodo_inicio": 2018, "observacoes": "Candidatura: ELEITO POR MÉDIA (TSE 2018)"},
+    {"id": "suplente", "tipo_evento": "candidatura", "periodo_inicio": 2018, "observacoes": "Candidatura: SUPLENTE (TSE 2018)"},
+    {"id": "inapto", "tipo_evento": "candidatura", "periodo_inicio": 2014, "observacoes": "Candidatura: INAPTO (TSE 2014)"},
+    {"id": "registro-negado", "tipo_evento": "candidatura", "periodo_inicio": 2018, "observacoes": "Candidatura: REGISTRO NEGADO (TSE 2018)"},
+    {"id": "segundo-turno-final", "tipo_evento": "candidatura", "periodo_inicio": 2018, "observacoes": "2º TURNO. Resultado final: ELEITO (TSE 2018)"},
+    {"id": "desistiu", "tipo_evento": "candidatura", "periodo_inicio": 2020, "observacoes": "Candidatura: DESISTIU (TSE 2020)"},
+    {"id": "renuncia", "tipo_evento": "candidatura", "periodo_inicio": 2020, "observacoes": "Candidatura: RENÚNCIA (TSE 2020)"}
+  ]
+}

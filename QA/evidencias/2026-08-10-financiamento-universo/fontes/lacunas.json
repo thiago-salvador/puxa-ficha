@@ -1,0 +1,2117 @@
+[
+  {
+    "candidato_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+    "slug": "acm-neto",
+    "nome_completo": "Antônio Carlos Peixoto de Magalhães Neto",
+    "nome_urna": "ACM Neto",
+    "ano": 2002,
+    "estado": "BA",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+    "slug": "alvaro-dias-rn",
+    "nome_completo": "Alvaro Costa Dias",
+    "nome_urna": "Alvaro Dias",
+    "ano": 2002,
+    "estado": "RN",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "68a1eec9-75c1-4dca-a68c-7a4e64033c9b",
+    "slug": "araceli-lemos",
+    "nome_completo": "Araceli Maria Pereira Lemos",
+    "nome_urna": "Araceli Lemos",
+    "ano": 2002,
+    "estado": "PA",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "2df15aa1-0bd3-4bab-89bf-13d780645e54",
+    "slug": "ciro-gomes-gov-ce",
+    "nome_completo": "Ciro Ferreira Gomes",
+    "nome_urna": "Ciro Gomes",
+    "ano": 2002,
+    "estado": "CE",
+    "cargo": "Presidente"
+  },
+  {
+    "candidato_id": "6991016f-b50a-4984-b60a-40521bcdf6ee",
+    "slug": "cyro-garcia",
+    "nome_completo": "Cyro Garcia",
+    "nome_urna": "Cyro Garcia",
+    "ano": 2002,
+    "estado": "RJ",
+    "cargo": "Governador"
+  },
+  {
+    "candidato_id": "2c7f19b6-4f91-420a-83ec-866c83a9e027",
+    "slug": "dario-barbosa",
+    "nome_completo": "Dario Barbosa de Melo",
+    "nome_urna": "Dário Barbosa",
+    "ano": 2002,
+    "estado": "RN",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "slug": "eduardo-paes",
+    "nome_completo": "Eduardo da Costa Paes",
+    "nome_urna": "Eduardo Paes",
+    "ano": 2002,
+    "estado": "RJ",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+    "slug": "flavio-bolsonaro",
+    "nome_completo": "Flavio Nantes Bolsonaro",
+    "nome_urna": "Flavio Bolsonaro",
+    "ano": 2002,
+    "estado": "RJ",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+    "slug": "garotinho",
+    "nome_completo": "Anthony William Garotinho Matheus de Oliveira",
+    "nome_urna": "Garotinho",
+    "ano": 2002,
+    "estado": "RJ",
+    "cargo": "Presidente"
+  },
+  {
+    "candidato_id": "85bcd355-89c2-464d-bfce-620fe8631285",
+    "slug": "gelson-merisio",
+    "nome_completo": "Gelson Luiz Merisio",
+    "nome_urna": "Gelson Merisio",
+    "ano": 2002,
+    "estado": "SC",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
+    "slug": "geraldo-carvalho",
+    "nome_completo": "Geraldo do Nascimento Carvalho",
+    "nome_urna": "Geraldo Carvalho",
+    "ano": 2002,
+    "estado": "PI",
+    "cargo": "Governador"
+  },
+  {
+    "candidato_id": "5dc271fa-9171-484c-a8b3-f366fed10d10",
+    "slug": "gilberto-vasconcelos",
+    "nome_completo": "Gilberto Vasconcelos da Silva",
+    "nome_urna": "Gilberto Vasconcelos",
+    "ano": 2002,
+    "estado": "AM",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+    "slug": "helder-salomao",
+    "nome_completo": "Helder Ignácio Salomão",
+    "nome_urna": "Helder Salomão",
+    "ano": 2002,
+    "estado": "ES",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "ebe1d53d-8b79-4d5c-8c98-66f5f9dfedf7",
+    "slug": "ismar-marques",
+    "nome_completo": "Ismar Aguiar Marques",
+    "nome_urna": "Ismar Marques",
+    "ano": 2002,
+    "estado": "PI",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "cc2dbc88-aae0-4c75-a112-bcc6bfc3189b",
+    "slug": "joao-campos",
+    "nome_completo": "Joao Henrique de Andrade Lima Campos",
+    "nome_urna": "Joao Campos",
+    "ano": 2002,
+    "estado": "GO",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+    "slug": "joao-rodrigues",
+    "nome_completo": "João Rodrigues",
+    "nome_urna": "João Rodrigues",
+    "ano": 2002,
+    "estado": "SC",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "63de6cc4-aebc-49f6-88ab-25c93dde0a58",
+    "slug": "joel-rodrigues",
+    "nome_completo": "Joel Rodrigues da Silva",
+    "nome_urna": "Joel Rodrigues",
+    "ano": 2002,
+    "estado": "PI",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
+    "slug": "jorginho-mello",
+    "nome_completo": "Jorginho dos Santos Mello",
+    "nome_urna": "Jorginho Mello",
+    "ano": 2002,
+    "estado": "SC",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "d9cf9c6b-c6f9-4561-ab0f-138d2086c5ce",
+    "slug": "jose-roberto-arruda",
+    "nome_completo": "Jose Roberto Arruda",
+    "nome_urna": "Jose Roberto Arruda",
+    "ano": 2002,
+    "estado": "DF",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "40d9eaa9-2e4e-4e86-b8c1-8374bcc808d5",
+    "slug": "larissa-rosado",
+    "nome_completo": "Larissa Daniela Escossia Rosado",
+    "nome_urna": "Larissa",
+    "ano": 2002,
+    "estado": "RN",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "e4a0bfc6-586c-491f-8580-e43c6d30f7a1",
+    "slug": "laurez-moreira",
+    "nome_completo": "Laurez da Rocha Moreira",
+    "nome_urna": "Laurez Moreira",
+    "ano": 2002,
+    "estado": "TO",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "a342036a-c436-400a-bd14-edefacad8d75",
+    "slug": "luis-cesar-bueno",
+    "nome_completo": "Luis Cesar Bueno e Freitas",
+    "nome_urna": "Luis Cesar Bueno",
+    "ano": 2002,
+    "estado": "GO",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+    "slug": "lula",
+    "nome_completo": "Luiz Inacio Lula da Silva",
+    "nome_urna": "Lula",
+    "ano": 2002,
+    "estado": null,
+    "cargo": "Presidente"
+  },
+  {
+    "candidato_id": "95fc116b-4c1e-4332-9c52-948bc1775a57",
+    "slug": "marconi-perillo",
+    "nome_completo": "Marconi Ferreira Perillo Junior",
+    "nome_urna": "Marconi Perillo",
+    "ano": 2002,
+    "estado": "GO",
+    "cargo": "Governador"
+  },
+  {
+    "candidato_id": "5e05e0d3-a64a-41b9-9f9a-bd160f43cec2",
+    "slug": "marcus-sodre",
+    "nome_completo": "Marcus Alexandre Sodré",
+    "nome_urna": "Marcus Sodré",
+    "ano": 2002,
+    "estado": "SC",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+    "slug": "patrus-ananias",
+    "nome_completo": "Patrus Ananias de Souza",
+    "nome_urna": "Patrus Ananias",
+    "ano": 2002,
+    "estado": "MG",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "adb2ed0d-e7d6-4726-b310-a32bf6e3478a",
+    "slug": "rafael-greca",
+    "nome_completo": "Rafael Valdomiro Greca de Macedo",
+    "nome_urna": "Rafael Greca",
+    "ano": 2002,
+    "estado": "PR",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "e79ddaf5-f86c-40c6-a54c-10535cb5514d",
+    "slug": "ricardo-ferraco",
+    "nome_completo": "Ricardo de Rezende Ferraço",
+    "nome_urna": "Ricardo Ferraço",
+    "ano": 2002,
+    "estado": "ES",
+    "cargo": "Senador"
+  },
+  {
+    "candidato_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+    "slug": "ronaldo-caiado",
+    "nome_completo": "Ronaldo Ramos Caiado",
+    "nome_urna": "Ronaldo Caiado",
+    "ano": 2002,
+    "estado": "GO",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "1eec3569-c202-4f16-a60a-d67125c51f95",
+    "slug": "rui-costa-pimenta",
+    "nome_completo": "Rui Costa Pimenta",
+    "nome_urna": "Rui Costa Pimenta",
+    "ano": 2002,
+    "estado": "SP",
+    "cargo": "Presidente"
+  },
+  {
+    "candidato_id": "af4d51ab-ffdd-4898-a240-29ea2e85b8e0",
+    "slug": "vittorio-medioli",
+    "nome_completo": "Vittorio Medioli",
+    "nome_urna": "Vittorio Medioli",
+    "ano": 2002,
+    "estado": "MG",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "febc4a12-c352-448a-99dc-671c77e8d57d",
+    "slug": "wellington-fagundes",
+    "nome_completo": "Wellington Antônio Fagundes",
+    "nome_urna": "Wellington Fagundes",
+    "ano": 2002,
+    "estado": "MT",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "68a1eec9-75c1-4dca-a68c-7a4e64033c9b",
+    "slug": "araceli-lemos",
+    "nome_completo": "Araceli Maria Pereira Lemos",
+    "nome_urna": "Araceli Lemos",
+    "ano": 2004,
+    "estado": "PA",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "d97908e9-5b30-4d0e-a01b-c0348682949d",
+    "slug": "clecio-luis",
+    "nome_completo": "Clecio Luis Vilhena Vieira",
+    "nome_urna": "Clecio Luis",
+    "ano": 2004,
+    "estado": "AP",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "6991016f-b50a-4984-b60a-40521bcdf6ee",
+    "slug": "cyro-garcia",
+    "nome_completo": "Cyro Garcia",
+    "nome_urna": "Cyro Garcia",
+    "ano": 2004,
+    "estado": "RJ",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "2c7f19b6-4f91-420a-83ec-866c83a9e027",
+    "slug": "dario-barbosa",
+    "nome_completo": "Dario Barbosa de Melo",
+    "nome_urna": "Dário Barbosa",
+    "ano": 2004,
+    "estado": "RN",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+    "slug": "david-almeida",
+    "nome_completo": "David Antônio Abisai Pereira de Almeida",
+    "nome_urna": "David Almeida",
+    "ano": 2004,
+    "estado": "AM",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "914d9904-1c6a-47f9-a25f-017138dc1cef",
+    "slug": "elizeu-aguiar",
+    "nome_completo": "Elizeu Morais de Aguiar",
+    "nome_urna": "Elizeu Aguiar",
+    "ano": 2004,
+    "estado": "PI",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
+    "slug": "geraldo-carvalho",
+    "nome_completo": "Geraldo do Nascimento Carvalho",
+    "nome_urna": "Geraldo Carvalho",
+    "ano": 2004,
+    "estado": "PI",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "5dc271fa-9171-484c-a8b3-f366fed10d10",
+    "slug": "gilberto-vasconcelos",
+    "nome_completo": "Gilberto Vasconcelos da Silva",
+    "nome_urna": "Gilberto Vasconcelos",
+    "ano": 2004,
+    "estado": "AM",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "f793ff5b-678f-4684-97b7-ce0eaf08c0c3",
+    "slug": "gustavo-henrique",
+    "nome_completo": "Gustavo Henrique Leite Feijó",
+    "nome_urna": "Gustavo Henrique",
+    "ano": 2004,
+    "estado": "PI",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+    "slug": "helder-salomao",
+    "nome_completo": "Helder Ignácio Salomão",
+    "nome_urna": "Helder Salomão",
+    "ano": 2004,
+    "estado": "ES",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "63de6cc4-aebc-49f6-88ab-25c93dde0a58",
+    "slug": "joel-rodrigues",
+    "nome_completo": "Joel Rodrigues da Silva",
+    "nome_urna": "Joel Rodrigues",
+    "ano": 2004,
+    "estado": "PI",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "40d9eaa9-2e4e-4e86-b8c1-8374bcc808d5",
+    "slug": "larissa-rosado",
+    "nome_completo": "Larissa Daniela Escossia Rosado",
+    "nome_urna": "Larissa",
+    "ano": 2004,
+    "estado": "RN",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "92d96cc2-d413-49ac-bbdd-9834ce7c6418",
+    "slug": "luiz-carlos-teodoro",
+    "nome_completo": "Luiz Carlos Teodoro",
+    "nome_urna": "Luiz Carlos Teodoro",
+    "ano": 2004,
+    "estado": "RO",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "a9ce3c0b-9fa4-4e28-9c2e-809b1fa5e639",
+    "slug": "marcos-rogerio",
+    "nome_completo": "Marcos Rogério da Silva Brito",
+    "nome_urna": "Marcos Rogerio",
+    "ano": 2004,
+    "estado": "RO",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "5e05e0d3-a64a-41b9-9f9a-bd160f43cec2",
+    "slug": "marcus-sodre",
+    "nome_completo": "Marcus Alexandre Sodré",
+    "nome_urna": "Marcus Sodré",
+    "ano": 2004,
+    "estado": "SC",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "3c628b54-5304-480d-a664-be16409e0322",
+    "slug": "mauricio-tonha",
+    "nome_completo": "Mauricio Cardoso Tonha",
+    "nome_urna": "Mauricio Tonha",
+    "ano": 2004,
+    "estado": "MT",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+    "slug": "renan-filho",
+    "nome_completo": "José Renan Vasconcelos Calheiros Filho",
+    "nome_urna": "Renan Filho",
+    "ano": 2004,
+    "estado": "AL",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
+    "slug": "tiao-bocalom",
+    "nome_completo": "Sebastiao Bocalom Rodrigues",
+    "nome_urna": "Tiao Bocalom",
+    "ano": 2004,
+    "estado": "AC",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "8e6f8d4c-7981-499e-b03b-5778e1db704d",
+    "slug": "valmir-de-francisquinho",
+    "nome_completo": "Valmir dos Santos Costa",
+    "nome_urna": "Valmir de Francisquinho",
+    "ano": 2004,
+    "estado": "SE",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
+    "slug": "vera-lucia",
+    "nome_completo": "Vera Lúcia Pereira da Silva Salgado",
+    "nome_urna": "Vera Lúcia",
+    "ano": 2004,
+    "estado": "SE",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "febc4a12-c352-448a-99dc-671c77e8d57d",
+    "slug": "wellington-fagundes",
+    "nome_completo": "Wellington Antônio Fagundes",
+    "nome_urna": "Wellington Fagundes",
+    "ano": 2004,
+    "estado": "MT",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+    "slug": "acm-neto",
+    "nome_completo": "Antônio Carlos Peixoto de Magalhães Neto",
+    "nome_urna": "ACM Neto",
+    "ano": 2006,
+    "estado": "BA",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+    "slug": "alvaro-dias-rn",
+    "nome_completo": "Alvaro Costa Dias",
+    "nome_urna": "Alvaro Dias",
+    "ano": 2006,
+    "estado": "RN",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "75d2da17-ddd3-45f2-9bde-07ed8655034a",
+    "slug": "amelio-cayres",
+    "nome_completo": "Amelio Cayres de Almeida",
+    "nome_urna": "Amelio Cayres",
+    "ano": 2006,
+    "estado": "TO",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "68a1eec9-75c1-4dca-a68c-7a4e64033c9b",
+    "slug": "araceli-lemos",
+    "nome_completo": "Araceli Maria Pereira Lemos",
+    "nome_urna": "Araceli Lemos",
+    "ano": 2006,
+    "estado": "PA",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "b1104f0b-80fb-4082-8356-dfb374e20028",
+    "slug": "cabo-daciolo",
+    "nome_completo": "Benevenuto Daciolo Fonseca dos Santos",
+    "nome_urna": "Cabo Daciolo",
+    "ano": 2006,
+    "estado": "RJ",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "76a6620b-1fd4-46df-806f-5101bd660f7f",
+    "slug": "cicero-lucena",
+    "nome_completo": "Cicero de Lucena Filho",
+    "nome_urna": "Cicero Lucena",
+    "ano": 2006,
+    "estado": "PB",
+    "cargo": "Senador"
+  },
+  {
+    "candidato_id": "2df15aa1-0bd3-4bab-89bf-13d780645e54",
+    "slug": "ciro-gomes-gov-ce",
+    "nome_completo": "Ciro Ferreira Gomes",
+    "nome_urna": "Ciro Gomes",
+    "ano": 2006,
+    "estado": "CE",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "d97908e9-5b30-4d0e-a01b-c0348682949d",
+    "slug": "clecio-luis",
+    "nome_completo": "Clecio Luis Vilhena Vieira",
+    "nome_urna": "Clecio Luis",
+    "ano": 2006,
+    "estado": "AP",
+    "cargo": "Governador"
+  },
+  {
+    "candidato_id": "6991016f-b50a-4984-b60a-40521bcdf6ee",
+    "slug": "cyro-garcia",
+    "nome_completo": "Cyro Garcia",
+    "nome_urna": "Cyro Garcia",
+    "ano": 2006,
+    "estado": "RJ",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+    "slug": "david-almeida",
+    "nome_completo": "David Antônio Abisai Pereira de Almeida",
+    "nome_urna": "David Almeida",
+    "ano": 2006,
+    "estado": "AM",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
+    "slug": "eduardo-braide",
+    "nome_completo": "Eduardo Salim Braide",
+    "nome_urna": "Eduardo Braide",
+    "ano": 2006,
+    "estado": "MA",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "slug": "eduardo-paes",
+    "nome_completo": "Eduardo da Costa Paes",
+    "nome_urna": "Eduardo Paes",
+    "ano": 2006,
+    "estado": "RJ",
+    "cargo": "Governador"
+  },
+  {
+    "candidato_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+    "slug": "efraim-filho",
+    "nome_completo": "Efraim de Araujo Morais Filho",
+    "nome_urna": "Efraim Filho",
+    "ano": 2006,
+    "estado": "PB",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "914d9904-1c6a-47f9-a25f-017138dc1cef",
+    "slug": "elizeu-aguiar",
+    "nome_completo": "Elizeu Morais de Aguiar",
+    "nome_urna": "Elizeu Aguiar",
+    "ano": 2006,
+    "estado": "PI",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "327ae8c2-292b-4677-a333-c46fe19ae2ec",
+    "slug": "emanuel-cacho",
+    "nome_completo": "Emanuel Messias Oliveira Cacho",
+    "nome_urna": "Emanuel Cacho",
+    "ano": 2006,
+    "estado": "SE",
+    "cargo": "2º suplente de Senador"
+  },
+  {
+    "candidato_id": "85bcd355-89c2-464d-bfce-620fe8631285",
+    "slug": "gelson-merisio",
+    "nome_completo": "Gelson Luiz Merisio",
+    "nome_urna": "Gelson Merisio",
+    "ano": 2006,
+    "estado": "SC",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
+    "slug": "geraldo-carvalho",
+    "nome_completo": "Geraldo do Nascimento Carvalho",
+    "nome_urna": "Geraldo Carvalho",
+    "ano": 2006,
+    "estado": "PI",
+    "cargo": "Senador"
+  },
+  {
+    "candidato_id": "b423fdbb-b7b8-48c8-9236-efac480e7017",
+    "slug": "indira-xavier",
+    "nome_completo": "Indira Ivanise Xavier",
+    "nome_urna": "Indira Xavier",
+    "ano": 2006,
+    "estado": "AL",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "ebe1d53d-8b79-4d5c-8c98-66f5f9dfedf7",
+    "slug": "ismar-marques",
+    "nome_completo": "Ismar Aguiar Marques",
+    "nome_urna": "Ismar Marques",
+    "ano": 2006,
+    "estado": "PI",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "888e1e8a-f269-496c-8bcc-15a61c44f320",
+    "slug": "jayme-campos",
+    "nome_completo": "Jayme Verissimo de Campos",
+    "nome_urna": "Jayme Campos",
+    "ano": 2006,
+    "estado": "MT",
+    "cargo": "Senador"
+  },
+  {
+    "candidato_id": "cc2dbc88-aae0-4c75-a112-bcc6bfc3189b",
+    "slug": "joao-campos",
+    "nome_completo": "Joao Henrique de Andrade Lima Campos",
+    "nome_urna": "Joao Campos",
+    "ano": 2006,
+    "estado": "GO",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
+    "slug": "jorginho-mello",
+    "nome_completo": "Jorginho dos Santos Mello",
+    "nome_urna": "Jorginho Mello",
+    "ano": 2006,
+    "estado": "SC",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "1a7a43e6-a160-432d-99bd-08e33fb8162f",
+    "slug": "jose-estevao",
+    "nome_completo": "José Estêvão dos Santos Barbosa",
+    "nome_urna": "José Estêvão",
+    "ano": 2006,
+    "estado": "BA",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "d9cf9c6b-c6f9-4561-ab0f-138d2086c5ce",
+    "slug": "jose-roberto-arruda",
+    "nome_completo": "Jose Roberto Arruda",
+    "nome_urna": "Jose Roberto Arruda",
+    "ano": 2006,
+    "estado": "DF",
+    "cargo": "Governador"
+  },
+  {
+    "candidato_id": "40d9eaa9-2e4e-4e86-b8c1-8374bcc808d5",
+    "slug": "larissa-rosado",
+    "nome_completo": "Larissa Daniela Escossia Rosado",
+    "nome_urna": "Larissa",
+    "ano": 2006,
+    "estado": "RN",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "e4a0bfc6-586c-491f-8580-e43c6d30f7a1",
+    "slug": "laurez-moreira",
+    "nome_completo": "Laurez da Rocha Moreira",
+    "nome_urna": "Laurez Moreira",
+    "ano": 2006,
+    "estado": "TO",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "f5de5375-7258-4164-9f89-45ee8ee442d6",
+    "slug": "lourdes-melo",
+    "nome_completo": "Maria de Lourdes Soares Melo",
+    "nome_urna": "Lourdes Melo",
+    "ano": 2006,
+    "estado": "PI",
+    "cargo": "Governador"
+  },
+  {
+    "candidato_id": "a342036a-c436-400a-bd14-edefacad8d75",
+    "slug": "luis-cesar-bueno",
+    "nome_completo": "Luis Cesar Bueno e Freitas",
+    "nome_urna": "Luis Cesar Bueno",
+    "ano": 2006,
+    "estado": "GO",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "95fc116b-4c1e-4332-9c52-948bc1775a57",
+    "slug": "marconi-perillo",
+    "nome_completo": "Marconi Ferreira Perillo Junior",
+    "nome_urna": "Marconi Perillo",
+    "ano": 2006,
+    "estado": "GO",
+    "cargo": "Senador"
+  },
+  {
+    "candidato_id": "47a1de10-1cf7-47f8-837b-dbbf94480421",
+    "slug": "orleans-brandao",
+    "nome_completo": "Carlos Orleans Brandão Junior",
+    "nome_urna": "Orleans Brandao",
+    "ano": 2006,
+    "estado": "MA",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "a8a86164-4000-4bbe-ac11-c02b90955ea5",
+    "slug": "otaviano-pivetta",
+    "nome_completo": "Otaviano Olavo Pivetta",
+    "nome_urna": "Otaviano Pivetta",
+    "ano": 2006,
+    "estado": "MT",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "adb2ed0d-e7d6-4726-b310-a32bf6e3478a",
+    "slug": "rafael-greca",
+    "nome_completo": "Rafael Valdomiro Greca de Macedo",
+    "nome_urna": "Rafael Greca",
+    "ano": 2006,
+    "estado": "PR",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "1a6c43cd-c70d-4b61-8d8b-44f93c517c96",
+    "slug": "roberto-claudio",
+    "nome_completo": "Roberto Cláudio Rodrigues Bezerra",
+    "nome_urna": "Roberto Claudio",
+    "ano": 2006,
+    "estado": "CE",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "4164ed87-4b75-4f33-9edb-8f12c38086e5",
+    "slug": "robson-raymundo",
+    "nome_completo": "Robson Raymundo da Silva",
+    "nome_urna": "Professor Robson Raymundo",
+    "ano": 2006,
+    "estado": "DF",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
+    "slug": "tiao-bocalom",
+    "nome_completo": "Sebastiao Bocalom Rodrigues",
+    "nome_urna": "Tiao Bocalom",
+    "ano": 2006,
+    "estado": "AC",
+    "cargo": "Governador"
+  },
+  {
+    "candidato_id": "a61bb9e4-2c0d-4848-8696-3fe26071fdbd",
+    "slug": "tulio-lopes",
+    "nome_completo": "Tulio Cesar Dias Lopes",
+    "nome_urna": "Tulio Lopes",
+    "ano": 2006,
+    "estado": "MG",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
+    "slug": "vera-lucia",
+    "nome_completo": "Vera Lúcia Pereira da Silva Salgado",
+    "nome_urna": "Vera Lúcia",
+    "ano": 2006,
+    "estado": "SE",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "febc4a12-c352-448a-99dc-671c77e8d57d",
+    "slug": "wellington-fagundes",
+    "nome_completo": "Wellington Antônio Fagundes",
+    "nome_urna": "Wellington Fagundes",
+    "ano": 2006,
+    "estado": "MT",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+    "slug": "acm-neto",
+    "nome_completo": "Antônio Carlos Peixoto de Magalhães Neto",
+    "nome_urna": "ACM Neto",
+    "ano": 2008,
+    "estado": "BA",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "e9cf3bd3-4ab9-4928-b652-558c5e8d8ce4",
+    "slug": "adailton-furia",
+    "nome_completo": "Adailton de Souza Fúria",
+    "nome_urna": "Adailton Furia",
+    "ano": 2008,
+    "estado": "RO",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "dade7402-b3dc-4910-9c21-43c834f21620",
+    "slug": "baba",
+    "nome_completo": "Anteomar Pereira da Silva",
+    "nome_urna": "Babá",
+    "ano": 2008,
+    "estado": "RN",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "b1104f0b-80fb-4082-8356-dfb374e20028",
+    "slug": "cabo-daciolo",
+    "nome_completo": "Benevenuto Daciolo Fonseca dos Santos",
+    "nome_urna": "Cabo Daciolo",
+    "ano": 2008,
+    "estado": "RJ",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "d97908e9-5b30-4d0e-a01b-c0348682949d",
+    "slug": "clecio-luis",
+    "nome_completo": "Clecio Luis Vilhena Vieira",
+    "nome_urna": "Clecio Luis",
+    "ano": 2008,
+    "estado": "AP",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "6991016f-b50a-4984-b60a-40521bcdf6ee",
+    "slug": "cyro-garcia",
+    "nome_completo": "Cyro Garcia",
+    "nome_urna": "Cyro Garcia",
+    "ano": 2008,
+    "estado": "RJ",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
+    "slug": "daniel-vilela",
+    "nome_completo": "Daniel Elias Carvalho Vilela",
+    "nome_urna": "Daniel Vilela",
+    "ano": 2008,
+    "estado": "GO",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "2c7f19b6-4f91-420a-83ec-866c83a9e027",
+    "slug": "dario-barbosa",
+    "nome_completo": "Dario Barbosa de Melo",
+    "nome_urna": "Dário Barbosa",
+    "ano": 2008,
+    "estado": "RN",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
+    "slug": "eduardo-braide",
+    "nome_completo": "Eduardo Salim Braide",
+    "nome_urna": "Eduardo Braide",
+    "ano": 2008,
+    "estado": "MA",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+    "slug": "eduardo-paes",
+    "nome_completo": "Eduardo da Costa Paes",
+    "nome_urna": "Eduardo Paes",
+    "ano": 2008,
+    "estado": "RJ",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "914d9904-1c6a-47f9-a25f-017138dc1cef",
+    "slug": "elizeu-aguiar",
+    "nome_completo": "Elizeu Morais de Aguiar",
+    "nome_urna": "Elizeu Aguiar",
+    "ano": 2008,
+    "estado": "PI",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+    "slug": "fabio-mitidieri",
+    "nome_completo": "Fábio Cruz Mitidieri",
+    "nome_urna": "Fabio Mitidieri",
+    "ano": 2008,
+    "estado": "SE",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
+    "slug": "geraldo-carvalho",
+    "nome_completo": "Geraldo do Nascimento Carvalho",
+    "nome_urna": "Geraldo Carvalho",
+    "ano": 2008,
+    "estado": "PI",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "f793ff5b-678f-4684-97b7-ce0eaf08c0c3",
+    "slug": "gustavo-henrique",
+    "nome_completo": "Gustavo Henrique Leite Feijó",
+    "nome_urna": "Gustavo Henrique",
+    "ano": 2008,
+    "estado": "PI",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+    "slug": "helder-salomao",
+    "nome_completo": "Helder Ignácio Salomão",
+    "nome_urna": "Helder Salomão",
+    "ano": 2008,
+    "estado": "ES",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+    "slug": "joao-rodrigues",
+    "nome_completo": "João Rodrigues",
+    "nome_urna": "João Rodrigues",
+    "ano": 2008,
+    "estado": "RS",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "63de6cc4-aebc-49f6-88ab-25c93dde0a58",
+    "slug": "joel-rodrigues",
+    "nome_completo": "Joel Rodrigues da Silva",
+    "nome_urna": "Joel Rodrigues",
+    "ano": 2008,
+    "estado": "PI",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "slug": "juliana-brizola",
+    "nome_completo": "Juliana Brizola",
+    "nome_urna": "Juliana Brizola",
+    "ano": 2008,
+    "estado": "RS",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "40d9eaa9-2e4e-4e86-b8c1-8374bcc808d5",
+    "slug": "larissa-rosado",
+    "nome_completo": "Larissa Daniela Escossia Rosado",
+    "nome_urna": "Larissa",
+    "ano": 2008,
+    "estado": "RN",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "f5de5375-7258-4164-9f89-45ee8ee442d6",
+    "slug": "lourdes-melo",
+    "nome_completo": "Maria de Lourdes Soares Melo",
+    "nome_urna": "Lourdes Melo",
+    "ano": 2008,
+    "estado": "PI",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "9f8bdf27-8e4e-4f67-ae08-1519fc941412",
+    "slug": "lucien-rezende",
+    "nome_completo": "Lucien Miranda de Rezende",
+    "nome_urna": "Lucien Rezende",
+    "ano": 2008,
+    "estado": "MS",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "a9ce3c0b-9fa4-4e28-9c2e-809b1fa5e639",
+    "slug": "marcos-rogerio",
+    "nome_completo": "Marcos Rogério da Silva Brito",
+    "nome_urna": "Marcos Rogerio",
+    "ano": 2008,
+    "estado": "RO",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "3c628b54-5304-480d-a664-be16409e0322",
+    "slug": "mauricio-tonha",
+    "nome_completo": "Mauricio Cardoso Tonha",
+    "nome_urna": "Mauricio Tonha",
+    "ano": 2008,
+    "estado": "MT",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "9fe469dc-058f-487d-b888-ba113f5535ae",
+    "slug": "omar-aziz",
+    "nome_completo": "Omar Jose Abdel Aziz",
+    "nome_urna": "Omar Aziz",
+    "ano": 2008,
+    "estado": "AM",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+    "slug": "renan-filho",
+    "nome_completo": "José Renan Vasconcelos Calheiros Filho",
+    "nome_urna": "Renan Filho",
+    "ano": 2008,
+    "estado": "AL",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
+    "slug": "sandro-alex",
+    "nome_completo": "Sandro Alex Cruz de Oliveira",
+    "nome_urna": "Sandro Alex",
+    "ano": 2008,
+    "estado": "PR",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
+    "slug": "tiao-bocalom",
+    "nome_completo": "Sebastiao Bocalom Rodrigues",
+    "nome_urna": "Tiao Bocalom",
+    "ano": 2008,
+    "estado": "AC",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "8e6f8d4c-7981-499e-b03b-5778e1db704d",
+    "slug": "valmir-de-francisquinho",
+    "nome_completo": "Valmir dos Santos Costa",
+    "nome_urna": "Valmir de Francisquinho",
+    "ano": 2008,
+    "estado": "SE",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
+    "slug": "vera-lucia",
+    "nome_completo": "Vera Lúcia Pereira da Silva Salgado",
+    "nome_urna": "Vera Lúcia",
+    "ano": 2008,
+    "estado": "SE",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "551a4c70-3c9e-4a47-ab62-c241b1dcfbd1",
+    "slug": "ze-coca",
+    "nome_completo": "Zenildo Brandão Santana",
+    "nome_urna": "Zé Cocá",
+    "ano": 2008,
+    "estado": "BA",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "131fa6ef-ec83-40fc-8cb8-d01c79dd30cd",
+    "slug": "ataides-oliveira",
+    "nome_completo": "Ataídes de Oliveira",
+    "nome_urna": "Ataides Oliveira",
+    "ano": 2010,
+    "estado": "TO",
+    "cargo": "1º SUPLENTE SENADOR"
+  },
+  {
+    "candidato_id": "d97908e9-5b30-4d0e-a01b-c0348682949d",
+    "slug": "clecio-luis",
+    "nome_completo": "Clecio Luis Vilhena Vieira",
+    "nome_urna": "Clecio Luis",
+    "ano": 2010,
+    "estado": "AP",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "9f2c557f-7c5a-459b-b0f5-faa6d561a4ce",
+    "slug": "dr-furlan",
+    "nome_completo": "Antonio Paulo de Oliveira Furlan",
+    "nome_urna": "Dr. Furlan",
+    "ano": 2010,
+    "estado": "AP",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+    "slug": "edmilson-costa",
+    "nome_completo": "Edmilson Silva Costa",
+    "nome_urna": "Edmilson Costa",
+    "ano": 2010,
+    "estado": null,
+    "cargo": "Vice-Presidente"
+  },
+  {
+    "candidato_id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+    "slug": "fabio-mitidieri",
+    "nome_completo": "Fábio Cruz Mitidieri",
+    "nome_urna": "Fabio Mitidieri",
+    "ano": 2010,
+    "estado": "SE",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "79b84a18-1a4e-4123-a831-8aefda253dc6",
+    "slug": "hertz-dias",
+    "nome_completo": "HERTZ DA CONCEICAO DIAS",
+    "nome_urna": "Hertz Dias",
+    "ano": 2010,
+    "estado": "MA",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "b423fdbb-b7b8-48c8-9236-efac480e7017",
+    "slug": "indira-xavier",
+    "nome_completo": "Indira Ivanise Xavier",
+    "nome_urna": "Indira Xavier",
+    "ano": 2010,
+    "estado": "AL",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "ebe1d53d-8b79-4d5c-8c98-66f5f9dfedf7",
+    "slug": "ismar-marques",
+    "nome_completo": "Ismar Aguiar Marques",
+    "nome_urna": "Ismar Marques",
+    "ano": 2010,
+    "estado": "PI",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "40d9eaa9-2e4e-4e86-b8c1-8374bcc808d5",
+    "slug": "larissa-rosado",
+    "nome_completo": "Larissa Daniela Escossia Rosado",
+    "nome_urna": "Larissa",
+    "ano": 2010,
+    "estado": "RN",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "f5de5375-7258-4164-9f89-45ee8ee442d6",
+    "slug": "lourdes-melo",
+    "nome_completo": "Maria de Lourdes Soares Melo",
+    "nome_urna": "Lourdes Melo",
+    "ano": 2010,
+    "estado": "PI",
+    "cargo": "Governador"
+  },
+  {
+    "candidato_id": "a342036a-c436-400a-bd14-edefacad8d75",
+    "slug": "luis-cesar-bueno",
+    "nome_completo": "Luis Cesar Bueno e Freitas",
+    "nome_urna": "Luis Cesar Bueno",
+    "ano": 2010,
+    "estado": "GO",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "5e05e0d3-a64a-41b9-9f9a-bd160f43cec2",
+    "slug": "marcus-sodre",
+    "nome_completo": "Marcus Alexandre Sodré",
+    "nome_urna": "Marcus Sodré",
+    "ano": 2010,
+    "estado": "SC",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "a8a86164-4000-4bbe-ac11-c02b90955ea5",
+    "slug": "otaviano-pivetta",
+    "nome_completo": "Otaviano Olavo Pivetta",
+    "nome_urna": "Otaviano Pivetta",
+    "ano": 2010,
+    "estado": "MT",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+    "slug": "patrus-ananias",
+    "nome_completo": "Patrus Ananias de Souza",
+    "nome_urna": "Patrus Ananias",
+    "ano": 2010,
+    "estado": "MG",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "af18411e-e979-4a30-9a1c-c64927b50442",
+    "slug": "wilder-morais",
+    "nome_completo": "Wilder Pedro de Morais",
+    "nome_urna": "Wilder Morais",
+    "ano": 2010,
+    "estado": "GO",
+    "cargo": "1º SUPLENTE SENADOR"
+  },
+  {
+    "candidato_id": "2c7f19b6-4f91-420a-83ec-866c83a9e027",
+    "slug": "dario-barbosa",
+    "nome_completo": "Dario Barbosa de Melo",
+    "nome_urna": "Dário Barbosa",
+    "ano": 2012,
+    "estado": "RN",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+    "slug": "efraim-filho",
+    "nome_completo": "Efraim de Araujo Morais Filho",
+    "nome_urna": "Efraim Filho",
+    "ano": 2012,
+    "estado": "PB",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "0ef8b4e2-ef3d-4f6a-b284-3f4648c1386b",
+    "slug": "juliete-pantoja",
+    "nome_completo": "Juliete Pantoja Alves",
+    "nome_urna": "Juliete Pantoja",
+    "ano": 2012,
+    "estado": "RJ",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "40d9eaa9-2e4e-4e86-b8c1-8374bcc808d5",
+    "slug": "larissa-rosado",
+    "nome_completo": "Larissa Daniela Escossia Rosado",
+    "nome_urna": "Larissa",
+    "ano": 2012,
+    "estado": "RN",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "f5de5375-7258-4164-9f89-45ee8ee442d6",
+    "slug": "lourdes-melo",
+    "nome_completo": "Maria de Lourdes Soares Melo",
+    "nome_urna": "Lourdes Melo",
+    "ano": 2012,
+    "estado": "PI",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "9f8bdf27-8e4e-4f67-ae08-1519fc941412",
+    "slug": "lucien-rezende",
+    "nome_completo": "Lucien Miranda de Rezende",
+    "nome_urna": "Lucien Rezende",
+    "ano": 2012,
+    "estado": "MS",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+    "slug": "patrus-ananias",
+    "nome_completo": "Patrus Ananias de Souza",
+    "nome_urna": "Patrus Ananias",
+    "ano": 2012,
+    "estado": "MG",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "fe3c5bfc-d2d5-425e-8146-cdcb114b68d0",
+    "slug": "prof-meire-reis",
+    "nome_completo": "Meire Lucia Alves dos Reis",
+    "nome_urna": "Prof. Meire Reis",
+    "ano": 2012,
+    "estado": "BA",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
+    "slug": "vera-lucia",
+    "nome_completo": "Vera Lúcia Pereira da Silva Salgado",
+    "nome_urna": "Vera Lúcia",
+    "ano": 2012,
+    "estado": "SE",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "92fea10d-509a-4e07-b686-2271f635fcf8",
+    "slug": "cintia-dias",
+    "nome_completo": "Cintia Aparecida Dias",
+    "nome_urna": "Cintia Dias",
+    "ano": 2014,
+    "estado": "GO",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+    "slug": "edmilson-costa",
+    "nome_completo": "Edmilson Silva Costa",
+    "nome_urna": "Edmilson Costa",
+    "ano": 2014,
+    "estado": "SP",
+    "cargo": "Senador"
+  },
+  {
+    "candidato_id": "327ae8c2-292b-4677-a333-c46fe19ae2ec",
+    "slug": "emanuel-cacho",
+    "nome_completo": "Emanuel Messias Oliveira Cacho",
+    "nome_urna": "Emanuel Cacho",
+    "ano": 2014,
+    "estado": "SE",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "5dc271fa-9171-484c-a8b3-f366fed10d10",
+    "slug": "gilberto-vasconcelos",
+    "nome_completo": "Gilberto Vasconcelos da Silva",
+    "nome_urna": "Gilberto Vasconcelos",
+    "ano": 2014,
+    "estado": "AM",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "ebe1d53d-8b79-4d5c-8c98-66f5f9dfedf7",
+    "slug": "ismar-marques",
+    "nome_completo": "Ismar Aguiar Marques",
+    "nome_urna": "Ismar Marques",
+    "ano": 2014,
+    "estado": "PI",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "40d9eaa9-2e4e-4e86-b8c1-8374bcc808d5",
+    "slug": "larissa-rosado",
+    "nome_completo": "Larissa Daniela Escossia Rosado",
+    "nome_urna": "Larissa",
+    "ano": 2014,
+    "estado": "RN",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "42be4b28-2cdc-4bbe-a436-4ec8432363ec",
+    "slug": "luciana-gurgel",
+    "nome_completo": "Luciana Araujo Goes Gurgel",
+    "nome_urna": "Luciana Gurgel",
+    "ano": 2014,
+    "estado": "AP",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "a342036a-c436-400a-bd14-edefacad8d75",
+    "slug": "luis-cesar-bueno",
+    "nome_completo": "Luis Cesar Bueno e Freitas",
+    "nome_urna": "Luis Cesar Bueno",
+    "ano": 2014,
+    "estado": "GO",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+    "slug": "mailza-assis",
+    "nome_completo": "Mailza Assis da Silva",
+    "nome_urna": "Mailza Assis",
+    "ano": 2014,
+    "estado": "AC",
+    "cargo": "1o Suplente Senador"
+  },
+  {
+    "candidato_id": "5e05e0d3-a64a-41b9-9f9a-bd160f43cec2",
+    "slug": "marcus-sodre",
+    "nome_completo": "Marcus Alexandre Sodré",
+    "nome_urna": "Marcus Sodré",
+    "ano": 2014,
+    "estado": "SC",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "47a1de10-1cf7-47f8-837b-dbbf94480421",
+    "slug": "orleans-brandao",
+    "nome_completo": "Carlos Orleans Brandão Junior",
+    "nome_urna": "Orleans Brandao",
+    "ano": 2014,
+    "estado": "MA",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+    "slug": "patrus-ananias",
+    "nome_completo": "Patrus Ananias de Souza",
+    "nome_urna": "Patrus Ananias",
+    "ano": 2014,
+    "estado": "MG",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "d5ece407-2e2a-4e76-91a9-c2b7db826430",
+    "slug": "ronaldo-mansur",
+    "nome_completo": "Ronaldo Mansur Santos Silva",
+    "nome_urna": "Ronaldo Mansur",
+    "ano": 2014,
+    "estado": "BA",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
+    "slug": "vera-lucia",
+    "nome_completo": "Vera Lúcia Pereira da Silva Salgado",
+    "nome_urna": "Vera Lúcia",
+    "ano": 2014,
+    "estado": "SE",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+    "slug": "acm-neto",
+    "nome_completo": "Antônio Carlos Peixoto de Magalhães Neto",
+    "nome_urna": "ACM Neto",
+    "ano": 2016,
+    "estado": "BA",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "e9cf3bd3-4ab9-4928-b652-558c5e8d8ce4",
+    "slug": "adailton-furia",
+    "nome_completo": "Adailton de Souza Fúria",
+    "nome_urna": "Adailton Furia",
+    "ano": 2016,
+    "estado": "RO",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+    "slug": "alvaro-dias-rn",
+    "nome_completo": "Alvaro Costa Dias",
+    "nome_urna": "Alvaro Dias",
+    "ano": 2016,
+    "estado": "RN",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "049a5051-e7c9-4729-8853-14753d2993e1",
+    "slug": "arthur-henrique",
+    "nome_completo": "Arthur Henrique Brandão Machado",
+    "nome_urna": "Arthur Henrique",
+    "ano": 2016,
+    "estado": "RR",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "dade7402-b3dc-4910-9c21-43c834f21620",
+    "slug": "baba",
+    "nome_completo": "Anteomar Pereira da Silva",
+    "nome_urna": "Babá",
+    "ano": 2016,
+    "estado": "RN",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "ff7f433f-70b4-420c-885d-c0401a901790",
+    "slug": "cleitinho",
+    "nome_completo": "Cleiton Gontijo de Azevedo",
+    "nome_urna": "Cleitinho",
+    "ano": 2016,
+    "estado": "MG",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "f126204e-1f28-4200-9468-9144eddbb6e4",
+    "slug": "elmano-de-freitas",
+    "nome_completo": "Elmano de Freitas da Costa",
+    "nome_urna": "Elmano de Freitas",
+    "ano": 2016,
+    "estado": "CE",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "5a325c79-3414-4d70-8926-673e91cbd578",
+    "slug": "hildon-chaves",
+    "nome_completo": "Hildon de Lima Chaves",
+    "nome_urna": "Hildon Chaves",
+    "ano": 2016,
+    "estado": "RO",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "29dbd8e2-6ebb-4261-bf53-be3b4df63718",
+    "slug": "joao-henrique-catan",
+    "nome_completo": "Joao Henrique Catan",
+    "nome_urna": "Joao Henrique Catan",
+    "ano": 2016,
+    "estado": "MS",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+    "slug": "joao-rodrigues",
+    "nome_completo": "João Rodrigues",
+    "nome_urna": "João Rodrigues",
+    "ano": 2016,
+    "estado": "RS",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "7a6a6475-0691-4823-9104-5055ca589405",
+    "slug": "juliana-brizola",
+    "nome_completo": "Juliana Brizola",
+    "nome_urna": "Juliana Brizola",
+    "ano": 2016,
+    "estado": "RS",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "e4a0bfc6-586c-491f-8580-e43c6d30f7a1",
+    "slug": "laurez-moreira",
+    "nome_completo": "Laurez da Rocha Moreira",
+    "nome_urna": "Laurez Moreira",
+    "ano": 2016,
+    "estado": "TO",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "b8ad0e9c-eb0f-4b37-bdf9-840c5d167016",
+    "slug": "lucas-ribeiro",
+    "nome_completo": "Lucas Ribeiro Novais de Araújo",
+    "nome_urna": "Lucas Ribeiro",
+    "ano": 2016,
+    "estado": "PB",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "59582609-1f9b-4363-9e36-08fd6d07b6c4",
+    "slug": "marcelo-maranata",
+    "nome_completo": "Marcelo Maranata",
+    "nome_urna": "Marcelo Maranata",
+    "ano": 2016,
+    "estado": "RS",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "a8a86164-4000-4bbe-ac11-c02b90955ea5",
+    "slug": "otaviano-pivetta",
+    "nome_completo": "Otaviano Olavo Pivetta",
+    "nome_urna": "Otaviano Pivetta",
+    "ano": 2016,
+    "estado": "MT",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "54fc08fb-f712-42e2-81ed-3bdedc60a783",
+    "slug": "preta-lu",
+    "nome_completo": "Luciana Costa Correa",
+    "nome_urna": "Preta Lu",
+    "ano": 2016,
+    "estado": "MA",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "022d27e8-2832-4156-9bc7-7eac817ac901",
+    "slug": "raquel-lyra",
+    "nome_completo": "Raquel Teixeira Lyra Lucena",
+    "nome_urna": "Raquel Lyra",
+    "ano": 2016,
+    "estado": "PE",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "36ec7b14-9da3-4324-820d-6318ce535d01",
+    "slug": "requiao-filho",
+    "nome_completo": "Mauricio Thadeu de Mello e Silva",
+    "nome_urna": "Requiao Filho",
+    "ano": 2016,
+    "estado": "PR",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "1a6c43cd-c70d-4b61-8d8b-44f93c517c96",
+    "slug": "roberto-claudio",
+    "nome_completo": "Roberto Cláudio Rodrigues Bezerra",
+    "nome_urna": "Roberto Claudio",
+    "ano": 2016,
+    "estado": "CE",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
+    "slug": "vera-lucia",
+    "nome_completo": "Vera Lúcia Pereira da Silva Salgado",
+    "nome_urna": "Vera Lúcia",
+    "ano": 2016,
+    "estado": "SE",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+    "slug": "alvaro-dias-rn",
+    "nome_completo": "Alvaro Costa Dias",
+    "nome_urna": "Alvaro Dias",
+    "ano": 2018,
+    "estado": "RN",
+    "cargo": "Presidente"
+  },
+  {
+    "candidato_id": "68a1eec9-75c1-4dca-a68c-7a4e64033c9b",
+    "slug": "araceli-lemos",
+    "nome_completo": "Araceli Maria Pereira Lemos",
+    "nome_urna": "Araceli Lemos",
+    "ano": 2018,
+    "estado": "PA",
+    "cargo": "Candidatura a 1o Suplente Senador"
+  },
+  {
+    "candidato_id": "23dc2553-0fd3-489f-9ac1-4ed50b8ec5e3",
+    "slug": "coronel-busnello",
+    "nome_completo": "João Jacques Soares Busnello",
+    "nome_urna": "Coronel Busnello",
+    "ano": 2018,
+    "estado": "RJ",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "79b84a18-1a4e-4123-a831-8aefda253dc6",
+    "slug": "hertz-dias",
+    "nome_completo": "HERTZ DA CONCEICAO DIAS",
+    "nome_urna": "Hertz Dias",
+    "ano": 2018,
+    "estado": null,
+    "cargo": "Vice-Presidente"
+  },
+  {
+    "candidato_id": "baf8abd2-9386-48df-876e-1e8b16fa1e7f",
+    "slug": "jeremias-cosmo",
+    "nome_completo": "Jeremias Cosmo Silva dos Santos",
+    "nome_urna": "Professor Jeremias",
+    "ano": 2018,
+    "estado": "PE",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "cc2dbc88-aae0-4c75-a112-bcc6bfc3189b",
+    "slug": "joao-campos",
+    "nome_completo": "Joao Henrique de Andrade Lima Campos",
+    "nome_urna": "Joao Campos",
+    "ano": 2018,
+    "estado": "GO",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+    "slug": "joao-rodrigues",
+    "nome_completo": "João Rodrigues",
+    "nome_urna": "João Rodrigues",
+    "ano": 2018,
+    "estado": "RS",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "a342036a-c436-400a-bd14-edefacad8d75",
+    "slug": "luis-cesar-bueno",
+    "nome_completo": "Luis Cesar Bueno e Freitas",
+    "nome_urna": "Luis Cesar Bueno",
+    "ano": 2018,
+    "estado": "GO",
+    "cargo": "Senador"
+  },
+  {
+    "candidato_id": "e1e7801e-ba65-4175-b9e3-e614e09905d0",
+    "slug": "marcelo-brigadeiro",
+    "nome_completo": "Marcelo Marcel Franco José da Silva",
+    "nome_urna": "Marcelo Brigadeiro",
+    "ano": 2018,
+    "estado": "SC",
+    "cargo": "1º Suplente"
+  },
+  {
+    "candidato_id": "47a1de10-1cf7-47f8-837b-dbbf94480421",
+    "slug": "orleans-brandao",
+    "nome_completo": "Carlos Orleans Brandão Junior",
+    "nome_urna": "Orleans Brandao",
+    "ano": 2018,
+    "estado": "MA",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "a8a86164-4000-4bbe-ac11-c02b90955ea5",
+    "slug": "otaviano-pivetta",
+    "nome_completo": "Otaviano Olavo Pivetta",
+    "nome_urna": "Otaviano Pivetta",
+    "ano": 2018,
+    "estado": "MT",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+    "slug": "patrus-ananias",
+    "nome_completo": "Patrus Ananias de Souza",
+    "nome_urna": "Patrus Ananias",
+    "ano": 2018,
+    "estado": "MG",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+    "slug": "david-almeida",
+    "nome_completo": "David Antônio Abisai Pereira de Almeida",
+    "nome_urna": "David Almeida",
+    "ano": 2020,
+    "estado": "AM",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "f383d692-5872-444d-b107-794c00182bad",
+    "slug": "henrique-areas",
+    "nome_completo": "Henrique Áreas de Araujo",
+    "nome_urna": "Henrique Áreas",
+    "ano": 2020,
+    "estado": "SP",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "20e8b8cd-54a6-4e85-89c2-386ef12d2cc8",
+    "slug": "izadora-dias",
+    "nome_completo": "Izadora Cristina Dias da Silva",
+    "nome_urna": "Izadora Dias",
+    "ano": 2020,
+    "estado": "SP",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "baf8abd2-9386-48df-876e-1e8b16fa1e7f",
+    "slug": "jeremias-cosmo",
+    "nome_completo": "Jeremias Cosmo Silva dos Santos",
+    "nome_urna": "Professor Jeremias",
+    "ano": 2020,
+    "estado": "PE",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "29dbd8e2-6ebb-4261-bf53-be3b4df63718",
+    "slug": "joao-henrique-catan",
+    "nome_completo": "Joao Henrique Catan",
+    "nome_urna": "Joao Henrique Catan",
+    "ano": 2020,
+    "estado": "MS",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+    "slug": "joao-rodrigues",
+    "nome_completo": "João Rodrigues",
+    "nome_urna": "João Rodrigues",
+    "ano": 2020,
+    "estado": "SC",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "9677309d-5b33-4973-9bbb-d92b766557a3",
+    "slug": "lenilda-luna",
+    "nome_completo": "Lenilda Luna de Almeida",
+    "nome_urna": "Lenilda Luna",
+    "ano": 2020,
+    "estado": "AL",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "b8ad0e9c-eb0f-4b37-bdf9-840c5d167016",
+    "slug": "lucas-ribeiro",
+    "nome_completo": "Lucas Ribeiro Novais de Araújo",
+    "nome_urna": "Lucas Ribeiro",
+    "ano": 2020,
+    "estado": "PB",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "92d96cc2-d413-49ac-bbdd-9834ce7c6418",
+    "slug": "luiz-carlos-teodoro",
+    "nome_completo": "Luiz Carlos Teodoro",
+    "nome_urna": "Luiz Carlos Teodoro",
+    "ano": 2020,
+    "estado": "RO",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "7ee50d01-a46b-4a98-8fcb-fe3936659022",
+    "slug": "roberio-paulino",
+    "nome_completo": "Roberio Paulino Rodrigues",
+    "nome_urna": "Robério Paulino",
+    "ano": 2020,
+    "estado": "RN",
+    "cargo": "Vereador"
+  },
+  {
+    "candidato_id": "38149b1c-1a82-482f-bb46-a9c7fea3afa6",
+    "slug": "serley-leal",
+    "nome_completo": "Serley de Sousa Leal",
+    "nome_urna": "Serley Leal",
+    "ano": 2020,
+    "estado": "CE",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "af18411e-e979-4a30-9a1c-c64927b50442",
+    "slug": "wilder-morais",
+    "nome_completo": "Wilder Pedro de Morais",
+    "nome_urna": "Wilder Morais",
+    "ano": 2020,
+    "estado": "GO",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+    "slug": "alvaro-dias-rn",
+    "nome_completo": "Alvaro Costa Dias",
+    "nome_urna": "Alvaro Dias",
+    "ano": 2022,
+    "estado": "PR",
+    "cargo": "Senador"
+  },
+  {
+    "candidato_id": "049a5051-e7c9-4729-8853-14753d2993e1",
+    "slug": "arthur-henrique",
+    "nome_completo": "Arthur Henrique Brandão Machado",
+    "nome_urna": "Arthur Henrique",
+    "ano": 2022,
+    "estado": "RR",
+    "cargo": "Governador"
+  },
+  {
+    "candidato_id": "131fa6ef-ec83-40fc-8cb8-d01c79dd30cd",
+    "slug": "ataides-oliveira",
+    "nome_completo": "Ataídes de Oliveira",
+    "nome_urna": "Ataides Oliveira",
+    "ano": 2022,
+    "estado": "TO",
+    "cargo": "Senador"
+  },
+  {
+    "candidato_id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
+    "slug": "celina-leao",
+    "nome_completo": "Celina Leão Hizim Ferreira",
+    "nome_urna": "Celina Leao",
+    "ano": 2022,
+    "estado": "DF",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "23dc2553-0fd3-489f-9ac1-4ed50b8ec5e3",
+    "slug": "coronel-busnello",
+    "nome_completo": "João Jacques Soares Busnello",
+    "nome_urna": "Coronel Busnello",
+    "ano": 2022,
+    "estado": "RJ",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
+    "slug": "daniel-vilela",
+    "nome_completo": "Daniel Elias Carvalho Vilela",
+    "nome_urna": "Daniel Vilela",
+    "ano": 2022,
+    "estado": "GO",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "2c7f19b6-4f91-420a-83ec-866c83a9e027",
+    "slug": "dario-barbosa",
+    "nome_completo": "Dario Barbosa de Melo",
+    "nome_urna": "Dário Barbosa",
+    "ano": 2022,
+    "estado": "RN",
+    "cargo": "Senador"
+  },
+  {
+    "candidato_id": "dcc4a93e-4114-43e9-b067-4581ed12cfd5",
+    "slug": "dr-daniel",
+    "nome_completo": "Daniel Barbosa Santos",
+    "nome_urna": "Dr. Daniel",
+    "ano": 2022,
+    "estado": "BA",
+    "cargo": "Deputado Estadual"
+  },
+  {
+    "candidato_id": "9f72e526-c72d-4fc5-8e08-0a965c03b712",
+    "slug": "edilson-damiao",
+    "nome_completo": "Edilson Damião Lima",
+    "nome_urna": "Edilson Damião",
+    "ano": 2022,
+    "estado": "RR",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "7738536c-3432-4762-97e5-f91e812550f4",
+    "slug": "felicio-ramuth",
+    "nome_completo": "Felício Ramuth",
+    "nome_urna": "Felicio Ramuth",
+    "ano": 2022,
+    "estado": "SP",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "0c0e1b6a-cfa6-4da7-82ab-a8ea90b55200",
+    "slug": "felipe-camarao",
+    "nome_completo": "Felipe Costa Camarão",
+    "nome_urna": "Felipe Camarão",
+    "ano": 2022,
+    "estado": "MA",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "b01d3b26-32d0-48c3-9242-6c6b324b249d",
+    "slug": "gabriel-souza",
+    "nome_completo": "Gabriel Vieira de Souza",
+    "nome_urna": "Gabriel Souza",
+    "ano": 2022,
+    "estado": "RS",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "13c6d8ac-fee3-49f7-b1cf-c1a80c69fcea",
+    "slug": "hana-ghassan",
+    "nome_completo": "Hana Ghassan Tuma",
+    "nome_urna": "Hana Ghassan",
+    "ano": 2022,
+    "estado": "PA",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "cc2dbc88-aae0-4c75-a112-bcc6bfc3189b",
+    "slug": "joao-campos",
+    "nome_completo": "Joao Henrique de Andrade Lima Campos",
+    "nome_urna": "Joao Campos",
+    "ano": 2022,
+    "estado": "GO",
+    "cargo": "Senador"
+  },
+  {
+    "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+    "slug": "joao-rodrigues",
+    "nome_completo": "João Rodrigues",
+    "nome_urna": "João Rodrigues",
+    "ano": 2022,
+    "estado": "RS",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "d9cf9c6b-c6f9-4561-ab0f-138d2086c5ce",
+    "slug": "jose-roberto-arruda",
+    "nome_completo": "Jose Roberto Arruda",
+    "nome_urna": "Jose Roberto Arruda",
+    "ano": 2022,
+    "estado": "DF",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "e4a0bfc6-586c-491f-8580-e43c6d30f7a1",
+    "slug": "laurez-moreira",
+    "nome_completo": "Laurez da Rocha Moreira",
+    "nome_urna": "Laurez Moreira",
+    "ano": 2022,
+    "estado": "TO",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "b8ad0e9c-eb0f-4b37-bdf9-840c5d167016",
+    "slug": "lucas-ribeiro",
+    "nome_completo": "Lucas Ribeiro Novais de Araújo",
+    "nome_urna": "Lucas Ribeiro",
+    "ano": 2022,
+    "estado": "PB",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+    "slug": "mailza-assis",
+    "nome_completo": "Mailza Assis da Silva",
+    "nome_urna": "Mailza Assis",
+    "ano": 2022,
+    "estado": "AC",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "9ea4f811-3d51-48b2-a297-e4fccb0ddc14",
+    "slug": "maria-do-carmo",
+    "nome_completo": "Maria do Carmo Seffair",
+    "nome_urna": "Maria do Carmo",
+    "ano": 2022,
+    "estado": "AM",
+    "cargo": "1o Suplente Senador"
+  },
+  {
+    "candidato_id": "6e37f628-6335-4009-8e49-80aa421650a0",
+    "slug": "mateus-simoes",
+    "nome_completo": "Mateus Simões",
+    "nome_urna": "Mateus Simões",
+    "ano": 2022,
+    "estado": "MG",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "a8a86164-4000-4bbe-ac11-c02b90955ea5",
+    "slug": "otaviano-pivetta",
+    "nome_completo": "Otaviano Olavo Pivetta",
+    "nome_urna": "Otaviano Pivetta",
+    "ano": 2022,
+    "estado": "MT",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+    "slug": "patrus-ananias",
+    "nome_completo": "Patrus Ananias de Souza",
+    "nome_urna": "Patrus Ananias",
+    "ano": 2022,
+    "estado": "MG",
+    "cargo": "Deputado Federal"
+  },
+  {
+    "candidato_id": "e79ddaf5-f86c-40c6-a54c-10535cb5514d",
+    "slug": "ricardo-ferraco",
+    "nome_completo": "Ricardo de Rezende Ferraço",
+    "nome_urna": "Ricardo Ferraço",
+    "ano": 2022,
+    "estado": "ES",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "d5ece407-2e2a-4e76-91a9-c2b7db826430",
+    "slug": "ronaldo-mansur",
+    "nome_completo": "Ronaldo Mansur Santos Silva",
+    "nome_urna": "Ronaldo Mansur",
+    "ano": 2022,
+    "estado": "BA",
+    "cargo": "Vice-Governador"
+  },
+  {
+    "candidato_id": "b3988a51-2776-4172-a73b-e326365b0c04",
+    "slug": "samara-martins",
+    "nome_completo": "SAMARA MARTINS DA SILVA",
+    "nome_urna": "Samara Martins",
+    "ano": 2022,
+    "estado": null,
+    "cargo": "Vice-Presidente"
+  },
+  {
+    "candidato_id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
+    "slug": "vera-lucia",
+    "nome_completo": "Vera Lúcia Pereira da Silva Salgado",
+    "nome_urna": "Vera Lúcia",
+    "ano": 2022,
+    "estado": "SP",
+    "cargo": "Presidente"
+  },
+  {
+    "candidato_id": "baf8abd2-9386-48df-876e-1e8b16fa1e7f",
+    "slug": "jeremias-cosmo",
+    "nome_completo": "Jeremias Cosmo Silva dos Santos",
+    "nome_urna": "Professor Jeremias",
+    "ano": 2024,
+    "estado": "PE",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "9677309d-5b33-4973-9bbb-d92b766557a3",
+    "slug": "lenilda-luna",
+    "nome_completo": "Lenilda Luna de Almeida",
+    "nome_urna": "Lenilda Luna",
+    "ano": 2024,
+    "estado": "AL",
+    "cargo": "Prefeito"
+  },
+  {
+    "candidato_id": "9ea4f811-3d51-48b2-a297-e4fccb0ddc14",
+    "slug": "maria-do-carmo",
+    "nome_completo": "Maria do Carmo Seffair",
+    "nome_urna": "Maria do Carmo",
+    "ano": 2024,
+    "estado": "AM",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "2ae1d014-8791-4eb4-817a-5ac85bf4fbd6",
+    "slug": "ricardo-marques",
+    "nome_completo": "José Ricardo Marques dos Santos",
+    "nome_urna": "Ricardo Marques",
+    "ano": 2024,
+    "estado": "SE",
+    "cargo": "Vice-Prefeito"
+  },
+  {
+    "candidato_id": "7ee50d01-a46b-4a98-8fcb-fe3936659022",
+    "slug": "roberio-paulino",
+    "nome_completo": "Roberio Paulino Rodrigues",
+    "nome_urna": "Robério Paulino",
+    "ano": 2024,
+    "estado": "RN",
+    "cargo": "Vereador"
+  }
+]

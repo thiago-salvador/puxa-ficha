@@ -1,0 +1,14 @@
+fichas: 280 | linhas de historico: 1454
+
+(a) Candidatura indeferida/cancelada exibida como candidatura real: 0
+(b) Raw ELEITO (inclusive QP/média) exibido como "Não Eleito": 0
+(c) Cargo interno de partido tratado como pleito: 0
+(d) Eleição em ano sem pleito, em qualquer superfície: 0
+(e) Sobreposição de mandatos sem regra de precedência aplicada: 0
+
+classes de sobreposição (congeladas em scripts/audit/sobreposicoes-congeladas.json):
+  C1_duplicata: 7
+  C4_conflito: 65
+  C5_acumulacao_permitida: 27
+
+C4 é conflito real declarado na ficha ("· período em conferência"), não pendência escondida: 65 par(es).

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "consultado_em": "2026-08-11T02:33:31Z",
+  "fontes": {
+    "consulta_cand_2026": {
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+      "sha256": "cd034c6b994025f018827e317476e5d37c2672809d5a0b69294d461d90cdcb04",
+      "observacao": "O layout 2026 consultado nao expoe a coluna ST_DECLARAR_BENS. A ausencia da coluna equivale a falta de evidencia, nunca a ST_DECLARAR_BENS = N."
+    },
+    "bem_candidato_2026": {
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2026.zip",
+      "sha256": "b4e098f1d9e2a616f7bf1d4dfe9fc103e1adfe4eb9acd87be3bc79b63f187c49"
+    }
+  },
+  "linhas": [
+    {
+      "acao": "adicionar",
+      "slug": "jose-estevao",
+      "ano": 2026,
+      "sq": "50002536579",
+      "estado": "nao_coletado",
+      "identidade": {
+        "nome": "JOSE ESTEVAO DOS SANTOS BARBOSA",
+        "nome_urna": "ESTEVAO",
+        "uf": "BA",
+        "cargo": "GOVERNADOR",
+        "arquivo": "consulta_cand_2026_BA.csv",
+        "arquivo_sha256": "6ca5376d4ee731fafb2c4b3df1ad46ec7fbfc778cacc505864acb710f6b359ab"
+      },
+      "resultado_bens": {
+        "arquivo": "bem_candidato_2026_BA.csv",
+        "arquivo_sha256": "bf500f71589eefec6820308c7ef28f2adcab5a68e8f5ec73f7fc9e9e8c108ffc",
+        "n_bens": 1,
+        "valor_total": 600000.0
+      }
+    },
+    {
+      "acao": "adicionar",
+      "slug": "samara-mineiro",
+      "ano": 2026,
+      "sq": "70002537111",
+      "estado": "nao_coletado",
+      "identidade": {
+        "nome": "SAMARA MINEIRO OLIVEIRA",
+        "nome_urna": "PROFESSORA SAMARA MINEIRO",
+        "uf": "DF",
+        "cargo": "GOVERNADOR",
+        "arquivo": "consulta_cand_2026_DF.csv",
+        "arquivo_sha256": "df4678b4154efcca5819a0ce040b2053e5ab18b1826476524557ffb2b8644fb7"
+      },
+      "resultado_bens": {
+        "arquivo": "bem_candidato_2026_DF.csv",
+        "arquivo_sha256": "665626c8676b6f743f5e89d518fb91967753371ed03e8174f2e01ebb523ed40a",
+        "n_bens": 2,
+        "valor_total": 69196.63
+      }
+    },
+    {
+      "acao": "substituir",
+      "slug": "dr-luisinho",
+      "ano": 2026,
+      "sq": "10002533539",
+      "estado": "nao_coletado",
+      "ausencia_persistida_sem_evidencia": true,
+      "identidade": {
+        "nome": "FRANCISCO DAS CHAGAS CONCEICAO DA SILVA",
+        "nome_urna": "DR.LUISINHO",
+        "uf": "AC",
+        "cargo": "GOVERNADOR",
+        "arquivo": "consulta_cand_2026_AC.csv",
+        "arquivo_sha256": "749df11ddbb4ac0c178571035427470d7432cb7aa395afdfaad6ac51d1e18ea1",
+        "st_declarar_bens": null
+      },
+      "resultado_bens": {
+        "n_bens": 0,
+        "valor_total": null
+      }
+    },
+    {
+      "acao": "substituir",
+      "slug": "preta-lu",
+      "ano": 2026,
+      "sq": "100002534191",
+      "estado": "nao_coletado",
+      "ausencia_persistida_sem_evidencia": true,
+      "identidade": {
+        "nome": "LUCIANA COSTA CORREA",
+        "nome_urna": "PRETA LU",
+        "uf": "MA",
+        "cargo": "VICE-GOVERNADOR",
+        "arquivo": "consulta_cand_2026_MA.csv",
+        "arquivo_sha256": "832d77910af06fe2f2bdb35b186e45d06aab244da933a122b00abf335c780d44",
+        "st_declarar_bens": null
+      },
+      "resultado_bens": {
+        "n_bens": 0,
+        "valor_total": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "$comentario": "Fixtures do contrato B-E2 (trilha B, 2026-08-09). Derivadas dos relatórios de dry-run e do manifesto auditado pf-patrimonio-20260807T170643Z. A Trilha C desenvolve contra estas formas sem esperar a aplicação. Contrato em QA/2026-08-09-trilha-b-contrato-de-dados.md.",
+  "$aviso": "Valores são representativos, não são leitura de produção. Slugs reais foram usados só onde o estado é evidência do manifesto auditado.",
+
+  "sancoes_administrativas": {
+    "$forma": "o que a Trilha C consome de verdade. FichaCandidato.sancoes_administrativas é tipado como SancaoAdministrativa[] (src/lib/types.ts): a tabela tem colunas a mais (ativo, numero_processo, fonte), mas elas NÃO estão no tipo nem no DTO público, então a C não pode depender delas.",
+    "$vigencia": "vigente deriva de data_fim, não de um campo ativo: data_fim null significa sem término no cadastro (CEAF nunca tem), data_fim no passado significa expirada, e expirada continua na lista.",
+    "encontrado_SancaoAdministrativa": [
+      {
+        "id": "00000000-0000-4000-8000-000000000001",
+        "candidato_id": "00000000-0000-4000-8000-0000000000c1",
+        "tipo": "CEIS",
+        "descricao": "Impedimento/proibição de contratar com prazo determinado",
+        "orgao_sancionador": "TRIBUNAL DE JUSTIÇA DO DISTRITO FEDERAL E DOS TERRITÓRIOS - TJDFT",
+        "data_inicio": "2021-09-10",
+        "data_fim": "2026-09-10",
+        "fundamentacao": null,
+        "vinculo": "direto",
+        "cnpj_empresa": null
+      },
+      {
+        "$caso": "CEAF (punição expulsiva) não tem data de fim no cadastro: data_fim null.",
+        "id": "00000000-0000-4000-8000-000000000002",
+        "candidato_id": "00000000-0000-4000-8000-0000000000c1",
+        "tipo": "CEAF",
+        "descricao": "Demissão",
+        "orgao_sancionador": "Ministério da Economia",
+        "data_inicio": "2015-03-02",
+        "data_fim": null,
+        "fundamentacao": "Lei 8.112/90, art. 132",
+        "vinculo": "direto",
+        "cnpj_empresa": null
+      }
+    ],
+    "encontrado_publicSancao": [
+      {
+        "$forma": "src/lib/public-profile-dto.ts publicSancao(): id compacto, sem candidato_id, sem cnpj_empresa; descricao e fundamentacao mascaradas",
+        "id": "sancao-1",
+        "tipo": "CEIS",
+        "descricao": "Impedimento/proibição de contratar com prazo determinado",
+        "orgao_sancionador": "TRIBUNAL DE JUSTIÇA DO DISTRITO FEDERAL E DOS TERRITÓRIOS - TJDFT",
+        "data_inicio": "2021-09-10",
+        "data_fim": "2026-09-10",
+        "fundamentacao": null,
+        "vinculo": "direto"
+      }
+    ],
+    "vazio": []
+  },
+
+  "sancoes_verificacao": {
+    "$forma": "FichaCandidato.sancoes_verificacao (interface SancoesVerificacao em src/lib/types.ts): {resultado, executado_em}. É ela, e não a lista vazia, que diz por que a ficha não mostra nada. O DTO público repassa o objeto inteiro. processos_verificacao tem a mesma forma.",
+    "$regra": "null = nunca verificado (ou leitura da view falhou: degrada para o mesmo estado neutro, nunca para limpeza). Só vazio_confirmado autoriza dizer 'nada encontrado'.",
+    "encontrado": {
+      "resultado": "encontrado",
+      "executado_em": "2026-08-09T14:02:11.000Z"
+    },
+    "vazio_confirmado": {
+      "resultado": "vazio_confirmado",
+      "executado_em": "2026-08-09T14:02:11.000Z"
+    },
+    "erro": {
+      "$caso": "cadastro fora do ar OU candidato sem CPF (30 dos 194 em 09/08). Nunca renderizar como ficha limpa.",
+      "resultado": "erro",
+      "executado_em": "2026-08-09T14:02:11.000Z"
+    },
+    "indeterminado": {
+      "$caso": "resposta com registros que não casam com o CPF consultado (indistinguível de filtro ignorado, incidente 2026-08-04). Tratar como erro: 'não foi possível verificar'.",
+      "resultado": "indeterminado",
+      "executado_em": "2026-08-09T14:02:11.000Z"
+    },
+    "nunca_verificado": null
+  },
+
+  "processos": {
+    "$forma": "public.processos, alimentada por curadoria (fonte processos-curadoria), não por coletor automático",
+    "encontrado": [
+      {
+        "id": "00000000-0000-4000-8000-000000000101",
+        "candidato_id": "00000000-0000-4000-8000-0000000000c1",
+        "tipo": "eleitoral",
+        "tribunal": "TSE",
+        "numero_processo": "0600123-45.2022.6.00.0000",
+        "descricao": "Ação de investigação judicial eleitoral",
+        "status": "em_andamento",
+        "data_inicio": "2022-11-04",
+        "data_decisao": null,
+        "gravidade": "media"
+      }
+    ],
+    "vazio": [],
+    "$estados_de_coleta": ["encontrado", "vazio_confirmado", "bloqueado"],
+    "$nota_bloqueado": "'bloqueado' é o estado de identidade insuficiente do lote de curadoria. Na leitura pública ele NÃO é vazio_confirmado: traduz para indeterminado."
+  },
+
+  "pontos_atencao": {
+    "$forma": "public.pontos_atencao",
+    "$contrato_critico": "Sanção NÃO gera ponto de atenção hoje. O guard motivoRecusaDeFonte() recusa gravidade alta sem fonte pública, e o coletor de sanções não anexa fonte. Trilha C não deve esperar ponto de atenção vindo de sanção: a lista continua vazia mesmo quando a sanção existe.",
+    "curado": [
+      {
+        "id": "00000000-0000-4000-8000-000000000201",
+        "candidato_id": "00000000-0000-4000-8000-0000000000c1",
+        "categoria": "corrupção",
+        "titulo": "Condenação em segunda instância",
+        "descricao": "Texto curado com fonte.",
+        "fontes": [
+          {
+            "$forma": "FonteReferencia de src/lib/types.ts: titulo, url, data",
+            "titulo": "Acórdão do TRF",
+            "url": "https://exemplo.jus.br/acordao/123",
+            "data": "2026-08-01"
+          }
+        ],
+        "gravidade": "alta",
+        "verificado": true,
+        "gerado_por": "curadoria",
+        "data_referencia": "2024-06-12"
+      }
+    ],
+    "vazio": []
+  },
+
+  "patrimonio": {
+    "$forma": "interface Patrimonio de src/lib/types.ts: id, candidato_id, ano_eleicao, valor_total, bens (BemDeclarado[]). A tabela tem coluna `fonte`; o TIPO não a expõe, então a C não depende dela.",
+    "publicado_Patrimonio": {
+      "id": "00000000-0000-4000-8000-000000000301",
+      "candidato_id": "00000000-0000-4000-8000-0000000000c1",
+      "ano_eleicao": 2022,
+      "valor_total": 914731.0,
+      "bens": [
+        {
+          "tipo": "Outros bens e direitos",
+          "descricao": "Casa residencial",
+          "valor": 265719
+        }
+      ]
+    }
+  },
+
+  "patrimonio_eleicoes": {
+    "$forma": "O TERCEIRO ESTADO chega na C por AQUI: PatrimonioEleicaoPublico, gerado por buildPatrimonioEleicoes (src/lib/public-profile-dto.ts), uma linha por ano aplicável. O tipo consumido de patrimonio_ausencia_oficial é PatrimonioAusenciaOficial: {ano_eleicao, fonte_url, verificado_em}, sem slug nem sq (a linha já chega filtrada por candidato).",
+    "$contrato_critico": "estado `vazio_confirmado` = o pacote oficial do TSE não traz bens para aquele pleito (nunca R$ 0). `nao_coletado` = lacuna de coleta. `publicado` = existe linha em patrimonio.",
+    "exemplos": [
+      {
+        "ano": 2022,
+        "estado": "publicado",
+        "fonte_url": null,
+        "verificado_em": null
+      },
+      {
+        "$caso": "o caso Daciolo 2018 do print: ausência oficial, com fonte e data do pacote conferido",
+        "ano": 2018,
+        "estado": "vazio_confirmado",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip",
+        "verificado_em": "2026-08-07T18:27:03.374Z"
+      },
+      {
+        "ano": 2014,
+        "estado": "nao_coletado",
+        "fonte_url": null,
+        "verificado_em": null
+      }
+    ]
+  },
+
+  "estados_terminais": {
+    "$vocabulario_fechado": [
+      "encontrado",
+      "vazio_confirmado",
+      "sem_achado_no_escopo",
+      "indeterminado",
+      "erro",
+      "nao_aplicavel"
+    ],
+    "fecham_cobertura": ["encontrado", "vazio_confirmado", "nao_aplicavel"],
+    "nao_fecham_cobertura": ["sem_achado_no_escopo", "indeterminado", "erro"],
+    "$regra_para_a_trilha_c": "Só `encontrado` e `vazio_confirmado` autorizam afirmar algo ao leitor. `indeterminado` e `erro` exigem estado explícito de 'não foi possível verificar', jamais silêncio nem lista vazia."
+  }
+}

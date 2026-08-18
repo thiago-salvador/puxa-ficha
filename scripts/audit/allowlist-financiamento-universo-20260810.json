@@ -1,0 +1,58 @@
+{
+  "_comentario": "Autoriza somente a carga estatica derivada do manifesto de 235 pleitos. A migration congela cardinalidade, recusa drift e marca todas as linhas com a mesma execucao para rollback exato.",
+  "recorte": "financiamento-universo-20260810",
+  "migration": "20260810121000_financiamento_reconciliado_universo.sql",
+  "fonte": "QA/evidencias/2026-08-10-financiamento-universo/manifesto-235.json",
+  "coorte": [],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "financiamento",
+      "ref": "pf-ajustes-financiamento-20260810",
+      "campos": [
+        "ano_eleicao",
+        "sq_candidato",
+        "uf_candidatura",
+        "total_arrecadado",
+        "total_fundo_partidario",
+        "total_fundo_eleitoral",
+        "total_pessoa_fisica",
+        "total_recursos_proprios",
+        "maiores_doadores",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "financiamento_verificacoes",
+      "ref": "pf-ajustes-financiamento-20260810",
+      "campos": [
+        "ano_eleicao",
+        "sq_candidato",
+        "uf_candidatura",
+        "resultado",
+        "fonte_url",
+        "verificado_em",
+        "detalhe",
+        "execucao"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "pf-ajustes-financiamento-20260810",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao"
+      ]
+    }
+  ]
+}

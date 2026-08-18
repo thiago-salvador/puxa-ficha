@@ -1,0 +1,222 @@
+name: CI
+
+# Roda em pushes e em PRs de qualquer fork. Não usa segredos, então
+# funciona para qualquer colaborador externo sem acesso à infra do projeto.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Falha em vulnerabilidade high+ nas dependencias de producao (o que vai
+      # pro browser/runtime). devDependencies (CLIs locais) ficam fora do gate.
+      - name: Audit (production deps)
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Spellcheck (UI)
+        run: npm run lint:spell:ui
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      # Os scripts de ingestão/auditoria têm tsconfig próprio e ficam fora do
+      # typecheck do app; sem este passo, um script quebrado só falharia na
+      # hora de rodar a ingestão agendada.
+      - name: Typecheck (scripts)
+        run: npm run check:scripts
+
+      # Valida data/candidatos.json (contrato, slugs únicos, colisões de
+      # nome_urna, SQ duplicado). Local e sem segredo, então roda em qualquer
+      # PR de fork. Sem este gate, um seed inválido passa no CI e só explode
+      # na ingestão.
+      - name: Validar seed
+        run: npm run validate:seed
+
+      # Foto de origem abaixo do slot em 2x (562x750) sai borrada na grade da
+      # home; recompressão não conserta resolução que nunca existiu (G5-02).
+      - name: Resolução das fotos de candidato
+        run: npm run audit:fotos:gate
+
+      - name: Dead code (knip)
+        run: npm run check:dead-code
+
+      # Escrita em produção fora de `escreverAuditado()` é escrita sem trilha, que
+      # é a causa raiz da #131. A varredura é estática (lê `scripts/` e `src/`, não
+      # toca no banco), então roda em PR de fork sem segredo nenhum. Gate que
+      # ninguém executa é o padrão que esta issue existe para quebrar.
+      - name: Escrita auditada (trilha obrigatória)
+        run: npm run audit:escrita-auditada:gate
+
+      # Migration de dados nova exige três coisas no mesmo PR: anotações `@write`,
+      # allowlist que autorize os pares (tabela, slug, campos) e entrada em
+      # `recortes.json` ligando a janela à allowlist. O comando é estático, não
+      # toca banco nem rede, então roda em PR de fork sem segredo nenhum.
+      # Entrou no verify porque até 09/08/2026 ele saía vermelho por construção,
+      # e gate que ninguém executa vira gate desligado: dois documentos chegaram
+      # a declarar "allowlist OK" com ele em exit 1.
+      - name: Allowlist de escrita (recortes e dívida congelada)
+        run: npm run audit:cobertura:allowlist
+
+      - name: Test
+        run: npm test
+
+      # Cobertura (c8) com os thresholds do c8.config.json, que existiam mas
+      # nunca eram executados em lugar nenhum. Não bloqueante na véspera do
+      # lançamento: reporta queda de cobertura sem derrubar o verify.
+      # Decisão 2026-08-04; avaliar promover a bloqueante depois do lançamento.
+      - name: Cobertura (não bloqueante)
+        continue-on-error: true
+        run: npm run test:coverage:raw
+
+      - name: Build
+        # Valores de placeholder: o build não acessa o Supabase (as páginas
+        # são renderizadas sob demanda). Um fork usa os próprios valores.
+        env:
+          SUPABASE_URL: https://placeholder.supabase.co
+          SUPABASE_ANON_KEY: placeholder-anon-key
+          NEXT_PUBLIC_SUPABASE_URL: https://placeholder.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: placeholder-anon-key
+          NEXT_PUBLIC_SITE_URL: http://localhost:3000
+        run: npm run build
+
+  # O unico teste que pegaria a regressao de CSP de 03/08 (PR #71, nonce
+  # removido, toda hidratacao bloqueada por ~12h) nunca rodava em PR:
+  # main-routes falha em qualquer erro de console, e script inline barrado por
+  # CSP sem nonce e exatamente esse sintoma. Este job builda o site em modo
+  # producao (CSP com nonce, sem 'unsafe-inline') usando env placeholder (sem
+  # segredo, funciona em PR de fork) e roda o teste contra o servidor local
+  # que o playwright.config sobe sozinho. Rotas que so renderizam com dados
+  # reais ficam de fora via PF_EXPECT_PLACEHOLDER_DATA: a CSP e global
+  # (middleware + layout raiz), entao as rotas restantes detectam a mesma
+  # classe de regressao. Prova registrada em 2026-08-04: com o nonce removido
+  # localmente, todas as rotas falham com "Executing inline script violates
+  # the following Content Security Policy directive 'script-src self'".
+  browser-smoke:
+    name: Rotas principais (build local)
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      SUPABASE_URL: https://placeholder.supabase.co
+      SUPABASE_ANON_KEY: placeholder-anon-key
+      NEXT_PUBLIC_SUPABASE_URL: https://placeholder.supabase.co
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: placeholder-anon-key
+      NEXT_PUBLIC_SITE_URL: http://127.0.0.1:3000
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium webkit
+
+      - name: Build (produção, env placeholder)
+        run: npm run build
+
+      - name: Rotas principais sem erro de console sob a CSP de produção
+        env:
+          PF_EXPECT_PLACEHOLDER_DATA: "1"
+        run: npx playwright test tests/visual/main-routes.spec.ts
+
+      # Fluxos de lançamento (acesso interno, short link do quiz, página de
+      # doadores) rodam com fixtures locais e sem segredo. O alerts-flow nasce
+      # em /candidato/lula e precisa de dados reais: fica skipped aqui e segue
+      # como checagem manual pré-lançamento (npm run test:playwright:launch
+      # contra um servidor com dados reais).
+      - name: Fluxos de lançamento (fixtures locais)
+        env:
+          PF_EXPECT_PLACEHOLDER_DATA: "1"
+        # O rm evita que uma falha aqui publique o playwright-report/ verde do
+        # step anterior (o launch config só usa reporter list) e confunda a
+        # triagem pelo artifact.
+        run: |
+          rm -rf playwright-report
+          npm run test:playwright:launch
+
+      - name: Publicar relatório em caso de falha
+        if: failure()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: playwright-browser-smoke-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+
+  # Acessibilidade roda contra a producao publica, nao contra um build local.
+  # Motivo: duas das seis rotas testadas (/candidato/lula e /doadores?q=silva)
+  # so renderizam com dados reais, e o job `verify` e sem segredo por desenho,
+  # para funcionar em PR de fork. Apontar PF_BASE_URL para o site publico
+  # dispensa segredo e ainda testa o HTML que o usuario recebe de verdade.
+  #
+  # So em push na main: num PR de fork, a producao ainda nao tem o codigo do
+  # PR, entao o resultado nao diria nada sobre a mudanca proposta.
+  a11y:
+    name: Acessibilidade (produção)
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium webkit
+
+      - name: Axe (moderate, serious e critical)
+        env:
+          # Com PF_BASE_URL definida, o playwright.config nao sobe webServer.
+          PF_BASE_URL: https://puxaficha.com.br
+        run: npm run test:a11y
+
+      - name: Publicar relatório em caso de falha
+        if: failure()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: playwright-a11y-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7

@@ -1,0 +1,411 @@
+{
+  "_comentario": "LOTE APROVADO EDITORIALMENTE E NAO APLICADO: a allowlist autoriza somente as 69 escritas nominais desta migration; aplicar continua sendo ato externo separado.",
+  "recorte": "processos-curadoria-djen-20260810",
+  "migration": "20260810122000_processos_curadoria_djen.sql",
+  "coorte": [
+    "adailton-furia",
+    "alexandre-kalil",
+    "arthur-henrique",
+    "ataides-oliveira",
+    "celina-leao",
+    "daniel-vilela",
+    "dr-furlan",
+    "eduardo-braide",
+    "eduardo-paes",
+    "hildon-chaves",
+    "joao-henrique-catan",
+    "jose-estevao",
+    "jose-roberto-arruda",
+    "marcelo-maluf",
+    "mauricio-tonha",
+    "orleans-brandao",
+    "paula-belmonte",
+    "rafael-greca",
+    "romeu-zema",
+    "sergio-moro-gov-pr",
+    "ze-coca"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "processos",
+      "slug": "adailton-furia",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "alexandre-kalil",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 18
+    },
+    {
+      "tabela": "processos",
+      "slug": "arthur-henrique",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "ataides-oliveira",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 4
+    },
+    {
+      "tabela": "processos",
+      "slug": "celina-leao",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "daniel-vilela",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "dr-furlan",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "eduardo-braide",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "eduardo-paes",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 4
+    },
+    {
+      "tabela": "processos",
+      "slug": "hildon-chaves",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "joao-henrique-catan",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "jose-estevao",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "jose-roberto-arruda",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "marcelo-maluf",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 7
+    },
+    {
+      "tabela": "processos",
+      "slug": "mauricio-tonha",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "orleans-brandao",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "paula-belmonte",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "rafael-greca",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "romeu-zema",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 6
+    },
+    {
+      "tabela": "processos",
+      "slug": "sergio-moro-gov-pr",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "ze-coca",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 4
+    }
+  ]
+}

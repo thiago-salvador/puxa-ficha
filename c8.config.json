@@ -1,0 +1,28 @@
+{
+  "all": true,
+  "check-coverage": true,
+  "branches": 72,
+  "functions": 75,
+  "lines": 33,
+  "statements": 33,
+  "reporter": [
+    "text-summary",
+    "lcov"
+  ],
+  "reports-dir": "output/coverage",
+  "temp-directory": ".tmp/c8",
+  "src": [
+    "src",
+    "scripts"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "scripts/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*.d.ts",
+    "scripts/**/*.json",
+    "tests/**"
+  ]
+}

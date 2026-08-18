@@ -1,0 +1,2862 @@
+{
+  "resumo": {
+    "universo": {
+      "votacoesNominaisDePlenario": 723,
+      "porClassificacao": {
+        "procedimental": 451,
+        "merito": 35,
+        "nao_classificada": 237
+      },
+      "elegiveis": 272,
+      "semProposicaoResolvida": 1
+    },
+    "materiasDistintas": {
+      "total": 115,
+      "comMeritoConfirmado": 25,
+      "precisamLeituraHumana": 90,
+      "renumeradasNaFonte": 1
+    },
+    "shortlist": {
+      "tamanho": 20,
+      "criterio": "matéria com rodada de mérito, ordenada por participação"
+    }
+  },
+  "shortlist": [
+    {
+      "chave": "prop:2143164",
+      "proposicao": "SIP 1/2017",
+      "ementa": "Encaminha, para os fins do artigo 51, inciso I, da Constituição Federal,  denúncia formulada pelo Ministério Público Federal em desfavor do Excelentíssimo Senhor Presidente da República, Michel Miguel Elias Temer Lulia, nos autos do Inquéri",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "2143164-138",
+        "data": "2017-08-02",
+        "placar": "263 x 227",
+        "totalNominal": 490,
+        "classificacao": "merito",
+        "regra": "parecer_de_merito",
+        "descricao": "Aprovado o Parecer da Comissão de Constituição e Justiça e de Cidadania que conclui pelo indeferimento da solicitação de autorização para a instauração, pelo Supremo Tribunal Feder",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2143164-138/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:14493",
+      "proposicao": "PEC 171/1993",
+      "ementa": "Altera a redação do art. 228 da Constituição Federal (imputabilidade penal do maior de dezesseis anos).",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "14493-442",
+        "data": "2015-06-30",
+        "placar": "303 x 184",
+        "totalNominal": 487,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Rejeitado o Substitutivo adotado pela Comissão Especial à Proposta de Emenda à Constituição nº 171 de 1993. Sim: 303; não: 184; abstenções: 3; total: 490.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/14493-442/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 3,
+      "outrasRodadas": [
+        "2015-07-01 323x155 nao_classificada (14493-503)",
+        "2015-07-01 323x155 nao_classificada (1549085-2)"
+      ]
+    },
+    {
+      "chave": "prop:373327",
+      "proposicao": "PEC 182/2007",
+      "ementa": "Altera os arts. 17, 46 e 55 da Constituição Federal, para assegurar aos partidos políticos a titularidade dos mandatos parlamentares e estabelecer a perda dos mandatos dos membros do Poder Legislativo e do Poder Executivo que se desfiliarem",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "373327-143",
+        "data": "2015-05-26",
+        "placar": "210 x 267",
+        "totalNominal": 477,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Rejeitado o artigo 1º do Substitutivo. Sim: 210; não: 267; abstenção: 5; total: 482.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/373327-143/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 20,
+      "outrasRodadas": [
+        "2015-08-12 317x162 nao_classificada (373327-425)",
+        "2015-05-26 264x207 nao_classificada (373327-157)",
+        "2015-05-27 330x141 nao_classificada (373327-179)",
+        "2015-05-27 452x19 merito (373327-190)",
+        "2015-05-26 99x369 nao_classificada (373327-136)",
+        "2015-06-10 348x110 nao_classificada (373327-245)",
+        "2015-06-17 317x139 nao_classificada (373327-357)",
+        "2015-06-10 134x311 merito (373327-237)",
+        "2015-06-10 220x225 nao_classificada (373327-253)",
+        "2015-06-10 419x8 nao_classificada (373327-262)",
+        "2015-05-26 21x402 nao_classificada (373327-129)",
+        "2015-06-11 363x48 merito (373327-278)",
+        "2015-06-11 337x73 nao_classificada (373327-276)",
+        "2015-05-28 369x39 merito (373327-219)",
+        "2015-05-27 164x240 nao_classificada (373327-170)",
+        "2015-05-27 56x343 nao_classificada (373327-174)",
+        "2015-06-11 386x10 merito (373327-281)",
+        "2015-06-17 4x334 nao_classificada (373327-368)",
+        "2015-06-17 89x230 nao_classificada (373327-364)"
+      ]
+    },
+    {
+      "chave": "prop:1050788",
+      "proposicao": "PLP 37/2015",
+      "ementa": "\"Altera a Lei Complementar nº 148, de 25 de novembro de 2014.\"  NOVA EMENTA: Altera a Lei Complementar nº 148, de 25 de novembro de 2014;  revoga as Leis nºs 10.819, de 16 de dezembro de 2003, e 11.429, de 26 de dezembro de 2006; e dá outra",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "1050788-82",
+        "data": "2015-06-30",
+        "placar": "461 x 7",
+        "totalNominal": 468,
+        "classificacao": "merito",
+        "regra": "emendas_do_senado",
+        "descricao": "Aprovadas as Emendas do Senado Federal, com pareceres pela aprovação. Sim: 461; não: 7; total: 468.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1050788-82/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2015-03-24 389x2 merito (1050788-27)"
+      ]
+    },
+    {
+      "chave": "prop:304008",
+      "proposicao": "PEC 471/2005",
+      "ementa": "Dá nova redação ao parágrafo 3º do art. 236 da Constituição Federal.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "304008-194",
+        "data": "2015-08-26",
+        "placar": "333 x 133",
+        "totalNominal": 466,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em primeiro turno, a Proposta de Emenda à Constituição nº 471 de 2005. Sim: 333; não: 133; abstenções: 6; total: 472.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/304008-194/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:544724",
+      "proposicao": "PLP 177/2012",
+      "ementa": "Estabelece normas de finanças públicas voltadas para a transparência, controle e fiscalização da execução de parcerias e convênios entre órgãos públicos e organizações não governamentais.  NOVA EMENTA: Estabelece normas de finanças públicas",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "544724-78",
+        "data": "2015-02-24",
+        "placar": "442 x 22",
+        "totalNominal": 464,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Aprovado o Substitutivo adotado pela Comissão de Finanças e Tributação ao Projeto de Lei Complementar nº 177 de 2012. Sim: 442; não: 22; abstenção: 02; total: 466.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/544724-78/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2025146",
+      "proposicao": "REP 1/2015",
+      "ementa": "Representação em desfavor do  Deputado Eduardo Cunha, que solicita abertura de Processo Disciplinar com o objetivo de apurar prática de condutas incompatíveis com o decoro parlamentar.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "2025146-115",
+        "data": "2016-09-12",
+        "placar": "450 x 10",
+        "totalNominal": 460,
+        "classificacao": "merito",
+        "regra": "parecer_de_merito",
+        "descricao": "Aprovado o Parecer do Conselho de Ética e Decoro Parlamentar, pela procedência da Representação nº 1/2015 e perda do mandato parlamentar do Dep. Eduardo Cunha (PMDB/RJ). Sim: 450; ",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2025146-115/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:551712",
+      "proposicao": "PEC 197/2012",
+      "ementa": "Altera o § 2º do art. 155 da Constituição Federal, para modificar a sistemática de cobrança do imposto sobre operações relativas à circulação de mercadorias e sobre prestações de serviços de transporte interestadual e intermunicipal e de co",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "551712-136",
+        "data": "2015-02-03",
+        "placar": "388 x 66",
+        "totalNominal": 454,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em segundo turno, a Proposta de Emenda à Constituição nº 197 de 2012. Sim: 388; não: 66 ; total: 454.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/551712-136/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:339287",
+      "proposicao": "PEC 590/2006",
+      "ementa": "Dá nova redação ao parágrafo 1º do art. 58  da Constituição Federal.  NOVA EMENTA: Dá nova redação ao § 1º do art. 58 da Constituição Federal, para garantir a representação proporcional de cada sexo na composição das Mesas e Comissões do Co",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "339287-77",
+        "data": "2015-03-10",
+        "placar": "452 x 2",
+        "totalNominal": 454,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em primeiro turno, a Proposta de Emenda à Constituição nº 590 de 2006. Sim: 452; não: 2; total: 454.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/339287-77/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2015-03-24 441x5 merito (339287-98)"
+      ]
+    },
+    {
+      "chave": "prop:1063052",
+      "proposicao": "PEC 11/2015",
+      "ementa": "Altera os arts. 92 e 111-A da Constituição Federal, para explicitar o Tribunal Superior do Trabalho como órgão do Poder Judiciário, alterar os requisitos para o provimento dos cargos de Ministros daquele Tribunal e modificar-lhe a competênc",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "1063052-76",
+        "data": "2016-02-23",
+        "placar": "448 x 3",
+        "totalNominal": 451,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em primeiro turno, a Proposta de Emenda à Constituição nº 11 de 2015. Sim: 448; não: 3; total: 451.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1063052-76/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2080604",
+      "proposicao": "PL 3855/2019",
+      "ementa": "Estabelece medidas contra a corrupção e demais crimes contra o patrimônio público e combate o enriquecimento ilícito de agentes públicos.  NOVA EMENTA: Estabelece medidas de combate à impunidade, à corrupção; altera os Decretos-Leis nºs 2.8",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "2080604-354",
+        "data": "2016-11-29",
+        "placar": "450 x 1",
+        "totalNominal": 451,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Aprovado o Substitutivo adotado pela Comissão Especial. Sim: 450; Não: 1; Abstenções: 3; Total: 454.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2080604-354/votos"
+      },
+      "renumeradaNaFonte": true,
+      "rodadas": 14,
+      "outrasRodadas": [
+        "2016-11-30 313x132 nao_classificada (2080604-364)",
+        "2016-11-30 36x392 nao_classificada (2080604-371)",
+        "2016-11-30 97x317 nao_classificada (2080604-374)",
+        "2016-11-30 301x107 nao_classificada (2080604-380)",
+        "2016-11-30 173x222 nao_classificada (2080604-384)",
+        "2016-11-30 151x220 nao_classificada (2080604-387)",
+        "2016-11-30 152x210 nao_classificada (2080604-377)",
+        "2016-11-30 32x328 nao_classificada (2080604-402)",
+        "2016-11-30 285x72 nao_classificada (2080604-396)",
+        "2016-11-30 35x322 nao_classificada (2080604-399)",
+        "2016-11-30 76x280 nao_classificada (2080604-390)",
+        "2016-11-30 143x207 nao_classificada (2080604-393)",
+        "2016-11-30 14x326 nao_classificada (2080604-367)"
+      ]
+    },
+    {
+      "chave": "prop:298878",
+      "proposicao": "PEC 457/2005",
+      "ementa": "Altera o art. 40 da Constituição Federal, relativo ao limite de idade para a aposentadoria compulsória do servidor público em geral, e acrescenta dispositivo ao Ato das Disposições Constitucionais Transitórias.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "298878-277",
+        "data": "2015-03-04",
+        "placar": "318 x 131",
+        "totalNominal": 449,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em primeiro turno, a Proposta de Emenda à Constituição nº 457 de 2005. Sim: 318; não: 131; abstenção: 10; total: 459. DCD de 05/03/15, PÁG 234 COL 01.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/298878-277/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:553947",
+      "proposicao": "PEC 209/2012",
+      "ementa": "Insere o § 1º ao art. 105, da Constituição Federal, e renumera o parágrafo único.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "553947-121",
+        "data": "2015-09-30",
+        "placar": "139 x 304",
+        "totalNominal": 443,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Rejeitado o Substitutivo apresentado pela Comissão Especial à Proposta de Emenda à Constituição nº 209 de 2012. Sim: 139; não: 304; abstenções: 03; total: 446.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/553947-121/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 3,
+      "outrasRodadas": [
+        "2016-11-30 327x75 merito (553947-203)",
+        "2017-03-15 376x7 merito (553947-246)"
+      ]
+    },
+    {
+      "chave": "prop:148200",
+      "proposicao": "PEC 215/2003",
+      "ementa": "Acrescenta o § 3º ao art. 42 da Constituição Federal que dispõe sobre os militares dos Estados, do Distrito Federal e dos Territórios.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "148200-119",
+        "data": "2015-11-03",
+        "placar": "435 x 1",
+        "totalNominal": 436,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em segundo turno, a Proposta de Emenda à Constituição nº 215 de 2003. Sim: 435; não: 1; total: 436.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/148200-119/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:544681",
+      "proposicao": "PEC 172/2012",
+      "ementa": "Altera o art. 160 da Constituição Federal.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "544681-92",
+        "data": "2015-09-02",
+        "placar": "379 x 49",
+        "totalNominal": 428,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovado, em primeiro turno, o Substitutivo adotado pela Comissão Especial à Proposta de Emenda à Constituição nº 172 de 2012. Sim: 379; não: 49; total: 435.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/544681-92/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 4,
+      "outrasRodadas": [
+        "2015-09-23 2x422 nao_classificada (544681-137)",
+        "2015-09-02 350x71 nao_classificada (544681-95)",
+        "2015-09-02 54x366 nao_classificada (544681-102)"
+      ]
+    },
+    {
+      "chave": "prop:2123843",
+      "proposicao": "PEC 304/2017",
+      "ementa": "Acrescenta § 7° ao art. 225 da Constituição Federal para determinar que práticas desportivas que utilizem animais não são consideradas cruéis, nas condições que especifica.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "2123843-93",
+        "data": "2017-05-31",
+        "placar": "373 x 50",
+        "totalNominal": 423,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em segundo turno, a Proposta de Emenda à Constituição n° 304, de 2017. Sim: 373; não: 50; abstenção: 6; Total: 429.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2123843-93/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2017-05-10 366x50 merito (2123843-66)"
+      ]
+    },
+    {
+      "chave": "prop:1526944",
+      "proposicao": "PEC 74/2015",
+      "ementa": "Acrescenta parágrafos ao artigo 100 da Constituição Federal, dispondo sobre o regime de pagamento de débitos públicos decorrentes de condenações judiciais, e acrescenta disposições ao Ato das Disposições Constitucionais Transitórias, instit",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "1526944-106",
+        "data": "2015-11-17",
+        "placar": "415 x 1",
+        "totalNominal": 416,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em primeiro turno, a Proposta de Emenda à Constituição nº 74 de 2015 na forma do Substitutivo adotado pela Comissão Especial. Sim: 415; não: 1; abstenção: 1; total: 417.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1526944-106/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2015-12-15 8x344 nao_classificada (1526944-129)"
+      ]
+    },
+    {
+      "chave": "prop:2088280",
+      "proposicao": "PL 5587/2016",
+      "ementa": "Altera a redação dos incisos VIII e X do artigo 4º e do artigo 12 na Lei 12.587, de 03 de janeiro de 2012 e acrescenta o art. 12-C na mesma Lei. Altera o artigo 1º da Lei 13.103, de 02 de março de 2015.  NOVA EMENTA: Altera a Lei nº 12.587,",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "2088280-73",
+        "data": "2017-04-04",
+        "placar": "226 x 182",
+        "totalNominal": 408,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Aprovado o art. 2º da Emenda Substitutiva nº1, apresentada ao PL 5587/16, em substituição ao art. 2º do substitutivo do relator, apresentado ao PL 5587/16. Sim: 226; não: 182; abst",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2088280-73/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 4,
+      "outrasRodadas": [
+        "2018-02-28 227x166 nao_classificada (2088280-114)",
+        "2017-04-04 215x163 nao_classificada (2088280-79)",
+        "2018-02-28 29x283 nao_classificada (2088280-111)"
+      ]
+    },
+    {
+      "chave": "prop:340812",
+      "proposicao": "PRC 8/2007",
+      "ementa": "Cria, no âmbito da Câmara dos Deputados, a Comissão da Mulher, do Idoso, da Criança e do Adolescente, da Juventude e Minorias.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "340812-195",
+        "data": "2016-04-27",
+        "placar": "221 x 167",
+        "totalNominal": 388,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Aprovado o Substitutivo adotado pela Mesa Diretora ao Projeto de Resolução nº 8 de 2007. Sim: 221; não: 167; abstenção: 1; total: 388.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/340812-195/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 4,
+      "outrasRodadas": [
+        "2016-04-27 267x119 nao_classificada (340812-203)",
+        "2016-04-27 276x107 nao_classificada (340812-205)",
+        "2016-04-27 259x122 nao_classificada (340812-208)"
+      ]
+    },
+    {
+      "chave": "prop:946620",
+      "proposicao": "PLP 13/2015",
+      "ementa": "Altera a redação do art. 3.º da Lei Complementar 79, de 7 de janeiro de 1994, que \"cria o Fundo Penitenciário Nacional - FUNPEN, e dá outras providências.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "946620-50",
+        "data": "2015-04-16",
+        "placar": "377 x 10",
+        "totalNominal": 387,
+        "classificacao": "merito",
+        "regra": "projeto",
+        "descricao": "Aprovado o Projeto de Lei Complementar nº 13 de 2015. Sim: 377; não: 10; total: 387.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/946620-50/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    }
+  ],
+  "confirmadas": [
+    {
+      "chave": "prop:2143164",
+      "proposicao": "SIP 1/2017",
+      "ementa": "Encaminha, para os fins do artigo 51, inciso I, da Constituição Federal,  denúncia formulada pelo Ministério Público Federal em desfavor do Excelentíssimo Senhor Presidente da República, Michel Miguel Elias Temer Lulia, nos autos do Inquéri",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "2143164-138",
+        "data": "2017-08-02",
+        "placar": "263 x 227",
+        "totalNominal": 490,
+        "classificacao": "merito",
+        "regra": "parecer_de_merito",
+        "descricao": "Aprovado o Parecer da Comissão de Constituição e Justiça e de Cidadania que conclui pelo indeferimento da solicitação de autorização para a instauração, pelo Supremo Tribunal Feder",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2143164-138/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:14493",
+      "proposicao": "PEC 171/1993",
+      "ementa": "Altera a redação do art. 228 da Constituição Federal (imputabilidade penal do maior de dezesseis anos).",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "14493-442",
+        "data": "2015-06-30",
+        "placar": "303 x 184",
+        "totalNominal": 487,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Rejeitado o Substitutivo adotado pela Comissão Especial à Proposta de Emenda à Constituição nº 171 de 1993. Sim: 303; não: 184; abstenções: 3; total: 490.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/14493-442/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 3,
+      "outrasRodadas": [
+        "2015-07-01 323x155 nao_classificada (14493-503)",
+        "2015-07-01 323x155 nao_classificada (1549085-2)"
+      ]
+    },
+    {
+      "chave": "prop:373327",
+      "proposicao": "PEC 182/2007",
+      "ementa": "Altera os arts. 17, 46 e 55 da Constituição Federal, para assegurar aos partidos políticos a titularidade dos mandatos parlamentares e estabelecer a perda dos mandatos dos membros do Poder Legislativo e do Poder Executivo que se desfiliarem",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "373327-143",
+        "data": "2015-05-26",
+        "placar": "210 x 267",
+        "totalNominal": 477,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Rejeitado o artigo 1º do Substitutivo. Sim: 210; não: 267; abstenção: 5; total: 482.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/373327-143/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 20,
+      "outrasRodadas": [
+        "2015-08-12 317x162 nao_classificada (373327-425)",
+        "2015-05-26 264x207 nao_classificada (373327-157)",
+        "2015-05-27 330x141 nao_classificada (373327-179)",
+        "2015-05-27 452x19 merito (373327-190)",
+        "2015-05-26 99x369 nao_classificada (373327-136)",
+        "2015-06-10 348x110 nao_classificada (373327-245)",
+        "2015-06-17 317x139 nao_classificada (373327-357)",
+        "2015-06-10 134x311 merito (373327-237)",
+        "2015-06-10 220x225 nao_classificada (373327-253)",
+        "2015-06-10 419x8 nao_classificada (373327-262)",
+        "2015-05-26 21x402 nao_classificada (373327-129)",
+        "2015-06-11 363x48 merito (373327-278)",
+        "2015-06-11 337x73 nao_classificada (373327-276)",
+        "2015-05-28 369x39 merito (373327-219)",
+        "2015-05-27 164x240 nao_classificada (373327-170)",
+        "2015-05-27 56x343 nao_classificada (373327-174)",
+        "2015-06-11 386x10 merito (373327-281)",
+        "2015-06-17 4x334 nao_classificada (373327-368)",
+        "2015-06-17 89x230 nao_classificada (373327-364)"
+      ]
+    },
+    {
+      "chave": "prop:1050788",
+      "proposicao": "PLP 37/2015",
+      "ementa": "\"Altera a Lei Complementar nº 148, de 25 de novembro de 2014.\"  NOVA EMENTA: Altera a Lei Complementar nº 148, de 25 de novembro de 2014;  revoga as Leis nºs 10.819, de 16 de dezembro de 2003, e 11.429, de 26 de dezembro de 2006; e dá outra",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "1050788-82",
+        "data": "2015-06-30",
+        "placar": "461 x 7",
+        "totalNominal": 468,
+        "classificacao": "merito",
+        "regra": "emendas_do_senado",
+        "descricao": "Aprovadas as Emendas do Senado Federal, com pareceres pela aprovação. Sim: 461; não: 7; total: 468.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1050788-82/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2015-03-24 389x2 merito (1050788-27)"
+      ]
+    },
+    {
+      "chave": "prop:304008",
+      "proposicao": "PEC 471/2005",
+      "ementa": "Dá nova redação ao parágrafo 3º do art. 236 da Constituição Federal.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "304008-194",
+        "data": "2015-08-26",
+        "placar": "333 x 133",
+        "totalNominal": 466,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em primeiro turno, a Proposta de Emenda à Constituição nº 471 de 2005. Sim: 333; não: 133; abstenções: 6; total: 472.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/304008-194/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:544724",
+      "proposicao": "PLP 177/2012",
+      "ementa": "Estabelece normas de finanças públicas voltadas para a transparência, controle e fiscalização da execução de parcerias e convênios entre órgãos públicos e organizações não governamentais.  NOVA EMENTA: Estabelece normas de finanças públicas",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "544724-78",
+        "data": "2015-02-24",
+        "placar": "442 x 22",
+        "totalNominal": 464,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Aprovado o Substitutivo adotado pela Comissão de Finanças e Tributação ao Projeto de Lei Complementar nº 177 de 2012. Sim: 442; não: 22; abstenção: 02; total: 466.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/544724-78/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2025146",
+      "proposicao": "REP 1/2015",
+      "ementa": "Representação em desfavor do  Deputado Eduardo Cunha, que solicita abertura de Processo Disciplinar com o objetivo de apurar prática de condutas incompatíveis com o decoro parlamentar.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "2025146-115",
+        "data": "2016-09-12",
+        "placar": "450 x 10",
+        "totalNominal": 460,
+        "classificacao": "merito",
+        "regra": "parecer_de_merito",
+        "descricao": "Aprovado o Parecer do Conselho de Ética e Decoro Parlamentar, pela procedência da Representação nº 1/2015 e perda do mandato parlamentar do Dep. Eduardo Cunha (PMDB/RJ). Sim: 450; ",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2025146-115/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:551712",
+      "proposicao": "PEC 197/2012",
+      "ementa": "Altera o § 2º do art. 155 da Constituição Federal, para modificar a sistemática de cobrança do imposto sobre operações relativas à circulação de mercadorias e sobre prestações de serviços de transporte interestadual e intermunicipal e de co",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "551712-136",
+        "data": "2015-02-03",
+        "placar": "388 x 66",
+        "totalNominal": 454,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em segundo turno, a Proposta de Emenda à Constituição nº 197 de 2012. Sim: 388; não: 66 ; total: 454.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/551712-136/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:339287",
+      "proposicao": "PEC 590/2006",
+      "ementa": "Dá nova redação ao parágrafo 1º do art. 58  da Constituição Federal.  NOVA EMENTA: Dá nova redação ao § 1º do art. 58 da Constituição Federal, para garantir a representação proporcional de cada sexo na composição das Mesas e Comissões do Co",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "339287-77",
+        "data": "2015-03-10",
+        "placar": "452 x 2",
+        "totalNominal": 454,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em primeiro turno, a Proposta de Emenda à Constituição nº 590 de 2006. Sim: 452; não: 2; total: 454.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/339287-77/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2015-03-24 441x5 merito (339287-98)"
+      ]
+    },
+    {
+      "chave": "prop:1063052",
+      "proposicao": "PEC 11/2015",
+      "ementa": "Altera os arts. 92 e 111-A da Constituição Federal, para explicitar o Tribunal Superior do Trabalho como órgão do Poder Judiciário, alterar os requisitos para o provimento dos cargos de Ministros daquele Tribunal e modificar-lhe a competênc",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "1063052-76",
+        "data": "2016-02-23",
+        "placar": "448 x 3",
+        "totalNominal": 451,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em primeiro turno, a Proposta de Emenda à Constituição nº 11 de 2015. Sim: 448; não: 3; total: 451.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1063052-76/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2080604",
+      "proposicao": "PL 3855/2019",
+      "ementa": "Estabelece medidas contra a corrupção e demais crimes contra o patrimônio público e combate o enriquecimento ilícito de agentes públicos.  NOVA EMENTA: Estabelece medidas de combate à impunidade, à corrupção; altera os Decretos-Leis nºs 2.8",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "2080604-354",
+        "data": "2016-11-29",
+        "placar": "450 x 1",
+        "totalNominal": 451,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Aprovado o Substitutivo adotado pela Comissão Especial. Sim: 450; Não: 1; Abstenções: 3; Total: 454.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2080604-354/votos"
+      },
+      "renumeradaNaFonte": true,
+      "rodadas": 14,
+      "outrasRodadas": [
+        "2016-11-30 313x132 nao_classificada (2080604-364)",
+        "2016-11-30 36x392 nao_classificada (2080604-371)",
+        "2016-11-30 97x317 nao_classificada (2080604-374)",
+        "2016-11-30 301x107 nao_classificada (2080604-380)",
+        "2016-11-30 173x222 nao_classificada (2080604-384)",
+        "2016-11-30 151x220 nao_classificada (2080604-387)",
+        "2016-11-30 152x210 nao_classificada (2080604-377)",
+        "2016-11-30 32x328 nao_classificada (2080604-402)",
+        "2016-11-30 285x72 nao_classificada (2080604-396)",
+        "2016-11-30 35x322 nao_classificada (2080604-399)",
+        "2016-11-30 76x280 nao_classificada (2080604-390)",
+        "2016-11-30 143x207 nao_classificada (2080604-393)",
+        "2016-11-30 14x326 nao_classificada (2080604-367)"
+      ]
+    },
+    {
+      "chave": "prop:298878",
+      "proposicao": "PEC 457/2005",
+      "ementa": "Altera o art. 40 da Constituição Federal, relativo ao limite de idade para a aposentadoria compulsória do servidor público em geral, e acrescenta dispositivo ao Ato das Disposições Constitucionais Transitórias.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "298878-277",
+        "data": "2015-03-04",
+        "placar": "318 x 131",
+        "totalNominal": 449,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em primeiro turno, a Proposta de Emenda à Constituição nº 457 de 2005. Sim: 318; não: 131; abstenção: 10; total: 459. DCD de 05/03/15, PÁG 234 COL 01.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/298878-277/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:553947",
+      "proposicao": "PEC 209/2012",
+      "ementa": "Insere o § 1º ao art. 105, da Constituição Federal, e renumera o parágrafo único.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "553947-121",
+        "data": "2015-09-30",
+        "placar": "139 x 304",
+        "totalNominal": 443,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Rejeitado o Substitutivo apresentado pela Comissão Especial à Proposta de Emenda à Constituição nº 209 de 2012. Sim: 139; não: 304; abstenções: 03; total: 446.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/553947-121/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 3,
+      "outrasRodadas": [
+        "2016-11-30 327x75 merito (553947-203)",
+        "2017-03-15 376x7 merito (553947-246)"
+      ]
+    },
+    {
+      "chave": "prop:148200",
+      "proposicao": "PEC 215/2003",
+      "ementa": "Acrescenta o § 3º ao art. 42 da Constituição Federal que dispõe sobre os militares dos Estados, do Distrito Federal e dos Territórios.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "148200-119",
+        "data": "2015-11-03",
+        "placar": "435 x 1",
+        "totalNominal": 436,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em segundo turno, a Proposta de Emenda à Constituição nº 215 de 2003. Sim: 435; não: 1; total: 436.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/148200-119/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:544681",
+      "proposicao": "PEC 172/2012",
+      "ementa": "Altera o art. 160 da Constituição Federal.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "544681-92",
+        "data": "2015-09-02",
+        "placar": "379 x 49",
+        "totalNominal": 428,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovado, em primeiro turno, o Substitutivo adotado pela Comissão Especial à Proposta de Emenda à Constituição nº 172 de 2012. Sim: 379; não: 49; total: 435.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/544681-92/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 4,
+      "outrasRodadas": [
+        "2015-09-23 2x422 nao_classificada (544681-137)",
+        "2015-09-02 350x71 nao_classificada (544681-95)",
+        "2015-09-02 54x366 nao_classificada (544681-102)"
+      ]
+    },
+    {
+      "chave": "prop:2123843",
+      "proposicao": "PEC 304/2017",
+      "ementa": "Acrescenta § 7° ao art. 225 da Constituição Federal para determinar que práticas desportivas que utilizem animais não são consideradas cruéis, nas condições que especifica.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "2123843-93",
+        "data": "2017-05-31",
+        "placar": "373 x 50",
+        "totalNominal": 423,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em segundo turno, a Proposta de Emenda à Constituição n° 304, de 2017. Sim: 373; não: 50; abstenção: 6; Total: 429.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2123843-93/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2017-05-10 366x50 merito (2123843-66)"
+      ]
+    },
+    {
+      "chave": "prop:1526944",
+      "proposicao": "PEC 74/2015",
+      "ementa": "Acrescenta parágrafos ao artigo 100 da Constituição Federal, dispondo sobre o regime de pagamento de débitos públicos decorrentes de condenações judiciais, e acrescenta disposições ao Ato das Disposições Constitucionais Transitórias, instit",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "1526944-106",
+        "data": "2015-11-17",
+        "placar": "415 x 1",
+        "totalNominal": 416,
+        "classificacao": "merito",
+        "regra": "turno_de_pec",
+        "descricao": "Aprovada, em primeiro turno, a Proposta de Emenda à Constituição nº 74 de 2015 na forma do Substitutivo adotado pela Comissão Especial. Sim: 415; não: 1; abstenção: 1; total: 417.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1526944-106/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2015-12-15 8x344 nao_classificada (1526944-129)"
+      ]
+    },
+    {
+      "chave": "prop:2088280",
+      "proposicao": "PL 5587/2016",
+      "ementa": "Altera a redação dos incisos VIII e X do artigo 4º e do artigo 12 na Lei 12.587, de 03 de janeiro de 2012 e acrescenta o art. 12-C na mesma Lei. Altera o artigo 1º da Lei 13.103, de 02 de março de 2015.  NOVA EMENTA: Altera a Lei nº 12.587,",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "2088280-73",
+        "data": "2017-04-04",
+        "placar": "226 x 182",
+        "totalNominal": 408,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Aprovado o art. 2º da Emenda Substitutiva nº1, apresentada ao PL 5587/16, em substituição ao art. 2º do substitutivo do relator, apresentado ao PL 5587/16. Sim: 226; não: 182; abst",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2088280-73/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 4,
+      "outrasRodadas": [
+        "2018-02-28 227x166 nao_classificada (2088280-114)",
+        "2017-04-04 215x163 nao_classificada (2088280-79)",
+        "2018-02-28 29x283 nao_classificada (2088280-111)"
+      ]
+    },
+    {
+      "chave": "prop:340812",
+      "proposicao": "PRC 8/2007",
+      "ementa": "Cria, no âmbito da Câmara dos Deputados, a Comissão da Mulher, do Idoso, da Criança e do Adolescente, da Juventude e Minorias.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "340812-195",
+        "data": "2016-04-27",
+        "placar": "221 x 167",
+        "totalNominal": 388,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Aprovado o Substitutivo adotado pela Mesa Diretora ao Projeto de Resolução nº 8 de 2007. Sim: 221; não: 167; abstenção: 1; total: 388.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/340812-195/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 4,
+      "outrasRodadas": [
+        "2016-04-27 267x119 nao_classificada (340812-203)",
+        "2016-04-27 276x107 nao_classificada (340812-205)",
+        "2016-04-27 259x122 nao_classificada (340812-208)"
+      ]
+    },
+    {
+      "chave": "prop:946620",
+      "proposicao": "PLP 13/2015",
+      "ementa": "Altera a redação do art. 3.º da Lei Complementar 79, de 7 de janeiro de 1994, que \"cria o Fundo Penitenciário Nacional - FUNPEN, e dá outras providências.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "946620-50",
+        "data": "2015-04-16",
+        "placar": "377 x 10",
+        "totalNominal": 387,
+        "classificacao": "merito",
+        "regra": "projeto",
+        "descricao": "Aprovado o Projeto de Lei Complementar nº 13 de 2015. Sim: 377; não: 10; total: 387.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/946620-50/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:1555340",
+      "proposicao": "PLP 124/2015",
+      "ementa": "Dispõe sobre a aposentadoria compulsória por idade, com proventos proporcionais, nos termos do inciso II do § 1º do art. 40 da Constituição Federal.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "1555340-67",
+        "data": "2015-09-23",
+        "placar": "355 x 32",
+        "totalNominal": 387,
+        "classificacao": "merito",
+        "regra": "projeto",
+        "descricao": "Aprovado o Projeto de Lei Complementar nº 124 de 2015. Sim: 355; não: 32; abstenção: 1; total: 388.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1555340-67/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2015-09-23 338x2 nao_classificada (1555340-63)"
+      ]
+    },
+    {
+      "chave": "prop:2182065",
+      "proposicao": "MPV 845/2018",
+      "ementa": "Institui o Fundo Nacional de Desenvolvimento Ferroviário.",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "2182065-64",
+        "data": "2018-11-21",
+        "placar": "145 x 217",
+        "totalNominal": 362,
+        "classificacao": "merito",
+        "regra": "projeto",
+        "descricao": "Rejeitado o Projeto de Lei de Conversão nº 30/18. Sim: 145; não: 217; abstenção: 5; total: 367.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2182065-64/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2018-11-21 15x254 nao_classificada (2182065-70)"
+      ]
+    },
+    {
+      "chave": "prop:2082293",
+      "proposicao": "PLP 270/2016",
+      "ementa": "Acrescenta §§ 5º e 6º ao art. 23 da Lei Complementar nº 101, de 4 maio de 2000 (Lei de Responsabilidade Fiscal), para vedar a aplicação de sanções a Município que ultrapasse o limite para a despesa total com pessoal nos casos de queda de re",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "2082293-61",
+        "data": "2018-12-05",
+        "placar": "300 x 46",
+        "totalNominal": 346,
+        "classificacao": "merito",
+        "regra": "projeto",
+        "descricao": "Aprovado o Projeto de Lei Complementar nº 270, de 2016. Sim: 300; não: 46; abstenção: 5; total: 351.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2082293-61/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:1228455",
+      "proposicao": "PDC 57/2015",
+      "ementa": "Aprova o texto do Tratado de Marraqueche para Facilitar o Acesso a Obras Publicadas às Pessoas Cegas, com Deficiência Visual ou com Outras Dificuldades para ter acesso ao Texto Impresso, concluído no âmbito da Organização Mundial da Proprie",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "1228455-65",
+        "data": "2015-08-20",
+        "placar": "341 x 1",
+        "totalNominal": 342,
+        "classificacao": "merito",
+        "regra": "substitutivo",
+        "descricao": "Aprovado o Substitutivo adotado pela Comissão de Cultura ao Projeto de Decreto Legislativo nº 57 de 2015. Sim: 341; não: 1; total: 342.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1228455-65/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2186777",
+      "proposicao": "PLP 549/2018",
+      "ementa": "Acrescenta o § 3º ao art. 2º da Lei Complementar nº 91, de 22 de dezembro de 1997, que dispõe sobre a fixação dos coeficientes de distribuição dos recursos do Fundo de Participação dos Municípios.  NOVA EMENTA: Acrescenta o § 3º ao art. 2º ",
+      "confirmacao": "merito_confirmado",
+      "representante": {
+        "votacaoId": "2186777-35",
+        "data": "2018-11-21",
+        "placar": "301 x 33",
+        "totalNominal": 334,
+        "classificacao": "merito",
+        "regra": "projeto",
+        "descricao": "Aprovado o Projeto de Lei Complementar nº 549, de 2018. Sim: 301; não: 33; abstenção: 2; total: 336.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2186777-35/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    }
+  ],
+  "precisamLeitura": [
+    {
+      "chave": "prop:580148",
+      "proposicao": "PL 5735/2013",
+      "ementa": "Altera dispositivos da Lei nº 4.737, de 15 de julho de 1965 (Código Eleitoral), da Lei nº 9.096, de 19 de setembro de 1995 (Lei dos Partidos Políticos) e da Lei nº 9.504, de 30 de setembro de 1997 (Lei das Eleições).  NOVA EMENTA: Altera as",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "580148-288",
+        "data": "2015-09-09",
+        "placar": "360 x 96",
+        "totalNominal": 456,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Restabelecido o texto da Câmara dos Deputados. Sim: 360; não: 96; abstenção: 1; total: 457.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/580148-288/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 7,
+      "outrasRodadas": [
+        "2015-07-14 204x244 nao_classificada (580148-154)",
+        "2015-07-14 246x200 nao_classificada (580148-161)",
+        "2015-07-14 149x283 nao_classificada (580148-196)",
+        "2015-07-14 191x231 nao_classificada (580148-137)",
+        "2015-07-14 194x193 nao_classificada (580148-127)",
+        "2015-07-14 206x163 nao_classificada (580148-122)"
+      ]
+    },
+    {
+      "chave": "prop:865929",
+      "proposicao": "MPV 664/2014",
+      "ementa": "Altera as Leis nº 8.213, de 24 de julho de 1991, nº 10.876, de 2 junho de 2004, nº 8.112, de 11 de dezembro de 1990, e a Lei nº 10.666, de 8 de maio de 2003.  NOVA EMENTA: Altera as Leis nºs 8.213, de 24 de julho de 1991, 10.876, de 2 de ju",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "865929-59",
+        "data": "2015-05-13",
+        "placar": "194 x 261",
+        "totalNominal": 455,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda nº 507. Sim: 194; não: 261; abstenção: 4; total: 459.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/865929-59/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 7,
+      "outrasRodadas": [
+        "2015-05-13 278x167 nao_classificada (865929-45)",
+        "2015-05-14 267x144 nao_classificada (865929-92)",
+        "2015-05-14 221x172 nao_classificada (865929-105)",
+        "2015-05-14 248x143 nao_classificada (865929-98)",
+        "2015-05-14 244x144 nao_classificada (865929-88)",
+        "2015-05-14 110x226 nao_classificada (865929-80)"
+      ]
+    },
+    {
+      "chave": "prop:611966",
+      "proposicao": "PEC 395/2014",
+      "ementa": "Altera a redação do inciso IV do art. 206 da Constituição Federal, referente à gratuidade do ensino público em estabelecimentos oficiais.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "611966-124",
+        "data": "2016-02-17",
+        "placar": "10 x 445",
+        "totalNominal": 455,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Suprimido o texto. Sim: 10; não: 445; abstenção: 1; total: 456.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/611966-124/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2017-03-29 304x139 nao_classificada (611966-202)"
+      ]
+    },
+    {
+      "chave": "prop:2088351",
+      "proposicao": "PEC 241/2016",
+      "ementa": "Altera o Ato das Disposições Constitucionais Transitórias, para instituir o Novo Regime Fiscal.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2088351-260",
+        "data": "2016-10-10",
+        "placar": "357 x 98",
+        "totalNominal": 455,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 357; Não: 98; Abstenção: 1; Total: 456.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2088351-260/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 13,
+      "outrasRodadas": [
+        "2016-10-10 90x327 nao_classificada (2088351-256)",
+        "2016-10-25 325x89 nao_classificada (2088351-348)",
+        "2016-10-10 103x303 nao_classificada (2088351-271)",
+        "2016-10-10 85x314 nao_classificada (2088351-268)",
+        "2016-10-25 332x64 nao_classificada (2088351-339)",
+        "2016-10-10 353x17 nao_classificada (2088351-274)",
+        "2016-10-25 346x20 nao_classificada (2088351-333)",
+        "2016-10-10 84x281 nao_classificada (2088351-278)",
+        "2016-10-25 340x25 nao_classificada (2088351-336)",
+        "2016-10-25 335x30 nao_classificada (2088351-342)",
+        "2016-10-25 332x29 nao_classificada (2088351-345)",
+        "2016-10-10 26x300 nao_classificada (2088351-253)"
+      ]
+    },
+    {
+      "chave": "prop:796341",
+      "proposicao": "MPV 660/2014",
+      "ementa": "Altera a Lei nº 12.800, de 23 de abril de 2013, que dispõe sobre as tabelas de salários, vencimentos, soldos e demais vantagens aplicáveis aos servidores civis, aos militares e aos empregados oriundos do exTerritório Federal de Rondônia int",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "796341-95",
+        "data": "2015-04-15",
+        "placar": "350 x 103",
+        "totalNominal": 453,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda nº 1 do Senado Federal. Sim: 350; não: 103; abstenção: 1; total: 454.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/796341-95/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:463155",
+      "proposicao": "PEC 443/2009",
+      "ementa": "Fixa parâmetros para a remuneração dos advogados públicos.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "463155-334",
+        "data": "2015-08-05",
+        "placar": "247 x 203",
+        "totalNominal": 450,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda Aglutinativa nº 16. Sim: 247; não: 203; abstenções: 14; total: 464.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/463155-334/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:1514014",
+      "proposicao": "PL 2016/2015",
+      "ementa": "Altera a Lei nº 12.850, de 2 de agosto de 2013, e a Lei nº 10.446, de 8 de maio de 2002, para dispor sobre organizações terroristas. NOVA EMENTA: Regulamenta o disposto no inciso XLIII do art. 5º da Constituição Federal, disciplinando o ter",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1514014-82",
+        "data": "2015-08-12",
+        "placar": "362 x 85",
+        "totalNominal": 447,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda Aglutinativa nº 4. Sim: 362; não: 85; abstenção: 3; total: 450.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1514014-82/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:1806249",
+      "proposicao": "MPV 694/2015",
+      "ementa": "Altera a Lei nº 9.249, de 26 de dezembro de 1995, para dispor sobre o imposto sobre a renda incidente sobre juros de capital próprio, a Lei nº 10.865, de 30 de abril de 2004, e a Lei nº 11.196, de 21 de novembro de 2005, para dispor sobre o",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1806249-68",
+        "data": "2016-03-02",
+        "placar": "261 x 184",
+        "totalNominal": 445,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 261; não: 184; total: 445.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1806249-68/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:944494",
+      "proposicao": "MPV 668/2015",
+      "ementa": "Altera a Lei nº 10.865, de 30 de abril de 2004, para elevar alíquotas da Contribuição para o PIS/PASEP- Importação e da COFINS-Importação, e dá outras providências.  NOVA EMENTA: Altera as Leis nºs 10.865, de 30 de abril de 2004, para eleva",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "944494-33",
+        "data": "2015-05-19",
+        "placar": "157 x 287",
+        "totalNominal": 444,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitado o Recurso. Sim: 157; não: 287\t; abstenção: 1; total: 445.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/944494-33/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:117975",
+      "proposicao": "PEC 77/2003",
+      "ementa": "Suprime o § 5º do art. 14 e dá nova redação ao § 1º do art. 27, ao caput do art. 28, ao inciso I do art. 29, ao parágrafo único do art. 44, aos §§ 1º e 2º do art. 46 e ao caput do art. 82, para pôr fim à reeleição majoritária, determinar a ",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "117975-214",
+        "data": "2017-09-19",
+        "placar": "205 x 238",
+        "totalNominal": 443,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitado o texto. Sim: 205; não: 238; abstenção: 1. Total: 444.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/117975-214/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2017-08-23 1x441 nao_classificada (117975-164)"
+      ]
+    },
+    {
+      "chave": "prop:860923",
+      "proposicao": "MPV 663/2014",
+      "ementa": "Altera a Lei nº 12.096, de 24 de novembro de 2009.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "860923-62",
+        "data": "2015-05-12",
+        "placar": "243 x 199",
+        "totalNominal": 442,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda nº 25. Sim: 243; não: 199; abstenção: 1; total: 443.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/860923-62/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2015-05-12 149x285 nao_classificada (860923-54)"
+      ]
+    },
+    {
+      "chave": "prop:996553",
+      "proposicao": "MPV 670/2015",
+      "ementa": "Altera a Lei nº 11.482, de 31 de maio de 2007, para dispor sobre os valores da tabela mensal do Imposto sobre a Renda da Pessoa Física; a Lei nº 7.713, de 22 de dezembro de 1988; e a Lei nº 9.250, de 26 de dezembro de 1995.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "996553-34",
+        "data": "2015-06-17",
+        "placar": "170 x 271",
+        "totalNominal": 441,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a  Emenda nº 88. Sim: 170; não: 271; abstenção: 1; total: 442.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/996553-34/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 3,
+      "outrasRodadas": [
+        "2015-06-17 222x199 nao_classificada (996553-39)",
+        "2015-06-17 231x143 nao_classificada (996553-43)"
+      ]
+    },
+    {
+      "chave": "prop:1806248",
+      "proposicao": "MPV 693/2015",
+      "ementa": "Altera a Lei nº 12.780, de 9 de janeiro de 2013, que dispõe sobre medidas tributárias referentes à realização, no Brasil, dos Jogos Olímpicos de 2016 e dos Jogos Paraolímpicos de 2016, e altera a Lei nº 10.593, de 6 de dezembro de 2002, par",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1806248-46",
+        "data": "2016-03-01",
+        "placar": "193 x 245",
+        "totalNominal": 438,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Suprimido o texto. Sim: 193; não: 245; abstenção: 7; total: 445.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1806248-46/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:1594437",
+      "proposicao": "MPV 685/2015",
+      "ementa": "Institui o Programa de Redução de Litígios Tributários - PRORELIT, cria a obrigação de informar à administração tributária federal as operações e atos ou negócios jurídicos que acarretem supressão, redução ou diferimento de tributo e autori",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1594437-66",
+        "data": "2015-11-03",
+        "placar": "200 x 235",
+        "totalNominal": 435,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda nº 65. Sim: 200; não: 235; abstenção: 3; total: 438.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1594437-66/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2015-11-03 201x200 nao_classificada (1594437-53)"
+      ]
+    },
+    {
+      "chave": "prop:2118401",
+      "proposicao": "PEC 282/2016",
+      "ementa": "Altera a Constituição Federal para vedar as coligações nas eleições proporcionais, disciplinar a autonomia dos partidos políticos e estabelecer normas sobre fidelidade partidária e funcionamento parlamentar dos partidos políticos; e estabel",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2118401-246",
+        "data": "2017-09-20",
+        "placar": "348 x 87",
+        "totalNominal": 435,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovado o texto. Sim: 348; não: 87; abstenção: 4; total: 439.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2118401-246/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 7,
+      "outrasRodadas": [
+        "2017-09-27 326x104 nao_classificada (2118401-293)",
+        "2017-09-27 143x280 nao_classificada (2118401-301)",
+        "2017-09-20 311x107 nao_classificada (2118401-251)",
+        "2017-09-20 383x17 nao_classificada (2118401-258)",
+        "2017-09-27 13x371 nao_classificada (2118401-296)",
+        "2017-09-20 371x11 nao_classificada (2118401-254)"
+      ]
+    },
+    {
+      "chave": "prop:267841",
+      "proposicao": "PL 4330/2004",
+      "ementa": "Dispõe sobre o contrato de prestação de serviço a terceiros e as relações de trabalho dele decorrentes.  NOVA EMENTA: Dispõe sobre os contratos de terceirização e as relações de trabalho deles decorrentes.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "267841-230",
+        "data": "2015-04-22",
+        "placar": "230 x 203",
+        "totalNominal": 433,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda Aglutinativa nº 15. Sim: 230; não: 203; abstenções: 4; total: 437.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/267841-230/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 3,
+      "outrasRodadas": [
+        "2015-04-14 47x360 nao_classificada (267841-205)",
+        "2015-04-22 257x38 nao_classificada (267841-238)"
+      ]
+    },
+    {
+      "chave": "prop:2153100",
+      "proposicao": "PL 8703/2017",
+      "ementa": "Altera as Leis nºs 9.096, de 19 de setembro de 1995, e 9.504, de 30 de setembro de 1997, para instituir o Fundo Especial de Financiamento de Campanha (FEFC), extinguir a propaganda partidária no rádio e na televisão",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2153100-59",
+        "data": "2017-10-04",
+        "placar": "223 x 209",
+        "totalNominal": 432,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 223; não: 209; abstenção: 3; total: 435.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2153100-59/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:585608",
+      "proposicao": "PLP 302/2013",
+      "ementa": "Dispõe sobre o contrato de trabalho doméstico; altera as Leis nº 8.212, de 24 de julho de 1991, nº 8.213, de 24 de julho de 1991, e Lei nº 11.196, de 21 de novembro de 2005; revoga o inciso I do art. 3º da Lei nº 8.009, de 29 de março de 19",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "585608-98",
+        "data": "2015-03-17",
+        "placar": "239 x 192",
+        "totalNominal": 431,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Suprimido o texto. Sim: 239; não: 192; total: 431.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/585608-98/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 4,
+      "outrasRodadas": [
+        "2015-03-17 204x207 nao_classificada (585608-88)",
+        "2015-03-17 204x169 nao_classificada (585608-93)",
+        "2015-03-17 316x2 nao_classificada (585608-84)"
+      ]
+    },
+    {
+      "chave": "prop:1806553",
+      "proposicao": "MPV 695/2015",
+      "ementa": "Autoriza o Banco do Brasil S.A. e a Caixa Econômica Federal a adquirirem participação nos termos e condições previstos no art. 2º da Lei nº 11.908, de 3 de março de 2009, e dá outras providências.  NOVA EMENTA: Autoriza o Banco do Brasil S.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1806553-78",
+        "data": "2016-02-16",
+        "placar": "280 x 150",
+        "totalNominal": 430,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 280; não: 150; abstenção: 1; total: 431.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1806553-78/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2016-02-16 246x122 nao_classificada (1806553-81)"
+      ]
+    },
+    {
+      "chave": "prop:2124451",
+      "proposicao": "PLP 343/2017",
+      "ementa": "Institui o Regime de Recuperação Fiscal dos Estados e do Distrito Federal e dá outras providências.  NOVA EMENTA: Institui o Regime de Recuperação Fiscal dos Estados e do Distrito Federal; altera as Leis Complementares nºs 101, de 4 de maio",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2124451-170",
+        "data": "2017-04-25",
+        "placar": "285 x 143",
+        "totalNominal": 428,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 285; não: 143; abstenção: 3; total: 431.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2124451-170/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 9,
+      "outrasRodadas": [
+        "2017-04-25 241x185 nao_classificada (2124451-176)",
+        "2017-05-10 314x100 nao_classificada (2124451-195)",
+        "2017-04-25 164x244 nao_classificada (2124451-173)",
+        "2017-04-19 302x98 nao_classificada (2124451-156)",
+        "2017-05-10 296x91 nao_classificada (2124451-191)",
+        "2017-04-19 303x51 nao_classificada (2124451-160)",
+        "2017-05-10 348x2 nao_classificada (2124451-206)",
+        "2017-05-10 3x270 nao_classificada (2124451-203)"
+      ]
+    },
+    {
+      "chave": "prop:2151995",
+      "proposicao": "PL 8612/2017",
+      "ementa": "Altera a Lei nº 9.096, de 19 de setembro de 1995 (Lei dos Partidos Políticos), a Lei nº 9.504, de 30 de setembro de 1997 (Lei das Eleições), a Lei nº 4.737, de 15 de julho de 1965 (Código Eleitoral), a Lei nº 13.165, de 29 de setembro de 20",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2151995-58",
+        "data": "2017-10-04",
+        "placar": "239 x 189",
+        "totalNominal": 428,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 239; não: 189; abstenção: 3; total: 431.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2151995-58/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2017-10-04 102x157 nao_classificada (2151995-82)"
+      ]
+    },
+    {
+      "chave": "prop:1514136",
+      "proposicao": "PL 2020/2015",
+      "ementa": "Disciplina a ação de indisponibilidade de bens, direitos ou valores em decorrência de resolução do Conselho de Segurança das Nações Unidas - CSNU.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1514136-40",
+        "data": "2015-08-04",
+        "placar": "307 x 120",
+        "totalNominal": 427,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda de Plenário nº 1. Sim: 307; não: 120; abstenção: 1; total: 428.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1514136-40/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:19319",
+      "proposicao": "PL 3232/1992",
+      "ementa": "Dispõe sobre a liberdade de imprensa, de opinião e de informação, disciplina a responsabilidade dos meios de comunicação, e dá outras providências",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "19319-83",
+        "data": "2015-10-20",
+        "placar": "206 x 219",
+        "totalNominal": 425,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda de Plenário nº 1. Sim: 206; não: 219; abstenção: 1; total: 426 (votação nominal, de ofício)",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/19319-83/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:946734",
+      "proposicao": "PEC 4/2015",
+      "ementa": "Altera o art. 76 do Ato das Disposições Constitucionais Transitórias",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "946734-182",
+        "data": "2016-06-08",
+        "placar": "326 x 99",
+        "totalNominal": 425,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto.Sim: 326; não: 99; abstenção: 1; total: 426.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/946734-182/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2116870",
+      "proposicao": "MPV 751/2016",
+      "ementa": "Cria o Programa Cartão Reforma e dá outras providências.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2116870-47",
+        "data": "2017-03-28",
+        "placar": "245 x 179",
+        "totalNominal": 424,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda nº 34. Sim: 245; não: 179; abstenção: 1; total: 425.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2116870-47/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2148437",
+      "proposicao": "MPV 795/2017",
+      "ementa": "Dispõe sobre o tratamento tributário das atividades de exploração e de desenvolvimento de campo de petróleo ou de gás natural, altera a Lei nº 9.481, de 13 de agosto de 1997, e a Lei nº 12.973, de 13 de maio de 2014, e institui regime tribu",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2148437-104",
+        "data": "2017-12-05",
+        "placar": "241 x 183",
+        "totalNominal": 424,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 241; não: 183; abstenção: 2; total: 426.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2148437-104/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 4,
+      "outrasRodadas": [
+        "2017-12-05 232x185 nao_classificada (2148437-84)",
+        "2017-12-13 193x206 nao_classificada (2148437-171)",
+        "2017-12-05 123x222 nao_classificada (2148437-123)"
+      ]
+    },
+    {
+      "chave": "prop:619150",
+      "proposicao": "PL 7735/2014",
+      "ementa": "Regulamenta o inciso II do § 1º e o § 4º do art. 225 da Constituição; os arts. 1, 8, \"j\", 10, \"c\", 15 e 16, §§ 3 e 4 da Convenção sobre Diversidade Biológica, promulgada pelo Decreto nº 2.519, de 16 de março de 1998; dispõe sobre o acesso a",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "619150-144",
+        "data": "2015-04-27",
+        "placar": "135 x 283",
+        "totalNominal": 418,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda nº 3. Sim: 135; não: 283; abstenções: 2; total: 420.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/619150-144/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 3,
+      "outrasRodadas": [
+        "2015-04-27 166x240 nao_classificada (619150-157)",
+        "2015-02-10 161x241 nao_classificada (619150-93)"
+      ]
+    },
+    {
+      "chave": "prop:344866",
+      "proposicao": "PLP 25/2007",
+      "ementa": "Dá nova redação ao caput do art. 79 da Lei Complementar nº 123, de 14 de dezembro de 2006.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "344866-192",
+        "data": "2015-09-02",
+        "placar": "344 x 73",
+        "totalNominal": 417,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada Emenda de Plenário nº 10. Sim: 344; não: 73; abstenções: 3; total: 420.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/344866-192/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 4,
+      "outrasRodadas": [
+        "2015-09-02 389x28 nao_classificada (344866-198)",
+        "2015-09-02 210x171 nao_classificada (344866-190)",
+        "2016-10-04 8x358 nao_classificada (344866-251)"
+      ]
+    },
+    {
+      "chave": "prop:1672065",
+      "proposicao": "MPV 688/2015",
+      "ementa": "Dispõe sobre a repactuação do risco hidrológico de geração de energia elétrica, institui a bonificação pela outorga e altera a Lei no 10.848, de 15 de março de 2004, que dispõe sobre a comercialização de energia elétrica, a Lei no 12.783, 1",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1672065-73",
+        "data": "2015-11-10",
+        "placar": "184 x 233",
+        "totalNominal": 417,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda nº 1. Sim: 184; não: 233; abstenção: 4; total: 421.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1672065-73/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2015-11-10 243x83 nao_classificada (1672065-44)"
+      ]
+    },
+    {
+      "chave": "prop:1504953",
+      "proposicao": "MPV 676/2015",
+      "ementa": "Altera a Lei nº 8.213, de 24 de julho de 1991, que dispõe sobre os Planos de Benefícios da Previdência Social.  NOVA EMENTA: Altera as Leis nºs 8.212, de 24 de julho de 1991, e 8.213, de 24 de julho de 1991, para tratar da associação do seg",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1504953-55",
+        "data": "2015-09-30",
+        "placar": "214 x 199",
+        "totalNominal": 413,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda nº 168. Sim: 214; não: 199; abstenção: 7; total: 420.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1504953-55/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2015-09-30 174x166 nao_classificada (1504953-45)"
+      ]
+    },
+    {
+      "chave": "prop:2168064",
+      "proposicao": "PDC 886/2018",
+      "ementa": "Aprova a intervenção federal no Estado do Rio de Janeiro nos termos do Decreto Presidencial nº 9.288, de 16 de fevereiro de 2018, com o objetivo de pôr termo ao grave comprometimento da ordem pública.  NOVA EMENTA: Aprova o Decreto nº 9.288",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2168064-19",
+        "data": "2018-02-19",
+        "placar": "340 x 72",
+        "totalNominal": 412,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovado o Projeto de Decreto Legislativo nº 886 de 2018, apresentado pelo Relator da Comissão de Constituição e Justiça e de Cidadania. Sim: 340; não: 72; abstenção: 1; total: 413",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2168064-19/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:1203158",
+      "proposicao": "PLP 54/2015",
+      "ementa": "Dispõe sobre convênio que permita aos Estados e ao Distrito Federal deliberar sobre a remissão dos créditos tributários, constituídos ou não, decorrentes de isenções, incentivos e benefícios fiscais ou financeiro-fiscais instituídos em desa",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1203158-81",
+        "data": "2017-05-31",
+        "placar": "386 x 25",
+        "totalNominal": 411,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 386; não: 25; abstenção: 2; Total: 413.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1203158-81/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:603566",
+      "proposicao": "PLP 366/2013",
+      "ementa": "Altera a Lei Complementar nº 116, de 31 de julho de 2003, que dispõe sobre o Imposto sobre Serviços de Qualquer Natureza; a Lei nº 8.429, de 2 de junho de 1992 (Lei de Improbidade Administrativa); e a Lei Complementar nº 63, de 11 de janeir",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "603566-135",
+        "data": "2015-09-16",
+        "placar": "340 x 67",
+        "totalNominal": 407,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda Aglutinativa nº 4. Sim: 340; não: 67; abstenção: 2; total: 409.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/603566-135/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2015-09-10 293x64 nao_classificada (603566-123)"
+      ]
+    },
+    {
+      "chave": "prop:1050558",
+      "proposicao": "MPV 671/2015",
+      "ementa": "Institui o Programa de Modernização da Gestão e de Responsabilidade Fiscal do Futebol Brasileiro, dispõe sobre a gestão temerária no âmbito das entidades desportivas profissionais, e dá outras providências.  NOVA EMENTA: Estabelece princípi",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1050558-63",
+        "data": "2015-07-07",
+        "placar": "373 x 31",
+        "totalNominal": 404,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 373; não: 31; abstenção: 4; total: 408.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1050558-63/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "votacao:1203407-4",
+      "proposicao": null,
+      "ementa": null,
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1203407-4",
+        "data": "2015-04-15",
+        "placar": "376 x 26",
+        "totalNominal": 402,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Eleito o Sr. Gustavo do Vale Rocha. Sim: 376; não: 26; abstenção: 36; total: 438.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1203407-4/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2139967",
+      "proposicao": "MPV 782/2017",
+      "ementa": "Estabelece a organização básica dos órgãos da Presidência da República e dos Ministérios.  NOVA EMENTA: Estabelece a organização básica dos órgãos da Presidência da República e dos Ministérios; altera a Lei nº 13.334, de 13 de setembro de 2",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2139967-68",
+        "data": "2017-09-26",
+        "placar": "203 x 198",
+        "totalNominal": 401,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 203; não: 198; abstenção: 7; total: 408.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2139967-68/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:1715687",
+      "proposicao": "PL 2960/2015",
+      "ementa": "Dispõe sobre o Regime Especial de Regularização Cambial e Tributária de recursos, bens ou direitos de origem lícita não declarados, remetidos, mantidos no exterior ou repatriados por residentes ou domiciliados no País, e dá outras providênc",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1715687-149",
+        "data": "2015-11-11",
+        "placar": "351 x 48",
+        "totalNominal": 399,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda de Plenário nº 23. Sim: 351; não: 48; abstenção: 5; total: 404.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1715687-149/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2015-11-11 199x89 nao_classificada (1715687-142)"
+      ]
+    },
+    {
+      "chave": "prop:593856",
+      "proposicao": "PL 6446/2013",
+      "ementa": "Dispõe sobre o direito de resposta ou retificação do ofendido por matéria divulgada, publicada ou transmitida por veículo de comunicação social.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "593856-21",
+        "data": "2015-10-20",
+        "placar": "318 x 79",
+        "totalNominal": 397,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "*** Votação, em turno único, do Projeto de Lei nº 3.232 de 1992, principal (Sessão Deliberativa Ordinária de 20/10/2015). \r\nEncaminhou a Votação o Dep. Afonso Florence (PT-BA). \r\nV",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/593856-21/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:1570899",
+      "proposicao": "MPV 682/2015",
+      "ementa": "Altera a Lei nº 12.712, de 30 de agosto de 2012, para estabelecer que a Agência Brasileira Gestora de Fundos Garantidores e Garantias S.A. - ABGF ficará encarregada da gestão do Fundo de Estabilidade do Seguro Rural - FESR até a completa li",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1570899-40",
+        "data": "2015-10-21",
+        "placar": "227 x 169",
+        "totalNominal": 396,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 227; não: 169; total: 396.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1570899-40/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:808898",
+      "proposicao": "MPV 661/2014",
+      "ementa": "Autoriza a União a conceder crédito ao Banco Nacional de Desenvolvimento Econômico e Social - BNDES e a destinar superávit financeiro das fontes de recursos existentes no Tesouro Nacional à cobertura de despesas primárias obrigatórias.  NOV",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "808898-52",
+        "data": "2015-04-09",
+        "placar": "298 x 95",
+        "totalNominal": 393,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda nº 60. Sim: 298; não: 95; abstenção:4; total: 397 (votação nominal anunciada, de ofício, pela Presidência).",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/808898-52/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 3,
+      "outrasRodadas": [
+        "2015-04-09 198x150 nao_classificada (808898-59)",
+        "2015-04-09 209x107 nao_classificada (808898-33)"
+      ]
+    },
+    {
+      "chave": "prop:2076264",
+      "proposicao": "MPV 710/2016",
+      "ementa": "Abre crédito extraordinário, em favor dos Ministérios da Justiça, da Cultura, da Defesa, da Integração Nacional e do Turismo e de Encargos Financeiros da União, no valor de R$ 1.472.650.000,00, para os fins que especifica.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2076264-43",
+        "data": "2016-03-29",
+        "placar": "221 x 165",
+        "totalNominal": 386,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovado, em apreciação preliminar, o Parecer do Relator, na parte em que manifesta opinião pelo atendimento parcial dos pressupostos constitucionais de relevância, urgência e impr",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2076264-43/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2118464",
+      "proposicao": "MPV 752/2016",
+      "ementa": "Dispõe sobre diretrizes gerais para a prorrogação e a relicitação dos contratos de parceria que especifica e dá outras providências.  NOVA EMENTA: Dispõe sobre diretrizes gerais para a prorrogação e a relicitação dos contratos de parceria q",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2118464-64",
+        "data": "2017-05-02",
+        "placar": "282 x 101",
+        "totalNominal": 383,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovado, em apreciação preliminar, o Parecer da Comissão Mista, na parte em que manifesta opinião favorável quanto ao atendimento dos pressupostos constitucionais de relevância e ",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2118464-64/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2017-05-02 83x270 nao_classificada (2118464-84)"
+      ]
+    },
+    {
+      "chave": "prop:1515649",
+      "proposicao": "MPV 679/2015",
+      "ementa": "Dispõe sobre autorização para a realização de obras e serviços necessários ao fornecimento de energia elétrica temporária para os Jogos Olímpicos e Paraolímpicos de 2016, de que trata a Lei no 12.035, de 1o de outubro de 2009, e altera a Le",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1515649-40",
+        "data": "2015-09-17",
+        "placar": "43 x 339",
+        "totalNominal": 382,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda nº 15. Sim: 43; não: 339; abstenção: 1; total: 383.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1515649-40/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:737866",
+      "proposicao": "PL 8077/2014",
+      "ementa": "Altera o art. 157 do Decreto-lei nº 2.848, de 7 de dezembro de 1940 (Código Penal) e a Lei nº 8.072 de 25 de julho de 1990 (Lei de crime hediondos).  NOVA EMENTA: Altera o art. 157 do Decreto-Lei nº 2.848, de 7 de dezembro de 1940 - Código ",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "737866-19",
+        "data": "2015-03-25",
+        "placar": "375 x 5",
+        "totalNominal": 380,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Discussão, em turno único, do Projeto de Lei nº 789 de 2007, principal (Sessão Deliberativa Extraordinária de 25 de março de 2015 - 19:57).\r\nDesignado Relator, Dep. João Campos (PS",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/737866-19/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:1050643",
+      "proposicao": "PL 863/2015",
+      "ementa": "Altera a Lei nº 12.546, de 14 de dezembro de 2011, quanto à contribuição previdenciária sobre a receita bruta; a Lei nº 12.469, de 26 de agosto de 2011, a Lei nº 12.995, de 18 de junho de 2014, e a Lei nº 11.196, de 21 de novembro de 2005, ",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1050643-113",
+        "data": "2015-06-25",
+        "placar": "211 x 160",
+        "totalNominal": 371,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda Aglutinativa nº 6.  Sim: 211; não: 160; total: 371.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1050643-113/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 5,
+      "outrasRodadas": [
+        "2015-06-25 136x213 nao_classificada (1050643-110)",
+        "2015-06-25 140x205 nao_classificada (1050643-117)",
+        "2015-06-25 117x226 nao_classificada (1050643-96)",
+        "2015-06-25 125x214 nao_classificada (1050643-99)"
+      ]
+    },
+    {
+      "chave": "prop:2080237",
+      "proposicao": "PLP 257/2016",
+      "ementa": "Estabelece o Plano de Auxílio aos Estados e ao Distrito Federal e medidas de estímulo ao reequilíbrio fiscal; altera a Lei nº 9.496, de 11 de setembro de 1997, a Medida Provisória nº 2.192-70, de 24 de agosto de 2001, a Lei Complementar nº ",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2080237-147",
+        "data": "2016-08-10",
+        "placar": "366 x 2",
+        "totalNominal": 368,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda Aglutinativa nº 2. Sim: 366; Não:2; Abst.: 2; Total: 370.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2080237-147/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 5,
+      "outrasRodadas": [
+        "2016-08-30 305x58 nao_classificada (2080237-180)",
+        "2016-08-10 111x246 nao_classificada (2080237-144)",
+        "2016-08-30 307x50 nao_classificada (2080237-189)",
+        "2016-08-30 90x258 nao_classificada (2080237-192)"
+      ]
+    },
+    {
+      "chave": "prop:2152544",
+      "proposicao": "MPV 801/2017",
+      "ementa": "Dispõe sobre a contratação, o aditamento, a repactuação e a renegociação de operações de crédito, a concessão de garantia pela União e a contratação com a União realizadas com fundamento na Lei Complementar nº 156, de 28 de dezembro de 2016",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2152544-73",
+        "data": "2018-02-27",
+        "placar": "128 x 240",
+        "totalNominal": 368,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda nº 6. Sim: 128; não: 240; total: 368.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2152544-73/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:598264",
+      "proposicao": "MSC 463/2013",
+      "ementa": "Submete à deliberação do Congresso Nacional Projeto de Lei que \" Autoriza o Poder Executivo a doar três aeronaves T-27 TUCANO  à Força Aérea de Moçambique\".",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2110703-16",
+        "data": "2017-02-08",
+        "placar": "271 x 93",
+        "totalNominal": 364,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Mensagem de Retirada de proposição. Sim: 271; Não: 93; Abstenções: 2; Total: 366.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2110703-16/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2188690",
+      "proposicao": "MSC 703/2018",
+      "ementa": "Submete à apreciação do Congresso Nacional o texto do decreto nº 9.602, de 8 de dezembro de 2018, publicado no Diário Oficial da União do dia 10 de dezembro de 2018, que \"Decreta intervenção federal no Estado de Roraima com o objetivo de pô",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2188690-32",
+        "data": "2018-12-11",
+        "placar": "290 x 69",
+        "totalNominal": 359,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovado o Projeto de Decreto Legislativo nº 1.105 de 2018, adotado pelo relator da Comissão de Constituição e Justiça e de Cidadania. Sim: 290; não: 69; abstenção: 4; total: 363.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2188690-32/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:944276",
+      "proposicao": "PL 23/2015",
+      "ementa": "Altera a Lei nº 9.096, de 19 de setembro de 1995.  NOVA EMENTA: Altera as Leis nºs 9.096, de 19 de setembro de 1995, e 9.504, de 30 de setembro de 1997, para dispor sobre fusão de partidos políticos.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "944276-21",
+        "data": "2015-02-25",
+        "placar": "30 x 328",
+        "totalNominal": 358,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Discussão, em turno único, do Projeto de Lei nº 2.211 de 2007, principal (Sessão Deliberativa Extraordinária de 25 de fevereiro de 2015).\r\nDiscutiram a Matéria: Dep. Rubens Pereira",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/944276-21/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2138918",
+      "proposicao": "MPV 781/2017",
+      "ementa": "Altera a Lei Complementar nº 79, de 7 de janeiro de 1994, para dispor sobre a transferência de recursos financeiros do Fundo Penitenciário Nacional, e a Lei nº 11.473, de 10 de maio de 2007, para permitir que os servidores que menciona pres",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2138918-54",
+        "data": "2017-09-20",
+        "placar": "194 x 163",
+        "totalNominal": 357,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 194; não: 163; total: 357.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2138918-54/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2112490",
+      "proposicao": "MPV 746/2016",
+      "ementa": "Institui a Política de Fomento à Implementação de Escolas de Ensino Médio em Tempo Integral, altera a Lei nº 9.394, de 20 de dezembro de 1996, que estabelece as diretrizes e bases da educação nacional, e a Lei nº 11.494 de 20 de junho 2007,",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2112490-107",
+        "data": "2016-12-13",
+        "placar": "148 x 208",
+        "totalNominal": 356,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda. Sim: 148; Não: 208: Total: 356.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2112490-107/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 7,
+      "outrasRodadas": [
+        "2016-12-13 229x124 nao_classificada (2112490-105)",
+        "2016-12-13 112x230 nao_classificada (2112490-124)",
+        "2016-12-13 324x5 nao_classificada (2112490-110)",
+        "2016-12-13 121x192 nao_classificada (2112490-92)",
+        "2016-12-13 120x171 nao_classificada (2112490-95)",
+        "2016-12-13 190x86 nao_classificada (2112490-118)"
+      ]
+    },
+    {
+      "chave": "prop:18216",
+      "proposicao": "PL 2505/2000",
+      "ementa": "Determina que o material apreendido pela Polícia Federal, fruto de contrabando e que possa vir a ser usado no combate ao crime, deverá ser repassado às Secretarias de Segurança Pública Estaduais e à Polícia Federal.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "18216-226",
+        "data": "2015-04-23",
+        "placar": "232 x 122",
+        "totalNominal": 354,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda de Plenário nº 6. Sim: 232; não: 122; abstenção: 2; total: 356.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/18216-226/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:1806554",
+      "proposicao": "MPV 696/2015",
+      "ementa": "Extingue e transforma cargos públicos e altera a Lei nº 10.683, de 28 de maio de 2003, que dispõe sobre a organização da Presidência da República e dos Ministérios.  NOVA EMENTA: Extingue e transforma cargos públicos; altera as Leis nºs 10.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1806554-87",
+        "data": "2016-02-18",
+        "placar": "166 x 188",
+        "totalNominal": 354,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Suprimido o texto. Sim: 166; não: 188; abstenção: 2; total: 356.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1806554-87/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2092382",
+      "proposicao": "MPV 742/2016",
+      "ementa": "Dispõe sobre a flexibilização do horário de transmissão do programa oficial de informações dos Poderes da República, durante a realização dos Jogos Olímpicos e Paralímpicos Rio 2016.  NOVA EMENTA: Altera a Lei nº 4.117, de 27 de agosto de 1",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2092382-69",
+        "data": "2016-11-08",
+        "placar": "242 x 112",
+        "totalNominal": 354,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda Aglutinativa Substitutiva Global nº 1. Sim: 242; Não: 112; Abstenção: 2; Total: 356.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2092382-69/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2016-11-08 232x26 nao_classificada (2092382-40)"
+      ]
+    },
+    {
+      "chave": "prop:2121843",
+      "proposicao": "MPV 757/2016",
+      "ementa": "Institui a Taxa de Controle de Incentivos Fiscais e a Taxa de Serviços em favor da Superintendência da Zona Franca de Manaus - Suframa e dá outras providências  NOVA EMENTA: Institui a Taxa de Controle de Incentivos Fiscais (TCIF) e a Taxa ",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2121843-40",
+        "data": "2017-05-15",
+        "placar": "264 x 89",
+        "totalNominal": 353,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 264; não: 89; abstenção: 1; total: 354.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2121843-40/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:552197",
+      "proposicao": "PL 4238/2012",
+      "ementa": "Altera o art. 19 da Lei nº 7.102, de 20 de junho de 1983, para dispor sobre o piso nacional de salário dos empregados em empresas particulares que explorem serviços de vigilância e transporte de valores.  NOVA EMENTA: Institui o Estatuto da",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "552197-208",
+        "data": "2016-11-29",
+        "placar": "297 x 51",
+        "totalNominal": 348,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 297; Não: 51; Abstenções: 2; Total: 350.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/552197-208/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2024766",
+      "proposicao": "MPV 698/2015",
+      "ementa": "Altera a Lei nº 11.977, de 7 de julho de 2009, para dispor sobre operações de financiamento habitacional com desconto ao beneficiário concedido pelo Fundo de Garantia do Tempo de Serviço - FGTS para aquisição de imóveis no âmbito do Program",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2024766-72",
+        "data": "2016-03-21",
+        "placar": "160 x 180",
+        "totalNominal": 340,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda nº 7.  Sim: 160; não: 180; total: 340.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2024766-72/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:356194",
+      "proposicao": "PLP 76/2007",
+      "ementa": "Modifica o art. 2º da Lei Complementar nº 125, de 2007.  NOVA EMENTA: Altera o art. 2º da Lei Complementar nº 125, de 3 de janeiro de 2007, para incluir os Municípios do Vale do Rio Doce, Estado de Minas Gerais, e Municípios do Estado do Es",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "356194-158",
+        "data": "2017-10-31",
+        "placar": "294 x 41",
+        "totalNominal": 335,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Subemenda Substitutiva Global, oferecida pelo Relator da Comissão de Integração Nacional, Desenvolvimento Regional e da Amazônia. Sim: 294; não: 41; abstenção: 4; total:",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/356194-158/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2128869",
+      "proposicao": "MPV 775/2017",
+      "ementa": "Altera a Lei nº 12.810, de 15 de maio de 2013, para dispor sobre a constituição de gravames e ônus sobre ativos financeiros e valores mobiliários objeto de registro ou de depósito centralizado.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2128869-89",
+        "data": "2017-08-15",
+        "placar": "219 x 111",
+        "totalNominal": 330,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 219; não: 111; abstenção: 2; total: 332.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2128869-89/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2121839",
+      "proposicao": "MPV 756/2016",
+      "ementa": "Altera os limites do Parque Nacional do Rio Novo, da Floresta Nacional do Jamanxim e cria a Área de Proteção Ambiental do Jamanxim.  NOVA EMENTA: Altera os limites da Floresta Nacional do Jamanxim; cria a Área de Proteção Ambiental do Jaman",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2121839-91",
+        "data": "2017-05-16",
+        "placar": "268 x 60",
+        "totalNominal": 328,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 268; não: 60; abstenção: 1; total: 329.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2121839-91/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 4,
+      "outrasRodadas": [
+        "2017-05-16 269x26 nao_classificada (2121839-63)",
+        "2017-05-16 255x19 nao_classificada (2121839-88)",
+        "2017-05-16 242x25 nao_classificada (2121839-78)"
+      ]
+    },
+    {
+      "chave": "prop:2138678",
+      "proposicao": "MPV 779/2017",
+      "ementa": "Estabelece critérios para a celebração de aditivos contratuais relativos às outorgas nos contratos de parceria no setor aeroportuário.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2138678-44",
+        "data": "2017-09-26",
+        "placar": "236 x 89",
+        "totalNominal": 325,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Medida Provisória nº 779 de 2017, na forma do Projeto de Lei de Conversão nº 31 de 2017. Sim: 236; não: 89; total: 325.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2138678-44/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:808880",
+      "proposicao": "PL 8170/2014",
+      "ementa": "Concede anistia aos débitos decorrentes de multas cominadas pelo IBAMA aos Municípios por infrações administrativas ambientais ocorridas antes da vigência da Lei Complementar nº 140, de 8 de dezembro de 2011, nos termos que especifica.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1570705-17",
+        "data": "2015-08-18",
+        "placar": "217 x 105",
+        "totalNominal": 322,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovado o Recurso contra apreciação conclusiva de comissão (art. 58, § 1º c/c art. 132, § 2º, RICD). Sim: 217; não: 105; total: 322.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1570705-17/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2015-08-18 217x105 nao_classificada (808880-46)"
+      ]
+    },
+    {
+      "chave": "prop:2120019",
+      "proposicao": "PL 6621/2016",
+      "ementa": "Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2182535-22",
+        "data": "2018-11-27",
+        "placar": "119 x 202",
+        "totalNominal": 321,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitado o Recurso. Sim: 119; não: 202; abstenção: 1; total: 322.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2182535-22/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:388449",
+      "proposicao": "PL 3131/2008",
+      "ementa": "Altera os arts. 61, 121, 129 e 147 do Decreto-Lei nº 2.848, de 7 de dezembro de 1940 - Código Penal, e o art. 2º da Lei nº 8.072, de 25 de julho de 1990 - Lei dos Crimes Hediondos, para prever como qualificadora e circunstância que agrava a",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "388449-116",
+        "data": "2015-03-26",
+        "placar": "215 x 100",
+        "totalNominal": 315,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 215; não: 100; abstenção: 5; total: 320.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/388449-116/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:1049380",
+      "proposicao": "PL 846/2015",
+      "ementa": "Acrescenta parágrafo ao artigo 121 do Decreto-lei nº 2.848, de 07 de dezembro de 1940 - Código Penal.  NOVA EMENTA: Altera os arts. 121 e 129 do Decreto-Lei nº 2.848, de 7 de dezembro de 1940 - Código Penal, e o art. 1º da Lei nº 8.072, de ",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1049380-18",
+        "data": "2015-03-26",
+        "placar": "215 x 100",
+        "totalNominal": 315,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Discussão, em turno único, do Projeto de Lei nº 3.131 de 2008, principal (Sessão Deliberativa Extraordinária de 26/03/2015 - 09:00).\r\nParecer proferido em Plenário pelo Relator, De",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1049380-18/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:542102",
+      "proposicao": "PL 3734/2012",
+      "ementa": "Disciplina a organização e o funcionamento dos órgãos responsáveis pela segurança pública, nos termos do § 7º do art. 144 da Constituição, institui o Sistema Único de Segurança Pública - SUSP, dispõe sobre a segurança cidadã, e dá outras pr",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "542102-163",
+        "data": "2018-04-11",
+        "placar": "78 x 234",
+        "totalNominal": 312,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda nº 15. Sim: 78; não: 234; total: 312.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/542102-163/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 3,
+      "outrasRodadas": [
+        "2018-04-11 263x8 nao_classificada (542102-169)",
+        "2018-04-11 17x250 nao_classificada (542102-160)"
+      ]
+    },
+    {
+      "chave": "prop:2121849",
+      "proposicao": "MPV 758/2016",
+      "ementa": "Altera os limites do Parque Nacional do Jamanxim e da Área de Proteção Ambiental do Tapajós.  NOVA EMENTA: Altera os limites do Parque Nacional do Jamanxim e cria a Área de Proteção Ambiental Rio Branco.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2121849-83",
+        "data": "2017-05-16",
+        "placar": "272 x 39",
+        "totalNominal": 311,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 272; não: 39; abstenção: 2; total: 313.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2121849-83/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 3,
+      "outrasRodadas": [
+        "2017-05-16 240x27 nao_classificada (2121849-101)",
+        "2017-05-16 221x36 nao_classificada (2121849-60)"
+      ]
+    },
+    {
+      "chave": "prop:2129185",
+      "proposicao": "PL 7391/2017",
+      "ementa": "Dispõe sobre a anistia das dívidas e multas referentes a cobrança da contribuição ao Fundo de Assistência ao Trabalhador Rural (Funrural) durante o período de 2011 a 2017.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2129185-86",
+        "data": "2017-12-12",
+        "placar": "202 x 108",
+        "totalNominal": 310,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 202; não: 108; abstenção: 1; total: 311.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2129185-86/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2168386",
+      "proposicao": "MPV 821/2018",
+      "ementa": "Altera a Lei nº 13.502, de 1º de novembro de 2017, que dispõe sobre organização básica da Presidência da República e dos Ministérios, para criar o Ministério Extraordinário da Segurança Pública.  NOVA EMENTA: Altera a Lei nº 13.502, de 1º d",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2168386-45",
+        "data": "2018-06-13",
+        "placar": "216 x 93",
+        "totalNominal": 309,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 216; não: 93; total: 309.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2168386-45/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2112064",
+      "proposicao": "MPV 745/2016",
+      "ementa": "Autoriza o Banco Central do Brasil a adquirir papel moeda e moeda metálica fabricados fora do País por fornecedor estrangeiro.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2112064-71",
+        "data": "2016-12-07",
+        "placar": "119 x 188",
+        "totalNominal": 307,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitado o Artigo 1° da Emenda n° 20. Sim: 119; não: 188; total: 307.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2112064-71/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2145275",
+      "proposicao": "MPV 786/2017",
+      "ementa": "Dispõe sobre a participação da União em fundo de apoio à estruturação e ao desenvolvimento de projetos de concessões e parcerias público-privadas, altera a Lei nº 11.578, de 26 de novembro 2007, que dispõe sobre a transferência obrigatória ",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2145275-48",
+        "data": "2017-11-21",
+        "placar": "145 x 160",
+        "totalNominal": 305,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda nº 14. Sim: 145; não: 160; abstenção: 1; total: 306.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2145275-48/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:20794",
+      "proposicao": "PL 4302/1998",
+      "ementa": "Dispõe sobre as relações de trabalho na empresa de trabalho temporário e na empresa de prestação de serviços a terceiros, e dá outras providências. NOVA EMENTA DO SUBSTITUTIVO: Altera dispositivos da Lei nº 6.019, de 03 de janeiro de 1974, ",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "20794-132",
+        "data": "2017-03-22",
+        "placar": "28 x 275",
+        "totalNominal": 303,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a supressão do §2º do art. 9º da Lei nº 6.019/74, constante do art. 2º do texto da Câmara dos Deputados. Em consequência, fica restabelecido o texto da Câmara dos Deputad",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/20794-132/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2122082",
+      "proposicao": "MPV 763/2016",
+      "ementa": "Altera a Lei nº 8.036, de 11 de maio de 1990, para elevar a rentabilidade das contas vinculadas do trabalhador por meio da distribuição de lucros do Fundo de Garantia do Tempo de Serviço e dispor sobre possibilidade de movimentação de conta",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2122082-68",
+        "data": "2017-05-23",
+        "placar": "40 x 261",
+        "totalNominal": 301,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda n° 8. Sim: 40; não: 261; abstenção: 1; total: 302.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2122082-68/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2132524",
+      "proposicao": "MPV 777/2017",
+      "ementa": "Institui a Taxa de Longo Prazo - TLP, dispõe sobre a remuneração dos recursos do Fundo de Participação PIS-Pasep, do Fundo de Amparo ao Trabalhador e do Fundo da Marinha Mercante e dá outras providências.  NOVA EMENTA: Institui a Taxa de Lo",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2132524-64",
+        "data": "2017-08-23",
+        "placar": "261 x 31",
+        "totalNominal": 292,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovado, em apreciação preliminar, o Parecer do Relator, na parte em que manifesta opinião favorável quanto ao atendimento dos pressupostos constitucionais de relevância e urgênci",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2132524-64/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2017-08-30 231x23 nao_classificada (2132524-113)"
+      ]
+    },
+    {
+      "chave": "prop:1594910",
+      "proposicao": "PL 2516/2015",
+      "ementa": "Institui a Lei de Migração.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "1594910-125",
+        "data": "2016-12-06",
+        "placar": "207 x 83",
+        "totalNominal": 290,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 207; Não: 83; Abstenção: 1;Total: 291.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1594910-125/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2164234",
+      "proposicao": "MPV 809/2017",
+      "ementa": "Altera a Lei nº 11.516, de 28 de agosto de 2007, que dispõe sobre a criação do Instituto Chico Mendes de Conservação da Biodiversidade - Instituto Chico Mendes, e a Lei nº 7.957, de 20 de dezembro de 1989, que dispõe sobre a tabela de Pesso",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2164234-109",
+        "data": "2018-04-25",
+        "placar": "266 x 24",
+        "totalNominal": 290,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 266; não: 24; abstenção: 1; total: 291.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2164234-109/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 5,
+      "outrasRodadas": [
+        "2018-04-25 247x34 nao_classificada (2164234-103)",
+        "2018-04-24 273x5 nao_classificada (2164234-73)",
+        "2018-04-25 236x35 nao_classificada (2164234-106)",
+        "2018-04-25 239x26 nao_classificada (2164234-113)"
+      ]
+    },
+    {
+      "chave": "prop:2110829",
+      "proposicao": "MPV 744/2016",
+      "ementa": "Altera a Lei nº 11.652, de 7 de abril de 2008, que institui os princípios e objetivos dos serviços de radiodifusão pública explorados pelo Poder Executivo ou outorgados a entidades de sua administração indireta e autoriza o Poder Executivo ",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2110829-59",
+        "data": "2016-12-14",
+        "placar": "79 x 210",
+        "totalNominal": 289,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda n°4. Sim: 79; não: 210; abstenção: 1; total: 290.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2110829-59/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 3,
+      "outrasRodadas": [
+        "2016-12-14 196x92 nao_classificada (2110829-65)",
+        "2016-12-14 85x193 nao_classificada (2110829-68)"
+      ]
+    },
+    {
+      "chave": "prop:16713",
+      "proposicao": "PL 1428/1999",
+      "ementa": "Altera dispositivos da Lei nº 9.503, de 23 de setembro de 1997 - Código de Trânsito Brasileiro.  NOVA EMENTA: Institui normas para regulação do transporte rodoviário de cargas; altera as Leis nºs 10.833, de 29 de dezembro de 2003, 9.503, de",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "16713-178",
+        "data": "2018-06-20",
+        "placar": "174 x 111",
+        "totalNominal": 285,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda nº 20. Sim: 174; não: 111; abstenção: 1; total: 286.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/16713-178/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 2,
+      "outrasRodadas": [
+        "2018-06-20 184x70 nao_classificada (16713-190)"
+      ]
+    },
+    {
+      "chave": "prop:2167507",
+      "proposicao": "MPV 811/2017",
+      "ementa": "Altera a Lei nº 12.304, de 2 de agosto de 2010, que autoriza o Poder Executivo a criar a empresa pública denominada Empresa Brasileira de Administração de Petróleo e Gás Natural S.A. - Pré-Sal Petróleo S.A. - PPSA e dispõe sobre a política ",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2167507-118",
+        "data": "2018-05-16",
+        "placar": "234 x 48",
+        "totalNominal": 282,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 234; não: 48; abst: 2; total: 284",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2167507-118/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 4,
+      "outrasRodadas": [
+        "2018-05-16 38x240 nao_classificada (2167507-125)",
+        "2018-05-16 222x47 nao_classificada (2167507-107)",
+        "2018-05-16 61x207 nao_classificada (2167507-112)"
+      ]
+    },
+    {
+      "chave": "prop:2158425",
+      "proposicao": "PL 8939/2017",
+      "ementa": "Modifica a Lei nº 12.276, de 30 de junho de 2010, que autoriza a União a ceder onerosamente à Petróleo Brasileiro S.A. - PETROBRAS o exercício das atividades de pesquisa e lavra de petróleo, de gás natural e de outros hidrocarbonetos fluido",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2158425-101",
+        "data": "2018-06-20",
+        "placar": "217 x 57",
+        "totalNominal": 274,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Subemenda Substitutiva Global apresentada pelo Relator da Comissão de Desenvolvimento Econômico, Indústria, Comércio e Serviços, Dep. Fernando Coelho Filho (DEM-PE), ao ",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2158425-101/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 7,
+      "outrasRodadas": [
+        "2018-06-20 27x239 nao_classificada (2158425-108)",
+        "2018-07-04 30x235 nao_classificada (2158425-154)",
+        "2018-06-20 53x205 nao_classificada (2158425-105)",
+        "2018-06-20 226x30 nao_classificada (2158425-114)",
+        "2018-07-04 138x116 nao_classificada (2158425-150)",
+        "2018-06-20 20x232 nao_classificada (2158425-111)"
+      ]
+    },
+    {
+      "chave": "prop:2078503",
+      "proposicao": "MPV 714/2016",
+      "ementa": "Extingue o Adicional de Tarifa Aeroportuária e altera a Lei nº 5.862, de 12 de dezembro de 1972, e a Lei nº 7.565, de 19 de dezembro de 1986.  NOVA EMENTA: Extingue o Adicional de Tarifa Aeroportuária; amplia o limite de participação do inv",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2078503-90",
+        "data": "2016-06-21",
+        "placar": "199 x 71",
+        "totalNominal": 270,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda Aglutinativa nº 1. Sim: 199; não: 71; abstenção: 1; total: 271.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2078503-90/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:949149",
+      "proposicao": "PRC 11/2015",
+      "ementa": "Altera o Regimento Interno da Câmara dos Deputados, aprovado pela Resolução n° 17, de 21 de setembro de 1989, para dispor sobre a Secretaria de Comunicação Social.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "949149-47",
+        "data": "2015-03-12",
+        "placar": "226 x 43",
+        "totalNominal": 269,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovado o Projeto de Resolução nº 11 de 2015. Sim: 226; não: 43; abstenção: 9; total: 278.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/949149-47/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2076245",
+      "proposicao": "MPV 708/2015",
+      "ementa": "Autoriza a União a reincorporar os trechos de rodovias federais transferidos aos Estados e ao Distrito Federal por força da Medida Provisória nº 82, de 7 de dezembro de 2002.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2076245-83",
+        "data": "2016-05-23",
+        "placar": "4 x 264",
+        "totalNominal": 268,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Mantido o texto. Sim: 4; Não: 264; Abstenção: 3; Total: 271.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2076245-83/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2084402",
+      "proposicao": "MPV 727/2016",
+      "ementa": "Cria o Programa de Parcerias de Investimentos - PPI e da outras providências",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2084402-66",
+        "data": "2016-08-30",
+        "placar": "22 x 240",
+        "totalNominal": 262,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Rejeitada a Emenda nº 99. Sim: 22; não: 240; abstenção: 1; total: 263.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2084402-66/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2145822",
+      "proposicao": "MPV 791/2017",
+      "ementa": "Cria a Agência Nacional de Mineração e extingue o   Departamento Nacional de Produção Mineral.  NOVA EMENTA: Cria a Agência Nacional de Mineração (ANM); extingue o Departamento Nacional de Produção Mineral (DNPM); altera as Leis nºs 11.046,",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2145822-60",
+        "data": "2017-11-22",
+        "placar": "153 x 109",
+        "totalNominal": 262,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda n° 93. Sim: 153; não: 109; total: 262.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2145822-60/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2122078",
+      "proposicao": "MPV 759/2016",
+      "ementa": "Dispõe sobre a regularização fundiária rural e urbana, sobre a liquidação de créditos concedidos aos assentados da reforma agrária e sobre a regularização fundiária no âmbito da Amazônia Legal, institui mecanismos para aprimorar a eficiênci",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2122078-146",
+        "data": "2017-06-27",
+        "placar": "245 x 12",
+        "totalNominal": 257,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovada a Emenda nº 2, do Senado Federal, ao Projeto de Lei de Conversão nº 12, de 2017. Sim: 245; não: 12; abstenção: 1; total: 258.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2122078-146/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2127803",
+      "proposicao": "MPV 772/2017",
+      "ementa": "Altera a Lei nº 7.889, de 23 de novembro de 1989, que dispõe sobre a inspeção sanitária e industrial dos produtos de origem animal.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2127803-75",
+        "data": "2017-07-11",
+        "placar": "247 x 8",
+        "totalNominal": 255,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Aprovado, em apreciação preliminar, o Parecer da Comissão Mista, na parte em que manifesta opinião favorável quanto ao atendimento dos pressupostos constitucionais de relevância e ",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2127803-75/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2077084",
+      "proposicao": "PDC 315/2016",
+      "ementa": "Susta, nos termos do art. 49, V, da Constituição, a vigência do inciso I do art. 3º do Decreto nº 8.616, de 29 de dezembro de 2015, que \"Regulamenta o disposto na Lei Complementar nº 148, de 25 de novembro de 2014, e no art. 2º da Lei nº 9.",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2077084-59",
+        "data": "2016-03-09",
+        "placar": "10 x 79",
+        "totalNominal": 89,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Adiada a votação por falta de \"quorum\" (Obstrução). Sim: 10; Não: 79; abstenção: 11; Total: 100.",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2077084-59/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    },
+    {
+      "chave": "prop:2058404",
+      "proposicao": "MPV 701/2015",
+      "ementa": "Altera a Lei nº 6.704, de 26 de outubro de 1979, para dispor sobre o Seguro de Crédito à Exportação; a Lei nº 9.818, de 23 de agosto de 1999, e a Lei nº 11.281, de 20 de fevereiro de 2006, para dispor sobre o Fundo de Garantia à Exportação;",
+      "confirmacao": "precisa_leitura_humana",
+      "representante": {
+        "votacaoId": "2058404-34",
+        "data": "2016-04-26",
+        "placar": "48 x 3",
+        "totalNominal": 51,
+        "classificacao": "nao_classificada",
+        "regra": null,
+        "descricao": "Prejudicada a verificação de votação do Projeto de Lei de Conversão de nº 7 adotado pela Comissão Mista à Medida Provisória nº 701 de 2015 por falta de \"quorum\" (Obstrução). Sim: 4",
+        "fonte": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2058404-34/votos"
+      },
+      "renumeradaNaFonte": false,
+      "rodadas": 1,
+      "outrasRodadas": []
+    }
+  ]
+}

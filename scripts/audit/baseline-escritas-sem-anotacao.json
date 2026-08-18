@@ -1,0 +1,1199 @@
+{
+  "$schema": "Baseline por ARQUIVO das escritas anteriores ao gate @write. Cada entrada congela quantos statements de escrita aquele arquivo tem sem anotação e o sha256 do conteúdo que produziu essa contagem. Não existe total aqui, de propósito: um número global quebraria no merge da próxima migration vinda de outro PR, e diria 'piorou' sem dizer onde. Regressão é fail-closed por arquivo: arquivo novo com escrita sem anotação reprova, arquivo do baseline que mudou de conteúdo reprova, entrada que ficou obsoleta reprova pedindo remoção. O baseline só encolhe.",
+  "gerado_em": "2026-08-09",
+  "como_encolher": "Anote os statements do arquivo com -- @write, abra o recorte dele em recortes.json com a allowlist que autoriza a escrita, e remova a entrada daqui. Nunca regenere este arquivo em massa: regenerar absolve dívida nova junto com a antiga, que é exatamente o que ele existe para impedir.",
+  "arquivos": {
+    "20260329000001_seed_data.sql": {
+      "statements": 2,
+      "sha256": "250ec9d4932270af00eef796f8fda1a77d69d5f6d4d02f0deb2ae80906705ff9"
+    },
+    "20260401140000_delete_low_confidence_wikipedia_historico.sql": {
+      "statements": 1,
+      "sha256": "159f52a8c2dc070203c546574fc65715d8e16ff7a87a27c9bbdaca27598387c7"
+    },
+    "20260403113000_harden_child_rls_and_uniques.sql": {
+      "statements": 2,
+      "sha256": "0cd25885c8c41734108a62bbd8ab15924fee06cf2eb7c93a51c175171b724e22"
+    },
+    "20260404180000_votacao_chave_auxilio_brasil_quiz.sql": {
+      "statements": 1,
+      "sha256": "7a217b1edd7e6599de359b50e6466b1520a259d905a92bfb0614e57476fd82ff"
+    },
+    "20260406120000_votacao_chave_marco_temporal_quiz.sql": {
+      "statements": 1,
+      "sha256": "f2c617fa0a4a832c11f1f512cc4d4cbef0bdd238911b592bcd460a2fc897d3cf"
+    },
+    "20260406123000_clear_invalid_camara_proposicao_id.sql": {
+      "statements": 1,
+      "sha256": "1fdac6807e9e40ad21b4296e6b322db0a7b3dca8f56ac087febaa6f82f3ba0ee"
+    },
+    "20260406150000_alerts_email_mvp.sql": {
+      "statements": 1,
+      "sha256": "89d3cefa38f8d4ce60fb1da9af6f3ec1115814617ae8c0824cb380d4474d12cd"
+    },
+    "20260406192000_historico_cargo_canonico_and_unique.sql": {
+      "statements": 14,
+      "sha256": "5fe8eec3d257866dc52109dbceb742d2b677ae0eddddef89ed563bf47eca0e71"
+    },
+    "20260407143000_historico_tipo_evento.sql": {
+      "statements": 3,
+      "sha256": "30c90f778f209929710775edd4452624973ceaa6ee48e7be59c0f0020f4b4415"
+    },
+    "20260410113000_dedupe_sancoes_attention_points.sql": {
+      "statements": 2,
+      "sha256": "90b4e8852711693138b3392434594cbfb7638661b91fdecbb9be5f189f9ab090"
+    },
+    "20260419090000_disambiguate_quiz_votacoes_titles.sql": {
+      "statements": 2,
+      "sha256": "900a680b4ec24c8828a7ffe8a9ea36ff6f1db7ba64fc12de1f9b2e20d3aa25ec"
+    },
+    "20260419110000_fix_auxilio_brasil_quiz_proposicao.sql": {
+      "statements": 2,
+      "sha256": "8e7792fd5b1cd7c076a63c07017157c34ed4aaf2e1d47ad89bf35c4a2a7dca30"
+    },
+    "20260420100000_seed_legislacao_mandato_executivo_lula_lei_14611.sql": {
+      "statements": 1,
+      "sha256": "2e2ca21f3bdb0a2362304281263e2610016dea1c131b01801c8b3054b0feec39"
+    },
+    "20260421100000_seed_legislacao_mandato_executivo_lula_federal_pilot.sql": {
+      "statements": 4,
+      "sha256": "985cb454eb33cec60ac4e2728fbc8e17edee5c1f3160053f75e5d2c23c2a3880"
+    },
+    "20260422104600_seed_legislacao_mandato_executivo_lula_lei_14628.sql": {
+      "statements": 1,
+      "sha256": "47958e756c2df883c7a533cdb765c2f31721944b47cdb8005ea42257de4d9ab1"
+    },
+    "20260422203000_canonize_legislacao_mandato_executivo_lula_lote_federal.sql": {
+      "statements": 1,
+      "sha256": "0b43da5253033e51a088ce020dbc8387fe815f420df023c7d6cbbdb610212bc6"
+    },
+    "20260423150000_seed_legislacao_mandato_executivo_tarcisio_gov_sp_lei_17735.sql": {
+      "statements": 1,
+      "sha256": "5d53e5b72f15f83a8d268b111e767e360deca5e6e9d9b288cd732965e83c15c8"
+    },
+    "20260423180000_seed_legislacao_mandato_executivo_ratinho_pr_lei_21355.sql": {
+      "statements": 1,
+      "sha256": "66166e149ab78fbaf475db7e846c06e1073c2a64b008cbbe0d0257f25380cb04"
+    },
+    "20260424130000_quiz_short_links_expires_at.sql": {
+      "statements": 1,
+      "sha256": "ba434a7b32769a9be647c2b58c1d2871e3525e68f66d669ca03dc92e65a31222"
+    },
+    "20260425170000_fix_valmir_de_francisquinho_foto_url.sql": {
+      "statements": 1,
+      "sha256": "54319e977c2a5998d1744ae7c6c31aa94d00b5bb86751e8ca57b18d2e062575f"
+    },
+    "20260427170000_seed_legislacao_mandato_executivo_eduardo_leite_rs_lei_16006.sql": {
+      "statements": 1,
+      "sha256": "7bb25d9d463957047ccc759a50f963203abdca725d9c524ec2173710719f16ad"
+    },
+    "20260427183000_seed_legislacao_mandato_executivo_eduardo_leite_rs_completo.sql": {
+      "statements": 2,
+      "sha256": "dcdaeaecfbe68502ffd37532fb1f5ad20db79d2dae5266158cb4703c2bfe15e0"
+    },
+    "20260428000000_seed_historico_politico_governors_for_legislacao_guards.sql": {
+      "statements": 1,
+      "sha256": "f627c2c9dfcb841200a7c3b1c16f6b501d0ed0b44cf0e48f3ec9071750894dec"
+    },
+    "20260428000001_seed_candidatos_ciro_gomes_for_legislacao_guards.sql": {
+      "statements": 2,
+      "sha256": "18edda7d546afa18422760df662fcd018b5f242ca96a28fc36a5057669c9283c"
+    },
+    "20260428000002_seed_candidatos_parlamentares_for_legislacao_guards.sql": {
+      "statements": 5,
+      "sha256": "fd10c8ea85395bf7aa4e54e4f3ef21da128b8335dad41c8ce8bca01a92e4ead0"
+    },
+    "20260428110000_seed_legislacao_mandato_executivo_tarcisio_presidencial_sp_lote_minimo.sql": {
+      "statements": 1,
+      "sha256": "0e6af67c130bd4c23fe1f6615897a7c1a65d2ff5329d6ec82cf94b558e648ecc"
+    },
+    "20260428160000_seed_legislacao_mandato_executivo_lula_federal_atual_completo.sql": {
+      "statements": 2,
+      "sha256": "d490943f4d9243d94b173453249b8eff9c8d34db9ce9b65d2daf080b61097923"
+    },
+    "20260428161000_seed_legislacao_mandato_executivo_tarcisio_sp_ampliado_parcial.sql": {
+      "statements": 2,
+      "sha256": "d270dca017267bf3a42616bb821313ab796dfe72155bc63fdd14de482c277dd5"
+    },
+    "20260429112929_seed_legislacao_mandato_executivo_ratinho_pr_lote_a.sql": {
+      "statements": 1,
+      "sha256": "323d211215385c602ed1545c0cc309c8ede700496d834cdc772b5c7a3c302e72"
+    },
+    "20260429183000_seed_legislacao_mandato_executivo_romeu_zema_mg_lote_a.sql": {
+      "statements": 1,
+      "sha256": "4e2038c046162b524f695a92885a5609229f3b812797ce52788473f429d98cdc"
+    },
+    "20260429203000_seed_legislacao_mandato_executivo_ronaldo_caiado_go_lote_a.sql": {
+      "statements": 1,
+      "sha256": "6e74cf5db6a55f3d3f116f38bc87f08350b5104de88edc76c5675433eb7dec13"
+    },
+    "20260429223000_seed_legislacao_mandato_executivo_ciro_gomes_ce_lote_a.sql": {
+      "statements": 1,
+      "sha256": "19e0719fe60864fc966ed48f775fa52cf6eb159bec72fcdd0c28367c64f317f1"
+    },
+    "20260429233000_seed_projetos_lei_flavio_bolsonaro_parlamentar_lote_a.sql": {
+      "statements": 1,
+      "sha256": "b64efa549cacdad0e2dc72851d13b6d3bbfec29ef3ba26a254add0b74e8d7bc4"
+    },
+    "20260429235959_cleanup_projetos_lei_flavio_bolsonaro_legacy_null_proposicao_id_api.sql": {
+      "statements": 1,
+      "sha256": "ca52dacc2baaf93e262f8a4ce0b7ff7b307d5f2f7428429a6bad72570bc57919"
+    },
+    "20260430000000_seed_projetos_lei_aldo_rebelo_parlamentar_lote_a.sql": {
+      "statements": 1,
+      "sha256": "9ef4e31913fb8ed78aff068e7879eb9ef4632131a247f406c1f9b04475032109"
+    },
+    "20260430010000_cleanup_projetos_lei_aldo_rebelo_legacy_curatorial.sql": {
+      "statements": 1,
+      "sha256": "ebd97b47be1459e5dbb83fae73eaa4a88d555cda3dfde90f14c3ecb414ffb1f6"
+    },
+    "20260430020000_seed_legislacao_mandato_executivo_romeu_zema_mg_lote_b.sql": {
+      "statements": 1,
+      "sha256": "d87f0a24275925bce6693371a29f99b0a3f7d2a977ddbe626218c006f8613e6a"
+    },
+    "20260430030000_seed_legislacao_mandato_executivo_ratinho_pr_lote_b.sql": {
+      "statements": 1,
+      "sha256": "63e4619b38edfe4eb24a80d61e7365288d3b8b5ecd67d1367728f5a7604ded9c"
+    },
+    "20260430040000_promote_legislacao_mandato_executivo_tarcisio_sp_inventario_completo.sql": {
+      "statements": 1,
+      "sha256": "550451fb3d052f1600a3bec5b3edd54a2a0c6a42260cd0683e3df5167ea6a4c3"
+    },
+    "20260430050000_seed_projetos_lei_aldo_rebelo_completo.sql": {
+      "statements": 1,
+      "sha256": "b05b4a36d49c9de6ccc284026f2464633db0726666388bc148ce41b2ef269278"
+    },
+    "20260430060000_seed_legislacao_mandato_executivo_romeu_zema_mg_completo.sql": {
+      "statements": 2,
+      "sha256": "d5b1d8b9e0e861471f727cd36a7900869e3e011356362d9d1615aabfa6cfa771"
+    },
+    "20260430071000_seed_coverage_id_aldo_rebelo_camara_completo.sql": {
+      "statements": 1,
+      "sha256": "e05a6af6d4a18a5cd3e6ce9f520f137f14327ee5f5a3456c57fd930f69c9c3e9"
+    },
+    "20260501100000_seed_projetos_lei_flavio_bolsonaro_parlamentar_lote_b.sql": {
+      "statements": 1,
+      "sha256": "bddeef0526ed7ed57d1357f9cf2520969b7ee4d7a81406e580cbd2e625e25000"
+    },
+    "20260502100000_seed_legislacao_mandato_executivo_ronaldo_caiado_go_completo_lote_b.sql": {
+      "statements": 1,
+      "sha256": "daf751cdfdd760dcb7274ac7aa3a38dfb2357c265f5c0c994fb63b2f29145ec6"
+    },
+    "20260504120000_seed_historico_politico_ciro_gomes_prefeito_fortaleza_for_legislacao_guards.sql": {
+      "statements": 1,
+      "sha256": "51990a784c5817c60ee17c65bb31dc69a8cd13b41c4fec4cfe9013d062dd2ffb"
+    },
+    "20260504130000_seed_legislacao_mandato_executivo_ciro_gomes_fortaleza_sapl_pdf_lote_a.sql": {
+      "statements": 1,
+      "sha256": "b3c10b65c415e58dc10fce693e828b26b7b57069ba04468a25768063f591dfd0"
+    },
+    "20260504160000_seed_legislacao_mandato_executivo_ciro_gomes_fortaleza_sapl_ocr_lote_b.sql": {
+      "statements": 1,
+      "sha256": "0866614bac02f312d3b708428db77a0e3d2c7ed733b3ed661108f52ac169697b"
+    },
+    "20260504231500_canonicalize_legislacao_mandato_executivo_ratinho_pr_lei_21355_coverage_scope.sql": {
+      "statements": 1,
+      "sha256": "324870b51fde989843b63f2bfd22a9d4576da38acc0f2d18fcd0479befeb9dce"
+    },
+    "20260505195909_seed_projetos_lei_ataides_oliveira_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "48035caeaf9f8e69784b5be67ef830d872da9bae0370666389bde4b71a16fab3"
+    },
+    "20260505221500_seed_projetos_lei_cicero_lucena_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "44597a8855922e4aa1b066df8aa903432d2d79aa9db0b2cee313d8a91fa1076a"
+    },
+    "20260505222500_seed_projetos_lei_joao_capiberibe_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "769ca5f6794e2ae9c649a38572a3137c96ca4e4ac35e73b8bee8aee3d7817a4e"
+    },
+    "20260505223500_seed_projetos_lei_ricardo_ferraco_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "30aeb90629b206d292bb286ed0da41e4876a68211bad49ed285e8426b81fe389"
+    },
+    "20260505224500_seed_legislacao_mandato_executivo_elmano_de_freitas_ce_belt_lote_a.sql": {
+      "statements": 1,
+      "sha256": "b2830851ba8507bb376d818ada75ab4d1339c4370c538b09c46d4a934250da88"
+    },
+    "20260505230500_seed_legislacao_mandato_executivo_felicio_ramuth_sp_alesp_vice_lote_a.sql": {
+      "statements": 1,
+      "sha256": "6f8348df53a7162bb82f6453f03924455204c3b00809ecbccf4138ecfb514668"
+    },
+    "20260505232500_seed_legislacao_mandato_executivo_mateus_simoes_mg_almg_lote_a.sql": {
+      "statements": 1,
+      "sha256": "9b9c7d256fa2fcecaf3701edf9bbeff497f7c77bb7dc34d640637227f19edd2b"
+    },
+    "20260505234000_seed_projetos_lei_adriana_accorsi_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "14c70f0bd34ffec1adfe58227449a6e869fe82486fef107c53a5565b72b825da"
+    },
+    "20260505235000_seed_projetos_lei_alan_rick_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "1bf6dd03d8ffa9a97d2f62c016bdfb16bd401710cf1d66f07b0b5ac921d45b50"
+    },
+    "20260505235900_seed_projetos_lei_anderson_ferreira_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "1d653a3c51da0c2b4aab8dd88548cf1ab5231b0a3e815d5814ab0f17887008d5"
+    },
+    "20260506002000_seed_projetos_lei_beto_faro_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "a31b8b6e75ce40083b70378aa05268967e6b6dda44eff334923c3c51bfb07c2e"
+    },
+    "20260506003000_seed_projetos_lei_capitao_wagner_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "2961056d6a38399a1a5ad8c1a33ea32c0684596a0d2c0741a582073fec7c255f"
+    },
+    "20260506004000_seed_projetos_lei_celina_leao_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "62ba84a2071ed876676f3ced7c3af3cbb20fa915b9300e4014e89d0d983bdef2"
+    },
+    "20260506005000_seed_projetos_lei_ciro_gomes_gov_ce_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "ce94a8c535d4017c29e7d58fdd2608d6d5d1f224a898aadc8a78292060f22b47"
+    },
+    "20260506010000_seed_projetos_lei_cleitinho_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "1d3bcd0defa44dbd03dbdbafb3a6b890393f8fdce7a667f6efa7571e4db91842"
+    },
+    "20260506011000_seed_projetos_lei_confucio_moura_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "1c270a7c85e715ef46381b122c8a2e9b152654f11ad92541c817097aef782981"
+    },
+    "20260506012000_seed_projetos_lei_daniel_vilela_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "279f83df8edb17fbf2b9b183c4844cdec4aaf963a5dc1ec5e1e2ee99ebbeb256"
+    },
+    "20260506013000_seed_projetos_lei_decio_lima_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "df5c2d88ab0ee6c23c166a34c44f1126dce3143b6d3c4597806d9374e8d89ee5"
+    },
+    "20260506014000_seed_projetos_lei_delegado_eder_mauro_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "ca545937dbc2a97250f61421f0b538daa94577f9763ec44d36bee590a2b6d90b"
+    },
+    "20260506015000_seed_projetos_lei_dr_fernando_maximo_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "68b6aea99f316bd30550484298df52a45584e11e9719f3afff0482764000bec6"
+    },
+    "20260506020000_seed_projetos_lei_eduardo_braga_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "b302e328c960e5c43075104853b534b9b3ef85d06c2b4caba7f0c356c1444d25"
+    },
+    "20260506021000_seed_projetos_lei_eduardo_braide_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "4d1cd40c694394bc5502f587cd00c745629e998d3ecf249f83d9be96c27c19cf"
+    },
+    "20260506022000_seed_projetos_lei_eduardo_girao_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "fc5a364a5ff2ad0e8f6d7d4d26cc1c76227f8b89b36eb234bdb6ebd7b1319318"
+    },
+    "20260506023000_seed_projetos_lei_efraim_filho_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "7a533142a473299006468891f53cc74c053f94fc43f4278cfd908bc4ffc1eaaa"
+    },
+    "20260506024000_seed_projetos_lei_erika_hilton_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "42f900a176c70b6e77c41b79a470bda0cb3177ab9e10b3d74ce7b335428fe950"
+    },
+    "20260506025000_seed_projetos_lei_expedito_netto_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "f268878f551cc142f1f567d4524a4f06d5fb0bf8e2ae89506c607e0c1d068714"
+    },
+    "20260506030000_seed_projetos_lei_fabio_mitidieri_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "933f192530f37a802ee4bcfb8a88721e40e0c74bafcb2671ffaa2349e3d9a04c"
+    },
+    "20260506031000_seed_projetos_lei_fabio_trad_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "1fe8c727d8941e68323d1d343b55fa6622c9d4544536a6123a2123453871d214"
+    },
+    "20260506032000_seed_projetos_lei_garotinho_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "93a83a22d07b7ce31788b30418032f453fef22e7849486201c4b2a38551abcf4"
+    },
+    "20260506033000_seed_projetos_lei_geraldo_alckmin_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "3f30ed819f617c576b2e2e95accfec37d4f967b52309836c9d3571dc44de5abb"
+    },
+    "20260506034000_seed_projetos_lei_gilberto_kassab_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "705976df0ccac2bdc11ddf5ab833a6f7be54cae8a719c1d49574d7bf24211365"
+    },
+    "20260506035000_seed_projetos_lei_guilherme_derrite_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "af8eaa87393dda9987e9615c61a3f1273eb478396ea8dfdcb60c7910aa6af5d0"
+    },
+    "20260506040000_seed_projetos_lei_helder_salomao_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "ea3ce57b2133189abd47741fd62fe04a81501bd8b1d83a8418cd6807f5497d30"
+    },
+    "20260506041000_seed_projetos_lei_jhc_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "ba90eaf493777c08a2a66e5e2e02fc3e95ec1d61b5863569921abe57f6160ef0"
+    },
+    "20260506042000_seed_projetos_lei_joao_campos_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "bd5e60a4a3c43e33858dc6eaa31413f46d4825fb48172d7cb9f8f6ff668a106e"
+    },
+    "20260506043000_seed_projetos_lei_joao_rodrigues_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "4334cfc2311d7979e1dd1d16f8774cc49f4bb8dc2c42ce077eb9d0d2700f841c"
+    },
+    "20260506044000_seed_projetos_lei_joao_roma_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "c68fec4d31d43c2e866c2ecc4bc7f72fe228306a07cac0fba14cad2a7444ccea"
+    },
+    "20260506045000_seed_projetos_lei_jorginho_mello_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "bd97a1845cfb8c41df326ad53a8aa6c0fceaaf1c765467b18a0e02d3cb7e018e"
+    },
+    "20260506050000_seed_projetos_lei_jose_carlos_aleluia_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "b456bece435d4e4632ea2df44884b5a11f7bc8e1248df9c61b22ce78a7efc800"
+    },
+    "20260506051000_seed_projetos_lei_luciano_zucco_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "063e872da770f595d10829a8d535b0135ed5e18b8fd325ff53db338266ca2c06"
+    },
+    "20260506052000_seed_projetos_lei_marconi_perillo_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "30316e8829d148c166f067f789a54583ed833cf68fe4f103bd098f1df0e95185"
+    },
+    "20260506053000_seed_projetos_lei_marcos_rogerio_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "90256387bfd49a7821dc922a14aeaefe4bdde4c249a7642accbecee90fec0e77"
+    },
+    "20260506054000_seed_projetos_lei_margarete_coelho_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "ed1d44b0eb5730a51c1dc666ac63f6b14f6b8640e2bd9d7ee6e502d0d8506291"
+    },
+    "20260506055000_seed_projetos_lei_nikolas_ferreira_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "d7fa87fe666208e081b98f52259368161ceff48f4950e7cca7c7c748ff3926b0"
+    },
+    "20260506060000_seed_projetos_lei_omar_aziz_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "a2627f4b96597aeca783808c9993d390da82df7e8ea489ee1edc34cbca149caf"
+    },
+    "20260506061000_seed_projetos_lei_paula_belmonte_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "9c567b2147ac6f48793b354e8badcfc6c95d8dcbba6b08395b0cdf2e97212ab9"
+    },
+    "20260506062000_seed_projetos_lei_paulo_martins_gov_pr_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "585de6feaddd07bfd8190b276c44f08b30b3eae103d7a31314e1c3b9901556bf"
+    },
+    "20260506063000_seed_projetos_lei_pedro_cunha_lima_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "122ef0beb37f53f8ce8f487a065f8d072be72b28f4d68e79c2cd8ca76e777cd9"
+    },
+    "20260506064000_seed_projetos_lei_professora_dorinha_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "944b74d445f2c5c274ce11b0107632afca010c320a98934e1f80382f96884f6b"
+    },
+    "20260506065000_seed_projetos_lei_rafael_greca_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "562787e3c4cf8a0a236465d6f955e434ea8fa55a6148a6796187bbe0ee162a0c"
+    },
+    "20260506071000_seed_projetos_lei_renan_filho_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "042ece9bba7ed66f4fb396efa1b65f980358ee3e48db77ef33a386b8fde9e854"
+    },
+    "20260506072000_seed_projetos_lei_rodrigo_pacheco_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "0fe65b5f053fbef306e3dfaddb8ed8a926f0cb4fb77f0000db4164968600492c"
+    },
+    "20260506073000_seed_projetos_lei_sergio_moro_gov_pr_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "e342ed4c7bcbab8114a267b9bbca829ee0638b11139427728952f7074da6b819"
+    },
+    "20260506074000_seed_projetos_lei_teresa_surita_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "d384f1e5878d183575f3dadd46caec2d4b8523cbd1c441734207d1a1fbab7e97"
+    },
+    "20260506075000_seed_projetos_lei_thiago_de_joaldo_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "c76b219a39de0b8c3045378089eec024e0f80fc6238ddb07f4fdddff43960b16"
+    },
+    "20260506080000_seed_projetos_lei_vicentinho_junior_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "c633d8c1bbf95ae54106d43a8834b228a948e0fd72edbb1bc8c93644c7a743f9"
+    },
+    "20260506081000_seed_projetos_lei_wellington_fagundes_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "764fc41a94bc6c09e5770deafa40d2c09a080a42448e386d1f9a0d56ca9ff49a"
+    },
+    "20260506083000_seed_legislacao_mandato_executivo_ciro_gomes_gov_ce_fortaleza_sapl_lote_a.sql": {
+      "statements": 1,
+      "sha256": "d0fdfd17a8a4b1fbdcb7038e4acce920c7f7efc1b5231dd70316eb760123640e"
+    },
+    "20260506084000_seed_legislacao_mandato_executivo_daniel_vilela_go_lote_a.sql": {
+      "statements": 1,
+      "sha256": "dd02fc03b8e02921fb9ec8ad57a5615c0ffa39abc1bea5363362e6c91d5b7161"
+    },
+    "20260506084500_seed_legislacao_mandato_executivo_geraldo_alckmin_sp_alesp_lote_a.sql": {
+      "statements": 1,
+      "sha256": "a4520d18d8f592175f97cecbb1b12c7caacca74922971f96961fd355e7f9120e"
+    },
+    "20260506090000_seed_legislacao_mandato_executivo_marconi_perillo_go_lote_a.sql": {
+      "statements": 1,
+      "sha256": "0ae2f5797539beff83f519093a38f0cd7dc79523dceeba07fdacfd07f0bce654"
+    },
+    "20260506091000_seed_legislacao_mandato_executivo_tarcisio_gov_sp_alesp_lote_a.sql": {
+      "statements": 1,
+      "sha256": "5ce89e8972390adc26b9e45b35d153848facd6ba5e49bc9017ac12b66025482d"
+    },
+    "20260506092000_seed_projetos_lei_ciro_gomes_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "e805ce1eb323130e31672c698e41130eab423ab595a8f8f2f25733a6bbbd3157"
+    },
+    "20260506093000_seed_projetos_lei_flavio_bolsonaro_senado_lote_a.sql": {
+      "statements": 1,
+      "sha256": "148a4afc72fe9538632468da70fa103c9599a2a0f7b52d9efd3793c6a91665c4"
+    },
+    "20260506094000_seed_projetos_lei_ratinho_junior_camara_coverage_lote_a.sql": {
+      "statements": 1,
+      "sha256": "f559a184923364761535b38a64aacddb0384575917780dd88886dd53b26a4bc9"
+    },
+    "20260506095000_canonize_legislacao_mandato_executivo_ciro_gomes_fortaleza_sapl_coverage_id.sql": {
+      "statements": 1,
+      "sha256": "cba46f6b884e81de38fd12827426f4e509aeeb637b317fd28c9e63ec1996823e"
+    },
+    "20260506100000_canonize_legislacao_mandato_executivo_ratinho_junior_pr_coverage_id.sql": {
+      "statements": 1,
+      "sha256": "8b842975712405bcfcd7a50b3b04c60e46bdfd6868849228b19931a51b00b00d"
+    },
+    "20260506103000_seed_projetos_lei_orleans_brandao_camara_lote_a.sql": {
+      "statements": 1,
+      "sha256": "620013c45702e7c6e58b96af84c181b262da942fcef7873c7b34d63288ec15c7"
+    },
+    "20260506110000_seed_legislacao_mandato_executivo_orleans_brandao_ma_stc_legisla_lote_a.sql": {
+      "statements": 1,
+      "sha256": "851c3f8a0beb13283fa1f60004ff5da539be7dacd69248c350190627eb7ca930"
+    },
+    "20260506233000_seed_projetos_lei_p0a1_state_assembly_lote_a.sql": {
+      "statements": 1,
+      "sha256": "2ab99adc4e00b9c9befb22c61cbf4ef664a7da7397a065fb9e71b529ed5ed94f"
+    },
+    "20260507004000_seed_legislacao_mandato_executivo_tarcisio_gov_sp_alesp_completo_cutoff_20260428.sql": {
+      "statements": 3,
+      "sha256": "f510e7069d9e0bbfd08701dfebb566a4807c66747eb52051ffc7f81499401fe8"
+    },
+    "20260507130000_seed_projetos_lei_eduardo_paes_camara_lote_a.sql": {
+      "statements": 1,
+      "sha256": "fe964802d222b21c5fe4088c80b83e76f9f8d2cc56e5d3965afe15da156e7b87"
+    },
+    "20260507144911_seed_projetos_lei_acm_neto_camara_lote_a.sql": {
+      "statements": 1,
+      "sha256": "dd39aa1959458957e5c0cfb765d36ea0b84ba10317fc7ae394a12ab2855b25b4"
+    },
+    "20260507172000_seed_projetos_lei_andre_kamai_rio_branco_sapl_lote_a.sql": {
+      "statements": 1,
+      "sha256": "b6a4f1ce8867e1c1797b6d120209295920e10f1b9adb29d13470d0a197efe811"
+    },
+    "20260507190000_seed_projetos_lei_alexandre_curi_alep_autoria_lote_a.sql": {
+      "statements": 1,
+      "sha256": "0d908acf8f7fbd11a087165a1b28a228b0a73a787e619050a62fffb758b3218e"
+    },
+    "20260507202000_seed_legislacao_mandato_executivo_haddad_sp_prefeitura_lote_a.sql": {
+      "statements": 1,
+      "sha256": "95fc875ec1c38e4379583f077fc9fb0ff9769db5de2efec4d8b652c4accd6bc7"
+    },
+    "20260507212000_seed_legislacao_mandato_executivo_eduardo_riedel_ms_alems_lote_a.sql": {
+      "statements": 1,
+      "sha256": "75cd41e4e0ec400a7419695d6a93b4ad43b1bbdbdcb689ac80c59195619b7765"
+    },
+    "20260507221000_seed_legislacao_mandato_executivo_hildon_chaves_pvh_sapl_lote_a.sql": {
+      "statements": 1,
+      "sha256": "6cdca8e2e4fa0e7307649afe5207a345b82830a186055150ab2a06d6e06ad35c"
+    },
+    "20260507232000_seed_projetos_lei_requiao_filho_alep_autoria_lote_a.sql": {
+      "statements": 1,
+      "sha256": "ce2d6146e8448d3918822edf8fa72bcee22323912236246f98a26c7658cf1c6c"
+    },
+    "20260507234500_seed_projetos_lei_ivan_moraes_recife_openlegis_lote_a.sql": {
+      "statements": 1,
+      "sha256": "7f7381f2a8218a090125483d7942eb3fb53ad3887858f6c5719bf99e2642fb89"
+    },
+    "20260508000500_seed_legislacao_mandato_executivo_rafael_fonteles_pi_sapl_lote_a.sql": {
+      "statements": 1,
+      "sha256": "37bee76a596fa265b0d746891024811b8084df0ea5eb2e334d542de5c05a0dbb"
+    },
+    "20260508003000_seed_legislacao_mandato_executivo_tiao_bocalom_rio_branco_pmrb_lote_a.sql": {
+      "statements": 1,
+      "sha256": "11ded71d43e43545694c2c9f77a235308d86d3b2ba6366d16aa7756d4f2bd972"
+    },
+    "20260508090000_seed_projetos_lei_unblock_26_lote_a.sql": {
+      "statements": 1,
+      "sha256": "0f1b0b0385e3aa10f598eb301c4276be4d8965381bebb8e231614a52e01ec70d"
+    },
+    "20260508103000_seed_projetos_lei_unblock_19_lote_b.sql": {
+      "statements": 1,
+      "sha256": "1535f1d137a53456ab1d76dc26ab99f47a3022d3be87363e7ba5c0c90aaca1db"
+    },
+    "20260508130000_seed_legislacao_mandato_executivo_lote_c_executivo_residuais.sql": {
+      "statements": 1,
+      "sha256": "9380b6364d776ce4278fc74b10ea31048f97dd3227351c225a6f1e2d181c6a9a"
+    },
+    "20260508153000_seed_projetos_lei_p0a2_lote_d_dr_furlan_alap.sql": {
+      "statements": 1,
+      "sha256": "3cfb23a4d7284c84523edd030814b038f35ca3c17c08ef0a0f7287cc5cb85e95"
+    },
+    "20260508190000_seed_projetos_lei_p0a2_reopen_joao_henrique_catan_alems.sql": {
+      "statements": 1,
+      "sha256": "737639c652f975e56d4531d723dd155e4c47f20387de26fbdf99a32e372a8e8c"
+    },
+    "20260508193000_seed_projetos_lei_p0a2_unlocked_final.sql": {
+      "statements": 1,
+      "sha256": "ed0f9f6108596fa258d5c3edc718434d27b2a5963464fbb03482be2663d3d95d"
+    },
+    "20260508194000_seed_legislacao_mandato_executivo_p0a2_unlocked_final.sql": {
+      "statements": 1,
+      "sha256": "ecf99f05693980f57049a95f4b3288f8c0a8fe1bbe43be4ada50199fd72fead1"
+    },
+    "20260509130000_promote_projetos_lei_bloco1_camara_completo_scoped.sql": {
+      "statements": 1,
+      "sha256": "1d7be7dea9c344c2dd36282bb5ef7ba500dc7dfc04069032826181aa365b9d2e"
+    },
+    "20260509131000_fix_bloco1_camara_autoria_principal_metadata.sql": {
+      "statements": 1,
+      "sha256": "3ae2f041eb885cde363d2ff93f3e4e5ea555c39a4143f0bf050a0376ce1de266"
+    },
+    "20260509174500_promote_legislacao_mandato_executivo_felicio_ramuth_sp_alesp_vice_completo.sql": {
+      "statements": 1,
+      "sha256": "23fba19a9081d01ec5325291813d0305e489573d3094e94fbf5bb2682b5e74b2"
+    },
+    "20260509193000_promote_projetos_lei_geraldo_alckmin_camara_completo.sql": {
+      "statements": 2,
+      "sha256": "9ff8954a5fe37f819450f9cf5c49a496cc085ddef8c9810226aaf1aea35e0e46"
+    },
+    "20260509200000_promote_projetos_lei_orleans_brandao_camara_completo.sql": {
+      "statements": 1,
+      "sha256": "f0832eb3f4565adc31d77467a75f3c663c07cfaf614f780a49f50155b2ba7cfa"
+    },
+    "20260509203000_promote_projetos_lei_ciro_gomes_camara_completo.sql": {
+      "statements": 1,
+      "sha256": "62e12dcc0b0c3e765bc193a5b9b565617ddcbf9047e09907b822d5ea979736cd"
+    },
+    "20260509210000_promote_projetos_lei_ciro_gomes_gov_ce_camara_completo.sql": {
+      "statements": 1,
+      "sha256": "a48cd5929da5e8f41eced956ef464c929fc467071a5ac95c542ca8b46d34f190"
+    },
+    "20260509214500_promote_projetos_lei_daniel_vilela_camara_completo.sql": {
+      "statements": 2,
+      "sha256": "747dfff1dfe77c13605b24ab70349beeefed6574ec9e478b3db2b877345ad542"
+    },
+    "20260509223000_promote_projetos_lei_ratinho_junior_camara_completo.sql": {
+      "statements": 2,
+      "sha256": "65ab38f3fd9e7318f1cfef08bf9f8e1f132230e7424461f8ba336041a091b8f5"
+    },
+    "20260510120000_promote_projetos_lei_alep_p0a_completo_alexandre_curi_requiao_filho.sql": {
+      "statements": 1,
+      "sha256": "0d4359d2f55a0facf6b71a2aa20283cb5686ab3c9b6e3330f70d2fc80a54b175"
+    },
+    "20260510143000_seed_projetos_lei_alrs_rs_autoria_completo.sql": {
+      "statements": 1,
+      "sha256": "bbfb0bb74ed0d014d432b781ba10f57f62ec3757d6bcbf265b0a10d4f13c880d"
+    },
+    "20260510162000_seed_projetos_lei_marcos_vieira_alesc_completo.sql": {
+      "statements": 1,
+      "sha256": "86004e4638be6df1129087737ae79248a1cb9e31a170d274b6a5b8e92bc21afa"
+    },
+    "20260510170000_promote_projetos_lei_janaina_riva_almt_completo.sql": {
+      "statements": 1,
+      "sha256": "e637918cf1e0b563a0a7f60612c64cc2428fe30c41c07b4e6716f96ef8091047"
+    },
+    "20260510183000_seed_projetos_lei_amelio_soldado_sapl_completo.sql": {
+      "statements": 1,
+      "sha256": "b689cc71dc31cb075aab639a03734260c188c11232a217fc398a238a87a3f582"
+    },
+    "20260510185500_promote_projetos_lei_david_almeida_sapl_aleam_completo.sql": {
+      "statements": 1,
+      "sha256": "901cadf7aeeb920d704049980f35066d90dea35dc37f54e2de87c012b91b3d12"
+    },
+    "20260511112000_promote_projetos_lei_acm_eduardo_camara_completo.sql": {
+      "statements": 1,
+      "sha256": "3c3fd628a5cd6903797ed9b60cd576842ca797b91dc7e0cb0b9ba0fbbb7b5500"
+    },
+    "20260511150000_promote_projetos_lei_anderson_ferreira_camara_completo.sql": {
+      "statements": 1,
+      "sha256": "3778c565c9f708991539430d45d0b77c6ed3698f75d813ad73ce4d712be79cbc"
+    },
+    "20260511170000_promote_projetos_lei_camara_federal_lote_b_completo.sql": {
+      "statements": 1,
+      "sha256": "021ef06a5005d1694e554a628fdbcf88305f1e67184ba7208c7a0400e5c9ace0"
+    },
+    "20260511200000_seed_legislacao_mandato_executivo_jeronimo_ba_legislabahia_completo.sql": {
+      "statements": 1,
+      "sha256": "21135d5255b184f774e58ae10ad7d854867567ef8a86c9a8c96c4421a5538a26"
+    },
+    "20260511233000_promote_projetos_lei_andre_kamai_rio_branco_sapl_completo.sql": {
+      "statements": 1,
+      "sha256": "d56640d447991ab0c44bc7be24579ef159d1fafb72f54ee82f1028b05489685a"
+    },
+    "20260512143000_promote_projetos_lei_ivan_leandro_completo.sql": {
+      "statements": 1,
+      "sha256": "204b9e3f9d52223e690270e8dcd9ca72ec28ff97918a73132ab847b72908954b"
+    },
+    "20260512170000_seed_projetos_lei_wilder_morais_senado_lote_b.sql": {
+      "statements": 1,
+      "sha256": "be9de1abdb50d9414e4d791f9809e6d5dbadd1c545557871c543fe90b1f42924"
+    },
+    "20260512190000_seed_legislacao_mandato_executivo_ricardo_nunes_sp_prefeitura_completo.sql": {
+      "statements": 1,
+      "sha256": "e47e80fad476e90f798c458662cd6a42437db721ccd2e12c59f1597dd90f441e"
+    },
+    "20260512203000_seed_legislacao_mandato_executivo_haddad_sp_prefeitura_completo.sql": {
+      "statements": 2,
+      "sha256": "79ec8526df4fe37c76c065a1de5c812f8c18214f5d546efc43aafe6b9a9b0673"
+    },
+    "20260512213000_promote_projetos_lei_ampliados_completos_final.sql": {
+      "statements": 1,
+      "sha256": "ac0def4e4a8b7bd112133011d2cad0d31ad6053c766c63026b97535648f161e7"
+    },
+    "20260515030000_update_presidential_cohort_editorial_swap.sql": {
+      "statements": 2,
+      "sha256": "9b0ef38dab35f137d09e41176f1b1a3e07511346442b7f0bed4bc54935106884"
+    },
+    "20260517153000_fix_public_profile_assets_and_sparse_presidenciaveis.sql": {
+      "statements": 7,
+      "sha256": "e4bc51b36601f5b191ddcf361f344300d9f1f1baf1554aeef947052dc0f515e3"
+    },
+    "20260520222500_fix_final_launch_cargo_none_public_candidates.sql": {
+      "statements": 4,
+      "sha256": "2a01ebd4fc7fd053272decd2b791e2b38b151c6295da6c62090e169d0bddebba"
+    },
+    "20260522160000_publish_candidate_publication_lote1_2.sql": {
+      "statements": 3,
+      "sha256": "4cda6ddb609167f168c16cd6bc103694ab55e8756734c138978665b124102914"
+    },
+    "20260522183000_publish_candidate_publication_lote3.sql": {
+      "statements": 3,
+      "sha256": "621b3e3f8873424206ec15357777007d5a9df4632b29582c8ea72cb9e11f7b93"
+    },
+    "20260524034000_restore_aldo_rebelo_presidency_publication.sql": {
+      "statements": 2,
+      "sha256": "d5bc4438d35a14d998a54c6cd338f850dbbca540f0395eaa4d0fd29ec2630b43"
+    },
+    "20260531052200_restore_edegar_pretto_vice_publication.sql": {
+      "statements": 1,
+      "sha256": "f31730e83fa351c061a46ecf1d6fdd8918ea2faec39ab2dad8d74f3aecc2d74b"
+    },
+    "20260604135721_sanitize_published_candidate_consistency.sql": {
+      "statements": 5,
+      "sha256": "e3819068f7f119bf61e32b3588a27f4f0b586d84e2f25c763b49e606deb30301"
+    },
+    "20260604151713_unpublish_tonny_kerley_gov_pi.sql": {
+      "statements": 1,
+      "sha256": "3cdeb22e1134ea5bbac60fc4a2207f1db4d28cbc37fe46e812ae77e4767154cd"
+    },
+    "20260604153742_processo_ciro_gomes_violencia_politica_genero.sql": {
+      "statements": 1,
+      "sha256": "fce8b06d0780e10b5530bd764c027cb1913448890edf618623412ce5eac81e53"
+    },
+    "20260604162939_pontos_atencao_daniel_furlan_juridico.sql": {
+      "statements": 2,
+      "sha256": "0e4d830bd147ad5e826347eaeec13c313a6209c3a184dfc66504fa841ab07b11"
+    },
+    "20260604175734_pontos_juridicos_bucket1_e_reclass_magno.sql": {
+      "statements": 4,
+      "sha256": "da0eaf2eacd6a8879afe048368c9f8f0c56b2eb8088f685632f1664569c54345"
+    },
+    "20260609113000_publish_candidate_publication_freshness_refresh.sql": {
+      "statements": 3,
+      "sha256": "c2359b6b1d47526ea32775072e234adc253f281f6f9fcfc950dec4915d076714"
+    },
+    "20260623131000_publish_recent_announcements_delta.sql": {
+      "statements": 2,
+      "sha256": "e2050e34cac0914c6433643bbb8c7d51c386419ddbd89369651db5c097a03dc6"
+    },
+    "20260626234755_seed_governador_cobertura_lote_20260626.sql": {
+      "statements": 86,
+      "sha256": "92888b78bdc13d3e4f6dace1d61405708d9927cdb318854e8de35589ebd1aaeb"
+    },
+    "20260629183404_publish_june_presidential_freshness_delta.sql": {
+      "statements": 4,
+      "sha256": "b49563c6d468e1ac416a25efb4bb9ff0e4c15fa3741ec6c11af6bb18ae5e390f"
+    },
+    "20260629225000_fill_public_candidate_local_photos.sql": {
+      "statements": 1,
+      "sha256": "e322a92c10998c0edad8d998c3a9a720c2b7998edbb9c56ba459c89cca7e85f2"
+    },
+    "20260630023500_enrich_raw_empty_core_lote1.sql": {
+      "statements": 2,
+      "sha256": "9667b95b7b62d1dbac921fbc030ce83cf428b14b362a504e2274cc56d985c549"
+    },
+    "20260630092000_enrich_raw_empty_core_lote2.sql": {
+      "statements": 2,
+      "sha256": "73e04583a2b04df96e50d471389716309c3ab488a52f282e5fc4fe681d91fe5f"
+    },
+    "20260630094500_enrich_raw_empty_core_lote3.sql": {
+      "statements": 2,
+      "sha256": "0dafa7229cb7b6e78756da302393a3084f75cdefd2e435e46da822b46459957d"
+    },
+    "20260630102200_enrich_raw_empty_core_lote4.sql": {
+      "statements": 2,
+      "sha256": "70cc209eb07abee059334626ac7edaeb980b0fcb1a9bd09256ad9d1a9476dad6"
+    },
+    "20260630103308_enrich_raw_empty_core_news_lote5.sql": {
+      "statements": 1,
+      "sha256": "8630caa79029712642a9d673f33093c665fa8d69a1d23bcb025eb4b5016285ff"
+    },
+    "20260630110844_enrich_raw_empty_core_lote6.sql": {
+      "statements": 3,
+      "sha256": "e31b468c5608c031bb3d4f0f9e6c8e9e799e7b782356642dc7931d1dabafd5f9"
+    },
+    "20260630122000_enrich_raw_empty_core_lote7_financiamento.sql": {
+      "statements": 4,
+      "sha256": "1950fe36083eca3568606a8462c6ea61f6fa4883dd43240fc77f5d22a768326b"
+    },
+    "20260630152000_enrich_raw_empty_core_lote8_andre_portugues.sql": {
+      "statements": 6,
+      "sha256": "1bd9b25fc040d943269f93872c01718d1d511b03033583054bf3efba73e91ec8"
+    },
+    "20260630163820_enrich_raw_empty_core_lote9_thor_dantas.sql": {
+      "statements": 6,
+      "sha256": "47f2183a8b45057bcf53845cf74d231e37adcfab7312ef1e0d8dff0b08462afa"
+    },
+    "20260630170619_enrich_raw_empty_core_lote10_status_rule.sql": {
+      "statements": 4,
+      "sha256": "f06b28a5f9b839a4d37ac4bbd38c8e8aa70d6fb330288fd7d4b608966db3da74"
+    },
+    "20260630191155_enrich_raw_empty_core_lote11_current_roles.sql": {
+      "statements": 1,
+      "sha256": "a74e4b74dfc948f0adf0672aef4291b744197e5057026cb3e3f1ae64a2a9f85d"
+    },
+    "20260703001500_seed_historico_joaquim_barbosa_pre_candidatura_dc.sql": {
+      "statements": 1,
+      "sha256": "9c3ff54da76f7ea3f7979eaf6bdf8778898b5356418e1c7d1f7cd27b10912b9a"
+    },
+    "20260703022000_add_joaquim_barbosa_stf_transparency_source.sql": {
+      "statements": 1,
+      "sha256": "175e1793a50de824c1c3508e6189326a807fc6683c5547626a73a89e9e82bd35"
+    },
+    "20260703112000_edmilson_costa_financiamento_2008.sql": {
+      "statements": 2,
+      "sha256": "aeb85a0d2daa575b178eab569d80247d16f0832f537c3d48253c973a190af7e0"
+    },
+    "20260703120500_renan_santos_historico_partido.sql": {
+      "statements": 2,
+      "sha256": "59bd214924beda178a714a9681ca72e7fe70c872344ddcf61a26861c7ec3aec0"
+    },
+    "20260703150500_presidenciaveis_residuos_curadoria.sql": {
+      "statements": 10,
+      "sha256": "0d4b6d22b0461e24105abf5e593791ec4ed0812eebace5a3f1e1228ad1100653"
+    },
+    "20260703163000_lula_remove_mock_patrimonio_2002.sql": {
+      "statements": 1,
+      "sha256": "ec894b24ac5d671784864cc33d3d4f71f3fcd4d116e6450b6ea89d02984e3d6b"
+    },
+    "20260703203000_al_governador_normaliza_historico_pontos.sql": {
+      "statements": 6,
+      "sha256": "fbe9a8774f262e461fab110c78ecbe3b227ea65c357dbb69b5fa85f6cc6a6147"
+    },
+    "20260703212142_al_governador_renan_legislacao_gastos_jhc_timeline.sql": {
+      "statements": 4,
+      "sha256": "6d0bc0136dbf0d38e9e9272ab36d69253e6aaba4766131026b15e768fbc9316e"
+    },
+    "20260703214500_al_governador_renan_legislacao_doc_retry.sql": {
+      "statements": 1,
+      "sha256": "a8787d948e2ba1addd12bb21a2f6524472668e91e862e3086933a6ab0244d5b0"
+    },
+    "20260703215200_al_governador_jhc_legislacao_diario_parcial.sql": {
+      "statements": 1,
+      "sha256": "c78743563630271405a199ad357685eb0ba0a74891a809532c447473fc8ce006"
+    },
+    "20260704170500_al_governador_jhc_camara_leis_completo.sql": {
+      "statements": 1,
+      "sha256": "4993904f1de54eb46b4480ad9431a8ad6acf79ae6a3fc96b432aba7684b279a5"
+    },
+    "20260704171000_al_governador_renan_sapl_metadata_residual.sql": {
+      "statements": 1,
+      "sha256": "d259c5144bf3108714008c64cd1c49f35b41322e647eaaeb836bb352ce6e01ce"
+    },
+    "20260705154500_ap_governador_fechamento.sql": {
+      "statements": 12,
+      "sha256": "21472bde957dc4dc0739853e0de0a4e6ca39b78425a6196c88b9814ab9f826f9"
+    },
+    "20260705170000_ba_governador_completion_curadoria.sql": {
+      "statements": 10,
+      "sha256": "ea315b59fd1692fc113b51bba22f1f1683e899a9fca381b3176871125048543c"
+    },
+    "20260705171500_ba_governador_jeronimo_partido_public_parity.sql": {
+      "statements": 1,
+      "sha256": "8964cf9b16bc6caca58dd41dc9b37ce25e861263d75946614be6803068191f77"
+    },
+    "20260705172000_ce_governador_huggo_jarir_historico.sql": {
+      "statements": 1,
+      "sha256": "44ec616bf4e98977017a758e8316b7619ab7350c2c6c54af51971e20b38e773c"
+    },
+    "20260705223000_df_governador_fechamento.sql": {
+      "statements": 6,
+      "sha256": "b819c7acbd32fb705e837904488580b8d9d3be590a5c885b70bec38610b70f09"
+    },
+    "20260706023600_es_governador_fechamento.sql": {
+      "statements": 19,
+      "sha256": "b9149ebbf0cc9e1a11ccd10daaee306b0a27c33f8fb1360c6bd1a20feebe7ee3"
+    },
+    "20260706024800_es_governador_accents.sql": {
+      "statements": 10,
+      "sha256": "6b1706cd84b50bc15d8a0c3de8636ab7c77f6766efa080b35c89bd24f02deb83"
+    },
+    "20260706120500_df_governador_izalci_profile.sql": {
+      "statements": 1,
+      "sha256": "3c8fc4749e52b8bc891675c4408bcc871412f4760394818ae5eb8103c210dbca"
+    },
+    "20260706151500_go_governador_completion_cleanup.sql": {
+      "statements": 4,
+      "sha256": "e90d7839a14c2871c9d48ca68561da691e98c85c3809f8c494890baf8f33638b"
+    },
+    "20260706163000_go_governador_historico_public_parity.sql": {
+      "statements": 2,
+      "sha256": "6841704056ea02bff2e1e4cbf4acd1d713e0264a4c234fb2dcff74b7e7c73744"
+    },
+    "20260706170000_go_governador_wilder_ceaps_html_parity.sql": {
+      "statements": 2,
+      "sha256": "8d458d0a7ad9c344a1eb49f8e89991439f6a3355fb04bc4c48ef4d390082d0d4"
+    },
+    "20260706193000_ma_governador_completion.sql": {
+      "statements": 13,
+      "sha256": "c7a7d3f6330bc15f03667d7390618345614d4b9cd34801e83f49455a36ed2964"
+    },
+    "20260706203500_ma_eduardo_braide_legislacao_exec.sql": {
+      "statements": 1,
+      "sha256": "5d1d74bae553a4cf4540a69582ef160a160125f73ad6b2c48b677bd43d6c5088"
+    },
+    "20260706214500_mg_governador_completion.sql": {
+      "statements": 1,
+      "sha256": "1098fb68f72f1ed1404b8b1703a78dcb4b6fdda7907e32119a6611b520ae48f1"
+    },
+    "20260706233000_mg_governador_profile_html_gaps.sql": {
+      "statements": 4,
+      "sha256": "502fad1277d4223404deafd5f90cfb2ea8ac13c1e32785724d6ed92bc970690a"
+    },
+    "20260707024500_ms_governador_financiamento_perfil.sql": {
+      "statements": 8,
+      "sha256": "f0f76963247f37a7d6a20a714513808a505389d50721f8f79bd6a0241a6329cc"
+    },
+    "20260707115000_mt_governador_completion.sql": {
+      "statements": 4,
+      "sha256": "276a4524fe718662585912b4ef6221a66e3647f6da3eb819e051e7cc5dc03f38"
+    },
+    "20260707183000_pa_governador_completion.sql": {
+      "statements": 13,
+      "sha256": "d0889c4d77fead4448bc9890ce1688806c31d6a1e1c232f298eff298845e0d97"
+    },
+    "20260707184500_pa_dr_daniel_party_label.sql": {
+      "statements": 1,
+      "sha256": "823b47b6b14650a9d5bccd194ae5ab4bdbf1a60ca1d92af019ffd54218c6cffe"
+    },
+    "20260708154800_pe_governador_completion.sql": {
+      "statements": 4,
+      "sha256": "eb5558c24f53de862b18f9c7a25d966c7f3cfaa978e03ede6c38f3d8a14245a3"
+    },
+    "20260708190200_pe_state_html_gaps.sql": {
+      "statements": 3,
+      "sha256": "9f18ffea07803627e1b0dcfd70eb3b791629d56f18bcdc2c46717070a4896385"
+    },
+    "20260709184500_pi_governador_completion.sql": {
+      "statements": 10,
+      "sha256": "9dcfc06f52a3aaa5051474b7ccd1f6b6b58eed5b466916adfc39121c485e8b58"
+    },
+    "20260709204500_pr_governador_completion.sql": {
+      "statements": 21,
+      "sha256": "40bf6633bb5698eb4e1a68234ea2f0e5edd1e1d6981dc9a001c77753435ec5dc"
+    },
+    "20260709233000_rj_governador_completion.sql": {
+      "statements": 4,
+      "sha256": "ec073e98423a590c8fe9eb44fee6051b0a1cf44d01c5efe2a096bd4d8a9458c7"
+    },
+    "20260709234500_rj_governador_hide_unverified_ai_points.sql": {
+      "statements": 1,
+      "sha256": "3648ca15c4eaa3c29776439d5d95b92996a17af6a4a3f1234b22e0835b184014"
+    },
+    "20260710150000_rn_governador_completion.sql": {
+      "statements": 5,
+      "sha256": "f1af81f0479ada42901893104fcc8826bb89bdab8f7c58c3017782da808164cc"
+    },
+    "20260710193000_ro_state_completion.sql": {
+      "statements": 5,
+      "sha256": "f647d2f4cc933a815f30fcaeb8580f77bd63cfe37e17ce1ce2d8d339c06840ce"
+    },
+    "20260710194500_ro_hide_unverified_ai_points.sql": {
+      "statements": 1,
+      "sha256": "6eef1bbb8df72e68f513ee447417cbeaa4d2d81686fd50e6ae154d9b0dd9ba78"
+    },
+    "20260710211500_rr_state_completion.sql": {
+      "statements": 11,
+      "sha256": "ca3b633e371c159bd5b6ba9f64d156a4208d12f2b0812d3fdd613278504ea0de"
+    },
+    "20260710215000_rr_arthur_2022_candidacy.sql": {
+      "statements": 1,
+      "sha256": "564babb3365ce96b83ae97794bd4037005863cf4c4bfb6f15071ba52dc82af00"
+    },
+    "20260710222500_sc_state_completion.sql": {
+      "statements": 6,
+      "sha256": "3e8a2ed24fdbaa3b94ee392ef63fcbe6702d34e1ceed7dd3d1ba2e503926d11f"
+    },
+    "20260710223000_rs_state_completion.sql": {
+      "statements": 6,
+      "sha256": "0dc6b58fd0bc2b2cc107c86c9ddf52cd85559567fa67e89f441d802bc3fff3dc"
+    },
+    "20260710223500_rs_hide_unverified_ai_points.sql": {
+      "statements": 1,
+      "sha256": "1880b9e2c160d759d65ee8cc6089c5218eb399d430be97856e4066f0b0a94c1d"
+    },
+    "20260710230000_se_state_completion.sql": {
+      "statements": 7,
+      "sha256": "15258b3b6d5592e2ee01c207b9a882567ebc49ea453adc333bf6d341333683ca"
+    },
+    "20260711003000_sp_state_completion.sql": {
+      "statements": 9,
+      "sha256": "1c4a07e1801ed19d5f3ccc7c280c00121400ab8eeff058d0ef2116cffba81dc7"
+    },
+    "20260711012000_sp_tarcisio_birthdate_fix.sql": {
+      "statements": 1,
+      "sha256": "64450ac20e1617994f58a1eb46f257a36c2f15b32df0e2cdebdebdea64ccdfc2"
+    },
+    "20260711180000_public_document_privacy_hardening.sql": {
+      "statements": 5,
+      "sha256": "d3c932f506e49cdcf1a769f6a65602b8731df9d24a81083094d0ae3028d3027d"
+    },
+    "20260711213000_eduardo_girao_senado_freshness_20260711.sql": {
+      "statements": 2,
+      "sha256": "340af69cee0d14379e41dadff1a9a0f78ed60fc8f75e29dae759666d8b1a6a2e"
+    },
+    "20260711223000_tse_money_gap_jenilson_wanderlei.sql": {
+      "statements": 2,
+      "sha256": "8ea16e16a53d5c8a6bac7fce1d02735e93cdf8d07d1a68c9dffcdb71b0706f45"
+    },
+    "20260712003000_public_security_invoker_compatibility.sql": {
+      "statements": 1,
+      "sha256": "207cd3bfa86ada32d82fc9743a4f95553faea70d37ea5326756e33d856dee967"
+    },
+    "20260712201000_cabo_daciolo_attention_point_ap927.sql": {
+      "statements": 1,
+      "sha256": "3751813921c016a780556bd19fae8da34a74b146f2fd32087877cf58d40e2536"
+    },
+    "20260712210000_south_attention_points_tony_jorginho.sql": {
+      "statements": 2,
+      "sha256": "62ea1077a01fa35ceec28f7e1ee7527267e02e35dacaa935f51ab62a31dc16e1"
+    },
+    "20260712221000_southeast_attention_points_kalil_witzel.sql": {
+      "statements": 2,
+      "sha256": "a43ef41ad1c0ce027db6cf34f7004f9560101d1ab4bc5851ea3d3b36c81dff90"
+    },
+    "20260713132135_norte_attention_points_approved.sql": {
+      "statements": 6,
+      "sha256": "b9b3862cf3f2d70c956e33345e8469c4ce2e01c00aadccfdd7b2a36bc2d38103"
+    },
+    "20260713150853_centro_oeste_attention_points_approved.sql": {
+      "statements": 3,
+      "sha256": "ad57621a07c780dbfc5fecc34547b10a3a24b03ada19513b4632e0431623d2d2"
+    },
+    "20260713162100_nordeste_attention_points_approved.sql": {
+      "statements": 7,
+      "sha256": "8ab773f6f6cce812b84e028a3f9fdc832372c0d4b50e5e6748719e870c85ef19"
+    },
+    "20260725120000_fontes_dominio_nu_etapa1b.sql": {
+      "statements": 11,
+      "sha256": "2c33bc3eaa18ed1dc6218e399bbecbe4b23e77ebcc82d671dff8b0998c9ba748"
+    },
+    "20260725123000_identidade_candidatos_fonte_oficial.sql": {
+      "statements": 59,
+      "sha256": "360c81dd58cbc5fcd8c26f53e2fdf747c15d4d97994dac79e4c21804715274e1"
+    },
+    "20260725130000_fontes_mortas_substituidas_etapa1a.sql": {
+      "statements": 12,
+      "sha256": "17d0e2da6833f875613bffc048b2f109ccdf0456537fa04993761a17faeaf724"
+    },
+    "20260725133000_despublicacao_claims_sem_fonte_etapa1a.sql": {
+      "statements": 14,
+      "sha256": "858f7a609a406b1fd8a433aba12c05215bee23802573607727e8130dc66a1015"
+    },
+    "20260725140000_historico_politico_periodo_fim_bug_v4.sql": {
+      "statements": 28,
+      "sha256": "cfac6d628b2f359943911f5e9fd78d7d7d6ec01bfc81b8e47de24d4e23607c3d"
+    },
+    "20260725143000_patrimonio_bem_candidato_duplicado.sql": {
+      "statements": 16,
+      "sha256": "11fc5f4f7acd82e49227466979135ac967811b05bc2e2cde9ba3734d58181049"
+    },
+    "20260725150000_cpf_invalido_guto_silva.sql": {
+      "statements": 1,
+      "sha256": "416b7de735016ad4bda26fcaa8e759048bc0687aa6f8dbddc3fb19dc4167dfa4"
+    },
+    "20260725153000_schema_motivo_despublicacao_e_cpf_formato.sql": {
+      "statements": 1,
+      "sha256": "6edf709ff8e0da72d4a51c6621bf763e35088e2d46051bdc6b69c832cda6edee"
+    },
+    "20260725160000_gate_gravidade_fonte_pontos_atencao.sql": {
+      "statements": 1,
+      "sha256": "cc45817f021dca19beb3484c1e24039dd4407771a0eea9bfff231659b93da669"
+    },
+    "20260725180000_urls_mortas_residuais_reauditoria.sql": {
+      "statements": 2,
+      "sha256": "d9f9309650df13b6b0ba8ec511e7edb56e421d423be24ad436c3a5e8c2e6cb9e"
+    },
+    "20260725190000_fonte_substancia_documento_pontos_atencao.sql": {
+      "statements": 2,
+      "sha256": "6e4dab12c1049c775754f6878e31ae03965395eedfbf24eb70f5537097fb467b"
+    },
+    "20260725191500_jorginho_mello_ponto_carreira_texto_corrigido.sql": {
+      "statements": 3,
+      "sha256": "6815a83c6f02ee436969fc33eb3006e5329a7d6c49561a0f30259cb08b2f4b59"
+    },
+    "20260725193000_identidade_ocupacao_formacao_naturalidade_tse.sql": {
+      "statements": 8,
+      "sha256": "3ec1cb8d85e66fd8ce252a23bd9cfc567ae81b0c82651d7f1c82bc50d7bbfcfd"
+    },
+    "20260725200000_clecio_luis_suplencia_senado_sem_exercicio.sql": {
+      "statements": 1,
+      "sha256": "8b4a3b69a04e64c407dc75ee0cf71f179f1bd1970f0f9892870f4eaa0ac743c1"
+    },
+    "20260725203000_eduardo_riedel_ponto_ia_despublicado_e_contas_tce_ms.sql": {
+      "statements": 2,
+      "sha256": "b3b18911c50c7770f3d46b1e2d9023f90985886e8777c8f941b145700a73a4cd"
+    },
+    "20260725210000_contas_de_governo_tribunais_de_contas.sql": {
+      "statements": 8,
+      "sha256": "2df814dbf7648cbef267bd7b9bdd323cf7d0d96c371bc73b523149dfcf90b09f"
+    },
+    "20260725213000_pontos_ia_refutados_por_fonte_oficial.sql": {
+      "statements": 4,
+      "sha256": "ed579a63e91bc74cb58c4b217af875f52725ac8bed287c56ae7b6e7137f84f07"
+    },
+    "20260725220000_raquel_lyra_naturalidade_e_cautelar_tce_pe.sql": {
+      "statements": 2,
+      "sha256": "7810a07736102b1df9ef45849b65412e92ec40a008e584bd86b942028b1cf864"
+    },
+    "20260725223000_precisao_de_pontos_publicados_com_fonte_primaria.sql": {
+      "statements": 3,
+      "sha256": "0c4dc087376df8e6d6f7025f21b0e69faceeda0da1cf2ef677b5927f06dafb1a"
+    },
+    "20260725230000_gabriel_souza_ponto_positivo_presidencia_alrs.sql": {
+      "statements": 1,
+      "sha256": "55af28c58d7576329b5068198d094e4f0ca4b34765a62bf452603d2e95829017"
+    },
+    "20260726120000_despublicar_senado_camara_escopo_lancamento.sql": {
+      "statements": 1,
+      "sha256": "9fccab193a81e1c4323bd9183c2817fdeba439d693ba02a1ebfec7f163db4e0c"
+    },
+    "20260726150000_reescrita_claims_dentro_da_fonte.sql": {
+      "statements": 8,
+      "sha256": "304ea4cdc56b35c2c6edfb064cfd993c34aa3bd8bd5073fb6a4e231ed1f3c854"
+    },
+    "20260726160000_despublicar_historico_por_homonimo.sql": {
+      "statements": 2,
+      "sha256": "1459a17a187e4d3811163196e3665d877bdbf677e57a8946c0ff72d88ef31688"
+    },
+    "20260726170000_consolidar_claim_duplicada_mapa_da_fome.sql": {
+      "statements": 2,
+      "sha256": "2b7b4a883a6ab4342f1290f4ce5b121763790ae85648466a7691e03fc80a1c44"
+    },
+    "20260726180000_identidade_jeronimo_e_homonimo_dorinha.sql": {
+      "statements": 2,
+      "sha256": "aaee812cd3d31af1c15f45f7560f5cfc0e5812c77aec5af02a5d2d556e04c473"
+    },
+    "20260726190000_homonimo_joao_roma_prefeitura_2020.sql": {
+      "statements": 1,
+      "sha256": "0daf0501721e7a6c938427b5e267ff8e6cf8f9b5744f934254d30942a2753f34"
+    },
+    "20260726200000_nome_civil_alysson_e_furlan.sql": {
+      "statements": 2,
+      "sha256": "4cef15a1b2308139dfb13f26895e7f3471ecfa3305ca8a2b97bb3c81c6f72010"
+    },
+    "20260726210000_veredito_final_claims_sem_fonte.sql": {
+      "statements": 2,
+      "sha256": "c4636e6216357714ba17df90a5e7d5efd7a338f2ed71b1bd5f4a15b50004e39f"
+    },
+    "20260730120000_roster_governadores_saidas_2026.sql": {
+      "statements": 6,
+      "sha256": "d3cb18bac647cfcb03584aabc692b509bc32ff812ac3b35f1d328e7079dcb34f"
+    },
+    "20260730130000_roster_governadores_inclusoes_2026.sql": {
+      "statements": 2,
+      "sha256": "71654a6a1498aa8f411c9f022df82e5ef9fefa94633961fc37986e8648271f6a"
+    },
+    "20260730150000_identidade_inclusoes_governadores_2026.sql": {
+      "statements": 7,
+      "sha256": "105c9230999c714cfa5553f4e0995d5aaad6f4e3f260f02f9a7488e1253b7103"
+    },
+    "20260730170000_quarentena_patrimonio_financiamento_homonimo.sql": {
+      "statements": 4,
+      "sha256": "849f9a6a70083d8dbb3d30454a004ef85b061c333626377b89ee24803c404706"
+    },
+    "20260803005201_seed_financiamento_2006_lula_rui_costa_pimenta.sql": {
+      "statements": 2,
+      "sha256": "3ab1b680952cf4105e021d1a8fabe6f8075fd7368cc02c5a1a2ddb3e0f13cb0d"
+    },
+    "20260803005314_posicoes_declaradas_presidenciaveis_com_fonte.sql": {
+      "statements": 13,
+      "sha256": "872137b31da8f2c91a040d9a081e432bd317e432bf1503b9092cda7f9a8d7a97"
+    },
+    "20260803005335_projetos_lei_destaque_flavio_bolsonaro.sql": {
+      "statements": 3,
+      "sha256": "c4845164dc8404c3924ef7b17faba49082dd98ba2f8367e6ec4ed6c5c8aad390"
+    },
+    "20260803101537_correcoes_claims_presidenciaveis_pos_factcheck.sql": {
+      "statements": 5,
+      "sha256": "83581317efdf6c3bd7c384d01b3dd5325a45889966c886a1712f1ff8fe112be0"
+    },
+    "20260803112556_descartar_claims_sem_mandato_contraditorias.sql": {
+      "statements": 2,
+      "sha256": "1b1937f217708cdbdda3f7cafa94589035bd922ea3ef2044d8c39f7d667269cc"
+    },
+    "20260803121034_roster_governadores_convencoes_agosto_2026.sql": {
+      "statements": 2,
+      "sha256": "b646169b635229e92e665ad82f0d7e0df4c3d6b7f3b21085a6a82051be17fa1b"
+    },
+    "20260803121126_identidade_inclusoes_governadores_agosto_2026.sql": {
+      "statements": 6,
+      "sha256": "383c05abf152bb8297f9da4f01e16659c53fbc61a1c37d3b0fed8eed21102fbf"
+    },
+    "20260803121709_saida_wilson_witzel_governo_rj_2026.sql": {
+      "statements": 1,
+      "sha256": "a964e42babd3b4cbbc0d01fdb465f8ca125c217c01280572ec3f31ceee24a479"
+    },
+    "20260803134124_roster_governadores_inclusoes_nome_urna_provisorio_2026.sql": {
+      "statements": 1,
+      "sha256": "08387515f3f41a5f5e7d5f68a110c70b999be5ee19df38b51035181b2aa316c9"
+    },
+    "20260803134510_politica_de_vice_registro_tse_2026.sql": {
+      "statements": 2,
+      "sha256": "408d16821ad2fbcc5e152956650f2d228466ac41f179152b042b3bd2837b1733"
+    },
+    "20260803142851_fonte_dados_prefixo_interno_fora_da_superficie_publica.sql": {
+      "statements": 1,
+      "sha256": "9a6121adac87cf28d84b79ec8603643bdf14f6f59d26255db2056f59f51220ff"
+    },
+    "20260803144143_higiene_formacao_e_caixa_roberto_claudio_emanuel_cacho.sql": {
+      "statements": 2,
+      "sha256": "04e9bf3962499a293242fc82457c31fb3efd782901e23bc3c187e7685cf3c980"
+    },
+    "20260803144857_patrimonio_2026_fichas_novas_lote2.sql": {
+      "statements": 1,
+      "sha256": "006f70d186f6aba57acee0d7b22d66b38fe87d5dea2a8b0da24cdb132f624a83"
+    },
+    "20260803144950_patrimonio_2026_fichas_novas_lote1.sql": {
+      "statements": 1,
+      "sha256": "886a6124946399f10600a8e6cdcee63978a5b2cdf3e85dc4931e7e6072b3b823"
+    },
+    "20260803145059_patrimonio_2026_fichas_novas_lote3.sql": {
+      "statements": 1,
+      "sha256": "e501b372cc7df2f2147c8704895ebef56a643cc732bb334f073d7c09bea85066"
+    },
+    "20260803173000_fontes_profundas_roberto_claudio_e_veredito_marcelo_brigadeiro.sql": {
+      "statements": 2,
+      "sha256": "2d0786d98f2c7f4a92de83dc9695f37f64d60c5e0db620e6079ae8ffce2763cd"
+    },
+    "20260805137000_renato_gomes_corrige_log_identidade.sql": {
+      "statements": 1,
+      "sha256": "18ec99f5ebd5cf6f182656893619f4a4870ccd29757f0bd85b70aa01e31f5940"
+    },
+    "20260806084742_news_refresh_lotes_idempotentes.sql": {
+      "statements": 6,
+      "sha256": "0680ceeee11e18cb5a70fea2eaf341502008ccd18c3a08641d01032415abb7b6"
+    }
+  }
+}

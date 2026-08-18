@@ -1,0 +1,119 @@
+Sobreposição de mandatos sem regra de precedência aplicada
+contagem: 116
+
+ciro-gomes-gov-ce | Ministro da Fazenda@1994-1995 X Ministro@1994-1995 | C1 congelada mas os dois lados aparecem (ou os dois sumiram)
+ciro-gomes-gov-ce | Ministro da Fazenda@1994-1995 X Ministro@1994-1995 | C1 congelada ainda aparece na lista pública
+teresa-surita | Prefeito@2012 | marcada=false, esperado=true pelo manifesto congelado
+teresa-surita | Deputado Federal@2010 | marcada=false, esperado=true pelo manifesto congelado
+eduardo-braide | Prefeito@2021 | marcada=false, esperado=true pelo manifesto congelado
+eduardo-braide | Deputado Federal@2018 | marcada=false, esperado=true pelo manifesto congelado
+capitao-wagner | Deputado Estadual@2019 | marcada=false, esperado=true pelo manifesto congelado
+capitao-wagner | Deputado Federal@2019 | marcada=false, esperado=true pelo manifesto congelado
+capitao-wagner | Deputado Estadual@2014 | marcada=false, esperado=true pelo manifesto congelado
+capitao-wagner | Vereador@2013 | marcada=false, esperado=true pelo manifesto congelado
+joao-campos | Deputado Federal@2014 | marcada=false, esperado=true pelo manifesto congelado
+joao-campos | Deputado Federal@2010 | marcada=false, esperado=true pelo manifesto congelado
+joao-campos | Deputado Federal@2006 | marcada=false, esperado=true pelo manifesto congelado
+joao-campos | Deputado Federal@2002 | marcada=false, esperado=true pelo manifesto congelado
+marconi-perillo | Governador@2010 | marcada=false, esperado=true pelo manifesto congelado
+marconi-perillo | Senador@2006 | marcada=false, esperado=true pelo manifesto congelado
+marconi-perillo | Deputado Federal@1994 | marcada=false, esperado=true pelo manifesto congelado
+marconi-perillo | Deputado Estadual@1991 | marcada=false, esperado=true pelo manifesto congelado
+ricardo-ferraco | Senador@2010 | marcada=false, esperado=true pelo manifesto congelado
+ricardo-ferraco | Vice-Governador@2006 | marcada=false, esperado=true pelo manifesto congelado
+ricardo-ferraco | Deputado Federal@1999 | marcada=false, esperado=true pelo manifesto congelado
+juliana-brizola | Vereador@2013 | marcada=false, esperado=true pelo manifesto congelado
+juliana-brizola | Deputado Estadual@2010 | marcada=false, esperado=true pelo manifesto congelado
+ze-coca | Prefeito@2025 | marcada=false, esperado=true pelo manifesto congelado
+ze-coca | Prefeito@2020 | marcada=false, esperado=true pelo manifesto congelado
+ze-coca | Deputado Estadual@2018 | marcada=false, esperado=true pelo manifesto congelado
+ze-coca | Prefeito@2012 | marcada=false, esperado=true pelo manifesto congelado
+helder-salomao | Deputado Federal@2011 | marcada=false, esperado=true pelo manifesto congelado
+helder-salomao | Prefeito@2009 | marcada=false, esperado=true pelo manifesto congelado
+ratinho-junior | Deputado Federal@2006 | marcada=false, esperado=true pelo manifesto congelado
+ratinho-junior | Deputado Estadual@2004 | marcada=false, esperado=true pelo manifesto congelado
+jayme-campos | Senador@2019 | marcada=false, esperado=true pelo manifesto congelado
+jayme-campos | Senador@2007 | marcada=false, esperado=true pelo manifesto congelado
+jayme-campos | Prefeito@2000 | marcada=false, esperado=true pelo manifesto congelado
+orleans-brandao | Governador@2022 | marcada=false, esperado=true pelo manifesto congelado
+orleans-brandao | Vice-Governador@2018 | marcada=false, esperado=true pelo manifesto congelado
+orleans-brandao | Vice-Governador@2015 | marcada=false, esperado=true pelo manifesto congelado
+orleans-brandao | Deputado Federal@2010 | marcada=false, esperado=true pelo manifesto congelado
+amelio-cayres | Presidente da Assembleia Legislativa do Tocantins@2023-2025 X presidente da Assembléia Legislativa do Tocantins@2023-2025 | C1 congelada mas os dois lados aparecem (ou os dois sumiram)
+amelio-cayres | Presidente da Assembleia Legislativa do Tocantins@2023-2025 X presidente da Assembléia Legislativa do Tocantins@2023-2025 | C1 congelada ainda aparece na lista pública
+amelio-cayres | Deputado Estadual@2022-atual X presidente da Assembléia Legislativa do Tocantins@2023-2025 | par NOVO, ausente do manifesto congelado
+cicero-lucena | Senador@2003 | marcada=false, esperado=true pelo manifesto congelado
+cicero-lucena | Prefeito@2000 | marcada=false, esperado=true pelo manifesto congelado
+anderson-ferreira | Prefeito@2017 | marcada=false, esperado=true pelo manifesto congelado
+anderson-ferreira | Deputado Federal@2014 | marcada=false, esperado=true pelo manifesto congelado
+eduardo-braga | Vice-Prefeito de Manaus@1993 | marcada=false, esperado=true pelo manifesto congelado
+eduardo-braga | Deputado Federal@1991 | marcada=false, esperado=true pelo manifesto congelado
+omar-aziz | Vice-Prefeito@1997 | marcada=false, esperado=true pelo manifesto congelado
+omar-aziz | deputy mayor of Manas@1997 | marcada=false, esperado=true pelo manifesto congelado
+omar-aziz | Deputado Estadual@1994 | marcada=false, esperado=true pelo manifesto congelado
+alvaro-dias-rn | Vice-Prefeito@2017 | marcada=false, esperado=true pelo manifesto congelado
+alvaro-dias-rn | Deputado Estadual@2014 | marcada=false, esperado=true pelo manifesto congelado
+alvaro-dias-rn | Deputado Estadual@2003 | marcada=false, esperado=true pelo manifesto congelado
+alvaro-dias-rn | Deputado Federal@2002 | marcada=false, esperado=true pelo manifesto congelado
+renan-filho | Deputado Federal@2010 | marcada=false, esperado=true pelo manifesto congelado
+renan-filho | Prefeito@2008 | marcada=false, esperado=true pelo manifesto congelado
+mailza-assis | Governadora@2026 | marcada=false, esperado=true pelo manifesto congelado
+mailza-assis | Vice-Governador@2022 | marcada=false, esperado=true pelo manifesto congelado
+eduardo-paes | presidente@2013 | marcada=false, esperado=true pelo manifesto congelado
+eduardo-paes | Prefeito@2012 | marcada=false, esperado=true pelo manifesto congelado
+cleitinho | Vereador@2020 | marcada=false, esperado=true pelo manifesto congelado
+cleitinho | Deputado Estadual@2018 | marcada=false, esperado=true pelo manifesto congelado
+clecio-luis | Prefeito@2016 | marcada=false, esperado=true pelo manifesto congelado
+clecio-luis | Prefeito@2012 | marcada=false, esperado=true pelo manifesto congelado
+clecio-luis | Senador (suplente)@2011 | marcada=false, esperado=true pelo manifesto congelado
+dr-daniel | Prefeito@2021 | marcada=false, esperado=true pelo manifesto congelado
+dr-daniel | Deputado Estadual@2019 | marcada=false, esperado=true pelo manifesto congelado
+mateus-simoes | Governador@2026 | marcada=false, esperado=true pelo manifesto congelado
+mateus-simoes | Vice-Governador@2022 | marcada=false, esperado=true pelo manifesto congelado
+mateus-simoes | Secretário@2020 | marcada=false, esperado=true pelo manifesto congelado
+paulo-hartung | Governador@2002 | marcada=false, esperado=true pelo manifesto congelado
+paulo-hartung | Senador@1998 | marcada=false, esperado=true pelo manifesto congelado
+sergio-vidigal | Prefeito@2020 | marcada=false, esperado=true pelo manifesto congelado
+sergio-vidigal | Deputado Federal@2018 | marcada=false, esperado=true pelo manifesto congelado
+sergio-vidigal | Deputado Federal@2014 | marcada=false, esperado=true pelo manifesto congelado
+sergio-vidigal | Prefeito@2008 | marcada=false, esperado=true pelo manifesto congelado
+washington-reis | Prefeito@2016 | marcada=false, esperado=true pelo manifesto congelado
+washington-reis | Deputado Federal@2014 | marcada=false, esperado=true pelo manifesto congelado
+washington-reis | Deputado Federal@2010 | marcada=false, esperado=true pelo manifesto congelado
+washington-reis | Prefeito@2004 | marcada=false, esperado=true pelo manifesto congelado
+confucio-moura | Prefeito@2004 | marcada=false, esperado=true pelo manifesto congelado
+confucio-moura | Deputado Federal@2002 | marcada=false, esperado=true pelo manifesto congelado
+ricardo-nunes | Prefeito@2021 | marcada=false, esperado=true pelo manifesto congelado
+ricardo-nunes | Vice-Prefeito de São Paulo@2020 | marcada=false, esperado=true pelo manifesto congelado
+ricardo-nunes | Vereador@2016 | marcada=false, esperado=true pelo manifesto congelado
+tarcisio-gov-sp | Ministro da Infraestrutura@2019-2022 X Ministro@2019-2022 | C1 congelada mas os dois lados aparecem (ou os dois sumiram)
+tarcisio-gov-sp | Ministro da Infraestrutura@2019-2022 X Ministro@2019-2022 | C1 congelada ainda aparece na lista pública
+otaviano-pivetta | Governador em exercício de Mato Grosso@2025 | marcada=false, esperado=true pelo manifesto congelado
+otaviano-pivetta | Vice-Governador@2022 | marcada=false, esperado=true pelo manifesto congelado
+daniel-vilela | Governador@2026 | marcada=false, esperado=true pelo manifesto congelado
+daniel-vilela | Vice-Governador@2022 | marcada=false, esperado=true pelo manifesto congelado
+decio-lima | Deputado Federal@2003 | marcada=false, esperado=true pelo manifesto congelado
+decio-lima | Prefeito@2000 | marcada=false, esperado=true pelo manifesto congelado
+ronaldo-caiado | Governador@2018 | marcada=false, esperado=true pelo manifesto congelado
+ronaldo-caiado | Senador@2015 | marcada=false, esperado=true pelo manifesto congelado
+gilberto-kassab | Secretário de Governo de São Paulo@2023-atual X Secretário de Governo e Relações Institucionais de São Paulo@2023-atual | C1 congelada mas os dois lados aparecem (ou os dois sumiram)
+gilberto-kassab | Secretário de Governo de São Paulo@2023-atual X Secretário de Governo e Relações Institucionais de São Paulo@2023-atual | C1 congelada ainda aparece na lista pública
+gilberto-kassab | Ministro da Ciência, Tecnologia, Inovações e Comunicações@2016 | marcada=false, esperado=true pelo manifesto congelado
+gilberto-kassab | Ministro da Ciência e Tecnologia@2016 | marcada=false, esperado=true pelo manifesto congelado
+roberto-claudio | Prefeito@2017 | marcada=false, esperado=true pelo manifesto congelado
+roberto-claudio | Prefeito@2013 | marcada=false, esperado=true pelo manifesto congelado
+roberto-claudio | Deputado Estadual@2010 | marcada=false, esperado=true pelo manifesto congelado
+marcio-franca | Deputado Federal@2010 | marcada=false, esperado=true pelo manifesto congelado
+marcio-franca | Deputado Federal@2006 | marcada=false, esperado=true pelo manifesto congelado
+marcio-franca | Prefeito@2000 | marcada=false, esperado=true pelo manifesto congelado
+haddad-gov-sp | Ministro da Educação@2005-2011 X ministra(o) da educação do Brasil@2005-2011 | C1 congelada mas os dois lados aparecem (ou os dois sumiram)
+haddad-gov-sp | Ministro da Educação@2011-2012 X ministra(o) da educação do Brasil@2011-2012 | C1 congelada mas os dois lados aparecem (ou os dois sumiram)
+haddad-gov-sp | Ministro da Educação@2011-2012 X ministra(o) da educação do Brasil@2011-2012 | C1 congelada ainda aparece na lista pública
+haddad-gov-sp | Ministro da Educação@2005-2011 X ministra(o) da educação do Brasil@2005-2011 | C1 congelada ainda aparece na lista pública
+haddad-gov-sp | Ministro da Fazenda@2023 | marcada=false, esperado=true pelo manifesto congelado
+haddad-gov-sp | Ministro@2023 | marcada=false, esperado=true pelo manifesto congelado
+acm-neto | Prefeito@2012 | marcada=false, esperado=true pelo manifesto congelado
+acm-neto | Deputado Federal@2010 | marcada=false, esperado=true pelo manifesto congelado
+david-almeida | Presidente da Assembleia Legislativa do Amazonas@2017-2019 X presidente da Assembléia Legislativa do Amazonas@2017-2019 | C1 congelada mas os dois lados aparecem (ou os dois sumiram)
+david-almeida | Presidente da Assembleia Legislativa do Amazonas@2017-2019 X presidente da Assembléia Legislativa do Amazonas@2017-2019 | C1 congelada ainda aparece na lista pública
+david-almeida | Deputado Estadual@2014-2018 X presidente da Assembléia Legislativa do Amazonas@2017-2019 | par NOVO, ausente do manifesto congelado

@@ -1,0 +1,53 @@
+[
+  {
+    "candidato_id": "cand-test-001",
+    "tipo_relacao": "projeto_enviado_pelo_executivo",
+    "esfera": "federal",
+    "uf_norma": "SP",
+    "fonte_primaria_url": "https://www.planalto.gov.br/ccivil_03/leis/invalid-1"
+  },
+  {
+    "candidato_id": "cand-test-002",
+    "tipo_relacao": "projeto_enviado_pelo_executivo",
+    "esfera": "estadual",
+    "uf_norma": "sp",
+    "fonte_primaria_url": "https://www.planalto.gov.br/invalid-2"
+  },
+  {
+    "candidato_id": "cand-test-003",
+    "tipo_relacao": "lei_promulgada_pelo_legislativo",
+    "esfera": "federal",
+    "autoridade_papel": "titular",
+    "fonte_primaria_url": "https://in.gov.br/invalid-3"
+  },
+  {
+    "candidato_id": "cand-test-004",
+    "tipo_relacao": "lei_sancionada",
+    "esfera": "federal",
+    "data_norma": "2023-01-15",
+    "signatario": "   ",
+    "autoridade_papel": "titular",
+    "fonte_primaria_url": "https://www.planalto.gov.br/invalid-4"
+  },
+  {
+    "candidato_id": "cand-test-005",
+    "tipo_relacao": "lei_sancionada",
+    "esfera": "federal",
+    "data_norma": "2023-01-15",
+    "signatario": "Signatário Teste",
+    "fonte_primaria_url": "https://in.gov.br/invalid-5"
+  },
+  {
+    "candidato_id": "cand-test-006",
+    "tipo_relacao": "projeto_enviado_pelo_executivo",
+    "esfera": "federal",
+    "fonte_primaria_url": "https://unregistered-source.test/invalid-6"
+  },
+  {
+    "candidato_id": "cand-test-007",
+    "tipo_relacao": "projeto_enviado_pelo_executivo",
+    "esfera": "estadual",
+    "uf_norma": "RJ",
+    "fonte_primaria_url": "https://rj.example.test/invalid-7"
+  }
+]

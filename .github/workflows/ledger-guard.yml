@@ -1,0 +1,116 @@
+name: Ledger vs repositório
+
+# O banco e `supabase/migrations/` contam a mesma história?
+#
+# Até 08/08/2026 nada checava isso, e a divergência era real: a migration
+# `marcadores_tse_residuais_patrimonio` estava no ledger como 20260808032540 e
+# no repo como 20260808010000, porque foi aplicada via `apply_migration` do MCP,
+# que carimba timestamp próprio em vez de usar o nome do arquivo. O repositório
+# tinha um arquivo que o banco não conhecia e o banco tinha uma versão que o
+# repositório não descrevia, ao mesmo tempo, pela mesma migration.
+#
+# O gate NÃO é "diff vazio", que derrubaria todo PR que cria migration. São três
+# regras, implementadas e testadas em scripts/audit/lib/ledger-guard.ts e
+# tests/ledger-guard.test.ts:
+#
+#   R1  versão no ledger sem arquivo no repo -> SEMPRE falha
+#   R2  arquivo ausente do ledger e ANTERIOR ao topo aplicado -> falha, salvo as
+#       cinco migrations da completude retidas de propósito
+#   R3  arquivo ausente do ledger e POSTERIOR ao topo -> passa (pendente normal)
+#
+# Divisão de trabalho: este workflow é a única parte que toca o banco, e faz um
+# SELECT só. A comparação vive num script puro, que roda sem credencial e sem
+# rede, e é por isso que o invariante tem teste de verdade.
+#
+# Nunca roda em pull_request: o repositório é público e PR de fork não recebe
+# secrets, então o job falharia por falta de segredo em vez de por divergência.
+# O modelo de confiança é o mesmo do backup-db.yml e do ingest.yml (schedule,
+# push na main e dispatch executam só o código já mergeado).
+#
+# A falha do job É o alerta (o GitHub notifica falha de scheduled workflow).
+#
+# Secrets necessários (Settings → Secrets and variables → Actions):
+#   SUPABASE_DB_URL  connection string do Postgres, a mesma do backup-db.yml.
+#                    Use a **Session Pooler** (Project Settings → Database →
+#                    Connection string → Session pooler): a "Direct connection"
+#                    resolve só IPv6 em projetos novos e os runners do GitHub
+#                    Actions não têm IPv6, o que falha em connection timeout.
+
+on:
+  schedule:
+    # Diário às 06:10 UTC (03:10 em Brasília), depois do backup das 05:30 e
+    # antes do cron de ingestão, para o alerta chegar com o dump do dia pronto.
+    - cron: "10 6 * * *"
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ledger-guard-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  comparar:
+    name: Ledger do banco vs supabase/migrations
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Checar secret antes de tocar o banco
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SUPABASE_DB_URL:-}" ]; then
+            echo "::error::SUPABASE_DB_URL ausente nos Actions secrets. É o mesmo secret do backup-db.yml." >&2
+            exit 1
+          fi
+
+      - run: npm ci
+
+      - name: Instalar postgresql-client-17
+        # Mesma receita do backup-db.yml. Aqui o psql 16 que já vem no runner
+        # falaria com o servidor 17 sem problema (a checagem dura de versão é do
+        # pg_dump, não do psql), mas manter duas receitas divergentes de client
+        # no repo é como se descobre a diferença do jeito caro.
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq curl ca-certificates
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl -fsSL -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc \
+            https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] \
+            https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" |
+            sudo tee /etc/apt/sources.list.d/pgdg.list
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq postgresql-client-17
+          echo "/usr/lib/postgresql/17/bin" >> "$GITHUB_PATH"
+
+      - name: Ler o ledger (SELECT, nenhuma escrita)
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          set -euo pipefail
+          # -A sem alinhamento, -t sem cabeçalho, -q silencioso: uma versão por
+          # linha e nada mais. ON_ERROR_STOP para o erro virar exit != 0 em vez
+          # de virar arquivo vazio, que o script trataria como gate cego.
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -Atq \
+            -c 'select version from supabase_migrations.schema_migrations order by version' \
+            > ledger.txt
+          echo "versões lidas do ledger: $(wc -l < ledger.txt)"
+
+      - name: Comparar com supabase/migrations (offline)
+        run: npm run audit:ledger:gate -- --remotas=ledger.txt

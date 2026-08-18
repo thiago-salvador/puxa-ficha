@@ -1,0 +1,55 @@
+{
+  "_comentario": "Chave independente da etapa 2, prevista em `contrato.criterio_identidade` do registro `identidade-etapa2-2026.json`: 'não persistir até confirmação por data de nascimento, SQ histórico ou CPF'. Datas lidas de `candidatos.data_nascimento` em produção. O campo `proveniencia` existe para provar que a data NÃO veio do snapshot TSE de 2026 que ela confirma: conferir o pleito 2026 com um dado extraído do próprio pleito 2026 não prova identidade nenhuma, e foi o defeito que derrubou a rota 2 do backfill de CPF (precedente jarbas-soares em scripts/backfill-cpf-tse.ts). `null` significa SEM chave independente: o slug continua bloqueado, e isso é o comportamento correto, não uma lacuna a preencher no chute. Acrescentar slug aqui é ato deliberado: exige medir a proveniência da data ANTES, e o gerador reprova slug fora do universo dos 71.",
+  "coletado_em": "2026-08-09",
+  "fonte": "banco de produção, tabela `candidatos`, colunas `data_nascimento` e `fonte_dados`",
+  "nascimentos": {
+    "alysson-bezerra": {
+      "data_nascimento": "1992-05-12",
+      "proveniencia": ["TSE Dados Abertos", "dados-cadastrais", "curadoria", "ALRN/Diario Oficial RN"]
+    },
+    "camila-falcao": {
+      "data_nascimento": null,
+      "proveniencia": ["sem data de nascimento no cadastro; backfill de CPF registrou decisao 'nenhum'"]
+    },
+    "clecio-luis": {
+      "data_nascimento": "1972-04-08",
+      "proveniencia": ["curadoria", "TSE DivulgaCandContas 2022 id 30001619676"]
+    },
+    "jeremias-cosmo": {
+      "data_nascimento": "1980-03-27",
+      "proveniencia": ["TSE DivulgaCandContas 2018 id 170000607399"]
+    },
+    "jeronimo": {
+      "data_nascimento": "1965-04-03",
+      "proveniencia": ["curadoria", "auditoria-identidade-20260725"]
+    },
+    "marcelo-maranata": {
+      "data_nascimento": "1976-05-25",
+      "proveniencia": ["TSE consulta_cand 2020", "TSE consulta_cand 2018", "dados-cadastrais", "curadoria"]
+    },
+    "maria-do-carmo": {
+      "data_nascimento": "1959-11-26",
+      "proveniencia": ["TSE consulta_cand 2022", "TSE consulta_cand 2024", "dados-cadastrais", "curadoria"]
+    },
+    "mateus-simoes": {
+      "data_nascimento": "1981-03-09",
+      "proveniencia": ["curadoria"]
+    },
+    "romeu-zema": {
+      "data_nascimento": "1964-10-28",
+      "proveniencia": ["curadoria"]
+    },
+    "samara-martins": {
+      "data_nascimento": "1987-08-31",
+      "proveniencia": ["TSE DivulgaCandContas 2022 candidato 280001602703", "TSE DivulgaCandContas 2020 candidato 200000724019", "TSE consulta_cand 2022", "TSE consulta_cand 2020", "curadoria"]
+    },
+    "tarcisio-gov-sp": {
+      "data_nascimento": "1975-06-19",
+      "proveniencia": ["TSE consulta_cand 2022 SQ 250001615967", "wikipedia", "curadoria"]
+    },
+    "witer-naves": {
+      "data_nascimento": null,
+      "proveniencia": ["sem data de nascimento no cadastro; backfill de CPF registrou decisao 'nenhum'"]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "coleta": "patrimonio",
+  "modo": "dry-run",
+  "roster": {
+    "origem": "não aplicável a esta coleta",
+    "total": 0
+  },
+  "detalhe": {
+    "origem_do_manifesto": "pf-patrimonio-20260807T170643Z/a2b/manifest.jsonl",
+    "universo_nao_publicado": 105,
+    "fichas_alcancadas": 69,
+    "por_estado_e_ano": {
+      "lacuna_com_dados_tse": {
+        "2006": 10,
+        "2008": 5,
+        "2014": 2,
+        "2016": 2,
+        "2018": 3,
+        "2020": 1,
+        "2022": 3,
+        "2024": 1,
+        "2026": 17
+      },
+      "ausencia_oficial": {
+        "2010": 4,
+        "2012": 6,
+        "2014": 5,
+        "2016": 5,
+        "2018": 7,
+        "2020": 8,
+        "2022": 10,
+        "2024": 3,
+        "2026": 13
+      }
+    },
+    "lacuna_com_dados_tse": {
+      "total": 44,
+      "fechadas_pelo_apply_de_0708": 27,
+      "residuo_ciclo_2026": 17
+    },
+    "ausencia_oficial": {
+      "total": 61,
+      "registradas_pelo_apply_de_0708": 48,
+      "residuo_ciclo_2026": 13
+    },
+    "nota": "ausencia_oficial NÃO é lacuna de coleta: o pacote oficial afirma que aquela candidatura não declarou bens. Backfill nenhum preenche essas células."
+  },
+  "plano": {
+    "geradoEm": "2026-08-10T01:58:32.163Z",
+    "universo": [],
+    "totalDeLinhasPlanejadas": 0,
+    "porTabela": {},
+    "porResultado": {},
+    "escritas": [],
+    "resultados": [],
+    "bloqueios": []
+  }
+}

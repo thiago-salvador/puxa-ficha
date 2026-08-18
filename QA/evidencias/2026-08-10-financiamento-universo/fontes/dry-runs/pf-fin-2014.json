@@ -1,0 +1,654 @@
+{
+  "dryRun": true,
+  "results": [
+    {
+      "source": "tse",
+      "candidato": "ismar-marques",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "patrus-ananias",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "larissa-rosado",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "luciana-gurgel",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "luis-cesar-bueno",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "vera-lucia",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "marcus-sodre",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "orleans-brandao",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "mailza-assis",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "cintia-dias",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "emanuel-cacho",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "ronaldo-mansur",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "edmilson-costa",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "gilberto-vasconcelos",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    }
+  ],
+  "plannedRows": [
+    {
+      "table": "financiamento",
+      "slug": "ismar-marques",
+      "row": {
+        "candidato_id": "ebe1d53d-8b79-4d5c-8c98-66f5f9dfedf7",
+        "ano_eleicao": 2014,
+        "sq_candidato": "180000000125",
+        "uf_candidatura": "PI",
+        "total_arrecadado": 89932.9,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "ISMAR AGUIAR MARQUES",
+            "valor": 23850,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELIANA PONTES MARQUES REIS",
+            "valor": 11200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EMERSON MENESES PIRES DE MOURA",
+            "valor": 8500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ISMAR AGUIAR MARQUES FILHO",
+            "valor": 7000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RAIMUNDO NONATO SILVA SALES",
+            "valor": 5800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCISCO DAS CHAGAS SILVA",
+            "valor": 4650,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "WILSON GONDIM CAVALCANTI",
+            "valor": 4182.9,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE AGUIAR MARQUES",
+            "valor": 4000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARCELO DE BRITO DANTAS",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARCIO LEANDRO PONTES REIS",
+            "valor": 2650,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "patrus-ananias",
+      "row": {
+        "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+        "ano_eleicao": 2014,
+        "sq_candidato": "130000000890",
+        "uf_candidatura": "MG",
+        "total_arrecadado": 1424880.63,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 328751.33,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Nacional",
+            "valor": 285000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "UNIC SORRISO LTDA",
+            "valor": 150000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LIGAS DE ALUMINIO S/A - LIASA",
+            "valor": 150000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PATRUS TRANSPORTES URGENTES LTDA",
+            "valor": 100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MINERAÇAO CORUBAENSE REUNIDA SA",
+            "valor": 100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "COMPANHIA BRASILEIRA DE METALURGIA E MINERAÇAO",
+            "valor": 100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELEIÇAO 2014 MARILIA APARECIDA CAMPOS",
+            "valor": 57113.54,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "WALFRIDO SILVINO DOS MARES GUIA NETO",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELEIÇAO 2014 JOSUE CHRISTIANO GOMES DA SILVA",
+            "valor": 29041.67,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "larissa-rosado",
+      "row": {
+        "candidato_id": "40d9eaa9-2e4e-4e86-b8c1-8374bcc808d5",
+        "ano_eleicao": 2014,
+        "sq_candidato": "200000000161",
+        "uf_candidatura": "RN",
+        "total_arrecadado": 583475.9,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 200000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LARISSA DANIELA DA ESCOSSIA ROSADO",
+            "valor": 178233.39,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELEIÇÃO 2014 SANDRA MARIA DA ESCOSSIA ROSADO DEPUTADA FEDERAL",
+            "valor": 122712.51,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELEIÇÃO 2014 WILMA MARIA DE FARIA SENADOR",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Municipal",
+            "valor": 30000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MIGUEL FAUSTINO DA ROCHA FILHO",
+            "valor": 2530,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "luciana-gurgel",
+      "row": {
+        "candidato_id": "42be4b28-2cdc-4bbe-a436-4ec8432363ec",
+        "ano_eleicao": 2014,
+        "sq_candidato": "30000000305",
+        "uf_candidatura": "AP",
+        "total_arrecadado": 73250,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "VINICIUS DE AZEVEDO GURGEL",
+            "valor": 15750,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCK ROBERTO GOES DA SILVA",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ADAILTON DE JESUS DA SILVA DOS SANTOS",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FABRICIO DO ESPIRITO SANTO",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PETRONIO NEY VIDAL DE FIGUEREIDO",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FELIPE EDSON PINTO",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALEX DE ALMEIDA PEREIRA",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VEX CONSTRUCOES E INCORPORACOES LTDA",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "L S ARAUJO JUNIOR - ME",
+            "valor": 3500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "REINALDO SANTOS BARROS",
+            "valor": 3000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "luis-cesar-bueno",
+      "row": {
+        "candidato_id": "a342036a-c436-400a-bd14-edefacad8d75",
+        "ano_eleicao": 2014,
+        "sq_candidato": "90000000320",
+        "uf_candidatura": "GO",
+        "total_arrecadado": 368990.44,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "LUIS CESAR BUENO E FREITAS",
+            "valor": 229540.8,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELEIÇOES 2014 OLAVO NOLETO ALVES DEPUTADO FEDERAL",
+            "valor": 17164.5,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARISTELA ALENCAR DE MELO BUENO",
+            "valor": 8000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DONIZETT PAULA BORGES",
+            "valor": 8000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ROSANA MARIA PERILLO FERREIRA",
+            "valor": 8000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARCUS VINICIUS DE OLIVEIRA",
+            "valor": 8000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MIGUEL CARLOS FERREIRA LEITE",
+            "valor": 8000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PAULO ALVES DE OLIVEIRA",
+            "valor": 6000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARISTELA BATISTA DO NASCIMENTO",
+            "valor": 6000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EDIMON BORGES OLIVEIRA C/A",
+            "valor": 5430,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "vera-lucia",
+      "row": {
+        "candidato_id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
+        "ano_eleicao": 2014,
+        "sq_candidato": "260000000024",
+        "uf_candidatura": "SE",
+        "total_arrecadado": 49957.99,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 45910.59,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE FRANCISCO DOS SANTOS OLIVEIRA",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VITOR HUGO GONÇALVES SALGADO",
+            "valor": 1947.4,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA JOSE DOS SANTOS SAMPAIO",
+            "valor": 100,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "marcus-sodre",
+      "row": {
+        "candidato_id": "5e05e0d3-a64a-41b9-9f9a-bd160f43cec2",
+        "ano_eleicao": 2014,
+        "sq_candidato": "240000000204",
+        "uf_candidatura": "SC",
+        "total_arrecadado": 2342.37,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 2342.37,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "orleans-brandao",
+      "row": {
+        "candidato_id": "47a1de10-1cf7-47f8-837b-dbbf94480421",
+        "ano_eleicao": 2014,
+        "sq_candidato": "100000000015",
+        "uf_candidatura": "MA",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_final_2014.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "mailza-assis",
+      "row": {
+        "candidato_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+        "ano_eleicao": 2014,
+        "sq_candidato": "10000000002",
+        "uf_candidatura": "AC",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_final_2014.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "cintia-dias",
+      "row": {
+        "candidato_id": "92fea10d-509a-4e07-b686-2271f635fcf8",
+        "ano_eleicao": 2014,
+        "sq_candidato": "90000000511",
+        "uf_candidatura": "GO",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_final_2014.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "emanuel-cacho",
+      "row": {
+        "candidato_id": "327ae8c2-292b-4677-a333-c46fe19ae2ec",
+        "ano_eleicao": 2014,
+        "sq_candidato": "260000000285",
+        "uf_candidatura": "SE",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_final_2014.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "ronaldo-mansur",
+      "row": {
+        "candidato_id": "d5ece407-2e2a-4e76-91a9-c2b7db826430",
+        "ano_eleicao": 2014,
+        "sq_candidato": "50000000006",
+        "uf_candidatura": "BA",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_final_2014.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "edmilson-costa",
+      "row": {
+        "candidato_id": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+        "ano_eleicao": 2014,
+        "sq_candidato": "250000002333",
+        "uf_candidatura": "SP",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_final_2014.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "gilberto-vasconcelos",
+      "row": {
+        "candidato_id": "5dc271fa-9171-484c-a8b3-f366fed10d10",
+        "ano_eleicao": 2014,
+        "sq_candidato": "40000000006",
+        "uf_candidatura": "AM",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_final_2014.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    }
+  ]
+}

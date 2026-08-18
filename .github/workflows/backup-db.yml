@@ -1,0 +1,134 @@
+name: Backup do banco
+
+# Segunda cópia, não a única. Verificado em 08/08/2026: a organização está no
+# Pro e o Supabase já faz backup físico diário do projeto, com Point in Time e
+# Restore to new project disponíveis no painel. O cabeçalho anterior dizia que o
+# projeto rodava no Free e que por isso não havia backup automático, o que era
+# falso e sustentou um alarme exagerado durante a sessão de 08/08.
+#
+# Por que este workflow continua valendo: o backup do Supabase é físico e vive
+# dentro daquela conta. Este produz um dump LÓGICO, cifrado, guardado fora do
+# Supabase, que você pode inspecionar, versionar e restaurar em qualquer
+# Postgres. Cobrem falhas diferentes: perda de acesso à conta, erro de escrita
+# que você quer diffar antes de restaurar, ou auditoria do conteúdo.
+#
+# O que NENHUM dos dois cobre: reconstruir o banco a partir do repositório. As
+# migrations não reproduzem o estado atual (replay bloqueado, ledger reparado à
+# mão, escritas por script fora do histórico). Esse é outro problema, e vive na
+# issue #131.
+#
+# Este workflow roda o scripts/backup-supabase.sh todo dia e guarda o dump como
+# artifact CIFRADO.
+# O repositório é público e o dump carrega PII (alert_subscribers): o artifact
+# nunca sobe em claro, e o workflow falha antes de dumpar se a chave de
+# criptografia não estiver configurada.
+#
+# Nunca roda em pull_request: usa secrets e o modelo de confiança é o mesmo
+# do ingest.yml (schedule e dispatch executam só o código da main).
+#
+# Secrets necessários (Settings → Secrets and variables → Actions):
+#   SUPABASE_DB_URL        connection string do Postgres. Use a **Session
+#                          Pooler** (Project Settings → Database → Connection
+#                          string → Session pooler): a "Direct connection"
+#                          resolve só IPv6 em projetos novos e os runners do
+#                          GitHub Actions não têm IPv6, o que falha em
+#                          connection timeout
+#   BACKUP_ENCRYPTION_KEY  passphrase forte (ex.: `openssl rand -base64 32`),
+#                          guardada também fora do GitHub: sem ela o backup
+#                          não abre
+#
+# Para restaurar (sempre em projeto Supabase NOVO, nunca produção):
+#   openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 \
+#     -pass env:BACKUP_ENCRYPTION_KEY \
+#     -in puxa-ficha-<data>.dump.enc -out puxa-ficha.dump
+#   pg_restore --no-owner --no-privileges -d "postgresql://<projeto-novo>" puxa-ficha.dump
+
+on:
+  schedule:
+    # Diário às 05:30 UTC (02:30 em Brasília), antes do cron de ingestão.
+    - cron: "30 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: backup-db
+  cancel-in-progress: false
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Checar secrets antes de tocar o banco
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          BACKUP_ENCRYPTION_KEY: ${{ secrets.BACKUP_ENCRYPTION_KEY }}
+        run: |
+          if [ -z "$SUPABASE_DB_URL" ] || [ -z "$BACKUP_ENCRYPTION_KEY" ]; then
+            echo "::error::SUPABASE_DB_URL e/ou BACKUP_ENCRYPTION_KEY ausentes nos Actions secrets." >&2
+            exit 1
+          fi
+
+      - name: Instalar postgresql-client-17
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq curl ca-certificates
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl -fsSL -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc \
+            https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] \
+            https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" |
+            sudo tee /etc/apt/sources.list.d/pgdg.list
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq postgresql-client-17
+
+          # O /usr/bin/pg_dump do Ubuntu e um wrapper do postgresql-client-common
+          # que escolhe a versao DEFAULT do sistema, e o runner ja vem com a 16.
+          # Instalar a 17 nao muda o default: em 08/08/2026 o log mostrou
+          # "Setting up postgresql-client-17 (17.10)" e logo abaixo
+          # "pg_dump (PostgreSQL) 16.14", e o dump abortou por version mismatch
+          # contra o servidor 17.6. Por isso o diretorio versionado entra na
+          # frente do PATH, em vez de confiar no wrapper.
+          echo "/usr/lib/postgresql/17/bin" >> "$GITHUB_PATH"
+
+          VERSAO="$(/usr/lib/postgresql/17/bin/pg_dump --version)"
+          echo "pg_dump que sera usado: ${VERSAO}"
+          case "${VERSAO}" in
+            *"PostgreSQL) 17."*) ;;
+            *) echo "::error::esperado pg_dump 17.x, veio ${VERSAO}"; exit 1 ;;
+          esac
+
+      - name: Gerar dump
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: bash scripts/backup-supabase.sh backups
+
+      - name: Cifrar dump (o artifact nunca sobe em claro)
+        env:
+          BACKUP_ENCRYPTION_KEY: ${{ secrets.BACKUP_ENCRYPTION_KEY }}
+        run: |
+          set -euo pipefail
+          DUMP="$(ls backups/puxa-ficha-*.dump)"
+          openssl enc -aes-256-cbc -pbkdf2 -iter 200000 \
+            -pass env:BACKUP_ENCRYPTION_KEY \
+            -in "$DUMP" -out "$DUMP.enc"
+          rm -f "$DUMP"
+          ls -lh backups/
+
+      # Retenção de 14 dias: janela suficiente para notar e recuperar um erro
+      # de escrita em massa, sem acumular PII cifrada indefinidamente.
+      - name: Publicar artifact cifrado
+        # Por tag major (sem SHA como no checkout) por falta de SHA verificado
+        # offline; pinar na primeira rodada verde, seguindo o padrão do repo.
+        uses: actions/upload-artifact@v4
+        with:
+          name: backup-db-${{ github.run_id }}
+          path: backups/*.dump.enc
+          retention-days: 14
+          if-no-files-found: error

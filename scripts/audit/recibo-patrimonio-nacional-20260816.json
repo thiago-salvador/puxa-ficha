@@ -1,0 +1,2490 @@
+{
+  "passo": "P-PATRIMONIO-NACIONAL",
+  "fase": "A_carga_positiva",
+  "snapshot": {
+    "bens": {
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2026.zip",
+      "lastModified": "Sat, 15 Aug 2026 22:35:56 GMT",
+      "bytes": 3745138,
+      "sha256": "db5b5a3e430670496aedb27a6dc9cd679117ff519f55222e8c70792faeca59c8",
+      "geracaoCsv": "15/08/2026 19:30:07"
+    },
+    "consultaCand": {
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+      "lastModified": "Sat, 15 Aug 2026 22:35:52 GMT",
+      "bytes": 3042236,
+      "sha256": "e0ae0300af3b14067dc49fb15510f32244a72093cb2a1249cc9da9cedbd3375c",
+      "geracaoCsv": "15/08/2026 19:30:51"
+    },
+    "inputs": {
+      "publicos": "873168d8c2843996e99de1ac4ff2396931b149e5e116f7f38d98342d7d4e20d3",
+      "universo": "f8c0e3dfb96d1466203579dd607c0d197b2a6e523f21310a108e4f4e5d00cb42",
+      "seed": "99463168ad9200f6e0ec35e5a93ed2d74fb249bc3f4bc5499a7e9f3c0d3615ed"
+    }
+  },
+  "totais": {
+    "fichasPublicas": 174,
+    "identidadesResolvidas": 132,
+    "identidadesExcluidas": 42,
+    "declaracoesPositivas": 117,
+    "semDeclaracao": 15,
+    "jaCarregadasPr203": 9,
+    "linhasMigration": 108,
+    "bensMigration": 996
+  },
+  "rotasIdentidade": {
+    "seed_sq": 30,
+    "cpf_consulta": 90,
+    "pr203_sq": 12
+  },
+  "identidades": [
+    {
+      "slug": "acm-neto",
+      "sq": "50002533190",
+      "cargo": "Governador",
+      "uf": "BA",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "adailton-furia",
+      "sq": "220002536806",
+      "cargo": "Governador",
+      "uf": "RO",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "alan-rick",
+      "sq": "10002532492",
+      "cargo": "Governador",
+      "uf": "AC",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "alexandre-kalil",
+      "sq": "130002539775",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "alysson-bezerra",
+      "sq": "200002535255",
+      "cargo": "Governador",
+      "uf": "RN",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "andre-marinho",
+      "sq": "190002537524",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "araceli-lemos",
+      "sq": "140002542386",
+      "cargo": "Governador",
+      "uf": "PA",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "aroldo-felix",
+      "sq": "50002544692",
+      "cargo": "Governador",
+      "uf": "BA",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "arthur-henrique",
+      "sq": "230002549223",
+      "cargo": "Governador",
+      "uf": "RR",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "ataides-oliveira",
+      "sq": "270002548412",
+      "cargo": "Governador",
+      "uf": "TO",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "augusto-cury",
+      "sq": "280002551547",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "cabo-daciolo",
+      "sq": "40002551740",
+      "cargo": "Governador",
+      "uf": "AM",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "carlos-machado",
+      "sq": "250002550913",
+      "cargo": "Governador",
+      "uf": "SP",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "celina-leao",
+      "sq": "70002553055",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "cicero-lucena",
+      "sq": "150002544133",
+      "cargo": "Governador",
+      "uf": "PB",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "sq": "60002531351",
+      "cargo": "Governador",
+      "uf": "CE",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "clariana-barao",
+      "sq": "280002552484",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "sq": "140002538631",
+      "cargo": "Governador",
+      "uf": "PA",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "clecio-luis",
+      "sq": "30002536311",
+      "cargo": "Governador",
+      "uf": "AP",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "cleitinho",
+      "sq": "130002552296",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "coronel-busnello",
+      "sq": "190002544120",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "cyro-garcia",
+      "sq": "190002540198",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "daniel-vilela",
+      "sq": "90002540993",
+      "cargo": "Governador",
+      "uf": "GO",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "dario-barbosa",
+      "sq": "200002542481",
+      "cargo": "Governador",
+      "uf": "RN",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "douglas-ruas",
+      "sq": "190002542887",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "dr-furlan",
+      "sq": "30002530014",
+      "cargo": "Governador",
+      "uf": "AP",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "dr-luisinho",
+      "sq": "10002533539",
+      "cargo": "Governador",
+      "uf": "AC",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "edmilson-costa",
+      "sq": "280002551975",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "eduardo-braide",
+      "sq": "100002545679",
+      "cargo": "Governador",
+      "uf": "MA",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "eduardo-paes",
+      "sq": "190002543380",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "eduardo-riedel",
+      "sq": "120002536582",
+      "cargo": "Governador",
+      "uf": "MS",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "efraim-filho",
+      "sq": "150002538692",
+      "cargo": "Governador",
+      "uf": "PB",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "elizeu-aguiar",
+      "sq": "180002533958",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "sq": "60002543969",
+      "cargo": "Governador",
+      "uf": "CE",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "emanuel-cacho",
+      "sq": "260002551712",
+      "cargo": "Governador",
+      "uf": "SE",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "expedito-netto",
+      "sq": "220002542185",
+      "cargo": "Governador",
+      "uf": "RO",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "sq": "260002542491",
+      "cargo": "Governador",
+      "uf": "SE",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "fabio-trad",
+      "sq": "120002539834",
+      "cargo": "Governador",
+      "uf": "MS",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "felipe-camarao",
+      "sq": "100002542556",
+      "cargo": "Governador",
+      "uf": "MA",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "sq": "280002551544",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "sq": "130002549557",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "gabriel-souza",
+      "sq": "210002542892",
+      "cargo": "Governador",
+      "uf": "RS",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "garotinho",
+      "sq": "190002550196",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "gelson-merisio",
+      "sq": "240002548628",
+      "cargo": "Governador",
+      "uf": "SC",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "sq": "180002537422",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "sq": "40002535267",
+      "cargo": "Governador",
+      "uf": "AM",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "guilherme-fonseca",
+      "sq": "170002536575",
+      "cargo": "Governador",
+      "uf": "PE",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "sq": "180002550421",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "sq": "250002549705",
+      "cargo": "Governador",
+      "uf": "SP",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "hana-ghassan",
+      "sq": "140002551598",
+      "cargo": "Governador",
+      "uf": "PA",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "helder-salomao",
+      "sq": "80002551833",
+      "cargo": "Governador",
+      "uf": "ES",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "henrique-areas",
+      "sq": "130002552308",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "hertz-dias",
+      "sq": "280002541457",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "hildon-chaves",
+      "sq": "220002542916",
+      "cargo": "Governador",
+      "uf": "RO",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "indira-xavier",
+      "sq": "130002547874",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "ivan-moraes",
+      "sq": "170002538097",
+      "cargo": "Governador",
+      "uf": "PE",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "izadora-dias",
+      "sq": "250002553062",
+      "cargo": "Governador",
+      "uf": "SP",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "jeferson-bezerra",
+      "sq": "120002550198",
+      "cargo": "Governador",
+      "uf": "MS",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "jeremias-cosmo",
+      "sq": "170002541258",
+      "cargo": "Governador",
+      "uf": "PE",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "jeronimo",
+      "sq": "50002536314",
+      "cargo": "Governador",
+      "uf": "BA",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "jhc",
+      "sq": "20002553350",
+      "cargo": "Governador",
+      "uf": "AL",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "sq": "120002552191",
+      "cargo": "Governador",
+      "uf": "MS",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "joel-rodrigues",
+      "sq": "180002538530",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "jorginho-mello",
+      "sq": "240002537073",
+      "cargo": "Governador",
+      "uf": "SC",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "jose-estevao",
+      "sq": "50002536579",
+      "cargo": "Governador",
+      "uf": "BA",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "jose-roberto-arruda",
+      "sq": "70002552586",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "juliana-brizola",
+      "sq": "210002551508",
+      "cargo": "Governador",
+      "uf": "RS",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "juliete-pantoja",
+      "sq": "190002547272",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "laurez-moreira",
+      "sq": "270002544494",
+      "cargo": "Governador",
+      "uf": "TO",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "leandro-grass",
+      "sq": "70002552496",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "lenilda-luna",
+      "sq": "20002539642",
+      "cargo": "Governador",
+      "uf": "AL",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "lourdes-melo",
+      "sq": "180002553722",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "luan-monteiro",
+      "sq": "190002552513",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "sq": "150002551789",
+      "cargo": "Governador",
+      "uf": "PB",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "lucia-santos",
+      "sq": "180002544216",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "luciano-zucco",
+      "sq": "210002547857",
+      "cargo": "Governador",
+      "uf": "RS",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "lucien-rezende",
+      "sq": "120002532257",
+      "cargo": "Governador",
+      "uf": "MS",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "luis-cesar-bueno",
+      "sq": "90002545476",
+      "cargo": "Governador",
+      "uf": "GO",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "lula",
+      "sq": "280002542548",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "mailza-assis",
+      "sq": "10002544107",
+      "cargo": "Governador",
+      "uf": "AC",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "marcelo-brigadeiro",
+      "sq": "240002544118",
+      "cargo": "Governador",
+      "uf": "SC",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "marcelo-maranata",
+      "sq": "210002535802",
+      "cargo": "Governador",
+      "uf": "RS",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "marconi-perillo",
+      "sq": "90002543463",
+      "cargo": "Governador",
+      "uf": "GO",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "marcos-rogerio",
+      "sq": "220002541939",
+      "cargo": "Governador",
+      "uf": "RO",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "marcus-sodre",
+      "sq": "240002541913",
+      "cargo": "Governador",
+      "uf": "SC",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "maria-do-carmo",
+      "sq": "40002541626",
+      "cargo": "Governador",
+      "uf": "AM",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "mateus-simoes",
+      "sq": "130002541911",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "omar-aziz",
+      "sq": "40002532272",
+      "cargo": "Governador",
+      "uf": "AM",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "sq": "110002551480",
+      "cargo": "Governador",
+      "uf": "MT",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "patrus-ananias",
+      "sq": "130002550464",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "paula-belmonte",
+      "sq": "70002552965",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "pazolini",
+      "sq": "80002552682",
+      "cargo": "Governador",
+      "uf": "ES",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "policial-edjane",
+      "sq": "250002548080",
+      "cargo": "Governador",
+      "uf": "SP",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "priscila-voigt",
+      "sq": "210002533355",
+      "cargo": "Governador",
+      "uf": "RS",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "professora-dorinha",
+      "sq": "270002544599",
+      "cargo": "Governador",
+      "uf": "TO",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "rafael-duda",
+      "sq": "130002546802",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "rafael-fonteles",
+      "sq": "180002532987",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "ralf-zimmer",
+      "sq": "240002552157",
+      "cargo": "Governador",
+      "uf": "SC",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "raquel-lyra",
+      "sq": "170002537227",
+      "cargo": "Governador",
+      "uf": "PE",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "ravenna-castro",
+      "sq": "180002548388",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "rejane-oliveira",
+      "sq": "210002541367",
+      "cargo": "Governador",
+      "uf": "RS",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "renan-santos",
+      "sq": "280002540694",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "requiao-filho",
+      "sq": "160002547666",
+      "cargo": "Governador",
+      "uf": "PR",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "sq": "80002552172",
+      "cargo": "Governador",
+      "uf": "ES",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "ricardo-marques",
+      "sq": "260002549466",
+      "cargo": "Governador",
+      "uf": "SE",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "roberio-paulino",
+      "sq": "200002546757",
+      "cargo": "Governador",
+      "uf": "RN",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "roberto-cidade",
+      "sq": "40002541741",
+      "cargo": "Governador",
+      "uf": "AM",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "robson-raymundo",
+      "sq": "70002535930",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "romeu-zema",
+      "sq": "280002539826",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "sq": "280002551932",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "ronaldo-mansur",
+      "sq": "50002532269",
+      "cargo": "Governador",
+      "uf": "BA",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "sq": "280002552487",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "samara-martins",
+      "sq": "280002538811",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "samara-mineiro",
+      "sq": "70002537111",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "samuel-costa",
+      "sq": "220002550927",
+      "cargo": "Governador",
+      "uf": "RO",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "sandro-alex",
+      "sq": "160002549553",
+      "cargo": "Governador",
+      "uf": "PR",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "saulo-arcangeli",
+      "sq": "100002534190",
+      "cargo": "Governador",
+      "uf": "MA",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "sq": "160002540833",
+      "cargo": "Governador",
+      "uf": "PR",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "serley-leal",
+      "sq": "60002533729",
+      "cargo": "Governador",
+      "uf": "CE",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "sq": "250002541303",
+      "cargo": "Governador",
+      "uf": "SP",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "thor-dantas",
+      "sq": "10002550719",
+      "cargo": "Governador",
+      "uf": "AC",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "sq": "10002544015",
+      "cargo": "Governador",
+      "uf": "AC",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "tulio-lopes",
+      "sq": "130002544122",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "sq": "260002532010",
+      "cargo": "Governador",
+      "uf": "SE",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "vera-lucia",
+      "sq": "250002536915",
+      "cargo": "Governador",
+      "uf": "SP",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "vicentinho-junior",
+      "sq": "270002544544",
+      "cargo": "Governador",
+      "uf": "TO",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "vivian-mendes",
+      "sq": "250002544912",
+      "cargo": "Governador",
+      "uf": "SP",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "sq": "110002551737",
+      "cargo": "Governador",
+      "uf": "MT",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "wilder-morais",
+      "sq": "90002551791",
+      "cargo": "Governador",
+      "uf": "GO",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "william-siri",
+      "sq": "190002536162",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "wilson-grassi-junior",
+      "sq": "280002548139",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "ze-batista",
+      "sq": "60002549967",
+      "cargo": "Governador",
+      "uf": "CE",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    }
+  ],
+  "semDeclaracao": [
+    {
+      "slug": "dr-luisinho",
+      "sq": "10002533539",
+      "cargo": "Governador",
+      "uf": "AC",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "sq": "40002535267",
+      "cargo": "Governador",
+      "uf": "AM",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "henrique-areas",
+      "sq": "130002552308",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "hertz-dias",
+      "sq": "280002541457",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "izadora-dias",
+      "sq": "250002553062",
+      "cargo": "Governador",
+      "uf": "SP",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "jeferson-bezerra",
+      "sq": "120002550198",
+      "cargo": "Governador",
+      "uf": "MS",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "jeremias-cosmo",
+      "sq": "170002541258",
+      "cargo": "Governador",
+      "uf": "PE",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "juliete-pantoja",
+      "sq": "190002547272",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "luan-monteiro",
+      "sq": "190002552513",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "policial-edjane",
+      "sq": "250002548080",
+      "cargo": "Governador",
+      "uf": "SP",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "rafael-duda",
+      "sq": "130002546802",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "ricardo-marques",
+      "sq": "260002549466",
+      "cargo": "Governador",
+      "uf": "SE",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "sq": "280002552487",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "tulio-lopes",
+      "sq": "130002544122",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    },
+    {
+      "slug": "vera-lucia",
+      "sq": "250002536915",
+      "cargo": "Governador",
+      "uf": "SP",
+      "rota": "seed_sq",
+      "geracaoConsulta": "15/08/2026 19:30:51"
+    }
+  ],
+  "excluidos": [
+    {
+      "slug": "alexandre-salomao",
+      "cargo": "Governador",
+      "uf": "PR",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "cargo": "Governador",
+      "uf": "RN",
+      "rota": "seed_sq",
+      "motivo": "cpf_mismatch"
+    },
+    {
+      "slug": "andre-luis",
+      "cargo": "Governador",
+      "uf": "MA",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "ariel-capistrano",
+      "cargo": "Governador",
+      "uf": "BA",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "arinalda-do-mlb",
+      "cargo": "Governador",
+      "uf": "RN",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "ben-mendes",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "breno-barcelar",
+      "cargo": "Governador",
+      "uf": "ES",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "camila-falcao",
+      "cargo": "Governador",
+      "uf": "PE",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "carlos-cley",
+      "cargo": "Governador",
+      "uf": "AP",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "david-almeida",
+      "cargo": "Governador",
+      "uf": "AM",
+      "rota": "seed_sq",
+      "motivo": "cpf_mismatch"
+    },
+    {
+      "slug": "dr-daniel",
+      "cargo": "Governador",
+      "uf": "PA",
+      "rota": "cpf_consulta",
+      "motivo": "cpf_not_found_or_scope_mismatch"
+    },
+    {
+      "slug": "dr-helton-monteiro",
+      "cargo": "Governador",
+      "uf": "SE",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "du-pereira",
+      "cargo": "Governador",
+      "uf": "TO",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "elisson-ferreira",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "eudo-raffael",
+      "cargo": "Governador",
+      "uf": "AC",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "farah-mesquita",
+      "cargo": "Governador",
+      "uf": "RR",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "francisco-jurity",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "gisvaldo-oliveira",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "huggo-leonardo",
+      "cargo": "Governador",
+      "uf": "CE",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "joao-campos",
+      "cargo": "Governador",
+      "uf": "PE",
+      "rota": "seed_sq",
+      "motivo": "cpf_mismatch"
+    },
+    {
+      "slug": "joao-rodrigues",
+      "cargo": "Governador",
+      "uf": "SC",
+      "rota": "cpf_consulta",
+      "motivo": "cpf_not_found_or_scope_mismatch"
+    },
+    {
+      "slug": "kiko-caputo",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "lais-chaud",
+      "cargo": "Governador",
+      "uf": "SC",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "laudicerio-aguiar",
+      "cargo": "Governador",
+      "uf": "MT",
+      "rota": "cpf_consulta",
+      "motivo": "cpf_not_found_or_scope_mismatch"
+    },
+    {
+      "slug": "leonardo-avalanche",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "luiz-franca",
+      "cargo": "Governador",
+      "uf": "PR",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "mauricio-coelho",
+      "cargo": "Governador",
+      "uf": "MT",
+      "rota": "cpf_consulta",
+      "motivo": "cpf_not_found_or_scope_mismatch"
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "cargo": "Governador",
+      "uf": "MT",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "orleans-brandao",
+      "cargo": "Governador",
+      "uf": "MA",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "pedro-abib",
+      "cargo": "Governador",
+      "uf": "RO",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "rafaell-milas",
+      "cargo": "Governador",
+      "uf": "MT",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "reginaldo-lima",
+      "cargo": "Governador",
+      "uf": "MA",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "renan-filho",
+      "cargo": "Governador",
+      "uf": "AL",
+      "rota": "cpf_consulta",
+      "motivo": "cpf_not_found_or_scope_mismatch"
+    },
+    {
+      "slug": "renan-hallais",
+      "cargo": "Governador",
+      "uf": "PE",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "renato-gomes",
+      "cargo": "Governador",
+      "uf": "MS",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "rodrigo-bolsonaro",
+      "cargo": "Governador",
+      "uf": "RN",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "samuel-de-mattos",
+      "cargo": "Governador",
+      "uf": "PR",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "santiago-belizario",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "subtenente-luiz-carlos",
+      "cargo": "Governador",
+      "uf": "TO",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "witer-naves",
+      "cargo": "Governador",
+      "uf": "TO",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    },
+    {
+      "slug": "yuri-ezequiel",
+      "cargo": "Governador",
+      "uf": "PB",
+      "rota": "",
+      "motivo": "no_sq_or_cpf"
+    }
+  ],
+  "migration": [
+    {
+      "slug": "acm-neto",
+      "sq": "50002533190",
+      "cargo": "Governador",
+      "uf": "BA",
+      "rota": "seed_sq",
+      "bens": 44,
+      "totalCentavos": 8488880963
+    },
+    {
+      "slug": "adailton-furia",
+      "sq": "220002536806",
+      "cargo": "Governador",
+      "uf": "RO",
+      "rota": "cpf_consulta",
+      "bens": 7,
+      "totalCentavos": 166508674
+    },
+    {
+      "slug": "alan-rick",
+      "sq": "10002532492",
+      "cargo": "Governador",
+      "uf": "AC",
+      "rota": "seed_sq",
+      "bens": 25,
+      "totalCentavos": 524456772
+    },
+    {
+      "slug": "alexandre-kalil",
+      "sq": "130002539775",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "bens": 42,
+      "totalCentavos": 594117684
+    },
+    {
+      "slug": "alysson-bezerra",
+      "sq": "200002535255",
+      "cargo": "Governador",
+      "uf": "RN",
+      "rota": "cpf_consulta",
+      "bens": 12,
+      "totalCentavos": 74886984
+    },
+    {
+      "slug": "andre-marinho",
+      "sq": "190002537524",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "seed_sq",
+      "bens": 6,
+      "totalCentavos": 40750355
+    },
+    {
+      "slug": "araceli-lemos",
+      "sq": "140002542386",
+      "cargo": "Governador",
+      "uf": "PA",
+      "rota": "cpf_consulta",
+      "bens": 6,
+      "totalCentavos": 53423119
+    },
+    {
+      "slug": "aroldo-felix",
+      "sq": "50002544692",
+      "cargo": "Governador",
+      "uf": "BA",
+      "rota": "cpf_consulta",
+      "bens": 3,
+      "totalCentavos": 85748532
+    },
+    {
+      "slug": "arthur-henrique",
+      "sq": "230002549223",
+      "cargo": "Governador",
+      "uf": "RR",
+      "rota": "cpf_consulta",
+      "bens": 8,
+      "totalCentavos": 57852564
+    },
+    {
+      "slug": "ataides-oliveira",
+      "sq": "270002548412",
+      "cargo": "Governador",
+      "uf": "TO",
+      "rota": "cpf_consulta",
+      "bens": 6,
+      "totalCentavos": 5445890200
+    },
+    {
+      "slug": "cabo-daciolo",
+      "sq": "40002551740",
+      "cargo": "Governador",
+      "uf": "AM",
+      "rota": "cpf_consulta",
+      "bens": 15,
+      "totalCentavos": 19075000
+    },
+    {
+      "slug": "carlos-machado",
+      "sq": "250002550913",
+      "cargo": "Governador",
+      "uf": "SP",
+      "rota": "cpf_consulta",
+      "bens": 2,
+      "totalCentavos": 2700000
+    },
+    {
+      "slug": "celina-leao",
+      "sq": "70002553055",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "cpf_consulta",
+      "bens": 5,
+      "totalCentavos": 44013139
+    },
+    {
+      "slug": "cicero-lucena",
+      "sq": "150002544133",
+      "cargo": "Governador",
+      "uf": "PB",
+      "rota": "cpf_consulta",
+      "bens": 22,
+      "totalCentavos": 251780994
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "sq": "60002531351",
+      "cargo": "Governador",
+      "uf": "CE",
+      "rota": "seed_sq",
+      "bens": 11,
+      "totalCentavos": 175664894
+    },
+    {
+      "slug": "cleber-rabelo",
+      "sq": "140002538631",
+      "cargo": "Governador",
+      "uf": "PA",
+      "rota": "seed_sq",
+      "bens": 1,
+      "totalCentavos": 5229200
+    },
+    {
+      "slug": "clecio-luis",
+      "sq": "30002536311",
+      "cargo": "Governador",
+      "uf": "AP",
+      "rota": "cpf_consulta",
+      "bens": 4,
+      "totalCentavos": 49799000
+    },
+    {
+      "slug": "cleitinho",
+      "sq": "130002552296",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "bens": 11,
+      "totalCentavos": 95656403
+    },
+    {
+      "slug": "coronel-busnello",
+      "sq": "190002544120",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "seed_sq",
+      "bens": 2,
+      "totalCentavos": 95000000
+    },
+    {
+      "slug": "cyro-garcia",
+      "sq": "190002540198",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "cpf_consulta",
+      "bens": 2,
+      "totalCentavos": 38540000
+    },
+    {
+      "slug": "daniel-vilela",
+      "sq": "90002540993",
+      "cargo": "Governador",
+      "uf": "GO",
+      "rota": "cpf_consulta",
+      "bens": 15,
+      "totalCentavos": 562738599
+    },
+    {
+      "slug": "dario-barbosa",
+      "sq": "200002542481",
+      "cargo": "Governador",
+      "uf": "RN",
+      "rota": "cpf_consulta",
+      "bens": 2,
+      "totalCentavos": 17000000
+    },
+    {
+      "slug": "douglas-ruas",
+      "sq": "190002542887",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "cpf_consulta",
+      "bens": 18,
+      "totalCentavos": 146768788
+    },
+    {
+      "slug": "dr-furlan",
+      "sq": "30002530014",
+      "cargo": "Governador",
+      "uf": "AP",
+      "rota": "seed_sq",
+      "bens": 6,
+      "totalCentavos": 116846477
+    },
+    {
+      "slug": "eduardo-braide",
+      "sq": "100002545679",
+      "cargo": "Governador",
+      "uf": "MA",
+      "rota": "cpf_consulta",
+      "bens": 8,
+      "totalCentavos": 104891076
+    },
+    {
+      "slug": "eduardo-paes",
+      "sq": "190002543380",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "cpf_consulta",
+      "bens": 7,
+      "totalCentavos": 18921063
+    },
+    {
+      "slug": "eduardo-riedel",
+      "sq": "120002536582",
+      "cargo": "Governador",
+      "uf": "MS",
+      "rota": "seed_sq",
+      "bens": 17,
+      "totalCentavos": 1614784934
+    },
+    {
+      "slug": "efraim-filho",
+      "sq": "150002538692",
+      "cargo": "Governador",
+      "uf": "PB",
+      "rota": "seed_sq",
+      "bens": 9,
+      "totalCentavos": 168278438
+    },
+    {
+      "slug": "elizeu-aguiar",
+      "sq": "180002533958",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "seed_sq",
+      "bens": 3,
+      "totalCentavos": 87280800
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "sq": "60002543969",
+      "cargo": "Governador",
+      "uf": "CE",
+      "rota": "cpf_consulta",
+      "bens": 12,
+      "totalCentavos": 36645771
+    },
+    {
+      "slug": "emanuel-cacho",
+      "sq": "260002551712",
+      "cargo": "Governador",
+      "uf": "SE",
+      "rota": "cpf_consulta",
+      "bens": 2,
+      "totalCentavos": 60000000
+    },
+    {
+      "slug": "expedito-netto",
+      "sq": "220002542185",
+      "cargo": "Governador",
+      "uf": "RO",
+      "rota": "cpf_consulta",
+      "bens": 3,
+      "totalCentavos": 35122600
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "sq": "260002542491",
+      "cargo": "Governador",
+      "uf": "SE",
+      "rota": "cpf_consulta",
+      "bens": 12,
+      "totalCentavos": 169894566
+    },
+    {
+      "slug": "fabio-trad",
+      "sq": "120002539834",
+      "cargo": "Governador",
+      "uf": "MS",
+      "rota": "cpf_consulta",
+      "bens": 30,
+      "totalCentavos": 367088045
+    },
+    {
+      "slug": "felipe-camarao",
+      "sq": "100002542556",
+      "cargo": "Governador",
+      "uf": "MA",
+      "rota": "cpf_consulta",
+      "bens": 5,
+      "totalCentavos": 520819372
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "sq": "130002549557",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "bens": 33,
+      "totalCentavos": 170215388
+    },
+    {
+      "slug": "gabriel-souza",
+      "sq": "210002542892",
+      "cargo": "Governador",
+      "uf": "RS",
+      "rota": "cpf_consulta",
+      "bens": 6,
+      "totalCentavos": 93546108
+    },
+    {
+      "slug": "garotinho",
+      "sq": "190002550196",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "cpf_consulta",
+      "bens": 8,
+      "totalCentavos": 16758505
+    },
+    {
+      "slug": "gelson-merisio",
+      "sq": "240002548628",
+      "cargo": "Governador",
+      "uf": "SC",
+      "rota": "cpf_consulta",
+      "bens": 8,
+      "totalCentavos": 65295378
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "sq": "180002537422",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "seed_sq",
+      "bens": 2,
+      "totalCentavos": 20059000
+    },
+    {
+      "slug": "guilherme-fonseca",
+      "sq": "170002536575",
+      "cargo": "Governador",
+      "uf": "PE",
+      "rota": "seed_sq",
+      "bens": 1,
+      "totalCentavos": 30000000
+    },
+    {
+      "slug": "gustavo-henrique",
+      "sq": "180002550421",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "cpf_consulta",
+      "bens": 2,
+      "totalCentavos": 14800000
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "sq": "250002549705",
+      "cargo": "Governador",
+      "uf": "SP",
+      "rota": "cpf_consulta",
+      "bens": 7,
+      "totalCentavos": 86121725
+    },
+    {
+      "slug": "hana-ghassan",
+      "sq": "140002551598",
+      "cargo": "Governador",
+      "uf": "PA",
+      "rota": "cpf_consulta",
+      "bens": 7,
+      "totalCentavos": 167046100
+    },
+    {
+      "slug": "helder-salomao",
+      "sq": "80002551833",
+      "cargo": "Governador",
+      "uf": "ES",
+      "rota": "cpf_consulta",
+      "bens": 10,
+      "totalCentavos": 120668223
+    },
+    {
+      "slug": "hildon-chaves",
+      "sq": "220002542916",
+      "cargo": "Governador",
+      "uf": "RO",
+      "rota": "cpf_consulta",
+      "bens": 3,
+      "totalCentavos": 3033062502
+    },
+    {
+      "slug": "indira-xavier",
+      "sq": "130002547874",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "bens": 1,
+      "totalCentavos": 47989
+    },
+    {
+      "slug": "ivan-moraes",
+      "sq": "170002538097",
+      "cargo": "Governador",
+      "uf": "PE",
+      "rota": "seed_sq",
+      "bens": 2,
+      "totalCentavos": 8145200
+    },
+    {
+      "slug": "jeronimo",
+      "sq": "50002536314",
+      "cargo": "Governador",
+      "uf": "BA",
+      "rota": "cpf_consulta",
+      "bens": 12,
+      "totalCentavos": 88654853
+    },
+    {
+      "slug": "jhc",
+      "sq": "20002553350",
+      "cargo": "Governador",
+      "uf": "AL",
+      "rota": "cpf_consulta",
+      "bens": 8,
+      "totalCentavos": 224473219
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "sq": "120002552191",
+      "cargo": "Governador",
+      "uf": "MS",
+      "rota": "cpf_consulta",
+      "bens": 7,
+      "totalCentavos": 58809738
+    },
+    {
+      "slug": "joel-rodrigues",
+      "sq": "180002538530",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "seed_sq",
+      "bens": 10,
+      "totalCentavos": 168825620
+    },
+    {
+      "slug": "jorginho-mello",
+      "sq": "240002537073",
+      "cargo": "Governador",
+      "uf": "SC",
+      "rota": "seed_sq",
+      "bens": 11,
+      "totalCentavos": 281803689
+    },
+    {
+      "slug": "jose-estevao",
+      "sq": "50002536579",
+      "cargo": "Governador",
+      "uf": "BA",
+      "rota": "seed_sq",
+      "bens": 1,
+      "totalCentavos": 60000000
+    },
+    {
+      "slug": "jose-roberto-arruda",
+      "sq": "70002552586",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "cpf_consulta",
+      "bens": 10,
+      "totalCentavos": 83017098
+    },
+    {
+      "slug": "juliana-brizola",
+      "sq": "210002551508",
+      "cargo": "Governador",
+      "uf": "RS",
+      "rota": "cpf_consulta",
+      "bens": 3,
+      "totalCentavos": 37613778
+    },
+    {
+      "slug": "laurez-moreira",
+      "sq": "270002544494",
+      "cargo": "Governador",
+      "uf": "TO",
+      "rota": "cpf_consulta",
+      "bens": 21,
+      "totalCentavos": 961540623
+    },
+    {
+      "slug": "leandro-grass",
+      "sq": "70002552496",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "cpf_consulta",
+      "bens": 1,
+      "totalCentavos": 28500000
+    },
+    {
+      "slug": "lenilda-luna",
+      "sq": "20002539642",
+      "cargo": "Governador",
+      "uf": "AL",
+      "rota": "cpf_consulta",
+      "bens": 2,
+      "totalCentavos": 11500000
+    },
+    {
+      "slug": "lourdes-melo",
+      "sq": "180002553722",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "cpf_consulta",
+      "bens": 2,
+      "totalCentavos": 45000000
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "sq": "150002551789",
+      "cargo": "Governador",
+      "uf": "PB",
+      "rota": "cpf_consulta",
+      "bens": 6,
+      "totalCentavos": 38562165
+    },
+    {
+      "slug": "lucia-santos",
+      "sq": "180002544216",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "cpf_consulta",
+      "bens": 8,
+      "totalCentavos": 79913468
+    },
+    {
+      "slug": "luciano-zucco",
+      "sq": "210002547857",
+      "cargo": "Governador",
+      "uf": "RS",
+      "rota": "cpf_consulta",
+      "bens": 12,
+      "totalCentavos": 70930400
+    },
+    {
+      "slug": "lucien-rezende",
+      "sq": "120002532257",
+      "cargo": "Governador",
+      "uf": "MS",
+      "rota": "cpf_consulta",
+      "bens": 2,
+      "totalCentavos": 50000000
+    },
+    {
+      "slug": "luis-cesar-bueno",
+      "sq": "90002545476",
+      "cargo": "Governador",
+      "uf": "GO",
+      "rota": "cpf_consulta",
+      "bens": 12,
+      "totalCentavos": 88460732
+    },
+    {
+      "slug": "mailza-assis",
+      "sq": "10002544107",
+      "cargo": "Governador",
+      "uf": "AC",
+      "rota": "cpf_consulta",
+      "bens": 5,
+      "totalCentavos": 16748291
+    },
+    {
+      "slug": "marcelo-brigadeiro",
+      "sq": "240002544118",
+      "cargo": "Governador",
+      "uf": "SC",
+      "rota": "cpf_consulta",
+      "bens": 5,
+      "totalCentavos": 183126111
+    },
+    {
+      "slug": "marcelo-maranata",
+      "sq": "210002535802",
+      "cargo": "Governador",
+      "uf": "RS",
+      "rota": "cpf_consulta",
+      "bens": 8,
+      "totalCentavos": 24980500
+    },
+    {
+      "slug": "marconi-perillo",
+      "sq": "90002543463",
+      "cargo": "Governador",
+      "uf": "GO",
+      "rota": "cpf_consulta",
+      "bens": 24,
+      "totalCentavos": 1187681571
+    },
+    {
+      "slug": "marcos-rogerio",
+      "sq": "220002541939",
+      "cargo": "Governador",
+      "uf": "RO",
+      "rota": "cpf_consulta",
+      "bens": 9,
+      "totalCentavos": 237616992
+    },
+    {
+      "slug": "marcus-sodre",
+      "sq": "240002541913",
+      "cargo": "Governador",
+      "uf": "SC",
+      "rota": "cpf_consulta",
+      "bens": 1,
+      "totalCentavos": 11700000
+    },
+    {
+      "slug": "maria-do-carmo",
+      "sq": "40002541626",
+      "cargo": "Governador",
+      "uf": "AM",
+      "rota": "cpf_consulta",
+      "bens": 27,
+      "totalCentavos": 11847376948
+    },
+    {
+      "slug": "mateus-simoes",
+      "sq": "130002541911",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "bens": 28,
+      "totalCentavos": 290449223
+    },
+    {
+      "slug": "omar-aziz",
+      "sq": "40002532272",
+      "cargo": "Governador",
+      "uf": "AM",
+      "rota": "seed_sq",
+      "bens": 5,
+      "totalCentavos": 207060800
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "sq": "110002551480",
+      "cargo": "Governador",
+      "uf": "MT",
+      "rota": "cpf_consulta",
+      "bens": 22,
+      "totalCentavos": 57568087095
+    },
+    {
+      "slug": "patrus-ananias",
+      "sq": "130002550464",
+      "cargo": "Governador",
+      "uf": "MG",
+      "rota": "cpf_consulta",
+      "bens": 9,
+      "totalCentavos": 124721254
+    },
+    {
+      "slug": "paula-belmonte",
+      "sq": "70002552965",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "cpf_consulta",
+      "bens": 4,
+      "totalCentavos": 1084422079
+    },
+    {
+      "slug": "pazolini",
+      "sq": "80002552682",
+      "cargo": "Governador",
+      "uf": "ES",
+      "rota": "cpf_consulta",
+      "bens": 7,
+      "totalCentavos": 100234277
+    },
+    {
+      "slug": "priscila-voigt",
+      "sq": "210002533355",
+      "cargo": "Governador",
+      "uf": "RS",
+      "rota": "seed_sq",
+      "bens": 1,
+      "totalCentavos": 100000
+    },
+    {
+      "slug": "professora-dorinha",
+      "sq": "270002544599",
+      "cargo": "Governador",
+      "uf": "TO",
+      "rota": "cpf_consulta",
+      "bens": 3,
+      "totalCentavos": 235274028
+    },
+    {
+      "slug": "rafael-fonteles",
+      "sq": "180002532987",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "seed_sq",
+      "bens": 7,
+      "totalCentavos": 179994860
+    },
+    {
+      "slug": "ralf-zimmer",
+      "sq": "240002552157",
+      "cargo": "Governador",
+      "uf": "SC",
+      "rota": "cpf_consulta",
+      "bens": 2,
+      "totalCentavos": 142659997
+    },
+    {
+      "slug": "raquel-lyra",
+      "sq": "170002537227",
+      "cargo": "Governador",
+      "uf": "PE",
+      "rota": "seed_sq",
+      "bens": 3,
+      "totalCentavos": 35949833
+    },
+    {
+      "slug": "ravenna-castro",
+      "sq": "180002548388",
+      "cargo": "Governador",
+      "uf": "PI",
+      "rota": "cpf_consulta",
+      "bens": 6,
+      "totalCentavos": 9160052
+    },
+    {
+      "slug": "rejane-oliveira",
+      "sq": "210002541367",
+      "cargo": "Governador",
+      "uf": "RS",
+      "rota": "cpf_consulta",
+      "bens": 2,
+      "totalCentavos": 49800000
+    },
+    {
+      "slug": "renan-santos",
+      "sq": "280002540694",
+      "cargo": "Presidente",
+      "uf": null,
+      "rota": "pr203_sq",
+      "bens": 4,
+      "totalCentavos": 79508900
+    },
+    {
+      "slug": "requiao-filho",
+      "sq": "160002547666",
+      "cargo": "Governador",
+      "uf": "PR",
+      "rota": "cpf_consulta",
+      "bens": 11,
+      "totalCentavos": 187634214
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "sq": "80002552172",
+      "cargo": "Governador",
+      "uf": "ES",
+      "rota": "cpf_consulta",
+      "bens": 31,
+      "totalCentavos": 2766878955
+    },
+    {
+      "slug": "roberio-paulino",
+      "sq": "200002546757",
+      "cargo": "Governador",
+      "uf": "RN",
+      "rota": "cpf_consulta",
+      "bens": 7,
+      "totalCentavos": 219436782
+    },
+    {
+      "slug": "roberto-cidade",
+      "sq": "40002541741",
+      "cargo": "Governador",
+      "uf": "AM",
+      "rota": "cpf_consulta",
+      "bens": 12,
+      "totalCentavos": 428540080
+    },
+    {
+      "slug": "robson-raymundo",
+      "sq": "70002535930",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "seed_sq",
+      "bens": 1,
+      "totalCentavos": 90000000
+    },
+    {
+      "slug": "ronaldo-mansur",
+      "sq": "50002532269",
+      "cargo": "Governador",
+      "uf": "BA",
+      "rota": "seed_sq",
+      "bens": 5,
+      "totalCentavos": 9139722
+    },
+    {
+      "slug": "samara-mineiro",
+      "sq": "70002537111",
+      "cargo": "Governador",
+      "uf": "DF",
+      "rota": "seed_sq",
+      "bens": 2,
+      "totalCentavos": 6919663
+    },
+    {
+      "slug": "samuel-costa",
+      "sq": "220002550927",
+      "cargo": "Governador",
+      "uf": "RO",
+      "rota": "cpf_consulta",
+      "bens": 18,
+      "totalCentavos": 363129768
+    },
+    {
+      "slug": "sandro-alex",
+      "sq": "160002549553",
+      "cargo": "Governador",
+      "uf": "PR",
+      "rota": "cpf_consulta",
+      "bens": 12,
+      "totalCentavos": 166712553
+    },
+    {
+      "slug": "saulo-arcangeli",
+      "sq": "100002534190",
+      "cargo": "Governador",
+      "uf": "MA",
+      "rota": "seed_sq",
+      "bens": 6,
+      "totalCentavos": 65640964
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "sq": "160002540833",
+      "cargo": "Governador",
+      "uf": "PR",
+      "rota": "cpf_consulta",
+      "bens": 12,
+      "totalCentavos": 103664225
+    },
+    {
+      "slug": "serley-leal",
+      "sq": "60002533729",
+      "cargo": "Governador",
+      "uf": "CE",
+      "rota": "cpf_consulta",
+      "bens": 4,
+      "totalCentavos": 8809469
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "sq": "250002541303",
+      "cargo": "Governador",
+      "uf": "SP",
+      "rota": "cpf_consulta",
+      "bens": 4,
+      "totalCentavos": 269680840
+    },
+    {
+      "slug": "thor-dantas",
+      "sq": "10002550719",
+      "cargo": "Governador",
+      "uf": "AC",
+      "rota": "cpf_consulta",
+      "bens": 27,
+      "totalCentavos": 76146279
+    },
+    {
+      "slug": "tiao-bocalom",
+      "sq": "10002544015",
+      "cargo": "Governador",
+      "uf": "AC",
+      "rota": "cpf_consulta",
+      "bens": 7,
+      "totalCentavos": 121650000
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "sq": "260002532010",
+      "cargo": "Governador",
+      "uf": "SE",
+      "rota": "seed_sq",
+      "bens": 2,
+      "totalCentavos": 25800000
+    },
+    {
+      "slug": "vicentinho-junior",
+      "sq": "270002544544",
+      "cargo": "Governador",
+      "uf": "TO",
+      "rota": "cpf_consulta",
+      "bens": 10,
+      "totalCentavos": 398339800
+    },
+    {
+      "slug": "vivian-mendes",
+      "sq": "250002544912",
+      "cargo": "Governador",
+      "uf": "SP",
+      "rota": "cpf_consulta",
+      "bens": 1,
+      "totalCentavos": 8000000
+    },
+    {
+      "slug": "wellington-fagundes",
+      "sq": "110002551737",
+      "cargo": "Governador",
+      "uf": "MT",
+      "rota": "cpf_consulta",
+      "bens": 28,
+      "totalCentavos": 1313246300
+    },
+    {
+      "slug": "wilder-morais",
+      "sq": "90002551791",
+      "cargo": "Governador",
+      "uf": "GO",
+      "rota": "cpf_consulta",
+      "bens": 10,
+      "totalCentavos": 6516090335
+    },
+    {
+      "slug": "william-siri",
+      "sq": "190002536162",
+      "cargo": "Governador",
+      "uf": "RJ",
+      "rota": "seed_sq",
+      "bens": 1,
+      "totalCentavos": 12000000
+    },
+    {
+      "slug": "ze-batista",
+      "sq": "60002549967",
+      "cargo": "Governador",
+      "uf": "CE",
+      "rota": "cpf_consulta",
+      "bens": 2,
+      "totalCentavos": 15700000
+    }
+  ]
+}

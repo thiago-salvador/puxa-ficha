@@ -1,0 +1,30 @@
+// FIXTURE POSITIVO. A mesma escrita do fixture inadimplente, agora dentro de
+// `escreverAuditado`. O gate tem que passar aqui, senão o único jeito de
+// satisfazê-lo seria não escrever nunca, e gate assim é contornado no primeiro
+// prazo apertado.
+
+import { supabase } from "../lib/supabase"
+import { escreverAuditado } from "../lib/escrita-auditada"
+
+export async function normalizar(ids: string[]) {
+  return escreverAuditado(
+    {
+      script: "fixture-conforme",
+      tabela: "candidatos",
+      motivo: "normaliza marcador TSE residual, issue #131 caso 1",
+      recorte: `${ids.length} candidatos publicáveis`,
+    },
+    () => supabase.from("candidatos").update({ marcador_tse: null }).in("id", ids).select("id"),
+  )
+}
+
+export async function apagarSobras(slug: string) {
+  return escreverAuditado(
+    {
+      script: "fixture-conforme",
+      tabela: "pontos_atencao",
+      motivo: "remove ponto de atenção duplicado após curadoria",
+    },
+    () => supabase.from("pontos_atencao").delete().eq("candidato_slug", slug).select("id"),
+  )
+}

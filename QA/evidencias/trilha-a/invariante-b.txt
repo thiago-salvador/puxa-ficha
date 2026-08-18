@@ -1,0 +1,4 @@
+Raw ELEITO (inclusive QP/média) exibido como "Não Eleito"
+contagem: 0
+
+

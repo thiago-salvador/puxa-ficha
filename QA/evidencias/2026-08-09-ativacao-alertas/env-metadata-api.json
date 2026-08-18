@@ -1,0 +1,18 @@
+{
+  "consulta": "GET https://api.vercel.com/v9/projects/{projectId}/env?teamId={orgId}&decrypt=false",
+  "nota_de_redacao": "O campo createdBy, que traz o identificador de usuario da Vercel, foi removido. Ele nao e necessario para o criterio 1, que afirma existencia e escopo da variavel, nao autoria.",
+  "resultado": [
+    {
+      "key": "NEXT_PUBLIC_ALERTS_EMAIL_ENABLED",
+      "id": "Z16V6HQcG5G0maxC",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ],
+      "createdAt": 1786310897705,
+      "createdAt_iso": "2026-08-09T21:28:17.705Z",
+      "updatedAt": 1786310897705,
+      "updatedAt_iso": "2026-08-09T21:28:17.705Z"
+    }
+  ]
+}

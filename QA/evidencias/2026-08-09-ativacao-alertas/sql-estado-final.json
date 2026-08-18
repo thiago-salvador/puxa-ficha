@@ -1,0 +1,27 @@
+{
+  "fonte": "Supabase producao, projeto wskpzsobvqwhnbsdsmok",
+  "medido_em": "2026-08-09T23:09:11.999645Z",
+  "resultado_pos_ato": {
+    "subscribers_total": 1,
+    "subscriptions_total": 2,
+    "subscriber_teste": 0,
+    "subscriptions_teste": 0,
+    "real_verified": true,
+    "real_updated_at": "2026-08-09T12:00:38.879917Z",
+    "real_last_digest": "2026-08-09T12:00:36.674Z",
+    "real_inscricoes": 2
+  },
+  "baseline_pre_ato_persistido": {
+    "medido_em": "2026-08-09T21:12Z",
+    "subscribers_total": 1,
+    "subscriptions_total": 2,
+    "real_updated_at": "2026-08-09T12:00:38.879917Z"
+  },
+  "campos_pos_ato_sem_contraparte_no_baseline": [
+    "real_verified",
+    "real_last_digest",
+    "real_inscricoes"
+  ],
+  "nota_de_cobertura": "O baseline persistido cobre apenas subscribers_total, subscriptions_total e real_updated_at. Os tres campos listados acima foram medidos depois do ato e nao tem valor pre-ato armazenado, portanto nao sustentam a afirmacao de que o assinante real permaneceu inalterado nesses atributos. Por isso o criterio 10 e FAIL: a comparacao que ele exige nao esta conferivel por terceiro. O que continua conferivel e o criterio 7, cujo estado exigido e ausencia: subscriber_teste 0 e subscriptions_teste 0.",
+  "nota_de_selecao": "As consultas filtraram por email_hash, um para o assinante de teste e outro para o assinante real. Os dois valores foram removidos deste artefato e nao foram substituidos por outro identificador. O hash de email do produto e SHA-256 sem sal (src/lib/alerts-shared.ts, hashAlertEmail), portanto correlacionavel por quem tenha um endereco candidato, e nao podia ficar em repositorio publico."
+}

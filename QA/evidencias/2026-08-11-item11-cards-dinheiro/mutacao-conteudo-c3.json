@@ -1,0 +1,13 @@
+{
+  "item": 11,
+  "controle": "patrimonio_total_visivel",
+  "slug": "hertz-dias",
+  "dtoEsperado": "R$ 100.000",
+  "domMutado": "R$ 999.999.999",
+  "resultadoEsperado": "falha",
+  "resultadoObservado": "falha",
+  "exitCode": 1,
+  "mensagem": "conteúdo visível integral diverge do DTO",
+  "viewport": "desktop",
+  "escritaRemota": false
+}

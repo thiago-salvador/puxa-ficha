@@ -1,0 +1,66 @@
+{
+  "versao": "2026-08-16",
+  "fonte": "TSE Dados Abertos bem_candidato_2026, snapshot 2026-08-15 16:35 BRT, SHA-256 960b8d054eaf045e2d424eaf86787c1eb547c73dc7ed2d1c9525199d7e9240a1; bem_candidato_2020 SHA-256 04353565306af1a894811520d8b9c73ea50730bd271dee25b1d1407e2ef8ba74",
+  "coorte": [
+    "alan-rick",
+    "dr-luisinho",
+    "thor-dantas",
+    "eudo-raffael",
+    "mailza-assis",
+    "tiao-bocalom"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "patrimonio",
+      "slug": "alan-rick",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "thor-dantas",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "eudo-raffael",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "mailza-assis",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "tiao-bocalom",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "dr-luisinho",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "sq_candidato", "fonte_url", "verificado_em", "detalhe"]
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "dr-luisinho",
+      "ano": 2020,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "sq_candidato", "fonte_url", "verificado_em", "detalhe"]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "candidato_id": "c-fixture-1",
+    "slug": "fulano-sp",
+    "nome_urna": "FULANO DA SILVA",
+    "partido_sigla": "PT",
+    "cargo_disputado": "Deputado Federal",
+    "estado": "SP",
+    "ano_eleicao": 2022,
+    "valor": 50000,
+    "tipo": "PF",
+    "doador_nome_exibicao": "JOAO GONCALVES SILVA"
+  },
+  {
+    "candidato_id": "c-fixture-2",
+    "slug": "beltrana-rj",
+    "nome_urna": "BELTRANA SOUZA",
+    "partido_sigla": "PSOL",
+    "cargo_disputado": "Senadora",
+    "estado": "RJ",
+    "ano_eleicao": 2022,
+    "valor": 15000,
+    "tipo": "PJ",
+    "doador_nome_exibicao": "SILVA & ASSOCIADOS LTDA"
+  },
+  {
+    "candidato_id": "c-fixture-3",
+    "slug": "ciclano-mg",
+    "nome_urna": "CICLANO FERREIRA",
+    "partido_sigla": "MDB",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ano_eleicao": 2022,
+    "valor": 100000,
+    "tipo": "PF",
+    "doador_nome_exibicao": "MARIA OLIVEIRA SANTOS"
+  }
+]

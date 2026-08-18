@@ -1,0 +1,391 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-anton), var(--font-inter), ui-sans-serif, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+  --shadow-xs: 0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+  --shadow-sm: 0 2px 6px -1px rgb(0 0 0 / 0.06), 0 1px 3px -1px rgb(0 0 0 / 0.04);
+  --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.04);
+  --shadow-lg: 0 12px 32px -4px rgb(0 0 0 / 0.1), 0 4px 8px -2px rgb(0 0 0 / 0.04);
+  --shadow-xl: 0 20px 48px -8px rgb(0 0 0 / 0.12), 0 8px 16px -4px rgb(0 0 0 / 0.06);
+}
+
+:root {
+  /* Core palette */
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --primary: #0a0a0a;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #171717;
+  --muted: #fafafa;
+  /* #737373 dava só 4,74:1 sobre o branco, folga quase nula sobre o mínimo de
+     4,5:1. Qualquer composição (fade de entrada, camada translúcida) empurrava
+     o texto secundário para baixo do limite. #666666 sobe para 5,74:1 e mantém
+     o par semântico bg-muted + text-muted-foreground acessível em todo o site. */
+  --muted-foreground: #666666;
+  --accent: #f0f0f0;
+  --accent-foreground: #0a0a0a;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #0a0a0a;
+  /* Shape */
+  --radius: 0.75rem;
+
+  /* Glassmorphism */
+  --glass-bg-dark: rgba(0, 0, 0, 0.35);
+  --glass-bg-light: rgba(255, 255, 255, 0.12);
+  --glass-bg-nav: rgba(255, 255, 255, 0.75);
+  --glass-blur: 16px;
+  --glass-saturate: 1.8;
+  --glass-border-light: rgba(255, 255, 255, 0.18);
+  --glass-border-dark: rgba(0, 0, 0, 0.08);
+
+  /* Typography scale (editorial) */
+  --text-eyebrow: 11px;
+  --text-caption: 12px;
+  --text-body-sm: 13px;
+  --text-body: 14px;
+  --text-body-lg: 16px;
+  --text-heading-sm: 22px;
+  --text-heading: 28px;
+  --text-heading-lg: 36px;
+
+  /* Easing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-smooth: cubic-bezier(0.65, 0.05, 0, 1);
+  --duration-fast: 0.2s;
+  --duration-normal: 0.3s;
+  --duration-slow: 0.5s;
+
+  /* Semantic grays (for direct use in components) */
+  --gray-50: #fafafa;
+  --gray-100: #f5f5f5;
+  --gray-200: #e5e5e5;
+  --gray-300: #d4d4d4;
+  --gray-400: #a3a3a3;
+  --gray-500: #737373;
+  --gray-600: #525252;
+  --gray-700: #404040;
+  --gray-800: #262626;
+  --gray-900: #171717;
+  --gray-950: #0a0a0a;
+
+  /* Brazil map by macro-region (editorial, muted; BrazilMap.tsx) */
+  --map-region-norte: #5c7568;
+  --map-region-norte-side: #415548;
+  --map-region-norte-hover: #6d8a7b;
+  --map-region-nordeste: #5a6785;
+  --map-region-nordeste-side: #3f4a60;
+  --map-region-nordeste-hover: #6b7a9a;
+  --map-region-centro-oeste: #8f6b5c;
+  --map-region-centro-oeste-side: #664a3f;
+  --map-region-centro-oeste-hover: #a17d6d;
+  --map-region-sudeste: #7d7758;
+  --map-region-sudeste-side: #5a5540;
+  --map-region-sudeste-hover: #948c69;
+  --map-region-sul: #5a6169;
+  --map-region-sul-side: #3e444a;
+  --map-region-sul-hover: #6e7680;
+  --map-state-stroke: #ffffff;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* ========================================
+   SCROLLBAR UTILITIES
+   ======================================== */
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========================================
+   GLASS UTILITIES
+   ======================================== */
+
+/* Dark glass: for overlays on photos (cards, slider) */
+.glass-dark {
+  background: rgba(0, 0, 0, 0.7);
+}
+@supports (backdrop-filter: blur(1px)) {
+  .glass-dark {
+    background: var(--glass-bg-dark);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+      inset 0 0 10px 4px rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Light glass: for floating panels on dark backgrounds (slider info) */
+.glass-light {
+  background: rgba(0, 0, 0, 0.6);
+}
+@supports (backdrop-filter: blur(1px)) {
+  .glass-light {
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    background: var(--glass-bg-light);
+    border: 1px solid var(--glass-border-light);
+  }
+}
+
+/* Nav glass: for scrolled header */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--glass-border-dark);
+}
+@supports (backdrop-filter: blur(1px)) {
+  .glass-nav {
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    /* Header fixo: se o backdrop-filter nao renderizar (ancestral com transform),
+       0.75 deixava o texto do corpo vazar atras do logo/menu ao rolar. 0.9 mantem
+       o efeito glass onde o blur funciona e garante legibilidade onde nao. */
+    background: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* ========================================
+   MENU NAV LINKS (sterling-gate style)
+   ======================================== */
+
+/* Nav link with stripe hover effect */
+.menu-nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-radius: 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* The stripe/band background that appears on hover */
+.menu-nav-link .link-stripe {
+  position: absolute;
+  inset: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--gray-900);
+  transition: transform var(--duration-slow) var(--ease-in-out-smooth);
+  z-index: 0;
+}
+.menu-nav-link:hover .link-stripe,
+.menu-nav-link.active .link-stripe {
+  transform: scaleX(1);
+}
+
+/* Text sits above the stripe */
+.menu-nav-link .link-text {
+  position: relative;
+  z-index: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  transition: color var(--duration-normal) ease;
+  color: var(--gray-900);
+}
+.menu-nav-link:hover .link-text,
+.menu-nav-link.active .link-text {
+  color: #ffffff;
+}
+
+/* Arrow icon */
+.menu-nav-link .link-arrow {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all var(--duration-normal) ease;
+  color: #ffffff;
+}
+.menu-nav-link:hover .link-arrow,
+.menu-nav-link.active .link-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card stagger entrance */
+.stagger-item {
+  animation: fadeSlideUp 0.5s ease-out both;
+  /* opacity: 0 intentionally omitted — animation-fill-mode: backwards (part of "both")
+     applies the from-keyframe during delay, keeping items hidden until their turn.
+     If the animation is blocked (extensions, print), items fall back to natural opacity: 1. */
+}
+
+/* Hero staggered entrance — same resilience as .stagger-item: no hard opacity:0 */
+.hero-fade {
+  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.2s;
+}
+
+/* Section reveal */
+.section-reveal {
+  animation: sectionReveal 0.6s ease-out both;
+}
+
+/* List item hover — subtle left accent */
+.list-item-hover {
+  position: relative;
+  transition: all var(--duration-normal) ease;
+}
+.list-item-hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  width: 3px;
+  height: 60%;
+  background: var(--foreground);
+  border-radius: 2px;
+  transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+.list-item-hover:hover::before {
+  transform: translateY(-50%) scaleY(1);
+}
+.list-item-hover:hover {
+  padding-left: 1.25rem;
+}
+
+/* Pill button hover pulse */
+.pill-hover {
+  transition: all var(--duration-normal) var(--ease-out-expo);
+}
+.pill-hover:hover {
+  background: var(--foreground);
+  color: var(--background);
+  border-color: var(--foreground);
+  transform: scale(1.02);
+}
+
+/* Disable hero entrance animation on mobile to avoid delaying LCP */
+@media (max-width: 640px) {
+  .hero-fade {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger-item,
+  .hero-fade,
+  .section-reveal {
+    animation: none;
+    opacity: 1;
+  }
+  .list-item-hover:hover {
+    transform: none;
+  }
+  .list-item-hover:hover {
+    padding-left: inherit;
+  }
+  .list-item-hover::before {
+    display: none;
+  }
+  .menu-nav-link .link-stripe {
+    transition: none;
+  }
+  /* Disable all transitions and transforms for reduced motion */
+  .glass-dark,
+  .glass-light,
+  .glass-nav,
+  .pill-hover,
+  .pill-hover:hover,
+  .menu-nav-link .link-stripe,
+  .menu-nav-link .link-arrow,
+  .menu-nav-link .link-text {
+    transition: none !important;
+  }
+  .pill-hover:hover {
+    transform: none;
+  }
+}

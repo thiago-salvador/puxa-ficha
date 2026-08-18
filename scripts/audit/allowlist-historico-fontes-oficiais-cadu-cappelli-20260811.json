@@ -1,0 +1,16 @@
+{
+  "_comentario": "Cinco trajetórias ativas, duas identidades nominais e fontes oficiais específicas. A migration atualiza somente período, observações e proveniência por referência fechada.",
+  "recorte": "historico-fontes-oficiais-cadu-cappelli-20260811",
+  "migration": "20260811101100_historico_fontes_oficiais_cadu_cappelli.sql",
+  "fonte": "fontes oficiais listadas na migration e no teste focal",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "historico_politico",
+      "ref": "historico-fontes-oficiais:cadu-cappelli",
+      "campos": ["periodo_inicio", "periodo_fim", "observacoes", "proveniencia"]
+    }
+  ]
+}
