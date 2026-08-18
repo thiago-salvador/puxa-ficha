@@ -49,8 +49,11 @@ describe("quiz-scoring", () => {
     const rows = compareCandidatesAlphabetically(respostas, dataset, undefined, 1) // fase 1 legada
     assert.ok(rows.length > 0)
     for (const row of rows) {
-      assert.ok(row.score_final >= 0 && row.score_final <= 100)
-      assert.ok(row.score_espectro >= 0 && row.score_espectro <= 1)
+      // no mock todo candidato tem espectro apurado, entao os dois tem valor
+      assert.notEqual(row.score_final, null)
+      assert.notEqual(row.score_espectro, null)
+      assert.ok(row.score_final! >= 0 && row.score_final! <= 100)
+      assert.ok(row.score_espectro! >= 0 && row.score_espectro! <= 1)
       assert.ok(row.explanation.resumo.length > 0)
     }
     const nomes = rows.map((row) => dataset.candidatos.find((c) => c.slug === row.candidato_slug)?.nome_urna ?? "")
@@ -73,7 +76,33 @@ describe("quiz-scoring", () => {
     const sLula = calcularAlinhamento(respostas, lula, quizPerguntasOrdenadas(), dataset, 1)
     const sFlavio = calcularAlinhamento(respostas, flavio, quizPerguntasOrdenadas(), dataset, 1)
 
-    assert.ok(sLula.score_final > sFlavio.score_final)
+    assert.notEqual(sLula.score_final, null)
+    assert.notEqual(sFlavio.score_final, null)
+    assert.ok(sLula.score_final! > sFlavio.score_final!)
+  })
+
+  it("partido sem espectro apurado: nao inventa nota nem afirma proximidade de eixo", () => {
+    const dataset = buildMockQuizAlignmentDataset()
+    const respostas = allNeutralAnswers()
+    const base = dataset.candidatos[0]
+    assert.ok(base)
+    // mesmo candidato, com uma sigla que nao existe no arquivo de espectro
+    const semEspectro = { ...base, partido_sigla: "PARTIDO-INEXISTENTE-XYZ", espectro_override: null }
+
+    const s = calcularAlinhamento(respostas, semEspectro, quizPerguntasOrdenadas(), dataset, 1)
+
+    assert.equal(s.espectro_partidario_mapeado, false)
+    // o 0.5 fabricado nao pode voltar: sem base, o espectro nao tem valor
+    assert.equal(s.score_espectro, null, "score_espectro deve ser null sem espectro apurado")
+    assert.notEqual(s.score_espectro, 0.5, "0.5 e o ponto medio fabricado, nao um dado")
+    // e a explicacao nao pode afirmar proximidade contra uma posicao que ninguem mediu
+    assert.ok(
+      !/eixo (econômico|social)/i.test(s.explanation.resumo) ||
+        /não tem espectro apurado/i.test(s.explanation.resumo),
+      `resumo nao pode afirmar eixo sem espectro: ${s.explanation.resumo}`
+    )
+    assert.match(s.explanation.resumo, /não tem espectro apurado/i)
+    assert.equal(s.explanation.peso_espectro_usado, 0)
   })
 
   it("dynamicWeights: 0 votos -> only spectrum; 1 voto -> 30% vote weight", () => {
@@ -111,7 +140,7 @@ describe("quiz-scoring", () => {
 
     const row = calcularAlinhamento(respostas, dataset.candidatos[0]!, perguntas, dataset, 1)
     assert.ok(row.votos_comparados >= 3)
-    assert.ok(row.score_final < 50, `expected score < 50, got ${row.score_final}`)
+    assert.ok(row.score_final != null && row.score_final < 50, `expected score < 50, got ${row.score_final}`)
   })
 
   it("P4 regression: one coincident vote does not yield high score for opposite spectrum", () => {
@@ -138,7 +167,7 @@ describe("quiz-scoring", () => {
     respostas.set("q01", { valor: "discordo_total", importante: false })
 
     const row = calcularAlinhamento(respostas, dataset.candidatos[0]!, perguntas, dataset, 1)
-    assert.ok(row.score_final < 50, `expected score < 50, got ${row.score_final}`)
+    assert.ok(row.score_final != null && row.score_final < 50, `expected score < 50, got ${row.score_final}`)
   })
 
   it("mantém o lookup do quiz no título canônico bruto mesmo com label pública diferente", () => {
@@ -263,7 +292,8 @@ describe("quiz-scoring", () => {
 
     assert.equal(row.confiabilidade, "baixa")
     assert.equal(row.espectro_partidario_mapeado, false)
-    assert.match(row.explanation.resumo, /Partido sem espectro editorial mapeado/)
+    assert.match(row.explanation.resumo, /não tem espectro apurado/i)
+    assert.equal(row.score_espectro, null)
   })
 })
 
