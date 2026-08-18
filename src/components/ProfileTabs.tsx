@@ -1,6 +1,7 @@
 "use client"
 
 import type { KeyboardEvent } from "react"
+import { ChevronRight } from "lucide-react"
 
 export interface Tab {
   id: string
@@ -43,9 +44,10 @@ export function ProfileTabs({
   return (
     <div className="sticky top-16 z-30 w-full overflow-hidden border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="mx-auto max-w-7xl min-w-0 px-5 md:px-12">
-        <nav aria-label="Seções do perfil">
+        <nav aria-label="Seções do perfil" className="relative">
           <div
             role="tablist"
+            aria-label="Seções do perfil. Role na horizontal para ver as demais abas."
             className="-mb-px flex w-full max-w-full gap-0 overflow-x-auto overscroll-x-contain scrollbar-none"
             aria-orientation="horizontal"
           >
@@ -78,6 +80,12 @@ export function ProfileTabs({
               </button>
             )
           })}
+          </div>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 right-0 flex w-11 items-center justify-end bg-gradient-to-l from-background from-25% to-transparent sm:hidden"
+          >
+            <ChevronRight className="mr-0.5 size-4 text-muted-foreground" />
           </div>
         </nav>
       </div>

@@ -117,17 +117,17 @@ export const CandidatoCard = memo(function CandidatoCard({
               </h3>
 
               {/* Mobile: compact inline stats — always visible, fixed single line */}
-              <div className="mt-1 flex h-[14px] items-center gap-2 truncate text-[10px] font-bold text-white/80 sm:hidden">
+              <div className="mt-1 flex min-h-[14px] items-center gap-1.5 text-[10px] font-bold text-white/80 sm:hidden">
                 {hasMainStats ? (
                   <>
-                    <span className="flex items-center gap-0.5">
-                      <Landmark className="size-2.5 shrink-0" />
+                    <span className="flex shrink-0 items-center gap-0.5">
+                      <Landmark className="size-3.5 shrink-0" />
                       {patrimonio != null && patrimonio > 0 ? formatCompact(patrimonio) : "N/D"}
                     </span>
                     <span className="text-white/30">|</span>
-                    <span className="flex items-center gap-0.5">
-                      <Scale className="size-2.5 shrink-0" />
-                      {processos} processo{processos !== 1 ? "s" : ""}
+                    <span className="flex shrink-0 items-center gap-0.5">
+                      <Scale className="size-3.5 shrink-0" />
+                      {processos}
                     </span>
                   </>
                 ) : (

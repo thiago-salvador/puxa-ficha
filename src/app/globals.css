@@ -63,7 +63,7 @@
   /* Glassmorphism */
   --glass-bg-dark: rgba(0, 0, 0, 0.35);
   --glass-bg-light: rgba(255, 255, 255, 0.12);
-  --glass-bg-nav: rgba(255, 255, 255, 0.75);
+  --glass-bg-nav: rgba(255, 255, 255, 0.94);
   --glass-blur: 16px;
   --glass-saturate: 1.8;
   --glass-border-light: rgba(255, 255, 255, 0.18);
@@ -180,17 +180,17 @@
 
 /* Nav glass: for scrolled header */
 .glass-nav {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.97);
   border-bottom: 1px solid var(--glass-border-dark);
 }
 @supports (backdrop-filter: blur(1px)) {
   .glass-nav {
-    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-    /* Header fixo: se o backdrop-filter nao renderizar (ancestral com transform),
-       0.75 deixava o texto do corpo vazar atras do logo/menu ao rolar. 0.9 mantem
-       o efeito glass onde o blur funciona e garante legibilidade onde nao. */
-    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(28px) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(28px) saturate(var(--glass-saturate));
+    /* 0.9 ainda deixava o texto do corpo vazar atras do logo. 0.94 + blur
+       maior cobre a leitura e ainda le como vidro. Sem backdrop-filter,
+       o 0.97 do bloco acima e o fallback opaco. */
+    background: var(--glass-bg-nav);
   }
 }
 

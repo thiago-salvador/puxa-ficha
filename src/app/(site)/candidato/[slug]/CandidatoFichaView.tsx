@@ -267,7 +267,7 @@ export async function CandidatoFichaView({
       <div className="mx-auto max-w-7xl px-5 pt-20 sm:pt-24 md:px-12">
         <Link
           href={backHref}
-          className="inline-flex items-center gap-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground transition-colors hover:text-foreground sm:text-[length:var(--text-caption)]"
+          className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground transition-colors hover:text-foreground sm:text-[length:var(--text-caption)]"
         >
           <ArrowLeft className="size-3 sm:size-3.5" />
           {backLabel}

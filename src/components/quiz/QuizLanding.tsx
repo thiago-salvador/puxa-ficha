@@ -85,7 +85,7 @@ export function QuizLanding() {
                 <select
                   value={uf}
                   onChange={(e) => setUf(e.target.value)}
-                  className="rounded-md border border-input bg-background px-3 py-2 text-[length:var(--text-body)] font-medium text-foreground"
+                  className="rounded-md border border-input bg-background px-3 py-2 text-base font-medium text-foreground"
                   aria-label="Estado para quiz de governador"
                 >
                   {ufsOrdenadas.map((s) => (

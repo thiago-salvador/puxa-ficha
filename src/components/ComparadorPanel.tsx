@@ -306,8 +306,13 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
         </div>
 
         <div className="hidden md:block">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left">
+          <div
+            className="overflow-x-auto overscroll-x-contain"
+            role="region"
+            aria-label="Lista de candidatos para comparar. Role na horizontal se as colunas não couberem."
+            tabIndex={0}
+          >
+            <table className="w-full min-w-[48rem] text-left">
               <thead>
                 <tr className="border-b border-border/60">
                   <th className="w-12 pb-3 pr-3">
@@ -523,8 +528,16 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
               </span>
             </div>
 
-            <div className="overflow-x-auto">
-              <table className="w-full">
+            <p className="mb-2 text-[length:var(--text-caption)] text-muted-foreground md:hidden">
+              Role a tabela para o lado para ver todos os candidatos.
+            </p>
+            <div
+              className="overflow-x-auto overscroll-x-contain"
+              role="region"
+              aria-label="Tabela de comparação. Role na horizontal para ver todas as colunas."
+              tabIndex={0}
+            >
+              <table className="w-full min-w-[36rem]">
                 <thead>
                   <tr>
                     <th className="w-32 pb-4 text-left text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground" />
