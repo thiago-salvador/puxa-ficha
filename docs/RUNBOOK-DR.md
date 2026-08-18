@@ -14,8 +14,8 @@ cron exigem autorização nomeada antes de executar.
 | Provedor de email | Resend > API Keys e Domains | valor usado em `RESEND_API_KEY` e domínio do remetente | Confirmar no painel: Thiago |
 | Observabilidade | Sentry > Project Settings | DSN, organização, projeto e token de source maps | Confirmar no painel: Thiago |
 
-A lista canônica de nomes fica em [`.env.example`](../.env.example) e em
-`Status/ARQUITETURA.md`, no repositório de operação, seções de automação e ambientes.
+A lista canônica de nomes fica na tabela acima e em `Status/ARQUITETURA.md`,
+no repositório de operação, seções de automação e ambientes.
 Nunca copiar valores para este arquivo, issue, log ou commit.
 
 ## 2. Ordem de reconstrução

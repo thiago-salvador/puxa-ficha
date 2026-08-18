@@ -129,7 +129,7 @@ union all select 'noticias_candidato', min(created_at), max(created_at), count(*
 order by ultimo desc;
 
 -- Evidencias fora do banco (repo + GitHub API), citadas no relatorio:
--- * grep -n "PF_CURATION_PHASE" .env.example vercel.json src/lib/api.ts scripts/lib/freshness-annotator.ts
+-- * grep -n "PF_CURATION_PHASE" vercel.json src/lib/api.ts scripts/lib/freshness-annotator.ts
 -- * cat vercel.json (4 crons: send-digest, news/refresh, published-consistency, runtime-smoke)
 -- * cat .github/workflows/ingest.yml (header: "Roda apenas por disparo manual")
 -- * gh run list --limit 20  (zero execucoes do workflow "Ingestao de dados" no historico)
