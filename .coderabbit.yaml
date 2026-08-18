@@ -1,0 +1,100 @@
+# yaml-language-server: $schema=https://storage.googleapis.com/coderabbit_public_assets/schema.v2.json
+#
+# Configuração do CodeRabbit para o Puxa Ficha.
+#
+# POR QUE ELE ESTÁ AQUI, com evidência do próprio repositório
+# -----------------------------------------------------------
+# No PR #149 a CI passou inteira e o review dele entrou como COMMENTED, ou seja nem
+# bloqueante era. Um dos comentários era um fail-open DENTRO do gate que existe para
+# impedir fail-open: a função de parse só casava `--nome=valor`, e na forma com espaço os
+# lookups voltavam undefined, o comando caía no modo completo e imprimia OK com exit 0.
+# Quem autorava um recorte lia verde e concluía que passou, sem nada ter sido conferido.
+# Está documentado em QA/2026-08-09-gate-allowlist-recortes-e-baseline.md.
+#
+# Outros achados dele viraram regressão permanente em tests/coderabbit-mediums.test.ts.
+#
+# SOBRE O LIMITE DE 300 ARQUIVOS
+# -------------------------------
+# Não existe chave de configuração para ele: é limite de plataforma, conferido no schema
+# oficial em 18/08/2026. O que dá para fazer é o que está em `path_filters` abaixo, tirando
+# da revisão o que é gerado ou binário e não pede olho humano. Medido: 1963 arquivos caem
+# para 952. Isso não salva um PR do tamanho de uma migração inteira, e nesse caso a resposta
+# é PR menor, não configuração.
+
+language: pt-BR
+
+tone_instructions: >
+  Responda em português do Brasil, direto e sem rodeio. Não use travessão.
+  Aponte o defeito e o efeito dele, não o estilo.
+
+reviews:
+  # `assertive` de propósito. O modo de falha deste projeto não é código feio, é código que
+  # passa no teste e mente no resultado: patrimônio dobrado em 46 fichas, link montado
+  # errado em 34, recibo dizendo que gravou quando o insert falhou. Feedback a mais aqui
+  # custa leitura; feedback a menos custa dado errado publicado sobre pessoa real.
+  profile: assertive
+  request_changes_workflow: false
+  high_level_summary: true
+  review_status: true
+  poem: false
+
+  auto_review:
+    enabled: true
+    drafts: false
+
+  # Fora da revisão: gerado, binário e dado bruto. Nenhum destes se corrige lendo diff.
+  path_filters:
+    - "!supabase/migrations/**"
+    - "!public/**"
+    - "!package-lock.json"
+    - "!data/**"
+    - "!QA/evidencias/**"
+    - "!scripts/audit/allowlist-*.json"
+    - "!scripts/audit/baseline-*.json"
+    - "!**/*.vtt"
+    - "!**/*.zip"
+
+  path_instructions:
+    - path: "scripts/**"
+      instructions: >
+        Estes scripts ESCREVEM no banco de produção. A disciplina obrigatória é backup,
+        dry-run, apply, readback e recibo em coleta_log, nessa ordem. Reprove escrita sem
+        caminho de desfazer.
+        Procure especificamente por: erro engolido com 2>&1 >/dev/null ou || true, que já
+        escondeu um "unknown flag" aqui por vários minutos; recibo gravado antes de conferir
+        o retorno do insert, que já registrou 30 linhas quando zero entraram; e DELETE
+        autorizado só por id, sem segunda chave conferida antes.
+        Ao ler resposta do TSE DivulgaCand: o campo `valor` de bens vem como número, não
+        string pt-BR, e tratar como "1.234,56" multiplica por dez. O texto rico do bem está
+        em `descricao`, não em `descricaoDeTipoDeBem`.
+    - path: "src/**"
+      instructions: >
+        Superfície pública lida por eleitor. Trate como defeito grave qualquer coisa que
+        exiba dado de uma pessoa na ficha de outra, e qualquer comparação de string
+        sensível a maiúscula ou acento em nome, URL ou identificador: o TSE devolve dado em
+        CAIXA ALTA e isso já quebrou 34 fichas.
+        Números de dinheiro precisam de fonte rastreável. Valor hardcoded em componente é
+        reprovação.
+    - path: "src/lib/news/**"
+      instructions: >
+        Aqui mora o casamento de notícia com candidato, e homônimo é o erro mais caro do
+        projeto: uma ficha já publicou matéria sobre o tio governador do candidato. Não
+        afrouxe newsTitleMentionsCandidate sem medição: um segundo guarda por caixa alta foi
+        testado em 05/08 e derrubava 177 linhas contra 30, sendo 147 cobertura legítima.
+    - path: "supabase/migrations/**"
+      instructions: >
+        Migration do baseline é imutável, rastreada por sha256 em
+        scripts/audit/baseline-escritas-sem-anotacao.json. Mudança em arquivo já listado ali
+        precisa de justificativa explícita, inclusive quando for só comentário.
+        Nenhuma migration pode conter CPF, título de eleitor ou nome de terceiro que não seja
+        candidato, nem em comentário.
+    - path: "tests/**"
+      instructions: >
+        Teste que só confirma que o build passou não vale. Peça o caso de erro.
+        Fixture com CPF tem que ser sintético: cruze com dado real é reprovação.
+        Teste não pode depender de caminho fora da raiz do repositório: o app já morou dentro
+        de outro repo e essa amarra quebrou o CI cinco vezes seguidas.
+
+knowledge_base:
+  learnings:
+    scope: local
