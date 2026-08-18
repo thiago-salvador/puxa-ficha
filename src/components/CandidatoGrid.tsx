@@ -192,7 +192,7 @@ export function CandidatoGrid({
               type="search"
               aria-label="Buscar candidatos por nome, partido ou estado"
               placeholder="Buscar por nome, partido ou estado..."
-              className="w-full rounded-full border border-foreground bg-transparent px-4 py-2.5 pl-11 pr-10 text-[14px] font-medium text-foreground outline-none transition-colors placeholder:font-medium placeholder:text-foreground focus:border-foreground focus:ring-2 focus:ring-foreground/50"
+              className="w-full rounded-full border border-foreground bg-transparent px-4 py-2.5 pl-11 pr-10 text-base font-medium text-foreground outline-none transition-colors placeholder:font-medium placeholder:text-foreground focus:border-foreground focus:ring-2 focus:ring-foreground/50 md:text-[14px]"
               value={query}
               onChange={(event) => {
                 const nextValue = event.target.value
