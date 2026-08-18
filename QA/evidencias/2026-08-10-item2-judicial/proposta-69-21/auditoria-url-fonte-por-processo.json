@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "executado_em": "2026-08-11T10:18:10Z",
+  "modo": "somente_leitura",
+  "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+  "universo": {
+    "linhas": 69,
+    "urls_comunica_pje": 55,
+    "urls_documentais": 14,
+    "divergencias_antes": 10,
+    "divergencias_depois": 0
+  },
+  "resultado_consultas_especificas": {
+    "consultadas": 10,
+    "http_200": 10,
+    "cnj_encontrado_no_payload": 10,
+    "erros": 0
+  },
+  "linhas_corrigidas": [
+    {
+      "slug": "alexandre-kalil",
+      "numero_cnj": "0010522-78.2022.5.03.0108",
+      "http_status": 200,
+      "identidade_confirmada_no_payload": true
+    },
+    {
+      "slug": "alexandre-kalil",
+      "numero_cnj": "0010746-20.2016.5.03.0013",
+      "http_status": 200,
+      "identidade_confirmada_no_payload": true
+    },
+    {
+      "slug": "alexandre-kalil",
+      "numero_cnj": "0011188-38.2015.5.03.0007",
+      "http_status": 200,
+      "identidade_confirmada_no_payload": true
+    },
+    {
+      "slug": "alexandre-kalil",
+      "numero_cnj": "0011337-13.2015.5.03.0111",
+      "http_status": 200,
+      "identidade_confirmada_no_payload": true
+    },
+    {
+      "slug": "alexandre-kalil",
+      "numero_cnj": "0011475-61.2016.5.03.0105",
+      "http_status": 200,
+      "identidade_confirmada_no_payload": true
+    },
+    {
+      "slug": "alexandre-kalil",
+      "numero_cnj": "0011533-64.2016.5.03.0008",
+      "http_status": 200,
+      "identidade_confirmada_no_payload": true
+    },
+    {
+      "slug": "alexandre-kalil",
+      "numero_cnj": "0011597-74.2016.5.03.0105",
+      "http_status": 200,
+      "identidade_confirmada_no_payload": true
+    },
+    {
+      "slug": "ataides-oliveira",
+      "numero_cnj": "1001988-98.2025.4.01.4300",
+      "http_status": 200,
+      "identidade_confirmada_no_payload": true
+    },
+    {
+      "slug": "ataides-oliveira",
+      "numero_cnj": "5717868-11.2022.8.09.0051",
+      "http_status": 200,
+      "identidade_confirmada_no_payload": true
+    },
+    {
+      "slug": "romeu-zema",
+      "numero_cnj": "5110636-33.2023.8.13.0024",
+      "http_status": 200,
+      "identidade_confirmada_no_payload": true
+    }
+  ],
+  "nota": "A contagem externa de 16 divergencias nao foi reproduzida. Somente as 10 incompatibilidades deterministicas foram alteradas; as 14 fontes documentais permaneceram intactas."
+}

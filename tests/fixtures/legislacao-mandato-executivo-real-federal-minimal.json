@@ -1,0 +1,47 @@
+[
+  {
+    "candidato_id": "fixture-lula-normalization-only",
+    "historico_politico_id": null,
+    "tipo_relacao": "lei_sancionada",
+    "esfera": "federal",
+    "uf_norma": null,
+    "tipo_norma": "lei",
+    "numero": "14.611",
+    "ano": 2023,
+    "data_norma": "2023-07-03",
+    "ementa": "Institui a igualdade salarial e de critérios remuneratórios entre mulheres e homens para exercício de função equivalente, na mesma empresa ou estabelecimento, e altera a Consolidação das Leis do Trabalho, aprovada pelo Decreto-Lei nº 5.452, de 1º de maio de 1943.",
+    "signatario": "LUIZ INÁCIO LULA DA SILVA",
+    "autoridade_papel": "titular",
+    "fonte_primaria_url": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2023/Lei/L14611.htm",
+    "fonte_primaria_titulo": "Portal da Legislação - Presidência da República",
+    "metadata": {
+      "note": "Fixture de dado real federal mínimo para prova de normalização/validação. candidato_id é sintético; vínculo por mandato (historico_politico_id) requer resolução antes de insert real.",
+      "source": "handoff Fluxo 5B",
+      "data_real": true,
+      "case_id": "lula-lei-14611"
+    }
+  },
+  {
+    "candidato_id": "fixture-lula-normalization-only",
+    "historico_politico_id": null,
+    "tipo_relacao": "lei_sancionada",
+    "esfera": "federal",
+    "uf_norma": null,
+    "tipo_norma": "lei",
+    "numero": "14.628",
+    "ano": 2023,
+    "data_norma": "2023-07-20",
+    "ementa": "Institui o Programa de Aquisição de Alimentos e altera a Lei nº 12.512, de 14 de outubro de 2011, e a Lei nº 14.133, de 1º de abril de 2021.",
+    "signatario": "LUIZ INÁCIO LULA DA SILVA",
+    "autoridade_papel": "titular",
+    "fonte_primaria_url": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2023/Lei/L14628.htm",
+    "fonte_primaria_titulo": "Portal da Legislação - Presidência da República",
+    "fonte_tramitacao_url": "https://www.planalto.gov.br/CCIVIL_03/Projetos/Ato_2023_2026/2023/PL/pl-2920.htm",
+    "metadata": {
+      "note": "Segundo caso federal real para prova local controlada do Fluxo 5B/6. candidato_id é sintético; vínculo por mandato (historico_politico_id) requer resolução antes de insert real.",
+      "source": "handoff Fluxo 5B/6",
+      "data_real": true,
+      "case_id": "lula-lei-14628"
+    }
+  }
+]

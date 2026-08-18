@@ -1,0 +1,74 @@
+[
+  {
+    "ano": 2002,
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2002.zip",
+    "arquivo": "prestacao_contas_2002.zip",
+    "sha256": "bca94708e30cc49e04dfe17e8265734060da25fd5f5624dbc631b02114dc8e72"
+  },
+  {
+    "ano": 2004,
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2004.zip",
+    "arquivo": "prestacao_contas_2004.zip",
+    "sha256": "d4903b304223b663fed972fe8aad251ca89753f5924e30aee5b4c993f24d97e5"
+  },
+  {
+    "ano": 2006,
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2006.zip",
+    "arquivo": "prestacao_contas_2006.zip",
+    "sha256": "9fb37e8e82d25e721a5e8e359e4d64ff4b180ff3dde7f6abc83aecb6f2eca18a"
+  },
+  {
+    "ano": 2008,
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2008.zip",
+    "arquivo": "prestacao_contas_2008.zip",
+    "sha256": "d177054a0cf219a6232f9298c835939c13b9b5aa413318ca9682c792828e9bfb"
+  },
+  {
+    "ano": 2010,
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2010.zip",
+    "arquivo": "prestacao_contas_2010.zip",
+    "sha256": "5c94adac6a9a202ea66d0fb86f5154edaf5850d9e4c9382095f0074a688ff5b8"
+  },
+  {
+    "ano": 2012,
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_final_2012.zip",
+    "arquivo": "prestacao_final_2012.zip",
+    "sha256": "8c8778150864cf70142b7f481192f643721bc98a8d733355fcc03f5c6bbfa3dd"
+  },
+  {
+    "ano": 2014,
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_final_2014.zip",
+    "arquivo": "prestacao_final_2014.zip",
+    "sha256": "9f1686ddfea2116d721cdffdfa76daf7f6a2e0f1d09db732521109f9f16782f4"
+  },
+  {
+    "ano": 2016,
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_contas_2016.zip",
+    "arquivo": "prestacao_contas_2016.zip",
+    "sha256": "cc523d5fcb3f7c16b28f184bdcf61a779c38c79181559f0002f54a42d5a0bcd9"
+  },
+  {
+    "ano": 2018,
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_de_contas_eleitorais_candidatos_2018.zip",
+    "arquivo": "prestacao_de_contas_eleitorais_candidatos_2018.zip",
+    "sha256": "1b28a7a172b9aeb87e3c200ea5d8be2de4feaa321655b9846aaa4e50e50d6d96"
+  },
+  {
+    "ano": 2020,
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_de_contas_eleitorais_candidatos_2020.zip",
+    "arquivo": "prestacao_de_contas_eleitorais_candidatos_2020.zip",
+    "sha256": "ad82f8c3451cc276012ab733866d06060c7db109941cdb639a6aa1a323137c56"
+  },
+  {
+    "ano": 2022,
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_de_contas_eleitorais_candidatos_2022.zip",
+    "arquivo": "prestacao_de_contas_eleitorais_candidatos_2022.zip",
+    "sha256": "6ff7e1c0672c8e74ce5d960a5b97576da0e4e9286452c47924684c8fc96e8799"
+  },
+  {
+    "ano": 2024,
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_de_contas_eleitorais_candidatos_2024.zip",
+    "arquivo": "prestacao_de_contas_eleitorais_candidatos_2024.zip",
+    "sha256": "1bf93de01b25a233982cda1b751bbb1a7409b02694fd97c62a2cc481c89ed3c7"
+  }
+]

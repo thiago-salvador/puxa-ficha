@@ -1,0 +1,71 @@
+[
+  {
+    "candidato_id": "fixture-tarcisio-presidencial-normalization-only",
+    "historico_politico_id": null,
+    "tipo_relacao": "lei_sancionada",
+    "esfera": "estadual",
+    "uf_norma": "SP",
+    "tipo_norma": "lei",
+    "numero": "18.025",
+    "ano": 2024,
+    "data_norma": "2024-09-09",
+    "ementa": "Dispõe sobre o programa habitacional para policiais civis, policiais militares, policiais técnico-científicos, policiais penais, agentes de segurança penitenciária e agentes de escolta e vigilância penitenciária do Estado de São Paulo.",
+    "signatario": "TARCÍSIO DE FREITAS",
+    "autoridade_papel": "titular",
+    "fonte_primaria_url": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2024/lei-18025-09.09.2024.html",
+    "fonte_primaria_titulo": "Assembleia Legislativa do Estado de São Paulo - Repositório de Legislação",
+    "metadata": {
+      "source": "ALESP",
+      "fluxo": "5B",
+      "data_real": true,
+      "case_id": "tarcisio-presidencial-sp-lei-18025",
+      "coverage_scope": "inventario_ampliado_parcial_sp_lote_minimo_20260428"
+    }
+  },
+  {
+    "candidato_id": "fixture-tarcisio-presidencial-normalization-only",
+    "historico_politico_id": null,
+    "tipo_relacao": "lei_sancionada",
+    "esfera": "estadual",
+    "uf_norma": "SP",
+    "tipo_norma": "lei",
+    "numero": "17.784",
+    "ano": 2023,
+    "data_norma": "2023-10-02",
+    "ementa": "Altera a Lei nº 6.374, de 1º de março de 1989, que dispõe sobre a instituição do Imposto sobre Operações Relativas à Circulação de Mercadorias e sobre Prestação de Serviços de Transporte Interestadual e Intermunicipal e de Comunicação - ICMS.",
+    "signatario": "TARCÍSIO DE FREITAS",
+    "autoridade_papel": "titular",
+    "fonte_primaria_url": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2023/lei-17784-02.10.2023.html",
+    "fonte_primaria_titulo": "Assembleia Legislativa do Estado de São Paulo - Repositório de Legislação",
+    "metadata": {
+      "source": "ALESP",
+      "fluxo": "5B",
+      "data_real": true,
+      "case_id": "tarcisio-presidencial-sp-lei-17784",
+      "coverage_scope": "inventario_ampliado_parcial_sp_lote_minimo_20260428"
+    }
+  },
+  {
+    "candidato_id": "fixture-tarcisio-presidencial-normalization-only",
+    "historico_politico_id": null,
+    "tipo_relacao": "lei_sancionada",
+    "esfera": "estadual",
+    "uf_norma": "SP",
+    "tipo_norma": "lei complementar",
+    "numero": "1.387",
+    "ano": 2023,
+    "data_norma": "2023-07-03",
+    "ementa": "Dispõe sobre a concessão de abono complementar aos servidores, na forma que especifica.",
+    "signatario": "TARCÍSIO DE FREITAS",
+    "autoridade_papel": "titular",
+    "fonte_primaria_url": "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2023/original-lei.complementar-1387-03.07.2023.html",
+    "fonte_primaria_titulo": "Assembleia Legislativa do Estado de São Paulo - Repositório de Legislação",
+    "metadata": {
+      "source": "ALESP",
+      "fluxo": "5B",
+      "data_real": true,
+      "case_id": "tarcisio-presidencial-sp-lc-1387",
+      "coverage_scope": "inventario_ampliado_parcial_sp_lote_minimo_20260428"
+    }
+  }
+]

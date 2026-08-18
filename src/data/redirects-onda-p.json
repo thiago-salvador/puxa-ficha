@@ -1,0 +1,187 @@
+[
+  {
+    "source": "/candidato/daniela-paiva",
+    "destination": "/candidato/dr-luisinho",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/ricardo-leite",
+    "destination": "/candidato/alan-rick",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/alessandra-campelo",
+    "destination": "/candidato/omar-aziz",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/luciana-gurgel",
+    "destination": "/candidato/dr-furlan",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/ze-coca",
+    "destination": "/candidato/acm-neto",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/prof-meire-reis",
+    "destination": "/candidato/ronaldo-mansur",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/roberto-claudio",
+    "destination": "/candidato/ciro-gomes-gov-ce",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/preta-lu",
+    "destination": "/candidato/saulo-arcangeli",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/washington-bandeira",
+    "destination": "/candidato/rafael-fonteles",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/rafael-greca",
+    "destination": "/candidato/sandro-alex",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/francisco-dias",
+    "destination": "/candidato/arinalda-do-mlb",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/baba",
+    "destination": "/candidato/alvaro-dias-rn",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/luiz-carlos-teodoro",
+    "destination": "/candidato/expedito-netto",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/naf-nascimento",
+    "destination": "/candidato/priscila-voigt",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/priscila-felizola",
+    "destination": "/candidato/valmir-de-francisquinho",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/felicio-ramuth",
+    "destination": "/candidato/tarcisio-gov-sp",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/amelio-cayres",
+    "destination": "/candidato/vicentinho-junior",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/raquel-bricio",
+    "destination": "/candidato/samara-martins",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/geraldo-alckmin",
+    "destination": "/candidato/lula",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/eduardo-girao",
+    "destination": "/candidato/romeu-zema",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/catherine-teles",
+    "destination": "/candidato/serley-leal",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/edegar-pretto",
+    "destination": "/candidato/juliana-brizola",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/ismar-marques",
+    "destination": "/candidato/elizeu-aguiar",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/jarbas-soares",
+    "destination": "/candidato/patrus-ananias",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/olimpio-rocha",
+    "destination": "/candidato/gustavo-henrique",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/prof-enfermeira-kaelly",
+    "destination": "/candidato/lucien-rezende",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/alex-pucineli",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/cadu-xavier",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/cintia-dias",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/edilson-damiao",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/jarir-pereira",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/jayme-campos",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/larissa-rosado",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/marcelo-maluf",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/mauricio-tonha",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/telemaco-brandao",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/candidato/vittorio-medioli",
+    "destination": "/",
+    "permanent": true
+  }
+]

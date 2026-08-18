@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://puxaficha.local/schemas/candidatos-seed.json",
+  "title": "PuxaFicha coorte (data/candidatos.json)",
+  "description": "Espelha scripts/lib/types.ts (CandidatoConfig). A validação em CI usa scripts/validate-seed.ts.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["slug", "nome_completo", "nome_urna", "cargo_disputado", "ids"],
+    "properties": {
+      "slug": { "type": "string", "minLength": 1 },
+      "nome_completo": { "type": "string", "minLength": 1 },
+      "nome_urna": { "type": "string", "minLength": 1 },
+      "cargo_disputado": {
+        "type": "string",
+        "enum": [
+          "Presidente",
+          "Governador",
+          "Vice-Governador",
+          "Senador",
+          "Deputado Federal",
+          "Nenhum"
+        ]
+      },
+      "estado": { "type": "string" },
+      "wikipedia_title": { "type": "string" },
+      "ids": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["camara", "senado", "tse_sq_candidato"],
+        "properties": {
+          "camara": { "type": ["integer", "null"] },
+          "senado": { "type": ["integer", "null"] },
+          "tse_sq_candidato": {
+            "type": "object",
+            "additionalProperties": { "type": "string", "minLength": 1 },
+            "propertyNames": { "pattern": "^[0-9]{4}$" }
+          }
+        }
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": { "cargo_disputado": { "const": "Governador" } },
+          "required": ["cargo_disputado"]
+        },
+        "then": { "required": ["estado"], "properties": { "estado": { "type": "string", "minLength": 1 } } }
+      }
+    ]
+  }
+}

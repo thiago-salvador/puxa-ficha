@@ -1,0 +1,16 @@
+{
+  "_comentario": "Cinco estados explícitos do novo perfil Orleans, sem vazio fabricado.",
+  "recorte": "orleans-destaques-proveniencia-20260812",
+  "migration": "20260812124000_orleans_destaques_proveniencia.sql",
+  "fonte": "QA/evidencias/2026-08-12-orleans-destaques-proveniencia/manifesto.json",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "orleans-destaques-proveniencia:5",
+      "campos": ["fonte","escopo","alvo","candidato_id","executado_em","resultado","volume","detalhe","url","execucao","natureza"]
+    }
+  ]
+}

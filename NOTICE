@@ -1,0 +1,47 @@
+Puxa Ficha
+Copyright 2026 Thiago Salvador and the Puxa Ficha contributors
+
+Este produto é licenciado sob a Apache License 2.0 (veja o arquivo LICENSE).
+
+## Dados públicos não são cobertos pela licença do código
+
+O conjunto de dados publicado por este projeto deriva de registros públicos
+brasileiros (TSE, Câmara dos Deputados, Senado Federal, Portal da
+Transparência) e está sujeito à Lei de Acesso à Informação (Lei 12.527/2011),
+não à licença de software acima. A Apache License 2.0 rege o código-fonte
+apenas.
+
+## Avisos de terceiros
+
+O projeto depende de pacotes de terceiros distribuídos sob suas próprias
+licenças. As licenças presentes na árvore de dependências incluem:
+
+- MIT, ISC, BSD-2-Clause, BSD-3-Clause, 0BSD, BlueOak-1.0.0, CC0-1.0
+  (permissivas)
+- Apache-2.0 (permissiva, com concessão de patente)
+- MPL-2.0 (copyleft por arquivo; atribuição preservada)
+- LGPL-3.0-or-later (uso por linkagem dinâmica, ex.: libvips, consumida pelo
+  `sharp` através dos binários pré-compilados)
+- FSL-1.1-MIT (Sentry; converte para MIT após o período de transição)
+- CC-BY-4.0 / CC BY-SA 4.0 (dados/dicionários com atribuição)
+
+Cada dependência mantém sua própria licença e avisos de copyright, disponíveis
+em `node_modules/<pacote>` após a instalação.
+
+## Observações específicas
+
+- GSAP (`gsap`) é distribuído sob a "GreenSock Standard 'No Charge' License"
+  (https://gsap.com/standard-license), que não é uma licença de código aberto.
+  O uso neste projeto se enquadra na licença gratuita padrão. Atenção a quem
+  fizer fork: a Apache License 2.0 permite uso comercial do código do Puxa
+  Ficha, mas essa permissão não se estende ao GSAP, que tem termos próprios.
+  Um fork que cobre do usuário final pelo acesso precisa de licença comercial
+  da GreenSock ou de substituir a dependência.
+- `sharp` é distribuído sob Apache-2.0. A libvips subjacente é LGPL e é
+  consumida por linkagem dinâmica nos binários pré-compilados.
+- `@cspell/dict-pt-br` (GPL-3.0-or-later) é uma dependência apenas de
+  desenvolvimento (dicionário do corretor ortográfico). Não é empacotada nem
+  redistribuída com o produto, portanto não afeta a licença da aplicação.
+
+Este arquivo é um resumo informativo e não substitui os textos completos das
+licenças de cada pacote.

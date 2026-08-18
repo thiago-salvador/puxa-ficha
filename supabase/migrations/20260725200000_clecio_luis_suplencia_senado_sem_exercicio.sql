@@ -1,0 +1,116 @@
+-- =====================================================================
+-- clecio-luis: a suplencia no Senado deixa de ser publicada como cadeira
+-- exercida.
+--
+-- POR QUE ESTA MIGRATION EXISTE
+--
+-- A linha 5012f8d3-603e-4632-b888-80c5465bcd90 de historico_politico publica
+-- "Senador (suplente) 2011-2019" com a observacao:
+--
+--   "Senado Dados Abertos confirma CodigoParlamentar 5044 para Clecio Luis
+--    Vilhena Vieira no mandato AP 2011-2019; participacoes indicam
+--    suplencia/titularidade."
+--
+-- O problema esta em "suplencia/titularidade". A fonte citada nao diz isso. O
+-- registro oficial do Senado, consultado nesta sessao, traz
+-- <DescricaoParticipacao>1º Suplente</DescricaoParticipacao> e um bloco
+-- <Titular> nominal apontando para Randolfe Rodrigues. E, decisivo, o mandato
+-- NAO tem bloco <Exercicios>: o Senado nao registra nenhum periodo em que
+-- Clecio Luis tenha ocupado a cadeira.
+--
+-- A comparacao interna prova que a ausencia e significativa, nao lacuna da
+-- API: o mesmo endpoint, para o parlamentar 5350 (jorginho-mello), devolve
+-- <Exercicios> com dois <Exercicio>. Quando ha exercicio, o Senado publica.
+--
+-- Publicar "participacoes indicam suplencia/titularidade" sobre pessoa nomeada
+-- e afirmar mais do que a fonte sustenta, no sentido que favorece a ficha
+-- (mandato de senador exercido). Sai.
+--
+-- ESCOPO DELIBERADAMENTE ESTREITO
+--   A coluna tipo_evento NAO e alterada. Ela so aceita 'mandato' ou
+--   'candidatura' (src/lib/types.ts: tipo_evento?: 'mandato' | 'candidatura' | null),
+--   e o proprio Senado classifica a suplencia dentro de <Mandatos><Mandato>.
+--   Trocar para 'candidatura' seria substituir um erro por outro. O campo
+--   cargo ja diz "Senador (suplente)", que e literal. O que estava errado era a
+--   observacao, e e ela que muda.
+--
+--   O periodo 2011-2019 esta certo e nao e tocado: legislaturas 54 e 55.
+--
+-- O OUTRO ERRO ESTRUTURAL DE clecio-luis JA ESTA RESOLVIDO em outro arquivo:
+-- "Prefeito 2016-2022" (6 anos) vira 2016-2020 em
+-- 20260725140000_historico_politico_periodo_fim_bug_v4.sql, linha 161, id
+-- 812a0ea4. Nao duplicado aqui.
+--
+-- ---------------------------------------------------------------------
+-- FONTE, TESTADA POR MIM COM curl -L --compressed E USER-AGENT DE NAVEGADOR
+-- EM 2026-07-25.
+--
+-- S1  https://legis.senado.leg.br/dadosabertos/senador/5044/mandatos
+--     Senado Federal, dados abertos. HTTP 200, 1661 bytes.
+--     Trecho literal, integral do bloco relevante:
+--       <Parlamentar><Codigo>5044</Codigo>
+--       <Nome>Clécio Luis Vilhena Vieira</Nome>
+--       <Mandatos><Mandato><CodigoMandato>475</CodigoMandato>
+--       <UfParlamentar>AP</UfParlamentar>
+--       <PrimeiraLegislaturaDoMandato><NumeroLegislatura>54</NumeroLegislatura>
+--         <DataInicio>2011-02-01</DataInicio><DataFim>2015-01-31</DataFim></...>
+--       <SegundaLegislaturaDoMandato><NumeroLegislatura>55</NumeroLegislatura>
+--         <DataInicio>2015-02-01</DataInicio><DataFim>2019-01-31</DataFim></...>
+--       <DescricaoParticipacao>1º Suplente</DescricaoParticipacao>
+--       <Titular><DescricaoParticipacao>Titular</DescricaoParticipacao>
+--         <CodigoParlamentar>5012</CodigoParlamentar>
+--         <NomeParlamentar>Randolfe Rodrigues</NomeParlamentar></Titular>
+--       <Partido><Sigla>PSOL</Sigla><Nome>Partido Socialismo e Liberdade</Nome>
+--         <DataFiliacao>2011-02-03</DataFiliacao></Partido>
+--     Nao existe elemento <Exercicios> nesta resposta. Verificado por leitura
+--     do XML inteiro, que cabe em 1661 bytes.
+--
+-- S2  https://legis.senado.leg.br/dadosabertos/senador/5350/mandatos
+--     Mesmo endpoint, parlamentar diferente. HTTP 200, 2166 bytes.
+--     Usado apenas como controle negativo: aqui <Exercicios> existe, com
+--     <Exercicio><CodigoExercicio>3002</CodigoExercicio>...
+--     Prova que a ausencia em S1 e informacao, nao omissao da API.
+--
+-- ---------------------------------------------------------------------
+-- SELECT DE VERIFICACAO RODADO CONTRA PRODUCAO EM 2026-07-25 (somente leitura)
+--
+--   select h.id, c.slug, h.cargo, h.periodo_inicio, h.periodo_fim,
+--          h.tipo_evento, h.partido, h.estado, h.observacoes, h.proveniencia
+--     from historico_politico h join candidatos c on c.id = h.candidato_id
+--    where h.id = '5012f8d3-603e-4632-b888-80c5465bcd90';
+--
+--   VALOR ATUAL OBSERVADO:
+--     slug           = clecio-luis
+--     cargo          = 'Senador (suplente)'
+--     periodo_inicio = 2011   periodo_fim = 2019
+--     tipo_evento    = 'mandato'   partido = 'PSOL'   estado = 'AP'
+--     proveniencia   = 'misto'
+--     observacoes    = 'Senado Dados Abertos confirma CodigoParlamentar 5044
+--                       para Clecio Luis Vilhena Vieira no mandato AP 2011-2019;
+--                       participacoes indicam suplencia/titularidade.'
+--
+--   RESULTADO ESPERADO DEPOIS DESTE ARQUIVO (mesmo SELECT):
+--     observacoes contendo '1º Suplente de Randolfe Rodrigues' e
+--     'não há exercício da cadeira registrado'
+--     observacoes NAO contendo 'suplencia/titularidade'
+--     cargo, periodo_inicio, periodo_fim, tipo_evento, partido, estado: iguais
+--
+--   Prova em uma linha:
+--     select observacoes !~ 'suplencia/titularidade' as texto_limpo,
+--            cargo, periodo_inicio, periodo_fim, tipo_evento
+--       from historico_politico
+--      where id = '5012f8d3-603e-4632-b888-80c5465bcd90';
+--     -- esperado: true | Senador (suplente) | 2011 | 2019 | mandato
+--
+-- NADA E DELETADO. REVERSIVEL: o texto anterior esta acima na integra.
+-- =====================================================================
+
+begin;
+
+update public.historico_politico
+   set observacoes = '1º Suplente de Randolfe Rodrigues nas 54ª e 55ª legislaturas (01/02/2011 a 31/01/2019), pelo PSOL, com filiação registrada em 03/02/2011. Fonte: Senado Dados Abertos, parlamentar 5044, mandato 475. O registro oficial não traz bloco de exercícios para este mandato, ou seja, não há exercício da cadeira registrado. [corrigido 2026-07-25: a observação anterior dizia que as participações indicavam "suplencia/titularidade", afirmação que a fonte citada não sustenta]',
+       proveniencia = 'misto'
+ where id = '5012f8d3-603e-4632-b888-80c5465bcd90'::uuid
+   and observacoes = 'Senado Dados Abertos confirma CodigoParlamentar 5044 para Clecio Luis Vilhena Vieira no mandato AP 2011-2019; participacoes indicam suplencia/titularidade.';
+
+commit;

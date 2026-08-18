@@ -1,0 +1,18 @@
+# Configuração do gitleaks para o Puxa Ficha.
+# Estende as regras padrão e suprime falsos positivos conhecidos: o detector
+# genérico de "api-key" marca IDs públicos de proposições legislativas e nomes
+# de hosts de imagem, que não são segredos.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Falsos positivos conhecidos (dados públicos, não segredos)"
+regexTarget = "line"
+regexes = [
+  # IDs de proposição de sistemas legislativos (SAPL etc.), dado público
+  '''proposicao_id_api''',
+]
+paths = [
+  # lista de hosts de imagem permitidos (hostnames públicos, não segredos)
+  '''src/lib/remote-image-hosts\.ts''',
+]

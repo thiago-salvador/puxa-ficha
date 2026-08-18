@@ -1,0 +1,14 @@
+{
+  "$schema": "Allowlist exata do recorte público de candidatos ao Governo do Acre, 2026-08-02. Toda escrita nova deste run precisa estar aqui. Janela do recorte: --desde=20260802200000 (ver o cabeçalho de check-migrations-allowlist.ts).",
+  "gerado_em": "2026-08-02",
+  "branch": "data/presidenciaveis-lacunas",
+  "coorte": ["alan-rick", "eudo-raffael", "mailza-assis", "thor-dantas", "tiao-bocalom"],
+  "fora_por_construcao": {"slugs": []},
+  "entries": [
+    {"tabela": "patrimonio", "slug": "thor-dantas", "ano": 2022, "campos": ["bens", "fonte"]},
+    {"tabela": "votos_candidato", "slug": "mailza-assis", "max_registros": 3, "campos": ["voto"]}
+  ],
+  "referencias": [
+    {"tabela": "votacoes_chave", "ref": "146740", "campos": ["proposicao_id"]}
+  ]
+}

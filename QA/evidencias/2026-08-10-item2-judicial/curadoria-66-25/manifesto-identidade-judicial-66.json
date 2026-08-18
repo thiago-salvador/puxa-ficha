@@ -1,0 +1,1439 @@
+{
+  "schema_version": 1,
+  "gerado_em": "2026-08-10",
+  "estado": "curadoria_identidade_confirmada_nao_aplicada",
+  "publicacao_pronta": false,
+  "motivo_bloqueio_publicacao": "O manifesto fecha identidade e CNJs, mas ainda nao contem polo, classe, estado atual, data e descricao publica por processo.",
+  "fonte_primaria": "DJEN - Comunicacoes processuais, API publica do PJe/CNJ (comunicaapi.pje.jus.br), consultada em 2026-08-10",
+  "escopo": "32 fichas de prioridade 1 e 2 da lista de curadoria judicial de 05/08/2026 (QA/evidencias/2026-08-09-trilha-b/curadoria-judicial-bloqueados.json)",
+  "proveniencia": {
+    "artefato_bruto_sha256": "08704ed893bb780078a2aec795995b1b6c3a6ade317b72e8684e3c366dd07b47",
+    "sanitizacao": "CPF, identificadores textuais, observacoes e dados pessoais adjacentes foram omitidos antes de versionar no repositorio publico."
+  },
+  "escada_de_evidencia": {
+    "E1": "CPF adjacente ao nome dentro do texto do ato judicial, identico ao CPF do candidato no banco (origem TSE). Prova documental.",
+    "E2": "Qualificacao funcional adjacente ao nome dentro do proprio ato judicial (o juizo escreve o cargo ao lado do nome). Prova documental.",
+    "E3": "Co-parte institucional univoca no mesmo processo: o partido que a pessoa preside, o ente federativo que ela chefia como autoridade coatora, ou conjuge nominado. Prova circunstancial forte.",
+    "H1": "CPF adjacente ao nome divergente do CPF do banco. Prova de homonimo NAQUELA ocorrencia.",
+    "naoAceito": "Nome exato + comarca/UF compativel com a trajetoria. Isso e o vetor de homonimo que o criterio de 05/08 proibe, e nunca foi usado para confirmar."
+  },
+  "totais": {
+    "fichas": 32,
+    "confirmadas": 25,
+    "indeterminadas": 7,
+    "cnjs_confirmados": 66
+  },
+  "fichas": [
+    {
+      "slug": "augusto-cury",
+      "nome_completo": "Augusto Jorge Cury",
+      "nome_urna": "Augusto Cury",
+      "cargo_disputado": "Presidente",
+      "uf": null,
+      "partido": "AVANTE",
+      "prioridade": 1,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E3",
+      "tipos_identificador": [
+        "coparte_institucional"
+      ],
+      "cnj_relevantes": [
+        "0709932-06.2017.8.07.0001"
+      ],
+      "tribunais": [
+        "TJDFT/STJ"
+      ],
+      "confianca": "media-alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=Augusto%20Jorge%20Cury&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0709932-06.2017.8.07.0001&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 103,
+        "comunicacoes_com_nome_exato": 99,
+        "processos_com_nome_exato": 10,
+        "ocorrencias_no_artefato_0508": 10,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 1,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 9,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": false
+    },
+    {
+      "slug": "cabo-daciolo",
+      "nome_completo": "BENEVENUTO DACIOLO FONSECA DOS SANTOS",
+      "nome_urna": "Cabo Daciolo",
+      "cargo_disputado": "Presidente",
+      "uf": null,
+      "partido": "MOBILIZA",
+      "prioridade": 1,
+      "desfecho": "indeterminado",
+      "nivel_evidencia": "-",
+      "tipos_identificador": [],
+      "cnj_relevantes": [
+        "0013452-95.2021.8.19.0209"
+      ],
+      "tribunais": [
+        "TJRJ"
+      ],
+      "confianca": "alta (na negativa)",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=BENEVENUTO%20DACIOLO%20FONSECA%20DOS%20SANTOS&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0013452-95.2021.8.19.0209&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 7,
+        "comunicacoes_com_nome_exato": 7,
+        "processos_com_nome_exato": 1,
+        "ocorrencias_no_artefato_0508": 1,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 0,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 1,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "edmilson-costa",
+      "nome_completo": "EDMILSON SILVA COSTA",
+      "nome_urna": "Edmilson Costa",
+      "cargo_disputado": "Presidente",
+      "uf": null,
+      "partido": "PCB",
+      "prioridade": 1,
+      "desfecho": "indeterminado",
+      "nivel_evidencia": "H1 parcial",
+      "tipos_identificador": [],
+      "cnj_relevantes": [
+        "5000927-27.2026.8.13.0487"
+      ],
+      "tribunais": [
+        "TJMG"
+      ],
+      "confianca": "alta (na negativa)",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=EDMILSON%20SILVA%20COSTA&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=5000927-27.2026.8.13.0487&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 104,
+        "comunicacoes_com_nome_exato": 104,
+        "processos_com_nome_exato": 23,
+        "ocorrencias_no_artefato_0508": 23,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 0,
+        "processos_com_cpf_divergente_homonimo": 1,
+        "processos_ainda_sem_identificador": 22,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "renan-santos",
+      "nome_completo": "Renan Antonio Ferreira dos Santos",
+      "nome_urna": "Renan Santos",
+      "cargo_disputado": "Presidente",
+      "uf": null,
+      "partido": "MISSAO",
+      "prioridade": 1,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E2+E3",
+      "tipos_identificador": [
+        "cargo_ou_qualificacao_no_ato",
+        "coparte_institucional"
+      ],
+      "cnj_relevantes": [
+        "0000349-29.2026.2.00.0515",
+        "0600089-03.2025.6.16.0144",
+        "0262930-72.2017.8.19.0001",
+        "1039971-32.2024.8.26.0002"
+      ],
+      "tribunais": [
+        "PJeCor",
+        "TRE-PR",
+        "TJRJ",
+        "TJSP"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=Renan%20Antonio%20Ferreira%20dos%20Santos&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0000349-29.2026.2.00.0515&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0600089-03.2025.6.16.0144&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0262930-72.2017.8.19.0001&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=1039971-32.2024.8.26.0002&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 136,
+        "comunicacoes_com_nome_exato": 135,
+        "processos_com_nome_exato": 35,
+        "ocorrencias_no_artefato_0508": 0,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 4,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 31,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": false
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "nome_completo": "RONALDO RAMOS CAIADO",
+      "nome_urna": "Ronaldo Caiado",
+      "cargo_disputado": "Presidente",
+      "uf": null,
+      "partido": "PSD",
+      "prioridade": 1,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E1+E2",
+      "tipos_identificador": [
+        "cpf_no_ato",
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "5355873-43.2024.8.09.0102",
+        "5846782-47.2025.8.09.0000",
+        "5353894-34.2026.8.09.0051"
+      ],
+      "tribunais": [
+        "TJGO"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=RONALDO%20RAMOS%20CAIADO&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=5355873-43.2024.8.09.0102&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=5846782-47.2025.8.09.0000&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=5353894-34.2026.8.09.0051&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 86,
+        "comunicacoes_com_nome_exato": 86,
+        "processos_com_nome_exato": 15,
+        "ocorrencias_no_artefato_0508": 14,
+        "processos_confirmados_por_cpf": 1,
+        "processos_com_identidade_resolvida": 3,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 12,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "nome_completo": "RUI COSTA PIMENTA",
+      "nome_urna": "Rui Costa Pimenta",
+      "cargo_disputado": "Presidente",
+      "uf": null,
+      "partido": "PCO",
+      "prioridade": 1,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E3",
+      "tipos_identificador": [
+        "coparte_institucional"
+      ],
+      "cnj_relevantes": [
+        "1011502-36.2025.8.26.0003",
+        "1056927-28.2021.8.26.0100",
+        "4054899-94.2025.8.26.0100",
+        "4015223-51.2025.8.26.0000",
+        "8000488-52.2023.8.05.0079",
+        "8000823-45.2023.8.05.0120"
+      ],
+      "tribunais": [
+        "TJSP",
+        "TJBA"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=RUI%20COSTA%20PIMENTA&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=1011502-36.2025.8.26.0003&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=1056927-28.2021.8.26.0100&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=4054899-94.2025.8.26.0100&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=4015223-51.2025.8.26.0000&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=8000488-52.2023.8.05.0079&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=8000823-45.2023.8.05.0120&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 52,
+        "comunicacoes_com_nome_exato": 45,
+        "processos_com_nome_exato": 8,
+        "ocorrencias_no_artefato_0508": 8,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 6,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 2,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "samara-martins",
+      "nome_completo": "SAMARA MARTINS DA SILVA",
+      "nome_urna": "Samara Martins",
+      "cargo_disputado": "Presidente",
+      "uf": null,
+      "partido": "UP",
+      "prioridade": 1,
+      "desfecho": "indeterminado",
+      "nivel_evidencia": "H1 parcial",
+      "tipos_identificador": [],
+      "cnj_relevantes": [
+        "0001302-43.2025.5.07.0010",
+        "5031326-36.2025.8.13.0079"
+      ],
+      "tribunais": [
+        "TRT7",
+        "TJMG"
+      ],
+      "confianca": "alta (na negativa)",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=SAMARA%20MARTINS%20DA%20SILVA&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0001302-43.2025.5.07.0010&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=5031326-36.2025.8.13.0079&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 148,
+        "comunicacoes_com_nome_exato": 97,
+        "processos_com_nome_exato": 37,
+        "ocorrencias_no_artefato_0508": 37,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 0,
+        "processos_com_cpf_divergente_homonimo": 2,
+        "processos_ainda_sem_identificador": 35,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "acm-neto",
+      "nome_completo": "ANTONIO CARLOS PEIXOTO DE MAGALHÃES NETO",
+      "nome_urna": "ACM Neto",
+      "cargo_disputado": "Governador",
+      "uf": "BA",
+      "partido": "UNIAO",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E3+E2",
+      "tipos_identificador": [
+        "cargo_ou_qualificacao_no_ato",
+        "coparte_institucional"
+      ],
+      "cnj_relevantes": [
+        "0769743-13.2025.8.07.0001",
+        "0703451-15.2026.8.07.0000",
+        "8010425-71.2019.8.05.0000",
+        "8091329-75.2019.8.05.0001"
+      ],
+      "tribunais": [
+        "TJDFT",
+        "TJBA"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=ANTONIO%20CARLOS%20PEIXOTO%20DE%20MAGALH%C3%83ES%20NETO&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0769743-13.2025.8.07.0001&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0703451-15.2026.8.07.0000&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=8010425-71.2019.8.05.0000&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=8091329-75.2019.8.05.0001&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 28,
+        "comunicacoes_com_nome_exato": 28,
+        "processos_com_nome_exato": 13,
+        "ocorrencias_no_artefato_0508": 13,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 4,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 9,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "alysson-bezerra",
+      "nome_completo": "ALLYSON LEANDRO BEZERRA SILVA",
+      "nome_urna": "Alysson Bezerra",
+      "cargo_disputado": "Governador",
+      "uf": "RN",
+      "partido": "UNIAO",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E1+E2",
+      "tipos_identificador": [
+        "cpf_no_ato",
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "0811941-55.2021.8.20.5106",
+        "0813585-28.2024.8.20.5106",
+        "0823319-37.2023.8.20.5106"
+      ],
+      "tribunais": [
+        "TJRN"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=ALLYSON%20LEANDRO%20BEZERRA%20SILVA&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0811941-55.2021.8.20.5106&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0813585-28.2024.8.20.5106&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0823319-37.2023.8.20.5106&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 61,
+        "comunicacoes_com_nome_exato": 31,
+        "processos_com_nome_exato": 12,
+        "ocorrencias_no_artefato_0508": 12,
+        "processos_confirmados_por_cpf": 1,
+        "processos_com_identidade_resolvida": 3,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 9,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "edilson-damiao",
+      "nome_completo": "EDILSON DAMIÃO LIMA",
+      "nome_urna": "Edilson Damião",
+      "cargo_disputado": "Governador",
+      "uf": "RR",
+      "partido": "UNIAO",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E2",
+      "tipos_identificador": [
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "0823846-59.2026.8.23.0010",
+        "0823841-37.2026.8.23.0010",
+        "0812002-64.2016.8.23.0010"
+      ],
+      "tribunais": [
+        "TJRR"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=EDILSON%20DAMI%C3%83O%20LIMA&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0823846-59.2026.8.23.0010&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0823841-37.2026.8.23.0010&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0812002-64.2016.8.23.0010&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 18,
+        "comunicacoes_com_nome_exato": 18,
+        "processos_com_nome_exato": 5,
+        "ocorrencias_no_artefato_0508": 5,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 3,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 2,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "eduardo-riedel",
+      "nome_completo": "EDUARDO CORREA RIEDEL",
+      "nome_urna": "Eduardo Riedel",
+      "cargo_disputado": "Governador",
+      "uf": "MS",
+      "partido": "PP",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E3",
+      "tipos_identificador": [
+        "coparte_institucional"
+      ],
+      "cnj_relevantes": [
+        "0800961-87.2024.8.12.0055",
+        "1412142-36.2026.8.12.0000",
+        "0804332-93.2026.8.12.0021"
+      ],
+      "tribunais": [
+        "TJMS"
+      ],
+      "confianca": "media-alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=EDUARDO%20CORREA%20RIEDEL&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0800961-87.2024.8.12.0055&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=1412142-36.2026.8.12.0000&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0804332-93.2026.8.12.0021&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 49,
+        "comunicacoes_com_nome_exato": 41,
+        "processos_com_nome_exato": 12,
+        "ocorrencias_no_artefato_0508": 12,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 3,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 9,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "garotinho",
+      "nome_completo": "ANTHONY WILLIAM GAROTINHO MATHEUS DE OLIVEIRA",
+      "nome_urna": "Garotinho",
+      "cargo_disputado": "Governador",
+      "uf": "RJ",
+      "partido": "REPUBLICANOS",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E1+E2",
+      "tipos_identificador": [
+        "cpf_no_ato",
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "0136337-52.2004.8.19.0001",
+        "5062747-88.2020.8.13.0024",
+        "0101879-97.2017.5.01.0035",
+        "0100985-65.2018.5.01.0010",
+        "0000692-86.2026.8.19.0000"
+      ],
+      "tribunais": [
+        "TJRJ",
+        "TJMG",
+        "TRT1"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=ANTHONY%20WILLIAM%20GAROTINHO%20MATHEUS%20DE%20OLIVEIRA&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0136337-52.2004.8.19.0001&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=5062747-88.2020.8.13.0024&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0101879-97.2017.5.01.0035&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0100985-65.2018.5.01.0010&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0000692-86.2026.8.19.0000&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 523,
+        "comunicacoes_com_nome_exato": 511,
+        "processos_com_nome_exato": 118,
+        "ocorrencias_no_artefato_0508": 116,
+        "processos_confirmados_por_cpf": 3,
+        "processos_com_identidade_resolvida": 5,
+        "processos_com_cpf_divergente_homonimo": 1,
+        "processos_ainda_sem_identificador": 112,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "hana-ghassan",
+      "nome_completo": "HANA GHASSAN TUMA",
+      "nome_urna": "Hana Ghassan",
+      "cargo_disputado": "Governador",
+      "uf": "PA",
+      "partido": "MDB",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E2",
+      "tipos_identificador": [
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "0815591-94.2026.8.14.0000"
+      ],
+      "tribunais": [
+        "TJPA"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=HANA%20GHASSAN%20TUMA&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0815591-94.2026.8.14.0000&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 2,
+        "comunicacoes_com_nome_exato": 2,
+        "processos_com_nome_exato": 2,
+        "ocorrencias_no_artefato_0508": 2,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 1,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 1,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "helder-salomao",
+      "nome_completo": "HELDER IGNÁCIO SALOMÃO",
+      "nome_urna": "Helder Salomão",
+      "cargo_disputado": "Governador",
+      "uf": "ES",
+      "partido": "PT",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E2",
+      "tipos_identificador": [
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "0018179-59.2014.8.08.0012"
+      ],
+      "tribunais": [
+        "TJES"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=HELDER%20IGN%C3%81CIO%20SALOM%C3%83O&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0018179-59.2014.8.08.0012&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 52,
+        "comunicacoes_com_nome_exato": 52,
+        "processos_com_nome_exato": 3,
+        "ocorrencias_no_artefato_0508": 3,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 1,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 2,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "jayme-campos",
+      "nome_completo": "JAYME VERISSIMO DE CAMPOS",
+      "nome_urna": "Jayme Campos",
+      "cargo_disputado": "Governador",
+      "uf": "MT",
+      "partido": "UNIAO",
+      "prioridade": 2,
+      "desfecho": "indeterminado",
+      "nivel_evidencia": "-",
+      "tipos_identificador": [],
+      "cnj_relevantes": [
+        "0027827-70.2009.4.01.3600",
+        "0003303-34.2008.4.01.3603",
+        "1008895-89.2024.4.01.3600"
+      ],
+      "tribunais": [
+        "TRF1"
+      ],
+      "confianca": "media",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=JAYME%20VERISSIMO%20DE%20CAMPOS&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0027827-70.2009.4.01.3600&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0003303-34.2008.4.01.3603&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=1008895-89.2024.4.01.3600&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 44,
+        "comunicacoes_com_nome_exato": 13,
+        "processos_com_nome_exato": 6,
+        "ocorrencias_no_artefato_0508": 6,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 0,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 6,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "jeronimo",
+      "nome_completo": "JERÔNIMO RODRIGUES SOUZA",
+      "nome_urna": "Jeronimo",
+      "cargo_disputado": "Governador",
+      "uf": "BA",
+      "partido": "PT",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E2",
+      "tipos_identificador": [
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "8066507-80.2023.8.05.0001",
+        "8166700-69.2024.8.05.0001",
+        "8024632-65.2025.8.05.0000"
+      ],
+      "tribunais": [
+        "TJBA"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=JER%C3%94NIMO%20RODRIGUES%20SOUZA&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=8066507-80.2023.8.05.0001&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=8166700-69.2024.8.05.0001&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=8024632-65.2025.8.05.0000&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 64,
+        "comunicacoes_com_nome_exato": 39,
+        "processos_com_nome_exato": 24,
+        "ocorrencias_no_artefato_0508": 24,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 3,
+        "processos_com_cpf_divergente_homonimo": 1,
+        "processos_ainda_sem_identificador": 20,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "joao-campos",
+      "nome_completo": "JOAO HENRIQUE DE ANDRADE LIMA CAMPOS",
+      "nome_urna": "Joao Campos",
+      "cargo_disputado": "Governador",
+      "uf": "PE",
+      "partido": "PSB",
+      "prioridade": 2,
+      "desfecho": "indeterminado",
+      "nivel_evidencia": "-",
+      "tipos_identificador": [],
+      "cnj_relevantes": [
+        "0025969-82.2020.8.17.2001"
+      ],
+      "tribunais": [
+        "TJPE"
+      ],
+      "confianca": "alta (na negativa)",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=JOAO%20HENRIQUE%20DE%20ANDRADE%20LIMA%20CAMPOS&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0025969-82.2020.8.17.2001&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 2,
+        "comunicacoes_com_nome_exato": 1,
+        "processos_com_nome_exato": 1,
+        "ocorrencias_no_artefato_0508": 1,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 0,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 1,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "joao-rodrigues",
+      "nome_completo": "JOÃO RODRIGUES",
+      "nome_urna": "João Rodrigues",
+      "cargo_disputado": "Governador",
+      "uf": "SC",
+      "partido": "PSD",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E2",
+      "tipos_identificador": [
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "5005429-52.2026.8.24.0018",
+        "0018430-25.2008.8.24.0018"
+      ],
+      "tribunais": [
+        "TJSC"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=JO%C3%83O%20RODRIGUES&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=5005429-52.2026.8.24.0018&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0018430-25.2008.8.24.0018&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 4100,
+        "comunicacoes_com_nome_exato": 277,
+        "processos_com_nome_exato": 164,
+        "ocorrencias_no_artefato_0508": 305,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 2,
+        "processos_com_cpf_divergente_homonimo": 3,
+        "processos_ainda_sem_identificador": 159,
+        "coleta_djen_truncada": true
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "joel-rodrigues",
+      "nome_completo": "JOEL RODRIGUES DA SILVA",
+      "nome_urna": "Joel Rodrigues",
+      "cargo_disputado": "Governador",
+      "uf": "PI",
+      "partido": "PP",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E2",
+      "tipos_identificador": [
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "0001723-41.2013.8.18.0028"
+      ],
+      "tribunais": [
+        "TJPI"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=JOEL%20RODRIGUES%20DA%20SILVA&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0001723-41.2013.8.18.0028&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 1300,
+        "comunicacoes_com_nome_exato": 1152,
+        "processos_com_nome_exato": 270,
+        "ocorrencias_no_artefato_0508": 322,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 1,
+        "processos_com_cpf_divergente_homonimo": 12,
+        "processos_ainda_sem_identificador": 257,
+        "coleta_djen_truncada": true
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "jorginho-mello",
+      "nome_completo": "JORGINHO DOS SANTOS MELLO",
+      "nome_urna": "Jorginho Mello",
+      "cargo_disputado": "Governador",
+      "uf": "SC",
+      "partido": "PL",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E2+E3",
+      "tipos_identificador": [
+        "cargo_ou_qualificacao_no_ato",
+        "coparte_institucional"
+      ],
+      "cnj_relevantes": [
+        "5005530-47.2022.4.02.5104",
+        "5004813-59.2024.8.24.0079"
+      ],
+      "tribunais": [
+        "TRF2",
+        "TJSC"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=JORGINHO%20DOS%20SANTOS%20MELLO&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=5005530-47.2022.4.02.5104&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=5004813-59.2024.8.24.0079&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 48,
+        "comunicacoes_com_nome_exato": 47,
+        "processos_com_nome_exato": 14,
+        "ocorrencias_no_artefato_0508": 14,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 2,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 12,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "nome_completo": "LUCAS RIBEIRO NOVAIS DE ARAÚJO",
+      "nome_urna": "Lucas Ribeiro",
+      "cargo_disputado": "Governador",
+      "uf": "PB",
+      "partido": "PP",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E2",
+      "tipos_identificador": [
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "0808628-51.2026.8.15.2002"
+      ],
+      "tribunais": [
+        "TJPB"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=LUCAS%20RIBEIRO%20NOVAIS%20DE%20ARA%C3%9AJO&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0808628-51.2026.8.15.2002&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 2,
+        "comunicacoes_com_nome_exato": 2,
+        "processos_com_nome_exato": 2,
+        "ocorrencias_no_artefato_0508": 1,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 1,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 1,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "marcelo-maranata",
+      "nome_completo": "Marcelo Maranata Soares Reinaldo",
+      "nome_urna": "Marcelo Maranata",
+      "cargo_disputado": "Governador",
+      "uf": "RS",
+      "partido": "PSDB",
+      "prioridade": 2,
+      "desfecho": "indeterminado",
+      "nivel_evidencia": "-",
+      "tipos_identificador": [],
+      "cnj_relevantes": [
+        "5008413-31.2025.4.04.7100",
+        "5056663-95.2025.4.04.7100"
+      ],
+      "tribunais": [
+        "TRF4"
+      ],
+      "confianca": "alta (na negativa)",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=Marcelo%20Maranata%20Soares%20Reinaldo&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=5008413-31.2025.4.04.7100&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=5056663-95.2025.4.04.7100&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 6,
+        "comunicacoes_com_nome_exato": 6,
+        "processos_com_nome_exato": 2,
+        "ocorrencias_no_artefato_0508": 2,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 0,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 2,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "mateus-simoes",
+      "nome_completo": "Mateus Simoes de Almeida",
+      "nome_urna": "Mateus Simões",
+      "cargo_disputado": "Governador",
+      "uf": "MG",
+      "partido": "PSD",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E1",
+      "tipos_identificador": [
+        "cpf_no_ato"
+      ],
+      "cnj_relevantes": [
+        "5111734-29.2018.8.13.0024"
+      ],
+      "tribunais": [
+        "TJMG"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=Mateus%20Simoes%20de%20Almeida&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=5111734-29.2018.8.13.0024&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 53,
+        "comunicacoes_com_nome_exato": 53,
+        "processos_com_nome_exato": 10,
+        "ocorrencias_no_artefato_0508": 10,
+        "processos_confirmados_por_cpf": 1,
+        "processos_com_identidade_resolvida": 1,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 9,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "omar-aziz",
+      "nome_completo": "OMAR JOSÉ ABDEL AZIZ",
+      "nome_urna": "Omar Aziz",
+      "cargo_disputado": "Governador",
+      "uf": "AM",
+      "partido": "PSD",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E2",
+      "tipos_identificador": [
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "0205483-75.2025.8.04.1000",
+        "0189923-93.2025.8.04.1000"
+      ],
+      "tribunais": [
+        "TJAM"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=OMAR%20JOS%C3%89%20ABDEL%20AZIZ&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0205483-75.2025.8.04.1000&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0189923-93.2025.8.04.1000&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 472,
+        "comunicacoes_com_nome_exato": 466,
+        "processos_com_nome_exato": 95,
+        "ocorrencias_no_artefato_0508": 95,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 2,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 93,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "pazolini",
+      "nome_completo": "Lorenzo Silva de Pazolini",
+      "nome_urna": "Pazolini",
+      "cargo_disputado": "Governador",
+      "uf": "ES",
+      "partido": "REPUBLICANOS",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E1+E2",
+      "tipos_identificador": [
+        "cpf_no_ato",
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "2002493-39.2023.8.08.0024",
+        "5025424-19.2022.8.08.0024",
+        "5017337-69.2025.8.08.0024"
+      ],
+      "tribunais": [
+        "SEEU/TJES",
+        "TJES"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=Lorenzo%20Silva%20de%20Pazolini&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=2002493-39.2023.8.08.0024&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=5025424-19.2022.8.08.0024&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=5017337-69.2025.8.08.0024&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 34,
+        "comunicacoes_com_nome_exato": 34,
+        "processos_com_nome_exato": 15,
+        "ocorrencias_no_artefato_0508": 15,
+        "processos_confirmados_por_cpf": 1,
+        "processos_com_identidade_resolvida": 3,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 12,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "rafael-fonteles",
+      "nome_completo": "RAFAEL TAJRA FONTELES",
+      "nome_urna": "Rafael Fonteles",
+      "cargo_disputado": "Governador",
+      "uf": "PI",
+      "partido": "PT",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E3",
+      "tipos_identificador": [
+        "coparte_institucional"
+      ],
+      "cnj_relevantes": [
+        "1003328-17.2019.4.01.4000",
+        "0805286-25.2023.8.18.0039",
+        "0761204-26.2023.8.18.0000"
+      ],
+      "tribunais": [
+        "TRF1",
+        "TJPI"
+      ],
+      "confianca": "media-alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=RAFAEL%20TAJRA%20FONTELES&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=1003328-17.2019.4.01.4000&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0805286-25.2023.8.18.0039&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0761204-26.2023.8.18.0000&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 18,
+        "comunicacoes_com_nome_exato": 15,
+        "processos_com_nome_exato": 7,
+        "ocorrencias_no_artefato_0508": 7,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 3,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 4,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "raquel-lyra",
+      "nome_completo": "RAQUEL TEIXEIRA LYRA LUCENA",
+      "nome_urna": "Raquel Lyra",
+      "cargo_disputado": "Governador",
+      "uf": "PE",
+      "partido": "PSD",
+      "prioridade": 2,
+      "desfecho": "indeterminado",
+      "nivel_evidencia": "-",
+      "tipos_identificador": [],
+      "cnj_relevantes": [
+        "0802432-34.2022.4.05.8302",
+        "0746464-95.2025.8.07.0001"
+      ],
+      "tribunais": [
+        "TRF5",
+        "TJDFT"
+      ],
+      "confianca": "alta (na negativa)",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=RAQUEL%20TEIXEIRA%20LYRA%20LUCENA&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0802432-34.2022.4.05.8302&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0746464-95.2025.8.07.0001&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 9,
+        "comunicacoes_com_nome_exato": 3,
+        "processos_com_nome_exato": 2,
+        "ocorrencias_no_artefato_0508": 2,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 0,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 2,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "renan-filho",
+      "nome_completo": "JOSÉ RENAN VASCONCELOS CALHEIROS FILHO",
+      "nome_urna": "Renan Filho",
+      "cargo_disputado": "Governador",
+      "uf": "AL",
+      "partido": "MDB",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E2",
+      "tipos_identificador": [
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "0809670-90.2026.8.02.0000",
+        "0727560-41.2020.8.02.0001"
+      ],
+      "tribunais": [
+        "TJAL"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=JOS%C3%89%20RENAN%20VASCONCELOS%20CALHEIROS%20FILHO&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0809670-90.2026.8.02.0000&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0727560-41.2020.8.02.0001&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 43,
+        "comunicacoes_com_nome_exato": 39,
+        "processos_com_nome_exato": 10,
+        "ocorrencias_no_artefato_0508": 8,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 2,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 8,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "nome_completo": "Ricardo Garcia Cappelli",
+      "nome_urna": "Ricardo Cappelli",
+      "cargo_disputado": "Governador",
+      "uf": "DF",
+      "partido": "PSB",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E2",
+      "tipos_identificador": [
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "0704997-05.2026.8.07.0001",
+        "0704590-45.2026.8.07.0018",
+        "0709498-48.2026.8.07.0018",
+        "0751806-87.2025.8.07.0001"
+      ],
+      "tribunais": [
+        "TJDFT"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=Ricardo%20Garcia%20Cappelli&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0704997-05.2026.8.07.0001&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0704590-45.2026.8.07.0018&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0709498-48.2026.8.07.0018&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0751806-87.2025.8.07.0001&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 78,
+        "comunicacoes_com_nome_exato": 75,
+        "processos_com_nome_exato": 17,
+        "ocorrencias_no_artefato_0508": 17,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 4,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 13,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": false
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "nome_completo": "RICARDO DE REZENDE FERRAÇO",
+      "nome_urna": "Ricardo Ferraço",
+      "cargo_disputado": "Governador",
+      "uf": "ES",
+      "partido": "MDB",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E3",
+      "tipos_identificador": [
+        "coparte_institucional"
+      ],
+      "cnj_relevantes": [
+        "0001151-69.2023.5.17.0010",
+        "0000891-92.2023.5.17.0009"
+      ],
+      "tribunais": [
+        "TRT17",
+        "TST"
+      ],
+      "confianca": "media-alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=RICARDO%20DE%20REZENDE%20FERRA%C3%87O&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0001151-69.2023.5.17.0010&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0000891-92.2023.5.17.0009&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 56,
+        "comunicacoes_com_nome_exato": 56,
+        "processos_com_nome_exato": 3,
+        "ocorrencias_no_artefato_0508": 3,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 2,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 1,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "tiao-bocalom",
+      "nome_completo": "SEBASTIAO BOCALOM RODRIGUES",
+      "nome_urna": "Tiao Bocalom",
+      "cargo_disputado": "Governador",
+      "uf": "AC",
+      "partido": "PSDB",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E2",
+      "tipos_identificador": [
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "1002797-54.2025.8.01.0000",
+        "0715972-30.2021.8.01.0001",
+        "0800019-66.2023.8.01.0000"
+      ],
+      "tribunais": [
+        "TJAC"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=SEBASTIAO%20BOCALOM%20RODRIGUES&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=1002797-54.2025.8.01.0000&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0715972-30.2021.8.01.0001&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0800019-66.2023.8.01.0000&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 70,
+        "comunicacoes_com_nome_exato": 61,
+        "processos_com_nome_exato": 22,
+        "ocorrencias_no_artefato_0508": 22,
+        "processos_confirmados_por_cpf": 0,
+        "processos_com_identidade_resolvida": 3,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 19,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "nome_completo": "VALMIR DOS SANTOS COSTA",
+      "nome_urna": "Valmir de Francisquinho",
+      "cargo_disputado": "Governador",
+      "uf": "SE",
+      "partido": "REPUBLICANOS",
+      "prioridade": 2,
+      "desfecho": "confirmado",
+      "nivel_evidencia": "E1+E2",
+      "tipos_identificador": [
+        "cpf_no_ato",
+        "cargo_ou_qualificacao_no_ato"
+      ],
+      "cnj_relevantes": [
+        "0003737-09.2018.8.25.0034",
+        "0007040-36.2018.8.25.0000",
+        "0007488-04.2018.8.25.0034"
+      ],
+      "tribunais": [
+        "TJSE"
+      ],
+      "confianca": "alta",
+      "fonte_consultada": {
+        "nome": "DJEN / Comunicacoes processuais - API publica do PJe (CNJ)",
+        "url_busca_por_nome": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=VALMIR%20DOS%20SANTOS%20COSTA&pagina=1",
+        "url_por_processo": [
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0003737-09.2018.8.25.0034&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0007040-36.2018.8.25.0000&pagina=1",
+          "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=20&numeroProcesso=0007488-04.2018.8.25.0034&pagina=1"
+        ],
+        "data_consulta": "2026-08-10"
+      },
+      "contagem": {
+        "comunicacoes_djen": 1074,
+        "comunicacoes_com_nome_exato": 1018,
+        "processos_com_nome_exato": 135,
+        "ocorrencias_no_artefato_0508": 135,
+        "processos_confirmados_por_cpf": 1,
+        "processos_com_identidade_resolvida": 3,
+        "processos_com_cpf_divergente_homonimo": 0,
+        "processos_ainda_sem_identificador": 132,
+        "coleta_djen_truncada": false
+      },
+      "cpf_no_banco": true
+    }
+  ]
+}

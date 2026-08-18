@@ -1,0 +1,19 @@
+// FIXTURE NEGATIVO. Escrita em tabela de produção sem trilha nenhuma: é a forma
+// exata do caso 1 da issue #131. Se o gate deixar este arquivo passar, ele é
+// decorativo. Extensão .ts.txt de propósito: isto não é código do projeto, não
+// compila junto e não conta para o knip.
+
+import { supabase } from "../lib/supabase"
+
+export async function normalizar(ids: string[]) {
+  const { error } = await supabase
+    .from("candidatos")
+    .update({ marcador_tse: null })
+    .in("id", ids)
+
+  if (error) throw new Error(error.message)
+}
+
+export async function apagarSobras(slug: string) {
+  await supabase.from("pontos_atencao").delete().eq("candidato_slug", slug)
+}

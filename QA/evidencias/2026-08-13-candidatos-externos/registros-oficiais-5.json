@@ -1,0 +1,75 @@
+{
+  "metadata": {
+    "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+    "fonte_sha256": "686fe1717dd0b860d714f878bf3d75a388478ebab2a56a2f963e6bba50ff0ce7",
+    "pii_removed": true,
+    "registros": 5
+  },
+  "records": [
+    {
+      "SQ_CANDIDATO": "170002541258",
+      "NM_CANDIDATO": "JEREMIAS COSMO SILVA DOS SANTOS",
+      "NM_URNA_CANDIDATO": "PROFESSOR JEREMIAS DO BANCO",
+      "DT_NASCIMENTO": "27/03/1980",
+      "SG_UF": "PE",
+      "DS_CARGO": "GOVERNADOR",
+      "SG_PARTIDO": "DEMOCRATA",
+      "NR_PARTIDO": "35",
+      "SQ_COLIGACAO": "170001800550",
+      "DT_GERACAO": "12/08/2026",
+      "HH_GERACAO": "19:30:33"
+    },
+    {
+      "SQ_CANDIDATO": "200002534001",
+      "NM_CANDIDATO": "CARLOS EDUARDO XAVIER",
+      "NM_URNA_CANDIDATO": "CADU DE LULA",
+      "DT_NASCIMENTO": "14/06/1978",
+      "SG_UF": "RN",
+      "DS_CARGO": "GOVERNADOR",
+      "SG_PARTIDO": "PT",
+      "NR_PARTIDO": "13",
+      "SQ_COLIGACAO": "200001800178",
+      "DT_GERACAO": "12/08/2026",
+      "HH_GERACAO": "19:30:33"
+    },
+    {
+      "SQ_CANDIDATO": "270002546368",
+      "NM_CANDIDATO": "LUIZ CARLOS FERREIRA DA SILVA",
+      "NM_URNA_CANDIDATO": "SUBTENENTE LUIZ CARLOS",
+      "DT_NASCIMENTO": "12/12/1968",
+      "SG_UF": "TO",
+      "DS_CARGO": "GOVERNADOR",
+      "SG_PARTIDO": "DEMOCRATA",
+      "NR_PARTIDO": "35",
+      "SQ_COLIGACAO": "270001800814",
+      "DT_GERACAO": "12/08/2026",
+      "HH_GERACAO": "19:30:33"
+    },
+    {
+      "SQ_CANDIDATO": "60002540417",
+      "NM_CANDIDATO": "HUGGO LEONARDO DE LIMA ANASTACIO",
+      "NM_URNA_CANDIDATO": "DELEGADO HUGGO",
+      "DT_NASCIMENTO": "23/02/1989",
+      "SG_UF": "CE",
+      "DS_CARGO": "GOVERNADOR",
+      "SG_PARTIDO": "MISSÃO",
+      "NR_PARTIDO": "14",
+      "SQ_COLIGACAO": "60001800520",
+      "DT_GERACAO": "12/08/2026",
+      "HH_GERACAO": "19:30:33"
+    },
+    {
+      "SQ_CANDIDATO": "70002535930",
+      "NM_CANDIDATO": "ROBSON RAYMUNDO DA SILVA",
+      "NM_URNA_CANDIDATO": "PROFESSOR ROBSON",
+      "DT_NASCIMENTO": "12/04/1970",
+      "SG_UF": "DF",
+      "DS_CARGO": "GOVERNADOR",
+      "SG_PARTIDO": "PSTU",
+      "NR_PARTIDO": "16",
+      "SQ_COLIGACAO": "70001800218",
+      "DT_GERACAO": "12/08/2026",
+      "HH_GERACAO": "19:30:33"
+    }
+  ]
+}

@@ -1,0 +1,1310 @@
+{
+  "_comentario": "Autoriza somente o backfill de foto_credito medido por slug e URL exata. Os 133 créditos Commons completos vêm da API oficial; os 28 créditos TSE usam URLs diretas de divulgacandcontas. Paulo Martins permanece fora por ausência de metadados recuperáveis.",
+  "recorte": "creditos-fotos-20260815",
+  "migration": "20260815130100_foto_credito_backfill.sql",
+  "fonte": "QA/evidencias/2026-08-15-creditos-fotos-commons.json e URLs diretas https://divulgacandcontas.tse.jus.br registradas na migration.",
+  "coorte": [
+    "acm-neto",
+    "adriana-accorsi",
+    "alan-rick",
+    "aldo-rebelo",
+    "alessandra-campelo",
+    "alexandre-curi",
+    "alexandre-kalil",
+    "alvaro-dias-rn",
+    "alysson-bezerra",
+    "andre-do-prado",
+    "andre-marinho",
+    "ataides-oliveira",
+    "augusto-cury",
+    "baba",
+    "beto-faro",
+    "cabo-daciolo",
+    "capitao-wagner",
+    "carlos-brandao-ma-historico",
+    "catherine-teles",
+    "celina-leao",
+    "cicero-lucena",
+    "ciro-gomes",
+    "ciro-gomes-gov-ce",
+    "clariana-barao",
+    "clecio-luis",
+    "cleitinho",
+    "confucio-moura",
+    "daniel-vilela",
+    "daniela-paiva",
+    "david-almeida",
+    "decio-lima",
+    "douglas-ruas",
+    "dr-daniel",
+    "dr-furlan",
+    "dr-luisinho",
+    "edegar-pretto",
+    "eduardo-braga",
+    "eduardo-braide",
+    "eduardo-girao",
+    "eduardo-leite",
+    "eduardo-paes",
+    "eduardo-riedel",
+    "efraim-filho",
+    "elmano-de-freitas",
+    "expedito-netto",
+    "fabio-mitidieri",
+    "fabio-trad",
+    "flavio-bolsonaro",
+    "gabriel-souza",
+    "garotinho",
+    "geraldo-alckmin",
+    "gilberto-kassab",
+    "gilson-machado",
+    "guilherme-derrite",
+    "guto-silva",
+    "haddad-gov-sp",
+    "hana-ghassan",
+    "hildon-chaves",
+    "jeronimo",
+    "jesus-rodrigues",
+    "joao-capiberibe",
+    "joao-henrique-catan",
+    "joao-roma",
+    "joaquim-barbosa",
+    "jorginho-mello",
+    "jose-carlos-aleluia",
+    "jose-eliton",
+    "juliana-brizola",
+    "lahesio-bonfim",
+    "laurez-moreira",
+    "leandro-grass",
+    "leonardo-avalanche",
+    "lucas-ribeiro",
+    "luciana-gurgel",
+    "lula",
+    "mailza-assis",
+    "marcio-franca",
+    "marconi-perillo",
+    "marcos-rogerio",
+    "margarete-coelho",
+    "mario-couto",
+    "mateus-simoes",
+    "naf-nascimento",
+    "natasha-slhessarenko",
+    "nikolas-ferreira",
+    "omar-aziz",
+    "otaviano-pivetta",
+    "patrus-ananias",
+    "paula-belmonte",
+    "paulo-hartung",
+    "paulo-serra",
+    "pazolini",
+    "pedro-cunha-lima",
+    "prof-meire-reis",
+    "rafael-fonteles",
+    "rafael-greca",
+    "rafaell-milas",
+    "raquel-lyra",
+    "ratinho-junior",
+    "renan-filho",
+    "renan-santos",
+    "requiao-filho",
+    "ricardo-cappelli",
+    "ricardo-ferraco",
+    "ricardo-leite",
+    "roberto-cidade",
+    "roberto-claudio",
+    "robson-raymundo",
+    "rodrigo-bacellar",
+    "romeu-zema",
+    "ronaldo-caiado",
+    "rui-costa-pimenta",
+    "sergio-goncalves",
+    "sergio-moro-gov-pr",
+    "sergio-vidigal",
+    "simao-jatene",
+    "soldado-sampaio",
+    "tadeu-de-souza",
+    "tarcisio",
+    "tarcisio-gov-sp",
+    "tarcisio-motta",
+    "teresa-surita",
+    "tiao-bocalom",
+    "tony-garcia",
+    "valmir-de-francisquinho",
+    "vera-lucia",
+    "vicentinho-junior",
+    "vittorio-medioli",
+    "washington-reis",
+    "wellington-fagundes",
+    "wilder-morais",
+    "wilson-witzel",
+    "ze-coca",
+    "alex-pucineli",
+    "andre-portugues",
+    "araceli-lemos",
+    "caiubi-kuhn",
+    "cintia-dias",
+    "cleber-rabelo",
+    "cyro-garcia",
+    "jenilson-leite",
+    "juliete-pantoja",
+    "laudicerio-aguiar",
+    "lourdes-melo",
+    "luan-monteiro",
+    "lucia-santos",
+    "luiz-carlos-teodoro",
+    "marcelo-maluf",
+    "mauricio-coelho",
+    "mauricio-tonha",
+    "priscila-voigt",
+    "ralf-zimmer",
+    "rejane-oliveira",
+    "samuel-costa",
+    "sandro-alex",
+    "toni-rodrigues",
+    "tonny-kerley",
+    "tulio-lopes",
+    "wanderlei-barbosa",
+    "william-siri",
+    "wilson-grassi-junior"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "referencias": [
+    {
+      "tabela": "candidatos",
+      "ref": "creditos_fotos_20260815",
+      "campos": [
+        "foto_credito"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "acm-neto",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "adriana-accorsi",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "alan-rick",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "aldo-rebelo",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "alessandra-campelo",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "alexandre-curi",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "alexandre-kalil",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "alvaro-dias-rn",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "alysson-bezerra",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "andre-do-prado",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "andre-marinho",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ataides-oliveira",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "augusto-cury",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "baba",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "beto-faro",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "cabo-daciolo",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "capitao-wagner",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "carlos-brandao-ma-historico",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "catherine-teles",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "celina-leao",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "cicero-lucena",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ciro-gomes",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ciro-gomes-gov-ce",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "clariana-barao",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "clecio-luis",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "cleitinho",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "confucio-moura",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "daniel-vilela",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "daniela-paiva",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "david-almeida",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "decio-lima",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "douglas-ruas",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "dr-daniel",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "dr-furlan",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "dr-luisinho",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "edegar-pretto",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "eduardo-braga",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "eduardo-braide",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "eduardo-girao",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "eduardo-leite",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "eduardo-paes",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "eduardo-riedel",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "efraim-filho",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "elmano-de-freitas",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "expedito-netto",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "fabio-mitidieri",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "fabio-trad",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "flavio-bolsonaro",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "gabriel-souza",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "garotinho",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "geraldo-alckmin",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "gilberto-kassab",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "gilson-machado",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "guilherme-derrite",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "guto-silva",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "haddad-gov-sp",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "hana-ghassan",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "hildon-chaves",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "jeronimo",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "jesus-rodrigues",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "joao-capiberibe",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "joao-henrique-catan",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "joao-roma",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "joaquim-barbosa",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "jorginho-mello",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "jose-carlos-aleluia",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "jose-eliton",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "juliana-brizola",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "lahesio-bonfim",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "laurez-moreira",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "leandro-grass",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "leonardo-avalanche",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "lucas-ribeiro",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "luciana-gurgel",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "lula",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "mailza-assis",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "marcio-franca",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "marconi-perillo",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "marcos-rogerio",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "margarete-coelho",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "mario-couto",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "mateus-simoes",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "naf-nascimento",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "natasha-slhessarenko",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "nikolas-ferreira",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "omar-aziz",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "otaviano-pivetta",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "patrus-ananias",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "paula-belmonte",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "paulo-hartung",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "paulo-serra",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "pazolini",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "pedro-cunha-lima",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "prof-meire-reis",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rafael-fonteles",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rafael-greca",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rafaell-milas",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "raquel-lyra",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ratinho-junior",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "renan-filho",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "renan-santos",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "requiao-filho",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ricardo-cappelli",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ricardo-ferraco",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ricardo-leite",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "roberto-cidade",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "roberto-claudio",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "robson-raymundo",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rodrigo-bacellar",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "romeu-zema",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ronaldo-caiado",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rui-costa-pimenta",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "sergio-goncalves",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "sergio-moro-gov-pr",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "sergio-vidigal",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "simao-jatene",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "soldado-sampaio",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "tadeu-de-souza",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "tarcisio",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "tarcisio-gov-sp",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "tarcisio-motta",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "teresa-surita",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "tiao-bocalom",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "tony-garcia",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "valmir-de-francisquinho",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "vera-lucia",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "vicentinho-junior",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "vittorio-medioli",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "washington-reis",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "wellington-fagundes",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "wilder-morais",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "wilson-witzel",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ze-coca",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "alex-pucineli",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "andre-portugues",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "araceli-lemos",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "caiubi-kuhn",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "cintia-dias",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "cleber-rabelo",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "cyro-garcia",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "jenilson-leite",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "juliete-pantoja",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "laudicerio-aguiar",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "lourdes-melo",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "luan-monteiro",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "lucia-santos",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "luiz-carlos-teodoro",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "marcelo-maluf",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "mauricio-coelho",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "mauricio-tonha",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "priscila-voigt",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ralf-zimmer",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rejane-oliveira",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "samuel-costa",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "sandro-alex",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "toni-rodrigues",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "tonny-kerley",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "tulio-lopes",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "wanderlei-barbosa",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "william-siri",
+      "campos": [
+        "foto_credito"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "wilson-grassi-junior",
+      "campos": [
+        "foto_credito"
+      ]
+    }
+  ]
+}

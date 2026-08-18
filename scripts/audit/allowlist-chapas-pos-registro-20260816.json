@@ -1,0 +1,40 @@
+{
+  "_comentario": "Autoriza somente a substituição atômica do snapshot oficial de chapas, do SHA de 12/08 para o pacote pós-registro publicado em 15/08/2026. Não cria fichas, não promove Leonardo Avalanche e mantém duas ambiguidades em quarentena.",
+  "recorte": "chapas-pos-registro-20260816",
+  "migration": "20260816011000_chapas_2026_tse_pos_registro.sql",
+  "fonte": "TSE Dados Abertos candidatos 2026, consulta_cand_2026.zip, SHA-256 c3d13ae50f95024f43046acb4458a4420a620e86526fed665f9e60c8dc6068df, Last-Modified Sat, 15 Aug 2026 19:35:53 GMT.",
+  "coorte": [],
+  "fora_por_construcao": {
+    "slugs": [
+      "leonardo-avalanche"
+    ]
+  },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "chapas_2026",
+      "ref": "snapshot-20260815",
+      "campos": [
+        "payload",
+        "chave",
+        "eleicao_codigo",
+        "eleicao_data",
+        "uf",
+        "cargo_titular",
+        "sq_coligacao",
+        "identidade_status",
+        "vinculo_titular_status",
+        "tse_situacao_codigo",
+        "titular_candidato_id",
+        "vice_candidato_id",
+        "titular_sq_candidato",
+        "vice_sq_candidato",
+        "nomes",
+        "partidos",
+        "fonte_url",
+        "fonte_sha256",
+        "snapshot_em"
+      ]
+    }
+  ]
+}

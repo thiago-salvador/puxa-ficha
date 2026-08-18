@@ -1,0 +1,1076 @@
+{
+  "$schema": "Exceções conhecidas de SQ_CANDIDATO. O audit-historical-sq-coverage.ts consome este arquivo para distinguir gap real de limitação confirmada.",
+  "entries": [
+    {
+      "slug": "wanderlei-barbosa",
+      "ano": 2018,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 270000618816 confirmado no consulta_cand TSE 2018 TO. Varredura read-only do pacote oficial de prestação de contas 2018 em 2026-07-11 encontrou 0 receitas atribuíveis ao SQ; o patrimônio do mesmo SQ foi encontrado e planejado separadamente.",
+      "confirmed": "2026-07-11"
+    },
+    {
+      "slug": "wanderlei-barbosa",
+      "ano": 2014,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 270000010436 confirmado no consulta_cand TSE 2014 TO. Varredura read-only do pacote oficial bem_candidato_2014.zip em 2026-07-11 encontrou 0 linhas de bens para o SQ; o mesmo run materializou somente Jenilson Leite no ano.",
+      "confirmed": "2026-07-11"
+    },
+    {
+      "slug": "wanderlei-barbosa",
+      "ano": 2014,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 270000010436 confirmado no consulta_cand TSE 2014 TO. Varredura read-only do pacote oficial de prestação de contas 2014 em 2026-07-11 encontrou 0 receitas atribuíveis ao SQ; o mesmo run materializou somente Jenilson Leite no ano.",
+      "confirmed": "2026-07-11"
+    },
+    {
+      "slug": "ricardo-frota",
+      "ano": 2012,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 220000000288 confirmado por nome completo, data de nascimento e titulo eleitoral parcial no consulta_cand TSE 2012 RO; ingestao do pacote oficial de receitas 2012 nao encontrou receita atribuivel ao SQ.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "samuel-costa",
+      "ano": 2012,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 220000000290 confirmado no consulta_cand TSE 2012 RO; ingestao do pacote oficial bem_candidato 2012 nao encontrou bem atribuivel ao SQ.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "samuel-costa",
+      "ano": 2014,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 220000000176 confirmado no consulta_cand TSE 2014 RO; ingestao do pacote oficial bem_candidato 2014 nao encontrou bem atribuivel ao SQ.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "luiz-carlos-teodoro",
+      "ano": 2020,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 220000977509 confirmado no consulta_cand TSE 2020 RO; ingestao do pacote oficial de receitas 2020 nao encontrou receita atribuivel ao SQ.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "ano": 2016,
+      "reason": "homonym-false-positive",
+      "detail": "SQ 160000035701 é VEREADOR PP PR, não Sergio Moro (juiz federal em 2016, Lava Jato). Match por name-urna-uf com homônimo.",
+      "confirmed": "2026-04-13"
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "ano": 2014,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 280000000081 válido (PRESIDENTE PCO BR), mas TSE não publicou bens_candidato para este SQ em 2014. Candidatura micro-partido. Revalidado em 2026-08-02: varredura read-only de bem_candidato_2014_BR.csv e bem_candidato_2014_BRASIL.csv, 0 linhas para o SQ; identidade reconferida no consulta_cand 2014 BR (RUI COSTA PIMENTA, PRESIDENTE, PCO, APTO). A hipotese 'candidatura micro-partido' do detalhe anterior era especulacao e nao e usada como prova.",
+      "confirmed": "2026-04-13"
+    },
+    {
+      "slug": "eduardo-braga",
+      "ano": 2024,
+      "reason": "homonym-false-positive",
+      "detail": "SQ 40001983688 pertence a LUIZ EDUARDO DA SILVA BRAGA (VEREADOR PSB AM), nao ao senador Eduardo Braga (MDB). Confirmado via consulta_cand_2024_BRASIL.csv. 2024 foi eleicao municipal, senador nao concorreu.",
+      "confirmed": "2026-04-13"
+    },
+    {
+      "slug": "jeronimo",
+      "ano": 2024,
+      "reason": "homonym-false-positive",
+      "detail": "SQ 50002296915 pertence a JERONIMO PEREIRA FLORES (VEREADOR SOLIDARIEDADE BA), nao ao governador Jeronimo Rodrigues (PT). Confirmado via consulta_cand_2024_BRASIL.csv. Jeronimo era governador em exercicio em 2024.",
+      "confirmed": "2026-04-13"
+    },
+    {
+      "slug": "cleitinho",
+      "ano": 2024,
+      "reason": "homonym-false-positive",
+      "detail": "SQ 130002260308 pertence a CLEITON ALVES DA SILVA (VEREADOR REPUBLICANOS MG), nao ao senador Cleitinho Husain. Confirmado via consulta_cand_2024_BRASIL.csv. Patrimonio contaminado (R$302344.12) deletado do Supabase.",
+      "confirmed": "2026-04-13"
+    },
+    {
+      "slug": "eduardo-braga",
+      "ano": 2012,
+      "reason": "homonym-false-positive",
+      "detail": "SQ 40000001460 pertence a LUIZ EDUARDO DA SILVA BRAGA / EDUARDO BRAGA (VEREADOR, PTB, Iranduba-AM, RENUNCIA) segundo consulta_cand_2012_AM.csv no ZIP oficial do TSE. Nao e o senador Eduardo Braga (MDB), eleito senador em 2010. SQ removido de candidatos.json; bens/receitas desse SQ nao podem ser atribuidos ao perfil publico.",
+      "confirmed": "2026-05-20"
+    },
+    {
+      "slug": "jeronimo",
+      "ano": 2012,
+      "reason": "homonym-false-positive",
+      "detail": "SQ 50000013624 pertence a JERONIMO BISPO FERREIRA / JERONIMO (VEREADOR, PTN, Santo Amaro-BA, SUPLENTE) segundo consulta_cand_2012_BA.csv no ZIP oficial do TSE. Nao e Jeronimo Rodrigues (PT), governador da Bahia. SQ removido de candidatos.json; bens/receitas desse SQ nao podem ser atribuidos ao perfil publico.",
+      "confirmed": "2026-05-20"
+    },
+    {
+      "slug": "cleitinho",
+      "ano": 2020,
+      "reason": "homonym-false-positive",
+      "detail": "SQ 130000770419 pertence a CLEITON TOBIAS / CLEITINHO (VEREADOR, AVANTE, Cana Verde-MG, ELEITO POR MEDIA) segundo consulta_cand_2020_MG.csv no ZIP oficial do TSE. Nao e Cleitinho Husain, que concorreu a prefeito de Divinopolis em 2020 pelo PSC. SQ removido de candidatos.json; bens/receitas desse SQ nao podem ser atribuidos ao perfil publico.",
+      "confirmed": "2026-05-20"
+    },
+    {
+      "slug": "joao-rodrigues",
+      "ano": 2018,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 210000604698 valido (candidato SC). Ingest TSE executado, nenhum registro em bem_candidato para este SQ em 2018. SQ pre-existente em candidatos.json (nao discovery).",
+      "confirmed": "2026-04-13"
+    },
+    {
+      "slug": "david-almeida",
+      "ano": 2010,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 40000000404 valido (DEPUTADO ESTADUAL PMN AM, confirmado em apply-current-factual-fixes.ts). Ingest TSE executado, nenhum registro em bem_candidato para este SQ em 2010.",
+      "confirmed": "2026-04-13"
+    },
+    {
+      "slug": "david-almeida",
+      "ano": 2020,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 170001127614 valido (prefeito Manaus AM). SQ pre-existente em candidatos.json. Ingest TSE executado, nenhum registro em bem_candidato para este SQ em 2020.",
+      "confirmed": "2026-04-13"
+    },
+    {
+      "slug": "jeronimo",
+      "ano": 2022,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 100001606606 valido (governador BA, eleito 2022). SQ pre-existente em candidatos.json. Ingest TSE executado, nenhum registro em bem_candidato para este SQ em 2022.",
+      "confirmed": "2026-04-13"
+    },
+    {
+      "slug": "marcos-vieira",
+      "ano": 2016,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 240000001401 (discovery VICE-PREFEITO PATRIOTA SC). Cargo e trajetoria compativeis com politico de SC que depois concorreu a governador. Ingest TSE executado, nenhum registro em bem_candidato para este SQ em 2016.",
+      "confirmed": "2026-04-13"
+    },
+    {
+      "slug": "marcos-vieira",
+      "ano": 2016,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 240000001401 pertence a VICE-PREFEITO (Florianopolis/SC, Patriota, NAO ELEITO) segundo consulta_cand_2016_SC.csv (CD_CARGO=12, DS_CARGO=VICE-PREFEITO, NM_CANDIDATO=ANTONIO MARCOS VIEIRA). Em TSE municipal 2016 as receitas da chapa Prefeito+Vice sao arquivadas sob o SQ do Prefeito; 0 linhas com SQ_CANDIDATO=240000001401 no ficheiro receitas_candidatos_2016_SC.txt (header PT-BR 'Sequencial Candidato'). Verificacao: unzip -p prestacao_contas_2016.zip receitas_candidatos_2016_SC.txt | iconv -f LATIN1 -t UTF-8 | grep -c '240000001401' -> 0. Ausencia estrutural na fonte, nao falha de parser.",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "mateus-simoes",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 130001701691 pertence a VICE-GOVERNADOR MG (PARTIDO NOVO, chapa Zema, ELEITO) segundo consulta_cand_2022_MG.csv (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR, NM_CANDIDATO=MATEUS SIMOES DE ALMEIDA). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador (Zema); 0 linhas com SQ_CANDIDATO=130001701691 nos ficheiros receitas_candidatos_2022_MG.csv, receitas_candidatos_doador_originario_2022_MG.csv e receitas_candidatos_2022_BRASIL.csv. Verificacao: unzip -p prestacao_de_contas_eleitorais_candidatos_2022.zip receitas_candidatos_2022_BRASIL.csv | iconv -f LATIN1 -t UTF-8 | grep -c '130001701691' -> 0. Ausencia estrutural na fonte, nao falha de parser.",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "maria-do-carmo",
+      "ano": 2024,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 40002142181 pertence a MARIA DO CARMO SEFFAIR LINS DE ALBUQUERQUE (VICE-PREFEITO, UF=AM) segundo consulta_cand_2024_AM.csv e consulta_cand_2024_BRASIL.csv (CD_CARGO=12, DS_CARGO=VICE-PREFEITO). Varredura exata do campo SQ_CANDIDATO em receitas_candidatos_2024_AM.csv, receitas_candidatos_2024_BRASIL.csv, receitas_candidatos_doador_originario_2024_AM.csv e receitas_candidatos_doador_originario_2024_BRASIL.csv dentro de prestacao_de_contas_eleitorais_candidatos_2024.zip, 2026-05-19: 0 linhas com SQ_CANDIDATO=40002142181. Ausencia estrutural na fonte, nao falha de parser.",
+      "confirmed": "2026-05-19"
+    },
+    {
+      "slug": "renan-santos",
+      "ano": 2008,
+      "reason": "homonym-false-positive",
+      "detail": "SQ 8882 pertence a EDMILSON SILVA COSTA / EDMILSON COSTA (PREFEITO, Sao Paulo/SP, PCB) segundo consulta_cand_2008_SP.csv do TSE (CD_CARGO=11, DS_CARGO=PREFEITO), nao a Renan Antonio Ferreira dos Santos. SQ removido de data/candidatos.json em 2026-07-02; dados de bens/receitas desse SQ nao podem ser atribuidos a Renan Santos.",
+      "confirmed": "2026-07-02"
+    },
+    {
+      "slug": "renan-santos",
+      "ano": 2010,
+      "reason": "homonym-false-positive",
+      "detail": "SQ 280000000018 pertence a EDMILSON SILVA COSTA / EDMILSON COSTA (VICE-PRESIDENTE, PCB, BR) segundo consulta_cand_2010_BR.csv e consulta_cand_2010_BRASIL.csv (CD_CARGO=2), nao a Renan Antonio Ferreira dos Santos. SQ removido de data/candidatos.json em 2026-05-19; bens existentes em bem_candidato_2010.zip sao de Edmilson Costa e nao podem ser atribuidos a Renan Santos.",
+      "confirmed": "2026-05-19"
+    },
+    {
+      "slug": "cabo-daciolo",
+      "ano": 2018,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 280000602500 pertence a BENEVENUTO DACIOLO FONSECA DOS SANTOS / CABO DACIOLO (PRESIDENTE, PATRIOTA, BR) segundo consulta_cand_2018_BRASIL.csv e consulta_cand_2018_BR.csv (CD_CARGO=1). Varredura em Latin-1 de 29 arquivos CSV/TXT dentro de bem_candidato_2018.zip (https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip), 2026-05-19: 0 linhas com SQ_CANDIDATO=280000602500. Ausencia oficial de bens declarados na fonte TSE. Revalidado em 2026-08-02: varredura read-only de bem_candidato_2018_BR.csv e bem_candidato_2018_BRASIL.csv, 0 linhas para o SQ. Controle: SQs vizinhos da mesma eleicao presidencial estao presentes no mesmo arquivo (280000602477, Geraldo Alckmin, e 280000602501), entao a ausencia e da declaracao, nao do arquivo.",
+      "confirmed": "2026-05-19"
+    },
+    {
+      "slug": "evandro-augusto",
+      "ano": 2020,
+      "reason": "homonym-false-positive",
+      "detail": "SQ 130000704273 pertence a GABRIEL SOUSA MARQUES DE AZEVEDO / GABRIEL (VEREADOR, MG, PATRIOTA) segundo consulta_cand_2020_BRASIL.csv e consulta_cand_2020_MG.csv (CD_CARGO=13), nao a Evandro Augusto (estado RS). SQ removido de data/candidatos.json em 2026-05-19; bens existentes em bem_candidato_2020.zip sao de Gabriel Azevedo e nao podem ser atribuidos a Evandro Augusto.",
+      "confirmed": "2026-05-19"
+    },
+    {
+      "slug": "evandro-augusto",
+      "ano": 2024,
+      "reason": "homonym-false-positive",
+      "detail": "SQ 130002074700 pertence a GABRIEL SOUSA MARQUES DE AZEVEDO / GABRIEL (PREFEITO, MG, MDB) segundo consulta_cand_2024_BRASIL.csv e consulta_cand_2024_MG.csv (CD_CARGO=11), nao a Evandro Augusto (estado RS). SQ removido de data/candidatos.json em 2026-05-19; bens existentes em bem_candidato_2024.zip sao de Gabriel Azevedo e nao podem ser atribuidos a Evandro Augusto.",
+      "confirmed": "2026-05-19"
+    },
+    {
+      "slug": "maria-do-carmo",
+      "ano": 2012,
+      "reason": "homonym-false-positive",
+      "detail": "SQ 40000004572 pertence a MARIA DO CARMO DA SILVA VIEIRA / MARIA DO CARMO (VEREADOR, PT, Coari-AM, SUPLENTE) segundo consulta_cand_2012_AM.csv no ZIP oficial do TSE. Nao e Maria do Carmo Seffair Lins de Albuquerque. SQ removido de candidatos.json; bens/receitas desse SQ nao podem ser atribuidos ao perfil publico.",
+      "confirmed": "2026-05-20"
+    },
+    {
+      "slug": "maria-do-carmo",
+      "ano": 2016,
+      "reason": "homonym-false-positive",
+      "detail": "SQ 40000011799 pertence a MARIA DO CARMO RICARDO PEREIRA / MARIA DO CARMO (VEREADOR, PPS, Manaus-AM, NAO ELEITO) segundo consulta_cand_2016_AM.csv no ZIP oficial do TSE. Nao e Maria do Carmo Seffair Lins de Albuquerque. SQ removido de candidatos.json; bens/receitas desse SQ nao podem ser atribuidos ao perfil publico.",
+      "confirmed": "2026-05-20"
+    },
+    {
+      "slug": "samara-martins",
+      "ano": 2020,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 200000724019 válido (Presidente BR 2020). Varredura do agregado oficial TSE `bem_candidato_2020_BRASIL.csv` dentro de `bem_candidato_2020.zip` (cdn.tse.jus.br) sem nenhuma linha com esse SQ_CANDIDATO. O canário `npm run audit:patrimonio-supported-canary` marcou lacuna em `patrimonio` para 2020 antes desta exceção; 2022 permanece materializado (P1) com bens no mesmo arquivo zip para SQ 280001602703. Correcao factual em 2026-08-02: o detalhe anterior dizia 'Presidente BR 2020', o que esta errado. O SQ 200000724019 e de candidatura a VEREADOR em NATAL/RN pela UP, conforme consulta_cand_2020_RN.csv (SAMARA MARTINS DA SILVA, APTO). A conclusao nao muda: varredura read-only de bem_candidato_2020_RN.csv e bem_candidato_2020_BRASIL.csv em 2026-08-02 encontrou 0 linhas para o SQ.",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "hertz-dias",
+      "ano": 2020,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 100000718146 válido na coorte (`data/candidatos.json`, `ids.tse_sq_candidato`). Leitura integral de `bem_candidato_2020_BRASIL.csv` em Latin-1 dentro de `bem_candidato_2020.zip` (https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2020.zip), 2026-04-15: nenhuma linha contém este SQ_CANDIDATO. O audit `audit:dinheiro-cohort-coverage` apontava `patrimonio_state=gap_no_row` antes desta exceção. Revalidado em 2026-08-02 (branch data/presidenciaveis-lacunas): varredura read-only de bem_candidato_2020_MA.csv e bem_candidato_2020_BRASIL.csv, 0 linhas para o SQ; identidade reconferida no consulta_cand 2020 MA (HERTZ DA CONCEICAO DIAS, PREFEITO, SAO LUIS, PSTU, APTO).",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "hertz-dias",
+      "ano": 2022,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 100001600008 válido na coorte (`data/candidatos.json`). Leitura integral de `bem_candidato_2022_BRASIL.csv` em Latin-1 dentro de `bem_candidato_2022.zip` (https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip), 2026-04-15: nenhuma linha contém este SQ_CANDIDATO. O audit de coorte apontava `patrimonio_state=gap_no_row` antes desta exceção. Revalidado em 2026-08-02: varredura read-only de bem_candidato_2022_MA.csv, bem_candidato_2022_BR.csv e bem_candidato_2022_BRASIL.csv, 0 linhas para o SQ; identidade reconferida no consulta_cand 2022 MA (HERTZ DA CONCEICAO DIAS, GOVERNADOR, MARANHAO, PSTU, APTO).",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "erika-hilton",
+      "ano": 2020,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 250000686838 válido na coorte (`data/candidatos.json`). Leitura integral de `bem_candidato_2020_BRASIL.csv` em Latin-1 dentro de `bem_candidato_2020.zip` (TSE, mesma URL base), 2026-04-15: nenhuma linha contém este SQ_CANDIDATO. O audit de coorte apontava `patrimonio_state=gap_no_row` antes desta exceção.",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "garotinho",
+      "ano": 2022,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 190001619506 válido na coorte (`data/candidatos.json`). Leitura integral de `bem_candidato_2022_BRASIL.csv` em Latin-1 dentro de `bem_candidato_2022.zip` (TSE, mesma URL base), 2026-04-15: nenhuma linha contém este SQ_CANDIDATO. O audit de coorte apontava `patrimonio_state=gap_no_row` antes desta exceção.",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "nikolas-ferreira",
+      "ano": 2020,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 130001175469 válido na coorte (`data/candidatos.json`). Leitura integral de `bem_candidato_2020_BRASIL.csv` em Latin-1 dentro de `bem_candidato_2020.zip` (TSE, mesma URL base), 2026-04-15: nenhuma linha contém este SQ_CANDIDATO. O audit de coorte apontava `patrimonio_state=gap_no_row` antes desta exceção.",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "ronaldo-mansur",
+      "ano": 2018,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 50000600889 válido na coorte (`data/candidatos.json`, Governador BA). Varredura em Latin-1 de todos os `*.csv` dentro de `bem_candidato_2018.zip` (https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip), 2026-04-15: nenhuma linha contém este SQ_CANDIDATO. O audit `audit:dinheiro-cohort-coverage` apontava `patrimonio_state=gap_no_row` antes desta exceção.",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "anderson-ferreira",
+      "ano": 2018,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 190000625124 válido na coorte (`data/candidatos.json`, Governador PE). Varredura em Latin-1 de todos os `*.csv` dentro de `bem_candidato_2018.zip` (mesma URL base do TSE), 2026-04-15: nenhuma linha contém este SQ_CANDIDATO. O audit de coorte apontava `patrimonio_state=gap_no_row` antes desta exceção.",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "renan-filho",
+      "ano": 2018,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 230000603179 válido na coorte (`data/candidatos.json`, Governador AL). Varredura em Latin-1 de todos os `*.csv` dentro de `bem_candidato_2018.zip` (TSE), 2026-04-15: nenhuma linha contém este SQ_CANDIDATO. O audit de coorte apontava `patrimonio_state=gap_no_row` antes desta exceção.",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "renan-filho",
+      "ano": 2022,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 230001643506 válido na coorte (`data/candidatos.json`, Governador AL). Varredura em Latin-1 de todos os `*.csv` dentro de `bem_candidato_2022.zip` (https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip), 2026-04-15: nenhuma linha contém este SQ_CANDIDATO. O audit de coorte apontava `patrimonio_state=gap_no_row` antes desta exceção.",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "ano": 2018,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 120000624894 válido na coorte (`data/candidatos.json`, Governador MS). Varredura em Latin-1 de todos os `*.csv` dentro de `bem_candidato_2018.zip` (TSE), 2026-04-15: nenhuma linha contém este SQ_CANDIDATO. O audit de coorte apontava `patrimonio_state=gap_no_row` antes desta exceção.",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "jeferson-bezerra",
+      "ano": 2020,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 120000850578 válido na coorte (`data/candidatos.json`, Governador MS). Varredura em Latin-1 dos arquivos oficiais `bem_candidato_2020_MS.csv` e `bem_candidato_2020_BRASIL.csv` dentro de `bem_candidato_2020.zip` (TSE), 2026-07-06: nenhuma linha contém este SQ_CANDIDATO.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "jeferson-bezerra",
+      "ano": 2022,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 120001611531 válido na coorte (`data/candidatos.json`, Governador MS). Varredura em Latin-1 dos arquivos oficiais `bem_candidato_2022_MS.csv`, `bem_candidato_2022_BRASIL.csv` e `bem_candidato_2022_BR.csv` dentro de `bem_candidato_2022.zip` (TSE), 2026-07-06: nenhuma linha contém este SQ_CANDIDATO.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "jeferson-bezerra",
+      "ano": 2024,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 120002315556 válido na coorte (`data/candidatos.json`, Governador MS). Varredura em Latin-1 dos arquivos oficiais `bem_candidato_2024_MS.csv` e `bem_candidato_2024_BRASIL.csv` dentro de `bem_candidato_2024.zip` (TSE), 2026-07-06: nenhuma linha contém este SQ_CANDIDATO.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "dr-daniel",
+      "ano": 2016,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 140000012852 válido na coorte (`data/candidatos.json`, Governador PA). Varredura em Latin-1 de todos os `*.csv` dentro de `bem_candidato_2016.zip` (https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2016.zip), 2026-04-15: nenhuma linha contém este SQ_CANDIDATO. O audit de coorte apontava `patrimonio_state=gap_no_row` antes desta exceção.",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "dr-daniel",
+      "ano": 2022,
+      "reason": "homonym-false-positive",
+      "detail": "SQ 50001614695 pertence a DANIEL SOUSA DE OLIVEIRA / DR. DANIEL (DEPUTADO ESTADUAL, MDB, BA), segundo consulta_cand_2022_BA.csv no ZIP oficial do TSE. Nao e Daniel Barbosa Santos / Dr. Daniel, pre-candidato a Governador do PA. SQ removido de data/candidatos.json em 2026-07-07; financiamento 2022 atribuido a este slug foi removido por colisao de homonimo.",
+      "confirmed": "2026-07-07"
+    },
+    {
+      "slug": "arthur-henrique",
+      "ano": 2020,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 230000679861 válido na coorte (`data/candidatos.json`, Governador RR). Varredura em Latin-1 de todos os `*.csv` dentro de `bem_candidato_2020.zip` (https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2020.zip), 2026-04-15: nenhuma linha contém este SQ_CANDIDATO. O audit de coorte apontava `patrimonio_state=gap_no_row` antes desta exceção.",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "arthur-henrique",
+      "ano": 2016,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 230000001882 pertence a VICE-PREFEITO de Boa Vista/RR segundo consulta_cand_2016, com CPF [documento removido] e resultado ELEITO. Nas eleições municipais de 2016, as receitas da chapa majoritária foram prestadas sob o candidato a prefeito; não há linha própria atribuível ao SQ do vice no pacote oficial do TSE.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "arthur-henrique",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 230002529896 confirmado no consulta_cand TSE 2022 por CPF [documento removido], nome completo, UF e cargo Governador. A ingestão integral do pacote oficial prestacao_de_contas_eleitorais_candidatos_2022 não encontrou receita atribuível ao SQ; ausência oficial documentada, não falha de identidade ou parser.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "edilson-damiao",
+      "ano": 2022,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 230001604254 válido na coorte (`data/candidatos.json`, Governador RR). Varredura em Latin-1 de todos os `*.csv` dentro de `bem_candidato_2022.zip` (TSE), 2026-04-15: nenhuma linha contém este SQ_CANDIDATO. O audit de coorte apontava `patrimonio_state=gap_no_row` antes desta exceção.",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "joao-campos",
+      "ano": 2024,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 170002121906 válido na coorte (`data/candidatos.json`, Governador PE). Varredura em Latin-1 de todos os `*.csv` dentro de `bem_candidato_2024.zip` (https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2024.zip), 2026-04-15: nenhuma linha contém este SQ_CANDIDATO. O audit de coorte apontava `patrimonio_state=gap_no_row` antes desta exceção.",
+      "confirmed": "2026-04-15"
+    },
+    {
+      "slug": "silvio-mendes",
+      "ano": 2014,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 180000000045 pertence a VICE-GOVERNADOR (UF=PI) segundo consulta_cand_2014 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2014 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2014*.csv/.txt dentro de primeira_parcial_2014.zip / segunda_parcial_2014.zip / prestacao_final_2014.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=180000000045. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "hertz-dias",
+      "ano": 2018,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 280000601174 pertence a VICE-PRESIDENTE (cargo nacional) segundo consulta_cand_2018 (CD_CARGO=2, DS_CARGO=VICE-PRESIDENTE). Em TSE 2018 as receitas da chapa Presidente+Vice sao arquivadas sob o SQ do Presidente; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2018*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2018.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=280000601174. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0). Revalidado em 2026-08-02: varredura read-only de receitas_candidatos_2018_BRASIL.csv, 0 receitas para o SQ. Controle na mesma varredura: o SQ 280000602500 (Cabo Daciolo, titular de outra chapa presidencial) aparece com 5 linhas, entao o arquivo cobre a disputa de ambito BR e a ausencia e do vice, nao do arquivo.",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "edmilson-costa",
+      "ano": 2010,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 280000000018 pertence a EDMILSON SILVA COSTA / EDMILSON COSTA (VICE-PRESIDENTE, PCB, BR) segundo consulta_cand_2010_BR.csv e consulta_cand_2010_BRASIL.csv. Em TSE 2010 as receitas da chapa Presidente+Vice podem estar arquivadas sob o SQ do titular; varredura estrita do campo SQ_CANDIDATO em 28 ficheiros de receita dentro de prestacao_contas_2010.zip, 2026-07-02: 0 linhas com SQ_CANDIDATO=280000000018. Ausencia estrutural na fonte, nao falha de parser. Revalidado em 2026-08-02: varredura read-only de candidato/BR/ReceitasCandidatos.txt (prestacao_contas_2010.zip), 0 receitas para o SQ. O arquivo tem 13 SQs distintos de ambito BR, entre eles o titular da mesma chapa (280000000017, Ivan Martins Pinheiro) e outros dois vices (280000000004 e 280000000012), o que confirma cobertura e mostra que a ausencia e especifica deste candidato.",
+      "confirmed": "2026-07-02"
+    },
+    {
+      "slug": "marcelo-brigadeiro",
+      "ano": 2018,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 240000609728 pertence a 1º SUPLENTE (UF=SC) segundo consulta_cand_2018 (CD_CARGO=9, DS_CARGO=1º SUPLENTE). Em TSE 2018 as receitas da chapa Senador (titular da chapa)+Vice sao arquivadas sob o SQ do Senador (titular da chapa); varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2018*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2018.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=240000609728. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "ano": 2018,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 110000612720 pertence a VICE-GOVERNADOR (UF=MT) segundo consulta_cand_2018 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2018 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2018*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2018.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=110000612720. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "ricardo-nunes",
+      "ano": 2020,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 250000896547 pertence a VICE-PREFEITO (UF=SP) segundo consulta_cand_2020 (CD_CARGO=12, DS_CARGO=VICE-PREFEITO). Em TSE 2020 as receitas da chapa Prefeito+Vice sao arquivadas sob o SQ do Prefeito; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2020*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2020.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=250000896547. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "ano": 2020,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 150000774537 pertence a VICE-PREFEITO (UF=PB) segundo consulta_cand_2020 (CD_CARGO=12, DS_CARGO=VICE-PREFEITO). Em TSE 2020 as receitas da chapa Prefeito+Vice sao arquivadas sob o SQ do Prefeito; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2020*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2020.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=150000774537. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "wilder-morais",
+      "ano": 2020,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 90001220915 pertence a VICE-PREFEITO (UF=GO) segundo consulta_cand_2020 (CD_CARGO=12, DS_CARGO=VICE-PREFEITO). Em TSE 2020 as receitas da chapa Prefeito+Vice sao arquivadas sob o SQ do Prefeito; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2020*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2020.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=90001220915. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "samara-martins",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 280001602703 pertence a VICE-PRESIDENTE (cargo nacional) segundo consulta_cand_2022 (CD_CARGO=2, DS_CARGO=VICE-PRESIDENTE). Em TSE 2022 as receitas da chapa Presidente+Vice sao arquivadas sob o SQ do Presidente; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=280001602703. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0). Revalidado em 2026-08-02: varredura read-only de receitas_candidatos_2022_BRASIL.csv, 0 receitas para o SQ. Controle: o SQ 280001602702, titular da mesma chapa, aparece no arquivo, confirmando que a prestacao e do titular.",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "felicio-ramuth",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 250001615968 pertence a VICE-GOVERNADOR (UF=SP) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=250001615968. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "geraldo-alckmin",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 280001607830 pertence a VICE-PRESIDENTE (UF=SP) segundo consulta_cand_2022 (CD_CARGO=2, DS_CARGO=VICE-PRESIDENTE). Em TSE 2022 as receitas da chapa Presidente+Vice sao arquivadas sob o SQ do Presidente; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=280001607830. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "gabriel-souza",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 210001609848 pertence a VICE-GOVERNADOR (UF=RS) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=210001609848. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "washington-reis",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 190001615754 pertence a VICE-GOVERNADOR (UF=RJ) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=190001615754. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 80001649124 pertence a VICE-GOVERNADOR (UF=ES) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=80001649124. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "ronaldo-mansur",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 50001600528 pertence a VICE-GOVERNADOR (UF=BA) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=50001600528. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "felipe-camarao",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 100001667488 pertence a VICE-GOVERNADOR (UF=MA) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=100001667488. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 150001613756 pertence a VICE-GOVERNADOR (UF=PB) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=150001613756. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "mailza-assis",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 10001612477 pertence a VICE-GOVERNADOR (UF=AC) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=10001612477. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "maria-do-carmo",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 40001650567 pertence a 1º SUPLENTE (UF=AM) segundo consulta_cand_2022 (CD_CARGO=9, DS_CARGO=1º SUPLENTE). Em TSE 2022 as receitas da chapa Senador (titular da chapa)+Vice sao arquivadas sob o SQ do Senador (titular da chapa); varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=40001650567. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "tadeu-de-souza",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 40001619527 pertence a VICE-GOVERNADOR (UF=AM) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=40001619527. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "hana-ghassan",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 140001651992 pertence a VICE-GOVERNADOR (UF=PA) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=140001651992. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "edilson-damiao",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 230001604254 pertence a VICE-GOVERNADOR (UF=RR) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=230001604254. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "laurez-moreira",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 270001652199 pertence a VICE-GOVERNADOR (UF=TO) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=270001652199. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "celina-leao",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 70001651045 pertence a VICE-GOVERNADOR (UF=DF) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=70001651045. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "daniel-vilela",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 90001646327 pertence a VICE-GOVERNADOR (UF=GO) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=90001646327. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 110001643542 pertence a VICE-GOVERNADOR (UF=MT) segundo consulta_cand_2022 (CD_CARGO=4, DS_CARGO=VICE-GOVERNADOR). Em TSE 2022 as receitas da chapa Governador+Vice sao arquivadas sob o SQ do Governador; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2022*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2022.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=110001643542. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "paulo-martins-gov-pr",
+      "ano": 2024,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 160001990124 pertence a VICE-PREFEITO (UF=PR) segundo consulta_cand_2024 (CD_CARGO=12, DS_CARGO=VICE-PREFEITO). Em TSE 2024 as receitas da chapa Prefeito+Vice sao arquivadas sob o SQ do Prefeito; varredura estrita do campo SQ_CANDIDATO em todos os ficheiros receitas_candidatos_2024*.csv/.txt dentro de prestacao_de_contas_eleitorais_candidatos_2024.zip, 2026-04-16: 0 linhas com SQ_CANDIDATO=160001990124. Ausencia estrutural na fonte, nao falha de parser. Prova: output/dinheiro-audit/vice-no-receita-strict.json (total_matches=0, files_scanned>0).",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "clecio-luis",
+      "ano": 2010,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 30000000086 pertence a DEPUTADO FEDERAL (UF=AP) PSOL em 2010 segundo consulta_cand_2010_AP.csv, com DS_SITUACAO_CANDIDATURA=INAPTO, DS_DETALHE_SITUACAO_CAND=CANCELADO, DS_SIT_TOT_TURNO=Cancelado. Candidatura cancelada nao presta contas ao TSE; grep estrito Latin1 em candidato/AP/ReceitasCandidatos.txt (prestacao_contas_2010.zip) 2026-04-16: 0 linhas com SQ=30000000086 (e tambem 0 para SQ alternativo 30000000665, 1o suplente senador deferido mas sem prestacao separada). Ausencia estrutural na fonte. Nao e falha de parser nem de URL; lote 4 (2026-04-16) processou 2010 com clecio-luis na allowlist e nao imprimiu linha de receita para este slug/ano.",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "eduardo-braga",
+      "ano": 2014,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 40000012063 pertence a candidatura em ELEICAO SUPLEMENTAR Governador AM segundo consulta_cand_2014_AM.csv (DS_TIPO_ELEICAO='ELEICAO SUPLEMENTAR', NM_TIPO_ELEICAO='Eleicao Suplementar Governador AM', DT_ELEICAO=06/08/2017, DS_CARGO=GOVERNADOR, DS_SITUACAO_CANDIDATURA=APTO, DS_SIT_TOT_TURNO='2o TURNO', COLIGACAO='UNIAO PELO AMAZONAS' PMDB). A eleicao foi realizada em 2017 apos impeachment de Jose Melo, mas o TSE arquiva sob ano=2014 (ciclo eleitoral). As receitas deste pleito estao num ciclo de prestacao TSE separado (nao presente nos zips prestacao 2014 primeira_parcial / segunda_parcial / prestacao_final); grep estrito em todos os 3 zips (receitas_candidatos_2014_AM.txt e _BR.txt extraidos em 2026-04-16): 0 linhas com SQ_CANDIDATO=40000012063. Ausencia estrutural na fonte para o ciclo 2014 padrao — nao e falha de parser. Candidato principal (Eduardo Braga) foi Senador em 2014 (eleicao regular), e Governador somente via suplementar 2017 filed sob ano canonico 2014.",
+      "confirmed": "2026-04-16"
+    },
+    {
+      "slug": "giovanni-sampaio",
+      "ano": 2010,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 60000000034 pertence a Giovanni Sampaio em consulta_cand/historico TSE 2010. O ingest oficial restrito de 2026-07-05 leu prestacao_contas_2010.zip, parseou 28 ficheiros de receitas (BR + 27 UFs) e nao materializou receita para o slug. Patrimonio 2010 foi materializado no mesmo fechamento, provando que o SQ estava resolvido. Prova local: /tmp/puxaficha-ce-governador-ingest.log e output/dinheiro-audit/giovanni-sampaio-20260705-ce-final.csv.",
+      "confirmed": "2026-07-05"
+    },
+    {
+      "slug": "giovanni-sampaio",
+      "ano": 2016,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 60000016045 pertence a Giovanni Sampaio em consulta_cand/historico TSE 2016. O ingest oficial restrito de 2026-07-05 leu prestacao_contas_2016.zip, parseou 29 ficheiros de receitas (BR + 27 UFs) e nao materializou receita para o slug. Patrimonio 2016 foi materializado no mesmo fechamento, provando que o SQ estava resolvido. Prova local: /tmp/puxaficha-ce-governador-ingest-2012-2022.log e output/dinheiro-audit/giovanni-sampaio-20260705-ce-final.csv.",
+      "confirmed": "2026-07-05"
+    },
+    {
+      "slug": "giovanni-sampaio",
+      "ano": 2020,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 60000916886 pertence a Giovanni Sampaio em consulta_cand/historico TSE 2020. O ingest oficial restrito de 2026-07-05 leu prestacao_de_contas_eleitorais_candidatos_2020.zip, parseou 54 ficheiros de receitas (BR + 27 UFs) e nao materializou receita para o slug. Patrimonio 2020 foi materializado no mesmo fechamento, provando que o SQ estava resolvido. Prova local: /tmp/puxaficha-ce-governador-ingest-final.log e output/dinheiro-audit/giovanni-sampaio-20260705-ce-final.csv.",
+      "confirmed": "2026-07-05"
+    },
+    {
+      "slug": "serley-leal",
+      "ano": 2012,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 60000015399 pertence a Serley Leal em historico TSE 2012. O ingest oficial restrito de 2026-07-05 leu bem_candidato_2012.zip, parseou 27 arquivos CSV (BR + 27 UFs) e nao materializou bens para o slug. Financiamento 2012 foi materializado no mesmo fechamento, provando que o SQ estava resolvido. Prova local: /tmp/puxaficha-ce-governador-ingest-final.log e output/dinheiro-audit/serley-leal-20260705-ce-final.csv.",
+      "confirmed": "2026-07-05"
+    },
+    {
+      "slug": "serley-leal",
+      "ano": 2020,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 60000717317 pertence a Serley Leal em historico TSE 2020. O ingest oficial restrito de 2026-07-05 leu prestacao_de_contas_eleitorais_candidatos_2020.zip, parseou 54 ficheiros de receitas (BR + 27 UFs) e nao materializou receita para o slug. Patrimonio 2020 foi materializado no mesmo fechamento, provando que o SQ estava resolvido. Prova local: /tmp/puxaficha-ce-governador-ingest-final.log e output/dinheiro-audit/serley-leal-20260705-ce-final.csv.",
+      "confirmed": "2026-07-05"
+    },
+    {
+      "slug": "jose-roberto-arruda",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 70001615918 pertence a Jose Roberto Arruda em consulta_cand_2022_DF/BRASIL.csv, cargo Deputado Federal, situacao INAPTO. Varredura estrita em rec22_2022.zip nos arquivos receitas_candidatos_2022_BRASIL.csv e receitas_candidatos_2022_DF.csv quando presente retornou 0 linhas para SQ_CANDIDATO=70001615918. Patrimonio 2022 ja esta materializado, e financiamento 2014 foi localizado em prestacao_final_2014.zip, separando ausencia 2022 de falha de identidade.",
+      "confirmed": "2026-07-05"
+    },
+    {
+      "slug": "cintia-dias",
+      "ano": 2010,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 90000000434 pertence a Cintia Aparecida Dias em data/candidatos.json e foi resolvido pelo ingest TSE. O ingest oficial restrito de 2026-07-06 leu bem_candidato_2010.zip, parseou 29 arquivos CSV (BR + 27 UFs) e nao materializou bens para o slug. Financiamento 2010 foi materializado no mesmo fechamento, provando que o SQ estava resolvido. Prova local: /tmp/puxaficha-go-tse-ingest.log.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "cintia-dias",
+      "ano": 2012,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 90000012450 pertence a Cintia Aparecida Dias em data/candidatos.json e foi resolvido pelo ingest TSE. O ingest oficial restrito de 2026-07-06 leu bem_candidato_2012.zip, parseou 27 arquivos CSV (BR + 27 UFs) e nao materializou bens para o slug. A mesma rodada parseou primeira_parcial_2012.zip, segunda_parcial_2012.zip e prestacao_final_2012.zip. Prova local: /tmp/puxaficha-go-tse-ingest.log.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "cintia-dias",
+      "ano": 2012,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 90000012450 pertence a Cintia Aparecida Dias em data/candidatos.json e foi resolvido pelo ingest TSE. O ingest oficial restrito de 2026-07-06 leu primeira_parcial_2012.zip, segunda_parcial_2012.zip e prestacao_final_2012.zip, parseou 27 ficheiros de receitas (BR + 27 UFs) e nao materializou receita para o slug. Prova local: /tmp/puxaficha-go-tse-ingest.log.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "cintia-dias",
+      "ano": 2014,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 90000000511 pertence a Cintia Aparecida Dias em data/candidatos.json e foi resolvido pelo ingest TSE. O ingest oficial restrito de 2026-07-06 leu primeira_parcial_2014.zip, segunda_parcial_2014.zip e prestacao_final_2014.zip, parseou 29 ficheiros de receitas (BR + 27 UFs) e nao materializou receita para o slug. Patrimonio 2014 foi materializado no mesmo fechamento, provando que o SQ estava resolvido. Prova local: /tmp/puxaficha-go-tse-ingest.log.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "orleans-brandao",
+      "ano": 2014,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 100000000015 pertence a Carlos Orleans Brandao Junior em consulta_cand_2014_MA/BRASIL.csv, cargo Vice-Governador, situacao ELEITO. Varredura estrita em receitas_2014_2_prestacao_final_2014.zip nos arquivos receitas_candidatos_2014_MA.txt e receitas_candidatos_2014_brasil.txt retornou 0 linhas para Sequencial Candidato=100000000015. Patrimonio 2014 foi localizado no bem_candidato_2014.zip, provando que o SQ estava resolvido; a ausencia de receitas e estrutural de chapa/vice, nao falha de parser.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "orleans-brandao",
+      "ano": 2018,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 100000603919 pertence a Carlos Orleans Brandao Junior em consulta_cand_2018_MA/BRASIL.csv, cargo Vice-Governador, situacao ELEITO. Varredura estrita em prestacao_de_contas_eleitorais_candidatos_2018.zip nos arquivos receitas_candidatos_2018_MA.csv e receitas_candidatos_2018_BRASIL.csv retornou 0 linhas para SQ_CANDIDATO=100000603919. Patrimonio 2018 foi localizado no bem_candidato_2018.zip, provando que o SQ estava resolvido; a ausencia de receitas e estrutural de chapa/vice, nao falha de parser.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "ano": 2016,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 130000084647 pertence a Gabriel Sousa Marques de Azevedo em consulta_cand_2016_MG/BRASIL.csv, cargo Vereador. Varredura oficial em bem_candidato_2016.zip retornou 0 linhas para SQ_CANDIDATO=130000084647; financiamento 2016 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "henrique-areas",
+      "ano": 2016,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 250000077188 pertence a Henrique Areas de Araujo em consulta_cand_2016_BRASIL.csv, cargo Prefeito/SP. Varredura oficial em bem_candidato_2016.zip retornou 0 linhas para SQ_CANDIDATO=250000077188; financiamento 2016 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "henrique-areas",
+      "ano": 2018,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 250000615443 pertence a Henrique Areas de Araujo em consulta_cand_2018_BRASIL.csv, cargo Deputado Federal/SP. Varredura oficial em bem_candidato_2018.zip retornou 0 linhas para SQ_CANDIDATO=250000615443; financiamento 2018 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "henrique-areas",
+      "ano": 2020,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 250001172315 pertence a Henrique Areas de Araujo em consulta_cand_2020_BRASIL.csv, cargo Vice-prefeito/SP. Varredura oficial em bem_candidato_2020.zip retornou 0 linhas para SQ_CANDIDATO=250001172315.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "henrique-areas",
+      "ano": 2020,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 250001172315 pertence a Henrique Areas de Araujo em consulta_cand_2020_BRASIL.csv, cargo Vice-prefeito/SP. Ingest TSE restrito de 2026-07-06 parseou prestacao_de_contas_eleitorais_candidatos_2020.zip e nao materializou receita para o slug; ausencia compativel com candidatura a vice na fonte de receitas.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "tulio-lopes",
+      "ano": 2016,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 130000083665 pertence a Tulio Cesar Dias Lopes em consulta_cand_2016_MG/BRASIL.csv. Varredura oficial em bem_candidato_2016.zip retornou 0 linhas para SQ_CANDIDATO=130000083665; financiamento 2016 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "tulio-lopes",
+      "ano": 2018,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 130000606639 pertence a Tulio Cesar Dias Lopes em consulta_cand_2018_MG/BRASIL.csv. Varredura oficial em bem_candidato_2018.zip retornou 0 linhas para SQ_CANDIDATO=130000606639; financiamento 2018 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "vittorio-medioli",
+      "ano": 2016,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 130000080259 pertence a Vittorio Medioli em consulta_cand_2016_MG/BRASIL.csv, cargo Prefeito. Varredura oficial em bem_candidato_2016.zip retornou 0 linhas para SQ_CANDIDATO=130000080259; financiamento 2016 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-06"
+    },
+    {
+      "slug": "laudicerio-aguiar",
+      "ano": 2022,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 110001621192 pertence a Laudicerio de Oliveira Aguiar em data/candidatos.json e foi resolvido pelo ingest TSE. Varredura estrita de 2026-07-07 em bem_candidato_2022.zip leu 29 arquivos CSV e encontrou 0 linhas para SQ_CANDIDATO=110001621192. Financiamento 2022 foi materializado no mesmo fechamento, provando que o SQ estava resolvido.",
+      "confirmed": "2026-07-07"
+    },
+    {
+      "slug": "marcelo-maluf",
+      "ano": 2014,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 110000000004 pertence a Marcelo Benedito Maluf em consulta_cand_2014_MT/BRASIL.csv, cargo 1o suplente/PSDB, situacao INAPTO. Varredura estrita de 2026-07-07 em receitas_2014_2_prestacao_final_2014.zip leu 89 arquivos de receita e encontrou 0 linhas para SQ_CANDIDATO=110000000004. Patrimonio 2014 foi materializado no mesmo fechamento, provando que o SQ estava resolvido.",
+      "confirmed": "2026-07-07"
+    },
+    {
+      "slug": "araceli-lemos",
+      "ano": 2018,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 140000604416 pertence a ARACELI MARIA PEREIRA LEMOS / ARACELI em consulta_cand_2018_PA.csv, cargo 1o suplente, PSOL, situacao APTO/NAO ELEITO. Varredura estrita de 2026-07-07 em receitas_candidatos_2018_PA.csv retornou 0 linhas para SQ_CANDIDATO=140000604416; patrimonio 2018 ja estava materializado e consulta_cand confirma o SQ.",
+      "confirmed": "2026-07-07"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "ano": 2010,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 140000000107 pertence a JOSE CLEBER BARROS RABELO / CLEBER RABELO em consulta_cand_2010_PA.csv, cargo Governador, PSTU, situacao APTO/NAO ELEITO. Varredura estrita de 2026-07-07 em bem_candidato_2010_PA.csv retornou 0 linhas para SQ_CANDIDATO=140000000107; financiamento 2010 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-07"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "ano": 2012,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 140000015615 pertence a JOSE CLEBER BARROS RABELO / CLEBER RABELO em consulta_cand_2012_PA.csv, cargo Vereador, PSTU, situacao APTO/ELEITO POR QP. Varredura estrita de 2026-07-07 em bem_candidato_2012_PA.csv retornou 0 linhas para SQ_CANDIDATO=140000015615; financiamento 2012 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-07"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "ano": 2014,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 140000000102 pertence a JOSE CLEBER BARROS RABELO / CLEBER RABELO em consulta_cand_2014_PA.csv, cargo Deputado Federal, PSTU, situacao APTO/SUPLENTE. Varredura estrita de 2026-07-07 em bem_candidato_2014_PA.csv retornou 0 linhas para SQ_CANDIDATO=140000000102; financiamento 2014 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-07"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "ano": 2016,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 140000006431 pertence a JOSE CLEBER BARROS RABELO / CLEBER RABELO em consulta_cand_2016_PA.csv, cargo Prefeito, PSTU, situacao APTO/NAO ELEITO. Varredura estrita de 2026-07-07 em bem_candidato_2016_PA.csv retornou 0 linhas para SQ_CANDIDATO=140000006431; financiamento 2016 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-07"
+    },
+    {
+      "slug": "raquel-bricio",
+      "ano": 2020,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 140000698916 pertence a RAQUEL NONATO DE BRICIO / RAQUEL BRICIO em consulta_cand_2020_PA.csv, cargo Vereador, UP, situacao APTO/NAO ELEITO. Varredura estrita de 2026-07-07 em bem_candidato_2020_PA.csv retornou 0 linhas para SQ_CANDIDATO=140000698916; financiamento 2020 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-07"
+    },
+    {
+      "slug": "raquel-bricio",
+      "ano": 2022,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 140001607779 pertence a RAQUEL NONATO DE BRICIO / RAQUEL BRICIO em consulta_cand_2022_PA.csv, cargo Deputado Estadual, UP, situacao APTO/NAO ELEITO. Varredura estrita de 2026-07-07 em bem_candidato_2022_PA.csv retornou 0 linhas para SQ_CANDIDATO=140001607779; financiamento 2022 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-07"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "ano": 2012,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 180000006226 pertence a GUSTAVO HENRIQUE LEITE FEIJÓ / GUSTAVO HENRIQUE em consulta_cand_2012_PI.csv, cargo Vereador, PSC, situação APTO. Varredura estrita de 2026-07-09 nos 27 CSVs de bem_candidato_2012.zip encontrou 0 linhas para o SQ; financiamento 2012 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-09"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "ano": 2014,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 180000000014 pertence a GUSTAVO HENRIQUE LEITE FEIJÓ / GUSTAVO HENRIQUE em consulta_cand_2014_PI.csv, cargo Senador, PSC, situação APTO. Varredura estrita de 2026-07-09 nos 29 CSVs de bem_candidato_2014.zip encontrou 0 linhas para o SQ; financiamento 2014 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-09"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "ano": 2022,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 180001643494 pertence a GUSTAVO HENRIQUE LEITE FEIJÓ / GUSTAVO HENRIQUE em consulta_cand_2022_PI.csv, cargo Governador, PATRIOTA, situação APTO. Varredura estrita de 2026-07-09 nos 29 CSVs de bem_candidato_2022.zip encontrou 0 linhas para o SQ; financiamento 2022 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-09"
+    },
+    {
+      "slug": "lourdes-melo",
+      "ano": 2010,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 180000000312 pertence a MARIA DE LOURDES SOARES MELO / LOURDES MELO em consulta_cand_2010_PI.csv. Varredura estrita de 2026-07-09 em todos os arquivos do ZIP oficial prestacao_contas_2010 encontrou 0 ocorrências do SQ; patrimônio 2010 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-09"
+    },
+    {
+      "slug": "lourdes-melo",
+      "ano": 2012,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 180000012118 pertence a MARIA DE LOURDES SOARES MELO / LOURDES MELO em consulta_cand_2012_PI.csv. Varredura estrita de 2026-07-09 nos três ZIPs oficiais de receitas de 2012 encontrou 0 ocorrências do SQ; patrimônio 2012 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-09"
+    },
+    {
+      "slug": "andre-portugues",
+      "ano": 2012,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 190000025768 pertence a Andre Portugues no seed curado. Ingestao oficial RJ-only de 2026-07-09 leu bem_candidato_2012 e retornou 0 linhas para o SQ; financiamento 2012 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-09"
+    },
+    {
+      "slug": "juliete-pantoja",
+      "ano": 2020,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 190001128515 pertence a Juliete Pantoja no seed curado. Ingestao oficial RJ-only de 2026-07-09 leu bem_candidato_2020 e retornou 0 linhas para o SQ; financiamento 2020 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-09"
+    },
+    {
+      "slug": "juliete-pantoja",
+      "ano": 2024,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 190002135108 pertence a Juliete Pantoja no seed curado. Ingestao oficial RJ-only de 2026-07-09 leu bem_candidato_2024 e retornou 0 linhas para o SQ; financiamento 2024 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-09"
+    },
+    {
+      "slug": "luan-monteiro",
+      "ano": 2020,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 190001092078 pertence a Luan Monteiro no seed curado. Ingestao oficial RJ-only de 2026-07-09 leu bem_candidato_2020 e retornou 0 linhas para o SQ; financiamento 2020 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-09"
+    },
+    {
+      "slug": "luan-monteiro",
+      "ano": 2022,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 190001717287 pertence a Luan Monteiro no seed curado. Ingestao oficial RJ-only de 2026-07-09 leu bem_candidato_2022 e retornou 0 linhas para o SQ; financiamento 2022 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-09"
+    },
+    {
+      "slug": "luan-monteiro",
+      "ano": 2024,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 190002346684 pertence a Luan Monteiro no seed curado. Ingestao oficial RJ-only de 2026-07-09 leu bem_candidato_2024 e retornou 0 linhas para o SQ; financiamento 2024 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-09"
+    },
+    {
+      "slug": "william-siri",
+      "ano": 2018,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 190000602173 pertence a William Siri no seed curado. Ingestao oficial RJ-only de 2026-07-09 leu bem_candidato_2018 e retornou 0 linhas para o SQ; financiamento 2018 foi materializado no mesmo fechamento.",
+      "confirmed": "2026-07-09"
+    },
+    {
+      "slug": "dario-barbosa",
+      "ano": 2012,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 200000001258 pertence a Dario Barbosa de Melo em consulta_cand_2012_RN. Ingestao oficial RN-only de 2026-07-10 leu a prestacao de contas de 2012 e retornou 0 receitas para o SQ; patrimonio 2012 foi materializado.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "dario-barbosa",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 200001652247 pertence a Dario Barbosa de Melo em consulta_cand_2022_RN. Ingestao oficial RN-only de 2026-07-10 leu receitas_candidatos_2022 e retornou 0 receitas para o SQ; patrimonio 2022 foi materializado.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "francisco-dias",
+      "ano": 2020,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 200000724020 pertence a Francisco de Assis da Costa Dias em consulta_cand_2020_RN. Ingestao oficial RN-only de 2026-07-10 leu bem_candidato_2020 e retornou 0 linhas para o SQ; financiamento 2020 foi materializado.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "francisco-dias",
+      "ano": 2024,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 200002109074 pertence a Francisco de Assis da Costa Dias em consulta_cand_2024_RN. Ingestao oficial RN-only de 2026-07-10 leu bem_candidato_2024 e retornou 0 linhas para o SQ.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "francisco-dias",
+      "ano": 2024,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 200002109074 pertence a Francisco de Assis da Costa Dias em consulta_cand_2024_RN. Ingestao oficial RN-only de 2026-07-10 leu receitas_candidatos_2024 e retornou 0 receitas para o SQ.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "roberio-paulino",
+      "ano": 2020,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 200000981908 pertence a Roberio Paulino Rodrigues em consulta_cand_2020_RN. Ingestao oficial RN-only de 2026-07-10 leu receitas_candidatos_2020 e retornou 0 receitas para o SQ; patrimonio 2020 foi materializado.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "roberio-paulino",
+      "ano": 2024,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 200002231543 pertence a Roberio Paulino Rodrigues em consulta_cand_2024_RN. Ingestao oficial RN-only de 2026-07-10 leu receitas_candidatos_2024 e retornou 0 receitas para o SQ; patrimonio 2024 foi materializado.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "emanuel-cacho",
+      "ano": 2006,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 10106 confirmado em consulta_cand_2006_SE. O arquivo oficial moderno de prestacao de contas 2006 retorna HTTP 404; nenhuma rota oficial alternativa com receitas individualizadas foi localizada. Patrimonio 2006 foi materializado.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "emanuel-cacho",
+      "ano": 2014,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 260000000285 confirmado por CPF em consulta_cand_2014_SE. A prestacao final oficial de 2014 foi processada e nao trouxe receita para o SQ; patrimonio 2014 foi materializado.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "ricardo-marques",
+      "ano": 2024,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 260001926363 confirmado por nome civil, data de nascimento e chapa em consulta_cand_2024_SE. O arquivo oficial de receitas 2024 foi processado e nao trouxe linha individual para o vice-prefeito; patrimonio 2024 foi materializado.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "ano": 2008,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 2182 confirmado por CPF em consulta_cand_2008_SE. A rota moderna esperada para prestacao individual de 2008 nao esta disponivel no formato suportado; patrimonio/candidatura permanecem documentados.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "ano": 2010,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 260000000203 confirmado por CPF em consulta_cand_2010_SE. Busca direta no arquivo oficial candidato/SE/ReceitasCandidatos.txt retornou zero linhas para o SQ; patrimonio 2010 foi materializado.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "ano": 2004,
+      "reason": "no-bens-at-source",
+      "detail": "SQ legado 21 confirmado por CPF em consulta_cand_2004_SE. O recorte de bens suportado/publicado pelo projeto começa em 2012; não foi localizada linha oficial de bens individualizada para 2004.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "ano": 2004,
+      "reason": "no-receita-at-source",
+      "detail": "SQ legado 21 confirmado por CPF em consulta_cand_2004_SE. Não foi localizada prestação de contas individualizada oficial no formato público suportado para 2004.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "ano": 2008,
+      "reason": "no-bens-at-source",
+      "detail": "SQ legado 1952 confirmado por CPF em consulta_cand_2008_SE. O recorte materializado de bens começa em 2012; não foi localizada linha oficial individualizada de bens para 2008.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "ano": 2008,
+      "reason": "no-receita-at-source",
+      "detail": "SQ legado 1952 confirmado por CPF em consulta_cand_2008_SE. Não foi localizada prestação de contas individualizada oficial no formato público suportado para 2008.",
+      "confirmed": "2026-07-10"
+    },
+    {
+      "slug": "vera-lucia",
+      "ano": 2010,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 260000000021 confirmado em consulta_cand_2010. A ingestão e a busca direta nos arquivos oficiais TSE do ano não retornaram linha individual para bens declarados; a ausência fica documentada sem inferência universal.",
+      "confirmed": "2026-07-11"
+    },
+    {
+      "slug": "vera-lucia",
+      "ano": 2012,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 260000001384 confirmado em consulta_cand_2012. A ingestão e a busca direta nos arquivos oficiais TSE do ano não retornaram linha individual para bens declarados; a ausência fica documentada sem inferência universal.",
+      "confirmed": "2026-07-11"
+    },
+    {
+      "slug": "vera-lucia",
+      "ano": 2014,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 260000000024 confirmado em consulta_cand_2014. A ingestão e a busca direta nos arquivos oficiais TSE do ano não retornaram linha individual para bens declarados; a ausência fica documentada sem inferência universal.",
+      "confirmed": "2026-07-11"
+    },
+    {
+      "slug": "vera-lucia",
+      "ano": 2016,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 260000005540 confirmado em consulta_cand_2016. A ingestão e a busca direta nos arquivos oficiais TSE do ano não retornaram linha individual para bens declarados; a ausência fica documentada sem inferência universal.",
+      "confirmed": "2026-07-11"
+    },
+    {
+      "slug": "vera-lucia",
+      "ano": 2020,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 250000744464 confirmado em consulta_cand_2020. A ingestão e a busca direta nos arquivos oficiais TSE do ano não retornaram linha individual para bens declarados; a ausência fica documentada sem inferência universal.",
+      "confirmed": "2026-07-11"
+    },
+    {
+      "slug": "vera-lucia",
+      "ano": 2012,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 260000001384 confirmado em consulta_cand_2012. A ingestão e a busca direta nos arquivos oficiais TSE do ano não retornaram linha individual para receitas da candidatura; a ausência fica documentada sem inferência universal.",
+      "confirmed": "2026-07-11"
+    },
+    {
+      "slug": "vera-lucia",
+      "ano": 2014,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 260000000024 confirmado em consulta_cand_2014. A ingestão e a busca direta nos arquivos oficiais TSE do ano não retornaram linha individual para receitas da candidatura; a ausência fica documentada sem inferência universal.",
+      "confirmed": "2026-07-11"
+    },
+    {
+      "slug": "vera-lucia",
+      "ano": 2016,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 260000005540 confirmado em consulta_cand_2016. A ingestão e a busca direta nos arquivos oficiais TSE do ano não retornaram linha individual para receitas da candidatura; a ausência fica documentada sem inferência universal.",
+      "confirmed": "2026-07-11"
+    },
+    {
+      "slug": "vera-lucia",
+      "ano": 2022,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 280001607831 confirmado em consulta_cand_2022. A ingestão e a busca direta nos arquivos oficiais TSE do ano não retornaram linha individual para receitas da candidatura; a ausência fica documentada sem inferência universal.",
+      "confirmed": "2026-07-11"
+    },
+    {
+      "slug": "paulo-serra",
+      "ano": 2016,
+      "reason": "no-receita-at-source",
+      "detail": "SQ 250000033808 confirmado em consulta_cand_2016. A ingestão e a busca direta nos arquivos oficiais TSE do ano não retornaram linha individual para receitas da candidatura; a ausência fica documentada sem inferência universal.",
+      "confirmed": "2026-07-11"
+    },
+    {
+      "slug": "izadora-dias",
+      "ano": 2022,
+      "reason": "no-bens-at-source",
+      "detail": "SQ 250001700018 confirmado em consulta_cand_2022. A ingestão e a busca direta nos arquivos oficiais TSE do ano não retornaram linha individual para bens declarados; a ausência fica documentada sem inferência universal.",
+      "confirmed": "2026-07-11"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "ano": 2018,
+      "reason": "tse-birthdate-typo",
+      "detail": "SQ 260000623594 (TSE 2018 SE). A data oscila entre 14/02/1977 e 24/02/1977 conforme o ano, mas CPF e titulo eleitoral sao identicos em 2008, 2014, 2018 e 2022, logo e a mesma pessoa e a divergencia e erro de digitacao do TSE. Conferido por hash dos documentos, sem grava-los.",
+      "confirmed": "2026-07-30"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "ano": 2014,
+      "reason": "tse-birthdate-typo",
+      "detail": "SQ 180000000014 (TSE 2014 PI) traz 22/11/1973 contra 29/11/1973 em 2012 e 2022. CPF e titulo identicos nos tres anos: mesma pessoa, digito trocado na origem.",
+      "confirmed": "2026-07-30"
+    },
+    {
+      "slug": "luan-monteiro",
+      "ano": 2020,
+      "reason": "tse-birthdate-typo",
+      "detail": "SQ 190001092078 (TSE 2020 RJ) traz 06/08/1996 contra 05/08/1996 em 2022 e 2024. CPF e titulo identicos: mesma pessoa, digito trocado na origem.",
+      "confirmed": "2026-07-30"
+    },
+    {
+      "slug": "wanderlei-barbosa",
+      "ano": 2014,
+      "reason": "tse-birthdate-typo",
+      "detail": "SQ 270000010436 (TSE 2014 TO) traz 21/02/1980 contra 12/03/1964 em 2006, 2008, 2010, 2018 e 2022. CPF e titulo identicos nos sete registros: mesma pessoa. A entrada anterior deste par dizia apenas 'SQ confirmado', confirmacao feita por NOME, que e o ponto cego que deixou passar 30 SQ de outra pessoa em 30/07/2026; agora esta ancorada em documento.",
+      "confirmed": "2026-07-30"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "ano": 2008,
+      "reason": "tse-birthdate-typo",
+      "detail": "SQ 2182 (TSE 2008 SE) traz 14/02/1977 contra a ancora 24/02/1977. Mesmo CPF e titulo eleitoral de 2014, 2018 e 2022. Atencao: ate 2008 o SQ e sequencial POR UF e este 2182 e compartilhado por 22 pessoas em UFs diferentes; a linha certa e a de SE, desempatada pela UF do seed.",
+      "confirmed": "2026-07-30"
+    }
+  ]
+}

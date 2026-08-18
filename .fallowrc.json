@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/joshmcguigan/fallow/main/schemas/fallow-config.schema.json",
+  "ignoreDependencies": [
+    "react-dom",
+    "@cspell/dict-pt-br",
+    "shadcn",
+    "react-devtools-core"
+  ],
+  "entry": [
+    "tests/visual/**/*.spec.ts"
+  ],
+  "ignorePatterns": [],
+  "ignoreExports": [],
+  "rules": {
+    "test-only-dependencies": "off"
+  }
+}

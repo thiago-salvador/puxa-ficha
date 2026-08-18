@@ -1,0 +1,6 @@
+{"id":"rui-2014-ausencia-oficial-explicita","source_ref":"diagnostico-codex-20260807","required_assertions":["official_absence_explicit","no_fabricated_zero","source_scope_date_visible"],"required_evidence":["sql","api","dom"]}
+{"id":"rui-2002-fora-da-janela-bens","source_ref":"matrix-pf-patrimonio-20260807T170643Z","required_assertions":["pre_2006_not_applicable_or_explicit","no_gap_counted_before_2006"],"required_evidence":["sql","dom"]}
+{"id":"candidaturas-oficiais-na-trajetoria","source_ref":"matrix-pf-patrimonio-20260807T170643Z","required_assertions":["every_official_candidacy_visible_or_explicit","zero_silent_missing"],"required_evidence":["sql","api"]}
+{"id":"falha-transporte-nao-vira-vazio","source_ref":"expected-behavior-5","required_assertions":["transport_error_stays_error","no_vazio_sem_pacote_oficial"],"required_evidence":["sql","file"]}
+{"id":"identidade-sem-nome","source_ref":"backfill-cpf-tse-regra","required_assertions":["sq_or_cpf_only","zero_name_only_persistence"],"required_evidence":["sql"]}
+{"id":"regua-por-eleicao","source_ref":"docs/cobertura-de-dados.md","required_assertions":["coverage_measures_per_election","docs_and_status_same_commit"],"required_evidence":["command","diff"]}

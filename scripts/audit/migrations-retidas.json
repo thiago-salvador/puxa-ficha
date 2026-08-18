@@ -1,0 +1,31 @@
+{
+  "_comentario": "Congelamento por hash das cinco migrations RETIDAS da completude. Elas escrevem em producao, nao estao no ledger e o timestamp delas e anterior ao de migrations ja aplicadas, entao um `db push` as aplicaria fora de ordem. Ate 09/08/2026 o gate so conferia presenca do arquivo e o aviso no topo, enquanto a documentacao afirmava protecao byte a byte: uma edicao no corpo passava em silencio. Liberar uma delas e ato deliberado: remova a entrada aqui, remova o aviso do arquivo, atualize tests/migrations-retidas-gate.test.ts e registre a decisao em Settings/STATUS.md, tudo no mesmo commit.",
+  "congelado_em": "2026-08-09",
+  "retidas": {
+    "20260807050000": {
+      "arquivo": "20260807050000_a2_money_reconciled_194_profiles.sql",
+      "sha256": "ac48171ff0c89d8b637f16b44d35a92a646f1da28c4f2a7cad14925c4dcfc04d",
+      "bytes": 215586
+    },
+    "20260807051000": {
+      "arquivo": "20260807051000_b1_project_official_urls.sql",
+      "sha256": "992f50739a544b09bd0e6bd3df3569bd1944a0d7fbe7cf93d54434bdc0746aff",
+      "bytes": 444155
+    },
+    "20260807052000": {
+      "arquivo": "20260807052000_b2_current_profiles_tse_2026.sql",
+      "sha256": "19c5229a6ecd7c15de1b43a250b639eb4b85d97d063bea91e81dc898c7b03ea6",
+      "bytes": 84639
+    },
+    "20260807052500": {
+      "arquivo": "20260807052500_a1_guilherme_fonseca_identity_fill.sql",
+      "sha256": "9653e8b83894505cca4d867c17e2feb0b59acd352d4b8e09550b8e372ef9537f",
+      "bytes": 2038
+    },
+    "20260807053000": {
+      "arquivo": "20260807053000_hide_no_mandate_attention_points.sql",
+      "sha256": "9fbaf456a4b57ac693b3c8c274f5f095599e87c20160710c2012864d2b8e5003",
+      "bytes": 2359
+    }
+  }
+}

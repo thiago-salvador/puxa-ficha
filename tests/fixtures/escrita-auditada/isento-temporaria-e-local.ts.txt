@@ -1,0 +1,18 @@
+// FIXTURE DE ISENÇÃO. Escrita em tabela temporária e escrita num client que não
+// é produção. As duas são escrita de banco de verdade, e nenhuma das duas é
+// escrita em produção: exigir trilha aqui infla a trilha com ruído e ensina o
+// time a ignorá-la.
+
+import { supabase } from "../lib/supabase"
+import { createClient } from "@supabase/supabase-js"
+
+const supabaseLocal = createClient("http://127.0.0.1:54321", "chave-de-dev")
+
+export async function materializar(linhas: unknown[]) {
+  await supabase.from("tmp_marcadores_recalculados").insert(linhas)
+  await supabase.from("temp_lote_curadoria").delete().neq("id", 0)
+}
+
+export async function semear(linhas: unknown[]) {
+  await supabaseLocal.from("candidatos").insert(linhas)
+}

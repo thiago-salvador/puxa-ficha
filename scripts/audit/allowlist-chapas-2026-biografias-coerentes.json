@@ -1,0 +1,23 @@
+{
+  "_comentario": "Autoriza somente a correção das seis biografias que ainda descreviam o papel eleitoral anterior ao snapshot TSE de 12/08/2026.",
+  "recorte": "chapas-2026-biografias-coerentes",
+  "migration": "20260813111700_chapas_2026_biografias_coerentes.sql",
+  "fonte": "TSE Dados Abertos candidatos 2026, consulta_cand_2026.zip, SHA-256 686fe1717dd0b860d714f878bf3d75a388478ebab2a56a2f963e6bba50ff0ce7.",
+  "coorte": [
+    "eduardo-girao",
+    "francisco-dias",
+    "geraldo-alckmin",
+    "luiz-carlos-teodoro",
+    "rafael-greca",
+    "raquel-bricio"
+  ],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [
+    { "tabela": "candidatos", "slug": "eduardo-girao", "campos": ["biografia", "ultima_atualizacao"] },
+    { "tabela": "candidatos", "slug": "francisco-dias", "campos": ["biografia", "ultima_atualizacao"] },
+    { "tabela": "candidatos", "slug": "geraldo-alckmin", "campos": ["biografia", "ultima_atualizacao"] },
+    { "tabela": "candidatos", "slug": "luiz-carlos-teodoro", "campos": ["biografia", "ultima_atualizacao"] },
+    { "tabela": "candidatos", "slug": "rafael-greca", "campos": ["biografia", "ultima_atualizacao"] },
+    { "tabela": "candidatos", "slug": "raquel-bricio", "campos": ["biografia", "ultima_atualizacao"] }
+  ]
+}

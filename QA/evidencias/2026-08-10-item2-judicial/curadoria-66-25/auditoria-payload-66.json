@@ -1,0 +1,3193 @@
+{
+  "schema_version": 1,
+  "gerado_em": "2026-08-11T02:27:26.100Z",
+  "estado": "auditoria_fail_closed_nao_publicavel",
+  "publicacao_pronta": false,
+  "origem_bruta_sha256": "08704ed893bb780078a2aec795995b1b6c3a6ade317b72e8684e3c366dd07b47",
+  "fonte_api": "https://comunicaapi.pje.jus.br/swagger/djen.yml",
+  "semantica": {
+    "status_comunicacao": "nao_e_status_de_merito_do_processo",
+    "data_disponibilizacao": "nao_e_data_inicio_nem_data_decisao_do_processo",
+    "texto_comunicacao": "inteiro_teor_nao_foi_promovido_a_descricao_editorial",
+    "descricao_publica": "deterministica_e_procedural_sem_inferencia_de_merito"
+  },
+  "totais": {
+    "processos": 66,
+    "fichas": 25,
+    "publicaveis": 0,
+    "payloads_tecnicos_prontos": 66,
+    "consultas_com_erro": 0,
+    "campos_sustentados": {
+      "identidade_na_resposta_oficial": 66,
+      "classe": 66,
+      "tribunal": 66,
+      "polo_candidato": 66,
+      "data_comunicacao": 66,
+      "orgao": 66,
+      "status_publico": 66,
+      "descricao_publica": 66
+    }
+  },
+  "processos": [
+    {
+      "slug": "augusto-cury",
+      "numero_cnj": "0709932-06.2017.8.07.0001",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0709932-06.2017.8.07.0001&pagina=1",
+      "classes": [
+        "AGRAVO DE INSTRUMENTO EM RECURSO ESPECIAL",
+        "AGRAVO EM RECURSO ESPECIAL",
+        "AGRAVO INTERNO CíVEL",
+        "APELAçãO CíVEL",
+        "EMBARGOS DE DECLARAçãO CíVEL",
+        "PROCEDIMENTO COMUM CíVEL",
+        "RECURSO ESPECIAL"
+      ],
+      "codigos_classe": [
+        "11881",
+        "1208",
+        "1689",
+        "1711",
+        "198",
+        "213",
+        "7"
+      ],
+      "tribunais": [
+        "STJ",
+        "TJDFT"
+      ],
+      "orgaos": [
+        "1ª Vara Cível de Brasília",
+        "6ª Turma Cível",
+        "COORDENADORIA DE CLASSIFICAÇÃO E DISTRIBUIÇÃO DE PROCESSOS",
+        "Gabinete da Desa. Soníria Rocha Campos D'Assunção",
+        "Presidência do Tribunal",
+        "SPF COORDENADORIA DE PROCESSAMENTO DE FEITOS DE DIREITO PRIVADO"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Edital",
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2023-10-19",
+      "ultima_comunicacao": "2026-07-24",
+      "comunicacoes_retornadas": 27,
+      "comunicacoes_com_identidade": 25,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0709932-06.2017.8.07.0001, nas classes AGRAVO DE INSTRUMENTO EM RECURSO ESPECIAL; AGRAVO EM RECURSO ESPECIAL; AGRAVO INTERNO CíVEL; APELAçãO CíVEL; EMBARGOS DE DECLARAçãO CíVEL; PROCEDIMENTO COMUM CíVEL; RECURSO ESPECIAL, perante 1ª Vara Cível de Brasília; 6ª Turma Cível; COORDENADORIA DE CLASSIFICAÇÃO E DISTRIBUIÇÃO DE PROCESSOS; Gabinete da Desa. Soníria Rocha Campos D'Assunção; Presidência do Tribunal; SPF COORDENADORIA DE PROCESSAMENTO DE FEITOS DE DIREITO PRIVADO (STJ, TJDFT). O candidato consta nos polos passivo. As comunicações Edital; Intimação foram disponibilizadas entre 2023-10-19 e 2026-07-24. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "67c93fddf4fcc75bac974928f9c08ca8d094084e6904811782f1050c8e2c7064",
+      "rate_limit_restante_apos_consulta": 19
+    },
+    {
+      "slug": "renan-santos",
+      "numero_cnj": "0000349-29.2026.2.00.0515",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2+E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0000349-29.2026.2.00.0515&pagina=1",
+      "classes": [
+        "RECLAMAÇÃO DISCIPLINAR"
+      ],
+      "codigos_classe": [
+        "1301"
+      ],
+      "tribunais": [
+        "PJeCor"
+      ],
+      "orgaos": [
+        "Corregedoria Regional de Justiça do Trabalho da 15ª Região"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-06-30",
+      "ultima_comunicacao": "2026-06-30",
+      "comunicacoes_retornadas": 1,
+      "comunicacoes_com_identidade": 1,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0000349-29.2026.2.00.0515, nas classes RECLAMAÇÃO DISCIPLINAR, perante Corregedoria Regional de Justiça do Trabalho da 15ª Região (PJeCor). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2026-06-30 e 2026-06-30. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "500819cbf26bfb541c7db51c31c8f3ba703465fe429406f7f333a67d3485d997",
+      "rate_limit_restante_apos_consulta": 18
+    },
+    {
+      "slug": "renan-santos",
+      "numero_cnj": "0600089-03.2025.6.16.0144",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2+E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0600089-03.2025.6.16.0144&pagina=1",
+      "classes": [
+        "LISTA DE APOIAMENTO PARA CRIAçãO DE PARTIDO POLíTICO"
+      ],
+      "codigos_classe": [
+        "12560"
+      ],
+      "tribunais": [
+        "TRE-PR"
+      ],
+      "orgaos": [
+        "144ª ZONA ELEITORAL DE FAZENDA RIO GRANDE PR"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Edital"
+      ],
+      "primeira_comunicacao": "2025-09-23",
+      "ultima_comunicacao": "2025-09-23",
+      "comunicacoes_retornadas": 1,
+      "comunicacoes_com_identidade": 1,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0600089-03.2025.6.16.0144, nas classes LISTA DE APOIAMENTO PARA CRIAçãO DE PARTIDO POLíTICO, perante 144ª ZONA ELEITORAL DE FAZENDA RIO GRANDE PR (TRE-PR). O candidato consta nos polos ativo. As comunicações Edital foram disponibilizadas entre 2025-09-23 e 2025-09-23. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "42f2445badf5a5b1ed58b170c3162a54018cfa932972cc515740a2fe741660f4",
+      "rate_limit_restante_apos_consulta": 17
+    },
+    {
+      "slug": "renan-santos",
+      "numero_cnj": "0262930-72.2017.8.19.0001",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2+E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0262930-72.2017.8.19.0001&pagina=1",
+      "classes": [
+        "RECURSO ESPECIAL",
+        "RECURSO EXTRAORDINáRIO"
+      ],
+      "codigos_classe": [
+        "212",
+        "213"
+      ],
+      "tribunais": [
+        "TJRJ"
+      ],
+      "orgaos": [
+        "3VP - DIVISAO DE PROCESSAMENTO"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2024-12-13",
+      "ultima_comunicacao": "2024-12-13",
+      "comunicacoes_retornadas": 2,
+      "comunicacoes_com_identidade": 2,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0262930-72.2017.8.19.0001, nas classes RECURSO ESPECIAL; RECURSO EXTRAORDINáRIO, perante 3VP - DIVISAO DE PROCESSAMENTO (TJRJ). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2024-12-13 e 2024-12-13. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "30136b5c8ac058898ba6b57ac5e6ebbda992e576929bc4e5d5dcb5a6d975fe4d",
+      "rate_limit_restante_apos_consulta": 16
+    },
+    {
+      "slug": "renan-santos",
+      "numero_cnj": "1039971-32.2024.8.26.0002",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2+E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=1039971-32.2024.8.26.0002&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJSP"
+      ],
+      "orgaos": [
+        "Foro Regional II - Santo Amaro - 3ª Vara Cível",
+        "UPJ da 1ª a 4ª e 16ª Varas Cíveis - Regional II - Santo Amaro"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-06-02",
+      "ultima_comunicacao": "2026-06-29",
+      "comunicacoes_retornadas": 4,
+      "comunicacoes_com_identidade": 4,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 1039971-32.2024.8.26.0002, nas classes PROCEDIMENTO COMUM CíVEL, perante Foro Regional II - Santo Amaro - 3ª Vara Cível; UPJ da 1ª a 4ª e 16ª Varas Cíveis - Regional II - Santo Amaro (TJSP). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-06-02 e 2026-06-29. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "dbcb88311982f735243b458952903532df823d2840a36824ddfef134317ca5ea",
+      "rate_limit_restante_apos_consulta": 15
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "numero_cnj": "5355873-43.2024.8.09.0102",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5355873-43.2024.8.09.0102&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJGO"
+      ],
+      "orgaos": [
+        "4ª Câmara Cível",
+        "Mara Rosa - 1ª Vara Cível",
+        "Mara Rosa - 2ª Vara Cível"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-03-25",
+      "ultima_comunicacao": "2026-06-10",
+      "comunicacoes_retornadas": 30,
+      "comunicacoes_com_identidade": 20,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 5355873-43.2024.8.09.0102, nas classes PROCEDIMENTO COMUM CíVEL, perante 4ª Câmara Cível; Mara Rosa - 1ª Vara Cível; Mara Rosa - 2ª Vara Cível (TJGO). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2025-03-25 e 2026-06-10. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "08a55ea981233e2df7c14a19abbc6a304c69c020de548088834547d71a7fe4b3",
+      "rate_limit_restante_apos_consulta": 14
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "numero_cnj": "5846782-47.2025.8.09.0000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5846782-47.2025.8.09.0000&pagina=1",
+      "classes": [
+        "REPRESENTAçãO CRIMINAL/NOTíCIA DE CRIME"
+      ],
+      "codigos_classe": [
+        "272"
+      ],
+      "tribunais": [
+        "TJGO"
+      ],
+      "orgaos": [
+        "Órgão Especial"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-01-21",
+      "ultima_comunicacao": "2026-06-29",
+      "comunicacoes_retornadas": 5,
+      "comunicacoes_com_identidade": 4,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 5846782-47.2025.8.09.0000, nas classes REPRESENTAçãO CRIMINAL/NOTíCIA DE CRIME, perante Órgão Especial (TJGO). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2026-01-21 e 2026-06-29. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "d028ac97ee08ba41b64744745567c9b13dc55c4e9a1b486c4ccc348ec96c794a",
+      "rate_limit_restante_apos_consulta": 13
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "numero_cnj": "5353894-34.2026.8.09.0051",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5353894-34.2026.8.09.0051&pagina=1",
+      "classes": [
+        "AçãO PENAL - PROCEDIMENTO ORDINáRIO",
+        "CRIMES DE CALúNIA, INJúRIA E DIFAMAçãO DE COMPETêNCIA DO JUIZ SINGULAR",
+        "REPRESENTAçãO CRIMINAL/NOTíCIA DE CRIME"
+      ],
+      "codigos_classe": [
+        "272",
+        "283",
+        "288"
+      ],
+      "tribunais": [
+        "TJGO"
+      ],
+      "orgaos": [
+        "Goiânia - 2ª UPJ Varas de Crimes Punidos com Reclusão e Detenção: 2ª, 4ª, 5ª , 8ª e 9ª"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-04-24",
+      "ultima_comunicacao": "2026-08-07",
+      "comunicacoes_retornadas": 10,
+      "comunicacoes_com_identidade": 10,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 5353894-34.2026.8.09.0051, nas classes AçãO PENAL - PROCEDIMENTO ORDINáRIO; CRIMES DE CALúNIA, INJúRIA E DIFAMAçãO DE COMPETêNCIA DO JUIZ SINGULAR; REPRESENTAçãO CRIMINAL/NOTíCIA DE CRIME, perante Goiânia - 2ª UPJ Varas de Crimes Punidos com Reclusão e Detenção: 2ª, 4ª, 5ª , 8ª e 9ª (TJGO). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2026-04-24 e 2026-08-07. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "f6c2e1fc7063786c01d23debcd165f3e92fd0805d90af47b4810fa99a593d3d0",
+      "rate_limit_restante_apos_consulta": 12
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "numero_cnj": "1011502-36.2025.8.26.0003",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=1011502-36.2025.8.26.0003&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJSP"
+      ],
+      "orgaos": [
+        "Foro Central Cível - 5ª Vara Cível"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-07-21",
+      "ultima_comunicacao": "2026-07-28",
+      "comunicacoes_retornadas": 6,
+      "comunicacoes_com_identidade": 6,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 1011502-36.2025.8.26.0003, nas classes PROCEDIMENTO COMUM CíVEL, perante Foro Central Cível - 5ª Vara Cível (TJSP). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2025-07-21 e 2026-07-28. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "eac98abbac4dae811b6d0c8244ee85a7c17c6db50565e39d4e2b32e4b9900be5",
+      "rate_limit_restante_apos_consulta": 11
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "numero_cnj": "1056927-28.2021.8.26.0100",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=1056927-28.2021.8.26.0100&pagina=1",
+      "classes": [
+        "AGRAVO EM RECURSO ESPECIAL",
+        "APELAçãO CíVEL",
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "11881",
+        "198",
+        "7"
+      ],
+      "tribunais": [
+        "STJ",
+        "TJSP"
+      ],
+      "orgaos": [
+        "AJC COORDENADORIA DE JULGAMENTO COLEGIADO DA QUARTA TURMA",
+        "Recursos Tribunais Superiores Direito Privado 1 - Extr., Esp., Ord - Pátio do Colégio, 73 - 4º andar",
+        "SECRETARIA JUDICIÁRIA",
+        "SPF COORDENADORIA DE PROCESSAMENTO DE FEITOS DE DIREITO PRIVADO",
+        "UPJ da 6ª a 10ª Varas Cíveis - Foro Central Cível"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-05-26",
+      "ultima_comunicacao": "2026-07-15",
+      "comunicacoes_retornadas": 12,
+      "comunicacoes_com_identidade": 10,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 1056927-28.2021.8.26.0100, nas classes AGRAVO EM RECURSO ESPECIAL; APELAçãO CíVEL; PROCEDIMENTO COMUM CíVEL, perante AJC COORDENADORIA DE JULGAMENTO COLEGIADO DA QUARTA TURMA; Recursos Tribunais Superiores Direito Privado 1 - Extr., Esp., Ord - Pátio do Colégio, 73 - 4º andar; SECRETARIA JUDICIÁRIA; SPF COORDENADORIA DE PROCESSAMENTO DE FEITOS DE DIREITO PRIVADO; UPJ da 6ª a 10ª Varas Cíveis - Foro Central Cível (STJ, TJSP). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-05-26 e 2026-07-15. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "241d46e053696bee58ab3f31dec7dbbaa67c4ba6c336898ba3c31384ff30c659",
+      "rate_limit_restante_apos_consulta": 10
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "numero_cnj": "4054899-94.2025.8.26.0100",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=4054899-94.2025.8.26.0100&pagina=1",
+      "classes": [
+        "AçãO CIVIL PúBLICA CíVEL"
+      ],
+      "codigos_classe": [
+        "65"
+      ],
+      "tribunais": [
+        "TJSP"
+      ],
+      "orgaos": [
+        "UPJ da 6ª a 10ª Varas Cíveis - Foro Central Cível"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-06-19",
+      "ultima_comunicacao": "2026-07-02",
+      "comunicacoes_retornadas": 2,
+      "comunicacoes_com_identidade": 2,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 4054899-94.2025.8.26.0100, nas classes AçãO CIVIL PúBLICA CíVEL, perante UPJ da 6ª a 10ª Varas Cíveis - Foro Central Cível (TJSP). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-06-19 e 2026-07-02. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "918d45ae30b6aa69b3ee662386ab56058a06a173ce6e2886d2c40ad5184ed289",
+      "rate_limit_restante_apos_consulta": 9
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "numero_cnj": "4015223-51.2025.8.26.0000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=4015223-51.2025.8.26.0000&pagina=1",
+      "classes": [
+        "AGRAVO DE INSTRUMENTO"
+      ],
+      "codigos_classe": [
+        "202"
+      ],
+      "tribunais": [
+        "TJSP"
+      ],
+      "orgaos": [
+        "3ª Câmara de Direito Privado",
+        "Gab. 02 - 3ª Câmara de Direito Privado"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Ata de sessão",
+        "Intimação",
+        "Lista de distribuição"
+      ],
+      "primeira_comunicacao": "2026-01-21",
+      "ultima_comunicacao": "2026-04-09",
+      "comunicacoes_retornadas": 4,
+      "comunicacoes_com_identidade": 4,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 4015223-51.2025.8.26.0000, nas classes AGRAVO DE INSTRUMENTO, perante 3ª Câmara de Direito Privado; Gab. 02 - 3ª Câmara de Direito Privado (TJSP). O candidato consta nos polos passivo. As comunicações Ata de sessão; Intimação; Lista de distribuição foram disponibilizadas entre 2026-01-21 e 2026-04-09. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "02c13c775f7ed1538360d2e2ca8a65c8984e3fdd7e3d869e30386c73f48210e6",
+      "rate_limit_restante_apos_consulta": 8
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "numero_cnj": "8000488-52.2023.8.05.0079",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=8000488-52.2023.8.05.0079&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJBA"
+      ],
+      "orgaos": [
+        "EUNÁPOLIS > 1ª VARA DOS FEITOS DE RELAÇÕES DE CONSUMO, CÍVEIS E COMERCIAIS"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2024-10-18",
+      "ultima_comunicacao": "2025-01-23",
+      "comunicacoes_retornadas": 10,
+      "comunicacoes_com_identidade": 6,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 8000488-52.2023.8.05.0079, nas classes PROCEDIMENTO COMUM CíVEL, perante EUNÁPOLIS > 1ª VARA DOS FEITOS DE RELAÇÕES DE CONSUMO, CÍVEIS E COMERCIAIS (TJBA). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2024-10-18 e 2025-01-23. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "5e667e62f7116c66e54be0192522bc004d72e845737f2f1e9fe46636da94dd24",
+      "rate_limit_restante_apos_consulta": 7
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "numero_cnj": "8000823-45.2023.8.05.0120",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=8000823-45.2023.8.05.0120&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJBA"
+      ],
+      "orgaos": [
+        "ITAMARAJU > VARA CÍVEL"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2024-10-02",
+      "ultima_comunicacao": "2024-10-02",
+      "comunicacoes_retornadas": 1,
+      "comunicacoes_com_identidade": 1,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 8000823-45.2023.8.05.0120, nas classes PROCEDIMENTO COMUM CíVEL, perante ITAMARAJU > VARA CÍVEL (TJBA). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2024-10-02 e 2024-10-02. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "642d6c15334507d30b663378feb87eb6a40e44bcd6d14c2ac0180902489a1934",
+      "rate_limit_restante_apos_consulta": 6
+    },
+    {
+      "slug": "acm-neto",
+      "numero_cnj": "0769743-13.2025.8.07.0001",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0769743-13.2025.8.07.0001&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJDFT"
+      ],
+      "orgaos": [
+        "8ª Vara Cível de Brasília"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-01-16",
+      "ultima_comunicacao": "2026-07-21",
+      "comunicacoes_retornadas": 4,
+      "comunicacoes_com_identidade": 4,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0769743-13.2025.8.07.0001, nas classes PROCEDIMENTO COMUM CíVEL, perante 8ª Vara Cível de Brasília (TJDFT). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-01-16 e 2026-07-21. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "acc9dee61afe20a2bbe9ec4e69c93187deb783fff28f5fa25c1b4fdc17b0256a",
+      "rate_limit_restante_apos_consulta": 5
+    },
+    {
+      "slug": "acm-neto",
+      "numero_cnj": "0703451-15.2026.8.07.0000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0703451-15.2026.8.07.0000&pagina=1",
+      "classes": [
+        "AGRAVO DE INSTRUMENTO"
+      ],
+      "codigos_classe": [
+        "202"
+      ],
+      "tribunais": [
+        "TJDFT"
+      ],
+      "orgaos": [
+        "2ª Turma Cível"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-02-09",
+      "ultima_comunicacao": "2026-07-27",
+      "comunicacoes_retornadas": 3,
+      "comunicacoes_com_identidade": 3,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0703451-15.2026.8.07.0000, nas classes AGRAVO DE INSTRUMENTO, perante 2ª Turma Cível (TJDFT). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-02-09 e 2026-07-27. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "eaa140787e640d4ace13dd02d7ffc271d879cb30cdf4420ed68632576b53176c",
+      "rate_limit_restante_apos_consulta": 4
+    },
+    {
+      "slug": "acm-neto",
+      "numero_cnj": "8010425-71.2019.8.05.0000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=8010425-71.2019.8.05.0000&pagina=1",
+      "classes": [
+        "MANDADO DE SEGURANçA CíVEL"
+      ],
+      "codigos_classe": [
+        "120"
+      ],
+      "tribunais": [
+        "TJBA"
+      ],
+      "orgaos": [
+        "SEÇÃO CÍVEL DE DIREITO PÚBLICO"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2024-12-16",
+      "ultima_comunicacao": "2024-12-16",
+      "comunicacoes_retornadas": 6,
+      "comunicacoes_com_identidade": 4,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 8010425-71.2019.8.05.0000, nas classes MANDADO DE SEGURANçA CíVEL, perante SEÇÃO CÍVEL DE DIREITO PÚBLICO (TJBA). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2024-12-16 e 2024-12-16. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "1e8161529d90f45452a5398d218400354ac1758f69d33b481871c69c2e02237f",
+      "rate_limit_restante_apos_consulta": 3
+    },
+    {
+      "slug": "acm-neto",
+      "numero_cnj": "8091329-75.2019.8.05.0001",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=8091329-75.2019.8.05.0001&pagina=1",
+      "classes": [
+        "MANDADO DE SEGURANçA CíVEL"
+      ],
+      "codigos_classe": [
+        "120"
+      ],
+      "tribunais": [
+        "TJBA"
+      ],
+      "orgaos": [
+        "7ª V DA FAZENDA PÚBLICA DE SALVADOR"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-03-13",
+      "ultima_comunicacao": "2026-03-13",
+      "comunicacoes_retornadas": 1,
+      "comunicacoes_com_identidade": 1,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 8091329-75.2019.8.05.0001, nas classes MANDADO DE SEGURANçA CíVEL, perante 7ª V DA FAZENDA PÚBLICA DE SALVADOR (TJBA). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-03-13 e 2026-03-13. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "36aa79aeacb19fcd15a0ea7b576228f12bd5b7a553326bae8bdec1662fec3193",
+      "rate_limit_restante_apos_consulta": 2
+    },
+    {
+      "slug": "alysson-bezerra",
+      "numero_cnj": "0811941-55.2021.8.20.5106",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0811941-55.2021.8.20.5106&pagina=1",
+      "classes": [
+        "APELAçãO CíVEL",
+        "CUMPRIMENTO DE SENTENçA",
+        "TUTELA CAUTELAR ANTECEDENTE"
+      ],
+      "codigos_classe": [
+        "12134",
+        "156",
+        "198"
+      ],
+      "tribunais": [
+        "TJRN"
+      ],
+      "orgaos": [
+        "2ª Vara Cível da Comarca de Mossoró",
+        "Gab. Des. Amaury Moura Sobrinho na Câmara Cível"
+      ],
+      "polos_candidato": [
+        "A",
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-05-07",
+      "ultima_comunicacao": "2025-11-03",
+      "comunicacoes_retornadas": 24,
+      "comunicacoes_com_identidade": 12,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0811941-55.2021.8.20.5106, nas classes APELAçãO CíVEL; CUMPRIMENTO DE SENTENçA; TUTELA CAUTELAR ANTECEDENTE, perante 2ª Vara Cível da Comarca de Mossoró; Gab. Des. Amaury Moura Sobrinho na Câmara Cível (TJRN). O candidato consta nos polos ativo e passivo. As comunicações Intimação foram disponibilizadas entre 2025-05-07 e 2025-11-03. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "1b6208ea1729fea052bd64271bb5a6fe94217abdad05201d21b72fbfcfbab12b",
+      "rate_limit_restante_apos_consulta": 1
+    },
+    {
+      "slug": "alysson-bezerra",
+      "numero_cnj": "0813585-28.2024.8.20.5106",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0813585-28.2024.8.20.5106&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJRN"
+      ],
+      "orgaos": [
+        "5ª Vara Cível da Comarca de Mossoró"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2024-06-24",
+      "ultima_comunicacao": "2026-07-03",
+      "comunicacoes_retornadas": 5,
+      "comunicacoes_com_identidade": 5,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0813585-28.2024.8.20.5106, nas classes PROCEDIMENTO COMUM CíVEL, perante 5ª Vara Cível da Comarca de Mossoró (TJRN). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2024-06-24 e 2026-07-03. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "883cfd411175af1c47ba4ed0b71ba51b4c4d7d04c9314bc1f354dbd4f1adabb1",
+      "rate_limit_restante_apos_consulta": 0
+    },
+    {
+      "slug": "alysson-bezerra",
+      "numero_cnj": "0823319-37.2023.8.20.5106",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0823319-37.2023.8.20.5106&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJRN"
+      ],
+      "orgaos": [
+        "4ª Vara Cível da Comarca de Mossoró"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2023-11-02",
+      "ultima_comunicacao": "2026-03-20",
+      "comunicacoes_retornadas": 26,
+      "comunicacoes_com_identidade": 26,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0823319-37.2023.8.20.5106, nas classes PROCEDIMENTO COMUM CíVEL, perante 4ª Vara Cível da Comarca de Mossoró (TJRN). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2023-11-02 e 2026-03-20. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "9c8e4259a139ca177a9071f1ed1fba6033c4ff289adb58e51849e3fa79f018b2",
+      "rate_limit_restante_apos_consulta": 19
+    },
+    {
+      "slug": "edilson-damiao",
+      "numero_cnj": "0823846-59.2026.8.23.0010",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0823846-59.2026.8.23.0010&pagina=1",
+      "classes": [
+        "PROCEDIMENTO DO JUIZADO ESPECIAL CíVEL"
+      ],
+      "codigos_classe": [
+        "436"
+      ],
+      "tribunais": [
+        "TJRR"
+      ],
+      "orgaos": [
+        "1º Juizado Especial Cível de Boa Vista"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação",
+        "Lista de distribuição"
+      ],
+      "primeira_comunicacao": "2026-06-01",
+      "ultima_comunicacao": "2026-08-03",
+      "comunicacoes_retornadas": 5,
+      "comunicacoes_com_identidade": 5,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0823846-59.2026.8.23.0010, nas classes PROCEDIMENTO DO JUIZADO ESPECIAL CíVEL, perante 1º Juizado Especial Cível de Boa Vista (TJRR). O candidato consta nos polos ativo. As comunicações Intimação; Lista de distribuição foram disponibilizadas entre 2026-06-01 e 2026-08-03. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "d162352699e3b2ed9b3c1e0cb3c893f6738c229bb756ee0208d5ad83b68ff17e",
+      "rate_limit_restante_apos_consulta": 18
+    },
+    {
+      "slug": "edilson-damiao",
+      "numero_cnj": "0823841-37.2026.8.23.0010",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0823841-37.2026.8.23.0010&pagina=1",
+      "classes": [
+        "PROCEDIMENTO DO JUIZADO ESPECIAL CíVEL"
+      ],
+      "codigos_classe": [
+        "436"
+      ],
+      "tribunais": [
+        "TJRR"
+      ],
+      "orgaos": [
+        "1º Juizado Especial Cível de Boa Vista"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação",
+        "Lista de distribuição"
+      ],
+      "primeira_comunicacao": "2026-06-01",
+      "ultima_comunicacao": "2026-07-31",
+      "comunicacoes_retornadas": 6,
+      "comunicacoes_com_identidade": 6,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0823841-37.2026.8.23.0010, nas classes PROCEDIMENTO DO JUIZADO ESPECIAL CíVEL, perante 1º Juizado Especial Cível de Boa Vista (TJRR). O candidato consta nos polos ativo. As comunicações Intimação; Lista de distribuição foram disponibilizadas entre 2026-06-01 e 2026-07-31. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "6d2fac353a0f7d106b4614995d7cf05b5816dd67995e322910d760ce5c6081de",
+      "rate_limit_restante_apos_consulta": 17
+    },
+    {
+      "slug": "edilson-damiao",
+      "numero_cnj": "0812002-64.2016.8.23.0010",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0812002-64.2016.8.23.0010&pagina=1",
+      "classes": [
+        "AçãO CIVIL DE IMPROBIDADE ADMINISTRATIVA"
+      ],
+      "codigos_classe": [
+        "64"
+      ],
+      "tribunais": [
+        "TJRR"
+      ],
+      "orgaos": [
+        "2ª Vara de Fazenda Pública",
+        "2ª Vara de Fazenda Pública de Boa Vista"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-07-04",
+      "ultima_comunicacao": "2026-05-11",
+      "comunicacoes_retornadas": 20,
+      "comunicacoes_com_identidade": 8,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0812002-64.2016.8.23.0010, nas classes AçãO CIVIL DE IMPROBIDADE ADMINISTRATIVA, perante 2ª Vara de Fazenda Pública; 2ª Vara de Fazenda Pública de Boa Vista (TJRR). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-07-04 e 2026-05-11. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "ff3d4e4f44783b943774aa94f63b365bd9815cf5cd69c2b647bb4c8a56a7c438",
+      "rate_limit_restante_apos_consulta": 16
+    },
+    {
+      "slug": "eduardo-riedel",
+      "numero_cnj": "0800961-87.2024.8.12.0055",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0800961-87.2024.8.12.0055&pagina=1",
+      "classes": [
+        "MANDADO DE SEGURANçA CíVEL"
+      ],
+      "codigos_classe": [
+        "120"
+      ],
+      "tribunais": [
+        "TJMS"
+      ],
+      "orgaos": [
+        "Vara Única"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2024-10-14",
+      "ultima_comunicacao": "2024-10-14",
+      "comunicacoes_retornadas": 1,
+      "comunicacoes_com_identidade": 1,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0800961-87.2024.8.12.0055, nas classes MANDADO DE SEGURANçA CíVEL, perante Vara Única (TJMS). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2024-10-14 e 2024-10-14. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "4c663e32626ad09ac09105c45ce58f2ea683475326f81f8039634b2ef60bbbac",
+      "rate_limit_restante_apos_consulta": 15
+    },
+    {
+      "slug": "eduardo-riedel",
+      "numero_cnj": "1412142-36.2026.8.12.0000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=1412142-36.2026.8.12.0000&pagina=1",
+      "classes": [
+        "AGRAVO DE INSTRUMENTO"
+      ],
+      "codigos_classe": [
+        "202"
+      ],
+      "tribunais": [
+        "TJMS"
+      ],
+      "orgaos": [
+        "Coordenadoria de Atendimento e Expedição",
+        "Coordenadoria de Protocolo e Distribuição"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-06-12",
+      "ultima_comunicacao": "2026-06-25",
+      "comunicacoes_retornadas": 2,
+      "comunicacoes_com_identidade": 2,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 1412142-36.2026.8.12.0000, nas classes AGRAVO DE INSTRUMENTO, perante Coordenadoria de Atendimento e Expedição; Coordenadoria de Protocolo e Distribuição (TJMS). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-06-12 e 2026-06-25. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "064c7ca23a847e5a92778529486efda253a7ad0a495c993caf7355b8d8906e9d",
+      "rate_limit_restante_apos_consulta": 14
+    },
+    {
+      "slug": "eduardo-riedel",
+      "numero_cnj": "0804332-93.2026.8.12.0021",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0804332-93.2026.8.12.0021&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJMS"
+      ],
+      "orgaos": [
+        "Vara de Fazenda Pública e Registros Públicos"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-06-08",
+      "ultima_comunicacao": "2026-06-25",
+      "comunicacoes_retornadas": 5,
+      "comunicacoes_com_identidade": 3,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0804332-93.2026.8.12.0021, nas classes PROCEDIMENTO COMUM CíVEL, perante Vara de Fazenda Pública e Registros Públicos (TJMS). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-06-08 e 2026-06-25. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "5a15fce182c43238980cee35cb344199534b136ab65f92d96fb66774d5f2c797",
+      "rate_limit_restante_apos_consulta": 13
+    },
+    {
+      "slug": "garotinho",
+      "numero_cnj": "0136337-52.2004.8.19.0001",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0136337-52.2004.8.19.0001&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJRJ"
+      ],
+      "orgaos": [
+        "Comarca da Capital- Cartório da 33ª Vara Cível"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-01-13",
+      "ultima_comunicacao": "2026-08-03",
+      "comunicacoes_retornadas": 5,
+      "comunicacoes_com_identidade": 5,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0136337-52.2004.8.19.0001, nas classes PROCEDIMENTO COMUM CíVEL, perante Comarca da Capital- Cartório da 33ª Vara Cível (TJRJ). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-01-13 e 2026-08-03. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "678e5d9d0493955c17f3dd8a89ee03cd65508a2d83e6f8544c424e6dab65d4a3",
+      "rate_limit_restante_apos_consulta": 12
+    },
+    {
+      "slug": "garotinho",
+      "numero_cnj": "5062747-88.2020.8.13.0024",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5062747-88.2020.8.13.0024&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJMG"
+      ],
+      "orgaos": [
+        "6ª Vara Cível da Comarca de Juiz de Fora"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-11-26",
+      "ultima_comunicacao": "2026-03-09",
+      "comunicacoes_retornadas": 4,
+      "comunicacoes_com_identidade": 4,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 5062747-88.2020.8.13.0024, nas classes PROCEDIMENTO COMUM CíVEL, perante 6ª Vara Cível da Comarca de Juiz de Fora (TJMG). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-11-26 e 2026-03-09. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "a006e38331b3655d4ec60126637bc58b1b11c6191b636376a5b27eaa0acfe283",
+      "rate_limit_restante_apos_consulta": 11
+    },
+    {
+      "slug": "garotinho",
+      "numero_cnj": "0101879-97.2017.5.01.0035",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0101879-97.2017.5.01.0035&pagina=1",
+      "classes": [
+        "AçãO TRABALHISTA - RITO ORDINáRIO"
+      ],
+      "codigos_classe": [
+        "985"
+      ],
+      "tribunais": [
+        "TRT1"
+      ],
+      "orgaos": [
+        "35ª Vara do Trabalho do Rio de Janeiro"
+      ],
+      "polos_candidato": [
+        "A",
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Edital",
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2024-08-16",
+      "ultima_comunicacao": "2025-08-04",
+      "comunicacoes_retornadas": 16,
+      "comunicacoes_com_identidade": 14,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0101879-97.2017.5.01.0035, nas classes AçãO TRABALHISTA - RITO ORDINáRIO, perante 35ª Vara do Trabalho do Rio de Janeiro (TRT1). O candidato consta nos polos ativo e passivo. As comunicações Edital; Intimação foram disponibilizadas entre 2024-08-16 e 2025-08-04. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "ac05c54d157f1d87220b81462286c773594fdec9a63f9fe517768c767a178ae3",
+      "rate_limit_restante_apos_consulta": 10
+    },
+    {
+      "slug": "garotinho",
+      "numero_cnj": "0100985-65.2018.5.01.0010",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0100985-65.2018.5.01.0010&pagina=1",
+      "classes": [
+        "AGRAVO DE PETIçãO",
+        "AçãO TRABALHISTA - RITO ORDINáRIO"
+      ],
+      "codigos_classe": [
+        "1004",
+        "985"
+      ],
+      "tribunais": [
+        "TRT1"
+      ],
+      "orgaos": [
+        "10ª Vara do Trabalho do Rio de Janeiro",
+        "6ª Turma",
+        "Gabinete 47"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Edital",
+        "Intimação",
+        "Lista de distribuição"
+      ],
+      "primeira_comunicacao": "2024-09-12",
+      "ultima_comunicacao": "2025-07-11",
+      "comunicacoes_retornadas": 39,
+      "comunicacoes_com_identidade": 39,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0100985-65.2018.5.01.0010, nas classes AGRAVO DE PETIçãO; AçãO TRABALHISTA - RITO ORDINáRIO, perante 10ª Vara do Trabalho do Rio de Janeiro; 6ª Turma; Gabinete 47 (TRT1). O candidato consta nos polos passivo. As comunicações Edital; Intimação; Lista de distribuição foram disponibilizadas entre 2024-09-12 e 2025-07-11. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "d6aaa0753b42ad11bdd4677278c7a4a0c778e45cf0addd15a555ead6ed555e23",
+      "rate_limit_restante_apos_consulta": 9
+    },
+    {
+      "slug": "garotinho",
+      "numero_cnj": "0000692-86.2026.8.19.0000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0000692-86.2026.8.19.0000&pagina=1",
+      "classes": [
+        "EXCEçãO DA VERDADE"
+      ],
+      "codigos_classe": [
+        "324"
+      ],
+      "tribunais": [
+        "TJRJ"
+      ],
+      "orgaos": [
+        "2VP - DEPTO AUTUACAO E DISTRIBUICAO CRIMINAL",
+        "SGJUD - TRIBUNAL PLENO E ÓRGÃO ESPECIAL"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação",
+        "Lista de distribuição"
+      ],
+      "primeira_comunicacao": "2026-01-13",
+      "ultima_comunicacao": "2026-03-12",
+      "comunicacoes_retornadas": 5,
+      "comunicacoes_com_identidade": 5,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0000692-86.2026.8.19.0000, nas classes EXCEçãO DA VERDADE, perante 2VP - DEPTO AUTUACAO E DISTRIBUICAO CRIMINAL; SGJUD - TRIBUNAL PLENO E ÓRGÃO ESPECIAL (TJRJ). O candidato consta nos polos ativo. As comunicações Intimação; Lista de distribuição foram disponibilizadas entre 2026-01-13 e 2026-03-12. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "c6e61bffc3ab5e23707e99c6f9b8110fe4c6aa168874c75ebc61408b877133b9",
+      "rate_limit_restante_apos_consulta": 8
+    },
+    {
+      "slug": "hana-ghassan",
+      "numero_cnj": "0815591-94.2026.8.14.0000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0815591-94.2026.8.14.0000&pagina=1",
+      "classes": [
+        "MANDADO DE SEGURANçA CíVEL"
+      ],
+      "codigos_classe": [
+        "120"
+      ],
+      "tribunais": [
+        "TJPA"
+      ],
+      "orgaos": [
+        "Tribunal Pleno - Desembargadora LUZIA NADJA GUIMARÃES NASCIMENTO"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-06-18",
+      "ultima_comunicacao": "2026-06-18",
+      "comunicacoes_retornadas": 3,
+      "comunicacoes_com_identidade": 1,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0815591-94.2026.8.14.0000, nas classes MANDADO DE SEGURANçA CíVEL, perante Tribunal Pleno - Desembargadora LUZIA NADJA GUIMARÃES NASCIMENTO (TJPA). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-06-18 e 2026-06-18. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "a9f5c5597757aba599eee98165c1ae582fac6113b2e1e18448ccbd7eadc117d1",
+      "rate_limit_restante_apos_consulta": 7
+    },
+    {
+      "slug": "helder-salomao",
+      "numero_cnj": "0018179-59.2014.8.08.0012",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0018179-59.2014.8.08.0012&pagina=1",
+      "classes": [
+        "AçãO PENAL - PROCEDIMENTO ORDINáRIO"
+      ],
+      "codigos_classe": [
+        "283"
+      ],
+      "tribunais": [
+        "TJES"
+      ],
+      "orgaos": [
+        "Gabinete Des. WILLIAN SILVA",
+        "Gabinete Desª. RACHEL DURÃO CORREIA LIMA"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-03-04",
+      "ultima_comunicacao": "2026-07-23",
+      "comunicacoes_retornadas": 5,
+      "comunicacoes_com_identidade": 5,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0018179-59.2014.8.08.0012, nas classes AçãO PENAL - PROCEDIMENTO ORDINáRIO, perante Gabinete Des. WILLIAN SILVA; Gabinete Desª. RACHEL DURÃO CORREIA LIMA (TJES). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-03-04 e 2026-07-23. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "5b360ed3308b24ccd6e9a9ed18c6478e4a4d8220978166fa535a959cb81adf6f",
+      "rate_limit_restante_apos_consulta": 6
+    },
+    {
+      "slug": "jeronimo",
+      "numero_cnj": "8066507-80.2023.8.05.0001",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=8066507-80.2023.8.05.0001&pagina=1",
+      "classes": [
+        "INTERPELAçãO"
+      ],
+      "codigos_classe": [
+        "12227"
+      ],
+      "tribunais": [
+        "TJBA"
+      ],
+      "orgaos": [
+        "6ª V DA FAZENDA PÚBLICA DE SALVADOR"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-05-14",
+      "ultima_comunicacao": "2026-05-14",
+      "comunicacoes_retornadas": 1,
+      "comunicacoes_com_identidade": 1,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 8066507-80.2023.8.05.0001, nas classes INTERPELAçãO, perante 6ª V DA FAZENDA PÚBLICA DE SALVADOR (TJBA). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-05-14 e 2026-05-14. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "95e3cb5b46395fa2b67a4d58489c8b12513f1ffed9208e158b290100fef132e5",
+      "rate_limit_restante_apos_consulta": 5
+    },
+    {
+      "slug": "jeronimo",
+      "numero_cnj": "8166700-69.2024.8.05.0001",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=8166700-69.2024.8.05.0001&pagina=1",
+      "classes": [
+        "INQUéRITO POLICIAL"
+      ],
+      "codigos_classe": [
+        "279"
+      ],
+      "tribunais": [
+        "TJBA"
+      ],
+      "orgaos": [
+        "3ª VARA DAS GARANTIAS DE SALVADOR"
+      ],
+      "polos_candidato": [
+        "T"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-02-24",
+      "ultima_comunicacao": "2026-02-24",
+      "comunicacoes_retornadas": 1,
+      "comunicacoes_com_identidade": 1,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 8166700-69.2024.8.05.0001, nas classes INQUéRITO POLICIAL, perante 3ª VARA DAS GARANTIAS DE SALVADOR (TJBA). O candidato consta nos polos terceiro interessado. As comunicações Intimação foram disponibilizadas entre 2026-02-24 e 2026-02-24. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "7b410cd11ddc45a697259982b2a2668fc888239757af75bb74ce067c0039645f",
+      "rate_limit_restante_apos_consulta": 4
+    },
+    {
+      "slug": "jeronimo",
+      "numero_cnj": "8024632-65.2025.8.05.0000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=8024632-65.2025.8.05.0000&pagina=1",
+      "classes": [
+        "MANDADO DE SEGURANçA CíVEL"
+      ],
+      "codigos_classe": [
+        "120"
+      ],
+      "tribunais": [
+        "TJBA"
+      ],
+      "orgaos": [
+        "Des. Paulo Alberto Nunes Chenaud"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-09-02",
+      "ultima_comunicacao": "2026-05-14",
+      "comunicacoes_retornadas": 4,
+      "comunicacoes_com_identidade": 4,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 8024632-65.2025.8.05.0000, nas classes MANDADO DE SEGURANçA CíVEL, perante Des. Paulo Alberto Nunes Chenaud (TJBA). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-09-02 e 2026-05-14. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "eedd147063e380a211affb901e7cc3b1741635b30c6726cbb4ea212e22ab366b",
+      "rate_limit_restante_apos_consulta": 3
+    },
+    {
+      "slug": "joao-rodrigues",
+      "numero_cnj": "5005429-52.2026.8.24.0018",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5005429-52.2026.8.24.0018&pagina=1",
+      "classes": [
+        "MANDADO DE SEGURANçA CíVEL"
+      ],
+      "codigos_classe": [
+        "120"
+      ],
+      "tribunais": [
+        "TJSC"
+      ],
+      "orgaos": [
+        "1ª Vara da Fazenda Pública da Comarca de Chapecó"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Lista de distribuição"
+      ],
+      "primeira_comunicacao": "2026-03-02",
+      "ultima_comunicacao": "2026-03-02",
+      "comunicacoes_retornadas": 3,
+      "comunicacoes_com_identidade": 1,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 5005429-52.2026.8.24.0018, nas classes MANDADO DE SEGURANçA CíVEL, perante 1ª Vara da Fazenda Pública da Comarca de Chapecó (TJSC). O candidato consta nos polos passivo. As comunicações Lista de distribuição foram disponibilizadas entre 2026-03-02 e 2026-03-02. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "acc9de18adf0b40e0a1f14e864a3187ba0c481d46838e76dee5857aa3da96226",
+      "rate_limit_restante_apos_consulta": 2
+    },
+    {
+      "slug": "joao-rodrigues",
+      "numero_cnj": "0018430-25.2008.8.24.0018",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0018430-25.2008.8.24.0018&pagina=1",
+      "classes": [
+        "APELAçãO / REMESSA NECESSáRIA"
+      ],
+      "codigos_classe": [
+        "1728"
+      ],
+      "tribunais": [
+        "TJSC"
+      ],
+      "orgaos": [
+        "5ª Câmara de Direito Público"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2023-05-29",
+      "ultima_comunicacao": "2023-09-04",
+      "comunicacoes_retornadas": 2,
+      "comunicacoes_com_identidade": 2,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0018430-25.2008.8.24.0018, nas classes APELAçãO / REMESSA NECESSáRIA, perante 5ª Câmara de Direito Público (TJSC). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2023-05-29 e 2023-09-04. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "3149196ca9a15472f3dfb902b7bd08875980d52f396a5e0e643bf09f991e1245",
+      "rate_limit_restante_apos_consulta": 1
+    },
+    {
+      "slug": "joel-rodrigues",
+      "numero_cnj": "0001723-41.2013.8.18.0028",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0001723-41.2013.8.18.0028&pagina=1",
+      "classes": [
+        "APELAçãO CíVEL",
+        "AçãO CIVIL PúBLICA CíVEL"
+      ],
+      "codigos_classe": [
+        "198",
+        "65"
+      ],
+      "tribunais": [
+        "TJPI"
+      ],
+      "orgaos": [
+        "1ª VARA DE FLORIANO",
+        "3ª Câmara de Direito Público"
+      ],
+      "polos_candidato": [
+        "A",
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Edital",
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2021-11-12",
+      "ultima_comunicacao": "2026-04-28",
+      "comunicacoes_retornadas": 9,
+      "comunicacoes_com_identidade": 9,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0001723-41.2013.8.18.0028, nas classes APELAçãO CíVEL; AçãO CIVIL PúBLICA CíVEL, perante 1ª VARA DE FLORIANO; 3ª Câmara de Direito Público (TJPI). O candidato consta nos polos ativo e passivo. As comunicações Edital; Intimação foram disponibilizadas entre 2021-11-12 e 2026-04-28. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "2dc94efd388e1c56b0b587eb5cf000e05fe3465c33295d4100642b727ac62692",
+      "rate_limit_restante_apos_consulta": 0
+    },
+    {
+      "slug": "jorginho-mello",
+      "numero_cnj": "5005530-47.2022.4.02.5104",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2+E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5005530-47.2022.4.02.5104&pagina=1",
+      "classes": [
+        "APELAçãO CRIMINAL",
+        "RECURSO ESPECIAL"
+      ],
+      "codigos_classe": [
+        "1032",
+        "417"
+      ],
+      "tribunais": [
+        "STJ",
+        "TRF2"
+      ],
+      "orgaos": [
+        "1ª TURMA ESPECIALIZADA",
+        "Assessoria de Recursos",
+        "SECRETARIA DA 1ª TURMA ESPECIALIZADA",
+        "SECRETARIA JUDICIÁRIA"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Ata de sessão",
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-05-21",
+      "ultima_comunicacao": "2025-12-23",
+      "comunicacoes_retornadas": 17,
+      "comunicacoes_com_identidade": 16,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 5005530-47.2022.4.02.5104, nas classes APELAçãO CRIMINAL; RECURSO ESPECIAL, perante 1ª TURMA ESPECIALIZADA; Assessoria de Recursos; SECRETARIA DA 1ª TURMA ESPECIALIZADA; SECRETARIA JUDICIÁRIA (STJ, TRF2). O candidato consta nos polos passivo. As comunicações Ata de sessão; Intimação foram disponibilizadas entre 2025-05-21 e 2025-12-23. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "38821ebdfffa4b517b4670e893304d5d47b0bb5a4cbc88b66f2ffff1d47e0240",
+      "rate_limit_restante_apos_consulta": 19
+    },
+    {
+      "slug": "jorginho-mello",
+      "numero_cnj": "5004813-59.2024.8.24.0079",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2+E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5004813-59.2024.8.24.0079&pagina=1",
+      "classes": [
+        "PETIçãO CíVEL"
+      ],
+      "codigos_classe": [
+        "241"
+      ],
+      "tribunais": [
+        "TJSC"
+      ],
+      "orgaos": [
+        "1ª Vara Cível da Comarca de Videira"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-06-09",
+      "ultima_comunicacao": "2026-07-10",
+      "comunicacoes_retornadas": 5,
+      "comunicacoes_com_identidade": 5,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 5004813-59.2024.8.24.0079, nas classes PETIçãO CíVEL, perante 1ª Vara Cível da Comarca de Videira (TJSC). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-06-09 e 2026-07-10. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "67523218f5b861510f11e3a444c70cf275d20f5f6499b13d64ee9e2efd7cbe67",
+      "rate_limit_restante_apos_consulta": 18
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "numero_cnj": "0808628-51.2026.8.15.2002",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0808628-51.2026.8.15.2002&pagina=1",
+      "classes": [
+        "REPRESENTAçãO CRIMINAL/NOTíCIA DE CRIME"
+      ],
+      "codigos_classe": [
+        "272"
+      ],
+      "tribunais": [
+        "TJPB"
+      ],
+      "orgaos": [
+        "4ª Vara Criminal da Capital"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-08-10",
+      "ultima_comunicacao": "2026-08-10",
+      "comunicacoes_retornadas": 2,
+      "comunicacoes_com_identidade": 2,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0808628-51.2026.8.15.2002, nas classes REPRESENTAçãO CRIMINAL/NOTíCIA DE CRIME, perante 4ª Vara Criminal da Capital (TJPB). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2026-08-10 e 2026-08-10. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "791f85d92f2b20dd41b0f3258ffd1a31b694ea004b7c727006550941d6621e47",
+      "rate_limit_restante_apos_consulta": 17
+    },
+    {
+      "slug": "mateus-simoes",
+      "numero_cnj": "5111734-29.2018.8.13.0024",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5111734-29.2018.8.13.0024&pagina=1",
+      "classes": [
+        "AçãO POPULAR"
+      ],
+      "codigos_classe": [
+        "66"
+      ],
+      "tribunais": [
+        "TJMG"
+      ],
+      "orgaos": [
+        "1ª Vara dos Feitos da Fazenda Pública Municipal da Comarca de Belo Horizonte"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-05-14",
+      "ultima_comunicacao": "2026-01-21",
+      "comunicacoes_retornadas": 4,
+      "comunicacoes_com_identidade": 4,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 5111734-29.2018.8.13.0024, nas classes AçãO POPULAR, perante 1ª Vara dos Feitos da Fazenda Pública Municipal da Comarca de Belo Horizonte (TJMG). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2025-05-14 e 2026-01-21. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "64d716ae87c293245cd8ac9338cbab569e09ce2e15a798cb34ec5744ff8d3ce6",
+      "rate_limit_restante_apos_consulta": 16
+    },
+    {
+      "slug": "omar-aziz",
+      "numero_cnj": "0205483-75.2025.8.04.1000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0205483-75.2025.8.04.1000&pagina=1",
+      "classes": [
+        "CUMPRIMENTO DE SENTENçA",
+        "PROCEDIMENTO DO JUIZADO ESPECIAL CíVEL"
+      ],
+      "codigos_classe": [
+        "156",
+        "436"
+      ],
+      "tribunais": [
+        "TJAM"
+      ],
+      "orgaos": [
+        "2º Juizado Especial Cível da Comarca de Manaus - JE Cível"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação",
+        "Lista de distribuição"
+      ],
+      "primeira_comunicacao": "2025-07-29",
+      "ultima_comunicacao": "2026-06-23",
+      "comunicacoes_retornadas": 6,
+      "comunicacoes_com_identidade": 6,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0205483-75.2025.8.04.1000, nas classes CUMPRIMENTO DE SENTENçA; PROCEDIMENTO DO JUIZADO ESPECIAL CíVEL, perante 2º Juizado Especial Cível da Comarca de Manaus - JE Cível (TJAM). O candidato consta nos polos ativo. As comunicações Intimação; Lista de distribuição foram disponibilizadas entre 2025-07-29 e 2026-06-23. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "75f74031db866447e9183dcf953bf8dac567f2dfca12d4f42ddb8e6e41f4aee7",
+      "rate_limit_restante_apos_consulta": 15
+    },
+    {
+      "slug": "omar-aziz",
+      "numero_cnj": "0189923-93.2025.8.04.1000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0189923-93.2025.8.04.1000&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJAM"
+      ],
+      "orgaos": [
+        "7ª Vara Cível e de Acidentes de Trabalho da Comarca de Manaus - Cível",
+        "9ª Vara Cível e de Acidentes de Trabalho da Comarca de Manaus - Cível"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação",
+        "Lista de distribuição"
+      ],
+      "primeira_comunicacao": "2025-07-14",
+      "ultima_comunicacao": "2026-07-27",
+      "comunicacoes_retornadas": 7,
+      "comunicacoes_com_identidade": 7,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0189923-93.2025.8.04.1000, nas classes PROCEDIMENTO COMUM CíVEL, perante 7ª Vara Cível e de Acidentes de Trabalho da Comarca de Manaus - Cível; 9ª Vara Cível e de Acidentes de Trabalho da Comarca de Manaus - Cível (TJAM). O candidato consta nos polos ativo. As comunicações Intimação; Lista de distribuição foram disponibilizadas entre 2025-07-14 e 2026-07-27. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "e347f27ec26f5fb652f359f7cc4f3135510b1ed75dff0cbc11c1b8d2e8c6da6c",
+      "rate_limit_restante_apos_consulta": 14
+    },
+    {
+      "slug": "pazolini",
+      "numero_cnj": "2002493-39.2023.8.08.0024",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=2002493-39.2023.8.08.0024&pagina=1",
+      "classes": [
+        "Execução de Medidas Alternativas"
+      ],
+      "codigos_classe": [
+        "12729"
+      ],
+      "tribunais": [
+        "SEEU"
+      ],
+      "orgaos": [
+        "7ª VARA CRIMINAL DE VITÓRIA - EXCLUSIVA DE PENAS E MEDIDAS ALTERNATIVAS"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Edital"
+      ],
+      "primeira_comunicacao": "2023-09-13",
+      "ultima_comunicacao": "2023-09-13",
+      "comunicacoes_retornadas": 3,
+      "comunicacoes_com_identidade": 1,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 2002493-39.2023.8.08.0024, nas classes Execução de Medidas Alternativas, perante 7ª VARA CRIMINAL DE VITÓRIA - EXCLUSIVA DE PENAS E MEDIDAS ALTERNATIVAS (SEEU). O candidato consta nos polos passivo. As comunicações Edital foram disponibilizadas entre 2023-09-13 e 2023-09-13. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "6df80a94baea848cb328e392bba7fb21c2a03440aa33b47d7a11600f62569e37",
+      "rate_limit_restante_apos_consulta": 13
+    },
+    {
+      "slug": "pazolini",
+      "numero_cnj": "5025424-19.2022.8.08.0024",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5025424-19.2022.8.08.0024&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJES"
+      ],
+      "orgaos": [
+        "Vitória - Comarca da Capital - 1ª Vara de Fazenda Pública Estadual, Municipal, Registros Públicos, Meio Ambiente, Saúde e Acidentes de Trabalho"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-05-08",
+      "ultima_comunicacao": "2026-02-10",
+      "comunicacoes_retornadas": 7,
+      "comunicacoes_com_identidade": 7,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 5025424-19.2022.8.08.0024, nas classes PROCEDIMENTO COMUM CíVEL, perante Vitória - Comarca da Capital - 1ª Vara de Fazenda Pública Estadual, Municipal, Registros Públicos, Meio Ambiente, Saúde e Acidentes de Trabalho (TJES). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-05-08 e 2026-02-10. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "1fb66ff63f7593a6cddc1140d321158be4d301bd0abed6957f36dae0c6d7658b",
+      "rate_limit_restante_apos_consulta": 12
+    },
+    {
+      "slug": "pazolini",
+      "numero_cnj": "5017337-69.2025.8.08.0024",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5017337-69.2025.8.08.0024&pagina=1",
+      "classes": [
+        "AçãO POPULAR"
+      ],
+      "codigos_classe": [
+        "66"
+      ],
+      "tribunais": [
+        "TJES"
+      ],
+      "orgaos": [
+        "Vitória - Comarca da Capital - 3ª Vara de Fazenda Pública Estadual, Municipal, Registros Públicos, Meio Ambiente, Saúde e Acidentes de Trabalho"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-05-20",
+      "ultima_comunicacao": "2025-09-16",
+      "comunicacoes_retornadas": 3,
+      "comunicacoes_com_identidade": 3,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 5017337-69.2025.8.08.0024, nas classes AçãO POPULAR, perante Vitória - Comarca da Capital - 3ª Vara de Fazenda Pública Estadual, Municipal, Registros Públicos, Meio Ambiente, Saúde e Acidentes de Trabalho (TJES). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-05-20 e 2025-09-16. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "f0cae5a92a5a569e9292e285bd555c5914c31d560f9d899405a579c000c92265",
+      "rate_limit_restante_apos_consulta": 11
+    },
+    {
+      "slug": "rafael-fonteles",
+      "numero_cnj": "1003328-17.2019.4.01.4000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=1003328-17.2019.4.01.4000&pagina=1",
+      "classes": [
+        "APELAçãO CíVEL",
+        "AçãO CIVIL DE IMPROBIDADE ADMINISTRATIVA"
+      ],
+      "codigos_classe": [
+        "198",
+        "64"
+      ],
+      "tribunais": [
+        "TRF1"
+      ],
+      "orgaos": [
+        "3ª Vara Federal Criminal da SJPI",
+        "Gab. 07 - DESEMBARGADOR FEDERAL WILSON ALVES DE SOUZA"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2021-08-11",
+      "ultima_comunicacao": "2026-08-04",
+      "comunicacoes_retornadas": 14,
+      "comunicacoes_com_identidade": 9,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 1003328-17.2019.4.01.4000, nas classes APELAçãO CíVEL; AçãO CIVIL DE IMPROBIDADE ADMINISTRATIVA, perante 3ª Vara Federal Criminal da SJPI; Gab. 07 - DESEMBARGADOR FEDERAL WILSON ALVES DE SOUZA (TRF1). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2021-08-11 e 2026-08-04. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "661027858ecadba486248bb952fcb4a88e060938b64fe30907f53a3dc41c8d8b",
+      "rate_limit_restante_apos_consulta": 10
+    },
+    {
+      "slug": "rafael-fonteles",
+      "numero_cnj": "0805286-25.2023.8.18.0039",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0805286-25.2023.8.18.0039&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJPI"
+      ],
+      "orgaos": [
+        "2ª Vara da Comarca de Barras"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-02-09",
+      "ultima_comunicacao": "2026-07-07",
+      "comunicacoes_retornadas": 5,
+      "comunicacoes_com_identidade": 5,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0805286-25.2023.8.18.0039, nas classes PROCEDIMENTO COMUM CíVEL, perante 2ª Vara da Comarca de Barras (TJPI). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-02-09 e 2026-07-07. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "909db8c19032f976ba7786a4cbb2ba424b5133131739e192786e1931ac1ee893",
+      "rate_limit_restante_apos_consulta": 9
+    },
+    {
+      "slug": "rafael-fonteles",
+      "numero_cnj": "0761204-26.2023.8.18.0000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0761204-26.2023.8.18.0000&pagina=1",
+      "classes": [
+        "MANDADO DE SEGURANçA CíVEL"
+      ],
+      "codigos_classe": [
+        "120"
+      ],
+      "tribunais": [
+        "TJPI"
+      ],
+      "orgaos": [
+        "5ª Câmara de Direito Público"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Edital",
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-08-27",
+      "ultima_comunicacao": "2025-09-15",
+      "comunicacoes_retornadas": 30,
+      "comunicacoes_com_identidade": 3,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0761204-26.2023.8.18.0000, nas classes MANDADO DE SEGURANçA CíVEL, perante 5ª Câmara de Direito Público (TJPI). O candidato consta nos polos passivo. As comunicações Edital; Intimação foram disponibilizadas entre 2025-08-27 e 2025-09-15. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "44422c1ef8c92a5178d15f555451d0406439ca457defe5b4ea45d94b8207077e",
+      "rate_limit_restante_apos_consulta": 8
+    },
+    {
+      "slug": "renan-filho",
+      "numero_cnj": "0809670-90.2026.8.02.0000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0809670-90.2026.8.02.0000&pagina=1",
+      "classes": [
+        "AGRAVO DE INSTRUMENTO"
+      ],
+      "codigos_classe": [
+        "202"
+      ],
+      "tribunais": [
+        "TJAL"
+      ],
+      "orgaos": [
+        "4ª Câmara Cível"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-08-10",
+      "ultima_comunicacao": "2026-08-10",
+      "comunicacoes_retornadas": 1,
+      "comunicacoes_com_identidade": 1,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0809670-90.2026.8.02.0000, nas classes AGRAVO DE INSTRUMENTO, perante 4ª Câmara Cível (TJAL). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2026-08-10 e 2026-08-10. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "630568ba9a51d63039c66adb43115d913733f6b477b1ac423d9038a258d8abb4",
+      "rate_limit_restante_apos_consulta": 7
+    },
+    {
+      "slug": "renan-filho",
+      "numero_cnj": "0727560-41.2020.8.02.0001",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0727560-41.2020.8.02.0001&pagina=1",
+      "classes": [
+        "APELAçãO CíVEL"
+      ],
+      "codigos_classe": [
+        "198"
+      ],
+      "tribunais": [
+        "TJAL"
+      ],
+      "orgaos": [
+        "3ª Câmara Cível",
+        "RET0000FF"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-05-16",
+      "ultima_comunicacao": "2025-08-15",
+      "comunicacoes_retornadas": 5,
+      "comunicacoes_com_identidade": 4,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0727560-41.2020.8.02.0001, nas classes APELAçãO CíVEL, perante 3ª Câmara Cível; RET0000FF (TJAL). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-05-16 e 2025-08-15. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "7928f8a135c34d0d6cff0a7230e889207c8b42723ab546818b711f66da04b5ec",
+      "rate_limit_restante_apos_consulta": 6
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "numero_cnj": "0704997-05.2026.8.07.0001",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0704997-05.2026.8.07.0001&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJDFT"
+      ],
+      "orgaos": [
+        "19ª Vara Cível de Brasília"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-02-09",
+      "ultima_comunicacao": "2026-07-15",
+      "comunicacoes_retornadas": 3,
+      "comunicacoes_com_identidade": 3,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0704997-05.2026.8.07.0001, nas classes PROCEDIMENTO COMUM CíVEL, perante 19ª Vara Cível de Brasília (TJDFT). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-02-09 e 2026-07-15. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "3fa229e3ade80bf4b389ba8a0ee729d15f4fb7dca5d2f1946c0328d87a2c73f8",
+      "rate_limit_restante_apos_consulta": 5
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "numero_cnj": "0704590-45.2026.8.07.0018",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0704590-45.2026.8.07.0018&pagina=1",
+      "classes": [
+        "AçãO POPULAR"
+      ],
+      "codigos_classe": [
+        "66"
+      ],
+      "tribunais": [
+        "TJDFT"
+      ],
+      "orgaos": [
+        "Vara de Meio Ambiente, Desenvolvimento Urbano e Fundiário do DF"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-04-01",
+      "ultima_comunicacao": "2026-08-10",
+      "comunicacoes_retornadas": 8,
+      "comunicacoes_com_identidade": 8,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0704590-45.2026.8.07.0018, nas classes AçãO POPULAR, perante Vara de Meio Ambiente, Desenvolvimento Urbano e Fundiário do DF (TJDFT). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2026-04-01 e 2026-08-10. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "468e7efb28009e901c4268ab64b24bc806558bb694152db2795394f96b24f0cc",
+      "rate_limit_restante_apos_consulta": 4
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "numero_cnj": "0709498-48.2026.8.07.0018",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0709498-48.2026.8.07.0018&pagina=1",
+      "classes": [
+        "AçãO POPULAR"
+      ],
+      "codigos_classe": [
+        "66"
+      ],
+      "tribunais": [
+        "TJDFT"
+      ],
+      "orgaos": [
+        "Vara de Meio Ambiente, Desenvolvimento Urbano e Fundiário do DF"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2026-07-27",
+      "ultima_comunicacao": "2026-07-28",
+      "comunicacoes_retornadas": 2,
+      "comunicacoes_com_identidade": 2,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0709498-48.2026.8.07.0018, nas classes AçãO POPULAR, perante Vara de Meio Ambiente, Desenvolvimento Urbano e Fundiário do DF (TJDFT). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2026-07-27 e 2026-07-28. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "eb9fab10ba593cff68547623ad3682ce75d382d33d1bf3eb7edad6bbd4f8545d",
+      "rate_limit_restante_apos_consulta": 3
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "numero_cnj": "0751806-87.2025.8.07.0001",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0751806-87.2025.8.07.0001&pagina=1",
+      "classes": [
+        "PROCEDIMENTO COMUM CíVEL"
+      ],
+      "codigos_classe": [
+        "7"
+      ],
+      "tribunais": [
+        "TJDFT"
+      ],
+      "orgaos": [
+        "21ª Vara Cível de Brasília"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-10-13",
+      "ultima_comunicacao": "2026-05-13",
+      "comunicacoes_retornadas": 10,
+      "comunicacoes_com_identidade": 6,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0751806-87.2025.8.07.0001, nas classes PROCEDIMENTO COMUM CíVEL, perante 21ª Vara Cível de Brasília (TJDFT). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-10-13 e 2026-05-13. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "043ca95c1cf9864abd3e631240d1860702dc31f1c6889633867068cce6937b70",
+      "rate_limit_restante_apos_consulta": 2
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "numero_cnj": "0001151-69.2023.5.17.0010",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0001151-69.2023.5.17.0010&pagina=1",
+      "classes": [
+        "AçãO TRABALHISTA - RITO ORDINáRIO",
+        "RECURSO ORDINáRIO TRABALHISTA"
+      ],
+      "codigos_classe": [
+        "1009",
+        "985"
+      ],
+      "tribunais": [
+        "TRT17"
+      ],
+      "orgaos": [
+        "10ª Vara do Trabalho de Vitória",
+        "2ª Turma",
+        "GAB. DES. MÁRIO RIBEIRO CANTARINO NETO",
+        "OJ de Análise de Recurso (Assessoria de Revista)"
+      ],
+      "polos_candidato": [
+        "A",
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação",
+        "Lista de distribuição"
+      ],
+      "primeira_comunicacao": "2025-02-19",
+      "ultima_comunicacao": "2026-04-22",
+      "comunicacoes_retornadas": 30,
+      "comunicacoes_com_identidade": 22,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0001151-69.2023.5.17.0010, nas classes AçãO TRABALHISTA - RITO ORDINáRIO; RECURSO ORDINáRIO TRABALHISTA, perante 10ª Vara do Trabalho de Vitória; 2ª Turma; GAB. DES. MÁRIO RIBEIRO CANTARINO NETO; OJ de Análise de Recurso (Assessoria de Revista) (TRT17). O candidato consta nos polos ativo e passivo. As comunicações Intimação; Lista de distribuição foram disponibilizadas entre 2025-02-19 e 2026-04-22. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "918bbbdfa9b576eb835cb334821a139209dc7f0fe595476208e6f127d9e4e3e7",
+      "rate_limit_restante_apos_consulta": 1
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "numero_cnj": "0000891-92.2023.5.17.0009",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E3",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0000891-92.2023.5.17.0009&pagina=1",
+      "classes": [
+        "AGRAVO DE INSTRUMENTO EM RECURSO DE REVISTA",
+        "RECURSO ORDINáRIO TRABALHISTA"
+      ],
+      "codigos_classe": [
+        "1002",
+        "1009"
+      ],
+      "tribunais": [
+        "TRT17",
+        "TST"
+      ],
+      "orgaos": [
+        "3ª Turma",
+        "4ª Turma",
+        "Gabinete da Ministra Maria Cristina Irigoyen Peduzzi",
+        "OJ de Análise de Recurso (Assessoria de Revista)"
+      ],
+      "polos_candidato": [
+        "A",
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação",
+        "Lista de distribuição"
+      ],
+      "primeira_comunicacao": "2025-10-02",
+      "ultima_comunicacao": "2026-04-22",
+      "comunicacoes_retornadas": 44,
+      "comunicacoes_com_identidade": 23,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0000891-92.2023.5.17.0009, nas classes AGRAVO DE INSTRUMENTO EM RECURSO DE REVISTA; RECURSO ORDINáRIO TRABALHISTA, perante 3ª Turma; 4ª Turma; Gabinete da Ministra Maria Cristina Irigoyen Peduzzi; OJ de Análise de Recurso (Assessoria de Revista) (TRT17, TST). O candidato consta nos polos ativo e passivo. As comunicações Intimação; Lista de distribuição foram disponibilizadas entre 2025-10-02 e 2026-04-22. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "7a3e295bd28fa9518dd773e4aa235d3c32bed8f55cd21fef7dfc0d8975014d00",
+      "rate_limit_restante_apos_consulta": 0
+    },
+    {
+      "slug": "tiao-bocalom",
+      "numero_cnj": "1002797-54.2025.8.01.0000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=1002797-54.2025.8.01.0000&pagina=1",
+      "classes": [
+        "DIRETA DE INCONSTITUCIONALIDADE"
+      ],
+      "codigos_classe": [
+        "95"
+      ],
+      "tribunais": [
+        "TJAC"
+      ],
+      "orgaos": [
+        "Plantão Judiciário",
+        "Tribunal Pleno Jurisdicional"
+      ],
+      "polos_candidato": [
+        "A"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2025-12-29",
+      "ultima_comunicacao": "2026-08-05",
+      "comunicacoes_retornadas": 13,
+      "comunicacoes_com_identidade": 13,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 1002797-54.2025.8.01.0000, nas classes DIRETA DE INCONSTITUCIONALIDADE, perante Plantão Judiciário; Tribunal Pleno Jurisdicional (TJAC). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2025-12-29 e 2026-08-05. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "9dea50931c7ede54d89926ab1afb0ec2728819410122d23e81d5d890e4964f87",
+      "rate_limit_restante_apos_consulta": 19
+    },
+    {
+      "slug": "tiao-bocalom",
+      "numero_cnj": "0715972-30.2021.8.01.0001",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0715972-30.2021.8.01.0001&pagina=1",
+      "classes": [
+        "MANDADO DE SEGURANçA CíVEL"
+      ],
+      "codigos_classe": [
+        "120"
+      ],
+      "tribunais": [
+        "TJAC"
+      ],
+      "orgaos": [
+        "1ª Vara da Fazenda Pública"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2024-12-12",
+      "ultima_comunicacao": "2025-03-18",
+      "comunicacoes_retornadas": 7,
+      "comunicacoes_com_identidade": 3,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0715972-30.2021.8.01.0001, nas classes MANDADO DE SEGURANçA CíVEL, perante 1ª Vara da Fazenda Pública (TJAC). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2024-12-12 e 2025-03-18. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "22dd789734fff47a464883fb9b1a1d9de8141083ba34a628fb957d33dcc6a6fc",
+      "rate_limit_restante_apos_consulta": 18
+    },
+    {
+      "slug": "tiao-bocalom",
+      "numero_cnj": "0800019-66.2023.8.01.0000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0800019-66.2023.8.01.0000&pagina=1",
+      "classes": [
+        "REPRESENTAçãO CRIMINAL/NOTíCIA DE CRIME"
+      ],
+      "codigos_classe": [
+        "272"
+      ],
+      "tribunais": [
+        "TJAC"
+      ],
+      "orgaos": [
+        "Tribunal Pleno Jurisdicional"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2024-12-02",
+      "ultima_comunicacao": "2025-02-28",
+      "comunicacoes_retornadas": 6,
+      "comunicacoes_com_identidade": 6,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0800019-66.2023.8.01.0000, nas classes REPRESENTAçãO CRIMINAL/NOTíCIA DE CRIME, perante Tribunal Pleno Jurisdicional (TJAC). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2024-12-02 e 2025-02-28. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "6e0d52a44cc8ceccedc72b21dabac4734a74f4bb7e42ce7651ddf412cecd569b",
+      "rate_limit_restante_apos_consulta": 17
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "numero_cnj": "0003737-09.2018.8.25.0034",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0003737-09.2018.8.25.0034&pagina=1",
+      "classes": [
+        "APELAçãO CíVEL",
+        "AçãO CIVIL DE IMPROBIDADE ADMINISTRATIVA"
+      ],
+      "codigos_classe": [
+        "198",
+        "64"
+      ],
+      "tribunais": [
+        "TJSE"
+      ],
+      "orgaos": [
+        "1ª Vara Civel de Itabaiana",
+        "Gabinete Des. Roberto Eugênio da Fonseca Porto"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Citação",
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2021-02-08",
+      "ultima_comunicacao": "2024-09-13",
+      "comunicacoes_retornadas": 15,
+      "comunicacoes_com_identidade": 15,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0003737-09.2018.8.25.0034, nas classes APELAçãO CíVEL; AçãO CIVIL DE IMPROBIDADE ADMINISTRATIVA, perante 1ª Vara Civel de Itabaiana; Gabinete Des. Roberto Eugênio da Fonseca Porto (TJSE). O candidato consta nos polos passivo. As comunicações Citação; Intimação foram disponibilizadas entre 2021-02-08 e 2024-09-13. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "e8e7c93b2aecf4806de73a2b0baee14a2790e90f70315c46d23aa9ba26073601",
+      "rate_limit_restante_apos_consulta": 16
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "numero_cnj": "0007040-36.2018.8.25.0000",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0007040-36.2018.8.25.0000&pagina=1",
+      "classes": [
+        "AGRAVO EM RECURSO ESPECIAL",
+        "INQUéRITO POLICIAL"
+      ],
+      "codigos_classe": [
+        "11881",
+        "279"
+      ],
+      "tribunais": [
+        "STJ",
+        "TJSE"
+      ],
+      "orgaos": [
+        "AJC ASSESSORIA DE JULGAMENTO COLEGIADO DA CORTE ESPECIAL",
+        "AJC COORDENADORIA DE JULGAMENTO COLEGIADO DA SEXTA TURMA",
+        "COORDENADORIA DE PROCESSOS ORIGINÁRIOS",
+        "Escrivania da Câmara Criminal e Tribunal Pleno",
+        "Gabinete Des. Diógenes Barreto",
+        "SPF COORDENADORIA DE PROCESSAMENTO DE DECISÕES ESTRANGEIRAS E RECURSOS PARA O STF",
+        "SPF COORDENADORIA DE PROCESSAMENTO DE FEITOS DE DIREITO PENAL"
+      ],
+      "polos_candidato": [
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2021-06-29",
+      "ultima_comunicacao": "2026-06-22",
+      "comunicacoes_retornadas": 15,
+      "comunicacoes_com_identidade": 15,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0007040-36.2018.8.25.0000, nas classes AGRAVO EM RECURSO ESPECIAL; INQUéRITO POLICIAL, perante AJC ASSESSORIA DE JULGAMENTO COLEGIADO DA CORTE ESPECIAL; AJC COORDENADORIA DE JULGAMENTO COLEGIADO DA SEXTA TURMA; COORDENADORIA DE PROCESSOS ORIGINÁRIOS; Escrivania da Câmara Criminal e Tribunal Pleno; Gabinete Des. Diógenes Barreto; SPF COORDENADORIA DE PROCESSAMENTO DE DECISÕES ESTRANGEIRAS E RECURSOS PARA O STF; SPF COORDENADORIA DE PROCESSAMENTO DE FEITOS DE DIREITO PENAL (STJ, TJSE). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2021-06-29 e 2026-06-22. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "d7da23a356ef3dc6be24cd32cf60eda178e61c1f74a9384dda6bf9cb67dabacb",
+      "rate_limit_restante_apos_consulta": 15
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "numero_cnj": "0007488-04.2018.8.25.0034",
+      "payload_tecnico_pronto": true,
+      "publicacao_pronta": false,
+      "identidade_curada": true,
+      "nivel_evidencia_identidade": "E1+E2",
+      "identidade_observada_na_resposta": true,
+      "fonte_oficial": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0007488-04.2018.8.25.0034&pagina=1",
+      "classes": [
+        "AGRAVO EM RECURSO ESPECIAL",
+        "AGRAVO INTERNO CíVEL",
+        "APELAçãO CíVEL",
+        "AçãO CIVIL DE IMPROBIDADE ADMINISTRATIVA"
+      ],
+      "codigos_classe": [
+        "11881",
+        "1208",
+        "198",
+        "64"
+      ],
+      "tribunais": [
+        "STJ",
+        "TJSE"
+      ],
+      "orgaos": [
+        "1ª Câmara Cível - 2º Grau",
+        "2ª Vara Civel de Itabaiana",
+        "COORDENADORIA DE CLASSIFICAÇÃO E DISTRIBUIÇÃO DE PROCESSOS",
+        "Escrivania da 1ª Câmara Cível",
+        "SPF COORDENADORIA DE PROCESSAMENTO DE FEITOS DE DIREITO PÚBLICO"
+      ],
+      "polos_candidato": [
+        "A",
+        "P"
+      ],
+      "tipos_comunicacao": [
+        "Intimação"
+      ],
+      "primeira_comunicacao": "2021-01-28",
+      "ultima_comunicacao": "2026-08-05",
+      "comunicacoes_retornadas": 52,
+      "comunicacoes_com_identidade": 52,
+      "status_publico": "comunicacao_processual_publicada_merito_nao_inferido",
+      "status_processual_merito": null,
+      "data_inicio": null,
+      "data_decisao": null,
+      "descricao_publica": "O DJEN registra comunicação processual oficial no processo 0007488-04.2018.8.25.0034, nas classes AGRAVO EM RECURSO ESPECIAL; AGRAVO INTERNO CíVEL; APELAçãO CíVEL; AçãO CIVIL DE IMPROBIDADE ADMINISTRATIVA, perante 1ª Câmara Cível - 2º Grau; 2ª Vara Civel de Itabaiana; COORDENADORIA DE CLASSIFICAÇÃO E DISTRIBUIÇÃO DE PROCESSOS; Escrivania da 1ª Câmara Cível; SPF COORDENADORIA DE PROCESSAMENTO DE FEITOS DE DIREITO PÚBLICO (STJ, TJSE). O candidato consta nos polos ativo e passivo. As comunicações Intimação foram disponibilizadas entre 2021-01-28 e 2026-08-05. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.",
+      "campos_nao_inferidos": [
+        "status_processual_merito",
+        "data_inicio",
+        "data_decisao",
+        "gravidade"
+      ],
+      "campos_faltantes": [],
+      "evidencia_publica_sha256": "085313b54cd7cc55df072ee7b7660bc8e433257f6590a36d91ccc96a9716fe2c",
+      "rate_limit_restante_apos_consulta": 14
+    }
+  ]
+}

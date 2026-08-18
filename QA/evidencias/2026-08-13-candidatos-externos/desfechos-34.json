@@ -1,0 +1,1325 @@
+{
+  "metadata": {
+    "total": 34,
+    "regra": "46 titulares sem ficha na base menos 11 novos oficiais presentes na lista menos Vera Lúcia/CE, confirmada como vice; residual de 34 inclui conflitos oficiais em quarentena",
+    "fontes_derivacao": [
+      "derivacao-206.json",
+      "coorte-34.json",
+      "data/chapas-2026-tse-20260812.json",
+      "registros-oficiais-5.json"
+    ],
+    "classes_desfecho": [
+      "confirmado_fora_snapshot",
+      "quarentena_identidade",
+      "resolvido_no_snapshot"
+    ],
+    "distincao_final": {
+      "pesquisa_externa": 30,
+      "resolvidos_por_reconciliacao_oficial": 3,
+      "quarentena_oficial": 1
+    },
+    "nota": "A coorte histórica de 34 continha quatro conflitos de pareamento; três não eram externos ao TSE e um permanece em revisão de identidade.",
+    "contagem_desfechos": {
+      "confirmado_fora_snapshot": 30,
+      "quarentena_identidade": 2,
+      "resolvido_no_snapshot": 2
+    }
+  },
+  "records": [
+    {
+      "ordem": 3,
+      "titular": "Edmilson Dias",
+      "uf": "BR",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A candidatura presidencial de Edmilson Dias pelo PCB foi oficializada em 1º de agosto de 2026, com Cleusa Santos como vice. Nome, partido, cargo nacional e vice coincidem integralmente com o registro pesquisado.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/08/04/eleicoes-2026-candidatos-a-presidencia-oficializados.ghtml",
+          "titulo": "Eleições 2026: veja todos os candidatos à Presidência oficializados até agora",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-04"
+        },
+        {
+          "url": "https://tvtnews.com.br/conheca-os-candidatos-a-presidencia-oficializados/",
+          "titulo": "Eleições 2026: conheça os candidatos à Presidência oficializados",
+          "tipo": "imprensa",
+          "data_publicacao": "2026-08-07"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/08/04/eleicoes-2026-candidatos-a-presidencia-oficializados.ghtml",
+          "trecho_exato": "Edmilson Dias (PCB): O professor e doutor em economia é o atual secretário-geral do PCB. O nome dele foi oficializado para a disputa pelo Planalto em evento realizado em São Paulo no dia 1º de agosto. A vice dele será Cleusa Santos."
+        },
+        {
+          "url": "https://tvtnews.com.br/conheca-os-candidatos-a-presidencia-oficializados/",
+          "trecho_exato": "Seu nome foi oficializado em evento realizado em São Paulo no dia 1º de agosto, tendo Cleusa Santos como vice."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Edmilson Dias\" PCB presidente 2026 Cleusa Santos",
+        "\"Edmilson Dias\" PCB presidente"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Presidente",
+      "partido_lista": "PCB",
+      "vice_lista": "Cleusa Santos"
+    },
+    {
+      "ordem": 22,
+      "titular": "Márcio Jambo",
+      "uf": "AL",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "O Partido Democrata oficializou Márcio Jambo ao Governo de Alagoas e Jaudinete Pontes como vice. Cargo, UF, partido e vice fecham com o registro pesquisado.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://oalagoano.com.br/noticias/2026/08/06/20031-saiba-quem-e-o-quarto-candidato-ao-governo-de-alagoas",
+          "titulo": "Saiba quem é o quarto candidato ao Governo de Alagoas",
+          "tipo": "imprensa_local",
+          "data_publicacao": "2026-08-06"
+        },
+        {
+          "url": "https://www.gazetadealagoas.com.br/politica/928398/oam-promove-debates-e-prepara-maior-cobertura-eleitoral-de-alagoas?_=amp",
+          "titulo": "OAM promove debates e prepara maior cobertura eleitoral de Alagoas",
+          "tipo": "imprensa_confiavel_local",
+          "data_publicacao": "2026-08-11"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://oalagoano.com.br/noticias/2026/08/06/20031-saiba-quem-e-o-quarto-candidato-ao-governo-de-alagoas",
+          "trecho_exato": "O Partido Democrata oficializou um candidato próprio para o embate, Márcio Jambo. Com propostas claras para Alagoas, a candidatura foi oficializada já com um nome para vice, Jaudinete Pontes, buscando renovar o cenário político do estado."
+        },
+        {
+          "url": "https://www.gazetadealagoas.com.br/politica/928398/oam-promove-debates-e-prepara-maior-cobertura-eleitoral-de-alagoas?_=amp",
+          "trecho_exato": "Na disputa pelo governo de Alagoas, JHC, Márcio Jambo, Renan Filho e Lenilda Luna serão entrevistados ao vivo no AL2."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Márcio Jambo\" governador Alagoas 2026",
+        "\"Márcio Jambo\" Alagoas"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "Democrata",
+      "vice_lista": "Jaudinete Pontes da Silva"
+    },
+    {
+      "ordem": 28,
+      "titular": "Lia Palheta",
+      "uf": "AM",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A ata da convenção estadual do PCO confirmou Lia Palheta da Silva ao Governo do Amazonas e Paulo Sergio Barbosa Monteiro como vice. A forma abreviada 'Barbosa Monteiro' da lista corresponde ao nome completo publicado.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/08/11/pco-lanca-lia-palheta-como-candidata-ao-governo-do-amazonas.ghtml",
+          "titulo": "PCO lança Lia Palheta como candidata ao governo do Amazonas",
+          "tipo": "imprensa_confiavel_com_base_em_ata",
+          "data_publicacao": "2026-08-11"
+        },
+        {
+          "url": "https://www.riosdenoticias.com.br/pco-oficializa-lia-palheta-e-disputa-pelo-governo-do-amazonas-chega-a-oito-candidatos/",
+          "titulo": "PCO oficializa Lia Palheta e disputa pelo Governo do Amazonas chega a oito candidatos",
+          "tipo": "imprensa_local_com_base_em_ata",
+          "data_publicacao": "2026-08-10"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/08/11/pco-lanca-lia-palheta-como-candidata-ao-governo-do-amazonas.ghtml",
+          "trecho_exato": "O Partido da Causa Operária (PCO) confirmou a candidatura de Lia Palheta ao governo do Amazonas. Decisão consta na ata enviada pelo partido à Justiça Eleitoral."
+        },
+        {
+          "url": "https://www.riosdenoticias.com.br/pco-oficializa-lia-palheta-e-disputa-pelo-governo-do-amazonas-chega-a-oito-candidatos/",
+          "trecho_exato": "O documento, assinado pelo presidente estadual do PCO, Victor Assis da Silva, registra que os convencionais aprovaram por unanimidade os nomes de Lia Palheta para governadora e Paulo Sergio Barbosa Monteiro para vice-governador."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Lia Palheta\" governador Amazonas 2026 PCO",
+        "\"Lia Palheta\" Amazonas"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PCO",
+      "vice_lista": "Barbosa Monteiro"
+    },
+    {
+      "ordem": 35,
+      "titular": "Jairo Palheta",
+      "uf": "AP",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "Convenção do PCO confirmou Jairo Palheta ao Governo do Amapá, com Iracelia Barbosa Rodrigues na vice. Nome, partido, cargo, UF e vice coincidem integralmente; a fonte específica de vices traz o nome civil completo.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/08/05/pco-lanca-jairo-palheta-como-candidato-ao-governo-do-amapa.ghtml",
+          "titulo": "PCO lança Jairo Palheta como candidato ao governo do Amapá",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-05"
+        },
+        {
+          "url": "https://selesnafes.com/2026/08/tem-rico-em-macapa-com-1-mil-imoveis-diz-jairo-palheta-candidato-ao-governo-pelo-pco/",
+          "titulo": "‘Tem rico em Macapá com 1 mil imóveis’, diz Jairo Palheta, candidato ao governo pelo PCO",
+          "tipo": "imprensa_local",
+          "data_publicacao": "2026-08-10"
+        },
+        {
+          "url": "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/08/06/veja-quem-sao-os-candidatos-a-vice-governador-no-amapa-em-2026.ghtml",
+          "titulo": "Veja quem são os candidatos a vice-governador no Amapá em 2026",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-06"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/08/05/pco-lanca-jairo-palheta-como-candidato-ao-governo-do-amapa.ghtml",
+          "trecho_exato": "Convenção do PCO com os candidatos a governo e vice no Amapá — Foto: Jairo Palheta/Divulgação Jairo Palheta, de 47 anos, é formado em Tecnologia da Mineração. Ele disputa pela segunda vez o cargo de governador do Estado."
+        },
+        {
+          "url": "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/08/06/veja-quem-sao-os-candidatos-a-vice-governador-no-amapa-em-2026.ghtml",
+          "trecho_exato": "Iracelia Barbosa Rodrigues, tem 51 anos, é servidora pública no Amapá, nasceu no distrito de Santa Luzia do Pacuí, em Macapá, é formada em Pedagogia, Administração Pública e Direito."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Jairo Palheta\" governador Amapá 2026 PCO",
+        "\"Jairo Palheta\" Amapá",
+        "\"Iracelia Barbosa\""
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PCO",
+      "vice_lista": "Iracelia Barbosa"
+    },
+    {
+      "ordem": 36,
+      "titular": "Marcos Reátegui",
+      "uf": "AP",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "Após o prazo de convenções, o g1 listou Marcos Reátegui, da Democracia Cristã, entre os cinco candidatos ao Governo do Amapá. A pesquisa também encontrou a pré-candidatura nominal anterior; não apareceu notícia de retirada ou troca de cargo.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/08/06/veja-quem-sao-os-candidatos-a-governador-no-amapa-em-2026.ghtml",
+          "titulo": "Veja quem são os candidatos a governador no Amapá em 2026",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-06"
+        },
+        {
+          "url": "https://www.diariodoamapa.com.br/cadernos/politica/marcos-reategui-diz-que-verdadeiro-desafio-e-permitir-desenvolvimento-economico-e-social-a-populacao/",
+          "titulo": "Marcos Reátegui diz que verdadeiro desafio é permitir desenvolvimento econômico e social à população",
+          "tipo": "imprensa_local",
+          "data_publicacao": "2026-06-24"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/ap/amapa/eleicoes/2026/noticia/2026/08/06/veja-quem-sao-os-candidatos-a-governador-no-amapa-em-2026.ghtml",
+          "trecho_exato": "Marcos Reátegui (DC) é candidato a governador do Amapá — Foto: Divulgação"
+        },
+        {
+          "url": "https://www.diariodoamapa.com.br/cadernos/politica/marcos-reategui-diz-que-verdadeiro-desafio-e-permitir-desenvolvimento-economico-e-social-a-populacao/",
+          "trecho_exato": "O ex-deputado federal Marcos Reátegui, que nas redes sociais anunciou candidatura ao governo do estado, pelo partido Democracia Cristã (DC), na manhã desta quarta-feira, 24, reforçou o novo desafio político que ele abraça"
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Marcos Reátegui\" governador Amapá 2026 Democracia Cristã",
+        "\"Marcos Reátegui\" convenção 2026",
+        "\"Marcos Reategui\" candidato governador 2026"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "Democracia Cristã",
+      "vice_lista": "Cristina Araújo"
+    },
+    {
+      "ordem": 44,
+      "titular": "Danilo Soares",
+      "uf": "CE",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A convenção do Democrata aprovou Danilo Soares Sousa para o Governo do Ceará em 5 de agosto de 2026. As fontes registram que a vice ainda não estava definida, exatamente como indicado na lista.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/ce/ceara/eleicoes/2026/noticia/2026/08/05/democrata-lanca-danilo-soares-como-candidato-ao-governo-do-ceara.ghtml",
+          "titulo": "Democrata lança Danilo Soares como candidato ao governo do Ceará",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-05"
+        },
+        {
+          "url": "https://www.opovo.com.br/noticias/politica/eleicoes/2026/08/07/quem-e-danilo-soares-candidato-a-governador-do-ceara.html",
+          "titulo": "Quem é Danilo Soares, candidato a governador do Ceará pelo Democrata",
+          "tipo": "imprensa_confiavel_local",
+          "data_publicacao": "2026-08-08"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/ce/ceara/eleicoes/2026/noticia/2026/08/05/democrata-lanca-danilo-soares-como-candidato-ao-governo-do-ceara.ghtml",
+          "trecho_exato": "Democrata lança Danilo Soares como candidato ao governo do Ceará."
+        },
+        {
+          "url": "https://www.opovo.com.br/noticias/politica/eleicoes/2026/08/07/quem-e-danilo-soares-candidato-a-governador-do-ceara.html",
+          "trecho_exato": "Ele foi o último candidato a ser lançado: a convenção do Democrata aprovou a candidatura na quarta-feira, 5, data limite do prazo estabelecido pela Justiça Eleitoral."
+        },
+        {
+          "url": "https://g1.globo.com/ce/ceara/eleicoes/2026/noticia/2026/08/05/democrata-lanca-danilo-soares-como-candidato-ao-governo-do-ceara.ghtml",
+          "trecho_exato": "Ainda não foi definido quem será o candidato a vice-governador na chapa de Danilo Soares."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Danilo Soares\" governador Ceará 2026 Democrata",
+        "\"Danilo Soares\" Ceará governador"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "Democrata",
+      "vice_lista": "Vice não definido"
+    },
+    {
+      "ordem": 45,
+      "titular": "Delegado Huggo",
+      "uf": "CE",
+      "desfecho": "quarentena_identidade",
+      "origem_decisao": "snapshot_tse_e_chave_independente",
+      "resumo": "O snapshot contém Huggo Leonardo de Lima Anastacio/Delegado Huggo no mesmo cargo, UF, partido e vice da lista, mas a ficha Huggo Leonardo ainda não possui chave independente suficiente para promover o vínculo; permanece em revisão.",
+      "pesquisado_em": "2026-08-13T08:40:28Z",
+      "fontes": [
+        {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+          "titulo": "TSE Dados Abertos — consulta_cand_2026.zip",
+          "tipo": "fonte_primaria_oficial",
+          "data_publicacao": "2026-08-12T19:30:33-03:00"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+          "artefato_local": "registros-oficiais-5.json",
+          "trecho_exato": "SQ_CANDIDATO=60002540417; nome_urna=DELEGADO HUGGO; vice=FELIPE MOREIRA; perfil_slug_proposto=huggo-leonardo; chave_independente=ausente"
+        }
+      ],
+      "consultas_realizadas": [
+        "snapshot oficial TSE 12/08/2026 e contrato de identidade local"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "cargo": "Governador",
+      "partido_lista": "Missão",
+      "vice_lista": "Felipe Silva Moreira"
+    },
+    {
+      "ordem": 47,
+      "titular": "Ieri Braga",
+      "uf": "CE",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "Levantamento eleitoral publicado após as convenções identifica Ieri de Sousa Braga Júnior, do PCO, como candidato ao Governo do Ceará em 2026. A identidade é individualizada por nome civil, idade, ocupação, partido e histórico eleitoral; a pesquisa não encontrou evidência de retirada.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://www.jota.info/eleicoes/eleicoes-2026/quem-sao-os-candidatos-ao-governo-do-ceara-ce-nas-eleicoes-2026-agosto",
+          "titulo": "Quem são os candidatos ao governo do Ceará (CE) nas eleições 2026",
+          "tipo": "imprensa_especializada_confiavel",
+          "data_publicacao": "2026-08-12"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://www.jota.info/eleicoes/eleicoes-2026/quem-sao-os-candidatos-ao-governo-do-ceara-ce-nas-eleicoes-2026-agosto",
+          "trecho_exato": "Natural de Cuiabá (MT), Ieri de Sousa Braga Júnior tem 37 anos e é técnico em química e servidor público. Com histórico de militância no movimento sindical e atuação junto aos trabalhadores técnico-administrativos em educação, é filiado ao Partido da Causa Operária (PCO)."
+        },
+        {
+          "url": "https://www.jota.info/eleicoes/eleicoes-2026/quem-sao-os-candidatos-ao-governo-do-ceara-ce-nas-eleicoes-2026-agosto",
+          "trecho_exato": "Agora Ieri Braga é candidato a governador do Ceará (CE) nas eleições 2026."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Ieri Braga\" governador Ceará 2026 PCO",
+        "\"Ieri Braga\"",
+        "\"Ieri\" Braga PCO governador Ceará",
+        "\"Ieri Braga\" Laerte Melo"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PCO",
+      "vice_lista": "Laerte Melo"
+    },
+    {
+      "ordem": 58,
+      "titular": "Rico Pinheiro",
+      "uf": "DF",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A convenção do PRTB escolheu Alderico da Silva Pinheiro Filho, nome de urna Rico Pinheiro, para o Governo do Distrito Federal. A fonte registra também que a vice permaneceu em aberto, coincidindo com a lista.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://soubrasilia.com/prtb-df-convencao-rico-pinheiro-gdf-henrique-barack-obama-senado-5-agosto-2026/",
+          "titulo": "PRTB lança Rico Pinheiro ao GDF e Henrique Barack Obama ao Senado",
+          "tipo": "imprensa_local_com_cobertura_de_convencao",
+          "data_publicacao": "2026-08-08"
+        },
+        {
+          "url": "https://www.correiobraziliense.com.br/cidades-df/2026/08/7477620-eleicoes-rico-pinheiro-projeta-debate-sobre-o-futuro-de-brasilia.html",
+          "titulo": "Rico Pinheiro, candidato do PRTB ao GDF, diz que debater problemas reais fortalece democracia",
+          "tipo": "imprensa_confiavel_local",
+          "data_publicacao": "2026-08-11"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://soubrasilia.com/prtb-df-convencao-rico-pinheiro-gdf-henrique-barack-obama-senado-5-agosto-2026/",
+          "trecho_exato": "Alderico da Silva Pinheiro Filho, que usará o nome de urna Rico Pinheiro, é o candidato ao Governo do Distrito Federal."
+        },
+        {
+          "url": "https://soubrasilia.com/prtb-df-convencao-rico-pinheiro-gdf-henrique-barack-obama-senado-5-agosto-2026/",
+          "trecho_exato": "O nome do vice na chapa ao Governo do DF não saiu da convenção."
+        },
+        {
+          "url": "https://www.correiobraziliense.com.br/cidades-df/2026/08/7477620-eleicoes-rico-pinheiro-projeta-debate-sobre-o-futuro-de-brasilia.html",
+          "trecho_exato": "O pré-candidato ao Governo do Distrito Federal Rico Pinheiro (PRTB) é um dos participantes da sabatina do Correio Braziliense nesta terça-feira (11/8)."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Rico Pinheiro\" governador DF 2026 PRTB",
+        "\"Rico Pinheiro\" DF PRTB"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PRTB",
+      "vice_lista": "Sem definição"
+    },
+    {
+      "ordem": 59,
+      "titular": "Robson Raimundo",
+      "uf": "DF",
+      "desfecho": "resolvido_no_snapshot",
+      "origem_decisao": "snapshot_tse_e_chave_independente",
+      "resumo": "O nome civil, cargo, UF e nascimento confirmam que Professor Robson é o mesmo Robson Raymundo da lista; não é candidatura externa ao snapshot.",
+      "pesquisado_em": "2026-08-13T08:40:28Z",
+      "fontes": [
+        {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+          "titulo": "TSE Dados Abertos — consulta_cand_2026.zip",
+          "tipo": "fonte_primaria_oficial",
+          "data_publicacao": "2026-08-12T19:30:33-03:00"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+          "trecho_exato": "SQ_CANDIDATO=70002535930; slug=robson-raymundo; chave_independente=data de nascimento idêntica",
+          "artefato_local": "registros-oficiais-5.json"
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Robson Raimundo\" governador DF 2026 PSTU Guillen",
+        "\"Robson Raimundo\" DF PSTU",
+        "\"Robson Raymundo\" Guillen 2026",
+        "\"Robson Raimundo\" Guillen 2026"
+      ],
+      "pesquisa_complementar_descartada": {
+        "desfecho": "confirmado_fora_snapshot",
+        "motivo": "Fonte primária e contrato de identidade prevalecem sobre pesquisa complementar."
+      },
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "cargo": "Governador",
+      "partido_lista": "PSTU",
+      "vice_lista": "Guillen"
+    },
+    {
+      "ordem": 64,
+      "titular": "Rafael Demuner",
+      "uf": "ES",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A convenção da Unidade Popular confirmou Rafael Demuner ao Governo do Espírito Santo e Dionary Sarmento como vice. Nome, partido, cargo, UF e vice coincidem integralmente.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/es/espirito-santo/eleicoes/2026/noticia/2026/08/03/unidade-popular-pelo-socialismo-lanca-rafael-demuner-como-candidato-ao-governo-do-espirito-santo.ghtml",
+          "titulo": "Unidade Popular pelo Socialismo lança Rafael Demuner como candidato ao governo do Espírito Santo",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-03"
+        },
+        {
+          "url": "https://www.metropoles.com/brasil/up-lanca-rafael-demuner-como-candidato-ao-governo-do-espirito-santo",
+          "titulo": "UP lança Rafael Demuner como candidato ao governo do Espírito Santo",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-03"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://www.metropoles.com/brasil/up-lanca-rafael-demuner-como-candidato-ao-governo-do-espirito-santo",
+          "trecho_exato": "A Unidade Popular pelo Socialismo (UP) confirmou, durante convenção realizada em Vitória (ES) nesse domingo (2/8), a candidatura de Rafael Demuner ao governo do Espírito Santo nas eleições de 2026."
+        },
+        {
+          "url": "https://www.metropoles.com/brasil/up-lanca-rafael-demuner-como-candidato-ao-governo-do-espirito-santo",
+          "trecho_exato": "O partido também oficializou Dionary Sarmento como candidata a vice-governadora."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Rafael Demuner\" governador Espírito Santo 2026 UP",
+        "\"Rafael Demuner\" Espírito Santo"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "UP",
+      "vice_lista": "Dionary Sarmento"
+    },
+    {
+      "ordem": 67,
+      "titular": "Danilo Pinheiro Evangelista da Silva",
+      "uf": "GO",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "O PCO escolheu Danilo Pinheiro Evangelista da Silva para o Governo de Goiás e Valdik Ferreira dos Santos para vice. Nome civil, partido, cargo, UF e vice coincidem integralmente.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/go/goias/videos-ja-1-edicao/video/pco-confirma-danilo-pinheiro-evangelista-da-silva-como-candidato-ao-governo-de-goias-14849435.ghtml",
+          "titulo": "PCO confirma Danilo Pinheiro Evangelista da Silva como candidato ao governo de Goiás",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-07"
+        },
+        {
+          "url": "https://transmissaopolitica.com.br/politica-goiana/2026/08/10/governo-goias-eleicoes-2026-candidatos/",
+          "titulo": "Eleições 2026: veja quem disputa o Governo de Goiás",
+          "tipo": "imprensa_local",
+          "data_publicacao": "2026-08-10"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/go/goias/videos-ja-1-edicao/video/pco-confirma-danilo-pinheiro-evangelista-da-silva-como-candidato-ao-governo-de-goias-14849435.ghtml",
+          "trecho_exato": "Partido oficializou Danilo Pinheiro Evangelista da Silva. Convenção também definiu o candidato a vice."
+        },
+        {
+          "url": "https://transmissaopolitica.com.br/politica-goiana/2026/08/10/governo-goias-eleicoes-2026-candidatos/",
+          "trecho_exato": "O Partido da Causa Operária escolheu Danilo Pinheiro Evangelista da Silva para disputar o Governo de Goiás."
+        },
+        {
+          "url": "https://transmissaopolitica.com.br/politica-goiana/2026/08/10/governo-goias-eleicoes-2026-candidatos/",
+          "trecho_exato": "Além disso, a legenda definiu Valdik Ferreira dos Santos como candidato a vice-governador."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Danilo Pinheiro Evangelista da Silva\" governador Goiás 2026 PCO",
+        "\"Danilo Pinheiro Evangelista da Silva\" Goiás"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PCO",
+      "vice_lista": "Valdik Ferreira dos Santos"
+    },
+    {
+      "ordem": 68,
+      "titular": "Luciana Amorim",
+      "uf": "GO",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A convenção da Unidade Popular confirmou Luciana de Deus Amorim ao Governo de Goiás e Caymmi Henrique como vice. Nome, partido, cargo, UF e vice fecham com o registro; uma segunda fonte individualiza o nome civil completo.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/08/02/up-lanca-luciana-amorim-como-candidata-ao-governo-de-goias.ghtml",
+          "titulo": "UP lança Luciana Amorim como candidata ao governo de Goiás",
+          "tipo": "imprensa_confiavel_com_cobertura_de_convencao",
+          "data_publicacao": "2026-08-02"
+        },
+        {
+          "url": "https://www.metropoles.com/brasil/up-oficializa-luciana-amorim-ao-governo-de-goias-em-convencao",
+          "titulo": "UP oficializa Luciana Amorim ao governo de Goiás em convenção",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-02"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/08/02/up-lanca-luciana-amorim-como-candidata-ao-governo-de-goias.ghtml",
+          "trecho_exato": "O Unidade Popular pelo Socialismo (UP) confirmou a candidatura de Luciana Amorim ao governo de Goiás. A decisão foi anunciada durante convenção realizada neste domingo (2), na Ocupação de Mulheres Maria Augusta Thomaz, no Setor Aeroporto, em Goiânia."
+        },
+        {
+          "url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/08/02/up-lanca-luciana-amorim-como-candidata-ao-governo-de-goias.ghtml",
+          "trecho_exato": "Outras candidaturas aprovadas na convenção: - Caymmi Henrique (UP) para vice-governador(a); - Guilherme Darques (UP) para o Senado."
+        },
+        {
+          "url": "https://www.metropoles.com/brasil/up-oficializa-luciana-amorim-ao-governo-de-goias-em-convencao",
+          "trecho_exato": "Natural de Anápolis (GO), Luciana de Deus Amorim, 54 anos, é analista judiciária da Justiça Federal em Goiás."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Luciana Amorim\" governadora Goiás 2026 UP Caymmi Henrique",
+        "\"Luciana Amorim\" Goiás UP"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "UP",
+      "vice_lista": "Caymmi Henrique"
+    },
+    {
+      "ordem": 77,
+      "titular": "Roberto Rocha",
+      "uf": "MA",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "Convenção do PRTB confirmou Roberto Rocha para governador do Maranhão e o pastor Josias Cardoso para vice-governador, ambos na mesma chapa indicada no lote.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/08/04/prtb-lanca-roberto-rocha-como-candidato-ao-governo-do-maranhao.ghtml",
+          "titulo": "PRTB lança Roberto Rocha como candidato ao governo do Maranhão",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-04"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/08/04/prtb-lanca-roberto-rocha-como-candidato-ao-governo-do-maranhao.ghtml",
+          "trecho_exato": "O Partido Renovador Trabalhista Brasileiro (PRTB) confirmou a candidatura de Roberto Rocha ao governo do Maranhão. A decisão foi tomada durante convenção realizada nesta terça-feira (4), na sede regional do partido, no bairro do Calhau, em São Luís."
+        },
+        {
+          "url": "https://g1.globo.com/ma/maranhao/eleicoes/2026/noticia/2026/08/04/prtb-lanca-roberto-rocha-como-candidato-ao-governo-do-maranhao.ghtml",
+          "trecho_exato": "Além da candidatura ao governo do Maranhão, o PRTB lançou o pastor Josias Cardoso, como candidato a vice-governador."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Roberto Rocha\" governador 2026 MA",
+        "\"Roberto Rocha\" \"Josias Cardoso\"",
+        "PRTB candidato governo MA 2026 convenção"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PRTB",
+      "vice_lista": "Josias Cardoso"
+    },
+    {
+      "ordem": 82,
+      "titular": "Flávio Roscoe",
+      "uf": "MG",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "Flávio Roscoe segue candidato do PL ao governo de Minas, mas a composição externa está superada: Charlles Thomacelli Evangelista desistiu da vice para concorrer a deputado federal e foi substituído por Ellen Miziara.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/mg/minas-gerais/eleicoes/2026/noticia/2026/08/07/pl-confirma-charlles-evangelista-como-candidato-a-vice-de-flavio-roscoe-em-mg.ghtml",
+          "titulo": "PL confirma Charlles Evangelista como candidato a vice de Roscoe em MG",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-07"
+        },
+        {
+          "url": "https://diariodocomercio.com.br/politica/pl-vereadora-uberaba-flavio-roscoe/",
+          "titulo": "PL escolhe vereadora de Uberaba como vice na chapa de Flávio Roscoe",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-12"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/mg/minas-gerais/eleicoes/2026/noticia/2026/08/07/pl-confirma-charlles-evangelista-como-candidato-a-vice-de-flavio-roscoe-em-mg.ghtml",
+          "trecho_exato": "O PL confirmou, no dia 7 de agosto, Charlles Evangelista como vice na chapa do candidato Flávio Roscoe ao governo de Minas Gerais. No entanto, quatro dias depois, Charlles desistiu da disputa."
+        },
+        {
+          "url": "https://diariodocomercio.com.br/politica/pl-vereadora-uberaba-flavio-roscoe/",
+          "trecho_exato": "A vereadora substitui o ex-deputado federal Charlles Thomacelli Evangelista, que havia sido escolhido pelo partido na última quarta-feira (5). Evangelista deixou a posição na chapa para concorrer ao cargo de deputado federal pelo PL nas eleições deste ano."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Flávio Roscoe\" governador 2026 MG",
+        "\"Flávio Roscoe\" \"Charlles Thomacelli Evangelista\"",
+        "PL candidato governo MG 2026 convenção",
+        "Flávio Roscoe vice desistiu substituição 2026"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "vice_vigente": "Ellen Miziara",
+      "divergencia_chapa": {
+        "vice_lista_original": "Charlles Thomacelli Evangelista",
+        "desfecho": "substituido",
+        "vice_vigente": "Ellen Miziara",
+        "fonte": "https://diariodocomercio.com.br/politica/pl-vereadora-uberaba-flavio-roscoe/"
+      },
+      "cargo": "Governador",
+      "partido_lista": "PL",
+      "vice_lista": "Charlles Thomacelli Evangelista"
+    },
+    {
+      "ordem": 90,
+      "titular": "Daniel Vasques",
+      "uf": "MS",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A convenção do PCO confirmou Daniel Lemes ao governo de Mato Grosso do Sul; a matéria identifica seu nome completo como Daniel Lemes Vasques e confirma Silvia Benites para vice, fechando a identidade da chapa do lote por nome civil, partido, vice, cargo e UF.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/ms/mato-grosso-do-sul/eleicoes/2026/noticia/2026/08/06/pco-lanca-daniel-lemes-como-candidato-ao-governo-de-ms.ghtml",
+          "titulo": "PCO lança Daniel Lemes como candidato ao governo de MS",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-06"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/ms/mato-grosso-do-sul/eleicoes/2026/noticia/2026/08/06/pco-lanca-daniel-lemes-como-candidato-ao-governo-de-ms.ghtml",
+          "trecho_exato": "O Partido da Causa Operária (PCO) confirmou a candidatura de Daniel Lemes ao governo de Mato Grosso do Sul. A decisão foi tomada durante convenção on-line realizada nessa quarta-feira (5)."
+        },
+        {
+          "url": "https://g1.globo.com/ms/mato-grosso-do-sul/eleicoes/2026/noticia/2026/08/06/pco-lanca-daniel-lemes-como-candidato-ao-governo-de-ms.ghtml",
+          "trecho_exato": "Daniel Lemes Vasques é uma liderança Guarini-Kaiowá, professor e militante político."
+        },
+        {
+          "url": "https://g1.globo.com/ms/mato-grosso-do-sul/eleicoes/2026/noticia/2026/08/06/pco-lanca-daniel-lemes-como-candidato-ao-governo-de-ms.ghtml",
+          "trecho_exato": "Silvia Benites, para vice-governadora;"
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Daniel Vasques\" governador 2026 MS",
+        "\"Daniel Vasques\" \"Silvia Benites\"",
+        "PCO candidato governo MS 2026 convenção",
+        "Daniel Lemes Vasques candidato governador MS 2026 TSE"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PCO",
+      "vice_lista": "Silvia Benites"
+    },
+    {
+      "ordem": 91,
+      "titular": "Delcídio Amaral",
+      "uf": "MS",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A Federação Renovação Solidária, formada por PRD e Solidariedade, confirmou Delcídio do Amaral ao governo de Mato Grosso do Sul e Francisca Esmeralda Ajala para vice.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/ms/mato-grosso-do-sul/eleicoes/2026/noticia/2026/08/07/prd-e-solidariedade-lancam-delcidio-do-amaral-como-candidato-ao-governo-de-ms.ghtml",
+          "titulo": "Delcídio do Amaral é lançado como candidato ao governo de MS",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-07"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/ms/mato-grosso-do-sul/eleicoes/2026/noticia/2026/08/07/prd-e-solidariedade-lancam-delcidio-do-amaral-como-candidato-ao-governo-de-ms.ghtml",
+          "trecho_exato": "A federação Renovação Solidária de Mato Grosso do Sul (PRD e Solidariedade) confirmou a candidatura do ex-senador Delcídio do Amaral ao governo de Mato Grosso do Sul. A decisão foi tomada durante convenção on-line realiza nessa quarta-feira (5)."
+        },
+        {
+          "url": "https://g1.globo.com/ms/mato-grosso-do-sul/eleicoes/2026/noticia/2026/08/07/prd-e-solidariedade-lancam-delcidio-do-amaral-como-candidato-ao-governo-de-ms.ghtml",
+          "trecho_exato": "Francisca Esmeralda Ajala, para vice-governadora;"
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Delcídio Amaral\" governador 2026 MS",
+        "\"Delcídio Amaral\" \"Francisca Esmeralda Ajala\"",
+        "PRD candidato governo MS 2026 convenção"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PRD",
+      "vice_lista": "Francisca Esmeralda Ajala"
+    },
+    {
+      "ordem": 102,
+      "titular": "Sargento Laudicério Machado",
+      "uf": "MT",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A convenção do Agir confirmou Sargento Laudicério Machado ao governo de Mato Grosso e escolheu Gilberto Possamai, também do Agir, para vice.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/mt/mato-grosso/noticia/2026/07/27/agir-lanca-sargento-laudicerio-machado-como-candidato-ao-governo-de-mato-grosso.ghtml",
+          "titulo": "Agir lança Sargento Laudicério Machado como candidato ao governo de MT",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-07-27"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/mt/mato-grosso/noticia/2026/07/27/agir-lanca-sargento-laudicerio-machado-como-candidato-ao-governo-de-mato-grosso.ghtml",
+          "trecho_exato": "O Partido Agir confirmou a candidatura do Sargento Laudicério Machado ao governo de Mato Grosso. A decisão foi tomada durante convenção realizada neste domingo (26), em Cuiabá. O vice-governador escolhido para completar a chapa foi o empresário e produtor rural Gilberto Possamai (Agir)."
+        },
+        {
+          "url": "https://g1.globo.com/mt/mato-grosso/noticia/2026/07/27/agir-lanca-sargento-laudicerio-machado-como-candidato-ao-governo-de-mato-grosso.ghtml",
+          "trecho_exato": "Natural de Cuiabá, o sargento Laudicério Aguiar Machado é doutor e mestre em Administração pela Universidade Metodista de Piracicaba (Unimep) e presidente da Associação de Cabos e Soldados da Polícia Militar e Bombeiro Militar de Mato Grosso (ACS-PMBM/MT) desde 2021."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Sargento Laudicério Machado\" governador 2026 MT",
+        "\"Sargento Laudicério Machado\" \"Gilberto Possamai\"",
+        "Agir candidato governo MT 2026 convenção"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "Agir",
+      "vice_lista": "Gilberto Possamai"
+    },
+    {
+      "ordem": 107,
+      "titular": "Gal Leite",
+      "uf": "PA",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A convenção da Unidade Popular homologou chapa própria ao governo do Pará encabeçada por Gal Leite, com Karen Sousa como vice-governadora.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://pontodepauta.com/2026/07/31/unidade-popular-homologa-chapa-ao-governo-do-para-com-gal-leite-e-karen-sousa/",
+          "titulo": "Unidade Popular homologa chapa ao governo do Pará com Gal Leite e Karen Sousa",
+          "tipo": "imprensa_local",
+          "data_publicacao": "2026-07-31"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://pontodepauta.com/2026/07/31/unidade-popular-homologa-chapa-ao-governo-do-para-com-gal-leite-e-karen-sousa/",
+          "trecho_exato": "Em convenção realizada na noite desta quinta-feira (30), na sede do Sindicato dos Urbanitários do Pará, em Belém, a Unidade Popular pelo Socialismo (UP) homologou suas candidaturas para as eleições estaduais de 2026."
+        },
+        {
+          "url": "https://pontodepauta.com/2026/07/31/unidade-popular-homologa-chapa-ao-governo-do-para-com-gal-leite-e-karen-sousa/",
+          "trecho_exato": "Para o governo do Estado, o partido lançou a chapa encabeçada por Gal Leite, com Karen Sousa como vice-governadora."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Gal Leite\" governador 2026 PA",
+        "\"Gal Leite\" \"Karen Sousa\"",
+        "UP candidato governo PA 2026 convenção"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "UP",
+      "vice_lista": "Karen Sousa"
+    },
+    {
+      "ordem": 109,
+      "titular": "José Moita",
+      "uf": "PA",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A convenção do Democrata confirmou José Moita ao governo do Pará e Simone Souza para vice-governadora; a matéria também identifica o titular como José Lucifaldo Moita.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/pa/para/eleicoes/2026/noticia/2026/08/05/democrata-lanca-jose-moita-como-candidato-ao-governo-do-para.ghtml",
+          "titulo": "Democrata lança José Moita como candidato ao governo do Pará",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-05"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/pa/para/eleicoes/2026/noticia/2026/08/05/democrata-lanca-jose-moita-como-candidato-ao-governo-do-para.ghtml",
+          "trecho_exato": "O partido Democrata (Democrata) confirmou, na tarde desta quarta-feira (5), a candidatura de José Moita governo do Pará. A decisão foi oficializada durante convenção realizada na sede do partido no bairro da Cidade Velha, em Belém."
+        },
+        {
+          "url": "https://g1.globo.com/pa/para/eleicoes/2026/noticia/2026/08/05/democrata-lanca-jose-moita-como-candidato-ao-governo-do-para.ghtml",
+          "trecho_exato": "Simone Souza (Democrata) para vice-governadora."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"José Moita\" governador 2026 PA",
+        "\"José Moita\" \"Simone Souza\"",
+        "Democrata candidato governo PA 2026 convenção"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "Democrata",
+      "vice_lista": "Simone Souza"
+    },
+    {
+      "ordem": 110,
+      "titular": "Roberto Martins",
+      "uf": "PA",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A convenção do PRTB confirmou Roberto Martins Pereira, conhecido como Robertinho Amigo do Povo, ao governo do Pará e Ronaldo Miranda Sarges para vice; nome, partido, vice, cargo e UF fecham a identidade do registro.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://news.folhadoprogresso.com.br/prtb-lanca-roberto-martins-pereira-como-candidato-ao-governo-do-para/",
+          "titulo": "PRTB lança Roberto Martins Pereira como candidato ao governo do Pará",
+          "tipo": "imprensa_local",
+          "data_publicacao": "2026-08-03"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://news.folhadoprogresso.com.br/prtb-lanca-roberto-martins-pereira-como-candidato-ao-governo-do-para/",
+          "trecho_exato": "PRTB lança Roberto Martins Pereira como candidato ao governo do Pará"
+        },
+        {
+          "url": "https://news.folhadoprogresso.com.br/prtb-lanca-roberto-martins-pereira-como-candidato-ao-governo-do-para/",
+          "trecho_exato": "Escolha foi confirmada durante convenção realizada nesta segunda-feira, 3. Ronaldo Miranda Sarges foi anunciado como canidato a vice-governador."
+        },
+        {
+          "url": "https://news.folhadoprogresso.com.br/prtb-lanca-roberto-martins-pereira-como-candidato-ao-governo-do-para/",
+          "trecho_exato": "Cearense, Roberto Martins Pereira, conhecido também como Robertinho Amigo do Povo, tem 46 anos e é empresário."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Roberto Martins\" governador 2026 PA",
+        "\"Roberto Martins\" \"Ronaldo Miranda Sarges\"",
+        "PRTB candidato governo PA 2026 convenção",
+        "Roberto Martins Pereira candidato governador Pará 2026 TSE",
+        "Robertinho Amigo do Povo governador Pará 2026"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PRTB",
+      "vice_lista": "Ronaldo Miranda Sarges"
+    },
+    {
+      "ordem": 111,
+      "titular": "Camilo Duarte",
+      "uf": "PB",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "Convenção do PCO confirmou Camilo Duarte ao governo da Paraíba e Marcos José, conhecido como Quinho, para vice-governador.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/08/05/pco-lanca-camilo-duarte-como-candidato-ao-governo-da-paraiba.ghtml",
+          "titulo": "PCO lança candidatura de Camilo Duarte ao governo da Paraíba",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-05"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/08/05/pco-lanca-camilo-duarte-como-candidato-ao-governo-da-paraiba.ghtml",
+          "trecho_exato": "O Partido da Causa Operária (PCO) confirmou a candidatura de Camilo Duarte ao governo do estado da Paraíba. A decisão foi tomada durante convenção realizada na noite da terça-feira (4), em audiência virtual."
+        },
+        {
+          "url": "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/08/05/pco-lanca-camilo-duarte-como-candidato-ao-governo-da-paraiba.ghtml",
+          "trecho_exato": "Também durante a convenção, Marcos José (PCO) , conhecido como \"Quinho\", foi anunciada como candidato a vice-governador."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Camilo Duarte\" governador 2026 PB",
+        "\"Camilo Duarte\" \"Marcos José\"",
+        "PCO candidato governo PB 2026 convenção"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PCO",
+      "vice_lista": "Marcos José"
+    },
+    {
+      "ordem": 115,
+      "titular": "Pedro Coutinho",
+      "uf": "PB",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "Convenção da Democracia Cristã confirmou Pedro Coutinho ao governo da Paraíba e Lenilda Pereira para vice-governadora, ambos pelo DC.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/08/03/dc-lanca-pedro-coutinho-como-candidato-ao-governo-da-paraiba.ghtml",
+          "titulo": "DC confirma Pedro Coutinho como candidato ao governo da Paraíba",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-03"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/08/03/dc-lanca-pedro-coutinho-como-candidato-ao-governo-da-paraiba.ghtml",
+          "trecho_exato": "O partido Democracia Cristã (DC) confirmou a candidatura de Pedro Coutinho ao governo do estado da Paraíba. A decisão foi anunciada durante convenção realizada nesta segunda-feira (3) em João Pessoa."
+        },
+        {
+          "url": "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/08/03/dc-lanca-pedro-coutinho-como-candidato-ao-governo-da-paraiba.ghtml",
+          "trecho_exato": "O produtor rural disputa eleições pela primeira vez. Lenilda Pereira (DC) foi anunciada como candidata a vice-governadora."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Pedro Coutinho\" governador 2026 PB",
+        "\"Pedro Coutinho\" \"Lenilda Pereira\"",
+        "DC candidato governo PB 2026 convenção"
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "DC",
+      "vice_lista": "Lenilda Pereira"
+    },
+    {
+      "ordem": 120,
+      "titular": "Jeremias Cosmo",
+      "uf": "PE",
+      "desfecho": "resolvido_no_snapshot",
+      "origem_decisao": "snapshot_tse_e_chave_independente",
+      "resumo": "O nome civil, cargo, UF e nascimento confirmam que Professor Jeremias do Banco é o mesmo Jeremias Cosmo da lista; não é candidatura externa ao snapshot.",
+      "pesquisado_em": "2026-08-13T08:40:28Z",
+      "fontes": [
+        {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+          "titulo": "TSE Dados Abertos — consulta_cand_2026.zip",
+          "tipo": "fonte_primaria_oficial",
+          "data_publicacao": "2026-08-12T19:30:33-03:00"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+          "trecho_exato": "SQ_CANDIDATO=170002541258; slug=jeremias-cosmo; chave_independente=data de nascimento idêntica",
+          "artefato_local": "registros-oficiais-5.json"
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Jeremias Cosmo\" governador 2026 PE",
+        "\"Jeremias Cosmo\" \"Carlos Alberto\"",
+        "Democrata candidato governo PE 2026 convenção",
+        "\"Professor Jeremias Do Banco\" Jeremias Cosmo",
+        "Professor Jeremias do Banco Carlos Alberto vice governador Pernambuco 2026"
+      ],
+      "pesquisa_complementar_descartada": {
+        "desfecho": "confirmado_fora_snapshot",
+        "motivo": "Fonte primária e contrato de identidade prevalecem sobre pesquisa complementar."
+      },
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "cargo": "Governador",
+      "partido_lista": "Democrata",
+      "vice_lista": "Carlos Alberto"
+    },
+    {
+      "ordem": 124,
+      "titular": "Victor Assis",
+      "uf": "PE",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "O PCO lançou Victor Assis ao governo de Pernambuco e Roberta Rita à vice; nome, partido, cargo, UF e vice coincidem com a lista.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/pe/pernambuco/eleicoes/2026/noticia/2026/08/09/pco-lanca-victor-assis-como-candidato-ao-governo-de-pernambuco.ghtml",
+          "titulo": "PCO lança Victor Assis como candidato ao governo de Pernambuco",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-09"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/pe/pernambuco/eleicoes/2026/noticia/2026/08/09/pco-lanca-victor-assis-como-candidato-ao-governo-de-pernambuco.ghtml",
+          "trecho_exato": "O PCO lançou no sábado (8) a candidatura de Victor Assis ao governo de Pernambuco. Roberta Rita concorrerá como vice-governadora e Mailson Neto disputará o Senado."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Victor Assis\" PCO governador Pernambuco 2026",
+        "\"Victor Assis\" \"Roberta Rita\""
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PCO",
+      "vice_lista": "Roberta Rita"
+    },
+    {
+      "ordem": 136,
+      "titular": "Adriano Teixeira",
+      "uf": "PR",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "Convenção do PCO confirmou Adriano Teixeira ao governo do Paraná e José Carlos Telles à vice.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/08/05/pco-lanca-candidatura-ao-governo-do-parana.ghtml",
+          "titulo": "PCO lança Adriano Teixeira ao governo do Paraná",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-05"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/08/05/pco-lanca-candidatura-ao-governo-do-parana.ghtml",
+          "trecho_exato": "O Partido da Causa Operária (PCO) confirmou na terça-feira (4) a candidatura de Adriano Teixeira ao governo do Paraná. A decisão foi anunciada durante a convenção do partido, realizada em Curitiba."
+        },
+        {
+          "url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/08/05/pco-lanca-candidatura-ao-governo-do-parana.ghtml",
+          "trecho_exato": "O partido também anunciou José Carlos Telles como candidato a vice-governador."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Adriano Teixeira\" PCO governador Paraná 2026",
+        "\"Adriano Teixeira\" \"José Carlos Telles\""
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PCO",
+      "vice_lista": "José Carlos Telles"
+    },
+    {
+      "ordem": 143,
+      "titular": "Tayná Miessa",
+      "uf": "PR",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "Convenção da UP confirmou Tayná Miessa ao governo do Paraná e Willian Araki à vice.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/07/31/up-lanca-candidatura-ao-governo-do-parana.ghtml",
+          "titulo": "UP lança candidatura de Tayná Miessa ao governo do Paraná",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-07-31"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/pr/parana/eleicoes/2026/noticia/2026/07/31/up-lanca-candidatura-ao-governo-do-parana.ghtml",
+          "trecho_exato": "O partido Unidade Popular (UP) confirmou, na quarta-feira (29), a candidatura de Tayná Miessa ao governo do Paraná. Willian Araki concorrerá como vice-governador na mesma chapa."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Tayná Miessa\" UP governadora Paraná 2026",
+        "\"Tayná Miessa\" \"Willian Araki\""
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "UP",
+      "vice_lista": "Willian Araki"
+    },
+    {
+      "ordem": 156,
+      "titular": "Cadu de Lula",
+      "uf": "RN",
+      "desfecho": "quarentena_identidade",
+      "origem_decisao": "snapshot_tse_e_chave_independente",
+      "resumo": "O snapshot contém Carlos Eduardo Xavier/Cadu de Lula no mesmo cargo e UF, mas o contrato vigente ainda não possui chave independente suficiente para promover o vínculo; permanece em revisão.",
+      "pesquisado_em": "2026-08-13T08:40:28Z",
+      "fontes": [
+        {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+          "titulo": "TSE Dados Abertos — consulta_cand_2026.zip",
+          "tipo": "fonte_primaria_oficial",
+          "data_publicacao": "2026-08-12T19:30:33-03:00"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+          "trecho_exato": "SQ_CANDIDATO=200002534001; slug=cadu-xavier; chave_independente=ausente",
+          "artefato_local": "registros-oficiais-5.json"
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Cadu de Lula\" governador RN 2026",
+        "\"Cadu Xavier\" \"Larissa Rosado\""
+      ],
+      "pesquisa_complementar_descartada": {
+        "desfecho": "quarentena_identidade",
+        "motivo": "Fonte primária e contrato de identidade prevalecem sobre pesquisa complementar."
+      },
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "cargo": "Governador",
+      "partido_lista": "PT",
+      "vice_lista": "Larissa Rosado"
+    },
+    {
+      "ordem": 157,
+      "titular": "Carlos Jararaca",
+      "uf": "RN",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A convenção da DC homologou Carlos Alberto de Almeida Cavalcante, nome de urna Carlos Jararaca, ao governo do RN, com Pastor Júlio à vice.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://agorarn.com.br/politica/rn-tera-8-candidatos-ao-governo/",
+          "titulo": "RN terá 8 candidatos ao Governo do Estado; conheça todas as chapas",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-06"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://agorarn.com.br/politica/rn-tera-8-candidatos-ao-governo/",
+          "trecho_exato": "Foi homologada a candidatura de Carlos Alberto de Almeida Cavalcante ao Governo, que utilizará o nome Carlos Jararaca. Jararaca terá como vice Júlio César Neves, que utilizará o nome Pastor Júlio."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Carlos Jararaca\" governador RN 2026",
+        "\"Carlos Alberto de Almeida Cavalcante\" \"Pastor Júlio\""
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "DC",
+      "vice_lista": "Pastor Júlio"
+    },
+    {
+      "ordem": 159,
+      "titular": "Henrique Lyra",
+      "uf": "RN",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "O PCO aprovou Henrique Othon Costa de Lyra ao governo do RN e Estevão Gomes à vice; Henrique Lyra é a forma abreviada da lista.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://tribunadonorte.com.br/politica/rn-chega-a-nove-concorrentes-ao-governo-e-14-ao-senado/",
+          "titulo": "RN chega a nove concorrentes ao Governo e 14 ao Senado",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-08"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://tribunadonorte.com.br/politica/rn-chega-a-nove-concorrentes-ao-governo-e-14-ao-senado/",
+          "trecho_exato": "O PCO aprovou a candidatura de Henrique Othon Costa de Lyra ao Governo do Estado. O candidato a vice-governador será Estevão Gomes."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Henrique Lyra\" PCO governador RN 2026",
+        "\"Henrique Othon Costa de Lyra\" \"Estevão Gomes\""
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PCO",
+      "vice_lista": "Estevão Gomes"
+    },
+    {
+      "ordem": 170,
+      "titular": "Rosi Aires",
+      "uf": "RR",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A Federação PSOL-Rede oficializou Rosi Aires ao governo de Roraima e Lucia Patamona à vice; a grafia Lúcia da lista corresponde à fonte.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://www.folhabv.com.br/politica/psol-rede-lanca-rosi-aires-ao-governo-e-define-barto-macuxi-e-mario-rocha-para-o-senado/",
+          "titulo": "PSOL-Rede lança Rosi Aires ao Governo e define Bartô Macuxi e Mário Rocha para o Senado",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-02"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://www.folhabv.com.br/politica/psol-rede-lanca-rosi-aires-ao-governo-e-define-barto-macuxi-e-mario-rocha-para-o-senado/",
+          "trecho_exato": "A Federação PSOL-Rede oficializou, durante convenção realizada nesse sábado (1º), a candidatura da professora Rosi Aires ao Governo de Roraima nas eleições de 2026. A chapa majoritária é composta ainda por Lucia Patamona como candidata a vice-governadora"
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Rosi Aires\" governadora Roraima 2026",
+        "\"Rosi Aires\" \"Lucia Patamona\""
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PSOL",
+      "vice_lista": "Lúcia Patamona"
+    },
+    {
+      "ordem": 172,
+      "titular": "César Pontes",
+      "uf": "RS",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "Convenção do PCO confirmou Cesar Pontes ao governo do RS e Tiago Nilo à vice.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/08/03/pco-lanca-cesar-pontes-como-candidato-ao-governo-do-rs.ghtml",
+          "titulo": "PCO lança Cesar Pontes como candidato ao governo do RS",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-03"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/08/03/pco-lanca-cesar-pontes-como-candidato-ao-governo-do-rs.ghtml",
+          "trecho_exato": "O PCO confirmou a candidatura de Cesar Pontes ao governo do Rio Grande do Sul. A decisão foi tomada durante convenção realizada neste domingo (3), em São Paulo."
+        },
+        {
+          "url": "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/08/03/pco-lanca-cesar-pontes-como-candidato-ao-governo-do-rs.ghtml",
+          "trecho_exato": "Tiago Nilo (PCO) para vice-governador;"
+        }
+      ],
+      "consultas_realizadas": [
+        "\"César Pontes\" PCO governador RS 2026",
+        "\"Cesar Pontes\" \"Tiago Nilo\""
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PCO",
+      "vice_lista": "Tiago Nilo"
+    },
+    {
+      "ordem": 179,
+      "titular": "Brunno Andrade",
+      "uf": "SC",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "Convenção do PCO confirmou Brunno Andrade ao governo de Santa Catarina e Jair Fernandes à vice.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/sc/santa-catarina/eleicoes/2026/noticia/2026/08/06/pco-lanca-brunno-dias-como-candidato-ao-governo-de-santa-catarina.ghtml",
+          "titulo": "PCO lança Brunno Andrade como candidato ao governo de Santa Catarina",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-06"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/sc/santa-catarina/eleicoes/2026/noticia/2026/08/06/pco-lanca-brunno-dias-como-candidato-ao-governo-de-santa-catarina.ghtml",
+          "trecho_exato": "Brunno Andrade foi confirmado pelo PCO como candidato ao governo de Santa Catarina."
+        },
+        {
+          "url": "https://g1.globo.com/sc/santa-catarina/eleicoes/2026/noticia/2026/08/06/pco-lanca-brunno-dias-como-candidato-ao-governo-de-santa-catarina.ghtml",
+          "trecho_exato": "Durante a convenção, a legenda lançou Jair Fernandes como candidato a vice-governador e Caroline Sant'Anna ao Senado."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Brunno Andrade\" PCO governador Santa Catarina 2026",
+        "\"Brunno Andrade\" \"Jair Fernandes\""
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "PCO",
+      "vice_lista": "Jair Fernandes"
+    },
+    {
+      "ordem": 191,
+      "titular": "Taty Cristina",
+      "uf": "SE",
+      "desfecho": "confirmado_fora_snapshot",
+      "resumo": "A Democracia Cristã oficializou Taty Cristina ao governo de Sergipe e indicou Simeão Barbosa à vice.",
+      "pesquisado_em": "2026-08-13",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/se/sergipe/eleicoes/2026/noticia/2026/08/06/democracia-crista-confirma-que-oficializou-candidatura-de-taty-cristina-ao-governo-de-sergipe.ghtml",
+          "titulo": "Democracia Cristã confirma que oficializou candidatura de Taty Cristina ao governo de Sergipe",
+          "tipo": "imprensa_confiavel",
+          "data_publicacao": "2026-08-06"
+        }
+      ],
+      "evidencias": [
+        {
+          "url": "https://g1.globo.com/se/sergipe/eleicoes/2026/noticia/2026/08/06/democracia-crista-confirma-que-oficializou-candidatura-de-taty-cristina-ao-governo-de-sergipe.ghtml",
+          "trecho_exato": "O Democracia Cristã confirmou, nesta quinta-feira (6), que oficializou a candidatura de Taty Cristina ao governo de Sergipe."
+        },
+        {
+          "url": "https://g1.globo.com/se/sergipe/eleicoes/2026/noticia/2026/08/06/democracia-crista-confirma-que-oficializou-candidatura-de-taty-cristina-ao-governo-de-sergipe.ghtml",
+          "trecho_exato": "O registro da candidatura foi formalizado no TSE no dia 1º de agosto. A chapa indicou Simeão Barbosa para o cargo de vice-governador."
+        }
+      ],
+      "consultas_realizadas": [
+        "\"Taty Cristina\" governadora Sergipe 2026",
+        "\"Taty Cristina\" \"Simeão Barbosa\""
+      ],
+      "origem_coorte": "lista_independente_12_08_cruzada_com_base_e_snapshot",
+      "origem_decisao": "pesquisa_complementar_fontes_publicas",
+      "cargo": "Governador",
+      "partido_lista": "Democracia Cristã",
+      "vice_lista": "Simeão Barbosa"
+    }
+  ]
+}

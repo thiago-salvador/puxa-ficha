@@ -1,0 +1,1962 @@
+{
+  "_comentario": "Registro de decisao de identidade eleitoral da etapa 2 (execucao pf-reverificacao-20260809). CANONICO PARA A DECISAO: quais slugs podem materializar candidatura TSE 2026 e sob qual chave. As 71 entradas sao transcricao verbatim do diagnostico, e por isso os dois hashes abaixo sao RECOMPUTAVEIS em CI a partir de `entradas`, sem nenhum artefato gitignorado. ADULTERACAO: qualquer edicao manual de `entradas` quebra os hashes e o teste falha; a correcao e regenerar, nunca reescrever o hash. DIVERGENCIA: o parser lanca e nada e materializado.",
+  "versao": 2,
+  "execucao": "pf-reverificacao-20260809",
+  "pleito": 2026,
+  "decidido_em": "2026-08-17",
+  "total": 71,
+  "contrato": {
+    "classe_que_promove_chave": "match_fresco",
+    "criterio_identidade": "confirmacao por um de dois caminhos. (1) nome civil + nome de urna + cargo + UF (mesmo contrato da B2). (2) chave independente: nome civil 1:1 OU subconjunto, mais cargo, UF e DATA DE NASCIMENTO identica a do nosso cadastro, com hit UNICO. Nome civil sozinho, sem chave independente, segue encaminhando revisao.",
+    "chave_independente": "data de nascimento por slug em data/identidade-etapa2-nascimentos.json, com proveniencia ANTERIOR ao pleito conferido (consulta_cand/DivulgaCandContas de ciclos passados ou curadoria). Conferir o pleito 2026 com dado extraido do proprio snapshot 2026 seria circular, defeito que derrubou a rota 2 do backfill de CPF. `null` mantem o slug bloqueado.",
+    "chave_vs_evidencia": "`chave` so existe em match_fresco. `hits[].sq` existe em classes bloqueadas e e EVIDENCIA para revisao, nao promocao. O invariante e `nenhuma chave promovida`, nao `nenhum SQ em lugar nenhum`.",
+    "reproducao": "diagnostico_final_71_sha256 = sha256(JSON.stringify(Object.fromEntries(entradas.map(e => [e.slug, e])), null, 2)); slugs_derivados_71_sha256 = sha256(entradas.map(e => e.slug).join('\\n') + '\\n')",
+    "janela_registro": "convencoes ate 05/08; pedidos de registro ate 15/08 as 19h (Resolucao TSE 23.609/2019, art. 19). As nao-localizacoes EXIGEM recheque apos 15/08 e nunca sao lidas como ausencia de registro."
+  },
+  "renovacao": {
+    "revalidar_ate": "2026-08-24",
+    "responsavel": "dono do repositorio, unico autor de migrations e unico operador do banco (Settings/WORKFLOWS.md)",
+    "procedimento": [
+      "npm run data:identidade-etapa2:fontes",
+      "npm run data:identidade-etapa2:gerar",
+      "node --import tsx --test tests/etapa2-identidade-protecao.test.ts"
+    ],
+    "prorrogacao": "mover `revalidar_ate` sem regenerar exige decisao registrada em Settings/STATUS.md no mesmo commit.",
+    "roda_em_ci": false,
+    "motivo_de_nao_rodar_em_ci": "3,3 MB de ZIPs do TSE e 2,98 MB de ledger, ambos gitignorados, mais o binario unzip. O que roda em CI e a verificacao dos hashes, nao a regeneracao."
+  },
+  "consumidores": [
+    "scripts/lib/identidade-etapa2.ts",
+    "scripts/validate-seed.ts",
+    "tests/etapa2-identidade-protecao.test.ts"
+  ],
+  "fonte": {
+    "nucleo": "scripts/lib/identidade-etapa2-classificador.ts",
+    "gerador": "scripts/audit/gerar-identidade-etapa2.ts",
+    "modo": "reclassificar",
+    "diagnostico_gitignorado": "output/pf-reverificacao-20260809/diagnostico-final-71.json",
+    "diagnostico_final_71_sha256": "e229a61e70ee9f9bbadde107f2005fca9ad9377a191e98078984cb2c80410641",
+    "slugs_derivados_71_sha256": "c05993541835f5ee06879ae084b96450fd78f44e97feffac86987431e22bcff9",
+    "universo_83_sha256": "653fff9c9ec7391eeeb5ee16b5d98c64182abb057b356fe1bd1a8df973385b53",
+    "db_snapshot_83_sha256": "4d7a002c09ba6182792e60d86ca179d9070ec2dc487ac256e63bd71dbe2f9f99",
+    "ledger_b2_sha256": "78dec9789bdd4952cbf781f5bd4952a75f919b4a82903e6869a42468cc168fc0",
+    "nascimentos": "data/identidade-etapa2-nascimentos.json",
+    "nascimentos_sha256": "5a87f9d786c723425fd1ad0ad1e7ff4ecdc7872b6a4fe1cdf6841467f540cc37",
+    "catalog_sha256": "2a28e49750180ef50b8b31818bfb90f6ad8e96c6f35e9056096a0f974f6f2445",
+    "catalog_fetched_at": "2026-08-17T21:31:38.119Z",
+    "snapshot_tse_sha256": "a9813a9ea95d5f63ec1a560e520c0467b5f63261d0ec60058f180dab6e7c1736",
+    "snapshot_complemento_sha256": "56903f93712ac339008bb02845dafd2f97022473d02498cf876834bba001832f",
+    "snapshot_redes_sha256": "e3bcc01d7ba42b450badd3bf09e339c05562524778734ca7ba423e584eeee472",
+    "dt_geracao_tse": "17/08/2026 12:31:17"
+  },
+  "contagem": {
+    "proxima_possivel_urna": 5,
+    "match_fresco": 49,
+    "revisao_identidade": 13,
+    "registro_encontrado_outro_cargo": 2,
+    "conflito_cargo_uf": 1,
+    "nao_localizado_pelos_matchers": 1
+  },
+  "entradas": [
+    {
+      "slug": "adailton-furia",
+      "nome_completo": "Adailton de Souza Fúria",
+      "nome_urna": "Adailton Furia",
+      "cargo_disputado": "Governador",
+      "estado": "RO",
+      "classe": "proxima_possivel_urna",
+      "motivo": "só nome de urna casa; nome civil diverge (possível homônimo ou registro com outro nome civil)",
+      "hits": [
+        {
+          "sq": "220002536806",
+          "nome_civil": "ADAILTON ANTUNES FERREIRA",
+          "nome_urna": "ADAILTON FURIA",
+          "cargo": "GOVERNADOR",
+          "uf": "RO",
+          "partido": "PSD",
+          "numero": "55"
+        }
+      ]
+    },
+    {
+      "slug": "alysson-bezerra",
+      "nome_completo": "Allyson Leandro Bezerra Silva",
+      "nome_urna": "Alysson Bezerra",
+      "cargo_disputado": "Governador",
+      "estado": "RN",
+      "classe": "match_fresco",
+      "motivo": "nome civil 1:1 + cargo + UF, e data de nascimento idêntica à do nosso cadastro (chave independente prevista no contrato); divergência de nome de urna superada",
+      "hits": [
+        {
+          "sq": "200002535255",
+          "nome_civil": "ALLYSON LEANDRO BEZERRA SILVA",
+          "nome_urna": "ALLYSON",
+          "cargo": "GOVERNADOR",
+          "uf": "RN",
+          "partido": "UNIÃO",
+          "numero": "44"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "200002535255"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 9
+      }
+    },
+    {
+      "slug": "amelio-cayres",
+      "nome_completo": "Amelio Cayres de Almeida",
+      "nome_urna": "Amelio Cayres",
+      "cargo_disputado": "Vice-Governador",
+      "estado": "TO",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "270002544545",
+          "nome_civil": "AMELIO CAYRES DE ALMEIDA",
+          "nome_urna": "AMÉLIO CAYRES",
+          "cargo": "VICE-GOVERNADOR",
+          "uf": "TO",
+          "partido": "MDB",
+          "numero": "45"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "270002544545"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 7
+      }
+    },
+    {
+      "slug": "andre-luis",
+      "nome_completo": "André Luís",
+      "nome_urna": "André Luís",
+      "cargo_disputado": "Governador",
+      "estado": "MA",
+      "classe": "revisao_identidade",
+      "motivo": "nome civil da ficha é subconjunto do nome TSE + cargo + UF; identidade não confirmada por chave independente",
+      "hits": [
+        {
+          "sq": "100002544076",
+          "nome_civil": "ANDRÉ LUÍS CAETANO DOS SANTOS",
+          "nome_urna": "ANDRÉ LUIS",
+          "cargo": "GOVERNADOR",
+          "uf": "MA",
+          "partido": "MISSÃO",
+          "numero": "14"
+        }
+      ]
+    },
+    {
+      "slug": "arthur-henrique",
+      "nome_completo": "Arthur Henrique Brandão Machado",
+      "nome_urna": "Arthur Henrique",
+      "cargo_disputado": "Governador",
+      "estado": "RR",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "230002549223",
+          "nome_civil": "ARTHUR HENRIQUE BRANDAO MACHADO",
+          "nome_urna": "ARTHUR HENRIQUE",
+          "cargo": "GOVERNADOR",
+          "uf": "RR",
+          "partido": "PL",
+          "numero": "22"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "230002549223"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 7
+      }
+    },
+    {
+      "slug": "ataides-oliveira",
+      "nome_completo": "Ataídes de Oliveira",
+      "nome_urna": "Ataides Oliveira",
+      "cargo_disputado": "Governador",
+      "estado": "TO",
+      "classe": "revisao_identidade",
+      "motivo": "nome civil 1:1 + cargo + UF, mas nome de urna diverge; identidade não confirmada por critério completo (falta nome de urna)",
+      "hits": [
+        {
+          "sq": "270002548412",
+          "nome_civil": "ATAIDES DE OLIVEIRA",
+          "nome_urna": "ATAIDES DE OLIVEIRA",
+          "cargo": "GOVERNADOR",
+          "uf": "TO",
+          "partido": "NOVO",
+          "numero": "30"
+        }
+      ]
+    },
+    {
+      "slug": "augusto-cury",
+      "nome_completo": "Augusto Jorge Cury",
+      "nome_urna": "Augusto Cury",
+      "cargo_disputado": "Presidente",
+      "estado": null,
+      "classe": "revisao_identidade",
+      "motivo": "nome civil 1:1 + cargo + UF, mas nome de urna diverge; identidade não confirmada por critério completo (falta nome de urna)",
+      "hits": [
+        {
+          "sq": "280002551547",
+          "nome_civil": "AUGUSTO JORGE CURY",
+          "nome_urna": "ESCRITOR AUGUSTO CURY",
+          "cargo": "PRESIDENTE",
+          "uf": "BR",
+          "partido": "AVANTE",
+          "numero": "70"
+        }
+      ]
+    },
+    {
+      "slug": "camila-falcao",
+      "nome_completo": "Camila Falcão",
+      "nome_urna": "Camila Falcão",
+      "cargo_disputado": "Governador",
+      "estado": "PE",
+      "classe": "revisao_identidade",
+      "motivo": "nome civil da ficha é subconjunto do nome TSE + cargo + UF; identidade não confirmada por chave independente",
+      "hits": [
+        {
+          "sq": "170002537320",
+          "nome_civil": "MARIA CAMILA DA SILVA FALCÃO",
+          "nome_urna": "PROFESSORA CAMILA",
+          "cargo": "GOVERNADOR",
+          "uf": "PE",
+          "partido": "UP",
+          "numero": "80"
+        }
+      ]
+    },
+    {
+      "slug": "celina-leao",
+      "nome_completo": "Celina Leão Hizim Ferreira",
+      "nome_urna": "Celina Leao",
+      "cargo_disputado": "Governador",
+      "estado": "DF",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "70002553055",
+          "nome_civil": "CELINA LEAO HIZIM FERREIRA",
+          "nome_urna": "CELINA LEÃO",
+          "cargo": "GOVERNADOR",
+          "uf": "DF",
+          "partido": "PP",
+          "numero": "11"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "70002553055"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 10
+      }
+    },
+    {
+      "slug": "cicero-lucena",
+      "nome_completo": "Cicero de Lucena Filho",
+      "nome_urna": "Cicero Lucena",
+      "cargo_disputado": "Governador",
+      "estado": "PB",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "150002544133",
+          "nome_civil": "CICERO DE LUCENA FILHO",
+          "nome_urna": "CÍCERO LUCENA",
+          "cargo": "GOVERNADOR",
+          "uf": "PB",
+          "partido": "MDB",
+          "numero": "15"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "150002544133"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 6
+      }
+    },
+    {
+      "slug": "clecio-luis",
+      "nome_completo": "Clecio Luis Vilhena Vieira",
+      "nome_urna": "Clecio Luis",
+      "cargo_disputado": "Governador",
+      "estado": "AP",
+      "classe": "match_fresco",
+      "motivo": "nome civil 1:1 + cargo + UF, e data de nascimento idêntica à do nosso cadastro (chave independente prevista no contrato); divergência de nome de urna superada",
+      "hits": [
+        {
+          "sq": "30002536311",
+          "nome_civil": "CLÉCIO LUÍS VILHENA VIEIRA",
+          "nome_urna": "CLÉCIO",
+          "cargo": "GOVERNADOR",
+          "uf": "AP",
+          "partido": "UNIÃO",
+          "numero": "44"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "30002536311"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 7
+      }
+    },
+    {
+      "slug": "cleitinho",
+      "nome_completo": "Cleiton Gontijo de Azevedo",
+      "nome_urna": "Cleitinho",
+      "cargo_disputado": "Governador",
+      "estado": "MG",
+      "classe": "revisao_identidade",
+      "motivo": "nome civil 1:1 + cargo + UF, mas nome de urna diverge; identidade não confirmada por critério completo (falta nome de urna)",
+      "hits": [
+        {
+          "sq": "130002552296",
+          "nome_civil": "CLEITON GONTIJO DE AZEVEDO",
+          "nome_urna": "CLEITINHO AZEVEDO",
+          "cargo": "GOVERNADOR",
+          "uf": "MG",
+          "partido": "REPUBLICANOS",
+          "numero": "10"
+        }
+      ]
+    },
+    {
+      "slug": "daniel-vilela",
+      "nome_completo": "Daniel Elias Carvalho Vilela",
+      "nome_urna": "Daniel Vilela",
+      "cargo_disputado": "Governador",
+      "estado": "GO",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "90002540993",
+          "nome_civil": "DANIEL ELIAS CARVALHO VILELA",
+          "nome_urna": "DANIEL VILELA",
+          "cargo": "GOVERNADOR",
+          "uf": "GO",
+          "partido": "MDB",
+          "numero": "15"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "90002540993"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 8
+      }
+    },
+    {
+      "slug": "douglas-ruas",
+      "nome_completo": "Douglas Ruas dos Santos",
+      "nome_urna": "Douglas Ruas",
+      "cargo_disputado": "Governador",
+      "estado": "RJ",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "190002542887",
+          "nome_civil": "DOUGLAS RUAS DOS SANTOS",
+          "nome_urna": "DOUGLAS RUAS",
+          "cargo": "GOVERNADOR",
+          "uf": "RJ",
+          "partido": "PL",
+          "numero": "22"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "190002542887"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 5
+      }
+    },
+    {
+      "slug": "dr-daniel",
+      "nome_completo": "Daniel Barbosa Santos",
+      "nome_urna": "Dr. Daniel",
+      "cargo_disputado": "Governador",
+      "estado": "PA",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "140002549930",
+          "nome_civil": "DANIEL BARBOSA SANTOS",
+          "nome_urna": "DR. DANIEL",
+          "cargo": "GOVERNADOR",
+          "uf": "PA",
+          "partido": "PODE",
+          "numero": "20"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "140002549930"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 5
+      }
+    },
+    {
+      "slug": "dr-helton-monteiro",
+      "nome_completo": "José Helton Silva Monteiro",
+      "nome_urna": "Dr. Helton Monteiro",
+      "cargo_disputado": "Governador",
+      "estado": "SE",
+      "classe": "revisao_identidade",
+      "motivo": "nome civil 1:1 + cargo + UF, mas nome de urna diverge; identidade não confirmada por critério completo (falta nome de urna)",
+      "hits": [
+        {
+          "sq": "260002547415",
+          "nome_civil": "JOSE HELTON SILVA MONTEIRO",
+          "nome_urna": "DR. HELTON",
+          "cargo": "GOVERNADOR",
+          "uf": "SE",
+          "partido": "PSOL",
+          "numero": "50"
+        }
+      ]
+    },
+    {
+      "slug": "edegar-pretto",
+      "nome_completo": "João Edegar Pretto",
+      "nome_urna": "Edegar Pretto",
+      "cargo_disputado": "Vice-Governador",
+      "estado": "RS",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "210002551509",
+          "nome_civil": "JOAO EDEGAR PRETTO",
+          "nome_urna": "EDEGAR PRETTO",
+          "cargo": "VICE-GOVERNADOR",
+          "uf": "RS",
+          "partido": "PT",
+          "numero": "12"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "210002551509"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 8
+      }
+    },
+    {
+      "slug": "edilson-damiao",
+      "nome_completo": "Edilson Damião Lima",
+      "nome_urna": "Edilson Damião",
+      "cargo_disputado": "Governador",
+      "estado": "RR",
+      "classe": "registro_encontrado_outro_cargo",
+      "motivo": "registro TSE em cargo diferente (DEPUTADO FEDERAL) com nome civil 1:1; conflito editorial, sem confirmação de identidade",
+      "hits": [
+        {
+          "sq": "230002549629",
+          "nome_civil": "EDILSON DAMIÃO LIMA",
+          "nome_urna": "EDILSON DAMIÃO",
+          "cargo": "DEPUTADO FEDERAL",
+          "uf": "RR",
+          "partido": "UNIÃO",
+          "numero": "4444"
+        }
+      ]
+    },
+    {
+      "slug": "edmilson-costa",
+      "nome_completo": "Edmilson Silva Costa",
+      "nome_urna": "Edmilson Costa",
+      "cargo_disputado": "Presidente",
+      "estado": null,
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "280002551975",
+          "nome_civil": "EDMILSON SILVA COSTA",
+          "nome_urna": "EDMILSON COSTA",
+          "cargo": "PRESIDENTE",
+          "uf": "BR",
+          "partido": "PCB",
+          "numero": "21"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "280002551975"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 12
+      }
+    },
+    {
+      "slug": "eduardo-girao",
+      "nome_completo": "Luís Eduardo Grangeiro Girão",
+      "nome_urna": "Eduardo Girao",
+      "cargo_disputado": "Governador",
+      "estado": "CE",
+      "classe": "conflito_cargo_uf",
+      "motivo": "nome civil 1:1, mas cargo e/ou UF divergem do anunciado; sem chave de persistência",
+      "hits": [
+        {
+          "sq": "280002539825",
+          "nome_civil": "LUIS EDUARDO GRANGEIRO GIRÃO",
+          "nome_urna": "EDUARDO GIRÃO",
+          "cargo": "VICE-PRESIDENTE",
+          "uf": "BR",
+          "partido": "NOVO",
+          "numero": "30"
+        }
+      ]
+    },
+    {
+      "slug": "eduardo-paes",
+      "nome_completo": "Eduardo da Costa Paes",
+      "nome_urna": "Eduardo Paes",
+      "cargo_disputado": "Governador",
+      "estado": "RJ",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "190002543380",
+          "nome_civil": "EDUARDO DA COSTA PAES",
+          "nome_urna": "EDUARDO PAES",
+          "cargo": "GOVERNADOR",
+          "uf": "RJ",
+          "partido": "PSD",
+          "numero": "55"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "190002543380"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 5
+      }
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "nome_completo": "Elmano de Freitas da Costa",
+      "nome_urna": "Elmano de Freitas",
+      "cargo_disputado": "Governador",
+      "estado": "CE",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "60002543969",
+          "nome_civil": "ELMANO DE FREITAS DA COSTA",
+          "nome_urna": "ELMANO DE FREITAS",
+          "cargo": "GOVERNADOR",
+          "uf": "CE",
+          "partido": "PT",
+          "numero": "13"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "60002543969"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 46
+      }
+    },
+    {
+      "slug": "eudo-raffael",
+      "nome_completo": "Eudo Raffael Lima da Silva",
+      "nome_urna": "Eudo Raffael",
+      "cargo_disputado": "Governador",
+      "estado": "AC",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "10002549500",
+          "nome_civil": "EUDO RAFFAEL LIMA DA SILVA",
+          "nome_urna": "EUDO RAFFAEL",
+          "cargo": "GOVERNADOR",
+          "uf": "AC",
+          "partido": "PCB",
+          "numero": "21"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "10002549500"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 1
+      }
+    },
+    {
+      "slug": "expedito-netto",
+      "nome_completo": "Expedito Gonçalves Ferreira Netto",
+      "nome_urna": "Expedito Netto",
+      "cargo_disputado": "Governador",
+      "estado": "RO",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "220002542185",
+          "nome_civil": "EXPEDITO GONCALVES FERREIRA NETTO",
+          "nome_urna": "EXPEDITO NETTO",
+          "cargo": "GOVERNADOR",
+          "uf": "RO",
+          "partido": "PT",
+          "numero": "13"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "220002542185"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 6
+      }
+    },
+    {
+      "slug": "fabio-trad",
+      "nome_completo": "Fábio Ricardo Trad",
+      "nome_urna": "Fabio Trad",
+      "cargo_disputado": "Governador",
+      "estado": "MS",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "120002539834",
+          "nome_civil": "FABIO RICARDO TRAD",
+          "nome_urna": "FÁBIO TRAD",
+          "cargo": "GOVERNADOR",
+          "uf": "MS",
+          "partido": "PT",
+          "numero": "13"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "120002539834"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 5
+      }
+    },
+    {
+      "slug": "felicio-ramuth",
+      "nome_completo": "Felício Ramuth",
+      "nome_urna": "Felicio Ramuth",
+      "cargo_disputado": "Vice-Governador",
+      "estado": "SP",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "250002541302",
+          "nome_civil": "FELICIO RAMUTH",
+          "nome_urna": "FELICIO RAMUTH",
+          "cargo": "VICE-GOVERNADOR",
+          "uf": "SP",
+          "partido": "MDB",
+          "numero": "10"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "250002541302"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": false,
+        "social_count": 0
+      }
+    },
+    {
+      "slug": "felipe-camarao",
+      "nome_completo": "Felipe Costa Camarão",
+      "nome_urna": "Felipe Camarão",
+      "cargo_disputado": "Governador",
+      "estado": "MA",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "100002542556",
+          "nome_civil": "FELIPE COSTA CAMARAO",
+          "nome_urna": "FELIPE CAMARÃO",
+          "cargo": "GOVERNADOR",
+          "uf": "MA",
+          "partido": "PT",
+          "numero": "13"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "100002542556"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 1
+      }
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "nome_completo": "Flavio Nantes Bolsonaro",
+      "nome_urna": "Flavio Bolsonaro",
+      "cargo_disputado": "Presidente",
+      "estado": null,
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "280002551544",
+          "nome_civil": "FLAVIO NANTES BOLSONARO",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "cargo": "PRESIDENTE",
+          "uf": "BR",
+          "partido": "PL",
+          "numero": "22"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "280002551544"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 38
+      }
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "nome_completo": "Gabriel Sousa Marques de Azevedo",
+      "nome_urna": "Gabriel Azevedo",
+      "cargo_disputado": "Governador",
+      "estado": "MG",
+      "classe": "revisao_identidade",
+      "motivo": "nome civil 1:1 + cargo + UF, mas nome de urna diverge; identidade não confirmada por critério completo (falta nome de urna)",
+      "hits": [
+        {
+          "sq": "130002549557",
+          "nome_civil": "GABRIEL SOUSA MARQUES DE AZEVEDO",
+          "nome_urna": "GABRIEL",
+          "cargo": "GOVERNADOR",
+          "uf": "MG",
+          "partido": "MDB",
+          "numero": "15"
+        }
+      ]
+    },
+    {
+      "slug": "gabriel-souza",
+      "nome_completo": "Gabriel Vieira de Souza",
+      "nome_urna": "Gabriel Souza",
+      "cargo_disputado": "Governador",
+      "estado": "RS",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "210002542892",
+          "nome_civil": "GABRIEL VIEIRA DE SOUZA",
+          "nome_urna": "GABRIEL SOUZA",
+          "cargo": "GOVERNADOR",
+          "uf": "RS",
+          "partido": "MDB",
+          "numero": "15"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "210002542892"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 11
+      }
+    },
+    {
+      "slug": "gisvaldo-oliveira",
+      "nome_completo": "Gisvaldo Oliveira da Silva",
+      "nome_urna": "Gisvaldo Oliveira",
+      "cargo_disputado": "Governador",
+      "estado": "PI",
+      "classe": "revisao_identidade",
+      "motivo": "nome civil 1:1 + cargo + UF, mas nome de urna diverge; identidade não confirmada por critério completo (falta nome de urna)",
+      "hits": [
+        {
+          "sq": "180002549970",
+          "nome_civil": "GISVALDO OLIVEIRA DA SILVA",
+          "nome_urna": "PROFESSOR GISVALDO",
+          "cargo": "GOVERNADOR",
+          "uf": "PI",
+          "partido": "PSOL",
+          "numero": "50"
+        }
+      ]
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "nome_completo": "Fernando Haddad",
+      "nome_urna": "Fernando Haddad",
+      "cargo_disputado": "Governador",
+      "estado": "SP",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "250002549705",
+          "nome_civil": "FERNANDO HADDAD",
+          "nome_urna": "FERNANDO HADDAD",
+          "cargo": "GOVERNADOR",
+          "uf": "SP",
+          "partido": "PT",
+          "numero": "13"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "250002549705"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 9
+      }
+    },
+    {
+      "slug": "hana-ghassan",
+      "nome_completo": "Hana Ghassan Tuma",
+      "nome_urna": "Hana Ghassan",
+      "cargo_disputado": "Governador",
+      "estado": "PA",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "140002551598",
+          "nome_civil": "HANA GHASSAN TUMA",
+          "nome_urna": "HANA GHASSAN",
+          "cargo": "GOVERNADOR",
+          "uf": "PA",
+          "partido": "MDB",
+          "numero": "15"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "140002551598"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 4
+      }
+    },
+    {
+      "slug": "hertz-dias",
+      "nome_completo": "HERTZ DA CONCEICAO DIAS",
+      "nome_urna": "Hertz Dias",
+      "cargo_disputado": "Presidente",
+      "estado": null,
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "280002541457",
+          "nome_civil": "HERTZ DA CONCEICAO DIAS",
+          "nome_urna": "HERTZ DIAS",
+          "cargo": "PRESIDENTE",
+          "uf": "BR",
+          "partido": "PSTU",
+          "numero": "16"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "280002541457"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 1
+      }
+    },
+    {
+      "slug": "hildon-chaves",
+      "nome_completo": "Hildon de Lima Chaves",
+      "nome_urna": "Hildon Chaves",
+      "cargo_disputado": "Governador",
+      "estado": "RO",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "220002542916",
+          "nome_civil": "HILDON DE LIMA CHAVES",
+          "nome_urna": "HILDON CHAVES",
+          "cargo": "GOVERNADOR",
+          "uf": "RO",
+          "partido": "UNIÃO",
+          "numero": "44"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "220002542916"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 7
+      }
+    },
+    {
+      "slug": "jarir-pereira",
+      "nome_completo": "Jarir Pereira",
+      "nome_urna": "Jarir Pereira",
+      "cargo_disputado": "Governador",
+      "estado": "CE",
+      "classe": "registro_encontrado_outro_cargo",
+      "motivo": "registro TSE em cargo diferente (DEPUTADO FEDERAL) com nome civil subconjunto; conflito editorial, sem confirmação de identidade",
+      "hits": [
+        {
+          "sq": "60002538337",
+          "nome_civil": "FRANCISCO JARIR LIMA PEREIRA",
+          "nome_urna": "PROFESSOR JARIR",
+          "cargo": "DEPUTADO FEDERAL",
+          "uf": "CE",
+          "partido": "PSOL",
+          "numero": "5018"
+        }
+      ]
+    },
+    {
+      "slug": "jeremias-cosmo",
+      "nome_completo": "Jeremias Cosmo Silva dos Santos",
+      "nome_urna": "Professor Jeremias",
+      "cargo_disputado": "Governador",
+      "estado": "PE",
+      "classe": "match_fresco",
+      "motivo": "nome civil 1:1 + cargo + UF, e data de nascimento idêntica à do nosso cadastro (chave independente prevista no contrato); divergência de nome de urna superada",
+      "hits": [
+        {
+          "sq": "170002541258",
+          "nome_civil": "JEREMIAS COSMO SILVA DOS SANTOS",
+          "nome_urna": "PROFESSOR JEREMIAS DO BANCO",
+          "cargo": "GOVERNADOR",
+          "uf": "PE",
+          "partido": "DEMOCRATA",
+          "numero": "35"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "170002541258"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 1
+      }
+    },
+    {
+      "slug": "jeronimo",
+      "nome_completo": "Jerônimo Rodrigues Souza",
+      "nome_urna": "Jeronimo",
+      "cargo_disputado": "Governador",
+      "estado": "BA",
+      "classe": "match_fresco",
+      "motivo": "nome civil 1:1 + cargo + UF, e data de nascimento idêntica à do nosso cadastro (chave independente prevista no contrato); divergência de nome de urna superada",
+      "hits": [
+        {
+          "sq": "50002536314",
+          "nome_civil": "JERONIMO RODRIGUES SOUZA",
+          "nome_urna": "JERÔNIMO RODRIGUES",
+          "cargo": "GOVERNADOR",
+          "uf": "BA",
+          "partido": "PT",
+          "numero": "13"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "50002536314"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 10
+      }
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "nome_completo": "Joao Henrique Catan",
+      "nome_urna": "Joao Henrique Catan",
+      "cargo_disputado": "Governador",
+      "estado": "MS",
+      "classe": "revisao_identidade",
+      "motivo": "nome civil da ficha é subconjunto do nome TSE + cargo + UF; identidade não confirmada por chave independente",
+      "hits": [
+        {
+          "sq": "120002552191",
+          "nome_civil": "JOÃO HENRIQUE MIRANDA SOARES CATAN",
+          "nome_urna": "JOÃO HENRIQUE CATAN",
+          "cargo": "GOVERNADOR",
+          "uf": "MS",
+          "partido": "NOVO",
+          "numero": "30"
+        }
+      ]
+    },
+    {
+      "slug": "juliana-brizola",
+      "nome_completo": "Juliana Brizola",
+      "nome_urna": "Juliana Brizola",
+      "cargo_disputado": "Governador",
+      "estado": "RS",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "210002551508",
+          "nome_civil": "JULIANA BRIZOLA",
+          "nome_urna": "JULIANA BRIZOLA",
+          "cargo": "GOVERNADOR",
+          "uf": "RS",
+          "partido": "PDT",
+          "numero": "12"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "210002551508"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 9
+      }
+    },
+    {
+      "slug": "lais-chaud",
+      "nome_completo": "Laís Chaud",
+      "nome_urna": "Laís Chaud",
+      "cargo_disputado": "Governador",
+      "estado": "SC",
+      "classe": "revisao_identidade",
+      "motivo": "nome civil da ficha é subconjunto do nome TSE + cargo + UF; identidade não confirmada por chave independente",
+      "hits": [
+        {
+          "sq": "240002550544",
+          "nome_civil": "LAÍS PAGANELLI CHAUD",
+          "nome_urna": "LAÍS CHAUD",
+          "cargo": "GOVERNADOR",
+          "uf": "SC",
+          "partido": "UP",
+          "numero": "80"
+        }
+      ]
+    },
+    {
+      "slug": "laurez-moreira",
+      "nome_completo": "Laurez da Rocha Moreira",
+      "nome_urna": "Laurez Moreira",
+      "cargo_disputado": "Governador",
+      "estado": "TO",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "270002544494",
+          "nome_civil": "LAUREZ DA ROCHA MOREIRA",
+          "nome_urna": "LAUREZ MOREIRA",
+          "cargo": "GOVERNADOR",
+          "uf": "TO",
+          "partido": "PSD",
+          "numero": "55"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "270002544494"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 5
+      }
+    },
+    {
+      "slug": "leandro-grass",
+      "nome_completo": "Leandro Antônio Grass Peixoto",
+      "nome_urna": "Leandro Grass",
+      "cargo_disputado": "Governador",
+      "estado": "DF",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "70002552496",
+          "nome_civil": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+          "nome_urna": "LEANDRO GRASS",
+          "cargo": "GOVERNADOR",
+          "uf": "DF",
+          "partido": "PT",
+          "numero": "13"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "70002552496"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 8
+      }
+    },
+    {
+      "slug": "luan-monteiro",
+      "nome_completo": "Luan Monteiro Paschoal Pires",
+      "nome_urna": "Luan Monteiro",
+      "cargo_disputado": "Governador",
+      "estado": "RJ",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "190002552513",
+          "nome_civil": "LUAN MONTEIRO PASCHOAL PIRES",
+          "nome_urna": "LUAN MONTEIRO",
+          "cargo": "GOVERNADOR",
+          "uf": "RJ",
+          "partido": "PCO",
+          "numero": "29"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "190002552513"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 1
+      }
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "nome_completo": "Lucas Ribeiro Novais de Araújo",
+      "nome_urna": "Lucas Ribeiro",
+      "cargo_disputado": "Governador",
+      "estado": "PB",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "150002551789",
+          "nome_civil": "LUCAS RIBEIRO NOVAIS DE ARAUJO",
+          "nome_urna": "LUCAS RIBEIRO",
+          "cargo": "GOVERNADOR",
+          "uf": "PB",
+          "partido": "PP",
+          "numero": "11"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "150002551789"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 16
+      }
+    },
+    {
+      "slug": "lucien-rezende",
+      "nome_completo": "Lucien Miranda de Rezende",
+      "nome_urna": "Lucien Rezende",
+      "cargo_disputado": "Governador",
+      "estado": "MS",
+      "classe": "proxima_possivel_urna",
+      "motivo": "só nome de urna casa; nome civil diverge (possível homônimo ou registro com outro nome civil)",
+      "hits": [
+        {
+          "sq": "120002532257",
+          "nome_civil": "LUCIEN ROBERTO GARCIA DE REZENDE",
+          "nome_urna": "LUCIEN REZENDE",
+          "cargo": "GOVERNADOR",
+          "uf": "MS",
+          "partido": "PSOL",
+          "numero": "50"
+        }
+      ]
+    },
+    {
+      "slug": "mailza-assis",
+      "nome_completo": "Mailza Assis da Silva",
+      "nome_urna": "Mailza Assis",
+      "cargo_disputado": "Governador",
+      "estado": "AC",
+      "classe": "proxima_possivel_urna",
+      "motivo": "só nome de urna casa; nome civil diverge (possível homônimo ou registro com outro nome civil)",
+      "hits": [
+        {
+          "sq": "10002544107",
+          "nome_civil": "MAILZA ASSIS CAMELI",
+          "nome_urna": "MAILZA ASSIS",
+          "cargo": "GOVERNADOR",
+          "uf": "AC",
+          "partido": "PP",
+          "numero": "11"
+        }
+      ]
+    },
+    {
+      "slug": "marcelo-brigadeiro",
+      "nome_completo": "Marcelo Marcel Franco José da Silva",
+      "nome_urna": "Marcelo Brigadeiro",
+      "cargo_disputado": "Governador",
+      "estado": "SC",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "240002544118",
+          "nome_civil": "MARCELO MARCEL FRANCO JOSE DA SILVA",
+          "nome_urna": "MARCELO BRIGADEIRO",
+          "cargo": "GOVERNADOR",
+          "uf": "SC",
+          "partido": "MISSÃO",
+          "numero": "14"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "240002544118"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 2
+      }
+    },
+    {
+      "slug": "marcelo-maranata",
+      "nome_completo": "Marcelo Maranata",
+      "nome_urna": "Marcelo Maranata",
+      "cargo_disputado": "Governador",
+      "estado": "RS",
+      "classe": "match_fresco",
+      "motivo": "nome civil da ficha é subconjunto do nome TSE + cargo + UF, e data de nascimento idêntica à do nosso cadastro (chave independente prevista no contrato)",
+      "hits": [
+        {
+          "sq": "210002535802",
+          "nome_civil": "MARCELO MARANATA SOARES REINALDO",
+          "nome_urna": "MARCELO MARANATA",
+          "cargo": "GOVERNADOR",
+          "uf": "RS",
+          "partido": "PSDB",
+          "numero": "45"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "210002535802"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 1
+      }
+    },
+    {
+      "slug": "maria-do-carmo",
+      "nome_completo": "Maria do Carmo Seffair",
+      "nome_urna": "Maria do Carmo",
+      "cargo_disputado": "Governador",
+      "estado": "AM",
+      "classe": "match_fresco",
+      "motivo": "nome civil da ficha é subconjunto do nome TSE + cargo + UF, e data de nascimento idêntica à do nosso cadastro (chave independente prevista no contrato)",
+      "hits": [
+        {
+          "sq": "40002541626",
+          "nome_civil": "MARIA DO CARMO SEFFAIR LINS DE ALBUQUERQUE",
+          "nome_urna": "PROFESSORA MARIA DO CARMO",
+          "cargo": "GOVERNADOR",
+          "uf": "AM",
+          "partido": "PL",
+          "numero": "22"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "40002541626"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 15
+      }
+    },
+    {
+      "slug": "mateus-simoes",
+      "nome_completo": "Mateus Simões",
+      "nome_urna": "Mateus Simões",
+      "cargo_disputado": "Governador",
+      "estado": "MG",
+      "classe": "match_fresco",
+      "motivo": "nome civil da ficha é subconjunto do nome TSE + cargo + UF, e data de nascimento idêntica à do nosso cadastro (chave independente prevista no contrato)",
+      "hits": [
+        {
+          "sq": "130002541911",
+          "nome_civil": "MATEUS SIMÕES DE ALMEIDA",
+          "nome_urna": "MATEUS SIMÕES",
+          "cargo": "GOVERNADOR",
+          "uf": "MG",
+          "partido": "PSD",
+          "numero": "55"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "130002541911"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 5
+      }
+    },
+    {
+      "slug": "mauricio-coelho",
+      "nome_completo": "Mauricio Coelho Ribeiro da Silva",
+      "nome_urna": "Mauricio Coelho",
+      "cargo_disputado": "Governador",
+      "estado": "MT",
+      "classe": "proxima_possivel_urna",
+      "motivo": "só nome de urna casa; nome civil diverge (possível homônimo ou registro com outro nome civil)",
+      "hits": [
+        {
+          "sq": "110002553058",
+          "nome_civil": "MAURICIO COELHO DE SOUZA JUNIOR",
+          "nome_urna": "MAURICIO COELHO",
+          "cargo": "GOVERNADOR",
+          "uf": "MT",
+          "partido": "MOBILIZA",
+          "numero": "33"
+        }
+      ]
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "nome_completo": "Natasha Slhessarenko",
+      "nome_urna": "Natasha Slhessarenko",
+      "cargo_disputado": "Governador",
+      "estado": "MT",
+      "classe": "revisao_identidade",
+      "motivo": "nome civil da ficha é subconjunto do nome TSE + cargo + UF; identidade não confirmada por chave independente",
+      "hits": [
+        {
+          "sq": "110002544985",
+          "nome_civil": "NATASHA SLHESSARENKO FRAIFE BARRETO",
+          "nome_urna": "DOUTORA NATASHA",
+          "cargo": "GOVERNADOR",
+          "uf": "MT",
+          "partido": "PSD",
+          "numero": "55"
+        }
+      ]
+    },
+    {
+      "slug": "orleans-brandao",
+      "nome_completo": "Carlos Orleans Brandão Junior",
+      "nome_urna": "Orleans Brandao",
+      "cargo_disputado": "Governador",
+      "estado": "MA",
+      "classe": "proxima_possivel_urna",
+      "motivo": "só nome de urna casa; nome civil diverge (possível homônimo ou registro com outro nome civil)",
+      "hits": [
+        {
+          "sq": "100002543869",
+          "nome_civil": "CARLOS ORLEANS BRAIDE BRANDÃO",
+          "nome_urna": "ORLEANS BRANDÃO",
+          "cargo": "GOVERNADOR",
+          "uf": "MA",
+          "partido": "MDB",
+          "numero": "15"
+        }
+      ]
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "nome_completo": "Otaviano Olavo Pivetta",
+      "nome_urna": "Otaviano Pivetta",
+      "cargo_disputado": "Governador",
+      "estado": "MT",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "110002551480",
+          "nome_civil": "OTAVIANO OLAVO PIVETTA",
+          "nome_urna": "OTAVIANO PIVETTA",
+          "cargo": "GOVERNADOR",
+          "uf": "MT",
+          "partido": "REPUBLICANOS",
+          "numero": "10"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "110002551480"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 8
+      }
+    },
+    {
+      "slug": "paula-belmonte",
+      "nome_completo": "Paula Moreno Paro Belmonte",
+      "nome_urna": "Paula Belmonte",
+      "cargo_disputado": "Governador",
+      "estado": "DF",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "70002552965",
+          "nome_civil": "PAULA MORENO PARO BELMONTE",
+          "nome_urna": "PAULA BELMONTE",
+          "cargo": "GOVERNADOR",
+          "uf": "DF",
+          "partido": "PSDB",
+          "numero": "45"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "70002552965"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 6
+      }
+    },
+    {
+      "slug": "pazolini",
+      "nome_completo": "Lorenzo Pazolini",
+      "nome_urna": "Pazolini",
+      "cargo_disputado": "Governador",
+      "estado": "ES",
+      "classe": "revisao_identidade",
+      "motivo": "nome civil da ficha é subconjunto do nome TSE + cargo + UF; identidade não confirmada por chave independente",
+      "hits": [
+        {
+          "sq": "80002552682",
+          "nome_civil": "LORENZO SILVA DE PAZOLINI",
+          "nome_urna": "LORENZO PAZOLINI",
+          "cargo": "GOVERNADOR",
+          "uf": "ES",
+          "partido": "REPUBLICANOS",
+          "numero": "10"
+        }
+      ]
+    },
+    {
+      "slug": "renan-santos",
+      "nome_completo": "Renan Antonio Ferreira dos Santos",
+      "nome_urna": "Renan Santos",
+      "cargo_disputado": "Presidente",
+      "estado": null,
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "280002540694",
+          "nome_civil": "RENAN ANTONIO FERREIRA DOS SANTOS",
+          "nome_urna": "RENAN SANTOS",
+          "cargo": "PRESIDENTE",
+          "uf": "BR",
+          "partido": "MISSÃO",
+          "numero": "14"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "280002540694"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 2
+      }
+    },
+    {
+      "slug": "requiao-filho",
+      "nome_completo": "Mauricio Thadeu de Mello e Silva",
+      "nome_urna": "Requiao Filho",
+      "cargo_disputado": "Governador",
+      "estado": "PR",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "160002547666",
+          "nome_civil": "MAURICIO THADEU DE MELLO E SILVA",
+          "nome_urna": "REQUIÃO FILHO",
+          "cargo": "GOVERNADOR",
+          "uf": "PR",
+          "partido": "PDT",
+          "numero": "12"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "160002547666"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 7
+      }
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "nome_completo": "Ricardo Ribeiro Cappelli",
+      "nome_urna": "Ricardo Cappelli",
+      "cargo_disputado": "Governador",
+      "estado": "DF",
+      "classe": "nao_localizado_pelos_matchers",
+      "motivo": "nenhum registro 2026 compatível por nome civil, urna, cargo ou UF no snapshot de 08/08 (janela de registro aberta até 15/08)",
+      "hits": []
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "nome_completo": "Ricardo de Rezende Ferraço",
+      "nome_urna": "Ricardo Ferraço",
+      "cargo_disputado": "Governador",
+      "estado": "ES",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "80002552172",
+          "nome_civil": "RICARDO DE REZENDE FERRAÇO",
+          "nome_urna": "RICARDO FERRAÇO",
+          "cargo": "GOVERNADOR",
+          "uf": "ES",
+          "partido": "MDB",
+          "numero": "15"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "80002552172"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 7
+      }
+    },
+    {
+      "slug": "romeu-zema",
+      "nome_completo": "Romeu Zema Neto",
+      "nome_urna": "Romeu Zema",
+      "cargo_disputado": "Presidente",
+      "estado": null,
+      "classe": "match_fresco",
+      "motivo": "nome civil 1:1 + cargo + UF, e data de nascimento idêntica à do nosso cadastro (chave independente prevista no contrato); divergência de nome de urna superada",
+      "hits": [
+        {
+          "sq": "280002539826",
+          "nome_civil": "ROMEU ZEMA NETO",
+          "nome_urna": "ZEMA",
+          "cargo": "PRESIDENTE",
+          "uf": "BR",
+          "partido": "NOVO",
+          "numero": "30"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "280002539826"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 11
+      }
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "nome_completo": "Rui Costa Pimenta",
+      "nome_urna": "Rui Costa Pimenta",
+      "cargo_disputado": "Presidente",
+      "estado": null,
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "280002552487",
+          "nome_civil": "RUI COSTA PIMENTA",
+          "nome_urna": "RUI COSTA PIMENTA",
+          "cargo": "PRESIDENTE",
+          "uf": "BR",
+          "partido": "PCO",
+          "numero": "29"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "280002552487"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 1
+      }
+    },
+    {
+      "slug": "samara-martins",
+      "nome_completo": "SAMARA MARTINS DA SILVA",
+      "nome_urna": "Samara Martins",
+      "cargo_disputado": "Presidente",
+      "estado": null,
+      "classe": "match_fresco",
+      "motivo": "nome civil da ficha é subconjunto do nome TSE + cargo + UF, e data de nascimento idêntica à do nosso cadastro (chave independente prevista no contrato)",
+      "hits": [
+        {
+          "sq": "280002538811",
+          "nome_civil": "SAMARA MARTINS DA SILVA FEITOSA",
+          "nome_urna": "SAMARA",
+          "cargo": "PRESIDENTE",
+          "uf": "BR",
+          "partido": "UP",
+          "numero": "80"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "280002538811"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 1
+      }
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "nome_completo": "Sergio Fernando Moro",
+      "nome_urna": "Sergio Moro",
+      "cargo_disputado": "Governador",
+      "estado": "PR",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "160002540833",
+          "nome_civil": "SERGIO FERNANDO MORO",
+          "nome_urna": "SERGIO MORO",
+          "cargo": "GOVERNADOR",
+          "uf": "PR",
+          "partido": "PL",
+          "numero": "22"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "160002540833"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 20
+      }
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "nome_completo": "Tarcísio Gomes de Freitas",
+      "nome_urna": "Tarcísio de Freitas",
+      "cargo_disputado": "Governador",
+      "estado": "SP",
+      "classe": "match_fresco",
+      "motivo": "nome civil 1:1 + cargo + UF, e data de nascimento idêntica à do nosso cadastro (chave independente prevista no contrato); divergência de nome de urna superada",
+      "hits": [
+        {
+          "sq": "250002541303",
+          "nome_civil": "TARCISIO GOMES DE FREITAS",
+          "nome_urna": "TARCÍSIO",
+          "cargo": "GOVERNADOR",
+          "uf": "SP",
+          "partido": "REPUBLICANOS",
+          "numero": "10"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "250002541303"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 11
+      }
+    },
+    {
+      "slug": "tiao-bocalom",
+      "nome_completo": "Sebastiao Bocalom Rodrigues",
+      "nome_urna": "Tiao Bocalom",
+      "cargo_disputado": "Governador",
+      "estado": "AC",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "10002544015",
+          "nome_civil": "SEBASTIAO BOCALOM RODRIGUES",
+          "nome_urna": "TIÃO BOCALOM",
+          "cargo": "GOVERNADOR",
+          "uf": "AC",
+          "partido": "PSDB",
+          "numero": "45"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "10002544015"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 1
+      }
+    },
+    {
+      "slug": "vicentinho-junior",
+      "nome_completo": "Vicente Alves de Oliveira Júnior",
+      "nome_urna": "Vicentinho Junior",
+      "cargo_disputado": "Governador",
+      "estado": "TO",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "270002544544",
+          "nome_civil": "VICENTE ALVES DE OLIVEIRA JÚNIOR",
+          "nome_urna": "VICENTINHO JÚNIOR",
+          "cargo": "GOVERNADOR",
+          "uf": "TO",
+          "partido": "PSDB",
+          "numero": "45"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "270002544544"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 9
+      }
+    },
+    {
+      "slug": "wilder-morais",
+      "nome_completo": "Wilder Pedro de Morais",
+      "nome_urna": "Wilder Morais",
+      "cargo_disputado": "Governador",
+      "estado": "GO",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "90002551791",
+          "nome_civil": "WILDER PEDRO DE MORAIS",
+          "nome_urna": "WILDER MORAIS",
+          "cargo": "GOVERNADOR",
+          "uf": "GO",
+          "partido": "PL",
+          "numero": "22"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "90002551791"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 9
+      }
+    },
+    {
+      "slug": "witer-naves",
+      "nome_completo": "Witer Fonseca Naves",
+      "nome_urna": "Witer Naves",
+      "cargo_disputado": "Governador",
+      "estado": "TO",
+      "classe": "revisao_identidade",
+      "motivo": "nome civil 1:1 + cargo + UF, mas nome de urna diverge; identidade não confirmada por critério completo (falta nome de urna)",
+      "hits": [
+        {
+          "sq": "270002539187",
+          "nome_civil": "WITER FONSECA NAVES",
+          "nome_urna": "PROF WITER NAVES",
+          "cargo": "GOVERNADOR",
+          "uf": "TO",
+          "partido": "PSOL",
+          "numero": "50"
+        }
+      ]
+    },
+    {
+      "slug": "ze-batista",
+      "nome_completo": "José Batista Neto",
+      "nome_urna": "Zé Batista",
+      "cargo_disputado": "Governador",
+      "estado": "CE",
+      "classe": "match_fresco",
+      "motivo": "casamento exato (nome civil + nome de urna + cargo + UF) no snapshot de 08/08; registro ausente no snapshot de 06/08 da B2",
+      "hits": [
+        {
+          "sq": "60002549967",
+          "nome_civil": "JOSE BATISTA NETO",
+          "nome_urna": "ZÉ BATISTA",
+          "cargo": "GOVERNADOR",
+          "uf": "CE",
+          "partido": "PSTU",
+          "numero": "16"
+        }
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "60002549967"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 2
+      }
+    }
+  ]
+}

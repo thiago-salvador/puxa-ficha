@@ -1,0 +1,788 @@
+{
+  "geradoEm": "2026-08-11T11:26:30.971Z",
+  "fonte": "https://legis.senado.leg.br/dadosabertos",
+  "universoAntes": {
+    "linhasSenado": 13,
+    "paresSenado": 81
+  },
+  "universoDepois": {
+    "linhasSenado": 6,
+    "paresNominaisPublicaveis": 75
+  },
+  "endpointsSenadoresExigidos": 28,
+  "linhas": [
+    {
+      "id": "7e1bef47-3d91-4c7a-8f94-fa323c6bd5f1",
+      "titulo": "Codigo Florestal (2012)",
+      "paresAntes": 1,
+      "decisao": "retirada",
+      "motivo": "data de sanção; Caiado não era senador e não há ato nominal endereçável em 25/05/2012"
+    },
+    {
+      "id": "539f836a-197b-4176-9861-d58759a5c73b",
+      "titulo": "Impeachment de Dilma",
+      "paresAntes": 9,
+      "decisao": "retirada",
+      "motivo": "proposicao_id 126084 é PLC 27/2016, não DEN 1/2016; pares legados não provam o quesito final"
+    },
+    {
+      "id": "8d470dc1-3215-4af0-86b1-8405e31ae903",
+      "titulo": "Teto de Gastos (PEC 55)",
+      "paresAntes": 0,
+      "decisao": "retirada",
+      "motivo": "sem CodigoSessaoVotacao verificável no endpoint nominal oficial"
+    },
+    {
+      "id": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "titulo": "Reforma da Previdencia",
+      "paresAntes": 12,
+      "decisao": "mantida",
+      "motivo": "CodigoSessaoVotacao 6046"
+    },
+    {
+      "id": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "titulo": "Autonomia do Banco Central",
+      "paresAntes": 12,
+      "decisao": "mantida",
+      "motivo": "CodigoSessaoVotacao 6248; data corrigida para 03/11/2020"
+    },
+    {
+      "id": "e586da0e-3d1e-4f4c-93cd-3c696417f627",
+      "titulo": "Privatização da Eletrobras (Senado)",
+      "paresAntes": 1,
+      "decisao": "mantida",
+      "motivo": "CodigoSessaoVotacao 6377; data da sessão corrigida para 16/06/2021"
+    },
+    {
+      "id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "titulo": "Arcabouco Fiscal",
+      "paresAntes": 18,
+      "decisao": "mantida",
+      "motivo": "CodigoSessaoVotacao 6714; data corrigida para 21/06/2023"
+    },
+    {
+      "id": "b3dce7a7-bb51-4d96-8aa2-ee0240f76cf0",
+      "titulo": "Marco Temporal Terras Indigenas",
+      "paresAntes": 1,
+      "decisao": "retirada",
+      "motivo": "duplicata; o único sim legado contradiz AP na fonte"
+    },
+    {
+      "id": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "titulo": "Marco Temporal Indigena (Senado)",
+      "paresAntes": 0,
+      "decisao": "mantida",
+      "motivo": "CodigoSessaoVotacao 6756; materia corrigida para 157888"
+    },
+    {
+      "id": "05104fa6-e50a-46ed-9847-7f20d1637dab",
+      "titulo": "Reforma Tributaria (PEC 45/2019)",
+      "paresAntes": 1,
+      "decisao": "retirada",
+      "motivo": "duplicata da PEC 45/2019"
+    },
+    {
+      "id": "baa22462-3a16-4f2b-9c4b-9a1ad9e54ee6",
+      "titulo": "Ofício S nº 25/2023 (CNJ)",
+      "paresAntes": 8,
+      "decisao": "retirada",
+      "motivo": "evento 6809 é secreto: fonte publica Votou, não sim/não"
+    },
+    {
+      "id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "titulo": "Reforma Tributaria",
+      "paresAntes": 18,
+      "decisao": "mantida",
+      "motivo": "CodigoSessaoVotacao 6777; data corrigida para 08/11/2023"
+    },
+    {
+      "id": "6f1e4c1e-bf51-4a52-a2c1-98722dd6fe5d",
+      "titulo": "Marco Legal da IA (PL 2338/2023)",
+      "paresAntes": 0,
+      "decisao": "retirada",
+      "motivo": "aprovação não nominal; sem polaridade individual publicável"
+    }
+  ],
+  "eventos": [
+    {
+      "id": "6046",
+      "linhaId": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "materia": "137999",
+      "data": "2019-10-22",
+      "descricao": "PEC da Previdência",
+      "codigoSessaoVotacao": "6046",
+      "materiaCodigo": "137999",
+      "dataSessao": "2019-10-22",
+      "descricaoVotacao": "Modifica o sistema de previdência social, estabelece regras de transição, disposições transitórias, e dá outras providências. (PEC da Previdência).",
+      "resultado": "Aprovado",
+      "pares": 10
+    },
+    {
+      "id": "6248",
+      "linhaId": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "materia": "135147",
+      "data": "2020-11-03",
+      "descricao": "Substitutivo",
+      "codigoSessaoVotacao": "6248",
+      "materiaCodigo": "135147",
+      "dataSessao": "2020-11-03",
+      "descricaoVotacao": "Votação da Emenda nº 18 - PLEN (Substitutivo) do Relator ao PLP nº 19, de 2019, ressalvado o destaque.",
+      "resultado": "Aprovado",
+      "pares": 10
+    },
+    {
+      "id": "6377",
+      "linhaId": "e586da0e-3d1e-4f4c-93cd-3c696417f627",
+      "materia": "146740",
+      "data": "2021-06-16",
+      "descricao": "desestatização",
+      "codigoSessaoVotacao": "6377",
+      "materiaCodigo": "146740",
+      "dataSessao": "2021-06-16",
+      "descricaoVotacao": "(Dispõe sobre a desestatização da empresa Centrais Elétricas Brasileiras S.A. (Eletrobras); altera as Leis nºs 5.899, de 1973, 9.991, de 2000, 10.438, de 2002, 10.848, de 2004, 13.182, de 2015, e 14.118, de 2021; e revoga dispositivos da Lei nº 3.890-A, de 1961.)",
+      "resultado": "Aprovado",
+      "pares": 10
+    },
+    {
+      "id": "6714",
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "materia": "157826",
+      "data": "2023-06-21",
+      "descricao": "Projeto de Lei Complementar",
+      "codigoSessaoVotacao": "6714",
+      "materiaCodigo": "157826",
+      "dataSessao": "2023-06-21",
+      "descricaoVotacao": "Votação nominal do Projeto de Lei Complementar nº 39, de 2023,e das emendas, nos termos do parecer, ressalvados os destaques.",
+      "resultado": "Aprovado",
+      "pares": 16
+    },
+    {
+      "id": "6756",
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "materia": "157888",
+      "data": "2023-09-27",
+      "descricao": "Projeto de Lei nº 2.903",
+      "codigoSessaoVotacao": "6756",
+      "materiaCodigo": "157888",
+      "dataSessao": "2023-09-27",
+      "descricaoVotacao": "Votação nominal do Projeto de Lei nº 2.903 de 2023, nos termos dos Pareceres, ressalvados os destaques.",
+      "resultado": "Aprovado",
+      "pares": 14
+    },
+    {
+      "id": "6777",
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "materia": "158930",
+      "data": "2023-11-08",
+      "descricao": "segundo turno",
+      "codigoSessaoVotacao": "6777",
+      "materiaCodigo": "158930",
+      "dataSessao": "2023-11-08",
+      "descricaoVotacao": "Votação nominal da Proposta de Emenda à Constituição nº 45, de 2019, nos termos do Parecer, em segundo turno.",
+      "resultado": "Aprovado",
+      "pares": 15
+    }
+  ],
+  "votos": [
+    {
+      "linhaId": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "codigoSessaoVotacao": "6046",
+      "slug": "flavio-bolsonaro",
+      "senadoId": 5894,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5894/votacoes.json"
+    },
+    {
+      "linhaId": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "codigoSessaoVotacao": "6248",
+      "slug": "flavio-bolsonaro",
+      "senadoId": 5894,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5894/votacoes.json"
+    },
+    {
+      "linhaId": "e586da0e-3d1e-4f4c-93cd-3c696417f627",
+      "codigoSessaoVotacao": "6377",
+      "slug": "flavio-bolsonaro",
+      "senadoId": 5894,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5894/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "flavio-bolsonaro",
+      "senadoId": 5894,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5894/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "flavio-bolsonaro",
+      "senadoId": 5894,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5894/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "sergio-moro-gov-pr",
+      "senadoId": 6331,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/6331/votacoes.json"
+    },
+    {
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "codigoSessaoVotacao": "6756",
+      "slug": "sergio-moro-gov-pr",
+      "senadoId": 6331,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/6331/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "sergio-moro-gov-pr",
+      "senadoId": 6331,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/6331/votacoes.json"
+    },
+    {
+      "linhaId": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "codigoSessaoVotacao": "6046",
+      "slug": "jorginho-mello",
+      "senadoId": 5350,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5350/votacoes.json"
+    },
+    {
+      "linhaId": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "codigoSessaoVotacao": "6248",
+      "slug": "jorginho-mello",
+      "senadoId": 5350,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5350/votacoes.json"
+    },
+    {
+      "linhaId": "e586da0e-3d1e-4f4c-93cd-3c696417f627",
+      "codigoSessaoVotacao": "6377",
+      "slug": "jorginho-mello",
+      "senadoId": 5350,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5350/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "cleitinho",
+      "senadoId": 6337,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/6337/votacoes.json"
+    },
+    {
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "codigoSessaoVotacao": "6756",
+      "slug": "cleitinho",
+      "senadoId": 6337,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/6337/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "cleitinho",
+      "senadoId": 6337,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/6337/votacoes.json"
+    },
+    {
+      "linhaId": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "codigoSessaoVotacao": "6248",
+      "slug": "rodrigo-pacheco",
+      "senadoId": 5732,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5732/votacoes.json"
+    },
+    {
+      "linhaId": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "codigoSessaoVotacao": "6046",
+      "slug": "eduardo-girao",
+      "senadoId": 5976,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5976/votacoes.json"
+    },
+    {
+      "linhaId": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "codigoSessaoVotacao": "6248",
+      "slug": "eduardo-girao",
+      "senadoId": 5976,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5976/votacoes.json"
+    },
+    {
+      "linhaId": "e586da0e-3d1e-4f4c-93cd-3c696417f627",
+      "codigoSessaoVotacao": "6377",
+      "slug": "eduardo-girao",
+      "senadoId": 5976,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5976/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "eduardo-girao",
+      "senadoId": 5976,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5976/votacoes.json"
+    },
+    {
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "codigoSessaoVotacao": "6756",
+      "slug": "eduardo-girao",
+      "senadoId": 5976,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5976/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "eduardo-girao",
+      "senadoId": 5976,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5976/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "efraim-filho",
+      "senadoId": 4642,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4642/votacoes.json"
+    },
+    {
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "codigoSessaoVotacao": "6756",
+      "slug": "efraim-filho",
+      "senadoId": 4642,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4642/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "efraim-filho",
+      "senadoId": 4642,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4642/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "alan-rick",
+      "senadoId": 5672,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5672/votacoes.json"
+    },
+    {
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "codigoSessaoVotacao": "6756",
+      "slug": "alan-rick",
+      "senadoId": 5672,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5672/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "alan-rick",
+      "senadoId": 5672,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5672/votacoes.json"
+    },
+    {
+      "linhaId": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "codigoSessaoVotacao": "6046",
+      "slug": "mailza-assis",
+      "senadoId": 5557,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5557/votacoes.json"
+    },
+    {
+      "linhaId": "e586da0e-3d1e-4f4c-93cd-3c696417f627",
+      "codigoSessaoVotacao": "6377",
+      "slug": "mailza-assis",
+      "senadoId": 5557,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5557/votacoes.json"
+    },
+    {
+      "linhaId": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "codigoSessaoVotacao": "6046",
+      "slug": "omar-aziz",
+      "senadoId": 5525,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5525/votacoes.json"
+    },
+    {
+      "linhaId": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "codigoSessaoVotacao": "6248",
+      "slug": "omar-aziz",
+      "senadoId": 5525,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5525/votacoes.json"
+    },
+    {
+      "linhaId": "e586da0e-3d1e-4f4c-93cd-3c696417f627",
+      "codigoSessaoVotacao": "6377",
+      "slug": "omar-aziz",
+      "senadoId": 5525,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5525/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "omar-aziz",
+      "senadoId": 5525,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5525/votacoes.json"
+    },
+    {
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "codigoSessaoVotacao": "6756",
+      "slug": "omar-aziz",
+      "senadoId": 5525,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5525/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "omar-aziz",
+      "senadoId": 5525,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5525/votacoes.json"
+    },
+    {
+      "linhaId": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "codigoSessaoVotacao": "6046",
+      "slug": "eduardo-braga",
+      "senadoId": 4994,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4994/votacoes.json"
+    },
+    {
+      "linhaId": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "codigoSessaoVotacao": "6248",
+      "slug": "eduardo-braga",
+      "senadoId": 4994,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4994/votacoes.json"
+    },
+    {
+      "linhaId": "e586da0e-3d1e-4f4c-93cd-3c696417f627",
+      "codigoSessaoVotacao": "6377",
+      "slug": "eduardo-braga",
+      "senadoId": 4994,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4994/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "eduardo-braga",
+      "senadoId": 4994,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4994/votacoes.json"
+    },
+    {
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "codigoSessaoVotacao": "6756",
+      "slug": "eduardo-braga",
+      "senadoId": 4994,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4994/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "eduardo-braga",
+      "senadoId": 4994,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4994/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "beto-faro",
+      "senadoId": 4639,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4639/votacoes.json"
+    },
+    {
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "codigoSessaoVotacao": "6756",
+      "slug": "beto-faro",
+      "senadoId": 4639,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4639/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "beto-faro",
+      "senadoId": 4639,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4639/votacoes.json"
+    },
+    {
+      "linhaId": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "codigoSessaoVotacao": "6046",
+      "slug": "marcos-rogerio",
+      "senadoId": 5422,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5422/votacoes.json"
+    },
+    {
+      "linhaId": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "codigoSessaoVotacao": "6248",
+      "slug": "marcos-rogerio",
+      "senadoId": 5422,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5422/votacoes.json"
+    },
+    {
+      "linhaId": "e586da0e-3d1e-4f4c-93cd-3c696417f627",
+      "codigoSessaoVotacao": "6377",
+      "slug": "marcos-rogerio",
+      "senadoId": 5422,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5422/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "marcos-rogerio",
+      "senadoId": 5422,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5422/votacoes.json"
+    },
+    {
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "codigoSessaoVotacao": "6756",
+      "slug": "marcos-rogerio",
+      "senadoId": 5422,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5422/votacoes.json"
+    },
+    {
+      "linhaId": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "codigoSessaoVotacao": "6046",
+      "slug": "confucio-moura",
+      "senadoId": 475,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/475/votacoes.json"
+    },
+    {
+      "linhaId": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "codigoSessaoVotacao": "6248",
+      "slug": "confucio-moura",
+      "senadoId": 475,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/475/votacoes.json"
+    },
+    {
+      "linhaId": "e586da0e-3d1e-4f4c-93cd-3c696417f627",
+      "codigoSessaoVotacao": "6377",
+      "slug": "confucio-moura",
+      "senadoId": 475,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/475/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "confucio-moura",
+      "senadoId": 475,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/475/votacoes.json"
+    },
+    {
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "codigoSessaoVotacao": "6756",
+      "slug": "confucio-moura",
+      "senadoId": 475,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/475/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "confucio-moura",
+      "senadoId": 475,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/475/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "professora-dorinha",
+      "senadoId": 5386,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5386/votacoes.json"
+    },
+    {
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "codigoSessaoVotacao": "6756",
+      "slug": "professora-dorinha",
+      "senadoId": 5386,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5386/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "professora-dorinha",
+      "senadoId": 5386,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5386/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "wilder-morais",
+      "senadoId": 5070,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5070/votacoes.json"
+    },
+    {
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "codigoSessaoVotacao": "6756",
+      "slug": "wilder-morais",
+      "senadoId": 5070,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5070/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "wilder-morais",
+      "senadoId": 5070,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/5070/votacoes.json"
+    },
+    {
+      "linhaId": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "codigoSessaoVotacao": "6046",
+      "slug": "wellington-fagundes",
+      "senadoId": 1173,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/1173/votacoes.json"
+    },
+    {
+      "linhaId": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "codigoSessaoVotacao": "6248",
+      "slug": "wellington-fagundes",
+      "senadoId": 1173,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/1173/votacoes.json"
+    },
+    {
+      "linhaId": "e586da0e-3d1e-4f4c-93cd-3c696417f627",
+      "codigoSessaoVotacao": "6377",
+      "slug": "wellington-fagundes",
+      "senadoId": 1173,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/1173/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "wellington-fagundes",
+      "senadoId": 1173,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/1173/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "wellington-fagundes",
+      "senadoId": 1173,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/1173/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "magno-malta",
+      "senadoId": 631,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/631/votacoes.json"
+    },
+    {
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "codigoSessaoVotacao": "6756",
+      "slug": "magno-malta",
+      "senadoId": 631,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/631/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "magno-malta",
+      "senadoId": 631,
+      "voto": "não",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/631/votacoes.json"
+    },
+    {
+      "linhaId": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "codigoSessaoVotacao": "6046",
+      "slug": "jayme-campos",
+      "senadoId": 4531,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4531/votacoes.json"
+    },
+    {
+      "linhaId": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "codigoSessaoVotacao": "6248",
+      "slug": "jayme-campos",
+      "senadoId": 4531,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4531/votacoes.json"
+    },
+    {
+      "linhaId": "e586da0e-3d1e-4f4c-93cd-3c696417f627",
+      "codigoSessaoVotacao": "6377",
+      "slug": "jayme-campos",
+      "senadoId": 4531,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4531/votacoes.json"
+    },
+    {
+      "linhaId": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "codigoSessaoVotacao": "6714",
+      "slug": "jayme-campos",
+      "senadoId": 4531,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4531/votacoes.json"
+    },
+    {
+      "linhaId": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "codigoSessaoVotacao": "6756",
+      "slug": "jayme-campos",
+      "senadoId": 4531,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4531/votacoes.json"
+    },
+    {
+      "linhaId": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "codigoSessaoVotacao": "6777",
+      "slug": "jayme-campos",
+      "senadoId": 4531,
+      "voto": "sim",
+      "urlFonte": "https://legis.senado.leg.br/dadosabertos/senador/4531/votacoes.json"
+    }
+  ]
+}

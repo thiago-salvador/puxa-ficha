@@ -1,0 +1,435 @@
+{
+  "_comentario": "Autoriza somente as 12 fichas oficiais novas, as seis correções de papel e o snapshot TSE de 134 chapas adquirido em 12/08/2026. #NE permanece situação não informada; 20 vínculos em revisão e a duplicidade Elizeu/Ismar não promovem identidade.",
+  "recorte": "chapas-tse-snapshot-20260812",
+  "migration": "20260813040100_chapas_2026_tse_snapshot.sql",
+  "fonte": "TSE Dados Abertos candidatos 2026, consulta_cand_2026.zip, SHA-256 686fe1717dd0b860d714f878bf3d75a388478ebab2a56a2f963e6bba50ff0ce7, Last-Modified Wed, 12 Aug 2026 22:35:38 GMT.",
+  "coorte": [
+    "carlos-cley",
+    "ariel-capistrano",
+    "pedro-brito",
+    "reginaldo-lima",
+    "alexandre-salomao",
+    "samuel-de-mattos",
+    "arinalda-do-mlb",
+    "rodrigo-bolsonaro",
+    "farah-mesquita",
+    "policial-edjane",
+    "du-pereira",
+    "subtenente-luiz-carlos",
+    "eduardo-girao",
+    "luiz-carlos-teodoro",
+    "rafael-greca",
+    "francisco-dias",
+    "geraldo-alckmin",
+    "raquel-bricio"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "carlos-cley",
+      "campos": [
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "data_nascimento",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao",
+        "formacao",
+        "profissao_declarada",
+        "genero",
+        "estado_civil",
+        "cor_raca",
+        "verificacao_campos"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ariel-capistrano",
+      "campos": [
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "data_nascimento",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao",
+        "formacao",
+        "profissao_declarada",
+        "genero",
+        "estado_civil",
+        "cor_raca",
+        "verificacao_campos"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "pedro-brito",
+      "campos": [
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "data_nascimento",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao",
+        "formacao",
+        "profissao_declarada",
+        "genero",
+        "estado_civil",
+        "cor_raca",
+        "verificacao_campos"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "reginaldo-lima",
+      "campos": [
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "data_nascimento",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao",
+        "formacao",
+        "profissao_declarada",
+        "genero",
+        "estado_civil",
+        "cor_raca",
+        "verificacao_campos"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "alexandre-salomao",
+      "campos": [
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "data_nascimento",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao",
+        "formacao",
+        "profissao_declarada",
+        "genero",
+        "estado_civil",
+        "cor_raca",
+        "verificacao_campos"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "samuel-de-mattos",
+      "campos": [
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "data_nascimento",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao",
+        "formacao",
+        "profissao_declarada",
+        "genero",
+        "estado_civil",
+        "cor_raca",
+        "verificacao_campos"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "arinalda-do-mlb",
+      "campos": [
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "data_nascimento",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao",
+        "formacao",
+        "profissao_declarada",
+        "genero",
+        "estado_civil",
+        "cor_raca",
+        "verificacao_campos"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rodrigo-bolsonaro",
+      "campos": [
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "data_nascimento",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao",
+        "formacao",
+        "profissao_declarada",
+        "genero",
+        "estado_civil",
+        "cor_raca",
+        "verificacao_campos"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "farah-mesquita",
+      "campos": [
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "data_nascimento",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao",
+        "formacao",
+        "profissao_declarada",
+        "genero",
+        "estado_civil",
+        "cor_raca",
+        "verificacao_campos"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "policial-edjane",
+      "campos": [
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "data_nascimento",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao",
+        "formacao",
+        "profissao_declarada",
+        "genero",
+        "estado_civil",
+        "cor_raca",
+        "verificacao_campos"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "du-pereira",
+      "campos": [
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "data_nascimento",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao",
+        "formacao",
+        "profissao_declarada",
+        "genero",
+        "estado_civil",
+        "cor_raca",
+        "verificacao_campos"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "subtenente-luiz-carlos",
+      "campos": [
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "data_nascimento",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao",
+        "formacao",
+        "profissao_declarada",
+        "genero",
+        "estado_civil",
+        "cor_raca",
+        "verificacao_campos"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "eduardo-girao",
+      "campos": [
+        "cargo_disputado",
+        "estado",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "luiz-carlos-teodoro",
+      "campos": [
+        "cargo_disputado",
+        "estado",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rafael-greca",
+      "campos": [
+        "cargo_disputado",
+        "estado",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "francisco-dias",
+      "campos": [
+        "cargo_disputado",
+        "estado",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "geraldo-alckmin",
+      "campos": [
+        "cargo_disputado",
+        "estado",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "raquel-bricio",
+      "campos": [
+        "cargo_disputado",
+        "estado",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "ultima_atualizacao"
+      ]
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "chapas_2026",
+      "ref": "snapshot-20260812",
+      "campos": [
+        "chave",
+        "eleicao_codigo",
+        "eleicao_data",
+        "uf",
+        "cargo_titular",
+        "sq_coligacao",
+        "identidade_status",
+        "vinculo_titular_status",
+        "tse_situacao_codigo",
+        "titular_candidato_id",
+        "vice_candidato_id",
+        "titular_sq_candidato",
+        "vice_sq_candidato",
+        "nomes",
+        "partidos",
+        "fonte_url",
+        "fonte_sha256",
+        "snapshot_em"
+      ]
+    }
+  ]
+}

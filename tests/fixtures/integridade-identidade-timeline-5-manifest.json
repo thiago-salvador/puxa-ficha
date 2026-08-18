@@ -1,0 +1,1144 @@
+{
+  "version": "20260811102100",
+  "measured_at": "2026-08-12T00:56:40-03:00",
+  "source": "Supabase production read-only after migrations 20260810093000, 20260810121000 and 20260811102000; before migration 20260811102100",
+  "hashes": {
+    "historico_politico": {
+      "2cdb9e2c-fd82-4ff2-9535-c768cf723248": "a94de3a13cae72dbc7cfbdc21a227d351de432dfc045da64eef5851fa8b42892",
+      "3a7f6d38-d643-45ec-978a-7955d1d59ad8": "4a1dab04018b69f256f0c04c79e13afe6207e20e1c0fe390c3f60dfc8999289c",
+      "470def37-f018-4dcc-a917-4ed07e42679b": "fb32f0c6edcfa99207d9ce7b5c36f1f492ca3c93c3b6c6265d23bdcb4a2a9af1",
+      "51341284-613b-4c99-86da-929c7f174e0e": "a49613352310d0480d19187051f4a4db9afabfb5ddf8b03f7c24e9976abfe7ca",
+      "633b3e5b-6e0a-42b8-b120-152349e89f7e": "8d9249609c683b0c84222757a8f2c8c0b141bcc40a827e1e4fe2ea6390480fa5",
+      "6b8c42f2-7124-42e4-ae9b-ca4dcaf453f4": "ca989d9b8dd2f6ae0f6f43b193b5fdceee3bdc4b08a6049ff7efdfd7f720acf6",
+      "6bfe178b-bd43-4ecd-9312-e5ef07fd7ee9": "90805d72b213ee9b8c5dd8e09270d55cd8e8d221061646ba67d31a972f088cd5",
+      "6fb20705-8476-4b0e-a816-551cd347db37": "c7f45d15b79e35919fab45d6366e61c5c1767f35126f7cfc28997d0a2fa4e49d",
+      "7ac8d8f8-a0ef-410b-8d7a-efa62a1a1a72": "bce1693dabbc332e22fa8dd07cdfda48f04633aaf6789045f123469c486008da",
+      "863ee379-1fb7-4416-8f25-e38260337eb8": "3021a01b0c25e6ae6e3e48d0dcc5f10d66e0a4d41c0344adbdb0edc08d677023",
+      "b2f7b24f-d828-43de-bc0d-4071fb86df82": "7b3bf089d11b9da92f3f016ef900643339c9f4dd9bad26ad7203317109e17546",
+      "e4d5e5ea-aa99-4ab0-8748-c5bffc942b31": "9908b58e8598b75b4835a81bc05ea7428490e4635d9b92556efc238fb4a09b0a"
+    },
+    "mudancas_partido": {
+      "00a4b5e3-7bd7-4824-9aa2-573fe51a06e3": "9b4b4d61e2ea02a9c86592d36d231314061c4007c0a36a93c40adc6b0e7f55ae",
+      "102e508b-6a63-45e2-a889-e1474123ffea": "925d1564da05e291366a8a18bf6617fc88c6a24d975162aa6ca16d1e371905c0",
+      "826cab46-0271-40d9-9979-035ff260be54": "102e6f07e4d16869238cffae3fa36d44d98bb618b8df357501993a3abc123024",
+      "ae226065-88b2-4b86-b4e6-92e8c5400210": "81c944d6f5d505de4ffa05106cee982f59fade7c48554d0f81f680c92047d0e7",
+      "c3f281e6-f38f-4a79-82f1-1621064c9e9f": "222a6a7b8ee9c2405c7c7859f0af1aefe912d654376ab63967dee1bbbf035ef9",
+      "dc3ae172-4577-4cd8-bb49-dd33a599735a": "30859d7c5e265fd1b21108048306d10dccd772a2cbc0d262aa4b1bcfed9b2267"
+    },
+    "patrimonio": {
+      "33ad044c-71c7-4964-b563-b1f7f31e62da": "8e40627581e2e5a50462d6d142d23ef5c762f810ef82806b3170a6925a59263f",
+      "61a49b91-a0d8-42f6-83c4-545fdd0eb570": "d937f9a12e014b37d993569bb8e4f7803d7c877e6228eb4ab512d5948ab4afdc",
+      "6cc29a4b-bb69-4e57-804b-fd6a3e7eb93d": "1b8d55981d7870432ab736c5543f2002e31c54a87aaec24b141d0f5ed8a0c8f5",
+      "75d858a8-4678-45f5-bfd2-631983d67224": "af74c4de9fca43ee24e0a293a9ee165139058f1dc729b08bcd1d3efdf4e24614"
+    },
+    "financiamento": {
+      "89c59acc-00ae-446e-9164-a82f01d25224": "f52453b50546d464d74b5991f81eff1b5426ae527096cb7f9c6082b63a327b42",
+      "99d896e5-f18c-471e-8f0e-e023a50ec8bb": "5d7c18c243ca75720d5e0770f7d734949f19a34106a9dcebe25251cfd7ccff25",
+      "c1e117bb-4caa-45f6-ae7b-7dadb5e012ca": "a4f75862e1de758f9f2d98b9d2f80ae11f9590b4fafbf3cf7ef1efccf9533eb7",
+      "e9c1abcb-22af-4ab1-afde-9b317c25391a": "db479054f6592495a7689767506551427ee69b44657631bb0ebc2a01c4914c1f"
+    }
+  },
+  "tables": {
+    "historico_politico": [
+      {
+        "id": "2cdb9e2c-fd82-4ff2-9535-c768cf723248",
+        "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+        "cargo": "Prefeito",
+        "periodo_inicio": 2020,
+        "periodo_fim": 2021,
+        "partido": "PSD",
+        "estado": "SC",
+        "eleito_por": "voto direto",
+        "observacoes": "ELEITO (TSE 2020)",
+        "created_at": "2026-04-06T01:55:49.214734+00:00",
+        "cargo_canonico": "Prefeito",
+        "tipo_evento": "mandato",
+        "proveniencia": "tse",
+        "despublicacao_motivo": null,
+        "despublicado_em": null
+      },
+      {
+        "id": "3a7f6d38-d643-45ec-978a-7955d1d59ad8",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "cargo": "Prefeito",
+        "periodo_inicio": 2004,
+        "periodo_fim": 2008,
+        "partido": "PMDB",
+        "estado": "AL",
+        "eleito_por": "voto direto",
+        "observacoes": "ELEITO (TSE 2004)",
+        "created_at": "2026-04-06T02:24:56.589864+00:00",
+        "cargo_canonico": "Prefeito",
+        "tipo_evento": "mandato",
+        "proveniencia": "tse",
+        "despublicacao_motivo": null,
+        "despublicado_em": null
+      },
+      {
+        "id": "470def37-f018-4dcc-a917-4ed07e42679b",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "cargo": "Prefeito",
+        "periodo_inicio": 2008,
+        "periodo_fim": 2012,
+        "partido": "PMDB",
+        "estado": "AL",
+        "eleito_por": "voto direto",
+        "observacoes": "ELEITO (TSE 2008) [corrigido 2026-07-25: periodo_fim 2014 -> 2012; bug V4 do backfill-historico-periodo-fim.ts]",
+        "created_at": "2026-04-06T02:24:56.661608+00:00",
+        "cargo_canonico": "Prefeito",
+        "tipo_evento": "mandato",
+        "proveniencia": "tse",
+        "despublicacao_motivo": null,
+        "despublicado_em": null
+      },
+      {
+        "id": "51341284-613b-4c99-86da-929c7f174e0e",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "cargo": "Deputado Federal",
+        "periodo_inicio": 2010,
+        "periodo_fim": 2014,
+        "partido": "PMDB",
+        "estado": "AL",
+        "eleito_por": "voto direto",
+        "observacoes": "ELEITO (TSE 2010)",
+        "created_at": "2026-04-06T02:24:56.732385+00:00",
+        "cargo_canonico": "Deputado Federal",
+        "tipo_evento": "mandato",
+        "proveniencia": "tse",
+        "despublicacao_motivo": null,
+        "despublicado_em": null
+      },
+      {
+        "id": "633b3e5b-6e0a-42b8-b120-152349e89f7e",
+        "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+        "cargo": "Deputado Federal",
+        "periodo_inicio": 2014,
+        "periodo_fim": 2018,
+        "partido": "PSD",
+        "estado": "SC",
+        "eleito_por": "voto direto",
+        "observacoes": "ELEITO POR QP (TSE 2014)",
+        "created_at": "2026-04-06T02:24:08.042264+00:00",
+        "cargo_canonico": "Deputado Federal",
+        "tipo_evento": "mandato",
+        "proveniencia": "tse",
+        "despublicacao_motivo": null,
+        "despublicado_em": null
+      },
+      {
+        "id": "6b8c42f2-7124-42e4-ae9b-ca4dcaf453f4",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "cargo": "Ministro",
+        "periodo_inicio": 2023,
+        "periodo_fim": null,
+        "partido": "MDB",
+        "estado": null,
+        "eleito_por": null,
+        "observacoes": "Importado automaticamente de Wikidata P39 em 2026-08-05",
+        "created_at": "2026-04-01T21:21:15.139902+00:00",
+        "cargo_canonico": "Ministro",
+        "tipo_evento": "mandato",
+        "proveniencia": "wikidata",
+        "despublicacao_motivo": null,
+        "despublicado_em": null
+      },
+      {
+        "id": "6bfe178b-bd43-4ecd-9312-e5ef07fd7ee9",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "cargo": "Senador",
+        "periodo_inicio": 2023,
+        "periodo_fim": null,
+        "partido": "MDB",
+        "estado": "AL",
+        "eleito_por": "voto direto",
+        "observacoes": "Mandato de senador iniciado em 2023-02-01, confirmado pelo Senado Dados Abertos; eleição registrada pelo TSE em 2022.",
+        "created_at": "2026-04-06T01:56:08.535569+00:00",
+        "cargo_canonico": "Senador",
+        "tipo_evento": "mandato",
+        "proveniencia": "misto",
+        "despublicacao_motivo": null,
+        "despublicado_em": null
+      },
+      {
+        "id": "6fb20705-8476-4b0e-a816-551cd347db37",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "cargo": "Governador",
+        "periodo_inicio": 2014,
+        "periodo_fim": 2018,
+        "partido": "PMDB",
+        "estado": "AL",
+        "eleito_por": "voto direto",
+        "observacoes": "ELEITO (TSE 2014)",
+        "created_at": "2026-04-06T02:24:56.961557+00:00",
+        "cargo_canonico": "Governador",
+        "tipo_evento": "mandato",
+        "proveniencia": "tse",
+        "despublicacao_motivo": null,
+        "despublicado_em": null
+      },
+      {
+        "id": "7ac8d8f8-a0ef-410b-8d7a-efa62a1a1a72",
+        "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+        "cargo": "Deputado Federal",
+        "periodo_inicio": 2018,
+        "periodo_fim": 2018,
+        "partido": "PSD",
+        "estado": "SC",
+        "eleito_por": null,
+        "observacoes": "Candidatura: NÃO ELEITO (TSE 2018)",
+        "created_at": "2026-04-06T01:55:48.983684+00:00",
+        "cargo_canonico": "Deputado Federal",
+        "tipo_evento": "candidatura",
+        "proveniencia": "tse",
+        "despublicacao_motivo": null,
+        "despublicado_em": null
+      },
+      {
+        "id": "863ee379-1fb7-4416-8f25-e38260337eb8",
+        "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+        "cargo": "Deputado Estadual",
+        "periodo_inicio": 2002,
+        "periodo_fim": 2004,
+        "partido": "PFL",
+        "estado": "SC",
+        "eleito_por": "voto direto",
+        "observacoes": "ELEITO (TSE 2002)",
+        "created_at": "2026-04-06T02:24:07.248175+00:00",
+        "cargo_canonico": "Deputado Estadual",
+        "tipo_evento": "mandato",
+        "proveniencia": "tse",
+        "despublicacao_motivo": null,
+        "despublicado_em": null
+      },
+      {
+        "id": "b2f7b24f-d828-43de-bc0d-4071fb86df82",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "cargo": "Governador",
+        "periodo_inicio": 2018,
+        "periodo_fim": 2022,
+        "partido": "MDB",
+        "estado": "AL",
+        "eleito_por": "voto direto",
+        "observacoes": "ELEITO (TSE 2018)",
+        "created_at": "2026-04-06T01:56:08.38297+00:00",
+        "cargo_canonico": "Governador",
+        "tipo_evento": "mandato",
+        "proveniencia": "tse",
+        "despublicacao_motivo": null,
+        "despublicado_em": null
+      },
+      {
+        "id": "e4d5e5ea-aa99-4ab0-8748-c5bffc942b31",
+        "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+        "cargo": "Deputado Federal",
+        "periodo_inicio": 2010,
+        "periodo_fim": 2014,
+        "partido": "DEM",
+        "estado": "SC",
+        "eleito_por": "voto direto",
+        "observacoes": "ELEITO (TSE 2010)",
+        "created_at": "2026-04-06T02:24:07.809364+00:00",
+        "cargo_canonico": "Deputado Federal",
+        "tipo_evento": "mandato",
+        "proveniencia": "tse",
+        "despublicacao_motivo": null,
+        "despublicado_em": null
+      }
+    ],
+    "mudancas_partido": [
+      {
+        "id": "00a4b5e3-7bd7-4824-9aa2-573fe51a06e3",
+        "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+        "partido_anterior": "DEM",
+        "partido_novo": "PTC",
+        "data_mudanca": null,
+        "ano": 2008,
+        "contexto": "Mudança observada entre eleições TSE (2008)",
+        "created_at": "2026-08-05T17:35:22.506223+00:00"
+      },
+      {
+        "id": "102e508b-6a63-45e2-a889-e1474123ffea",
+        "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+        "partido_anterior": "PTC",
+        "partido_novo": "DEM",
+        "data_mudanca": null,
+        "ano": 2010,
+        "contexto": "Mudança observada entre eleições TSE (2010)",
+        "created_at": "2026-08-05T17:35:22.558489+00:00"
+      },
+      {
+        "id": "826cab46-0271-40d9-9979-035ff260be54",
+        "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+        "partido_anterior": "DEM",
+        "partido_novo": "PSD",
+        "data_mudanca": "2011-09-29",
+        "ano": 2011,
+        "contexto": "Filiação ao PSD na fundação do partido em 29/09/2011, vindo do DEM (Câmara perfil 160571 + Gazeta do Povo SC + Wikipedia; auditoria 2026-04-13)",
+        "created_at": "2026-04-14T15:30:45.123079+00:00"
+      },
+      {
+        "id": "ae226065-88b2-4b86-b4e6-92e8c5400210",
+        "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+        "partido_anterior": "PFL",
+        "partido_novo": "DEM",
+        "data_mudanca": "2007-03-28",
+        "ano": 2007,
+        "contexto": "Renomeação histórica do PFL como DEM em 28/03/2007 (não conta como troca real; auditoria 2026-04-13)",
+        "created_at": "2026-04-14T14:25:42.386187+00:00"
+      },
+      {
+        "id": "c3f281e6-f38f-4a79-82f1-1621064c9e9f",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "partido_anterior": "PMDB",
+        "partido_novo": "MDB",
+        "data_mudanca": null,
+        "ano": 2018,
+        "contexto": "Mudança observada entre eleições TSE (2018)",
+        "created_at": "2026-04-06T02:24:57.520023+00:00"
+      },
+      {
+        "id": "dc3ae172-4577-4cd8-bb49-dd33a599735a",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "partido_anterior": "SEMPARTIDO",
+        "partido_novo": "MDB",
+        "data_mudanca": "2003-09-27",
+        "ano": 2003,
+        "contexto": "Wikidata P102 (filiação inicial conhecida)",
+        "created_at": "2026-04-01T21:21:14.815568+00:00"
+      }
+    ],
+    "patrimonio": [
+      {
+        "id": "33ad044c-71c7-4964-b563-b1f7f31e62da",
+        "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+        "ano_eleicao": 2010,
+        "valor_total": 985123.29,
+        "bens": [
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "valor": 90000,
+            "descricao": "COTA DE CAPITAL NA EMPRESA RADIO NONOAI CNPJ [documento mascarado]"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 40327.32,
+            "descricao": "BANCO DO BRASIL AG 13927 CONTA 20028"
+          },
+          {
+            "tipo": "Aplicação de renda fixa (CDB, RDB e outros)",
+            "valor": 2633.26,
+            "descricao": "BANCO DO BRASIL OURO CAP MULTI CHANCE"
+          },
+          {
+            "tipo": "Aplicação de renda fixa (CDB, RDB e outros)",
+            "valor": 500,
+            "descricao": "BANCO DO BRASIL AGENCIA 1392 CONTA 20028 CDB DI"
+          },
+          {
+            "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+            "valor": 151779.16,
+            "descricao": "TOYOTA HILUX DIESEL ANO 2005"
+          },
+          {
+            "tipo": "Fundo de ações, inclusive Carteira Livre e Fundo de Investimento no exterior",
+            "valor": 116.36,
+            "descricao": "FUNDO DE APLICACAO HIPERFUNDO BANCO BRADESCO"
+          },
+          {
+            "tipo": "Consórcio não contemplado",
+            "valor": 21781.74,
+            "descricao": "PORTOBENS ADMINISTRADORA DE CONSORCIOS CONTRATO 179915"
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "valor": 21580,
+            "descricao": "CAPITAL PORTAL SISITEMA FM COMUNICACAO LTDA"
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "valor": 41650,
+            "descricao": "CREDITO DA EMPRESA CAPITAL PORTAL SISTEMA FM COMUNICACAO LTDA"
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "valor": 19920,
+            "descricao": "CAPITAL PORTAL SISITEMA FM COMUNICACAO"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 13502.4,
+            "descricao": "CAIXA ECONOMICA FEDERAL AG 0414 CONTA 2525251"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 8.41,
+            "descricao": "BANCO SANTANDER"
+          },
+          {
+            "tipo": "Apartamento",
+            "valor": 360000,
+            "descricao": "APTO NR 901 EDIFICIO PUERTO SOLER CHAPECO SC"
+          },
+          {
+            "tipo": "Caderneta de poupança",
+            "valor": 6822.4,
+            "descricao": "BRADESCO AGENCIA 343 CONTA 3884 DEPENDENTE CAROLINE MATTE RODRIGUES"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 11469.57,
+            "descricao": "CAIXA ECONOMICA FEDERAL AGENCIA 4146 CONTA 002525258"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 32.67,
+            "descricao": "BRADESCO AG 343 CONTA 1064320"
+          },
+          {
+            "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+            "valor": 73000,
+            "descricao": "TUCSON GL 2WD PLACAS MEJ 9835"
+          },
+          {
+            "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+            "valor": 130000,
+            "descricao": "CAMINHONETA VERA CRUZ MARCA HYUNDAI PLACAS MIZ 2525"
+          }
+        ],
+        "fonte": "TSE",
+        "created_at": "2026-04-13T21:38:01.814397+00:00"
+      },
+      {
+        "id": "61a49b91-a0d8-42f6-83c4-545fdd0eb570",
+        "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+        "ano_eleicao": 2014,
+        "valor_total": 2394418.89,
+        "bens": [
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "valor": 90000,
+            "descricao": "QUOTAS DE CAPITAL NA EMPRESA RADIO NONOAI LTDA"
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "valor": 21580,
+            "descricao": "QUOTAS DE CAPITAL NA EMPRESA PORTAÇ SISTEMA FM COMUNICAÇÕES LTDA"
+          },
+          {
+            "tipo": "Fundo de capitalização",
+            "valor": 4579.55,
+            "descricao": "BANCO DO BRASIL S.A CONTA 2002-8 AGENCIA 1392-7 OURO CAP"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 8.41,
+            "descricao": "BANCO SANTANDER 1238-[documento mascarado]"
+          },
+          {
+            "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+            "valor": 240000,
+            "descricao": "VEICULO CAMIONETE DISCOVERY 4 S TDV LAND ROVER 2013"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 11973.75,
+            "descricao": "BANCO BRADESCO S.A CONTA 3884-7 AGENCIA 0343-3"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 197834.53,
+            "descricao": "CAIXA ECONOMICA FEDERAL AGENCIA 0414-6 CONTA 252525-8"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 32477.67,
+            "descricao": "BANCO DO BRASIL S.A CONTA 2002-8 AGENCIA 1392-7"
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "valor": 41650,
+            "descricao": "CREDITO DA EMPRESA PORTAL SISTEMA FM DE COMUNICAÇÕES LTDA"
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "valor": 19920,
+            "descricao": "QUOTAS DE CAPITAL NA EMPRESA PORTAL SISTEMA FM DE COMUNICAÇÕES LTDA"
+          },
+          {
+            "tipo": "Consórcio não contemplado",
+            "valor": 21781.74,
+            "descricao": "PROTOBENS ADMINISTRADORA DE CONSORCIOS LTDA - CONTRATO"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 222.02,
+            "descricao": "BANCO DO BRASIL S.A CONTA 2002-8 AGENCIA 1392-7 105 - BRASIL"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 500211.31,
+            "descricao": "CAIXA ECONOMICA FEDERAL AGENCIA 0414-6 CONTA 252525-8 105 - BRASIL"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 8491.27,
+            "descricao": "BANCO DO BRASIL S.A CONTA 2002-8 AGENCIA 1392-7"
+          },
+          {
+            "tipo": "Fundo de capitalização",
+            "valor": 3296.82,
+            "descricao": "BANCO DO BRASIL S.A CONTA 2002-8 AGENCIA 1392-7 OUROCAP MULTI CHANCE"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 48910.65,
+            "descricao": "CAIXA ECONOMICA FEDERAL CONTA 252525-1 AGENCIA 0414-6"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 1060.32,
+            "descricao": "CAIXA ECONOMICA FEDERAL CONTA 169085-2 AGENCIA 04146"
+          },
+          {
+            "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+            "valor": 111167.94,
+            "descricao": "VEICULO CAMIONETE I TOYOTA HILUX SWA 4X4 2010"
+          },
+          {
+            "tipo": "Outros fundos",
+            "valor": 250000,
+            "descricao": "LETRA DE CRÉDITO IMOBILIARIO CEF 0414-6 CONTA 252525-8"
+          },
+          {
+            "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+            "valor": 48000,
+            "descricao": "VEICULO AUTOMOVEL MARCA FIAT MODELO PUNTO COR VERMELHO CHAPECO"
+          },
+          {
+            "tipo": "Apartamento",
+            "valor": 360000,
+            "descricao": "APARTAMENTO AREA TOTAL 377,7892M2 EM CHAPECÓ"
+          },
+          {
+            "tipo": "Apartamento",
+            "valor": 50000,
+            "descricao": "APARTAMENTO 404,16M2 EM ITAPEMA"
+          },
+          {
+            "tipo": "Depósito bancário em conta corrente no País",
+            "valor": 50,
+            "descricao": "CAIXA ECONOMICA FEDERAL AGENCIA 0414-6 CONTA 00252525-8"
+          },
+          {
+            "tipo": "Dinheiro em espécie - moeda nacional",
+            "valor": 195000,
+            "descricao": "DINHEIRO EM ESPECIE"
+          },
+          {
+            "tipo": "Terreno",
+            "valor": 136202.91,
+            "descricao": "LOTE URBANO NU 05 COM 1.085M2 CASA DE ALVENARIA DE 188M2 CIDADE DE SÃO CARLOS"
+          }
+        ],
+        "fonte": "TSE",
+        "created_at": "2026-04-13T21:40:19.117313+00:00"
+      },
+      {
+        "id": "6cc29a4b-bb69-4e57-804b-fd6a3e7eb93d",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "ano_eleicao": 2014,
+        "valor_total": 784424.56,
+        "bens": [
+          {
+            "tipo": "Outras participações societárias",
+            "valor": 2500,
+            "descricao": "PARTICIPACAO NO CAPITAL SOCIAL DA EMPRESA AGROPECUARIA ALAGOAS LTDA"
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "valor": 49000,
+            "descricao": "AQUISICAO DE COTAS DE CAPITAL DO SR. JOSE LUCINO BARBOSA DA SILVA NA SOCIEDADE RADIO MANGUABA DO PILAR"
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "valor": 50000,
+            "descricao": "PARTICIPACAO DOCAPITAL SOCIAL DA EMPRESA SISTEMA COSTA DOURADA DE RADIODIFUSAO LTDA"
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "valor": 49709,
+            "descricao": "PARTICIPACAO NO CAPITAL SOCIAL DA EMPRESA RADIO MANGUABA DO PILAR S/C LTDA"
+          },
+          {
+            "tipo": "Outros bens imóveis",
+            "valor": 240898.19,
+            "descricao": "UNIDADE COMERCIAL AUTONOMA SOB N. 1001 COMPONENTE DO TERRA BRASILIS CORPORATE, ADQUIRIDO DE MARROQUIM ENG. LTDA"
+          },
+          {
+            "tipo": "Apartamento",
+            "valor": 269317.37,
+            "descricao": "01 APARTAMENTO NA PONTA VERDE, EDF. CHATEAU DH RHONE"
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "valor": 98000,
+            "descricao": "AQUISICAO DE COTAS DE CAPITAL DO SR. JOSE QUEIROZ DE OLIVEIRA"
+          },
+          {
+            "tipo": "Outras participações societárias",
+            "valor": 25000,
+            "descricao": "PARTICIPACAO NO CAPITAL SOCIAL A EMPRESA SISTEMA ALAGOANO DE RADIODIFUSAO LTDA"
+          }
+        ],
+        "fonte": "TSE",
+        "created_at": "2026-04-13T14:44:18.277367+00:00"
+      },
+      {
+        "id": "75d858a8-4678-45f5-bfd2-631983d67224",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "ano_eleicao": 2010,
+        "valor_total": 633192.4,
+        "bens": [
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "valor": 50000,
+            "descricao": "40000 COTAS DO CAPITAL DA EMPRESA SISTEMA COSTADOURADA DE RADIODIFUSÃO LTDA"
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "valor": 150000,
+            "descricao": "150000 COTAS DA EMPRESA CORREIO GRAFICA, EDITORA E PRODUTOS LTDA"
+          },
+          {
+            "tipo": "Apartamento",
+            "valor": 118897.81,
+            "descricao": "APARTAMENTO 901, EDF. CHATEAU DU RHONE, EM MACEIÓ-AL"
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "valor": 25000,
+            "descricao": "COTAS DA EMPRESA SISTEMA ALAGOANO DE RADIODIFUSÃO LTDA."
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "valor": 49709,
+            "descricao": "49709 COTAS DA SOCIEDADE RADIO CORREIO DE ALAGOAS LTDA."
+          },
+          {
+            "tipo": "Quotas ou quinhões de capital",
+            "valor": 2500,
+            "descricao": "2500 COTAS DE CAPITAL NA AGROPECUÁRIA ALAGOAS LTDA"
+          },
+          {
+            "tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+            "valor": 118990,
+            "descricao": "VEÍCULO HILUX CD 4X4"
+          },
+          {
+            "tipo": "Caderneta de poupança",
+            "valor": 7060.09,
+            "descricao": "POUPANÇA NA CEF EM NOME DO CÔNJUGE RENATA PEREIRA PIRES"
+          },
+          {
+            "tipo": "Casa",
+            "valor": 111035.5,
+            "descricao": "50% DO IMÓVEL RESIDENCIAL SITO A SHIN - Q 12, CONJ. 02, N. 12, BRASÍLIA-DF, EM NOME DA ESPOSA RENATA PEREIRA PIRES"
+          }
+        ],
+        "fonte": "TSE",
+        "created_at": "2026-04-13T14:43:38.558147+00:00"
+      }
+    ],
+    "financiamento": [
+      {
+        "id": "89c59acc-00ae-446e-9164-a82f01d25224",
+        "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+        "ano_eleicao": 2010,
+        "total_arrecadado": 796675.98,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "CLARICE ELETRODOMESTICOS",
+            "tipo": "PJ",
+            "valor": 140000
+          },
+          {
+            "nome": "FOLLE INDUSTRIA DE IMPLEMENTOS RODOVIARIOS LTDA",
+            "tipo": "PJ",
+            "valor": 103000
+          },
+          {
+            "nome": "SEARA ALIMENTOS S.A.",
+            "tipo": "PJ",
+            "valor": 50000
+          },
+          {
+            "nome": "POSTEC INSTALADORA ELETRICA LTDA",
+            "tipo": "PJ",
+            "valor": 26500
+          },
+          {
+            "nome": "PEDRO LUIZ VOLKWEISS",
+            "tipo": "PJ",
+            "valor": 25000
+          },
+          {
+            "nome": "GELSON LUIZ MERISIO",
+            "tipo": "PJ",
+            "valor": 23927.35
+          },
+          {
+            "nome": "JOÃO RODRIGUES",
+            "tipo": "PJ",
+            "valor": 17000
+          },
+          {
+            "nome": "TICKET SERVIÇOS LTDA",
+            "tipo": "PJ",
+            "valor": 15000
+          },
+          {
+            "nome": "HAI AUTOMOVEIS LTDA.",
+            "tipo": "PJ",
+            "valor": 12000
+          },
+          {
+            "nome": "JOÃO ARTUR ETZ JUNIOR",
+            "tipo": "PJ",
+            "valor": 11500
+          }
+        ],
+        "fonte": "TSE",
+        "created_at": "2026-04-16T03:04:14.46129+00:00",
+        "maiores_doadores_publicos": [
+          {
+            "nome": "CLARICE ELETRODOMESTICOS",
+            "tipo": "PJ",
+            "valor": "140000"
+          },
+          {
+            "nome": "FOLLE INDUSTRIA DE IMPLEMENTOS RODOVIARIOS LTDA",
+            "tipo": "PJ",
+            "valor": "103000"
+          },
+          {
+            "nome": "SEARA ALIMENTOS S.A.",
+            "tipo": "PJ",
+            "valor": "50000"
+          },
+          {
+            "nome": "POSTEC INSTALADORA ELETRICA LTDA",
+            "tipo": "PJ",
+            "valor": "26500"
+          },
+          {
+            "nome": "PEDRO LUIZ VOLKWEISS",
+            "tipo": "PJ",
+            "valor": "25000"
+          },
+          {
+            "nome": "GELSON LUIZ MERISIO",
+            "tipo": "PJ",
+            "valor": "23927.35"
+          },
+          {
+            "nome": "JOÃO RODRIGUES",
+            "tipo": "PJ",
+            "valor": "17000"
+          },
+          {
+            "nome": "TICKET SERVIÇOS LTDA",
+            "tipo": "PJ",
+            "valor": "15000"
+          },
+          {
+            "nome": "HAI AUTOMOVEIS LTDA.",
+            "tipo": "PJ",
+            "valor": "12000"
+          },
+          {
+            "nome": "JOÃO ARTUR ETZ JUNIOR",
+            "tipo": "PJ",
+            "valor": "11500"
+          }
+        ],
+        "sq_candidato": null,
+        "uf_candidatura": null
+      },
+      {
+        "id": "99d896e5-f18c-471e-8f0e-e023a50ec8bb",
+        "candidato_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+        "ano_eleicao": 2014,
+        "total_arrecadado": 1626125.52,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "CLARICE ELETRODOMÉSTICOS LTDA",
+            "tipo": "PJ",
+            "valor": 512045.89
+          },
+          {
+            "nome": "PROSUL - PROJETOS· SUPERVISÃO E PLANEJAMENTO LTDA",
+            "tipo": "PJ",
+            "valor": 150000
+          },
+          {
+            "nome": "BUGIO AGROPECUÁRIA LTDA",
+            "tipo": "PJ",
+            "valor": 100000
+          },
+          {
+            "nome": "FABIO HOFFMANN PEGORARO",
+            "tipo": "PJ",
+            "valor": 95000
+          },
+          {
+            "nome": "GELSON LUIZ MERISIO",
+            "tipo": "PJ",
+            "valor": 50851.5
+          },
+          {
+            "nome": "ADAMI S.A. MADEIRAS",
+            "tipo": "PJ",
+            "valor": 50000
+          },
+          {
+            "nome": "EDEGAR GIORDANI",
+            "tipo": "PJ",
+            "valor": 50000
+          },
+          {
+            "nome": "CONCREBAL CONCRETOS BALDISSERA LTDA",
+            "tipo": "PJ",
+            "valor": 30000
+          },
+          {
+            "nome": "ANELSI CEZAR DANIELLI",
+            "tipo": "PJ",
+            "valor": 20000
+          },
+          {
+            "nome": "BRITABAL INDUSTRIA E COMERCIO LTDA",
+            "tipo": "PJ",
+            "valor": 20000
+          }
+        ],
+        "fonte": "TSE",
+        "created_at": "2026-04-16T03:13:04.311915+00:00",
+        "maiores_doadores_publicos": [
+          {
+            "nome": "CLARICE ELETRODOMÉSTICOS LTDA",
+            "tipo": "PJ",
+            "valor": "512045.89"
+          },
+          {
+            "nome": "PROSUL - PROJETOS· SUPERVISÃO E PLANEJAMENTO LTDA",
+            "tipo": "PJ",
+            "valor": "150000"
+          },
+          {
+            "nome": "BUGIO AGROPECUÁRIA LTDA",
+            "tipo": "PJ",
+            "valor": "100000"
+          },
+          {
+            "nome": "FABIO HOFFMANN PEGORARO",
+            "tipo": "PJ",
+            "valor": "95000"
+          },
+          {
+            "nome": "GELSON LUIZ MERISIO",
+            "tipo": "PJ",
+            "valor": "50851.5"
+          },
+          {
+            "nome": "ADAMI S.A. MADEIRAS",
+            "tipo": "PJ",
+            "valor": "50000"
+          },
+          {
+            "nome": "EDEGAR GIORDANI",
+            "tipo": "PJ",
+            "valor": "50000"
+          },
+          {
+            "nome": "CONCREBAL CONCRETOS BALDISSERA LTDA",
+            "tipo": "PJ",
+            "valor": "30000"
+          },
+          {
+            "nome": "ANELSI CEZAR DANIELLI",
+            "tipo": "PJ",
+            "valor": "20000"
+          },
+          {
+            "nome": "BRITABAL INDUSTRIA E COMERCIO LTDA",
+            "tipo": "PJ",
+            "valor": "20000"
+          }
+        ],
+        "sq_candidato": null,
+        "uf_candidatura": null
+      },
+      {
+        "id": "c1e117bb-4caa-45f6-ae7b-7dadb5e012ca",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "ano_eleicao": 2010,
+        "total_arrecadado": 600045.88,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "cnpj": "18725804000113",
+            "nome": "TELEMONT ENGENHARIA DE TELECOMUNICAÇÕES S/A",
+            "tipo": "PJ",
+            "valor": 200000
+          },
+          {
+            "cnpj": "12205253000180",
+            "nome": "Comitê Financeiro Estadual/Distrital para Senador da República",
+            "tipo": "PJ",
+            "valor": 134000
+          },
+          {
+            "cnpj": "04735992000156",
+            "nome": "MAXI LUB LTDA",
+            "tipo": "PJ",
+            "valor": 100000
+          },
+          {
+            "nome": "JOSÉ RENAN VASCONCELOS CALHEIROS FILHIO",
+            "tipo": "PJ",
+            "valor": 54729.78
+          },
+          {
+            "cnpj": "12154853000167",
+            "nome": "Comitê Financeiro Nacional para Presidente da República",
+            "tipo": "PJ",
+            "valor": 50000
+          },
+          {
+            "cnpj": "07165156000171",
+            "nome": "MAXI POSTO IV LTDA",
+            "tipo": "PJ",
+            "valor": 40000
+          },
+          {
+            "cnpj": "01308052000192",
+            "nome": "Diretório Estadual/Distrital",
+            "tipo": "PJ",
+            "valor": 10000
+          },
+          {
+            "cnpj": "12168518000118",
+            "nome": "RONALDO AUGUSTO LESSA SANTOS",
+            "tipo": "PJ",
+            "valor": 5916.1
+          },
+          {
+            "nome": "RICARDO JOSÉ GOMES DA ROCHA",
+            "tipo": "PJ",
+            "valor": 1900
+          },
+          {
+            "nome": "MARIA NILCE DE MENDONÇA PINTO",
+            "tipo": "PJ",
+            "valor": 1500
+          }
+        ],
+        "fonte": "TSE",
+        "created_at": "2026-04-19T07:10:56.927901+00:00",
+        "maiores_doadores_publicos": [
+          {
+            "nome": "TELEMONT ENGENHARIA DE TELECOMUNICAÇÕES S/A",
+            "tipo": "PJ",
+            "valor": "200000"
+          },
+          {
+            "nome": "Comitê Financeiro Estadual/Distrital para Senador da República",
+            "tipo": "PJ",
+            "valor": "134000"
+          },
+          {
+            "nome": "MAXI LUB LTDA",
+            "tipo": "PJ",
+            "valor": "100000"
+          },
+          {
+            "nome": "JOSÉ RENAN VASCONCELOS CALHEIROS FILHIO",
+            "tipo": "PJ",
+            "valor": "54729.78"
+          },
+          {
+            "nome": "Comitê Financeiro Nacional para Presidente da República",
+            "tipo": "PJ",
+            "valor": "50000"
+          },
+          {
+            "nome": "MAXI POSTO IV LTDA",
+            "tipo": "PJ",
+            "valor": "40000"
+          },
+          {
+            "nome": "Diretório Estadual/Distrital",
+            "tipo": "PJ",
+            "valor": "10000"
+          },
+          {
+            "nome": "RONALDO AUGUSTO LESSA SANTOS",
+            "tipo": "PJ",
+            "valor": "5916.1"
+          },
+          {
+            "nome": "RICARDO JOSÉ GOMES DA ROCHA",
+            "tipo": "PJ",
+            "valor": "1900"
+          },
+          {
+            "nome": "MARIA NILCE DE MENDONÇA PINTO",
+            "tipo": "PJ",
+            "valor": "1500"
+          }
+        ],
+        "sq_candidato": null,
+        "uf_candidatura": null
+      },
+      {
+        "id": "e9c1abcb-22af-4ab1-afde-9b317c25391a",
+        "candidato_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+        "ano_eleicao": 2014,
+        "total_arrecadado": 16810704.83,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "cnpj": "01308052000192",
+            "nome": "Direção Estadual/Distrital",
+            "tipo": "PJ",
+            "valor": 14312372.83
+          },
+          {
+            "cnpj": "20570274000123",
+            "nome": "ELEICAO 2014 DILMA VANA ROUSSEFF PRESIDENTE",
+            "tipo": "PJ",
+            "valor": 351404.74
+          },
+          {
+            "cnpj": "12213443000140",
+            "nome": "INDUSTRIAS REUNIDAS CORINGA LTDA",
+            "tipo": "PJ",
+            "valor": 200000
+          },
+          {
+            "cnpj": "01543722000155",
+            "nome": "SVC CONSTRUÇÕES LTDA",
+            "tipo": "PJ",
+            "valor": 200000
+          },
+          {
+            "cnpj": "42150391000170",
+            "nome": "BRASKEM S/A",
+            "tipo": "PJ",
+            "valor": 200000
+          },
+          {
+            "cnpj": "07118264000193",
+            "nome": "QUALITY MEDICAL COMERCIO E DISTRIBUIDORA DE MEDICAMENTOS LTDA",
+            "tipo": "PJ",
+            "valor": 200000
+          },
+          {
+            "cnpj": "12282034000286",
+            "nome": "USINA CAETE S/A",
+            "tipo": "PJ",
+            "valor": 150000
+          },
+          {
+            "cnpj": "06171493000109",
+            "nome": "MS LOG SERVICOS DE LOGISTICA TRANSPORTES LTDA",
+            "tipo": "PJ",
+            "valor": 150000
+          },
+          {
+            "cnpj": "02865831000151",
+            "nome": "VERDES MARES DISTRIBUIDORA LTDA",
+            "tipo": "PJ",
+            "valor": 100000
+          },
+          {
+            "cnpj": "12277489000122",
+            "nome": "CIMAPRA CIA MERCANTIL AGRO PECUARIA PRATAGY",
+            "tipo": "PJ",
+            "valor": 100000
+          }
+        ],
+        "fonte": "TSE",
+        "created_at": "2026-04-19T07:48:08.561232+00:00",
+        "maiores_doadores_publicos": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "tipo": "PJ",
+            "valor": "14312372.83"
+          },
+          {
+            "nome": "ELEICAO 2014 DILMA VANA ROUSSEFF PRESIDENTE",
+            "tipo": "PJ",
+            "valor": "351404.74"
+          },
+          {
+            "nome": "INDUSTRIAS REUNIDAS CORINGA LTDA",
+            "tipo": "PJ",
+            "valor": "200000"
+          },
+          {
+            "nome": "SVC CONSTRUÇÕES LTDA",
+            "tipo": "PJ",
+            "valor": "200000"
+          },
+          {
+            "nome": "BRASKEM S/A",
+            "tipo": "PJ",
+            "valor": "200000"
+          },
+          {
+            "nome": "QUALITY MEDICAL COMERCIO E DISTRIBUIDORA DE MEDICAMENTOS LTDA",
+            "tipo": "PJ",
+            "valor": "200000"
+          },
+          {
+            "nome": "USINA CAETE S/A",
+            "tipo": "PJ",
+            "valor": "150000"
+          },
+          {
+            "nome": "MS LOG SERVICOS DE LOGISTICA TRANSPORTES LTDA",
+            "tipo": "PJ",
+            "valor": "150000"
+          },
+          {
+            "nome": "VERDES MARES DISTRIBUIDORA LTDA",
+            "tipo": "PJ",
+            "valor": "100000"
+          },
+          {
+            "nome": "CIMAPRA CIA MERCANTIL AGRO PECUARIA PRATAGY",
+            "tipo": "PJ",
+            "valor": "100000"
+          }
+        ],
+        "sq_candidato": null,
+        "uf_candidatura": null
+      }
+    ]
+  }
+}

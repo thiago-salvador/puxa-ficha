@@ -1,0 +1,262 @@
+{
+  "_comentario": "Allowlist do recorte do re-run de patrimonio 2026. Autoriza EXATAMENTE as 21 operacoes medidas contra os pacotes oficiais congelados por SHA-256: 10 INSERT em patrimonio, 1 UPDATE em patrimonio e 10 DELETE em patrimonio_ausencia_oficial. Oito DELETE acompanham bens publicados; dois removem ausencia sem ST_DECLARAR_BENS = N. Janela FECHADA numa migration so: --desde=20260810093000 --ate=20260810093000.",
+  "recorte": "patrimonio-rerun-20260810",
+  "migration": "20260810093000_rerun_patrimonio_2026_tse_publicou.sql",
+  "fonte": "QA/evidencias/2026-08-10-migration-patrimonio-rerun/manifesto-delta-patrimonio-2026.json",
+  "coorte": [
+    "andre-marinho",
+    "cleber-rabelo",
+    "efraim-filho",
+    "geraldo-carvalho",
+    "ivan-moraes",
+    "jose-estevao",
+    "joao-campos",
+    "joel-rodrigues",
+    "priscila-voigt",
+    "raquel-lyra",
+    "samara-mineiro",
+    "dr-luisinho",
+    "preta-lu"
+  ],
+  "fora_por_construcao": {
+    "_comentario": "As tres linhas legadas nao reclassificadas neste delta ficam fora por construcao. Zero linha no pacote, sozinho, nao e usado aqui para reafirmar ausencia oficial.",
+    "slugs": [
+      "gilberto-vasconcelos",
+      "luciana-gurgel",
+      "vera-lucia"
+    ]
+  },
+  "entries": [
+    {
+      "tabela": "patrimonio",
+      "slug": "andre-marinho",
+      "ano": 2026,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "cleber-rabelo",
+      "ano": 2026,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "efraim-filho",
+      "ano": 2026,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "geraldo-carvalho",
+      "ano": 2026,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "ivan-moraes",
+      "ano": 2026,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "joao-campos",
+      "ano": 2026,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "joel-rodrigues",
+      "ano": 2026,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "raquel-lyra",
+      "ano": 2026,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "jose-estevao",
+      "ano": 2026,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "samara-mineiro",
+      "ano": 2026,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "priscila-voigt",
+      "ano": 2026,
+      "campos": [
+        "valor_total",
+        "bens",
+        "fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "andre-marinho",
+      "ano": 2026,
+      "campos": [
+        "remocao_da_linha_de_ausencia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "cleber-rabelo",
+      "ano": 2026,
+      "campos": [
+        "remocao_da_linha_de_ausencia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "efraim-filho",
+      "ano": 2026,
+      "campos": [
+        "remocao_da_linha_de_ausencia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "geraldo-carvalho",
+      "ano": 2026,
+      "campos": [
+        "remocao_da_linha_de_ausencia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "ivan-moraes",
+      "ano": 2026,
+      "campos": [
+        "remocao_da_linha_de_ausencia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "joao-campos",
+      "ano": 2026,
+      "campos": [
+        "remocao_da_linha_de_ausencia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "joel-rodrigues",
+      "ano": 2026,
+      "campos": [
+        "remocao_da_linha_de_ausencia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "raquel-lyra",
+      "ano": 2026,
+      "campos": [
+        "remocao_da_linha_de_ausencia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "dr-luisinho",
+      "ano": 2026,
+      "campos": [
+        "remocao_de_ausencia_sem_evidencia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "preta-lu",
+      "ano": 2026,
+      "campos": [
+        "remocao_de_ausencia_sem_evidencia"
+      ],
+      "max_registros": 1
+    }
+  ]
+}

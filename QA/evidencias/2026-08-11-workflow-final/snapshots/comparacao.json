@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "natureza": "comparacao_de_recibos_somente_leitura",
+  "antes": {
+    "arquivo": "antes.json",
+    "capturadoEm": "2026-08-11T12:49:11.509Z",
+    "sha256": "e0f7a4c54985223f36f2957aedb8268c8fec49c2dad1ed8518141f75c323f54a"
+  },
+  "depois": {
+    "arquivo": "depois.json",
+    "capturadoEm": "2026-08-11T13:11:24.163Z",
+    "sha256": "6ea22be577cb6cdda5580c66f78950a7b20d939dd0ed76797ee126159e81239e"
+  },
+  "refsIguais": {
+    "localMain": true,
+    "localRcLancamento": true,
+    "remotoMain": true,
+    "remotoRcLancamento": true,
+    "integracaoHead": true
+  },
+  "deploymentIgual": true,
+  "contagensRemotasIguais": true,
+  "invariantesSemAplicacaoIguais": true,
+  "estadoComum": {
+    "remotoMain": "7e3e4165b0536aee50a68647488e93dd6127446c",
+    "remotoRcLancamento": "d17163fb58ad1c8d780d82be71e428671821306d",
+    "productionSha": "7e3e4165b0536aee50a68647488e93dd6127446c",
+    "fichasPublicas": 194,
+    "processosTotal": 30,
+    "judicial69": 0,
+    "judicial66": 0,
+    "tse8": 0,
+    "senadoLinhas": 13,
+    "senadoPares": 81,
+    "financiamentoContrato": "PGRST205",
+    "patrimonioRerun": 0
+  },
+  "ledgerDepois": {
+    "acessoDireto": "indisponivel_sem_SUPABASE_DB_URL",
+    "evidenciaSubstituta": {
+      "workflowRunId": 31468778542,
+      "headSha": "7e3e4165b0536aee50a68647488e93dd6127446c",
+      "conclusion": "success",
+      "quantidadeVersoes": 371,
+      "versaoMaisRecente": "20260809060000",
+      "quantidadeArquivosRepoNoRun": 376,
+      "gateDeclarouConsistencia": true
+    }
+  },
+  "incidenteMaterializacao": {
+    "ocorreu": true,
+    "descricao": "a primeira aplicacao dos dois JSONs usou caminho relativo e criou temporariamente arquivos novos no diretorio equivalente do checkout principal",
+    "arquivosPreexistentesSobrescritos": false,
+    "arquivosTemporariosRemovidos": true,
+    "diretoriosVaziosRemovidos": true,
+    "statusSha256AntesDoIncidente": "d7db0e26839b7da99f83768820ecf76e50dc760f675292acc921f4c9df8a9631",
+    "statusSha256DepoisDoRestauro": "d7db0e26839b7da99f83768820ecf76e50dc760f675292acc921f4c9df8a9631"
+  },
+  "lacunas": [
+    "antes.json nao registrou o status nem um hash do checkout principal; a igualdade desse conteudo local entre os dois instantes nao pode ser afirmada por estes recibos",
+    "nao houve acesso direto ao ledger depois porque SUPABASE_DB_URL nao estava disponivel; o substituto e o ultimo SELECT versionado pelo ledger-guard no SHA de producao"
+  ]
+}

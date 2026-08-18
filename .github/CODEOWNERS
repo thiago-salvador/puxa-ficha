@@ -1,0 +1,12 @@
+# Toda mudança exige review do mantenedor.
+* @thiago-salvador
+
+# Caminhos sensíveis (segurança, deploy, dados, superfície pública).
+/.github/            @thiago-salvador
+/.github/workflows/  @thiago-salvador
+/supabase/           @thiago-salvador
+/scripts/            @thiago-salvador
+/middleware.ts       @thiago-salvador
+/next.config.ts      @thiago-salvador
+/vercel.json         @thiago-salvador
+/src/app/api/        @thiago-salvador

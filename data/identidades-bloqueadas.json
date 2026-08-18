@@ -1,0 +1,78 @@
+{
+  "$schema": "Identidades eleitorais que a curadoria já rejeitou por homônimo. A ingestão consulta este arquivo ANTES de escrever, para que uma correção aplicada não seja desfeita pela próxima rodada. Cada entrada nomeia a migration que registrou a decisão. Issue #130.",
+  "bloqueios": [
+    {
+      "slug": "renato-gomes",
+      "sq_candidato": "120000886590",
+      "ano": 2020,
+      "motivo": "SQ de Renato da Silveira Gomes, candidato a vereador em Campo Grande/MS em 2020. A ficha é de Renato Wanderley Gomes, economista e pré-candidato do DC ao governo de MS. Nome de urna e UF coincidem e não provam identidade.",
+      "decidido_em": "2026-08-05",
+      "migrations": [
+        "20260805134000_renato_gomes_homonimo_remocao.sql",
+        "20260807185000_renato_gomes_remove_reincidencia_homonimo.sql"
+      ]
+    },
+    {
+      "slug": "renato-gomes",
+      "ano": 2008,
+      "motivo": "Candidatura de 2008 do mesmo homônimo, Renato da Silveira Gomes. O SQ de 2008 não foi registrado na decisão porque até 2008 o SQ do TSE é sequencial por UF e não identifica pessoa sozinho. A pós-condição da 20260807185000 exige ZERO linha de proveniência TSE para este slug, então o ano inteiro está bloqueado.",
+      "decidido_em": "2026-08-05",
+      "migrations": [
+        "20260805134000_renato_gomes_homonimo_remocao.sql",
+        "20260807185000_renato_gomes_remove_reincidencia_homonimo.sql"
+      ]
+    },
+    {
+      "slug": "jarbas-soares",
+      "sq_candidato": "130000743230",
+      "ano": 2020,
+      "motivo": "SQ do homônimo candidato a vice-prefeito em 2020. A ficha é de Jarbas Soares Júnior, ex-procurador-geral de justiça de MG com 36 anos de MPMG, que não disputou esse pleito.",
+      "decidido_em": "2026-08-05",
+      "migrations": [
+        "20260805132000_jarbas_soares_homonimo_e_nascimento.sql",
+        "20260807184000_remover_patrimonio_homonimo_jarbas_soares.sql"
+      ]
+    },
+    {
+      "slug": "jarbas-soares",
+      "sq_candidato": "47351",
+      "ano": 2008,
+      "motivo": "SQ do homônimo candidato a vereador em MG em 2008. Mesmo caso da entrada de 2020. O valor é curto porque em 2008 o SQ é sequencial por UF, o que reforça o bloqueio: sozinho ele nem identifica pessoa.",
+      "decidido_em": "2026-08-05",
+      "migrations": [
+        "20260805132000_jarbas_soares_homonimo_e_nascimento.sql",
+        "20260807184000_remover_patrimonio_homonimo_jarbas_soares.sql"
+      ]
+    },
+    {
+      "slug": "cadu-xavier",
+      "sq_candidato": "200000998862",
+      "ano": 2020,
+      "motivo": "SQ de Carlos Eduardo Xavier, estudante nascido em 04/06/1999, candidato a vereador em Mossoró/RN pelo DEM. A ficha é do auditor fiscal que assinava como secretário estadual em 2019 e disputa o primeiro cargo eletivo em 2026.",
+      "decidido_em": "2026-08-05",
+      "migrations": ["20260805135000_varredura_homonimos_cadu_juliana.sql"]
+    },
+    {
+      "slug": "juliana-brizola",
+      "sq_candidato": "210001233500",
+      "ano": 2020,
+      "motivo": "SQ de Juliana Maria Mittelstaedt Brizola, nascida em 13/12/1989, candidata a vereadora em Ronda Alta/RS pelo PSL. A ficha é de Juliana Brizola, nascida em 03/08/1975, cuja candidatura correta de 2020 é a Prefeitura de Porto Alegre pelo PDT, SQ 210001189949, que segue válida.",
+      "decidido_em": "2026-08-05",
+      "migrations": ["20260805135000_varredura_homonimos_cadu_juliana.sql"]
+    },
+    {
+      "slug": "professora-dorinha",
+      "ano": 2000,
+      "motivo": "Candidatura a vereadora em Araguatins/TO pelo PPB de Doralice de Sousa Dantas, nome de urna \"Professora Dorinha\". A ficha é de Maria Auxiliadora Seabra Rezende, que não aparece no consulta_cand do ano. Sem SQ na decisão, então o ano inteiro está bloqueado, o que é fiel: a pessoa da ficha não tem candidatura própria em 2000.",
+      "decidido_em": "2026-07-26",
+      "migrations": ["20260726180000_identidade_jeronimo_e_homonimo_dorinha.sql"]
+    },
+    {
+      "slug": "professora-dorinha",
+      "ano": 2016,
+      "motivo": "Mesmo homônimo, candidatura a vereadora em Araguatins/TO pelo PMDB. Nome de urna, estado e partido coincidem em 2016, que é o bastante para o degrau de nome casar. A busca por \"SEABRA\" em 2016/TO volta vazia, coerente com a pessoa da ficha ser deputada federal no período.",
+      "decidido_em": "2026-07-26",
+      "migrations": ["20260726180000_identidade_jeronimo_e_homonimo_dorinha.sql"]
+    }
+  ]
+}

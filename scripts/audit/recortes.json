@@ -1,0 +1,330 @@
+{
+  "$schema": "Mapa de recortes de escrita auditada. Cada recorte é o par (janela de migrations, allowlist que autoriza o que elas escrevem). Existe porque a allowlist de um recorte reprova legitimamente as migrations de outro: rodar uma allowlist só contra a árvore inteira devolve centenas de 'fora da coorte' que não são defeito de migration nenhuma, e um gate que falha sempre para de ser lido. Este arquivo tira a lista de janelas do comentário de scripts/audit/check-migrations-allowlist.ts, onde ela estava incompleta (3 de 12) e não era conferida por ninguém, e passa a ser a fonte de verdade que o próprio checker valida.",
+  "gerado_em": "2026-08-09",
+  "regras": [
+    "desde/ate são comparação de PREFIXO do nome do arquivo, não data, e ate é inclusivo.",
+    "ate é obrigatório: sem teto, uma janela correta hoje engole a próxima migration que alguém criar.",
+    "Janelas não podem se sobrepor.",
+    "Toda migration com anotação @write tem que cair em exatamente um recorte.",
+    "Todo arquivo allowlist-*.json tem que ser referenciado por exatamente um recorte, ou estar declarado em allowlists_sem_recorte com motivo.",
+    "divida congela a dívida histórica EXATA: conjunto de arquivos na janela e impressão digital das violações. Não é dispensa de conferir, é congelamento do que já foi medido. Arquivo novo na janela, arquivo que sumiu ou violação a mais reprovam com exit 1.",
+    "Recorte novo NÃO pode nascer com divida. O roster de nomes que podem carregar divida é fechado e mora em DIVIDAS_CONGELADAS, no código do checker, justamente para acrescentar dívida não ser uma linha a mais neste JSON."
+  ],
+  "recortes": [
+    {
+      "nome": "governadores-ac",
+      "desde": "20260802200000",
+      "ate": "20260802200100",
+      "allowlist": "scripts/audit/allowlist-governadores-ac.json",
+      "divida": null
+    },
+    {
+      "nome": "governadores-al",
+      "desde": "20260803080000",
+      "ate": "20260803080000",
+      "allowlist": "scripts/audit/allowlist-governadores-al.json",
+      "divida": null
+    },
+    {
+      "nome": "correcoes-claims-pos-factcheck",
+      "desde": "20260803101537",
+      "ate": "20260803101537",
+      "allowlist": "scripts/audit/allowlist-correcoes-claims.json",
+      "divida": {
+        "motivo": "A allowlist nasceu no MESMO commit da migration (fda8063), com a autorização registrada (clique em Aplicar, payload correcoes-claims-v1), e a migration foi escrita sem nenhuma anotação @write. Resultado: a autorização existe no repositório e nunca foi conferida contra o SQL. Os 5 statements estão congelados em baseline-escritas-sem-anotacao.json. Anotar esta migration exercita uma allowlist que já está aprovada, e é a dívida mais barata da lista.",
+        "congelado_em": "2026-08-09",
+        "arquivos": [
+          "20260803101537_correcoes_claims_presidenciaveis_pos_factcheck.sql"
+        ],
+        "violacoes_sha256": "1825a84bde4fc62fd895e9143e62791aaa621f45b2141998221c31487f8c2154",
+        "violacoes": 5
+      }
+    },
+    {
+      "nome": "limpeza-familia-sem-mandato",
+      "desde": "20260803112556",
+      "ate": "20260803112556",
+      "allowlist": "scripts/audit/allowlist-limpeza-familia-sem-mandato.json",
+      "divida": {
+        "motivo": "Mesmo padrão de correcoes-claims: allowlist e migration no mesmo commit (a881e03), zero anotação @write, autorização registrada e nunca conferida. 2 statements congelados no baseline.",
+        "congelado_em": "2026-08-09",
+        "arquivos": [
+          "20260803112556_descartar_claims_sem_mandato_contraditorias.sql"
+        ],
+        "violacoes_sha256": "db429a1db84f334ac3e863e6c375284048de9533b13c3facf5ffd04ed5193678",
+        "violacoes": 2
+      }
+    },
+    {
+      "nome": "claims-desatualizadas",
+      "desde": "20260803134217",
+      "ate": "20260803134217",
+      "allowlist": "scripts/audit/allowlist-claims-desatualizadas.json",
+      "divida": null
+    },
+    {
+      "nome": "mandatos-omitidos",
+      "desde": "20260803134247",
+      "ate": "20260803134247",
+      "allowlist": "scripts/audit/allowlist-mandatos-omitidos.json",
+      "divida": null
+    },
+    {
+      "nome": "quiz-posicoes",
+      "desde": "20260803141901",
+      "ate": "20260803141901",
+      "allowlist": "scripts/audit/allowlist-quiz-posicoes.json",
+      "divida": null
+    },
+    {
+      "nome": "quiz-refonteadas",
+      "desde": "20260803144120",
+      "ate": "20260803144120",
+      "allowlist": "scripts/audit/allowlist-quiz-refonteadas.json",
+      "divida": null
+    },
+    {
+      "nome": "editoriais-e-homonimos-20260805",
+      "desde": "20260805004921",
+      "ate": "20260805137000",
+      "allowlist": null,
+      "divida": {
+        "motivo": "Onze migrations declaram escrita com @write e NENHUMA allowlist do repositório autoriza o par (tabela, slug) delas. Conferido em 09/08/2026 rodando cada arquivo contra as doze allowlists existentes: a melhor delas ainda reprova (de 1 a 52 violações), então não é caso de janela errada, é autorização que não existe. A janela está declarada para a escrita ficar visível e nomeada; ela não vale como aprovação. Fechar esta dívida exige a decisão editorial de quem aprovou o recorte, não uma allowlist inventada agora.",
+        "congelado_em": "2026-08-09",
+        "arquivos": [
+          "20260805004921_backfill_coleta_log_do_estado_atual.sql",
+          "20260805120133_noticias_presas_em_registro_morto.sql",
+          "20260805120633_status_fora_do_dominio_e_check.sql",
+          "20260805123929_aplicar_decisoes_editoriais_20260805.sql",
+          "20260805132000_jarbas_soares_homonimo_e_nascimento.sql",
+          "20260805133000_cargo_canonico_sem_prefixo_de_candidatura.sql",
+          "20260805134000_renato_gomes_homonimo_remocao.sql",
+          "20260805135000_varredura_homonimos_cadu_juliana.sql",
+          "20260805135540_approve_editorial_biographies_20.sql",
+          "20260805136000_renato_gomes_formacao_homonimo.sql",
+          "20260805137000_renato_gomes_corrige_log_identidade.sql"
+        ],
+        "violacoes_sha256": "ade8e4989a31356437276a9700e3c7ab16742edfd27b826ada1badccbba6c13e",
+        "violacoes": 93
+      }
+    },
+    {
+      "nome": "profile-completeness-20260807",
+      "desde": "20260807050000",
+      "ate": "20260807053000",
+      "allowlist": "scripts/audit/allowlist-profile-completeness-20260807.json",
+      "divida": null
+    },
+    {
+      "nome": "historico-judicial-sem-merito-20260807",
+      "desde": "20260807054000",
+      "ate": "20260807054000",
+      "allowlist": null,
+      "divida": {
+        "motivo": "Mesma dívida do recorte editoriais-e-homonimos-20260805, um arquivo só: escrita declarada, autorização não registrada em allowlist nenhuma.",
+        "congelado_em": "2026-08-09",
+        "arquivos": [
+          "20260807054000_neutralizar_historico_judicial_sem_merito.sql"
+        ],
+        "violacoes_sha256": "14a9967884bae302fa71e407c071fd4f852347ddfc60c9ddc60248a68ffab074",
+        "violacoes": 2
+      }
+    },
+    {
+      "nome": "pf-patrimonio-20260807",
+      "desde": "20260807180000",
+      "ate": "20260807185000",
+      "allowlist": "scripts/audit/allowlist-pf-patrimonio-20260807.json",
+      "divida": null
+    },
+    {
+      "nome": "marcadores-tse-residuais-20260808",
+      "desde": "20260808032540",
+      "ate": "20260808032540",
+      "allowlist": null,
+      "divida": {
+        "motivo": "Saneamento dos 9 marcadores #NULO# residuais. Escreve em patrimonio/bens_descricao_marcador, campo que nenhuma allowlist existente cobre. Autorização não registrada.",
+        "congelado_em": "2026-08-09",
+        "arquivos": [
+          "20260808032540_marcadores_tse_residuais_patrimonio.sql"
+        ],
+        "violacoes_sha256": "c5cc26124d2da02d53c3d0ba6b08716fa338d54a359a53a326e18a6b5bcff7ad",
+        "violacoes": 2
+      }
+    },
+    {
+      "nome": "verificacao-campos-b2-20260809",
+      "desde": "20260809070000",
+      "ate": "20260809070000",
+      "allowlist": "scripts/audit/allowlist-verificacao-campos-b2-20260809.json",
+      "divida": null
+    },
+    {
+      "nome": "trilha-a-classificacao-20260810",
+      "desde": "20260810085000",
+      "ate": "20260810085000",
+      "allowlist": "scripts/audit/allowlist-trilha-a-20260810.json",
+      "divida": null
+    },
+    {
+      "nome": "votacoes-chave-v2-20260810",
+      "desde": "20260810090000",
+      "ate": "20260810090200",
+      "allowlist": "scripts/audit/allowlist-votacoes-chave-v2-20260810.json",
+      "divida": null
+    },
+    {
+      "nome": "patrimonio-rerun-20260810",
+      "desde": "20260810093000",
+      "ate": "20260810093000",
+      "allowlist": "scripts/audit/allowlist-patrimonio-rerun-20260810.json",
+      "divida": null
+    },
+    {
+      "nome": "daciolo-patrimonio-20260810",
+      "desde": "20260810094000",
+      "ate": "20260810094000",
+      "allowlist": "scripts/audit/allowlist-daciolo-patrimonio-20260810.json",
+      "divida": null
+    },
+    {
+      "nome": "financiamento-universo-20260810",
+      "desde": "20260810121000",
+      "ate": "20260810121000",
+      "allowlist": "scripts/audit/allowlist-financiamento-universo-20260810.json",
+      "divida": null
+    },
+    {
+      "nome": "processos-curadoria-djen-20260810",
+      "desde": "20260810122000",
+      "ate": "20260810122000",
+      "allowlist": "scripts/audit/allowlist-processos-curadoria-20260810.json",
+      "divida": null
+    },
+    {
+      "nome": "processos-curadoria-djen-66-20260810",
+      "desde": "20260810123000",
+      "ate": "20260810123000",
+      "allowlist": "scripts/audit/allowlist-processos-curadoria-66-20260810.json",
+      "divida": null
+    },
+    {
+      "nome": "destaques-trajetoria-tse-8-20260811",
+      "desde": "20260810124000",
+      "ate": "20260810124000",
+      "allowlist": "scripts/audit/allowlist-destaques-trajetoria-tse-8-20260811.json",
+      "divida": null
+    },
+    {
+      "nome": "votacoes-senado-exatas-20260811",
+      "desde": "20260811100000",
+      "ate": "20260811100000",
+      "allowlist": "scripts/audit/allowlist-votacoes-senado-exatas-20260811.json",
+      "divida": null
+    },
+    {
+      "nome": "destaques-estados-residuais-194-20260811",
+      "desde": "20260811101000",
+      "ate": "20260811101000",
+      "allowlist": "scripts/audit/allowlist-destaques-estados-residuais-194-20260811.json",
+      "divida": null
+    },
+    {
+      "nome": "historico-fontes-oficiais-cadu-cappelli-20260811",
+      "desde": "20260811101100",
+      "ate": "20260811101100",
+      "allowlist": "scripts/audit/allowlist-historico-fontes-oficiais-cadu-cappelli-20260811.json",
+      "divida": null
+    },
+    {
+      "nome": "processos-legados-fontes-oficiais-20260811",
+      "desde": "20260811101200",
+      "ate": "20260811101200",
+      "allowlist": "scripts/audit/allowlist-processos-legados-fontes-oficiais-20260811.json",
+      "divida": null
+    },
+    {
+      "nome": "integridade-identidade-timeline-5-20260811",
+      "desde": "20260811102000",
+      "ate": "20260811102100",
+      "allowlist": "scripts/audit/allowlist-integridade-identidade-timeline-5-20260811.json",
+      "divida": null
+    },
+    {
+      "nome": "orleans-destaques-proveniencia-20260812",
+      "desde": "20260812124000",
+      "ate": "20260812124000",
+      "allowlist": "scripts/audit/allowlist-orleans-destaques-proveniencia-20260812.json",
+      "divida": null
+    },
+    {
+      "nome": "orleans-chaves-canonicas-20260812",
+      "desde": "20260812125000",
+      "ate": "20260812125000",
+      "allowlist": "scripts/audit/allowlist-orleans-chaves-canonicas-20260812.json",
+      "divida": null
+    },
+    {
+      "nome": "presidenciaveis-13-convencoes-20260812",
+      "desde": "20260812130000",
+      "ate": "20260812130000",
+      "allowlist": "scripts/audit/allowlist-presidenciaveis-13-convencoes-20260812.json",
+      "divida": null
+    },
+    {
+      "nome": "chapas-tse-snapshot-20260812",
+      "desde": "20260813040100",
+      "ate": "20260813040100",
+      "allowlist": "scripts/audit/allowlist-chapas-tse-snapshot-20260812.json",
+      "divida": null
+    },
+    {
+      "nome": "chapas-2026-biografias-coerentes",
+      "desde": "20260813111700",
+      "ate": "20260813111700",
+      "allowlist": "scripts/audit/allowlist-chapas-2026-biografias-coerentes.json",
+      "divida": null
+    },
+    {
+      "nome": "creditos-fotos-20260815",
+      "desde": "20260815130100",
+      "ate": "20260815130100",
+      "allowlist": "scripts/audit/allowlist-creditos-fotos-20260815.json",
+      "divida": null
+    },
+    {
+      "nome": "patrimonio-presidenciaveis-20260815",
+      "desde": "20260815223000",
+      "ate": "20260815223000",
+      "allowlist": "scripts/audit/allowlist-patrimonio-presidenciaveis-20260815.json",
+      "divida": null
+    },
+    {
+      "nome": "patrimonio-onda-g-ac-20260816",
+      "desde": "20260816010000",
+      "ate": "20260816010000",
+      "allowlist": "scripts/audit/allowlist-patrimonio-onda-g-ac-20260816.json",
+      "divida": null
+    },
+    {
+      "nome": "chapas-pos-registro-20260816",
+      "desde": "20260816011000",
+      "ate": "20260816011000",
+      "allowlist": "scripts/audit/allowlist-chapas-pos-registro-20260816.json",
+      "divida": null
+    },
+    {
+      "nome": "patrimonio-nacional-20260816",
+      "desde": "20260816055200",
+      "ate": "20260816055200",
+      "allowlist": "scripts/audit/allowlist-patrimonio-nacional-20260816.json",
+      "divida": null
+    }
+  ],
+  "allowlists_sem_recorte": [
+    {
+      "allowlist": "scripts/audit/allowlist-presidenciaveis.json",
+      "motivo": "Nasceu em 7e2a19e sem nenhuma migration junto e nunca governou uma. Era o DEFAULT de check-migrations-allowlist.ts quando ninguém passava --allowlist, que é a razão de o comando pelado ser vermelho por construção: a allowlist padrão não tinha recorte, então toda escrita de todo recorte real caía como 'fora da coorte'. O default foi removido. O arquivo fica porque a coorte de 11 presidenciáveis e as 22 entradas continuam sendo a autorização de referência para um recorte que ainda pode ser aberto."
+    }
+  ]
+}

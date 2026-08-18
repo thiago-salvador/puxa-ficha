@@ -1,0 +1,45 @@
+{
+  "_comentario": "Seis claims judiciais legados sem numero/URL: cinco correcoes apoiadas por fonte oficial e uma despublicacao com bloqueio indeterminado. Aplicacao continua dependendo de autorizacao nominal.",
+  "recorte": "processos-legados-fontes-oficiais-20260811",
+  "migration": "20260811101200_processos_legados_fontes_oficiais.sql",
+  "fonte": "STF, TCU, TRE-SP, TSE e MPSP, URLs fechadas na migration",
+  "coorte": [
+    "felicio-ramuth",
+    "flavio-bolsonaro",
+    "haddad-gov-sp",
+    "tarcisio-gov-sp"
+  ],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [
+    {
+      "tabela": "processos",
+      "slug": "flavio-bolsonaro",
+      "campos": ["tipo", "tribunal", "numero_processo", "descricao", "status", "data_inicio", "data_decisao", "gravidade", "fonte", "url_fonte"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "tarcisio-gov-sp",
+      "campos": ["tipo", "tribunal", "numero_processo", "descricao", "status", "data_inicio", "data_decisao", "gravidade", "fonte", "url_fonte"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "haddad-gov-sp",
+      "campos": ["tipo", "tribunal", "numero_processo", "descricao", "status", "data_inicio", "data_decisao", "gravidade", "fonte", "url_fonte"],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "felicio-ramuth",
+      "campos": ["id", "candidato_id", "tipo", "tribunal", "numero_processo", "descricao", "status", "data_inicio", "data_decisao", "gravidade", "fonte", "url_fonte"],
+      "max_registros": 2
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "felicio-ramuth",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "executado_em", "execucao"],
+      "max_registros": 1
+    }
+  ]
+}

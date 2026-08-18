@@ -1,0 +1,1594 @@
+{
+  "versao": "2026-08-16",
+  "fonte": "TSE Dados Abertos bem_candidato_2026, snapshot 2026-08-15 19:35 BRT, SHA-256 db5b5a3e430670496aedb27a6dc9cd679117ff519f55222e8c70792faeca59c8",
+  "coorte": [
+    "acm-neto",
+    "adailton-furia",
+    "alan-rick",
+    "alexandre-kalil",
+    "alysson-bezerra",
+    "andre-marinho",
+    "araceli-lemos",
+    "aroldo-felix",
+    "arthur-henrique",
+    "ataides-oliveira",
+    "cabo-daciolo",
+    "carlos-machado",
+    "celina-leao",
+    "cicero-lucena",
+    "ciro-gomes-gov-ce",
+    "cleber-rabelo",
+    "clecio-luis",
+    "cleitinho",
+    "coronel-busnello",
+    "cyro-garcia",
+    "daniel-vilela",
+    "dario-barbosa",
+    "douglas-ruas",
+    "dr-furlan",
+    "eduardo-braide",
+    "eduardo-paes",
+    "eduardo-riedel",
+    "efraim-filho",
+    "elizeu-aguiar",
+    "elmano-de-freitas",
+    "emanuel-cacho",
+    "expedito-netto",
+    "fabio-mitidieri",
+    "fabio-trad",
+    "felipe-camarao",
+    "gabriel-azevedo",
+    "gabriel-souza",
+    "garotinho",
+    "gelson-merisio",
+    "geraldo-carvalho",
+    "guilherme-fonseca",
+    "gustavo-henrique",
+    "haddad-gov-sp",
+    "hana-ghassan",
+    "helder-salomao",
+    "hildon-chaves",
+    "indira-xavier",
+    "ivan-moraes",
+    "jeronimo",
+    "jhc",
+    "joao-henrique-catan",
+    "joel-rodrigues",
+    "jorginho-mello",
+    "jose-estevao",
+    "jose-roberto-arruda",
+    "juliana-brizola",
+    "laurez-moreira",
+    "leandro-grass",
+    "lenilda-luna",
+    "lourdes-melo",
+    "lucas-ribeiro",
+    "lucia-santos",
+    "luciano-zucco",
+    "lucien-rezende",
+    "luis-cesar-bueno",
+    "mailza-assis",
+    "marcelo-brigadeiro",
+    "marcelo-maranata",
+    "marconi-perillo",
+    "marcos-rogerio",
+    "marcus-sodre",
+    "maria-do-carmo",
+    "mateus-simoes",
+    "omar-aziz",
+    "otaviano-pivetta",
+    "patrus-ananias",
+    "paula-belmonte",
+    "pazolini",
+    "priscila-voigt",
+    "professora-dorinha",
+    "rafael-fonteles",
+    "ralf-zimmer",
+    "raquel-lyra",
+    "ravenna-castro",
+    "rejane-oliveira",
+    "renan-santos",
+    "requiao-filho",
+    "ricardo-ferraco",
+    "roberio-paulino",
+    "roberto-cidade",
+    "robson-raymundo",
+    "ronaldo-mansur",
+    "samara-mineiro",
+    "samuel-costa",
+    "sandro-alex",
+    "saulo-arcangeli",
+    "sergio-moro-gov-pr",
+    "serley-leal",
+    "tarcisio-gov-sp",
+    "thor-dantas",
+    "tiao-bocalom",
+    "valmir-de-francisquinho",
+    "vicentinho-junior",
+    "vivian-mendes",
+    "wellington-fagundes",
+    "wilder-morais",
+    "william-siri",
+    "ze-batista"
+  ],
+  "fora_por_construcao": {
+    "ja_carregados_pr203": [
+      "augusto-cury",
+      "clariana-barao",
+      "edmilson-costa",
+      "flavio-bolsonaro",
+      "lula",
+      "romeu-zema",
+      "ronaldo-caiado",
+      "samara-martins",
+      "wilson-grassi-junior"
+    ],
+    "sem_declaracao": [
+      "dr-luisinho",
+      "gilberto-vasconcelos",
+      "henrique-areas",
+      "hertz-dias",
+      "izadora-dias",
+      "jeferson-bezerra",
+      "jeremias-cosmo",
+      "juliete-pantoja",
+      "luan-monteiro",
+      "policial-edjane",
+      "rafael-duda",
+      "ricardo-marques",
+      "rui-costa-pimenta",
+      "tulio-lopes",
+      "vera-lucia"
+    ],
+    "identidade_excluida": [
+      "alexandre-salomao",
+      "alvaro-dias-rn",
+      "andre-luis",
+      "ariel-capistrano",
+      "arinalda-do-mlb",
+      "ben-mendes",
+      "breno-barcelar",
+      "camila-falcao",
+      "carlos-cley",
+      "david-almeida",
+      "dr-daniel",
+      "dr-helton-monteiro",
+      "du-pereira",
+      "elisson-ferreira",
+      "eudo-raffael",
+      "farah-mesquita",
+      "francisco-jurity",
+      "gisvaldo-oliveira",
+      "huggo-leonardo",
+      "joao-campos",
+      "joao-rodrigues",
+      "kiko-caputo",
+      "lais-chaud",
+      "laudicerio-aguiar",
+      "leonardo-avalanche",
+      "luiz-franca",
+      "mauricio-coelho",
+      "natasha-slhessarenko",
+      "orleans-brandao",
+      "pedro-abib",
+      "rafaell-milas",
+      "reginaldo-lima",
+      "renan-filho",
+      "renan-hallais",
+      "renato-gomes",
+      "ricardo-cappelli",
+      "rodrigo-bolsonaro",
+      "samuel-de-mattos",
+      "santiago-belizario",
+      "subtenente-luiz-carlos",
+      "witer-naves",
+      "yuri-ezequiel"
+    ]
+  },
+  "entries": [
+    {
+      "tabela": "patrimonio",
+      "slug": "acm-neto",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "adailton-furia",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "alan-rick",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "alexandre-kalil",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "alysson-bezerra",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "andre-marinho",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "araceli-lemos",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "aroldo-felix",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "arthur-henrique",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "ataides-oliveira",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "cabo-daciolo",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "carlos-machado",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "celina-leao",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "cicero-lucena",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "ciro-gomes-gov-ce",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "cleber-rabelo",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "clecio-luis",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "cleitinho",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "coronel-busnello",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "cyro-garcia",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "daniel-vilela",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "dario-barbosa",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "douglas-ruas",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "dr-furlan",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "eduardo-braide",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "eduardo-paes",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "eduardo-riedel",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "efraim-filho",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "elizeu-aguiar",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "elmano-de-freitas",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "emanuel-cacho",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "expedito-netto",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "fabio-mitidieri",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "fabio-trad",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "felipe-camarao",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "gabriel-azevedo",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "gabriel-souza",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "garotinho",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "gelson-merisio",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "geraldo-carvalho",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "guilherme-fonseca",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "gustavo-henrique",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "haddad-gov-sp",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "hana-ghassan",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "helder-salomao",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "hildon-chaves",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "indira-xavier",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "ivan-moraes",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "jeronimo",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "jhc",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "joao-henrique-catan",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "joel-rodrigues",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "jorginho-mello",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "jose-estevao",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "jose-roberto-arruda",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "juliana-brizola",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "laurez-moreira",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "leandro-grass",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "lenilda-luna",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "lourdes-melo",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "lucas-ribeiro",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "lucia-santos",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "luciano-zucco",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "lucien-rezende",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "luis-cesar-bueno",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "mailza-assis",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "marcelo-brigadeiro",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "marcelo-maranata",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "marconi-perillo",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "marcos-rogerio",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "marcus-sodre",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "maria-do-carmo",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "mateus-simoes",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "omar-aziz",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "otaviano-pivetta",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "patrus-ananias",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "paula-belmonte",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "pazolini",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "priscila-voigt",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "professora-dorinha",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "rafael-fonteles",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "ralf-zimmer",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "raquel-lyra",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "ravenna-castro",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "rejane-oliveira",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "renan-santos",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "requiao-filho",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "ricardo-ferraco",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "roberio-paulino",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "roberto-cidade",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "robson-raymundo",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "ronaldo-mansur",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "samara-mineiro",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "samuel-costa",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "sandro-alex",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "saulo-arcangeli",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "sergio-moro-gov-pr",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "serley-leal",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "tarcisio-gov-sp",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "thor-dantas",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "tiao-bocalom",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "valmir-de-francisquinho",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "vicentinho-junior",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "vivian-mendes",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "wellington-fagundes",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "wilder-morais",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "william-siri",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "ze-batista",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "valor_total",
+        "bens",
+        "fonte"
+      ]
+    }
+  ]
+}
