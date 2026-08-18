@@ -15,6 +15,33 @@ import { join, resolve } from "node:path"
 const raizRepo = resolve(process.cwd(), "..")
 const statusDir = join(raizRepo, "Status")
 
+/**
+ * ONDE ESTE CONTRATO VALE, e por que ele nao pode simplesmente reprovar fora dali.
+ *
+ * Ele guarda a camada normativa do repositorio de OPERACAO (`Status/`, `contratos/` e o
+ * README da raiz), que mora um nivel acima do app quando o app vive em `pf-16-08/app/`.
+ *
+ * Na migracao de 18/08/2026 o codigo passou a ser a RAIZ do repositorio publico
+ * `thiago-salvador/puxa-ficha`, e ali `cwd/..` nao e o repo de operacao, e sim a pasta do
+ * runner. A normativa legitimamente nao existe nesse contexto, e o teste quebrava com ENOENT
+ * em `/home/runner/work/puxa-ficha/README.md`.
+ *
+ * A saida NAO e afrouxar a assercao: onde a normativa existe, ela continua sendo cobrada
+ * inteira. O teste detecta o contexto e, quando roda fora do repo de operacao, diz isso em
+ * voz alta em vez de passar calado, para ninguem achar que o guarda esta ativo quando nao esta.
+ */
+const dentroDoRepoDeOperacao = existsSync(statusDir)
+
+function pularForaDaOperacao(t: { skip: (motivo: string) => void }): boolean {
+  if (dentroDoRepoDeOperacao) return false
+  t.skip(
+    "fora do repositorio de operacao: nao existe `Status/` acima de " +
+      process.cwd() +
+      ". Este contrato so vale no pf-16-08, onde a camada normativa mora."
+  )
+  return true
+}
+
 const documentosCanonicos = [
   "README.md",
   "REGRAS.md",
@@ -27,7 +54,8 @@ function ler(caminho: string): string {
   return readFileSync(caminho, "utf8")
 }
 
-test("Status expõe os documentos canônicos na ordem de leitura", () => {
+test("Status expõe os documentos canônicos na ordem de leitura", (t) => {
+  if (pularForaDaOperacao(t)) return
   for (const arquivo of documentosCanonicos) {
     assert.ok(
       existsSync(join(statusDir, arquivo)),
@@ -45,7 +73,8 @@ test("Status expõe os documentos canônicos na ordem de leitura", () => {
   }
 })
 
-test("a Regra 0 continua no topo de REGRAS.md", () => {
+test("a Regra 0 continua no topo de REGRAS.md", (t) => {
+  if (pularForaDaOperacao(t)) return
   const regras = ler(join(statusDir, "REGRAS.md"))
   assert.match(regras, /Regra 0/, "REGRAS.md perdeu a Regra 0")
   assert.match(
@@ -55,7 +84,8 @@ test("a Regra 0 continua no topo de REGRAS.md", () => {
   )
 })
 
-test("os contratos campo a campo existem e são referenciados por DADOS.md", () => {
+test("os contratos campo a campo existem e são referenciados por DADOS.md", (t) => {
+  if (pularForaDaOperacao(t)) return
   const contratosDir = join(raizRepo, "contratos")
   assert.ok(existsSync(contratosDir), "faltou a pasta contratos/")
 
@@ -63,7 +93,8 @@ test("os contratos campo a campo existem e são referenciados por DADOS.md", () 
   assert.match(dados, /contratos\//, "DADOS.md deixou de apontar para contratos/")
 })
 
-test("o README da raiz aponta para a camada normativa", () => {
+test("o README da raiz aponta para a camada normativa", (t) => {
+  if (pularForaDaOperacao(t)) return
   const readme = ler(join(raizRepo, "README.md"))
   assert.match(readme, /Status\/REGRAS\.md/, "README da raiz perdeu o ponteiro para as regras")
 })
