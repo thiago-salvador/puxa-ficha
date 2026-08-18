@@ -1,7 +1,7 @@
 import assert from "node:assert"
 import { test, describe } from "node:test"
 import { aggregatePlCountsByQuizEixo, mapProjetoTemaToQuizEixo } from "@/lib/quiz-tema-map"
-import { readFileSync } from "fs"
+import { existsSync, readFileSync } from "fs"
 
 function extractProjectIngestRow(content: string): string {
   const projectUpsertIndex = content.indexOf('.from("projetos_lei")')
@@ -442,8 +442,19 @@ describe("Projetos de lei contract", () => {
         "nenhum ramo pode converter falha em sucesso",
       )
 
-      // a camada normativa saiu de Settings/ para Status/, na raiz do repositorio
-      const status = readFileSync("../Status/ARQUITETURA.md", "utf-8")
+      // A camada normativa (Status/) mora no repositorio de OPERACAO, um nivel acima quando
+      // o app vive em pf-16-08/app/. Desde a migracao de 18/08/2026 o app tambem e a RAIZ do
+      // repositorio publico, e ali esse caminho legitimamente nao existe. Onde a normativa
+      // esta presente a assercao continua valendo inteira; onde nao esta, o teste diz isso
+      // em vez de quebrar com ENOENT.
+      const caminhoStatus = "../Status/ARQUITETURA.md"
+      if (!existsSync(caminhoStatus)) {
+        console.log(
+          "  (fora do repositorio de operacao: sem ../Status/, a checagem da normativa nao roda)"
+        )
+        return
+      }
+      const status = readFileSync(caminhoStatus, "utf-8")
       assert.match(
         status,
         /readback-fichas-camara\.ts/,

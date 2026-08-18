@@ -15,7 +15,7 @@ cron exigem autorização nomeada antes de executar.
 | Observabilidade | Sentry > Project Settings | DSN, organização, projeto e token de source maps | Confirmar no painel: Thiago |
 
 A lista canônica de nomes fica em [`.env.example`](../.env.example) e em
-[`Status/ARQUITETURA.md`](../../Status/ARQUITETURA.md), seções de automação e ambientes.
+`Status/ARQUITETURA.md`, no repositório de operação, seções de automação e ambientes.
 Nunca copiar valores para este arquivo, issue, log ou commit.
 
 ## 2. Ordem de reconstrução
@@ -51,7 +51,7 @@ Nunca copiar valores para este arquivo, issue, log ou commit.
    ```
 
    Aplicar somente migrations ausentes, na ordem, pelo procedimento autorizado
-   de [`Status/ARQUITETURA.md`](../../Status/ARQUITETURA.md), seção de banco. Não usar `db push`
+   de `Status/ARQUITETURA.md`, no repositório de operação, seção de banco. Não usar `db push`
    amplo para tentar corrigir divergência de ledger.
 4. **Recriar o projeto Vercel.** Importar `thiago-salvador/puxa-ficha-oss`, usar
    Next.js, Node 24.x e região `gru1`. Repor as variáveis pelo inventário acima,
@@ -62,7 +62,7 @@ Nunca copiar valores para este arquivo, issue, log ou commit.
    deploy exigem autorização nomeada.
 6. **Reativar GitHub Actions.** Repor os secrets, confirmar que os workflows
    estão ativos e conferir os agendamentos em
-   [`Status/ARQUITETURA.md`](../../Status/ARQUITETURA.md), seções de automação e ambientes.
+   `Status/ARQUITETURA.md`, no repositório de operação, seções de automação e ambientes.
    Não disparar ingest, revalidação ou cron de escrita como teste de conectividade.
 
 ## 3. Verificação final
