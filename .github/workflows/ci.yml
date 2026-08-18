@@ -180,15 +180,45 @@ jobs:
       # traz. O que muda e a resiliencia: cada tentativa morre em 6 min em vez
       # de pendurar ate os 25 do job, e tenta de novo, porque trava de apt e
       # transitoria.
+      # A causa raiz do travamento, achada no log de 18/08: o apt do runner tenta
+      # o mirror azure.archive.ubuntu.com, que responde Ign, e fica pendurado sem
+      # timeout. Com estes limites ele desiste do mirror morto em 15s e cai no
+      # archive.ubuntu.com, que responde.
+      - name: apt desiste rapido de mirror morto
+        run: |
+          sudo tee /etc/apt/apt.conf.d/99-timeout-curto >/dev/null <<'FIM'
+          Acquire::http::Timeout "15";
+          Acquire::https::Timeout "15";
+          Acquire::ftp::Timeout "15";
+          Acquire::Retries "2";
+          FIM
+
+      # WebKit e obrigatorio, nao escolha: o projeto `mobile` do
+      # playwright.config emula iPhone 14, e todo device iPhone do Playwright
+      # roda em WebKit. O --with-deps tambem fica, porque o WebKit depende de
+      # bibliotecas (libwoff, libhyphen, libmanette) que a imagem do runner nao
+      # traz.
+      #
+      # O `timeout` mata o processo pai, mas o apt-get NETO sobrevive segurando
+      # /var/lib/apt/lists/lock, e por isso a segunda tentativa morria em 2s com
+      # "Could not get lock ... held by process". Medido na primeira execucao
+      # desta mudanca. Por isso a limpeza entre tentativas.
       - name: Install Playwright browsers
         timeout-minutes: 14
         run: |
+          limpar_apt() {
+            sudo pkill -9 -f 'apt-get|dpkg' 2>/dev/null || true
+            sudo rm -f /var/lib/apt/lists/lock /var/cache/apt/archives/lock \
+                       /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend 2>/dev/null || true
+            sudo dpkg --configure -a 2>/dev/null || true
+          }
           for tentativa in 1 2; do
             if timeout 360 npx playwright install --with-deps chromium webkit; then
               exit 0
             fi
-            echo "::warning::tentativa $tentativa de instalar navegadores falhou ou travou em 6 min"
-            sleep 15
+            echo "::warning::tentativa $tentativa falhou ou travou em 6 min; limpando lock do apt"
+            limpar_apt
+            sleep 10
           done
           echo "::error::duas tentativas de instalar os navegadores falharam"
           exit 1
@@ -270,15 +300,45 @@ jobs:
       # traz. O que muda e a resiliencia: cada tentativa morre em 6 min em vez
       # de pendurar ate os 25 do job, e tenta de novo, porque trava de apt e
       # transitoria.
+      # A causa raiz do travamento, achada no log de 18/08: o apt do runner tenta
+      # o mirror azure.archive.ubuntu.com, que responde Ign, e fica pendurado sem
+      # timeout. Com estes limites ele desiste do mirror morto em 15s e cai no
+      # archive.ubuntu.com, que responde.
+      - name: apt desiste rapido de mirror morto
+        run: |
+          sudo tee /etc/apt/apt.conf.d/99-timeout-curto >/dev/null <<'FIM'
+          Acquire::http::Timeout "15";
+          Acquire::https::Timeout "15";
+          Acquire::ftp::Timeout "15";
+          Acquire::Retries "2";
+          FIM
+
+      # WebKit e obrigatorio, nao escolha: o projeto `mobile` do
+      # playwright.config emula iPhone 14, e todo device iPhone do Playwright
+      # roda em WebKit. O --with-deps tambem fica, porque o WebKit depende de
+      # bibliotecas (libwoff, libhyphen, libmanette) que a imagem do runner nao
+      # traz.
+      #
+      # O `timeout` mata o processo pai, mas o apt-get NETO sobrevive segurando
+      # /var/lib/apt/lists/lock, e por isso a segunda tentativa morria em 2s com
+      # "Could not get lock ... held by process". Medido na primeira execucao
+      # desta mudanca. Por isso a limpeza entre tentativas.
       - name: Install Playwright browsers
         timeout-minutes: 14
         run: |
+          limpar_apt() {
+            sudo pkill -9 -f 'apt-get|dpkg' 2>/dev/null || true
+            sudo rm -f /var/lib/apt/lists/lock /var/cache/apt/archives/lock \
+                       /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend 2>/dev/null || true
+            sudo dpkg --configure -a 2>/dev/null || true
+          }
           for tentativa in 1 2; do
             if timeout 360 npx playwright install --with-deps chromium webkit; then
               exit 0
             fi
-            echo "::warning::tentativa $tentativa de instalar navegadores falhou ou travou em 6 min"
-            sleep 15
+            echo "::warning::tentativa $tentativa falhou ou travou em 6 min; limpando lock do apt"
+            limpar_apt
+            sleep 10
           done
           echo "::error::duas tentativas de instalar os navegadores falharam"
           exit 1
