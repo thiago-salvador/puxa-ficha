@@ -1,0 +1,359 @@
+{
+  "resumo": {
+    "universo": {
+      "fichasPublicas": 194,
+      "fichasMedidas": 194
+    },
+    "defeito1_financiamento": {
+      "fichasQueAfirmamAusenciaSemVerificar": 0,
+      "fichasComPleitoDisputadoOmitido": 0,
+      "pleitosDisputadosOmitidos": 0,
+      "pleitosSemDadoNoUniverso": 295,
+      "pleitosSemDadoComEstadoExplicito": 295,
+      "ausenciasAfirmadas": 57,
+      "ausenciasAfirmadasComFonteEData": 57
+    },
+    "defeito2_judicial": {
+      "fichasComBuscaRegistradaSemProcesso": 185,
+      "fichasQueLeemNaoVerificadoMesmoAssim": 0
+    },
+    "porMotivo": {},
+    "casosNomeados": {
+      "joao-campos": {
+        "financiamento_no_banco": [
+          2020,
+          2014,
+          2010
+        ],
+        "pleitos_aplicaveis": [
+          2022,
+          2020,
+          2018,
+          2014,
+          2010,
+          2006,
+          2002
+        ],
+        "dom_publicados": [
+          2020,
+          2014,
+          2010
+        ],
+        "dom_estados": [
+          {
+            "ano": 2022,
+            "estado": "nao_coletado",
+            "fonte_e_data": false
+          },
+          {
+            "ano": 2018,
+            "estado": "nao_coletado",
+            "fonte_e_data": false
+          },
+          {
+            "ano": 2006,
+            "estado": "nao_coletado",
+            "fonte_e_data": false
+          },
+          {
+            "ano": 2002,
+            "estado": "nao_coletado",
+            "fonte_e_data": false
+          }
+        ],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:17.668822+00:00"
+        },
+        "legenda_processos": "identidade não confirmada",
+        "motivos": []
+      },
+      "jayme-campos": {
+        "financiamento_no_banco": [
+          2018,
+          2014
+        ],
+        "pleitos_aplicaveis": [
+          2018,
+          2014,
+          2006,
+          2000
+        ],
+        "dom_publicados": [
+          2018,
+          2014
+        ],
+        "dom_estados": [
+          {
+            "ano": 2006,
+            "estado": "nao_coletado",
+            "fonte_e_data": false
+          },
+          {
+            "ano": 2000,
+            "estado": "fora_da_serie_oficial",
+            "fonte_e_data": true
+          }
+        ],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:17.421221+00:00"
+        },
+        "legenda_processos": "identidade não confirmada",
+        "motivos": []
+      },
+      "flavio-bolsonaro": {
+        "financiamento_no_banco": [
+          2018,
+          2016,
+          2014,
+          2010,
+          2006
+        ],
+        "pleitos_aplicaveis": [
+          2018,
+          2016,
+          2014,
+          2010,
+          2006,
+          2002
+        ],
+        "dom_publicados": [
+          2018,
+          2016,
+          2014,
+          2010,
+          2006
+        ],
+        "dom_estados": [
+          {
+            "ano": 2002,
+            "estado": "nao_coletado",
+            "fonte_e_data": false
+          }
+        ],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": null,
+        "legenda_processos": null,
+        "motivos": []
+      },
+      "marcelo-maranata": {
+        "financiamento_no_banco": [
+          2020,
+          2018,
+          2012
+        ],
+        "pleitos_aplicaveis": [
+          2020,
+          2018,
+          2016,
+          2012
+        ],
+        "dom_publicados": [
+          2020,
+          2018,
+          2012
+        ],
+        "dom_estados": [
+          {
+            "ano": 2016,
+            "estado": "nao_coletado",
+            "fonte_e_data": false
+          }
+        ],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:18.345566+00:00"
+        },
+        "legenda_processos": "identidade não confirmada",
+        "motivos": []
+      },
+      "rui-costa-pimenta": {
+        "financiamento_no_banco": [
+          2014,
+          2010,
+          2006
+        ],
+        "pleitos_aplicaveis": [
+          2014,
+          2010,
+          2006,
+          2002,
+          2000,
+          1998,
+          1996
+        ],
+        "dom_publicados": [
+          2014,
+          2010,
+          2006
+        ],
+        "dom_estados": [
+          {
+            "ano": 2002,
+            "estado": "nao_coletado",
+            "fonte_e_data": false
+          },
+          {
+            "ano": 2000,
+            "estado": "fora_da_serie_oficial",
+            "fonte_e_data": true
+          },
+          {
+            "ano": 1998,
+            "estado": "fora_da_serie_oficial",
+            "fonte_e_data": true
+          },
+          {
+            "ano": 1996,
+            "estado": "fora_da_serie_oficial",
+            "fonte_e_data": true
+          }
+        ],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:14.782137+00:00"
+        },
+        "legenda_processos": "identidade não confirmada",
+        "motivos": []
+      },
+      "samara-martins": {
+        "financiamento_no_banco": [
+          2020
+        ],
+        "pleitos_aplicaveis": [
+          2022,
+          2020
+        ],
+        "dom_publicados": [
+          2020
+        ],
+        "dom_estados": [
+          {
+            "ano": 2022,
+            "estado": "nao_coletado",
+            "fonte_e_data": false
+          }
+        ],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:14.911728+00:00"
+        },
+        "legenda_processos": "identidade não confirmada",
+        "motivos": []
+      },
+      "edmilson-costa": {
+        "financiamento_no_banco": [
+          2008
+        ],
+        "pleitos_aplicaveis": [
+          2014,
+          2010,
+          2008
+        ],
+        "dom_publicados": [
+          2008
+        ],
+        "dom_estados": [
+          {
+            "ano": 2014,
+            "estado": "nao_coletado",
+            "fonte_e_data": false
+          },
+          {
+            "ano": 2010,
+            "estado": "nao_coletado",
+            "fonte_e_data": false
+          }
+        ],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:14.010238+00:00"
+        },
+        "legenda_processos": "identidade não confirmada",
+        "motivos": []
+      },
+      "cabo-daciolo": {
+        "financiamento_no_banco": [
+          2022,
+          2018,
+          2014
+        ],
+        "pleitos_aplicaveis": [
+          2022,
+          2018,
+          2014,
+          2008,
+          2006
+        ],
+        "dom_publicados": [
+          2022,
+          2018,
+          2014
+        ],
+        "dom_estados": [
+          {
+            "ano": 2008,
+            "estado": "nao_coletado",
+            "fonte_e_data": false
+          },
+          {
+            "ano": 2006,
+            "estado": "nao_coletado",
+            "fonte_e_data": false
+          }
+        ],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:13.702258+00:00"
+        },
+        "legenda_processos": "identidade não confirmada",
+        "motivos": []
+      },
+      "raquel-lyra": {
+        "financiamento_no_banco": [
+          2022,
+          2020,
+          2014,
+          2010
+        ],
+        "pleitos_aplicaveis": [
+          2022,
+          2020,
+          2016,
+          2014,
+          2010
+        ],
+        "dom_publicados": [
+          2022,
+          2020,
+          2014,
+          2010
+        ],
+        "dom_estados": [
+          {
+            "ano": 2016,
+            "estado": "nao_coletado",
+            "fonte_e_data": false
+          }
+        ],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:19.0385+00:00"
+        },
+        "legenda_processos": "identidade não confirmada",
+        "motivos": []
+      }
+    },
+    "fichasAfetadas": []
+  },
+  "defeitos": []
+}

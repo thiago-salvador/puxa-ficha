@@ -1,0 +1,87 @@
+name: Replay real de migrations
+
+# O gate estático de tests/migrations-classificacao.test.ts congela o CONJUNTO
+# de quebras que o classificador PREVÊ, mas previsão estática não executa SQL:
+# uma migration com FK para tabela inexistente classifica como schema/replicavel
+# e ainda assim derruba o Postgres no replay (rodada 3 da vistoria dos PRs
+# #141/#142). Este workflow fecha esse buraco rodando o replay REAL, migration a
+# migration, num Postgres 17 descartável dentro do runner.
+#
+# O veredito não é "não falhou": é comparação de CONJUNTO. O modo --gate roda o
+# replay linear tolerante e confere as falhas reais contra o manifesto congelado
+# em scripts/audit/falhas-replay-linear.json. Falha NOVA reprova em qualquer
+# posição, inclusive depois da 179ª, que um replay estrito nunca alcançaria;
+# falha que sumiu também reprova, até alguém regenerar o manifesto
+# deliberadamente no mesmo PR (conserto sem re-medição é medição mentindo).
+#
+# Roda em pull_request sem risco: não usa secret nenhum, não toca produção, o
+# Postgres nasce e morre no runner. Só dispara quando migrations ou o próprio
+# harness mudam, porque o replay completo custa alguns minutos.
+
+on:
+  pull_request:
+    paths:
+      - "supabase/migrations/**"
+      - "supabase/readback/**"
+      - "scripts/audit/replay-migrations.sh"
+      - "scripts/audit/classificar-migrations.ts"
+      - "scripts/audit/lib/migrations-classificacao.ts"
+      - "scripts/audit/lib/comparar-dumps.py"
+      - "scripts/audit/falhas-replay-linear.json"
+      - "scripts/audit/quebras-previstas.json"
+      - "scripts/audit/provar-*.sh"
+      - "scripts/gerar-migration-processos-curadoria.ts"
+      - "scripts/gerar-proposta-processos-judiciais-66.ts"
+      - "QA/evidencias/2026-08-10-item2-judicial/**"
+      - "tests/release-operational-artifacts.test.ts"
+      - "supabase/rollback/**"
+      - ".github/workflows/replay-migrations.yml"
+      # Dependencias tambem sao entrada do gate (rodada 4 da vistoria): o job
+      # roda npm ci, entao lockfile novo muda o que executa o replay.
+      - "package.json"
+      - "package-lock.json"
+  push:
+    branches: [main]
+    paths:
+      - "supabase/migrations/**"
+      - "supabase/readback/**"
+      - "supabase/rollback/**"
+      - "scripts/audit/provar-*.sh"
+      - "scripts/audit/falhas-replay-linear.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  replay-gate:
+    name: Gate de replay (conjunto de falhas congelado)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # O job nao faz operacao git autenticada depois do checkout, e roda
+          # npm ci sobre conteudo do PR: credencial persistida no runner seria
+          # superficie gratuita (rodada 4 da vistoria).
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Replay linear real contra o manifesto
+        run: bash scripts/audit/replay-migrations.sh --gate
+
+      - name: Replay integral do schema separado
+        run: bash scripts/audit/replay-migrations.sh --schema-gate
+
+      # Contratos de migration não são provados por asserção textual. O gate
+      # agrega as mutações adversariais das 19 migrations, serialmente, em bancos
+      # PostgreSQL 17 efêmeros e sem conexão ou segredo de produção.
+      - name: Contratos operacionais das 19 migrations em PostgreSQL 17
+        run: bash scripts/audit/provar-release-pf-ajustes-pg17.sh

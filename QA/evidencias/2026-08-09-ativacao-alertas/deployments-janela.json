@@ -1,0 +1,151 @@
+{
+  "fonte": "Vercel REST API, somente leitura: GET /v6/deployments e GET /v13/deployments/{id}",
+  "coletado_em": "2026-08-09T21:40Z (recoleta para o head 4f9b6a0)",
+  "janela": "2026-08-09T21:10:00Z a 2026-08-09T22:00:00Z",
+  "total_deployments_na_janela": 10,
+  "total_production_na_janela": 5,
+  "regra_de_selecao_do_ato": "target == 'production' AND source == 'cli' AND meta.action == 'redeploy' AND meta.originalDeploymentId != null",
+  "justificativa_da_regra": "Os tres deployments do ato foram criados por 'vercel redeploy' a partir do CLI, e a API marca isso em tres campos independentes: source 'cli', meta.action 'redeploy' e meta.originalDeploymentId apontando para o deployment reaproveitado. Os demais deployments de producao da janela nasceram de push no Git e trazem source 'git', sem action e sem originalDeploymentId. A regra e aplicavel por terceiro sobre este arquivo e nao depende de horario nem de ordem.",
+  "selecionados_pela_regra": [
+    "dpl_bFcFvcEGFtmA16XxAvWDkAW4Hot8",
+    "dpl_6fHn3Req3Zgm5E4cWaPnViQpuWPG",
+    "dpl_4WhsmgnU7hL9sLMFP41eDLetDuqq"
+  ],
+  "total_selecionados": 3,
+  "cadeia_de_redeploy": [
+    {
+      "deployment": "dpl_bFcFvcEGFtmA16XxAvWDkAW4Hot8",
+      "redeploy_de": "dpl_GmZwhzpHva9Gd93uBWeH3UsLzs6q"
+    },
+    {
+      "deployment": "dpl_6fHn3Req3Zgm5E4cWaPnViQpuWPG",
+      "redeploy_de": "dpl_bFcFvcEGFtmA16XxAvWDkAW4Hot8"
+    },
+    {
+      "deployment": "dpl_4WhsmgnU7hL9sLMFP41eDLetDuqq",
+      "redeploy_de": "dpl_6fHn3Req3Zgm5E4cWaPnViQpuWPG"
+    }
+  ],
+  "deployments": [
+    {
+      "id": "dpl_bFcFvcEGFtmA16XxAvWDkAW4Hot8",
+      "criadoEm": "2026-08-09T21:14:16.574Z",
+      "url": "puxa-ficha-r55omsbei-thiagosalvador.vercel.app",
+      "target": "production",
+      "readyState": "READY",
+      "source": "cli",
+      "commitSha": "a1ffde9849850000d0974886b7eff53ff03fe8b1",
+      "commitRef": "main",
+      "meta_action": "redeploy",
+      "meta_originalDeploymentId": "dpl_GmZwhzpHva9Gd93uBWeH3UsLzs6q"
+    },
+    {
+      "id": "dpl_ABhnQHWJjuHoBW6gcs9pgHAVaqqF",
+      "criadoEm": "2026-08-09T21:14:36.862Z",
+      "url": "puxa-ficha-1e5nnliwu-thiagosalvador.vercel.app",
+      "target": null,
+      "readyState": "READY",
+      "source": "git",
+      "commitSha": "932b56a7f0ba387a7c4ec0c9013439635d5b7727",
+      "commitRef": "claude/distracted-wozniak-5a5482",
+      "meta_action": null,
+      "meta_originalDeploymentId": null
+    },
+    {
+      "id": "dpl_6fHn3Req3Zgm5E4cWaPnViQpuWPG",
+      "criadoEm": "2026-08-09T21:25:54.459Z",
+      "url": "puxa-ficha-b4lhj6rja-thiagosalvador.vercel.app",
+      "target": "production",
+      "readyState": "READY",
+      "source": "cli",
+      "commitSha": "a1ffde9849850000d0974886b7eff53ff03fe8b1",
+      "commitRef": "main",
+      "meta_action": "redeploy",
+      "meta_originalDeploymentId": "dpl_bFcFvcEGFtmA16XxAvWDkAW4Hot8"
+    },
+    {
+      "id": "dpl_4WhsmgnU7hL9sLMFP41eDLetDuqq",
+      "criadoEm": "2026-08-09T21:28:25.260Z",
+      "url": "puxa-ficha-ehpthm7w4-thiagosalvador.vercel.app",
+      "target": "production",
+      "readyState": "READY",
+      "source": "cli",
+      "commitSha": "a1ffde9849850000d0974886b7eff53ff03fe8b1",
+      "commitRef": "main",
+      "meta_action": "redeploy",
+      "meta_originalDeploymentId": "dpl_6fHn3Req3Zgm5E4cWaPnViQpuWPG"
+    },
+    {
+      "id": "dpl_377GZo5A5qcz3BvgTV2Em3rT15AS",
+      "criadoEm": "2026-08-09T21:29:54.504Z",
+      "url": "puxa-ficha-nve995qen-thiagosalvador.vercel.app",
+      "target": null,
+      "readyState": "READY",
+      "source": "git",
+      "commitSha": "eca33b12395503107af24be1e652b857ac269f17",
+      "commitRef": "claude/distracted-wozniak-5a5482",
+      "meta_action": null,
+      "meta_originalDeploymentId": null
+    },
+    {
+      "id": "dpl_EcjPwQco4oQJk5aCQRm7sC19VnkX",
+      "criadoEm": "2026-08-09T21:30:37.125Z",
+      "url": "puxa-ficha-c5l3nnran-thiagosalvador.vercel.app",
+      "target": null,
+      "readyState": "READY",
+      "source": "git",
+      "commitSha": "b9fa246cdd6be0f9334af64403fb43676d73f156",
+      "commitRef": "feat/chave-independente-e-frescor-por-ultima-verificacao",
+      "meta_action": null,
+      "meta_originalDeploymentId": null
+    },
+    {
+      "id": "dpl_94E58qtV48mXJa9Yfa495TZ1SaK1",
+      "criadoEm": "2026-08-09T21:38:41.066Z",
+      "url": "puxa-ficha-6ln7oxxof-thiagosalvador.vercel.app",
+      "target": "production",
+      "readyState": "READY",
+      "source": "git",
+      "commitSha": "208c3e909b44adfd400e7c7ccb5516cc6cf80251",
+      "commitRef": "main",
+      "meta_action": null,
+      "meta_originalDeploymentId": null
+    },
+    {
+      "id": "dpl_C4rePke2TrfouZzq3JGg7u5sqYVm",
+      "criadoEm": "2026-08-09T21:42:37.410Z",
+      "url": "puxa-ficha-6rzdd6dmz-thiagosalvador.vercel.app",
+      "target": null,
+      "readyState": "READY",
+      "source": "git",
+      "commitSha": "358daa43956ae89762994b19828f0f9d31dbf0ea",
+      "commitRef": "feat/chave-independente-e-frescor-por-ultima-verificacao",
+      "meta_action": null,
+      "meta_originalDeploymentId": null
+    },
+    {
+      "id": "dpl_HG4fyqpe4urjqpcUEUzt8bzmiod5",
+      "criadoEm": "2026-08-09T21:44:40.235Z",
+      "url": "puxa-ficha-8f1hdiyt8-thiagosalvador.vercel.app",
+      "target": null,
+      "readyState": "READY",
+      "source": "git",
+      "commitSha": "64d7d6e79f603d9d0d03e3ea146e2bdda8d0f03c",
+      "commitRef": "feat/chave-independente-e-frescor-por-ultima-verificacao",
+      "meta_action": null,
+      "meta_originalDeploymentId": null
+    },
+    {
+      "id": "dpl_FjUMRAJXppBCpDtTqwbbuVVD49G5",
+      "criadoEm": "2026-08-09T21:53:40.115Z",
+      "url": "puxa-ficha-djgrkawii-thiagosalvador.vercel.app",
+      "target": "production",
+      "readyState": "READY",
+      "source": "git",
+      "commitSha": "0b08a3b6e763be3cf438f45553062dd57f30244b",
+      "commitRef": "main",
+      "meta_action": null,
+      "meta_originalDeploymentId": null
+    }
+  ]
+}

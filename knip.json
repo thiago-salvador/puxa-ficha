@@ -1,0 +1,24 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "entry": [
+    "sentry.*.config.ts",
+    "playwright*.config.ts",
+    "src/app/**/*.{ts,tsx}",
+    "scripts/*.ts",
+    "scripts/audit/*.ts",
+    "tests/**/*.test.{ts,tsx}",
+    "tests/visual/**/*.spec.ts"
+  ],
+  "project": [
+    "src/**/*.{ts,tsx}",
+    "scripts/**/*.ts",
+    "tests/**/*.{ts,tsx}",
+    "*.config.{ts,mjs,js}"
+  ],
+  "ignore": [],
+  "ignoreIssues": {
+    "scripts/lib/**": ["exports"],
+    "scripts/audit/lib/**": ["exports"]
+  },
+  "ignoreDependencies": ["fallow", "shadcn", "tailwindcss"]
+}

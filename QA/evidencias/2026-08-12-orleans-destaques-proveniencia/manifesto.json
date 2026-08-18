@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "causa": "O split da identidade 20260811102100 criou uma nova pessoa pública depois da carga global 20260811101000; por isso as cinco células nasceram sem proveniência.",
+  "candidato": {
+    "id": "b6e8c205-a2b7-4a26-9b65-e7a3b3b2f601",
+    "slug": "orleans-brandao",
+    "nome_completo": "Carlos Orleans Braide Brandão",
+    "data_nascimento": "1994-12-08"
+  },
+  "dependencia": {
+    "migration": "20260811102100",
+    "evidencia": "QA/evidencias/2026-08-11-integridade-identidade-timeline-5/resumo.json"
+  },
+  "celulas": [
+    {
+      "fonte": "destaques-sancoes",
+      "resultado": "indeterminado",
+      "tentativa_executada": false,
+      "detalhe": "CPF validado não está disponível para atribuir com segurança a consulta nominal nas bases federais de sanções; nenhuma ausência foi inferida.",
+      "url": null
+    },
+    {
+      "fonte": "destaques-processos",
+      "resultado": "indeterminado",
+      "tentativa_executada": false,
+      "detalhe": "Não há manifesto judicial nominal aprovado para esta identidade; processos do governador homônimo não foram transferidos e nenhuma ausência foi inferida.",
+      "url": null
+    },
+    {
+      "fonte": "destaques-trajetoria",
+      "resultado": "sem_achado_no_escopo",
+      "tentativa_executada": true,
+      "detalhe": "Consulta oficial TSE 2026 executada por SQ_CANDIDATO, UF, cargo, nome e nascimento; o resultado #NULO ancora a identidade, mas não comprova mandato nem candidatura registrada ou deferida.",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip"
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "resultado": "indeterminado",
+      "tentativa_executada": false,
+      "detalhe": "O registro TSE #NULO não autoriza atribuir bens ou declaração negativa a esta identidade; nenhum patrimônio do governador homônimo foi transferido.",
+      "url": null
+    },
+    {
+      "fonte": "destaques-votacoes",
+      "resultado": "indeterminado",
+      "tentativa_executada": false,
+      "detalhe": "Não há identificador parlamentar federal versionado para consulta nominal; nenhuma votação do governador homônimo foi transferida e nenhum vazio foi inferido.",
+      "url": null
+    }
+  ]
+}

@@ -1,0 +1,1008 @@
+{
+  "resumo": {
+    "fichas": 194,
+    "antes": {
+      "comConteudo": 60,
+      "vazias": 134
+    },
+    "depois": {
+      "comConteudo": 162,
+      "vaziasPorAusenciaConfirmada": 0,
+      "vaziasPorFaltaDeVerificacao": 32
+    },
+    "fichasQueGanharamConteudoReal": 102,
+    "modo": "banco-atual",
+    "estadosPorFonte": {
+      "sancoes": {
+        "vazio_confirmado": 163,
+        "tem_conteudo": 1,
+        "nao_foi_possivel_verificar": 30
+      },
+      "processos": {
+        "nao_foi_possivel_verificar": 169,
+        "tem_conteudo": 9,
+        "vazio_confirmado": 16
+      },
+      "trajetoria": {
+        "nunca_verificado": 88,
+        "tem_conteudo": 106
+      },
+      "patrimonio": {
+        "tem_conteudo": 158,
+        "nunca_verificado": 29,
+        "vazio_confirmado": 7
+      },
+      "votacoes": {
+        "nunca_verificado": 159,
+        "tem_conteudo": 35
+      }
+    },
+    "fichasVazias": [
+      "ben-mendes",
+      "samara-mineiro",
+      "natasha-slhessarenko",
+      "luiz-franca",
+      "witer-naves",
+      "andre-luis",
+      "dr-helton-monteiro",
+      "andre-marinho",
+      "jose-estevao",
+      "huggo-leonardo",
+      "elisson-ferreira",
+      "carlos-machado",
+      "breno-barcelar",
+      "dr-luisinho",
+      "jarbas-soares",
+      "eudo-raffael",
+      "jarir-pereira",
+      "renato-gomes",
+      "henrique-areas",
+      "kiko-caputo",
+      "pedro-abib",
+      "camila-falcao",
+      "lais-chaud",
+      "luan-monteiro",
+      "renan-hallais",
+      "gisvaldo-oliveira",
+      "izadora-dias",
+      "rafaell-milas",
+      "augusto-cury",
+      "yuri-ezequiel",
+      "francisco-jurity",
+      "preta-lu"
+    ],
+    "fichasVaziasDetalhe": [
+      {
+        "slug": "ben-mendes",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "samara-mineiro",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "vazio_confirmado"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "natasha-slhessarenko",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "luiz-franca",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "witer-naves",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "andre-luis",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "dr-helton-monteiro",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "andre-marinho",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "vazio_confirmado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "jose-estevao",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "vazio_confirmado"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "huggo-leonardo",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "elisson-ferreira",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "carlos-machado",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "breno-barcelar",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "dr-luisinho",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "vazio_confirmado"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "vazio_confirmado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "jarbas-soares",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "eudo-raffael",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "jarir-pereira",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "renato-gomes",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "henrique-areas",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "vazio_confirmado"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "vazio_confirmado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "kiko-caputo",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "pedro-abib",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "camila-falcao",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "lais-chaud",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "luan-monteiro",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "vazio_confirmado"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "vazio_confirmado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "renan-hallais",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "gisvaldo-oliveira",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "izadora-dias",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "vazio_confirmado"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "vazio_confirmado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "rafaell-milas",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "augusto-cury",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "yuri-ezequiel",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "francisco-jurity",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      },
+      {
+        "slug": "preta-lu",
+        "fontes": [
+          {
+            "chave": "sancoes",
+            "estado": "vazio_confirmado"
+          },
+          {
+            "chave": "processos",
+            "estado": "nao_foi_possivel_verificar"
+          },
+          {
+            "chave": "trajetoria",
+            "estado": "nunca_verificado"
+          },
+          {
+            "chave": "patrimonio",
+            "estado": "vazio_confirmado"
+          },
+          {
+            "chave": "votacoes",
+            "estado": "nunca_verificado"
+          }
+        ]
+      }
+    ],
+    "itensPorFonte": {
+      "pontos_atencao": 97,
+      "sancoes": 2,
+      "processos": 12,
+      "mandatos": 423,
+      "patrimonio": 505,
+      "votacoes": 110
+    },
+    "fichasComAlgumItemPorFonte": {
+      "pontos_atencao": 60,
+      "sancoes": 1,
+      "processos": 9,
+      "mandatos": 106,
+      "patrimonio": 158,
+      "votacoes": 35
+    },
+    "provaDom": {
+      "fichasRenderizadas": 194,
+      "divergencias": 0,
+      "exemplos": []
+    },
+    "provaProveniencia": {
+      "mandatosPromovidos": 423,
+      "comColunaPersistidaNula": 11,
+      "cardsSemProvenienciaEfetiva": 0,
+      "fichasAfetadas": []
+    }
+  },
+  "ganharam": [
+    "vivian-mendes",
+    "serley-leal",
+    "eduardo-braide",
+    "gelson-merisio",
+    "cintia-dias",
+    "pazolini",
+    "joao-campos",
+    "ravenna-castro",
+    "ricardo-cappelli",
+    "luciana-gurgel",
+    "marcelo-maluf",
+    "rafael-duda",
+    "ze-coca",
+    "tulio-lopes",
+    "alan-rick",
+    "telemaco-brandao",
+    "ismar-marques",
+    "cleber-rabelo",
+    "jeferson-bezerra",
+    "coronel-busnello",
+    "patrus-ananias",
+    "marcus-sodre",
+    "vera-lucia",
+    "jeremias-cosmo",
+    "alex-pucineli",
+    "ricardo-marques",
+    "gabriel-azevedo",
+    "vittorio-medioli",
+    "helder-salomao",
+    "lenilda-luna",
+    "jayme-campos",
+    "santiago-belizario",
+    "cyro-garcia",
+    "dario-barbosa",
+    "aroldo-felix",
+    "requiao-filho",
+    "sandro-alex",
+    "lourdes-melo",
+    "saulo-arcangeli",
+    "celina-leao",
+    "gilberto-vasconcelos",
+    "laudicerio-aguiar",
+    "roberio-paulino",
+    "priscila-felizola",
+    "araceli-lemos",
+    "larissa-rosado",
+    "hildon-chaves",
+    "indira-xavier",
+    "expedito-netto",
+    "professora-dorinha",
+    "joao-rodrigues",
+    "baba",
+    "naf-nascimento",
+    "alessandra-campelo",
+    "amelio-cayres",
+    "gustavo-henrique",
+    "lucia-santos",
+    "emanuel-cacho",
+    "luciano-zucco",
+    "luiz-carlos-teodoro",
+    "catherine-teles",
+    "alysson-bezerra",
+    "washington-bandeira",
+    "roberto-cidade",
+    "juliete-pantoja",
+    "thor-dantas",
+    "lucien-rezende",
+    "mauricio-coelho",
+    "luis-cesar-bueno",
+    "leandro-grass",
+    "marcelo-brigadeiro",
+    "elizeu-aguiar",
+    "paula-belmonte",
+    "samuel-costa",
+    "geraldo-carvalho",
+    "ralf-zimmer",
+    "ze-batista",
+    "mailza-assis",
+    "olimpio-rocha",
+    "guilherme-fonseca",
+    "rejane-oliveira",
+    "vicentinho-junior",
+    "wilder-morais",
+    "priscila-voigt",
+    "prof-meire-reis",
+    "william-siri",
+    "ricardo-leite",
+    "marcelo-maranata",
+    "rui-costa-pimenta",
+    "elmano-de-freitas",
+    "daniela-paiva",
+    "mateus-simoes",
+    "prof-enfermeira-kaelly",
+    "robson-raymundo",
+    "eduardo-girao",
+    "otaviano-pivetta",
+    "fabio-trad",
+    "edmilson-costa",
+    "edegar-pretto",
+    "felipe-camarao",
+    "ivan-moraes",
+    "joel-rodrigues"
+  ]
+}

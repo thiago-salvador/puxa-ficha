@@ -1,0 +1,91 @@
+{
+  "versao": "2026-08-15",
+  "fonte": "TSE Dados Abertos bem_candidato_2026, snapshot 2026-08-15 16:35 BRT, SHA-256 960b8d054eaf045e2d424eaf86787c1eb547c73dc7ed2d1c9525199d7e9240a1",
+  "coorte": [
+    "samara-martins",
+    "renan-filho",
+    "wilson-grassi-junior",
+    "clariana-barao",
+    "romeu-zema",
+    "ronaldo-caiado",
+    "edmilson-costa",
+    "flavio-bolsonaro",
+    "lula",
+    "augusto-cury"
+  ],
+  "fora_por_construcao": {
+    "slugs": ["hertz-dias", "rui-costa-pimenta", "leonardo-avalanche"]
+  },
+  "entries": [
+    {
+      "tabela": "patrimonio",
+      "slug": "samara-martins",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "renan-filho",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "wilson-grassi-junior",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "clariana-barao",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "romeu-zema",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "ronaldo-caiado",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "edmilson-costa",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "flavio-bolsonaro",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "lula",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "augusto-cury",
+      "ano": 2026,
+      "max_registros": 1,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"]
+    }
+  ]
+}

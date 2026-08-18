@@ -1,0 +1,762 @@
+-- 20260810123000_processos_curadoria_djen_66.sql
+-- APROVADO EDITORIALMENTE EM 2026-08-11, NAO APLICADO.
+CREATE TEMP TABLE _pf_processos_curadoria_66 (
+  slug text NOT NULL,
+  tipo text NOT NULL,
+  tribunal text NOT NULL,
+  numero_cnj text PRIMARY KEY,
+  descricao text NOT NULL,
+  status text NOT NULL,
+  fonte text NOT NULL,
+  url_fonte text NOT NULL
+) ON COMMIT DROP;
+
+INSERT INTO _pf_processos_curadoria_66
+  (slug, tipo, tribunal, numero_cnj, descricao, status, fonte, url_fonte)
+VALUES
+    ('augusto-cury', 'civil', 'STJ / TJDFT', '0709932-06.2017.8.07.0001', 'O DJEN registra comunicação processual oficial no processo 0709932-06.2017.8.07.0001, nas classes AGRAVO DE INSTRUMENTO EM RECURSO ESPECIAL; AGRAVO EM RECURSO ESPECIAL; AGRAVO INTERNO CíVEL; APELAçãO CíVEL; EMBARGOS DE DECLARAçãO CíVEL; PROCEDIMENTO COMUM CíVEL; RECURSO ESPECIAL, perante 1ª Vara Cível de Brasília; 6ª Turma Cível; COORDENADORIA DE CLASSIFICAÇÃO E DISTRIBUIÇÃO DE PROCESSOS; Gabinete da Desa. Soníria Rocha Campos D''Assunção; Presidência do Tribunal; SPF COORDENADORIA DE PROCESSAMENTO DE FEITOS DE DIREITO PRIVADO (STJ, TJDFT). O candidato consta nos polos passivo. As comunicações Edital; Intimação foram disponibilizadas entre 2023-10-19 e 2026-07-24. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0709932-06.2017.8.07.0001&pagina=1'),
+    ('renan-santos', 'civil', 'PJeCor', '0000349-29.2026.2.00.0515', 'O DJEN registra comunicação processual oficial no processo 0000349-29.2026.2.00.0515, nas classes RECLAMAÇÃO DISCIPLINAR, perante Corregedoria Regional de Justiça do Trabalho da 15ª Região (PJeCor). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2026-06-30 e 2026-06-30. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0000349-29.2026.2.00.0515&pagina=1'),
+    ('renan-santos', 'civil', 'TRE-PR', '0600089-03.2025.6.16.0144', 'O DJEN registra comunicação processual oficial no processo 0600089-03.2025.6.16.0144, nas classes LISTA DE APOIAMENTO PARA CRIAçãO DE PARTIDO POLíTICO, perante 144ª ZONA ELEITORAL DE FAZENDA RIO GRANDE PR (TRE-PR). O candidato consta nos polos ativo. As comunicações Edital foram disponibilizadas entre 2025-09-23 e 2025-09-23. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0600089-03.2025.6.16.0144&pagina=1'),
+    ('renan-santos', 'civil', 'TJRJ', '0262930-72.2017.8.19.0001', 'O DJEN registra comunicação processual oficial no processo 0262930-72.2017.8.19.0001, nas classes RECURSO ESPECIAL; RECURSO EXTRAORDINáRIO, perante 3VP - DIVISAO DE PROCESSAMENTO (TJRJ). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2024-12-13 e 2024-12-13. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0262930-72.2017.8.19.0001&pagina=1'),
+    ('renan-santos', 'civil', 'TJSP', '1039971-32.2024.8.26.0002', 'O DJEN registra comunicação processual oficial no processo 1039971-32.2024.8.26.0002, nas classes PROCEDIMENTO COMUM CíVEL, perante Foro Regional II - Santo Amaro - 3ª Vara Cível; UPJ da 1ª a 4ª e 16ª Varas Cíveis - Regional II - Santo Amaro (TJSP). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-06-02 e 2026-06-29. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=1039971-32.2024.8.26.0002&pagina=1'),
+    ('ronaldo-caiado', 'civil', 'TJGO', '5355873-43.2024.8.09.0102', 'O DJEN registra comunicação processual oficial no processo 5355873-43.2024.8.09.0102, nas classes PROCEDIMENTO COMUM CíVEL, perante 4ª Câmara Cível; Mara Rosa - 1ª Vara Cível; Mara Rosa - 2ª Vara Cível (TJGO). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2025-03-25 e 2026-06-10. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5355873-43.2024.8.09.0102&pagina=1'),
+    ('ronaldo-caiado', 'criminal', 'TJGO', '5846782-47.2025.8.09.0000', 'O DJEN registra comunicação processual oficial no processo 5846782-47.2025.8.09.0000, nas classes REPRESENTAçãO CRIMINAL/NOTíCIA DE CRIME, perante Órgão Especial (TJGO). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2026-01-21 e 2026-06-29. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5846782-47.2025.8.09.0000&pagina=1'),
+    ('ronaldo-caiado', 'criminal', 'TJGO', '5353894-34.2026.8.09.0051', 'O DJEN registra comunicação processual oficial no processo 5353894-34.2026.8.09.0051, nas classes AçãO PENAL - PROCEDIMENTO ORDINáRIO; CRIMES DE CALúNIA, INJúRIA E DIFAMAçãO DE COMPETêNCIA DO JUIZ SINGULAR; REPRESENTAçãO CRIMINAL/NOTíCIA DE CRIME, perante Goiânia - 2ª UPJ Varas de Crimes Punidos com Reclusão e Detenção: 2ª, 4ª, 5ª , 8ª e 9ª (TJGO). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2026-04-24 e 2026-08-07. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5353894-34.2026.8.09.0051&pagina=1'),
+    ('rui-costa-pimenta', 'civil', 'TJSP', '1011502-36.2025.8.26.0003', 'O DJEN registra comunicação processual oficial no processo 1011502-36.2025.8.26.0003, nas classes PROCEDIMENTO COMUM CíVEL, perante Foro Central Cível - 5ª Vara Cível (TJSP). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2025-07-21 e 2026-07-28. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=1011502-36.2025.8.26.0003&pagina=1'),
+    ('rui-costa-pimenta', 'civil', 'STJ / TJSP', '1056927-28.2021.8.26.0100', 'O DJEN registra comunicação processual oficial no processo 1056927-28.2021.8.26.0100, nas classes AGRAVO EM RECURSO ESPECIAL; APELAçãO CíVEL; PROCEDIMENTO COMUM CíVEL, perante AJC COORDENADORIA DE JULGAMENTO COLEGIADO DA QUARTA TURMA; Recursos Tribunais Superiores Direito Privado 1 - Extr., Esp., Ord - Pátio do Colégio, 73 - 4º andar; SECRETARIA JUDICIÁRIA; SPF COORDENADORIA DE PROCESSAMENTO DE FEITOS DE DIREITO PRIVADO; UPJ da 6ª a 10ª Varas Cíveis - Foro Central Cível (STJ, TJSP). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-05-26 e 2026-07-15. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=1056927-28.2021.8.26.0100&pagina=1'),
+    ('rui-costa-pimenta', 'civil', 'TJSP', '4054899-94.2025.8.26.0100', 'O DJEN registra comunicação processual oficial no processo 4054899-94.2025.8.26.0100, nas classes AçãO CIVIL PúBLICA CíVEL, perante UPJ da 6ª a 10ª Varas Cíveis - Foro Central Cível (TJSP). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-06-19 e 2026-07-02. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=4054899-94.2025.8.26.0100&pagina=1'),
+    ('rui-costa-pimenta', 'civil', 'TJSP', '4015223-51.2025.8.26.0000', 'O DJEN registra comunicação processual oficial no processo 4015223-51.2025.8.26.0000, nas classes AGRAVO DE INSTRUMENTO, perante 3ª Câmara de Direito Privado; Gab. 02 - 3ª Câmara de Direito Privado (TJSP). O candidato consta nos polos passivo. As comunicações Ata de sessão; Intimação; Lista de distribuição foram disponibilizadas entre 2026-01-21 e 2026-04-09. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=4015223-51.2025.8.26.0000&pagina=1'),
+    ('rui-costa-pimenta', 'civil', 'TJBA', '8000488-52.2023.8.05.0079', 'O DJEN registra comunicação processual oficial no processo 8000488-52.2023.8.05.0079, nas classes PROCEDIMENTO COMUM CíVEL, perante EUNÁPOLIS > 1ª VARA DOS FEITOS DE RELAÇÕES DE CONSUMO, CÍVEIS E COMERCIAIS (TJBA). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2024-10-18 e 2025-01-23. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=8000488-52.2023.8.05.0079&pagina=1'),
+    ('rui-costa-pimenta', 'civil', 'TJBA', '8000823-45.2023.8.05.0120', 'O DJEN registra comunicação processual oficial no processo 8000823-45.2023.8.05.0120, nas classes PROCEDIMENTO COMUM CíVEL, perante ITAMARAJU > VARA CÍVEL (TJBA). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2024-10-02 e 2024-10-02. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=8000823-45.2023.8.05.0120&pagina=1'),
+    ('acm-neto', 'civil', 'TJDFT', '0769743-13.2025.8.07.0001', 'O DJEN registra comunicação processual oficial no processo 0769743-13.2025.8.07.0001, nas classes PROCEDIMENTO COMUM CíVEL, perante 8ª Vara Cível de Brasília (TJDFT). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-01-16 e 2026-07-21. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0769743-13.2025.8.07.0001&pagina=1'),
+    ('acm-neto', 'civil', 'TJDFT', '0703451-15.2026.8.07.0000', 'O DJEN registra comunicação processual oficial no processo 0703451-15.2026.8.07.0000, nas classes AGRAVO DE INSTRUMENTO, perante 2ª Turma Cível (TJDFT). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-02-09 e 2026-07-27. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0703451-15.2026.8.07.0000&pagina=1'),
+    ('acm-neto', 'civil', 'TJBA', '8010425-71.2019.8.05.0000', 'O DJEN registra comunicação processual oficial no processo 8010425-71.2019.8.05.0000, nas classes MANDADO DE SEGURANçA CíVEL, perante SEÇÃO CÍVEL DE DIREITO PÚBLICO (TJBA). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2024-12-16 e 2024-12-16. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=8010425-71.2019.8.05.0000&pagina=1'),
+    ('acm-neto', 'civil', 'TJBA', '8091329-75.2019.8.05.0001', 'O DJEN registra comunicação processual oficial no processo 8091329-75.2019.8.05.0001, nas classes MANDADO DE SEGURANçA CíVEL, perante 7ª V DA FAZENDA PÚBLICA DE SALVADOR (TJBA). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-03-13 e 2026-03-13. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=8091329-75.2019.8.05.0001&pagina=1'),
+    ('alysson-bezerra', 'civil', 'TJRN', '0811941-55.2021.8.20.5106', 'O DJEN registra comunicação processual oficial no processo 0811941-55.2021.8.20.5106, nas classes APELAçãO CíVEL; CUMPRIMENTO DE SENTENçA; TUTELA CAUTELAR ANTECEDENTE, perante 2ª Vara Cível da Comarca de Mossoró; Gab. Des. Amaury Moura Sobrinho na Câmara Cível (TJRN). O candidato consta nos polos ativo e passivo. As comunicações Intimação foram disponibilizadas entre 2025-05-07 e 2025-11-03. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0811941-55.2021.8.20.5106&pagina=1'),
+    ('alysson-bezerra', 'civil', 'TJRN', '0813585-28.2024.8.20.5106', 'O DJEN registra comunicação processual oficial no processo 0813585-28.2024.8.20.5106, nas classes PROCEDIMENTO COMUM CíVEL, perante 5ª Vara Cível da Comarca de Mossoró (TJRN). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2024-06-24 e 2026-07-03. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0813585-28.2024.8.20.5106&pagina=1'),
+    ('alysson-bezerra', 'civil', 'TJRN', '0823319-37.2023.8.20.5106', 'O DJEN registra comunicação processual oficial no processo 0823319-37.2023.8.20.5106, nas classes PROCEDIMENTO COMUM CíVEL, perante 4ª Vara Cível da Comarca de Mossoró (TJRN). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2023-11-02 e 2026-03-20. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0823319-37.2023.8.20.5106&pagina=1'),
+    ('edilson-damiao', 'civil', 'TJRR', '0823846-59.2026.8.23.0010', 'O DJEN registra comunicação processual oficial no processo 0823846-59.2026.8.23.0010, nas classes PROCEDIMENTO DO JUIZADO ESPECIAL CíVEL, perante 1º Juizado Especial Cível de Boa Vista (TJRR). O candidato consta nos polos ativo. As comunicações Intimação; Lista de distribuição foram disponibilizadas entre 2026-06-01 e 2026-08-03. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0823846-59.2026.8.23.0010&pagina=1'),
+    ('edilson-damiao', 'civil', 'TJRR', '0823841-37.2026.8.23.0010', 'O DJEN registra comunicação processual oficial no processo 0823841-37.2026.8.23.0010, nas classes PROCEDIMENTO DO JUIZADO ESPECIAL CíVEL, perante 1º Juizado Especial Cível de Boa Vista (TJRR). O candidato consta nos polos ativo. As comunicações Intimação; Lista de distribuição foram disponibilizadas entre 2026-06-01 e 2026-07-31. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0823841-37.2026.8.23.0010&pagina=1'),
+    ('edilson-damiao', 'improbidade', 'TJRR', '0812002-64.2016.8.23.0010', 'O DJEN registra comunicação processual oficial no processo 0812002-64.2016.8.23.0010, nas classes AçãO CIVIL DE IMPROBIDADE ADMINISTRATIVA, perante 2ª Vara de Fazenda Pública; 2ª Vara de Fazenda Pública de Boa Vista (TJRR). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-07-04 e 2026-05-11. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0812002-64.2016.8.23.0010&pagina=1'),
+    ('eduardo-riedel', 'civil', 'TJMS', '0800961-87.2024.8.12.0055', 'O DJEN registra comunicação processual oficial no processo 0800961-87.2024.8.12.0055, nas classes MANDADO DE SEGURANçA CíVEL, perante Vara Única (TJMS). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2024-10-14 e 2024-10-14. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0800961-87.2024.8.12.0055&pagina=1'),
+    ('eduardo-riedel', 'civil', 'TJMS', '1412142-36.2026.8.12.0000', 'O DJEN registra comunicação processual oficial no processo 1412142-36.2026.8.12.0000, nas classes AGRAVO DE INSTRUMENTO, perante Coordenadoria de Atendimento e Expedição; Coordenadoria de Protocolo e Distribuição (TJMS). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-06-12 e 2026-06-25. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=1412142-36.2026.8.12.0000&pagina=1'),
+    ('eduardo-riedel', 'civil', 'TJMS', '0804332-93.2026.8.12.0021', 'O DJEN registra comunicação processual oficial no processo 0804332-93.2026.8.12.0021, nas classes PROCEDIMENTO COMUM CíVEL, perante Vara de Fazenda Pública e Registros Públicos (TJMS). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-06-08 e 2026-06-25. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0804332-93.2026.8.12.0021&pagina=1'),
+    ('garotinho', 'civil', 'TJRJ', '0136337-52.2004.8.19.0001', 'O DJEN registra comunicação processual oficial no processo 0136337-52.2004.8.19.0001, nas classes PROCEDIMENTO COMUM CíVEL, perante Comarca da Capital- Cartório da 33ª Vara Cível (TJRJ). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-01-13 e 2026-08-03. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0136337-52.2004.8.19.0001&pagina=1'),
+    ('garotinho', 'civil', 'TJMG', '5062747-88.2020.8.13.0024', 'O DJEN registra comunicação processual oficial no processo 5062747-88.2020.8.13.0024, nas classes PROCEDIMENTO COMUM CíVEL, perante 6ª Vara Cível da Comarca de Juiz de Fora (TJMG). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-11-26 e 2026-03-09. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5062747-88.2020.8.13.0024&pagina=1'),
+    ('garotinho', 'civil', 'TRT1', '0101879-97.2017.5.01.0035', 'O DJEN registra comunicação processual oficial no processo 0101879-97.2017.5.01.0035, nas classes AçãO TRABALHISTA - RITO ORDINáRIO, perante 35ª Vara do Trabalho do Rio de Janeiro (TRT1). O candidato consta nos polos ativo e passivo. As comunicações Edital; Intimação foram disponibilizadas entre 2024-08-16 e 2025-08-04. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0101879-97.2017.5.01.0035&pagina=1'),
+    ('garotinho', 'civil', 'TRT1', '0100985-65.2018.5.01.0010', 'O DJEN registra comunicação processual oficial no processo 0100985-65.2018.5.01.0010, nas classes AGRAVO DE PETIçãO; AçãO TRABALHISTA - RITO ORDINáRIO, perante 10ª Vara do Trabalho do Rio de Janeiro; 6ª Turma; Gabinete 47 (TRT1). O candidato consta nos polos passivo. As comunicações Edital; Intimação; Lista de distribuição foram disponibilizadas entre 2024-09-12 e 2025-07-11. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0100985-65.2018.5.01.0010&pagina=1'),
+    ('garotinho', 'civil', 'TJRJ', '0000692-86.2026.8.19.0000', 'O DJEN registra comunicação processual oficial no processo 0000692-86.2026.8.19.0000, nas classes EXCEçãO DA VERDADE, perante 2VP - DEPTO AUTUACAO E DISTRIBUICAO CRIMINAL; SGJUD - TRIBUNAL PLENO E ÓRGÃO ESPECIAL (TJRJ). O candidato consta nos polos ativo. As comunicações Intimação; Lista de distribuição foram disponibilizadas entre 2026-01-13 e 2026-03-12. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0000692-86.2026.8.19.0000&pagina=1'),
+    ('hana-ghassan', 'civil', 'TJPA', '0815591-94.2026.8.14.0000', 'O DJEN registra comunicação processual oficial no processo 0815591-94.2026.8.14.0000, nas classes MANDADO DE SEGURANçA CíVEL, perante Tribunal Pleno - Desembargadora LUZIA NADJA GUIMARÃES NASCIMENTO (TJPA). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-06-18 e 2026-06-18. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0815591-94.2026.8.14.0000&pagina=1'),
+    ('helder-salomao', 'criminal', 'TJES', '0018179-59.2014.8.08.0012', 'O DJEN registra comunicação processual oficial no processo 0018179-59.2014.8.08.0012, nas classes AçãO PENAL - PROCEDIMENTO ORDINáRIO, perante Gabinete Des. WILLIAN SILVA; Gabinete Desª. RACHEL DURÃO CORREIA LIMA (TJES). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-03-04 e 2026-07-23. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0018179-59.2014.8.08.0012&pagina=1'),
+    ('jeronimo', 'civil', 'TJBA', '8066507-80.2023.8.05.0001', 'O DJEN registra comunicação processual oficial no processo 8066507-80.2023.8.05.0001, nas classes INTERPELAçãO, perante 6ª V DA FAZENDA PÚBLICA DE SALVADOR (TJBA). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-05-14 e 2026-05-14. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=8066507-80.2023.8.05.0001&pagina=1'),
+    ('jeronimo', 'criminal', 'TJBA', '8166700-69.2024.8.05.0001', 'O DJEN registra comunicação processual oficial no processo 8166700-69.2024.8.05.0001, nas classes INQUéRITO POLICIAL, perante 3ª VARA DAS GARANTIAS DE SALVADOR (TJBA). O candidato consta nos polos terceiro interessado. As comunicações Intimação foram disponibilizadas entre 2026-02-24 e 2026-02-24. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=8166700-69.2024.8.05.0001&pagina=1'),
+    ('jeronimo', 'civil', 'TJBA', '8024632-65.2025.8.05.0000', 'O DJEN registra comunicação processual oficial no processo 8024632-65.2025.8.05.0000, nas classes MANDADO DE SEGURANçA CíVEL, perante Des. Paulo Alberto Nunes Chenaud (TJBA). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-09-02 e 2026-05-14. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=8024632-65.2025.8.05.0000&pagina=1'),
+    ('joao-rodrigues', 'civil', 'TJSC', '5005429-52.2026.8.24.0018', 'O DJEN registra comunicação processual oficial no processo 5005429-52.2026.8.24.0018, nas classes MANDADO DE SEGURANçA CíVEL, perante 1ª Vara da Fazenda Pública da Comarca de Chapecó (TJSC). O candidato consta nos polos passivo. As comunicações Lista de distribuição foram disponibilizadas entre 2026-03-02 e 2026-03-02. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5005429-52.2026.8.24.0018&pagina=1'),
+    ('joao-rodrigues', 'civil', 'TJSC', '0018430-25.2008.8.24.0018', 'O DJEN registra comunicação processual oficial no processo 0018430-25.2008.8.24.0018, nas classes APELAçãO / REMESSA NECESSáRIA, perante 5ª Câmara de Direito Público (TJSC). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2023-05-29 e 2023-09-04. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0018430-25.2008.8.24.0018&pagina=1'),
+    ('joel-rodrigues', 'civil', 'TJPI', '0001723-41.2013.8.18.0028', 'O DJEN registra comunicação processual oficial no processo 0001723-41.2013.8.18.0028, nas classes APELAçãO CíVEL; AçãO CIVIL PúBLICA CíVEL, perante 1ª VARA DE FLORIANO; 3ª Câmara de Direito Público (TJPI). O candidato consta nos polos ativo e passivo. As comunicações Edital; Intimação foram disponibilizadas entre 2021-11-12 e 2026-04-28. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0001723-41.2013.8.18.0028&pagina=1'),
+    ('jorginho-mello', 'criminal', 'STJ / TRF2', '5005530-47.2022.4.02.5104', 'O DJEN registra comunicação processual oficial no processo 5005530-47.2022.4.02.5104, nas classes APELAçãO CRIMINAL; RECURSO ESPECIAL, perante 1ª TURMA ESPECIALIZADA; Assessoria de Recursos; SECRETARIA DA 1ª TURMA ESPECIALIZADA; SECRETARIA JUDICIÁRIA (STJ, TRF2). O candidato consta nos polos passivo. As comunicações Ata de sessão; Intimação foram disponibilizadas entre 2025-05-21 e 2025-12-23. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5005530-47.2022.4.02.5104&pagina=1'),
+    ('jorginho-mello', 'civil', 'TJSC', '5004813-59.2024.8.24.0079', 'O DJEN registra comunicação processual oficial no processo 5004813-59.2024.8.24.0079, nas classes PETIçãO CíVEL, perante 1ª Vara Cível da Comarca de Videira (TJSC). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-06-09 e 2026-07-10. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5004813-59.2024.8.24.0079&pagina=1'),
+    ('lucas-ribeiro', 'criminal', 'TJPB', '0808628-51.2026.8.15.2002', 'O DJEN registra comunicação processual oficial no processo 0808628-51.2026.8.15.2002, nas classes REPRESENTAçãO CRIMINAL/NOTíCIA DE CRIME, perante 4ª Vara Criminal da Capital (TJPB). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2026-08-10 e 2026-08-10. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0808628-51.2026.8.15.2002&pagina=1'),
+    ('mateus-simoes', 'civil', 'TJMG', '5111734-29.2018.8.13.0024', 'O DJEN registra comunicação processual oficial no processo 5111734-29.2018.8.13.0024, nas classes AçãO POPULAR, perante 1ª Vara dos Feitos da Fazenda Pública Municipal da Comarca de Belo Horizonte (TJMG). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2025-05-14 e 2026-01-21. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5111734-29.2018.8.13.0024&pagina=1'),
+    ('omar-aziz', 'civil', 'TJAM', '0205483-75.2025.8.04.1000', 'O DJEN registra comunicação processual oficial no processo 0205483-75.2025.8.04.1000, nas classes CUMPRIMENTO DE SENTENçA; PROCEDIMENTO DO JUIZADO ESPECIAL CíVEL, perante 2º Juizado Especial Cível da Comarca de Manaus - JE Cível (TJAM). O candidato consta nos polos ativo. As comunicações Intimação; Lista de distribuição foram disponibilizadas entre 2025-07-29 e 2026-06-23. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0205483-75.2025.8.04.1000&pagina=1'),
+    ('omar-aziz', 'civil', 'TJAM', '0189923-93.2025.8.04.1000', 'O DJEN registra comunicação processual oficial no processo 0189923-93.2025.8.04.1000, nas classes PROCEDIMENTO COMUM CíVEL, perante 7ª Vara Cível e de Acidentes de Trabalho da Comarca de Manaus - Cível; 9ª Vara Cível e de Acidentes de Trabalho da Comarca de Manaus - Cível (TJAM). O candidato consta nos polos ativo. As comunicações Intimação; Lista de distribuição foram disponibilizadas entre 2025-07-14 e 2026-07-27. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0189923-93.2025.8.04.1000&pagina=1'),
+    ('pazolini', 'civil', 'SEEU', '2002493-39.2023.8.08.0024', 'O DJEN registra comunicação processual oficial no processo 2002493-39.2023.8.08.0024, nas classes Execução de Medidas Alternativas, perante 7ª VARA CRIMINAL DE VITÓRIA - EXCLUSIVA DE PENAS E MEDIDAS ALTERNATIVAS (SEEU). O candidato consta nos polos passivo. As comunicações Edital foram disponibilizadas entre 2023-09-13 e 2023-09-13. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=2002493-39.2023.8.08.0024&pagina=1'),
+    ('pazolini', 'civil', 'TJES', '5025424-19.2022.8.08.0024', 'O DJEN registra comunicação processual oficial no processo 5025424-19.2022.8.08.0024, nas classes PROCEDIMENTO COMUM CíVEL, perante Vitória - Comarca da Capital - 1ª Vara de Fazenda Pública Estadual, Municipal, Registros Públicos, Meio Ambiente, Saúde e Acidentes de Trabalho (TJES). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-05-08 e 2026-02-10. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5025424-19.2022.8.08.0024&pagina=1'),
+    ('pazolini', 'civil', 'TJES', '5017337-69.2025.8.08.0024', 'O DJEN registra comunicação processual oficial no processo 5017337-69.2025.8.08.0024, nas classes AçãO POPULAR, perante Vitória - Comarca da Capital - 3ª Vara de Fazenda Pública Estadual, Municipal, Registros Públicos, Meio Ambiente, Saúde e Acidentes de Trabalho (TJES). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-05-20 e 2025-09-16. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=5017337-69.2025.8.08.0024&pagina=1'),
+    ('rafael-fonteles', 'improbidade', 'TRF1', '1003328-17.2019.4.01.4000', 'O DJEN registra comunicação processual oficial no processo 1003328-17.2019.4.01.4000, nas classes APELAçãO CíVEL; AçãO CIVIL DE IMPROBIDADE ADMINISTRATIVA, perante 3ª Vara Federal Criminal da SJPI; Gab. 07 - DESEMBARGADOR FEDERAL WILSON ALVES DE SOUZA (TRF1). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2021-08-11 e 2026-08-04. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=1003328-17.2019.4.01.4000&pagina=1'),
+    ('rafael-fonteles', 'civil', 'TJPI', '0805286-25.2023.8.18.0039', 'O DJEN registra comunicação processual oficial no processo 0805286-25.2023.8.18.0039, nas classes PROCEDIMENTO COMUM CíVEL, perante 2ª Vara da Comarca de Barras (TJPI). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-02-09 e 2026-07-07. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0805286-25.2023.8.18.0039&pagina=1'),
+    ('rafael-fonteles', 'civil', 'TJPI', '0761204-26.2023.8.18.0000', 'O DJEN registra comunicação processual oficial no processo 0761204-26.2023.8.18.0000, nas classes MANDADO DE SEGURANçA CíVEL, perante 5ª Câmara de Direito Público (TJPI). O candidato consta nos polos passivo. As comunicações Edital; Intimação foram disponibilizadas entre 2025-08-27 e 2025-09-15. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0761204-26.2023.8.18.0000&pagina=1'),
+    ('renan-filho', 'civil', 'TJAL', '0809670-90.2026.8.02.0000', 'O DJEN registra comunicação processual oficial no processo 0809670-90.2026.8.02.0000, nas classes AGRAVO DE INSTRUMENTO, perante 4ª Câmara Cível (TJAL). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2026-08-10 e 2026-08-10. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0809670-90.2026.8.02.0000&pagina=1'),
+    ('renan-filho', 'civil', 'TJAL', '0727560-41.2020.8.02.0001', 'O DJEN registra comunicação processual oficial no processo 0727560-41.2020.8.02.0001, nas classes APELAçãO CíVEL, perante 3ª Câmara Cível; RET0000FF (TJAL). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-05-16 e 2025-08-15. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0727560-41.2020.8.02.0001&pagina=1'),
+    ('ricardo-cappelli', 'civil', 'TJDFT', '0704997-05.2026.8.07.0001', 'O DJEN registra comunicação processual oficial no processo 0704997-05.2026.8.07.0001, nas classes PROCEDIMENTO COMUM CíVEL, perante 19ª Vara Cível de Brasília (TJDFT). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2026-02-09 e 2026-07-15. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0704997-05.2026.8.07.0001&pagina=1'),
+    ('ricardo-cappelli', 'civil', 'TJDFT', '0704590-45.2026.8.07.0018', 'O DJEN registra comunicação processual oficial no processo 0704590-45.2026.8.07.0018, nas classes AçãO POPULAR, perante Vara de Meio Ambiente, Desenvolvimento Urbano e Fundiário do DF (TJDFT). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2026-04-01 e 2026-08-10. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0704590-45.2026.8.07.0018&pagina=1'),
+    ('ricardo-cappelli', 'civil', 'TJDFT', '0709498-48.2026.8.07.0018', 'O DJEN registra comunicação processual oficial no processo 0709498-48.2026.8.07.0018, nas classes AçãO POPULAR, perante Vara de Meio Ambiente, Desenvolvimento Urbano e Fundiário do DF (TJDFT). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2026-07-27 e 2026-07-28. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0709498-48.2026.8.07.0018&pagina=1'),
+    ('ricardo-cappelli', 'civil', 'TJDFT', '0751806-87.2025.8.07.0001', 'O DJEN registra comunicação processual oficial no processo 0751806-87.2025.8.07.0001, nas classes PROCEDIMENTO COMUM CíVEL, perante 21ª Vara Cível de Brasília (TJDFT). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2025-10-13 e 2026-05-13. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0751806-87.2025.8.07.0001&pagina=1'),
+    ('ricardo-ferraco', 'civil', 'TRT17', '0001151-69.2023.5.17.0010', 'O DJEN registra comunicação processual oficial no processo 0001151-69.2023.5.17.0010, nas classes AçãO TRABALHISTA - RITO ORDINáRIO; RECURSO ORDINáRIO TRABALHISTA, perante 10ª Vara do Trabalho de Vitória; 2ª Turma; GAB. DES. MÁRIO RIBEIRO CANTARINO NETO; OJ de Análise de Recurso (Assessoria de Revista) (TRT17). O candidato consta nos polos ativo e passivo. As comunicações Intimação; Lista de distribuição foram disponibilizadas entre 2025-02-19 e 2026-04-22. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0001151-69.2023.5.17.0010&pagina=1'),
+    ('ricardo-ferraco', 'civil', 'TRT17 / TST', '0000891-92.2023.5.17.0009', 'O DJEN registra comunicação processual oficial no processo 0000891-92.2023.5.17.0009, nas classes AGRAVO DE INSTRUMENTO EM RECURSO DE REVISTA; RECURSO ORDINáRIO TRABALHISTA, perante 3ª Turma; 4ª Turma; Gabinete da Ministra Maria Cristina Irigoyen Peduzzi; OJ de Análise de Recurso (Assessoria de Revista) (TRT17, TST). O candidato consta nos polos ativo e passivo. As comunicações Intimação; Lista de distribuição foram disponibilizadas entre 2025-10-02 e 2026-04-22. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0000891-92.2023.5.17.0009&pagina=1'),
+    ('tiao-bocalom', 'civil', 'TJAC', '1002797-54.2025.8.01.0000', 'O DJEN registra comunicação processual oficial no processo 1002797-54.2025.8.01.0000, nas classes DIRETA DE INCONSTITUCIONALIDADE, perante Plantão Judiciário; Tribunal Pleno Jurisdicional (TJAC). O candidato consta nos polos ativo. As comunicações Intimação foram disponibilizadas entre 2025-12-29 e 2026-08-05. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=1002797-54.2025.8.01.0000&pagina=1'),
+    ('tiao-bocalom', 'civil', 'TJAC', '0715972-30.2021.8.01.0001', 'O DJEN registra comunicação processual oficial no processo 0715972-30.2021.8.01.0001, nas classes MANDADO DE SEGURANçA CíVEL, perante 1ª Vara da Fazenda Pública (TJAC). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2024-12-12 e 2025-03-18. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0715972-30.2021.8.01.0001&pagina=1'),
+    ('tiao-bocalom', 'criminal', 'TJAC', '0800019-66.2023.8.01.0000', 'O DJEN registra comunicação processual oficial no processo 0800019-66.2023.8.01.0000, nas classes REPRESENTAçãO CRIMINAL/NOTíCIA DE CRIME, perante Tribunal Pleno Jurisdicional (TJAC). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2024-12-02 e 2025-02-28. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0800019-66.2023.8.01.0000&pagina=1'),
+    ('valmir-de-francisquinho', 'improbidade', 'TJSE', '0003737-09.2018.8.25.0034', 'O DJEN registra comunicação processual oficial no processo 0003737-09.2018.8.25.0034, nas classes APELAçãO CíVEL; AçãO CIVIL DE IMPROBIDADE ADMINISTRATIVA, perante 1ª Vara Civel de Itabaiana; Gabinete Des. Roberto Eugênio da Fonseca Porto (TJSE). O candidato consta nos polos passivo. As comunicações Citação; Intimação foram disponibilizadas entre 2021-02-08 e 2024-09-13. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0003737-09.2018.8.25.0034&pagina=1'),
+    ('valmir-de-francisquinho', 'criminal', 'STJ / TJSE', '0007040-36.2018.8.25.0000', 'O DJEN registra comunicação processual oficial no processo 0007040-36.2018.8.25.0000, nas classes AGRAVO EM RECURSO ESPECIAL; INQUéRITO POLICIAL, perante AJC ASSESSORIA DE JULGAMENTO COLEGIADO DA CORTE ESPECIAL; AJC COORDENADORIA DE JULGAMENTO COLEGIADO DA SEXTA TURMA; COORDENADORIA DE PROCESSOS ORIGINÁRIOS; Escrivania da Câmara Criminal e Tribunal Pleno; Gabinete Des. Diógenes Barreto; SPF COORDENADORIA DE PROCESSAMENTO DE DECISÕES ESTRANGEIRAS E RECURSOS PARA O STF; SPF COORDENADORIA DE PROCESSAMENTO DE FEITOS DE DIREITO PENAL (STJ, TJSE). O candidato consta nos polos passivo. As comunicações Intimação foram disponibilizadas entre 2021-06-29 e 2026-06-22. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0007040-36.2018.8.25.0000&pagina=1'),
+    ('valmir-de-francisquinho', 'improbidade', 'STJ / TJSE', '0007488-04.2018.8.25.0034', 'O DJEN registra comunicação processual oficial no processo 0007488-04.2018.8.25.0034, nas classes AGRAVO EM RECURSO ESPECIAL; AGRAVO INTERNO CíVEL; APELAçãO CíVEL; AçãO CIVIL DE IMPROBIDADE ADMINISTRATIVA, perante 1ª Câmara Cível - 2º Grau; 2ª Vara Civel de Itabaiana; COORDENADORIA DE CLASSIFICAÇÃO E DISTRIBUIÇÃO DE PROCESSOS; Escrivania da 1ª Câmara Cível; SPF COORDENADORIA DE PROCESSAMENTO DE FEITOS DE DIREITO PÚBLICO (STJ, TJSE). O candidato consta nos polos ativo e passivo. As comunicações Intimação foram disponibilizadas entre 2021-01-28 e 2026-08-05. A publicação comprova a ocorrência e o vínculo processual, mas não informa, por si só, mérito, culpa ou desfecho.', 'comunicacao_processual_publicada_merito_nao_inferido', 'curadoria-djen-20260810: API publica do DJEN/CNJ', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=0007488-04.2018.8.25.0034&pagina=1');
+
+DO $$
+DECLARE n integer;
+BEGIN
+  SELECT count(*) INTO n FROM _pf_processos_curadoria_66;
+  IF n <> 66 THEN RAISE EXCEPTION 'processos 66/25: esperados 66, encontrados %', n; END IF;
+  SELECT count(DISTINCT slug) INTO n FROM _pf_processos_curadoria_66;
+  IF n <> 25 THEN RAISE EXCEPTION 'processos 66/25: esperadas 25 fichas, encontradas %', n; END IF;
+  SELECT count(*) INTO n FROM _pf_processos_curadoria_66 l LEFT JOIN public.candidatos c ON c.slug = l.slug WHERE c.id IS NULL;
+  IF n <> 0 THEN RAISE EXCEPTION 'processos 66/25: % slugs sem candidato', n; END IF;
+  SELECT count(*) INTO n FROM _pf_processos_curadoria_66 l JOIN public.processos p ON regexp_replace(p.numero_processo, '[^0-9]', '', 'g') = regexp_replace(l.numero_cnj, '[^0-9]', '', 'g');
+  IF n <> 0 THEN RAISE EXCEPTION 'processos 66/25: % CNJs ja existem', n; END IF;
+END $$;
+
+-- @write tabela=processos slug=augusto-cury campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'augusto-cury' AND l.numero_cnj = '0709932-06.2017.8.07.0001';
+
+-- @write tabela=processos slug=renan-santos campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'renan-santos' AND l.numero_cnj = '0000349-29.2026.2.00.0515';
+
+-- @write tabela=processos slug=renan-santos campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'renan-santos' AND l.numero_cnj = '0600089-03.2025.6.16.0144';
+
+-- @write tabela=processos slug=renan-santos campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'renan-santos' AND l.numero_cnj = '0262930-72.2017.8.19.0001';
+
+-- @write tabela=processos slug=renan-santos campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'renan-santos' AND l.numero_cnj = '1039971-32.2024.8.26.0002';
+
+-- @write tabela=processos slug=ronaldo-caiado campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ronaldo-caiado' AND l.numero_cnj = '5355873-43.2024.8.09.0102';
+
+-- @write tabela=processos slug=ronaldo-caiado campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ronaldo-caiado' AND l.numero_cnj = '5846782-47.2025.8.09.0000';
+
+-- @write tabela=processos slug=ronaldo-caiado campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ronaldo-caiado' AND l.numero_cnj = '5353894-34.2026.8.09.0051';
+
+-- @write tabela=processos slug=rui-costa-pimenta campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'rui-costa-pimenta' AND l.numero_cnj = '1011502-36.2025.8.26.0003';
+
+-- @write tabela=processos slug=rui-costa-pimenta campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'rui-costa-pimenta' AND l.numero_cnj = '1056927-28.2021.8.26.0100';
+
+-- @write tabela=processos slug=rui-costa-pimenta campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'rui-costa-pimenta' AND l.numero_cnj = '4054899-94.2025.8.26.0100';
+
+-- @write tabela=processos slug=rui-costa-pimenta campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'rui-costa-pimenta' AND l.numero_cnj = '4015223-51.2025.8.26.0000';
+
+-- @write tabela=processos slug=rui-costa-pimenta campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'rui-costa-pimenta' AND l.numero_cnj = '8000488-52.2023.8.05.0079';
+
+-- @write tabela=processos slug=rui-costa-pimenta campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'rui-costa-pimenta' AND l.numero_cnj = '8000823-45.2023.8.05.0120';
+
+-- @write tabela=processos slug=acm-neto campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'acm-neto' AND l.numero_cnj = '0769743-13.2025.8.07.0001';
+
+-- @write tabela=processos slug=acm-neto campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'acm-neto' AND l.numero_cnj = '0703451-15.2026.8.07.0000';
+
+-- @write tabela=processos slug=acm-neto campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'acm-neto' AND l.numero_cnj = '8010425-71.2019.8.05.0000';
+
+-- @write tabela=processos slug=acm-neto campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'acm-neto' AND l.numero_cnj = '8091329-75.2019.8.05.0001';
+
+-- @write tabela=processos slug=alysson-bezerra campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alysson-bezerra' AND l.numero_cnj = '0811941-55.2021.8.20.5106';
+
+-- @write tabela=processos slug=alysson-bezerra campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alysson-bezerra' AND l.numero_cnj = '0813585-28.2024.8.20.5106';
+
+-- @write tabela=processos slug=alysson-bezerra campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alysson-bezerra' AND l.numero_cnj = '0823319-37.2023.8.20.5106';
+
+-- @write tabela=processos slug=edilson-damiao campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'edilson-damiao' AND l.numero_cnj = '0823846-59.2026.8.23.0010';
+
+-- @write tabela=processos slug=edilson-damiao campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'edilson-damiao' AND l.numero_cnj = '0823841-37.2026.8.23.0010';
+
+-- @write tabela=processos slug=edilson-damiao campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'edilson-damiao' AND l.numero_cnj = '0812002-64.2016.8.23.0010';
+
+-- @write tabela=processos slug=eduardo-riedel campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'eduardo-riedel' AND l.numero_cnj = '0800961-87.2024.8.12.0055';
+
+-- @write tabela=processos slug=eduardo-riedel campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'eduardo-riedel' AND l.numero_cnj = '1412142-36.2026.8.12.0000';
+
+-- @write tabela=processos slug=eduardo-riedel campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'eduardo-riedel' AND l.numero_cnj = '0804332-93.2026.8.12.0021';
+
+-- @write tabela=processos slug=garotinho campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'garotinho' AND l.numero_cnj = '0136337-52.2004.8.19.0001';
+
+-- @write tabela=processos slug=garotinho campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'garotinho' AND l.numero_cnj = '5062747-88.2020.8.13.0024';
+
+-- @write tabela=processos slug=garotinho campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'garotinho' AND l.numero_cnj = '0101879-97.2017.5.01.0035';
+
+-- @write tabela=processos slug=garotinho campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'garotinho' AND l.numero_cnj = '0100985-65.2018.5.01.0010';
+
+-- @write tabela=processos slug=garotinho campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'garotinho' AND l.numero_cnj = '0000692-86.2026.8.19.0000';
+
+-- @write tabela=processos slug=hana-ghassan campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'hana-ghassan' AND l.numero_cnj = '0815591-94.2026.8.14.0000';
+
+-- @write tabela=processos slug=helder-salomao campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'helder-salomao' AND l.numero_cnj = '0018179-59.2014.8.08.0012';
+
+-- @write tabela=processos slug=jeronimo campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'jeronimo' AND l.numero_cnj = '8066507-80.2023.8.05.0001';
+
+-- @write tabela=processos slug=jeronimo campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'jeronimo' AND l.numero_cnj = '8166700-69.2024.8.05.0001';
+
+-- @write tabela=processos slug=jeronimo campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'jeronimo' AND l.numero_cnj = '8024632-65.2025.8.05.0000';
+
+-- @write tabela=processos slug=joao-rodrigues campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'joao-rodrigues' AND l.numero_cnj = '5005429-52.2026.8.24.0018';
+
+-- @write tabela=processos slug=joao-rodrigues campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'joao-rodrigues' AND l.numero_cnj = '0018430-25.2008.8.24.0018';
+
+-- @write tabela=processos slug=joel-rodrigues campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'joel-rodrigues' AND l.numero_cnj = '0001723-41.2013.8.18.0028';
+
+-- @write tabela=processos slug=jorginho-mello campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'jorginho-mello' AND l.numero_cnj = '5005530-47.2022.4.02.5104';
+
+-- @write tabela=processos slug=jorginho-mello campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'jorginho-mello' AND l.numero_cnj = '5004813-59.2024.8.24.0079';
+
+-- @write tabela=processos slug=lucas-ribeiro campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'lucas-ribeiro' AND l.numero_cnj = '0808628-51.2026.8.15.2002';
+
+-- @write tabela=processos slug=mateus-simoes campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'mateus-simoes' AND l.numero_cnj = '5111734-29.2018.8.13.0024';
+
+-- @write tabela=processos slug=omar-aziz campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'omar-aziz' AND l.numero_cnj = '0205483-75.2025.8.04.1000';
+
+-- @write tabela=processos slug=omar-aziz campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'omar-aziz' AND l.numero_cnj = '0189923-93.2025.8.04.1000';
+
+-- @write tabela=processos slug=pazolini campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'pazolini' AND l.numero_cnj = '2002493-39.2023.8.08.0024';
+
+-- @write tabela=processos slug=pazolini campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'pazolini' AND l.numero_cnj = '5025424-19.2022.8.08.0024';
+
+-- @write tabela=processos slug=pazolini campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'pazolini' AND l.numero_cnj = '5017337-69.2025.8.08.0024';
+
+-- @write tabela=processos slug=rafael-fonteles campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'rafael-fonteles' AND l.numero_cnj = '1003328-17.2019.4.01.4000';
+
+-- @write tabela=processos slug=rafael-fonteles campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'rafael-fonteles' AND l.numero_cnj = '0805286-25.2023.8.18.0039';
+
+-- @write tabela=processos slug=rafael-fonteles campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'rafael-fonteles' AND l.numero_cnj = '0761204-26.2023.8.18.0000';
+
+-- @write tabela=processos slug=renan-filho campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'renan-filho' AND l.numero_cnj = '0809670-90.2026.8.02.0000';
+
+-- @write tabela=processos slug=renan-filho campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'renan-filho' AND l.numero_cnj = '0727560-41.2020.8.02.0001';
+
+-- @write tabela=processos slug=ricardo-cappelli campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ricardo-cappelli' AND l.numero_cnj = '0704997-05.2026.8.07.0001';
+
+-- @write tabela=processos slug=ricardo-cappelli campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ricardo-cappelli' AND l.numero_cnj = '0704590-45.2026.8.07.0018';
+
+-- @write tabela=processos slug=ricardo-cappelli campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ricardo-cappelli' AND l.numero_cnj = '0709498-48.2026.8.07.0018';
+
+-- @write tabela=processos slug=ricardo-cappelli campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ricardo-cappelli' AND l.numero_cnj = '0751806-87.2025.8.07.0001';
+
+-- @write tabela=processos slug=ricardo-ferraco campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ricardo-ferraco' AND l.numero_cnj = '0001151-69.2023.5.17.0010';
+
+-- @write tabela=processos slug=ricardo-ferraco campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ricardo-ferraco' AND l.numero_cnj = '0000891-92.2023.5.17.0009';
+
+-- @write tabela=processos slug=tiao-bocalom campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'tiao-bocalom' AND l.numero_cnj = '1002797-54.2025.8.01.0000';
+
+-- @write tabela=processos slug=tiao-bocalom campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'tiao-bocalom' AND l.numero_cnj = '0715972-30.2021.8.01.0001';
+
+-- @write tabela=processos slug=tiao-bocalom campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'tiao-bocalom' AND l.numero_cnj = '0800019-66.2023.8.01.0000';
+
+-- @write tabela=processos slug=valmir-de-francisquinho campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'valmir-de-francisquinho' AND l.numero_cnj = '0003737-09.2018.8.25.0034';
+
+-- @write tabela=processos slug=valmir-de-francisquinho campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'valmir-de-francisquinho' AND l.numero_cnj = '0007040-36.2018.8.25.0000';
+
+-- @write tabela=processos slug=valmir-de-francisquinho campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+       NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria_66 l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'valmir-de-francisquinho' AND l.numero_cnj = '0007488-04.2018.8.25.0034';
+
+DO $$
+DECLARE n integer;
+BEGIN
+  SELECT count(*) INTO n FROM public.processos WHERE fonte LIKE 'curadoria-djen-20260810: %';
+  IF n <> 66 THEN RAISE EXCEPTION 'processos 66/25: esperados 66 inseridos, encontrados %', n; END IF;
+END $$;

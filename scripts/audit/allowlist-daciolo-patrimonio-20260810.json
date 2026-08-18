@@ -1,0 +1,35 @@
+{
+  "_comentario": "Allowlist do recorte do patrimonio do cabo-daciolo em 2006 e 2008, os dois anos que a ficha exibia como `nao_coletado` porque `ids.tse_sq_candidato` do seed so tinha 2018 e 2022. Duas escritas, uma por ano, e CADA UMA EM TABELA DIFERENTE de proposito: 2006 vai para `patrimonio` (o pacote bem_candidato_2006 traz um registro dizendo 'Nenhum bem a declarar', R$ 0,00, e isso e declaracao, nao ausencia) e 2008 vai para `patrimonio_ausencia_oficial` (o pacote bem_candidato_2008 nao traz linha nenhuma para o SQ 14144 em RJ, e o registro de candidatura marca ST_DECLARAR_BENS = 'N'). Trocar as duas de lugar faria a tela afirmar sobre a fonte o oposto do que a fonte diz, e por isso os `ano` das entradas sao fechados. Janela FECHADA de uma migration so: --desde=20260810094000 --ate=20260810094000.",
+  "recorte": "daciolo-patrimonio-20260810",
+  "migration": "20260810094000_daciolo_patrimonio_2006_2008.sql",
+  "fonte": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2006.zip e .../bem_candidato_2008.zip, mais consulta_cand_2006.zip e consulta_cand_2008.zip, confirmados em divulgacandcontas.tse.jus.br (lidos em 2026-08-10, entre 18:50Z e 19:01Z)",
+  "coorte": ["cabo-daciolo"],
+  "fora_por_construcao": {
+    "_comentario": "2018 do proprio cabo-daciolo fica FORA de proposito: a ausencia oficial daquele ano (SQ 280000602500) ja foi registrada em 20260807181000 e foi RE-VERIFICADA nesta mesma rodada (bem_candidato_2018.zip, 187.054 linhas, zero casaram; DivulgaCandContas totalDeBens 0). Esta correta e nao ha o que escrever. rui-costa-pimenta 2014 e samara-martins 2020 tambem foram re-verificados na mesma rodada, confirmados, e ficam fora pelo mesmo motivo: re-escrever dado correto e risco sem ganho.",
+    "slugs": ["rui-costa-pimenta", "samara-martins"]
+  },
+  "entries": [
+    {
+      "tabela": "patrimonio",
+      "slug": "cabo-daciolo",
+      "ano": 2006,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "cabo-daciolo",
+      "ano": 2008,
+      "campos": [
+        "candidato_id",
+        "ano_eleicao",
+        "sq_candidato",
+        "fonte_url",
+        "verificado_em",
+        "detalhe",
+        "execucao"
+      ],
+      "max_registros": 1
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+name: Aplicar correção de biografias das chapas 2026
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: "SHA de 40 caracteres já mergeado em main"
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-db-migrations
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ inputs.expected_sha }}
+          fetch-depth: 1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+      - name: Instalar cliente PostgreSQL
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+      - name: Instalar dependências
+        run: npm ci
+      - name: Validar SHA e main
+        env:
+          PF_EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          set -euo pipefail
+          [[ "$PF_EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          test "$(git rev-parse HEAD)" = "$PF_EXPECTED_SHA"
+          test "${{ github.ref }}" = "refs/heads/main"
+          test -z "$(git status --porcelain=v1 --untracked-files=normal)"
+          test "$(git ls-remote https://github.com/${{ github.repository }} refs/heads/main | cut -f1)" = "$PF_EXPECTED_SHA"
+      - name: Aplicar versão fechada e validar readback
+        env:
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+          PF_EXPECTED_SHA: ${{ inputs.expected_sha }}
+          GITHUB_REF: ${{ github.ref }}
+        run: bash scripts/audit/apply-chapas-2026-biografias.sh

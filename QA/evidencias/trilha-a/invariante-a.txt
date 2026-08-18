@@ -1,0 +1,4 @@
+Candidatura indeferida/cancelada exibida como candidatura real
+contagem: 0
+
+

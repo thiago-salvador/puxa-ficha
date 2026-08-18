@@ -1,0 +1,53 @@
+{
+  "$schema": "Allowlist EXATA das correções de texto em pontos_atencao aprovadas por Thiago em 2026-08-03, na página de correções (versao correcoes-claims-v1). Cada entrada é uma claim identificada por id, com os campos que podem mudar. Conferida statement a statement por scripts/audit/check-migrations-allowlist.ts --allowlist=scripts/audit/allowlist-correcoes-claims.json",
+  "gerado_em": "2026-08-03",
+  "branch": "data/presidenciaveis-lacunas",
+  "origem_da_autorizacao": "clique em Aplicar na página 2026-08-03-puxa-ficha-correcoes-claims.descartavel.html, payload {\"versao\":\"correcoes-claims-v1\",\"acoes\":[\"corrigir-4\",\"corrigir-15\",\"corrigir-17\",\"corrigir-24\",\"corrigir-25\"]}",
+  "coorte": ["flavio-bolsonaro", "lula", "renan-santos", "ronaldo-caiado"],
+  "fora_por_construcao": {
+    "slugs": [],
+    "motivo": "Nenhum slug bloqueado: a allowlist já é fechada por id de claim, então nada além destas 5 linhas passa."
+  },
+  "entries": [
+    {
+      "tabela": "pontos_atencao",
+      "slug": "flavio-bolsonaro",
+      "claim_id": "9c933004-b41a-408a-82f5-2bbaa29dd74c",
+      "claim_numero": 4,
+      "campos": ["titulo", "descricao"],
+      "motivo": "CNN diz R$ 5,9 milhões; o texto arredondava para 6 e atribuía questionamentos que a fonte não nomeia."
+    },
+    {
+      "tabela": "pontos_atencao",
+      "slug": "lula",
+      "claim_id": "612f6a0a-9fc9-47d2-9023-1cf9cab3ca9f",
+      "claim_numero": 15,
+      "campos": ["titulo", "descricao", "fontes"],
+      "motivo": "O 4,1% não existe na fonte citada. Série oficial do IBGE dá 1,1 / 5,7 / 3,2 / 4,0, média 3,5%. Os 9 milhões de empregos e os 46% saem por falta de fonte."
+    },
+    {
+      "tabela": "pontos_atencao",
+      "slug": "renan-santos",
+      "claim_id": "4229b371-7908-4d31-b593-6c8257ca2ea3",
+      "claim_numero": 17,
+      "campos": ["titulo", "descricao"],
+      "motivo": "Metade dos itens não tem fonte localizada. Fica só o que foi confirmado."
+    },
+    {
+      "tabela": "pontos_atencao",
+      "slug": "ronaldo-caiado",
+      "claim_id": "7b123f00-93a6-44b2-9fb0-4723f3c23513",
+      "claim_numero": 24,
+      "campos": ["titulo", "descricao"],
+      "motivo": "Erro factual publicado: PRB não existe na carreira dele, e a contagem tratava a mesma legenda renomeada como partidos diferentes."
+    },
+    {
+      "tabela": "pontos_atencao",
+      "slug": "ronaldo-caiado",
+      "claim_id": "8ef45b5e-93e6-4ba9-9bdd-a2985e7d2f16",
+      "claim_numero": 25,
+      "campos": ["titulo", "descricao"],
+      "motivo": "Lockdown e as datas de 2021 e 2023 não estão na fonte; sai também a atribuição de intenção."
+    }
+  ]
+}

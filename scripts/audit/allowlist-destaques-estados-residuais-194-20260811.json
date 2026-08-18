@@ -1,0 +1,30 @@
+{
+  "_comentario": "292 estados nominais sem vazio fabricado: 241 indeterminados e 51 recortes limitados.",
+  "recorte": "destaques-estados-residuais-194-20260811",
+  "migration": "20260811101000_destaques_estados_residuais_194.sql",
+  "fonte": "QA/evidencias/2026-08-11-itens-4-14-destaques/matriz-fontes-194.json",
+  "coorte": [],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "destaques-estados-residuais:194x3",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    }
+  ]
+}

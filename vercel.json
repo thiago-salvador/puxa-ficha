@@ -1,0 +1,25 @@
+{
+  "regions": ["gru1"],
+  "crons": [
+    {
+      "path": "/api/alerts/send-digest",
+      "schedule": "0 12 * * *"
+    },
+    {
+      "path": "/api/news/refresh",
+      "schedule": "0 8 * * *"
+    },
+    {
+      "path": "/api/news/refresh/recover",
+      "schedule": "30 8 * * *"
+    },
+    {
+      "path": "/api/internal/published-consistency",
+      "schedule": "0 9 * * *"
+    },
+    {
+      "path": "/api/internal/runtime-smoke",
+      "schedule": "30 9 * * *"
+    }
+  ]
+}

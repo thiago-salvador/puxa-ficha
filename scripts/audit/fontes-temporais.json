@@ -1,0 +1,30 @@
+{
+  "_por_que": [
+    "Ancora de tempo das fontes cuja verdade muda sozinha. Sem ela o gate de validade",
+    "temporal nao teria contra o que comparar, e voltaria a ser o que era em 15/08/2026:",
+    "87 biografias corretas na data em que foram escritas e falsas no dia seguinte, porque",
+    "o prazo de registro do TSE fechou e ninguem reconferiu. A data aqui nao e opiniao:",
+    "sai de DT_GERACAO/HH_GERACAO, que o proprio pacote do TSE carrega em toda linha.",
+    "Atualizar este arquivo e a unica forma legitima de mover a regua: baixar o pacote",
+    "novo, ler DT_GERACAO e registrar a evidencia. O gate confere a leitura com",
+    "--pacote-tse=<dir> e reprova se o pacote for mais novo que o declarado aqui."
+  ],
+  "fontes": {
+    "tse-consulta-cand-2026": {
+      "nome": "TSE, consulta de candidaturas 2026 (consulta_cand_2026_<UF>.csv)",
+      "snapshot_em": "2026-08-16T12:30:07-03:00",
+      "fuso_declarado": "America/Sao_Paulo. O pacote publica DT_GERACAO e HH_GERACAO sem offset; o TSE gera em horario de Brasilia, e o offset entra aqui declarado em vez de suposto na hora da comparacao.",
+      "evidencia": {
+        "campo_lido": "DT_GERACAO;HH_GERACAO da primeira linha de dados",
+        "valor_lido": "16/08/2026;12:30:07",
+        "arquivos_conferidos": 29,
+        "arquivos_divergentes": 0,
+        "conferido_em": "2026-08-16",
+        "origem": "pacote consulta_cand_2026 baixado do portal de dados abertos do TSE e extraido integralmente"
+      },
+      "marco": "O prazo de registro de candidatura fechou em 15/08/2026. Toda afirmacao sobre registro, situacao de candidatura, filiacao ou cargo em disputa verificada ANTES deste snapshot nunca foi conferida contra a lista fechada.",
+      "revalidar_ate": "2026-08-23",
+      "_revalidar_ate_por_que": "Prazo de vida da propria ancora. Vencido, o gate reprova ate alguem baixar pacote novo e reescrever este bloco. Ancora que envelhece em silencio recria o defeito que o gate existe para pegar."
+    }
+  }
+}

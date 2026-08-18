@@ -1,0 +1,17 @@
+{
+  "capturadoEm": "2026-08-09T23:08:37.136Z",
+  "url": "https://puxaficha.com.br/candidato/lula",
+  "metodo": "Playwright, page.evaluate sobre o DOM depois de scroll e 4s de espera pela hidratacao",
+  "deployment": {
+    "ok": true,
+    "commitSha": "0b08a3b6e763be3cf438f45553062dd57f30244b",
+    "commitRef": "main",
+    "environment": "production"
+  },
+  "validacaoOperacional": 0,
+  "alertasDaFicha": 1,
+  "receberAlertas": 1,
+  "seguirCandidato": 1,
+  "blocoTexto": "ALERTAS DA FICHA\n\nSem login. Você só precisa confirmar o email uma vez.\n\nReceber alertas",
+  "nota": "Capturado contra deployment posterior aos tres desta janela, gerado por outra sessao a partir do commit 0b08a3b6. A variavel e de projeto e sobreviveu ao rebuild."
+}

@@ -1,0 +1,16 @@
+{
+  "_comentario": "Oito consultas TSE exatas por SQ_CANDIDATO, limitadas aos pleitos conhecidos e registradas como sem_achado_no_escopo. A coorte nominal está na evidência; a migration escreve por ref para que o gate valide o lote inteiro.",
+  "recorte": "destaques-trajetoria-tse-8-20260811",
+  "migration": "20260810124000_destaques_trajetoria_tse_8.sql",
+  "fonte": "QA/evidencias/2026-08-10-item4-14-destaques/auditoria-fontes-32.json",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "destaques-trajetoria:tse-8",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "executado_em", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ]
+}

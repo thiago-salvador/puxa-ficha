@@ -1,0 +1,4157 @@
+{
+  "dryRun": true,
+  "results": [
+    {
+      "source": "tse",
+      "candidato": "ivan-moraes",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "roberio-paulino",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "alvaro-dias-rn",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "felicio-ramuth",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "eduardo-braide",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "raquel-lyra",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "hildon-chaves",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "mauricio-tonha",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "samara-martins",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "elizeu-aguiar",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "samuel-costa",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "pazolini",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "rafael-greca",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "baba",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "saulo-arcangeli",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "elmano-de-freitas",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "cintia-dias",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "joel-rodrigues",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "joao-campos",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "gabriel-azevedo",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "vittorio-medioli",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "vera-lucia",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "william-siri",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "dr-furlan",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "dr-daniel",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "lucia-santos",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "jhc",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "larissa-rosado",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "olimpio-rocha",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "telemaco-brandao",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "ricardo-marques",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "cicero-lucena",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "preta-lu",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "cyro-garcia",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "alysson-bezerra",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "ze-coca",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "arthur-henrique",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "ravenna-castro",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "lenilda-luna",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "marcelo-maranata",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "eduardo-paes",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "laudicerio-aguiar",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "priscila-voigt",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "adailton-furia",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "hertz-dias",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "cleber-rabelo",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "jeremias-cosmo",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "alexandre-kalil",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "gustavo-henrique",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "jeferson-bezerra",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "juliana-brizola",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "tiao-bocalom",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "gilberto-vasconcelos",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "prof-enfermeira-kaelly",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "juliete-pantoja",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "daniela-paiva",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "izadora-dias",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "lourdes-melo",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "luan-monteiro",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "dr-luisinho",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "joao-henrique-catan",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "david-almeida",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "ze-batista",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "rafael-duda",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "mauricio-coelho",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "lucas-ribeiro",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "wilder-morais",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "luiz-carlos-teodoro",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "serley-leal",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "henrique-areas",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    }
+  ],
+  "plannedRows": [
+    {
+      "table": "financiamento",
+      "slug": "ivan-moraes",
+      "row": {
+        "candidato_id": "8a59da03-a2ad-4385-9516-eb738f970df0",
+        "ano_eleicao": 2020,
+        "sq_candidato": "170001062173",
+        "uf_candidatura": "PE",
+        "total_arrecadado": 212753.84,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 74783.4,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MOUX APLICATIVOS MOVEIS LTDA",
+            "valor": 33060,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Joao Henrique Marinho de Souza",
+            "valor": 11300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUÍS JOSÉ MARANHÃO NETO",
+            "valor": 7200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RICARDO ESTEVÃO DE OLIVIEIRA",
+            "valor": 6000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "KAREM ALMEIDA SANTOS",
+            "valor": 5849,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SANDRA RODRIGUES BARBOSA",
+            "valor": 5574.04,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SANDRA CRISANTO S MAIOR",
+            "valor": 3500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELEICÃO 2020 MARILIA VALENCA ROCHA ARRAES DE ALENCAR PREFEITO",
+            "valor": 3200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANA CAROLINA DA CAMARA LIMA",
+            "valor": 3200,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "roberio-paulino",
+      "row": {
+        "candidato_id": "7ee50d01-a46b-4a98-8fcb-fe3936659022",
+        "ano_eleicao": 2020,
+        "sq_candidato": "200000981908",
+        "uf_candidatura": "RN",
+        "total_arrecadado": 27999.6,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 17299.6,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ROBERIO PAULINO RODRIGUES",
+            "valor": 3900,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOÃO PAULO",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PEDRO",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FLAVIO TAVARES DE LYRA JR.",
+            "valor": 800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARITZA W",
+            "valor": 700,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PABLO HENRIQUE DE PAULA PAIXAO",
+            "valor": 300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ROMULO LIMA SILVA DE GOIS",
+            "valor": 300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SONIA MARIA GODEIRO",
+            "valor": 300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE WILSON SILVA DE FARIAS",
+            "valor": 300,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "alvaro-dias-rn",
+      "row": {
+        "candidato_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "ano_eleicao": 2020,
+        "sq_candidato": "200001194163",
+        "uf_candidatura": "RN",
+        "total_arrecadado": 2122585.53,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 1225000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARCELO HENRIQUE RIBEIRO ALECRIM",
+            "valor": 75000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PAULO COELHO DE MEDEIROS",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JURACY ALVES DE O FRANÇA",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ÁLVARO COSTA DIAS",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FLÁVIO GURGEL ROCHA",
+            "valor": 34000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELVIO GURGEL ROCHA",
+            "valor": 33000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LISIANE GURGEL ROCHA",
+            "valor": 33000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCISCA EVA DIÓGENES",
+            "valor": 28000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SCHIAVO DURVAL FERNANDES ÁLVARES",
+            "valor": 20000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "felicio-ramuth",
+      "row": {
+        "candidato_id": "7738536c-3432-4762-97e5-f91e812550f4",
+        "ano_eleicao": 2020,
+        "sq_candidato": "250000693253",
+        "uf_candidatura": "SP",
+        "total_arrecadado": 1668910,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 353000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "WAGNER LOUIS DE SOUZA",
+            "valor": 100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MANOEL CONDE NETO",
+            "valor": 25000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RICARDO DEL CIELLO",
+            "valor": 15000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DENIS CESAR CORREIA",
+            "valor": 15000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSÉ DE MELLO CORREA",
+            "valor": 13000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ODILSON GOMES BRAZ JUNIOR",
+            "valor": 12000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FERNANDO MASSAAKI SHIBATA",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JAQUELINE LANFRANCHI TALLAVASSO VASSOVINO",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SYLVIA RAMUTH",
+            "valor": 10000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "eduardo-braide",
+      "row": {
+        "candidato_id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
+        "ano_eleicao": 2020,
+        "sq_candidato": "100000756891",
+        "uf_candidatura": "MA",
+        "total_arrecadado": 2347678.91,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 1561928.91,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Nacional",
+            "valor": 560000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANTONIO CARLOS BRAIDE",
+            "valor": 59750,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALFREDO RAMALHO PEREIRA",
+            "valor": 30000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PATRICIA FRANCO MARQUES",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUIS GUSTAVO FRANCO MARQUES",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VINICIUS PEREIRA VIEGAS",
+            "valor": 15000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RAIMUNDO FLORENCIO MONTEIRO FILHO",
+            "valor": 13000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSÉ MARIO FERRO FRAZAO",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DIEGO BRAGA CARVAHO",
+            "valor": 10000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "raquel-lyra",
+      "row": {
+        "candidato_id": "022d27e8-2832-4156-9bc7-7eac817ac901",
+        "ano_eleicao": 2020,
+        "sq_candidato": "170001032564",
+        "uf_candidatura": "PE",
+        "total_arrecadado": 2389758.66,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "DIREÇÃO NACIONAL",
+            "valor": 1050287.5,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GABRIEL ACURCIO VILACA SOARES",
+            "valor": 120000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUIZ ILDEFONSO SIMOES LOPES",
+            "valor": 100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DIREÇÃO ESTADUAL/DISTRITAL",
+            "valor": 80000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCISCO FRANCO DE VASCONCELOS",
+            "valor": 65000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARCOS ANTONIO MAGALHAES",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BERNARDO DE LIMA BARBOSA",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCISCO EUSTACIO FERNANDES VIEIRA",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CARLOS JEREISSATI",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CLAUSTON PACAS SILVA",
+            "valor": 40000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "hildon-chaves",
+      "row": {
+        "candidato_id": "5a325c79-3414-4d70-8926-673e91cbd578",
+        "ano_eleicao": 2020,
+        "sq_candidato": "220001051415",
+        "uf_candidatura": "RO",
+        "total_arrecadado": 1502216.93,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 522500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "HILDON DE LIMA CHAVES",
+            "valor": 300000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "IEDA PACHECO CHAVES",
+            "valor": 300000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 142060,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CRED REAL INTERMEDIACAO DE NEGOCIOS LTDA",
+            "valor": 24064,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELIANA RODRIGUES OLIVEIRA",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANASILDO CORREA LIMA",
+            "valor": 8000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "IVONETE GOMES DA SILVA COSTA",
+            "valor": 7000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "TIAGO DOS SANTOS MIRANDA",
+            "valor": 7000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VICTOR DE OLIVEIRA SOUZA",
+            "valor": 6567.5,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "mauricio-tonha",
+      "row": {
+        "candidato_id": "3c628b54-5304-480d-a664-be16409e0322",
+        "ano_eleicao": 2020,
+        "sq_candidato": "110001033922",
+        "uf_candidatura": "MT",
+        "total_arrecadado": 878396.98,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "MAURICIO CARDOSO TONHA",
+            "valor": 110000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ABEL TERRUGI LEOPOLDINO",
+            "valor": 100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VINICIUS MARIN RAMOS DA SILVA",
+            "valor": 60000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GUILHERME FRIEDRICHS TONHA",
+            "valor": 60000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "WILSON JOSE DOS SANTOS",
+            "valor": 55000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GUILHERME PINEZZI HONORIO",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JANE CRISTINA FRIEDRICHS TONHA",
+            "valor": 44746,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CESAR LUIS FRIEDRICHS",
+            "valor": 43012.06,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE RICARDO REZEK",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VALDEMAR FRIEDRICHS",
+            "valor": 38312.06,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "samara-martins",
+      "row": {
+        "candidato_id": "b3988a51-2776-4172-a73b-e326365b0c04",
+        "ano_eleicao": 2020,
+        "sq_candidato": "200000724019",
+        "uf_candidatura": "RN",
+        "total_arrecadado": 6591.8,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 3031.8,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SAMARA MARTINS DA SILVA",
+            "valor": 1340,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUIZ ROBERTO AUGUSTO NONO",
+            "valor": 500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ARACY ALVES MARTINS",
+            "valor": 400,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "INAE NAIARA LOPES MARQUES DE OLIVEIRA",
+            "valor": 300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARCIA C COSTA MIGUEL",
+            "valor": 240,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ARISTOTELINO MONTEIRO FERREIRA",
+            "valor": 200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARLUCE BARROS DA SILVA",
+            "valor": 100,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA ANGELA FERNANDES FERREIRA",
+            "valor": 100,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MATEUS F S DE FREITAS",
+            "valor": 100,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "elizeu-aguiar",
+      "row": {
+        "candidato_id": "914d9904-1c6a-47f9-a25f-017138dc1cef",
+        "ano_eleicao": 2020,
+        "sq_candidato": "180000762626",
+        "uf_candidatura": "PI",
+        "total_arrecadado": 141232.97,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 125740.97,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EDIVALDO PINTO RODRIGUES",
+            "valor": 4420,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANTONIO JOSE DE MORAES AGUIAR",
+            "valor": 3340,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GILBERTO DA ROCHA",
+            "valor": 3160,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "HIDELBERTO GOMES DE CAMPOS",
+            "valor": 2412,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EZEQUIAS GOMES DE SOUSA",
+            "valor": 2160,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "samuel-costa",
+      "row": {
+        "candidato_id": "f4e5e4bd-7934-4d04-8534-9a60fac53edd",
+        "ano_eleicao": 2020,
+        "sq_candidato": "220000685117",
+        "uf_candidatura": "RO",
+        "total_arrecadado": 81041.7,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 52321.7,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 15570,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SAMUEL COSTA MENEZES",
+            "valor": 3200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JURANDI SILVA CAMARA",
+            "valor": 2200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ISAAC SANTANA",
+            "valor": 1600,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUIZ DA CRUZ PAIXÃO",
+            "valor": 1300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANDERSON LIMA MACHADO",
+            "valor": 1250,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "HAROLDO FELIX DE SANTANA",
+            "valor": 1200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NELMAX COSTA PINTO",
+            "valor": 1200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DILAN DA SILVA PAIXÃO",
+            "valor": 1200,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "pazolini",
+      "row": {
+        "candidato_id": "8d4eb423-5fa3-401f-883d-d70f4c0c64d8",
+        "ano_eleicao": 2020,
+        "sq_candidato": "80001188308",
+        "uf_candidatura": "ES",
+        "total_arrecadado": 2536114,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 1720000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 752514,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSÉ AUGUSTO SAVA",
+            "valor": 10600,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALEX MARIANO",
+            "valor": 6000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DIOGO DE SOUZA MARTINS",
+            "valor": 4000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ROSA THOMAZ DE SOUZA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE DE SOUZA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GENÉSIO SOARES DIAS",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "WALTER RODRIGUES LOPES",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALEXANDRO CRISTO ALVES",
+            "valor": 3000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "rafael-greca",
+      "row": {
+        "candidato_id": "adb2ed0d-e7d6-4726-b310-a32bf6e3478a",
+        "ano_eleicao": 2020,
+        "sq_candidato": "160000657203",
+        "uf_candidatura": "PR",
+        "total_arrecadado": 3791400,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 3274500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 103000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE ISAAC PERES",
+            "valor": 80000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ODENIR JOSE SANCHES",
+            "valor": 50500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CARLO ALBERTO BOTTARELLI",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANDRE PAULOZZI VILLAR",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RICARDO BELLON JUNIOR",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DANIELLE OLIVEIRA SILVA SALVARO",
+            "valor": 30000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RITA DE CASSIA RIBAS OLIVEIRA",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANA CRISTINA CANET OZORIO DE ALMEIDA",
+            "valor": 10000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "baba",
+      "row": {
+        "candidato_id": "dade7402-b3dc-4910-9c21-43c834f21620",
+        "ano_eleicao": 2020,
+        "sq_candidato": "200000779479",
+        "uf_candidatura": "RN",
+        "total_arrecadado": 85040,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANTEOMAR PEREIRA DA SILVA",
+            "valor": 12000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANA CECÍLIA DE ARAÚJO PEREIRA",
+            "valor": 10010,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSINALDO AMARO DE LIMA",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCISCO ESTRELA MARTINS",
+            "valor": 6000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCISCO SILVA MEDEIROS",
+            "valor": 1380,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EGBERTO NUNES DE CARVALHO",
+            "valor": 1200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSIELMA AMARO DE LIMA",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUCICARLA PEREIRA DA SILVA FERREIRA",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "TERESA CRISTINA DA SILVA",
+            "valor": 500,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "saulo-arcangeli",
+      "row": {
+        "candidato_id": "968f8c87-8d8b-4248-9cee-4aee7929f4d9",
+        "ano_eleicao": 2020,
+        "sq_candidato": "100000718204",
+        "uf_candidatura": "MA",
+        "total_arrecadado": 12363,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 9435,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SAULO COSTA ARCANGELI",
+            "valor": 728,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GENIAL IDEIAS E SOLUCOES LTDA",
+            "valor": 600,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "KATIA MARIA DE ALMEIDA RIBEIRO",
+            "valor": 500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELOY NATAN SILVEIRA NASCIMENTO",
+            "valor": 350,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CARLOS ANTONIO BONFIM PEREIRA",
+            "valor": 300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCI GOMES CARDOSO",
+            "valor": 200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARCELINO RODRIGUES CUTRIM NETO",
+            "valor": 200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ACRISIO SOARES MOTA",
+            "valor": 50,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "elmano-de-freitas",
+      "row": {
+        "candidato_id": "f126204e-1f28-4200-9468-9144eddbb6e4",
+        "ano_eleicao": 2020,
+        "sq_candidato": "60000983767",
+        "uf_candidatura": "CE",
+        "total_arrecadado": 858000,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 450000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PEDRO GRENDENE BARTELLE",
+            "valor": 150000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALEXANDRE GRENDENE BARTELLE",
+            "valor": 150000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Nacional",
+            "valor": 30000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELMANO DE FREITAS DA COSTA",
+            "valor": 19000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE EDUARDO SILVA NOBRE",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUIZ SÉRGIO MENEZES DA COSTA",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANKLIN DA SILVA NASCIMENTO",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALFREDO JOSE PESSOA DE OLIVEIRA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA GLAUCIA GONDIM ARAUJO",
+            "valor": 2000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "cintia-dias",
+      "row": {
+        "candidato_id": "92fea10d-509a-4e07-b686-2271f635fcf8",
+        "ano_eleicao": 2020,
+        "sq_candidato": "90000746350",
+        "uf_candidatura": "GO",
+        "total_arrecadado": 33771.39,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "WELTON MARDEN DE ALMEIDA",
+            "valor": 15000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 6511.19,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA ANGELA DE AMBROSIS PINHEIRO MACHADO",
+            "valor": 4000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALEXANDRE AGUIAR DOS SANTOS",
+            "valor": 2040.2,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CRISTIANE LOPES SIMAO LEMOS",
+            "valor": 1600,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CINTIA APARECIDA DIAS",
+            "valor": 1500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CASSIO DA SILVA ARAUJO TAVARES",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NABSON SANTANA CUNHA",
+            "valor": 500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALINE PRISCILA PANSANI",
+            "valor": 400,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA DO CARMO FERRAZ TEDESCO",
+            "valor": 200,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "joel-rodrigues",
+      "row": {
+        "candidato_id": "63de6cc4-aebc-49f6-88ab-25c93dde0a58",
+        "ano_eleicao": 2020,
+        "sq_candidato": "180000952432",
+        "uf_candidatura": "PI",
+        "total_arrecadado": 356000,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 318000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELEIÇÃO 2020 ANTONIO REIS NETO VICE-PREFEITO",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RAFAEL DA SILVA OLIVEIRA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SILVIO RUI SILVA REIS",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JAMES RODRIGUES DOS SANTOS",
+            "valor": 2500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSELIA RODRIGUES DA SILVA",
+            "valor": 1800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELICARLOS DE SOUSA BRITO",
+            "valor": 1500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DANIELA AMORIM OLIVEIRA",
+            "valor": 1500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JULIO CESAR DA SILVA FERREIRA",
+            "valor": 1200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCISCA ALVES FEITOZA",
+            "valor": 1000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "joao-campos",
+      "row": {
+        "candidato_id": "cc2dbc88-aae0-4c75-a112-bcc6bfc3189b",
+        "ano_eleicao": 2020,
+        "sq_candidato": "170000688433",
+        "uf_candidatura": "PE",
+        "total_arrecadado": 9924003.92,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 9900000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Municipal/Comissão Provisória",
+            "valor": 13720,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DJALMO DE OLIVEIRA LEÃO",
+            "valor": 4500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SAULO FERNANDO DE AZEVEDO MENDES FIGUEIREDO",
+            "valor": 2432.52,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "OZINETE JOSEFA ALVES",
+            "valor": 1351.4,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "gabriel-azevedo",
+      "row": {
+        "candidato_id": "2081565f-e38d-4246-81d6-4f28979e8136",
+        "ano_eleicao": 2020,
+        "sq_candidato": "130000704273",
+        "uf_candidatura": "MG",
+        "total_arrecadado": 233106.28,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Eighty-eight",
+            "valor": 105080,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LEONARDO JOSÉ PAIXÃO DIAS",
+            "valor": 33000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BRUNO CAMPOS GUIMARAES VEREZA",
+            "valor": 12000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUCAS CAMPOS GUIMARAES VEREZA",
+            "valor": 12000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOAO BATISTA PAIVA DE SOUSA",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RAFAEL FONSECA DAYRELL FARINHA",
+            "valor": 8000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CAROLINA MOREIRA FERNANDES",
+            "valor": 5500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANDRE DE SOUZA SIMIL",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FELIPE CANCADO",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Ana Cristina Wanderley",
+            "valor": 4000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "vittorio-medioli",
+      "row": {
+        "candidato_id": "af4d51ab-ffdd-4898-a240-29ea2e85b8e0",
+        "ano_eleicao": 2020,
+        "sq_candidato": "130000692020",
+        "uf_candidatura": "MG",
+        "total_arrecadado": 3969954.25,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 2100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Municipal/Comissão Provisória",
+            "valor": 787974.25,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VITTORIO MEDIOLI",
+            "valor": 500000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DANIELA MARIA MEDIOLI",
+            "valor": 83000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VIRGILIO JOSE MACHADO SANTOS",
+            "valor": 80000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARINA MEDIOLI",
+            "valor": 80000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANA MARIA ANTUNES MACHADO",
+            "valor": 60000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 49979,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LAURA MARIA MACHADO MEDIOLI",
+            "valor": 47001,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MILTON LUIZ GREPALLI",
+            "valor": 20000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "vera-lucia",
+      "row": {
+        "candidato_id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
+        "ano_eleicao": 2020,
+        "sq_candidato": "250000744464",
+        "uf_candidatura": "SP",
+        "total_arrecadado": 137220,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 109700,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JULIA MARIA DE SIQUEIRA EID",
+            "valor": 3400,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NARCISO FERNANDES SOARES",
+            "valor": 2900,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "HIDETOSHI TAKIISHI",
+            "valor": 1600,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUCAS ANTONIO NIZUMA SIMABUKULO",
+            "valor": 1500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "OSLEY CARDOSO DOS SANTOS",
+            "valor": 1400,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EDUARDO HENRIQUE NASCIMENTO SILVA",
+            "valor": 1300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VERUSKA OLIVEIRA TENORIO",
+            "valor": 1255,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ARTOUR BARBOSA DE QUEIROZ",
+            "valor": 1060,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIO CEZAR BARBOSA CONCEIÇÃO",
+            "valor": 1050,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "william-siri",
+      "row": {
+        "candidato_id": "de8dc3ea-6427-4b02-babe-a1925547e135",
+        "ano_eleicao": 2020,
+        "sq_candidato": "190000684938",
+        "uf_candidatura": "RJ",
+        "total_arrecadado": 74709.79,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Municipal/Comissão Provisória",
+            "valor": 42267.99,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "WILLIAM CARLOS BRUM BISPO",
+            "valor": 20700,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DEMOCRATIZE TECNOLOGIA LTDA",
+            "valor": 6329,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE CARLOS DA COSTA BISPO",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELISÂNGELA DOS SANTOS MACEDO",
+            "valor": 770,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "AMANDA MAURA DE OLIVEIRA",
+            "valor": 770,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA JULIA ALVES MONSORES",
+            "valor": 770,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOÃO FELIPE DA SILVA SANTOS",
+            "valor": 770,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUCAS GABRIEL SONCINI DA COSTA",
+            "valor": 770,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GUSTAVO FILGUEIRAS VIANA",
+            "valor": 300,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "dr-furlan",
+      "row": {
+        "candidato_id": "9f2c557f-7c5a-459b-b0f5-faa6d561a4ce",
+        "ano_eleicao": 2020,
+        "sq_candidato": "30000747583",
+        "uf_candidatura": "AP",
+        "total_arrecadado": 1121351.75,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 500000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 376641.75,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Municipal/Comissão Provisória",
+            "valor": 209800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANTONIO PAULO DE OLIVEIRA FURLAN",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RAIMUNDO DOS SANTOS",
+            "valor": 9000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUCIANO FERREIRA SECCHIN",
+            "valor": 3500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANTONIO AUGUSTO DE AGUIAR",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PEDRO PAULO DA SILVA COSTA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EDINELSON DIAS PALHETA",
+            "valor": 2500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "WILSON SANTANA MARQUES",
+            "valor": 1510,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "dr-daniel",
+      "row": {
+        "candidato_id": "dcc4a93e-4114-43e9-b067-4581ed12cfd5",
+        "ano_eleicao": 2020,
+        "sq_candidato": "140001027099",
+        "uf_candidatura": "PA",
+        "total_arrecadado": 1190136.65,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "DANIEL BARBOSA SANTOS",
+            "valor": 132200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELTON DOS ANJOS BRANDÃO",
+            "valor": 120000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOÃO LUIS BRASIL BATISTA ROLIM DE CASTRO",
+            "valor": 115000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GISELLE REMOR MONTEIRO",
+            "valor": 100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIANA GOES CUNHA LIMA",
+            "valor": 80000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LEILA ABUD DE CARVALHO",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VICTOR ORENGEL DIAS",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NATERCIA TRINDADE PINTO JEHA",
+            "valor": 39000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GILENE ALVES MENDES",
+            "valor": 30000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "lucia-santos",
+      "row": {
+        "candidato_id": "af1bd42d-8ee5-4b53-9267-0a0114b74956",
+        "ano_eleicao": 2020,
+        "sq_candidato": "180001057808",
+        "uf_candidatura": "PI",
+        "total_arrecadado": 26541,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "LUCIA MARIA DE SOUSA AGUIAR DOS SANTOS",
+            "valor": 23300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ISADORA DOS SANTOS PAIVA",
+            "valor": 2800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "KAIRON RUBENS NOGUEIRA DE CASTRO CARVALHO",
+            "valor": 350,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELEIÇÃO 2020 DIEGO GOMES MELO PREFEITO",
+            "valor": 91,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "jhc",
+      "row": {
+        "candidato_id": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+        "ano_eleicao": 2020,
+        "sq_candidato": "20000842791",
+        "uf_candidatura": "AL",
+        "total_arrecadado": 5052797.91,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 2437097.91,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Nacional",
+            "valor": 1800000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Municipal/Comissão Provisória",
+            "valor": 750000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RICARDO DE ARAUJO SANTA RITA",
+            "valor": 15000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOAO HENRIQUE HOLANDA CALDAS",
+            "valor": 14500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VANDERLEI VIEIRA",
+            "valor": 7500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RAYANNE ISABELLE T DA SILVA",
+            "valor": 4500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DANIEL EDSON ALMEIDA BEZERRA SILVA",
+            "valor": 3200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANTONIO ALICIO MOREIRA DE OLIVEIRA JUNIOR",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "HUGO MACIEL DE BARROS",
+            "valor": 3000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "larissa-rosado",
+      "row": {
+        "candidato_id": "40d9eaa9-2e4e-4e86-b8c1-8374bcc808d5",
+        "ano_eleicao": 2020,
+        "sq_candidato": "200000915288",
+        "uf_candidatura": "RN",
+        "total_arrecadado": 91728.73,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 70000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "HERBERT DE SOUZA VIEIRA",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PAULO SIDNEY GOMES SILVA",
+            "valor": 3721.82,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JERONYMO LAHYRE DE MELLO ROSADO NETO",
+            "valor": 3500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PEDRO ALMEIDA DUARTE",
+            "valor": 2400,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NESTOR GOMES DUARTE JUNIO",
+            "valor": 2146,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LARISSA DANIELA DA ESCOSSIA ROSADO",
+            "valor": 1860.91,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CID A ESCOSSIA ROSADO FH",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANA TACILA ALVES DE LIMA",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PABLO MARCEL DE SOUSA OLIVIERA",
+            "valor": 600,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "olimpio-rocha",
+      "row": {
+        "candidato_id": "ce6918c4-3139-4fa0-b65a-2245ee0272bb",
+        "ano_eleicao": 2020,
+        "sq_candidato": "150001021436",
+        "uf_candidatura": "PB",
+        "total_arrecadado": 68789.29,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 30998.84,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Nacional",
+            "valor": 20174.75,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GENIAL IDEIAS E SOLUCOES LTDA",
+            "valor": 6570,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "OLÍMPIO DE MORAES ROCHA",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUIZA MARILLAC LEAL DE MORAES ROCHA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "TAMARA DE MORAES ROCHA",
+            "valor": 1200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALEXANDRE SOARES DE MELO",
+            "valor": 600,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUCIANA LEANDRO DA SILVA",
+            "valor": 500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA SHEYLLA CAMPOS DE LIMA",
+            "valor": 215.7,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALBERTO JOSE CORREIA RAMOS",
+            "valor": 200,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "telemaco-brandao",
+      "row": {
+        "candidato_id": "d18023b4-c6a2-4608-a72a-43fa924fc76a",
+        "ano_eleicao": 2020,
+        "sq_candidato": "90001221414",
+        "uf_candidatura": "GO",
+        "total_arrecadado": 65410,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "TELEMACO BRANDÃO",
+            "valor": 35910,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FREDERICO A. A. O. VALTUILLE",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JAIRO MACHADO CARNEIRO",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CAIRO SALIM MARCELINO LOPES",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LICIA CAMILHER MACHADO BRANDÃO",
+            "valor": 2500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ROBERTO COUTINHO SANTOS",
+            "valor": 1000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "ricardo-marques",
+      "row": {
+        "candidato_id": "2ae1d014-8791-4eb4-817a-5ac85bf4fbd6",
+        "ano_eleicao": 2020,
+        "sq_candidato": "260000657536",
+        "uf_candidatura": "SE",
+        "total_arrecadado": 28343.7,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "THIAGO WILLIAMS DOS SANTOS",
+            "valor": 6000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALBERTO BARRETO DE ANDRADE",
+            "valor": 4000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CAUA TERRA CORDEIRO",
+            "valor": 2270,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA MACHADO",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JAQUELINE MACHADO DE JESUS",
+            "valor": 1800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JANAINA PEREIRA DE LUCENA MENEZES",
+            "valor": 1600,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARCOS ALAN DA CONCEIÇÃO SOUZA",
+            "valor": 1400,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUCAS BRENDON CAVALCANTE SILVA",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DANIELA SANTOS MELO",
+            "valor": 950,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE LUIZ DOS SANTOS",
+            "valor": 950,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "cicero-lucena",
+      "row": {
+        "candidato_id": "76a6620b-1fd4-46df-806f-5101bd660f7f",
+        "ano_eleicao": 2020,
+        "sq_candidato": "150000976695",
+        "uf_candidatura": "PB",
+        "total_arrecadado": 2894067.98,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 1294000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Nacional",
+            "valor": 1201000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOÃO AMER",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELIENE MARIA RAMALHO FARIAS",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RAMON RODRIGUES",
+            "valor": 35000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE ANTONIO",
+            "valor": 20700,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FLAVIO MAROJA PEDROSA",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "IGOR PEDROSA",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SEVERINO BEZERRA CABRAL NETO",
+            "valor": 19987.99,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SEBASTIAO FEITOSA",
+            "valor": 15000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "preta-lu",
+      "row": {
+        "candidato_id": "54fc08fb-f712-42e2-81ed-3bdedc60a783",
+        "ano_eleicao": 2020,
+        "sq_candidato": "100000718202",
+        "uf_candidatura": "MA",
+        "total_arrecadado": 10600,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 9000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ESTER ALVES DURANS",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELOY NATAN SILVEIRA NASCIMENTO",
+            "valor": 600,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "cyro-garcia",
+      "row": {
+        "candidato_id": "6991016f-b50a-4984-b60a-40521bcdf6ee",
+        "ano_eleicao": 2020,
+        "sq_candidato": "190000858699",
+        "uf_candidatura": "RJ",
+        "total_arrecadado": 55390,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 48450,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PAULA REGINA GOTO",
+            "valor": 2500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DEMOCRATIZE TECNOLOGIA LTDA",
+            "valor": 2490,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Municipal/Comissão Provisória",
+            "valor": 1300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 450,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELIZABETHCASTRODE PAULA",
+            "valor": 100,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELIZABETH ELISA",
+            "valor": 100,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "alysson-bezerra",
+      "row": {
+        "candidato_id": "71129af6-3c6d-4b0a-9030-b97984fc1e0b",
+        "ano_eleicao": 2020,
+        "sq_candidato": "200000661444",
+        "uf_candidatura": "RN",
+        "total_arrecadado": 421825,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 160000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALLYSON LEANDRO BEZERRA SILVA",
+            "valor": 107800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Nacional",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "KELPS DE OLIVEIRA LIMA",
+            "valor": 27000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUIZ HENRIQUE MEDEIROS PA",
+            "valor": 15000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BRUNO MARTINS DE BRITO",
+            "valor": 10500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SIMONE FREIRE MARTINS",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE ALVARES VIEIRA",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FELIPE RODRIGUES D SILVA",
+            "valor": 9000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCISCO XAVIER GUELBER",
+            "valor": 5000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "ze-coca",
+      "row": {
+        "candidato_id": "551a4c70-3c9e-4a47-ab62-c241b1dcfbd1",
+        "ano_eleicao": 2020,
+        "sq_candidato": "50000788865",
+        "uf_candidatura": "BA",
+        "total_arrecadado": 293560.45,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 225200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JEFERSON LIMA POMPONET",
+            "valor": 6000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ZENILDO BRANDÃO SANTANA",
+            "valor": 4000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCISCA MARIA DOS SANTOS MARQUES",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA DA SOLEDADE BRANDÃO S CASTELLUCCI",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JONATAS GERSON SANTOS MARQUES",
+            "valor": 1660.45,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "REBECCA MARQUES DE CASTILHO",
+            "valor": 1500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FLAVIO BRANDÃO SANTANA",
+            "valor": 600,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RONALDO BRITO MACHADO",
+            "valor": 600,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "arthur-henrique",
+      "row": {
+        "candidato_id": "049a5051-e7c9-4729-8853-14753d2993e1",
+        "ano_eleicao": 2020,
+        "sq_candidato": "230000679861",
+        "uf_candidatura": "RR",
+        "total_arrecadado": 2351500,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 1990000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 361500,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "ravenna-castro",
+      "row": {
+        "candidato_id": "ae28abd5-e231-405a-938e-85e8c6d64d75",
+        "ano_eleicao": 2020,
+        "sq_candidato": "180001238894",
+        "uf_candidatura": "PI",
+        "total_arrecadado": 213920,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 200000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CAMILA DA SILVA NOGUEIRA",
+            "valor": 2450,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DERIVALDO DA COSTA LOPES",
+            "valor": 2100,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PARSIFAL ARTURO DE OLIVEIRA",
+            "valor": 1680,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "HUGO CASSIANO NUNES AMORIM",
+            "valor": 1190,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANTÔNIO ALVES DA SILVA",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ISABEL CRISTINA CRONEMBERGER ROCHA",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EUDES COELHO BATISTA NETO",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PAULO SÉRGIO SOARES DA SILVA",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MIZAEL DE SOUSA ALVES OLIVEIRA",
+            "valor": 1000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "lenilda-luna",
+      "row": {
+        "candidato_id": "9677309d-5b33-4973-9bbb-d92b766557a3",
+        "ano_eleicao": 2020,
+        "sq_candidato": "20000699995",
+        "uf_candidatura": "AL",
+        "total_arrecadado": 21343,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 11994,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GOIA SERVICOS",
+            "valor": 3649,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ESIO MELO",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOÃO HENRIQUE",
+            "valor": 600,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "YURI DELEON BUARQUE MAGALHÃES DE SOUZA",
+            "valor": 500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "OLGA TATIANA D",
+            "valor": 500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MICHELE F",
+            "valor": 500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EMANUEL L",
+            "valor": 500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FLÁVIO CA",
+            "valor": 500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FÁBIO HENRIQUE",
+            "valor": 400,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "marcelo-maranata",
+      "row": {
+        "candidato_id": "59582609-1f9b-4363-9e36-08fd6d07b6c4",
+        "ano_eleicao": 2020,
+        "sq_candidato": "210000884394",
+        "uf_candidatura": "RS",
+        "total_arrecadado": 194786.5,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 180000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GUILHERME ALEXSANDER DA TRINDADE",
+            "valor": 7000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DEISI SILVEIRA REINALDO",
+            "valor": 2500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARCELO SOARES REINALDO",
+            "valor": 2250,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "KATIA VALDIRENE SILVA DE CAMARGO",
+            "valor": 1900,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SERGIO AXELRUD GALBINSKI",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FABRICIO AUGUSTO SANTOS CARVALHO",
+            "valor": 100,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Municipal/Comissão Provisória",
+            "valor": 36.5,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "eduardo-paes",
+      "row": {
+        "candidato_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+        "ano_eleicao": 2020,
+        "sq_candidato": "190000688286",
+        "uf_candidatura": "RJ",
+        "total_arrecadado": 9425006.78,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 9309000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Municipal/Comissão Provisória",
+            "valor": 102192.78,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CATARINA CLEO DO NASCIMENTO RINCO",
+            "valor": 1800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LÍVIA DA SILVA MOURA",
+            "valor": 1800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUIZ GUSTAVO PEREIRA DA SILVA",
+            "valor": 1800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RODRIGO JOSE ANDRADE DA SILVA",
+            "valor": 1800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GIOVANNA DE ARAUJO BIALOWAS",
+            "valor": 1200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GABRIEL FILIPE ANGELI LEAL",
+            "valor": 1200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FERNANDA BORDONE ROSA",
+            "valor": 1200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NICOLI DA CONCEIÇÃO MESQUITA",
+            "valor": 1200,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "laudicerio-aguiar",
+      "row": {
+        "candidato_id": "9f4c6003-20a5-486e-9c7a-90d48d4cdcd0",
+        "ano_eleicao": 2020,
+        "sq_candidato": "110000677466",
+        "uf_candidatura": "MT",
+        "total_arrecadado": 17900,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "WESLEY ALBANO O SILVA",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MAGDA CRISTINA P SALVIANO",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LAUDICÉRIO AGUIAR MACHADO",
+            "valor": 3300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARLON JACKSON GONÇALVES",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 1600,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "priscila-voigt",
+      "row": {
+        "candidato_id": "25b8bb92-4c1e-43c0-a4eb-d3c65ac5867b",
+        "ano_eleicao": 2020,
+        "sq_candidato": "210000636284",
+        "uf_candidatura": "RS",
+        "total_arrecadado": 13380,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 6600,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CFZ - ASSESSORIA E CONSULTORIA EMPRESARIAL LTDA.",
+            "valor": 2030,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VINICIUS VOIGT SEVERIANO",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CAUA ROCA ANTUNES",
+            "valor": 1550,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARCELO HEIDRICH ANTUNES",
+            "valor": 300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LAYSLA YASMIN DOS SANTOS DA FONSECA",
+            "valor": 250,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MAURO NUNES DA SILVA",
+            "valor": 200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DANIEL DE ALEXANDRINO COSTA CABRAL",
+            "valor": 200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ADRIANA EDVIGES DE ARAUJO CORTE",
+            "valor": 150,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RODRIGO PEDROSO TOLIO",
+            "valor": 50,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "adailton-furia",
+      "row": {
+        "candidato_id": "e9cf3bd3-4ab9-4928-b652-558c5e8d8ce4",
+        "ano_eleicao": 2020,
+        "sq_candidato": "220001025502",
+        "uf_candidatura": "RO",
+        "total_arrecadado": 317430,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 311000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSÉ CASSIANO GOIS DE FREITAS",
+            "valor": 2400,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOLIANE TAMIRES DURAN SIMÕES",
+            "valor": 2030,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ADAILTON ANTUNES FERREIRA",
+            "valor": 2000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "hertz-dias",
+      "row": {
+        "candidato_id": "79b84a18-1a4e-4123-a831-8aefda253dc6",
+        "ano_eleicao": 2020,
+        "sq_candidato": "100000718146",
+        "uf_candidatura": "MA",
+        "total_arrecadado": 25760,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 24450,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELOY NATAN SILVEIRA NASCIMENTO",
+            "valor": 1280,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GENIAL IDEIAS E SOLUCOES",
+            "valor": 30,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "cleber-rabelo",
+      "row": {
+        "candidato_id": "c3927ab9-3b7b-4563-a0d9-afa1df9f3efa",
+        "ano_eleicao": 2020,
+        "sq_candidato": "140000637323",
+        "uf_candidatura": "PA",
+        "total_arrecadado": 14000,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 13300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BRUNO GOMES TERRIBAS",
+            "valor": 700,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "jeremias-cosmo",
+      "row": {
+        "candidato_id": "baf8abd2-9386-48df-876e-1e8b16fa1e7f",
+        "ano_eleicao": 2020,
+        "sq_candidato": "170000735134",
+        "uf_candidatura": "PE",
+        "total_arrecadado": 3019.29,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "JEREMIAS COSMO SILVA DOS SANTOS",
+            "valor": 2670.45,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELEICOES 2020 ANNA KARINA GOUVEIA PREFEITO",
+            "valor": 348.84,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "alexandre-kalil",
+      "row": {
+        "candidato_id": "18d872c1-3e51-4856-9a93-2ca53b35d78f",
+        "ano_eleicao": 2020,
+        "sq_candidato": "130000756879",
+        "uf_candidatura": "MG",
+        "total_arrecadado": 5839466.67,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Municipal/Comissão Provisória",
+            "valor": 5477000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 340000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LEONARDO GUIMARÃES BASTOS",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RAPHAEL DOMINGOS ALEMIDA DE SOUZA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LIVIA MARTINS DE FREITAS",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALAN DERRE CARVALHO",
+            "valor": 2500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EZEQUIAS RODRIGUES DE SOUZA",
+            "valor": 2500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SIMÃO EVANGELISTA DE SOUZA",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NEYMAR CAMILO DA SILVA",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RURICK DOS SANTOS FERREIRA",
+            "valor": 1500,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "gustavo-henrique",
+      "row": {
+        "candidato_id": "f793ff5b-678f-4684-97b7-ce0eaf08c0c3",
+        "ano_eleicao": 2020,
+        "sq_candidato": "180000726521",
+        "uf_candidatura": "PI",
+        "total_arrecadado": 31808,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 20808,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSÉ BROXADO LAPA NETO",
+            "valor": 3500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOHN RAFAEL SOARES BEZERRA DA SILVA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MELQUIZEDEQUE BARROS BORGES",
+            "valor": 1500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FEDERIC RAMON MATIAS DA SILVA",
+            "valor": 1500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MAURO MARTINS CHAVES",
+            "valor": 1500,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "jeferson-bezerra",
+      "row": {
+        "candidato_id": "10874c20-5864-42f9-a83e-0610502381c6",
+        "ano_eleicao": 2020,
+        "sq_candidato": "120000850578",
+        "uf_candidatura": "MS",
+        "total_arrecadado": 0,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "#NULO",
+            "valor": 0,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "juliana-brizola",
+      "row": {
+        "candidato_id": "7a6a6475-0691-4823-9104-5055ca589405",
+        "ano_eleicao": 2020,
+        "sq_candidato": "210001189949",
+        "uf_candidatura": "RS",
+        "total_arrecadado": 2702300,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 2680000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JONATAS OURIQUES DA SILVA",
+            "valor": 2300,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "tiao-bocalom",
+      "row": {
+        "candidato_id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
+        "ano_eleicao": 2020,
+        "sq_candidato": "10001003637",
+        "uf_candidatura": "AC",
+        "total_arrecadado": 268308.6,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 167308.6,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Nacional",
+            "valor": 101000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "gilberto-vasconcelos",
+      "row": {
+        "candidato_id": "5dc271fa-9171-484c-a8b3-f366fed10d10",
+        "ano_eleicao": 2020,
+        "sq_candidato": "40000686956",
+        "uf_candidatura": "AM",
+        "total_arrecadado": 13285,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 9735,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JULIANA FROTA REBOUÇAS",
+            "valor": 1300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 1250,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EUDES LOPES MELO",
+            "valor": 1000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "prof-enfermeira-kaelly",
+      "row": {
+        "candidato_id": "5260f6ab-31cb-4797-87e7-9bef5b1b4e96",
+        "ano_eleicao": 2020,
+        "sq_candidato": "120001084939",
+        "uf_candidatura": "MS",
+        "total_arrecadado": 22000,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 22000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "juliete-pantoja",
+      "row": {
+        "candidato_id": "0ef8b4e2-ef3d-4f6a-b284-3f4648c1386b",
+        "ano_eleicao": 2020,
+        "sq_candidato": "190001128515",
+        "uf_candidatura": "RJ",
+        "total_arrecadado": 0,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "#NULO",
+            "valor": 0,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "daniela-paiva",
+      "row": {
+        "candidato_id": "4cae14d9-c9d4-45e8-af39-5330e1900ae7",
+        "ano_eleicao": 2020,
+        "sq_candidato": "10000699924",
+        "uf_candidatura": "AC",
+        "total_arrecadado": 43319.4,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 41819.4,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA DO PERPETUO DO SOCORRO PAIVA DE OLIVEIRA",
+            "valor": 1500,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "izadora-dias",
+      "row": {
+        "candidato_id": "20e8b8cd-54a6-4e85-89c2-386ef12d2cc8",
+        "ano_eleicao": 2020,
+        "sq_candidato": "250001263474",
+        "uf_candidatura": "SP",
+        "total_arrecadado": 1000,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 1000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "lourdes-melo",
+      "row": {
+        "candidato_id": "f5de5375-7258-4164-9f89-45ee8ee442d6",
+        "ano_eleicao": 2020,
+        "sq_candidato": "180001237871",
+        "uf_candidatura": "PI",
+        "total_arrecadado": 1000,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 1000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "luan-monteiro",
+      "row": {
+        "candidato_id": "8acf0237-f485-4193-9a72-874f2c2790d1",
+        "ano_eleicao": 2020,
+        "sq_candidato": "190001092078",
+        "uf_candidatura": "RJ",
+        "total_arrecadado": 1000,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 1000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "dr-luisinho",
+      "row": {
+        "candidato_id": "c9c117e4-ea81-433d-b8c0-a01c8d831bae",
+        "ano_eleicao": 2020,
+        "sq_candidato": "40000972144",
+        "uf_candidatura": "AM",
+        "total_arrecadado": 4879.15,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 4469.15,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Municipal/Comissão Provisória",
+            "valor": 410,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "joao-henrique-catan",
+      "row": {
+        "candidato_id": "29dbd8e2-6ebb-4261-bf53-be3b4df63718",
+        "ano_eleicao": 2020,
+        "sq_candidato": "120001151664",
+        "uf_candidatura": "MS",
+        "total_arrecadado": 77237.85,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "JOAO HENRIQUE MIRANDA SOARES CATAN",
+            "valor": 77237.85,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "david-almeida",
+      "row": {
+        "candidato_id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+        "ano_eleicao": 2020,
+        "sq_candidato": "170001127614",
+        "uf_candidatura": "PE",
+        "total_arrecadado": 36,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "ELEIÇÃO 2020 ALTAIR BEZERRA DA SILVA JÚNIOR PREFEITO",
+            "valor": 26,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DAVID WILLIAMS SILVA DE ALMEIDA",
+            "valor": 10,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "ze-batista",
+      "row": {
+        "candidato_id": "21641505-703a-4227-b32f-d9995337dc49",
+        "ano_eleicao": 2020,
+        "sq_candidato": "60001133056",
+        "uf_candidatura": "CE",
+        "total_arrecadado": 5235,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 5235,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "rafael-duda",
+      "row": {
+        "candidato_id": "1eb75804-f098-4956-a1df-fd18d16c5f1d",
+        "ano_eleicao": 2020,
+        "sq_candidato": "130000788972",
+        "uf_candidatura": "MG",
+        "total_arrecadado": 4900,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 4900,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "mauricio-coelho",
+      "row": {
+        "candidato_id": "c7a28e0e-06d0-412b-98ee-b79a7a4354f9",
+        "ano_eleicao": 2020,
+        "sq_candidato": "110000951550",
+        "uf_candidatura": "MT",
+        "total_arrecadado": 172,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "MAURICIO COELHO RIBEIRO DA SILVA",
+            "valor": 172,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "lucas-ribeiro",
+      "row": {
+        "candidato_id": "b8ad0e9c-eb0f-4b37-bdf9-840c5d167016",
+        "ano_eleicao": 2020,
+        "sq_candidato": "150000774537",
+        "uf_candidatura": "PB",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_de_contas_eleitorais_candidatos_2020.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "wilder-morais",
+      "row": {
+        "candidato_id": "af18411e-e979-4a30-9a1c-c64927b50442",
+        "ano_eleicao": 2020,
+        "sq_candidato": "90001220915",
+        "uf_candidatura": "GO",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_de_contas_eleitorais_candidatos_2020.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "luiz-carlos-teodoro",
+      "row": {
+        "candidato_id": "92d96cc2-d413-49ac-bbdd-9834ce7c6418",
+        "ano_eleicao": 2020,
+        "sq_candidato": "220000977509",
+        "uf_candidatura": "RO",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_de_contas_eleitorais_candidatos_2020.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "serley-leal",
+      "row": {
+        "candidato_id": "38149b1c-1a82-482f-bb46-a9c7fea3afa6",
+        "ano_eleicao": 2020,
+        "sq_candidato": "60000717317",
+        "uf_candidatura": "CE",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_de_contas_eleitorais_candidatos_2020.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "henrique-areas",
+      "row": {
+        "candidato_id": "f383d692-5872-444d-b107-794c00182bad",
+        "ano_eleicao": 2020,
+        "sq_candidato": "250001172315",
+        "uf_candidatura": "SP",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_de_contas_eleitorais_candidatos_2020.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    }
+  ]
+}

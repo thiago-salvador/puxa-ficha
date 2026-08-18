@@ -1,0 +1,2789 @@
+{
+ "origem": "lote de curadoria de 05/08 (~/.disposable-html/2026-08-05-puxa-ficha-processos-curadoria.evidence.json)",
+ "nota": "As ocorrencias ambiguas completas ficam na evidencia original; aqui vao o total e uma amostra de 2. A busca_url reproduz a consulta.",
+ "resumo": {
+  "classificados": 185,
+  "encontrado": 50,
+  "vazio_confirmado": 16,
+  "bloqueado": 119
+ },
+ "total_bloqueados": 119,
+ "linhas": [
+  {
+   "slug": "augusto-cury",
+   "nome_urna": "Augusto Cury",
+   "nome_completo": "Augusto Jorge Cury",
+   "cargo": "Presidente",
+   "uf": null,
+   "partido": "AVANTE",
+   "prioridade": 1,
+   "identidade_status": "confirmada",
+   "motivo": "10 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 10,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "4004910-65.2025.8.26.0506",
+     "tribunal": "TJSP",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "4020359-29.2025.8.26.0000",
+     "tribunal": "TJSP",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=Augusto%20Jorge%20Cury&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "cabo-daciolo",
+   "nome_urna": "Cabo Daciolo",
+   "nome_completo": "BENEVENUTO DACIOLO FONSECA DOS SANTOS",
+   "cargo": "Presidente",
+   "uf": null,
+   "partido": "MOBILIZA",
+   "prioridade": 1,
+   "identidade_status": "confirmada",
+   "motivo": "1 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 1,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0013452-95.2021.8.19.0209",
+     "tribunal": "TJRJ",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=Benevenuto%20Daciolo%20Fonseca%20dos%20Santos&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "edmilson-costa",
+   "nome_urna": "Edmilson Costa",
+   "nome_completo": "EDMILSON SILVA COSTA",
+   "cargo": "Presidente",
+   "uf": null,
+   "partido": "PCB",
+   "prioridade": 1,
+   "identidade_status": "confirmada",
+   "motivo": "23 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 23,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0000650-87.2018.5.19.0058",
+     "tribunal": "TRT19",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "8001565-38.2026.8.05.0032",
+     "tribunal": "TJBA",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=Edmilson%20Silva%20Costa&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "renan-santos",
+   "nome_urna": "Renan Santos",
+   "nome_completo": "Renan Antonio Ferreira dos Santos",
+   "cargo": "Presidente",
+   "uf": null,
+   "partido": "MISSAO",
+   "prioridade": 1,
+   "identidade_status": "bloqueada",
+   "motivo": "fonte oficial do partido confirma a identidade como fundador, mas nao identifica cargo ou pre-candidatura; busca processual por nome ficaria ambigua",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "ronaldo-caiado",
+   "nome_urna": "Ronaldo Caiado",
+   "nome_completo": "RONALDO RAMOS CAIADO",
+   "cargo": "Presidente",
+   "uf": null,
+   "partido": "PSD",
+   "prioridade": 1,
+   "identidade_status": "confirmada",
+   "motivo": "14 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 14,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5441166-66.2026.8.09.0051",
+     "tribunal": "TJGO",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5353894-34.2026.8.09.0051",
+     "tribunal": "TJGO",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=Ronaldo%20Ramos%20Caiado&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "rui-costa-pimenta",
+   "nome_urna": "Rui Costa Pimenta",
+   "nome_completo": "RUI COSTA PIMENTA",
+   "cargo": "Presidente",
+   "uf": null,
+   "partido": "PCO",
+   "prioridade": 1,
+   "identidade_status": "confirmada",
+   "motivo": "8 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 8,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "1011502-36.2025.8.26.0003",
+     "tribunal": "TJSP",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "1056927-28.2021.8.26.0100",
+     "tribunal": "TJSP",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=Rui%20Costa%20Pimenta&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "samara-martins",
+   "nome_urna": "Samara Martins",
+   "nome_completo": "SAMARA MARTINS DA SILVA",
+   "cargo": "Presidente",
+   "uf": null,
+   "partido": "UP",
+   "prioridade": 1,
+   "identidade_status": "confirmada",
+   "motivo": "37 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 37,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "4001522-64.2026.8.26.0654",
+     "tribunal": "TJSP",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0803089-36.2025.8.12.0026",
+     "tribunal": "TJMS",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=SAMARA%20MARTINS%20DA%20SILVA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "acm-neto",
+   "nome_urna": "ACM Neto",
+   "nome_completo": "ANTONIO CARLOS PEIXOTO DE MAGALHÃES NETO",
+   "cargo": "Governador",
+   "uf": "BA",
+   "partido": "UNIAO",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "13 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 13,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0703451-15.2026.8.07.0000",
+     "tribunal": "TJDFT",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "8135347-40.2026.8.05.0001",
+     "tribunal": "TJBA",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=Ant%C3%B4nio%20Carlos%20Peixoto%20de%20Magalh%C3%A3es%20Neto&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "alysson-bezerra",
+   "nome_urna": "Alysson Bezerra",
+   "nome_completo": "ALLYSON LEANDRO BEZERRA SILVA",
+   "cargo": "Governador",
+   "uf": "RN",
+   "partido": "UNIAO",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "12 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 12,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0809208-69.2025.8.20.0000",
+     "tribunal": "TJRN",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0820672-98.2020.8.20.5001",
+     "tribunal": "TJRN",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=ALLYSON%20LEANDRO%20BEZERRA%20SILVA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "edilson-damiao",
+   "nome_urna": "Edilson Damião",
+   "nome_completo": "EDILSON DAMIÃO LIMA",
+   "cargo": "Governador",
+   "uf": "RR",
+   "partido": "UNIAO",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "5 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 5,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0823846-59.2026.8.23.0010",
+     "tribunal": "TJRR",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0823841-37.2026.8.23.0010",
+     "tribunal": "TJRR",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=EDILSON%20DAMI%C3%83O%20LIMA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "eduardo-riedel",
+   "nome_urna": "Eduardo Riedel",
+   "nome_completo": "EDUARDO CORREA RIEDEL",
+   "cargo": "Governador",
+   "uf": "MS",
+   "partido": "PP",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "12 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 12,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "1412142-36.2026.8.12.0000",
+     "tribunal": "TJMS",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0804332-93.2026.8.12.0021",
+     "tribunal": "TJMS",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=EDUARDO%20CORREA%20RIEDEL&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "garotinho",
+   "nome_urna": "Garotinho",
+   "nome_completo": "ANTHONY WILLIAM GAROTINHO MATHEUS DE OLIVEIRA",
+   "cargo": "Governador",
+   "uf": "RJ",
+   "partido": "REPUBLICANOS",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "116 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 116,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "3142302-85.2026.8.19.0001",
+     "tribunal": "TJRJ",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0070212-33.2026.8.19.0001",
+     "tribunal": "TJRJ",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=ANTHONY%20WILLIAM%20GAROTINHO%20MATHEUS%20DE%20OLIVEIRA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "hana-ghassan",
+   "nome_urna": "Hana Ghassan",
+   "nome_completo": "HANA GHASSAN TUMA",
+   "cargo": "Governador",
+   "uf": "PA",
+   "partido": "MDB",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "2 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 2,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0815591-94.2026.8.14.0000",
+     "tribunal": "TJPA",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0009421-71.2009.4.01.3900",
+     "tribunal": "TRF1",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=HANA%20GHASSAN%20TUMA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "helder-salomao",
+   "nome_urna": "Helder Salomão",
+   "nome_completo": "HELDER IGNÁCIO SALOMÃO",
+   "cargo": "Governador",
+   "uf": "ES",
+   "partido": "PT",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "3 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 3,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0018179-59.2014.8.08.0012",
+     "tribunal": "TJES",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0090800-82.1994.5.17.0003",
+     "tribunal": "TRT17",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=HELDER%20IGN%C3%81CIO%20SALOM%C3%83O&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "jayme-campos",
+   "nome_urna": "Jayme Campos",
+   "nome_completo": "JAYME VERISSIMO DE CAMPOS",
+   "cargo": "Governador",
+   "uf": "MT",
+   "partido": "UNIAO",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "6 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 6,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "1008895-89.2024.4.01.3600",
+     "tribunal": "TRF1",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0003303-34.2008.4.01.3603",
+     "tribunal": "TRF1",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=JAYME%20VERISSIMO%20DE%20CAMPOS&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "jeronimo",
+   "nome_urna": "Jeronimo",
+   "nome_completo": "JERÔNIMO RODRIGUES SOUZA",
+   "cargo": "Governador",
+   "uf": "BA",
+   "partido": "PT",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "24 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 24,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "8208150-55.2025.8.05.0001",
+     "tribunal": "TJBA",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0115648-05.2026.8.05.0001",
+     "tribunal": "TJBA",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=JER%C3%94NIMO%20RODRIGUES%20SOUZA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "joao-campos",
+   "nome_urna": "Joao Campos",
+   "nome_completo": "JOAO HENRIQUE DE ANDRADE LIMA CAMPOS",
+   "cargo": "Governador",
+   "uf": "PE",
+   "partido": "PSB",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "1 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 1,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0025969-82.2020.8.17.2001",
+     "tribunal": "TJPE",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=JOAO%20HENRIQUE%20DE%20ANDRADE%20LIMA%20CAMPOS&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "joao-rodrigues",
+   "nome_urna": "João Rodrigues",
+   "nome_completo": "JOÃO RODRIGUES",
+   "cargo": "Governador",
+   "uf": "SC",
+   "partido": "PSD",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "305 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua; DJEN atingiu o teto publico de 10000 comunicacoes",
+   "ocorrencias_ambiguas_total": 305,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "1008712-76.2019.4.01.3800",
+     "tribunal": "TRF6",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "1001367-48.2025.8.11.0078",
+     "tribunal": "TJMT",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=JO%C3%83O%20RODRIGUES&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "joel-rodrigues",
+   "nome_urna": "Joel Rodrigues",
+   "nome_completo": "JOEL RODRIGUES DA SILVA",
+   "cargo": "Governador",
+   "uf": "PI",
+   "partido": "PP",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "322 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 322,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0002080-12.2025.5.12.0030",
+     "tribunal": "TRT12",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0013277-12.2025.8.16.0188",
+     "tribunal": "TJPR",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=JOEL%20RODRIGUES%20DA%20SILVA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "jorginho-mello",
+   "nome_urna": "Jorginho Mello",
+   "nome_completo": "JORGINHO DOS SANTOS MELLO",
+   "cargo": "Governador",
+   "uf": "SC",
+   "partido": "PL",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "14 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 14,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5029653-39.2026.8.24.0023",
+     "tribunal": "TJSC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5040228-09.2026.8.24.0023",
+     "tribunal": "TJSC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&nomeParte=JORGINHO%20DOS%20SANTOS%20MELLO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "lucas-ribeiro",
+   "nome_urna": "Lucas Ribeiro",
+   "nome_completo": "LUCAS RIBEIRO NOVAIS DE ARAÚJO",
+   "cargo": "Governador",
+   "uf": "PB",
+   "partido": "PP",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "1 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 1,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0836958-61.2026.8.15.2001",
+     "tribunal": "TJPB",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=LUCAS%20RIBEIRO%20NOVAIS%20DE%20ARA%C3%9AJO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "marcelo-maranata",
+   "nome_urna": "Marcelo Maranata",
+   "nome_completo": "Marcelo Maranata Soares Reinaldo",
+   "cargo": "Governador",
+   "uf": "RS",
+   "partido": "PSDB",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "2 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 2,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5008413-31.2025.4.04.7100",
+     "tribunal": "TRF4",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5056663-95.2025.4.04.7100",
+     "tribunal": "TRF4",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Marcelo%20Maranata%20Soares%20Reinaldo&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "mateus-simoes",
+   "nome_urna": "Mateus Simões",
+   "nome_completo": "Mateus Simoes de Almeida",
+   "cargo": "Governador",
+   "uf": "MG",
+   "partido": "PSD",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "10 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 10,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "1000023-33.2026.8.13.0210",
+     "tribunal": "TJMG",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5259512-61.2022.8.13.0024",
+     "tribunal": "TJMG",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Mateus%20Simoes%20de%20Almeida&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "omar-aziz",
+   "nome_urna": "Omar Aziz",
+   "nome_completo": "OMAR JOSÉ ABDEL AZIZ",
+   "cargo": "Governador",
+   "uf": "AM",
+   "partido": "PSD",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "95 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 95,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0046985-41.2026.8.04.1000",
+     "tribunal": "TJAM",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0107560-15.2026.8.04.1000",
+     "tribunal": "TJAM",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=OMAR%20JOS%C3%89%20ABDEL%20AZIZ&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "pazolini",
+   "nome_urna": "Pazolini",
+   "nome_completo": "Lorenzo Silva de Pazolini",
+   "cargo": "Governador",
+   "uf": "ES",
+   "partido": "REPUBLICANOS",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "15 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 15,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5017644-23.2025.8.08.0024",
+     "tribunal": "TJES",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5000592-06.2026.8.08.9101",
+     "tribunal": "TJES",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Lorenzo%20Silva%20de%20Pazolini&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "rafael-fonteles",
+   "nome_urna": "Rafael Fonteles",
+   "nome_completo": "RAFAEL TAJRA FONTELES",
+   "cargo": "Governador",
+   "uf": "PI",
+   "partido": "PT",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "7 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 7,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "1003328-17.2019.4.01.4000",
+     "tribunal": "TRF1",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0805286-25.2023.8.18.0039",
+     "tribunal": "TJPI",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=RAFAEL%20TAJRA%20FONTELES&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "raquel-lyra",
+   "nome_urna": "Raquel Lyra",
+   "nome_completo": "RAQUEL TEIXEIRA LYRA LUCENA",
+   "cargo": "Governador",
+   "uf": "PE",
+   "partido": "PSD",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "2 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 2,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0802432-34.2022.4.05.8302",
+     "tribunal": "TRF5",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0746464-95.2025.8.07.0001",
+     "tribunal": "TJDFT",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=RAQUEL%20TEIXEIRA%20LYRA%20LUCENA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "renan-filho",
+   "nome_urna": "Renan Filho",
+   "nome_completo": "JOSÉ RENAN VASCONCELOS CALHEIROS FILHO",
+   "cargo": "Governador",
+   "uf": "AL",
+   "partido": "MDB",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "8 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 8,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0000771-07.2024.8.02.0001",
+     "tribunal": "TJAL",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0736007-08.2026.8.02.0001",
+     "tribunal": "TJAL",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=JOS%C3%89%20RENAN%20VASCONCELOS%20CALHEIROS%20FILHO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "ricardo-cappelli",
+   "nome_urna": "Ricardo Cappelli",
+   "nome_completo": "Ricardo Garcia Cappelli",
+   "cargo": "Governador",
+   "uf": "DF",
+   "partido": "PSB",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "17 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 17,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0730447-50.2026.8.07.0000",
+     "tribunal": "TJDFT",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0710294-93.2026.8.07.0000",
+     "tribunal": "TJDFT",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Ricardo%20Garcia%20Cappelli&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "ricardo-ferraco",
+   "nome_urna": "Ricardo Ferraço",
+   "nome_completo": "RICARDO DE REZENDE FERRAÇO",
+   "cargo": "Governador",
+   "uf": "ES",
+   "partido": "MDB",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "3 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 3,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0000381-74.2026.5.17.0009",
+     "tribunal": "TRT17",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0001151-69.2023.5.17.0010",
+     "tribunal": "TRT17",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=RICARDO%20DE%20REZENDE%20FERRA%C3%87O&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "tiao-bocalom",
+   "nome_urna": "Tiao Bocalom",
+   "nome_completo": "SEBASTIAO BOCALOM RODRIGUES",
+   "cargo": "Governador",
+   "uf": "AC",
+   "partido": "PSDB",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "22 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 22,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "1002797-54.2025.8.01.0000",
+     "tribunal": "TJAC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5000042-86.2025.8.01.0000",
+     "tribunal": "TJAC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=SEBASTIAO%20BOCALOM%20RODRIGUES&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "valmir-de-francisquinho",
+   "nome_urna": "Valmir de Francisquinho",
+   "nome_completo": "VALMIR DOS SANTOS COSTA",
+   "cargo": "Governador",
+   "uf": "SE",
+   "partido": "REPUBLICANOS",
+   "prioridade": 2,
+   "identidade_status": "confirmada",
+   "motivo": "135 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 135,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0002235-92.2026.8.25.9010",
+     "tribunal": "TJSE",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0009532-83.2024.8.25.0034",
+     "tribunal": "TJSE",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=VALMIR%20DOS%20SANTOS%20COSTA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "alan-rick",
+   "nome_urna": "Alan Rick",
+   "nome_completo": "ALAN RICK MIRANDA",
+   "cargo": "Governador",
+   "uf": "AC",
+   "partido": "REPUBLICANOS",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "15 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 15,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0703721-21.2025.8.01.0912",
+     "tribunal": "TJAC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5021299-33.2026.8.01.0001",
+     "tribunal": "TJAC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=ALAN%20RICK%20MIRANDA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "alex-pucineli",
+   "nome_urna": "Alex Pucineli",
+   "nome_completo": "ALEX PEDDE PUCINELI",
+   "cargo": "Governador",
+   "uf": "MT",
+   "partido": "D35",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "10 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 10,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "1028545-59.2020.8.11.0041",
+     "tribunal": "TJMT",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "1039694-42.2026.8.11.0041",
+     "tribunal": "TJMT",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=ALEX%20PEDDE%20PUCINELI&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "amelio-cayres",
+   "nome_urna": "Amelio Cayres",
+   "nome_completo": "AMELIO CAYRES DE ALMEIDA",
+   "cargo": "Vice-Governador",
+   "uf": "TO",
+   "partido": "MDB",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "5 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 5,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0036614-40.2020.8.27.2729",
+     "tribunal": "TJTO",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0028449-28.2025.8.27.2729",
+     "tribunal": "TJTO",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=AMELIO%20CAYRES%20DE%20ALMEIDA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "andre-luis",
+   "nome_urna": "André Luís",
+   "nome_completo": "André Luís",
+   "cargo": "Governador",
+   "uf": "MA",
+   "partido": "MISSAO",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "andre-marinho",
+   "nome_urna": "Andre Marinho",
+   "nome_completo": "Andre Bourguignon Marinho",
+   "cargo": "Governador",
+   "uf": "RJ",
+   "partido": "NOVO",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "aroldo-felix",
+   "nome_urna": "Aroldo Félix",
+   "nome_completo": "Aroldo Felix de Azevedo Junior",
+   "cargo": "Governador",
+   "uf": "BA",
+   "partido": "UP",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "identidade TSE localizada em SE, mas a ficha atual esta em BA; falta ponte oficial entre as UFs",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "baba",
+   "nome_urna": "Babá",
+   "nome_completo": "ANTEOMAR PEREIRA DA SILVA",
+   "cargo": "Vice-Governador",
+   "uf": "RN",
+   "partido": "PL",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "7 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 7,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0000100-70.2005.8.20.0155",
+     "tribunal": "TJRN",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0800504-59.2024.8.20.5155",
+     "tribunal": "TJRN",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=ANTEOMAR%20PEREIRA%20DA%20SILVA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "ben-mendes",
+   "nome_urna": "Ben Mendes",
+   "nome_completo": "Benoni Benjamin Cardoso Mendes",
+   "cargo": "Governador",
+   "uf": "MG",
+   "partido": "MISSAO",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "breno-barcelar",
+   "nome_urna": "Breno Barcelos",
+   "nome_completo": "Breno Barcelos",
+   "cargo": "Governador",
+   "uf": "ES",
+   "partido": "MISSAO",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "cadu-xavier",
+   "nome_urna": "Cadu Xavier",
+   "nome_completo": "CARLOS EDUARDO XAVIER",
+   "cargo": "Governador",
+   "uf": "RN",
+   "partido": "PT",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "56 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 56,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0027345-05.2025.8.26.0053",
+     "tribunal": "TJSP",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5021823-45.2026.4.03.6100",
+     "tribunal": "TRF3",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=CARLOS%20EDUARDO%20XAVIER&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "camila-falcao",
+   "nome_urna": "Camila Falcão",
+   "nome_completo": "Camila Falcão",
+   "cargo": "Governador",
+   "uf": "PE",
+   "partido": "UP",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "carlos-machado",
+   "nome_urna": "Carlos Machado",
+   "nome_completo": "Carlos Machado",
+   "cargo": "Governador",
+   "uf": "SP",
+   "partido": "PCB",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "cintia-dias",
+   "nome_urna": "Cintia Dias",
+   "nome_completo": "CINTIA APARECIDA DIAS",
+   "cargo": "Governador",
+   "uf": "GO",
+   "partido": "PSOL",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "8 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 8,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0004577-20.2026.8.04.4400",
+     "tribunal": "TJAM",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0010895-43.2026.5.15.0106",
+     "tribunal": "TRT15",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=CINTIA%20APARECIDA%20DIAS&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "coronel-busnello",
+   "nome_urna": "Coronel Busnello",
+   "nome_completo": "JOÃO JACQUES SOARES BUSNELLO",
+   "cargo": "Governador",
+   "uf": "RJ",
+   "partido": "MISSAO",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "2 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 2,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0824767-51.2025.8.19.0208",
+     "tribunal": "TJRJ",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0002103-86.2019.8.19.0073",
+     "tribunal": "TJRJ",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=JO%C3%83O%20JACQUES%20SOARES%20BUSNELLO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "cyro-garcia",
+   "nome_urna": "Cyro Garcia",
+   "nome_completo": "CYRO GARCIA",
+   "cargo": "Governador",
+   "uf": "RJ",
+   "partido": "PSTU",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "4 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 4,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0004871-54.2004.4.01.3400",
+     "tribunal": "TRF1",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5141575-62.2025.4.02.5101",
+     "tribunal": "TRF2",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=CYRO%20GARCIA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "daniela-paiva",
+   "nome_urna": "Daniela Paiva",
+   "nome_completo": "DANIELA PAIVA DE OLIVEIRA",
+   "cargo": "Vice-Governador",
+   "uf": "AC",
+   "partido": "AGIR",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "3 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 3,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0703849-63.2022.8.01.0001",
+     "tribunal": "TJAC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0714024-14.2025.8.01.0001",
+     "tribunal": "TJAC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=DANIELA%20PAIVA%20DE%20OLIVEIRA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "dario-barbosa",
+   "nome_urna": "Dário Barbosa",
+   "nome_completo": "DÁRIO BARBOSA DE MELO",
+   "cargo": "Governador",
+   "uf": "RN",
+   "partido": "PSTU",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "6 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 6,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0003858-32.2006.8.26.0292",
+     "tribunal": "TJSP",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0812148-39.2025.8.20.5001",
+     "tribunal": "TJRN",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=D%C3%81RIO%20BARBOSA%20DE%20MELO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "dr-helton-monteiro",
+   "nome_urna": "Dr. Helton Monteiro",
+   "nome_completo": "José Helton Silva Monteiro",
+   "cargo": "Governador",
+   "uf": "SE",
+   "partido": "PSOL",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "edegar-pretto",
+   "nome_urna": "Edegar Pretto",
+   "nome_completo": "JOÃO EDEGAR PRETTO",
+   "cargo": "Vice-Governador",
+   "uf": "RS",
+   "partido": "PT",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "7 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 7,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5006254-15.2025.4.04.7101",
+     "tribunal": "TRF4",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5044447-70.2026.8.21.7000",
+     "tribunal": "TJRS",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=JO%C3%83O%20EDEGAR%20PRETTO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "elisson-ferreira",
+   "nome_urna": "Elisson Ferreira",
+   "nome_completo": "Elisson Ferreira",
+   "cargo": "Governador",
+   "uf": "DF",
+   "partido": "AGIR",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "elizeu-aguiar",
+   "nome_urna": "Elizeu Aguiar",
+   "nome_completo": "ELIZEU MORAIS DE AGUIAR",
+   "cargo": "Governador",
+   "uf": "PI",
+   "partido": "NOVO",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "14 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 14,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0836741-35.2019.8.18.0140",
+     "tribunal": "TJPI",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0836739-65.2019.8.18.0140",
+     "tribunal": "TJPI",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=ELIZEU%20MORAIS%20DE%20AGUIAR&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "emanuel-cacho",
+   "nome_urna": "Emanuel Cacho",
+   "nome_completo": "EMANUEL MESSIAS OLIVEIRA CACHO",
+   "cargo": "Governador",
+   "uf": "SE",
+   "partido": "PSDB",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "16 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 16,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0000868-95.2018.8.05.0142",
+     "tribunal": "TJBA",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "1040983-82.2025.4.01.0000",
+     "tribunal": "TRF1",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=EMANUEL%20MESSIAS%20OLIVEIRA%20CACHO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "eudo-raffael",
+   "nome_urna": "Eudo Raffael",
+   "nome_completo": "Eudo Raffael Lima da Silva",
+   "cargo": "Governador",
+   "uf": "AC",
+   "partido": "PCB",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "fabio-trad",
+   "nome_urna": "Fabio Trad",
+   "nome_completo": "FÁBIO RICARDO TRAD",
+   "cargo": "Governador",
+   "uf": "MS",
+   "partido": "PT",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "30 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 30,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5015454-14.2026.8.12.0001",
+     "tribunal": "TJMS",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "1416500-44.2026.8.12.0000",
+     "tribunal": "TJMS",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=F%C3%81BIO%20RICARDO%20TRAD&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "francisco-jurity",
+   "nome_urna": "Francisco Jurity",
+   "nome_completo": "Francisco Jurity",
+   "cargo": "Governador",
+   "uf": "PI",
+   "partido": "DC",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "gabriel-azevedo",
+   "nome_urna": "Gabriel Azevedo",
+   "nome_completo": "GABRIEL SOUSA MARQUES DE AZEVEDO",
+   "cargo": "Governador",
+   "uf": "MG",
+   "partido": "MDB",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "16 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 16,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5036375-34.2022.8.13.0024",
+     "tribunal": "TJMG",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5300783-79.2024.8.13.0024",
+     "tribunal": "TJMG",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=GABRIEL%20SOUSA%20MARQUES%20DE%20AZEVEDO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "gabriel-souza",
+   "nome_urna": "Gabriel Souza",
+   "nome_completo": "GABRIEL VIEIRA DE SOUZA",
+   "cargo": "Governador",
+   "uf": "RS",
+   "partido": "MDB",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "41 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 41,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0002941-02.2025.8.26.0048",
+     "tribunal": "TJSP",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0002356-83.2026.8.26.0154",
+     "tribunal": "TJSP",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=GABRIEL%20VIEIRA%20DE%20SOUZA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "gelson-merisio",
+   "nome_urna": "Gelson Merisio",
+   "nome_completo": "GELSON LUIZ MERÍSIO",
+   "cargo": "Governador",
+   "uf": "SC",
+   "partido": "PSB",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "5 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 5,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5033507-75.2025.8.24.0023",
+     "tribunal": "TJSC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0000697-55.2004.8.24.0125",
+     "tribunal": "TJSC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=GELSON%20LUIZ%20MER%C3%8DSIO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "geraldo-carvalho",
+   "nome_urna": "Geraldo Carvalho",
+   "nome_completo": "GERALDO DO NASCIMENTO CARVALHO",
+   "cargo": "Governador",
+   "uf": "PI",
+   "partido": "PSTU",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "2 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 2,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0004199-11.2012.4.01.4000",
+     "tribunal": "TRF1",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0067535-19.2016.4.01.0000",
+     "tribunal": "TRF1",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=GERALDO%20DO%20NASCIMENTO%20CARVALHO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "gilberto-vasconcelos",
+   "nome_urna": "Gilberto Vasconcelos",
+   "nome_completo": "GILBERTO VASCONCELOS DA SILVA",
+   "cargo": "Governador",
+   "uf": "AM",
+   "partido": "PSTU",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "6 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 6,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0023292-65.2026.4.05.8200",
+     "tribunal": "TRF5",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0811789-02.2026.8.10.0000",
+     "tribunal": "TJMA",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=GILBERTO%20VASCONCELOS%20DA%20SILVA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "gisvaldo-oliveira",
+   "nome_urna": "Gisvaldo Oliveira",
+   "nome_completo": "Gisvaldo Oliveira da Silva",
+   "cargo": "Governador",
+   "uf": "PI",
+   "partido": "PSOL",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "guilherme-fonseca",
+   "nome_urna": "Guilherme Fonseca",
+   "nome_completo": "GUILHERME FONSECA",
+   "cargo": "Governador",
+   "uf": "PE",
+   "partido": "PSTU",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "14 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 14,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0004486-18.2016.8.13.0232",
+     "tribunal": "TJMG",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "1000189-96.2026.8.13.0232",
+     "tribunal": "TJMG",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=GUILHERME%20FONSECA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "gustavo-henrique",
+   "nome_urna": "Gustavo Henrique",
+   "nome_completo": "GUSTAVO HENRIQUE LEITE FEIJÓ",
+   "cargo": "Governador",
+   "uf": "PI",
+   "partido": "AVANTE",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "16 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 16,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0801823-65.2021.8.18.0162",
+     "tribunal": "TJPI",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0861713-30.2023.8.18.0140",
+     "tribunal": "TJPI",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=GUSTAVO%20HENRIQUE%20LEITE%20FEIJ%C3%93&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "henrique-areas",
+   "nome_urna": "Henrique Áreas",
+   "nome_completo": "Henrique Áreas de Araujo",
+   "cargo": "Governador",
+   "uf": "MG",
+   "partido": "PCO",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "identidade TSE localizada em SP, mas a ficha atual esta em MG; falta ponte oficial entre as UFs",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "huggo-leonardo",
+   "nome_urna": "Huggo Leonardo",
+   "nome_completo": "Huggo Leonardo",
+   "cargo": "Governador",
+   "uf": "CE",
+   "partido": "MISSAO",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "ismar-marques",
+   "nome_urna": "Ismar Marques",
+   "nome_completo": "ISMAR AGUIAR MARQUES",
+   "cargo": "Vice-Governador",
+   "uf": "PI",
+   "partido": "NOVO",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "12 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 12,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0000747-36.2025.5.22.0001",
+     "tribunal": "TRT22",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0766801-05.2025.8.18.0000",
+     "tribunal": "TJPI",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=ISMAR%20AGUIAR%20MARQUES&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "izadora-dias",
+   "nome_urna": "Izadora Dias",
+   "nome_completo": "IZADORA CRISTINA DIAS DA SILVA",
+   "cargo": "Governador",
+   "uf": "SP",
+   "partido": "PCO",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "1 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 1,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5000186-57.2024.4.03.6181",
+     "tribunal": "TRF3",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=IZADORA%20CRISTINA%20DIAS%20DA%20SILVA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "jarbas-soares",
+   "nome_urna": "Jarbas Soares",
+   "nome_completo": "JARBAS SOARES",
+   "cargo": "Governador",
+   "uf": "MG",
+   "partido": "PSB",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "24 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 24,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0018776-33.2011.8.05.0039",
+     "tribunal": "TJBA",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0011027-24.2021.8.16.0001",
+     "tribunal": "TJPR",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=JARBAS%20SOARES&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "jarir-pereira",
+   "nome_urna": "Jarir Pereira",
+   "nome_completo": "Jarir Pereira",
+   "cargo": "Governador",
+   "uf": "CE",
+   "partido": "PSOL",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "jeferson-bezerra",
+   "nome_urna": "Jeferson Bezerra",
+   "nome_completo": "JEFERSON JOSÉ BEZERRA",
+   "cargo": "Governador",
+   "uf": "MS",
+   "partido": "AGIR",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "4 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 4,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0867939-14.2024.8.12.0001",
+     "tribunal": "TJMS",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0001590-22.2007.8.12.0013",
+     "tribunal": "TJMS",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=JEFERSON%20JOS%C3%89%20BEZERRA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "juliana-brizola",
+   "nome_urna": "Juliana Brizola",
+   "nome_completo": "JULIANA BRIZOLA",
+   "cargo": "Governador",
+   "uf": "RS",
+   "partido": "PDT",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "12 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 12,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0000757-10.2026.8.16.0083",
+     "tribunal": "TJPR",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5071261-04.2025.8.21.0001",
+     "tribunal": "TJRS",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=JULIANA%20BRIZOLA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "juliete-pantoja",
+   "nome_urna": "Juliete Pantoja",
+   "nome_completo": "JULIETE PANTOJA ALVES",
+   "cargo": "Governador",
+   "uf": "RJ",
+   "partido": "UP",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "1 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 1,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0861489-31.2022.8.19.0001",
+     "tribunal": "TJRJ",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=JULIETE%20PANTOJA%20ALVES&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "kiko-caputo",
+   "nome_urna": "Kiko Caputo",
+   "nome_completo": "Kiko Caputo",
+   "cargo": "Governador",
+   "uf": "DF",
+   "partido": "NOVO",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "OAB-DF confirma a ligacao entre Francisco Queiroz Caputo Neto e Kiko Caputo, mas nao confirma a pre-candidatura atual ao governo do DF",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "lais-chaud",
+   "nome_urna": "Laís Chaud",
+   "nome_completo": "Lais Paganelli Chaud",
+   "cargo": "Governador",
+   "uf": "SC",
+   "partido": "UP",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "1 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 1,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5000922-67.2025.8.24.0023",
+     "tribunal": "TJSC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Lais%20Paganelli%20Chaud&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "lenilda-luna",
+   "nome_urna": "Lenilda Luna",
+   "nome_completo": "LENILDA LUNA DE ALMEIDA",
+   "cargo": "Governador",
+   "uf": "AL",
+   "partido": "UP",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "2 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 2,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0814365-03.2023.4.05.8000",
+     "tribunal": "TRF5",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0001286-54.2023.5.19.0001",
+     "tribunal": "TRT19",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=LENILDA%20LUNA%20DE%20ALMEIDA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "lourdes-melo",
+   "nome_urna": "Lourdes Melo",
+   "nome_completo": "MARIA DE LOURDES SOARES MELO",
+   "cargo": "Governador",
+   "uf": "PI",
+   "partido": "PCO",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "4 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 4,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0600235-97.2026.6.18.0000",
+     "tribunal": "TRE-PI",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0005751-73.2012.8.18.0000",
+     "tribunal": "TJPI",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=MARIA%20DE%20LOURDES%20SOARES%20MELO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "luan-monteiro",
+   "nome_urna": "Luan Monteiro",
+   "nome_completo": "LUAN MONTEIRO PASCHOAL PIRES",
+   "cargo": "Governador",
+   "uf": "RJ",
+   "partido": "PCO",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "1 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 1,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0829467-80.2023.8.19.0001",
+     "tribunal": "TJRJ",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=LUAN%20MONTEIRO%20PASCHOAL%20PIRES&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "lucia-santos",
+   "nome_urna": "Lucia Santos",
+   "nome_completo": "LUCIA MARIA DE SOUSA AGUIAR DOS SANTOS",
+   "cargo": "Governador",
+   "uf": "PI",
+   "partido": "PSDB",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "5 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 5,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0848091-73.2026.8.18.0140",
+     "tribunal": "TJPI",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0000514-77.2023.5.10.0022",
+     "tribunal": "TRT10",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=LUCIA%20MARIA%20DE%20SOUSA%20AGUIAR%20DOS%20SANTOS&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "lucien-rezende",
+   "nome_urna": "Lucien Rezende",
+   "nome_completo": "Lucien Roberto Garcia de Rezende",
+   "cargo": "Governador",
+   "uf": "MS",
+   "partido": "PSOL",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "3 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 3,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0000774-57.2024.8.12.0041",
+     "tribunal": "TJMS",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0804032-30.2023.8.12.0800",
+     "tribunal": "TJMS",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Lucien%20Roberto%20Garcia%20de%20Rezende&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "luis-cesar-bueno",
+   "nome_urna": "Luis Cesar Bueno",
+   "nome_completo": "LUIS CESAR BUENO E FREITAS",
+   "cargo": "Governador",
+   "uf": "GO",
+   "partido": "PT",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "2 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 2,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5095334-64.2018.8.09.0051",
+     "tribunal": "TJGO",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5616640-95.2019.8.09.0051",
+     "tribunal": "TJGO",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=LUIS%20CESAR%20BUENO%20E%20FREITAS&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "luiz-carlos-teodoro",
+   "nome_urna": "Luiz Carlos Teodoro",
+   "nome_completo": "LUIZ CARLOS TEODORO",
+   "cargo": "Governador",
+   "uf": "RO",
+   "partido": "PSOL",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "116 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 116,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "4002051-95.2026.8.26.0650",
+     "tribunal": "TJSP",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0026275-60.2019.8.26.0053",
+     "tribunal": "TJSP",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=LUIZ%20CARLOS%20TEODORO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "luiz-franca",
+   "nome_urna": "Luiz Franca",
+   "nome_completo": "Luiz Felipe Franca",
+   "cargo": "Governador",
+   "uf": "PR",
+   "partido": "MISSAO",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "marcelo-brigadeiro",
+   "nome_urna": "Marcelo Brigadeiro",
+   "nome_completo": "MARCELO MARCEL FRANCO JOSÉ DA SILVA",
+   "cargo": "Governador",
+   "uf": "SC",
+   "partido": "MISSAO",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "9 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 9,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5014113-05.2026.8.24.0005",
+     "tribunal": "TJSC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5023009-13.2021.8.24.0005",
+     "tribunal": "TJSC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=MARCELO%20MARCEL%20FRANCO%20JOS%C3%89%20DA%20SILVA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "marcus-sodre",
+   "nome_urna": "Marcus Sodré",
+   "nome_completo": "MARCUS ALEXANDRE SODRÉ",
+   "cargo": "Governador",
+   "uf": "SC",
+   "partido": "PSTU",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "4 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 4,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0312237-22.2016.8.24.0023",
+     "tribunal": "TJSC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5103131-56.2021.8.24.0023",
+     "tribunal": "TJSC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=MARCUS%20ALEXANDRE%20SODR%C3%89&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "maria-do-carmo",
+   "nome_urna": "Maria do Carmo",
+   "nome_completo": "Maria do Carmo Seffair",
+   "cargo": "Governador",
+   "uf": "AM",
+   "partido": "PL",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "natasha-slhessarenko",
+   "nome_urna": "Natasha Slhessarenko",
+   "nome_completo": "Natasha Slhessarenko",
+   "cargo": "Governador",
+   "uf": "MT",
+   "partido": "PSD",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "patrus-ananias",
+   "nome_urna": "Patrus Ananias",
+   "nome_completo": "PATRUS ANANIAS DE SOUZA",
+   "cargo": "Governador",
+   "uf": "MG",
+   "partido": "PT",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "3 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 3,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "6007592-38.2025.4.06.3807",
+     "tribunal": "TRF6",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "2829807-69.2012.8.13.0024",
+     "tribunal": "TJMG",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=PATRUS%20ANANIAS%20DE%20SOUZA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "pedro-abib",
+   "nome_urna": "Pedro Abib",
+   "nome_completo": "Pedro Abib Hecktheuer",
+   "cargo": "Governador",
+   "uf": "RO",
+   "partido": "MDB",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "preta-lu",
+   "nome_urna": "Preta Lu",
+   "nome_completo": "LUCIANA COSTA CORREA",
+   "cargo": "Vice-Governador",
+   "uf": "MA",
+   "partido": "PSTU",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "4 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 4,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0812934-28.2021.8.14.0301",
+     "tribunal": "TJPA",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0000437-45.2020.5.08.0017",
+     "tribunal": "TRT8",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=LUCIANA%20COSTA%20CORREA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "priscila-felizola",
+   "nome_urna": "Priscila Felizola",
+   "nome_completo": "PRISCILA DIAS SILVA FELIZOLA",
+   "cargo": "Vice-Governador",
+   "uf": "SE",
+   "partido": "REPUBLICANOS",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "3 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 3,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0001099-58.2025.8.25.0001",
+     "tribunal": "TJSE",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0010887-75.2024.8.25.0084",
+     "tribunal": "TJSE",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=PRISCILA%20DIAS%20SILVA%20FELIZOLA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "priscila-voigt",
+   "nome_urna": "Priscila Voigt",
+   "nome_completo": "PRISCILA VOIGT SEVERIANO",
+   "cargo": "Governador",
+   "uf": "RS",
+   "partido": "UP",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "1 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 1,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5114671-83.2023.8.21.0001",
+     "tribunal": "TJRS",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=PRISCILA%20VOIGT%20SEVERIANO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "prof-enfermeira-kaelly",
+   "nome_urna": "Prof. Enfermeira Kaelly",
+   "nome_completo": "KAELLY VIRGINIA DE OLIVEIRA SARAIVA",
+   "cargo": "Vice-Governador",
+   "uf": "MS",
+   "partido": "PSOL",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "2 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 2,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0804507-87.2026.8.12.0021",
+     "tribunal": "TJMS",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5006074-07.2020.4.03.6000",
+     "tribunal": "TRF3",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=KAELLY%20VIRGINIA%20DE%20OLIVEIRA%20SARAIVA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "rafael-duda",
+   "nome_urna": "Rafael Duda",
+   "nome_completo": "RAFAEL RIBEIRO DE ÁVILA",
+   "cargo": "Governador",
+   "uf": "MG",
+   "partido": "PSTU",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "3 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 3,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5005892-40.2024.8.13.0480",
+     "tribunal": "TJMG",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5002085-63.2021.8.13.0400",
+     "tribunal": "TJMG",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=RAFAEL%20RIBEIRO%20DE%20%C3%81VILA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "rafaell-milas",
+   "nome_urna": "Rafaell Milas",
+   "nome_completo": "Rafaell Milas",
+   "cargo": "Governador",
+   "uf": "MT",
+   "partido": "MISSAO",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "ravenna-castro",
+   "nome_urna": "Ravenna Castro",
+   "nome_completo": "RAVENNA DE CASTRO LIMA AZEVEDO",
+   "cargo": "Governador",
+   "uf": "PI",
+   "partido": "D35",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "5 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 5,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0821084-19.2020.8.18.0140",
+     "tribunal": "TJPI",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0801351-96.2025.8.18.0009",
+     "tribunal": "TJPI",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=RAVENNA%20DE%20CASTRO%20LIMA%20AZEVEDO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "rejane-oliveira",
+   "nome_urna": "Rejane de Oliveira",
+   "nome_completo": "REJANE SILVA DE OLIVEIRA",
+   "cargo": "Governador",
+   "uf": "RS",
+   "partido": "PSTU",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "30 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 30,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0010380-13.2016.5.03.0164",
+     "tribunal": "TRT3",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0943300-08.2025.8.19.0001",
+     "tribunal": "TJRJ",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=REJANE%20SILVA%20DE%20OLIVEIRA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "renan-hallais",
+   "nome_urna": "Renan Hallais",
+   "nome_completo": "Renan Hallais",
+   "cargo": "Governador",
+   "uf": "PE",
+   "partido": "MISSAO",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "renato-gomes",
+   "nome_urna": "Renato Gomes",
+   "nome_completo": "Renato Gomes",
+   "cargo": "Governador",
+   "uf": "MS",
+   "partido": "DC",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "ricardo-leite",
+   "nome_urna": "Ricardo Leite",
+   "nome_completo": "FABIO RICARDO LEITE",
+   "cargo": "Vice-Governador",
+   "uf": "AC",
+   "partido": "REPUBLICANOS",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "12 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 12,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5010068-09.2026.8.01.0001",
+     "tribunal": "TJAC",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "7048583-07.2020.8.22.0001",
+     "tribunal": "TJRO",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=FABIO%20RICARDO%20LEITE&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "ricardo-marques",
+   "nome_urna": "Ricardo Marques",
+   "nome_completo": "JOSÉ RICARDO MARQUES DOS SANTOS",
+   "cargo": "Governador",
+   "uf": "SE",
+   "partido": "PL",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "15 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 15,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "1000717-56.2025.5.02.0254",
+     "tribunal": "TRT2",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "8002613-82.2026.8.05.0274",
+     "tribunal": "TJBA",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=JOS%C3%89%20RICARDO%20MARQUES%20DOS%20SANTOS&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "roberio-paulino",
+   "nome_urna": "Robério Paulino",
+   "nome_completo": "ROBÉRIO PAULINO RODRIGUES",
+   "cargo": "Governador",
+   "uf": "RN",
+   "partido": "PSOL",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "3 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 3,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0843327-30.2021.8.20.5001",
+     "tribunal": "TJRN",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0817415-94.2022.8.20.5001",
+     "tribunal": "TJRN",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=ROB%C3%89RIO%20PAULINO%20RODRIGUES&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "ronaldo-mansur",
+   "nome_urna": "Ronaldo Mansur",
+   "nome_completo": "RONALDO MANSUR SANTOS SILVA",
+   "cargo": "Governador",
+   "uf": "BA",
+   "partido": "PSOL",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "2 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 2,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "8079413-37.2025.8.05.0000",
+     "tribunal": "TJBA",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "8036552-36.2025.8.05.0000",
+     "tribunal": "TJBA",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=RONALDO%20MANSUR%20SANTOS%20SILVA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "samara-mineiro",
+   "nome_urna": "Samara Mineiro",
+   "nome_completo": "Samara Mineiro",
+   "cargo": "Governador",
+   "uf": "DF",
+   "partido": "UP",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "samuel-costa",
+   "nome_urna": "Samuel Costa",
+   "nome_completo": "SAMUEL COSTA MENEZES",
+   "cargo": "Governador",
+   "uf": "RO",
+   "partido": "PSB",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "24 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 24,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0800062-49.2026.4.05.8300",
+     "tribunal": "TRF5",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "7045740-93.2025.8.22.0001",
+     "tribunal": "TJRO",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=SAMUEL%20COSTA%20MENEZES&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "sandro-alex",
+   "nome_urna": "Sandro Alex",
+   "nome_completo": "SANDRO ALEX CRUZ DE OLIVEIRA",
+   "cargo": "Governador",
+   "uf": "PR",
+   "partido": "PSD",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "7 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 7,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5007505-74.2025.4.04.7002",
+     "tribunal": "TRF4",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0003842-07.2023.8.16.0019",
+     "tribunal": "TJPR",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=SANDRO%20ALEX%20CRUZ%20DE%20OLIVEIRA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "saulo-arcangeli",
+   "nome_urna": "Saulo Arcangeli",
+   "nome_completo": "SAULO COSTA ARCANGELI",
+   "cargo": "Governador",
+   "uf": "MA",
+   "partido": "PSTU",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "2 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 2,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0847953-36.2021.8.10.0001",
+     "tribunal": "TJMA",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "1033222-60.2022.4.01.3700",
+     "tribunal": "TRF1",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=SAULO%20COSTA%20ARCANGELI&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "telemaco-brandao",
+   "nome_urna": "Telêmaco Brandão",
+   "nome_completo": "TELÊMACO BRANDÃO",
+   "cargo": "Governador",
+   "uf": "GO",
+   "partido": "NOVO",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "13 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 13,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "5599460-95.2021.8.09.0051",
+     "tribunal": "TJGO",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "5964967-22.2024.8.09.0051",
+     "tribunal": "TJGO",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=TEL%C3%8AMACO%20BRAND%C3%83O&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "thor-dantas",
+   "nome_urna": "Thor Dantas",
+   "nome_completo": "THOR OLIVEIRA DANTAS",
+   "cargo": "Governador",
+   "uf": "AC",
+   "partido": "PSB",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "2 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 2,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "1012580-27.2025.4.01.3000",
+     "tribunal": "TRF1",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "1012578-57.2025.4.01.3000",
+     "tribunal": "TRF1",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=THOR%20OLIVEIRA%20DANTAS&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "tulio-lopes",
+   "nome_urna": "Tulio Lopes",
+   "nome_completo": "TÚLIO CESAR DIAS LOPES",
+   "cargo": "Governador",
+   "uf": "MG",
+   "partido": "PCB",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "1 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 1,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0062774-88.2016.4.01.3800",
+     "tribunal": "TRF1",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=T%C3%9ALIO%20CESAR%20DIAS%20LOPES&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "vera-lucia",
+   "nome_urna": "Vera Lúcia",
+   "nome_completo": "Vera Lúcia Pereira da Silva Salgado",
+   "cargo": "Governador",
+   "uf": "SP",
+   "partido": "PSTU",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "identidade TSE localizada em BR, mas a ficha atual esta em SP; falta ponte oficial entre as UFs",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "vicentinho-junior",
+   "nome_urna": "Vicentinho Junior",
+   "nome_completo": "VICENTE ALVES DE OLIVEIRA JUNIOR",
+   "cargo": "Governador",
+   "uf": "TO",
+   "partido": "PSDB",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "4 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 4,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0036117-84.2024.8.27.2729",
+     "tribunal": "TJTO",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0018581-89.2026.8.27.2729",
+     "tribunal": "TJTO",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=VICENTE%20ALVES%20DE%20OLIVEIRA%20JUNIOR&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "vivian-mendes",
+   "nome_urna": "Vivian Mendes",
+   "nome_completo": "VIVIAN MENDES DA SILVA",
+   "cargo": "Governador",
+   "uf": "SP",
+   "partido": "UP",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "9 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 9,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0021292-98.2025.5.04.0205",
+     "tribunal": "TRT4",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "1028955-15.2023.8.26.0100",
+     "tribunal": "TJSP",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=VIVIAN%20MENDES%20DA%20SILVA&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "washington-bandeira",
+   "nome_urna": "Washington Bandeira",
+   "nome_completo": "FRANCISCO WASHINGTON BANDEIRA SANTOS FILHO",
+   "cargo": "Vice-Governador",
+   "uf": "PI",
+   "partido": "PT",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "8 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 8,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0762103-53.2025.8.18.0000",
+     "tribunal": "TJPI",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0762099-16.2025.8.18.0000",
+     "tribunal": "TJPI",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=FRANCISCO%20WASHINGTON%20BANDEIRA%20SANTOS%20FILHO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "william-siri",
+   "nome_urna": "William Siri",
+   "nome_completo": "WILLIAM CARLOS BRUM BISPO",
+   "cargo": "Governador",
+   "uf": "RJ",
+   "partido": "PSOL",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "3 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 3,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0814223-77.2024.8.19.0001",
+     "tribunal": "TJRJ",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0929641-97.2023.8.19.0001",
+     "tribunal": "TJRJ",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=WILLIAM%20CARLOS%20BRUM%20BISPO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  },
+  {
+   "slug": "witer-naves",
+   "nome_urna": "Witer Naves",
+   "nome_completo": "Witer Fonseca Naves",
+   "cargo": "Governador",
+   "uf": "TO",
+   "partido": "PSOL",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "yuri-ezequiel",
+   "nome_urna": "Yuri Ezequiel",
+   "nome_completo": "Yuri Ezequiel",
+   "cargo": "Governador",
+   "uf": "PB",
+   "partido": "UP",
+   "prioridade": 4,
+   "identidade_status": "bloqueada",
+   "motivo": "sem identificador ou perfil oficial verificavel apos TSE 2016, 2018, 2020, 2022, 2024 e 2026 (nome completo + UF + nome de urna ou partido)",
+   "ocorrencias_ambiguas_total": 0,
+   "amostra_ocorrencias": []
+  },
+  {
+   "slug": "ze-batista",
+   "nome_urna": "Zé Batista",
+   "nome_completo": "JOSÉ BATISTA NETO",
+   "cargo": "Governador",
+   "uf": "CE",
+   "partido": "PSTU",
+   "prioridade": 4,
+   "identidade_status": "confirmada",
+   "motivo": "202 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+   "ocorrencias_ambiguas_total": 202,
+   "amostra_ocorrencias": [
+    {
+     "numero_cnj": "0000482-64.2020.5.19.0010",
+     "tribunal": "TRT19",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    },
+    {
+     "numero_cnj": "0824653-68.2025.8.15.0000",
+     "tribunal": "TJPB",
+     "motivo": "nome exato sem segundo identificador oficial adjacente; identidade ambigua"
+    }
+   ],
+   "busca_url": "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=JOS%C3%89%20BATISTA%20NETO&pagina=1",
+   "busca_periodo": "acervo disponivel ate 2026-08-05",
+   "busca_termos": "nome completo exato + cargo + UF + partido + trajetoria"
+  }
+ ]
+}

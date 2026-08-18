@@ -1,0 +1,1040 @@
+{
+  "linhas": [
+    {
+      "id": "7e1bef47-3d91-4c7a-8f94-fa323c6bd5f1",
+      "titulo": "Codigo Florestal (2012)",
+      "descricao": "Novo codigo florestal brasileiro",
+      "data_votacao": "2012-05-25",
+      "casa": "Senado",
+      "proposicao_id": null,
+      "tema": "Meio Ambiente",
+      "impacto_popular": "Define regras de preservacao em propriedades rurais",
+      "created_at": "2026-04-01T19:04:34.951424+00:00"
+    },
+    {
+      "id": "539f836a-197b-4176-9861-d58759a5c73b",
+      "titulo": "Impeachment de Dilma",
+      "descricao": "Votacao final do impeachment de Dilma Rousseff no Senado",
+      "data_votacao": "2016-08-31",
+      "casa": "Senado",
+      "proposicao_id": "126084",
+      "tema": null,
+      "impacto_popular": null,
+      "created_at": "2026-03-31T19:03:00.917203+00:00"
+    },
+    {
+      "id": "8d470dc1-3215-4af0-86b1-8405e31ae903",
+      "titulo": "Teto de Gastos (PEC 55)",
+      "descricao": "Congelou investimentos em saude e educacao por 20 anos",
+      "data_votacao": "2016-12-13",
+      "casa": "Senado",
+      "proposicao_id": "127337",
+      "tema": "economia",
+      "impacto_popular": "Limitou gastos publicos em saude e educacao ate 2036",
+      "created_at": "2026-03-29T22:40:39.093628+00:00"
+    },
+    {
+      "id": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "titulo": "Reforma da Previdencia",
+      "descricao": "Aumentou idade minima de aposentadoria e tempo de contribuicao",
+      "data_votacao": "2019-10-22",
+      "casa": "Senado",
+      "proposicao_id": "137999",
+      "tema": "previdencia",
+      "impacto_popular": "Dificultou aposentadoria pra trabalhadores de baixa renda",
+      "created_at": "2026-03-29T22:40:39.093628+00:00"
+    },
+    {
+      "id": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "titulo": "Autonomia do Banco Central",
+      "descricao": "Deu mandato fixo ao presidente do BC, independente do presidente eleito",
+      "data_votacao": "2021-02-04",
+      "casa": "Senado",
+      "proposicao_id": "135147",
+      "tema": "economia",
+      "impacto_popular": "Politica monetaria fica blindada de decisoes democraticas",
+      "created_at": "2026-03-29T22:40:39.093628+00:00"
+    },
+    {
+      "id": "e586da0e-3d1e-4f4c-93cd-3c696417f627",
+      "titulo": "Privatização da Eletrobras (Senado)",
+      "descricao": "Aprovacao da MP que viabilizou a privatizacao da Eletrobras no Senado",
+      "data_votacao": "2021-06-17",
+      "casa": "Senado",
+      "proposicao_id": "146740",
+      "tema": null,
+      "impacto_popular": null,
+      "created_at": "2026-03-31T19:03:00.917203+00:00"
+    },
+    {
+      "id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "titulo": "Arcabouco Fiscal",
+      "descricao": "Novo regime fiscal com metas de resultado primario e limite de gastos",
+      "data_votacao": "2023-08-22",
+      "casa": "Senado",
+      "proposicao_id": "157826",
+      "tema": "economia",
+      "impacto_popular": "Substitui Teto de Gastos por regra menos rigida mas ainda limita investimento social",
+      "created_at": "2026-03-29T22:40:39.093628+00:00"
+    },
+    {
+      "id": "b3dce7a7-bb51-4d96-8aa2-ee0240f76cf0",
+      "titulo": "Marco Temporal Terras Indigenas",
+      "descricao": "Tese que limita demarcacao de terras indigenas",
+      "data_votacao": "2023-09-27",
+      "casa": "Senado",
+      "proposicao_id": null,
+      "tema": "Meio Ambiente",
+      "impacto_popular": "Afeta diretamente comunidades indigenas e politica ambiental",
+      "created_at": "2026-04-01T19:04:32.949538+00:00"
+    },
+    {
+      "id": "7fa2b07b-f390-4d0f-87d5-354a68b1c593",
+      "titulo": "Marco Temporal Indigena (Senado)",
+      "descricao": "PL 490 - Marco temporal para demarcacao de terras indigenas",
+      "data_votacao": "2023-09-27",
+      "casa": "Senado",
+      "proposicao_id": "153517",
+      "tema": null,
+      "impacto_popular": null,
+      "created_at": "2026-03-31T19:03:00.917203+00:00"
+    },
+    {
+      "id": "05104fa6-e50a-46ed-9847-7f20d1637dab",
+      "titulo": "Reforma Tributaria (PEC 45/2019)",
+      "descricao": "Reforma do sistema tributario nacional",
+      "data_votacao": "2023-11-08",
+      "casa": "Senado",
+      "proposicao_id": null,
+      "tema": "Economia",
+      "impacto_popular": "Alto impacto na carga tributaria de consumo",
+      "created_at": "2026-04-01T19:04:32.819503+00:00"
+    },
+    {
+      "id": "baa22462-3a16-4f2b-9c4b-9a1ad9e54ee6",
+      "titulo": "Ofício \"S\" nº 25, de 2023 - Guilherme Augusto Caputo Bastos (CNJ)",
+      "descricao": "Votação nominal do Ofício nº 25, de 2023, indicação de membro do Conselho Nacional de Justiça. Página oficial do Senado registra Renan Filho como presente/votante em 13/12/2023.",
+      "data_votacao": "2023-12-13",
+      "casa": "Senado",
+      "proposicao_id": "160914",
+      "tema": "indicação_autoridade",
+      "impacto_popular": "alto",
+      "created_at": "2026-04-11T17:45:21.222637+00:00"
+    },
+    {
+      "id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "titulo": "Reforma Tributaria",
+      "descricao": "Unificou impostos (IBS+CBS), cashback pra baixa renda, transicao ate 2032",
+      "data_votacao": "2023-12-15",
+      "casa": "Senado",
+      "proposicao_id": "158930",
+      "tema": "economia",
+      "impacto_popular": "Simplifica impostos, potencial reducao de carga sobre pobres",
+      "created_at": "2026-03-29T22:40:39.093628+00:00"
+    },
+    {
+      "id": "6f1e4c1e-bf51-4a52-a2c1-98722dd6fe5d",
+      "titulo": "Marco Legal da IA (PL 2338/2023)",
+      "descricao": "Regulamentação do uso de inteligência artificial no Brasil",
+      "data_votacao": "2024-12-10",
+      "casa": "Senado",
+      "proposicao_id": "157233",
+      "tema": "tecnologia",
+      "impacto_popular": "Primeiro marco legal para regular o uso de IA, com regras sobre transparência algorítmica e proteção de dados.",
+      "created_at": "2026-03-29T22:30:42.584795+00:00"
+    }
+  ],
+  "pares": [
+    {
+      "id": "2d96f570-d950-49f3-9fa7-332590c69a1f",
+      "votacao_id": "05104fa6-e50a-46ed-9847-7f20d1637dab",
+      "voto": "não",
+      "contradicao": true,
+      "contradicao_descricao": "Votou contra mesmo tendo defendido publicamente a medida",
+      "created_at": "2026-04-01T19:04:32.86142+00:00",
+      "candidatos": {
+        "slug": "flavio-bolsonaro"
+      }
+    },
+    {
+      "id": "19c20ce8-a532-427e-92a4-bba15360b281",
+      "votacao_id": "539f836a-197b-4176-9861-d58759a5c73b",
+      "voto": "ausente",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-05-30T20:42:01.179601+00:00",
+      "candidatos": {
+        "slug": "magno-malta"
+      }
+    },
+    {
+      "id": "7603cdbd-d742-4a69-a78d-59e28b207f02",
+      "votacao_id": "539f836a-197b-4176-9861-d58759a5c73b",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-01T01:31:09.476831+00:00",
+      "candidatos": {
+        "slug": "ronaldo-caiado"
+      }
+    },
+    {
+      "id": "3cb4aaef-0656-4410-b906-149f856a07ac",
+      "votacao_id": "539f836a-197b-4176-9861-d58759a5c73b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-01T01:32:15.031084+00:00",
+      "candidatos": {
+        "slug": "ricardo-ferraco"
+      }
+    },
+    {
+      "id": "5680c4db-02d5-4c5b-aeb7-ce6cb56be7fa",
+      "votacao_id": "539f836a-197b-4176-9861-d58759a5c73b",
+      "voto": "ausente",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-01T01:33:25.236489+00:00",
+      "candidatos": {
+        "slug": "omar-aziz"
+      }
+    },
+    {
+      "id": "b913787e-736b-4028-be33-fbf80ad26c4c",
+      "votacao_id": "539f836a-197b-4176-9861-d58759a5c73b",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-01T01:33:43.07226+00:00",
+      "candidatos": {
+        "slug": "eduardo-braga"
+      }
+    },
+    {
+      "id": "fd45836d-fa5c-4ade-9ed6-01426bf11ba8",
+      "votacao_id": "539f836a-197b-4176-9861-d58759a5c73b",
+      "voto": "ausente",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-01T01:34:00.029991+00:00",
+      "candidatos": {
+        "slug": "joao-capiberibe"
+      }
+    },
+    {
+      "id": "04f772c0-7353-4a75-9612-c94a9e92a2f0",
+      "votacao_id": "539f836a-197b-4176-9861-d58759a5c73b",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-01T01:35:08.192245+00:00",
+      "candidatos": {
+        "slug": "ataides-oliveira"
+      }
+    },
+    {
+      "id": "dc898137-b540-4389-92f3-8e4f1cda0f3c",
+      "votacao_id": "539f836a-197b-4176-9861-d58759a5c73b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-01T01:35:32.673494+00:00",
+      "candidatos": {
+        "slug": "wilder-morais"
+      }
+    },
+    {
+      "id": "08c5066c-8b4a-485e-86c7-978a870bf936",
+      "votacao_id": "539f836a-197b-4176-9861-d58759a5c73b",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-01T01:35:46.867354+00:00",
+      "candidatos": {
+        "slug": "wellington-fagundes"
+      }
+    },
+    {
+      "id": "82831a08-b9d5-41c0-b2dd-325a1fa8a658",
+      "votacao_id": "7e1bef47-3d91-4c7a-8f94-fa323c6bd5f1",
+      "voto": "sim",
+      "contradicao": true,
+      "contradicao_descricao": "Lider ruralista votou a favor de restricao ambiental por pressao da base",
+      "created_at": "2026-04-01T19:04:34.990157+00:00",
+      "candidatos": {
+        "slug": "ronaldo-caiado"
+      }
+    },
+    {
+      "id": "0dddb4d4-0247-4493-85e3-6a29fabcea3f",
+      "votacao_id": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-29T22:55:00.998065+00:00",
+      "candidatos": {
+        "slug": "simone-tebet"
+      }
+    },
+    {
+      "id": "5c5aa351-b9fa-421e-aa2e-cb6d0ac294ed",
+      "votacao_id": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-29T22:55:14.639722+00:00",
+      "candidatos": {
+        "slug": "flavio-bolsonaro"
+      }
+    },
+    {
+      "id": "5b0f2e81-c348-4260-9a8c-7bb050ebf598",
+      "votacao_id": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T03:42:50.182926+00:00",
+      "candidatos": {
+        "slug": "jorginho-mello"
+      }
+    },
+    {
+      "id": "065b94f5-e232-4496-9ee5-74347b84fd84",
+      "votacao_id": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "voto": "ausente",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:37:09.0594+00:00",
+      "candidatos": {
+        "slug": "rodrigo-pacheco"
+      }
+    },
+    {
+      "id": "96bec449-b096-426e-8c2e-0507d3f971ed",
+      "votacao_id": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:37:36.51391+00:00",
+      "candidatos": {
+        "slug": "eduardo-girao"
+      }
+    },
+    {
+      "id": "9358e3b5-6b0c-42b2-8aac-be3e8bdea72f",
+      "votacao_id": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:41:26.377631+00:00",
+      "candidatos": {
+        "slug": "wellington-fagundes"
+      }
+    },
+    {
+      "id": "a22fc763-ebba-4351-a728-65af577bb81d",
+      "votacao_id": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:39:18.956502+00:00",
+      "candidatos": {
+        "slug": "eduardo-braga"
+      }
+    },
+    {
+      "id": "b9bd61bb-9aa7-4618-84ae-0160eb9a2bad",
+      "votacao_id": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:40:13.50013+00:00",
+      "candidatos": {
+        "slug": "confucio-moura"
+      }
+    },
+    {
+      "id": "a8ba9f49-60ac-470e-8fae-db8abf74a577",
+      "votacao_id": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-05-30T20:41:54.201009+00:00",
+      "candidatos": {
+        "slug": "jayme-campos"
+      }
+    },
+    {
+      "id": "bb29b4a9-8524-4270-9701-3e8d1a9e002c",
+      "votacao_id": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:38:50.490277+00:00",
+      "candidatos": {
+        "slug": "omar-aziz"
+      }
+    },
+    {
+      "id": "272e1885-a6da-449d-8609-2123c9390802",
+      "votacao_id": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-08-03T16:12:28.549275+00:00",
+      "candidatos": {
+        "slug": "mailza-assis"
+      }
+    },
+    {
+      "id": "af0d1e39-2267-4b27-ab2e-e6d74d3f5106",
+      "votacao_id": "8ccbfe61-0ede-409e-83a1-1c2cbdd0421d",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:39:59.311791+00:00",
+      "candidatos": {
+        "slug": "marcos-rogerio"
+      }
+    },
+    {
+      "id": "00ea408f-9c4b-47d7-bb13-064919ad5700",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-05-30T20:41:53.272839+00:00",
+      "candidatos": {
+        "slug": "jayme-campos"
+      }
+    },
+    {
+      "id": "c7076665-7c05-4864-8bc8-fb0a0a1e0d62",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T03:42:50.922169+00:00",
+      "candidatos": {
+        "slug": "jorginho-mello"
+      }
+    },
+    {
+      "id": "e546d261-b140-449f-a3f6-837217e316ee",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-29T22:55:14.411782+00:00",
+      "candidatos": {
+        "slug": "flavio-bolsonaro"
+      }
+    },
+    {
+      "id": "df7c608f-72b5-4d2c-aca0-b489b908cc08",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-05-30T20:42:01.025348+00:00",
+      "candidatos": {
+        "slug": "magno-malta"
+      }
+    },
+    {
+      "id": "e3aabf1a-8289-4022-90a3-fd3ac24daaa2",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:36:53.707276+00:00",
+      "candidatos": {
+        "slug": "cleitinho"
+      }
+    },
+    {
+      "id": "6b3941fb-128a-4264-a7a9-e4d2ad293c0f",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:41:13.550605+00:00",
+      "candidatos": {
+        "slug": "wilder-morais"
+      }
+    },
+    {
+      "id": "ba16cb76-be8f-437e-9eae-0c649d91c6a5",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "ausente",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:37:09.949498+00:00",
+      "candidatos": {
+        "slug": "rodrigo-pacheco"
+      }
+    },
+    {
+      "id": "c8fe4b0c-98eb-4e5c-9411-c30a96bea26e",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:38:51.329968+00:00",
+      "candidatos": {
+        "slug": "omar-aziz"
+      }
+    },
+    {
+      "id": "b66f9199-ff9a-418b-8061-fbde08de2e0b",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:40:00.091441+00:00",
+      "candidatos": {
+        "slug": "marcos-rogerio"
+      }
+    },
+    {
+      "id": "b6369876-1e82-46e1-bf69-3b4b37906be6",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:37:37.313423+00:00",
+      "candidatos": {
+        "slug": "eduardo-girao"
+      }
+    },
+    {
+      "id": "c319b661-c7d6-43f0-bd18-dc331ae255b6",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:38:02.721037+00:00",
+      "candidatos": {
+        "slug": "efraim-filho"
+      }
+    },
+    {
+      "id": "dff8491d-ca91-4255-80bc-11d70a737025",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:41:26.878495+00:00",
+      "candidatos": {
+        "slug": "wellington-fagundes"
+      }
+    },
+    {
+      "id": "ae155e7f-9735-4608-93c1-880894024e6c",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:38:37.701991+00:00",
+      "candidatos": {
+        "slug": "alan-rick"
+      }
+    },
+    {
+      "id": "1f464e20-c0c2-47a7-ab47-67f6e9f2b59d",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:39:19.693395+00:00",
+      "candidatos": {
+        "slug": "eduardo-braga"
+      }
+    },
+    {
+      "id": "ae28bc98-cb43-4b6e-b49e-ccd3a8452e7a",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:39:46.97825+00:00",
+      "candidatos": {
+        "slug": "beto-faro"
+      }
+    },
+    {
+      "id": "1197da8f-199d-41b9-86a4-227a43c5f90e",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "ausente",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:40:14.498163+00:00",
+      "candidatos": {
+        "slug": "confucio-moura"
+      }
+    },
+    {
+      "id": "4adec437-e4bb-479c-9ca7-f149444eca7b",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:40:27.37564+00:00",
+      "candidatos": {
+        "slug": "professora-dorinha"
+      }
+    },
+    {
+      "id": "6b14e540-6732-4e6c-86f4-c6f66ae367bb",
+      "votacao_id": "a145eff6-be34-4550-a7d3-8394a899262b",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-01T23:34:44.39582+00:00",
+      "candidatos": {
+        "slug": "sergio-moro-gov-pr"
+      }
+    },
+    {
+      "id": "f5bbe49a-4151-470e-a293-e092d21ad2e1",
+      "votacao_id": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-29T22:55:02.229184+00:00",
+      "candidatos": {
+        "slug": "simone-tebet"
+      }
+    },
+    {
+      "id": "1ebdcc8e-9df9-4aba-90d5-37d6e374b3f9",
+      "votacao_id": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-29T22:55:15.154919+00:00",
+      "candidatos": {
+        "slug": "flavio-bolsonaro"
+      }
+    },
+    {
+      "id": "67854b44-acdd-4d71-a975-e749cfdd69c5",
+      "votacao_id": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "voto": "ausente",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T03:42:50.541236+00:00",
+      "candidatos": {
+        "slug": "jorginho-mello"
+      }
+    },
+    {
+      "id": "d3dbe127-faf3-40b3-a9c9-7de7a388ac48",
+      "votacao_id": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:38:50.987812+00:00",
+      "candidatos": {
+        "slug": "omar-aziz"
+      }
+    },
+    {
+      "id": "7c2c7dd4-9e51-4d0c-9280-8763e318aeac",
+      "votacao_id": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:37:09.547746+00:00",
+      "candidatos": {
+        "slug": "rodrigo-pacheco"
+      }
+    },
+    {
+      "id": "f3b2310e-d14d-41fe-9a5b-a9c0a5563746",
+      "votacao_id": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:39:59.818759+00:00",
+      "candidatos": {
+        "slug": "marcos-rogerio"
+      }
+    },
+    {
+      "id": "fce2aba9-287c-4bf3-b96c-6f9f2d873ac0",
+      "votacao_id": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:37:36.996858+00:00",
+      "candidatos": {
+        "slug": "eduardo-girao"
+      }
+    },
+    {
+      "id": "ba8cfd58-ac19-41d7-86c9-64e5bfbd36fc",
+      "votacao_id": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:41:26.482343+00:00",
+      "candidatos": {
+        "slug": "wellington-fagundes"
+      }
+    },
+    {
+      "id": "79b39f3a-e3fa-4524-9e53-31009fb34c4f",
+      "votacao_id": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:39:19.45027+00:00",
+      "candidatos": {
+        "slug": "eduardo-braga"
+      }
+    },
+    {
+      "id": "e576a28a-1517-41f3-be8d-7bd895438fbd",
+      "votacao_id": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:40:14.099732+00:00",
+      "candidatos": {
+        "slug": "confucio-moura"
+      }
+    },
+    {
+      "id": "0beae739-76f9-4962-93e8-d37020a07bac",
+      "votacao_id": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "voto": "ausente",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-08-03T16:12:28.549275+00:00",
+      "candidatos": {
+        "slug": "mailza-assis"
+      }
+    },
+    {
+      "id": "71d32c8d-ddcc-44f4-adf8-bbecc4e27b14",
+      "votacao_id": "a8b40599-746f-418a-810e-4bbaa1894847",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-05-30T20:41:54.787003+00:00",
+      "candidatos": {
+        "slug": "jayme-campos"
+      }
+    },
+    {
+      "id": "394fc7e4-dab5-4502-8172-ca3e59149ea5",
+      "votacao_id": "b3dce7a7-bb51-4d96-8aa2-ee0240f76cf0",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-01T19:04:32.990104+00:00",
+      "candidatos": {
+        "slug": "flavio-bolsonaro"
+      }
+    },
+    {
+      "id": "dd6e373e-94d2-4e59-9692-5f4aeba213e4",
+      "votacao_id": "baa22462-3a16-4f2b-9c4b-9a1ad9e54ee6",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-13T12:33:40.449105+00:00",
+      "candidatos": {
+        "slug": "cleitinho"
+      }
+    },
+    {
+      "id": "1299e15a-5ced-4a7d-9e98-f5a00efd7986",
+      "votacao_id": "baa22462-3a16-4f2b-9c4b-9a1ad9e54ee6",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-13T12:34:40.76221+00:00",
+      "candidatos": {
+        "slug": "wilder-morais"
+      }
+    },
+    {
+      "id": "e764df55-48c1-4db3-a980-e3329f318c77",
+      "votacao_id": "baa22462-3a16-4f2b-9c4b-9a1ad9e54ee6",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-05-30T20:42:01.436676+00:00",
+      "candidatos": {
+        "slug": "magno-malta"
+      }
+    },
+    {
+      "id": "daee4c62-5f15-4b70-9893-b0a02a7ea092",
+      "votacao_id": "baa22462-3a16-4f2b-9c4b-9a1ad9e54ee6",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-13T12:34:13.115715+00:00",
+      "candidatos": {
+        "slug": "omar-aziz"
+      }
+    },
+    {
+      "id": "ae6a257b-b129-493b-a58d-02a1b382a690",
+      "votacao_id": "baa22462-3a16-4f2b-9c4b-9a1ad9e54ee6",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-13T12:33:56.174733+00:00",
+      "candidatos": {
+        "slug": "eduardo-girao"
+      }
+    },
+    {
+      "id": "adc749a5-a0b5-4d14-a848-7283a0239a99",
+      "votacao_id": "baa22462-3a16-4f2b-9c4b-9a1ad9e54ee6",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-13T12:34:29.067499+00:00",
+      "candidatos": {
+        "slug": "eduardo-braga"
+      }
+    },
+    {
+      "id": "5b488835-813c-452e-bb38-3f46eb43dafc",
+      "votacao_id": "baa22462-3a16-4f2b-9c4b-9a1ad9e54ee6",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-11T17:45:21.283162+00:00",
+      "candidatos": {
+        "slug": "renan-filho"
+      }
+    },
+    {
+      "id": "a8c391a4-877f-4eb7-b53e-3a4a0cd66256",
+      "votacao_id": "baa22462-3a16-4f2b-9c4b-9a1ad9e54ee6",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-05-30T20:41:54.109589+00:00",
+      "candidatos": {
+        "slug": "jayme-campos"
+      }
+    },
+    {
+      "id": "5e6bdc35-f9b7-4497-a329-c00e2b99379d",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T03:42:50.752421+00:00",
+      "candidatos": {
+        "slug": "jorginho-mello"
+      }
+    },
+    {
+      "id": "d21b9ee7-5054-472e-824a-ef92677527f1",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-29T22:55:14.210243+00:00",
+      "candidatos": {
+        "slug": "flavio-bolsonaro"
+      }
+    },
+    {
+      "id": "5d127209-6fe8-4572-8b62-4180c80772a2",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:36:53.225364+00:00",
+      "candidatos": {
+        "slug": "cleitinho"
+      }
+    },
+    {
+      "id": "6c62e604-2fae-490e-9e8c-801c5a36e963",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:38:51.136146+00:00",
+      "candidatos": {
+        "slug": "omar-aziz"
+      }
+    },
+    {
+      "id": "1d0bf727-04e6-436b-9220-4de99bb7b63f",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "ausente",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:37:09.686051+00:00",
+      "candidatos": {
+        "slug": "rodrigo-pacheco"
+      }
+    },
+    {
+      "id": "d7504025-4036-427e-aab5-86ab7f2d138c",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-05-30T20:42:01.222501+00:00",
+      "candidatos": {
+        "slug": "magno-malta"
+      }
+    },
+    {
+      "id": "d1aed31f-19a6-4778-87da-cdf3d483af4b",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "ausente",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:39:59.908389+00:00",
+      "candidatos": {
+        "slug": "marcos-rogerio"
+      }
+    },
+    {
+      "id": "306a1dfe-abad-4677-89e3-743def0d7139",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:37:37.07133+00:00",
+      "candidatos": {
+        "slug": "eduardo-girao"
+      }
+    },
+    {
+      "id": "2ce5adda-560f-4753-ae5f-e74c4842aff5",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-05-30T20:41:53.70414+00:00",
+      "candidatos": {
+        "slug": "jayme-campos"
+      }
+    },
+    {
+      "id": "9a2e876e-74e2-4898-b323-5d3cb96cb896",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:38:02.493466+00:00",
+      "candidatos": {
+        "slug": "efraim-filho"
+      }
+    },
+    {
+      "id": "284e9b5a-5465-4d6a-92ac-f18dd56cc74f",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:41:26.575323+00:00",
+      "candidatos": {
+        "slug": "wellington-fagundes"
+      }
+    },
+    {
+      "id": "27da4717-4319-43e4-9ade-f7f52fdd1a5c",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:38:37.377938+00:00",
+      "candidatos": {
+        "slug": "alan-rick"
+      }
+    },
+    {
+      "id": "017a44d3-d20c-47f7-b04d-bee0b19983e2",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:39:19.520288+00:00",
+      "candidatos": {
+        "slug": "eduardo-braga"
+      }
+    },
+    {
+      "id": "078be2fa-0bad-4f93-990a-9d9303b37418",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:40:14.198942+00:00",
+      "candidatos": {
+        "slug": "confucio-moura"
+      }
+    },
+    {
+      "id": "e235b506-7799-490b-9e9b-6b31c061ef87",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:39:46.742871+00:00",
+      "candidatos": {
+        "slug": "beto-faro"
+      }
+    },
+    {
+      "id": "a4e56de0-f008-4353-8f95-d055e62504a4",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:40:27.105457+00:00",
+      "candidatos": {
+        "slug": "professora-dorinha"
+      }
+    },
+    {
+      "id": "4b6f9aef-9692-4963-8218-1973b4b942bd",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-03-31T15:41:13.270331+00:00",
+      "candidatos": {
+        "slug": "wilder-morais"
+      }
+    },
+    {
+      "id": "5aa3fd99-cc91-4f23-88ad-a093fab34c4a",
+      "votacao_id": "e473c35a-fe74-4bd0-b3e9-02604fbe2e9f",
+      "voto": "não",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-04-01T23:34:44.023286+00:00",
+      "candidatos": {
+        "slug": "sergio-moro-gov-pr"
+      }
+    },
+    {
+      "id": "c05a432b-ad06-4ef8-aed6-2787b1cbbf28",
+      "votacao_id": "e586da0e-3d1e-4f4c-93cd-3c696417f627",
+      "voto": "sim",
+      "contradicao": false,
+      "contradicao_descricao": null,
+      "created_at": "2026-08-03T16:12:28.549275+00:00",
+      "candidatos": {
+        "slug": "mailza-assis"
+      }
+    }
+  ]
+}

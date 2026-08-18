@@ -1,0 +1,24 @@
+[
+  {
+    "candidato_id": "fixture-ratinho-junior-normalization-only",
+    "historico_politico_id": null,
+    "tipo_relacao": "lei_sancionada",
+    "esfera": "estadual",
+    "uf_norma": "PR",
+    "tipo_norma": "lei",
+    "numero": "21.355",
+    "ano": 2023,
+    "data_norma": "2023-01-01",
+    "ementa": "Autoriza o Poder Executivo a instituir o Serviço Social Autônomo Viaje Paraná.",
+    "signatario": "CARLOS MASSA RATINHO JUNIOR",
+    "autoridade_papel": "titular",
+    "fonte_primaria_url": "https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=iniciarProcesso&codAto=279043&codItemAto=1770781",
+    "fonte_primaria_titulo": "Sistema Legislação do Estado do Paraná",
+    "metadata": {
+      "note": "Fixture de dado real estadual mínimo para prova de normalização/validação. candidato_id é sintético; vínculo por mandato (historico_politico_id) requer resolução antes de insert real.",
+      "source": "Fluxo 5B expansão factual v2",
+      "data_real": true,
+      "case_id": "ratinho-junior-pr-lei-21355"
+    }
+  }
+]

@@ -1,0 +1,65 @@
+name: Aplicar release de chapas 2026
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: "SHA de 40 caracteres já mergeado em main"
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: apply-chapas-2026-production
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    name: Três migrations, ledger e readback
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    env:
+      PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+      PF_EXPECTED_SHA: ${{ github.event.inputs.expected_sha }}
+    steps:
+      - name: Validar ref e input
+        env:
+          DISPATCH_SHA: ${{ github.sha }}
+          DISPATCH_REF: ${{ github.ref }}
+        run: |
+          set -euo pipefail
+          test "$DISPATCH_REF" = "refs/heads/main"
+          test "${#PF_EXPECTED_SHA}" -eq 40
+          test "$PF_EXPECTED_SHA" = "$DISPATCH_SHA"
+          test -n "${PF_DATABASE_URL:-}"
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.inputs.expected_sha }}
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Instalar cliente PostgreSQL 17
+        run: |
+          set -euo pipefail
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl --fail --silent --show-error --location \
+            -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc \
+            https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          . /etc/os-release
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt ${VERSION_CODENAME}-pgdg main" \
+            | sudo tee /etc/apt/sources.list.d/pgdg.list >/dev/null
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq postgresql-client-17
+          psql --version
+
+      - run: npm ci
+
+      - name: Aplicar conjunto fechado
+        run: bash scripts/audit/apply-chapas-2026-release.sh

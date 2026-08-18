@@ -1,0 +1,7180 @@
+{
+  "promovidas": [
+    {
+      "slug": "ricardo-marques",
+      "canonico": "Vereador",
+      "cargo": "Vereador de Aracaju",
+      "inicio": 2021,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "dr-daniel",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2019,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cicero-lucena",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 1991,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "lula",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "luciano-zucco",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2023,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 1998,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "jorginho-mello",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2023,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "eduardo-braide",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2007,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "jhc",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2021,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "ivan-moraes",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cicero-lucena",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2003,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "lula",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "romeu-zema",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "luciano-zucco",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "sandro-alex",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2015,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "jhc",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2015,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "orleans-brandao",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2007,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "eduardo-braide",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2021,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "eduardo-paes",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2024,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "garotinho",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 1998,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "daniel-vilela",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2026,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "cleitinho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "laurez-moreira",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2023,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "joao-rodrigues",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "gabriel-souza",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "dr-furlan",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2021,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "pazolini",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2024,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "helder-salomao",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2004,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2004,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-braide",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2025,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "amelio-cayres",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 1997,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-paes",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "hana-ghassan",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "dr-furlan",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2025,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "eduardo-paes",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2012,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "acm-neto",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joel-rodrigues",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2008,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joao-campos",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2000,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "clecio-luis",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2012,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "hildon-chaves",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "hildon-chaves",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "felicio-ramuth",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "mailza-assis",
+      "canonico": "Governador",
+      "cargo": "Governadora",
+      "inicio": 2026,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "felicio-ramuth",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "rafael-greca",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cicero-lucena",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2025,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "felipe-camarao",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-paes",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2025,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "jhc",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2025,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "orleans-brandao",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2015,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "romeu-zema",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "raquel-lyra",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "dr-daniel",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "jorginho-mello",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-braide",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alysson-bezerra",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2024,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "david-almeida",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cicero-lucena",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 1994,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "jhc",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "raquel-lyra",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "raquel-lyra",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cicero-lucena",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alysson-bezerra",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "roberto-claudio",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2017,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2012,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "rafael-greca",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-paes",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2008,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "adailton-furia",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2021,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "alysson-bezerra",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2019,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "clecio-luis",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "marcos-rogerio",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "jeronimo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2023,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 1995,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "laurez-moreira",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "efraim-filho",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2026,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "edilson-damiao",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "helder-salomao",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "jorginho-mello",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "renan-filho",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2004,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "renan-filho",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2023,
+      "provenienciaPersistida": null,
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "paula-belmonte",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2019,
+      "provenienciaPersistida": null,
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "fabio-trad",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cicero-lucena",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 1996,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joel-rodrigues",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joel-rodrigues",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2021,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "celina-leao",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "hildon-chaves",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2017,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "lula",
+      "canonico": "Presidente",
+      "cargo": "Presidente da República",
+      "inicio": 2007,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "orleans-brandao",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "efraim-filho",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2026,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "joao-campos",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2021,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "adailton-furia",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2021,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "acm-neto",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "raquel-lyra",
+      "canonico": "Prefeito",
+      "cargo": "Prefeita",
+      "inicio": 2021,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2009,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "helder-salomao",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2008,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "acm-neto",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "efraim-filho",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "vicentinho-junior",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "jorginho-mello",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-paes",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "rafael-fonteles",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2023,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "leandro-grass",
+      "canonico": "Deputado Distrital",
+      "cargo": "Deputado Distrital",
+      "inicio": 2019,
+      "provenienciaPersistida": null,
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "vicentinho-junior",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "arthur-henrique",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2007,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2016,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 1997,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "joel-rodrigues",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2013,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "efraim-filho",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joel-rodrigues",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2004,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "paula-belmonte",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "romeu-zema",
+      "canonico": "Governador",
+      "cargo": "Governador de Minas Gerais",
+      "inicio": 2019,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "jhc",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "expedito-netto",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "hana-ghassan",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2023,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "vicentinho-junior",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "acm-neto",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2012,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cicero-lucena",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2000,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 1995,
+      "provenienciaPersistida": null,
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "daniel-vilela",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "helder-salomao",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2019,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "david-almeida",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2025,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "jeronimo",
+      "canonico": "Secretário",
+      "cargo": "Secretário de Estado",
+      "inicio": 2019,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "roberto-claudio",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2007,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "canonico": "Vereador",
+      "cargo": "Vereador de Itabaiana",
+      "inicio": 2005,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "canonico": "Vereador",
+      "cargo": "Vereador de Itabaiana",
+      "inicio": 2009,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "canonico": "Governador",
+      "cargo": "Governador em exercício de Mato Grosso",
+      "inicio": 2025,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2003,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "eduardo-paes",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2009,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "arthur-henrique",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "sandro-alex",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "vittorio-medioli",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "gabriel-souza",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "felipe-camarao",
+      "canonico": "Secretário",
+      "cargo": "Secretário de Estado",
+      "inicio": 2015,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "canonico": "Vereador",
+      "cargo": "Vereador de Itabaiana",
+      "inicio": 2001,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-riedel",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 1998,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "luciano-zucco",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-riedel",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2023,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2012,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "felipe-camarao",
+      "canonico": "Secretário Municipal",
+      "cargo": "Secretário Municipal",
+      "inicio": 2012,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "edilson-damiao",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2026,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2021,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "eduardo-paes",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2021,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "jeronimo",
+      "canonico": "Secretário",
+      "cargo": "Secretário de Estado",
+      "inicio": 2015,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "rafael-fonteles",
+      "canonico": "Secretário da Fazenda do Piauí",
+      "cargo": "Secretário da Fazenda do Piauí",
+      "inicio": 2015,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joao-campos",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2019,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "joao-rodrigues",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "mateus-simoes",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "raquel-lyra",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2023,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "renan-filho",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "helder-salomao",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2011,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "renan-filho",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2008,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito de Fortaleza",
+      "inicio": 1989,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "celina-leao",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2011,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2023,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "mailza-assis",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-paes",
+      "canonico": "Ministro do Turismo",
+      "cargo": "Ministro do Turismo",
+      "inicio": 2007,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "dr-daniel",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2021,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "jhc",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2011,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2019,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "hana-ghassan",
+      "canonico": "Secretário",
+      "cargo": "Secretário",
+      "inicio": 2019,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "lula",
+      "canonico": "Presidente",
+      "cargo": "Presidente da República",
+      "inicio": 2003,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "juliana-brizola",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2013,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "jorginho-mello",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2019,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito de Itabaiana",
+      "inicio": 2013,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "luciano-zucco",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2019,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "sandro-alex",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito de Itabaiana",
+      "inicio": 2017,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "orleans-brandao",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "canonico": "Secretário-Executivo do MJSP",
+      "cargo": "Secretário-Executivo do MJSP",
+      "inicio": 2023,
+      "provenienciaPersistida": null,
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "helder-salomao",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2009,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "juliana-brizola",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2019,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "dr-furlan",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "vittorio-medioli",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito de Itabaiana",
+      "inicio": 2025,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "joao-campos",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "inicio": 2017,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "sandro-alex",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "clecio-luis",
+      "canonico": "Senador",
+      "cargo": "Senador (suplente)",
+      "inicio": 2011,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "mateus-simoes",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2026,
+      "provenienciaPersistida": null,
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2018,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "helder-salomao",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 1993,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "mailza-assis",
+      "canonico": "Senador",
+      "cargo": "Senadora",
+      "inicio": 2019,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "orleans-brandao",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joao-campos",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2008,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "renan-filho",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "david-almeida",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2024,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "dr-daniel",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alysson-bezerra",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2021,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 1998,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ivan-moraes",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2021,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "lula",
+      "canonico": "Presidente",
+      "cargo": "Presidente da República",
+      "inicio": 2023,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2019,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 1991,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "celina-leao",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2026,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2015,
+      "provenienciaPersistida": null,
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "garotinho",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "helder-salomao",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "orleans-brandao",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joao-campos",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "raquel-lyra",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cicero-lucena",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2024,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joel-rodrigues",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2012,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "daniel-vilela",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "orleans-brandao",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ivan-moraes",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2017,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "celina-leao",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2023,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2000,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "raquel-lyra",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2011,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-paes",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 1998,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joao-campos",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alysson-bezerra",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2025,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "renan-filho",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "celina-leao",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2019,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2019,
+      "provenienciaPersistida": null,
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joao-campos",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "professora-dorinha",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2004,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2024,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "expedito-netto",
+      "canonico": "Secretário Nacional de Pesca e Aquicultura",
+      "cargo": "Secretário Nacional de Pesca e Aquicultura",
+      "inicio": 2023,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "fabio-trad",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "roberto-claudio",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2013,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 1999,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "jorginho-mello",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "celina-leao",
+      "canonico": "Deputado Distrital",
+      "cargo": "Deputado Distrital",
+      "inicio": 2011,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "amelio-cayres",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2000,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alessandra-campelo",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alessandra-campelo",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "baba",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "baba",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "roberto-claudio",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2012,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "felicio-ramuth",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2021,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "roberto-claudio",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "marconi-perillo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-braide",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "laurez-moreira",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2012,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "felicio-ramuth",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2017,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "patrus-ananias",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2013,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "jose-roberto-arruda",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 1995,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "jeronimo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "laurez-moreira",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "marconi-perillo",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 1994,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "garotinho",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2011,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 1991,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2008,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "professora-dorinha",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ismar-marques",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "roberto-claudio",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 1998,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joao-rodrigues",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "garotinho",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 1999,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "david-almeida",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2021,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "william-siri",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2025,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "helder-salomao",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "lula",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 1987,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "professora-dorinha",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "larissa-rosado",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "marconi-perillo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 1998,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "felicio-ramuth",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2023,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "jhc",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2024,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "expedito-netto",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2013,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "garotinho",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2001,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "alexandre-kalil",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2017,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "juliana-brizola",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "edegar-pretto",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "pazolini",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-braide",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2024,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "marconi-perillo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "edegar-pretto",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2011,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "juliana-brizola",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2015,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "luciana-gurgel",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "luciana-gurgel",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2024,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "dr-furlan",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2024,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "luis-cesar-bueno",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "gelson-merisio",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2005,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "gabriel-souza",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "acm-neto",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "inicio": 1997,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "rafael-greca",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 1998,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alan-rick",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "luis-cesar-bueno",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2003,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "romeu-zema",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2023,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "amelio-cayres",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "raquel-lyra",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "amelio-cayres",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "clecio-luis",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "inicio": 2001,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "eduardo-braide",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2026,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "amelio-cayres",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "adailton-furia",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "dr-furlan",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "amelio-cayres",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "david-almeida",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alysson-bezerra",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cleitinho",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2023,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "marconi-perillo",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 1991,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2007,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "mateus-simoes",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "david-almeida",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 1991,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "laurez-moreira",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "jorginho-mello",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 1994,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "laurez-moreira",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 1994,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "amelio-cayres",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "jayme-campos",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2019,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "daniel-vilela",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "juliana-brizola",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "pazolini",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joao-rodrigues",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "rafael-greca",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "laurez-moreira",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 1998,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "requiao-filho",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "jorginho-mello",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 1998,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "jorginho-mello",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "jorginho-mello",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 1998,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2006,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "leandro-grass",
+      "canonico": "Deputado Distrital",
+      "cargo": "Deputado Distrital",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 1994,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "requiao-filho",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "araceli-lemos",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2003,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "edegar-pretto",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-braide",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "douglas-ruas",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "celina-leao",
+      "canonico": "Deputado Distrital",
+      "cargo": "Deputado Distrital",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "edegar-pretto",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cleitinho",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "helder-salomao",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "paula-belmonte",
+      "canonico": "Deputado Distrital",
+      "cargo": "Deputado Distrital",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "david-almeida",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "marconi-perillo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cleitinho",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "canonico": "Governador",
+      "cargo": "Governador de Sao Paulo",
+      "inicio": 2023,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cicero-lucena",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "rafael-greca",
+      "canonico": "Secretário de Desenvolvimento Sustentável",
+      "cargo": "Secretário de Desenvolvimento Sustentável",
+      "inicio": 2025,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "marcos-rogerio",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "professora-dorinha",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "wilder-morais",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "sandro-alex",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2011,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "sandro-alex",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2015,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ze-coca",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2012,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-girao",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ataides-oliveira",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2011,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "cleitinho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2008,
+      "provenienciaPersistida": null,
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "clecio-luis",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2008,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "felicio-ramuth",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "marcelo-maranata",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ivan-moraes",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "efraim-filho",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "joel-rodrigues",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2000,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cleitinho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2020,
+      "provenienciaPersistida": null,
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "renan-filho",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2023,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "dr-daniel",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2024,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "felipe-camarao",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "inicio": 2023,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "sandro-alex",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2019,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alan-rick",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "marconi-perillo",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alan-rick",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "canonico": "Ministro da Infraestrutura",
+      "cargo": "Ministro da Infraestrutura",
+      "inicio": 2019,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "sandro-alex",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2023,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "daniel-vilela",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2008,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "rafael-fonteles",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "marcos-rogerio",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2008,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "adailton-furia",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2012,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "juliana-brizola",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2008,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ze-coca",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "canonico": "Ministro da Fazenda",
+      "cargo": "Ministro da Fazenda",
+      "inicio": 2023,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "canonico": "Ministro da Educação",
+      "cargo": "Ministro da Educação",
+      "inicio": 2005,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "requiao-filho",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2025,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "requiao-filho",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "jayme-campos",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2007,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ze-coca",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2023,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "eduardo-girao",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2019,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "eduardo-girao",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2023,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2000,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "araceli-lemos",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ze-coca",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2009,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "ze-coca",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2025,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "efraim-filho",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2026,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2021,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "dr-furlan",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "dr-daniel",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2012,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "dr-daniel",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "canonico": "Ministro",
+      "cargo": "Ministro",
+      "inicio": 2019,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "canonico": "Ministro",
+      "cargo": "Ministro",
+      "inicio": 2023,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "efraim-filho",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2007,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "canonico": "ministra(o) da educação do Brasil",
+      "cargo": "ministra(o) da educação do Brasil",
+      "inicio": 2005,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2026,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2015,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2019,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "raquel-lyra",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2025,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "canonico": "Vereador",
+      "cargo": "Vereador de Aracaju",
+      "inicio": 2009,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "emanuel-cacho",
+      "canonico": "Secretário de Estado",
+      "cargo": "Secretário de Estado da Justiça e Cidadania",
+      "inicio": 2003,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "ricardo-marques",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-prefeito de Aracaju",
+      "inicio": 2025,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2023,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "canonico": "ministra(o) da educação do Brasil",
+      "cargo": "ministra(o) da educação do Brasil",
+      "inicio": 2011,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "eduardo-paes",
+      "canonico": "Presidente",
+      "cargo": "presidente",
+      "inicio": 2013,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "cicero-lucena",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2021,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "ismar-marques",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2000,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "canonico": "Ministro",
+      "cargo": "Ministro",
+      "inicio": 1994,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "raquel-lyra",
+      "canonico": "Prefeito",
+      "cargo": "Prefeita",
+      "inicio": 2017,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cabo-daciolo",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2015,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "jhc",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "gelson-merisio",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ismar-marques",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "hana-ghassan",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2026,
+      "provenienciaPersistida": "misto",
+      "provenienciaEfetiva": "misto"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "canonico": "Ministro da Fazenda",
+      "cargo": "Ministro da Fazenda",
+      "inicio": 1994,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "canonico": "Ministro da Integração Nacional",
+      "cargo": "Ministro da Integração Nacional",
+      "inicio": 2003,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "renan-filho",
+      "canonico": "Ministro",
+      "cargo": "Ministro",
+      "inicio": 2023,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "rafael-greca",
+      "canonico": "Ministro",
+      "cargo": "Ministro",
+      "inicio": 1999,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "canonico": "Ministro",
+      "cargo": "Ministro",
+      "inicio": 2023,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "canonico": "Secretário",
+      "cargo": "Secretário",
+      "inicio": 1999,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "paula-belmonte",
+      "canonico": "Deputado Distrital",
+      "cargo": "Deputada Distrital",
+      "inicio": 2023,
+      "provenienciaPersistida": null,
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "canonico": "Ministro",
+      "cargo": "Ministro",
+      "inicio": 2019,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "jayme-campos",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "elizeu-aguiar",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2008,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "mateus-simoes",
+      "canonico": "Secretário",
+      "cargo": "Secretário",
+      "inicio": 2020,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "canonico": "Ministro da Educação",
+      "cargo": "Ministro da Educação",
+      "inicio": 2011,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "jayme-campos",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cadu-xavier",
+      "canonico": "Secretário",
+      "cargo": "Secretário de Estado da Fazenda do Rio Grande do Norte",
+      "inicio": 2019,
+      "provenienciaPersistida": "manual",
+      "provenienciaEfetiva": "manual"
+    },
+    {
+      "slug": "vittorio-medioli",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 1998,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "patrus-ananias",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "patrus-ananias",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "luis-cesar-bueno",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2000,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "larissa-rosado",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "baba",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2008,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 1991,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "eduardo-riedel",
+      "canonico": "Secretário",
+      "cargo": "Secretário",
+      "inicio": 2015,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "jose-roberto-arruda",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ricardo-marques",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "inicio": 2024,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ze-coca",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2008,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-riedel",
+      "canonico": "Secretário",
+      "cargo": "Secretário",
+      "inicio": 2021,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "mauricio-tonha",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2004,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "vittorio-medioli",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "luis-cesar-bueno",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "eduardo-riedel",
+      "canonico": "Vice-Presidente",
+      "cargo": "Vice-Presidente",
+      "inicio": 2023,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "jose-roberto-arruda",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "inicio": 2015,
+      "provenienciaPersistida": "wikidata",
+      "provenienciaEfetiva": "wikidata"
+    },
+    {
+      "slug": "jayme-campos",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2000,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "patrus-ananias",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alessandra-campelo",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "larissa-rosado",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2002,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "mauricio-tonha",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2008,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "roberto-cidade",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2018,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "roberto-cidade",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2022,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "elizeu-aguiar",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2004,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "roberio-paulino",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "luis-cesar-bueno",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2006,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2012,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "william-siri",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "william-siri",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2024,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alexandre-kalil",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2016,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "alexandre-kalil",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "cabo-daciolo",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "gelson-merisio",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2010,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "gelson-merisio",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "inicio": 2014,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    },
+    {
+      "slug": "ricardo-marques",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "inicio": 2020,
+      "provenienciaPersistida": "tse",
+      "provenienciaEfetiva": "tse"
+    }
+  ],
+  "excluidas": [
+    {
+      "slug": "professora-dorinha",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "edmilson-costa",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcelo-maranata",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcelo-brigadeiro",
+      "canonico": "1º Suplente",
+      "cargo": "1º Suplente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cyro-garcia",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "adailton-furia",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "david-almeida",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "roberto-claudio",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "roberto-claudio",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "maria-do-carmo",
+      "canonico": "1o Suplente Senador",
+      "cargo": "1o Suplente Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jhc",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "efraim-filho",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "mauricio-tonha",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rafael-greca",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cyro-garcia",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "mateus-simoes",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "tulio-lopes",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "helder-salomao",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joel-rodrigues",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marconi-perillo",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "david-almeida",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "priscila-voigt",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joel-rodrigues",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lucien-rezende",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "wilder-morais",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ricardo-marques",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joel-rodrigues",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcos-rogerio",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "adailton-furia",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ataides-oliveira",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "celina-leao",
+      "canonico": "Deputado Distrital",
+      "cargo": "Deputado Distrital",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marconi-perillo",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "hertz-dias",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "edegar-pretto",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gabriel-souza",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "priscila-voigt",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "priscila-voigt",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cyro-garcia",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "eduardo-braide",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joao-rodrigues",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcos-rogerio",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lucien-rezende",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cleitinho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ralf-zimmer",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cabo-daciolo",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "roberto-claudio",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rejane-oliveira",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cabo-daciolo",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cyro-garcia",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "maria-do-carmo",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "hertz-dias",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "helder-salomao",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "garotinho",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "clecio-luis",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cyro-garcia",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "eduardo-riedel",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "samara-martins",
+      "canonico": "Vice-Presidente",
+      "cargo": "Vice-Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joao-campos",
+      "canonico": "Chefe de Gabinete do Governo de Pernambuco",
+      "cargo": "Chefe de Gabinete do Governo de Pernambuco",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "sandro-alex",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "roberto-claudio",
+      "canonico": "Presidente da Assembleia Legislativa do Ceará",
+      "cargo": "Presidente da Assembleia Legislativa do Ceará",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "canonico": "Presidente da ABDI",
+      "cargo": "Presidente da ABDI",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "edmilson-costa",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cabo-daciolo",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "eduardo-paes",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "garotinho",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "garotinho",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "raquel-lyra",
+      "canonico": "Governador",
+      "cargo": "Governador de Pernambuco",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcos-rogerio",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcelo-maranata",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "edmilson-costa",
+      "canonico": "Vice-Presidente",
+      "cargo": "Vice-Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "acm-neto",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "douglas-ruas",
+      "canonico": "Presidente da Alerj",
+      "cargo": "Presidente da Alerj",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "canonico": "Interventor na Segurança Pública do Distrito Federal",
+      "cargo": "Interventor na Segurança Pública do Distrito Federal",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "eduardo-girao",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "william-siri",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "adailton-furia",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ataides-oliveira",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "dr-furlan",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "santiago-belizario",
+      "canonico": "Governador",
+      "cargo": "Pré-candidato a Governador do Piauí",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joao-rodrigues",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "juliana-brizola",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "eduardo-braide",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "vera-lucia",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "edegar-pretto",
+      "canonico": "Presidente da Conab",
+      "cargo": "Presidente da Conab",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "indira-xavier",
+      "canonico": "Candidatura a Governador",
+      "cargo": "Candidatura a Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "juliana-brizola",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcelo-maranata",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cicero-lucena",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "araceli-lemos",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ataides-oliveira",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ataides-oliveira",
+      "canonico": "1º SUPLENTE SENADOR",
+      "cargo": "1º SUPLENTE SENADOR",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "efraim-filho",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joao-rodrigues",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jeronimo",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "wilder-morais",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "hildon-chaves",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcelo-brigadeiro",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joao-rodrigues",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "edegar-pretto",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joao-campos",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jeronimo",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jeronimo",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jeronimo",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ze-batista",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "amelio-cayres",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "eduardo-braide",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joao-rodrigues",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joao-rodrigues",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "expedito-netto",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ze-batista",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "juliana-brizola",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jeronimo",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lula",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "professora-dorinha",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "professora-dorinha",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "garotinho",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jeronimo",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ronaldo-mansur",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "renan-filho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcos-rogerio",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "pedro-abib",
+      "canonico": "Pre-candidatura a Governador",
+      "cargo": "Pre-candidatura ao Governo de Rondonia",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "vicentinho-junior",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "fabio-trad",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "aroldo-felix",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "fabio-trad",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "dr-luisinho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cyro-garcia",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lucien-rezende",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "daniela-paiva",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "daniela-paiva",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lula",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cyro-garcia",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "arthur-henrique",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "vera-lucia",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "garotinho",
+      "canonico": "Filiação ao PSB",
+      "cargo": "Filiação ao PSB",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "garotinho",
+      "canonico": "Filiação ao PRP",
+      "cargo": "Filiação ao PRP",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "garotinho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "huggo-leonardo",
+      "canonico": "Pré-candidatura ao Senado",
+      "cargo": "Pré-candidatura ao Senado",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "huggo-leonardo",
+      "canonico": "Pré-candidatura a Governador",
+      "cargo": "Pré-candidatura a Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jarir-pereira",
+      "canonico": "Membro da Executiva Estadual do PSOL Ceará",
+      "cargo": "Membro da Executiva Estadual do PSOL Ceará",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "jarir-pereira",
+      "canonico": "Pré-candidatura a Governador",
+      "cargo": "Pré-candidatura a Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ivan-moraes",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ronaldo-mansur",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "patrus-ananias",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "garotinho",
+      "canonico": "Filiação ao União Brasil",
+      "cargo": "Filiação ao União Brasil",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ismar-marques",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ismar-marques",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jeremias-cosmo",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jose-estevao",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "kiko-caputo",
+      "canonico": "Governador",
+      "cargo": "Pre-candidato a Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "samara-mineiro",
+      "canonico": "Governador",
+      "cargo": "Pre-candidata a Governadora",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "larissa-rosado",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joao-rodrigues",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "larissa-rosado",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "larissa-rosado",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "larissa-rosado",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lenilda-luna",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lenilda-luna",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "requiao-filho",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "juliana-brizola",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lenilda-luna",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "juliana-brizola",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcelo-maranata",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito de Guaíba",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "luciano-zucco",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "gabriel-souza",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador do Rio Grande do Sul",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "rafael-greca",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "laurez-moreira",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rafael-greca",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "helder-salomao",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "luis-cesar-bueno",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "luis-cesar-bueno",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "luis-cesar-bueno",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "luciana-gurgel",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "preta-lu",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "larissa-rosado",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "laurez-moreira",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "canonico": "Governador",
+      "cargo": "Governador do Ceará",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "robson-raymundo",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "prof-meire-reis",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "prof-enfermeira-kaelly",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "preta-lu",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "preta-lu",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "robson-raymundo",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ronaldo-mansur",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "robson-raymundo",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "robson-raymundo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jorginho-mello",
+      "canonico": "Governador",
+      "cargo": "Governador de Santa Catarina",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "rafaell-milas",
+      "canonico": "Presidente estadual do Partido Missão em Mato Grosso",
+      "cargo": "Presidente estadual do Partido Missão em Mato Grosso",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rafaell-milas",
+      "canonico": "Pré-candidatura ao Governo de Mato Grosso",
+      "cargo": "Pré-candidatura ao Governo de Mato Grosso",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "renan-santos",
+      "canonico": "Presidente Nacional do Partido Missão",
+      "cargo": "Presidente Nacional do Partido Missão",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "breno-barcelar",
+      "canonico": "Presidente estadual do Missão Espírito Santo",
+      "cargo": "Presidente estadual do Missão Espírito Santo",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "saulo-arcangeli",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "saulo-arcangeli",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "breno-barcelar",
+      "canonico": "Pré-candidatura ao Governo do Espírito Santo",
+      "cargo": "Pré-candidatura ao Governo do Espírito Santo",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "daniel-vilela",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "renan-santos",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "saulo-arcangeli",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "luiz-franca",
+      "canonico": "Governador",
+      "cargo": "Pre-candidato a Governador do Parana",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "saulo-arcangeli",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "saulo-arcangeli",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "saulo-arcangeli",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "eduardo-paes",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "saulo-arcangeli",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "samara-martins",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "andre-luis",
+      "canonico": "Governador",
+      "cargo": "Pre-candidato a Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcos-rogerio",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "eduardo-girao",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "leandro-grass",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "hertz-dias",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "canonico": "Diretor-Geral do DNIT",
+      "cargo": "Diretor-Geral do DNIT",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "henrique-areas",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jeronimo",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "acm-neto",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "clecio-luis",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ben-mendes",
+      "canonico": "Governador",
+      "cargo": "Pre-candidato a Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "henrique-areas",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lais-chaud",
+      "canonico": "Pré-candidata a Governadora",
+      "cargo": "Pré-candidata ao Governo de Santa Catarina",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "thor-dantas",
+      "canonico": "Governador",
+      "cargo": "Pré-candidato ao Governo do Acre",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "henrique-areas",
+      "canonico": "Governador",
+      "cargo": "Pre-candidato a Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "indira-xavier",
+      "canonico": "Governador",
+      "cargo": "Pre-candidata a Governadora",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ivan-moraes",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "hertz-dias",
+      "canonico": "Vice-Presidente",
+      "cargo": "Vice-Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rafael-greca",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lucien-rezende",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "henrique-areas",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "indira-xavier",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "indira-xavier",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "samara-martins",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lula",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "eudo-raffael",
+      "canonico": "Governador",
+      "cargo": "Pré-candidato ao Governo do Acre",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "alex-pucineli",
+      "canonico": "Governador",
+      "cargo": "Pre-candidato a Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcelo-maluf",
+      "canonico": "Suplente",
+      "cargo": "1o suplente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcelo-maluf",
+      "canonico": "Governador",
+      "cargo": "Pre-candidato a Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "mauricio-tonha",
+      "canonico": "Governador",
+      "cargo": "Pre-candidato a Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "andre-marinho",
+      "canonico": "Pre-candidato a Governador",
+      "cargo": "Pre-candidato a Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ataides-oliveira",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "larissa-rosado",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "dr-furlan",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "clecio-luis",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lula",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "renan-filho",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "clecio-luis",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "araceli-lemos",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "preta-lu",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "emanuel-cacho",
+      "canonico": "Suplente de Senador",
+      "cargo": "2º suplente de Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "araceli-lemos",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "emanuel-cacho",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "emanuel-cacho",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "camila-falcao",
+      "canonico": "Governador",
+      "cargo": "Pre-candidata a Governadora de Pernambuco",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "renan-hallais",
+      "canonico": "Governador",
+      "cargo": "Pre-candidato a Governador de Pernambuco",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joao-campos",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito do Recife",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "dr-helton-monteiro",
+      "canonico": "Dirigente sindical",
+      "cargo": "Dirigente do Sindimed-SE",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "dr-helton-monteiro",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jhc",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "david-almeida",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "vera-lucia",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "vera-lucia",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "clecio-luis",
+      "canonico": "1º SUPLENTE SENADOR",
+      "cargo": "1º SUPLENTE SENADOR",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cyro-garcia",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "dr-daniel",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "araceli-lemos",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "augusto-cury",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cabo-daciolo",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "edmilson-costa",
+      "canonico": "Presidente",
+      "cargo": "Presidente",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gelson-merisio",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "dario-barbosa",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "dario-barbosa",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "dario-barbosa",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcus-sodre",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "amelio-cayres",
+      "canonico": "presidente da Assembléia Legislativa do Tocantins",
+      "cargo": "presidente da Assembléia Legislativa do Tocantins",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "wilder-morais",
+      "canonico": "1º SUPLENTE SENADOR",
+      "cargo": "1º SUPLENTE SENADOR",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jose-roberto-arruda",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "dario-barbosa",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "coronel-busnello",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcus-sodre",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "omar-aziz",
+      "canonico": "deputy mayor of Manas",
+      "cargo": "deputy mayor of Manas",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "francisco-jurity",
+      "canonico": "Governador",
+      "cargo": "Pré-candidato a Governador do Piauí",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gisvaldo-oliveira",
+      "canonico": "Governador",
+      "cargo": "Pré-candidato a Governador do Piauí",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "david-almeida",
+      "canonico": "Presidente da Assembleia Legislativa do Amazonas",
+      "cargo": "Presidente da Assembleia Legislativa do Amazonas",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "lourdes-melo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "amelio-cayres",
+      "canonico": "Presidente da Assembleia Legislativa do Tocantins",
+      "cargo": "Presidente da Assembleia Legislativa do Tocantins",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "amelio-cayres",
+      "canonico": "Presidente da Assembleia Legislativa do Tocantins",
+      "cargo": "Presidente da Assembleia Legislativa do Tocantins",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "luiz-carlos-teodoro",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "indira-xavier",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "leandro-grass",
+      "canonico": "Presidente do IPHAN",
+      "cargo": "Presidente do IPHAN",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "mauricio-tonha",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "edegar-pretto",
+      "canonico": "Presidente da Conab",
+      "cargo": "Presidente da Conab",
+      "motivo": "sem_ano_de_inicio"
+    },
+    {
+      "slug": "cabo-daciolo",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "araceli-lemos",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "araceli-lemos",
+      "canonico": "1o Suplente Senador",
+      "cargo": "Candidatura a 1o Suplente Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "alex-pucineli",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "luiz-carlos-teodoro",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "indira-xavier",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "vera-lucia",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "vera-lucia",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jose-estevao",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "david-almeida",
+      "canonico": "presidente da Assembléia Legislativa do Amazonas",
+      "cargo": "presidente da Assembléia Legislativa do Amazonas",
+      "motivo": "cargo_fora_da_regra_positiva"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ralf-zimmer",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "dario-barbosa",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcus-sodre",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "vera-lucia",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "larissa-rosado",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "patrus-ananias",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "dario-barbosa",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "izadora-dias",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ismar-marques",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lourdes-melo",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "elizeu-aguiar",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "vera-lucia",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jeremias-cosmo",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jarbas-soares",
+      "canonico": "Candidatura a Vereador",
+      "cargo": "Candidatura a Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jarbas-soares",
+      "canonico": "Candidatura a Vice-prefeito",
+      "cargo": "Candidatura a Vice-prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "henrique-areas",
+      "canonico": "Candidatura a Prefeito",
+      "cargo": "Candidatura a Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "priscila-voigt",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "tulio-lopes",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "tulio-lopes",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "tulio-lopes",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "serley-leal",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "serley-leal",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "serley-leal",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "vivian-mendes",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rafael-duda",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rafael-duda",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "telemaco-brandao",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "olimpio-rocha",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "olimpio-rocha",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "izadora-dias",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "telemaco-brandao",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lourdes-melo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "roberto-cidade",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "roberto-cidade",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "elizeu-aguiar",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "elizeu-aguiar",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "elizeu-aguiar",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "elizeu-aguiar",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ravenna-castro",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ravenna-castro",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ravenna-castro",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cintia-dias",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "santiago-belizario",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "rafael-duda",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "thor-dantas",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "roberio-paulino",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "roberio-paulino",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "roberio-paulino",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "roberio-paulino",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "roberio-paulino",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "vera-lucia",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "vera-lucia",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "patrus-ananias",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jeremias-cosmo",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ravenna-castro",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cyro-garcia",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cyro-garcia",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cyro-garcia",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cyro-garcia",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cyro-garcia",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cyro-garcia",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cleber-rabelo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cintia-dias",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cintia-dias",
+      "canonico": "Vice-Governador",
+      "cargo": "Vice-Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cintia-dias",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cintia-dias",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cintia-dias",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lourdes-melo",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lourdes-melo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lourdes-melo",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lourdes-melo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lourdes-melo",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lourdes-melo",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lourdes-melo",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "dario-barbosa",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "dario-barbosa",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "dario-barbosa",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "william-siri",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "william-siri",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "alexandre-kalil",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "alexandre-kalil",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "samuel-costa",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "samuel-costa",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "samuel-costa",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "samuel-costa",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "samuel-costa",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jeferson-bezerra",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jeferson-bezerra",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jeferson-bezerra",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jeferson-bezerra",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "juliana-brizola",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jose-roberto-arruda",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "juliete-pantoja",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "juliete-pantoja",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "juliete-pantoja",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "juliete-pantoja",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "luan-monteiro",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "luan-monteiro",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "luan-monteiro",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "cadu-xavier",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "laudicerio-aguiar",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "laudicerio-aguiar",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "laudicerio-aguiar",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "laudicerio-aguiar",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "mauricio-coelho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "mauricio-coelho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lucia-santos",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "lucia-santos",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "luiz-carlos-teodoro",
+      "canonico": "Vice-Prefeito",
+      "cargo": "Vice-Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gelson-merisio",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "gelson-merisio",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "canonico": "Vereador",
+      "cargo": "Vereador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "dario-barbosa",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "coronel-busnello",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "marcus-sodre",
+      "canonico": "Prefeito",
+      "cargo": "Prefeito",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "robson-raymundo",
+      "canonico": "Deputado Federal",
+      "cargo": "Deputado Federal",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "ismar-marques",
+      "canonico": "Deputado Estadual",
+      "cargo": "Deputado Estadual",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jayme-campos",
+      "canonico": "Senador",
+      "cargo": "Senador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "jose-roberto-arruda",
+      "canonico": "Governador",
+      "cargo": "Governador",
+      "motivo": "nao_e_mandato"
+    },
+    {
+      "slug": "mailza-assis",
+      "canonico": "1o Suplente Senador",
+      "cargo": "1o Suplente Senador",
+      "motivo": "nao_e_mandato"
+    }
+  ]
+}

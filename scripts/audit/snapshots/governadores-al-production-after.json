@@ -1,0 +1,19 @@
+{
+  "captured_at": "2026-08-03T10:45:00-03:00",
+  "project_id": "wskpzsobvqwhnbsdsmok",
+  "cohort": ["jhc", "renan-filho"],
+  "compared_to": "governadores-al-production-before.json",
+  "diff": [],
+  "tables": [
+    {"slug":"jhc","tabela":"candidatos","count":1,"max_id":"ba62f5d0-3e39-40a7-a0af-ee1d86e97e75","max_timestamp":"2026-03-31 02:47:47.335142+00"},
+    {"slug":"jhc","tabela":"patrimonio","count":6,"max_id":"e9c01468-48a5-43f4-bb83-a84c76c18adc","max_timestamp":"2026-04-14 01:33:48.23542+00"},
+    {"slug":"jhc","tabela":"financiamento","count":6,"max_id":"d01f9be3-19e4-43ca-a433-81161e0c9aa4","max_timestamp":"2026-04-16 19:18:40.959889+00"},
+    {"slug":"jhc","tabela":"posicoes_declaradas","count":0,"max_id":null,"max_timestamp":null},
+    {"slug":"jhc","tabela":"projetos_lei","count":303,"max_id":"ffde9357-8973-4923-99d9-722dce493146","max_timestamp":"2026-05-11 19:02:42.078402+00"},
+    {"slug":"renan-filho","tabela":"candidatos","count":1,"max_id":"81e00cd6-ea5b-4c19-8bff-a116fb73e5a7","max_timestamp":"2026-03-31 02:47:47.335142+00"},
+    {"slug":"renan-filho","tabela":"patrimonio","count":2,"max_id":"75d858a8-4678-45f5-bfd2-631983d67224","max_timestamp":"2026-04-13 14:44:18.277367+00"},
+    {"slug":"renan-filho","tabela":"financiamento","count":5,"max_id":"e9c1abcb-22af-4ab1-afde-9b317c25391a","max_timestamp":"2026-04-19 07:48:08.561232+00"},
+    {"slug":"renan-filho","tabela":"posicoes_declaradas","count":0,"max_id":null,"max_timestamp":null},
+    {"slug":"renan-filho","tabela":"projetos_lei","count":100,"max_id":"ff82bb3d-edbe-4946-b4ff-53661cf89ce2","max_timestamp":"2026-03-31 18:25:43.812562+00"}
+  ]
+}

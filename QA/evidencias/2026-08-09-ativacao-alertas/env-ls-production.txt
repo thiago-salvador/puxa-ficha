@@ -1,0 +1,28 @@
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Retrieving project…
+> Environment Variables found for thiagosalvador/puxa-ficha [243ms]
+
+ name                                value               environments                        created     
+ NEXT_PUBLIC_ALERTS_EMAIL_ENABLED    Encrypted           Production                          2h ago      
+ SENTRY_AUTH_TOKEN                   Encrypted           Production                          17d ago     
+ PF_REVALIDATE_SECRET                Encrypted           Production                          66d ago     
+ PF_QUIZ_SHORT_LINK_SALT             Encrypted           Production                          84d ago     
+ PF_ALERTS_FROM_EMAIL                Encrypted           Production                          85d ago     
+ PF_INTERNAL_TOKEN                   Encrypted           Production                          86d ago     
+ SENTRY_ORG                          Encrypted           Development, Preview, Production    122d ago    
+ SENTRY_PROJECT                      Encrypted           Development, Preview, Production    122d ago    
+ NEXT_PUBLIC_SENTRY_DSN              Encrypted           Development, Preview, Production    122d ago    
+ RESEND_API_KEY                      Encrypted           Production                          126d ago    
+ CRON_SECRET                         Encrypted           Production                          126d ago    
+ PF_ALERTS_TOKEN_ENCRYPTION_KEY      Encrypted           Production                          126d ago    
+ PF_ALERTS_IP_SALT                   Encrypted           Production                          126d ago    
+ PF_ALERTS_TOKEN_SALT                Encrypted           Production                          126d ago    
+ SUPABASE_SERVICE_ROLE_KEY           Encrypted           Production                          126d ago    
+ SUPABASE_ANON_KEY                   Encrypted           Production                          126d ago    
+ SUPABASE_URL                        Encrypted           Production                          128d ago    
+ PF_PREVIEW_TOKEN                    Encrypted           Development, Preview, Production    128d ago    
+
+Common next commands:
+- `vercel env add`
+- `vercel env rm`
+- `vercel env pull`

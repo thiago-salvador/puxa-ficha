@@ -1,0 +1,1801 @@
+{
+  "dryRun": true,
+  "results": [
+    {
+      "source": "tse",
+      "candidato": "gilberto-vasconcelos",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "acm-neto",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "lula",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "jose-roberto-arruda",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "helder-salomao",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "ricardo-ferraco",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "joao-campos",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "luis-cesar-bueno",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "marconi-perillo",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "ronaldo-caiado",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "patrus-ananias",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "vittorio-medioli",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "wellington-fagundes",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "araceli-lemos",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "geraldo-carvalho",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "ismar-marques",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "joel-rodrigues",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "alvaro-dias-rn",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "rafael-greca",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "cyro-garcia",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "eduardo-paes",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "flavio-bolsonaro",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "dario-barbosa",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "larissa-rosado",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "gelson-merisio",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "jorginho-mello",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "marcus-sodre",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "laurez-moreira",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    }
+  ],
+  "plannedRows": [
+    {
+      "table": "financiamento",
+      "slug": "gilberto-vasconcelos",
+      "row": {
+        "candidato_id": "5dc271fa-9171-484c-a8b3-f366fed10d10",
+        "ano_eleicao": 2002,
+        "sq_candidato": "70",
+        "uf_candidatura": "AM",
+        "total_arrecadado": 599.74,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "ELEIÇÃO 2002 CF ÚNICO PSTU",
+            "valor": 599.74,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "acm-neto",
+      "row": {
+        "candidato_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+        "ano_eleicao": 2002,
+        "sq_candidato": "484",
+        "uf_candidatura": "BA",
+        "total_arrecadado": 458807.85,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "ANTÔNIO CARLOS PEIXOTO DE MAGALHÃES JR",
+            "valor": 144000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GRÁFICA SANTA HELENA LTDA",
+            "valor": 94090,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VERACEL CELULOSE S/A",
+            "valor": 75000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "URANUS 2 COMUNICAÇÃO LTDA",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BAHIA SUL CELULOSE SA",
+            "valor": 27700.85,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "QUEOPS CONSTRUÇÕES E INCORPORAÇÕES LTDA",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ATA - AEROTAXI ABAETÉ LTDA",
+            "valor": 18000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PENTA EVENTOS PRODUÇÕES LTDA",
+            "valor": 13000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MACHADO LIMA COMÉRCIO DE COMBUSTÍVEIS E SERVIÇOS LTDA",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PERTO DA SELVA PRODUÇÕES, PUBLICIDADE E EDIÇÕES MUSICAIS LTDA",
+            "valor": 5000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "lula",
+      "row": {
+        "candidato_id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+        "ano_eleicao": 2002,
+        "sq_candidato": "9574",
+        "uf_candidatura": "BR",
+        "total_arrecadado": 21072475.98,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "ELEICAO 2002-CF PRESIDENTE PT",
+            "valor": 2561000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELEICAO 2002 CF PRESIDENTE PT",
+            "valor": 2250000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CF PRESIDENTE PT",
+            "valor": 1900000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "INSTITUTO BRASILEIRO DE SIDERURGIA",
+            "valor": 1000000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "STARONE S/A",
+            "valor": 750000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SIBRA S/A",
+            "valor": 700000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PROMODAL LOGISTICA E TRANSPORTES LTDA",
+            "valor": 500000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GERDAU S/A.",
+            "valor": 500000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CIA BRASILEIRA DE METALURGIA E MINERACAO",
+            "valor": 500000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CIA BRASILEIRA DE POLIURETANOS S/A",
+            "valor": 500000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "jose-roberto-arruda",
+      "row": {
+        "candidato_id": "d9cf9c6b-c6f9-4561-ab0f-138d2086c5ce",
+        "ano_eleicao": 2002,
+        "sq_candidato": "463",
+        "uf_candidatura": "DF",
+        "total_arrecadado": 489221,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "SITRAN EMPREENDIMENTOS EMPRESARIAIS LTDA",
+            "valor": 130000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SITRAN EMPREENDIMENTOS EMPRESARIAS LTDA",
+            "valor": 70000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RECOFORMA IND. AMAZONAS LTDA",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "UNIDAS COMERCIAL E DISTRIBUIDORA LTDA",
+            "valor": 35000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SONDATECNICA ENGENHARIA DE SOLOS S/A",
+            "valor": 30000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "HOTEIS DE TURISMO DAS NAÇÕES LTDA",
+            "valor": 24696,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "AUTO POSTO CEILANDIA NORTE LTDA",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "L. ALVES CONSULTORIA E MARKETING LTDA",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SONDOTECNICA ENGENHARIA DE SOLOS S/A",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "POSTO ESTRADA PARK LTDA",
+            "valor": 20000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "helder-salomao",
+      "row": {
+        "candidato_id": "270a8b55-145a-400f-b371-38809653eea8",
+        "ano_eleicao": 2002,
+        "sq_candidato": "217",
+        "uf_candidatura": "ES",
+        "total_arrecadado": 21560.49,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "HELDER IGNACIO SALOMAO",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MANOEL RODRIGUES DA VITORIA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA DAS GRAÇAS NICOLLI",
+            "valor": 1800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "HOSPITAL SAO FRANCISCO DE ASSIS",
+            "valor": 1600,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SAULO ANDREON",
+            "valor": 1320,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "WALACE BERGER",
+            "valor": 1300,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA DA PENHA LOPES",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOEL MONDONI",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELI SAAR",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CANDIDATO JOAO CARLOS COZER",
+            "valor": 1000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "ricardo-ferraco",
+      "row": {
+        "candidato_id": "e79ddaf5-f86c-40c6-a54c-10535cb5514d",
+        "ano_eleicao": 2002,
+        "sq_candidato": "33",
+        "uf_candidatura": "ES",
+        "total_arrecadado": 595000,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "ARACRUZ CELULOSE",
+            "valor": 100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "INSTITUTO BRASILEIRO DE SIDERURGIA",
+            "valor": 90000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARLIM AZUL COM. DE PETROLEO E DERIV.",
+            "valor": 77500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ESTRUTURAL CONST. E INC. LTDA.",
+            "valor": 52000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SIBRA S/A",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NAVEGAÇÃO RIO DOCE",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CENTRO COMÉRCIO DE CAFE DE VITORIA",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "COTIA TRADING S/A",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BLOKOS ENGENHARIA LTDA",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SIMEX-SIQUEIRA IMP. E EXPORTAÇÃO S/A",
+            "valor": 20000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "joao-campos",
+      "row": {
+        "candidato_id": "cc2dbc88-aae0-4c75-a112-bcc6bfc3189b",
+        "ano_eleicao": 2002,
+        "sq_candidato": "961",
+        "uf_candidatura": "GO",
+        "total_arrecadado": 249942.34,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "AREDES CORREIA PIRES",
+            "valor": 10800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MISSIAS R. DE FREITAS",
+            "valor": 6000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DIRETORIO REGIONAL DO PSDB",
+            "valor": 4000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUIZ T. CHAVES",
+            "valor": 4000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOAO CAMPOS  DE ARAUJO",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JAIR E. DE BASTOS SOBRINHO",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NILZA CANDIDA MOREIRA",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GERCY DE A TAGUATINGA",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DELCI ALVES ROCHA",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOAO DE MACEDO E SILVA",
+            "valor": 2000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "luis-cesar-bueno",
+      "row": {
+        "candidato_id": "a342036a-c436-400a-bd14-edefacad8d75",
+        "ano_eleicao": 2002,
+        "sq_candidato": "597",
+        "uf_candidatura": "GO",
+        "total_arrecadado": 84780.3,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "LUIZ CESAR BUENO E FREITAS",
+            "valor": 12011.4,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "AUTO POSTO ASA NORTE LTDA",
+            "valor": 10620,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LEONARDO CAIRO RIZZO",
+            "valor": 6000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARINA PIGNATARO SANTANA",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JUNIOR CESAR BUENO E FREITAS",
+            "valor": 4000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "OLÍMPIO  COSTA LEITE NETO",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MIGUEL TIAGO",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NELSON REMY GILLET",
+            "valor": 2500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EROTIDES BORGES",
+            "valor": 2450,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARTINS E TEODORO LTDA",
+            "valor": 2200,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "marconi-perillo",
+      "row": {
+        "candidato_id": "95fc116b-4c1e-4332-9c52-948bc1775a57",
+        "ano_eleicao": 2002,
+        "sq_candidato": "406",
+        "uf_candidatura": "GO",
+        "total_arrecadado": 9185274.48,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "DIRETORIO REGIONAL PSDB GOIAS",
+            "valor": 3467060.17,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Comercialização de Bens ou Realização de Eventos",
+            "valor": 973234,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EGL EMPREENDIMENTOS GERAIS LTDA.",
+            "valor": 300000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "UNIGRAF UNIDAS GRAFICA E EDITORA LTDA.",
+            "valor": 300000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "COM. IND. BRASILEIRAS COIMBRA SA",
+            "valor": 300000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "TRAC TEBEL EGI SOUTH AMERICA LTDA.",
+            "valor": 250000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BRASPELCO IND. E COM. LTDA.",
+            "valor": 150000.1,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CONSTRUTORA NORBERTO ODEBRECHT S/A",
+            "valor": 150000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CARAMURU ALIMENTOS LTDA.",
+            "valor": 150000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "REYDROGAS COMERCIAL LTDA.",
+            "valor": 150000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "ronaldo-caiado",
+      "row": {
+        "candidato_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+        "ano_eleicao": 2002,
+        "sq_candidato": "403",
+        "uf_candidatura": "GO",
+        "total_arrecadado": 699112.7,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "BERTIN LTDA",
+            "valor": 72000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DIRETÓRIO REGIONAL DO PSDB",
+            "valor": 65000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SAMA MINERAÇÃO AMIANTO LTDA",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SAMA MINERAÇÃO E AMIANTO LTDA",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "COOP.PROD.CANA, AÇÚCAR E ÁLCOOL EST. S.P. LTDA",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RIPASA S.A. CELULOSE E PAPEL",
+            "valor": 32211.71,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CONVENÇÃO S/A COR.VALORES E CÂMBIO",
+            "valor": 30000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BMFBOLSA DE MERCADORIAS E FUTUROS",
+            "valor": 30000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOÃO LENINE BONIFÁCIO DE SOUZA",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "USINA SANTA HELENA DE AÇÚCAR E ÁLCOOL",
+            "valor": 20000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "patrus-ananias",
+      "row": {
+        "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+        "ano_eleicao": 2002,
+        "sq_candidato": "1941",
+        "uf_candidatura": "MG",
+        "total_arrecadado": 564463.26,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "V & M DO BRASIL S/A",
+            "valor": 120000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "AÇOMINAS GERAIS S/A",
+            "valor": 90000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "IBS - INSTITUTO BRASILEIRO SIDERURGIA",
+            "valor": 90000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CIA. BRASILEIRA DE METAL E MINERAÇÃO",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CONSITA LTDA.",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LIGAS DE ALUMINIO S/A -LIASA",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BANCO MERCANTIL DO BRASIL S/A",
+            "valor": 14700,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MOVEIS AP LTDA",
+            "valor": 13850,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BANCO RURAL S/A",
+            "valor": 12000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CIA DE SEGUROS MINAS BRASIL",
+            "valor": 10000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "vittorio-medioli",
+      "row": {
+        "candidato_id": "af4d51ab-ffdd-4898-a240-29ea2e85b8e0",
+        "ano_eleicao": 2002,
+        "sq_candidato": "1574",
+        "uf_candidatura": "MG",
+        "total_arrecadado": 299909.86,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "SEMPRE EDITORA LTDA.",
+            "valor": 65769.86,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DACUNHA S/A",
+            "valor": 55000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SADA TRANSPORTES E ARMAZENAGENS LTDA",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "TRANSZERO LTDA.",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BRAZUL TRANSPORTE DE VEÍCULOS LTDA.",
+            "valor": 35000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VITTÓRIO MEDIOLI",
+            "valor": 21000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CARLAILE DE JESUS PEDROSA",
+            "valor": 6480,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARCUS DE OLIVEIRA E SOUZA",
+            "valor": 6200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EDSON LUIZ PEREIRA",
+            "valor": 4520,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RICARDO FARID SARSUR",
+            "valor": 2960,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "wellington-fagundes",
+      "row": {
+        "candidato_id": "febc4a12-c352-448a-99dc-671c77e8d57d",
+        "ano_eleicao": 2002,
+        "sq_candidato": "112",
+        "uf_candidatura": "MT",
+        "total_arrecadado": 411690,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "WELLINGTON ANTONIO FAGUNDES",
+            "valor": 411690,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "araceli-lemos",
+      "row": {
+        "candidato_id": "68a1eec9-75c1-4dca-a68c-7a4e64033c9b",
+        "ano_eleicao": 2002,
+        "sq_candidato": "331",
+        "uf_candidatura": "PA",
+        "total_arrecadado": 75282,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "CTC",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PARÁ OUTDOOR LTDA",
+            "valor": 4500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "WALMIR BRITO FREIRE",
+            "valor": 4000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSÉ ROBERTO P. DE OLIVEIRA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GLORIA MARIA DA ROCHA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ROSANGELA CECIN ALBIN",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SANDRA HELENA R. CRUZ",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANA DA CONCEIÇÃO OLIVEIRA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA LUZIA DE MATOS",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FERNANDO ANTONIO MATINS CARNEIRO",
+            "valor": 2000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "geraldo-carvalho",
+      "row": {
+        "candidato_id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
+        "ano_eleicao": 2002,
+        "sq_candidato": "436",
+        "uf_candidatura": "PI",
+        "total_arrecadado": 180,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "GERALDO DO NASCIMENTO CARVALHO",
+            "valor": 180,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "ismar-marques",
+      "row": {
+        "candidato_id": "ebe1d53d-8b79-4d5c-8c98-66f5f9dfedf7",
+        "ano_eleicao": 2002,
+        "sq_candidato": "319",
+        "uf_candidatura": "PI",
+        "total_arrecadado": 62700,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "ISMAR AGUIAR MARQUES",
+            "valor": 32700,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "HERÁCLITO DE SOUSA FORTES",
+            "valor": 30000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "joel-rodrigues",
+      "row": {
+        "candidato_id": "63de6cc4-aebc-49f6-88ab-25c93dde0a58",
+        "ano_eleicao": 2002,
+        "sq_candidato": "557",
+        "uf_candidatura": "PI",
+        "total_arrecadado": 9050,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "JOEL RODRIGUES DA SILVA",
+            "valor": 9050,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "alvaro-dias-rn",
+      "row": {
+        "candidato_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+        "ano_eleicao": 2002,
+        "sq_candidato": "398",
+        "uf_candidatura": "PR",
+        "total_arrecadado": 4761181.77,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "NUTRIARA ALIMENTOS LTDA",
+            "valor": 824000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "UTC ENGENHARIA S/A",
+            "valor": 560000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "U T C ENGENHARIA S/A",
+            "valor": 221000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "INSOL ITERTRADING DO BRASIL LTDA",
+            "valor": 200000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GERDAU S/A",
+            "valor": 200000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "COMITE FINANCEIRO UNICO - PDT",
+            "valor": 199621.44,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "INDUSTRIA DE MOVEIS FREDERICO OBERLEITNER LTDA",
+            "valor": 156000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALVARO FERNANDES DIAS",
+            "valor": 150000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Comercialização de Bens ou Realização de Eventos",
+            "valor": 148000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "KLABIN S/A",
+            "valor": 123579.96,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "rafael-greca",
+      "row": {
+        "candidato_id": "adb2ed0d-e7d6-4726-b310-a32bf6e3478a",
+        "ano_eleicao": 2002,
+        "sq_candidato": "68",
+        "uf_candidatura": "PR",
+        "total_arrecadado": 134754.85,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "VALE DO IVAÍ S/A - AÇÚCAR E ÁLCOOL",
+            "valor": 25000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "BRAFER CONSTRUÇÕES METÁLICAS S/A",
+            "valor": 21000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "TROMBINI EMBALAGENS LTDA.",
+            "valor": 20000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SCORPIUS ASSESSORAMENTO DE MARKETING S/C LTDA.",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ARNALDO SCHERER DOS SANTOS",
+            "valor": 5500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RAFAEL VALDOMIRO GRECA DE MACEDO",
+            "valor": 5325,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELEIÇÃO 2002 - CANDIDATO ALCENI ANGELO GUERRA",
+            "valor": 5250,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARGARITA ELIZABETH PERICÁS SANSONE",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GRÁFICA E EDITORA POSIGRAF S.A.",
+            "valor": 4179.85,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CESBE S/A ENGENHARIA E EMPREENDIMENTOS",
+            "valor": 4000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "cyro-garcia",
+      "row": {
+        "candidato_id": "6991016f-b50a-4984-b60a-40521bcdf6ee",
+        "ano_eleicao": 2002,
+        "sq_candidato": "1632",
+        "uf_candidatura": "RJ",
+        "total_arrecadado": 20999.7,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "ANDRE BUCARESKY",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "HELIO TAVARES LUZ",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JORGE MILTON TEMER",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FERNANDO MAIA FREIRE RIBEIRO",
+            "valor": 1000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NELSON MARQUES FILHO",
+            "valor": 853,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOAO CLAUDIO BITTENCOURT",
+            "valor": 775,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MIRIAN FERNANDES RIBEIRO",
+            "valor": 752,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CONSUELO TUPAM MIGUEL",
+            "valor": 677,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "DENISE FRANCISCO GOES",
+            "valor": 618.5,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CLEIER MARCONSIN",
+            "valor": 582.5,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "eduardo-paes",
+      "row": {
+        "candidato_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+        "ano_eleicao": 2002,
+        "sq_candidato": "1749",
+        "uf_candidatura": "RJ",
+        "total_arrecadado": 820250,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "SAN JOACHINO ADM. DE V. S/C LTDA.",
+            "valor": 150000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SAN JOACHINO ADM VALORES MOBIL S/C",
+            "valor": 150000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SAN JOACHINO ADM VALORES MOBIL SC",
+            "valor": 100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RODOCON CONSTRUÇÕES RODOVIARIAS LTDA",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CIA SUZANOPAPEL E CELULOSE",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LANCE EMPREENDIMENTOS E PART. LTDA.",
+            "valor": 50000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "RECOFARMA IND. DO AMAZONAS LTDA.",
+            "valor": 40000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "UNIPAR UNIAO DE IND PETROQ. S/A",
+            "valor": 30000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CIA BRASILEIRA DE PETR IPIRANGA",
+            "valor": 30000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MINERAÇOES BRASILEIRAS REUNIDAS",
+            "valor": 30000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "flavio-bolsonaro",
+      "row": {
+        "candidato_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+        "ano_eleicao": 2002,
+        "sq_candidato": "851",
+        "uf_candidatura": "RJ",
+        "total_arrecadado": 5988,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "JORGE FRANCISCO",
+            "valor": 5988,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "dario-barbosa",
+      "row": {
+        "candidato_id": "2c7f19b6-4f91-420a-83ec-866c83a9e027",
+        "ano_eleicao": 2002,
+        "sq_candidato": "162",
+        "uf_candidatura": "RN",
+        "total_arrecadado": 877,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "LICEU LUIS DE CARVALHO",
+            "valor": 339,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ROSÁLIA MARIA FERNANDES",
+            "valor": 338,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALEXANDRE GUEDES FERNANDES",
+            "valor": 200,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "larissa-rosado",
+      "row": {
+        "candidato_id": "40d9eaa9-2e4e-4e86-b8c1-8374bcc808d5",
+        "ano_eleicao": 2002,
+        "sq_candidato": "253",
+        "uf_candidatura": "RN",
+        "total_arrecadado": 41550,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "PEDRO ALMEIDA DUARTE",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA NATALIA BEZERRA DA COSTA",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCISCO DAS CHAGAS DA SILVA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "OLGA DE OLIVEIRA FREIRE",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FELIPE CAETANO DE OLIVEIRA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SIRLEYDE DIAS DE ALMEIDA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "FRANCIS HELIO DA COSTA",
+            "valor": 3000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ANTONIA LEONIDES BARBOSA",
+            "valor": 2000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MARIA JOSÉ BEZERRA DA COSTA",
+            "valor": 1500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SAMUELSON PINTO DANTAS DINIZ",
+            "valor": 1000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "gelson-merisio",
+      "row": {
+        "candidato_id": "85bcd355-89c2-464d-bfce-620fe8631285",
+        "ano_eleicao": 2002,
+        "sq_candidato": "467",
+        "uf_candidatura": "SC",
+        "total_arrecadado": 30720,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "GELSON LUIZ MERISIO",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EDEGAR GIORDANI",
+            "valor": 6000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NORIMAR ROBERTO FRACASSO",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "VANDERLEI GRUNITZKI",
+            "valor": 4700,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "SAUL MARIO SARTORETTO",
+            "valor": 2650,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JOSE DADIA",
+            "valor": 2350,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ALEXANDRE TONINI",
+            "valor": 20,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "jorginho-mello",
+      "row": {
+        "candidato_id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
+        "ano_eleicao": 2002,
+        "sq_candidato": "228",
+        "uf_candidatura": "SC",
+        "total_arrecadado": 130364.07,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "EQUISUL EQUIPAMENTOS ELETRÔNICOS LTDA",
+            "valor": 13000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MÁRIO ADOLFO CORRÊA FILHO",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MAURO SOARES DE OLIVEIRA",
+            "valor": 7800,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GEAN MARQUES LOUREIRO",
+            "valor": 6000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "REMI ALECIO MASCARELO",
+            "valor": 5500,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "JORGINHO DOS SANTOS MELLO",
+            "valor": 5000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LUIZ FERNANDO GWVAERO",
+            "valor": 4750,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "CESAR LOCKS",
+            "valor": 4200,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "LAUDELINO DE BASTOS E SILVA",
+            "valor": 4000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "NARCOS ANTÔNIO SILVEIRA",
+            "valor": 4000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "marcus-sodre",
+      "row": {
+        "candidato_id": "5e05e0d3-a64a-41b9-9f9a-bd160f43cec2",
+        "ano_eleicao": 2002,
+        "sq_candidato": "200",
+        "uf_candidatura": "SC",
+        "total_arrecadado": 807.5,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "COMITE FINANCEIRO UNICO",
+            "valor": 807.5,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "laurez-moreira",
+      "row": {
+        "candidato_id": "e4a0bfc6-586c-491f-8580-e43c6d30f7a1",
+        "ano_eleicao": 2002,
+        "sq_candidato": "283",
+        "uf_candidatura": "TO",
+        "total_arrecadado": 82030.95,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "ELEICOES 2002 CF UNICO PPB",
+            "valor": 68530.2,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "COOPERATIVA DOS PRODUTORES DE CARNES E DER. DE GURUPI",
+            "valor": 10000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELEICEOES 2002 CF UNICO PPB",
+            "valor": 1750.75,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "ELEICOES 2002 CF UNICP PPB",
+            "valor": 1750,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    }
+  ]
+}

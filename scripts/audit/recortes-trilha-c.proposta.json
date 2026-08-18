@@ -1,0 +1,23 @@
+{
+  "$schema": "PROPOSTA de recorte da Trilha C para o item 7. Não é o arquivo do gate. `scripts/audit/recortes.json` é ato da Raiz, e a trilha entrega a proposta em arquivo separado por causa disso. Para integrar, copiar o objeto de `recorte_proposto` para dentro do array `recortes` de recortes.json, mantendo a ordem por janela.",
+  "gerado_em": "2026-08-10",
+  "trilha": "C",
+  "recorte_proposto": {
+    "nome": "votacoes-chave-v2-20260810",
+    "desde": "20260810090000",
+    "ate": "20260810090200",
+    "allowlist": "scripts/audit/allowlist-votacoes-chave-v2-20260810.json",
+    "divida": null
+  },
+  "conferencia_local": {
+    "_comentario": "Rodado no worktree trilha-c antes de propor. O modo recorte exige as três flags juntas e na forma com `=`.",
+    "comando": "npm run audit:cobertura:allowlist -- --allowlist=scripts/audit/allowlist-votacoes-chave-v2-20260810.json --desde=20260810090000 --ate=20260810090200",
+    "resultado": "exit 0"
+  },
+  "notas": [
+    "A janela não se sobrepõe a nenhum recorte existente: o último em recortes.json é verificacao-campos-b2-20260809, que fecha em 20260809070000.",
+    "Nasce SEM dívida, como manda a regra: as três migrations têm anotação @write onde escrevem e a allowlist autoriza cada par (tabela, ref, campos).",
+    "20260810090000 é DDL pura e não carrega @write, então não precisa de entrada na allowlist.",
+    "20260810090100 não é reversível por SQL. O rollback correspondente falha de propósito e explica que só backup desfaz. Aplicar exige backup confirmado e autorização nomeando o ato."
+  ]
+}

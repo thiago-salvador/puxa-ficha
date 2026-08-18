@@ -1,0 +1,102 @@
+import assert from "node:assert/strict"
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
+import { tmpdir } from "node:os"
+import { join } from "node:path"
+import { test } from "node:test"
+import { financiamentoSourceFileUf, validarCoberturaPacoteReceitas } from "../scripts/lib/ingest-tse"
+
+const source = readFileSync("scripts/lib/ingest-tse.ts", "utf8")
+
+test("TSE ingest dry-run emits normalized rows without database mutations", () => {
+  assert.match(source, /dryRun\?: boolean/)
+  assert.match(source, /onPlannedRow\?: \(entry: PlannedTseRow\)/)
+  assert.match(source, /if \(options\.dryRun\) \{[\s\S]*table: "patrimonio"/)
+  assert.match(source, /if \(options\.dryRun\) \{[\s\S]*table: "financiamento"/)
+  assert.match(source, /sanitizeMaioresDoadoresForPublic\(row\.maiores_doadores\)/)
+  assert.match(source, /maskDocumentLikeSequences\(bem\.descricao\)/)
+})
+
+test("TSE ingest CLI exposes an explicit dry-run flag", () => {
+  assert.match(source, /arg === "--dry-run"/)
+  assert.match(source, /PF_TSE_INGEST_DRY_RUN/)
+  assert.match(source, /options\.dryRun \? \{ dryRun: true, results, plannedRows \} : results/)
+})
+
+test("TSE ingest inclui 2002 a 2008 e valida toda identidade por SQ, ano e UF", () => {
+  assert.match(
+    source,
+    /DEFAULT_ANOS = \[2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024\]/,
+  )
+  assert.match(source, /financiamentoReceitaIdentity\(row, ano, identidade\.uf\)/)
+  assert.match(source, /financiamentoReceitaIdentityKey/)
+  assert.match(source, /if \(!selection\.uf\)/)
+  assert.match(source, /identidade sem UF oficial/)
+  assert.doesNotMatch(source, /sqFallbackKey/)
+  assert.match(source, /candidato: `financiamento-\$\{ano\}`/)
+  assert.match(source, /coleta_resultado: "erro"/)
+  assert.match(source, /sq_candidato: data\.sqCandidato/)
+  assert.match(source, /uf_candidatura: data\.uf/)
+  assert.match(source, /tse_uf_candidatura/)
+  assert.match(source, /match\.method === "sq-preloaded"/)
+  assert.match(source, /historicalCandidateRowMatches\(row, candidato\)/)
+  assert.match(source, /table: "financiamento_verificacoes"/)
+  assert.match(source, /successfulReceitasZips === receitasUrls\.length/)
+  assert.match(source, /const resultado = confirmOfficialAbsence/)
+  assert.match(source, /resultado: "erro"/)
+})
+
+test("falha ou pacote parcial persiste erro por candidatura e nunca ausencia", () => {
+  assert.doesNotMatch(
+    source,
+    /async function planFinanciamentoYearError[\s\S]*?if \(!options\.dryRun\) return/,
+  )
+  assert.match(
+    source,
+    /confirmOfficialAbsence\s*\?\s*"ausencia_oficial"\s*:\s*"erro"/,
+  )
+  assert.match(source, /resultado === "ausencia_oficial"\s*\?\s*"vazio_confirmado"\s*:\s*"erro"/)
+  assert.match(source, /nenhum ZIP de receitas baixado[\s\S]*planFinanciamentoYearError\(/)
+  assert.match(source, /const receitasPacoteDir = resolve\(receitasDir, String\(i\)\)/)
+  assert.match(source, /execFileSync\("unzip", \["-C", "-o", zipPath/)
+  assert.match(source, /throw new Error\(`Ficheiros de receitas de candidatos nao encontrados/)
+  assert.match(source, /const dedupKey = `\$\{ano\}:\$\{identidadeDaLinha\.uf\}:\$\{sq\}:\$\{sqReceita\}`/)
+  assert.match(source, /if \(lookupError\) throw lookupError/)
+  assert.match(source, /if \(writeError\) throw writeError/)
+  assert.match(source, /staleVerificationError/)
+  assert.match(source, /if \(existingFinance\) continue/)
+  assert.match(source, /planFinanciamentoCandidatesYearError/)
+  assert.match(source, /successfulReceitasZips === receitasUrls\.length/)
+  assert.match(source, /pacote incompleto ou sem cobertura esperada/)
+})
+
+test("pacote parcial nunca habilita ausencia oficial", () => {
+  const root = mkdtempSync(join(tmpdir(), "pf-receitas-"))
+  try {
+    const partial = join(root, "partial")
+    mkdirSync(partial)
+    writeFileSync(join(partial, "receitas_candidatos_2012_SE.txt"), "")
+    assert.throws(
+      () => validarCoberturaPacoteReceitas(2012, partial, ["SE", "MG"]),
+      /cobertura incompleta das UFs \(MG\)/,
+    )
+
+    const complete = join(root, "complete")
+    mkdirSync(complete)
+    writeFileSync(join(complete, "receitas_candidatos_2012_brasil.txt"), "")
+    assert.equal(validarCoberturaPacoteReceitas(2012, complete, ["SE", "MG"]).length, 1)
+
+    const legacy = join(root, "legacy")
+    mkdirSync(legacy)
+    writeFileSync(join(legacy, "ReceitaCandidato.csv"), "")
+    assert.equal(validarCoberturaPacoteReceitas(2002, legacy, ["RJ"]).length, 1)
+  } finally {
+    rmSync(root, { recursive: true, force: true })
+  }
+})
+
+test("UF da candidatura e inferida de arquivos nacionais e estaduais em todos os layouts", () => {
+  assert.equal(financiamentoSourceFileUf("/tmp/receitas_candidatos_2018_BR.csv", ["RJ"]), "BR")
+  assert.equal(financiamentoSourceFileUf("/tmp/pacote/RJ/receitas_candidatos.csv", ["RJ"]), "RJ")
+  assert.equal(financiamentoSourceFileUf("/tmp/prestacao_contas_2008_BRASIL.txt", ["SP"]), "BR")
+  assert.equal(financiamentoSourceFileUf("/tmp/receitas_candidatos.csv", ["RJ"]), undefined)
+})

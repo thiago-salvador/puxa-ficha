@@ -1,0 +1,50 @@
+{
+  "_comentario": "As 13 candidaturas presidenciais escolhidas em convencao (20/07 a 05/08/2026). Entram tres fichas novas com nome civil placeholder, e cabo-daciolo sai da disputa presidencial para Governador/AM depois de o Mobiliza barrar a candidatura dele a Presidencia. Registro no TSE vai ate 15/08 as 19h: sao convencoes, nao registros deferidos.",
+  "recorte": "presidenciaveis-13-convencoes-20260812",
+  "migration": "20260812130000_presidenciaveis_13_convencoes.sql",
+  "fonte": "Convencoes partidarias cobertas por CNN Brasil, CartaCapital, Metropoles e O Tempo (DC, 05/08); Poder360, O Tempo, NSC Total e Correio Braziliense (PRTB, 29/07); Agencia Brasil, Poder360 e Revista Oeste (Democrata/D35, 02/08); Poder360, O POVO, Revista Oeste, Crusoe e BNC Amazonas (Mobiliza barra Daciolo e o lanca ao governo do AM). Conferencia em QA/evidencias/2026-08-12-dado1/R2-disputa-presidencial-fonte-vs-banco.md",
+  "coorte": [
+    "cabo-daciolo",
+    "clariana-barao",
+    "leonardo-avalanche",
+    "wilson-grassi-junior"
+  ],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "clariana-barao",
+      "campos": [
+        "slug", "nome_completo", "nome_urna", "partido_sigla", "partido_atual",
+        "cargo_disputado", "estado", "status", "situacao_candidatura",
+        "publicavel", "fonte_dados", "ultima_atualizacao"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "leonardo-avalanche",
+      "campos": [
+        "slug", "nome_completo", "nome_urna", "partido_sigla", "partido_atual",
+        "cargo_disputado", "estado", "status", "situacao_candidatura",
+        "publicavel", "fonte_dados", "ultima_atualizacao"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "wilson-grassi-junior",
+      "campos": [
+        "slug", "nome_completo", "nome_urna", "partido_sigla", "partido_atual",
+        "cargo_disputado", "estado", "status", "situacao_candidatura",
+        "publicavel", "fonte_dados", "ultima_atualizacao"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "cabo-daciolo",
+      "campos": [
+        "cargo_disputado", "estado", "fonte_dados", "ultima_atualizacao"
+      ]
+    }
+  ],
+  "referencias": []
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "candidato_id": "cand-test-001",
+    "tipo_relacao": "projeto_enviado_pelo_executivo",
+    "esfera": "federal",
+    "tipo_norma": "projeto de lei",
+    "numero": "PL 1234",
+    "ano": 2023,
+    "ementa": "Projeto de teste sintético",
+    "fonte_primaria_url": "https://www.planalto.gov.br/ccivil_03/leis/exemplo.htm",
+    "fonte_primaria_titulo": "Portal da Legislação - Presidência da República"
+  },
+  {
+    "candidato_id": "cand-test-002",
+    "historico_politico_id": "hist-test-001",
+    "tipo_relacao": "lei_sancionada",
+    "esfera": "estadual",
+    "uf_norma": "sp",
+    "tipo_norma": "lei",
+    "numero": "Lei 42",
+    "ano": 2022,
+    "data_norma": "2022-03-15",
+    "ementa": "Lei estadual sintética",
+    "signatario": "Governador Teste Sintético",
+    "autoridade_papel": "titular",
+    "fonte_primaria_url": "https://www.al.sp.gov.br/fixture-sintetico/lei-42",
+    "fonte_primaria_titulo": "Fixture sintético sobre ALESP (origem válida, caminho não real)"
+  },
+  {
+    "candidato_id": "cand-test-003",
+    "tipo_relacao": "lei_promulgada_pelo_legislativo",
+    "esfera": "federal",
+    "tipo_norma": "lei",
+    "numero": "Lei 99",
+    "ano": 2021,
+    "data_norma": "2021-07-20",
+    "ementa": "Lei promulgada pela mesa legislativa",
+    "autoridade_papel": "mesa_legislativa",
+    "fonte_primaria_url": "https://in.gov.br/web/dou/-/exemplo",
+    "fonte_primaria_titulo": "Diário Oficial da União"
+  }
+]

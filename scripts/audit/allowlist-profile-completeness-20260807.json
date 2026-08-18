@@ -1,0 +1,79 @@
+{
+  "coorte": [
+    "guilherme-fonseca"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "guilherme-fonseca",
+      "campos": [
+        "data_nascimento",
+        "formacao",
+        "profissao_declarada",
+        "fonte_dados",
+        "ultima_atualizacao",
+        "verificacao_campos"
+      ]
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "_pf_financiamento_reconciliado",
+      "ref": "A2-reconciliacao-20260807",
+      "campos": ["slug", "ano_eleicao", "sq_candidato", "totais", "maiores_doadores", "categorias_origem"]
+    },
+    {
+      "tabela": "_pf_patrimonio_reconciliado",
+      "ref": "A2-reconciliacao-20260807",
+      "campos": ["slug", "ano_eleicao", "sq_candidato", "valor_total", "bens"]
+    },
+    {
+      "tabela": "financiamento",
+      "ref": "A2-reconciliacao-20260807",
+      "campos": ["total_arrecadado", "total_fundo_partidario", "total_fundo_eleitoral", "total_pessoa_fisica", "total_recursos_proprios", "maiores_doadores", "categorias_origem", "fonte"]
+    },
+    {
+      "tabela": "patrimonio",
+      "ref": "A2-reconciliacao-20260807",
+      "campos": ["valor_total", "bens", "fonte"]
+    },
+    {
+      "tabela": "_pf_project_urls",
+      "ref": "B1-projetos-20260807",
+      "campos": ["slug", "proposicao_id_api", "fonte", "public_url"]
+    },
+    {
+      "tabela": "projetos_lei",
+      "ref": "B1-projetos-20260807",
+      "campos": ["url_inteiro_teor"]
+    },
+    {
+      "tabela": "_pf_current_profile",
+      "ref": "B2-perfis-20260807",
+      "campos": ["perfil", "redes", "site", "profissao", "formacao", "verificacao"]
+    },
+    {
+      "tabela": "candidatos",
+      "ref": "B2-perfis-20260807",
+      "campos": ["status", "situacao_candidatura", "cargo_disputado", "estado", "partido_sigla", "partido_atual", "redes_sociais", "site_campanha", "profissao_declarada", "formacao", "fonte_dados", "ultima_atualizacao", "verificacao_campos"]
+    },
+    {
+      "tabela": "historico_politico",
+      "ref": "B2-perfis-20260807",
+      "campos": ["tipo_evento", "cargo", "cargo_canonico", "estado", "periodo_inicio", "periodo_fim", "partido", "eleito_por", "observacoes", "proveniencia"]
+    },
+    {
+      "tabela": "_pf_no_mandate_alerts",
+      "ref": "A1-sem-mandato-20260807",
+      "campos": ["slug", "titulo"]
+    },
+    {
+      "tabela": "pontos_atencao",
+      "ref": "A1-sem-mandato-20260807",
+      "campos": ["visivel", "despublicacao_motivo", "despublicado_em"]
+    }
+  ]
+}

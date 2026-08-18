@@ -1,0 +1,15 @@
+{
+  "_comentario": "PROPOSTA de recorte do patrimonio 2006/2008 do cabo-daciolo para a Sessao Raiz. Nao e o arquivo do gate: `scripts/audit/recortes.json` e propriedade da Raiz, e a sessao entrega a entrada separada, no mesmo formato de recortes-trilha-a.proposta.json. A Raiz acrescenta o objeto de `recorte_proposto` ao array `recortes` de recortes.json, mantendo a ordem cronologica (esta entra DEPOIS de votacoes-chave-v2-20260810, que fecha em 20260810090200). Enquanto a Raiz nao integrar, `npm run audit:cobertura:allowlist` sem flags reprova acusando as duas escritas desta migration como nao cobertas por recorte: isso e esperado e nao se conserta editando recortes.json.",
+  "conferido_pela_sessao": {
+    "comando": "npm run audit:cobertura:allowlist -- --allowlist=scripts/audit/allowlist-daciolo-patrimonio-20260810.json --desde=20260810094000 --ate=20260810094000",
+    "resultado": "exit 0",
+    "observacao": "As tres flags juntas e na forma com `=`. A janela e comparacao de prefixo do nome do arquivo, e aqui e fechada numa migration so."
+  },
+  "recorte_proposto": {
+    "nome": "daciolo-patrimonio-20260810",
+    "desde": "20260810094000",
+    "ate": "20260810094000",
+    "allowlist": "scripts/audit/allowlist-daciolo-patrimonio-20260810.json",
+    "divida": null
+  }
+}

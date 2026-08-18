@@ -1,0 +1,36 @@
+{
+  "$schema": "Allowlist exata do recorte público de candidatos ao Governo de Alagoas, run v3 de 2026-08-03. Toda escrita nova deste run precisa estar aqui. Janela do recorte: --desde=20260803080000 (ver o cabeçalho de check-migrations-allowlist.ts). Convertida em 2026-08-03 do schema próprio que a branch data/governadores-al-lacunas usava (chaves em inglês e campo `disposition`) para o schema canônico compartilhado com os demais recortes.",
+  "gerado_em": "2026-08-03",
+  "branch": "data/governadores-al-lacunas",
+  "coorte": ["jhc", "renan-filho"],
+  "fora_por_construcao": {
+    "slugs": [],
+    "motivo": "A coorte pública de Governador em AL tem só estes dois slugs; não houve candidato excluído por construção neste recorte."
+  },
+  "entries": [
+    {
+      "tabela": "posicoes_declaradas",
+      "slug": "jhc",
+      "temas": ["reforma_trabalhista"],
+      "campos": ["posicao", "descricao", "fonte", "url_fonte", "verificado", "gerado_por"]
+    },
+    {
+      "tabela": "posicoes_declaradas",
+      "slug": "renan-filho",
+      "temas": ["reforma_trabalhista", "teto_gastos", "transferencia_renda"],
+      "campos": ["posicao", "descricao", "fonte", "url_fonte", "verificado", "gerado_por"]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "renan-filho",
+      "campos": ["profissao_declarada"]
+    }
+  ],
+  "nao_autorizam_sql": {
+    "motivo": "Eram entradas com `disposition: exception` no schema antigo do run de AL. Exceção de fonte não autoriza escrita: ela vive em data/sq-exceptions.json e está listada aqui só para o rastro do que foi investigado e terminou sem fonte.",
+    "itens": [
+      {"tabela": "patrimonio", "slug": "renan-filho", "ano": 2018, "campo": "bens"},
+      {"tabela": "patrimonio", "slug": "renan-filho", "ano": 2022, "campo": "bens"}
+    ]
+  }
+}

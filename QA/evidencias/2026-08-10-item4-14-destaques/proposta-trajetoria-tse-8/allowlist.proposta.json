@@ -1,0 +1,26 @@
+{
+  "_comentario": "Proposta não aplicável até promoção explícita para supabase/migrations e recortes.json. Oito consultas TSE exatas por SQ_CANDIDATO, todas limitadas aos pleitos conhecidos e registradas como sem_achado_no_escopo.",
+  "recorte": "destaques-trajetoria-tse-8-20260810",
+  "migration": "20260810124000_destaques_trajetoria_tse_8.sql",
+  "fonte": "QA/evidencias/2026-08-10-item4-14-destaques/auditoria-fontes-32.json",
+  "coorte": [
+    "andre-marinho",
+    "dr-luisinho",
+    "henrique-areas",
+    "izadora-dias",
+    "jose-estevao",
+    "luan-monteiro",
+    "preta-lu",
+    "samara-mineiro"
+  ],
+  "entries": [
+    { "tabela": "coleta_log", "slug": "andre-marinho", "campos": ["fonte", "escopo", "alvo", "candidato_id", "executado_em", "resultado", "volume", "detalhe", "url", "execucao"], "max_registros": 1 },
+    { "tabela": "coleta_log", "slug": "dr-luisinho", "campos": ["fonte", "escopo", "alvo", "candidato_id", "executado_em", "resultado", "volume", "detalhe", "url", "execucao"], "max_registros": 1 },
+    { "tabela": "coleta_log", "slug": "henrique-areas", "campos": ["fonte", "escopo", "alvo", "candidato_id", "executado_em", "resultado", "volume", "detalhe", "url", "execucao"], "max_registros": 1 },
+    { "tabela": "coleta_log", "slug": "izadora-dias", "campos": ["fonte", "escopo", "alvo", "candidato_id", "executado_em", "resultado", "volume", "detalhe", "url", "execucao"], "max_registros": 1 },
+    { "tabela": "coleta_log", "slug": "jose-estevao", "campos": ["fonte", "escopo", "alvo", "candidato_id", "executado_em", "resultado", "volume", "detalhe", "url", "execucao"], "max_registros": 1 },
+    { "tabela": "coleta_log", "slug": "luan-monteiro", "campos": ["fonte", "escopo", "alvo", "candidato_id", "executado_em", "resultado", "volume", "detalhe", "url", "execucao"], "max_registros": 1 },
+    { "tabela": "coleta_log", "slug": "preta-lu", "campos": ["fonte", "escopo", "alvo", "candidato_id", "executado_em", "resultado", "volume", "detalhe", "url", "execucao"], "max_registros": 1 },
+    { "tabela": "coleta_log", "slug": "samara-mineiro", "campos": ["fonte", "escopo", "alvo", "candidato_id", "executado_em", "resultado", "volume", "detalhe", "url", "execucao"], "max_registros": 1 }
+  ]
+}

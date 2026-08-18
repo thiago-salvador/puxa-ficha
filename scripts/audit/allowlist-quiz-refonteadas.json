@@ -1,0 +1,80 @@
+{
+  "$schema": "Allowlist exata do passo que dá fonte às 11 posições do quiz que estavam sem lastro, ou as tira do quiz. Janela do recorte: --desde=20260803150000 --ate=20260803150000 (ver o cabeçalho de check-migrations-allowlist.ts).",
+  "gerado_em": "2026-08-03",
+  "branch": "data/quiz-posicoes-refonteadas",
+  "coorte": [
+    "flavio-bolsonaro",
+    "lula",
+    "romeu-zema",
+    "ronaldo-caiado"
+  ],
+  "fora_por_construcao": {
+    "slugs": [],
+    "motivo": "Recorte definido pelas posições que sobraram sem fonte no passo anterior (20260803140000). São exatamente estes quatro candidatos."
+  },
+  "entries": [
+    {
+      "tabela": "posicoes_declaradas",
+      "slug": "flavio-bolsonaro",
+      "temas": [
+        "teto_gastos",
+        "reforma_trabalhista"
+      ],
+      "campos": [
+        "posicao",
+        "descricao",
+        "fonte",
+        "url_fonte",
+        "verificado"
+      ],
+      "motivo": "teto_gastos publicava um voto que nao existe: dizia voto favoravel ao 'arcabouco fiscal de 2016', mas em 2016 ele era deputado estadual e o arcabouco e de 2023. A descricao passa a dizer o fato verificado (votou NAO no PLP 93/2023) e a posicao sai do quiz por verificado = false. A polaridade NAO e alterada de proposito: votar contra o arcabouco de 2023 foi a posicao do bloco de oposicao, boa parte por considera-lo frouxo demais, entao o voto sozinho nao sustenta o rotulo 'contra teto de gastos'. reforma_trabalhista e a unica das 11 sem fonte alguma e tambem sai do quiz, sem ser apagada."
+    },
+    {
+      "tabela": "posicoes_declaradas",
+      "slug": "lula",
+      "temas": [
+        "reforma_trabalhista",
+        "teto_gastos",
+        "transferencia_renda"
+      ],
+      "campos": [
+        "descricao",
+        "fonte",
+        "url_fonte"
+      ],
+      "motivo": "As três mantêm a posição e trocam caracterização por fato datado. Duas delas atribuíam a ele o que era do partido ou dos governos: 'Bancada do PT votou contra a EC 95' e 'Programas de renda são marca dos governos petistas'. No lugar entram atos dele: a sanção da LC 200/2023 e a da Lei 14.601/2023."
+    },
+    {
+      "tabela": "posicoes_declaradas",
+      "slug": "romeu-zema",
+      "temas": [
+        "reforma_trabalhista",
+        "teto_gastos",
+        "transferencia_renda"
+      ],
+      "campos": [
+        "posicao",
+        "descricao",
+        "fonte",
+        "url_fonte"
+      ],
+      "motivo": "As duas primeiras ganham declaração dele, datada e citada, no lugar de juízo genérico sobre ambiente de negócios. transferencia_renda muda de contra para ambíguo: ele diz textualmente que manterá os programas para quem precisa, o que é condicionar e não se opor."
+    },
+    {
+      "tabela": "posicoes_declaradas",
+      "slug": "ronaldo-caiado",
+      "temas": [
+        "reforma_trabalhista",
+        "teto_gastos",
+        "transferencia_renda"
+      ],
+      "campos": [
+        "posicao",
+        "descricao",
+        "fonte",
+        "url_fonte"
+      ],
+      "motivo": "As duas primeiras viram voto nominal datado, e o teto sai de 'arcabouço fiscal de 2016' para PEC 55/2016 e EC 95/2016, que é o instrumento certo. transferencia_renda muda de contra para ambíguo: nenhuma fonte sustenta oposição e três momentos datados apontam o contrário."
+    }
+  ]
+}

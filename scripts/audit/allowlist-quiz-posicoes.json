@@ -1,0 +1,24 @@
+{
+  "$schema": "Allowlist exata do passo que liga no quiz as posições declaradas que têm fonte. Janela do recorte: --desde=20260803140000 --ate=20260803140000 (ver o cabeçalho de check-migrations-allowlist.ts).",
+  "gerado_em": "2026-08-03",
+  "branch": "data/quiz-posicoes-com-fonte",
+  "coorte": [
+    "augusto-cury", "cabo-daciolo", "edmilson-costa", "flavio-bolsonaro", "hertz-dias",
+    "renan-santos", "rui-costa-pimenta", "samara-martins", "tarcisio"
+  ],
+  "fora_por_construcao": {
+    "slugs": ["lula", "romeu-zema", "ronaldo-caiado"],
+    "motivo": "As 11 posições sem fonte destes três (mais duas do flavio-bolsonaro) continuam ligadas de propósito neste passo. Desligá-las agora tiraria o favorito e mais dois nomes grandes do quiz. Elas ficam enquanto a fonte é buscada, e saem se não se sustentarem."
+  },
+  "entries": [
+    {"tabela": "posicoes_declaradas", "slug": "augusto-cury", "campos": ["verificado", "descricao"], "motivo": "Liga a posição de transferencia_renda, que tem fonte do Metrópoles com URL. A descrição é reescrita para devolver o verbo 'reverter' à reportagem, que foi quem o escreveu."},
+    {"tabela": "posicoes_declaradas", "slug": "cabo-daciolo", "campos": ["verificado"], "motivo": "3 posições com fonte da Câmara (votação nominal) e do Diário do Centro do Mundo."},
+    {"tabela": "posicoes_declaradas", "slug": "edmilson-costa", "campos": ["verificado"], "motivo": "3 posições com fonte do PCB e da União da Juventude Comunista."},
+    {"tabela": "posicoes_declaradas", "slug": "flavio-bolsonaro", "campos": ["verificado"], "motivo": "1 posição de transferencia_renda com fonte da Gazeta do Povo. As outras duas dele seguem sem fonte e não são tocadas aqui."},
+    {"tabela": "posicoes_declaradas", "slug": "hertz-dias", "campos": ["verificado"], "motivo": "2 posições com fonte do Correio Braziliense."},
+    {"tabela": "posicoes_declaradas", "slug": "renan-santos", "campos": ["verificado"], "motivo": "1 posição com fonte do g1 MS."},
+    {"tabela": "posicoes_declaradas", "slug": "rui-costa-pimenta", "campos": ["verificado"], "motivo": "1 posição com fonte do Diário Causa Operária."},
+    {"tabela": "posicoes_declaradas", "slug": "samara-martins", "campos": ["verificado"], "motivo": "1 posição com fonte do Mulher em Pauta."},
+    {"tabela": "posicoes_declaradas", "slug": "tarcisio", "campos": ["verificado"], "motivo": "3 posições contavam como curadoria válida para candidato com status removido e publicavel = false. Desligadas."}
+  ]
+}

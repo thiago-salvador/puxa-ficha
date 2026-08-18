@@ -1,0 +1,1445 @@
+{
+  "gerado_em": "2026-08-10T22:43:03.721Z",
+  "universo": {
+    "fichas_publicas": 194,
+    "fichas_na_curadoria_05_08": 185,
+    "fichas_fora_da_curadoria": 9,
+    "fichas_fora_da_curadoria_sem_processo": 0,
+    "slugs_fora_da_curadoria": [
+      "ciro-gomes-gov-ce",
+      "dr-daniel",
+      "felicio-ramuth",
+      "felipe-camarao",
+      "flavio-bolsonaro",
+      "haddad-gov-sp",
+      "leandro-grass",
+      "lula",
+      "tarcisio-gov-sp"
+    ]
+  },
+  "cobertura": {
+    "fichas_sem_desfecho": 0,
+    "fichas_classificadas": 194
+  },
+  "desfechos_antes": {
+    "positivo": 9,
+    "ausencia_confirmada": 16,
+    "erro": 0,
+    "bloqueio_editorial": 169
+  },
+  "desfechos_depois_revisao": {
+    "positivo": 30,
+    "ausencia_confirmada": 16,
+    "erro": 0,
+    "bloqueio_editorial": 148
+  },
+  "processos": {
+    "linhas_atuais": 30,
+    "fichas_com_linha_atual": 21,
+    "aprovados_na_evidencia": 69,
+    "fichas_aprovadas_na_evidencia": 21,
+    "cnjs_aprovados_ja_no_banco": 0,
+    "cnjs_aprovados_pendentes": 69,
+    "identidades_confirmadas": 69,
+    "com_fonte_oficial": 69,
+    "cnjs_unicos": 69
+  },
+  "buscas_reexecutadas": {
+    "fichas": 28,
+    "com_url": 28,
+    "sem_url": 0,
+    "erro": 0,
+    "por_resultado": {
+      "bloqueio_editorial": 28
+    }
+  },
+  "migration": {
+    "timestamp_reservado": "20260810122000",
+    "pronta": true,
+    "divergencias": [],
+    "ato_editorial_necessario": "aprovar nominalmente, de forma independente, o lote 69/21 e o contrato procedural 66/25 antes de instalar qualquer proposta no diretorio de migrations"
+  },
+  "manifestos_complementares": {
+    "lote_05_08_load_ready": {
+      "processos": 69,
+      "fichas": 21,
+      "estado": "proposta_nao_aplicada"
+    },
+    "curadoria_10_08_payload_procedural": {
+      "processos": 66,
+      "fichas_confirmadas": 25,
+      "fichas_indeterminadas": 7,
+      "consultas_oficiais_sem_erro": 66,
+      "payloads_tecnicos_prontos": 66,
+      "estado": "proposta_nao_aplicada_aguarda_aprovacao_editorial"
+    },
+    "sobreposicao": {
+      "cnjs": 0,
+      "fichas": 0
+    },
+    "uniao_potencial": {
+      "processos": 135,
+      "fichas": 46
+    }
+  },
+  "fichas": [
+    {
+      "slug": "acm-neto",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "adailton-furia",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 3
+    },
+    {
+      "slug": "alan-rick",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "alessandra-campelo",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "alex-pucineli",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "alexandre-kalil",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 18
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "alysson-bezerra",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "amelio-cayres",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "andre-luis",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "andre-marinho",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "araceli-lemos",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "aroldo-felix",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "arthur-henrique",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 1
+    },
+    {
+      "slug": "ataides-oliveira",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 4
+    },
+    {
+      "slug": "augusto-cury",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "baba",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "ben-mendes",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "breno-barcelar",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "cabo-daciolo",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "cadu-xavier",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "camila-falcao",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "carlos-machado",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "catherine-teles",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "celina-leao",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 2
+    },
+    {
+      "slug": "cicero-lucena",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "cintia-dias",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "antes": "positivo",
+      "depois_revisao": "positivo",
+      "processos_atuais": 1,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "cleber-rabelo",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "clecio-luis",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "cleitinho",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "coronel-busnello",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "cyro-garcia",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "daniel-vilela",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 2
+    },
+    {
+      "slug": "daniela-paiva",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "dario-barbosa",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "david-almeida",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "douglas-ruas",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "dr-daniel",
+      "antes": "positivo",
+      "depois_revisao": "positivo",
+      "processos_atuais": 1,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "dr-furlan",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 1
+    },
+    {
+      "slug": "dr-helton-monteiro",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "dr-luisinho",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "edegar-pretto",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "edilson-damiao",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "edmilson-costa",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "eduardo-braide",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 2
+    },
+    {
+      "slug": "eduardo-girao",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "eduardo-paes",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 4
+    },
+    {
+      "slug": "eduardo-riedel",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "efraim-filho",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "elisson-ferreira",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "elizeu-aguiar",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "emanuel-cacho",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "eudo-raffael",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "expedito-netto",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "fabio-trad",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "felicio-ramuth",
+      "antes": "positivo",
+      "depois_revisao": "positivo",
+      "processos_atuais": 2,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "felipe-camarao",
+      "antes": "positivo",
+      "depois_revisao": "positivo",
+      "processos_atuais": 1,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "antes": "positivo",
+      "depois_revisao": "positivo",
+      "processos_atuais": 1,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "francisco-jurity",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "gabriel-souza",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "garotinho",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "gelson-merisio",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "gisvaldo-oliveira",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "guilherme-fonseca",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "gustavo-henrique",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "antes": "positivo",
+      "depois_revisao": "positivo",
+      "processos_atuais": 2,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "hana-ghassan",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "helder-salomao",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "henrique-areas",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "hertz-dias",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "hildon-chaves",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 2
+    },
+    {
+      "slug": "huggo-leonardo",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "indira-xavier",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "ismar-marques",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "ivan-moraes",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "izadora-dias",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "jarbas-soares",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "jarir-pereira",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "jayme-campos",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "jeferson-bezerra",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "jeremias-cosmo",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "jeronimo",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "jhc",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "joao-campos",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 2
+    },
+    {
+      "slug": "joao-rodrigues",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "joel-rodrigues",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "jorginho-mello",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "jose-estevao",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 3
+    },
+    {
+      "slug": "jose-roberto-arruda",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 2
+    },
+    {
+      "slug": "juliana-brizola",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "juliete-pantoja",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "kiko-caputo",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "lais-chaud",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "larissa-rosado",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "laudicerio-aguiar",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "laurez-moreira",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "leandro-grass",
+      "antes": "positivo",
+      "depois_revisao": "positivo",
+      "processos_atuais": 1,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "lenilda-luna",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "lourdes-melo",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "luan-monteiro",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "lucia-santos",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "luciana-gurgel",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "luciano-zucco",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "lucien-rezende",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "luis-cesar-bueno",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "luiz-carlos-teodoro",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "luiz-franca",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "lula",
+      "antes": "positivo",
+      "depois_revisao": "positivo",
+      "processos_atuais": 2,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "mailza-assis",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "marcelo-brigadeiro",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "marcelo-maluf",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 7
+    },
+    {
+      "slug": "marcelo-maranata",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "marconi-perillo",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "marcos-rogerio",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "marcus-sodre",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "maria-do-carmo",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "mateus-simoes",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "mauricio-coelho",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "mauricio-tonha",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 1
+    },
+    {
+      "slug": "naf-nascimento",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "olimpio-rocha",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "omar-aziz",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "orleans-brandao",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 2
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "patrus-ananias",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "paula-belmonte",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 1
+    },
+    {
+      "slug": "pazolini",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "pedro-abib",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "preta-lu",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "priscila-felizola",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "priscila-voigt",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "prof-enfermeira-kaelly",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "prof-meire-reis",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "professora-dorinha",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "rafael-duda",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "rafael-fonteles",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "rafael-greca",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 1
+    },
+    {
+      "slug": "rafaell-milas",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "ralf-zimmer",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "raquel-lyra",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "ravenna-castro",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "rejane-oliveira",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "renan-filho",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "renan-hallais",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "renan-santos",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "renato-gomes",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "requiao-filho",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "ricardo-leite",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "ricardo-marques",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "roberio-paulino",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "roberto-cidade",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "roberto-claudio",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "robson-raymundo",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "romeu-zema",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 6
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "ronaldo-mansur",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "samara-martins",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "samara-mineiro",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "samuel-costa",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "sandro-alex",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "santiago-belizario",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "saulo-arcangeli",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 1
+    },
+    {
+      "slug": "serley-leal",
+      "antes": "ausencia_confirmada",
+      "depois_revisao": "ausencia_confirmada",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "antes": "positivo",
+      "depois_revisao": "positivo",
+      "processos_atuais": 1,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "telemaco-brandao",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "thor-dantas",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "tiao-bocalom",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "tulio-lopes",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "vera-lucia",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "vicentinho-junior",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "vittorio-medioli",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "vivian-mendes",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "washington-bandeira",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "wellington-fagundes",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "wilder-morais",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "william-siri",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "witer-naves",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "yuri-ezequiel",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "ze-batista",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "bloqueio_editorial",
+      "processos_atuais": 0,
+      "processos_aprovados": 0
+    },
+    {
+      "slug": "ze-coca",
+      "antes": "bloqueio_editorial",
+      "depois_revisao": "positivo",
+      "processos_atuais": 0,
+      "processos_aprovados": 4
+    }
+  ]
+}

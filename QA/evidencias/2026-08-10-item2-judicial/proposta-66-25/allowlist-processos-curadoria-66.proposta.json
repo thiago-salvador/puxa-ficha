@@ -1,0 +1,487 @@
+{
+  "_comentario": "APROVADO EDITORIALMENTE EM 2026-08-11, NAO APLICADO: lote procedural 66/25 independente do 69/21.",
+  "recorte": "processos-curadoria-djen-66-20260810",
+  "migration": "20260810123000_processos_curadoria_djen_66.sql",
+  "coorte": [
+    "acm-neto",
+    "alysson-bezerra",
+    "augusto-cury",
+    "edilson-damiao",
+    "eduardo-riedel",
+    "garotinho",
+    "hana-ghassan",
+    "helder-salomao",
+    "jeronimo",
+    "joao-rodrigues",
+    "joel-rodrigues",
+    "jorginho-mello",
+    "lucas-ribeiro",
+    "mateus-simoes",
+    "omar-aziz",
+    "pazolini",
+    "rafael-fonteles",
+    "renan-filho",
+    "renan-santos",
+    "ricardo-cappelli",
+    "ricardo-ferraco",
+    "ronaldo-caiado",
+    "rui-costa-pimenta",
+    "tiao-bocalom",
+    "valmir-de-francisquinho"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "processos",
+      "slug": "acm-neto",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 4
+    },
+    {
+      "tabela": "processos",
+      "slug": "alysson-bezerra",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "augusto-cury",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "edilson-damiao",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "eduardo-riedel",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "garotinho",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 5
+    },
+    {
+      "tabela": "processos",
+      "slug": "hana-ghassan",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "helder-salomao",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "jeronimo",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "joao-rodrigues",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "joel-rodrigues",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "jorginho-mello",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "lucas-ribeiro",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "mateus-simoes",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "processos",
+      "slug": "omar-aziz",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "pazolini",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "rafael-fonteles",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "renan-filho",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "renan-santos",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 4
+    },
+    {
+      "tabela": "processos",
+      "slug": "ricardo-cappelli",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 4
+    },
+    {
+      "tabela": "processos",
+      "slug": "ricardo-ferraco",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 2
+    },
+    {
+      "tabela": "processos",
+      "slug": "ronaldo-caiado",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "rui-costa-pimenta",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 6
+    },
+    {
+      "tabela": "processos",
+      "slug": "tiao-bocalom",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    },
+    {
+      "tabela": "processos",
+      "slug": "valmir-de-francisquinho",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 3
+    }
+  ]
+}

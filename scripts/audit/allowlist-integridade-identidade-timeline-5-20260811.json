@@ -1,0 +1,25 @@
+{
+  "_comentario": "Correção reversível de cinco fichas com identidade ou timeline divergente, limitada a quarentena, split Orleans e três âncoras oficiais TSE 2026.",
+  "recorte": "integridade-identidade-timeline-5-20260811",
+  "migration": "20260811102100_integridade_identidade_timeline_5.sql",
+  "fonte": "TSE consulta_cand 2018, 2022 e 2026 por SQ_CANDIDATO, nome civil, UF e cargo; Assembleia Legislativa do Maranhão e site público de Orleans Brandão para a pré-candidatura",
+  "coorte": ["coronel-busnello", "jeremias-cosmo", "joao-rodrigues", "orleans-brandao", "renan-filho"],
+  "fora_por_construcao": { "slugs": [] },
+  "referencias": [
+    { "tabela": "identidade_timeline_quarentena_snapshot", "ref": "20260811102100", "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"] }
+  ],
+  "entries": [
+    { "tabela": "candidatos", "slug": "orleans-brandao", "campos": ["id", "nome_completo", "nome_urna", "slug", "data_nascimento", "naturalidade", "formacao", "profissao_declarada", "partido_atual", "partido_sigla", "cargo_atual", "cargo_disputado", "estado", "status", "situacao_candidatura", "site_campanha", "redes_sociais", "fonte_dados", "biografia", "publicavel", "ultima_atualizacao", "created_at"] },
+    { "tabela": "mudancas_partido", "slug": "orleans-brandao", "max_registros": 1, "campos": ["id", "candidato_id", "partido_anterior", "partido_novo", "ano", "data_mudanca", "contexto", "created_at"] },
+    { "tabela": "historico_politico", "slug": "joao-rodrigues", "campos": ["despublicado_em", "despublicacao_motivo"] },
+    { "tabela": "patrimonio", "slug": "joao-rodrigues", "campos": ["despublicado_em", "despublicacao_motivo"] },
+    { "tabela": "financiamento", "slug": "joao-rodrigues", "campos": ["despublicado_em", "despublicacao_motivo"] },
+    { "tabela": "mudancas_partido", "slug": "joao-rodrigues", "campos": ["despublicado_em", "despublicacao_motivo"] },
+    { "tabela": "historico_politico", "slug": "renan-filho", "campos": ["despublicado_em", "despublicacao_motivo"] },
+    { "tabela": "patrimonio", "slug": "renan-filho", "campos": ["despublicado_em", "despublicacao_motivo"] },
+    { "tabela": "financiamento", "slug": "renan-filho", "campos": ["despublicado_em", "despublicacao_motivo"] },
+    { "tabela": "mudancas_partido", "slug": "renan-filho", "campos": ["despublicado_em", "despublicacao_motivo"] },
+    { "tabela": "mudancas_partido", "slug": "coronel-busnello", "max_registros": 1, "campos": ["id", "candidato_id", "partido_anterior", "partido_novo", "ano", "data_mudanca", "contexto", "created_at"] },
+    { "tabela": "mudancas_partido", "slug": "jeremias-cosmo", "max_registros": 1, "campos": ["id", "candidato_id", "partido_anterior", "partido_novo", "ano", "data_mudanca", "contexto", "created_at"] }
+  ]
+}

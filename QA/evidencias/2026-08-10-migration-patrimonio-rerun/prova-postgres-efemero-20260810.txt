@@ -1,0 +1,22 @@
+Comando: bash scripts/audit/provar-migration-patrimonio-rerun.sh
+Ambiente: Postgres 17 efêmero, container local
+Resultado: exit 0, 9 ramos, todos como esperado
+
+F0 PASS: base vazia, no-op explícito, zero escrita
+F1 PASS: coorte parcial abortou, zero escrita
+F2 PASS: SQ divergente abortou, estado preservado
+F3 PASS: patrimônio posterior abortou, estado preservado
+F4 PASS: composição divergente de priscila-voigt abortou
+F5 PASS: composição esperada aplicou 21 operações
+F5 PASS: 10 inserts em patrimônio, 10 deletes de ausência, 1 update
+F5 PASS: jose-estevao, 1 bem, 600000.00
+F5 PASS: samara-mineiro, 2 bens, 69196.63
+F5 PASS: dr-luisinho, zero patrimônio, zero ausência oficial, nao_coletado
+F5 PASS: preta-lu, zero patrimônio, zero ausência oficial, nao_coletado
+F5 PASS: gilberto-vasconcelos, luciana-gurgel e vera-lucia preservados
+F6 PASS: reaplicação abortou, estado preservado
+R1 PASS: rollback removeu os 10 patrimônios e restaurou só 8 ausências comprováveis
+R1 PASS: dr-luisinho e preta-lu continuaram sem ausência oficial
+R2 PASS: curadoria posterior bloqueou rollback destrutivo
+
+Nenhuma migration foi aplicada em produção.

@@ -1,0 +1,268 @@
+{
+  "dryRun": true,
+  "results": [
+    {
+      "source": "tse",
+      "candidato": "vera-lucia",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "patrus-ananias",
+      "tables_updated": [
+        "financiamento"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0
+    },
+    {
+      "source": "tse",
+      "candidato": "lourdes-melo",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "dario-barbosa",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "efraim-filho",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "prof-meire-reis",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    },
+    {
+      "source": "tse",
+      "candidato": "lucien-rezende",
+      "tables_updated": [
+        "financiamento_verificacoes"
+      ],
+      "rows_upserted": 0,
+      "errors": [],
+      "duration_ms": 0,
+      "coleta_resultado": "vazio_confirmado",
+      "coleta_volume": 0,
+      "coleta_detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura."
+    }
+  ],
+  "plannedRows": [
+    {
+      "table": "financiamento",
+      "slug": "vera-lucia",
+      "row": {
+        "candidato_id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
+        "ano_eleicao": 2012,
+        "sq_candidato": "260000001384",
+        "uf_candidatura": "SE",
+        "total_arrecadado": 40245.2,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Comitê Financeiro Municipal Único",
+            "valor": 35218.83,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PAULO ROBERTO DOS SANTOS AGUIAR",
+            "valor": 4026.37,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "GIVANILDO RIBEIRO DA SILVA",
+            "valor": 1000,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento",
+      "slug": "patrus-ananias",
+      "row": {
+        "candidato_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+        "ano_eleicao": 2012,
+        "sq_candidato": "130000058454",
+        "uf_candidatura": "MG",
+        "total_arrecadado": 17408279.15,
+        "total_fundo_partidario": 0,
+        "total_fundo_eleitoral": 0,
+        "total_pessoa_fisica": 0,
+        "total_recursos_proprios": 0,
+        "maiores_doadores": [
+          {
+            "nome": "Direção Nacional",
+            "valor": 14057000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Estadual/Distrital",
+            "valor": 2332950.9,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PRESTASERV PRESTADORA DE SERVIÇOS LTDA",
+            "valor": 300000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "EVIDENCE COND RESORT INCORPORAÇÃO SPE LTDA",
+            "valor": 200000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "PROGED ENGENHARIA LTDA",
+            "valor": 100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MRV ENG E PARTICIPACOES SA",
+            "valor": 100000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Comitê Financeiro Municipal para Prefeito",
+            "valor": 80000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "AROSUCO AROMAS E SUCOS LTDA",
+            "valor": 60000,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "Direção Municipal",
+            "valor": 39445,
+            "tipo": "PJ"
+          },
+          {
+            "nome": "MÁRCIO LINCOLN DANTES",
+            "valor": 37500,
+            "tipo": "PJ"
+          }
+        ],
+        "fonte": "TSE"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "lourdes-melo",
+      "row": {
+        "candidato_id": "f5de5375-7258-4164-9f89-45ee8ee442d6",
+        "ano_eleicao": 2012,
+        "sq_candidato": "180000012118",
+        "uf_candidatura": "PI",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_final_2012.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "dario-barbosa",
+      "row": {
+        "candidato_id": "2c7f19b6-4f91-420a-83ec-866c83a9e027",
+        "ano_eleicao": 2012,
+        "sq_candidato": "200000001258",
+        "uf_candidatura": "RN",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_final_2012.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "efraim-filho",
+      "row": {
+        "candidato_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+        "ano_eleicao": 2012,
+        "sq_candidato": "150000008775",
+        "uf_candidatura": "PB",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_final_2012.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "prof-meire-reis",
+      "row": {
+        "candidato_id": "fe3c5bfc-d2d5-425e-8146-cdcb114b68d0",
+        "ano_eleicao": 2012,
+        "sq_candidato": "50000031720",
+        "uf_candidatura": "BA",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_final_2012.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    },
+    {
+      "table": "financiamento_verificacoes",
+      "slug": "lucien-rezende",
+      "row": {
+        "candidato_id": "9f8bdf27-8e4e-4f67-ae08-1519fc941412",
+        "ano_eleicao": 2012,
+        "sq_candidato": "120000002543",
+        "uf_candidatura": "MS",
+        "resultado": "ausencia_oficial",
+        "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/prestacao_contas/prestacao_final_2012.zip",
+        "verificado_em": "2026-08-10T00:00:00.000Z",
+        "detalhe": "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem receita para a candidatura.",
+        "execucao": "pf-ajustes-financiamento-20260810"
+      }
+    }
+  ]
+}

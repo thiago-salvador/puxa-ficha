@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "capturadoEm": "2026-08-11T13:11:24.163Z",
+  "natureza": "somente_leitura",
+  "git": {
+    "localMain": "0b08a3b6e763be3cf438f45553062dd57f30244b",
+    "localRcLancamento": "d17163fb58ad1c8d780d82be71e428671821306d",
+    "remoto": {
+      "main": "7e3e4165b0536aee50a68647488e93dd6127446c",
+      "rc-lancamento": "d17163fb58ad1c8d780d82be71e428671821306d"
+    },
+    "integracaoHead": "c1270092395b30434a4e57b2409edecc6d9ca6a1",
+    "integracaoDirty": true,
+    "checkouts": {
+      "principalMain": {
+        "anexado": true,
+        "path": "/Users/thiagosalvador/Documents/Apps/Pessoal/puxa-ficha",
+        "head": "0b08a3b6e763be3cf438f45553062dd57f30244b",
+        "ref": "0b08a3b6e763be3cf438f45553062dd57f30244b",
+        "dirty": true,
+        "entradasStatus": 38,
+        "statusSha256": "d7db0e26839b7da99f83768820ecf76e50dc760f675292acc921f4c9df8a9631",
+        "ultimoReflog": "0b08a3b6e763be3cf438f45553062dd57f30244b\tmain@{2026-08-09T18:53:38-03:00}\tpull --ff-only origin main: Fast-forward\t2026-08-09T18:53:36-03:00"
+      },
+      "rcLancamento": {
+        "anexado": false,
+        "ref": "d17163fb58ad1c8d780d82be71e428671821306d",
+        "ultimoReflog": "d17163fb58ad1c8d780d82be71e428671821306d\trc-lancamento@{2026-08-10T18:42:08-03:00}\tcommit: fix: endurecer contratos de integridade do RC\t2026-08-10T18:42:08-03:00"
+      }
+    }
+  },
+  "deployment": {
+    "ok": true,
+    "commitSha": "7e3e4165b0536aee50a68647488e93dd6127446c",
+    "commitRef": "main",
+    "environment": "production"
+  },
+  "producao": {
+    "fichasPublicas": {
+      "status": 206,
+      "count": 194,
+      "errorCode": null
+    },
+    "processosTotal": {
+      "status": 206,
+      "count": 30,
+      "errorCode": null
+    },
+    "judicial69": {
+      "status": 200,
+      "count": 0,
+      "errorCode": null
+    },
+    "judicial66": {
+      "status": 200,
+      "count": 0,
+      "errorCode": null
+    },
+    "tse8": {
+      "status": 200,
+      "count": 0,
+      "errorCode": null
+    },
+    "senadoLinhas": {
+      "status": 206,
+      "count": 13,
+      "errorCode": null
+    },
+    "senadoPares": {
+      "status": 206,
+      "count": 81,
+      "errorCode": null
+    },
+    "financiamentoContrato": {
+      "status": 404,
+      "count": null,
+      "errorCode": "PGRST205"
+    },
+    "patrimonioRerun": {
+      "status": 200,
+      "count": 0,
+      "errorCode": null
+    }
+  },
+  "invariantesSemAplicacao": {
+    "fichasPublicas194": true,
+    "processosAinda30": true,
+    "judicial69Ausente": true,
+    "judicial66Ausente": true,
+    "tse8Ausente": true,
+    "senadoAinda13x81": true,
+    "financiamentoNaoAplicado": true,
+    "patrimonioRerunAusente": true
+  },
+  "ledger": {
+    "acessoDireto": {
+      "status": "indisponivel",
+      "metodo": "psql_select_read_only",
+      "motivo": "SUPABASE_DB_URL ausente no ambiente local; nenhuma conexao direta foi tentada."
+    },
+    "evidenciaSubstituta": {
+      "status": "disponivel",
+      "run": {
+        "conclusion": "success",
+        "createdAt": "2026-08-11T07:23:53Z",
+        "databaseId": 31468778542,
+        "event": "schedule",
+        "headSha": "7e3e4165b0536aee50a68647488e93dd6127446c",
+        "status": "completed",
+        "updatedAt": "2026-08-11T07:24:36Z",
+        "url": "https://github.com/thiago-salvador/puxa-ficha-oss/actions/runs/31468778542"
+      },
+      "leitura": {
+        "quantidadeVersoes": 371,
+        "versaoMaisRecente": "20260809060000",
+        "quantidadeArquivosRepoNoRun": 376,
+        "gateDeclarouConsistencia": true
+      }
+    },
+    "limiteDaProva": "Sem SUPABASE_DB_URL local, o recibo nao consulta o banco diretamente. O workflow substituto registra o SELECT, a contagem e o gate no SHA de main indicado no proprio run."
+  },
+  "proveniencia": {
+    "refsRemotas": "git ls-remote origin refs/heads/main refs/heads/rc-lancamento",
+    "deployment": "https://puxaficha.com.br/api/deployment-info",
+    "contagens": "Supabase PostgREST, GET com Prefer: count=exact e limit=1",
+    "ledgerDireto": "psql SELECT com PGOPTIONS default_transaction_read_only=on",
+    "ledgerSubstituto": "GitHub Actions ledger-guard.yml, metadados e log do run mais recente em main"
+  }
+}

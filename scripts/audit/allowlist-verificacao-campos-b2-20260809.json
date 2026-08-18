@@ -1,0 +1,25 @@
+{
+  "_comentario": "Allowlist do recorte de 09/08/2026: materializacao das tres frentes TSE de verificacao_campos para os dois perfis da B2 que a etapa 9 nao alcancou (cleber-rabelo e gilberto-vasconcelos). Janela FECHADA de uma migration so: --desde=20260809070000 --ate=20260809070000. Rodar sem --ate colocaria toda migration criada depois nesta janela, e a allowlist deste recorte a reprovaria com razao.",
+  "recorte": "verificacao-campos-b2-20260809",
+  "migration": "20260809070000_verificacao_campos_b2_cleber_gilberto.sql",
+  "fonte": "output/pf-completeness-20260807T022551Z/research-b2/proposals.jsonl (SHA-256 78dec9789bdd4952cbf781f5bd4952a75f919b4a82903e6869a42468cc168fc0)",
+  "coorte": ["cleber-rabelo", "gilberto-vasconcelos"],
+  "fora_por_construcao": {
+    "_comentario": "Nenhum slug bloqueado: a coorte tem dois, os dois com SQ_CANDIDATO 2026 seguro no ledger da B2 e no seed (data/candidatos.json).",
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "cleber-rabelo",
+      "campos": ["verificacao_campos"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "gilberto-vasconcelos",
+      "campos": ["verificacao_campos"],
+      "max_registros": 1
+    }
+  ]
+}

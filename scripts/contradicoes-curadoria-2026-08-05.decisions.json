@@ -1,0 +1,403 @@
+{
+  "thiago_review": {
+    "submitted_at": "2026-08-05T20:26:57.568Z",
+    "instructions": "",
+    "summary": {
+      "approve_recommendation": 7,
+      "needs_more_review": 6,
+      "reject_recommendation": 5
+    },
+    "publication_or_content_change_applied": false,
+    "decisions": {
+      "new-eduardo-paes": "approve_recommendation",
+      "new-sergio-moro-gov-pr": "approve_recommendation",
+      "new-gelson-merisio": "approve_recommendation",
+      "existing-ciro-gomes-gov-ce": "needs_more_review",
+      "existing-flavio-bolsonaro-ponto": "needs_more_review",
+      "existing-flavio-bolsonaro-voto": "needs_more_review",
+      "existing-haddad-gov-sp": "needs_more_review",
+      "existing-hertz-dias": "approve_recommendation",
+      "existing-lula": "approve_recommendation",
+      "existing-renan-santos": "needs_more_review",
+      "existing-romeu-zema": "needs_more_review",
+      "existing-ronaldo-caiado-ponto": "reject_recommendation",
+      "existing-ronaldo-caiado-voto": "reject_recommendation",
+      "existing-rui-costa-pimenta": "approve_recommendation",
+      "existing-samara-martins": "approve_recommendation",
+      "existing-tarcisio-gov-sp-1": "reject_recommendation",
+      "existing-tarcisio-gov-sp-2": "reject_recommendation",
+      "existing-tarcisio-gov-sp-3": "reject_recommendation"
+    }
+  },
+  "default_no_finding_note": "Curadoria concluída sem achado no escopo. O resultado não prova ausência absoluta de contradições.",
+  "pairs": [
+    {
+      "slug": "eduardo-paes",
+      "theme": "permanência no mandato municipal e candidatura estadual em 2026",
+      "classification": "mudanca_de_posicao_ao_longo_do_tempo",
+      "evidence_a": {
+        "date": "2025-07-01",
+        "url": "https://cbn.globo.com/rio-de-janeiro/noticia/2025/07/01/eduardo-paes-volta-a-dizer-que-nao-sera-candidato-ao-governo-do-estado-em-2026.ghtml",
+        "attribution": "Eduardo Paes",
+        "statement_or_action": "Afirmou que não seria candidato ao governo em 2026 e que cumpriria o mandato de prefeito até o fim de 2028."
+      },
+      "evidence_b": {
+        "date": "2026-03-20",
+        "url": "https://g1.globo.com/rj/rio-de-janeiro/eleicoes/2026/noticia/2026/03/20/eduardo-paes-deixa-a-prefeitura-do-rio-para-ser-candidato-eduardo-cavaliere-assume.ghtml",
+        "attribution": "Eduardo Paes",
+        "statement_or_action": "Renunciou à Prefeitura do Rio e se apresentou como pré-candidato ao governo estadual."
+      },
+      "neutral_explanation": "As evidências mostram reversão entre uma declaração reiterada em julho de 2025 e a renúncia de março de 2026. A revisão deve decidir se a mudança de posição, por si só, merece o rótulo editorial de contradição.",
+      "consulted_urls": [
+        "https://diariodorio.com/governador-paes-afirma-que-se-reeleito-a-prefeitura-do-rio-cumprira-mandato-ate-o-fim/"
+      ]
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "theme": "entrada na política partidária",
+      "classification": "mudanca_de_posicao_ao_longo_do_tempo",
+      "evidence_a": {
+        "date": "2016-11",
+        "url": "https://www.dw.com/pt-br/sergio-moro-ensaia-bolsonarismo-sem-bolsonaro/a-59782404",
+        "attribution": "Sergio Moro",
+        "statement_or_action": "Em entrevista de novembro de 2016, afirmou que jamais entraria para a política e que não era um homem da política."
+      },
+      "evidence_b": {
+        "date": "2021-11-10",
+        "url": "https://g1.globo.com/politica/noticia/2021/11/10/em-ato-em-brasilia-ex-juiz-sergio-moro-se-filia-ao-podemos.ghtml",
+        "attribution": "Sergio Moro",
+        "statement_or_action": "Formalizou a filiação ao Podemos, entrada oficial na política partidária."
+      },
+      "neutral_explanation": "Há uma mudança verificável entre a declaração de 2016 e a ação partidária de 2021. O intervalo de cinco anos e a experiência posterior como ministro são contexto necessário e afastam uma conclusão automática sobre intenção ou engano.",
+      "consulted_urls": []
+    },
+    {
+      "slug": "gelson-merisio",
+      "theme": "apoio presidencial e realinhamento político",
+      "classification": "mudanca_provocada_por_novo_contexto",
+      "evidence_a": {
+        "date": "2018-09-27",
+        "url": "https://www.poder360.com.br/eleicoes/gelson-merisio-candidato-do-psd-ao-governo-de-sc-declara-apoio-a-bolsonaro/",
+        "attribution": "Gelson Merisio",
+        "statement_or_action": "Declarou voto em Jair Bolsonaro e apresentou o apoio como coerente com o que desejava Santa Catarina."
+      },
+      "evidence_b": {
+        "date": "2026-04-16",
+        "url": "https://www.nsctotal.com.br/politica/indicado-de-lula-ao-governo-de-sc-merisio-diz-que-nao-se-arrependeu-de-apoio-a-bolsonaro",
+        "attribution": "Gelson Merisio",
+        "statement_or_action": "Afirmou que mudou de posição após discordar do governo Bolsonaro na pandemia e na economia e que faria campanha aberta por Lula."
+      },
+      "neutral_explanation": "O próprio candidato reconhece a mudança e atribui a revisão a fatos posteriores, especialmente pandemia e economia. A evidência sustenta mudança provocada por novo contexto, não contradição factual automática.",
+      "consulted_urls": []
+    }
+  ],
+  "blocked": [
+    {
+      "slug": "alex-pucineli",
+      "reason": "A busca pública não retornou fontes recuperáveis para formar ou excluir um par com segurança."
+    },
+    {
+      "slug": "eudo-raffael",
+      "reason": "A busca pública não retornou fontes recuperáveis para formar ou excluir um par com segurança."
+    },
+    {
+      "slug": "izadora-dias",
+      "reason": "A busca pública não retornou fontes recuperáveis para formar ou excluir um par com segurança."
+    },
+    {
+      "slug": "jeremias-cosmo",
+      "reason": "A busca pública não retornou fontes recuperáveis para formar ou excluir um par com segurança."
+    },
+    {
+      "slug": "larissa-rosado",
+      "reason": "A busca pública não retornou fontes recuperáveis para formar ou excluir um par com segurança."
+    },
+    {
+      "slug": "lenilda-luna",
+      "reason": "A busca pública não retornou fontes recuperáveis para formar ou excluir um par com segurança."
+    },
+    {
+      "slug": "lucien-rezende",
+      "reason": "A busca pública não retornou fontes recuperáveis para formar ou excluir um par com segurança."
+    },
+    {
+      "slug": "mauricio-coelho",
+      "reason": "A busca pública não retornou fontes recuperáveis para formar ou excluir um par com segurança."
+    },
+    {
+      "slug": "ravenna-castro",
+      "reason": "A busca pública não retornou fontes recuperáveis para formar ou excluir um par com segurança."
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "reason": "A busca pública não retornou fontes recuperáveis para formar ou excluir um par com segurança."
+    },
+    {
+      "slug": "ronaldo-mansur",
+      "reason": "A busca pública não retornou fontes recuperáveis para formar ou excluir um par com segurança."
+    },
+    {
+      "slug": "santiago-belizario",
+      "reason": "A busca pública não retornou fontes recuperáveis para formar ou excluir um par com segurança."
+    }
+  ],
+  "discards": [
+    {
+      "slug": "acm-neto",
+      "kind": "contexto_ou_terceiro",
+      "reason": "Resultados tratavam principalmente de acusações a terceiros ou especulação de aliados, sem duas posições atribuíveis ao candidato."
+    },
+    {
+      "slug": "adailton-furia",
+      "kind": "contexto_ou_terceiro",
+      "reason": "Negar amizade ou aliança pessoal e reconhecer apoio institucional atual não forma conflito factual por si só."
+    },
+    {
+      "slug": "alexandre-kalil",
+      "kind": "contexto_ou_terceiro",
+      "reason": "As fontes descrevem resistência e negociação partidária, mas não entregam duas declarações próprias comparáveis com datas completas."
+    },
+    {
+      "slug": "cabo-daciolo",
+      "kind": "contexto_ou_terceiro",
+      "reason": "A divergência encontrada era entre anúncio pessoal e posição partidária, não duas afirmações do candidato."
+    },
+    {
+      "slug": "cleitinho",
+      "kind": "contexto_ou_terceiro",
+      "reason": "Desistência e retorno em menos de um dia foram explicados pelo luto após a morte do irmão; mudança de contexto, não contradição defensável."
+    },
+    {
+      "slug": "marcelo-brigadeiro",
+      "kind": "contexto_ou_terceiro",
+      "reason": "Desistência e retorno em menos de 24 horas configuram mudança estratégica de candidatura, sem tema substantivo comparável."
+    },
+    {
+      "slug": "huggo-leonardo",
+      "kind": "contexto_ou_terceiro",
+      "reason": "Mudança do cargo pretendido de Senado para governo é decisão estratégica, não contradição temática."
+    },
+    {
+      "slug": "jose-estevao",
+      "kind": "contexto_ou_terceiro",
+      "reason": "Retirada e relançamento apareceram em disputa partidária, sem par substantivo de posições públicas."
+    },
+    {
+      "slug": "joao-campos",
+      "kind": "contexto_ou_terceiro",
+      "reason": "A renúncia para disputar o governo foi confirmada, mas não foi localizada promessa atribuível de cumprir o mandato até 2028."
+    },
+    {
+      "slug": "cicero-lucena",
+      "kind": "contexto_ou_terceiro",
+      "reason": "A renúncia foi localizada, mas não apareceu uma declaração anterior comparável de permanência no mandato."
+    },
+    {
+      "slug": "raquel-lyra",
+      "kind": "contexto_ou_terceiro",
+      "reason": "A promessa de não elevar imposto apareceu atribuída por opositores; o plano oficial consultado não sustentou essa formulação e a mudança tributária tinha contexto da reforma."
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "kind": "contexto_ou_terceiro",
+      "reason": "A desestatização da Sabesp era apresentada como prioridade de governo, não reversão da posição localizada."
+    },
+    {
+      "slug": "lula",
+      "kind": "contexto_ou_terceiro",
+      "reason": "Revogar a EC 95 e adotar um marco fiscal diferente não é conflito factual sem uma promessa mais específica sobre qualquer limite de gasto."
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "kind": "contexto_ou_terceiro",
+      "reason": "Não endossar candidatos em segundos turnos não constitui, sozinho, par conflitante com outra declaração própria."
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "kind": "contexto_ou_terceiro",
+      "reason": "Investigação ou denúncia não prova a conduta investigada; o voto marcado como contraditório não tinha a declaração anterior e a fonte do voto pareadas."
+    },
+    {
+      "slug": "hertz-dias",
+      "kind": "contexto_ou_terceiro",
+      "reason": "Ter concorrido sem exercer mandato não é contradição."
+    },
+    {
+      "slug": "samara-martins",
+      "kind": "contexto_ou_terceiro",
+      "reason": "Ter concorrido sem exercer mandato não é contradição."
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "kind": "contexto_ou_terceiro",
+      "reason": "Repetição de candidaturas e baixa votação não formam duas posições conflitantes."
+    },
+    {
+      "slug": "romeu-zema",
+      "kind": "contexto_ou_terceiro",
+      "reason": "O contraste entre discurso anti-establishment e alianças legislativas permaneceu amplo e sem duas declarações próprias pareadas."
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "kind": "contexto_ou_terceiro",
+      "reason": "O resultado fiscal foi localizado, mas faltou fonte pública específica para a promessa comparada no item antigo."
+    },
+    {
+      "slug": "renan-santos",
+      "kind": "contexto_ou_terceiro",
+      "reason": "O item já estava oculto por fonte morta e a rodada não localizou par público substituto."
+    },
+    {
+      "slug": "andre-luis",
+      "kind": "homonimo_ou_ruido",
+      "reason": "Resultados homônimos e menções genéricas sem vínculo demonstrado com o candidato."
+    },
+    {
+      "slug": "dr-luisinho",
+      "kind": "homonimo_ou_ruido",
+      "reason": "Resultados homônimos ou referentes a terceiros não formaram par atribuível."
+    },
+    {
+      "slug": "jeferson-bezerra",
+      "kind": "homonimo_ou_ruido",
+      "reason": "Resultados jurídicos e homônimos sem par atribuível ao candidato."
+    },
+    {
+      "slug": "luciana-gurgel",
+      "kind": "homonimo_ou_ruido",
+      "reason": "Ocorrências da palavra contradição estavam em materiais ou falas de terceiros."
+    },
+    {
+      "slug": "washington-bandeira",
+      "kind": "homonimo_ou_ruido",
+      "reason": "A palavra contradição apareceu em decisão de tribunal de contas, sem relação editorial com posições do candidato."
+    },
+    {
+      "slug": "edmilson-costa",
+      "kind": "homonimo_ou_ruido",
+      "reason": "A palavra contradição apareceu em produção acadêmica, não em posições políticas conflitantes."
+    },
+    {
+      "slug": "garotinho",
+      "kind": "homonimo_ou_ruido",
+      "reason": "Resultados continham usos genéricos da palavra contradição e comentários de terceiros, sem par verificável."
+    },
+    {
+      "slug": "luan-monteiro",
+      "kind": "homonimo_ou_ruido",
+      "reason": "Gatilhos lexicais não correspondiam a duas posições atribuíveis ao candidato."
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "kind": "homonimo_ou_ruido",
+      "reason": "Gatilhos lexicais não correspondiam a duas posições atribuíveis ao candidato."
+    },
+    {
+      "slug": "ismar-marques",
+      "kind": "homonimo_ou_ruido",
+      "reason": "Gatilhos lexicais não correspondiam a duas posições atribuíveis ao candidato."
+    },
+    {
+      "slug": "prof-meire-reis",
+      "kind": "homonimo_ou_ruido",
+      "reason": "A palavra contradição apareceu em documento partidário, não como par de falas da candidata."
+    },
+    {
+      "slug": "preta-lu",
+      "kind": "homonimo_ou_ruido",
+      "reason": "Resultados misturavam documentos acadêmicos e falas de terceiros sem par atribuível."
+    }
+  ],
+  "existing_item_reviews": [
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "item": "Posição nos segundos turnos presidenciais de 2018 e 2022",
+      "recommendation": "retirar_categoria_contradicao",
+      "reason": "O item descreve não endosso, sem segunda posição conflitante."
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "item": "Discurso anticorrupção vs investigações proprias",
+      "recommendation": "retirar_categoria_contradicao",
+      "reason": "Investigação não comprova conduta e falta a segunda evidência atribuível."
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "item": "Reforma Tributaria (PEC 45/2019) - voto marcado como contradição",
+      "recommendation": "remover_marcacao_contradicao",
+      "reason": "Faltam fonte da defesa pública anterior e fonte oficial do voto pareadas."
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "item": "Ministro da Fazenda com déficit fiscal crescente",
+      "recommendation": "manter_oculto_e_rejeitar_publicacao",
+      "reason": "A fonte cobre resultado fiscal, mas não a promessa comparada."
+    },
+    {
+      "slug": "hertz-dias",
+      "item": "Trajetória eleitoral sem mandato eletivo",
+      "recommendation": "retirar_categoria_contradicao",
+      "reason": "Ausência de mandato não é contradição."
+    },
+    {
+      "slug": "lula",
+      "item": "Critica teto de gastos mas governo mantém limites fiscais",
+      "recommendation": "retirar_categoria_contradicao",
+      "reason": "Os regimes fiscais são distintos e a fonte não prova promessa contra qualquer limite."
+    },
+    {
+      "slug": "renan-santos",
+      "item": "Fundador do MBL, movimento que pede renovação mas centraliza poder",
+      "recommendation": "manter_oculto_e_rejeitar_publicacao",
+      "reason": "Fonte morta e juízo não sustentado por par público."
+    },
+    {
+      "slug": "romeu-zema",
+      "item": "Elegeu-se como anti-política mas negociou com centrao",
+      "recommendation": "manter_oculto_e_rejeitar_publicacao",
+      "reason": "Fonte anterior morta e contraste amplo sem par atribuível completo."
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "item": "Rompimentos e reaproximações com Bolsonaro",
+      "recommendation": "reclassificar_mudanca_contexto",
+      "reason": "As fontes mostram mudança motivada por divergência na pandemia e reaproximações posteriores, não contradição factual simples."
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "item": "Codigo Florestal (2012) - voto marcado como contradição",
+      "recommendation": "remover_marcacao_contradicao",
+      "reason": "A justificativa sobre pressão da base não tem fontes pareadas na ficha."
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "item": "Candidato perene: 5a candidatura a presidente sem expressao eleitoral",
+      "recommendation": "manter_oculto_e_rejeitar_publicacao",
+      "reason": "Candidaturas repetidas e votação baixa não são contradição."
+    },
+    {
+      "slug": "samara-martins",
+      "item": "Trajetória eleitoral sem mandato eletivo",
+      "recommendation": "retirar_categoria_contradicao",
+      "reason": "Ausência de mandato não é contradição."
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "item": "Resposta a críticas sobre a letalidade policial",
+      "recommendation": "retirar_categoria_contradicao",
+      "reason": "O item contém uma fala contextualizada, não duas posições conflitantes."
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "item": "Agenda de privatizações e desestatização da Sabesp",
+      "recommendation": "retirar_categoria_contradicao",
+      "reason": "A ação é coerente com a agenda localizada e não forma um par conflitante."
+    },
+    {
+      "slug": "tarcisio-gov-sp",
+      "item": "Transferência do domicílio eleitoral para São Paulo",
+      "recommendation": "retirar_categoria_contradicao",
+      "reason": "Transferência de domicílio e crítica de paraquedismo não são contradição."
+    }
+  ]
+}

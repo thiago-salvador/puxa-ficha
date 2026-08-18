@@ -1,0 +1,50 @@
+{
+  "_comentario": "Separacao aditiva das migrations mistas ja aplicadas. Os arquivos de origem permanecem imutaveis como historico de curadoria; o substituto puro de schema reproduz apenas a DDL. O replay de schema exclui uma origem somente se o hash continuar igual e o substituto existir e for schema puro.",
+  "schema_dump_sha256": "0b278c4e484606ca474e5054b5ec84d2884ce43a6ccecea69492df5b1372d8f7",
+  "_comentario_20260815223000": "Medido em 15/08/2026: P-PATRIMONIO-2026 e curadoria DML pura, fica fora do replay de schema e preserva o hash 457537c1d3874a0a43a2cef0a038d059fe5bb3e635a7a0292cf57bfc5ceaeb32 com 79 migrations aplicadas e zero falhas.",
+  "_comentario_20260816011000": "Medido em 16/08/2026: patrimônio do AC e snapshot pós-registro são DML puros, ficam fora do replay de schema e preservam o hash 457537c1d3874a0a43a2cef0a038d059fe5bb3e635a7a0292cf57bfc5ceaeb32 com 79 migrations aplicadas e zero falhas.",
+  "_comentario_20260816055200": "Medido em 16/08/2026: P-PATRIMONIO-NACIONAL e DML puro, fica fora do replay de schema e preserva o hash 457537c1d3874a0a43a2cef0a038d059fe5bb3e635a7a0292cf57bfc5ceaeb32 com 79 migrations aplicadas e zero falhas.",
+  "substituto": "20260809052600_schema_extraido_migrations_mistas.sql",
+  "origens": [
+    {
+      "arquivo": "20260710222500_sc_state_completion.sql",
+      "sha256": "3e8a2ed24fdbaa3b94ee392ef63fcbe6702d34e1ceed7dd3d1ba2e503926d11f",
+      "objetos": [
+        "uq_patrimonio_candidato_ano_eleicao",
+        "uq_financiamento_candidato_ano_eleicao"
+      ]
+    },
+    {
+      "arquivo": "20260726160000_despublicar_historico_por_homonimo.sql",
+      "sha256": "1459a17a187e4d3811163196e3665d877bdbf677e57a8946c0ff72d88ef31688",
+      "objetos": [
+        "historico_politico.despublicacao_motivo",
+        "historico_politico.despublicado_em",
+        "idx_historico_politico_despublicado"
+      ]
+    },
+    {
+      "arquivo": "20260726180000_identidade_jeronimo_e_homonimo_dorinha.sql",
+      "sha256": "aaee812cd3d31af1c15f45f7560f5cfc0e5812c77aec5af02a5d2d556e04c473",
+      "objetos": [
+        "comment:candidatos.naturalidade"
+      ]
+    },
+    {
+      "arquivo": "20260805123929_aplicar_decisoes_editoriais_20260805.sql",
+      "sha256": "7dc444b516e073fc62e22bf2669cd97e0d91446f0b6a24cb3d42c82d38a1b1f2",
+      "objetos": [
+        "bloquear_contagem_ia_cargos_como_mandatos",
+        "trg_bloquear_contagem_ia_cargos_como_mandatos"
+      ]
+    },
+    {
+      "arquivo": "20260807181000_patrimonio_ausencia_oficial.sql",
+      "sha256": "2baa08a7fc7ff59576a5b69fe4512cbe8590a04067df7a95ccf9b75ed47eba8c",
+      "objetos": [
+        "patrimonio_ausencia_oficial"
+      ]
+    }
+  ],
+  "_comentario_20260817053000": "Hash remedido em 17/08/2026 apos a 20260817053000, que acrescenta a coluna sq_candidato_2026, o CHECK de formato e o indice unico parcial ao dump. Valor lido do proprio schema-gate ('esperado 623dbd3538fc..., medido 0b278c4e4846...'). Nao estimado: baseline de schema so vale medido."
+}

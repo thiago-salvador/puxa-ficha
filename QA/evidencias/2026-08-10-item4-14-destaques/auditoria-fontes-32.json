@@ -1,0 +1,1846 @@
+{
+  "schema_version": 1,
+  "script": "auditar-fontes-destaques-vazios",
+  "modo": "dry-run_read_only",
+  "consultado_em": "2026-08-11T11:28:01.895Z",
+  "universo": 32,
+  "readback": {
+    "path": "QA/evidencias/2026-08-10-item4-14-destaques/readback-destaques.json",
+    "sha256": "0342d0068883672753192bbc673362aa92c9e776ebe5869bad62dc9dd4f594f9"
+  },
+  "recibo_judicial": {
+    "arquivo": "retry-djen-28.json",
+    "sha256": "512a8460ac30416f440bf317906a36567641ae0ab21fa52472a63ff64a1ecd1e"
+  },
+  "fontes_externas": {
+    "sancoes": [
+      "https://api.portaldatransparencia.gov.br/api-de-dados/ceis",
+      "https://api.portaldatransparencia.gov.br/api-de-dados/cnep",
+      "https://api.portaldatransparencia.gov.br/api-de-dados/ceaf"
+    ],
+    "tse_pacotes": [
+      {
+        "ano": 2016,
+        "consultaCand": {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2016.zip",
+          "sha256": "9fd0066979b45172870eca4f5434131d019d87f6018002a241e91d2c91658be1",
+          "bytes": 140136131
+        },
+        "bemCandidato": {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2016.zip",
+          "sha256": "c6fbc4bb18cadbf680b4488952c4f222692e9a8695b53155313131ddeb5ede1d",
+          "bytes": 72862941
+        }
+      },
+      {
+        "ano": 2018,
+        "consultaCand": {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip",
+          "sha256": "57f6881f1aa036142886ae548afd275e7ee6695643a2ab62826f2ee232d3fd44",
+          "bytes": 4722704
+        },
+        "bemCandidato": {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip",
+          "sha256": "d2473b7eef8849faf6061618a02add730d050364f37b546c93c37b9f2fbac58f",
+          "bytes": 5098559
+        }
+      },
+      {
+        "ano": 2020,
+        "consultaCand": {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2020.zip",
+          "sha256": "8079b01adfa406ebe38ff1617abc835f0f5f8d09d18032c410fee04427baea26",
+          "bytes": 85384126
+        },
+        "bemCandidato": {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2020.zip",
+          "sha256": "04353565306af1a894811520d8b9c73ea50730bd271dee25b1d1407e2ef8ba74",
+          "bytes": 81675261
+        }
+      },
+      {
+        "ano": 2022,
+        "consultaCand": {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip",
+          "sha256": "a70b7a4660aeadcbf468b5c08e570f31adc10bade43163c13d2b01bcf97f4caf",
+          "bytes": 4375932
+        },
+        "bemCandidato": {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2022.zip",
+          "sha256": "998fb9e6a1bc6c9663a8ac5ea9fa9be5b3010f20bccbc3cb5e248da2bc1b758c",
+          "bytes": 5532411
+        }
+      },
+      {
+        "ano": 2024,
+        "consultaCand": {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2024.zip",
+          "sha256": "aedc890adc65735b64066b115cdf39d91fb389825564ce79332c01686f3d60af",
+          "bytes": 63625529
+        },
+        "bemCandidato": {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2024.zip",
+          "sha256": "706cf4742001637fe095739468241d21c28d99117926de3fe6fecdad0d2ca3b3",
+          "bytes": 44235701
+        }
+      },
+      {
+        "ano": 2026,
+        "consultaCand": {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+          "sha256": "cd034c6b994025f018827e317476e5d37c2672809d5a0b69294d461d90cdcb04",
+          "bytes": 2038879
+        },
+        "bemCandidato": {
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2026.zip",
+          "sha256": "b4e098f1d9e2a616f7bf1d4dfe9fc103e1adfe4eb9acd87be3bc79b63f187c49",
+          "bytes": 2696278
+        }
+      }
+    ],
+    "votacoes": "não consultadas: 0/32 têm ID Câmara ou Senado no registro versionado"
+  },
+  "resumo": {
+    "sancoes": {
+      "erro": 25,
+      "vazio_confirmado": 7
+    },
+    "processos": {
+      "bloqueio_editorial": 24,
+      "indeterminado": 6,
+      "erro_divergencia_encontrado_sem_card": 2
+    },
+    "trajetoria": {
+      "bloqueio_identidade_sem_sq": 24,
+      "sem_achado_no_escopo": 8
+    },
+    "patrimonio": {
+      "bloqueio_identidade_sem_sq": 24,
+      "encontrado": 3,
+      "indeterminado": 5
+    },
+    "votacoes": {
+      "bloqueio_identidade_sem_id_legislativo": 32
+    }
+  },
+  "fichas": [
+    {
+      "slug": "andre-luis",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 10000,
+          "ocorrencias_nome_exato": 1,
+          "resultado": "bloqueio_editorial",
+          "motivo": "1 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "andre-marinho",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "vazio_confirmado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 0,
+          "ocorrencias_nome_exato": 0,
+          "resultado": "bloqueio_editorial",
+          "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+        },
+        "trajetoria": {
+          "consulta_externa": true,
+          "resultado": "sem_achado_no_escopo",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": [
+            {
+              "ano": 2026,
+              "sq": "190002537524",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "#NULO",
+              "declarouBens": null,
+              "bens": 6,
+              "valorTotal": 407503.55
+            }
+          ]
+        },
+        "patrimonio": {
+          "consulta_externa": true,
+          "resultado": "encontrado",
+          "dependencia": "PR #156, item 1, carga do pacote bem_candidato_2026",
+          "candidaturas": [
+            {
+              "ano": 2026,
+              "sq": "190002537524",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "#NULO",
+              "declarouBens": null,
+              "bens": 6,
+              "valorTotal": 407503.55
+            }
+          ]
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "augusto-cury",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": false,
+          "resultado": "indeterminado",
+          "origem": "coleta_log_ultima",
+          "executado_em": "2026-08-06T00:47:13.35098+00:00",
+          "motivo": "resultado explícito da tentativa anterior; nenhuma nova busca foi executada nesta frente"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "ben-mendes",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 402,
+          "ocorrencias_nome_exato": 388,
+          "resultado": "bloqueio_editorial",
+          "motivo": "388 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "breno-barcelar",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 111,
+          "ocorrencias_nome_exato": 0,
+          "resultado": "bloqueio_editorial",
+          "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "camila-falcao",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 161,
+          "ocorrencias_nome_exato": 10,
+          "resultado": "bloqueio_editorial",
+          "motivo": "10 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "carlos-machado",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 10000,
+          "ocorrencias_nome_exato": 132,
+          "resultado": "bloqueio_editorial",
+          "motivo": "132 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "dr-helton-monteiro",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 55,
+          "ocorrencias_nome_exato": 55,
+          "resultado": "bloqueio_editorial",
+          "motivo": "55 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "dr-luisinho",
+      "estado_atual": {
+        "sancoes": "vazio_confirmado",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "vazio_confirmado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": true,
+          "resultado": "vazio_confirmado",
+          "volume": 0,
+          "por_cadastro": [
+            {
+              "cadastro": "CEIS",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            },
+            {
+              "cadastro": "CNEP",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            },
+            {
+              "cadastro": "CEAF",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            }
+          ],
+          "falhas": []
+        },
+        "processos": {
+          "consulta_externa": false,
+          "resultado": "erro_divergencia_encontrado_sem_card",
+          "origem": "coleta_log_ultima",
+          "executado_em": "2026-08-06T00:47:21.502378+00:00",
+          "motivo": "a coleta anterior marcou encontrado, mas nenhum processo publicável chegou à ficha; divergência explícita, nunca ausência"
+        },
+        "trajetoria": {
+          "consulta_externa": true,
+          "resultado": "sem_achado_no_escopo",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": [
+            {
+              "ano": 2026,
+              "sq": "10002533539",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "#NULO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            }
+          ]
+        },
+        "patrimonio": {
+          "consulta_externa": true,
+          "resultado": "indeterminado",
+          "dependencia": null,
+          "candidaturas": [
+            {
+              "ano": 2026,
+              "sq": "10002533539",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "#NULO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            }
+          ]
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "elisson-ferreira",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 341,
+          "ocorrencias_nome_exato": 0,
+          "resultado": "bloqueio_editorial",
+          "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "eudo-raffael",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 15,
+          "ocorrencias_nome_exato": 15,
+          "resultado": "bloqueio_editorial",
+          "motivo": "15 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "francisco-jurity",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 0,
+          "ocorrencias_nome_exato": 0,
+          "resultado": "bloqueio_editorial",
+          "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "gisvaldo-oliveira",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 3,
+          "ocorrencias_nome_exato": 3,
+          "resultado": "bloqueio_editorial",
+          "motivo": "3 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "henrique-areas",
+      "estado_atual": {
+        "sancoes": "vazio_confirmado",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "vazio_confirmado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": true,
+          "resultado": "vazio_confirmado",
+          "volume": 0,
+          "por_cadastro": [
+            {
+              "cadastro": "CEIS",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            },
+            {
+              "cadastro": "CNEP",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            },
+            {
+              "cadastro": "CEAF",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            }
+          ],
+          "falhas": []
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 3,
+          "ocorrencias_nome_exato": 3,
+          "resultado": "bloqueio_editorial",
+          "motivo": "3 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+        },
+        "trajetoria": {
+          "consulta_externa": true,
+          "resultado": "sem_achado_no_escopo",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": [
+            {
+              "ano": 2016,
+              "sq": "250000077188",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "NÃO ELEITO",
+              "declarouBens": "N",
+              "bens": 0,
+              "valorTotal": 0
+            },
+            {
+              "ano": 2018,
+              "sq": "250000615443",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "NÃO ELEITO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            },
+            {
+              "ano": 2020,
+              "sq": "250001172315",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "NÃO ELEITO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            }
+          ]
+        },
+        "patrimonio": {
+          "consulta_externa": true,
+          "resultado": "indeterminado",
+          "dependencia": null,
+          "candidaturas": [
+            {
+              "ano": 2016,
+              "sq": "250000077188",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "NÃO ELEITO",
+              "declarouBens": "N",
+              "bens": 0,
+              "valorTotal": 0
+            },
+            {
+              "ano": 2018,
+              "sq": "250000615443",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "NÃO ELEITO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            },
+            {
+              "ano": 2020,
+              "sq": "250001172315",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "NÃO ELEITO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            }
+          ]
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "huggo-leonardo",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 30,
+          "ocorrencias_nome_exato": 0,
+          "resultado": "bloqueio_editorial",
+          "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "izadora-dias",
+      "estado_atual": {
+        "sancoes": "vazio_confirmado",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "vazio_confirmado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": true,
+          "resultado": "vazio_confirmado",
+          "volume": 0,
+          "por_cadastro": [
+            {
+              "cadastro": "CEIS",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            },
+            {
+              "cadastro": "CNEP",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            },
+            {
+              "cadastro": "CEAF",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            }
+          ],
+          "falhas": []
+        },
+        "processos": {
+          "consulta_externa": false,
+          "resultado": "indeterminado",
+          "origem": "coleta_log_ultima",
+          "executado_em": "2026-08-06T00:47:23.146149+00:00",
+          "motivo": "resultado explícito da tentativa anterior; nenhuma nova busca foi executada nesta frente"
+        },
+        "trajetoria": {
+          "consulta_externa": true,
+          "resultado": "sem_achado_no_escopo",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": [
+            {
+              "ano": 2022,
+              "sq": "250001700018",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "NÃO ELEITO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            }
+          ]
+        },
+        "patrimonio": {
+          "consulta_externa": true,
+          "resultado": "indeterminado",
+          "dependencia": null,
+          "candidaturas": [
+            {
+              "ano": 2022,
+              "sq": "250001700018",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "NÃO ELEITO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            }
+          ]
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "jarbas-soares",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": false,
+          "resultado": "indeterminado",
+          "origem": "coleta_log_ultima",
+          "executado_em": "2026-08-06T00:47:23.210129+00:00",
+          "motivo": "resultado explícito da tentativa anterior; nenhuma nova busca foi executada nesta frente"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "jarir-pereira",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 0,
+          "ocorrencias_nome_exato": 0,
+          "resultado": "bloqueio_editorial",
+          "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "jose-estevao",
+      "estado_atual": {
+        "sancoes": "vazio_confirmado",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": true,
+          "resultado": "vazio_confirmado",
+          "volume": 0,
+          "por_cadastro": [
+            {
+              "cadastro": "CEIS",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            },
+            {
+              "cadastro": "CNEP",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            },
+            {
+              "cadastro": "CEAF",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            }
+          ],
+          "falhas": []
+        },
+        "processos": {
+          "consulta_externa": false,
+          "resultado": "erro_divergencia_encontrado_sem_card",
+          "origem": "coleta_log_ultima",
+          "executado_em": "2026-08-06T00:47:23.533095+00:00",
+          "motivo": "a coleta anterior marcou encontrado, mas nenhum processo publicável chegou à ficha; divergência explícita, nunca ausência"
+        },
+        "trajetoria": {
+          "consulta_externa": true,
+          "resultado": "sem_achado_no_escopo",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": [
+            {
+              "ano": 2026,
+              "sq": "50002536579",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "#NULO",
+              "declarouBens": null,
+              "bens": 1,
+              "valorTotal": 600000
+            }
+          ]
+        },
+        "patrimonio": {
+          "consulta_externa": true,
+          "resultado": "encontrado",
+          "dependencia": "PR #156, item 1, carga do pacote bem_candidato_2026",
+          "candidaturas": [
+            {
+              "ano": 2026,
+              "sq": "50002536579",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "#NULO",
+              "declarouBens": null,
+              "bens": 1,
+              "valorTotal": 600000
+            }
+          ]
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "kiko-caputo",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 0,
+          "ocorrencias_nome_exato": 0,
+          "resultado": "bloqueio_editorial",
+          "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "lais-chaud",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": false,
+          "resultado": "indeterminado",
+          "origem": "coleta_log_ultima",
+          "executado_em": "2026-08-06T00:47:23.79533+00:00",
+          "motivo": "resultado explícito da tentativa anterior; nenhuma nova busca foi executada nesta frente"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "luan-monteiro",
+      "estado_atual": {
+        "sancoes": "vazio_confirmado",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "vazio_confirmado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": true,
+          "resultado": "vazio_confirmado",
+          "volume": 0,
+          "por_cadastro": [
+            {
+              "cadastro": "CEIS",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            },
+            {
+              "cadastro": "CNEP",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            },
+            {
+              "cadastro": "CEAF",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            }
+          ],
+          "falhas": []
+        },
+        "processos": {
+          "consulta_externa": false,
+          "resultado": "indeterminado",
+          "origem": "coleta_log_ultima",
+          "executado_em": "2026-08-06T00:47:24.084565+00:00",
+          "motivo": "resultado explícito da tentativa anterior; nenhuma nova busca foi executada nesta frente"
+        },
+        "trajetoria": {
+          "consulta_externa": true,
+          "resultado": "sem_achado_no_escopo",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": [
+            {
+              "ano": 2020,
+              "sq": "190001092078",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "NÃO ELEITO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            },
+            {
+              "ano": 2022,
+              "sq": "190001717287",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "NÃO ELEITO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            },
+            {
+              "ano": 2024,
+              "sq": "190002346684",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "NÃO ELEITO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            }
+          ]
+        },
+        "patrimonio": {
+          "consulta_externa": true,
+          "resultado": "indeterminado",
+          "dependencia": null,
+          "candidaturas": [
+            {
+              "ano": 2020,
+              "sq": "190001092078",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "NÃO ELEITO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            },
+            {
+              "ano": 2022,
+              "sq": "190001717287",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "NÃO ELEITO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            },
+            {
+              "ano": 2024,
+              "sq": "190002346684",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "NÃO ELEITO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            }
+          ]
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "luiz-franca",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 198,
+          "ocorrencias_nome_exato": 0,
+          "resultado": "bloqueio_editorial",
+          "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 28,
+          "ocorrencias_nome_exato": 0,
+          "resultado": "bloqueio_editorial",
+          "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "pedro-abib",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 351,
+          "ocorrencias_nome_exato": 351,
+          "resultado": "bloqueio_editorial",
+          "motivo": "351 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "preta-lu",
+      "estado_atual": {
+        "sancoes": "vazio_confirmado",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "vazio_confirmado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": true,
+          "resultado": "vazio_confirmado",
+          "volume": 0,
+          "por_cadastro": [
+            {
+              "cadastro": "CEIS",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            },
+            {
+              "cadastro": "CNEP",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            },
+            {
+              "cadastro": "CEAF",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            }
+          ],
+          "falhas": []
+        },
+        "processos": {
+          "consulta_externa": false,
+          "resultado": "indeterminado",
+          "origem": "coleta_log_ultima",
+          "executado_em": "2026-08-06T00:47:25.459659+00:00",
+          "motivo": "resultado explícito da tentativa anterior; nenhuma nova busca foi executada nesta frente"
+        },
+        "trajetoria": {
+          "consulta_externa": true,
+          "resultado": "sem_achado_no_escopo",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": [
+            {
+              "ano": 2026,
+              "sq": "100002534191",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "#NULO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            }
+          ]
+        },
+        "patrimonio": {
+          "consulta_externa": true,
+          "resultado": "indeterminado",
+          "dependencia": null,
+          "candidaturas": [
+            {
+              "ano": 2026,
+              "sq": "100002534191",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "#NULO",
+              "declarouBens": null,
+              "bens": 0,
+              "valorTotal": 0
+            }
+          ]
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "rafaell-milas",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 24,
+          "ocorrencias_nome_exato": 0,
+          "resultado": "bloqueio_editorial",
+          "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "renan-hallais",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 0,
+          "ocorrencias_nome_exato": 0,
+          "resultado": "bloqueio_editorial",
+          "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "renato-gomes",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 10000,
+          "ocorrencias_nome_exato": 270,
+          "resultado": "bloqueio_editorial",
+          "motivo": "270 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "samara-mineiro",
+      "estado_atual": {
+        "sancoes": "vazio_confirmado",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": true,
+          "resultado": "vazio_confirmado",
+          "volume": 0,
+          "por_cadastro": [
+            {
+              "cadastro": "CEIS",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            },
+            {
+              "cadastro": "CNEP",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            },
+            {
+              "cadastro": "CEAF",
+              "resultado": "vazio_confirmado",
+              "volume": 0
+            }
+          ],
+          "falhas": []
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 0,
+          "ocorrencias_nome_exato": 0,
+          "resultado": "bloqueio_editorial",
+          "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+        },
+        "trajetoria": {
+          "consulta_externa": true,
+          "resultado": "sem_achado_no_escopo",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": [
+            {
+              "ano": 2026,
+              "sq": "70002537111",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "#NULO",
+              "declarouBens": null,
+              "bens": 2,
+              "valorTotal": 69196.63
+            }
+          ]
+        },
+        "patrimonio": {
+          "consulta_externa": true,
+          "resultado": "encontrado",
+          "dependencia": "PR #156, item 1, carga do pacote bem_candidato_2026",
+          "candidaturas": [
+            {
+              "ano": 2026,
+              "sq": "70002537111",
+              "identidade": "confirmada",
+              "resultadoEleitoral": "#NULO",
+              "declarouBens": null,
+              "bens": 2,
+              "valorTotal": 69196.63
+            }
+          ]
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "witer-naves",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 25,
+          "ocorrencias_nome_exato": 25,
+          "resultado": "bloqueio_editorial",
+          "motivo": "25 ocorrencia(s) por nome exato sem segundo identificador oficial; nenhuma atribuicao foi publicada"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    },
+    {
+      "slug": "yuri-ezequiel",
+      "estado_atual": {
+        "sancoes": "nao_foi_possivel_verificar",
+        "processos": "nao_foi_possivel_verificar",
+        "trajetoria": "nunca_verificado",
+        "patrimonio": "nunca_verificado",
+        "votacoes": "nunca_verificado"
+      },
+      "fontes": {
+        "sancoes": {
+          "consulta_externa": false,
+          "resultado": "erro",
+          "motivo": "CPF válido ausente; nenhum cadastro foi consultado"
+        },
+        "processos": {
+          "consulta_externa": true,
+          "fonte": "https://comunicaapi.pje.jus.br/api/v1/comunicacao",
+          "consultado_em": "2026-08-10T22:23:04.360Z",
+          "total_api": 66,
+          "ocorrencias_nome_exato": 0,
+          "resultado": "bloqueio_editorial",
+          "motivo": "busca executada sem ocorrencia exata; identidade oficial insuficiente impede confirmar ausencia judicial"
+        },
+        "trajetoria": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "escopo": "candidaturas com SQ_CANDIDATO versionado; não cobre cargos nomeados nem carreira fora desses pleitos",
+          "candidaturas": []
+        },
+        "patrimonio": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_sq",
+          "dependencia": null,
+          "candidaturas": []
+        },
+        "votacoes": {
+          "consulta_externa": false,
+          "resultado": "bloqueio_identidade_sem_id_legislativo",
+          "motivo": "sem identificador Câmara/Senado; nenhuma API foi consultada e nenhum vazio foi inferido"
+        }
+      }
+    }
+  ]
+}

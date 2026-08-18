@@ -1,0 +1,10 @@
+Candidatura indeferida/cancelada exibida como candidatura real
+contagem: 7
+
+jose-roberto-arruda | 2014 | Governador | "2014 - Não Eleito" | Candidatura: INAPTO (TSE 2014). SQ 70000000153; fonte consulta_cand_2014 (TSE Da
+cintia-dias | 2012 | Vereador | "2012 - Não Eleito" | Candidatura: INDEFERIDO (TSE 2012). SQ 90000012450; fonte consulta_cand_2012 (TS
+marcelo-maluf | 2014 | 1o suplente | "2014 - Não Eleito" | TSE consulta_cand_2014_MT/BRASIL.csv: SQ 110000000004, Marcelo Benedito Maluf, 1
+jayme-campos | 2014 | Senador | "2014 - Não Eleito" | Candidatura: INAPTO (TSE 2014). SQ 110000000003; fonte consulta_cand_2014 (TSE D
+wilson-witzel | 2022 | Candidatura a Governador | "2022 - Não Eleito" | Consulta_cand TSE 2022: Wilson Jose Witzel, governador pelo PMB no RJ, SQ 190001
+lula | 2018 | Presidente | "2018 - Não Eleito" | Candidatura: registro INDEFERIDO pelo TSE (divulgacandcontas 2018, SQ_CANDIDATO 
+rui-costa-pimenta | 2006 | Presidente | "2006 - Não Eleito" | candidatura: pleito à Presidência em 2006 (TSE); registro Indeferido pelo TSE (d

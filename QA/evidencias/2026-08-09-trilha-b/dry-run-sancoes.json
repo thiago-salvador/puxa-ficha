@@ -1,0 +1,25 @@
+{
+  "coleta": "sancoes",
+  "modo": "dry-run",
+  "roster": {
+    "origem": "arquivo local: data/candidatos.json",
+    "total": 271
+  },
+  "detalhe": {
+    "escopo": "universo apenas",
+    "motivo": "roster local não traz CPF, e sem CPF não há consulta. A alcançabilidade por candidato exige uma leitura de `candidatos.cpf` em produção.",
+    "universo": 271,
+    "credencial_presente": false,
+    "alcancaveis": "indeterminado"
+  },
+  "plano": {
+    "geradoEm": "2026-08-10T01:59:12.759Z",
+    "universo": [],
+    "totalDeLinhasPlanejadas": 0,
+    "porTabela": {},
+    "porResultado": {},
+    "escritas": [],
+    "resultados": [],
+    "bloqueios": []
+  }
+}

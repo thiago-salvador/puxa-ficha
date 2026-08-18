@@ -1,0 +1,52 @@
+{
+  "$schema": "Lacunas editoriais com desfecho registrado, para o gate `check-report.ts --fail-on-correctable-missing`. Uma entrada aqui significa: a lacuna foi investigada, a fonte necessaria nao existe (ou nao qualifica), e a celula vazia e um resultado, nao um esquecimento. Lacuna de fonte TSE nao entra aqui, vai em data/sq-exceptions.json.",
+  "entries": [
+    {
+      "slug": "eudo-raffael",
+      "coluna": "redes",
+      "motivo": "nenhuma rede social atribuível por fonte primária encontrada nesta rodada",
+      "confirmado_em": "2026-08-02",
+      "detalhe": "As fontes públicas consultadas confirmam a atuação sindical e partidária de Eudo Raffael, mas não identificam uma URL de perfil social oficial do candidato. O campo permanece vazio para não atribuir conta de terceiro."
+    },
+    {
+      "slug": "thor-dantas",
+      "coluna": "redes",
+      "motivo": "nenhuma rede social atribuível por fonte primária encontrada nesta rodada",
+      "confirmado_em": "2026-08-02",
+      "detalhe": "Há menções jornalísticas a presença no Instagram, mas nenhuma URL de perfil oficial foi validada como pertencente ao candidato neste run. O campo permanece vazio."
+    },
+    {
+      "slug": "renan-santos",
+      "coluna": "dados",
+      "motivo": "profissao declarada sem fonte oficial",
+      "confirmado_em": "2026-08-02",
+      "detalhe": "A coluna candidatos.profissao_declarada e alimentada pela ocupacao declarada ao TSE. Renan Santos nunca disputou eleicao, e a listagem do DivulgaCandContas para 2026 (endpoint /divulga/rest/v1/candidatura/listar/2026/BR/2040602026/1/candidatos, consultado em 2026-08-02) devolve lista vazia, porque os registros de candidatura de 2026 ainda nao foram publicados. Existe caracterizacao jornalistica ('empresario e fundador do MBL', g1, 01/08/2026, https://g1.globo.com/politica/eleicoes/2026/noticia/2026/08/01/estreante-em-eleicoes-renan-santos-e-empresario-e-fundador-do-mbl.ghtml), mas isso e reportagem, nao declaracao ao TSE, e gravar como profissao declarada mudaria o significado da coluna. Campo mantido nulo de proposito; revisitar quando o TSE publicar o registro de 2026."
+    },
+    {
+      "slug": "jhc",
+      "coluna": "cota",
+      "motivo": "mandato federal aplicável, mas não houve coleta de gastos CEAP neste run local; não converter ausência em zero factual",
+      "confirmado_em": "2026-08-03",
+      "detalhe": "gastos_parlamentares=0 no snapshot de produção; exceção operacional para o run, pendente de coleta oficial específica"
+    },
+    {
+      "slug": "jhc",
+      "coluna": "posicoes_quiz",
+      "motivo": "sem declaração encontrada para teto_gastos após buscas direcionadas em fontes públicas da Câmara, Maceió e Alagoas",
+      "confirmado_em": "2026-08-03",
+      "detalhe": "reforma_trabalhista entra por migration; transferencia_renda não foi migrada porque a URL institucional encontrada respondeu HTTP 403 no gate local; não há fonte viva <400 validada para este tema; teto_gastos permanece sem posição"
+    },
+    {
+      "slug": "jhc",
+      "coluna": "destaques",
+      "motivo": "0 destaques: os 303 registros de projetos estão sem situacao registrada, portanto não há fato de aprovação, tramitação ou repercussão no próprio registro que sustente destaque",
+      "confirmado_em": "2026-08-03"
+    },
+    {
+      "slug": "renan-filho",
+      "coluna": "destaques",
+      "motivo": "0 destaques: os 100 registros de projetos estão sem situacao registrada, portanto não há fato de aprovação, tramitação ou repercussão no próprio registro que sustente destaque",
+      "confirmado_em": "2026-08-03"
+    }
+  ]
+}

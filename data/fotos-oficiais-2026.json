@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "pleito": 2026,
+  "codigo_eleicao": "20322002026",
+  "ancoras": [
+    {
+      "slug": "carlos-machado",
+      "sq_candidato": "250002550913",
+      "uf": "SP",
+      "cargo": "Governador",
+      "fonte": "entregas/ONDA-G/SP/fotos-divulgacand.json"
+    },
+    {
+      "slug": "coronel-busnello",
+      "sq_candidato": "190002544120",
+      "uf": "RJ",
+      "cargo": "Governador",
+      "fonte": "data/candidatos.json"
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "sq_candidato": "40002535267",
+      "uf": "AM",
+      "cargo": "Governador",
+      "fonte": "data/candidatos.json"
+    },
+    {
+      "slug": "guilherme-fonseca",
+      "sq_candidato": "170002536575",
+      "uf": "PE",
+      "cargo": "Governador",
+      "fonte": "data/candidatos.json"
+    },
+    {
+      "slug": "jeremias-cosmo",
+      "sq_candidato": "170002541258",
+      "uf": "PE",
+      "cargo": "Governador",
+      "fonte": "data/candidatos.json"
+    },
+    {
+      "slug": "jose-estevao",
+      "sq_candidato": "50002536579",
+      "uf": "BA",
+      "cargo": "Governador",
+      "fonte": "data/candidatos.json"
+    },
+    {
+      "slug": "policial-edjane",
+      "sq_candidato": "250002548080",
+      "uf": "SP",
+      "cargo": "Governador",
+      "fonte": "entregas/ONDA-G/SP/fotos-divulgacand.json"
+    },
+    {
+      "slug": "saulo-arcangeli",
+      "sq_candidato": "100002534190",
+      "uf": "MA",
+      "cargo": "Governador",
+      "fonte": "data/candidatos.json"
+    }
+  ]
+}

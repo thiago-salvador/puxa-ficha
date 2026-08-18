@@ -1,0 +1,15 @@
+// FIXTURE NEGATIVO com alvo por variável, que é como
+// `scripts/normalizar-marcadores-publicos.ts:105` escreve. Gate que só entende
+// literal de string não resolve o alvo aqui e deixaria passar justamente o
+// script que abriu a issue #131.
+
+import { supabase } from "../lib/supabase"
+
+const TABELAS = ["candidatos", "historico_politico"]
+
+export async function limpar(patch: Record<string, unknown>) {
+  for (const tabela of TABELAS) {
+    const { error } = await supabase.from(tabela).update(patch).eq("publicavel", true)
+    if (error) throw new Error(error.message)
+  }
+}

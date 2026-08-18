@@ -1,0 +1,19 @@
+{
+  "escopo": "Somente fatos efetivamente persistidos aqui. Alegacoes sobre estado de token, MIME bruto, renderizacao do cliente de email e resultado de DKIM foram removidas por nao terem fonte primaria armazenada neste diretorio.",
+  "fonte": "caixa de teste [test-inbox-redacted], lida via conector Gmail",
+  "threadId": "19fe867d3bcc3fbb",
+  "messageId_gmail": "19fe867d3bcc3fbb",
+  "messageId_resend": "37d02bd7-64a5-4f1c-8994-15ee0c3d4572",
+  "recebido_em": "2026-08-09T21:22:25Z",
+  "remetente": "alertas@puxaficha.com.br",
+  "destinatario": "[test-inbox-redacted]",
+  "assunto": "Confirme seu alerta sobre Lula no Puxa Ficha",
+  "corpo": "nao persistido: carrega os tokens de verify e manage",
+  "links_presentes": [
+    "/alertas/acesso?verify=<token>&manage=<token>",
+    "/alertas/acesso?manage=<token>",
+    "/alertas/acesso?manage=<token>&hash=deletar-dados"
+  ],
+  "amarracao_com_producao": "O messageId_resend acima e o mesmo do evento resend_accepted em runtime-logs-pf-alerts.jsonl, o que liga esta mensagem ao log de producao sem expor o endereco.",
+  "nota_de_correcao": "Uma versao anterior deste recibo reportou o terceiro link como corrompido no produto. Esse diagnostico foi retirado: era falso positivo, causado por decodificacao indevida na ferramenta de leitura. A refutacao foi feita por revisao independente sobre o MIME bruto, que NAO esta armazenado aqui, portanto este arquivo nao serve como prova dela e nao a afirma."
+}

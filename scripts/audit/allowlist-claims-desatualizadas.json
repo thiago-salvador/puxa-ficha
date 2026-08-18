@@ -1,0 +1,26 @@
+{
+  "$schema": "Allowlist exata das duas claims no ar cujo texto deixou de ser verdadeiro depois de publicado. Janela do recorte: --desde=20260803130000 --ate=20260803130000 (ver o cabeçalho de check-migrations-allowlist.ts).",
+  "gerado_em": "2026-08-03",
+  "branch": "data/claims-desatualizadas-no-ar",
+  "coorte": ["ciro-gomes-gov-ce", "acm-neto"],
+  "fora_por_construcao": {
+    "slugs": [],
+    "motivo": "Recorte definido por defeito encontrado, não por coorte de UF: entram só as duas claims cujo texto a fonte oficial deixou de sustentar."
+  },
+  "entries": [
+    {
+      "tabela": "pontos_atencao",
+      "slug": "ciro-gomes-gov-ce",
+      "claim_id": "e01bbf63-93f7-4726-ade0-9861e693f397",
+      "campos": ["titulo", "descricao", "fontes"],
+      "motivo": "O texto afirmava que o recebimento da denúncia 'não equivale a condenação'. Houve condenação em primeira instância em 18/05/2026, mantida em embargos em 09/07/2026. A claim ganha fonte nova (G1) porque a afirmação nova precisa de lastro próprio; a fonte original do MPCE fica preservada em segundo lugar."
+    },
+    {
+      "tabela": "pontos_atencao",
+      "slug": "acm-neto",
+      "claim_id": "7ce00008-0725-4a00-8e01-000000000008",
+      "campos": ["titulo"],
+      "motivo": "O título dizia 'aprovou por unanimidade' e omitia 'com ressalvas', contradizendo a descrição da própria claim e o texto oficial do TCM-BA. Só o título muda; a fonte já citada é a que sustenta a correção."
+    }
+  ]
+}

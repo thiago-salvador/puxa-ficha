@@ -1,0 +1,201 @@
+name: Ingestão de dados
+
+# Ingestão em massa das fontes públicas (TSE, Câmara, Senado, Portal da
+# Transparência) para o Supabase. Nunca roda em pull_request: usa o
+# SUPABASE_SERVICE_ROLE_KEY, e secrets não são expostos a PRs de fork.
+# Tanto workflow_dispatch quanto schedule executam somente o código da main,
+# então o modelo de confiança é o mesmo nos dois disparos.
+#
+# Cadência: schedule semanal cobre só camara+senado (APIs REST idempotentes,
+# dado que muda toda semana: votações, gastos, proposições). TSE e demais
+# fontes continuam por disparo manual: são lotes pesados e/ou passam por
+# curadoria antes de publicar. Se este cron mudar, o rótulo updateFrequency
+# de src/data/methodology-sources.ts muda no MESMO commit (regra documentada
+# no cabeçalho daquele arquivo).
+#
+# Após ingestão bem-sucedida, o job `revalidate` derruba o Data Cache das
+# tags públicas na produção; sem isso o site continua servindo o dado antigo
+# até a revalidação manual.
+#
+# Secrets necessários (Settings → Secrets and variables → Actions):
+#   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, PF_REVALIDATE_SECRET,
+#   TRANSPARENCIA_API_KEY (opcional)
+
+on:
+  schedule:
+    # Quartas às 06:00 UTC (03:00 em Brasília): camara+senado (default de
+    # RAW_SOURCES quando não há input).
+    - cron: "0 6 * * 3"
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: "Fontes (separadas por espaço): camara senado tse transparencia sancoes google-news"
+        required: false
+        default: "camara senado"
+      # Em 30/07/2026 o job `camara` estourou os 30 min e foi cancelado sem
+      # chegar no candidato alvo: a fila roda na ordem do seed, gasta 70-90s por
+      # candidato e sempre recomeça do topo. O script ja tinha as duas saidas
+      # (`--slugs` e `--skip-camara-validated`), mas nenhuma era alcancavel pelo
+      # dispatch, entao a unica forma de enriquecer 1 ficha era rodar a coorte
+      # inteira e torcer pra caber na janela.
+      incremental:
+        description: "Camara: pular quem ja tem votos+projetos+gastos recentes (evita o timeout de 30 min)"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ingest-pipeline
+  cancel-in-progress: false
+
+jobs:
+  ingest-rest:
+    name: REST APIs (Câmara + Senado + Transparência)
+    runs-on: ubuntu-latest
+    # 90 e não 30: medição de 15/08 (run 31887911201, cancelado). O modo
+    # incremental pula quem já está validado, mas o primeiro tratamento de um
+    # ex-parlamentar regrava o acervo autoral inteiro (fabio-mitidieri: 808
+    # proposições em 174s; jhc: 523 em 115s), 2-3 min por candidato pesado, e
+    # 30 min cobriam ~12 por run: a fila avançava em ratchet com o job sempre
+    # terminando vermelho e o Revalidar cache público (needs) sempre skipped.
+    # Com 90 min o run de estreia fecha a fila; os seguintes voltam a ser
+    # curtos porque o skip incremental pula quem já está completo.
+    timeout-minutes: 90
+    # No disparo por schedule não existem inputs; o fallback de RAW_SOURCES
+    # ('camara senado') decide o que roda.
+    # `transparencia` cobre `sancoes` por substring no contains(), mas a
+    # condição fica explícita: depender de coincidência de prefixo é o tipo de
+    # acerto que quebra em silêncio quando alguém renomeia uma fonte.
+    if: >-
+      github.event_name == 'schedule' ||
+      contains(github.event.inputs.sources, 'camara') ||
+      contains(github.event.inputs.sources, 'senado') ||
+      contains(github.event.inputs.sources, 'transparencia') ||
+      contains(github.event.inputs.sources, 'sancoes')
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+      - name: Ingestão REST
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          TRANSPARENCIA_API_KEY: ${{ secrets.TRANSPARENCIA_API_KEY }}
+          RAW_SOURCES: ${{ github.event.inputs.sources || 'camara senado' }}
+          # No schedule não existem inputs e a coorte completa estoura os 30
+          # min (3 dos 4 últimos runs cancelados desde 30/07); o caminho
+          # incremental vira o default do cron, e o dispatch manual segue
+          # mandando na flag.
+          INCREMENTAL: ${{ github.event_name == 'schedule' && 'true' || github.event.inputs.incremental }}
+        run: |
+          set -euo pipefail
+          SAFE=""
+          for s in $RAW_SOURCES; do
+            case "$s" in
+              # `sancoes` é o nome CLI do ingest-transparencia-sanctions em
+              # scripts/ingest-all.ts (VALID_SOURCES). `transparencia` é OUTRO
+              # coletor, o de gastos do Portal: sem esta linha, o ato "rodar a
+              # coleta de sanções" era indispatchável por este workflow.
+              camara|senado|tse|transparencia|sancoes|google-news) SAFE="$SAFE $s" ;;
+              *) echo "::error::fonte inválida: $s" ; exit 1 ;;
+            esac
+          done
+          # A flag nao entra na allowlist de fontes de proposito: ela e booleana
+          # e vem de `inputs`, nunca de string livre, entao nao ha superficie de
+          # injecao pelo campo de texto.
+          FLAGS=""
+          if [ "${INCREMENTAL:-false}" = "true" ]; then
+            FLAGS="--skip-camara-validated"
+          fi
+          # shellcheck disable=SC2086 # SAFE e FLAGS são listas validadas acima.
+          npx tsx scripts/ingest-all.ts $SAFE $FLAGS
+
+  ingest-tse:
+    name: TSE CSV
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    if: contains(github.event.inputs.sources, 'tse')
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: "npm"
+      - name: Cache TSE downloads
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: data/tse
+          key: tse-downloads-${{ runner.os }}-v1
+      - run: npm ci
+      - name: Ingestão TSE
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          PF_KEEP_TSE_DOWNLOADS: "1"
+        run: npx tsx scripts/ingest-all.ts tse
+
+  ingest-news:
+    name: Google News
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: contains(github.event.inputs.sources, 'google-news')
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+      - name: Google News RSS
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npx tsx scripts/ingest-all.ts google-news
+
+  # Fecha o loop dado novo -> site novo: sem esta etapa, a produção continua
+  # servindo o Data Cache antigo até alguém rodar "Revalidar cache" na mão.
+  # Roda depois dos jobs de ingestão mesmo se um deles falhar parcialmente.
+  # O job que falhou continua vermelho; a revalidação publica as escritas que
+  # chegaram ao banco e o cron-watchdog mantém o alarme operacional honesto.
+  revalidate:
+    name: Revalidar cache público
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [ingest-rest, ingest-tse, ingest-news]
+    if: ${{ !cancelled() }}
+    env:
+      REVALIDATE_URL: https://puxaficha.com.br/api/revalidate
+      REVALIDATE_SECRET: ${{ secrets.PF_REVALIDATE_SECRET }}
+      # Mesmo conjunto de tags públicas de revalidate-cache.yml.
+      TAGS_JSON: >-
+        ["public-candidatos","public-candidato-metadata","public-candidato-ficha","public-candidatos-resumo","public-candidatos-comparaveis","public-indicadores-all","public-indicadores-estado","quiz-dataset","ranking-data","doador-reverse"]
+    steps:
+      - name: POST /api/revalidate
+        run: |
+          set -euo pipefail
+          if [ -z "${REVALIDATE_SECRET:-}" ]; then
+            echo "PF_REVALIDATE_SECRET ausente nos GitHub Actions secrets." >&2
+            exit 1
+          fi
+          jq -cn --argjson tags "$TAGS_JSON" '{tags: $tags}' > /tmp/payload.json
+          status="$(curl -sS -o /tmp/resp.json -w "%{http_code}" \
+            -X POST "$REVALIDATE_URL" \
+            -H "content-type: application/json" \
+            -H "x-pf-revalidate-secret: ${REVALIDATE_SECRET}" \
+            --data-binary @/tmp/payload.json)"
+          echo "HTTP ${status}"
+          jq -c . /tmp/resp.json || cat /tmp/resp.json
+          echo "HTTP ${status}" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$status" != "200" ]; then exit 1; fi

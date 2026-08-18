@@ -1,0 +1,4 @@
+Cargo interno de partido tratado como pleito
+contagem: 0
+
+

@@ -1,0 +1,83 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# cache do auditor de SQ do TSE (pacotes anuais, dezenas de MB)
+/.tse-audit-cache
+
+# testing / coverage
+/coverage
+# c8 escreve em output/coverage (reports-dir) e .tmp/c8 (temp-directory),
+# que nao casavam com as regras acima e vazavam no git status.
+/output
+/.tmp
+.lighthouse-reports/
+test-results/
+playwright-report/
+/playwright/.cache/
+
+# next.js
+/.next/
+/out/
+/build
+next-env.d.ts
+
+# production data downloads (large, regenerable via the ingest pipeline)
+data/tse/
+data/tse-cpf/
+data/operations/
+# fila de revisão manual, reescrita a cada execução de backfill-historico-periodo-fim
+data/manual-review-periodo-fim.csv
+tmp/
+
+# misc
+.DS_Store
+*.pem
+*.log
+logs/
+
+# env files
+# `.env*` cobre tambem o que `vercel env pull` escreve fora do padrao
+# (`.env.production`, por exemplo). A excecao mantem o template versionado.
+.env*
+!.env.example
+
+# local script state (regenerable)
+scripts/audit-factual-*.json
+scripts/tse-situacao-audit.json
+
+# dumps do banco (PII de assinantes; nunca versionar, ver scripts/backup-supabase.sh)
+backups/
+
+# typescript
+*.tsbuildinfo
+
+# vercel
+.vercel
+
+# supabase local files (migrations are tracked)
+supabase/.temp/
+supabase/.branches/
+
+# IDE / editor
+.vscode/
+.idea/
+
+# AI assistant / local tooling (not part of the product)
+.claude/
+.codex/
+.cursor/
+**/CLAUDE.md
+**/AGENTS.md
+!/CLAUDE.md
+!/AGENTS.md
+
+# Saida temporaria do browser tooling (Playwright MCP)
+.playwright-mcp/
+
+# Cache local de pesquisa web (Firecrawl)
+.firecrawl/
+.playwright-cli/

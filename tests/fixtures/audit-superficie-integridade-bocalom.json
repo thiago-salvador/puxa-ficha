@@ -1,0 +1,70 @@
+[
+  {
+    "slug": "tiao-bocalom",
+    "publica": true,
+    "verificacao_campos": {
+      "existing_profile_aggregate": "2026-08-14"
+    },
+    "ultima_atualizacao": "2026-08-14T12:00:00Z",
+    "pontos_visiveis": 1,
+    "coletas": {
+      "transparencia-sanctions": {
+        "resultado": "vazio_confirmado",
+        "executado_em": "2026-08-15T10:00:00Z"
+      },
+      "processos-curadoria": {
+        "resultado": "encontrado",
+        "executado_em": "2026-08-15T10:00:00Z"
+      }
+    },
+    "linhas_abas": {
+      "votacoes_chave": 1,
+      "historico_politico": 2
+    },
+    "textos_publicos": [],
+    "integridade_partidaria": {
+      "mudancas_visiveis": [
+        {
+          "id": "m-2002",
+          "ano": 2002,
+          "partido_anterior": "MDB",
+          "partido_novo": "PSDB",
+          "data_mudanca": null,
+          "contexto": "Curadoria"
+        },
+        {
+          "id": "m-2004-a",
+          "ano": 2004,
+          "partido_anterior": "PSDB",
+          "partido_novo": "PV",
+          "data_mudanca": null,
+          "contexto": "Mudança observada entre eleições TSE (2004)"
+        },
+        {
+          "id": "m-2004-b",
+          "ano": 2004,
+          "partido_anterior": "PV",
+          "partido_novo": "PSDB",
+          "data_mudanca": null,
+          "contexto": "Mudança observada entre eleições TSE (2004)"
+        },
+        {
+          "id": "m-2014",
+          "ano": 2014,
+          "partido_anterior": "DEM",
+          "partido_novo": "PSD",
+          "data_mudanca": null,
+          "contexto": "Mudança observada entre eleições TSE (2014)"
+        }
+      ],
+      "partidos_historico_visivel": [
+        "MDB",
+        "DEM",
+        "PSDB"
+      ],
+      "partidos_historico_despublicado": [
+        "PV"
+      ]
+    }
+  }
+]

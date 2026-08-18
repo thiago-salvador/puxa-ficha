@@ -1,0 +1,309 @@
+{
+  "universo": {
+    "fichasPublicas": 194,
+    "fichasMedidas": 194
+  },
+  "fichasComPeloMenosUmaEleicaoDefeituosa": 39,
+  "eleicoesDefeituosas": 61,
+  "ausenciaOficialConfirmada": {
+    "fichas": 39,
+    "eleicoes": 61,
+    "exibidasComFonteEData": 0
+  },
+  "porMotivo": {
+    "banco_tem_dado_mas_dom_diz_nao_coletado": 48,
+    "banco_tem_dado_mas_dom_omite_a_eleicao": 13
+  },
+  "casosNomeados": {
+    "flavio-bolsonaro": {
+      "banco": [
+        {
+          "ano": 2018,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2016,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2014,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2010,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2006,
+          "estado": "publicado"
+        }
+      ],
+      "dto": [
+        {
+          "ano": 2018,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2016,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2014,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2010,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2006,
+          "estado": "publicado"
+        }
+      ],
+      "dom": [
+        {
+          "ano": 2018,
+          "estado": "publicado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2016,
+          "estado": "publicado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2014,
+          "estado": "publicado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2010,
+          "estado": "publicado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2006,
+          "estado": "publicado",
+          "fonte_e_data": false
+        }
+      ],
+      "defeitos": []
+    },
+    "hertz-dias": {
+      "banco": [
+        {
+          "ano": 2022,
+          "estado": "vazio_confirmado"
+        },
+        {
+          "ano": 2020,
+          "estado": "vazio_confirmado"
+        },
+        {
+          "ano": 2018,
+          "estado": "publicado"
+        }
+      ],
+      "dto": [
+        {
+          "ano": 2022,
+          "estado": "vazio_confirmado"
+        },
+        {
+          "ano": 2020,
+          "estado": "vazio_confirmado"
+        },
+        {
+          "ano": 2018,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2010,
+          "estado": "nao_coletado"
+        }
+      ],
+      "dom": [
+        {
+          "ano": 2022,
+          "estado": "nao_coletado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2020,
+          "estado": "nao_coletado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2018,
+          "estado": "publicado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2010,
+          "estado": "nao_coletado",
+          "fonte_e_data": false
+        }
+      ],
+      "defeitos": [
+        {
+          "ano": 2022,
+          "esperado": "vazio_confirmado",
+          "dto": "vazio_confirmado",
+          "dom": "nao_coletado",
+          "motivo": "banco_tem_dado_mas_dom_diz_nao_coletado"
+        },
+        {
+          "ano": 2020,
+          "esperado": "vazio_confirmado",
+          "dto": "vazio_confirmado",
+          "dom": "nao_coletado",
+          "motivo": "banco_tem_dado_mas_dom_diz_nao_coletado"
+        }
+      ]
+    },
+    "rui-costa-pimenta": {
+      "banco": [
+        {
+          "ano": 2014,
+          "estado": "vazio_confirmado"
+        },
+        {
+          "ano": 2010,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2006,
+          "estado": "publicado"
+        }
+      ],
+      "dto": [
+        {
+          "ano": 2014,
+          "estado": "vazio_confirmado"
+        },
+        {
+          "ano": 2010,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2006,
+          "estado": "publicado"
+        }
+      ],
+      "dom": [
+        {
+          "ano": 2014,
+          "estado": "nao_coletado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2010,
+          "estado": "publicado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2006,
+          "estado": "publicado",
+          "fonte_e_data": false
+        }
+      ],
+      "defeitos": [
+        {
+          "ano": 2014,
+          "esperado": "vazio_confirmado",
+          "dto": "vazio_confirmado",
+          "dom": "nao_coletado",
+          "motivo": "banco_tem_dado_mas_dom_diz_nao_coletado"
+        }
+      ]
+    },
+    "samara-martins": {
+      "banco": [
+        {
+          "ano": 2022,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2020,
+          "estado": "vazio_confirmado"
+        }
+      ],
+      "dto": [
+        {
+          "ano": 2022,
+          "estado": "publicado"
+        },
+        {
+          "ano": 2020,
+          "estado": "vazio_confirmado"
+        }
+      ],
+      "dom": [
+        {
+          "ano": 2022,
+          "estado": "publicado",
+          "fonte_e_data": false
+        },
+        {
+          "ano": 2020,
+          "estado": "nao_coletado",
+          "fonte_e_data": false
+        }
+      ],
+      "defeitos": [
+        {
+          "ano": 2020,
+          "esperado": "vazio_confirmado",
+          "dto": "vazio_confirmado",
+          "dom": "nao_coletado",
+          "motivo": "banco_tem_dado_mas_dom_diz_nao_coletado"
+        }
+      ]
+    }
+  },
+  "fichasAfetadas": [
+    "serley-leal",
+    "cintia-dias",
+    "ronaldo-mansur",
+    "joao-campos",
+    "luciana-gurgel",
+    "arthur-henrique",
+    "tulio-lopes",
+    "cleber-rabelo",
+    "jeferson-bezerra",
+    "vera-lucia",
+    "jeremias-cosmo",
+    "andre-marinho",
+    "gilberto-vasconcelos",
+    "laudicerio-aguiar",
+    "dr-luisinho",
+    "henrique-areas",
+    "luan-monteiro",
+    "gustavo-henrique",
+    "izadora-dias",
+    "juliete-pantoja",
+    "samuel-costa",
+    "geraldo-carvalho",
+    "renan-filho",
+    "garotinho",
+    "joao-henrique-catan",
+    "dr-daniel",
+    "hertz-dias",
+    "william-siri",
+    "rui-costa-pimenta",
+    "preta-lu",
+    "edilson-damiao",
+    "samara-martins",
+    "robson-raymundo",
+    "cabo-daciolo",
+    "raquel-lyra",
+    "ivan-moraes",
+    "joel-rodrigues",
+    "efraim-filho",
+    "david-almeida"
+  ]
+}
+
+Detalhe em QA/evidencias/2026-08-10-r2-patrimonio-eleicoes/antes.json
+
+FALHA: 39 ficha(s) exibem eleição com dado no banco como não coletada, omitida ou sem fonte.

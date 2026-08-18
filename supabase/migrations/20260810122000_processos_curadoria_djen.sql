@@ -1,0 +1,970 @@
+-- 20260810122000_processos_curadoria_djen.sql
+-- APROVADO EDITORIALMENTE, NAO APLICADO. Lote judicial de 05/08/2026.
+-- As contagens explicitas passadas ao gerador precisam coincidir com este lote.
+-- Sem BEGIN/COMMIT proprio: o aplicador envolve migration e ledger na mesma transacao.
+
+CREATE TEMP TABLE _pf_processos_curadoria (
+  slug text NOT NULL,
+  tipo text NOT NULL,
+  tribunal text NOT NULL,
+  numero_cnj text NOT NULL,
+  descricao text NOT NULL,
+  status text NOT NULL,
+  fonte text NOT NULL,
+  url_fonte text NOT NULL
+) ON COMMIT DROP;
+
+INSERT INTO _pf_processos_curadoria
+  (slug, tipo, tribunal, numero_cnj, descricao, status, fonte, url_fonte)
+VALUES
+    ('adailton-furia', 'civil', 'TJRO', '7000047-10.2021.8.22.0007', 'A ação popular questionou decreto de Adailton Antunes Ferreira, então prefeito de Cacoal, que nomeou secretário municipal. O TJRO confirmou por unanimidade a sentença e registrou ausência de ilegalidade no ato. A publicação deve apresentar o questionamento e o desfecho favorável com igual destaque, sem sugerir condenação.', 'Sentença confirmada por unanimidade pela 1ª Câmara Especial do TJRO; acórdão disponibilizado em 29/07/2024 registrou ausência de ilegalidade na nomeação.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 7000047-10.2021.8.22.0007', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=70000471020218220007'),
+    ('adailton-furia', 'criminal', 'TJRO', '7000071-67.2023.8.22.0007', 'Adailton foi querelante em queixa-crime por calúnia relacionada a alegações sobre uso de rejeitos de asfalto em propriedade particular. A fonte oficial registra que a exceção da verdade apresentada pelo querelado foi julgada procedente, com rejeição da queixa-crime, e que o feito foi arquivado em abril de 2025. Esse resultado processual é publicável, mas não equivale por si só a condenação criminal de Adailton.', 'A exceção da verdade foi julgada procedente para rejeitar a queixa-crime; após tramitação recursal, despacho de 08/04/2025 registrou que nada restava pendente e determinou o arquivamento.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 7000071-67.2023.8.22.0007', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=70000716720238220007'),
+    ('adailton-furia', 'civil', 'TJRO', '7012498-62.2024.8.22.0007', 'O Ministério Público de Rondônia impetrou mandado de segurança coletivo contra omissão atribuída a Adailton, então prefeito, na lotação de professores para assegurar a continuidade do ensino municipal. A segurança foi concedida e a sentença foi confirmada por unanimidade pelo TJRO. O registro é diretamente ligado à gestão pública e tem desfecho oficial definido.', 'A sentença concedeu a segurança para garantir a oferta regular de ensino, inclusive com renovação de contratos de professores; o TJRO confirmou a decisão por unanimidade em acórdão disponibilizado em 19/12/2024.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 7012498-62.2024.8.22.0007', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=70124986220248220007'),
+    ('alexandre-kalil', 'civil', 'TRT3', '0010454-23.2025.5.03.0012', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Limitações: Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'curadoria-djen-20260805: Comunica PJe - processo 0010454-23.2025.5.03.0012', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00104542320255030012'),
+    ('alexandre-kalil', 'civil', 'TRT3', '0010522-78.2022.5.03.0108', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Limitações: Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'curadoria-djen-20260805: Comunica PJe - processo 0010522-78.2022.5.03.0108', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00105227820225030108'),
+    ('alexandre-kalil', 'civil', 'TRT3', '0010746-20.2016.5.03.0013', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Limitações: Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'curadoria-djen-20260805: Comunica PJe - processo 0010746-20.2016.5.03.0013', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00107462020165030013'),
+    ('alexandre-kalil', 'civil', 'TRT3', '0011188-38.2015.5.03.0007', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Limitações: Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'curadoria-djen-20260805: Comunica PJe - processo 0011188-38.2015.5.03.0007', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00111883820155030007'),
+    ('alexandre-kalil', 'civil', 'TRT3', '0011337-13.2015.5.03.0111', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Limitações: Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'curadoria-djen-20260805: Comunica PJe - processo 0011337-13.2015.5.03.0111', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00113371320155030111'),
+    ('alexandre-kalil', 'civil', 'TRT3', '0011475-61.2016.5.03.0105', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Limitações: Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'curadoria-djen-20260805: Comunica PJe - processo 0011475-61.2016.5.03.0105', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00114756120165030105'),
+    ('alexandre-kalil', 'civil', 'TRT3', '0011533-64.2016.5.03.0008', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Limitações: Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'curadoria-djen-20260805: Comunica PJe - processo 0011533-64.2016.5.03.0008', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00115336420165030008'),
+    ('alexandre-kalil', 'civil', 'TRT3', '0011597-74.2016.5.03.0105', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'Oito processos trabalhistas publicados entre abril de 2024 e agosto de 2026 vinculam Alexandre Kalil, identificado por CPF, a atos de execução relacionados às empresas Erkal Engenharia e Fergikal. As comunicações registram medidas como pesquisa ou bloqueio de ativos, reserva de créditos e intimação em incidente de desconsideração; um dos embargos de terceiro foi dado como quitado e arquivado em outubro de 2025. O conjunto documenta um núcleo empresarial e patrimonial recorrente, sem provar ilícito eleitoral, penal ou de gestão pública. Limitações: Os oito CNJs têm fases e resultados distintos; o texto não os trata como condenações pessoais equivalentes. Os dois novos processos de Kalil foram excluídos deste grupo por não pertencerem ao núcleo Erkal/Fergikal. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'curadoria-djen-20260805: Comunica PJe - processo 0011597-74.2016.5.03.0105', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00115977420165030105'),
+    ('alexandre-kalil', 'criminal', 'TJMG', '0372585-71.2022.8.13.0000', 'O procedimento investigou possível descumprimento de decisão judicial por Alexandre Kalil quando prefeito. O Ministério Público pediu arquivamento porque não comprovou autoria e materialidade, nem intimação pessoal para cumprir a obrigação, e entendeu a conduta atípica diante da sanção civil já prevista. O TJMG acolheu o pedido, e o arquivamento tornou-se definitivo.', 'Pedido de arquivamento acolhido em 31/05/2022; decisão transitada em 28/06/2022 e arquivamento definitivo registrado em 05/07/2022.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 0372585-71.2022.8.13.0000', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=03725857120228130000'),
+    ('alexandre-kalil', 'improbidade', 'TJMG', '5011447-19.2022.8.13.0024', 'A ação do MPMG tratou da manutenção de ruas e praça fechadas na área do Clube dos Caçadores e identificou Kalil, ex-prefeito, como réu. Houve condenação em primeiro grau, mas a 5ª Câmara Cível deu provimento aos recursos principais em julho de 2026, afastando a condenação e julgando improcedente a ação por ausência de comprovação de dolo e dano ao erário. O desfecho recursal deve receber o mesmo destaque da acusação inicial.', 'Condenação parcial em primeiro grau em agosto de 2025; acórdão da 5ª Câmara Cível, julgado em 23/07/2026, deu provimento aos recursos principais e afastou a condenação. Extrato oficial disponibilizado em 05/08/2026.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 5011447-19.2022.8.13.0024', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=50114471920228130024'),
+    ('alexandre-kalil', 'civil', 'TJMG', '5099217-84.2021.8.13.0024', 'Não adere ao núcleo Erkal/Fergikal. Manter como item individual e neutro: cumprimento de sentença civil privado contra Alexandre Kalil, com penhora de 18,75% de aluguéis determinada em 29 de abril de 2026; não sugerir origem ilícita do débito.', 'Não adere ao núcleo Erkal/Fergikal. Manter como item individual e neutro: cumprimento de sentença civil privado contra Alexandre Kalil, com penhora de 18,75% de aluguéis determinada em 29 de abril de 2026; não sugerir origem ilícita do débito.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 5099217-84.2021.8.13.0024', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=50992178420218130024'),
+    ('alexandre-kalil', 'civil', 'TJMG', '5126890-52.2021.8.13.0024', 'O procedimento sobre assembleia e eleição identificou Kalil por CPF como réu. Em março de 2026, o próprio autor requereu desistência por perda superveniente do objeto; os réus concordaram, e o processo foi extinto sem resolução de mérito, com custas e honorários atribuídos ao autor. O resultado oficial permite publicação responsável sem imputação de irregularidade a Kalil.', 'Desistência homologada e processo extinto sem resolução de mérito em 19/03/2026 por perda superveniente do objeto; fase posterior trata da cobrança de honorários contra o autor.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 5126890-52.2021.8.13.0024', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=51268905220218130024'),
+    ('alexandre-kalil', 'civil', 'TJMG', '5165390-66.2016.8.13.0024', 'Réu em ação cível pessoal de locação; a natureza privada não é hipótese terminal de descarte.', 'Autos retornaram da instância superior; houve vista às partes por 10 dias e ordem de cálculo e intimação para custas finais.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=51653906620168130024'),
+    ('alexandre-kalil', 'criminal', 'TJMG', '5206180-19.2021.8.13.0024', 'A queixa-crime identificou Kalil como querelado por supostos crimes de difamação e injúria relacionados a fatos de outubro de 2021. Em abril de 2026, o juízo reconheceu a prescrição porque transcorreram mais de quatro anos sem recebimento da queixa por juízo competente e extinguiu a punibilidade. A publicação deve registrar a imputação e a extinção por prescrição, sem sugerir condenação.', 'Punibilidade extinta por prescrição em sentença disponibilizada em 27/04/2026; a decisão determinou arquivamento após o trânsito em julgado.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 5206180-19.2021.8.13.0024', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=52061801920218130024'),
+    ('alexandre-kalil', 'civil', 'TJMG', '5218095-31.2022.8.13.0024', 'Não adere ao núcleo trabalhista Erkal/Fergikal. Manter como item individual: execução fiscal de IPTU contra Alexandre Kalil, com penhora e avaliação do imóvel determinadas em 29 de junho de 2025 e posterior migração ao eproc; não afirmar fraude ou inadimplemento definitivo.', 'Não adere ao núcleo trabalhista Erkal/Fergikal. Manter como item individual: execução fiscal de IPTU contra Alexandre Kalil, com penhora e avaliação do imóvel determinadas em 29 de junho de 2025 e posterior migração ao eproc; não afirmar fraude ou inadimplemento definitivo.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 5218095-31.2022.8.13.0024', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=52180953120228130024'),
+    ('alexandre-kalil', 'improbidade', 'TJMG', '5222140-78.2022.8.13.0024', 'A ação do MPMG atribuiu a Kalil, ex-prefeito, nepotismo na nomeação de Marcelo Amarante Guimarães para cargo comissionado. Em abril de 2026, o primeiro grau julgou o pedido procedente e aplicou multa civil e proibição de contratar com o poder público por dois anos. Em julho, o processo ainda tratava de embargos de declaração; não há trânsito em julgado informado.', 'Sentença de procedência proferida em 28/04/2026, com multa civil de duas vezes a remuneração de referência e proibição de contratar com o poder público por dois anos; embargos de declaração ainda em contraditório em 16/07/2026.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 5222140-78.2022.8.13.0024', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=52221407820228130024'),
+    ('alexandre-kalil', 'improbidade', 'TJMG', '5267198-36.2024.8.13.0024', 'A ação de improbidade do MPMG trata de pesquisa eleitoral realizada no contexto de contrato de publicidade da Prefeitura de Belo Horizonte. Acordos encerraram o processo para outros réus, mas a decisão oficial de março de 2026 determinou que a ação prosseguisse somente contra Alexandre Kalil. Em julho de 2026, o juízo abriu prazo para especificação de provas, sem decisão de mérito contra ele.', 'Após homologação de acordos de não persecução civil de corréus, o feito prosseguiu somente contra Kalil; em 30/07/2026, as partes foram intimadas a especificar provas antes do saneamento.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 5267198-36.2024.8.13.0024', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=52671983620248130024'),
+    ('alexandre-kalil', 'civil', 'TJMG', '6119259-50.2015.8.13.0024', 'Embargos pessoais de IPTU são atribuíveis ao candidato; baixa relevância ou natureza fiscal privada não autorizam descarte terminal.', 'Instrução probatória encerrada; partes chamadas a alegações finais, com posterior conclusão para sentença.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=61192595020158130024'),
+    ('arthur-henrique', 'civil', 'TJRR', '0825283-48.2020.8.23.0010', 'A ação popular questionou a nomeação da companheira de Arthur Henrique Brandão Machado, então vice-prefeito de Boa Vista, para cargo comissionado, sob alegação de nepotismo. A fase de conhecimento foi extinta sem resolução de mérito por perda superveniente do objeto após a exoneração e mudança de função da nomeada; o TJRR confirmou a sentença em junho de 2026.', 'Extinção sem resolução de mérito por perda superveniente do objeto confirmada pelo TJRR em 16/06/2026; decisão determinou intimação e arquivamento.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 0825283-48.2020.8.23.0010', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=08252834820208230010'),
+    ('ataides-oliveira', 'civil', 'TRF1', '0000421-28.2019.4.01.3502', 'Entre setembro de 2022 e junho de 2026, três processos registraram Ataídes de Oliveira pessoalmente no polo passivo: duas execuções fiscais federais, uma ao lado da Toc Construtora e outra ao lado da Araguaia Construtora, e um cumprimento de sentença civil proposto pela Goiás Aviação. No processo civil, o TJGO homologou acordo e suspendeu o feito em 26 de junho de 2026. As publicações consultadas comprovam cobranças e atos de execução, mas não autorizam associá-los a ilícito eleitoral ou a ato de governo. O último ato oficial localizado para a execução de 2019 é de 2022, e a execução de 2025 ainda não tem desfecho nas comunicações consultadas. O acordo do caso civil não equivale a declaração de ilicitude. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'Entre setembro de 2022 e junho de 2026, três processos registraram Ataídes de Oliveira pessoalmente no polo passivo: duas execuções fiscais federais, uma ao lado da Toc Construtora e outra ao lado da Araguaia Construtora, e um cumprimento de sentença civil proposto pela Goiás Aviação. No processo civil, o TJGO homologou acordo e suspendeu o feito em 26 de junho de 2026. As publicações consultadas comprovam cobranças e atos de execução, mas não autorizam associá-los a ilícito eleitoral ou a ato de governo. Limitações: O último ato oficial localizado para a execução de 2019 é de 2022, e a execução de 2025 ainda não tem desfecho nas comunicações consultadas. O acordo do caso civil não equivale a declaração de ilicitude. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'curadoria-djen-20260805: Comunica PJe - processo 0000421-28.2019.4.01.3502', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00004212820194013502'),
+    ('ataides-oliveira', 'eleitoral', 'TRE-TO', '0600940-85.2022.6.27.0000', 'O processo eleitoral identifica Ataídes de Oliveira por CPF como representado e, depois, executado em caso de propaganda eleitoral irregular por faixa de pré-candidatura ao Senado. O cumprimento de sentença promovido pelo Ministério Público Eleitoral registrou execução de R$ 6.835,80 e edital de leilão de embarcação. É matéria eleitoral diretamente atribuível e publicável, com a ressalva de que a fonte consultada não informa o resultado posterior do leilão.', 'Cumprimento de sentença promovido pelo Ministério Público Eleitoral; edital disponibilizado em agosto de 2025 anunciou leilões para 28/10/2025 e 04/11/2025, com valor de execução de R$ 6.835,80. Não foi localizada comunicação oficial posterior sobre o resultado.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 0600940-85.2022.6.27.0000', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=06009408520226270000'),
+    ('ataides-oliveira', 'civil', 'TRF1', '1001988-98.2025.4.01.4300', 'Entre setembro de 2022 e junho de 2026, três processos registraram Ataídes de Oliveira pessoalmente no polo passivo: duas execuções fiscais federais, uma ao lado da Toc Construtora e outra ao lado da Araguaia Construtora, e um cumprimento de sentença civil proposto pela Goiás Aviação. No processo civil, o TJGO homologou acordo e suspendeu o feito em 26 de junho de 2026. As publicações consultadas comprovam cobranças e atos de execução, mas não autorizam associá-los a ilícito eleitoral ou a ato de governo. O último ato oficial localizado para a execução de 2019 é de 2022, e a execução de 2025 ainda não tem desfecho nas comunicações consultadas. O acordo do caso civil não equivale a declaração de ilicitude. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'Entre setembro de 2022 e junho de 2026, três processos registraram Ataídes de Oliveira pessoalmente no polo passivo: duas execuções fiscais federais, uma ao lado da Toc Construtora e outra ao lado da Araguaia Construtora, e um cumprimento de sentença civil proposto pela Goiás Aviação. No processo civil, o TJGO homologou acordo e suspendeu o feito em 26 de junho de 2026. As publicações consultadas comprovam cobranças e atos de execução, mas não autorizam associá-los a ilícito eleitoral ou a ato de governo. Limitações: O último ato oficial localizado para a execução de 2019 é de 2022, e a execução de 2025 ainda não tem desfecho nas comunicações consultadas. O acordo do caso civil não equivale a declaração de ilicitude. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'curadoria-djen-20260805: Comunica PJe - processo 1001988-98.2025.4.01.4300', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=10019889820254014300'),
+    ('ataides-oliveira', 'civil', 'TJGO', '5717868-11.2022.8.09.0051', 'Entre setembro de 2022 e junho de 2026, três processos registraram Ataídes de Oliveira pessoalmente no polo passivo: duas execuções fiscais federais, uma ao lado da Toc Construtora e outra ao lado da Araguaia Construtora, e um cumprimento de sentença civil proposto pela Goiás Aviação. No processo civil, o TJGO homologou acordo e suspendeu o feito em 26 de junho de 2026. As publicações consultadas comprovam cobranças e atos de execução, mas não autorizam associá-los a ilícito eleitoral ou a ato de governo. O último ato oficial localizado para a execução de 2019 é de 2022, e a execução de 2025 ainda não tem desfecho nas comunicações consultadas. O acordo do caso civil não equivale a declaração de ilicitude. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'Entre setembro de 2022 e junho de 2026, três processos registraram Ataídes de Oliveira pessoalmente no polo passivo: duas execuções fiscais federais, uma ao lado da Toc Construtora e outra ao lado da Araguaia Construtora, e um cumprimento de sentença civil proposto pela Goiás Aviação. No processo civil, o TJGO homologou acordo e suspendeu o feito em 26 de junho de 2026. As publicações consultadas comprovam cobranças e atos de execução, mas não autorizam associá-los a ilícito eleitoral ou a ato de governo. Limitações: O último ato oficial localizado para a execução de 2019 é de 2022, e a execução de 2025 ainda não tem desfecho nas comunicações consultadas. O acordo do caso civil não equivale a declaração de ilicitude. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'curadoria-djen-20260805: Comunica PJe - processo 5717868-11.2022.8.09.0051', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=57178681120228090051'),
+    ('celina-leao', 'civil', 'TJDFT', '0701782-15.2022.8.07.0016', 'Não existe família agregada aderente. Manter como item individual, com o desfecho no mesmo destaque: execução fiscal contra Celina Leão extinta em 20 de janeiro de 2026 após pagamento do débito e cancelamento das CDAs; comunicação posterior tratou apenas de custas finais.', 'Não existe família agregada aderente. Manter como item individual, com o desfecho no mesmo destaque: execução fiscal contra Celina Leão extinta em 20 de janeiro de 2026 após pagamento do débito e cancelamento das CDAs; comunicação posterior tratou apenas de custas finais.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 0701782-15.2022.8.07.0016', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=07017821520228070016'),
+    ('celina-leao', 'improbidade', 'TJDFT', '0706061-14.2017.8.07.0018', 'A ação civil pública da Operação Drácon identifica Celina Leão por nome completo e CPF entre os réus. Segundo o TJDFT, o MPDFT atribuiu aos então deputados e servidores solicitação de vantagens indevidas ligada à destinação de emendas para pagamentos de obras escolares e serviços de UTI; os réus negaram os fatos. O processo continua em instrução, sem sentença de mérito, e a publicação deve preservar essa condição.', 'Ação recebida e em instrução; comunicações de julho de 2026 registram diligências para oitiva de testemunha e expedição de certidões, sem sentença de mérito.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 0706061-14.2017.8.07.0018', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=07060611420178070018'),
+    ('daniel-vilela', 'civil', 'TRF1', '1020852-04.2021.4.01.3500', 'Execução fiscal pessoal de conselho profissional não pode ser descartada apenas por baixo valor ou falta de nexo público.', 'Edital de citação para pagar ou garantir R$ 3.223,16 em cinco dias.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=10208520420214013500'),
+    ('daniel-vilela', 'criminal', 'TJGO', '5924701-49.2024.8.09.0000', 'A queixa-crime identifica Daniel Vilela pelo nome completo e pelo cargo de vice-governador, no polo passivo. A fonte oficial registra que o querelante desistiu e que a punibilidade foi extinta, sem julgamento de culpa; esse desfecho deve aparecer com o mesmo destaque da acusação.', 'Punibilidade extinta em 17/06/2025 após desistência do querelante; embargos posteriores trataram apenas de honorários.', 'curadoria-djen-20260805: TJGO - decisão monocrática na Queixa-Crime 5924701-49.2024.8.09.0000', 'https://projudi.tjgo.jus.br/p?c=109087685432563873740983646'),
+    ('dr-furlan', 'civil', 'TJAP', '6092623-46.2025.8.03.0001', 'A ação civil pública identifica Antônio Paulo de Oliveira Furlan como prefeito e réu em controvérsia sobre gestão e repasse de contribuições à Macapaprev. A sentença extinguiu o processo sem resolução do mérito por vícios processuais e desistência, sem validar as alegações.', 'Processo extinto sem resolução do mérito em 13/04/2026, com fundamento no art. 485, VI e VIII, do CPC.', 'curadoria-djen-20260805: TJAP - sentença na Ação Civil Pública 6092623-46.2025.8.03.0001', 'https://pje.tjap.jus.br:443/1g/Processo/ConsultaDocumento/listView.seam?x=26041313043227800000026675692'),
+    ('eduardo-braide', 'civil', 'TJMA', '0856599-93.2025.8.10.0001', 'A ação popular identifica Eduardo Braide como prefeito e réu e questiona fotografias suas em prédios públicos. O ato oficial mais recente informa que a causa estava pronta para possível julgamento antecipado, ainda sem decisão de mérito.', 'Em tramitação; em 26/09/2025 o juízo abriu prazo para manifestação sobre julgamento antecipado do mérito.', 'curadoria-djen-20260805: TJMA - decisão na Ação Popular 0856599-93.2025.8.10.0001', 'https://pje.tjma.jus.br:443/pje/Processo/ConsultaDocumento/listView.seam?x=25092620012267400000149720744'),
+    ('eduardo-braide', 'improbidade', 'TJMA', '0862062-84.2023.8.10.0001', 'A comunicação oficial identifica Eduardo Salim Braide como réu e prefeito de São Luís, descreve a imputação do Ministério Público e contém a sentença de mérito. O interesse público é material e o desfecho favorável ao réu pode ser apresentado com o mesmo destaque da alegação, sem sugerir culpa.', 'Sentença de primeiro grau publicada em 09/09/2025 julgou improcedentes os pedidos. O juízo concluiu que a conduta narrada era formalmente atípica para o art. 11, IV, da Lei de Improbidade e que não havia prova de dolo específico. A consulta atual do Comunica PJe não mostra comunicação posterior nem comprova trânsito em julgado.', 'curadoria-djen-20260805: Comunica PJe/CNJ: comunicações do processo 0862062-84.2023.8.10.0001', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=08620628420238100001'),
+    ('eduardo-paes', 'criminal', 'TJRJ', '0096585-41.2025.8.19.0000', 'A queixa-crime identifica Eduardo Paes como prefeito e querelado por difamação. O 1º Grupo de Câmaras Criminais rejeitou a queixa por ausência de justa causa, resultado que impede qualquer insinuação de culpa.', 'Queixa-crime rejeitada por maioria em junho de 2026, nos termos do art. 395, III, do CPP.', 'curadoria-djen-20260805: TJRJ - conclusão de acórdão na Petição Criminal 0096585-41.2025.8.19.0000', 'https://www3.tjrj.jus.br/gedcacheweb/default.aspx?UZIP=1&GEDID=0004B231872478B614EE8FABC49A7436F0EFC51A5C331C56'),
+    ('eduardo-paes', 'civil', 'TJRJ', '0097255-81.2022.8.19.0001', 'A ação popular trata da criação do aplicativo municipal Valeu e identifica Eduardo Paes como prefeito e réu. O tribunal manteve a anulação do ato e o entendimento de desvio de finalidade do aplicativo, mas a sentença, após embargos, excluiu a condenação pessoal de Paes à restituição de valores.', 'Recursos do Município e da IplanRio desprovidos em 05/05/2026; mantida a anulação do aplicativo. A condenação pessoal de Paes à restituição havia sido afastada em primeiro grau.', 'curadoria-djen-20260805: TJRJ - acórdão na Apelação 0097255-81.2022.8.19.0001', 'https://www3.tjrj.jus.br/gedcacheweb/default.aspx?UZIP=1&GEDID=0004B52ED964767FD3E8B091AE259AA30FE1C51A4C2F415F'),
+    ('eduardo-paes', 'civil', 'TJRJ', '0321212-64.2021.8.19.0001', 'A ação monitória é uma cobrança privada ligada à campanha eleitoral de 2018. A sentença identifica Eduardo Paes como devedor principal e o partido como devedor solidário e constituiu título executivo judicial, mas o núcleo é contratual e eleitoral, não ato de gestão pública.', 'Pretensão monitória julgada procedente em 21/01/2026, com constituição de crédito de R$ 485.103,14; houve despacho posterior em 02/06/2026.', 'curadoria-djen-20260805: CNJ Comunica PJe - comunicações do processo 0321212-64.2021.8.19.0001', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=03212126420218190001'),
+    ('eduardo-paes', 'civil', 'TJRJ', '0967545-20.2024.8.19.0001', 'A ação popular identifica Eduardo Paes como prefeito e réu e questiona decreto municipal sobre licença especial de servidores. A petição inicial foi indeferida e o processo extinto sem mérito por inadequação da via, sem reconhecimento de ilegalidade do decreto.', 'Extinto sem resolução do mérito em 08/01/2025; a sentença foi submetida a remessa necessária.', 'curadoria-djen-20260805: TJRJ - sentença na Ação Popular 0967545-20.2024.8.19.0001', 'https://tjrj.pje.jus.br/1g/Processo/ConsultaDocumento/listView.seam?x=25010815325458500000156741742'),
+    ('hildon-chaves', 'civil', 'TJRO', '7054114-11.2019.8.22.0001', 'A sentença identifica Hildon de Lima Chaves como réu e então prefeito e reproduz a alegação concreta de omissão na cobrança de valores e no cumprimento de medidas relacionadas ao programa municipal de bolsas. A mesma fonte registra a improcedência por ausência de ilegalidade e lesividade concreta, depois mantida no reexame necessário.', 'A sentença publicada em 25/08/2025 julgou a ação popular improcedente. Em decisão disponibilizada em 04/12/2025, o relator negou provimento monocrático ao reexame necessário e manteve integralmente a sentença. O Comunica PJe não apresenta comunicação posterior nem comprova trânsito em julgado dessa decisão.', 'curadoria-djen-20260805: Comunica PJe/CNJ: comunicações do processo 7054114-11.2019.8.22.0001', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=70541141120198220001'),
+    ('hildon-chaves', 'civil', 'TJRO', '7066233-62.2023.8.22.0001', 'Hildon Chaves foi réu em ação indenizatória proposta pela Caerd por publicação crítica sobre serviço público, mas a Justiça concluiu que a manifestação estava protegida pela liberdade de expressão, não configurava ato ilícito e não gerou dano moral. Não há fato adverso judicialmente reconhecido contra ele. O desfecho favorável deve acompanhar a descrição com o mesmo destaque.', 'Pedidos da Caerd julgados improcedentes; apelação desprovida, embargos rejeitados e recurso especial não admitido em 25/07/2025.', 'curadoria-djen-20260805: TJRO - decisão de inadmissão do recurso especial no processo 7066233-62.2023.8.22.0001', 'https://pjesg.tjro.jus.br/Processo/ConsultaDocumento/listView.seam?x=25072511453900000000028671776'),
+    ('joao-henrique-catan', 'criminal', 'TRF3', '5002452-12.2023.4.03.6000', 'A fonte oficial identifica João Henrique Catan pelo nome completo, mandato de deputado estadual e posição de investigado/réu em denúncia por incitação pública de animosidade das Forças Armadas contra os poderes constitucionais. A Justiça Federal declinou a competência quanto a ele ao TJMS e não julgou culpa.', 'Competência declinada ao TJMS quanto a Catan em abril de 2024; a sentença federal posterior registra apenas a retificação do polo por esse declínio.', 'curadoria-djen-20260805: TRF3 - decisão no processo 5002452-12.2023.4.03.6000', 'https://pje1g.trf3.jus.br:443/pje/Processo/ConsultaDocumento/listView.seam?x=24041509393230200000310861669'),
+    ('joao-henrique-catan', 'criminal', 'TRF3', '5005453-05.2023.4.03.6000', 'A decisão oficial identifica João Henrique Catan como deputado estadual investigado e registra denúncia por crimes contra a honra do Presidente da República. O juízo federal declarou-se incompetente e remeteu o feito ao TJMS, sem receber a denúncia nem decidir culpa.', 'Remetido ao Tribunal de Justiça de Mato Grosso do Sul por prerrogativa de foro em 10/04/2024.', 'curadoria-djen-20260805: TRF3 - decisão no Inquérito Policial 5005453-05.2023.4.03.6000', 'https://pje1g.trf3.jus.br:443/pje/Processo/ConsultaDocumento/listView.seam?x=24041016174221400000310437376'),
+    ('jose-estevao', 'civil', 'TRT9', '0000926-89.2014.5.09.0009', 'Ação trabalhista pessoal atribuível não se enquadra nas categorias terminais de descarte.', 'Intimação para manifestação sobre cálculo do contador em cinco dias.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00009268920145090009'),
+    ('jose-estevao', 'civil', 'TRT15', '0011108-94.2023.5.15.0125', 'Inclusão pessoal em incidente de desconsideração não pode ser descartada só por origem empresarial privada.', 'Incidente instaurado; inclusão no polo passivo e citação para defesa em 15 dias.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00111089420235150125'),
+    ('jose-estevao', 'civil', 'TJMG', '5179512-84.2016.8.13.0024', 'Ação monitória em que o candidato figura pessoalmente no polo passivo não satisfaz descarte terminal.', 'Edital de intimação expedido em 5 de dezembro de 2024.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=51795128420168130024'),
+    ('jose-roberto-arruda', 'improbidade', 'TJDFT', '0048408-11.2014.8.07.0018', 'A ação de improbidade identifica José Roberto Arruda como ex-governador e réu no caso Call Tecnologia. A 6ª Turma Cível manteve em junho de 2026 a condenação patrimonial e acrescentou dano moral coletivo, segundo fonte oficial do TJDFT.', 'Condenação mantida em segunda instância em junho de 2026; a fonte consultada não certifica trânsito em julgado.', 'curadoria-djen-20260805: TJDFT - condenação por improbidade na Operação Caixa de Pandora', 'https://www.tjdft.jus.br/institucional/imprensa/noticias/2026/junho/tjdft-mantem-condenacao-por-improbidade-na-operacao-caixa-de-pandora-e-condena-reus-a-pagar-r-1-milhao-por-danos-morais-coletivos'),
+    ('jose-roberto-arruda', 'improbidade', 'TJDFT', '0048831-68.2014.8.07.0018', 'A ação de improbidade identifica José Roberto Arruda como ex-governador e réu no caso Uni Repro. A sentença de primeiro grau o condenou por improbidade e determinou reparação, multa e outras sanções; a fonte oficial registra que cabia recurso, e comunicações posteriores mostram apelação em curso.', 'Condenação de primeiro grau proferida em outubro de 2024; apelação ainda apresentava movimentações em julho de 2026.', 'curadoria-djen-20260805: TJDFT - sentença no caso Uni Repro da Operação Caixa de Pandora', 'https://www.tjdft.jus.br/institucional/imprensa/noticias/2024/outubro/caixa-de-pandora-justica-do-df-condena-ex-governador-e-mais-quatro-reus-em-esquema-de-propinas'),
+    ('marcelo-maluf', 'civil', 'TRT23', '0000171-58.2026.5.23.0008', 'Procedimento trabalhista pessoal de homologação de acordo não se enquadra em descarte terminal.', 'Intimado a juntar procuração com poderes para transigir em 10 dias, sob pena de não apreciação do acordo e extinção sem mérito.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00001715820265230008'),
+    ('marcelo-maluf', 'civil', 'TRT23', '0000173-28.2026.5.23.0008', 'Procedimento trabalhista pessoal de homologação de acordo não se enquadra em descarte terminal.', 'Intimado a juntar procuração com poderes para transigir em 10 dias, sob pena de não apreciação do acordo e extinção sem mérito.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00001732820265230008'),
+    ('marcelo-maluf', 'civil', 'TRT23', '0000481-61.2026.5.23.0009', 'Procedimento trabalhista pessoal de homologação de acordo não se enquadra em descarte terminal.', 'Chamado a apresentar procuração específica em cinco dias; depois, autos deveriam voltar conclusos para análise da homologação.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00004816120265230009'),
+    ('marcelo-maluf', 'civil', 'TRT23', '0000706-73.2024.5.23.0002', 'Ação trabalhista com inclusão pessoal no polo passivo não pode ser descartada apenas por origem empresarial.', 'Juízo determinou a retificação da autuação para inclusão de Marcelo Maluf por CPF.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00007067320245230002'),
+    ('marcelo-maluf', 'civil', 'TRT23', '0000843-24.2025.5.23.0001', 'Homologação trabalhista vinculada pessoalmente ao empregador não satisfaz descarte terminal.', 'Trecho oficial contém alvará com dados do vínculo e orientações para seguro-desemprego.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00008432420255230001'),
+    ('marcelo-maluf', 'civil', 'TRT23', '0001064-80.2025.5.23.0009', 'Procedimento trabalhista e fase de cumprimento pessoalmente atribuíveis não satisfazem descarte terminal.', 'Despacho converteu valores bloqueados em penhora e abriu prazo de cinco dias ao executado.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00010648020255230009'),
+    ('marcelo-maluf', 'civil', 'TRT23', '0001248-60.2025.5.23.0001', 'Homologação trabalhista vinculada pessoalmente ao empregador não satisfaz descarte terminal.', 'Trecho oficial contém alvará com período contratual, dispensa sem justa causa e orientação para seguro-desemprego.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00012486020255230001'),
+    ('mauricio-tonha', 'civil', 'TJMT', '0000317-64.2014.8.11.0021', 'A ação civil pública identifica Maurício Cardoso Tonha por nome e CPF entre os réus e trata de danos ambientais ligados a atividades empresariais. A sentença condenou solidariamente os requeridos, e o TJMT deu parcial provimento apenas para permitir abatimento de despesas comprovadas no TAC do valor do dano moral coletivo.', 'Condenação de mérito proferida em 2022; apelação parcialmente provida em 2023 quanto ao cálculo do dano moral coletivo.', 'curadoria-djen-20260805: TJMT - acórdão na Apelação 0000317-64.2014.8.11.0021', 'https://pje2.tjmt.jus.br/pje2/Processo/ConsultaDocumento/listView.seam?x=23090115303753500000178760164'),
+    ('orleans-brandao', 'civil', 'TJMA', '0864077-55.2025.8.10.0001', 'A ação popular identifica Carlos Orleans Brandão Júnior pelo nome e cargo de governador, no polo passivo, e questiona publicidade institucional por possível promoção pessoal. O processo estava em fase de saneamento, sem decisão de mérito no ato oficial localizado.', 'Em tramitação; audiência de saneamento foi designada para 25/02/2026 no ato publicado em dezembro de 2025.', 'curadoria-djen-20260805: TJMA - despacho na Ação Popular 0864077-55.2025.8.10.0001', 'https://pje.tjma.jus.br:443/pje/Processo/ConsultaDocumento/listView.seam?x=25121816272478500000155361604'),
+    ('orleans-brandao', 'civil', 'TJMA', '0865198-21.2025.8.10.0001', 'A ação popular identifica Carlos Orleans Brandão Júnior como governador e réu e questiona bonés institucionais supostamente semelhantes a marca privada. A sentença extinguiu o processo sem mérito por vício processual e condenou o autor por litigância de má-fé, sem reconhecer irregularidade dos réus.', 'Processo extinto sem resolução do mérito em 29/05/2026; autor condenado por litigância de má-fé.', 'curadoria-djen-20260805: TJMA - sentença na Ação Popular 0865198-21.2025.8.10.0001', 'https://pje.tjma.jus.br:443/pje/Processo/ConsultaDocumento/listView.seam?x=26052912471367100000167645436'),
+    ('paula-belmonte', 'civil', 'TRT10', '0000277-64.2023.5.10.0015', 'A participação pessoal em incidente trabalhista não pode ser descartada apenas por não ter relação com mandato ou campanha.', 'IDPJ instaurado em face dos sócios; Paula Belmonte aparece citada por CPF.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00002776420235100015'),
+    ('rafael-greca', 'civil', 'TJPR', '0002703-75.2017.8.16.0004', 'A fonte oficial identifica Rafael Valdomiro Greca de Macedo como réu e prefeito na ação civil pública sobre a demolição da Casa Erbo Stenzel após incêndio. O juízo homologou transação em 2023; o cumprimento de sentença prossegue e, em março de 2026, foram rejeitados embargos de declaração relacionados aos honorários. A publicação deve descrever o ato de gestão, o acordo homologado e a fase executiva, sem atribuir culpa pessoal além do decidido.', 'Transação homologada com resolução de mérito em 02/03/2023; cumprimento de sentença em curso; embargos de declaração rejeitados em comunicação disponibilizada em 05/03/2026.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 0002703-75.2017.8.16.0004', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00027037520178160004'),
+    ('romeu-zema', 'civil', 'TJMG', '1937434-41.2023.8.13.0000', 'Litígio contratual ligado à campanha de 2022 não é hipótese terminal de descarte quando o candidato figura como agravado.', 'Agravo distribuído e concluso ao relator em 11 de agosto de 2023.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=19374344120238130000'),
+    ('romeu-zema', 'civil', 'TJMG', '3185360-80.2024.8.13.0000', 'Litígio contratual ligado à campanha de 2022 não é hipótese terminal de descarte quando o candidato figura como agravado.', 'Agravo distribuído e concluso ao relator em 9 de julho de 2024.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=31853608020248130000'),
+    ('romeu-zema', 'civil', 'TJMG', '5011299-77.2023.8.13.0313', 'Cobrança de aluguel em que o candidato é fiador é pessoalmente atribuível; a natureza privada não autoriza descarte.', 'Decisão interlocutória registrou ausência de participação direta nos fatos além da condição de fiador.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=50112997720238130313'),
+    ('romeu-zema', 'civil', 'TJMG', '5110636-33.2023.8.13.0024', 'Dois processos tratam de cobranças contratuais de campanhas distintas. No caso da campanha de Eduardo Paes em 2018, o TJRJ julgou procedente a ação monitória em 21 de janeiro de 2026 e constituiu título executivo judicial de R$ 485.103,14 contra Paes, com responsabilidade solidária do partido. No caso de 2022, uma empresa de marketing move execução contra a pessoa jurídica de campanha denominada “Eleição 2022 Romeu Zema Neto Governador” e outros; em março de 2026, o TJMG reuniu a instrução com processos conexos, e a execução seguia em curso em junho. São obrigações contratuais eleitorais separadas, sem reconhecimento de ilícito eleitoral ou de dívida pública. O processo mineiro identifica a pessoa jurídica da campanha, não uma obrigação pessoal de Romeu Zema; o processo fluminense tem sentença contra Eduardo Paes, mas permanece de natureza contratual privada. A agregação é temática e não indica conexão entre as campanhas. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'Dois processos tratam de cobranças contratuais de campanhas distintas. No caso da campanha de Eduardo Paes em 2018, o TJRJ julgou procedente a ação monitória em 21 de janeiro de 2026 e constituiu título executivo judicial de R$ 485.103,14 contra Paes, com responsabilidade solidária do partido. No caso de 2022, uma empresa de marketing move execução contra a pessoa jurídica de campanha denominada “Eleição 2022 Romeu Zema Neto Governador” e outros; em março de 2026, o TJMG reuniu a instrução com processos conexos, e a execução seguia em curso em junho. São obrigações contratuais eleitorais separadas, sem reconhecimento de ilícito eleitoral ou de dívida pública. Limitações: O processo mineiro identifica a pessoa jurídica da campanha, não uma obrigação pessoal de Romeu Zema; o processo fluminense tem sentença contra Eduardo Paes, mas permanece de natureza contratual privada. A agregação é temática e não indica conexão entre as campanhas. Consulta feita em baixa concorrência, com conferência nos artefatos oficiais cacheados do Comunica PJe.', 'curadoria-djen-20260805: Comunica PJe - processo 5110636-33.2023.8.13.0024', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=51106363320238130024'),
+    ('romeu-zema', 'civil', 'TJMG', '5204911-37.2024.8.13.0024', 'Litígio contratual ligado à campanha de 2022 não é hipótese terminal de descarte quando o candidato figura como apelado.', 'Apelação distribuída e conclusa ao relator em 6 de setembro de 2024.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=52049113720248130024'),
+    ('romeu-zema', 'civil', 'TJMG', '5273774-45.2024.8.13.0024', 'Embargos pessoais à execução não podem ser descartados apenas por natureza contratual privada.', 'Embargos recebidos como tempestivos, com efeito suspensivo diante de caução de R$ 331.350,00; embargados chamados a impugnar.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=52737744520248130024'),
+    ('sergio-moro-gov-pr', 'civil', 'TJPR', '0002338-27.2022.8.16.0204', 'Ação de direito autoral contra o candidato e sua campanha é atribuível e não pode ser apagada por ser privada.', 'A revisão local registra desistência do autor e encerramento sem julgamento do mérito.', 'curadoria-djen-20260805: Fonte processual oficial', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=00023382720228160204'),
+    ('ze-coca', 'civil', 'TJBA', '8001075-77.2026.8.05.0141', 'A ação popular identifica Zenildo Brandão Santana no polo passivo e relaciona sua participação a condutas comissivas e omissivas durante sua gestão, envolvendo a fiscalização e o processo de destombamento do antigo Mercado Municipal. A decisão mais recente concede tutela apenas provisória e não declara responsabilidade pessoal, distinção que deve receber destaque equivalente.', 'Decisão de 04/08/2026 rejeitou as preliminares dos réus e deferiu tutela provisória de urgência para suspender autorizações e intervenções no antigo Mercado Municipal até julgamento final ou nova deliberação. A ordem principal foi dirigida ao Município, à Secretaria de Cultura e aos ocupantes do mercado; Zé Cocá foi mantido no polo passivo e intimado pessoalmente. O processo segue sem julgamento de mérito e sem declaração de responsabilidade pessoal.', 'curadoria-djen-20260805: Comunica PJe/CNJ: comunicações do processo 8001075-77.2026.8.05.0141', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=80010757720268050141'),
+    ('ze-coca', 'civil', 'TJBA', '8003449-71.2023.8.05.0141', 'O cumprimento provisório decorre de acórdão sobre o cálculo do adicional por tempo de serviço dos guardas civis de Jequié. A fonte oficial identifica Zenildo Brandão Santana como requerido e prefeito e registra ordens dirigidas à gestão municipal diante de descumprimento reiterado, com majoração de astreintes e exigência de justificativa individual dos gestores. A publicação deve se limitar ao descumprimento reconhecido na execução e não afirmar crime ou improbidade, cuja eventual apuração foi apenas condicionada ou cogitada.', 'Cumprimento provisório em curso. Em 24/03/2026, o juízo indeferiu dilação, majorou a multa diária para R$ 2.000 até o limite de R$ 200.000 e determinou justificativas dos gestores; em 15/04/2026, intimou a parte exequente para se manifestar.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 8003449-71.2023.8.05.0141', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=80034497120238050141'),
+    ('ze-coca', 'civil', 'TJBA', '8003560-55.2023.8.05.0141', 'A ação popular discute leis municipais que elevaram subsídios de agentes políticos. Zenildo Brandão Santana aparece nominalmente como réu e prefeito. Sentença oficial de maio de 2026 julgou procedentes os pedidos e suspendeu definitivamente os efeitos financeiros e administrativos das normas, mas embargos de declaração foram opostos e ainda aguardavam contraditório em junho de 2026. O registro é publicável como decisão de primeira instância sujeita a impugnação, sem imputar culpa pessoal.', 'Sentença de 18/05/2026 julgou procedentes os pedidos e suspendeu os efeitos das Leis Municipais nº 2.322/2023 e 2.323/2023; em 12/06/2026, o juízo abriu prazo para manifestação sobre embargos de declaração.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 8003560-55.2023.8.05.0141', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=80035605520238050141'),
+    ('ze-coca', 'improbidade', 'TJBA', '8006091-80.2024.8.05.0141', 'Não adere ao bloco de pessoal e previdência. Manter como item individual de interesse público: ação civil pública sobre alteração do PDDU de Jequié, com tutela de urgência indeferida e sem decisão de mérito até março de 2026; pedidos de improbidade e afastamento são alegações da autora, não fatos reconhecidos.', 'Não adere ao bloco de pessoal e previdência. Manter como item individual de interesse público: ação civil pública sobre alteração do PDDU de Jequié, com tutela de urgência indeferida e sem decisão de mérito até março de 2026; pedidos de improbidade e afastamento são alegações da autora, não fatos reconhecidos.', 'curadoria-djen-20260805: Comunicações processuais oficiais do CNJ/PJe - processo 8006091-80.2024.8.05.0141', 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=80060918020248050141');
+
+DO $$
+DECLARE
+  n integer;
+BEGIN
+  SELECT count(*) INTO n FROM _pf_processos_curadoria;
+  IF n <> 69 THEN
+    RAISE EXCEPTION 'processos curadoria: esperados 69 CNJs no lote, encontrados %', n;
+  END IF;
+
+  SELECT count(DISTINCT slug) INTO n FROM _pf_processos_curadoria;
+  IF n <> 21 THEN
+    RAISE EXCEPTION 'processos curadoria: esperadas 21 fichas no lote, encontradas %', n;
+  END IF;
+
+  SELECT count(*) INTO n
+  FROM _pf_processos_curadoria
+  WHERE url_fonte LIKE 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?%'
+    AND url_fonte <>
+    'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=' ||
+    regexp_replace(numero_cnj, '[^0-9]', '', 'g');
+  IF n <> 0 THEN
+    RAISE EXCEPTION 'processos curadoria: % URLs nao provam o proprio CNJ', n;
+  END IF;
+
+  SELECT count(*) INTO n
+  FROM _pf_processos_curadoria l
+  LEFT JOIN public.candidatos c ON c.slug = l.slug
+  WHERE c.id IS NULL;
+  IF n <> 0 THEN
+    RAISE EXCEPTION 'processos curadoria: % slugs nao resolvidos em candidatos', n;
+  END IF;
+
+  SELECT count(*) INTO n
+  FROM _pf_processos_curadoria l
+  JOIN public.processos p
+    ON regexp_replace(p.numero_processo, '[^0-9]', '', 'g') =
+       regexp_replace(l.numero_cnj, '[^0-9]', '', 'g');
+  IF n <> 0 THEN
+    RAISE EXCEPTION 'processos curadoria: % CNJs ja existem; recusar duplicacao ou lote parcial', n;
+  END IF;
+END $$;
+
+-- @write tabela=processos slug=adailton-furia campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'adailton-furia'
+  AND l.numero_cnj = '7000047-10.2021.8.22.0007';
+
+-- @write tabela=processos slug=adailton-furia campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'adailton-furia'
+  AND l.numero_cnj = '7000071-67.2023.8.22.0007';
+
+-- @write tabela=processos slug=adailton-furia campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'adailton-furia'
+  AND l.numero_cnj = '7012498-62.2024.8.22.0007';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '0010454-23.2025.5.03.0012';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '0010522-78.2022.5.03.0108';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '0010746-20.2016.5.03.0013';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '0011188-38.2015.5.03.0007';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '0011337-13.2015.5.03.0111';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '0011475-61.2016.5.03.0105';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '0011533-64.2016.5.03.0008';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '0011597-74.2016.5.03.0105';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '0372585-71.2022.8.13.0000';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '5011447-19.2022.8.13.0024';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '5099217-84.2021.8.13.0024';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '5126890-52.2021.8.13.0024';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '5165390-66.2016.8.13.0024';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '5206180-19.2021.8.13.0024';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '5218095-31.2022.8.13.0024';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '5222140-78.2022.8.13.0024';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '5267198-36.2024.8.13.0024';
+
+-- @write tabela=processos slug=alexandre-kalil campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'alexandre-kalil'
+  AND l.numero_cnj = '6119259-50.2015.8.13.0024';
+
+-- @write tabela=processos slug=arthur-henrique campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'arthur-henrique'
+  AND l.numero_cnj = '0825283-48.2020.8.23.0010';
+
+-- @write tabela=processos slug=ataides-oliveira campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ataides-oliveira'
+  AND l.numero_cnj = '0000421-28.2019.4.01.3502';
+
+-- @write tabela=processos slug=ataides-oliveira campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ataides-oliveira'
+  AND l.numero_cnj = '0600940-85.2022.6.27.0000';
+
+-- @write tabela=processos slug=ataides-oliveira campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ataides-oliveira'
+  AND l.numero_cnj = '1001988-98.2025.4.01.4300';
+
+-- @write tabela=processos slug=ataides-oliveira campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ataides-oliveira'
+  AND l.numero_cnj = '5717868-11.2022.8.09.0051';
+
+-- @write tabela=processos slug=celina-leao campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'celina-leao'
+  AND l.numero_cnj = '0701782-15.2022.8.07.0016';
+
+-- @write tabela=processos slug=celina-leao campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'celina-leao'
+  AND l.numero_cnj = '0706061-14.2017.8.07.0018';
+
+-- @write tabela=processos slug=daniel-vilela campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'daniel-vilela'
+  AND l.numero_cnj = '1020852-04.2021.4.01.3500';
+
+-- @write tabela=processos slug=daniel-vilela campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'daniel-vilela'
+  AND l.numero_cnj = '5924701-49.2024.8.09.0000';
+
+-- @write tabela=processos slug=dr-furlan campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'dr-furlan'
+  AND l.numero_cnj = '6092623-46.2025.8.03.0001';
+
+-- @write tabela=processos slug=eduardo-braide campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'eduardo-braide'
+  AND l.numero_cnj = '0856599-93.2025.8.10.0001';
+
+-- @write tabela=processos slug=eduardo-braide campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'eduardo-braide'
+  AND l.numero_cnj = '0862062-84.2023.8.10.0001';
+
+-- @write tabela=processos slug=eduardo-paes campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'eduardo-paes'
+  AND l.numero_cnj = '0096585-41.2025.8.19.0000';
+
+-- @write tabela=processos slug=eduardo-paes campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'eduardo-paes'
+  AND l.numero_cnj = '0097255-81.2022.8.19.0001';
+
+-- @write tabela=processos slug=eduardo-paes campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'eduardo-paes'
+  AND l.numero_cnj = '0321212-64.2021.8.19.0001';
+
+-- @write tabela=processos slug=eduardo-paes campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'eduardo-paes'
+  AND l.numero_cnj = '0967545-20.2024.8.19.0001';
+
+-- @write tabela=processos slug=hildon-chaves campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'hildon-chaves'
+  AND l.numero_cnj = '7054114-11.2019.8.22.0001';
+
+-- @write tabela=processos slug=hildon-chaves campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'hildon-chaves'
+  AND l.numero_cnj = '7066233-62.2023.8.22.0001';
+
+-- @write tabela=processos slug=joao-henrique-catan campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'joao-henrique-catan'
+  AND l.numero_cnj = '5002452-12.2023.4.03.6000';
+
+-- @write tabela=processos slug=joao-henrique-catan campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'joao-henrique-catan'
+  AND l.numero_cnj = '5005453-05.2023.4.03.6000';
+
+-- @write tabela=processos slug=jose-estevao campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'jose-estevao'
+  AND l.numero_cnj = '0000926-89.2014.5.09.0009';
+
+-- @write tabela=processos slug=jose-estevao campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'jose-estevao'
+  AND l.numero_cnj = '0011108-94.2023.5.15.0125';
+
+-- @write tabela=processos slug=jose-estevao campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'jose-estevao'
+  AND l.numero_cnj = '5179512-84.2016.8.13.0024';
+
+-- @write tabela=processos slug=jose-roberto-arruda campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'jose-roberto-arruda'
+  AND l.numero_cnj = '0048408-11.2014.8.07.0018';
+
+-- @write tabela=processos slug=jose-roberto-arruda campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'jose-roberto-arruda'
+  AND l.numero_cnj = '0048831-68.2014.8.07.0018';
+
+-- @write tabela=processos slug=marcelo-maluf campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'marcelo-maluf'
+  AND l.numero_cnj = '0000171-58.2026.5.23.0008';
+
+-- @write tabela=processos slug=marcelo-maluf campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'marcelo-maluf'
+  AND l.numero_cnj = '0000173-28.2026.5.23.0008';
+
+-- @write tabela=processos slug=marcelo-maluf campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'marcelo-maluf'
+  AND l.numero_cnj = '0000481-61.2026.5.23.0009';
+
+-- @write tabela=processos slug=marcelo-maluf campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'marcelo-maluf'
+  AND l.numero_cnj = '0000706-73.2024.5.23.0002';
+
+-- @write tabela=processos slug=marcelo-maluf campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'marcelo-maluf'
+  AND l.numero_cnj = '0000843-24.2025.5.23.0001';
+
+-- @write tabela=processos slug=marcelo-maluf campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'marcelo-maluf'
+  AND l.numero_cnj = '0001064-80.2025.5.23.0009';
+
+-- @write tabela=processos slug=marcelo-maluf campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'marcelo-maluf'
+  AND l.numero_cnj = '0001248-60.2025.5.23.0001';
+
+-- @write tabela=processos slug=mauricio-tonha campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'mauricio-tonha'
+  AND l.numero_cnj = '0000317-64.2014.8.11.0021';
+
+-- @write tabela=processos slug=orleans-brandao campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'orleans-brandao'
+  AND l.numero_cnj = '0864077-55.2025.8.10.0001';
+
+-- @write tabela=processos slug=orleans-brandao campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'orleans-brandao'
+  AND l.numero_cnj = '0865198-21.2025.8.10.0001';
+
+-- @write tabela=processos slug=paula-belmonte campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'paula-belmonte'
+  AND l.numero_cnj = '0000277-64.2023.5.10.0015';
+
+-- @write tabela=processos slug=rafael-greca campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'rafael-greca'
+  AND l.numero_cnj = '0002703-75.2017.8.16.0004';
+
+-- @write tabela=processos slug=romeu-zema campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'romeu-zema'
+  AND l.numero_cnj = '1937434-41.2023.8.13.0000';
+
+-- @write tabela=processos slug=romeu-zema campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'romeu-zema'
+  AND l.numero_cnj = '3185360-80.2024.8.13.0000';
+
+-- @write tabela=processos slug=romeu-zema campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'romeu-zema'
+  AND l.numero_cnj = '5011299-77.2023.8.13.0313';
+
+-- @write tabela=processos slug=romeu-zema campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'romeu-zema'
+  AND l.numero_cnj = '5110636-33.2023.8.13.0024';
+
+-- @write tabela=processos slug=romeu-zema campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'romeu-zema'
+  AND l.numero_cnj = '5204911-37.2024.8.13.0024';
+
+-- @write tabela=processos slug=romeu-zema campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'romeu-zema'
+  AND l.numero_cnj = '5273774-45.2024.8.13.0024';
+
+-- @write tabela=processos slug=sergio-moro-gov-pr campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'sergio-moro-gov-pr'
+  AND l.numero_cnj = '0002338-27.2022.8.16.0204';
+
+-- @write tabela=processos slug=ze-coca campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ze-coca'
+  AND l.numero_cnj = '8001075-77.2026.8.05.0141';
+
+-- @write tabela=processos slug=ze-coca campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ze-coca'
+  AND l.numero_cnj = '8003449-71.2023.8.05.0141';
+
+-- @write tabela=processos slug=ze-coca campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ze-coca'
+  AND l.numero_cnj = '8003560-55.2023.8.05.0141';
+
+-- @write tabela=processos slug=ze-coca campos=candidato_id,tipo,tribunal,numero_processo,descricao,status,data_inicio,data_decisao,gravidade,fonte,url_fonte
+INSERT INTO public.processos
+  (candidato_id, tipo, tribunal, numero_processo, descricao, status,
+   data_inicio, data_decisao, gravidade, fonte, url_fonte)
+SELECT
+  c.id, l.tipo, l.tribunal, l.numero_cnj, l.descricao, l.status,
+  NULL, NULL, NULL, l.fonte, l.url_fonte
+FROM _pf_processos_curadoria l
+JOIN public.candidatos c ON c.slug = l.slug
+WHERE l.slug = 'ze-coca'
+  AND l.numero_cnj = '8006091-80.2024.8.05.0141';
+
+DO $$
+DECLARE
+  n integer;
+BEGIN
+  SELECT count(*) INTO n
+  FROM public.processos
+  WHERE fonte LIKE 'curadoria-djen-20260805: %';
+  IF n <> 69 THEN
+    RAISE EXCEPTION 'processos curadoria: esperados 69 registros inseridos, encontrados %', n;
+  END IF;
+END $$;

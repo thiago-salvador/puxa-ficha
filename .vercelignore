@@ -1,0 +1,14 @@
+.git
+.next
+node_modules
+coverage
+test-results
+playwright-report
+.playwright-cli
+data/tse
+data/operations
+
+# segredos nunca sobem no bundle do deploy
+.env
+.env.*
+!.env.example

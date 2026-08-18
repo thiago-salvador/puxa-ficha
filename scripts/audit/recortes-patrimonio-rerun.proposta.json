@@ -1,0 +1,17 @@
+{
+  "_comentario": "PROPOSTA de recorte do re-run de patrimonio 2026 para a Sessao Raiz. Nao e o arquivo do gate: `scripts/audit/recortes.json` e propriedade da Raiz, e a trilha entrega a entrada separada. A Raiz acrescenta o objeto de `recorte_proposto` ao array `recortes` de recortes.json, mantendo a ordem cronologica (esta entra depois de trilha-a-classificacao-20260810 e das entradas das votacoes de 20260810090000..20260810090200, se elas ja tiverem sido integradas).",
+  "conferido_pela_trilha": {
+    "comando": "npm run audit:cobertura:allowlist -- --allowlist=scripts/audit/allowlist-patrimonio-rerun-20260810.json --desde=20260810093000 --ate=20260810093000",
+    "resultado": "exit 0",
+    "saida": "1 migration(s) na janela, 17 write(s) declarado(s); OK: toda escrita declarada esta dentro da allowlist.",
+    "observacao": "As tres flags juntas e na forma com `=`. A janela e comparacao de prefixo do nome do arquivo, e aqui e fechada numa migration so."
+  },
+  "enquanto_a_raiz_nao_integra": "O comando PELADO (`npm run audit:cobertura:allowlist`, sem flag) reprova de proposito enquanto esta proposta nao entra em recortes.json, com duas violacoes nomeadas: a allowlist nova nao e referenciada por recorte nenhum, e a migration nova tem @write e nao cai em recorte nenhum. As duas somem quando a Raiz integra o objeto abaixo. A trilha NAO editou recortes.json para calar o gate.",
+  "recorte_proposto": {
+    "nome": "patrimonio-rerun-20260810",
+    "desde": "20260810093000",
+    "ate": "20260810093000",
+    "allowlist": "scripts/audit/allowlist-patrimonio-rerun-20260810.json",
+    "divida": null
+  }
+}

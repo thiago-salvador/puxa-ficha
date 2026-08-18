@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "run_id": "contradicoes-curadoria-2026-08-05-followup-6",
+  "reviewed_at": "2026-08-05T20:52:00.000Z",
+  "status": "decisao_thiago_registrada",
+  "decision_artifact": "scripts/contradicoes-curadoria-2026-08-05.followup-decisions.json",
+  "scope": {
+    "items": 6,
+    "candidates": 5,
+    "trigger": "thiago_needs_more_review"
+  },
+  "summary": {
+    "items_reviewed": 6,
+    "defensible_context_change_pairs": 1,
+    "not_contradictions_after_research": 5,
+    "blocked_live_sources": 1,
+    "publish_automatically": false
+  },
+  "items": [
+    {
+      "review_id": "existing-ciro-gomes-gov-ce",
+      "slug": "ciro-gomes-gov-ce",
+      "candidate_name": "Ciro Ferreira Gomes",
+      "stored_item_id": "72419fa9-891b-471b-8ce3-3ffc5ee8ad82",
+      "stored_title": "Posição nos segundos turnos presidenciais de 2018 e 2022",
+      "classification": "duas_frases_apenas_aparentando_conflito",
+      "recommendation": "retirar_categoria_contradicao_e_corrigir_descricao",
+      "neutral_explanation": "As novas fontes mostram apoio crítico a Haddad em 2018 e adesão à decisão do PDT de apoiar Lula em 2022. A intensidade do apoio e a ausência em palanque não formam posições incompatíveis. A descrição armazenada de que Ciro não declarou apoio público em 2018 é contestada pela fonte viva.",
+      "evidence": [
+        {
+          "event_date": "2018-10-10",
+          "source_date": "2018-10-10",
+          "url": "https://www.poder360.com.br/eleicoes/ciro-gomes-se-alia-a-fernando-haddad-no-2o-turno/",
+          "source": "Poder360",
+          "finding": "Ciro aceitou que o presidente do PDT falasse por ele; a executiva declarou apoio crítico a Haddad e vetou apoio a Bolsonaro."
+        },
+        {
+          "event_date": "2022-10-04",
+          "source_date": "2022-10-04",
+          "url": "https://amp.dw.com/pt-br/ciro-acompanha-pdt-e-anuncia-apoio-a-lula-no-segundo-turno/a-63333243",
+          "source": "DW Brasil",
+          "finding": "Ciro afirmou que acompanhava a decisão do PDT de apoiar Lula, embora considerasse as duas opções insatisfatórias."
+        }
+      ],
+      "status": "aguardando_nova_decisao_thiago"
+    },
+    {
+      "review_id": "existing-flavio-bolsonaro-ponto",
+      "slug": "flavio-bolsonaro",
+      "candidate_name": "Flavio Nantes Bolsonaro",
+      "stored_item_id": "c27b6be2-3526-4304-b506-c76a9eb0f1a9",
+      "stored_title": "Discurso anticorrupção vs investigações proprias",
+      "classification": "sem_par_defensavel",
+      "recommendation": "retirar_categoria_contradicao",
+      "neutral_explanation": "A rodada encontrou denúncias, decisões processuais e negativas de Flávio, mas não uma declaração pessoal, datada e comparável que forme o primeiro lado do par. Investigação ou acusação não prova prática incompatível com um discurso anticorrupção. Os fatos processuais já têm itens próprios na ficha.",
+      "evidence": [
+        {
+          "event_date": "2026-05-14",
+          "source_date": "2026-05-14",
+          "url": "https://www.bbc.com/portuguese/articles/crmpv9r7mz9o",
+          "source": "BBC News Brasil",
+          "finding": "A reportagem contextualiza acusações e registra as negativas do senador, sem estabelecer culpa nem fornecer uma promessa anticorrupção comparável."
+        },
+        {
+          "event_date": "2020-11-04",
+          "source_date": "2020-11-04",
+          "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2020-11/mp-do-rio-denuncia-17-investigados-por-lavagem-de-dinheiro-e-peculato",
+          "source": "Agência Brasil",
+          "finding": "A fonte armazenada documenta a denúncia, não uma condenação ou ação comprovada de Flávio."
+        }
+      ],
+      "blocked_sources": [
+        {
+          "url": "https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=477496",
+          "observed_status": "404 em 2026-08-05"
+        }
+      ],
+      "status": "aguardando_nova_decisao_thiago"
+    },
+    {
+      "review_id": "existing-flavio-bolsonaro-voto",
+      "slug": "flavio-bolsonaro",
+      "candidate_name": "Flavio Nantes Bolsonaro",
+      "stored_item_id": "2d96f570-d950-49f3-9fa7-332590c69a1f",
+      "stored_title": "Reforma Tributaria (PEC 45/2019) - voto marcado como contradição",
+      "classification": "erro_de_marcacao_contradicao",
+      "recommendation": "remover_marcacao_e_consolidar_registro_duplicado",
+      "neutral_explanation": "O pronunciamento oficial de Flávio no dia da votação critica a PEC 45 e a cobertura do Senado registra que ele acompanhou a oposição. O voto não foi contrário a uma defesa anterior encontrada. A ficha também contém outro registro da mesma reforma com o identificador oficial 158930 e sem marcação de contradição.",
+      "evidence": [
+        {
+          "event_date": "2023-11-08",
+          "source_date": "2023-11-08",
+          "url": "https://www25.senado.leg.br/web/atividade/pronunciamentos/-/p/pronunciamento/502087",
+          "source": "Senado Federal",
+          "finding": "Flávio criticou a PEC 45, dizendo que a proposta aumentaria a carga tributária."
+        },
+        {
+          "event_date": "2023-11-08",
+          "source_date": "2023-11-08",
+          "url": "https://www12.senado.leg.br/noticias/materias/2023/11/08/reforma-tributaria-posicao-resiste-mas-texto-obtem-apoio-necessario",
+          "source": "Agência Senado",
+          "finding": "A cobertura oficial registra Flávio entre os senadores que acompanharam a posição contrária à proposta."
+        }
+      ],
+      "status": "aguardando_nova_decisao_thiago"
+    },
+    {
+      "review_id": "existing-haddad-gov-sp",
+      "slug": "haddad-gov-sp",
+      "candidate_name": "Fernando Haddad",
+      "stored_item_id": "97803699-4262-412c-bd41-4dcd8fe2c9f2",
+      "stored_title": "Ministro da Fazenda com déficit fiscal crescente",
+      "classification": "conflito_aparente_por_definicao_da_meta",
+      "recommendation": "manter_oculto_e_retirar_categoria_contradicao",
+      "neutral_explanation": "Haddad perseguiu resultado primário zero para 2024. O resultado cheio foi déficit de R$ 43 bilhões, mas a métrica legal para cumprimento da meta descontou R$ 31,9 bilhões e chegou a déficit de R$ 11 bilhões, dentro do intervalo de tolerância. Dizer apenas que prometeu equilíbrio e entregou déficit omite a definição legal da meta e o contexto das exclusões.",
+      "evidence": [
+        {
+          "event_date": "2023-11-07",
+          "source_date": "2023-11-07",
+          "url": "https://g1.globo.com/economia/noticia/2023/11/07/o-que-e-deficit-primario-e-como-disputa-no-governo-afeta-seu-bolso.ghtml",
+          "source": "G1",
+          "finding": "A reportagem registra a meta defendida por Haddad e o compromisso de buscar equilíbrio fiscal."
+        },
+        {
+          "event_date": "2024-12-31",
+          "source_date": "2025-02",
+          "url": "https://www2.camara.leg.br/atividade-legislativa/estudos-e-notas-tecnicas/estudos-por-assunto/economia/analise-do-resultado-primario-de-2024-e-projecoes-para-2025",
+          "source": "Consultoria de Orçamento da Câmara dos Deputados",
+          "finding": "O estudo apurou déficit cheio de R$ 43 bilhões e cumprimento da meta legal após exclusões, com resultado de R$ 11 bilhões negativos dentro da tolerância."
+        }
+      ],
+      "status": "aguardando_nova_decisao_thiago"
+    },
+    {
+      "review_id": "existing-renan-santos",
+      "slug": "renan-santos",
+      "candidate_name": "Renan Antonio Ferreira dos Santos",
+      "stored_item_id": "360ede81-fd37-4343-93b3-dc4c3014ed36",
+      "stored_title": "Fundador do MBL, movimento que pede renovação mas centraliza poder",
+      "classification": "sem_par_defensavel",
+      "recommendation": "manter_oculto_e_rejeitar_publicacao",
+      "neutral_explanation": "A entrevista de 2015 e o site oficial confirmam que Renan é fundador e líder do MBL, mas não sustentam os juízos de poder centralizado ou ausência de transparência financeira. Também não foi localizada uma declaração dele prometendo estrutura descentralizada ou transparência que pudesse ser comparada a uma ação posterior.",
+      "evidence": [
+        {
+          "event_date": "2015-05-23",
+          "source_date": "2015-05-23",
+          "url": "https://www.jornalopcao.com.br/entrevistas/dilma-deve-ser-impedida-e-o-pt-tem-de-ser-extinto-36379/",
+          "source": "Jornal Opção",
+          "finding": "A entrevista coletiva confirma a liderança e posições do MBL, sem evidência sobre centralização ou transparência financeira."
+        },
+        {
+          "event_date": null,
+          "source_date": "acesso em 2026-08-05",
+          "url": "https://renansantosmbl.com/",
+          "source": "Site oficial de Renan Santos",
+          "finding": "O site o apresenta como fundador e líder, sem a promessa comparável exigida pelo item."
+        }
+      ],
+      "status": "aguardando_nova_decisao_thiago"
+    },
+    {
+      "review_id": "existing-romeu-zema",
+      "slug": "romeu-zema",
+      "candidate_name": "Romeu Zema Neto",
+      "stored_item_id": "bd734f7a-5aeb-477e-83ea-70a3a492b150",
+      "stored_title": "Elegeu-se como anti-política mas negociou com centrao",
+      "classification": "mudanca_provocada_por_novo_contexto",
+      "recommendation": "reclassificar_como_mudanca_contextual_e_reescrever",
+      "neutral_explanation": "Há base para descrever uma mudança contextual: Zema foi eleito em 2018 na onda da nova política e, no governo e na campanha de 2022, moderou a retórica antipolítica e manteve alianças pragmáticas com lideranças tradicionais. A evidência sustenta acomodação ao contexto institucional, não contradição factual automática.",
+      "evidence": [
+        {
+          "event_date": "2018",
+          "source_date": "2021-12-06",
+          "url": "https://www.gazetadopovo.com.br/republica/governadores-da-nova-politica-de-2018-o-que-fizeram-e-como-estao-para-2022/",
+          "source": "Gazeta do Povo",
+          "finding": "A reportagem situa Zema entre os governadores eleitos em 2018 com discurso de renovação e nova política."
+        },
+        {
+          "event_date": "2022",
+          "source_date": "2024",
+          "url": "https://www.scielo.br/j/rbcpol/a/fTLsS5p5vk3qjRJgPrSJWHB/?lang=pt",
+          "source": "Revista Brasileira de Ciência Política, SciELO",
+          "finding": "Estudo de 170 vídeos das campanhas identifica moderação da retórica antipolítica de Zema e alianças pragmáticas com atores tradicionais."
+        }
+      ],
+      "status": "aguardando_nova_decisao_thiago"
+    }
+  ]
+}

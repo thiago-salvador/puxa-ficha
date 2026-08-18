@@ -1,0 +1,19 @@
+{
+  "_comentario": "Allowlist do recorte da Trilha A: uma escrita so, o `eleito_por` da candidatura INDEFERIDA do Lula em 2018, que diverge do raw oficial do TSE (descricaoSituacao='Indeferido', descricaoTotalizacao='Concorrendo', candidatoApto=false; SQ_CANDIDATO 280000625869). Janela FECHADA de uma migration so: --desde=20260810085000 --ate=20260810085000. Os outros 155 falsos 'Nao Eleito' da base NAO entram aqui porque nao sao dado errado: o banco esta certo e quem errava era a conversao de exibicao, corrigida em src/lib/resultado-eleitoral.ts. Migration sobre eles destruiria dado correto.",
+  "recorte": "trilha-a-classificacao-20260810",
+  "migration": "20260810085000_lula_2018_registro_indeferido_eleito_por.sql",
+  "fonte": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2018/BR/2022802018/1/candidatos (lido em 2026-08-09)",
+  "coorte": ["lula"],
+  "fora_por_construcao": {
+    "_comentario": "rui-costa-pimenta tambem tem candidatura indeferida com eleito_por='nao eleito' (Presidente, 2006), e esta FORA de proposito: o raw daquela candidatura traz descricaoTotalizacao='Nao eleito' (candidatura/buscar/2006/BR/14423/candidato/27), entao o valor persistido e fiel a fonte. cintia-dias 2012 tambem fica fora, ja com eleito_por NULL. A ficha dos tres passa a exibir 'Registro indeferido' por codigo, sem escrita nenhuma.",
+    "slugs": ["rui-costa-pimenta", "cintia-dias"]
+  },
+  "entries": [
+    {
+      "tabela": "historico_politico",
+      "slug": "lula",
+      "campos": ["eleito_por"],
+      "max_registros": 1
+    }
+  ]
+}

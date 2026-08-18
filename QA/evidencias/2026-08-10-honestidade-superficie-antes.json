@@ -1,0 +1,2480 @@
+{
+  "resumo": {
+    "universo": {
+      "fichasPublicas": 194,
+      "fichasMedidas": 194
+    },
+    "defeito1_financiamento": {
+      "fichasQueAfirmamAusenciaSemVerificar": 18,
+      "fichasComPleitoDisputadoOmitido": 109,
+      "pleitosDisputadosOmitidos": 295,
+      "pleitosSemDadoNoUniverso": 295,
+      "pleitosSemDadoComEstadoExplicito": 0,
+      "ausenciasAfirmadas": 0,
+      "ausenciasAfirmadasComFonteEData": 0
+    },
+    "defeito2_judicial": {
+      "fichasComBuscaRegistradaSemProcesso": 185,
+      "fichasQueLeemNaoVerificadoMesmoAssim": 169
+    },
+    "porMotivo": {
+      "judicial_diz_nao_verificado_com_busca_registrada": 169,
+      "pleito_disputado_omitido_da_aba_dinheiro": 109,
+      "financiamento_afirma_ausencia_sem_verificar": 18
+    },
+    "casosNomeados": {
+      "joao-campos": {
+        "financiamento_no_banco": [
+          2020,
+          2014,
+          2010
+        ],
+        "pleitos_aplicaveis": [
+          2022,
+          2020,
+          2018,
+          2014,
+          2010,
+          2006,
+          2002
+        ],
+        "dom_publicados": [
+          2020,
+          2014,
+          2010
+        ],
+        "dom_estados": [],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:17.668822+00:00"
+        },
+        "legenda_processos": "não verificado",
+        "motivos": [
+          "pleito_disputado_omitido_da_aba_dinheiro",
+          "judicial_diz_nao_verificado_com_busca_registrada"
+        ]
+      },
+      "jayme-campos": {
+        "financiamento_no_banco": [
+          2018,
+          2014
+        ],
+        "pleitos_aplicaveis": [
+          2018,
+          2014,
+          2006,
+          2000
+        ],
+        "dom_publicados": [
+          2018,
+          2014
+        ],
+        "dom_estados": [],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:17.421221+00:00"
+        },
+        "legenda_processos": "não verificado",
+        "motivos": [
+          "pleito_disputado_omitido_da_aba_dinheiro",
+          "judicial_diz_nao_verificado_com_busca_registrada"
+        ]
+      },
+      "flavio-bolsonaro": {
+        "financiamento_no_banco": [
+          2018,
+          2016,
+          2014,
+          2010,
+          2006
+        ],
+        "pleitos_aplicaveis": [
+          2018,
+          2016,
+          2014,
+          2010,
+          2006,
+          2002
+        ],
+        "dom_publicados": [
+          2018,
+          2016,
+          2014,
+          2010,
+          2006
+        ],
+        "dom_estados": [],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": null,
+        "legenda_processos": null,
+        "motivos": [
+          "pleito_disputado_omitido_da_aba_dinheiro"
+        ]
+      },
+      "marcelo-maranata": {
+        "financiamento_no_banco": [
+          2020,
+          2018,
+          2012
+        ],
+        "pleitos_aplicaveis": [
+          2020,
+          2018,
+          2016,
+          2012
+        ],
+        "dom_publicados": [
+          2020,
+          2018,
+          2012
+        ],
+        "dom_estados": [],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:18.345566+00:00"
+        },
+        "legenda_processos": "não verificado",
+        "motivos": [
+          "pleito_disputado_omitido_da_aba_dinheiro",
+          "judicial_diz_nao_verificado_com_busca_registrada"
+        ]
+      },
+      "rui-costa-pimenta": {
+        "financiamento_no_banco": [
+          2014,
+          2010,
+          2006
+        ],
+        "pleitos_aplicaveis": [
+          2014,
+          2010,
+          2006,
+          2002,
+          2000,
+          1998,
+          1996
+        ],
+        "dom_publicados": [
+          2014,
+          2010,
+          2006
+        ],
+        "dom_estados": [],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:14.782137+00:00"
+        },
+        "legenda_processos": "não verificado",
+        "motivos": [
+          "pleito_disputado_omitido_da_aba_dinheiro",
+          "judicial_diz_nao_verificado_com_busca_registrada"
+        ]
+      },
+      "samara-martins": {
+        "financiamento_no_banco": [
+          2020
+        ],
+        "pleitos_aplicaveis": [
+          2022,
+          2020
+        ],
+        "dom_publicados": [
+          2020
+        ],
+        "dom_estados": [],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:14.911728+00:00"
+        },
+        "legenda_processos": "não verificado",
+        "motivos": [
+          "pleito_disputado_omitido_da_aba_dinheiro",
+          "judicial_diz_nao_verificado_com_busca_registrada"
+        ]
+      },
+      "edmilson-costa": {
+        "financiamento_no_banco": [
+          2008
+        ],
+        "pleitos_aplicaveis": [
+          2014,
+          2010,
+          2008
+        ],
+        "dom_publicados": [
+          2008
+        ],
+        "dom_estados": [],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:14.010238+00:00"
+        },
+        "legenda_processos": "não verificado",
+        "motivos": [
+          "pleito_disputado_omitido_da_aba_dinheiro",
+          "judicial_diz_nao_verificado_com_busca_registrada"
+        ]
+      },
+      "cabo-daciolo": {
+        "financiamento_no_banco": [
+          2022,
+          2018,
+          2014
+        ],
+        "pleitos_aplicaveis": [
+          2022,
+          2018,
+          2014,
+          2008,
+          2006
+        ],
+        "dom_publicados": [
+          2022,
+          2018,
+          2014
+        ],
+        "dom_estados": [],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:13.702258+00:00"
+        },
+        "legenda_processos": "não verificado",
+        "motivos": [
+          "pleito_disputado_omitido_da_aba_dinheiro",
+          "judicial_diz_nao_verificado_com_busca_registrada"
+        ]
+      },
+      "raquel-lyra": {
+        "financiamento_no_banco": [
+          2022,
+          2020,
+          2014,
+          2010
+        ],
+        "pleitos_aplicaveis": [
+          2022,
+          2020,
+          2016,
+          2014,
+          2010
+        ],
+        "dom_publicados": [
+          2022,
+          2020,
+          2014,
+          2010
+        ],
+        "dom_estados": [],
+        "afirma_ausencia_sem_verificar": false,
+        "processos_verificacao": {
+          "resultado": "indeterminado",
+          "executado_em": "2026-08-06T00:47:19.0385+00:00"
+        },
+        "legenda_processos": "não verificado",
+        "motivos": [
+          "pleito_disputado_omitido_da_aba_dinheiro",
+          "judicial_diz_nao_verificado_com_busca_registrada"
+        ]
+      }
+    },
+    "fichasAfetadas": [
+      "vivian-mendes",
+      "rafael-fonteles",
+      "ciro-gomes-gov-ce",
+      "jose-roberto-arruda",
+      "serley-leal",
+      "ben-mendes",
+      "eduardo-braide",
+      "gelson-merisio",
+      "jorginho-mello",
+      "cintia-dias",
+      "jeronimo",
+      "pazolini",
+      "ronaldo-mansur",
+      "joao-campos",
+      "ravenna-castro",
+      "ricardo-cappelli",
+      "marconi-perillo",
+      "ricardo-ferraco",
+      "luciana-gurgel",
+      "juliana-brizola",
+      "arthur-henrique",
+      "marcelo-maluf",
+      "samara-mineiro",
+      "rafael-duda",
+      "ze-coca",
+      "tulio-lopes",
+      "alan-rick",
+      "telemaco-brandao",
+      "mauricio-tonha",
+      "ismar-marques",
+      "natasha-slhessarenko",
+      "hana-ghassan",
+      "jeferson-bezerra",
+      "coronel-busnello",
+      "patrus-ananias",
+      "marcus-sodre",
+      "luiz-franca",
+      "vera-lucia",
+      "jeremias-cosmo",
+      "witer-naves",
+      "alex-pucineli",
+      "ricardo-marques",
+      "andre-luis",
+      "gabriel-azevedo",
+      "vittorio-medioli",
+      "helder-salomao",
+      "lenilda-luna",
+      "dr-helton-monteiro",
+      "fabio-mitidieri",
+      "andre-marinho",
+      "jayme-campos",
+      "cyro-garcia",
+      "orleans-brandao",
+      "dario-barbosa",
+      "aroldo-felix",
+      "jose-estevao",
+      "requiao-filho",
+      "huggo-leonardo",
+      "sandro-alex",
+      "lourdes-melo",
+      "saulo-arcangeli",
+      "elisson-ferreira",
+      "celina-leao",
+      "gilberto-vasconcelos",
+      "carlos-machado",
+      "laudicerio-aguiar",
+      "breno-barcelar",
+      "roberio-paulino",
+      "dr-luisinho",
+      "priscila-felizola",
+      "araceli-lemos",
+      "jarbas-soares",
+      "adailton-furia",
+      "larissa-rosado",
+      "eudo-raffael",
+      "jarir-pereira",
+      "renato-gomes",
+      "henrique-areas",
+      "kiko-caputo",
+      "pedro-abib",
+      "hildon-chaves",
+      "indira-xavier",
+      "expedito-netto",
+      "professora-dorinha",
+      "joao-rodrigues",
+      "baba",
+      "cadu-xavier",
+      "naf-nascimento",
+      "camila-falcao",
+      "lais-chaud",
+      "alessandra-campelo",
+      "luan-monteiro",
+      "amelio-cayres",
+      "renan-hallais",
+      "gustavo-henrique",
+      "lucia-santos",
+      "emanuel-cacho",
+      "gisvaldo-oliveira",
+      "luciano-zucco",
+      "cicero-lucena",
+      "luiz-carlos-teodoro",
+      "izadora-dias",
+      "catherine-teles",
+      "alysson-bezerra",
+      "washington-bandeira",
+      "roberto-cidade",
+      "juliete-pantoja",
+      "dr-furlan",
+      "thor-dantas",
+      "laurez-moreira",
+      "lucien-rezende",
+      "omar-aziz",
+      "luis-cesar-bueno",
+      "ataides-oliveira",
+      "rafaell-milas",
+      "marcelo-brigadeiro",
+      "alvaro-dias-rn",
+      "elizeu-aguiar",
+      "douglas-ruas",
+      "paula-belmonte",
+      "samuel-costa",
+      "geraldo-carvalho",
+      "ze-batista",
+      "renan-filho",
+      "mailza-assis",
+      "tiao-bocalom",
+      "olimpio-rocha",
+      "guilherme-fonseca",
+      "rejane-oliveira",
+      "wellington-fagundes",
+      "eduardo-paes",
+      "jhc",
+      "augusto-cury",
+      "vicentinho-junior",
+      "gabriel-souza",
+      "marcos-rogerio",
+      "garotinho",
+      "cleitinho",
+      "alexandre-kalil",
+      "wilder-morais",
+      "flavio-bolsonaro",
+      "priscila-voigt",
+      "clecio-luis",
+      "joao-henrique-catan",
+      "dr-daniel",
+      "hertz-dias",
+      "prof-meire-reis",
+      "eduardo-riedel",
+      "renan-santos",
+      "lucas-ribeiro",
+      "sergio-moro-gov-pr",
+      "lula",
+      "william-siri",
+      "ricardo-leite",
+      "marcelo-maranata",
+      "yuri-ezequiel",
+      "rui-costa-pimenta",
+      "elmano-de-freitas",
+      "daniela-paiva",
+      "francisco-jurity",
+      "mateus-simoes",
+      "romeu-zema",
+      "preta-lu",
+      "felicio-ramuth",
+      "edilson-damiao",
+      "prof-enfermeira-kaelly",
+      "samara-martins",
+      "robson-raymundo",
+      "eduardo-girao",
+      "otaviano-pivetta",
+      "daniel-vilela",
+      "fabio-trad",
+      "ronaldo-caiado",
+      "roberto-claudio",
+      "edmilson-costa",
+      "rafael-greca",
+      "cabo-daciolo",
+      "edegar-pretto",
+      "felipe-camarao",
+      "acm-neto",
+      "raquel-lyra",
+      "joel-rodrigues",
+      "efraim-filho",
+      "valmir-de-francisquinho",
+      "maria-do-carmo",
+      "david-almeida"
+    ]
+  },
+  "defeitos": [
+    {
+      "slug": "vivian-mendes",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "rafael-fonteles",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2006,
+        2002,
+        1998
+      ],
+      "legendaProcessos": null
+    },
+    {
+      "slug": "jose-roberto-arruda",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2006,
+        2002,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "serley-leal",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2020
+      ],
+      "legendaProcessos": "escopo verificado"
+    },
+    {
+      "slug": "ben-mendes",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "eduardo-braide",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        2006
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "gelson-merisio",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2006,
+        2002,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "jorginho-mello",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2006,
+        2002,
+        1998,
+        1994
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "cintia-dias",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2014,
+        2012
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "jeronimo",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "pazolini",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "ronaldo-mansur",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2014
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "joao-campos",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2018,
+        2006,
+        2002
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "ravenna-castro",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "marconi-perillo",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2006,
+        2002,
+        1998,
+        1994
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "ricardo-ferraco",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2002,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "luciana-gurgel",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2014
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "juliana-brizola",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2016,
+        2008
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "arthur-henrique",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2016
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "marcelo-maluf",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2014
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "samara-mineiro",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "rafael-duda",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "ze-coca",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "tulio-lopes",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2006
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "alan-rick",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "telemaco-brandao",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "mauricio-tonha",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        2004,
+        2000
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "ismar-marques",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2014,
+        2010,
+        2006,
+        2002,
+        2000,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "hana-ghassan",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "jeferson-bezerra",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "coronel-busnello",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2018
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "patrus-ananias",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2018,
+        2014,
+        2012,
+        2010,
+        2002,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "marcus-sodre",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2014,
+        2010,
+        2004,
+        2002
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "luiz-franca",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "vera-lucia",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2016,
+        2014,
+        2012,
+        2008,
+        2006,
+        2004
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "jeremias-cosmo",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2024,
+        2020,
+        2018
+      ],
+      "legendaProcessos": "escopo verificado"
+    },
+    {
+      "slug": "witer-naves",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "alex-pucineli",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "ricardo-marques",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2024
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "andre-luis",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "vittorio-medioli",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2002,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "helder-salomao",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        2004,
+        2002,
+        2000,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "lenilda-luna",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2024,
+        2020
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "dr-helton-monteiro",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2010,
+        2008
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "andre-marinho",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "jayme-campos",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2006,
+        2000
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "cyro-garcia",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        2006,
+        2004,
+        2002,
+        2000,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "orleans-brandao",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2018,
+        2014,
+        2006
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "dario-barbosa",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2012,
+        2008,
+        2004,
+        2002,
+        2000,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "aroldo-felix",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "jose-estevao",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2006,
+        2000
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "requiao-filho",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2016
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "huggo-leonardo",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "sandro-alex",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "lourdes-melo",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2012,
+        2010,
+        2008,
+        2006
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "saulo-arcangeli",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "elisson-ferreira",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "celina-leao",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2014,
+        2004,
+        2002,
+        2000
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "carlos-machado",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "laudicerio-aguiar",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "breno-barcelar",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "roberio-paulino",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2024,
+        2020
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "dr-luisinho",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "priscila-felizola",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "araceli-lemos",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2018,
+        2006,
+        2004,
+        2002,
+        2000,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "jarbas-soares",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "adailton-furia",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2016,
+        2008
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "larissa-rosado",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2014,
+        2012,
+        2010,
+        2008,
+        2006,
+        2004,
+        2002
+      ],
+      "legendaProcessos": "escopo verificado"
+    },
+    {
+      "slug": "eudo-raffael",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "jarir-pereira",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "renato-gomes",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "henrique-areas",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2020
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "kiko-caputo",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "pedro-abib",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "hildon-chaves",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2016
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "indira-xavier",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2010,
+        2006
+      ],
+      "legendaProcessos": "escopo verificado"
+    },
+    {
+      "slug": "expedito-netto",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "professora-dorinha",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "joao-rodrigues",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2020,
+        2018,
+        2016,
+        2008,
+        2002,
+        2000
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "baba",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2016,
+        2008
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "cadu-xavier",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "naf-nascimento",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "escopo verificado"
+    },
+    {
+      "slug": "camila-falcao",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "lais-chaud",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "alessandra-campelo",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "luan-monteiro",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "amelio-cayres",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2006,
+        2000
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "renan-hallais",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "gustavo-henrique",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        2004,
+        2000
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "lucia-santos",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "emanuel-cacho",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2014,
+        2006
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "gisvaldo-oliveira",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "luciano-zucco",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "cicero-lucena",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2006,
+        2000,
+        1996
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "luiz-carlos-teodoro",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2020,
+        2004,
+        2000
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "izadora-dias",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2020
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "catherine-teles",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "escopo verificado"
+    },
+    {
+      "slug": "alysson-bezerra",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "washington-bandeira",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "roberto-cidade",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "juliete-pantoja",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2012
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "dr-furlan",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2010
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "thor-dantas",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "laurez-moreira",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2016,
+        2006,
+        2002,
+        1998,
+        1994
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "lucien-rezende",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2012,
+        2008
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "omar-aziz",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        1994
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "luis-cesar-bueno",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2018,
+        2014,
+        2010,
+        2006,
+        2002,
+        2000,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "ataides-oliveira",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2010
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "rafaell-milas",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "marcelo-brigadeiro",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2018
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "alvaro-dias-rn",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2018,
+        2016,
+        2006,
+        2002,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "elizeu-aguiar",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        2006,
+        2004
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "douglas-ruas",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "paula-belmonte",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "samuel-costa",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        2006,
+        2004,
+        2002,
+        2000,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "ze-batista",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "renan-filho",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        2004
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "mailza-assis",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2014
+      ],
+      "legendaProcessos": "escopo verificado"
+    },
+    {
+      "slug": "tiao-bocalom",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        2006,
+        2004,
+        2000,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "olimpio-rocha",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "guilherme-fonseca",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "rejane-oliveira",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2006,
+        2004,
+        2002,
+        2000,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "eduardo-paes",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        2006,
+        2002,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "jhc",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "augusto-cury",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "vicentinho-junior",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "gabriel-souza",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "marcos-rogerio",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        2004,
+        2000
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "garotinho",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2002,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "cleitinho",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2016
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "alexandre-kalil",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "wilder-morais",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2020,
+        2010
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "flavio-bolsonaro",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2002
+      ],
+      "legendaProcessos": null
+    },
+    {
+      "slug": "priscila-voigt",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "clecio-luis",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2010,
+        2008,
+        2006,
+        2004
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "joao-henrique-catan",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2020,
+        2016
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "dr-daniel",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2022
+      ],
+      "legendaProcessos": null
+    },
+    {
+      "slug": "hertz-dias",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2018,
+        2010
+      ],
+      "legendaProcessos": "escopo verificado"
+    },
+    {
+      "slug": "prof-meire-reis",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2012
+      ],
+      "legendaProcessos": "escopo verificado"
+    },
+    {
+      "slug": "eduardo-riedel",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "renan-santos",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "lucas-ribeiro",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2020,
+        2016
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "sergio-moro-gov-pr",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "lula",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2002,
+        1998,
+        1994,
+        1989
+      ],
+      "legendaProcessos": null
+    },
+    {
+      "slug": "william-siri",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "ricardo-leite",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "marcelo-maranata",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2016
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "yuri-ezequiel",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2002,
+        2000,
+        1998,
+        1996
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2016
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "daniela-paiva",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "francisco-jurity",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "mateus-simoes",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "romeu-zema",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "preta-lu",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2016
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "felicio-ramuth",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2022
+      ],
+      "legendaProcessos": null
+    },
+    {
+      "slug": "edilson-damiao",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "prof-enfermeira-kaelly",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "samara-martins",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "robson-raymundo",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2006
+      ],
+      "legendaProcessos": "escopo verificado"
+    },
+    {
+      "slug": "eduardo-girao",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2018,
+        2016,
+        2010,
+        2006,
+        2000
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "daniel-vilela",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2022,
+        2008
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "fabio-trad",
+      "motivos": [
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "ronaldo-caiado",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2002,
+        1998,
+        1994
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "roberto-claudio",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2016,
+        2006
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "edmilson-costa",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2014,
+        2010
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "rafael-greca",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2006,
+        2002,
+        1998
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "cabo-daciolo",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        2006
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "edegar-pretto",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2026
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "felipe-camarao",
+      "motivos": [
+        "financiamento_afirma_ausencia_sem_verificar",
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2022
+      ],
+      "legendaProcessos": null
+    },
+    {
+      "slug": "acm-neto",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2016,
+        2008,
+        2006,
+        2002
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "raquel-lyra",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2016
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "joel-rodrigues",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        2004,
+        2002,
+        2000
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "efraim-filho",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro"
+      ],
+      "pleitosOmitidos": [
+        2012,
+        2006
+      ],
+      "legendaProcessos": "escopo verificado"
+    },
+    {
+      "slug": "valmir-de-francisquinho",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2008,
+        2004,
+        2000
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "maria-do-carmo",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2024,
+        2022
+      ],
+      "legendaProcessos": "não verificado"
+    },
+    {
+      "slug": "david-almeida",
+      "motivos": [
+        "pleito_disputado_omitido_da_aba_dinheiro",
+        "judicial_diz_nao_verificado_com_busca_registrada"
+      ],
+      "pleitosOmitidos": [
+        2020,
+        2006,
+        2004
+      ],
+      "legendaProcessos": "não verificado"
+    }
+  ]
+}

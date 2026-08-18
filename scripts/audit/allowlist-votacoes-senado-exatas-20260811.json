@@ -1,0 +1,65 @@
+{
+  "_comentario": "Item 7, Senado: janela fechada de uma migration. Antes 13 linhas/81 pares; depois 6 eventos oficiais exatos/75 pares. Aplicação continua sendo ato externo separado.",
+  "recorte": "votacoes-senado-exatas-20260811",
+  "migration": "20260811100000_votacoes_senado_chave_exata.sql",
+  "fonte": "Senado Dados Abertos, recibo QA/evidencias/2026-08-11-item7-senado/auditoria-oficial-13-linhas.json",
+  "coorte": [],
+  "fora_por_construcao": {
+    "_comentario": "As escritas são globais por votação e declaradas por ref; não são autorizadas por coorte de candidato.",
+    "slugs": []
+  },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "votos_candidato",
+      "ref": "senado-reset-81",
+      "campos": ["candidato_id", "votacao_id", "voto"]
+    },
+    {
+      "tabela": "votacoes_chave",
+      "ref": "senado-retirar-7",
+      "campos": ["id"]
+    },
+    {
+      "tabela": "votacoes_chave",
+      "ref": "6046",
+      "campos": ["fonte", "votacao_id_api", "proposicao_id", "data_votacao"]
+    },
+    {
+      "tabela": "votacoes_chave",
+      "ref": "6248",
+      "campos": ["fonte", "votacao_id_api", "proposicao_id", "data_votacao"]
+    },
+    {
+      "tabela": "votacoes_chave",
+      "ref": "6377",
+      "campos": ["fonte", "votacao_id_api", "proposicao_id", "data_votacao"]
+    },
+    {
+      "tabela": "votacoes_chave",
+      "ref": "6714",
+      "campos": ["fonte", "votacao_id_api", "proposicao_id", "data_votacao"]
+    },
+    {
+      "tabela": "votacoes_chave",
+      "ref": "6756",
+      "campos": ["fonte", "votacao_id_api", "proposicao_id", "data_votacao"]
+    },
+    {
+      "tabela": "votacoes_chave",
+      "ref": "6777",
+      "campos": ["fonte", "votacao_id_api", "proposicao_id", "data_votacao"]
+    },
+    {
+      "tabela": "votos_candidato",
+      "ref": "senado-exatos-75",
+      "campos": ["candidato_id", "votacao_id", "voto"]
+    }
+  ],
+  "medicao": {
+    "antes": { "linhas": 13, "pares": 81 },
+    "depois": { "linhas": 6, "pares": 75 },
+    "eventos": ["6046", "6248", "6377", "6714", "6756", "6777"],
+    "linhas_retiradas": 7
+  }
+}
