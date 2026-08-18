@@ -16,12 +16,12 @@ export function Footer() {
               Projeto de Thiago Salvador
             </p>
           </div>
-          <nav aria-label="Links do rodapé" className="grid grid-cols-3 gap-4 sm:flex sm:gap-8">
+          <nav aria-label="Links do rodapé" className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             <div className="space-y-2">
               <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
                 Páginas
               </span>
-              <ul className="space-y-1.5">
+              <ul>
                 {[
                   { href: "/", label: "Presidência" },
                   { href: "/governadores", label: "Governadores" },
@@ -37,7 +37,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
+                      className="inline-flex min-h-11 items-center text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {link.label}
                     </Link>
@@ -49,7 +49,7 @@ export function Footer() {
               <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
                 Fontes consultadas
               </span>
-              <ul className="space-y-1.5">
+              <ul>
                 {[
                   { href: "https://dadosabertos.tse.jus.br", label: "TSE" },
                   { href: "https://dadosabertos.camara.leg.br", label: "Câmara" },
@@ -66,7 +66,7 @@ export function Footer() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
+                      className="inline-flex min-h-11 items-center text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {link.label}
                     </a>
@@ -78,13 +78,13 @@ export function Footer() {
               <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
                 Projeto
               </span>
-              <ul className="space-y-1.5">
+              <ul>
                 <li>
                   <a
                     href="https://instagram.com/salvador_thiago"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
+                    className="inline-flex min-h-11 items-center text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
                   >
                     Instagram
                   </a>
@@ -94,7 +94,7 @@ export function Footer() {
                     href="https://apoia.se/puxaficha"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
+                    className="inline-flex min-h-11 items-center text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
                   >
                     Apoiar
                   </a>
@@ -102,7 +102,7 @@ export function Footer() {
                 <li>
                   <a
                     href="mailto:contato@puxaficha.com.br"
-                    className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
+                    className="inline-flex min-h-11 items-center text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
                   >
                     Contato
                   </a>
