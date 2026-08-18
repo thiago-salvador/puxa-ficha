@@ -8,7 +8,7 @@ bem-vindas.
 
 ## Antes de começar
 
-1. Leia o [README](README.md) e rode o projeto localmente.
+1. Leia o [README](README.md).
 2. Leia o [Código de Conduta](CODE_OF_CONDUCT.md).
 3. Para mudanças grandes, abra uma issue antes de investir tempo no código, para
    alinharmos escopo e abordagem.
@@ -33,7 +33,7 @@ bem-vindas.
    npm run lint          # ESLint
    npm run typecheck     # tsc --noEmit
    npm test              # testes unitários
-   npm run build         # build de produção
+   npm run build         # build
    ```
 
 4. Abra o Pull Request descrevendo o quê e o porquê. Preencha o template.
@@ -44,14 +44,6 @@ bem-vindas.
 
 - TypeScript, Next.js (App Router), Tailwind. Siga o padrão do código existente.
 - O ESLint e o Prettier definem a formatação. Não brigue com eles.
-
-## Pipeline de dados
-
-Os scripts de ingestão em `scripts/` coletam dados das APIs públicas e
-persistem no Supabase. Rodá-los exige uma `SUPABASE_SERVICE_ROLE_KEY` própria e,
-para alguns, uma chave do Portal da Transparência. Veja o README para detalhes.
-Contribuições no pipeline devem ser idempotentes e não sobrescrever dados de
-fonte de maior prioridade.
 
 ## Licença das contribuições
 

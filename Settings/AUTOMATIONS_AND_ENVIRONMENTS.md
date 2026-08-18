@@ -29,8 +29,8 @@ Documente nomes, nunca valores.
 | Ingestão | `TRANSPARENCIA_API_KEY`, `PF_DOADOR_CPF_HASH_SALT` |
 | Backup | `BACKUP_ENCRYPTION_KEY` |
 
-A lista detalhada e atual deve permanecer em `.env.example`. Service role,
-tokens de banco e chaves de ingestão nunca recebem prefixo `NEXT_PUBLIC_`.
+A lista de nomes é a tabela acima. Service role, tokens de banco e chaves de
+ingestão nunca recebem prefixo `NEXT_PUBLIC_`.
 
 ## Crons da Vercel
 

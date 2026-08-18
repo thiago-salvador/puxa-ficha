@@ -12,7 +12,7 @@ Federal, Portal da Transparência) sob a Lei de Acesso à Informação.
 A cobertura atual é dos cargos majoritários do Executivo: Presidência da
 República e governos estaduais, incluindo os vices das chapas.
 
-**Produção:** https://puxaficha.com.br
+**Site:** https://puxaficha.com.br
 
 ## Como conferir um número do site
 
@@ -20,8 +20,8 @@ Este repositório é público por um motivo específico: qualquer pessoa deve po
 pegar uma afirmação do site e rastrear até a fonte oficial, sem precisar
 acreditar em nós. Esta seção mostra como, com casos reais.
 
-O caminho é sempre o mesmo, em três passos: **o script que coletou**, **a URL
-oficial que ele leu** e **o recibo da gravação** na tabela `coleta_log`.
+O caminho é o script que coletou (quando está neste repositório) e a URL oficial
+que ele leu.
 
 ### Patrimônio declarado
 
@@ -80,115 +80,45 @@ Abre uma issue com o link da ficha e a fonte que contradiz. Erro de dado é o ti
 de contribuição mais útil que este projeto pode receber. Para falha de segurança,
 use o canal privado em [SECURITY.md](SECURITY.md), não uma issue pública.
 
-
-## Configuração operacional
-
-Objetivo, arquitetura, fontes, dados, workflows, automações, ambientes, versões,
-comportamento esperado e status atual estão em
-[Settings/README.md](Settings/README.md). Leia essa camada antes de alterar o
-produto ou executar pipelines.
-
 ## Stack
 
 - **Next.js 16** (App Router, renderização sob demanda)
 - **TypeScript**
 - **Tailwind CSS 4** + shadcn/ui
-- **Supabase** (PostgreSQL)
-- **Sentry** (observabilidade, opcional)
-- Deploy na **Vercel**
 
 ## Pré-requisitos
 
 - Node.js **24.x** (ver `.nvmrc`)
-- Uma conta no [Supabase](https://supabase.com) (o plano free basta para desenvolvimento)
-- Opcional: [Supabase CLI](https://supabase.com/docs/guides/cli) para aplicar as migrations
 
-## Setup local
-
-### 1. Instalar dependências
+## Setup
 
 ```bash
 npm ci
 ```
 
-### 2. Variáveis de ambiente
+Os gates de um PR não pedem banco, conta de nuvem nem arquivo `.env`:
 
 ```bash
-cp .env.example .env.local
+npm run lint
+npm run typecheck
+npm test
+npm run build
 ```
 
-Preencha no mínimo `SUPABASE_URL`, `SUPABASE_ANON_KEY`,
-`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` e
-`NEXT_PUBLIC_SITE_URL`. Os valores do Supabase estão em
-**Project Settings → API** no painel do seu projeto. O `.env.example` documenta
-todas as variáveis, incluindo as opcionais (Sentry, alertas por email, ingestão).
-
-### 3. Banco de dados
-
-O schema e os dados vivem em `supabase/migrations/` como migrations SQL
-sequenciais. Autentique a CLI, aponte para o seu projeto e aplique:
+## Scripts
 
 ```bash
-supabase login                              # autentica a CLI (abre o browser)
-supabase link --project-ref SEU_PROJECT_REF # vai pedir a senha do banco
-supabase db push
-```
-
-As migrations incluem o schema completo e os *seeds* com dados públicos de
-candidatos. Elas são snapshots verificados das fontes oficiais (TSE, Câmara,
-Senado); não são regeneráveis a partir do zero apenas com o código deste
-repositório, mas sobem sozinhas num projeto Supabase vazio, sem depender de
-nenhum artefato externo.
-
-### 4. Rodar
-
-```bash
-npm run dev      # http://localhost:3000
-```
-
-## Scripts principais
-
-```bash
-npm run dev         # servidor de desenvolvimento
-npm run build       # build de produção
-npm start           # servir o build
-npm run lint        # ESLint
-npm run typecheck   # tsc --noEmit
-npm test            # testes unitários (node --test)
-npm run test:visual # testes visuais (Playwright: rode `npx playwright install` antes)
+npm run lint           # ESLint
+npm run typecheck      # tsc --noEmit
+npm test               # testes unitários (node --test)
+npm run build          # build
+npm run test:visual    # testes visuais (Playwright: rode `npx playwright install` antes)
 npm run validate:seed  # valida a integridade do seed de candidatos
 ```
 
 > Os gates obrigatórios de um PR (`lint`, `typecheck`, `test`, `build`) não
 > dependem do Playwright. Os testes visuais são opcionais e exigem
 > `npx playwright install` para baixar os browsers.
-
-## Pipeline de dados
-
-Os scripts em `scripts/` (biblioteca em `scripts/lib/`) coletam dados das APIs
-públicas e persistem no Supabase. Exigem uma `SUPABASE_SERVICE_ROLE_KEY` e, para
-algumas fontes, uma `TRANSPARENCIA_API_KEY`.
-
-```bash
-npx tsx scripts/ingest-all.ts camara senado   # REST APIs
-npx tsx scripts/ingest-all.ts tse             # CSV do TSE
-```
-
-O pipeline é idempotente e respeita a hierarquia de proveniência das fontes
-(não sobrescreve dado de fonte de maior prioridade com uma de menor).
-
-## Cobertura de dados
-
-Quanto de cada ficha está preenchido, por candidato e por frente de dado:
-
-```bash
-npm run audit:cobertura
-```
-
-Um comando só: lê o banco de produção em modo somente leitura, monta o HTML e
-abre a fila de revisão ao lado. É a **única** medida de cobertura do projeto;
-número de cobertura que não saia daqui não vale. Credencial, régua e o que fazer
-quando dois relatórios discordam: [docs/cobertura-de-dados.md](docs/cobertura-de-dados.md).
 
 ## Estrutura
 

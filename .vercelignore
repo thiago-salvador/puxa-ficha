@@ -11,4 +11,3 @@ data/operations
 # segredos nunca sobem no bundle do deploy
 .env
 .env.*
-!.env.example
