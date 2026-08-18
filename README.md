@@ -14,6 +14,73 @@ República e governos estaduais, incluindo os vices das chapas.
 
 **Produção:** https://puxaficha.com.br
 
+## Como conferir um número do site
+
+Este repositório é público por um motivo específico: qualquer pessoa deve poder
+pegar uma afirmação do site e rastrear até a fonte oficial, sem precisar
+acreditar em nós. Esta seção mostra como, com casos reais.
+
+O caminho é sempre o mesmo, em três passos: **o script que coletou**, **a URL
+oficial que ele leu** e **o recibo da gravação** na tabela `coleta_log`.
+
+### Patrimônio declarado
+
+O valor vem do DivulgaCand, o sistema de divulgação de candidaturas do TSE.
+
+- Coleta: [`scripts/gerar-backfill-patrimonio-tse-2026.ts`](scripts/gerar-backfill-patrimonio-tse-2026.ts),
+  que lê o pacote oficial **`bem_candidato_2026`** do portal de dados abertos do
+  TSE. Nenhum valor é digitado à mão.
+- Conferência por candidato, sem depender de nós: a API pública do DivulgaCand em
+  `divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/{UF}/20322002026/candidato/{SQ}`
+  devolve os bens e o `totalDeBens` daquela pessoa. O `SQ` está na ficha.
+- A soma dos bens tem que fechar com o total que o TSE devolve. Se não fecha, o
+  dado não sobe.
+
+Em 18/08/2026 essa conferência encontrou 46 fichas publicando o **dobro** do
+patrimônio declarado, por erro de leitura nosso, e as corrigiu. O histórico do
+conserto está no log de commits, de propósito: um projeto de transparência que
+apaga o rastro dos próprios consertos pede uma confiança que não oferece.
+
+> **Lacuna conhecida, 18/08/2026.** Nem todo script de coleta e auditoria que
+> gerou o dado publicado está neste repositório; parte vive no repositório de
+> trabalho. Enquanto isso não fecha, a API oficial acima é o caminho de
+> conferência que não depende de nós.
+
+### Espectro do partido no quiz
+
+Cada eixo em [`src/data/quiz/espectro-partidario.ts`](src/data/quiz/espectro-partidario.ts)
+declara sua própria procedência. Quando o `tipo` é `programa`,
+`carta_de_principios` ou `manifesto`, o registro traz **trecho literal, URL e
+data**: abra a URL e procure o trecho.
+
+Quando o `tipo` é `curadoria`, não existe documento ainda. É julgamento editorial
+e está rotulado como tal, para que ninguém o confunda com fonte.
+
+Duas coisas que este arquivo deliberadamente **não** faz: usar o estatuto
+registrado no TSE, que é carta de organização interna e não diz o que o partido
+defende; e citar a home do site do partido, que muda sem aviso.
+
+Posição de partido nunca é escrita como declaração do candidato. Ela não entra em
+`posicoes_declaradas`.
+
+### Votações nominais
+
+Vêm das APIs abertas da Câmara e do Senado, com o identificador da proposição
+preservado, para que o link leve à votação nominal original.
+
+### Doadores
+
+O CPF do doador **nunca** é gravado em texto claro, nem neste repositório nem no
+banco. Vira `SHA-256(sal + ":" + cpf)`. O que fica visível é o padrão agregado
+por setor, não a pessoa física.
+
+### Achou um erro?
+
+Abre uma issue com o link da ficha e a fonte que contradiz. Erro de dado é o tipo
+de contribuição mais útil que este projeto pode receber. Para falha de segurança,
+use o canal privado em [SECURITY.md](SECURITY.md), não uma issue pública.
+
+
 ## Configuração operacional
 
 Objetivo, arquitetura, fontes, dados, workflows, automações, ambientes, versões,
