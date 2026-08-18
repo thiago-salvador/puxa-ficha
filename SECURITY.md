@@ -30,8 +30,7 @@ tratados como sensíveis por decisão de privacidade do projeto:
 
 ## Segredos
 
-- Nenhum segredo deve ser commitado. Use `.env.local` (git-ignored) a partir do
-  `.env.example`.
+- Nenhum segredo deve ser commitado. Os gates de PR não precisam de `.env.local`.
 - Se um segredo for exposto acidentalmente, rotacione a credencial antes de
   qualquer outra ação e depois remova do histórico.
 
