@@ -86,14 +86,6 @@ jobs:
       - name: Test
         run: npm test
 
-      # Cobertura (c8) com os thresholds do c8.config.json, que existiam mas
-      # nunca eram executados em lugar nenhum. Não bloqueante na véspera do
-      # lançamento: reporta queda de cobertura sem derrubar o verify.
-      # Decisão 2026-08-04; avaliar promover a bloqueante depois do lançamento.
-      - name: Cobertura (não bloqueante)
-        continue-on-error: true
-        run: npm run test:coverage:raw
-
       - name: Build
         # Valores de placeholder: o build não acessa o Supabase (as páginas
         # são renderizadas sob demanda). Um fork usa os próprios valores.
@@ -104,6 +96,36 @@ jobs:
           NEXT_PUBLIC_SUPABASE_ANON_KEY: placeholder-anon-key
           NEXT_PUBLIC_SITE_URL: http://localhost:3000
         run: npm run build
+
+  # A cobertura saiu do `verify` em 18/08/2026, medida antes de mexer: levava 347
+  # dos 651 segundos do job, mais da metade, e tem `continue-on-error: true`, ou
+  # seja nao pode reprovar nada. O comando roda a suite inteira uma SEGUNDA vez
+  # com --test-concurrency=1, serial, o que explica ser quase o dobro do step
+  # `Test`. Ninguem podia mergear enquanto um numero informativo era calculado.
+  # Em job proprio ela roda em paralelo e sai do caminho critico.
+  cobertura:
+    name: Cobertura (informativa)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Thresholds do c8.config.json, que existiam mas nunca eram executados em
+      # lugar nenhum. Informativa por decisao de 2026-08-04: reporta queda de
+      # cobertura sem derrubar o CI. Avaliar promover a bloqueante.
+      - name: Cobertura
+        continue-on-error: true
+        run: npm run test:coverage:raw
 
   # O unico teste que pegaria a regressao de CSP de 03/08 (PR #71, nonce
   # removido, toda hidratacao bloqueada por ~12h) nunca rodava em PR:
@@ -140,8 +162,76 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Sem cache, cada rodada baixava de novo os ~250 MB de Chromium e WebKit.
+      # Medido em 18/08/2026, sete execucoes do mesmo dia: 48s, 59s, 65s, 80s,
+      # 136s, 287s e 1487s. A ultima nao terminou, foi morta pelo timeout do job
+      # e levou o PR com ela. Variacao de 30x nao e volume de download: e o
+      # apt-get do --with-deps travando.
+      # A chave e a VERSAO do Playwright, nao o hash do package-lock. Com o
+      # lock inteiro, qualquer bump de dependencia invalidaria os 363 MB de
+      # navegador, e o dependabot deste repo roda toda segunda com ate 4 PRs:
+      # o cache viveria menos de uma semana. Os binarios so mudam quando a
+      # versao do Playwright muda. Lido do lockfile, que existe antes do npm ci.
+      - name: Versao do Playwright, para a chave do cache
+        id: pw-versao
+        run: |
+          echo "v=$(node -p "require('./package-lock.json').packages['node_modules/playwright'].version")" >> "$GITHUB_OUTPUT"
+
+      - name: Cache dos navegadores do Playwright
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.pw-versao.outputs.v }}
+
+      # WebKit e obrigatorio, nao escolha: o projeto `mobile` do
+      # playwright.config emula iPhone 14, e todo device iPhone do Playwright
+      # roda em WebKit. O --with-deps tambem fica, porque o WebKit depende de
+      # bibliotecas (libwoff, libhyphen, libmanette) que a imagem do runner nao
+      # traz. O que muda e a resiliencia: cada tentativa morre em 6 min em vez
+      # de pendurar ate os 25 do job, e tenta de novo, porque trava de apt e
+      # transitoria.
+      # A causa raiz do travamento, achada no log de 18/08: o apt do runner tenta
+      # o mirror azure.archive.ubuntu.com, que responde Ign, e fica pendurado sem
+      # timeout. Com estes limites ele desiste do mirror morto em 15s e cai no
+      # archive.ubuntu.com, que responde.
+      - name: apt desiste rapido de mirror morto
+        run: |
+          sudo tee /etc/apt/apt.conf.d/99-timeout-curto >/dev/null <<'FIM'
+          Acquire::http::Timeout "15";
+          Acquire::https::Timeout "15";
+          Acquire::ftp::Timeout "15";
+          Acquire::Retries "2";
+          FIM
+
+      # WebKit e obrigatorio, nao escolha: o projeto `mobile` do
+      # playwright.config emula iPhone 14, e todo device iPhone do Playwright
+      # roda em WebKit. O --with-deps tambem fica, porque o WebKit depende de
+      # bibliotecas (libwoff, libhyphen, libmanette) que a imagem do runner nao
+      # traz.
+      #
+      # O `timeout` mata o processo pai, mas o apt-get NETO sobrevive segurando
+      # /var/lib/apt/lists/lock, e por isso a segunda tentativa morria em 2s com
+      # "Could not get lock ... held by process". Medido na primeira execucao
+      # desta mudanca. Por isso a limpeza entre tentativas.
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium webkit
+        timeout-minutes: 14
+        run: |
+          limpar_apt() {
+            sudo pkill -9 -f 'apt-get|dpkg' 2>/dev/null || true
+            sudo rm -f /var/lib/apt/lists/lock /var/cache/apt/archives/lock \
+                       /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend 2>/dev/null || true
+            sudo dpkg --configure -a 2>/dev/null || true
+          }
+          for tentativa in 1 2; do
+            if timeout 360 npx playwright install --with-deps chromium webkit; then
+              exit 0
+            fi
+            echo "::warning::tentativa $tentativa falhou ou travou em 6 min; limpando lock do apt"
+            limpar_apt
+            sleep 10
+          done
+          echo "::error::duas tentativas de instalar os navegadores falharam"
+          exit 1
 
       - name: Build (produção, env placeholder)
         run: npm run build
@@ -202,8 +292,76 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Sem cache, cada rodada baixava de novo os ~250 MB de Chromium e WebKit.
+      # Medido em 18/08/2026, sete execucoes do mesmo dia: 48s, 59s, 65s, 80s,
+      # 136s, 287s e 1487s. A ultima nao terminou, foi morta pelo timeout do job
+      # e levou o PR com ela. Variacao de 30x nao e volume de download: e o
+      # apt-get do --with-deps travando.
+      # A chave e a VERSAO do Playwright, nao o hash do package-lock. Com o
+      # lock inteiro, qualquer bump de dependencia invalidaria os 363 MB de
+      # navegador, e o dependabot deste repo roda toda segunda com ate 4 PRs:
+      # o cache viveria menos de uma semana. Os binarios so mudam quando a
+      # versao do Playwright muda. Lido do lockfile, que existe antes do npm ci.
+      - name: Versao do Playwright, para a chave do cache
+        id: pw-versao
+        run: |
+          echo "v=$(node -p "require('./package-lock.json').packages['node_modules/playwright'].version")" >> "$GITHUB_OUTPUT"
+
+      - name: Cache dos navegadores do Playwright
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.pw-versao.outputs.v }}
+
+      # WebKit e obrigatorio, nao escolha: o projeto `mobile` do
+      # playwright.config emula iPhone 14, e todo device iPhone do Playwright
+      # roda em WebKit. O --with-deps tambem fica, porque o WebKit depende de
+      # bibliotecas (libwoff, libhyphen, libmanette) que a imagem do runner nao
+      # traz. O que muda e a resiliencia: cada tentativa morre em 6 min em vez
+      # de pendurar ate os 25 do job, e tenta de novo, porque trava de apt e
+      # transitoria.
+      # A causa raiz do travamento, achada no log de 18/08: o apt do runner tenta
+      # o mirror azure.archive.ubuntu.com, que responde Ign, e fica pendurado sem
+      # timeout. Com estes limites ele desiste do mirror morto em 15s e cai no
+      # archive.ubuntu.com, que responde.
+      - name: apt desiste rapido de mirror morto
+        run: |
+          sudo tee /etc/apt/apt.conf.d/99-timeout-curto >/dev/null <<'FIM'
+          Acquire::http::Timeout "15";
+          Acquire::https::Timeout "15";
+          Acquire::ftp::Timeout "15";
+          Acquire::Retries "2";
+          FIM
+
+      # WebKit e obrigatorio, nao escolha: o projeto `mobile` do
+      # playwright.config emula iPhone 14, e todo device iPhone do Playwright
+      # roda em WebKit. O --with-deps tambem fica, porque o WebKit depende de
+      # bibliotecas (libwoff, libhyphen, libmanette) que a imagem do runner nao
+      # traz.
+      #
+      # O `timeout` mata o processo pai, mas o apt-get NETO sobrevive segurando
+      # /var/lib/apt/lists/lock, e por isso a segunda tentativa morria em 2s com
+      # "Could not get lock ... held by process". Medido na primeira execucao
+      # desta mudanca. Por isso a limpeza entre tentativas.
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium webkit
+        timeout-minutes: 14
+        run: |
+          limpar_apt() {
+            sudo pkill -9 -f 'apt-get|dpkg' 2>/dev/null || true
+            sudo rm -f /var/lib/apt/lists/lock /var/cache/apt/archives/lock \
+                       /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend 2>/dev/null || true
+            sudo dpkg --configure -a 2>/dev/null || true
+          }
+          for tentativa in 1 2; do
+            if timeout 360 npx playwright install --with-deps chromium webkit; then
+              exit 0
+            fi
+            echo "::warning::tentativa $tentativa falhou ou travou em 6 min; limpando lock do apt"
+            limpar_apt
+            sleep 10
+          done
+          echo "::error::duas tentativas de instalar os navegadores falharam"
+          exit 1
 
       - name: Axe (moderate, serious e critical)
         env:
