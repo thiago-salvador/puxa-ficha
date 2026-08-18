@@ -277,7 +277,7 @@ export function Navbar() {
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:px-12">
           <Link
             href="/"
-            className={`flex items-center gap-2 font-heading text-[18px] uppercase tracking-[-0.01em] transition-colors duration-300 ${
+            className={`flex min-h-11 items-center gap-2 py-2 pr-3 font-heading text-[18px] uppercase tracking-[-0.01em] transition-colors duration-300 ${
               useDarkText ? "text-black" : "text-white"
             }`}
           >
