@@ -232,12 +232,12 @@ function computeScoreProjetos(
 function phase2Blend(
   scoreV: number | null,
   nVotos: number,
-  scoreE: number,
+  scoreE: number | null,
   scoreP: number | null,
   scorePl: number | null,
   scoreFin: number | null
 ): {
-  final01: number
+  final01: number | null
   wVotoEff: number
   wEspEff: number
   wPosEff: number
@@ -245,8 +245,15 @@ function phase2Blend(
   wFinEff: number
 } {
   const { wVoto, wEspectro } = dynamicWeights(scoreV != null && nVotos > 0 ? nVotos : 0)
-  const inner01 =
-    scoreV != null && nVotos > 0 ? wVoto * scoreV + wEspectro * scoreE : wEspectro * scoreE
+  const temVoto = scoreV != null && nVotos > 0
+  // O bloco interno so existe se pelo menos um dos dois sinais existir. Com
+  // espectro nulo o peso dele nao vira nota media: some, e o resto renormaliza.
+  const inner01: number | null =
+    temVoto && scoreE != null
+      ? wVoto * scoreV + wEspectro * scoreE
+      : temVoto
+        ? scoreV
+        : scoreE
 
   let wInner = PHASE2_INNER
   let wPos = PHASE2_POS
@@ -265,19 +272,20 @@ function phase2Blend(
     wFin = 0
   }
 
-  const parts: { w: number; s: number }[] = [{ w: wInner, s: inner01 }]
+  const parts: { w: number; s: number }[] = []
+  if (inner01 != null) parts.push({ w: wInner, s: inner01 })
   if (scoreP != null && wPos > 0) parts.push({ w: wPos, s: scoreP })
   if (scorePl != null && wPl > 0) parts.push({ w: wPl, s: scorePl })
   if (scoreFin != null && wFin > 0) parts.push({ w: wFin, s: scoreFin })
 
   const sumW = parts.reduce((a, p) => a + p.w, 0)
-  const final01 = sumW > 0 ? parts.reduce((a, p) => a + (p.w / sumW) * p.s, 0) : scoreE
-  const shareInner = sumW > 0 ? wInner / sumW : 0
+  const final01 = sumW > 0 ? parts.reduce((a, p) => a + (p.w / sumW) * p.s, 0) : null
+  const shareInner = sumW > 0 && inner01 != null ? wInner / sumW : 0
 
   return {
     final01,
-    wVotoEff: scoreV != null && nVotos > 0 ? shareInner * wVoto : 0,
-    wEspEff: scoreV != null && nVotos > 0 ? shareInner * wEspectro : shareInner,
+    wVotoEff: temVoto ? (scoreE != null ? shareInner * wVoto : shareInner) : 0,
+    wEspEff: scoreE == null ? 0 : temVoto ? shareInner * wEspectro : shareInner,
     wPosEff: scoreP != null && wPos > 0 ? wPos / sumW : 0,
     wPlEff: scorePl != null && wPl > 0 ? wPl / sumW : 0,
     wFinEff: scoreFin != null && wFin > 0 ? wFin / sumW : 0,
@@ -298,15 +306,21 @@ function buildExplanation(
   fase: 1 | 2 | 3,
   wPos?: number,
   wPl?: number,
-  wFin?: number
+  wFin?: number,
+  temEspectro = true
 ): QuizScoreExplanation {
   const parts: string[] = []
   const de = Math.abs(userEco - candEco)
   const ds = Math.abs(userSoc - candSoc)
-  if (de <= 2) parts.push("Próximo no eixo econômico")
-  else if (de >= 5) parts.push("Distante no eixo econômico")
-  if (ds <= 2) parts.push("Próximo no eixo social")
-  else if (ds >= 5) parts.push("Distante no eixo social")
+  // Proximidade de eixo so pode ser afirmada quando o partido tem espectro
+  // apurado. Sem isso a comparacao seria contra o ponto medio da escala, e a
+  // frase diria ao leitor algo que ninguem mediu.
+  if (temEspectro) {
+    if (de <= 2) parts.push("Próximo no eixo econômico")
+    else if (de >= 5) parts.push("Distante no eixo econômico")
+    if (ds <= 2) parts.push("Próximo no eixo social")
+    else if (ds >= 5) parts.push("Distante no eixo social")
+  }
 
   if (scoreVotacoes == null || votosComparados === 0) {
     parts.push("Estimativa sem votos públicos comparados neste quiz")
@@ -435,18 +449,20 @@ export function calcularAlinhamento(
     }
   }
 
-  const score_espectro = hasSpectrumBasis
+  // Sem espectro mapeado nao existe base para medir proximidade de eixo. O valor
+  // fica null e sai da conta: um 0.5 aqui seria numero inventado entrando no score.
+  const score_espectro: number | null = hasSpectrumBasis
     ? (() => {
         const dEco = userEco - esp.eixo_economico
         const dSoc = userSoc - esp.eixo_social
         const dist = Math.sqrt(ECO_AXIS_WEIGHT * dEco * dEco + dSoc * dSoc)
         return Math.max(0, Math.min(1, 1 - dist / MAX_EUCLIDEAN))
       })()
-    : 0.5
+    : null
 
   const { wVoto, wEspectro } = dynamicWeights(votosComparados)
 
-  let score_final: number
+  let score_final: number | null
   let score_posicoes: number | null = null
   let score_projetos: number | null = null
   let score_financiamento: number | null = null
@@ -470,11 +486,15 @@ export function calcularAlinhamento(
       score_projetos,
       fin01
     )
-    score_final = phase2BlendResult.final01 * 100
+    score_final = phase2BlendResult.final01 != null ? phase2BlendResult.final01 * 100 : null
   } else if (score_votacoes != null && votosComparados > 0) {
-    score_final = (wVoto * score_votacoes + wEspectro * score_espectro) * 100
+    score_final =
+      score_espectro != null
+        ? (wVoto * score_votacoes + wEspectro * score_espectro) * 100
+        : score_votacoes * 100
   } else {
-    score_final = score_espectro * 100
+    // Sem voto comparavel e sem espectro mapeado nao ha base nenhuma de afinidade.
+    score_final = score_espectro != null ? score_espectro * 100 : null
   }
 
   let explanationFixed: QuizScoreExplanation
@@ -494,7 +514,8 @@ export function calcularAlinhamento(
       fase,
       b.wPosEff,
       b.wPlEff,
-      b.wFinEff
+      b.wFinEff,
+      hasSpectrumBasis
     )
   } else {
     explanationFixed = buildExplanation(
@@ -507,14 +528,18 @@ export function calcularAlinhamento(
       divergiu,
       score_votacoes,
       score_votacoes != null && votosComparados > 0 ? wVoto : 0,
-      score_votacoes != null && votosComparados > 0 ? wEspectro : 1,
-      fase
+      hasSpectrumBasis ? (score_votacoes != null && votosComparados > 0 ? wEspectro : 1) : 0,
+      fase,
+      undefined,
+      undefined,
+      undefined,
+      hasSpectrumBasis
     )
   }
   if (!hasSpectrumBasis) {
     explanationFixed = {
       ...explanationFixed,
-      resumo: `${explanationFixed.resumo} Partido sem espectro editorial mapeado; confiança baixa.`,
+      resumo: `${explanationFixed.resumo} O partido deste candidato não tem espectro apurado, então nenhuma proximidade de eixo é afirmada aqui.`,
     }
   }
 
@@ -536,9 +561,9 @@ export function calcularAlinhamento(
 
   return {
     candidato_slug: candidato.slug,
-    score_final: Math.round(score_final * 10) / 10,
+    score_final: score_final != null ? Math.round(score_final * 10) / 10 : null,
     score_votacoes: score_votacoes != null ? Math.round(score_votacoes * 1000) / 1000 : null,
-    score_espectro: Math.round(score_espectro * 1000) / 1000,
+    score_espectro: score_espectro != null ? Math.round(score_espectro * 1000) / 1000 : null,
     score_posicoes: score_posicoes != null ? Math.round(score_posicoes * 1000) / 1000 : null,
     score_projetos: score_projetos != null ? Math.round(score_projetos * 1000) / 1000 : null,
     score_financiamento:

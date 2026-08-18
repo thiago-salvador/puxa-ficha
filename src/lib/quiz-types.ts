@@ -88,9 +88,9 @@ export interface QuizScoreDetalhe {
 
 export interface QuizScoreResult {
   candidato_slug: string
-  score_final: number
+  score_final: number | null
   score_votacoes: number | null
-  score_espectro: number
+  score_espectro: number | null
   score_posicoes: number | null
   score_projetos: number | null
   score_financiamento: number | null

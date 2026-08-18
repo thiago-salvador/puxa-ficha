@@ -73,7 +73,6 @@ export function QuizResultCard({ candidato, score }: QuizResultCardProps) {
         <p className="text-xs leading-relaxed text-muted-foreground">{score.explanation.resumo}</p>
         <p className="text-xs text-muted-foreground">
           {confiabilidadeLabel(score.confiabilidade, score.votos_comparados)}
-          {score.espectro_partidario_mapeado ? "" : " Partido sem espectro editorial mapeado."}
         </p>
         {(score.score_posicoes != null || score.score_projetos != null || score.score_financiamento != null) && (
           <p className="text-xs text-muted-foreground">
