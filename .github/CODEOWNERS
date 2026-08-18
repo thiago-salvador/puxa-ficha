@@ -1,0 +1,24 @@
+# Toda mudança exige review do mantenedor.
+* @thiago-salvador
+
+# Caminhos sensíveis: segurança, deploy, dados e superfície pública.
+#
+# Corrigido em 17/08. As regras anteriores apontavam para `/supabase/`,
+# `/middleware.ts`, `/next.config.ts`, `/vercel.json` e `/src/app/api/`, caminhos que não
+# existem neste layout: o app vive em `app/`. Cinco das oito regras não casavam com nada. A
+# regra global `*` acima cobria tudo de qualquer jeito, então nenhum arquivo ficou sem dono,
+# mas a proteção específica desses caminhos estava desligada sem ninguém ver.
+/.github/                @thiago-salvador
+/.github/workflows/      @thiago-salvador
+/app/supabase/           @thiago-salvador
+/app/scripts/            @thiago-salvador
+/app/middleware.ts       @thiago-salvador
+/app/next.config.ts      @thiago-salvador
+/app/vercel.json         @thiago-salvador
+/app/src/app/api/        @thiago-salvador
+/scripts/                @thiago-salvador
+
+# Camada normativa e contratos de dado: mudar isto muda o que o site pode afirmar.
+/contratos/              @thiago-salvador
+/Status/                 @thiago-salvador
+/app/Settings/           @thiago-salvador
