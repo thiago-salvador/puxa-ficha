@@ -285,6 +285,10 @@ describe("contrato da view candidatos_publico", () => {
       // publicando a mesma coluna `c.situacao_candidatura`, agora com domínio fechado.
       "20260816230000_vocabulario_situacao_candidatura.sql",
       "20260816230100_vocabulario_situacao_candidatura_check.sql",
+      // Move a extensao unaccent de public para extensions, fechando o advisor
+      // "Extension in Public". E um DO com guard em pg_extension: nao toca em
+      // tabela, coluna nem view, entao nao redefine candidatos_publico.
+      "20260818172010_unaccent_sai_do_public_para_extensions.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

@@ -39,6 +39,33 @@ export async function auditPublicSecuritySurface(
     "content-type": "application/json",
     Prefer: "return=minimal",
   }
+  // Tabelas internas: RLS ligado E sem grant nenhum para anon/authenticated.
+  //
+  // O linter do Supabase marca as 13 como `rls_enabled_no_policy` em nivel INFO,
+  // porque ele olha policy e nao olha grant. A postura real e mais forte do que o
+  // linter enxerga: o privilegio nem existe, entao nao ha o que a policy liberar.
+  // Conferido em 18/08/2026 com a chave anon contra producao: as 13 devolvem 401.
+  //
+  // Este gate existe para impedir o conserto ERRADO. Quem olhar 13 lints INFO e
+  // quiser zerar o painel pode ser tentado a criar `POLICY ... USING (true)`, o
+  // que abriria e-mail de inscrito em alerta, hash de IP e o log interno de
+  // proveniencia. Se isso acontecer, o check abaixo fica vermelho.
+  const TABELAS_INTERNAS = [
+    "alert_subscribers",
+    "alert_subscriptions",
+    "analytics_launch_events",
+    "candidate_changes",
+    "coleta_log",
+    "financiamento_quarentena",
+    "financiamento_verificacoes",
+    "identidade_timeline_quarentena_snapshot",
+    "link_check_url_observacao",
+    "news_refresh_lotes",
+    "notification_log",
+    "patrimonio_quarentena",
+    "quiz_result_short_links",
+  ] as const
+
   const cases = [
     { name: "view-candidates-readable", method: "GET", path: "candidatos_publico?select=slug&limit=1", allowed: [200] },
     { name: "view-finance-readable", method: "GET", path: "financiamento_publico?select=id,maiores_doadores&limit=1", allowed: [200] },
@@ -49,8 +76,18 @@ export async function auditPublicSecuritySurface(
     { name: "anon-insert-denied", method: "POST", path: "patrimonio", body: JSON.stringify({ candidato_id: impossibleId, ano_eleicao: 1900, valor_total: 0, bens: [] }), allowed: [401, 403] },
   ] as const
 
+  const todos = [
+    ...cases,
+    ...TABELAS_INTERNAS.map((tabela) => ({
+      name: `interna-negada-${tabela}`,
+      method: "GET" as const,
+      path: `${tabela}?select=*&limit=1`,
+      allowed: [401, 403, 404] as const,
+    })),
+  ]
+
   return Promise.all(
-    cases.map(async (check) => {
+    todos.map(async (check) => {
       const response = await fetchImpl(`${env.url}/rest/v1/${check.path}`, {
         method: check.method,
         headers,
