@@ -167,11 +167,21 @@ jobs:
       # 136s, 287s e 1487s. A ultima nao terminou, foi morta pelo timeout do job
       # e levou o PR com ela. Variacao de 30x nao e volume de download: e o
       # apt-get do --with-deps travando.
+      # A chave e a VERSAO do Playwright, nao o hash do package-lock. Com o
+      # lock inteiro, qualquer bump de dependencia invalidaria os 363 MB de
+      # navegador, e o dependabot deste repo roda toda segunda com ate 4 PRs:
+      # o cache viveria menos de uma semana. Os binarios so mudam quando a
+      # versao do Playwright muda. Lido do lockfile, que existe antes do npm ci.
+      - name: Versao do Playwright, para a chave do cache
+        id: pw-versao
+        run: |
+          echo "v=$(node -p "require('./package-lock.json').packages['node_modules/playwright'].version")" >> "$GITHUB_OUTPUT"
+
       - name: Cache dos navegadores do Playwright
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: playwright-${{ runner.os }}-${{ steps.pw-versao.outputs.v }}
 
       # WebKit e obrigatorio, nao escolha: o projeto `mobile` do
       # playwright.config emula iPhone 14, e todo device iPhone do Playwright
@@ -287,11 +297,21 @@ jobs:
       # 136s, 287s e 1487s. A ultima nao terminou, foi morta pelo timeout do job
       # e levou o PR com ela. Variacao de 30x nao e volume de download: e o
       # apt-get do --with-deps travando.
+      # A chave e a VERSAO do Playwright, nao o hash do package-lock. Com o
+      # lock inteiro, qualquer bump de dependencia invalidaria os 363 MB de
+      # navegador, e o dependabot deste repo roda toda segunda com ate 4 PRs:
+      # o cache viveria menos de uma semana. Os binarios so mudam quando a
+      # versao do Playwright muda. Lido do lockfile, que existe antes do npm ci.
+      - name: Versao do Playwright, para a chave do cache
+        id: pw-versao
+        run: |
+          echo "v=$(node -p "require('./package-lock.json').packages['node_modules/playwright'].version")" >> "$GITHUB_OUTPUT"
+
       - name: Cache dos navegadores do Playwright
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: playwright-${{ runner.os }}-${{ steps.pw-versao.outputs.v }}
 
       # WebKit e obrigatorio, nao escolha: o projeto `mobile` do
       # playwright.config emula iPhone 14, e todo device iPhone do Playwright
