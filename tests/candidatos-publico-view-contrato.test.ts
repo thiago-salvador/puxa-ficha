@@ -289,6 +289,9 @@ describe("contrato da view candidatos_publico", () => {
       // "Extension in Public". E um DO com guard em pg_extension: nao toca em
       // tabela, coluna nem view, entao nao redefine candidatos_publico.
       "20260818172010_unaccent_sai_do_public_para_extensions.sql",
+      // Alinha a policy de leitura de `financiamento` com o filtro que a view
+      // publica ja aplicava. Toca RLS de outra tabela, nao a definicao desta view.
+      "20260818193909_financiamento_policy_alinha_com_a_view_publica.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 
