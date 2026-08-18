@@ -97,10 +97,10 @@ export default async function GovernadoresPage() {
       <section className="mx-auto max-w-7xl px-5 pt-8 md:px-12">
         <div className="max-w-3xl">
           <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
-            O hub de governadores organiza a busca por estado para quem procura
-            candidatos a governador mapeados para 2026 sem cair direto em
-            material de campanha. O mapa serve como índice de entrada e cada UF
-            reúne fichas e comparador dos nomes publicados.
+            O hub de governadores organiza a busca por estado: candidatos a
+            governador em todos os estados e no Distrito Federal em 2026. O mapa
+            serve como índice de entrada e cada UF reúne fichas e comparador dos
+            nomes publicados.
           </p>
           <p className="mt-3 text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
             Se preferir a cobertura nacional, volte para a{" "}
