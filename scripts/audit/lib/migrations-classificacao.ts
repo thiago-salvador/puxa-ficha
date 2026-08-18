@@ -371,7 +371,10 @@ export const MEDICAO_REPLAY = Object.freeze({
   // 79 -> 80 em 16/08/2026: gastos_executivo entra no conjunto DDL. Medicao
   // re-executada no merge com a main pos-#210: 80 limpas, 0 falhas, e o
   // schema_dump_sha256 continua o mesmo (as migrations do #210 sao DML).
-  schemaReplayTamanho: 81,
+  // 81 -> 82 em 18/08/2026: a 20260818172010 (unaccent sai de public) e DDL
+  // persistente e entra na classe de schema. MEDIDO no gate do CI, run
+  // 32165874941: `--schema-gate` devolveu "aplicadas limpo: 82" e "falhas: 0".
+  schemaReplayTamanho: 82,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

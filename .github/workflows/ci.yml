@@ -213,25 +213,45 @@ jobs:
       # /var/lib/apt/lists/lock, e por isso a segunda tentativa morria em 2s com
       # "Could not get lock ... held by process". Medido na primeira execucao
       # desta mudanca. Por isso a limpeza entre tentativas.
-      - name: Install Playwright browsers
-        timeout-minutes: 14
+      # Separado em DOIS passos de proposito. Juntos, num --with-deps unico, o
+      # cache nunca ajudava: o apt roda toda vez, e ele e a parte lenta e
+      # instavel. Separando, o cache mata de fato o download de ~250 MB de
+      # navegador, e sobra so o apt.
+      #
+      # As dependencias de sistema do WebKit sao ~125 pacotes (libwoff, libhyphen,
+      # libmanette, gstreamer). Em 18/08 uma tentativa de 6 min morreu no meio do
+      # download com o mirror azure respondendo Ign, por isso o teto por tentativa
+      # e maior aqui do que a intuicao sugere.
+      #
+      # `pkill -x` casa NOME EXATO. A versao anterior usava `pkill -f
+      # 'apt-get|dpkg'`, e o -f casa contra a linha de comando inteira: a linha do
+      # proprio pkill contem "apt-get", entao ele se matava. O log de 18/08 mostra
+      # "3451 Killed sudo pkill -9 -f 'apt-get|dpkg'".
+      - name: Dependencias de sistema dos navegadores (apt)
+        timeout-minutes: 22
         run: |
           limpar_apt() {
-            sudo pkill -9 -f 'apt-get|dpkg' 2>/dev/null || true
+            sudo pkill -9 -x apt-get 2>/dev/null || true
+            sudo pkill -9 -x dpkg 2>/dev/null || true
             sudo rm -f /var/lib/apt/lists/lock /var/cache/apt/archives/lock \
                        /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend 2>/dev/null || true
             sudo dpkg --configure -a 2>/dev/null || true
           }
           for tentativa in 1 2; do
-            if timeout 360 npx playwright install --with-deps chromium webkit; then
+            if timeout 600 npx playwright install-deps chromium webkit; then
               exit 0
             fi
-            echo "::warning::tentativa $tentativa falhou ou travou em 6 min; limpando lock do apt"
+            echo "::warning::tentativa $tentativa de instalar dependencias falhou ou travou em 10 min"
             limpar_apt
             sleep 10
           done
-          echo "::error::duas tentativas de instalar os navegadores falharam"
+          echo "::error::duas tentativas de instalar as dependencias de sistema falharam"
           exit 1
+
+      # Este e o passo que o cache serve. Com hit, sai em segundos.
+      - name: Install Playwright browsers
+        timeout-minutes: 10
+        run: npx playwright install chromium webkit
 
       - name: Build (produção, env placeholder)
         run: npm run build
@@ -343,25 +363,45 @@ jobs:
       # /var/lib/apt/lists/lock, e por isso a segunda tentativa morria em 2s com
       # "Could not get lock ... held by process". Medido na primeira execucao
       # desta mudanca. Por isso a limpeza entre tentativas.
-      - name: Install Playwright browsers
-        timeout-minutes: 14
+      # Separado em DOIS passos de proposito. Juntos, num --with-deps unico, o
+      # cache nunca ajudava: o apt roda toda vez, e ele e a parte lenta e
+      # instavel. Separando, o cache mata de fato o download de ~250 MB de
+      # navegador, e sobra so o apt.
+      #
+      # As dependencias de sistema do WebKit sao ~125 pacotes (libwoff, libhyphen,
+      # libmanette, gstreamer). Em 18/08 uma tentativa de 6 min morreu no meio do
+      # download com o mirror azure respondendo Ign, por isso o teto por tentativa
+      # e maior aqui do que a intuicao sugere.
+      #
+      # `pkill -x` casa NOME EXATO. A versao anterior usava `pkill -f
+      # 'apt-get|dpkg'`, e o -f casa contra a linha de comando inteira: a linha do
+      # proprio pkill contem "apt-get", entao ele se matava. O log de 18/08 mostra
+      # "3451 Killed sudo pkill -9 -f 'apt-get|dpkg'".
+      - name: Dependencias de sistema dos navegadores (apt)
+        timeout-minutes: 22
         run: |
           limpar_apt() {
-            sudo pkill -9 -f 'apt-get|dpkg' 2>/dev/null || true
+            sudo pkill -9 -x apt-get 2>/dev/null || true
+            sudo pkill -9 -x dpkg 2>/dev/null || true
             sudo rm -f /var/lib/apt/lists/lock /var/cache/apt/archives/lock \
                        /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend 2>/dev/null || true
             sudo dpkg --configure -a 2>/dev/null || true
           }
           for tentativa in 1 2; do
-            if timeout 360 npx playwright install --with-deps chromium webkit; then
+            if timeout 600 npx playwright install-deps chromium webkit; then
               exit 0
             fi
-            echo "::warning::tentativa $tentativa falhou ou travou em 6 min; limpando lock do apt"
+            echo "::warning::tentativa $tentativa de instalar dependencias falhou ou travou em 10 min"
             limpar_apt
             sleep 10
           done
-          echo "::error::duas tentativas de instalar os navegadores falharam"
+          echo "::error::duas tentativas de instalar as dependencias de sistema falharam"
           exit 1
+
+      # Este e o passo que o cache serve. Com hit, sai em segundos.
+      - name: Install Playwright browsers
+        timeout-minutes: 10
+        run: npx playwright install chromium webkit
 
       - name: Axe (moderate, serious e critical)
         env:
