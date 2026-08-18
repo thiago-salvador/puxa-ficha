@@ -374,7 +374,10 @@ export const MEDICAO_REPLAY = Object.freeze({
   // 81 -> 82 em 18/08/2026: a 20260818172010 (unaccent sai de public) e DDL
   // persistente e entra na classe de schema. MEDIDO no gate do CI, run
   // 32165874941: `--schema-gate` devolveu "aplicadas limpo: 82" e "falhas: 0".
-  schemaReplayTamanho: 82,
+  // 82 -> 83 em 18/08/2026: a 20260818193909 (policy de financiamento) e DDL
+  // persistente. MEDIDO no gate, run 32178043147: `--schema-gate` devolveu
+  // "aplicadas limpo: 83" e "falhas: 0".
+  schemaReplayTamanho: 83,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

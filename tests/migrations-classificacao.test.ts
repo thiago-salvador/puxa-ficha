@@ -305,7 +305,10 @@ describe("classificador puro (#136)", () => {
     // 312 -> 313 em 18/08/2026: a 20260818172010 tira a extensao unaccent do
     // schema public. Medido no gate do CI (run 32165874941):
     // "conservacao OK: 313 + 103 = 416 migrations", conjunto de falhas intacto.
-    assert.equal(manifesto.aplicadas_esperadas, 313)
+    // 313 -> 314 em 18/08/2026: a 20260818193909 alinha a policy de leitura de
+    // financiamento com o filtro da view publica. Medido no gate (run 32178043147):
+    // "conservacao OK: 314 + 103 = 417 migrations", conjunto de falhas intacto.
+    assert.equal(manifesto.aplicadas_esperadas, 314)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
