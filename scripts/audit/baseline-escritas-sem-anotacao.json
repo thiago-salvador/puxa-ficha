@@ -1041,7 +1041,8 @@
     },
     "20260725191500_jorginho_mello_ponto_carreira_texto_corrigido.sql": {
       "statements": 3,
-      "sha256": "6815a83c6f02ee436969fc33eb3006e5329a7d6c49561a0f30259cb08b2f4b59"
+      "sha256": "192d88d609a6697547a788e488e10ff9a8b07b58e5498d16833a707d137272e1",
+      "motivo_da_atualizacao_do_hash": "Hash atualizado em 18/08/2026. A mudanca foi SOMENTE em comentario: o arquivo trazia o CPF de pessoa real em duas linhas de comentario (79 e 81) e ele foi redigido antes de o repositorio de codigo ir a publico. O SQL executavel e byte a byte identico, conferido com hash do arquivo sem as linhas de comentario, e a contagem de statements continua 3. Nenhuma escrita nova foi absolvida, que e o que esta politica existe para impedir."
     },
     "20260725193000_identidade_ocupacao_formacao_naturalidade_tse.sql": {
       "statements": 8,
