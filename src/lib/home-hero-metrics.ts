@@ -1,8 +1,13 @@
 import type { DataSourceStatus } from "@/lib/types"
 
+const HERO_CARGOS = new Set(["Presidente", "Governador"])
+
 type HeroResumo = {
   patrimonio: number | null
   processos: number
+  candidato: {
+    cargo_disputado: string
+  }
 }
 
 export type HomeHeroMetrics = {
@@ -11,12 +16,19 @@ export type HomeHeroMetrics = {
   totalProcessos: number | null
 }
 
+function recorteHero(resumos: HeroResumo[]): HeroResumo[] {
+  return resumos.filter((resumo) =>
+    HERO_CARGOS.has(resumo.candidato.cargo_disputado)
+  )
+}
+
 export function getHomeHeroMetrics(
   resumos: HeroResumo[],
   sourceStatus: DataSourceStatus
 ): HomeHeroMetrics {
+  const recorte = recorteHero(resumos)
   const totalCandidatos =
-    sourceStatus === "live" || resumos.length > 0 ? resumos.length : null
+    sourceStatus === "live" || recorte.length > 0 ? recorte.length : null
 
   if (sourceStatus !== "live") {
     return {
@@ -28,11 +40,11 @@ export function getHomeHeroMetrics(
 
   return {
     totalCandidatos,
-    totalPatrimonio: resumos.reduce(
+    totalPatrimonio: recorte.reduce(
       (sum, resumo) => sum + (resumo.patrimonio ?? 0),
       0
     ),
-    totalProcessos: resumos.reduce(
+    totalProcessos: recorte.reduce(
       (sum, resumo) => sum + resumo.processos,
       0
     ),

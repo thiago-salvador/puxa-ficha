@@ -3,14 +3,22 @@ import { describe, it } from "node:test"
 
 import { getHomeHeroMetrics } from "../src/lib/home-hero-metrics"
 
+function resumo(
+  cargo_disputado: string,
+  patrimonio: number | null,
+  processos: number
+) {
+  return { patrimonio, processos, candidato: { cargo_disputado } }
+}
+
 describe("home hero global metrics", () => {
-  it("sums the complete public roster", () => {
+  it("sums presidents and governors only", () => {
     assert.deepEqual(
       getHomeHeroMetrics(
         [
-          { patrimonio: 100, processos: 2 },
-          { patrimonio: null, processos: 0 },
-          { patrimonio: 50, processos: 1 },
+          resumo("Presidente", 100, 2),
+          resumo("Governador", null, 0),
+          resumo("Governador", 50, 1),
         ],
         "live"
       ),
@@ -22,12 +30,32 @@ describe("home hero global metrics", () => {
     )
   })
 
+  it("excludes vice-president and vice-governor from every hero total", () => {
+    assert.deepEqual(
+      getHomeHeroMetrics(
+        [
+          resumo("Presidente", 100, 1),
+          resumo("Governador", 40, 2),
+          resumo("Vice-Presidente", 999, 50),
+          resumo("Vice-Governador", 888, 40),
+        ],
+        "live"
+      ),
+      {
+        totalCandidatos: 2,
+        totalPatrimonio: 140,
+        totalProcessos: 3,
+      }
+    )
+  })
+
   it("keeps the known roster count but does not publish partial zeros", () => {
     assert.deepEqual(
       getHomeHeroMetrics(
         [
-          { patrimonio: null, processos: 0 },
-          { patrimonio: null, processos: 0 },
+          resumo("Presidente", null, 0),
+          resumo("Vice-Presidente", null, 0),
+          resumo("Governador", null, 0),
         ],
         "degraded"
       ),
