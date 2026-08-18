@@ -21,7 +21,7 @@ export function CandidatePhotoCredit({
 
   const className =
     variant === "caption"
-      ? "mt-2 max-w-[96px] text-[9px] leading-snug text-muted-foreground sm:max-w-[270px] sm:text-[length:var(--text-eyebrow)] lg:max-w-[315px]"
+      ? "mt-2 max-w-[96px] text-xs leading-snug text-muted-foreground sm:max-w-[270px] lg:max-w-[315px]"
       : "mt-2 max-w-3xl text-[length:var(--text-eyebrow)] leading-relaxed text-muted-foreground"
 
   if (credit.origem === "tse") {

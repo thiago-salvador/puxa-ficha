@@ -121,12 +121,12 @@ export const CandidatoCard = memo(function CandidatoCard({
                 {hasMainStats ? (
                   <>
                     <span className="flex shrink-0 items-center gap-0.5">
-                      <Landmark className="size-2.5 shrink-0" />
+                      <Landmark className="size-3.5 shrink-0" />
                       {patrimonio != null && patrimonio > 0 ? formatCompact(patrimonio) : "N/D"}
                     </span>
                     <span className="text-white/30">|</span>
                     <span className="flex shrink-0 items-center gap-0.5">
-                      <Scale className="size-2.5 shrink-0" />
+                      <Scale className="size-3.5 shrink-0" />
                       {processos}
                     </span>
                   </>
