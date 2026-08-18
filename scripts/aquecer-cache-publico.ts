@@ -42,6 +42,7 @@ const ROTAS_FIXAS = [
   "/metodologia",
   "/sobre",
   "/governadores",
+  "/parlamentares",
   "/doadores",
 ]
 

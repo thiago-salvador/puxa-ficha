@@ -92,6 +92,12 @@ function buildShortcutItems(): GlobalSearchIndexItem[] {
       badge: "Atalho",
     },
     {
+      href: "/parlamentares",
+      title: "Parlamentares",
+      subtitle: "Fichas de deputados e senadores ainda não estão prontas",
+      badge: "Atalho",
+    },
+    {
       href: "/sobre",
       title: "Sobre o projeto",
       subtitle: "Entender critério editorial e fontes",

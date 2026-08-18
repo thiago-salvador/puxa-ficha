@@ -204,10 +204,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 0;
   overflow: hidden;
   cursor: pointer;
+}
+@media (min-width: 640px) {
+  .menu-nav-link {
+    padding: 0.75rem 1rem;
+  }
 }
 
 /* The stripe/band background that appears on hover */

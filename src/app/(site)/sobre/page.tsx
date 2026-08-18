@@ -76,10 +76,16 @@ export default function SobrePage() {
           </p>
           <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[length:var(--text-body-lg)]">
             A cobertura atual é dos cargos majoritários do Executivo: Presidência da República e
-            governos estaduais, incluindo os vices das chapas. Senado e Câmara dos Deputados ficam
-            de fora por enquanto, porque uma amostra pequena das duas casas informaria menos do que
-            sugere. Dados de mandato parlamentar continuam sendo usados como fonte sobre quem hoje
-            ocupa uma cadeira e disputa o Executivo.
+            governos estaduais, incluindo os vices das chapas.{" "}
+            <Link
+              href="/parlamentares"
+              className="font-bold text-foreground underline decoration-foreground/20 underline-offset-2 hover:decoration-foreground/60"
+            >
+              Senado e Câmara dos Deputados
+            </Link>{" "}
+            ficam de fora por enquanto, porque uma amostra pequena das duas casas informaria menos
+            do que sugere. Dados de mandato parlamentar continuam sendo usados como fonte sobre quem
+            hoje ocupa uma cadeira e disputa o Executivo.
           </p>
           <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[length:var(--text-body-lg)]">
             Diferente de ferramentas que simulam neutralidade, o Puxa Ficha tem uma perspectiva

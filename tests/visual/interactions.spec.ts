@@ -36,6 +36,7 @@ test.describe("Navbar mobile menu", () => {
     // Confirm links are present
     await expect(dialog.getByText("Presidência")).toBeVisible()
     await expect(dialog.getByText("Governadores")).toBeVisible()
+    await expect(dialog.getByText("Parlamentares")).toBeVisible()
     await expect(dialog.getByText("Comparar")).toBeVisible()
     await expect(dialog.getByText("Sobre")).toBeVisible()
 
