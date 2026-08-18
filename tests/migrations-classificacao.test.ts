@@ -302,7 +302,10 @@ describe("classificador puro (#136)", () => {
     // pós-registro, gastos_executivo e o backfill nacional de patrimônio
     // aplicam limpos. Gate re-medido neste merge: "311 aplicadas, 103 falhas
     // reais" e conservação de 414 migrations.
-    assert.equal(manifesto.aplicadas_esperadas, 312)
+    // 312 -> 313 em 18/08/2026: a 20260818172010 tira a extensao unaccent do
+    // schema public. Medido no gate do CI (run 32165874941):
+    // "conservacao OK: 313 + 103 = 416 migrations", conjunto de falhas intacto.
+    assert.equal(manifesto.aplicadas_esperadas, 313)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
