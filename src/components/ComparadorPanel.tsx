@@ -27,6 +27,7 @@ import {
 } from "@/lib/processos-display"
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
+import { formacaoPublicaDe } from "@/lib/formacao-display"
 import type { CandidatoComparavel } from "@/lib/types"
 import {
   COMPARADOR_EIXO_DEFAULT,
@@ -354,7 +355,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                       data-pf-comparador-name={candidato.nome_urna}
                       data-pf-comparador-party={candidato.partido_sigla}
                       data-pf-comparador-age={candidato.idade ?? ""}
-                      data-pf-comparador-formacao={candidato.formacao ?? ""}
+                      data-pf-comparador-formacao={formacaoPublicaDe(candidato) ?? ""}
                       data-pf-comparador-patrimonio={candidato.patrimonio_declarado ?? ""}
                       data-pf-comparador-evolucao={
                         candidato.evolucao_patrimonial_pct ?? "N/A"
@@ -423,7 +424,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                         )}
                       </td>
                       <td className="max-w-[200px] truncate py-3 pr-4 text-[length:var(--text-body-sm)] font-medium text-foreground">
-                        {candidato.formacao ?? (
+                        {formacaoPublicaDe(candidato) ?? (
                           <span className="text-muted-foreground">não informada</span>
                         )}
                       </td>
@@ -595,7 +596,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                         key={candidato.id}
                         className="py-3 text-center text-[length:var(--text-body-sm)] font-medium text-foreground"
                       >
-                        {candidato.formacao ?? (
+                        {formacaoPublicaDe(candidato) ?? (
                           <span className="text-muted-foreground">não informada</span>
                         )}
                       </td>

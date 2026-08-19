@@ -389,7 +389,9 @@ function urlOficialEspecifica(valor: string, buscaUrls: string[], numero: string
   const host = url.hostname.toLowerCase()
   const numeroDigitos = numero.replace(/\D/g, "")
   const numeroConsulta = url.searchParams.get("numeroProcesso")?.replace(/\D/g, "") ?? ""
-  return host === "comunicaapi.pje.jus.br" && numeroConsulta === numeroDigitos
+  const apiOk = host === "comunicaapi.pje.jus.br" && url.pathname === "/api/v1/comunicacao"
+  const portalOk = host === "comunica.pje.jus.br" && url.pathname === "/consulta"
+  return (apiOk || portalOk) && numeroConsulta === numeroDigitos
 }
 
 function urlGenericaDeBusca(url: URL, buscaUrls: string[]): boolean {

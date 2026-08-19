@@ -308,7 +308,10 @@ describe("classificador puro (#136)", () => {
     // 313 -> 314 em 18/08/2026: a 20260818193909 alinha a policy de leitura de
     // financiamento com o filtro da view publica. Medido no gate (run 32178043147):
     // "conservacao OK: 314 + 103 = 417 migrations", conjunto de falhas intacto.
-    assert.equal(manifesto.aplicadas_esperadas, 314)
+    // 314 -> 318 em 19/08/2026: schema de formacao_instituicao, backfill do portal
+    // DJEN, higiene de formação e curadoria judicial do Renan. As quatro aplicam
+    // limpo em universo vazio (sem RAISE). Conservação: 318 + 103 = 421.
+    assert.equal(manifesto.aplicadas_esperadas, 318)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

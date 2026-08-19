@@ -18,7 +18,16 @@ C="pf-orleans-chaves-$$"
 trap 'docker rm -f "$C" >/dev/null 2>&1 || true' EXIT
 
 docker run -d --name "$C" -e POSTGRES_PASSWORD=postgres "$IMG" >/dev/null
-for _ in {1..30}; do docker exec "$C" pg_isready -U postgres >/dev/null 2>&1 && break; sleep 1; done
+pronto=0
+for _ in $(seq 1 90); do
+  if docker exec "$C" pg_isready -U postgres -h 127.0.0.1 >/dev/null 2>&1 &&
+     docker exec "$C" psql -U postgres -h 127.0.0.1 -d postgres -tAc 'select 1' >/dev/null 2>&1; then
+    pronto=1
+    break
+  fi
+  sleep 1
+done
+[[ "$pronto" == 1 ]] || { echo "FAIL: postgres nao ficou pronto"; exit 1; }
 q(){ docker exec -i "$C" psql -X -v ON_ERROR_STOP=1 -U postgres -d postgres "$@"; }
 qtx(){ docker exec -i "$C" psql -X -v ON_ERROR_STOP=1 --single-transaction -U postgres -d postgres "$@"; }
 

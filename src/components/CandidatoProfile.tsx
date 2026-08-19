@@ -14,6 +14,7 @@ import {
   isProcessStatusNeutral,
   isTerminalProcessStatus,
   processoBorderColor,
+  processoFonteLabel,
   processoPodeContarComoCriminal,
   processoTemporalLabel,
   processosOverviewDisplay,
@@ -828,7 +829,7 @@ export function CandidatoProfile({
                                 rel="noreferrer noopener"
                                 className="mt-2 inline-flex text-[length:var(--text-caption)] font-bold text-foreground underline underline-offset-2"
                               >
-                                Fonte oficial
+                                {processoFonteLabel(p)}
                               </a>
                             )}
                           </div>

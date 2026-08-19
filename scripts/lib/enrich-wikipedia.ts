@@ -4,6 +4,7 @@ import { fetchJSON, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import { finalizarColeta, registrarErroColeta } from "./coleta-resultado"
 import type { IngestResult } from "./types"
+import { pareceNomeDeInstituicao } from "../../src/lib/formacao-display"
 
 const args = process.argv.slice(2)
 const slugArgs = args
@@ -21,6 +22,7 @@ const FALLBACK_DATA: Record<string, {
   data_nascimento?: string
   naturalidade?: string
   formacao?: string
+  formacao_instituicao?: string
   profissao_declarada?: string
 }> = {
   "hertz-dias": {
@@ -106,7 +108,7 @@ const FALLBACK_DATA: Record<string, {
   "joao-henrique-catan": {
     data_nascimento: "1988-04-19",
     naturalidade: "Campo Grande/MS",
-    formacao: "Instituto Presbiteriano Mackenzie",
+    formacao_instituicao: "Instituto Presbiteriano Mackenzie",
   },
   "orleans-brandao": {
     formacao: "Administração",
@@ -477,8 +479,15 @@ function mergeFallbackUpdates(
   if (fb.naturalidade && (!mergedState.naturalidade || isInvalidStructuredText(mergedState.naturalidade))) {
     pendingUpdates.naturalidade = fb.naturalidade
   }
+  if (fb.formacao_instituicao && !mergedState.formacao_instituicao) {
+    pendingUpdates.formacao_instituicao = fb.formacao_instituicao
+  }
   if (fb.formacao && (!mergedState.formacao || isInvalidStructuredText(mergedState.formacao))) {
-    pendingUpdates.formacao = fb.formacao
+    if (pareceNomeDeInstituicao(fb.formacao)) {
+      if (!mergedState.formacao_instituicao) pendingUpdates.formacao_instituicao = fb.formacao
+    } else {
+      pendingUpdates.formacao = fb.formacao
+    }
   }
   if (fb.profissao_declarada && (!mergedState.profissao_declarada || isInvalidStructuredText(mergedState.profissao_declarada))) {
     pendingUpdates.profissao_declarada = fb.profissao_declarada
@@ -540,7 +549,16 @@ async function applyFallback(slug: string, candidatoId: string, existing: Record
   if (fb.foto_url && !existing.foto_url) updates.foto_url = fb.foto_url
   if (fb.data_nascimento && !existing.data_nascimento) updates.data_nascimento = fb.data_nascimento
   if (fb.naturalidade && !existing.naturalidade) updates.naturalidade = fb.naturalidade
-  if (fb.formacao && !existing.formacao) updates.formacao = fb.formacao
+  if (fb.formacao_instituicao && !existing.formacao_instituicao) {
+    updates.formacao_instituicao = fb.formacao_instituicao
+  }
+  if (fb.formacao && !existing.formacao) {
+    if (pareceNomeDeInstituicao(fb.formacao)) {
+      if (!existing.formacao_instituicao) updates.formacao_instituicao = fb.formacao
+    } else {
+      updates.formacao = fb.formacao
+    }
+  }
   if (fb.profissao_declarada && !existing.profissao_declarada) updates.profissao_declarada = fb.profissao_declarada
 
   if (Object.keys(updates).length === 0) {
@@ -583,7 +601,7 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
     try {
       const consultaDb = await supabase
         .from("candidatos")
-        .select("id, foto_url, data_nascimento, naturalidade, formacao, profissao_declarada, biografia, redes_sociais, wikidata_id")
+        .select("id, foto_url, data_nascimento, naturalidade, formacao, formacao_instituicao, profissao_declarada, biografia, redes_sociais, wikidata_id")
         .eq("slug", cand.slug)
         .single()
 
@@ -633,7 +651,7 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
           warn("wikipedia", `  ${cand.slug}: sem foto na Wikipedia`)
         }
 
-        if (!existing.biografia || !existing.data_nascimento || !existing.naturalidade || !existing.formacao) {
+        if (!existing.biografia || !existing.data_nascimento || !existing.naturalidade || !existing.formacao || !existing.formacao_instituicao) {
           try {
             summary = await fetchWikiSummary(wikiTitle)
           } catch (err) {
@@ -642,7 +660,7 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
           await sleep(300)
         }
 
-        const needsStructured = !existing.data_nascimento || !existing.naturalidade || !existing.formacao
+        const needsStructured = !existing.data_nascimento || !existing.naturalidade || !existing.formacao || !existing.formacao_instituicao
         let wd: WikiStructuredFallback = { dataNascimento: null, naturalidade: null, formacao: null }
         let wikiStructured: WikiStructuredFallback = { dataNascimento: null, naturalidade: null, formacao: null }
         if (wikidataId && needsStructured) {
@@ -659,7 +677,7 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
           !wikidataId ||
           (!existing.data_nascimento && !wd.dataNascimento) ||
           (!existing.naturalidade && !wd.naturalidade) ||
-          (!existing.formacao && !wd.formacao)
+          (!existing.formacao && !existing.formacao_instituicao && !wd.formacao)
         )) {
           try {
             wikiStructured = await fetchWikiWikitextStructured(wikiTitle, summary)
@@ -671,7 +689,7 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
 
         const dataNascimento = pickBestBirthDate(wd.dataNascimento, wikiStructured.dataNascimento)
         const naturalidade = wd.naturalidade ?? wikiStructured.naturalidade
-        const formacao = wd.formacao ?? wikiStructured.formacao
+        const educacao = wd.formacao ?? wikiStructured.formacao
         if (!existing.data_nascimento && dataNascimento) {
           updates.data_nascimento = dataNascimento
           log("wikipedia", `  ${cand.slug}: data_nascimento = ${dataNascimento}`)
@@ -680,9 +698,16 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
           updates.naturalidade = naturalidade
           log("wikipedia", `  ${cand.slug}: naturalidade = ${naturalidade}`)
         }
-        if (!existing.formacao && formacao) {
-          updates.formacao = formacao
-          log("wikipedia", `  ${cand.slug}: formacao = ${formacao}`)
+        if (educacao) {
+          if (pareceNomeDeInstituicao(educacao)) {
+            if (!existing.formacao_instituicao) {
+              updates.formacao_instituicao = educacao
+              log("wikipedia", `  ${cand.slug}: formacao_instituicao = ${educacao}`)
+            }
+          } else if (!existing.formacao) {
+            updates.formacao = educacao
+            log("wikipedia", `  ${cand.slug}: formacao = ${educacao}`)
+          }
         }
 
         if (!existing.biografia && summary) {

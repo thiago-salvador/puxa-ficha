@@ -17,6 +17,7 @@ export interface Candidato {
   idade: number | null;
   naturalidade: string | null;
   formacao: string | null;
+  formacao_instituicao?: string | null;
   profissao_declarada: string | null;
   genero?: string | null;
   estado_civil?: string | null;
@@ -597,6 +598,7 @@ export interface CandidatoComparavel {
   foto_url: string | null;
   idade: number | null;
   formacao: string | null;
+  formacao_instituicao?: string | null;
   total_processos: number;
   mudancas_partido: number;
   total_pontos_atencao: number;

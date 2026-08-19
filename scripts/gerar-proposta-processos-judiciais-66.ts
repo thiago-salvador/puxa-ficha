@@ -100,9 +100,13 @@ function linhasDaAuditoria(auditoria: Auditoria66): Linha66[] {
       throw new Error(`${processo.numero_cnj}: evidencia oficial incompleta`)
     }
     const url = new URL(processo.fonte_oficial)
-    if (url.protocol !== "https:" || url.hostname !== "comunicaapi.pje.jus.br") {
+    if (
+      url.protocol !== "https:" ||
+      (url.hostname !== "comunicaapi.pje.jus.br" && url.hostname !== "comunica.pje.jus.br")
+    ) {
       throw new Error(`${processo.numero_cnj}: fonte oficial invalida`)
     }
+    const cnjDigitos = processo.numero_cnj.replace(/\D/g, "")
     return {
       slug: processo.slug,
       numero_cnj: processo.numero_cnj,
@@ -114,7 +118,7 @@ function linhasDaAuditoria(auditoria: Auditoria66): Linha66[] {
       data_decisao: null,
       gravidade: null,
       fonte: `${MARCADOR}: API publica do DJEN/CNJ`,
-      url_fonte: processo.fonte_oficial,
+      url_fonte: `https://comunica.pje.jus.br/consulta?numeroProcesso=${cnjDigitos}`,
     }
   })
 }
@@ -281,7 +285,7 @@ SELECT
   (SELECT count(*) FROM actual WHERE status <> '${PROCESS_STATUS_NEUTRAL}') AS invalid_status,
   (SELECT count(*) FROM actual WHERE data_inicio IS NOT NULL OR data_decisao IS NOT NULL OR gravidade IS NOT NULL) AS inferred_fields,
   (SELECT count(*) FROM actual WHERE descricao IS NULL OR btrim(descricao) = '') AS missing_description,
-  (SELECT count(*) FROM actual WHERE url_fonte IS NULL OR url_fonte !~ '^https://comunicaapi[.]pje[.]jus[.]br/') AS invalid_source_urls,
+  (SELECT count(*) FROM actual WHERE url_fonte IS NULL OR url_fonte !~ '^https://comunica[.]pje[.]jus[.]br/consulta') AS invalid_source_urls,
   (SELECT count(*) FROM actual
    WHERE regexp_replace(coalesce(substring(url_fonte from 'numeroProcesso=([^&]+)'), ''), '[^0-9]', '', 'g')
          <> regexp_replace(numero_cnj, '[^0-9]', '', 'g')) AS source_cnj_mismatch;
