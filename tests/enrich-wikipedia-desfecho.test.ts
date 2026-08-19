@@ -95,10 +95,12 @@ describe("Wikipedia: desfecho explicito", () => {
     assert.match(r.coleta_detalhe ?? "", /HTTP 500/)
   })
 
-  it("P69 e fallback de instituição não escrevem em formacao", () => {
+  it("P69, resumo e fallback de educação não escrevem grau TSE em formacao", () => {
     const fonte = readFileSync("scripts/lib/enrich-wikipedia.ts", "utf8")
-    assert.match(fonte, /pareceNomeDeInstituicao/)
     assert.match(fonte, /formacao_instituicao: "Instituto Presbiteriano Mackenzie"/)
     assert.doesNotMatch(fonte, /formacao: "Instituto Presbiteriano Mackenzie"/)
+    assert.doesNotMatch(fonte, /updates\.formacao = educacao/)
+    assert.doesNotMatch(fonte, /pendingUpdates\.formacao = fb\.formacao/)
+    assert.doesNotMatch(fonte, /updates\.formacao = fb\.formacao/)
   })
 })

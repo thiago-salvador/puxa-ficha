@@ -1,5 +1,6 @@
 /**
  * Formação pública: grau TSE + instituição complementar, nunca diploma implícito.
+ * Grau vem do TSE. Instituição vem de mídia ou wiki. Cada um aparece se existir.
  */
 
 const INSTITUICAO_RE =
@@ -11,11 +12,21 @@ export function pareceNomeDeInstituicao(valor: string | null | undefined): boole
   return INSTITUICAO_RE.test(texto)
 }
 
+function humanizarGrauTse(valor: string | null | undefined): string | null {
+  const texto = valor?.trim() || null
+  if (!texto) return null
+  if (texto.length > 4 && texto === texto.toLocaleUpperCase("pt-BR")) {
+    const lower = texto.toLocaleLowerCase("pt-BR")
+    return lower.charAt(0).toLocaleUpperCase("pt-BR") + lower.slice(1)
+  }
+  return texto
+}
+
 export function formatFormacaoPublica(
   grau: string | null | undefined,
   instituicao: string | null | undefined,
 ): string | null {
-  let g = grau?.trim() || null
+  let g = humanizarGrauTse(grau)
   let i = instituicao?.trim() || null
   if (pareceNomeDeInstituicao(g)) {
     if (!i) i = g
@@ -23,6 +34,7 @@ export function formatFormacaoPublica(
   }
   if (g && i) return `${g} · ${i}`
   if (g) return g
+  if (i) return i
   return null
 }
 

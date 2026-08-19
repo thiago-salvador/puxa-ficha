@@ -15,16 +15,39 @@ describe("formatFormacaoPublica", () => {
     )
   })
 
-  it("não afirma diploma quando só há grau", () => {
-    assert.equal(formatFormacaoPublica("Superior incompleto", null), "Superior incompleto")
+  it("humaniza grau TSE em caixa alta", () => {
+    assert.equal(
+      formatFormacaoPublica("SUPERIOR COMPLETO", "Universidade Paulista (Unip)"),
+      "Superior completo · Universidade Paulista (Unip)",
+    )
+    assert.equal(formatFormacaoPublica("SUPERIOR INCOMPLETO", null), "Superior incompleto")
   })
 
-  it("não apresenta instituição sozinha como se fosse grau", () => {
-    assert.equal(formatFormacaoPublica(null, "Universidade de São Paulo"), null)
-    assert.equal(formatFormacaoPublica("Universidade de São Paulo", null), null)
+  it("mostra só o grau quando não há instituição", () => {
+    assert.equal(formatFormacaoPublica("Superior incompleto", null), "Superior incompleto")
+    assert.equal(formatFormacaoPublica("SUPERIOR COMPLETO", null), "Superior completo")
+  })
+
+  it("mostra só a instituição quando não há grau TSE", () => {
+    assert.equal(
+      formatFormacaoPublica(null, "Universidade de São Paulo"),
+      "Universidade de São Paulo",
+    )
+    assert.equal(
+      formatFormacaoPublica("Universidade de São Paulo", null),
+      "Universidade de São Paulo",
+    )
     assert.equal(
       formatFormacaoPublica("Centro Universitário de Brasília", null),
-      null,
+      "Centro Universitário de Brasília",
+    )
+  })
+
+  it("não trata o nome da instituição como se fosse grau", () => {
+    assert.equal(pareceNomeDeInstituicao("Universidade de São Paulo"), true)
+    assert.equal(
+      formatFormacaoPublica("Universidade de São Paulo", "Universidade de São Paulo"),
+      "Universidade de São Paulo",
     )
   })
 
