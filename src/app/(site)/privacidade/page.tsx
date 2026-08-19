@@ -413,9 +413,9 @@ export default function PrivacidadePage() {
           </P>
           <Ul>
             <li>
-              <strong>Vercel Analytics:</strong> medição agregada de páginas visitadas, servida pelo
-              provedor de hosting sem cookies persistentes de identificação pessoal. Fornece apenas
-              contagens agregadas de tráfego por rota, sem mapear indivíduos.
+              <strong>Cloudflare Web Analytics:</strong> medição agregada de páginas visitadas via
+              beacon no navegador, sem cookies persistentes de identificação pessoal. Fornece
+              contagens agregadas de tráfego por rota, país e aparelho, sem mapear indivíduos.
             </li>
             <li>
               <strong>Eventos operacionais:</strong> registramos interações mínimas para medir
