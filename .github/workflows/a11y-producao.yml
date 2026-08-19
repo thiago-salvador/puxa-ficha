@@ -1,0 +1,103 @@
+name: Acessibilidade (produção)
+
+# So no push da main. Num PR este workflow nao aparece, para nao listar o
+# check "skipped" que dava a impressao de a11y nao ter rodado. O axe do
+# codigo do PR vive no job "Rotas e acessibilidade" do ci.yml, contra o
+# build local. Aqui o alvo e puxaficha.com.br: o HTML com dados reais.
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: a11y-prod-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  a11y:
+    name: Acessibilidade (produção)
+    runs-on: ubuntu-latest
+    # 15 min matava o job no meio do apt: o passo abaixo tem duas tentativas
+    # de 5 min (teto 22 no step), e em 19/08 o apt rodou 14m47s ate o
+    # cancelamento (run 32258909527). 30 min e o mesmo teto do verify.
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Versao do Playwright, para a chave do cache
+        id: pw-versao
+        run: |
+          echo "v=$(node -p "require('./package-lock.json').packages['node_modules/playwright'].version")" >> "$GITHUB_OUTPUT"
+
+      - name: Cache dos navegadores do Playwright
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.pw-versao.outputs.v }}
+
+      - name: apt desiste rapido de mirror morto
+        run: |
+          sudo tee /etc/apt/apt.conf.d/99-timeout-curto >/dev/null <<'FIM'
+          Acquire::http::Timeout "15";
+          Acquire::https::Timeout "15";
+          Acquire::ftp::Timeout "15";
+          Acquire::Retries "2";
+          FIM
+          sudo sed -i 's/azure\.archive\.ubuntu\.com/archive.ubuntu.com/g' \
+            /etc/apt/sources.list \
+            /etc/apt/sources.list.d/*.list \
+            /etc/apt/sources.list.d/*.sources \
+            2>/dev/null || true
+
+      - name: Dependencias de sistema dos navegadores (apt)
+        timeout-minutes: 22
+        run: |
+          limpar_apt() {
+            sudo pkill -9 -x apt-get 2>/dev/null || true
+            sudo pkill -9 -x dpkg 2>/dev/null || true
+            sudo rm -f /var/lib/apt/lists/lock /var/cache/apt/archives/lock \
+                       /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend 2>/dev/null || true
+            sudo dpkg --configure -a 2>/dev/null || true
+          }
+          for tentativa in 1 2; do
+            if timeout -k 15 300 npx playwright install-deps chromium webkit; then
+              exit 0
+            fi
+            echo "::warning::tentativa $tentativa de instalar dependencias falhou ou travou em 5 min"
+            limpar_apt
+            sleep 10
+          done
+          echo "::error::duas tentativas de instalar as dependencias de sistema falharam"
+          exit 1
+
+      - name: Install Playwright browsers
+        timeout-minutes: 10
+        run: npx playwright install chromium webkit
+
+      - name: Axe (moderate, serious e critical)
+        env:
+          PF_BASE_URL: https://puxaficha.com.br
+        run: npm run test:a11y
+
+      - name: Publicar relatório em caso de falha
+        if: failure()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: playwright-a11y-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
