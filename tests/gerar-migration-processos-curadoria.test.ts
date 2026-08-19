@@ -42,7 +42,7 @@ describe("gerar migration de processos da curadoria", () => {
         "https://comunicaapi.pje.jus.br/api/v1/comunicacao?numeroProcesso=70000471020218220007&itensPorPagina=25",
         "7000047-10.2021.8.22.0007",
       ),
-      "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=70000471020218220007",
+      "https://comunica.pje.jus.br/consulta?numeroProcesso=70000471020218220007",
     )
   })
 
@@ -136,7 +136,7 @@ describe("gerar migration de processos da curadoria", () => {
     for (const numero of cnjs) assert.ok(pacote.readback.includes(numero))
   })
 
-  it("gerador reproduz byte a byte o readback aplicado do lote 69/21", () => {
+  it("gerador publica portal humano e mantém 69/21 sem JSON da API", () => {
     const path = "QA/evidencias/2026-08-10-item2-judicial/proposta-69-21/manifesto-processos-curadoria-69.json"
     const manifesto = JSON.parse(readFileSync(path, "utf8")) as {
       linhas: Array<{
@@ -177,10 +177,16 @@ describe("gerar migration de processos da curadoria", () => {
       aprovadoEditorialmente: true,
     })
 
-    assert.equal(
-      pacote.readback,
-      readFileSync("QA/evidencias/2026-08-10-item2-judicial/proposta-69-21/20260810122000_processos_curadoria_djen.readback.sql", "utf8"),
-    )
+    assert.equal(pacote.linhas.length, 69)
+    for (const linha of pacote.linhas) {
+      assert.doesNotMatch(linha.url_fonte, /comunicaapi\.pje\.jus\.br/)
+      if (linha.url_fonte.includes("comunica.pje.jus.br")) {
+        assert.match(linha.url_fonte, /^https:\/\/comunica\.pje\.jus\.br\/consulta\?numeroProcesso=\d{20}$/)
+      }
+    }
+    assert.doesNotMatch(pacote.migration, /comunicaapi\.pje\.jus\.br/)
+    assert.match(pacote.readback, /AS invalid_source_urls/)
+    assert.match(pacote.readback, /url_fonte !~ '\^https:\/\/'/)
   })
 
   it("ignora fonte editorial representativa e usa a URL individual do processo", () => {
@@ -206,7 +212,7 @@ describe("gerar migration de processos da curadoria", () => {
     })
     assert.equal(
       pacote.linhas[0].url_fonte,
-      "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=70000471020218220007",
+      "https://comunica.pje.jus.br/consulta?numeroProcesso=70000471020218220007",
     )
     assert.doesNotMatch(pacote.migration, /00104542320255030012/)
   })
@@ -233,7 +239,7 @@ describe("gerar migration de processos da curadoria", () => {
             esperadoFichas: 1,
             timestamp: "20260810122000",
           }),
-        /URL individual do Comunica PJe nao prova o proprio CNJ/,
+        /URL do Comunica PJe nao prova o proprio CNJ/,
       )
     }
   })

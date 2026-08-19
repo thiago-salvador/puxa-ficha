@@ -8,6 +8,7 @@ import {
   FALLBACK_GRADIENT,
 } from "@/lib/utils"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
+import { formacaoPublicaDe } from "@/lib/formacao-display"
 import { CandidatePhoto } from "@/components/CandidatePhoto"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import type { Candidato } from "@/lib/types"
@@ -33,6 +34,12 @@ export const CandidatoCard = memo(function CandidatoCard({
   const gradient = FALLBACK_GRADIENT
   const partyLogo = getPartyLogoUrl(candidato.partido_sigla)
   const hasMainStats = (patrimonio != null && patrimonio > 0) || processos > 0
+  const formacaoLabel = formacaoPublicaDe({
+    formacao: candidato.formacao ? sanitizePtBrText(candidato.formacao) : null,
+    formacao_instituicao: candidato.formacao_instituicao
+      ? sanitizePtBrText(candidato.formacao_instituicao)
+      : null,
+  })
   const photoFrameRef = useRef<HTMLDivElement>(null)
   const [photoAllowed, setPhotoAllowed] = useState(!deferPhotoUntilVisible)
 
@@ -138,13 +145,13 @@ export const CandidatoCard = memo(function CandidatoCard({
                         {sanitizePtBrText(candidato.cargo_atual)}
                       </span>
                     )}
-                    {!candidato.cargo_atual && candidato.formacao && (
+                    {!candidato.cargo_atual && formacaoLabel && (
                       <span className="flex items-center gap-0.5 truncate">
                         <GraduationCap className="size-2.5 shrink-0" />
-                        {sanitizePtBrText(candidato.formacao)}
+                        {formacaoLabel}
                       </span>
                     )}
-                    {!candidato.cargo_atual && !candidato.formacao && candidato.idade && (
+                    {!candidato.cargo_atual && !formacaoLabel && candidato.idade && (
                       <span>{candidato.idade} anos</span>
                     )}
                   </>
@@ -183,10 +190,10 @@ export const CandidatoCard = memo(function CandidatoCard({
                         <span className="text-[13px] font-semibold text-white">{sanitizePtBrText(candidato.cargo_atual)}</span>
                       </div>
                     )}
-                    {candidato.formacao && (
+                    {formacaoLabel && (
                       <div className="flex items-center gap-2">
                         <GraduationCap className="size-3.5 shrink-0 text-white/60" />
-                        <span className="text-[13px] font-semibold text-white">{sanitizePtBrText(candidato.formacao)}</span>
+                        <span className="text-[13px] font-semibold text-white">{formacaoLabel}</span>
                       </div>
                     )}
                     {candidato.idade && (

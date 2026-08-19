@@ -11,6 +11,8 @@ import { homedir } from "node:os"
 import { resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 
+import { urlConsultaDjenDeFonte } from "../src/lib/djen-consulta-url"
+
 const MARCADOR_FONTE = "curadoria-djen-20260805"
 const SPLIT_IDENTIDADE_VERSION = "20260811102100"
 
@@ -97,50 +99,18 @@ export function cnjValido(valor: string): boolean {
   return verificador === esperado
 }
 
-const COMUNICA_PJE_ORIGEM = "https://comunicaapi.pje.jus.br"
-const COMUNICA_PJE_CAMINHO = "/api/v1/comunicacao"
-
 export function urlComunicaPjePorCnj(valor: string, numeroCnj: string): string {
-  const cnjDigitos = numeroCnj.replace(/\D/g, "")
-  let url: URL
-  try {
-    url = new URL(valor)
-  } catch {
-    throw new Error(`${numeroCnj}: URL individual do Comunica PJe invalida`)
-  }
-  const numerosProcesso = url.searchParams.getAll("numeroProcesso")
-  if (
-    url.protocol !== "https:" ||
-    url.hostname !== "comunicaapi.pje.jus.br" ||
-    url.port !== "" ||
-    url.username !== "" ||
-    url.password !== "" ||
-    url.hash !== "" ||
-    url.pathname !== COMUNICA_PJE_CAMINHO ||
-    numerosProcesso.length !== 1 ||
-    !/^\d{20}$/.test(numerosProcesso[0]) ||
-    numerosProcesso[0] !== cnjDigitos
-  ) {
-    throw new Error(`${numeroCnj}: URL individual do Comunica PJe nao prova o proprio CNJ`)
-  }
-  return `${COMUNICA_PJE_ORIGEM}${COMUNICA_PJE_CAMINHO}?itensPorPagina=100&numeroProcesso=${cnjDigitos}`
+  return urlConsultaDjenDeFonte(valor, numeroCnj)
 }
 
 function fonteOficialPorProcesso(
   fontes: FonteOficial[],
   numeroCnj: string,
 ): FonteOficial | undefined {
-  const cnjDigitos = numeroCnj.replace(/\D/g, "")
   return fontes.find((fonte) => {
     try {
-      const url = new URL(fonte.url)
-      return (
-        url.protocol === "https:" &&
-        url.hostname === "comunicaapi.pje.jus.br" &&
-        url.pathname === COMUNICA_PJE_CAMINHO &&
-        url.searchParams.getAll("numeroProcesso").length === 1 &&
-        url.searchParams.get("numeroProcesso") === cnjDigitos
-      )
+      urlConsultaDjenDeFonte(fonte.url, numeroCnj)
+      return true
     } catch {
       return false
     }
@@ -248,9 +218,9 @@ BEGIN
 
   SELECT count(*) INTO n
   FROM _pf_processos_curadoria
-  WHERE url_fonte LIKE 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?%'
+  WHERE url_fonte LIKE 'https://comunica.pje.jus.br/consulta?%'
     AND url_fonte <>
-    'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=' ||
+    'https://comunica.pje.jus.br/consulta?numeroProcesso=' ||
     regexp_replace(numero_cnj, '[^0-9]', '', 'g');
   IF n <> 0 THEN
     RAISE EXCEPTION 'processos curadoria: % URLs nao provam o proprio CNJ', n;
@@ -476,9 +446,9 @@ SELECT
   (SELECT count(*) FROM actual
    WHERE url_fonte IS NULL OR url_fonte !~ '^https://') AS invalid_source_urls,
   (SELECT count(*) FROM actual
-   WHERE url_fonte LIKE 'https://comunicaapi.pje.jus.br/api/v1/comunicacao?%'
+   WHERE url_fonte LIKE 'https://comunica.pje.jus.br/consulta?%'
      AND url_fonte <>
-     'https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=100&numeroProcesso=' ||
+     'https://comunica.pje.jus.br/consulta?numeroProcesso=' ||
      regexp_replace(numero_cnj, '[^0-9]', '', 'g')) AS source_cnj_mismatch;
 
 DO $readback$
@@ -533,7 +503,7 @@ export function prepararPacoteProcessos(entrada: EntradaPacote) {
     let urlFonte = fonte.url
     try {
       const url = new URL(fonte.url)
-      if (url.hostname === "comunicaapi.pje.jus.br") {
+      if (url.hostname === "comunicaapi.pje.jus.br" || url.hostname === "comunica.pje.jus.br") {
         urlFonte = urlComunicaPjePorCnj(fonte.url, item.numero_cnj)
       }
     } catch {

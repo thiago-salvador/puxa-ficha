@@ -292,6 +292,10 @@ describe("contrato da view candidatos_publico", () => {
       // Alinha a policy de leitura de `financiamento` com o filtro que a view
       // publica ja aplicava. Toca RLS de outra tabela, nao a definicao desta view.
       "20260818193909_financiamento_policy_alinha_com_a_view_publica.sql",
+      "20260819140000_formacao_instituicao_schema_publico.sql",
+      "20260819140100_urls_consulta_djen.sql",
+      "20260819140200_formacao_instituicao_higiene.sql",
+      "20260819140300_renan_santos_processos_assunto_absolvido.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 
@@ -396,5 +400,25 @@ describe("contrato da view candidatos_publico: crédito de foto", () => {
     assert.match(migration, /GRANT SELECT \(foto_credito\) ON TABLE public\.candidatos TO anon, authenticated;/)
     assert.match(migration, /GRANT SELECT ON public\.candidatos_publico TO anon, authenticated;/)
     assert.doesNotMatch(statements("20260815130000_foto_credito_schema_publico.sql"), /DROP\s+VIEW/i)
+  })
+})
+
+describe("contrato da view candidatos_publico: formação instituição", () => {
+  const anterior = corpoDaView(ler("20260815130000_foto_credito_schema_publico.sql"))
+  const nova = corpoDaView(ler("20260819140000_formacao_instituicao_schema_publico.sql"))
+  const colunasAnteriores = colunasDaView(anterior)
+  const colunasNovas = colunasDaView(nova)
+
+  it("preserva todas as colunas anteriores e acrescenta formacao_instituicao no fim", () => {
+    assert.deepEqual(colunasNovas.slice(0, colunasAnteriores.length), colunasAnteriores)
+    assert.equal(colunasNovas.length, colunasAnteriores.length + 1)
+    assert.equal(colunasNovas.at(-1), "formacao_instituicao")
+  })
+
+  it("concede leitura da coluna e da view sem derrubar dependentes", () => {
+    const migration = ler("20260819140000_formacao_instituicao_schema_publico.sql")
+    assert.match(migration, /GRANT SELECT \(formacao_instituicao\) ON TABLE public\.candidatos TO anon, authenticated;/)
+    assert.match(migration, /GRANT SELECT ON public\.candidatos_publico TO anon, authenticated;/)
+    assert.doesNotMatch(statements("20260819140000_formacao_instituicao_schema_publico.sql"), /DROP\s+VIEW/i)
   })
 })

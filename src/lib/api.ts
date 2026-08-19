@@ -189,8 +189,9 @@ if (USE_MOCK && process.env.VERCEL) {
 }
 
 // Public columns only: excludes cpf, email_campanha, cpf_hash, tcu flags, wikidata_id
-const CANDIDATO_COLUMNS = "id, nome_completo, nome_urna, slug, data_nascimento, idade, naturalidade, formacao, profissao_declarada, genero, estado_civil, cor_raca, partido_atual, partido_sigla, cargo_atual, cargo_disputado, estado, status, situacao_candidatura, biografia, foto_url, site_campanha, redes_sociais, fonte_dados, ultima_atualizacao, verificacao_campos, foto_credito"
-const CANDIDATO_COLUMNS_WITHOUT_PHOTO_CREDIT = CANDIDATO_COLUMNS.replace(/, foto_credito$/, "")
+const CANDIDATO_COLUMNS = "id, nome_completo, nome_urna, slug, data_nascimento, idade, naturalidade, formacao, profissao_declarada, genero, estado_civil, cor_raca, partido_atual, partido_sigla, cargo_atual, cargo_disputado, estado, status, situacao_candidatura, biografia, foto_url, site_campanha, redes_sociais, fonte_dados, ultima_atualizacao, verificacao_campos, foto_credito, formacao_instituicao"
+const CANDIDATO_COLUMNS_WITHOUT_FORMACAO_INSTITUICAO = CANDIDATO_COLUMNS.replace(/, formacao_instituicao$/, "")
+const CANDIDATO_COLUMNS_WITHOUT_PHOTO_CREDIT = CANDIDATO_COLUMNS_WITHOUT_FORMACAO_INSTITUICAO.replace(/, foto_credito$/, "")
 const CANDIDATO_COLUMNS_LEGACY = CANDIDATO_COLUMNS_WITHOUT_PHOTO_CREDIT.replace(/, verificacao_campos$/, "")
 
 function isMissingOptionalCandidateColumnError(error: { message?: string } | null | undefined): boolean {
@@ -782,6 +783,9 @@ async function getCandidatosResourceUncached(
   }, { attemptTimeoutMs: SUPABASE_FIRST_FOLD_ATTEMPT_TIMEOUT_MS })
   let result = await load(CANDIDATO_COLUMNS)
   if (isMissingOptionalCandidateColumnError(result.error)) {
+    result = await load(CANDIDATO_COLUMNS_WITHOUT_FORMACAO_INSTITUICAO)
+  }
+  if (isMissingOptionalCandidateColumnError(result.error)) {
     result = await load(CANDIDATO_COLUMNS_WITHOUT_PHOTO_CREDIT)
   }
   if (isMissingOptionalCandidateColumnError(result.error)) {
@@ -1063,6 +1067,9 @@ const getCandidatoPublicRowForRequest = cache(async function loadCandidatoPublic
         .single()
   )
   let result = await load(CANDIDATO_COLUMNS)
+  if (isMissingOptionalCandidateColumnError(result.error)) {
+    result = await load(CANDIDATO_COLUMNS_WITHOUT_FORMACAO_INSTITUICAO)
+  }
   if (isMissingOptionalCandidateColumnError(result.error)) {
     result = await load(CANDIDATO_COLUMNS_WITHOUT_PHOTO_CREDIT)
   }
@@ -1371,6 +1378,9 @@ async function getCandidatoBySlugFromRelationResource(
           .single()
     )
     let result = await load(CANDIDATO_COLUMNS)
+    if (isMissingOptionalCandidateColumnError(result.error)) {
+      result = await load(CANDIDATO_COLUMNS_WITHOUT_FORMACAO_INSTITUICAO)
+    }
     if (isMissingOptionalCandidateColumnError(result.error)) {
       result = await load(CANDIDATO_COLUMNS_WITHOUT_PHOTO_CREDIT)
     }

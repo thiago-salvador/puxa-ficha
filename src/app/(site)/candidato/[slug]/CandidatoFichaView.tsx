@@ -36,6 +36,7 @@ import {
   resolveCargoDisputadoProveniencia,
 } from "@/lib/candidatura-proveniencia"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
+import { formacaoPublicaDe } from "@/lib/formacao-display"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
@@ -150,7 +151,12 @@ export async function CandidatoFichaView({
     cargoAtualLabel || null,
     ficha.naturalidade,
     ficha.idade ? `${ficha.idade} anos` : null,
-    ficha.formacao ? sanitizePtBrText(ficha.formacao) : null,
+    formacaoPublicaDe({
+      formacao: ficha.formacao ? sanitizePtBrText(ficha.formacao) : null,
+      formacao_instituicao: ficha.formacao_instituicao
+        ? sanitizePtBrText(ficha.formacao_instituicao)
+        : null,
+    }),
     ficha.profissao_declarada ? sanitizePtBrText(ficha.profissao_declarada) : null,
     ficha.genero ? sanitizePtBrText(ficha.genero) : null,
     ficha.estado_civil ? sanitizePtBrText(ficha.estado_civil) : null,

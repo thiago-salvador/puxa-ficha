@@ -6,6 +6,7 @@ import {
   isProcessStatusNeutral,
   isTerminalProcessStatus,
   processoBorderColor,
+  processoFonteLabel,
   processoPodeContarComoCriminal,
   processoTemporalLabel,
   processosMaiorVerificadoNaComparacao,
@@ -181,5 +182,29 @@ describe("CandidatoProfileSkeleton: a legenda não pode sumir na primeira pintur
 
   it("o atributo cru de overview segue intacto", () => {
     assert.match(fonte, /data-pf-overview-raw=\{overview\.processos\}/)
+  })
+})
+
+describe("rótulo da fonte e absolvição", () => {
+  it("portal judiciário continua Fonte oficial", () => {
+    assert.equal(
+      processoFonteLabel({
+        status: "comunicacao_processual_publicada_merito_nao_inferido",
+        url_fonte: "https://comunica.pje.jus.br/consulta?numeroProcesso=10399713220248260002",
+      }),
+      "Fonte oficial",
+    )
+  })
+
+  it("absolvido com URL de imprensa vira Fonte jornalística e não conta no criminal", () => {
+    const processo = {
+      status: "absolvido",
+      tipo: "criminal" as const,
+      url_fonte:
+        "https://g1.globo.com/sp/sao-paulo/eleicoes/2026/noticia/2026/08/04/mp-de-sp-confirma-que-renan-santos-foi-absolvido-em-processo-por-acusacao-de-estupro.ghtml",
+    }
+    assert.equal(processoFonteLabel(processo), "Fonte jornalística")
+    assert.equal(processoPodeContarComoCriminal(processo), false)
+    assert.equal(isTerminalProcessStatus(processo.status), true)
   })
 })

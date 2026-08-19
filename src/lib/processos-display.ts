@@ -1,3 +1,5 @@
+import { urlFonteEPortalJudiciario } from "@/lib/djen-consulta-url"
+
 /**
  * Display honesto do contador de processos judiciais (2026-08-05).
  *
@@ -134,6 +136,14 @@ export function processosResumoLabel(total: number | null | undefined): string {
 export function processosListaCount(total: number | null | undefined): number {
   if (processosNaoVerificado(total)) return 0
   return total ?? 0
+}
+
+export function processoFonteLabel(
+  processo: Pick<import("@/lib/types").Processo, "status" | "url_fonte">,
+): string {
+  if (urlFonteEPortalJudiciario(processo.url_fonte)) return "Fonte oficial"
+  if (isTerminalProcessStatus(processo.status)) return "Fonte jornalística"
+  return "Fonte oficial"
 }
 
 /**

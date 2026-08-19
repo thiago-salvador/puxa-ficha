@@ -6,6 +6,7 @@ import { CandidatePhoto } from "@/components/CandidatePhoto"
 import { SITE_ORIGIN } from "@/lib/metadata"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
+import { formacaoPublicaDe } from "@/lib/formacao-display"
 import { formatCargoDisputadoPublicLabel } from "@/lib/ui-labels"
 import { processosOverviewDisplay } from "@/lib/processos-display"
 
@@ -15,7 +16,12 @@ function MetaLine({ ficha }: { ficha: FichaCandidato }) {
     ficha.cargo_disputado ? formatCargoDisputadoPublicLabel(ficha.cargo_disputado) : null,
     ficha.estado ? ficha.estado.toUpperCase() : null,
     ficha.idade != null ? `${ficha.idade} anos` : null,
-    ficha.formacao ? sanitizePtBrText(ficha.formacao) : null,
+    formacaoPublicaDe({
+      formacao: ficha.formacao ? sanitizePtBrText(ficha.formacao) : null,
+      formacao_instituicao: ficha.formacao_instituicao
+        ? sanitizePtBrText(ficha.formacao_instituicao)
+        : null,
+    }),
   ].filter(Boolean)
   return <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground">{parts.join(" · ")}</p>
 }

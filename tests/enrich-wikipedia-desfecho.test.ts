@@ -1,4 +1,5 @@
 import assert from "node:assert/strict"
+import { readFileSync } from "node:fs"
 import { describe, it } from "node:test"
 
 import {
@@ -92,5 +93,12 @@ describe("Wikipedia: desfecho explicito", () => {
     finalizarResultadoWikipedia(r, "encontrado", "verbete confirmado")
     assert.equal(r.coleta_resultado, "erro")
     assert.match(r.coleta_detalhe ?? "", /HTTP 500/)
+  })
+
+  it("P69 e fallback de instituição não escrevem em formacao", () => {
+    const fonte = readFileSync("scripts/lib/enrich-wikipedia.ts", "utf8")
+    assert.match(fonte, /pareceNomeDeInstituicao/)
+    assert.match(fonte, /formacao_instituicao: "Instituto Presbiteriano Mackenzie"/)
+    assert.doesNotMatch(fonte, /formacao: "Instituto Presbiteriano Mackenzie"/)
   })
 })

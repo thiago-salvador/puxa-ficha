@@ -470,6 +470,7 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     idade: ficha.idade,
     naturalidade: ficha.naturalidade,
     formacao: publicTaxonomyValue(ficha.formacao),
+    formacao_instituicao: ficha.formacao_instituicao?.trim() || null,
     profissao_declarada: publicTaxonomyValue(ficha.profissao_declarada),
     genero: ficha.genero ?? null,
     estado_civil: ficha.estado_civil ?? null,

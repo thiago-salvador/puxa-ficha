@@ -1,0 +1,64 @@
+{
+  "_comentario": "Autoriza o backfill do portal humano do DJEN, a higiene de formação (grau TSE + instituição) e a curadoria judicial do Renan Santos (leads de classe e o caso criminal absolvido).",
+  "recorte": "formacao-processos-renan-20260819",
+  "migrations": [
+    "20260819140100_urls_consulta_djen.sql",
+    "20260819140200_formacao_instituicao_higiene.sql",
+    "20260819140300_renan_santos_processos_assunto_absolvido.sql"
+  ],
+  "fonte": "Portal DJEN comunica.pje.jus.br/consulta, TSE consulta_cand_2026 DS_GRAU_INSTRUCAO, Wikipedia/Folha para USP, e g1 de 04/08/2026 com confirmação do MP-SP.",
+  "coorte": [
+    "acm-neto",
+    "alysson-bezerra",
+    "david-almeida",
+    "dr-furlan",
+    "eduardo-paes",
+    "joao-henrique-catan",
+    "mailza-assis",
+    "mateus-simoes",
+    "renan-santos",
+    "sergio-moro-gov-pr",
+    "wilder-morais"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "referencias": [
+    {
+      "tabela": "processos",
+      "ref": "urls_consulta_djen_20260819",
+      "campos": ["url_fonte"]
+    }
+  ],
+  "entries": [
+    {"tabela": "candidatos", "slug": "acm-neto", "campos": ["formacao", "formacao_instituicao", "ultima_atualizacao"]},
+    {"tabela": "candidatos", "slug": "alysson-bezerra", "campos": ["formacao", "formacao_instituicao", "ultima_atualizacao"]},
+    {"tabela": "candidatos", "slug": "david-almeida", "campos": ["formacao", "formacao_instituicao", "ultima_atualizacao"]},
+    {"tabela": "candidatos", "slug": "dr-furlan", "campos": ["formacao", "formacao_instituicao", "ultima_atualizacao"]},
+    {"tabela": "candidatos", "slug": "eduardo-paes", "campos": ["formacao", "formacao_instituicao", "ultima_atualizacao"]},
+    {"tabela": "candidatos", "slug": "joao-henrique-catan", "campos": ["formacao", "formacao_instituicao", "ultima_atualizacao"]},
+    {"tabela": "candidatos", "slug": "mailza-assis", "campos": ["formacao", "formacao_instituicao", "ultima_atualizacao"]},
+    {"tabela": "candidatos", "slug": "mateus-simoes", "campos": ["formacao", "formacao_instituicao", "ultima_atualizacao"]},
+    {"tabela": "candidatos", "slug": "renan-santos", "campos": ["formacao", "formacao_instituicao", "ultima_atualizacao"]},
+    {"tabela": "candidatos", "slug": "sergio-moro-gov-pr", "campos": ["formacao", "formacao_instituicao", "ultima_atualizacao"]},
+    {"tabela": "candidatos", "slug": "wilder-morais", "campos": ["formacao", "formacao_instituicao", "ultima_atualizacao"]},
+    {
+      "tabela": "processos",
+      "slug": "renan-santos",
+      "campos": [
+        "candidato_id",
+        "tipo",
+        "tribunal",
+        "numero_processo",
+        "descricao",
+        "status",
+        "data_inicio",
+        "data_decisao",
+        "gravidade",
+        "fonte",
+        "url_fonte"
+      ],
+      "max_registros": 5
+    }
+  ]
+}

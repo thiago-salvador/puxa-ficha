@@ -12,6 +12,7 @@ import { SectionDivider } from "@/components/SectionHeader"
 import { getCandidatoBySlugPreviewResource } from "@/lib/api"
 import { requirePreviewAccess } from "@/lib/preview-access"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
+import { formacaoPublicaDe } from "@/lib/formacao-display"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { formatCargoDisputadoPublicLabel } from "@/lib/ui-labels"
 
@@ -131,7 +132,12 @@ export default async function PreviewCandidatoPage({
                 ficha.cargo_atual ? sanitizePtBrText(ficha.cargo_atual) : null,
                 ficha.naturalidade,
                 ficha.idade ? `${ficha.idade} anos` : null,
-                ficha.formacao ? sanitizePtBrText(ficha.formacao) : null,
+                formacaoPublicaDe({
+                  formacao: ficha.formacao ? sanitizePtBrText(ficha.formacao) : null,
+                  formacao_instituicao: ficha.formacao_instituicao
+                    ? sanitizePtBrText(ficha.formacao_instituicao)
+                    : null,
+                }),
               ]
                 .filter(Boolean)
                 .join(" · ")}

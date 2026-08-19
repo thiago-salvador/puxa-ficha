@@ -17,6 +17,7 @@ function fixtureProfile(): FichaCandidato {
     idade: null,
     naturalidade: null,
     formacao: null,
+    formacao_instituicao: null,
     profissao_declarada: null,
     genero: null,
     estado_civil: null,
@@ -133,7 +134,7 @@ function fixtureProfile(): FichaCandidato {
         data_decisao: null,
         gravidade: "baixa",
         fonte: "DJEN",
-        url_fonte: "https://comunicaapi.pje.jus.br/api/v1/comunicacao?numeroProcesso=1",
+        url_fonte: "https://comunica.pje.jus.br/consulta?numeroProcesso=00000000020200000000",
       },
     ],
     pontos_atencao: [
@@ -366,7 +367,7 @@ describe("public profile DTO", () => {
     const dto = toPublicCandidatoProfileDto(ficha)
 
     assert.equal(dto.processos[0].fonte, "DJEN")
-    assert.match(dto.processos[0].url_fonte ?? "", /^https:\/\/comunicaapi\.pje\.jus\.br/)
+    assert.match(dto.processos[0].url_fonte ?? "", /^https:\/\/comunica\.pje\.jus\.br\/consulta/)
     assert.equal(dto.processos_criminais, 0)
   })
 
@@ -400,6 +401,15 @@ describe("public profile DTO", () => {
     assert.equal(dto.formacao, "Superior completo")
     assert.doesNotMatch(JSON.stringify(dto), /consulta_cand|SQ_CANDIDATO|Q12345/)
     assert.doesNotMatch(JSON.stringify(dto), /\brow\b/i)
+  })
+
+  it("expõe instituição à parte do grau e não afirma diploma", () => {
+    const ficha = fixtureProfile()
+    ficha.formacao = "SUPERIOR INCOMPLETO"
+    ficha.formacao_instituicao = "Universidade de São Paulo"
+    const dto = toPublicCandidatoProfileDto(ficha)
+    assert.equal(dto.formacao, "Superior incompleto")
+    assert.equal(dto.formacao_instituicao, "Universidade de São Paulo")
   })
 
   it("não conta processo criminal terminal no resumo público", () => {

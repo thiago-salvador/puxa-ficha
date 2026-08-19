@@ -319,6 +319,13 @@
       "ate": "20260816055200",
       "allowlist": "scripts/audit/allowlist-patrimonio-nacional-20260816.json",
       "divida": null
+    },
+    {
+      "nome": "formacao-processos-renan-20260819",
+      "desde": "20260819140100",
+      "ate": "20260819140300",
+      "allowlist": "scripts/audit/allowlist-formacao-processos-renan-20260819.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
