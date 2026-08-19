@@ -13,6 +13,7 @@ function isIgnorableConsoleNoise(
 ): boolean {
   if (message.includes("/_vercel/insights/")) return true
   if (message.includes("[Vercel Web Analytics] Failed to load script")) return true
+  if (message.includes("cloudflareinsights.com")) return true
   return (
     (sawLocalInsightsFailure || sawExternalImageFailure) &&
     /Failed to load resource:.*status of (404|429)/i.test(message)

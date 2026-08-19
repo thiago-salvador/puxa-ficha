@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next"
-import { Analytics } from "@vercel/analytics/next"
 import { buildTwitterMetadata } from "@/lib/metadata"
+import { CloudflareWebAnalytics } from "@/components/CloudflareWebAnalytics"
 import { Navbar } from "@/components/Navbar"
 import { GlobalSearchProvider } from "@/components/GlobalSearchProvider"
 import DevToolsInit from "@/components/DevToolsInit"
@@ -70,7 +70,7 @@ export default async function SiteLayout({
           {children}
         </main>
       </GlobalSearchProvider>
-      <Analytics />
+      <CloudflareWebAnalytics />
     </>
   )
 }

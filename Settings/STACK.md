@@ -12,7 +12,7 @@ desvios operacionais relevantes.
 | UI | React 19.2.8, React DOM 19.2.8, Tailwind CSS 4.3.3, shadcn |
 | Linguagem | TypeScript 6.0.3 |
 | Banco | Supabase/PostgreSQL; `@supabase/supabase-js` 2.111.0 |
-| Observabilidade | `@sentry/nextjs` 10.69.0 e Vercel Analytics |
+| Observabilidade | `@sentry/nextjs` 10.69.0 e Cloudflare Web Analytics |
 | Testes | Node test runner, tsx 4.23.1, Playwright 1.62.1, axe |
 | Qualidade | ESLint 9.39.5, cspell, knip e c8 |
 | Deploy | Vercel, região `gru1` |

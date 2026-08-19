@@ -14,7 +14,6 @@ import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { Dialog } from "@base-ui/react/dialog"
 import { Search, Command, ArrowUpRight, X } from "lucide-react"
-import { track } from "@vercel/analytics/react"
 
 import { CandidatePhoto } from "@/components/CandidatePhoto"
 import {
@@ -258,7 +257,6 @@ export function GlobalSearchProvider({
   initialCandidates?: GlobalSearchIndexItem[]
 }) {
   const router = useRouter()
-  const openViaRef = useRef<GlobalSearchOpenVia>("toolbar")
   const lastZeroResultQueryRef = useRef("")
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState("")
@@ -301,8 +299,7 @@ export function GlobalSearchProvider({
     }
   }, [open, candidateByHref])
 
-  const openSearch = useCallback((via?: GlobalSearchOpenVia) => {
-    openViaRef.current = via ?? "toolbar"
+  const openSearch = useCallback((_via?: GlobalSearchOpenVia) => {
     setOpen(true)
     void loadSearchCandidates()
   }, [loadSearchCandidates])
@@ -325,7 +322,6 @@ export function GlobalSearchProvider({
         event.preventDefault()
         setOpen((current) => {
           if (!current) {
-            openViaRef.current = "cmd_k"
             void loadSearchCandidates()
           }
           return !current
@@ -335,7 +331,6 @@ export function GlobalSearchProvider({
 
       if (event.key === "/" && !isTextInput(event.target)) {
         event.preventDefault()
-        openViaRef.current = "slash"
         void loadSearchCandidates()
         setOpen(true)
       }
@@ -351,11 +346,6 @@ export function GlobalSearchProvider({
       setQuery("")
       setActiveIndex(-1)
     }
-  }, [open])
-
-  useEffect(() => {
-    if (!open) return
-    track("Global Search Open", { via: openViaRef.current })
   }, [open])
 
   const queryNorm = normalizeForSearch(deferredQuery)
@@ -390,11 +380,6 @@ export function GlobalSearchProvider({
     const trimmed = deferredQuery.trim()
     if (!trimmed) return
     const handle = window.setTimeout(() => {
-      track("Global Search Filter", {
-        term_length: trimmed.length,
-        zero_results: flatRows.length === 0 ? 1 : 0,
-        result_count: flatRows.length,
-      })
       if (flatRows.length === 0) {
         const zeroResultKey = normalizeForSearch(trimmed)
         if (lastZeroResultQueryRef.current !== zeroResultKey) {
@@ -432,10 +417,6 @@ export function GlobalSearchProvider({
         foto_url: item.foto_url,
       })
     }
-    track("Global Search Select", {
-      kind: item.badge === "Atalho" ? "shortcut" : "candidate",
-      had_query: trimmed.length > 0 ? 1 : 0,
-    })
     if (item.badge !== "Atalho") {
       trackLaunchEvent(ANALYTICS_EVENTS.candidateClick, { surface: "global_search" })
     }
@@ -459,7 +440,6 @@ export function GlobalSearchProvider({
         if (row.kind === "recent_query") {
           setQuery(row.query)
           setActiveIndex(-1)
-          track("Global Search Recent Query Pick", {})
           return
         }
         setOpen(false)
@@ -586,7 +566,6 @@ export function GlobalSearchProvider({
                                       onClick={() => {
                                         setQuery(row.query)
                                         setActiveIndex(-1)
-                                        track("Global Search Recent Query Pick", {})
                                       }}
                                       className={`group flex w-full items-center justify-between rounded-[16px] border px-4 py-3 text-left transition-colors ${
                                         isActive

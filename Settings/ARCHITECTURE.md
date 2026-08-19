@@ -79,10 +79,11 @@ substitui o mapeamento correto de dependências.
 
 ## Observabilidade e proteção
 
-Sentry, Vercel Analytics e Speed Insights cobrem erro e comportamento da
-aplicação. Middleware e cabeçalhos de segurança protegem as rotas. Endpoints
-internos e crons exigem seus respectivos segredos; os valores nunca são
-expostos ao cliente ou documentados no repositório.
+Sentry, Cloudflare Web Analytics e os eventos operacionais no Supabase cobrem
+erro e comportamento da aplicação. Middleware e cabeçalhos de segurança
+protegem as rotas. Endpoints internos e crons exigem seus respectivos
+segredos; os valores nunca são expostos ao cliente ou documentados no
+repositório.
 
 ## Limite arquitetural importante
 

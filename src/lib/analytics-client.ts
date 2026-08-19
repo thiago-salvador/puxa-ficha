@@ -1,6 +1,5 @@
 "use client"
 
-import { track } from "@vercel/analytics/react"
 import {
   ANALYTICS_PROOF_ID_RE,
   type AnalyticsEventName,
@@ -39,6 +38,5 @@ export function trackLaunchEvent(eventName: AnalyticsEventName, payload?: unknow
   const proofId = getAnalyticsProofIdFromPayload(sanitized) ?? readProofIdFromUrl()
   if (proofId) sanitized.proof_id = proofId
 
-  track(eventName, sanitized)
   postLaunchEvent(eventName, sanitized)
 }

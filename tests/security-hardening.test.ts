@@ -50,12 +50,24 @@ describe("production CSP contract", () => {
     assert.match(connectSrc, /https:\/\/project\.supabase\.co/)
     assert.match(connectSrc, /wss:\/\/project\.supabase\.co/)
     assert.match(connectSrc, /https:\/\/o123\.ingest\.sentry\.io/)
+    assert.match(connectSrc, /https:\/\/cloudflareinsights\.com/)
+    assert.match(connectSrc, /https:\/\/static\.cloudflareinsights\.com/)
     assert.doesNotMatch(connectSrc, /(^|\s)https:(\s|$)/)
 
     assert.match(imgSrc, /https:\/\/upload\.wikimedia\.org/)
     assert.match(imgSrc, /https:\/\/i0\.wp\.com/)
     assert.match(imgSrc, /http:\/\/www\.senado\.leg\.br/)
     assert.doesNotMatch(imgSrc, /(^|\s)https:(\s|$)/)
+  })
+
+  it("carrega o beacon da Cloudflare só em produção e não o Analytics da Vercel", () => {
+    const component = read("src/components/CloudflareWebAnalytics.tsx")
+    const layout = read("src/app/(site)/layout.tsx")
+
+    assert.match(component, /VERCEL_ENV !== "production"/)
+    assert.match(component, /static\.cloudflareinsights\.com\/beacon\.min\.js/)
+    assert.match(layout, /CloudflareWebAnalytics/)
+    assert.doesNotMatch(layout, /@vercel\/analytics/)
   })
 })
 
