@@ -54,3 +54,26 @@ describe("formação híbrida", () => {
     }
   })
 })
+
+describe("formação Cury e Marçal", () => {
+  const curadoriaPath = join(ROOT, "supabase/migrations/20260819140400_formacao_cury_marcal.sql")
+  const curadoria = readFileSync(curadoriaPath, "utf8")
+
+  it("só grava grau TSE e instituição já curada, sem misturar schema", () => {
+    assert.doesNotMatch(curadoria, /\b(CREATE|ALTER|DROP)\s+(TABLE|VIEW|INDEX)\b/i)
+    assert.equal(classificarMigration(curadoriaPath, curadoria).classe, "curadoria")
+    assert.match(curadoria, /DS_GRAU_INSTRUCAO/)
+    assert.doesNotMatch(curadoria, /formacao = 'SUPERIOR COMPLETO ·/)
+  })
+
+  it("restaura o grau TSE e move a instituição para a coluna certa", () => {
+    assert.match(
+      curadoria,
+      /-- @write tabela=candidatos slug=augusto-cury campos=formacao,formacao_instituicao,ultima_atualizacao\nUPDATE public\.candidatos\nSET formacao = 'SUPERIOR COMPLETO',\n    formacao_instituicao = 'Medicina pela Faculdade de Medicina de São José do Rio Preto'/,
+    )
+    assert.match(
+      curadoria,
+      /-- @write tabela=candidatos slug=pablo-marcal campos=formacao,formacao_instituicao,ultima_atualizacao\nUPDATE public\.candidatos\nSET formacao = 'SUPERIOR COMPLETO',\n    formacao_instituicao = 'Universidade Paulista \(Unip\)'/,
+    )
+  })
+})
