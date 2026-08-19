@@ -3,7 +3,7 @@
  */
 
 const INSTITUICAO_RE =
-  /^(universidade|pontif[ií]cia universidade|instituto|faculdade)\b/i
+  /^(universidade|pontif[ií]cia universidade|centro universit[aá]rio|instituto|faculdade)\b/i
 
 export function pareceNomeDeInstituicao(valor: string | null | undefined): boolean {
   const texto = valor?.trim() ?? ""
@@ -15,10 +15,15 @@ export function formatFormacaoPublica(
   grau: string | null | undefined,
   instituicao: string | null | undefined,
 ): string | null {
-  const g = grau?.trim() || null
-  const i = instituicao?.trim() || null
+  let g = grau?.trim() || null
+  let i = instituicao?.trim() || null
+  if (pareceNomeDeInstituicao(g)) {
+    if (!i) i = g
+    g = null
+  }
   if (g && i) return `${g} · ${i}`
-  return g ?? i
+  if (g) return g
+  return null
 }
 
 export function formacaoPublicaDe(candidato: {

@@ -13,10 +13,16 @@ C_C="${C}-c"
 limpar() { docker rm -f "$C" "$C_C" >/dev/null 2>&1 || true; }
 trap limpar EXIT INT TERM
 docker run -d --name "$C" -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres "$IMG" >/dev/null || exit 1
+pronto=0
 for _ in $(seq 1 90); do
-  docker exec "$C" pg_isready -U postgres >/dev/null 2>&1 && break
+  if docker exec "$C" pg_isready -U postgres -h 127.0.0.1 >/dev/null 2>&1 &&
+     docker exec "$C" psql -U postgres -h 127.0.0.1 -d postgres -tAc 'select 1' >/dev/null 2>&1; then
+    pronto=1
+    break
+  fi
   sleep 1
 done
+[[ "$pronto" == 1 ]] || { echo "FAIL: postgres nao ficou pronto"; exit 1; }
 q() { docker exec -i "$C" psql -U postgres -d postgres -v ON_ERROR_STOP=1 -qtA "$@"; }
 aplicar() { docker exec -i "$C" psql -U postgres -d postgres -v ON_ERROR_STOP=1 -q --single-transaction -f -; }
 
@@ -116,10 +122,16 @@ igual "remove ledger" "$(q -c 'select count(*) from supabase_migrations.schema_m
 echo "F2b: readback identico em cluster com locale C"
 docker run -d --name "$C_C" -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres \
   -e POSTGRES_INITDB_ARGS='--locale=C' "$IMG" >/dev/null || exit 1
+pronto_c=0
 for _ in $(seq 1 90); do
-  docker exec "$C_C" pg_isready -U postgres >/dev/null 2>&1 && break
+  if docker exec "$C_C" pg_isready -U postgres -h 127.0.0.1 >/dev/null 2>&1 &&
+     docker exec "$C_C" psql -U postgres -h 127.0.0.1 -d postgres -tAc 'select 1' >/dev/null 2>&1; then
+    pronto_c=1
+    break
+  fi
   sleep 1
 done
+[[ "$pronto_c" == 1 ]] || { echo "FAIL: postgres locale C nao ficou pronto"; exit 1; }
 qc() { docker exec -i "$C_C" psql -U postgres -d postgres -v ON_ERROR_STOP=1 -qtA "$@"; }
 aplicar_c() { docker exec -i "$C_C" psql -U postgres -d postgres -v ON_ERROR_STOP=1 -q --single-transaction -f -; }
 qc <<'SQL' >/dev/null

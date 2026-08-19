@@ -15,5 +15,6 @@ describe("backfill de URL do DJEN", () => {
     assert.match(sql, /https:\/\/comunica\.pje\.jus\.br\/consulta\?numeroProcesso=/)
     assert.match(sql, /'urls_consulta_djen_20260819'::text IS NOT NULL/)
     assert.match(sql, /numeroProcesso=\\d\{20\}/)
+    assert.doesNotMatch(sql, /\bslug\b/)
   })
 })

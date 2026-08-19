@@ -19,6 +19,7 @@ import {
 import { anosDePleitoDisputado } from "@/lib/pleitos-disputados"
 import { buildFinanciamentoEleicoes } from "@/lib/financiamento-eleicoes"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
+import { pareceNomeDeInstituicao } from "@/lib/formacao-display"
 import { sanitizePublicText } from "@/lib/public-text"
 import { prepareHistoricoPoliticoPublicDisplayList } from "@/lib/trajetoria-public-display"
 import {
@@ -469,8 +470,12 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     data_nascimento: ficha.data_nascimento,
     idade: ficha.idade,
     naturalidade: ficha.naturalidade,
-    formacao: publicTaxonomyValue(ficha.formacao),
-    formacao_instituicao: ficha.formacao_instituicao?.trim() || null,
+    formacao: publicTaxonomyValue(
+      pareceNomeDeInstituicao(ficha.formacao) ? null : ficha.formacao,
+    ),
+    formacao_instituicao:
+      ficha.formacao_instituicao?.trim() ||
+      (pareceNomeDeInstituicao(ficha.formacao) ? (ficha.formacao?.trim() ?? null) : null),
     profissao_declarada: publicTaxonomyValue(ficha.profissao_declarada),
     genero: ficha.genero ?? null,
     estado_civil: ficha.estado_civil ?? null,

@@ -77,3 +77,31 @@ SET formacao = 'SUPERIOR COMPLETO',
     formacao_instituicao = 'Pontifícia Universidade Católica de Goiás',
     ultima_atualizacao = NOW()
 WHERE slug = 'wilder-morais';
+
+-- @write tabela=candidatos slug=elmano-de-freitas campos=formacao,formacao_instituicao,ultima_atualizacao
+UPDATE public.candidatos
+SET formacao = 'SUPERIOR COMPLETO',
+    formacao_instituicao = 'Faculdade de Direito da Universidade Federal do Ceará',
+    ultima_atualizacao = NOW()
+WHERE slug = 'elmano-de-freitas';
+
+-- @write tabela=candidatos slug=raquel-lyra campos=formacao,formacao_instituicao,ultima_atualizacao
+UPDATE public.candidatos
+SET formacao = 'SUPERIOR COMPLETO',
+    formacao_instituicao = 'Faculdade de Direito da Universidade Federal de Pernambuco',
+    ultima_atualizacao = NOW()
+WHERE slug = 'raquel-lyra';
+
+-- @write tabela=candidatos slug=requiao-filho campos=formacao,formacao_instituicao,ultima_atualizacao
+UPDATE public.candidatos
+SET formacao = 'SUPERIOR COMPLETO',
+    formacao_instituicao = 'Centro Universitário de Brasília',
+    ultima_atualizacao = NOW()
+WHERE slug = 'requiao-filho';
+
+-- @write tabela=candidatos slug=ricardo-cappelli campos=formacao,formacao_instituicao,ultima_atualizacao
+UPDATE public.candidatos
+SET formacao = 'SUPERIOR COMPLETO',
+    formacao_instituicao = 'Centro Universitário Euroamericano',
+    ultima_atualizacao = NOW()
+WHERE slug = 'ricardo-cappelli';

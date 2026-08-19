@@ -17,7 +17,11 @@ docker run -d --name "$C" -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres 
 }
 pronto=0
 for _ in $(seq 1 90); do
-  if docker exec "$C" pg_isready -U postgres >/dev/null 2>&1; then pronto=1; break; fi
+  if docker exec "$C" pg_isready -U postgres -h 127.0.0.1 >/dev/null 2>&1 &&
+     docker exec "$C" psql -U postgres -h 127.0.0.1 -d postgres -tAc 'select 1' >/dev/null 2>&1; then
+    pronto=1
+    break
+  fi
   sleep 1
 done
 [[ "$pronto" == 1 ]] || { echo "FAIL: postgres nao ficou pronto"; exit 1; }

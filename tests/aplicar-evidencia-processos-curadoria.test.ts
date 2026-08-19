@@ -317,6 +317,13 @@ describe("aplicador da evidência de processos", () => {
       classificacao: "encontrado",
       processos: [processo(cnjValido, urlOficial)],
     })))
+    assert.doesNotThrow(() => criarPlanos(evidenciaCom({
+      classificacao: "encontrado",
+      processos: [processo(
+        cnjValido,
+        `https://comunica.pje.jus.br/consulta?numeroProcesso=${cnjValido.replace(/\D/g, "")}`,
+      )],
+    })))
   })
 
   it("aceita o CNJ apenas no parâmetro numeroProcesso com valor exato", () => {

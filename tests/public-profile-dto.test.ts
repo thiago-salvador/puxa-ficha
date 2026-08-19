@@ -412,6 +412,15 @@ describe("public profile DTO", () => {
     assert.equal(dto.formacao_instituicao, "Universidade de São Paulo")
   })
 
+  it("não publica o nome da instituição no campo de grau", () => {
+    const ficha = fixtureProfile()
+    ficha.formacao = "Universidade de São Paulo"
+    ficha.formacao_instituicao = null
+    const dto = toPublicCandidatoProfileDto(ficha)
+    assert.equal(dto.formacao, null)
+    assert.equal(dto.formacao_instituicao, "Universidade de São Paulo")
+  })
+
   it("não conta processo criminal terminal no resumo público", () => {
     const ficha = fixtureProfile()
     ficha.processos[0].tipo = "criminal"

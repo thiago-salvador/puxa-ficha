@@ -3,12 +3,12 @@
  * coleta; `url_fonte` pública aponta para a consulta, não para o JSON.
  */
 
-export const DJEN_CONSULTA_ORIGEM = "https://comunica.pje.jus.br"
-export const DJEN_CONSULTA_CAMINHO = "/consulta"
-export const DJEN_API_ORIGEM = "https://comunicaapi.pje.jus.br"
-export const DJEN_API_CAMINHO = "/api/v1/comunicacao"
+const DJEN_CONSULTA_ORIGEM = "https://comunica.pje.jus.br"
+const DJEN_CONSULTA_CAMINHO = "/consulta"
+const DJEN_API_ORIGEM = "https://comunicaapi.pje.jus.br"
+const DJEN_API_CAMINHO = "/api/v1/comunicacao"
 
-export function cnjSomenteDigitos(valor: string): string {
+function cnjSomenteDigitos(valor: string): string {
   return valor.replace(/\D/g, "")
 }
 
