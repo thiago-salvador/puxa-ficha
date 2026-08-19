@@ -116,7 +116,7 @@ export function processosOverviewDisplay(
   }
 }
 
-export function processosNaoVerificado(total: number | null | undefined): boolean {
+function processosNaoVerificado(total: number | null | undefined): boolean {
   return typeof processosOverviewDisplay(total).value !== "number"
 }
 
