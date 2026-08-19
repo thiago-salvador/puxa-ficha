@@ -20,6 +20,10 @@
     {
       "path": "/api/internal/runtime-smoke",
       "schedule": "30 9 * * *"
+    },
+    {
+      "path": "/api/internal/revalidate-public-cache",
+      "schedule": "*/15 * * * *"
     }
   ]
 }
