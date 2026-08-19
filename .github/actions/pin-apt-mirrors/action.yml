@@ -1,0 +1,31 @@
+name: Pin Ubuntu apt mirrors
+description: >
+  ubuntu-24.04 no GitHub Actions consulta /etc/apt/apt-mirrors.txt
+  (azure.archive). Troca por archive.ubuntu.com e corta o timeout de
+  download em 15s, para o apt nao pendurar ate o teto do job.
+
+runs:
+  using: composite
+  steps:
+    - name: apt desiste rapido de mirror morto
+      shell: bash
+      run: |
+        set -euo pipefail
+        sudo tee /etc/apt/apt.conf.d/99-timeout-curto >/dev/null <<'FIM'
+        Acquire::http::Timeout "15";
+        Acquire::https::Timeout "15";
+        Acquire::ftp::Timeout "15";
+        Acquire::Retries "2";
+        FIM
+        # ubuntu-24.04 no GHA nao usa sources.list: usa
+        # mirror+file:/etc/apt/apt-mirrors.txt. Run 32268001697: o sed nas
+        # sources nao mudou nada; Get:1 file:.../apt-mirrors.txt e Get:2
+        # azure.archive... fonts-freefont-ttf (5 MB em 4 min ate o timeout).
+        printf 'http://archive.ubuntu.com/ubuntu/\n' | sudo tee /etc/apt/apt-mirrors.txt >/dev/null
+        sudo sed -i 's|mirror+file:/etc/apt/apt-mirrors.txt|http://archive.ubuntu.com/ubuntu|g' \
+          /etc/apt/sources.list.d/*.sources 2>/dev/null || true
+        sudo sed -i 's/azure\.archive\.ubuntu\.com/archive.ubuntu.com/g' \
+          /etc/apt/sources.list \
+          /etc/apt/sources.list.d/*.list \
+          /etc/apt/sources.list.d/*.sources \
+          2>/dev/null || true

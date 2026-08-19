@@ -28,8 +28,13 @@ jobs:
         with:
           node-version: 24
           cache: npm
+      - uses: ./.github/actions/pin-apt-mirrors
       - name: Instalar cliente PostgreSQL
-        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+        timeout-minutes: 8
+        run: |
+          set -euo pipefail
+          timeout -k 15 180 sudo apt-get update
+          timeout -k 15 180 sudo apt-get install -y postgresql-client
       - name: Instalar dependências
         run: npm ci
       - name: Validar SHA e main

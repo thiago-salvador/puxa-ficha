@@ -48,25 +48,7 @@ jobs:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ steps.pw-versao.outputs.v }}
 
-      - name: apt desiste rapido de mirror morto
-        run: |
-          sudo tee /etc/apt/apt.conf.d/99-timeout-curto >/dev/null <<'FIM'
-          Acquire::http::Timeout "15";
-          Acquire::https::Timeout "15";
-          Acquire::ftp::Timeout "15";
-          Acquire::Retries "2";
-          FIM
-          # ubuntu-24.04 no GHA usa mirror+file:/etc/apt/apt-mirrors.txt.
-          # Run 32268001697: sed nas sources nao pegou; apt ainda baixava de
-          # azure.archive (fonts-freefont-ttf, 5 MB em 4 min).
-          printf 'http://archive.ubuntu.com/ubuntu/\n' | sudo tee /etc/apt/apt-mirrors.txt >/dev/null
-          sudo sed -i 's|mirror+file:/etc/apt/apt-mirrors.txt|http://archive.ubuntu.com/ubuntu|g' \
-            /etc/apt/sources.list.d/*.sources 2>/dev/null || true
-          sudo sed -i 's/azure\.archive\.ubuntu\.com/archive.ubuntu.com/g' \
-            /etc/apt/sources.list \
-            /etc/apt/sources.list.d/*.list \
-            /etc/apt/sources.list.d/*.sources \
-            2>/dev/null || true
+      - uses: ./.github/actions/pin-apt-mirrors
 
       - name: Dependencias de sistema dos navegadores (apt)
         timeout-minutes: 22
