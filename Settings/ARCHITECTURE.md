@@ -23,7 +23,7 @@ fontes públicas
 
 | Caminho | Responsabilidade |
 |---|---|
-| `src/app` | Páginas App Router e 22 rotas de API. |
+| `src/app` | Páginas App Router e 23 rotas de API. |
 | `src/components` | Componentes de ficha e superfícies compartilhadas. |
 | `src/lib` | DTOs, acesso a dados, cache, segurança e regras de domínio. |
 | `src/data` | Registros versionados, incluindo as fontes da metodologia. |
@@ -75,7 +75,9 @@ doador-reverse
 
 Ingestões que mudam dados públicos devem chamar `/api/revalidate` com as tags
 afetadas e depois conferir a rota pública. Invalidar tudo por conveniência não
-substitui o mapeamento correto de dependências.
+substitui o mapeamento correto de dependências. Escritas fora da ingestão
+(migration, SQL no painel, MCP) ficam no cron
+`/api/internal/revalidate-public-cache`, a cada 15 minutos.
 
 ## Observabilidade e proteção
 
