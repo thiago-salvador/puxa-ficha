@@ -142,7 +142,7 @@ jobs:
   browser-smoke:
     name: Rotas principais (build local)
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
     env:
       SUPABASE_URL: https://placeholder.supabase.co
       SUPABASE_ANON_KEY: placeholder-anon-key
@@ -288,6 +288,17 @@ jobs:
           rm -rf playwright-report
           npm run test:playwright:launch
 
+      # Gate de a11y no PR: o job "Acessibilidade (produção)" so roda no push
+      # da main (HTML ao vivo, dados reais). Sem este passo, o axe do codigo
+      # do PR so aparecia depois do merge. Build local, sem segredo, igual
+      # as rotas acima. embed-candidate fica skipped com placeholder.
+      - name: Axe (build local)
+        env:
+          PF_EXPECT_PLACEHOLDER_DATA: "1"
+        run: |
+          rm -rf playwright-report
+          npx playwright test tests/visual/a11y.spec.ts
+
       - name: Publicar relatório em caso de falha
         if: failure()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
@@ -298,14 +309,11 @@ jobs:
             test-results/
           retention-days: 7
 
-  # Acessibilidade roda contra a producao publica, nao contra um build local.
-  # Motivo: duas das seis rotas testadas (/candidato/lula e /doadores?q=silva)
-  # so renderizam com dados reais, e o job `verify` e sem segredo por desenho,
-  # para funcionar em PR de fork. Apontar PF_BASE_URL para o site publico
-  # dispensa segredo e ainda testa o HTML que o usuario recebe de verdade.
-  #
-  # So em push na main: num PR de fork, a producao ainda nao tem o codigo do
-  # PR, entao o resultado nao diria nada sobre a mudanca proposta.
+  # A11y do codigo do PR vive no job "Rotas principais" (build local).
+  # Este job continua so no push da main, contra puxaficha.com.br: e o HTML
+  # que o usuario recebe, com dados reais (ficha e doadores). Num PR a
+  # producao ainda nao tem o codigo novo, entao apontar o site ao vivo nao
+  # diria nada sobre a mudanca.
   a11y:
     name: Acessibilidade (produção)
     if: github.event_name == 'push'
