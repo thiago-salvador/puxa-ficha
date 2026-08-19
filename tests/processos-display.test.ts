@@ -11,6 +11,7 @@ import {
   processosMaiorVerificadoNaComparacao,
   processosOverviewDisplay,
   processosResumoLabel,
+  processosListaCount,
 } from "../src/lib/processos-display"
 import { getProcessosEmptyState } from "../src/components/EmptyState"
 
@@ -101,16 +102,21 @@ describe("processosMaiorVerificadoNaComparacao", () => {
 
 describe("processosResumoLabel", () => {
   /*
-    Correção de 2026-08-10: o rótulo dizia "processos não verificados", que é
-    falso para as fichas cuja busca judicial FOI feita e fechou como identidade
-    não confirmada. O comparador só recebe a contagem, nunca o desfecho, então
-    o texto passa a afirmar apenas o que é verdade nos dois casos.
+    2026-08-19: na lista compacta o texto longo quebrava o card no mobile.
+    0 processos é o display da ausência de contagem, não afirmação de ficha
+    limpa. A ficha continua em processosOverviewDisplay.
   */
-  it("afirma só a ausência de contagem, que vale com ou sem busca feita", () => {
-    assert.equal(processosResumoLabel(0), "sem contagem de processos verificada")
-    assert.equal(processosResumoLabel(null), "sem contagem de processos verificada")
+  it("mostra 0 processos quando não há contagem verificada", () => {
+    assert.equal(processosResumoLabel(0), "0 processos")
+    assert.equal(processosResumoLabel(null), "0 processos")
     assert.equal(processosResumoLabel(1), "1 processo")
     assert.equal(processosResumoLabel(3), "3 processos")
+  })
+
+  it("a coluna numérica da lista usa 0 no mesmo caso", () => {
+    assert.equal(processosListaCount(0), 0)
+    assert.equal(processosListaCount(null), 0)
+    assert.equal(processosListaCount(4), 4)
   })
 })
 
@@ -125,25 +131,34 @@ describe("getProcessosEmptyState", () => {
   })
 })
 
-describe("ComparadorPanel: a mesma régua do overview vale no comparador", () => {
+describe("ComparadorPanel: a mesma régua do overview vale na comparação, a lista é compacta", () => {
   const fonte = readFileSync("src/components/ComparadorPanel.tsx", "utf-8")
 
   it("nenhuma superfície visível renderiza total_processos cru", () => {
-    // As duas células que exibiam o número entravam em contradição com a
-    // ficha: "0 processos" afirma busca ativa que não houve. O único
-    // `{candidato.total_processos}` que pode sobrar é o data-attribute, que
-    // por contrato carrega o valor cru.
-    // O lookbehind deixa passar `${...}`: as interpolações que sobraram estão
-    // dentro do ramo guardado por `total_processos > 0`, onde o número é real.
+    // O único `{candidato.total_processos}` que pode sobrar é o data-attribute.
     const semDataAttr = fonte.replace(/data-pf-comparador-processos=\{candidato\.total_processos\}/g, "")
     assert.doesNotMatch(semDataAttr, /(?<!\$)\{candidato\.total_processos\}/)
     assert.match(fonte, /processosOverviewDisplay\(candidato\.total_processos\)/)
+    assert.match(fonte, /processosListaCount\(candidato\.total_processos\)/)
   })
 
-  it("a lista compacta e o aria-label dizem não verificado em vez de zero", () => {
+  it("a lista compacta e o aria-label usam 0 processos, não o texto longo", () => {
     const ocorrencias = fonte.match(/processosResumoLabel\(candidato\.total_processos\)/g) ?? []
     assert.equal(ocorrencias.length, 2, "esperado no aria-label e na lista compacta")
-    assert.doesNotMatch(fonte, /\$\{candidato\.total_processos\} processos, /)
+    assert.doesNotMatch(fonte, /sem contagem de processos verificada/)
+    assert.doesNotMatch(fonte, /sem contagem verificada/)
+  })
+
+  it("a lista não mostra colunas de votações nem de gastos", () => {
+    assert.doesNotMatch(fonte, /heading: "Votações"/)
+    assert.doesNotMatch(fonte, /heading: "Gastos"/)
+    assert.doesNotMatch(fonte, /total_votos_mapeados\} votações/)
+    const gastosNaLista = fonte.match(/sem gasto mapeado/g) ?? []
+    assert.equal(
+      gastosNaLista.length,
+      1,
+      "sem gasto mapeado fica só na tabela de comparação, não na lista",
+    )
   })
 
   it("o atributo cru continua disponível e o selo usa a regra compartilhada", () => {

@@ -57,6 +57,7 @@ import {
   fetchGastoTotalsByCandidatoIds,
   fetchLegislacaoMandatoExecutivoRowsPaged,
   fetchMudancasPartidoRowsPaged,
+  fetchPatrimonioSeriesByCandidatoIds,
   fetchVotosCountsByCandidatoIds,
   LEGISLACAO_MANDATO_EXECUTIVO_PROFILE_PREVIEW_LIMIT,
   LEGISLACAO_MANDATO_EXECUTIVO_PUBLIC_SELECT,
@@ -105,6 +106,7 @@ import {
   resolverUltimaVerificacaoDoPerfil,
 } from "@/lib/verificacao-campos"
 import { formatDate } from "@/lib/utils"
+import { evolucaoPatrimonialVs2026, type PatrimonioAnoValor } from "@/lib/evolucao-patrimonial"
 import { buildVotacaoPublicUrl } from "@/lib/quiz-votacao-url"
 import { getRankingDefinitionBySlug } from "@/data/ranking-definitions"
 import {
@@ -2159,15 +2161,16 @@ async function getCandidatosComparaveisResourceUncached(
   const switchCountById = new Map<string, number>()
   const gastoTotalsById = new Map<string, number>()
   const votosCountById = new Map<string, number>()
+  let patrimonioPorId = new Map<string, PatrimonioAnoValor[]>()
   if (comparadorIds.length > 0) {
-    // As três agregações (mudanças de partido, gastos, votos) dependem só de
-    // comparadorIds e não umas das outras, então rodam num único Promise.all em
-    // vez de duas stages sequenciais. Corta um round-trip serial no cold render.
-    const [mudRows, gastoMap, votoMap] = await Promise.all([
+    // As quatro agregações dependem só de comparadorIds e não umas das outras.
+    const [mudRows, gastoMap, votoMap, patrimonioMap] = await Promise.all([
       fetchMudancasPartidoRowsPaged(supabase, comparadorIds),
       fetchGastoTotalsByCandidatoIds(supabase, comparadorIds),
       fetchVotosCountsByCandidatoIds(supabase, comparadorIds),
+      fetchPatrimonioSeriesByCandidatoIds(supabase, comparadorIds),
     ])
+    patrimonioPorId = patrimonioMap
 
     const byCandidato = new Map<string, MudancaPartido[]>()
     for (const row of mudRows) {
@@ -2202,6 +2205,9 @@ async function getCandidatosComparaveisResourceUncached(
         ? (gastoTotalsById.get(row.id) ?? null)
         : null,
       total_votos_mapeados: votosCountById.get(row.id) ?? 0,
+      evolucao_patrimonial_pct: evolucaoPatrimonialVs2026(
+        patrimonioPorId.get(row.id) ?? [],
+      ),
     }
     // pontos_atencao só serve para derivar os contadores editoriais no servidor; o
     // ComparadorPanel nunca lê o array no cliente. Remove do payload público
@@ -2221,7 +2227,7 @@ const getCachedCandidatosComparaveisResource = unstable_cache(
   // Bumped 2026-04-26: payload publico carrega partido sanitizado.
   // Bumped 2026-06-03: pontos_atencao removido do payload de comparaveis (so
   // alimentava alertas_graves no servidor, nunca lido no cliente).
-  ["public-candidatos-comparaveis-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "comparaveis-strip-pontos-20260603", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", CURRENT_DATA_WAVE],
+  ["public-candidatos-comparaveis-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "comparaveis-strip-pontos-20260603", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "evolucao-patrimonial-lista-20260819", CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos-comparaveis"],

@@ -602,6 +602,11 @@ export interface CandidatoComparavel {
   total_pontos_atencao: number;
   alertas_graves: number;
   patrimonio_declarado: number | null;
+  /**
+   * Variação percentual do patrimônio 2026 vs. o último ano anterior registrado.
+   * Null quando só há 2026, quando 2026 falta, ou quando o ano anterior é 0.
+   */
+  evolucao_patrimonial_pct: number | null;
   /** Soma de `total_gasto` em `gastos_parlamentares` — alinhada ao ranking gastos-parlamentares. */
   total_gasto_parlamentar: number | null;
   /** Quantidade de votações-chave com voto registrado (`votos_candidato`). */

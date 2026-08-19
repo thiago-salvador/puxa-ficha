@@ -121,14 +121,19 @@ export function processosNaoVerificado(total: number | null | undefined): boolea
 }
 
 /**
- * O comparador só recebe a contagem, nunca o desfecho da busca, então ele não
- * tem como distinguir "ninguém procurou" de "procuraram e a identidade não
- * fechou". O rótulo diz o que é verdade nos dois casos: não existe contagem
- * verificada. Afirmar "não verificados" ali era falso para as fichas buscadas.
+ * Lista compacta (cards e coluna Processos): 0 processos é o display pedido
+ * para ausência de contagem, não uma afirmação de ficha limpa. A ficha e o
+ * overview continuam em `processosOverviewDisplay` ("—" + legenda).
  */
 export function processosResumoLabel(total: number | null | undefined): string {
-  if (processosNaoVerificado(total)) return "sem contagem de processos verificada"
+  if (processosNaoVerificado(total)) return "0 processos"
   return total === 1 ? "1 processo" : `${total} processos`
+}
+
+/** Número da coluna Processos na lista: 0 quando não há contagem verificada. */
+export function processosListaCount(total: number | null | undefined): number {
+  if (processosNaoVerificado(total)) return 0
+  return total ?? 0
 }
 
 /**
