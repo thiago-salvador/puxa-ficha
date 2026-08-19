@@ -1,0 +1,20 @@
+{
+  "_comentario": "Autoriza a curadoria pontual de formação do Augusto Cury e do Pablo Marçal: grau TSE de consulta_cand_2026 e instituição já publicada (FAMERP via verbete/Agência Brasil; Unip via Wikipedia e Agência Brasil 2026).",
+  "recorte": "formacao-cury-marcal-20260819",
+  "migrations": [
+    "20260819140400_formacao_cury_marcal.sql"
+  ],
+  "fonte": "consulta_cand_2026_BRASIL.csv (DT_GERACAO 17/08/2026 12:31:17) DS_GRAU_INSTRUCAO SUPERIOR COMPLETO para SQ 280002551547 e 280002553884; instituição Cury já curada na coluna formacao; Wikipedia alma mater Universidade Paulista e Agência Brasil 18/08/2026 para Unip.",
+  "coorte": [
+    "augusto-cury",
+    "pablo-marcal"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "referencias": [],
+  "entries": [
+    {"tabela": "candidatos", "slug": "augusto-cury", "campos": ["formacao", "formacao_instituicao", "ultima_atualizacao"]},
+    {"tabela": "candidatos", "slug": "pablo-marcal", "campos": ["formacao", "formacao_instituicao", "ultima_atualizacao"]}
+  ]
+}
