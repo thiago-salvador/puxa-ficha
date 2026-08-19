@@ -81,6 +81,7 @@ describe("comparador metrics", () => {
       total_pontos_atencao: 0,
       alertas_graves: 0,
       patrimonio_declarado: 1_500_000,
+      evolucao_patrimonial_pct: 12,
       total_gasto_parlamentar: 2_000_000,
       total_votos_mapeados: 3,
     }

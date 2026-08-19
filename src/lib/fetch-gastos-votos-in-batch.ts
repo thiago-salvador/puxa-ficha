@@ -1,6 +1,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js"
 
 import { sumTotalGastoByCandidatoId } from "@/lib/gastos-parlamentares-aggregate"
+import type { PatrimonioAnoValor } from "@/lib/evolucao-patrimonial"
 import type { LegislacaoMandatoExecutivo, MudancaPartido } from "@/lib/types"
 import { countVotosRowsByCandidatoId } from "@/lib/votos-candidato-aggregate"
 
@@ -29,6 +30,11 @@ export const LEGISLACAO_MANDATO_EXECUTIVO_PUBLIC_SELECT =
 
 type GastoRow = { candidato_id: string; total_gasto: number | string | null }
 type VotoRow = { candidato_id: string }
+type PatrimonioRow = {
+  candidato_id: string
+  ano_eleicao: number
+  valor_total: number | string | null
+}
 
 /**
  * Soma `total_gasto` por candidato, percorrendo todas as páginas de resultado.
@@ -107,6 +113,61 @@ export async function fetchVotosCountsByCandidatoIds(
   }
 
   return countVotosRowsByCandidatoId(all)
+}
+
+function toNumberOrNull(value: number | string | null): number | null {
+  if (value == null) return null
+  const n = typeof value === "number" ? value : Number(value)
+  return Number.isFinite(n) ? n : null
+}
+
+/**
+ * Série de patrimônio por candidato (ano + valor), paginada.
+ * Filtra linhas despublicadas. Só o suficiente para a evolução 2026 vs. ano anterior.
+ */
+export async function fetchPatrimonioSeriesByCandidatoIds(
+  supabase: SupabaseClient,
+  candidatoIds: string[]
+): Promise<Map<string, PatrimonioAnoValor[]>> {
+  const ids = [...new Set(candidatoIds)].filter(Boolean)
+  const byId = new Map<string, PatrimonioAnoValor[]>()
+  if (ids.length === 0) return byId
+
+  const all: PatrimonioRow[] = []
+
+  for (let c = 0; c < ids.length; c += CANDIDATO_ID_CHUNK) {
+    const idChunk = ids.slice(c, c + CANDIDATO_ID_CHUNK)
+    let from = 0
+
+    while (true) {
+      const { data, error } = await supabase
+        .from("patrimonio")
+        .select("candidato_id,ano_eleicao,valor_total")
+        .in("candidato_id", idChunk)
+        .is("despublicado_em", null)
+        .range(from, from + PAGE_SIZE - 1)
+
+      if (error) {
+        throw new Error(`patrimonio batch: ${error.message}`)
+      }
+
+      const rows = (data ?? []) as PatrimonioRow[]
+      all.push(...rows)
+      if (rows.length < PAGE_SIZE) break
+      from += PAGE_SIZE
+    }
+  }
+
+  for (const row of all) {
+    const list = byId.get(row.candidato_id) ?? []
+    list.push({
+      ano_eleicao: row.ano_eleicao,
+      valor_total: toNumberOrNull(row.valor_total),
+    })
+    byId.set(row.candidato_id, list)
+  }
+
+  return byId
 }
 
 const MUDANCAS_SELECT =

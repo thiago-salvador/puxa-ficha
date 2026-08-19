@@ -18,9 +18,10 @@ import {
 
 import { CandidatePhoto } from "@/components/CandidatePhoto"
 import { formatCompact } from "@/lib/utils"
+import { formatEvolucaoPatrimonialPct } from "@/lib/evolucao-patrimonial"
 import {
+  processosListaCount,
   processosMaiorVerificadoNaComparacao,
-  processosNaoVerificado,
   processosOverviewDisplay,
   processosResumoLabel,
 } from "@/lib/processos-display"
@@ -256,7 +257,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                   ? `Remover ${candidato.nome_urna} da comparação`
                   : `Adicionar ${candidato.nome_urna} à comparação`}. ${
                   candidato.idade ? `${candidato.idade} anos, ` : ""
-                }${processosResumoLabel(candidato.total_processos)}, ${candidato.total_votos_mapeados} votações mapeadas`}
+                }${processosResumoLabel(candidato.total_processos)}, evolução patrimonial ${formatEvolucaoPatrimonialPct(candidato.evolucao_patrimonial_pct)}`}
                 className={`flex w-full items-center gap-3 rounded-[12px] border px-4 py-3.5 text-left transition-all ${
                   selected
                     ? "border-foreground bg-foreground/[0.03]"
@@ -294,11 +295,13 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                 </div>
                 <div
                   aria-hidden="true"
-                  className="flex shrink-0 flex-col items-end gap-0.5 text-right text-[length:var(--text-eyebrow)] font-bold text-muted-foreground"
+                  className="flex shrink-0 flex-col items-end gap-0.5 whitespace-nowrap text-right text-[length:var(--text-eyebrow)] font-bold text-muted-foreground"
                 >
                   {candidato.idade && <span>{candidato.idade} anos</span>}
                   <span>{processosResumoLabel(candidato.total_processos)}</span>
-                  <span>{candidato.total_votos_mapeados} votações</span>
+                  <span>
+                    {formatEvolucaoPatrimonialPct(candidato.evolucao_patrimonial_pct)}
+                  </span>
                 </div>
               </button>
             )
@@ -312,10 +315,10 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
             aria-label="Lista de candidatos para comparar. Role na horizontal se as colunas não couberem."
             tabIndex={0}
           >
-            <table className="w-full min-w-[48rem] text-left">
+            <table className="w-full min-w-[44rem] table-auto text-left">
               <thead>
                 <tr className="border-b border-border/60">
-                  <th className="w-12 pb-3 pr-3">
+                  <th className="w-12 pb-3 pr-4">
                     <span className="sr-only">Selecionar</span>
                   </th>
                   {[
@@ -324,15 +327,14 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                     { heading: "Idade", numeric: true },
                     { heading: "Formação", numeric: false },
                     { heading: "Patrimônio", numeric: true },
-                    { heading: "Votações", numeric: true },
-                    { heading: "Gastos", numeric: true },
                     { heading: "Processos", numeric: true },
                     { heading: "Destaques", numeric: true },
                   ].map(({ heading, numeric }) => (
                     <th
                       key={heading}
-                      className={`pb-3 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground ${
-                        numeric ? "text-right" : ""
+                      scope="col"
+                      className={`whitespace-nowrap pb-3 pr-4 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground last:pr-0 ${
+                        numeric ? "text-right" : "text-left"
                       }`}
                     >
                       {heading}
@@ -354,6 +356,9 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                       data-pf-comparador-age={candidato.idade ?? ""}
                       data-pf-comparador-formacao={candidato.formacao ?? ""}
                       data-pf-comparador-patrimonio={candidato.patrimonio_declarado ?? ""}
+                      data-pf-comparador-evolucao={
+                        candidato.evolucao_patrimonial_pct ?? "N/A"
+                      }
                       data-pf-comparador-votos={candidato.total_votos_mapeados}
                       data-pf-comparador-gastos={candidato.total_gasto_parlamentar ?? ""}
                       data-pf-comparador-processos={candidato.total_processos}
@@ -424,27 +429,21 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                       </td>
                       <td className="py-3 pr-4 text-right text-[length:var(--text-body-sm)] font-bold tabular-nums text-foreground">
                         {candidato.patrimonio_declarado != null ? (
-                          formatCompact(candidato.patrimonio_declarado)
+                          <span className="block">
+                            {formatCompact(candidato.patrimonio_declarado)}
+                          </span>
                         ) : (
-                          <span className="font-medium text-muted-foreground">sem declaração</span>
+                          <span className="block font-medium text-muted-foreground">sem declaração</span>
                         )}
+                        <span
+                          className="mt-0.5 block text-[11px] font-semibold text-muted-foreground"
+                        >
+                          <span className="sr-only">Evolução patrimonial: </span>
+                          {formatEvolucaoPatrimonialPct(candidato.evolucao_patrimonial_pct)}
+                        </span>
                       </td>
                       <td className="py-3 pr-4 text-right text-[length:var(--text-body-sm)] font-bold tabular-nums text-foreground">
-                        {candidato.total_votos_mapeados}
-                      </td>
-                      <td className="py-3 pr-4 text-right text-[length:var(--text-body-sm)] font-bold tabular-nums text-foreground">
-                        {candidato.total_gasto_parlamentar != null ? (
-                          formatCompact(candidato.total_gasto_parlamentar)
-                        ) : (
-                          <span className="font-medium text-muted-foreground">sem gasto mapeado</span>
-                        )}
-                      </td>
-                      <td className="py-3 pr-4 text-right text-[length:var(--text-body-sm)] font-bold tabular-nums text-foreground">
-                        {processosNaoVerificado(candidato.total_processos) ? (
-                          <span className="font-medium text-muted-foreground">sem contagem verificada</span>
-                        ) : (
-                          candidato.total_processos
-                        )}
+                        {processosListaCount(candidato.total_processos)}
                       </td>
                       <td className="py-3 text-right text-[length:var(--text-body-sm)] font-bold tabular-nums text-foreground">
                         {candidato.total_pontos_atencao}
