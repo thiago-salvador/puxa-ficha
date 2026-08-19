@@ -193,7 +193,7 @@ jobs:
     # R8-R10 da cadeia partidária, inclusive backlog ainda não público.
     name: Superfície e integridade das fichas
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 9 * * 4'
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -213,20 +213,8 @@ jobs:
             exit 1
           fi
       - run: npm ci
-      - name: Instalar postgresql-client-17
-        run: |
-          set -euo pipefail
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq curl ca-certificates
-          sudo install -d /usr/share/postgresql-common/pgdg
-          sudo curl -fsSL -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc \
-            https://www.postgresql.org/media/keys/ACCC4CF8.asc
-          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] \
-            https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" |
-            sudo tee /etc/apt/sources.list.d/pgdg.list
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq postgresql-client-17
-          echo "/usr/lib/postgresql/17/bin" >> "$GITHUB_PATH"
+      - uses: ./.github/actions/install-postgresql-client-17
+        timeout-minutes: 12
       - name: Snapshot da superfície (SELECT, nenhuma escrita)
         env:
           SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}

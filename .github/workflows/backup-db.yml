@@ -75,19 +75,12 @@ jobs:
             exit 1
           fi
 
-      - name: Instalar postgresql-client-17
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq curl ca-certificates
-          sudo install -d /usr/share/postgresql-common/pgdg
-          sudo curl -fsSL -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc \
-            https://www.postgresql.org/media/keys/ACCC4CF8.asc
-          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] \
-            https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" |
-            sudo tee /etc/apt/sources.list.d/pgdg.list
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq postgresql-client-17
+      - uses: ./.github/actions/install-postgresql-client-17
+        timeout-minutes: 12
 
+      - name: Confirmar pg_dump 17
+        run: |
+          set -euo pipefail
           # O /usr/bin/pg_dump do Ubuntu e um wrapper do postgresql-client-common
           # que escolhe a versao DEFAULT do sistema, e o runner ja vem com a 16.
           # Instalar a 17 nao muda o default: em 08/08/2026 o log mostrou
@@ -95,8 +88,6 @@ jobs:
           # "pg_dump (PostgreSQL) 16.14", e o dump abortou por version mismatch
           # contra o servidor 17.6. Por isso o diretorio versionado entra na
           # frente do PATH, em vez de confiar no wrapper.
-          echo "/usr/lib/postgresql/17/bin" >> "$GITHUB_PATH"
-
           VERSAO="$(/usr/lib/postgresql/17/bin/pg_dump --version)"
           echo "pg_dump que sera usado: ${VERSAO}"
           case "${VERSAO}" in

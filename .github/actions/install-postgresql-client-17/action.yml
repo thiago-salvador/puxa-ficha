@@ -1,0 +1,14 @@
+name: Instalar postgresql-client-17
+description: >
+  Pina o mirror do Ubuntu e instala o client 17 com teto por comando.
+  Sem isso, apt-get update/install fica 30 min no azure.archive ate o
+  job cancelar (ledger-guard, run 32274236313, 19/08/2026).
+
+runs:
+  using: composite
+  steps:
+    - uses: ./.github/actions/pin-apt-mirrors
+
+    - name: Instalar postgresql-client-17
+      shell: bash
+      run: bash "${{ github.action_path }}/install.sh"

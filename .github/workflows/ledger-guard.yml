@@ -57,10 +57,9 @@ jobs:
   comparar:
     name: Ledger do banco vs supabase/migrations
     runs-on: ubuntu-latest
-    # 30, igual ao backup-db.yml: o cron de 19/08 (run 32225811992) estourou
-    # os 15 min no apt-get do postgresql-client-17, o job saiu cancelled e o
-    # watchdog abriu a #19. O SELECT em si é curto; o orçamento extra é do
-    # apt.postgresql.org.
+    # 30, igual ao backup-db.yml. O SELECT é curto; o orçamento extra era do
+    # apt (cron 32225811992 e o merge 32274236313, 30 min no azure.archive).
+    # O install agora tem teto próprio de 12 min na action compartilhada.
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -84,24 +83,8 @@ jobs:
 
       - run: npm ci
 
-      - name: Instalar postgresql-client-17
-        # Mesma receita do backup-db.yml. Aqui o psql 16 que já vem no runner
-        # falaria com o servidor 17 sem problema (a checagem dura de versão é do
-        # pg_dump, não do psql), mas manter duas receitas divergentes de client
-        # no repo é como se descobre a diferença do jeito caro.
-        run: |
-          set -euo pipefail
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq curl ca-certificates
-          sudo install -d /usr/share/postgresql-common/pgdg
-          sudo curl -fsSL -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc \
-            https://www.postgresql.org/media/keys/ACCC4CF8.asc
-          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] \
-            https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" |
-            sudo tee /etc/apt/sources.list.d/pgdg.list
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq postgresql-client-17
-          echo "/usr/lib/postgresql/17/bin" >> "$GITHUB_PATH"
+      - uses: ./.github/actions/install-postgresql-client-17
+        timeout-minutes: 12
 
       - name: Ler o ledger (SELECT, nenhuma escrita)
         env:

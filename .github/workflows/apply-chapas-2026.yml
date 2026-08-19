@@ -45,19 +45,8 @@ jobs:
           node-version: "24"
           cache: npm
 
-      - name: Instalar cliente PostgreSQL 17
-        run: |
-          set -euo pipefail
-          sudo install -d /usr/share/postgresql-common/pgdg
-          sudo curl --fail --silent --show-error --location \
-            -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc \
-            https://www.postgresql.org/media/keys/ACCC4CF8.asc
-          . /etc/os-release
-          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt ${VERSION_CODENAME}-pgdg main" \
-            | sudo tee /etc/apt/sources.list.d/pgdg.list >/dev/null
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq postgresql-client-17
-          psql --version
+      - uses: ./.github/actions/install-postgresql-client-17
+        timeout-minutes: 12
 
       - run: npm ci
 
