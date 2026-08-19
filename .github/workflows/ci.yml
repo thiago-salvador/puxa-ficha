@@ -140,7 +140,7 @@ jobs:
   # localmente, todas as rotas falham com "Executing inline script violates
   # the following Content Security Policy directive 'script-src self'".
   browser-smoke:
-    name: Rotas principais (build local)
+    name: Rotas e acessibilidade (build local)
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
@@ -288,10 +288,10 @@ jobs:
           rm -rf playwright-report
           npm run test:playwright:launch
 
-      # Gate de a11y no PR: o job "Acessibilidade (produção)" so roda no push
-      # da main (HTML ao vivo, dados reais). Sem este passo, o axe do codigo
-      # do PR so aparecia depois do merge. Build local, sem segredo, igual
-      # as rotas acima. embed-candidate fica skipped com placeholder.
+      # Gate de a11y no PR (e tambem no push). O axe contra producao mora em
+      # .github/workflows/a11y-producao.yml, que so dispara na main: assim o
+      # PR nao lista um check "skipped". embed-candidate fica skipped com
+      # placeholder.
       - name: Axe (build local)
         env:
           PF_EXPECT_PLACEHOLDER_DATA: "1"
@@ -304,151 +304,6 @@ jobs:
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: playwright-browser-smoke-report
-          path: |
-            playwright-report/
-            test-results/
-          retention-days: 7
-
-  # A11y do codigo do PR vive no job "Rotas principais" (build local).
-  # Este job continua so no push da main, contra puxaficha.com.br: e o HTML
-  # que o usuario recebe, com dados reais (ficha e doadores). Num PR a
-  # producao ainda nao tem o codigo novo, entao apontar o site ao vivo nao
-  # diria nada sobre a mudanca.
-  a11y:
-    name: Acessibilidade (produção)
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    # 15 min matava o job no meio do apt: o passo abaixo tem duas tentativas
-    # de 10 min (teto 22 no step), e em 19/08 o apt rodou 14m47s ate o
-    # cancelamento (run 32258909527). 30 min e o mesmo teto do verify.
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: 24
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      # Sem cache, cada rodada baixava de novo os ~250 MB de Chromium e WebKit.
-      # Medido em 18/08/2026, sete execucoes do mesmo dia: 48s, 59s, 65s, 80s,
-      # 136s, 287s e 1487s. A ultima nao terminou, foi morta pelo timeout do job
-      # e levou o PR com ela. Variacao de 30x nao e volume de download: e o
-      # apt-get do --with-deps travando.
-      # A chave e a VERSAO do Playwright, nao o hash do package-lock. Com o
-      # lock inteiro, qualquer bump de dependencia invalidaria os 363 MB de
-      # navegador, e o dependabot deste repo roda toda segunda com ate 4 PRs:
-      # o cache viveria menos de uma semana. Os binarios so mudam quando a
-      # versao do Playwright muda. Lido do lockfile, que existe antes do npm ci.
-      - name: Versao do Playwright, para a chave do cache
-        id: pw-versao
-        run: |
-          echo "v=$(node -p "require('./package-lock.json').packages['node_modules/playwright'].version")" >> "$GITHUB_OUTPUT"
-
-      - name: Cache dos navegadores do Playwright
-        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ steps.pw-versao.outputs.v }}
-
-      # WebKit e obrigatorio, nao escolha: o projeto `mobile` do
-      # playwright.config emula iPhone 14, e todo device iPhone do Playwright
-      # roda em WebKit. O --with-deps tambem fica, porque o WebKit depende de
-      # bibliotecas (libwoff, libhyphen, libmanette) que a imagem do runner nao
-      # traz. O que muda e a resiliencia: cada tentativa morre em 6 min em vez
-      # de pendurar ate os 25 do job, e tenta de novo, porque trava de apt e
-      # transitoria.
-      # A causa raiz do travamento, achada no log de 18/08: o apt do runner tenta
-      # o mirror azure.archive.ubuntu.com, que responde Ign, e fica pendurado sem
-      # timeout. Com estes limites ele desiste do mirror morto em 15s e cai no
-      # archive.ubuntu.com, que responde.
-      - name: apt desiste rapido de mirror morto
-        run: |
-          sudo tee /etc/apt/apt.conf.d/99-timeout-curto >/dev/null <<'FIM'
-          Acquire::http::Timeout "15";
-          Acquire::https::Timeout "15";
-          Acquire::ftp::Timeout "15";
-          Acquire::Retries "2";
-          FIM
-          # Timeout de 15s nao basta: o azure.archive as vezes responde Ign e
-          # o download arrasta 10-15 min (a11y em 19/08, run 32263428277).
-          # O job de rotas no mesmo push instalou as deps em 80s. Forcar o
-          # archive.ubuntu.com evita a primeira tentativa lenta.
-          sudo sed -i 's/azure\.archive\.ubuntu\.com/archive.ubuntu.com/g' \
-            /etc/apt/sources.list \
-            /etc/apt/sources.list.d/*.list \
-            /etc/apt/sources.list.d/*.sources \
-            2>/dev/null || true
-
-      # WebKit e obrigatorio, nao escolha: o projeto `mobile` do
-      # playwright.config emula iPhone 14, e todo device iPhone do Playwright
-      # roda em WebKit. O --with-deps tambem fica, porque o WebKit depende de
-      # bibliotecas (libwoff, libhyphen, libmanette) que a imagem do runner nao
-      # traz.
-      #
-      # O `timeout` mata o processo pai, mas o apt-get NETO sobrevive segurando
-      # /var/lib/apt/lists/lock, e por isso a segunda tentativa morria em 2s com
-      # "Could not get lock ... held by process". Medido na primeira execucao
-      # desta mudanca. Por isso a limpeza entre tentativas.
-      # Separado em DOIS passos de proposito. Juntos, num --with-deps unico, o
-      # cache nunca ajudava: o apt roda toda vez, e ele e a parte lenta e
-      # instavel. Separando, o cache mata de fato o download de ~250 MB de
-      # navegador, e sobra so o apt.
-      #
-      # As dependencias de sistema do WebKit sao ~125 pacotes (libwoff, libhyphen,
-      # libmanette, gstreamer). Em 18/08 uma tentativa de 6 min morreu no meio do
-      # download com o mirror azure respondendo Ign, por isso o teto por tentativa
-      # e maior aqui do que a intuicao sugere.
-      #
-      # `pkill -x` casa NOME EXATO. A versao anterior usava `pkill -f
-      # 'apt-get|dpkg'`, e o -f casa contra a linha de comando inteira: a linha do
-      # proprio pkill contem "apt-get", entao ele se matava. O log de 18/08 mostra
-      # "3451 Killed sudo pkill -9 -f 'apt-get|dpkg'".
-      - name: Dependencias de sistema dos navegadores (apt)
-        timeout-minutes: 22
-        run: |
-          limpar_apt() {
-            sudo pkill -9 -x apt-get 2>/dev/null || true
-            sudo pkill -9 -x dpkg 2>/dev/null || true
-            sudo rm -f /var/lib/apt/lists/lock /var/cache/apt/archives/lock \
-                       /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend 2>/dev/null || true
-            sudo dpkg --configure -a 2>/dev/null || true
-          }
-          for tentativa in 1 2; do
-            # Sem -k, o GNU timeout manda SIGTERM e espera para sempre se o
-            # apt-get neto ignorar o sinal. Em 19/08 o a11y ficou 11+ min no
-            # primeiro install-deps (run 32263428277). -k 15 manda SIGKILL.
-            if timeout -k 15 300 npx playwright install-deps chromium webkit; then
-              exit 0
-            fi
-            echo "::warning::tentativa $tentativa de instalar dependencias falhou ou travou em 5 min"
-            limpar_apt
-            sleep 10
-          done
-          echo "::error::duas tentativas de instalar as dependencias de sistema falharam"
-          exit 1
-
-      # Este e o passo que o cache serve. Com hit, sai em segundos.
-      - name: Install Playwright browsers
-        timeout-minutes: 10
-        run: npx playwright install chromium webkit
-
-      - name: Axe (moderate, serious e critical)
-        env:
-          # Com PF_BASE_URL definida, o playwright.config nao sobe webServer.
-          PF_BASE_URL: https://puxaficha.com.br
-        run: npm run test:a11y
-
-      - name: Publicar relatório em caso de falha
-        if: failure()
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
-        with:
-          name: playwright-a11y-report
           path: |
             playwright-report/
             test-results/
