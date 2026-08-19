@@ -43,4 +43,10 @@ describe("watchdog de crons", () => {
     assert.match(script, /WATCHDOG_DRY_RUN:-0/)
     assert.match(script, /if \[\[ "\$DRY_RUN" == "1" \]\]/)
   })
+
+  it("rerun posterior em verde cancela o alarme do cron vermelho", () => {
+    assert.match(script, /status=completed -f per_page=1/)
+    assert.match(script, /cron \$\{conclusion\} mas rerun \$\{latest_id\} em verde/)
+    assert.match(script, /latest_conclusion.*success/)
+  })
 })
