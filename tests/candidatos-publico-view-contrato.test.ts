@@ -296,6 +296,7 @@ describe("contrato da view candidatos_publico", () => {
       "20260819140100_urls_consulta_djen.sql",
       "20260819140200_formacao_instituicao_higiene.sql",
       "20260819140300_renan_santos_processos_assunto_absolvido.sql",
+      "20260819140400_formacao_cury_marcal.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

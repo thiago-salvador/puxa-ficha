@@ -311,7 +311,9 @@ describe("classificador puro (#136)", () => {
     // 314 -> 318 em 19/08/2026: schema de formacao_instituicao, backfill do portal
     // DJEN, higiene de formação e curadoria judicial do Renan. As quatro aplicam
     // limpo em universo vazio (sem RAISE). Conservação: 318 + 103 = 421.
-    assert.equal(manifesto.aplicadas_esperadas, 318)
+    // 318 -> 319 em 19/08/2026: curadoria Cury/Marçal (dois UPDATE). Conservação:
+    // 319 + 103 = 422.
+    assert.equal(manifesto.aplicadas_esperadas, 319)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

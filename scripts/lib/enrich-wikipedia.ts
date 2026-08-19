@@ -4,7 +4,6 @@ import { fetchJSON, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import { finalizarColeta, registrarErroColeta } from "./coleta-resultado"
 import type { IngestResult } from "./types"
-import { pareceNomeDeInstituicao } from "../../src/lib/formacao-display"
 
 const args = process.argv.slice(2)
 const slugArgs = args
@@ -482,12 +481,8 @@ function mergeFallbackUpdates(
   if (fb.formacao_instituicao && !mergedState.formacao_instituicao) {
     pendingUpdates.formacao_instituicao = fb.formacao_instituicao
   }
-  if (fb.formacao && (!mergedState.formacao || isInvalidStructuredText(mergedState.formacao))) {
-    if (pareceNomeDeInstituicao(fb.formacao)) {
-      if (!mergedState.formacao_instituicao) pendingUpdates.formacao_instituicao = fb.formacao
-    } else {
-      pendingUpdates.formacao = fb.formacao
-    }
+  if (fb.formacao && !mergedState.formacao_instituicao && !pendingUpdates.formacao_instituicao) {
+    pendingUpdates.formacao_instituicao = fb.formacao
   }
   if (fb.profissao_declarada && (!mergedState.profissao_declarada || isInvalidStructuredText(mergedState.profissao_declarada))) {
     pendingUpdates.profissao_declarada = fb.profissao_declarada
@@ -552,12 +547,8 @@ async function applyFallback(slug: string, candidatoId: string, existing: Record
   if (fb.formacao_instituicao && !existing.formacao_instituicao) {
     updates.formacao_instituicao = fb.formacao_instituicao
   }
-  if (fb.formacao && !existing.formacao) {
-    if (pareceNomeDeInstituicao(fb.formacao)) {
-      if (!existing.formacao_instituicao) updates.formacao_instituicao = fb.formacao
-    } else {
-      updates.formacao = fb.formacao
-    }
+  if (fb.formacao && !existing.formacao_instituicao && !updates.formacao_instituicao) {
+    updates.formacao_instituicao = fb.formacao
   }
   if (fb.profissao_declarada && !existing.profissao_declarada) updates.profissao_declarada = fb.profissao_declarada
 
@@ -698,16 +689,9 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
           updates.naturalidade = naturalidade
           log("wikipedia", `  ${cand.slug}: naturalidade = ${naturalidade}`)
         }
-        if (educacao) {
-          if (pareceNomeDeInstituicao(educacao)) {
-            if (!existing.formacao_instituicao) {
-              updates.formacao_instituicao = educacao
-              log("wikipedia", `  ${cand.slug}: formacao_instituicao = ${educacao}`)
-            }
-          } else if (!existing.formacao) {
-            updates.formacao = educacao
-            log("wikipedia", `  ${cand.slug}: formacao = ${educacao}`)
-          }
+        if (educacao && !existing.formacao_instituicao) {
+          updates.formacao_instituicao = educacao
+          log("wikipedia", `  ${cand.slug}: formacao_instituicao = ${educacao}`)
         }
 
         if (!existing.biografia && summary) {
