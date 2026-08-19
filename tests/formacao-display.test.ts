@@ -28,18 +28,19 @@ describe("formatFormacaoPublica", () => {
     assert.equal(formatFormacaoPublica("SUPERIOR COMPLETO", null), "Superior completo")
   })
 
-  it("mostra só a instituição quando não há grau TSE", () => {
-    assert.equal(
-      formatFormacaoPublica(null, "Universidade de São Paulo"),
-      "Universidade de São Paulo",
-    )
-    assert.equal(
-      formatFormacaoPublica("Universidade de São Paulo", null),
-      "Universidade de São Paulo",
-    )
+  it("não mostra formação quando só há instituição", () => {
+    assert.equal(formatFormacaoPublica(null, "Universidade de São Paulo"), null)
+    assert.equal(formatFormacaoPublica("Universidade de São Paulo", null), null)
     assert.equal(
       formatFormacaoPublica("Centro Universitário de Brasília", null),
-      "Centro Universitário de Brasília",
+      null,
+    )
+    assert.equal(
+      formacaoPublicaDe({
+        formacao: null,
+        formacao_instituicao: "Universidade de São Paulo",
+      }),
+      null,
     )
   })
 
@@ -47,7 +48,7 @@ describe("formatFormacaoPublica", () => {
     assert.equal(pareceNomeDeInstituicao("Universidade de São Paulo"), true)
     assert.equal(
       formatFormacaoPublica("Universidade de São Paulo", "Universidade de São Paulo"),
-      "Universidade de São Paulo",
+      null,
     )
   })
 

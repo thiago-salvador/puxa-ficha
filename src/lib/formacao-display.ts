@@ -1,6 +1,6 @@
 /**
  * Formação pública: grau TSE + instituição complementar, nunca diploma implícito.
- * Grau vem do TSE. Instituição vem de mídia ou wiki. Cada um aparece se existir.
+ * Grau vem do TSE. Instituição só aparece junto com o grau. Sozinha, some.
  */
 
 const INSTITUICAO_RE =
@@ -34,7 +34,6 @@ export function formatFormacaoPublica(
   }
   if (g && i) return `${g} · ${i}`
   if (g) return g
-  if (i) return i
   return null
 }
 
