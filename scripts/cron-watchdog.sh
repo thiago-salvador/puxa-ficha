@@ -61,7 +61,7 @@ publish_anomaly() {
 ${run_line}
 - Detectado em: $(date -u +%Y-%m-%dT%H:%M:%SZ)
 
-O watchdog considera apenas a última execução concluída disparada por \`schedule\`.
+O watchdog considera a última execução \`schedule\`. Um rerun posterior em verde (dispatch ou push) conta como recuperado.
 
 ${marker}
 EOF
@@ -134,8 +134,18 @@ for workflow_file in "${WORKFLOW_FILES[@]}"; do
   run_epoch=$(iso_to_epoch "$run_completed_at")
   run_age_days=$(( (NOW_EPOCH - run_epoch) / 86400 ))
   if [[ "$conclusion" != "success" ]]; then
-    ANOMALIES=$((ANOMALIES + 1))
-    publish_anomaly "$workflow_file" "$workflow_name" "$conclusion" "$run_url" "$run_id"
+    # Cron vermelho com rerun posterior em verde (dispatch ou push) está
+    # recuperado: senão a issue fecha hoje e o watchdog reabre amanhã.
+    latest_json=$(json_get "repos/${REPO}/actions/workflows/${workflow_file}/runs" \
+      -f status=completed -f per_page=1)
+    latest_conclusion=$(jq -r '.workflow_runs[0].conclusion // empty' <<<"$latest_json")
+    latest_id=$(jq -r '.workflow_runs[0].id // empty' <<<"$latest_json")
+    if [[ "$latest_conclusion" == "success" && "$latest_id" != "$run_id" ]]; then
+      echo "ok: ${workflow_name}, cron ${conclusion} mas rerun ${latest_id} em verde"
+    else
+      ANOMALIES=$((ANOMALIES + 1))
+      publish_anomaly "$workflow_file" "$workflow_name" "$conclusion" "$run_url" "$run_id"
+    fi
   elif [[ "$run_age_days" -ge "$GRACE_DAYS" ]]; then
     ANOMALIES=$((ANOMALIES + 1))
     publish_anomaly "$workflow_file" "$workflow_name" \
