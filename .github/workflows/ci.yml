@@ -202,10 +202,13 @@ jobs:
           Acquire::ftp::Timeout "15";
           Acquire::Retries "2";
           FIM
-          # Timeout de 15s nao basta: o azure.archive as vezes responde Ign e
-          # o download arrasta 10-15 min (a11y em 19/08, run 32263428277).
-          # O job de rotas no mesmo push instalou as deps em 80s. Forcar o
-          # archive.ubuntu.com evita a primeira tentativa lenta.
+          # ubuntu-24.04 no GHA nao usa sources.list: usa
+          # mirror+file:/etc/apt/apt-mirrors.txt. Run 32268001697: o sed nas
+          # sources nao mudou nada; Get:1 file:.../apt-mirrors.txt e Get:2
+          # azure.archive... fonts-freefont-ttf (5 MB em 4 min ate o timeout).
+          printf 'http://archive.ubuntu.com/ubuntu/\n' | sudo tee /etc/apt/apt-mirrors.txt >/dev/null
+          sudo sed -i 's|mirror+file:/etc/apt/apt-mirrors.txt|http://archive.ubuntu.com/ubuntu|g' \
+            /etc/apt/sources.list.d/*.sources 2>/dev/null || true
           sudo sed -i 's/azure\.archive\.ubuntu\.com/archive.ubuntu.com/g' \
             /etc/apt/sources.list \
             /etc/apt/sources.list.d/*.list \
