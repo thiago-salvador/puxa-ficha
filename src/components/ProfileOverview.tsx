@@ -47,6 +47,10 @@ import {
   isTerminalProcessStatus,
   processoBorderColor,
 } from "@/lib/processos-display"
+import {
+  groupGastosExecutivoPorOrgao,
+  pickOrgaoMaisRecente,
+} from "@/lib/gastos-executivo-display"
 
 /* ─── Pure helpers ──────────────────────────────────── */
 
@@ -475,16 +479,10 @@ function ExecutiveSpendingTeaser({
   // Visão Geral como o da cota parlamentar. Enquadramento é inegociável:
   // gasto do ÓRGÃO, nunca da pessoa. E como na aba Dinheiro, total é sempre
   // POR ÓRGÃO: nunca somar valores de órgãos diferentes numa cifra só.
-  if (gastosExecutivo.length === 0) return null
-  const ordenados = [...gastosExecutivo].sort((a, b) => b.mes_extrato.localeCompare(a.mes_extrato))
-  const orgaoRecente = ordenados[0].orgao_codigo
-  const doOrgao = ordenados.filter((g) => g.orgao_codigo === orgaoRecente)
-  const total = doOrgao.reduce((soma, g) => soma + g.valor_total, 0)
-  const ultimo = doOrgao.find((g) => g.valor_total > 0)
-  const orgaoNome = doOrgao[0].orgao_nome ?? "órgão público"
-  const outrosOrgaos = new Set(
-    ordenados.filter((g) => g.orgao_codigo !== orgaoRecente).map((g) => g.orgao_codigo),
-  ).size
+  const orgaos = groupGastosExecutivoPorOrgao(gastosExecutivo)
+  const orgao = pickOrgaoMaisRecente(orgaos)
+  if (!orgao) return null
+  const outrosOrgaos = orgaos.length - 1
 
   return (
     <TeaserCard
@@ -493,17 +491,35 @@ function ExecutiveSpendingTeaser({
       onNavigate={onNavigate}
       moneyCardKind="gasto"
     >
-      <p className="font-heading text-[22px] leading-none tracking-tight text-foreground">
-        {formatCompact(total)}
+      <p className="text-[12px] font-medium text-muted-foreground">{orgao.nome}</p>
+      <p
+        data-pf-gastos-executivo-total-mandato
+        className="mt-2 font-heading text-[22px] leading-none tracking-tight text-foreground"
+      >
+        {formatCompact(orgao.totalMandato)}
+      </p>
+      <p className="mt-0.5 text-[12px] font-medium text-muted-foreground">Total no mandato</p>
+      <p
+        data-pf-gastos-executivo-total-ano={orgao.anoCorrente}
+        className="mt-3 text-[15px] font-bold tabular-nums text-foreground"
+      >
+        {formatCompact(orgao.totalAnoCorrente)}
       </p>
       <p className="mt-0.5 text-[12px] font-medium text-muted-foreground">
-        Total institucional do órgão ({orgaoNome}) no mandato; não é gasto pessoal do titular.
+        Total em {orgao.anoCorrente}
       </p>
-      {ultimo && (
-        <p className="mt-2 text-[12px] font-medium text-muted-foreground">
-          Último mês com movimento: {formatMesExtratoCurto(ultimo.mes_extrato)} ·{" "}
-          <span className="font-bold tabular-nums text-foreground">{formatCompact(ultimo.valor_total)}</span>
-        </p>
+      {orgao.ultimoMesComMovimento && (
+        <>
+          <p
+            data-pf-gastos-executivo-ultimo-mes={orgao.ultimoMesComMovimento.mes_extrato}
+            className="mt-3 text-[15px] font-bold tabular-nums text-foreground"
+          >
+            {formatCompact(orgao.ultimoMesComMovimento.valor_total)}
+          </p>
+          <p className="mt-0.5 text-[12px] font-medium text-muted-foreground">
+            Último mês com movimento: {formatMesExtratoCurto(orgao.ultimoMesComMovimento.mes_extrato)}
+          </p>
+        </>
       )}
       {outrosOrgaos > 0 && (
         <p className="mt-2 text-[12px] font-medium text-muted-foreground">

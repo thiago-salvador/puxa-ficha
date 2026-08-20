@@ -297,6 +297,10 @@ describe("contrato da view candidatos_publico", () => {
       "20260819140200_formacao_instituicao_higiene.sql",
       "20260819140300_renan_santos_processos_assunto_absolvido.sql",
       "20260819140400_formacao_cury_marcal.sql",
+      // Gastos do Executivo: troca o grão mensal de órgão para unidade gestora
+      // e acrescenta contagens de sigilo de portador e estabelecimento. Não
+      // redefine candidatos_publico. O dado continua sendo do órgão, não da pessoa.
+      "20260820010000_gastos_executivo_ug.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

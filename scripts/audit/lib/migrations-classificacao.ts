@@ -381,7 +381,11 @@ export const MEDICAO_REPLAY = Object.freeze({
   // em candidatos, candidatos_publico e v_comparador. MEDIDO no schema-gate
   // local: aplicadas limpo 84, falhas 0, hash
   // 69c4e5e0e72a6f855954bed5b7c77565f3c4b73541cfc499bf1fc107b26e5e7d.
-  schemaReplayTamanho: 84,
+  // 84 -> 85 em 20/08/2026: a 20260820010000 (gastos_executivo_ug) troca o
+  // grão mensal de órgão para unidade gestora e acrescenta contagens de
+  // sigilo. Classe schema (ALTER TABLE). Hash do dump precisa de re-medição
+  // no schema-gate.
+  schemaReplayTamanho: 85,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

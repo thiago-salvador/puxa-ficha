@@ -313,7 +313,9 @@ describe("classificador puro (#136)", () => {
     // limpo em universo vazio (sem RAISE). Conservação: 318 + 103 = 421.
     // 318 -> 319 em 19/08/2026: curadoria Cury/Marçal (dois UPDATE). Conservação:
     // 319 + 103 = 422.
-    assert.equal(manifesto.aplicadas_esperadas, 319)
+    // 319 -> 320 em 20/08/2026: schema de gastos_executivo_ug aplica limpo
+    // (ALTER TABLE, sem RAISE). Conservação: 320 + 103 = 423.
+    assert.equal(manifesto.aplicadas_esperadas, 320)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
