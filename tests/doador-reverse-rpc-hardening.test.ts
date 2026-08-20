@@ -4,7 +4,7 @@ import { join } from "node:path"
 import { describe, it } from "node:test"
 
 const ROOT = process.cwd()
-const MIGRATION = "20260820121000_doador_reverse_rpc_server_only_trgm.sql"
+const MIGRATION = "20260820164117_doador_reverse_rpc_server_only_trgm.sql"
 
 function sql(): string {
   return readFileSync(join(ROOT, "supabase/migrations", MIGRATION), "utf8")

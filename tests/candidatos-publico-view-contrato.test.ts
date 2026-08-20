@@ -297,13 +297,15 @@ describe("contrato da view candidatos_publico", () => {
       "20260819140200_formacao_instituicao_higiene.sql",
       "20260819140300_renan_santos_processos_assunto_absolvido.sql",
       "20260819140400_formacao_cury_marcal.sql",
+      // Busca reversa por doador: tabela derivada com trgm, RPC so service_role.
+      // Nao redefine candidatos_publico. Nome bate com o ledger (MCP apply_migration).
+      "20260820164117_doador_reverse_rpc_server_only_trgm.sql",
       // Gastos do Executivo: troca o grão mensal de órgão para unidade gestora
       // e acrescenta contagens de sigilo de portador e estabelecimento. Não
       // redefine candidatos_publico. O dado continua sendo do órgão, não da pessoa.
-      "20260820010000_gastos_executivo_ug.sql",
-      // Busca reversa por doador: tabela derivada com trgm, RPC so service_role.
-      // Nao redefine candidatos_publico.
-      "20260820121000_doador_reverse_rpc_server_only_trgm.sql",
+      // Timestamp depois do topo do ledger (20260820164117): a UG ainda não foi
+      // aplicada; o MCP carimbou a RPC de doadores na frente.
+      "20260820170000_gastos_executivo_ug.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

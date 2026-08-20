@@ -5,7 +5,7 @@ import test from "node:test"
 
 const ROOT = process.cwd()
 const MIGRATION = "20260816014600_gastos_executivo_schema.sql"
-const MIGRATION_UG = "20260820010000_gastos_executivo_ug.sql"
+const MIGRATION_UG = "20260820170000_gastos_executivo_ug.sql"
 const migrationPath = join(ROOT, "supabase/migrations", MIGRATION)
 const migrationUgPath = join(ROOT, "supabase/migrations", MIGRATION_UG)
 
@@ -99,7 +99,7 @@ test("migration de UG troca o grão para candidato, órgão, unidade gestora e m
   assert.ok(viewContract.includes(MIGRATION_UG), "migration de UG não entrou em POSTERIORES")
 
   const rollback = readFileSync(
-    join(ROOT, "supabase/rollback", "20260820010000_gastos_executivo_ug.rollback.sql"),
+    join(ROOT, "supabase/rollback", "20260820170000_gastos_executivo_ug.rollback.sql"),
     "utf8",
   )
   assert.match(rollback, /DROP CONSTRAINT IF EXISTS gastos_executivo_candidato_orgao_ug_mes_unique/i)
