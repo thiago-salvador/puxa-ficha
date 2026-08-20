@@ -150,16 +150,15 @@ describe("ComparadorPanel: a mesma régua do overview vale na comparação, a li
     assert.doesNotMatch(fonte, /sem contagem verificada/)
   })
 
-  it("a lista não mostra colunas de votações nem de gastos", () => {
+  it("a lista não mostra colunas de votações nem de gastos, e a comparação não usa 0 de CEAP", () => {
     assert.doesNotMatch(fonte, /heading: "Votações"/)
     assert.doesNotMatch(fonte, /heading: "Gastos"/)
+    assert.doesNotMatch(fonte, /heading: "Destaques"/)
     assert.doesNotMatch(fonte, /total_votos_mapeados\} votações/)
-    const gastosNaLista = fonte.match(/sem gasto mapeado/g) ?? []
-    assert.equal(
-      gastosNaLista.length,
-      1,
-      "sem gasto mapeado fica só na tabela de comparação, não na lista",
-    )
+    assert.doesNotMatch(fonte, /sem gasto mapeado/)
+    assert.match(fonte, /COMPARADOR_NAO_SE_APLICA/)
+    assert.match(fonte, /heading: "Alertas graves"/)
+    assert.doesNotMatch(fonte, /bg-destructive\/10/)
   })
 
   it("o atributo cru continua disponível e o selo usa a regra compartilhada", () => {

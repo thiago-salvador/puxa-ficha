@@ -8,10 +8,9 @@ import {
   Check,
   Scale,
   Landmark,
-  Sparkles,
+  AlertCircle,
   ArrowRightLeft,
   ChevronDown,
-  Vote,
   CircleDollarSign,
   Link2,
 } from "lucide-react"
@@ -37,6 +36,12 @@ import {
   comparadorEixoShortLabels,
   normalizeComparadorEixo,
 } from "@/lib/comparador-axis"
+import {
+  COMPARADOR_NAO_SE_APLICA,
+  deveMostrarBlocoCongresso,
+  maiorEntreValoresReais,
+} from "@/lib/comparador-display"
+import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { BRAZIL_STATES } from "@/data/brazil-states"
 import { ANALYTICS_EVENTS } from "@/lib/analytics-events"
 import { trackLaunchEvent } from "@/lib/analytics-client"
@@ -118,6 +123,11 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
     [candidatos, selectedIds]
   )
 
+  const showCongresso = useMemo(
+    () => deveMostrarBlocoCongresso(selectedCandidatos),
+    [selectedCandidatos],
+  )
+
   const isSelected = useCallback((id: string) => selectedIds.includes(id), [selectedIds])
 
   const toggle = (id: string) => {
@@ -193,10 +203,8 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
     switch (eixo) {
       case "patrimonio":
         return "Valores da última declaração disponível no Puxa Ficha."
-      case "votos":
-        return "Contagem de votações-chave com voto registrado."
       case "gastos":
-        return "Soma dos gastos parlamentares no banco do Puxa Ficha (mesma lógica das listas temáticas)."
+        return "Soma da cota parlamentar de deputado federal (CEAP) e senador (CEAPS) nos anos disponíveis. Não inclui Presidência nem governo estadual."
       default:
         return ""
     }
@@ -329,7 +337,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                     { heading: "Formação", numeric: false },
                     { heading: "Patrimônio", numeric: true },
                     { heading: "Processos", numeric: true },
-                    { heading: "Destaques", numeric: true },
+                    { heading: "Alertas graves", numeric: true },
                   ].map(({ heading, numeric }) => (
                     <th
                       key={heading}
@@ -360,10 +368,9 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                       data-pf-comparador-evolucao={
                         candidato.evolucao_patrimonial_pct ?? "N/A"
                       }
-                      data-pf-comparador-votos={candidato.total_votos_mapeados}
                       data-pf-comparador-gastos={candidato.total_gasto_parlamentar ?? ""}
                       data-pf-comparador-processos={candidato.total_processos}
-                      data-pf-comparador-destaques={candidato.total_pontos_atencao}
+                      data-pf-comparador-alertas={candidato.alertas_graves}
                       className={`border-b transition-colors ${
                         selected
                           ? "border-border/50 bg-foreground/[0.03]"
@@ -447,7 +454,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                         {processosListaCount(candidato.total_processos)}
                       </td>
                       <td className="py-3 text-right text-[length:var(--text-body-sm)] font-bold tabular-nums text-foreground">
-                        {candidato.total_pontos_atencao}
+                        {candidato.alertas_graves}
                       </td>
                     </tr>
                   )
@@ -574,6 +581,23 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                   </tr>
                 </thead>
                 <tbody>
+                  <CompRow label="Cargo atual" icon={null} highlight={false}>
+                    {selectedCandidatos.map((candidato) => {
+                      const cargo = candidato.cargo_atual?.trim()
+                      return (
+                        <td
+                          key={candidato.id}
+                          className="py-3 text-center text-[length:var(--text-body-sm)] font-medium text-foreground"
+                        >
+                          {cargo ? (
+                            sanitizePtBrText(cargo)
+                          ) : (
+                            <span className="text-muted-foreground">não informado</span>
+                          )}
+                        </td>
+                      )
+                    })}
+                  </CompRow>
                   <CompRow label="Idade" icon={null} highlight={false}>
                     {selectedCandidatos.map((candidato) => (
                       <td
@@ -609,11 +633,10 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                     highlight={eixo === "patrimonio"}
                   >
                     {selectedCandidatos.map((candidato) => {
-                      const values = selectedCandidatos.map((item) => item.patrimonio_declarado ?? 0)
-                      const max = Math.max(...values)
-                      const value = candidato.patrimonio_declarado ?? 0
-                      const allEqual = values.every((item) => item === max)
-                      const isMax = value === max && value > 0 && !allEqual
+                      const isMax = maiorEntreValoresReais(
+                        candidato.patrimonio_declarado,
+                        selectedCandidatos.map((item) => item.patrimonio_declarado),
+                      )
 
                       return (
                         <td key={candidato.id} className="py-3 text-center">
@@ -628,76 +651,24 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                               sem declaração
                             </span>
                           )}
-                          {isMax && (
-                            <span className="ml-1.5 inline-block rounded-full bg-foreground/10 px-1.5 py-0.5 text-[11px] font-bold uppercase text-muted-foreground">
-                              maior
-                            </span>
-                          )}
+                          {isMax && <MaiorBadge />}
                         </td>
                       )
                     })}
                   </CompRow>
-                  <CompRow
-                    label={comparadorEixoLabels.votos}
-                    rowKey="votos"
-                    icon={<Vote className="size-3.5" />}
-                    highlight={eixo === "votos"}
-                  >
-                    {selectedCandidatos.map((candidato) => {
-                      const values = selectedCandidatos.map((item) => item.total_votos_mapeados)
-                      const max = Math.max(...values)
-                      const value = candidato.total_votos_mapeados
-                      const allEqual = values.every((item) => item === max)
-                      const isMax = value === max && value > 0 && !allEqual
-
-                      return (
-                        <td key={candidato.id} className="py-3 text-center">
-                          <span className="text-[length:var(--text-body)] font-bold tabular-nums text-foreground">
-                            {value}
-                          </span>
-                          {isMax && (
-                            <span className="ml-1.5 inline-block rounded-full bg-foreground/10 px-1.5 py-0.5 text-[11px] font-bold uppercase text-muted-foreground">
-                              maior
-                            </span>
-                          )}
-                        </td>
-                      )
-                    })}
-                  </CompRow>
-                  <CompRow
-                    label={comparadorEixoLabels.gastos}
-                    rowKey="gastos"
-                    icon={<CircleDollarSign className="size-3.5" />}
-                    highlight={eixo === "gastos"}
-                  >
-                    {selectedCandidatos.map((candidato) => {
-                      const values = selectedCandidatos.map((item) => item.total_gasto_parlamentar ?? 0)
-                      const max = Math.max(...values)
-                      const value = candidato.total_gasto_parlamentar ?? 0
-                      const allEqual = values.every((item) => item === max)
-                      const isMax = value === max && value > 0 && !allEqual
-
-                      return (
-                        <td key={candidato.id} className="py-3 text-center">
-                          {candidato.total_gasto_parlamentar != null ? (
-                            <span
-                              className={`text-[length:var(--text-body)] font-bold tabular-nums ${isMax ? "text-destructive" : "text-foreground"}`}
-                            >
-                              {formatCompact(candidato.total_gasto_parlamentar)}
-                            </span>
-                          ) : (
-                            <span className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
-                              sem gasto mapeado
-                            </span>
-                          )}
-                          {isMax && (
-                            <span className="ml-1.5 inline-block rounded-full bg-foreground/10 px-1.5 py-0.5 text-[11px] font-bold uppercase text-muted-foreground">
-                              maior
-                            </span>
-                          )}
-                        </td>
-                      )
-                    })}
+                  <CompRow label="Evolução patrimonial" icon={null} highlight={false}>
+                    {selectedCandidatos.map((candidato) => (
+                      <td
+                        key={candidato.id}
+                        className="py-3 text-center text-[length:var(--text-body)] font-bold tabular-nums text-foreground"
+                      >
+                        {candidato.evolucao_patrimonial_pct == null ? (
+                          <span className="font-medium text-muted-foreground">N/A</span>
+                        ) : (
+                          formatEvolucaoPatrimonialPct(candidato.evolucao_patrimonial_pct)
+                        )}
+                      </td>
+                    ))}
                   </CompRow>
                   <CompRow label="Processos" icon={<Scale className="size-3.5" />} highlight={false}>
                     {selectedCandidatos.map((candidato) => {
@@ -719,14 +690,24 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                               {display.sub}
                             </span>
                           )}
-                          {isMax && (
-                            <span className="ml-1.5 inline-block rounded-full bg-destructive/10 px-1.5 py-0.5 text-[11px] font-bold uppercase text-destructive">
-                              maior
-                            </span>
-                          )}
+                          {isMax && <MaiorBadge />}
                         </td>
                       )
                     })}
+                  </CompRow>
+                  <CompRow
+                    label="Alertas graves"
+                    icon={<AlertCircle className="size-3.5" />}
+                    highlight={false}
+                  >
+                    {selectedCandidatos.map((candidato) => (
+                      <td
+                        key={candidato.id}
+                        className="py-3 text-center text-[length:var(--text-body)] font-bold tabular-nums text-foreground"
+                      >
+                        {candidato.alertas_graves}
+                      </td>
+                    ))}
                   </CompRow>
                   <CompRow
                     label="Trocas de partido"
@@ -742,30 +723,39 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                       </td>
                     ))}
                   </CompRow>
-                  <CompRow label="Destaques" icon={<Sparkles className="size-3.5" />} highlight={false}>
-                    {selectedCandidatos.map((candidato) => {
-                      const values = selectedCandidatos.map((item) => item.total_pontos_atencao)
-                      const max = Math.max(...values)
-                      const allEqual = values.every((item) => item === max)
-                      const isMax =
-                        candidato.total_pontos_atencao === max &&
-                        candidato.total_pontos_atencao > 0 &&
-                        !allEqual
+                  {showCongresso && (
+                    <CompRow
+                      label="Cota parlamentar (CEAP/CEAPS)"
+                      rowKey="gastos"
+                      icon={<CircleDollarSign className="size-3.5" />}
+                      highlight={eixo === "gastos"}
+                      caption="Não inclui Presidência nem governo estadual."
+                    >
+                      {selectedCandidatos.map((candidato) => {
+                        const isMax = maiorEntreValoresReais(
+                          candidato.total_gasto_parlamentar,
+                          selectedCandidatos.map((item) => item.total_gasto_parlamentar),
+                        )
 
-                      return (
-                        <td key={candidato.id} className="py-3 text-center">
-                          <span className="text-[length:var(--text-body)] font-bold tabular-nums text-foreground">
-                            {candidato.total_pontos_atencao}
-                          </span>
-                          {isMax && (
-                            <span className="ml-1.5 inline-block rounded-full bg-destructive/10 px-1.5 py-0.5 text-[11px] font-bold uppercase text-destructive">
-                              maior
-                            </span>
-                          )}
-                        </td>
-                      )
-                    })}
-                  </CompRow>
+                        return (
+                          <td key={candidato.id} className="py-3 text-center">
+                            {candidato.total_gasto_parlamentar != null ? (
+                              <span
+                                className={`text-[length:var(--text-body)] font-bold tabular-nums ${isMax ? "text-destructive" : "text-foreground"}`}
+                              >
+                                {formatCompact(candidato.total_gasto_parlamentar)}
+                              </span>
+                            ) : (
+                              <span className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
+                                {COMPARADOR_NAO_SE_APLICA}
+                              </span>
+                            )}
+                            {isMax && <MaiorBadge />}
+                          </td>
+                        )
+                      })}
+                    </CompRow>
+                  )}
                 </tbody>
               </table>
             </div>
@@ -788,18 +778,28 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
   )
 }
 
+function MaiorBadge() {
+  return (
+    <span className="ml-1.5 inline-block rounded-full bg-foreground/10 px-1.5 py-0.5 text-[11px] font-bold uppercase text-muted-foreground">
+      maior
+    </span>
+  )
+}
+
 function CompRow({
   label,
   icon,
   children,
   highlight,
   rowKey,
+  caption,
 }: {
   label: string
   icon: React.ReactNode
   children: React.ReactNode
   highlight: boolean
   rowKey?: ComparadorEixo
+  caption?: string
 }) {
   return (
     <tr
@@ -813,6 +813,11 @@ function CompRow({
             {label}
           </span>
         </div>
+        {caption && (
+          <span className="mt-1 block max-w-[11rem] text-[10px] font-medium normal-case tracking-normal text-muted-foreground">
+            {caption}
+          </span>
+        )}
       </td>
       {children}
     </tr>
