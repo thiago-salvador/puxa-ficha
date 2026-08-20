@@ -1,6 +1,7 @@
 {
   "_comentario": "Conjunto FECHADO das migrations que falham no replay linear REAL (tolerante) em banco vazio, medido pelo harness scripts/audit/replay-migrations.sh. O modo --gate compara o resultado de uma execucao real contra esta lista: falha NOVA e regressao de replay em qualquer posicao (inclusive depois da 179a, que o modo estrito nunca alcanca); falha que sumiu exige regenerar este manifesto deliberadamente no mesmo PR. Regenerar: scripts/audit/replay-migrations.sh linear --tolerante e copiar os nomes.",
-  "aplicadas_esperadas": 319,
+  "aplicadas_esperadas": 320,
+  "_comentario_20260820010000": "aplicadas_esperadas 319 -> 320 em 20/08/2026: entra o grão UG de gastos_executivo (schema puro, ALTER TABLE). Conservação: 320 + 103 = 423 migrations. Conjunto de falhas inalterado.",
   "_comentario_20260819140400": "aplicadas_esperadas 318 -> 319 em 19/08/2026: entra a curadoria de formação do Cury e do Marçal (dois UPDATE em candidatos, sem RAISE). Conservação: 319 + 103 = 422 migrations. Conjunto de falhas inalterado.",
   "_comentario_20260819140000": "aplicadas_esperadas 314 -> 318 em 19/08/2026: entram schema de formacao_instituicao, backfill do portal DJEN, higiene de formação e a curadoria judicial do Renan. MEDIDO no --gate local: 'conservacao OK: 318 + 103 = 421 migrations'. Conjunto de falhas inalterado.",
   "_comentario_20260816014600": "309 -> 310 em 16/08/2026 (merge pos-#210): gastos_executivo aplica limpo junto do patrimonio AC e do snapshot de chapas. Numero re-medido no gate local deste merge.",

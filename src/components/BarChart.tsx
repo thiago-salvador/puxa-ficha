@@ -4,6 +4,7 @@ interface BarItem {
   label: string
   value: number
   highlight?: boolean
+  dataAttributes?: Record<string, string>
 }
 
 export function HorizontalBars({ items, maxValue }: { items: BarItem[]; maxValue?: number }) {
@@ -14,7 +15,7 @@ export function HorizontalBars({ items, maxValue }: { items: BarItem[]; maxValue
       {items.map((item) => {
         const pct = Math.max((item.value / max) * 100, 2)
         return (
-          <div key={item.label}>
+          <div key={item.label} {...item.dataAttributes}>
             <div className="mb-1 flex items-baseline justify-between">
               <span className="text-[length:var(--text-caption)] font-semibold text-foreground sm:text-[length:var(--text-body-sm)]">
                 {item.label}

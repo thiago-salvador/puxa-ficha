@@ -69,8 +69,16 @@ function gastoExecutivoRow(
     candidato_id: "candidato-teste",
     orgao_codigo: "20101",
     orgao_nome: "Presidência da República",
+    ug_codigo: "110322",
+    ug_nome: "GABINETE DE SEGURANCA INSTITUCIONAL/PR",
     valor_total: 100.1,
     qtd_transacoes: 2,
+    qtd_portador_sigiloso: 2,
+    qtd_portador_nominado: 0,
+    qtd_portador_ausente: 0,
+    qtd_estabelecimento_sigiloso: 2,
+    qtd_estabelecimento_nominado: 0,
+    qtd_estabelecimento_ausente: 0,
     fonte: "https://portaldatransparencia.gov.br/cartoes",
     coletado_em: "2026-08-16T04:00:00.000Z",
     ...partial,
@@ -265,21 +273,125 @@ test("gastos do Executivo são institucionais, mensais e totalizados sem atribui
   })
 
   assert.ok(html.includes("Gastos da estrutura de governo"))
-  assert.ok(html.includes("gasto institucional do órgão"))
-  assert.ok(html.includes("não é gasto pessoal do titular"))
-  assert.ok(html.includes("estabelecimento e portador"))
-  assert.ok(html.includes("sigilosos durante o mandato por norma de segurança"))
+  assert.ok(html.includes('id="gastos-estrutura-governo"'))
+  assert.equal(html.includes("Gastos do Candidato Teste"), false)
+  assert.equal(html.includes("gastos do Lula"), false)
   assert.ok(html.includes("Portal da Transparência"))
   assert.ok(html.includes(formatBRL(300.3)), "o total do mandato precisa somar a série mensal")
   assert.ok(html.includes('href="https://portaldatransparencia.gov.br/cartoes"'))
+  assert.ok(html.includes("coleta em"))
+
+  const mandato = html.indexOf('data-pf-gastos-executivo-total-mandato')
+  const ano = html.indexOf('data-pf-gastos-executivo-total-ano')
+  const ultimo = html.indexOf('data-pf-gastos-executivo-ultimo-mes')
+  assert.ok(mandato >= 0 && ano >= 0 && ultimo >= 0, "os três totais do recorte precisam aparecer")
+  assert.ok(mandato < ano && ano < ultimo, "ordem: mandato, ano civil corrente, último mês com movimento")
 
   const ordem = [...html.matchAll(/data-pf-gasto-executivo-mes="([^"]+)"/g)].map((m) => m[1])
   assert.deepEqual(ordem, ["2026-02-01", "2026-01-01"])
 })
 
+test("caixa de recorte explica o que o número é e o que não é, sem cifra viral", () => {
+  const html = renderMoneyTab({
+    patrimonio: [],
+    gastosExecutivo: [
+      gastoExecutivoRow({ id: "ge-fev", mes_extrato: "2026-02-01", valor_total: 200.2 }),
+    ],
+  })
+
+  assert.ok(html.includes('data-pf-gastos-executivo-recorte'))
+  assert.ok(html.includes("O que este número é"))
+  assert.ok(html.includes("O que este número não é"))
+  assert.ok(html.includes("CPGF"))
+  assert.ok(html.includes("Presidência da República"))
+  assert.ok(html.includes("20101"))
+  assert.ok(html.includes("Portal da Transparência"))
+  assert.ok(html.includes("Cota parlamentar"))
+  assert.ok(html.includes("CPDC"))
+  assert.ok(html.includes("Doação de campanha"))
+  assert.ok(html.includes("governo federal inteiro") || html.includes("Ministérios"))
+  assert.ok(html.includes("download oficial mensal do CPGF"))
+  assert.ok(html.includes("vale o CSV"))
+  assert.match(html, /data-pf-gastos-executivo-portador-status/)
+  assert.ok(html.includes("sigiloso"))
+  assert.equal(html.includes(">Sigiloso<"), false)
+  assert.ok(html.includes("misturam"))
+  assert.equal(html.includes("WhatsApp"), false)
+  assert.equal(html.includes("bilhões"), false)
+  assert.equal(html.includes("bilhão"), false)
+})
+
+test("anos civis fechados mostram barra anual; meses ficam no ano aberto", () => {
+  const html = renderMoneyTab({
+    patrimonio: [],
+    gastosExecutivo: [
+      gastoExecutivoRow({ id: "ge-2025", mes_extrato: "2025-06-01", valor_total: 80 }),
+      gastoExecutivoRow({ id: "ge-jan", mes_extrato: "2026-01-01", valor_total: 100.1 }),
+      gastoExecutivoRow({ id: "ge-fev", mes_extrato: "2026-02-01", valor_total: 200.2 }),
+    ],
+  })
+
+  assert.ok(html.includes('data-pf-gastos-executivo-barras-ano'))
+  assert.match(html, /data-pf-gastos-executivo-ano-bar="2025"/)
+  assert.match(html, /data-pf-gastos-executivo-ano-bar="2026"/)
+  assert.ok(html.includes('data-pf-gastos-executivo-barras-mes="2026"'))
+  assert.equal(
+    html.includes('data-pf-gastos-executivo-barras-mes="2025"'),
+    false,
+    "ano fechado não despeja barras mensais",
+  )
+  assert.equal(html.includes('data-pf-gasto-executivo-mes="2025-06-01"'), false)
+  assert.ok(html.includes('data-pf-gasto-executivo-mes="2026-02-01"'))
+})
+
 test("ficha sem dado não renderiza a seção de gastos do Executivo", () => {
   const html = renderMoneyTab({ patrimonio: [], gastosExecutivo: [] })
   assert.equal(html.includes("Gastos da estrutura de governo"), false)
+  assert.equal(html.includes('id="gastos-estrutura-governo"'), false)
+})
+
+test("bloco do órgão mostra composição por UG abaixo do total e portador como status medido", () => {
+  const html = renderMoneyTab({
+    patrimonio: [],
+    gastosExecutivo: [
+      gastoExecutivoRow({
+        id: "gsi-jan",
+        mes_extrato: "2026-01-01",
+        valor_total: 100,
+        qtd_transacoes: 4,
+        qtd_portador_sigiloso: 4,
+        qtd_estabelecimento_sigiloso: 4,
+      }),
+      gastoExecutivoRow({
+        id: "sg-jan",
+        mes_extrato: "2026-01-01",
+        valor_total: 50,
+        ug_codigo: "110001",
+        ug_nome: "SECRETARIA-GERAL/PR",
+        qtd_transacoes: 2,
+        qtd_portador_sigiloso: 1,
+        qtd_portador_nominado: 1,
+        qtd_estabelecimento_sigiloso: 2,
+      }),
+    ],
+  })
+
+  const mandato = html.indexOf("data-pf-gastos-executivo-total-mandato")
+  const composicao = html.indexOf("data-pf-gastos-executivo-ug-composicao")
+  assert.ok(mandato >= 0 && composicao > mandato, "total do órgão fica acima da composição por UG")
+  assert.match(html, /data-pf-gastos-executivo-ug="110322"/)
+  assert.match(html, /data-pf-gastos-executivo-ug="110001"/)
+  assert.ok(html.includes("GABINETE DE SEGURANCA INSTITUCIONAL/PR"))
+  assert.ok(html.includes("SECRETARIA-GERAL/PR"))
+  assert.ok(html.includes(formatBRL(150)))
+  assert.equal(html.includes("gastos do Lula"), false)
+  assert.doesNotMatch(html, /[\u2013\u2014]/)
+  assert.match(html, /data-pf-gastos-executivo-portador-status/)
+  assert.ok(html.includes("Portador"))
+  assert.ok(html.includes("sigiloso"))
+  assert.ok(html.includes("identificado"))
+  assert.equal(html.includes(">Sigiloso<"), false)
+  assert.equal(html.includes("JOAO PORTADOR"), false, "portador é status, não lista de nomes")
 })
 
 test("dois órgãos no mesmo mês viram blocos separados, nunca uma soma misturada", () => {
@@ -411,14 +523,27 @@ test("teaser de registro único abre pelo contexto e só depois mostra a cifra",
 test("Visão Geral mostra o card de gastos da estrutura de governo quando há série", () => {
   const ficha = buildFicha({
     gastos_executivo: [
+      gastoExecutivoRow({ id: "ge-2025", mes_extrato: "2025-12-01", valor_total: 40 }),
       gastoExecutivoRow({ id: "ge-jan", mes_extrato: "2026-01-01", valor_total: 100.1 }),
       gastoExecutivoRow({ id: "ge-fev", mes_extrato: "2026-02-01", valor_total: 200.2 }),
     ],
   })
   const html = renderToStaticMarkup(<ProfileOverview ficha={ficha} onNavigateTab={() => {}} />)
   assert.ok(html.includes("Gastos da estrutura de governo"))
-  assert.ok(html.includes("não é gasto pessoal do titular"))
+  assert.equal(html.includes("Gastos do Candidato Teste"), false)
+  assert.ok(html.includes("Presidência da República"))
+  assert.ok(html.includes(formatCompact(340.3)))
   assert.ok(html.includes(formatCompact(300.3)))
+  assert.ok(html.includes(formatCompact(200.2)))
+
+  const mandato = html.indexOf('data-pf-gastos-executivo-total-mandato')
+  const ano = html.indexOf('data-pf-gastos-executivo-total-ano')
+  const ultimo = html.indexOf('data-pf-gastos-executivo-ultimo-mes')
+  assert.ok(mandato >= 0 && ano >= 0 && ultimo >= 0, "os três totais cabem no card compacto")
+  assert.ok(mandato < ano && ano < ultimo)
+  assert.equal(html.includes("data-pf-gastos-executivo-barras-ano"), false)
+  assert.equal(html.includes("data-pf-gastos-executivo-barras-mes"), false)
+  assert.equal(html.includes("data-pf-gasto-executivo-mes="), false)
 })
 
 test("teaser de gastos do Executivo nunca soma órgãos diferentes numa cifra só", () => {
@@ -447,6 +572,7 @@ test("teaser de gastos do Executivo nunca soma órgãos diferentes numa cifra s�
   )
   assert.ok(html.includes("Presidência da República"), "o nome citado é o do órgão somado")
   assert.ok(html.includes("+1 outro órgão detalhado"), "o outro órgão é apontado para a aba Dinheiro")
+  assert.ok(html.includes('data-pf-gastos-executivo-total-mandato'))
 })
 
 test("Visão Geral sem série de gastos do Executivo não mostra o card", () => {

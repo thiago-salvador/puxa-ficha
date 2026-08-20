@@ -300,9 +300,17 @@ export interface GastoExecutivo {
   candidato_id: string;
   orgao_codigo: string;
   orgao_nome: string;
+  ug_codigo?: string;
+  ug_nome?: string;
   mes_extrato: string;
   valor_total: number;
   qtd_transacoes: number;
+  qtd_portador_sigiloso?: number;
+  qtd_portador_nominado?: number;
+  qtd_portador_ausente?: number;
+  qtd_estabelecimento_sigiloso?: number;
+  qtd_estabelecimento_nominado?: number;
+  qtd_estabelecimento_ausente?: number;
   fonte: string;
   coletado_em: string;
 }

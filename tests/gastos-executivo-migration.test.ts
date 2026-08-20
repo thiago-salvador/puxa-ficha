@@ -5,7 +5,9 @@ import test from "node:test"
 
 const ROOT = process.cwd()
 const MIGRATION = "20260816014600_gastos_executivo_schema.sql"
+const MIGRATION_UG = "20260820010000_gastos_executivo_ug.sql"
 const migrationPath = join(ROOT, "supabase/migrations", MIGRATION)
+const migrationUgPath = join(ROOT, "supabase/migrations", MIGRATION_UG)
 
 function sql(): string {
   assert.ok(existsSync(migrationPath), `${MIGRATION} ainda não existe`)
@@ -55,4 +57,51 @@ test("migration é schema puro e está declarada na ordenação pública", () =>
     "utf8",
   )
   assert.ok(viewContract.includes(MIGRATION), "migration nova não entrou em POSTERIORES")
+})
+
+function sqlUg(): string {
+  assert.ok(existsSync(migrationUgPath), `${MIGRATION_UG} ainda não existe`)
+  return readFileSync(migrationUgPath, "utf8")
+}
+
+test("migration de UG troca o grão para candidato, órgão, unidade gestora e mês", () => {
+  const source = sqlUg()
+  assert.match(source, /ALTER TABLE public\.gastos_executivo/i)
+  for (const column of [
+    "ug_codigo",
+    "ug_nome",
+    "qtd_portador_sigiloso",
+    "qtd_portador_nominado",
+    "qtd_portador_ausente",
+    "qtd_estabelecimento_sigiloso",
+    "qtd_estabelecimento_nominado",
+    "qtd_estabelecimento_ausente",
+  ]) {
+    assert.match(source, new RegExp(`\\b${column}\\b`, "i"), `coluna ${column} ausente`)
+  }
+  assert.match(
+    source,
+    /DROP CONSTRAINT IF EXISTS gastos_executivo_candidato_orgao_mes_unique/i,
+  )
+  assert.match(
+    source,
+    /UNIQUE\s*\(\s*candidato_id\s*,\s*orgao_codigo\s*,\s*ug_codigo\s*,\s*mes_extrato\s*\)/i,
+  )
+  assert.match(source, /órgão|orgao público|não.*pessoa|nao.*pessoa/i)
+  assert.match(source, /portal estadual|governador/i)
+  assert.doesNotMatch(source, /^\s*(?:INSERT|UPDATE|DELETE)\b/im)
+  assert.equal(source.includes("@write"), false)
+
+  const viewContract = readFileSync(
+    join(ROOT, "tests/candidatos-publico-view-contrato.test.ts"),
+    "utf8",
+  )
+  assert.ok(viewContract.includes(MIGRATION_UG), "migration de UG não entrou em POSTERIORES")
+
+  const rollback = readFileSync(
+    join(ROOT, "supabase/rollback", "20260820010000_gastos_executivo_ug.rollback.sql"),
+    "utf8",
+  )
+  assert.match(rollback, /DROP CONSTRAINT IF EXISTS gastos_executivo_candidato_orgao_ug_mes_unique/i)
+  assert.match(rollback, /gastos_executivo_candidato_orgao_mes_unique/i)
 })
