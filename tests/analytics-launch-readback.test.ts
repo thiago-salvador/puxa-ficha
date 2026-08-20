@@ -111,7 +111,6 @@ describe("/api/internal/analytics-launch-readback exige proofId", () => {
 
     assert.equal(resposta.status, 400)
     assert.deepEqual(corpo, { ok: false, reason: "missing_proof_id" })
-    assert.notEqual(corpo.ready, true)
     assert.deepEqual(chamadas, [])
   })
 
@@ -123,7 +122,6 @@ describe("/api/internal/analytics-launch-readback exige proofId", () => {
 
     assert.equal(resposta.status, 400)
     assert.deepEqual(corpo, { ok: false, reason: "missing_proof_id" })
-    assert.notEqual(corpo.ready, true)
     assert.deepEqual(chamadas, [])
   })
 
