@@ -167,19 +167,19 @@ export async function recordAnalyticsLaunchEvent(input: {
 
 export async function readAnalyticsLaunchCounts(input: {
   sinceIso: string
-  proofId?: string | null
+  proofId: string
 }): Promise<{ counts: AnalyticsLaunchCounts; missing: AnalyticsEventName[] }> {
+  if (typeof input.proofId !== "string" || input.proofId.trim() === "") {
+    throw new Error("analytics_launch_events readback requires proofId")
+  }
+
   const supabase = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
-  let query = supabase
+  const { data, error } = await supabase
     .from("analytics_launch_events")
     .select("event_name")
     .gte("created_at", input.sinceIso)
+    .eq("proof_id", input.proofId)
 
-  if (input.proofId) {
-    query = query.eq("proof_id", input.proofId)
-  }
-
-  const { data, error } = await query
   if (error) {
     throw new Error(`analytics_launch_events readback failed: ${error.message}`)
   }

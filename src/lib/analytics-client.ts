@@ -10,6 +10,11 @@ import {
 
 function readProofIdFromUrl(): string | null {
   if (typeof window === "undefined") return null
+  // Prova de uma execução: gerar com `openssl rand -hex 16` (32 hex, casa o regex).
+  // Navegar as superfícies com `?pf_analytics_proof=<id>`. O cliente anexa
+  // `proof_id` no POST. Conferir GET /api/internal/analytics-launch-readback
+  // com o mesmo id e `PF_INTERNAL_TOKEN`. `ready` não é gate de lançamento.
+  // Não usar `launch-01`. Sem HMAC.
   const value = new URL(window.location.href).searchParams.get("pf_analytics_proof")
   if (!value) return null
   return ANALYTICS_PROOF_ID_RE.test(value) ? value : null
