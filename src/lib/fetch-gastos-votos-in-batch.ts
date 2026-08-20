@@ -3,7 +3,7 @@ import type { SupabaseClient } from "@supabase/supabase-js"
 import { sumTotalGastoByCandidatoId } from "@/lib/gastos-parlamentares-aggregate"
 import type { PatrimonioAnoValor } from "@/lib/evolucao-patrimonial"
 import type { LegislacaoMandatoExecutivo, MudancaPartido } from "@/lib/types"
-import { countVotosRowsByCandidatoId } from "@/lib/votos-candidato-aggregate"
+import { legislativeHistoryFlagsFromRows } from "@/lib/legislative-history"
 
 /** PostgREST / Supabase default max rows per request. */
 const PAGE_SIZE = 1000
@@ -29,7 +29,12 @@ export const LEGISLACAO_MANDATO_EXECUTIVO_PUBLIC_SELECT =
   "id,candidato_id,tipo_relacao,tipo_norma,numero,ano,data_norma,ementa,signatario,autoridade_papel,fonte_primaria_url,metadata" as const
 
 type GastoRow = { candidato_id: string; total_gasto: number | string | null }
-type VotoRow = { candidato_id: string }
+type CargoAtualRow = { id: string; cargo_atual: string | null }
+type HistoricoLegislativoRow = {
+  candidato_id: string
+  cargo: string | null
+  cargo_canonico: string | null
+}
 type PatrimonioRow = {
   candidato_id: string
   ano_eleicao: number
@@ -77,18 +82,18 @@ export async function fetchGastoTotalsByCandidatoIds(
 }
 
 /**
- * Conta linhas de `votos_candidato` por candidato com paginação completa.
+ * `cargo_atual` público por candidato. `v_comparador` não carrega a coluna;
+ * o comparador lê da superfície pública, sem migration nova.
  */
-export async function fetchVotosCountsByCandidatoIds(
+export async function fetchCargoAtualByCandidatoIds(
   supabase: SupabaseClient,
   candidatoIds: string[]
-): Promise<Map<string, number>> {
+): Promise<Map<string, string | null>> {
   const ids = [...new Set(candidatoIds)].filter(Boolean)
+  const byId = new Map<string, string | null>()
   if (ids.length === 0) {
-    return new Map()
+    return byId
   }
-
-  const all: VotoRow[] = []
 
   for (let c = 0; c < ids.length; c += CANDIDATO_ID_CHUNK) {
     const idChunk = ids.slice(c, c + CANDIDATO_ID_CHUNK)
@@ -96,23 +101,69 @@ export async function fetchVotosCountsByCandidatoIds(
 
     while (true) {
       const { data, error } = await supabase
-        .from("votos_candidato")
-        .select("candidato_id")
-        .in("candidato_id", idChunk)
+        .from("candidatos_publico")
+        .select("id,cargo_atual")
+        .in("id", idChunk)
         .range(from, from + PAGE_SIZE - 1)
 
       if (error) {
-        throw new Error(`votos_candidato batch: ${error.message}`)
+        throw new Error(`cargo_atual batch: ${error.message}`)
       }
 
-      const rows = (data ?? []) as VotoRow[]
+      const rows = (data ?? []) as CargoAtualRow[]
+      for (const row of rows) {
+        if (!row.id) continue
+        const cargo = row.cargo_atual?.trim() || null
+        byId.set(row.id, cargo)
+      }
+      if (rows.length < PAGE_SIZE) break
+      from += PAGE_SIZE
+    }
+  }
+
+  return byId
+}
+
+/**
+ * Boolean de histórico federal (senador / deputado federal) por candidato,
+ * só com cargo e cargo_canonico. Não carrega a ficha. Vereador e deputado
+ * estadual/distrital ficam de fora: o comparador usa isso no bloco CEAP.
+ */
+export async function fetchLegislativeHistoryFlagsByCandidatoIds(
+  supabase: SupabaseClient,
+  candidatoIds: string[]
+): Promise<Map<string, boolean>> {
+  const ids = [...new Set(candidatoIds)].filter(Boolean)
+  if (ids.length === 0) {
+    return new Map()
+  }
+
+  const all: HistoricoLegislativoRow[] = []
+
+  for (let c = 0; c < ids.length; c += CANDIDATO_ID_CHUNK) {
+    const idChunk = ids.slice(c, c + CANDIDATO_ID_CHUNK)
+    let from = 0
+
+    while (true) {
+      const { data, error } = await supabase
+        .from("historico_politico")
+        .select("candidato_id,cargo,cargo_canonico")
+        .in("candidato_id", idChunk)
+        .is("despublicado_em", null)
+        .range(from, from + PAGE_SIZE - 1)
+
+      if (error) {
+        throw new Error(`historico_politico legislativo batch: ${error.message}`)
+      }
+
+      const rows = (data ?? []) as HistoricoLegislativoRow[]
       all.push(...rows)
       if (rows.length < PAGE_SIZE) break
       from += PAGE_SIZE
     }
   }
 
-  return countVotosRowsByCandidatoId(all)
+  return legislativeHistoryFlagsFromRows(all)
 }
 
 function toNumberOrNull(value: number | string | null): number | null {

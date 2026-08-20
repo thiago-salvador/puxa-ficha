@@ -594,6 +594,7 @@ export interface CandidatoComparavel {
   slug: string;
   partido_sigla: string;
   cargo_disputado: string;
+  cargo_atual: string | null;
   estado: string | null;
   foto_url: string | null;
   idade: number | null;
@@ -601,7 +602,6 @@ export interface CandidatoComparavel {
   formacao_instituicao?: string | null;
   total_processos: number;
   mudancas_partido: number;
-  total_pontos_atencao: number;
   alertas_graves: number;
   patrimonio_declarado: number | null;
   /**
@@ -611,6 +611,6 @@ export interface CandidatoComparavel {
   evolucao_patrimonial_pct: number | null;
   /** Soma de `total_gasto` em `gastos_parlamentares` — alinhada ao ranking gastos-parlamentares. */
   total_gasto_parlamentar: number | null;
-  /** Quantidade de votações-chave com voto registrado (`votos_candidato`). */
-  total_votos_mapeados: number;
+  /** Presença de mandato federal (senador ou deputado federal) em `historico_politico`. Não inclui vereador, deputado estadual nem distrital. */
+  tem_historico_legislativo: boolean;
 }

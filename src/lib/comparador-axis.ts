@@ -1,6 +1,6 @@
-export type ComparadorEixo = "patrimonio" | "votos" | "gastos"
+export type ComparadorEixo = "patrimonio" | "gastos"
 
-export const COMPARADOR_EIXOS: ComparadorEixo[] = ["patrimonio", "votos", "gastos"]
+export const COMPARADOR_EIXOS: ComparadorEixo[] = ["patrimonio", "gastos"]
 
 export const COMPARADOR_EIXO_DEFAULT: ComparadorEixo = "patrimonio"
 
@@ -8,7 +8,6 @@ function parseComparadorEixo(raw: string | null | undefined): ComparadorEixo | n
   if (!raw || typeof raw !== "string") return null
   const v = raw.trim().toLowerCase()
   if (v === "patrimonio" || v === "patrimônio") return "patrimonio"
-  if (v === "votos" || v === "votacoes" || v === "votações") return "votos"
   if (v === "gastos") return "gastos"
   return null
 }
@@ -19,19 +18,17 @@ export function normalizeComparadorEixo(raw: string | null | undefined): Compara
 
 export const comparadorEixoLabels: Record<ComparadorEixo, string> = {
   patrimonio: "Patrimônio",
-  votos: "Votações",
-  gastos: "Gastos parlamentares",
+  gastos: "Cota parlamentar",
 }
 
 export const comparadorEixoShortLabels: Record<ComparadorEixo, string> = {
   patrimonio: "Patrimônio",
-  votos: "Votações",
-  gastos: "Gastos",
+  gastos: "Cota",
 }
 
 /** Texto curto para OG / metadata. */
 export const comparadorEixoOgSubtitle: Record<ComparadorEixo, string> = {
   patrimonio: "Última declaração disponível no Puxa Ficha.",
-  votos: "Votações Chave com registro de voto no Puxa Ficha.",
-  gastos: "Soma de gastos parlamentares registrados no Puxa Ficha.",
+  gastos:
+    "Soma da cota parlamentar (CEAP/CEAPS) nos anos disponíveis. Presidência e governo estadual não entram.",
 }

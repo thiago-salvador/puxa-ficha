@@ -55,10 +55,11 @@ import { countPartySwitches, normalizePartyTimelineForDisplay } from "@/lib/part
 import { newsTitleMentionsCandidate } from "@/lib/news/name-match"
 import {
   fetchGastoTotalsByCandidatoIds,
+  fetchCargoAtualByCandidatoIds,
   fetchLegislacaoMandatoExecutivoRowsPaged,
+  fetchLegislativeHistoryFlagsByCandidatoIds,
   fetchMudancasPartidoRowsPaged,
   fetchPatrimonioSeriesByCandidatoIds,
-  fetchVotosCountsByCandidatoIds,
   LEGISLACAO_MANDATO_EXECUTIVO_PROFILE_PREVIEW_LIMIT,
   LEGISLACAO_MANDATO_EXECUTIVO_PUBLIC_SELECT,
 } from "@/lib/fetch-gastos-votos-in-batch"
@@ -2170,16 +2171,18 @@ async function getCandidatosComparaveisResourceUncached(
 
   const switchCountById = new Map<string, number>()
   const gastoTotalsById = new Map<string, number>()
-  const votosCountById = new Map<string, number>()
+  const cargoAtualById = new Map<string, string | null>()
+  const legislativoById = new Map<string, boolean>()
   let patrimonioPorId = new Map<string, PatrimonioAnoValor[]>()
   if (comparadorIds.length > 0) {
-    // As quatro agregações dependem só de comparadorIds e não umas das outras.
-    const [mudRows, gastoMap, votoMap, patrimonioMap] = await Promise.all([
-      fetchMudancasPartidoRowsPaged(supabase, comparadorIds),
-      fetchGastoTotalsByCandidatoIds(supabase, comparadorIds),
-      fetchVotosCountsByCandidatoIds(supabase, comparadorIds),
-      fetchPatrimonioSeriesByCandidatoIds(supabase, comparadorIds),
-    ])
+    const [mudRows, gastoMap, patrimonioMap, cargoMap, legislativoMap] =
+      await Promise.all([
+        fetchMudancasPartidoRowsPaged(supabase, comparadorIds),
+        fetchGastoTotalsByCandidatoIds(supabase, comparadorIds),
+        fetchPatrimonioSeriesByCandidatoIds(supabase, comparadorIds),
+        fetchCargoAtualByCandidatoIds(supabase, comparadorIds),
+        fetchLegislativeHistoryFlagsByCandidatoIds(supabase, comparadorIds),
+      ])
     patrimonioPorId = patrimonioMap
 
     const byCandidato = new Map<string, MudancaPartido[]>()
@@ -2197,7 +2200,8 @@ async function getCandidatosComparaveisResourceUncached(
     }
 
     gastoMap.forEach((v, k) => gastoTotalsById.set(k, v))
-    votoMap.forEach((v, k) => votosCountById.set(k, v))
+    cargoMap.forEach((v, k) => cargoAtualById.set(k, v))
+    legislativoMap.forEach((v, k) => legislativoById.set(k, v))
   }
 
   const normalizedRows = baseRows.map((row) => {
@@ -2206,7 +2210,7 @@ async function getCandidatosComparaveisResourceUncached(
 
     const normalized = {
       ...row,
-      total_pontos_atencao: pontos.length,
+      cargo_atual: cargoAtualById.has(row.id) ? (cargoAtualById.get(row.id) ?? null) : null,
       alertas_graves: alertasGraves.length,
       mudancas_partido: switchCountById.has(row.id)
         ? (switchCountById.get(row.id) ?? 0)
@@ -2214,12 +2218,12 @@ async function getCandidatosComparaveisResourceUncached(
       total_gasto_parlamentar: gastoTotalsById.has(row.id)
         ? (gastoTotalsById.get(row.id) ?? null)
         : null,
-      total_votos_mapeados: votosCountById.get(row.id) ?? 0,
+      tem_historico_legislativo: legislativoById.get(row.id) ?? false,
       evolucao_patrimonial_pct: evolucaoPatrimonialVs2026(
         patrimonioPorId.get(row.id) ?? [],
       ),
     }
-    // pontos_atencao só serve para derivar os contadores editoriais no servidor; o
+    // pontos_atencao só serve para derivar alertas_graves no servidor; o
     // ComparadorPanel nunca lê o array no cliente. Remove do payload público
     // (e do cache de comparáveis) em vez de serializar sem uso.
     delete (normalized as { pontos_atencao?: unknown }).pontos_atencao
@@ -2237,7 +2241,9 @@ const getCachedCandidatosComparaveisResource = unstable_cache(
   // Bumped 2026-04-26: payload publico carrega partido sanitizado.
   // Bumped 2026-06-03: pontos_atencao removido do payload de comparaveis (so
   // alimentava alertas_graves no servidor, nunca lido no cliente).
-  ["public-candidatos-comparaveis-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "comparaveis-strip-pontos-20260603", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "evolucao-patrimonial-lista-20260819", CURRENT_DATA_WAVE],
+  // Bumped 2026-08-20: comparador B v1 (cargo_atual, bloco CEAP, sem votos).
+  // Bumped 2026-08-20: sem flag de gastos_executivo no payload do comparador.
+  ["public-candidatos-comparaveis-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "comparaveis-strip-pontos-20260603", "photos-names-20260610", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "evolucao-patrimonial-lista-20260819", "comparador-b-v1-20260820", "comparador-ceap-federal-20260820", "comparador-sem-executivo-20260820", CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos-comparaveis"],

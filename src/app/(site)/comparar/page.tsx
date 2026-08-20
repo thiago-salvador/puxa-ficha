@@ -16,7 +16,7 @@ import Link from "next/link"
 
 const defaultTitle = "Comparador de candidatos | Puxa Ficha"
 const defaultDescription =
-  "Compare dados públicos disponíveis de 2 ou mais candidatos lado a lado: patrimônio, votações, gastos, processos, partido e formação quando houver fonte estruturada."
+  "Compare dados públicos disponíveis de 2 ou mais candidatos lado a lado: cargo, formação, patrimônio, processos, alertas graves e, quando couber, cota parlamentar."
 
 export async function generateMetadata({
   searchParams,
@@ -222,9 +222,9 @@ export default async function CompararPage({
         <div className="max-w-3xl">
           <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
             O comparador foi pensado para busca orgânica e decisão prática:
-            selecionar de 2 a 4 nomes, comparar por patrimônio, votações-chave ou gastos
-            parlamentares, além de processos e destaques, e seguir para a ficha
-            pública sem perder o contexto.
+            selecionar de 2 a 4 nomes, comparar patrimônio, formação, processos e
+            alertas graves, e, quando alguém do conjunto tiver o histórico, a
+            cota parlamentar (CEAP/CEAPS).
           </p>
           <p className="mt-3 text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
             Se quiser navegar antes de comparar, volte para a{" "}
@@ -261,7 +261,8 @@ export default async function CompararPage({
       <div className="mx-auto max-w-7xl px-5 pb-4 md:px-12">
         <p className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
           Dados de fontes públicas oficiais (TSE, Câmara, Senado). Patrimônio refere-se à última
-          declaração disponível. Votações e gastos refletem o que está estruturado no Puxa Ficha.
+          declaração disponível. Cota parlamentar mede CEAP/CEAPS, não gasto da Presidência nem de
+          governo estadual.
         </p>
       </div>
 
