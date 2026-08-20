@@ -5,7 +5,7 @@
 
 export const COMPARADOR_NAO_SE_APLICA = "Não se aplica"
 
-export function maiorEntreNumerosReais(
+export function maiorEntreValoresReais(
   valor: number | null | undefined,
   todos: ReadonlyArray<number | null | undefined>,
 ): boolean {

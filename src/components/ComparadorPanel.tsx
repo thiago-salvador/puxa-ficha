@@ -39,7 +39,7 @@ import {
 import {
   COMPARADOR_NAO_SE_APLICA,
   deveMostrarBlocoCongresso,
-  maiorEntreNumerosReais,
+  maiorEntreValoresReais,
 } from "@/lib/comparador-display"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { BRAZIL_STATES } from "@/data/brazil-states"
@@ -633,7 +633,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                     highlight={eixo === "patrimonio"}
                   >
                     {selectedCandidatos.map((candidato) => {
-                      const isMax = maiorEntreNumerosReais(
+                      const isMax = maiorEntreValoresReais(
                         candidato.patrimonio_declarado,
                         selectedCandidatos.map((item) => item.patrimonio_declarado),
                       )
@@ -732,7 +732,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                       caption="Não inclui Presidência nem governo estadual."
                     >
                       {selectedCandidatos.map((candidato) => {
-                        const isMax = maiorEntreNumerosReais(
+                        const isMax = maiorEntreValoresReais(
                           candidato.total_gasto_parlamentar,
                           selectedCandidatos.map((item) => item.total_gasto_parlamentar),
                         )

@@ -9,7 +9,7 @@ import { formatComparadorMetricForOg } from "../src/lib/comparador-og-format"
 import {
   COMPARADOR_NAO_SE_APLICA,
   deveMostrarBlocoCongresso,
-  maiorEntreNumerosReais,
+  maiorEntreValoresReais,
 } from "../src/lib/comparador-display"
 import { hasFederalLegislativeHistory } from "../src/lib/legislative-history"
 import type { CandidatoComparavel } from "../src/lib/types"
@@ -112,17 +112,17 @@ describe("comparador metrics", () => {
 
 describe("comparador B v1: N/A e MAIOR", () => {
   it("não dá MAIOR contra null nem quando só um lado tem número", () => {
-    assert.equal(maiorEntreNumerosReais(100, [100, null]), false)
-    assert.equal(maiorEntreNumerosReais(null, [100, null]), false)
-    assert.equal(maiorEntreNumerosReais(100, [100]), false)
+    assert.equal(maiorEntreValoresReais(100, [100, null]), false)
+    assert.equal(maiorEntreValoresReais(null, [100, null]), false)
+    assert.equal(maiorEntreValoresReais(100, [100]), false)
   })
 
   it("dá MAIOR só entre valores reais distintos", () => {
-    assert.equal(maiorEntreNumerosReais(200, [100, 200]), true)
-    assert.equal(maiorEntreNumerosReais(100, [100, 200]), false)
-    assert.equal(maiorEntreNumerosReais(100, [100, 100]), false)
-    assert.equal(maiorEntreNumerosReais(0, [0, 50]), false)
-    assert.equal(maiorEntreNumerosReais(50, [0, 50]), true)
+    assert.equal(maiorEntreValoresReais(200, [100, 200]), true)
+    assert.equal(maiorEntreValoresReais(100, [100, 200]), false)
+    assert.equal(maiorEntreValoresReais(100, [100, 100]), false)
+    assert.equal(maiorEntreValoresReais(0, [0, 50]), false)
+    assert.equal(maiorEntreValoresReais(50, [0, 50]), true)
   })
 
   it("mostra o bloco Congresso com CEAP ou histórico legislativo", () => {
