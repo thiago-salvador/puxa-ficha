@@ -1,0 +1,24 @@
+{
+  "_comentario": "Backfill e manutencao da tabela derivada financiamento_doador_search. Nao e curadoria de ficha: copia o top 10 ja sanitizado para busca com indice trigram. Autoriza so a ref doador-reverse-trgm, sem slug.",
+  "recorte": "doador-reverse-trgm-20260820",
+  "migration": "20260820121000_doador_reverse_rpc_server_only_trgm.sql",
+  "fonte": "maiores_doadores_publicos em financiamento publicado",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "financiamento_doador_search",
+      "ref": "doador-reverse-trgm",
+      "campos": [
+        "financiamento_id",
+        "candidato_id",
+        "ano_eleicao",
+        "valor",
+        "tipo",
+        "doador_nome_exibicao",
+        "nome_normalizado"
+      ]
+    }
+  ]
+}

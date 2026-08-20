@@ -188,24 +188,20 @@ describe("paginacao da RPC", () => {
   })
 })
 
-describe("tolerancia a migration ainda nao aplicada", () => {
-  it("cai na assinatura antiga e corta no aplicativo quando a paginada nao existe", async () => {
-    const linhas = Array.from({ length: DOADOR_REVERSE_PAGE_SIZE + 10 }, (_, i) => linha(i))
+describe("assinatura unica paginada, sem fallback de 1 argumento", () => {
+  it("nao tenta a RPC de 1 argumento quando a paginada falha", async () => {
     const chamadas: ChamadaRpc[] = []
     const caller = {
       rpc: async (fn: string, params: Record<string, unknown>) => {
         chamadas.push({ fn, params })
-        if ("p_limit" in params) {
-          return {
-            data: null,
-            error: {
-              code: "PGRST202",
-              message:
-                "Could not find the function public.search_financiamento_by_doador_normalized(p_limit, p_offset, p_query) in the schema cache",
-            },
-          }
+        return {
+          data: null,
+          error: {
+            code: "PGRST202",
+            message:
+              "Could not find the function public.search_financiamento_by_doador_normalized(p_limit, p_offset, p_query) in the schema cache",
+          },
         }
-        return { data: linhas, error: null }
       },
     }
 
@@ -218,14 +214,13 @@ describe("tolerancia a migration ainda nao aplicada", () => {
       console.error = originalConsoleError
     }
 
-    assert.equal(chamadas.length, 2, "tenta a paginada e so entao cai na antiga")
-    assert.ok(!("p_limit" in chamadas[1].params))
-    assert.equal(resultado.error, null)
-    assert.equal(resultado.rows.length, DOADOR_REVERSE_PAGE_SIZE)
-    assert.equal(resultado.truncado, true)
+    assert.equal(chamadas.length, 1)
+    assert.equal(chamadas[0].params.p_limit, DOADOR_REVERSE_PAGE_SIZE + 1)
+    assert.equal(resultado.error, "Não foi possível carregar os resultados agora.")
+    assert.deepEqual(resultado.rows, [])
   })
 
-  it("erro que nao e de assinatura ausente nao vira retentativa", async () => {
+  it("erro de permissao nao vira retentativa", async () => {
     const chamadas: ChamadaRpc[] = []
     const caller = {
       rpc: async (fn: string, params: Record<string, unknown>) => {

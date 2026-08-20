@@ -11,7 +11,7 @@ import {
   type DoadorReverseSearchResult,
 } from "@/lib/doador-reverse-shared"
 import { normalizeForSearch } from "@/lib/search-normalize"
-import { createServerSupabaseClient, getAppSupabaseUrl } from "@/lib/supabase"
+import { createServiceRoleSupabaseClient, getAppSupabaseUrl } from "@/lib/supabase"
 
 export {
   DOADOR_REVERSE_DISCLAIMER,
@@ -66,27 +66,6 @@ function paginar(rows: DoadorReverseFinanciamentoRow[]): DoadorReversePage {
   }
 }
 
-/**
- * A assinatura paginada da RPC chega pela migration
- * `..._doador_reverse_rpc_paginada`. Enquanto ela não estiver aplicada, o
- * PostgREST responde que não achou a função com aqueles parâmetros
- * (`PGRST202`, ou `42883` vindo do Postgres). Reconhecer isso é o que permite
- * aplicar a migration antes ou depois do deploy sem derrubar /doadores.
- */
-function assinaturaPaginadaAusente(error: { code?: string; message?: string } | null): boolean {
-  if (!error) return false
-  if (error.code === "PGRST202" || error.code === "42883") return true
-  const message = error.message?.toLowerCase() ?? ""
-  return (
-    (message.includes("could not find the function") ||
-      message.includes("does not exist") ||
-      message.includes("schema cache")) &&
-    message.includes("search_financiamento_by_doador_normalized")
-  )
-}
-
-let avisouRpcNaoPaginada = false
-
 async function fetchDoadorReverseRows(
   normalizedQuery: string,
   rpcCaller?: DoadorReverseRpcCaller
@@ -128,7 +107,9 @@ async function fetchDoadorReverseRows(
     }
   }
 
-  const caller = rpcCaller ?? createServerSupabaseClient()
+  // service_role: a RPC nao tem mais EXECUTE para anon. O limiter de /doadores
+  // so e real se o visitante nao puder POST /rest/v1/rpc com a chave publica.
+  const caller = rpcCaller ?? createServiceRoleSupabaseClient()
   const { data, error } = await Sentry.startSpan(
     {
       name: "doador_reverse.rpc",
@@ -148,26 +129,6 @@ async function fetchDoadorReverseRows(
         p_offset: 0,
       }),
   )
-
-  // Migration ainda não aplicada: cai na assinatura antiga, sem LIMIT no banco,
-  // e corta no aplicativo. Pior do que paginar de verdade, melhor do que a
-  // página inteira responder erro.
-  if (error && assinaturaPaginadaAusente(error)) {
-    if (!avisouRpcNaoPaginada) {
-      avisouRpcNaoPaginada = true
-      console.error(
-        "doador-reverse: RPC sem assinatura paginada, migration nao aplicada; cortando no aplicativo",
-      )
-    }
-    const legado = await caller.rpc("search_financiamento_by_doador_normalized", {
-      p_query: normalizedQuery,
-    })
-    if (legado.error) {
-      console.error("search_financiamento_by_doador_normalized:", legado.error.message)
-      throw new DoadorReverseUnavailableError(legado.error.message)
-    }
-    return paginar(parseDoadorReverseRpcRows(legado.data).slice(0, FETCH_LIMIT))
-  }
 
   if (error) {
     console.error("search_financiamento_by_doador_normalized:", error.message)

@@ -301,6 +301,9 @@ describe("contrato da view candidatos_publico", () => {
       // e acrescenta contagens de sigilo de portador e estabelecimento. Não
       // redefine candidatos_publico. O dado continua sendo do órgão, não da pessoa.
       "20260820010000_gastos_executivo_ug.sql",
+      // Busca reversa por doador: tabela derivada com trgm, RPC so service_role.
+      // Nao redefine candidatos_publico.
+      "20260820121000_doador_reverse_rpc_server_only_trgm.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

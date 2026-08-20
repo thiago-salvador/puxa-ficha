@@ -333,6 +333,13 @@
       "ate": "20260819140400",
       "allowlist": "scripts/audit/allowlist-formacao-cury-marcal-20260819.json",
       "divida": null
+    },
+    {
+      "nome": "doador-reverse-trgm-20260820",
+      "desde": "20260820121000",
+      "ate": "20260820121000",
+      "allowlist": "scripts/audit/allowlist-doador-reverse-trgm-20260820.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
