@@ -90,6 +90,7 @@ export const TABELAS_DE_CONTEUDO: readonly string[] = [
  */
 export const TABELAS_DE_ESTADO: readonly string[] = [
   "coleta_log",
+  "financiamento_doador_search",
   "identidade_timeline_quarentena_snapshot",
   "news_refresh_lotes",
   "quiz_result_short_links",
@@ -386,7 +387,12 @@ export const MEDICAO_REPLAY = Object.freeze({
   // sigilo. Classe schema (ALTER TABLE). MEDIDO no schema-gate local e no
   // run 32378830303: aplicadas limpo 85, falhas 0, hash
   // 18730634f32f3c9c75fb04b7161f76ea6b482e5c1feeabd5fad9e1251a9338b6.
-  schemaReplayTamanho: 85,
+  // 85 -> 86 em 20/08/2026: doador_reverse_rpc_server_only_trgm cria tabela de
+  // busca, indice trgm, RPC e grants. Schema persistente; o backfill e estado
+  // derivado, nao curadoria de ficha. MEDIDO no schema-gate local: aplicadas
+  // limpo 86, falhas 0, hash
+  // 2a58088b22dd5103f88476ca867cb2fc28bb94411506226d488757acab582662.
+  schemaReplayTamanho: 86,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

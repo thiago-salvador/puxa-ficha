@@ -126,6 +126,7 @@ const ANON_DENIED_TABLES = [
   "notification_log",
   "quiz_result_short_links",
   "analytics_launch_events",
+  "financiamento_doador_search",
 ]
 
 /**

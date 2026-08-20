@@ -315,7 +315,9 @@ describe("classificador puro (#136)", () => {
     // 319 + 103 = 422.
     // 319 -> 320 em 20/08/2026: schema de gastos_executivo_ug aplica limpo
     // (ALTER TABLE, sem RAISE). Conservação: 320 + 103 = 423.
-    assert.equal(manifesto.aplicadas_esperadas, 320)
+    // 320 -> 321 em 20/08/2026: hardening server-only/trgm da RPC de doadores
+    // aplica limpo (schema + tabela derivada, sem RAISE). Conservação: 321 + 103 = 424.
+    assert.equal(manifesto.aplicadas_esperadas, 321)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
