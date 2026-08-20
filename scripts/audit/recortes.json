@@ -336,8 +336,8 @@
     },
     {
       "nome": "doador-reverse-trgm-20260820",
-      "desde": "20260820121000",
-      "ate": "20260820121000",
+      "desde": "20260820164117",
+      "ate": "20260820164117",
       "allowlist": "scripts/audit/allowlist-doador-reverse-trgm-20260820.json",
       "divida": null
     }
