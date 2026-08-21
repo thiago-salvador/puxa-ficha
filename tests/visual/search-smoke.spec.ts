@@ -7,9 +7,18 @@ import { expect, test } from "playwright/test"
  *
  * Rodar: npm run test:search-smoke
  */
+function isPuxaFichaHost(raw: string): boolean {
+  try {
+    const host = new URL(raw).hostname
+    return host === "puxaficha.com.br" || host === "www.puxaficha.com.br"
+  } catch {
+    return false
+  }
+}
+
 const baseUrl = process.env.PF_BASE_URL ?? ""
 const hasRealIndex =
-  process.env.PF_RUN_SEARCH_SMOKE === "1" || /puxaficha\.com\.br/i.test(baseUrl)
+  process.env.PF_RUN_SEARCH_SMOKE === "1" || isPuxaFichaHost(baseUrl)
 
 test.describe("Busca rápida (caminho real)", () => {
   test.skip(

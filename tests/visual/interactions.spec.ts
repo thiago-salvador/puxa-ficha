@@ -11,6 +11,15 @@
 
 import { test, expect } from "playwright/test"
 
+function isPuxaFichaHost(raw: string): boolean {
+  try {
+    const host = new URL(raw).hostname
+    return host === "puxaficha.com.br" || host === "www.puxaficha.com.br"
+  } catch {
+    return false
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Navbar — mobile menu cycle
 // ---------------------------------------------------------------------------
@@ -73,7 +82,7 @@ test.describe("Busca rápida palette", () => {
   test("search opens palette and lists Lula", async ({ page }) => {
     test.skip(
       process.env.PF_EXPECT_PLACEHOLDER_DATA === "1" ||
-        (!/puxaficha\.com\.br/i.test(process.env.PF_BASE_URL ?? "") &&
+        (!isPuxaFichaHost(process.env.PF_BASE_URL ?? "") &&
           process.env.PF_RUN_SEARCH_SMOKE !== "1"),
       "índice real só com PF_BASE_URL de produção",
     )
