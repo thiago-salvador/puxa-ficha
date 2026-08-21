@@ -57,28 +57,26 @@ export async function POST(req: NextRequest) {
 
   const now = Date.now()
   const since = new Date(now - 3_600_000).toISOString()
-  let count: number
-  try {
-    count = await store.countRecentByIpHash(ipHash, since)
-  } catch {
-    return NextResponse.json({ error: "Rate check failed" }, { status: 503 })
-  }
-  if (count >= MAX_PER_HOUR) {
-    return NextResponse.json({ error: "Too many requests" }, { status: 429 })
-  }
 
   for (let attempt = 0; attempt < 6; attempt += 1) {
     const token = randomBytes(9).toString("base64url").replace(/=+$/, "").slice(0, 14)
     const createdAt = new Date(now).toISOString()
     const expiresAt = new Date(now + QUIZ_SHORT_LINK_TTL_MS).toISOString()
     try {
-      const result = await store.insertLink({
-        token,
-        query_string: sanitized,
-        ip_hash: ipHash,
-        created_at: createdAt,
-        expires_at: expiresAt,
-      })
+      const result = await store.tryInsertLink(
+        {
+          token,
+          query_string: sanitized,
+          ip_hash: ipHash,
+          created_at: createdAt,
+          expires_at: expiresAt,
+        },
+        since,
+        MAX_PER_HOUR,
+      )
+      if (result === "quota_exceeded") {
+        return NextResponse.json({ error: "Too many requests" }, { status: 429 })
+      }
       if (result === "inserted") {
         const path = `/quiz/r/${token}`
         const url = new URL(path, req.nextUrl.origin).toString()
@@ -87,7 +85,6 @@ export async function POST(req: NextRequest) {
     } catch {
       return NextResponse.json({ error: "Could not allocate token" }, { status: 503 })
     }
-
   }
 
   return NextResponse.json({ error: "Could not allocate token" }, { status: 503 })

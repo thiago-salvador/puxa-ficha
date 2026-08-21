@@ -35,6 +35,7 @@ import {
 } from "@/lib/request-rate-limit"
 import { logAlertsApiExit, logAlertsEvent } from "@/lib/alerts-log"
 import { sendTransactionalEmail } from "@/lib/email"
+import { isMissingQuotaRpc, readQuotaRpcId, readQuotaRpcStatus } from "@/lib/quota-rpc"
 import {
   isRequestBodyTooLargeError,
   readJsonBodyWithLimit,
@@ -105,48 +106,89 @@ function avisarColunaAusenteUmaVez() {
   )
 }
 
+type EmailBudgetResult =
+  | { kind: "ok"; reserved: boolean }
+  | { kind: "blocked"; response: NextResponse }
+
 /**
- * Teto durável do envio de e-mail, do lado do banco.
- *
- * Conta assinantes cujo último e-mail na janela foi pedido por este mesmo
- * cliente. O contador em memória é por instância e em serverless cada instância
- * nova nasce com o balde zerado, então ele nunca foi teto de verdade: com uma
- * lista de endereços já inscritos, o atacante conseguia um e-mail por endereço
- * limitado só pelo cooldown de 15 min de cada assinante, gastando cota do Resend
- * e queimando a reputação do domínio.
- *
- * Repetir o MESMO endereço não acumula (o carimbo é sobrescrito na linha dele);
- * quem segura esse caso é o cooldown. Este contador existe para o ataque que se
- * espalha por muitos endereços, que é justamente o que o cooldown não vê.
+ * Reserva a cota de e-mail por IP no banco, carimbando o assinante na mesma
+ * transação, antes do envio. Sem a RPC ou sem a coluna, degrada para o COUNT
+ * antigo (janela de deploy) e deixa o carimbo para depois do envio.
  */
-async function enforceEmailIpBudget(
+async function reserveEmailIpBudget(
   supabase: AlertsServiceRoleClient,
+  subscriberId: string,
   emailIpHash: string,
   sinceIso: string,
   exceededReason: string,
   deps: Pick<SubscribeDeps, "logAlertsApiExit">,
-): Promise<NextResponse | null> {
-  const { count, error } = await supabase
-    .from("alert_subscribers")
-    .select("*", { count: "exact", head: true })
-    .eq("last_email_request_ip_hash", emailIpHash)
-    .gte("last_verification_email_sent_at", sinceIso)
+): Promise<EmailBudgetResult> {
+  const sentAt = new Date().toISOString()
+  const { data, error } = await supabase.rpc("reserve_alert_email_ip_budget", {
+    p_subscriber_id: subscriberId,
+    p_email_ip_hash: emailIpHash,
+    p_since: sinceIso,
+    p_max: MAX_EMAILS_PER_IP_HOUR,
+    p_sent_at: sentAt,
+  })
 
   if (error) {
     if (isMissingEmailIpHashColumn(error)) {
       avisarColunaAusenteUmaVez()
-      return null
+      return { kind: "ok", reserved: false }
     }
-    deps.logAlertsApiExit("subscribe", 503, "email_ip_rate_check_failed")
-    return NextResponse.json({ error: "Rate check failed" }, { status: 503 })
+    if (!isMissingQuotaRpc(error)) {
+      deps.logAlertsApiExit("subscribe", 503, "email_ip_rate_check_failed")
+      return {
+        kind: "blocked",
+        response: NextResponse.json({ error: "Rate check failed" }, { status: 503 }),
+      }
+    }
+
+    const { count, error: countError } = await supabase
+      .from("alert_subscribers")
+      .select("*", { count: "exact", head: true })
+      .eq("last_email_request_ip_hash", emailIpHash)
+      .gte("last_verification_email_sent_at", sinceIso)
+
+    if (countError) {
+      if (isMissingEmailIpHashColumn(countError)) {
+        avisarColunaAusenteUmaVez()
+        return { kind: "ok", reserved: false }
+      }
+      deps.logAlertsApiExit("subscribe", 503, "email_ip_rate_check_failed")
+      return {
+        kind: "blocked",
+        response: NextResponse.json({ error: "Rate check failed" }, { status: 503 }),
+      }
+    }
+
+    if ((count ?? 0) >= MAX_EMAILS_PER_IP_HOUR) {
+      deps.logAlertsApiExit("subscribe", 429, exceededReason)
+      return {
+        kind: "blocked",
+        response: NextResponse.json({ error: "Too many requests" }, { status: 429 }),
+      }
+    }
+
+    return { kind: "ok", reserved: false }
   }
 
-  if ((count ?? 0) >= MAX_EMAILS_PER_IP_HOUR) {
+  const status = readQuotaRpcStatus(data)
+  if (status === "quota_exceeded") {
     deps.logAlertsApiExit("subscribe", 429, exceededReason)
-    return NextResponse.json({ error: "Too many requests" }, { status: 429 })
+    return {
+      kind: "blocked",
+      response: NextResponse.json({ error: "Too many requests" }, { status: 429 }),
+    }
   }
+  if (status === "reserved") return { kind: "ok", reserved: true }
 
-  return null
+  deps.logAlertsApiExit("subscribe", 503, "email_ip_rate_check_failed")
+  return {
+    kind: "blocked",
+    response: NextResponse.json({ error: "Rate check failed" }, { status: 503 }),
+  }
 }
 
 /**
@@ -318,14 +360,15 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
           return neutralSubscribeResponse(candidate.slug)
         }
 
-        const budgetResponse = await enforceEmailIpBudget(
+        const budget = await reserveEmailIpBudget(
           supabase,
+          existingSubscriber.id,
           emailIpHash,
           ipWindowStartIso,
           "rate_limit_manage_email_ip_hour",
           deps,
         )
-        if (budgetResponse) return budgetResponse
+        if (budget.kind === "blocked") return budget.response
 
         const nextManageToken = createAlertToken()
         const manageTokenHash = hashAlertToken(nextManageToken)
@@ -366,14 +409,16 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
           )
         }
 
-        await markVerificationEmailSent(
-          supabase,
-          existingSubscriber.id,
-          candidate.slug,
-          "manage_access_sent_timestamp_update_failed",
-          deps,
-          emailIpHash,
-        )
+        if (!budget.reserved) {
+          await markVerificationEmailSent(
+            supabase,
+            existingSubscriber.id,
+            candidate.slug,
+            "manage_access_sent_timestamp_update_failed",
+            deps,
+            emailIpHash,
+          )
+        }
 
         deps.logAlertsApiExit("subscribe", 200, "verified_manage_link_sent", {
           candidateSlug: candidate.slug,
@@ -412,23 +457,7 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
       )
     }
 
-    if (!existingSubscriber) {
-      const { count, error: countError } = await supabase
-        .from("alert_subscribers")
-        .select("*", { count: "exact", head: true })
-        .eq("ip_consentimento_hash", ipHash)
-        .gte("created_at", ipWindowStartIso)
-
-      if (countError) {
-        deps.logAlertsApiExit("subscribe", 503, "rate_check_failed")
-        return NextResponse.json({ error: "Rate check failed" }, { status: 503 })
-      }
-
-      if ((count ?? 0) >= MAX_NEW_SUBSCRIBERS_PER_HOUR) {
-        deps.logAlertsApiExit("subscribe", 429, "rate_limit_new_subscribers_hour")
-        return NextResponse.json({ error: "Too many requests" }, { status: 429 })
-      }
-    }
+    let emailBudgetReserved = false
 
     if (existingSubscriber && cooldownActive) {
       const { error: subscriptionError } = await supabase.from("alert_subscriptions").upsert(
@@ -451,18 +480,19 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
     }
 
     if (existingSubscriber) {
-      // Assinante que já existe não passa pelo teto de assinantes novos acima,
-      // então sem esta checagem o reenvio do e-mail de confirmação ficaria com o
-      // mesmo buraco do link de gestão: durável nenhum, só o cooldown por
-      // endereço.
-      const budgetResponse = await enforceEmailIpBudget(
+      // Assinante que já existe não passa pelo teto de assinantes novos, então
+      // sem esta checagem o reenvio do e-mail de confirmação ficaria só com o
+      // cooldown por endereço.
+      const budget = await reserveEmailIpBudget(
         supabase,
+        existingSubscriber.id,
         emailIpHash,
         ipWindowStartIso,
         "rate_limit_verification_email_ip_hour",
         deps,
       )
-      if (budgetResponse) return budgetResponse
+      if (budget.kind === "blocked") return budget.response
+      emailBudgetReserved = budget.reserved
     }
 
     const verifyToken = createAlertToken()
@@ -495,27 +525,78 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
 
       subscriberId = existingSubscriber.id
     } else {
-      const { data: insertedSubscriber, error: insertError } = await supabase
-        .from("alert_subscribers")
-        .insert({
-          email,
-          email_hash: emailHash,
-          nome,
-          verify_token_hash: verifyTokenHash,
-          verify_token_expires_at: verifyExpiresAt,
-          manage_token_hash: manageTokenHash,
-          manage_token_ciphertext: manageTokenCiphertext,
-          ip_consentimento_hash: ipHash,
-        })
-        .select("id")
-        .single()
+      const { data: inserted, error: insertError } = await supabase.rpc(
+        "insert_alert_subscriber_under_ip_quota",
+        {
+          p_email: email,
+          p_email_hash: emailHash,
+          p_nome: nome,
+          p_verify_token_hash: verifyTokenHash,
+          p_verify_token_expires_at: verifyExpiresAt,
+          p_manage_token_hash: manageTokenHash,
+          p_manage_token_ciphertext: manageTokenCiphertext,
+          p_ip_consentimento_hash: ipHash,
+          p_since: ipWindowStartIso,
+          p_max: MAX_NEW_SUBSCRIBERS_PER_HOUR,
+        },
+      )
 
-      if (insertError || !insertedSubscriber) {
-        deps.logAlertsApiExit("subscribe", 503, "db_insert_subscriber_failed")
-        return NextResponse.json({ error: "Could not create subscriber" }, { status: 503 })
+      if (insertError) {
+        if (isMissingQuotaRpc(insertError)) {
+          const { count, error: countError } = await supabase
+            .from("alert_subscribers")
+            .select("*", { count: "exact", head: true })
+            .eq("ip_consentimento_hash", ipHash)
+            .gte("created_at", ipWindowStartIso)
+
+          if (countError) {
+            deps.logAlertsApiExit("subscribe", 503, "rate_check_failed")
+            return NextResponse.json({ error: "Rate check failed" }, { status: 503 })
+          }
+
+          if ((count ?? 0) >= MAX_NEW_SUBSCRIBERS_PER_HOUR) {
+            deps.logAlertsApiExit("subscribe", 429, "rate_limit_new_subscribers_hour")
+            return NextResponse.json({ error: "Too many requests" }, { status: 429 })
+          }
+
+          const { data: insertedSubscriber, error: legacyInsertError } = await supabase
+            .from("alert_subscribers")
+            .insert({
+              email,
+              email_hash: emailHash,
+              nome,
+              verify_token_hash: verifyTokenHash,
+              verify_token_expires_at: verifyExpiresAt,
+              manage_token_hash: manageTokenHash,
+              manage_token_ciphertext: manageTokenCiphertext,
+              ip_consentimento_hash: ipHash,
+            })
+            .select("id")
+            .single()
+
+          if (legacyInsertError || !insertedSubscriber) {
+            deps.logAlertsApiExit("subscribe", 503, "db_insert_subscriber_failed")
+            return NextResponse.json({ error: "Could not create subscriber" }, { status: 503 })
+          }
+
+          subscriberId = insertedSubscriber.id
+        } else {
+          deps.logAlertsApiExit("subscribe", 503, "db_insert_subscriber_failed")
+          return NextResponse.json({ error: "Could not create subscriber" }, { status: 503 })
+        }
+      } else {
+        const status = readQuotaRpcStatus(inserted)
+        if (status === "quota_exceeded") {
+          deps.logAlertsApiExit("subscribe", 429, "rate_limit_new_subscribers_hour")
+          return NextResponse.json({ error: "Too many requests" }, { status: 429 })
+        }
+        const insertedId = readQuotaRpcId(inserted)
+        if (status !== "inserted" || !insertedId) {
+          deps.logAlertsApiExit("subscribe", 503, "db_insert_subscriber_failed")
+          return NextResponse.json({ error: "Could not create subscriber" }, { status: 503 })
+        }
+        subscriberId = insertedId
       }
-
-      subscriberId = insertedSubscriber.id
     }
 
     if (!subscriberId) {
@@ -561,14 +642,16 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
       )
     }
 
-    await markVerificationEmailSent(
-      supabase,
-      subscriberId,
-      candidate.slug,
-      "verification_email_sent_timestamp_update_failed",
-      deps,
-      emailIpHash,
-    )
+    if (!emailBudgetReserved) {
+      await markVerificationEmailSent(
+        supabase,
+        subscriberId,
+        candidate.slug,
+        "verification_email_sent_timestamp_update_failed",
+        deps,
+        emailIpHash,
+      )
+    }
 
     deps.logAlertsApiExit("subscribe", 200, "requires_verification_email_sent", {
       candidateSlug: candidate.slug,

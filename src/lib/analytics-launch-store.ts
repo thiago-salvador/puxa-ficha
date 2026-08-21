@@ -7,6 +7,7 @@ import {
   getAnalyticsProofIdFromPayload,
 } from "@/lib/analytics-events"
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
+import { isMissingQuotaRpc, readQuotaRpcStatus } from "@/lib/quota-rpc"
 
 export type AnalyticsLaunchCounts = Record<AnalyticsEventName, number>
 
@@ -39,7 +40,7 @@ export type AnalyticsIpHashCount =
  * compartilhado por todas elas. Mesmo formato do `countRecentByIpHash` de
  * `/api/quiz/short-link`.
  */
-export async function countRecentAnalyticsEventsByIpHash(
+async function countRecentAnalyticsEventsByIpHash(
   ipHash: string,
   sinceIso: string,
 ): Promise<AnalyticsIpHashCount> {
@@ -163,6 +164,56 @@ export async function recordAnalyticsLaunchEvent(input: {
   }
 
   throw new Error(`analytics_launch_events insert failed: ${error.message}`)
+}
+
+export type AnalyticsQuotaInsertResult =
+  | { status: "inserted" }
+  | { status: "quota_exceeded" }
+  | { status: "coluna_ausente" }
+
+/**
+ * Reserva a cota por ip_hash e grava o evento na mesma transação. Sem a RPC
+ * ainda, cai no COUNT+INSERT antigo (janela de deploy). Sem a coluna, devolve
+ * `coluna_ausente` para o caller gravar o evento sem hash.
+ */
+export async function recordAnalyticsLaunchEventUnderQuota(input: {
+  eventName: AnalyticsEventName
+  payload: AnalyticsPayload
+  ipHash: string
+  sinceIso: string
+  max: number
+}): Promise<AnalyticsQuotaInsertResult> {
+  const supabase = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
+  const proofId = getAnalyticsProofIdFromPayload(input.payload)
+  const { data, error } = await supabase.rpc("insert_analytics_launch_event_under_ip_quota", {
+    p_event_name: input.eventName,
+    p_payload: input.payload,
+    p_proof_id: proofId,
+    p_ip_hash: input.ipHash,
+    p_since: input.sinceIso,
+    p_max: input.max,
+  })
+
+  if (error) {
+    if (isMissingIpHashColumn(error)) return { status: "coluna_ausente" }
+    if (!isMissingQuotaRpc(error)) {
+      throw new Error(`analytics_launch_events quota insert failed: ${error.message}`)
+    }
+
+    const durable = await countRecentAnalyticsEventsByIpHash(input.ipHash, input.sinceIso)
+    if (durable.status === "coluna_ausente") return { status: "coluna_ausente" }
+    if (durable.count >= input.max) return { status: "quota_exceeded" }
+    await recordAnalyticsLaunchEvent({
+      eventName: input.eventName,
+      payload: input.payload,
+      ipHash: input.ipHash,
+    })
+    return { status: "inserted" }
+  }
+
+  const status = readQuotaRpcStatus(data)
+  if (status === "inserted" || status === "quota_exceeded") return { status }
+  throw new Error(`insert_analytics_launch_event_under_ip_quota: status inesperado ${String(status)}`)
 }
 
 export async function readAnalyticsLaunchCounts(input: {

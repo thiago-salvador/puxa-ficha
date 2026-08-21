@@ -270,7 +270,7 @@ describe("alerts subscribe: resposta neutra contra enumeracao", () => {
       candidatos_publico: [seedCandidate()],
       alert_subscribers: [seedVerificadoLimpo()],
     })
-    fixture.failNextSelect("alert_subscribers", {
+    fixture.failNextRpc({
       code: "42703",
       message: 'column alert_subscribers.last_email_request_ip_hash does not exist',
     })
@@ -292,7 +292,7 @@ describe("alerts subscribe: resposta neutra contra enumeracao", () => {
       candidatos_publico: [seedCandidate()],
       alert_subscribers: [seedVerificadoLimpo()],
     })
-    fixture.failNextSelect("alert_subscribers", { message: "connection reset" })
+    fixture.failNextRpc({ message: "connection reset" })
 
     const response = await createSubscribeHandler(createDeps(fixture))(
       subscribeRequest("verificado@example.com", ip),

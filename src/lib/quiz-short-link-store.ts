@@ -2,6 +2,7 @@ import "server-only"
 
 import { mkdir, readFile, writeFile } from "node:fs/promises"
 import path from "node:path"
+import { isMissingQuotaRpc, readQuotaRpcStatus } from "@/lib/quota-rpc"
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
 
 /** TTL padrão do short-link do quiz (90 dias em milissegundos). */
@@ -15,12 +16,30 @@ interface QuizShortLinkRecord {
   expires_at: string
 }
 
-type InsertResult = "inserted" | "duplicate"
+export type QuizShortLinkInsertResult = "inserted" | "duplicate" | "quota_exceeded"
 
 interface QuizShortLinkStore {
-  countRecentByIpHash(ipHash: string, sinceIso: string): Promise<number>
-  insertLink(record: QuizShortLinkRecord): Promise<InsertResult>
+  tryInsertLink(
+    record: QuizShortLinkRecord,
+    sinceIso: string,
+    max: number,
+  ): Promise<QuizShortLinkInsertResult>
   resolveToken(token: string): Promise<string | null>
+}
+
+const fixtureLocks = new Map<string, Promise<unknown>>()
+
+function withFixtureLock<T>(filePath: string, fn: () => Promise<T>): Promise<T> {
+  const previous = fixtureLocks.get(filePath) ?? Promise.resolve()
+  const run = previous.then(fn, fn)
+  fixtureLocks.set(
+    filePath,
+    run.then(
+      () => undefined,
+      () => undefined,
+    ),
+  )
+  return run
 }
 
 function resolveQuizShortLinkFixturePath() {
@@ -85,17 +104,19 @@ async function writeFixtureRows(filePath: string, rows: QuizShortLinkRecord[]) {
 
 function createFixtureStore(filePath: string): QuizShortLinkStore {
   return {
-    async countRecentByIpHash(ipHash, sinceIso) {
-      const since = Date.parse(sinceIso)
-      const rows = await readFixtureRows(filePath)
-      return rows.filter((row) => row.ip_hash === ipHash && Date.parse(row.created_at) >= since).length
-    },
-    async insertLink(record) {
-      const rows = await readFixtureRows(filePath)
-      if (rows.some((row) => row.token === record.token)) return "duplicate"
-      rows.push(record)
-      await writeFixtureRows(filePath, rows)
-      return "inserted"
+    async tryInsertLink(record, sinceIso, max) {
+      return withFixtureLock(filePath, async () => {
+        const since = Date.parse(sinceIso)
+        const rows = await readFixtureRows(filePath)
+        const recent = rows.filter(
+          (row) => row.ip_hash === record.ip_hash && Date.parse(row.created_at) >= since,
+        ).length
+        if (recent >= max) return "quota_exceeded"
+        if (rows.some((row) => row.token === record.token)) return "duplicate"
+        rows.push(record)
+        await writeFixtureRows(filePath, rows)
+        return "inserted"
+      })
     },
     async resolveToken(token) {
       const rows = await readFixtureRows(filePath)
@@ -108,32 +129,70 @@ function createFixtureStore(filePath: string): QuizShortLinkStore {
   }
 }
 
+async function countRecentByIpHash(
+  supabase: ReturnType<typeof createServiceRoleSupabaseClient>,
+  ipHash: string,
+  sinceIso: string,
+): Promise<number> {
+  const { count, error } = await supabase
+    .from("quiz_result_short_links")
+    .select("*", { count: "exact", head: true })
+    .eq("ip_hash", ipHash)
+    .gte("created_at", sinceIso)
+
+  if (error) throw error
+  return count ?? 0
+}
+
+async function insertLink(
+  supabase: ReturnType<typeof createServiceRoleSupabaseClient>,
+  record: QuizShortLinkRecord,
+): Promise<"inserted" | "duplicate"> {
+  const { error } = await supabase.from("quiz_result_short_links").insert({
+    token: record.token,
+    query_string: record.query_string,
+    ip_hash: record.ip_hash,
+    created_at: record.created_at,
+    expires_at: record.expires_at,
+  })
+
+  if (!error) return "inserted"
+  if (isUniqueViolation(error)) return "duplicate"
+  throw error
+}
+
 function createSupabaseStore(): QuizShortLinkStore {
   const supabase = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
 
   return {
-    async countRecentByIpHash(ipHash, sinceIso) {
-      const { count, error } = await supabase
-        .from("quiz_result_short_links")
-        .select("*", { count: "exact", head: true })
-        .eq("ip_hash", ipHash)
-        .gte("created_at", sinceIso)
+    async tryInsertLink(record, sinceIso, max) {
+      if (!record.ip_hash) {
+        throw new Error("quiz short-link insert requires ip_hash")
+      }
 
-      if (error) throw error
-      return count ?? 0
-    },
-    async insertLink(record) {
-      const { error } = await supabase.from("quiz_result_short_links").insert({
-        token: record.token,
-        query_string: record.query_string,
-        ip_hash: record.ip_hash,
-        created_at: record.created_at,
-        expires_at: record.expires_at,
+      const { data, error } = await supabase.rpc("insert_quiz_short_link_under_ip_quota", {
+        p_token: record.token,
+        p_query_string: record.query_string,
+        p_ip_hash: record.ip_hash,
+        p_created_at: record.created_at,
+        p_expires_at: record.expires_at,
+        p_since: sinceIso,
+        p_max: max,
       })
 
-      if (!error) return "inserted"
-      if (isUniqueViolation(error)) return "duplicate"
-      throw error
+      if (error && isMissingQuotaRpc(error)) {
+        const count = await countRecentByIpHash(supabase, record.ip_hash, sinceIso)
+        if (count >= max) return "quota_exceeded"
+        return insertLink(supabase, record)
+      }
+
+      if (error) throw error
+
+      const status = readQuotaRpcStatus(data)
+      if (status === "inserted" || status === "duplicate" || status === "quota_exceeded") {
+        return status
+      }
+      throw new Error(`insert_quiz_short_link_under_ip_quota: status inesperado ${String(status)}`)
     },
     async resolveToken(token) {
       const { data, error } = await supabase

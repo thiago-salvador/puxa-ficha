@@ -242,6 +242,21 @@ describe("quiz short-link HTTP route", () => {
     assert.equal(limited.status, 429)
   })
 
+  it("bursts in parallel stay inside the hourly cap", async () => {
+    await enableFileStore()
+
+    const responses = await Promise.all(
+      Array.from({ length: 80 }, () =>
+        POST(request(VALID_QUERY, { "x-real-ip": "198.51.100.77" })),
+      ),
+    )
+    const ok = responses.filter((response) => response.status === 200).length
+    const limited = responses.filter((response) => response.status === 429).length
+
+    assert.equal(ok, 24)
+    assert.equal(limited, 56)
+  })
+
   it("returns 503 when no Supabase config or controlled fixture store is available", async () => {
     delete process.env.PF_QUIZ_SHORT_LINKS_FILE
     process.env.PF_QUIZ_SHORT_LINK_SALT = "quiz-short-link-test-salt"

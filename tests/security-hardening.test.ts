@@ -128,7 +128,10 @@ describe("fixed-window IP rate limit", () => {
       recordAnalyticsLaunchEvent: async () => {
         writes += 1
       },
-      countRecentAnalyticsEventsByIpHash: async () => ({ status: "ok", count: 0 }),
+      recordAnalyticsLaunchEventUnderQuota: async () => {
+        writes += 1
+        return { status: "inserted" as const }
+      },
       now: () => Date.now(),
     })
     const request = () =>
@@ -159,7 +162,10 @@ describe("fixed-window IP rate limit", () => {
       recordAnalyticsLaunchEvent: async () => {
         writes += 1
       },
-      countRecentAnalyticsEventsByIpHash: async () => ({ status: "ok", count: 0 }),
+      recordAnalyticsLaunchEventUnderQuota: async () => {
+        writes += 1
+        return { status: "inserted" as const }
+      },
       now: () => Date.now(),
     })
 
@@ -198,7 +204,10 @@ describe("fixed-window IP rate limit", () => {
       recordAnalyticsLaunchEvent: async () => {
         writes += 1
       },
-      countRecentAnalyticsEventsByIpHash: async () => ({ status: "ok", count: 0 }),
+      recordAnalyticsLaunchEventUnderQuota: async () => {
+        writes += 1
+        return { status: "inserted" as const }
+      },
       now: () => Date.now(),
     })
 
@@ -229,7 +238,10 @@ describe("fixed-window IP rate limit", () => {
       recordAnalyticsLaunchEvent: async () => {
         writes += 1
       },
-      countRecentAnalyticsEventsByIpHash: async () => ({ status: "ok", count: 0 }),
+      recordAnalyticsLaunchEventUnderQuota: async () => {
+        writes += 1
+        return { status: "inserted" as const }
+      },
       now: () => Date.now(),
     })
 

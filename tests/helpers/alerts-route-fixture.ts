@@ -361,6 +361,7 @@ export class AlertsRouteFixture {
   private readonly tables: AlertsTables
   private idCounter = 1
   private pendingEmailError: Error | null = null
+  private pendingRpcError: QueryError | null = null
   private pendingMutationErrors: Array<{
     tableName: TableName
     operation: MutationOperation
@@ -425,6 +426,10 @@ export class AlertsRouteFixture {
     })
   }
 
+  failNextRpc(error: QueryError) {
+    this.pendingRpcError = error
+  }
+
   consumeMutationError(tableName: TableName, operation: MutationOperation) {
     const index = this.pendingMutationErrors.findIndex(
       (pending) => pending.tableName === tableName && pending.operation === operation,
@@ -473,7 +478,57 @@ export class AlertsRouteFixture {
           },
         }
       },
+      rpc: (fn: string, args: Record<string, unknown> = {}) => this.executeQuotaRpc(fn, args),
     } as unknown as AlertsServiceRoleClient
+  }
+
+  private async executeQuotaRpc(fn: string, args: Record<string, unknown>) {
+    const pending = this.pendingRpcError
+    this.pendingRpcError = null
+    if (pending) return { data: null, error: pending }
+
+    if (fn === "reserve_alert_email_ip_budget") {
+      const emailIpHash = String(args.p_email_ip_hash ?? "")
+      const sinceIso = String(args.p_since ?? "")
+      const max = Number(args.p_max)
+      const subscriberId = String(args.p_subscriber_id ?? "")
+      const sentAt = String(args.p_sent_at ?? new Date().toISOString())
+      const count = this.tables.alert_subscribers.filter(
+        (row) =>
+          row.last_email_request_ip_hash === emailIpHash &&
+          (row.last_verification_email_sent_at ?? "") >= sinceIso,
+      ).length
+      if (count >= max) return { data: { status: "quota_exceeded" }, error: null }
+      const subscriber = this.tables.alert_subscribers.find((row) => row.id === subscriberId)
+      if (!subscriber) return { data: { status: "not_found" }, error: null }
+      subscriber.last_email_request_ip_hash = emailIpHash
+      subscriber.last_verification_email_sent_at = sentAt
+      return { data: { status: "reserved" }, error: null }
+    }
+
+    if (fn === "insert_alert_subscriber_under_ip_quota") {
+      const ipHash = String(args.p_ip_consentimento_hash ?? "")
+      const sinceIso = String(args.p_since ?? "")
+      const max = Number(args.p_max)
+      const count = this.tables.alert_subscribers.filter(
+        (row) => row.ip_consentimento_hash === ipHash && row.created_at >= sinceIso,
+      ).length
+      if (count >= max) return { data: { status: "quota_exceeded" }, error: null }
+      const row = this.normalizeInsertedRow("alert_subscribers", {
+        email: args.p_email,
+        email_hash: args.p_email_hash,
+        nome: args.p_nome,
+        verify_token_hash: args.p_verify_token_hash,
+        verify_token_expires_at: args.p_verify_token_expires_at,
+        manage_token_hash: args.p_manage_token_hash,
+        manage_token_ciphertext: args.p_manage_token_ciphertext,
+        ip_consentimento_hash: ipHash,
+      }) as SubscriberRow
+      this.tables.alert_subscribers.push(row)
+      return { data: { status: "inserted", id: row.id }, error: null }
+    }
+
+    return { data: null, error: { message: `unknown rpc ${fn}` } }
   }
 
   private normalizeInsertedRow(tableName: TableName, row: Record<string, unknown>) {

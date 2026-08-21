@@ -1,0 +1,37 @@
+{
+  "_comentario": "RPCs que reservam cota de IP e gravam na mesma transação. Não é curadoria de ficha: estado de ferramenta (short-link, analytics, alertas). Autoriza só a ref quota-atomica, sem slug.",
+  "recorte": "quota-atomica-20260821",
+  "migration": "20260821010000_reserve_ip_quotas_atomicas.sql",
+  "fonte": "hardening de cota pública",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "quiz_result_short_links",
+      "ref": "quota-atomica",
+      "campos": ["token", "query_string", "ip_hash", "created_at", "expires_at"]
+    },
+    {
+      "tabela": "analytics_launch_events",
+      "ref": "quota-atomica",
+      "campos": ["event_name", "payload", "proof_id", "ip_hash"]
+    },
+    {
+      "tabela": "alert_subscribers",
+      "ref": "quota-atomica",
+      "campos": [
+        "email",
+        "email_hash",
+        "nome",
+        "verify_token_hash",
+        "verify_token_expires_at",
+        "manage_token_hash",
+        "manage_token_ciphertext",
+        "ip_consentimento_hash",
+        "last_email_request_ip_hash",
+        "last_verification_email_sent_at"
+      ]
+    }
+  ]
+}

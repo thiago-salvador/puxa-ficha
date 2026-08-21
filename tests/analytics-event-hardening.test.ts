@@ -49,10 +49,15 @@ function criarHandler(opcoes: {
       if (opcoes.gravarLanca) throw new Error("insert falhou")
       gravados.push({ eventName: input.eventName, ipHash: input.ipHash })
     },
-    countRecentAnalyticsEventsByIpHash: async (ipHash, sinceIso) => {
-      consultas.push({ ipHash, sinceIso })
+    recordAnalyticsLaunchEventUnderQuota: async (input) => {
+      consultas.push({ ipHash: input.ipHash, sinceIso: input.sinceIso })
       const contagem = opcoes.contagem ?? { status: "ok" as const, count: 0 }
-      return typeof contagem === "function" ? contagem() : contagem
+      const resolved = typeof contagem === "function" ? await contagem() : contagem
+      if (resolved.status === "coluna_ausente") return { status: "coluna_ausente" as const }
+      if (resolved.status === "ok" && resolved.count >= 120) return { status: "quota_exceeded" as const }
+      if (opcoes.gravarLanca) throw new Error("insert falhou")
+      gravados.push({ eventName: input.eventName, ipHash: input.ipHash })
+      return { status: "inserted" as const }
     },
     rateLimiter: {
       check: () => {
@@ -157,7 +162,7 @@ describe("/api/analytics/event limita por camada duravel", () => {
   it("falha da contagem fecha o portao em 503 sem gravar", async () => {
     const { handler, gravados } = criarHandler({
       contagem: async () => {
-        throw new Error("connection reset by peer")
+        throw new Error("analytics_launch_events rate count failed: connection reset by peer")
       },
     })
 
