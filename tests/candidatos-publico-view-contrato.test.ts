@@ -311,6 +311,10 @@ describe("contrato da view candidatos_publico", () => {
       // short-link, analytics/event e alerts/subscribe. Não redefine
       // candidatos_publico; só cria/substitui funções de cota por IP.
       "20260821010000_reserve_ip_quotas_atomicas.sql",
+      // Restaura rótulos CEAPS de alan-rick e mailza-assis gravados com U+FFFD.
+      // Só UPDATE em gastos_parlamentares; não redefine candidatos_publico.
+      // Filename bate com o ledger de produção (MCP apply_migration).
+      "20260821214601_ceaps_categoria_utf8.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 
