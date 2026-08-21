@@ -49,6 +49,7 @@ function createDeps(fixture: AlertsRouteFixture, now = NOW) {
     logAlertsApiExit: fixture.logAlertsApiExit,
     logAlertsEvent: fixture.logAlertsEvent,
     now: () => new Date(now),
+    sleep: async () => {},
   }
 }
 
@@ -1549,11 +1550,178 @@ describe("alerts HTTP routes", () => {
       assert.equal(afterCallbacks.length, 1)
       await afterCallbacks[0]?.()
 
+      const retry = fixture.events.find((event) => event.event === "digest_chain_fetch_retry")
       const failure = fixture.events.find((event) => event.event === "digest_chain_fetch_failed")
+      assert.ok(retry, "esperava evento digest_chain_fetch_retry antes da segunda tentativa")
       assert.ok(failure, "esperava evento digest_chain_fetch_failed para resposta 302")
+      assert.equal(retry?.detail?.status, 302)
+      assert.equal(retry?.detail?.attempt, 1)
       assert.equal(failure?.detail?.status, 302)
       assert.equal(failure?.detail?.nextCursor, 1)
+      assert.equal(failure?.detail?.attempt, 2)
       assert.equal(failure?.level, "error")
+    })
+
+    it("o fetch de encadeamento leva signal com prazo", async () => {
+      const fixture = baseDigestFixture()
+      const secondSubscriber = seedSubscriber({
+        id: "sub_digest_signal_2",
+        email: "segundo-signal@example.com",
+        manageToken: "ManageTokenSignal002",
+        verified: true,
+        verified_at: "2026-04-09T10:00:00.000Z",
+        verify_token_hash: null,
+      })
+      fixture.setTable("alert_subscribers", [
+        ...fixture.getTable("alert_subscribers"),
+        secondSubscriber,
+      ])
+      fixture.setTable("alert_subscriptions", [
+        ...fixture.getTable("alert_subscriptions"),
+        {
+          id: "asub_signal_2",
+          subscriber_id: secondSubscriber.id,
+          candidato_id: "cand_lula",
+        },
+      ])
+      const chainedInits: Array<RequestInit | undefined> = []
+      const afterCallbacks: Array<() => Promise<void> | void> = []
+      const handler = createSendDigestHandler({
+        ...createDeps(fixture),
+        afterResponse: (callback: () => Promise<void> | void) => {
+          afterCallbacks.push(callback)
+        },
+        fetchImpl: async (_input: string | URL | Request, init?: RequestInit) => {
+          chainedInits.push(init)
+          return new Response(JSON.stringify({ ok: true }), { status: 200 })
+        },
+      })
+
+      const response = await handler(buildDigestRequest(fixture, "?limit=1"))
+      assert.equal(response.status, 200)
+      assert.equal(afterCallbacks.length, 1)
+      await afterCallbacks[0]?.()
+
+      assert.equal(chainedInits.length, 1)
+      // Sem signal, um POST interno travado nunca voltava: sem retry, sem
+      // digest_chain_fetch_failed e sem nova invocação para o resto da fila.
+      assert.ok(chainedInits[0]?.signal instanceof AbortSignal)
+    })
+
+    it("abort do prazo é registrado como timeout e ainda tenta de novo", async () => {
+      const fixture = baseDigestFixture()
+      const secondSubscriber = seedSubscriber({
+        id: "sub_digest_abort_2",
+        email: "segundo-abort@example.com",
+        manageToken: "ManageTokenAbort002",
+        verified: true,
+        verified_at: "2026-04-09T10:00:00.000Z",
+        verify_token_hash: null,
+      })
+      fixture.setTable("alert_subscribers", [
+        ...fixture.getTable("alert_subscribers"),
+        secondSubscriber,
+      ])
+      fixture.setTable("alert_subscriptions", [
+        ...fixture.getTable("alert_subscriptions"),
+        {
+          id: "asub_abort_2",
+          subscriber_id: secondSubscriber.id,
+          candidato_id: "cand_lula",
+        },
+      ])
+      const fetchCalls: Array<{ url: string; init?: RequestInit }> = []
+      const sleepCalls: number[] = []
+      const afterCallbacks: Array<() => Promise<void> | void> = []
+      const handler = createSendDigestHandler({
+        ...createDeps(fixture),
+        sleep: async (ms: number) => {
+          sleepCalls.push(ms)
+        },
+        afterResponse: (callback: () => Promise<void> | void) => {
+          afterCallbacks.push(callback)
+        },
+        fetchImpl: async (input: string | URL | Request, init?: RequestInit) => {
+          fetchCalls.push({ url: String(input), init })
+          throw Object.assign(new Error("aborted"), { name: "AbortError" })
+        },
+      })
+
+      const response = await handler(buildDigestRequest(fixture, "?limit=1"))
+      assert.equal(response.status, 200)
+      assert.equal(afterCallbacks.length, 1)
+      await afterCallbacks[0]?.()
+
+      assert.equal(fetchCalls.length, 2)
+      assert.deepEqual(sleepCalls, [3000])
+      const eventos = fixture.events.filter((event) =>
+        String(event.event).startsWith("digest_chain_fetch_"),
+      )
+      assert.deepEqual(
+        eventos.map((event) => event.event),
+        ["digest_chain_fetch_retry", "digest_chain_fetch_failed"],
+      )
+      for (const evento of eventos) assert.equal(evento.detail?.message, "timeout")
+    })
+
+    it("retries the chained fetch once before declaring chain_fetch_failed", async () => {
+      const fixture = baseDigestFixture()
+      const secondSubscriber = seedSubscriber({
+        id: "sub_digest_retry_2",
+        email: "segundo-retry@example.com",
+        manageToken: "ManageTokenRetry002",
+        verified: true,
+        verified_at: "2026-04-09T10:00:00.000Z",
+        verify_token_hash: null,
+      })
+      fixture.setTable("alert_subscribers", [
+        ...fixture.getTable("alert_subscribers"),
+        secondSubscriber,
+      ])
+      fixture.setTable("alert_subscriptions", [
+        ...fixture.getTable("alert_subscriptions"),
+        {
+          id: "asub_retry_2",
+          subscriber_id: secondSubscriber.id,
+          candidato_id: "cand_lula",
+        },
+      ])
+      let calls = 0
+      const fetchCalls: unknown[] = []
+      const sleepCalls: number[] = []
+      const afterCallbacks: Array<() => Promise<void> | void> = []
+      const handler = createSendDigestHandler({
+        ...createDeps(fixture),
+        sleep: async (ms: number) => {
+          sleepCalls.push(ms)
+        },
+        afterResponse: (callback: () => Promise<void> | void) => {
+          afterCallbacks.push(callback)
+        },
+        fetchImpl: async (input: string | URL | Request) => {
+          fetchCalls.push(String(input))
+          calls += 1
+          if (calls === 1) throw new Error("socket hang up")
+          return new Response(JSON.stringify({ ok: true }), { status: 200 })
+        },
+      })
+
+      const response = await handler(buildDigestRequest(fixture, "?limit=1"))
+      assert.equal(response.status, 200)
+      assert.equal(afterCallbacks.length, 1)
+      await afterCallbacks[0]?.()
+
+      // Primeiro elo falhou, o retry salvou a fila do dia.
+      assert.equal(fetchCalls.length, 2)
+      assert.deepEqual(sleepCalls, [3000])
+      assert.equal(
+        fixture.events.filter((event) => event.event === "digest_chain_fetch_retry").length,
+        1,
+      )
+      assert.equal(
+        fixture.events.filter((event) => event.event === "digest_chain_fetch_failed").length,
+        0,
+      )
     })
 
     it("does not chain past the configured digest depth ceiling", async () => {
