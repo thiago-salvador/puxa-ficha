@@ -426,3 +426,14 @@ export function alertBodyStringField(body: unknown, key: string): string {
   const value = (body as Record<string, unknown> | null)?.[key]
   return typeof value === "string" ? value : ""
 }
+
+/**
+ * Campo-isca do formulário de subscribe. Humanos não veem; bot que preenche
+ * todo input manda string aqui. O nome parece campo real de cadastro, de
+ * propósito: isca, não `honeypot` no JSON.
+ */
+export const ALERT_SUBSCRIBE_HONEYPOT_FIELD = "website"
+
+export function isAlertSubscribeHoneypotFilled(body: unknown): boolean {
+  return alertBodyStringField(body, ALERT_SUBSCRIBE_HONEYPOT_FIELD).trim().length > 0
+}
