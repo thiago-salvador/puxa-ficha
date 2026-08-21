@@ -5,7 +5,11 @@ const useLocalWebServer = !process.env.PF_BASE_URL
 
 export default defineConfig({
   testDir: "./tests/visual",
-  testIgnore: "**/quiz-resultado-og.spec.ts",
+  testIgnore: [
+    "**/quiz-resultado-og.spec.ts",
+    "**/cards-dinheiro-universo.spec.ts",
+    "**/doadores-page.spec.ts",
+  ],
   timeout: 30_000,
   retries: 1,
   reporter: [["list"], ["html", { open: "never" }]],

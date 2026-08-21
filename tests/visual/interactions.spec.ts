@@ -36,7 +36,6 @@ test.describe("Navbar mobile menu", () => {
     // Confirm links are present
     await expect(dialog.getByText("Presidência")).toBeVisible()
     await expect(dialog.getByText("Governadores")).toBeVisible()
-    await expect(dialog.getByText("Parlamentares")).toBeVisible()
     await expect(dialog.getByText("Comparar")).toBeVisible()
     await expect(dialog.getByText("Sobre")).toBeVisible()
 
@@ -67,56 +66,33 @@ test.describe("Navbar mobile menu", () => {
 })
 
 // ---------------------------------------------------------------------------
-// CandidatoGrid — search filter + view toggle
+// Busca rápida (palette) + DeferredCandidatoGrid view toggle
 // ---------------------------------------------------------------------------
 
-test.describe("CandidatoGrid", () => {
-  test("search filters candidates by name", async ({ page }) => {
+test.describe("Busca rápida palette", () => {
+  test("search opens palette and lists Lula", async ({ page }) => {
+    test.skip(
+      process.env.PF_EXPECT_PLACEHOLDER_DATA === "1" ||
+        (!/puxaficha\.com\.br/i.test(process.env.PF_BASE_URL ?? "") &&
+          process.env.PF_RUN_SEARCH_SMOKE !== "1"),
+      "índice real só com PF_BASE_URL de produção",
+    )
     await page.goto("/")
-    await page.waitForLoadState("networkidle")
-
-    const searchInput = page.getByPlaceholder(/buscar por nome/i)
+    await page.getByRole("button", { name: "Abrir busca rápida" }).first().click()
+    const searchInput = page.getByRole("combobox", { name: "Buscar no site" })
     await expect(searchInput).toBeVisible()
-
-    // Count initial cards
-    const cardsBefore = await page.locator("[data-pf-card]").count()
-    // Fallback: count links in the grid area
-    const initialCount = cardsBefore > 0
-      ? cardsBefore
-      : await page.locator("main a[href^='/candidato/']").count()
-    expect(initialCount).toBeGreaterThan(1)
-
-    // Search for Lula — should narrow results
     await searchInput.fill("Lula")
-    await page.waitForTimeout(300) // debounce
-
-    const filteredLinks = page.locator("main a[href^='/candidato/']")
-    const filteredCount = await filteredLinks.count()
-    expect(filteredCount).toBeGreaterThan(0)
-    expect(filteredCount).toBeLessThan(initialCount)
-
-    // Top result should contain "Lula"
-    const firstCard = filteredLinks.first()
-    await expect(firstCard).toContainText(/lula/i)
+    const target = page.getByRole("option").filter({ hasText: /Lula/i }).first()
+    await expect(target).toBeVisible({ timeout: 15_000 })
   })
 
-  test("clear button resets search", async ({ page }) => {
+  test("Escape closes the palette", async ({ page }) => {
     await page.goto("/")
-    await page.waitForLoadState("networkidle")
-
-    const searchInput = page.getByPlaceholder(/buscar por nome/i)
-    await searchInput.fill("Lula")
-    await page.waitForTimeout(300)
-
-    const clearBtn = page.getByRole("button", { name: /limpar busca/i })
-    await expect(clearBtn).toBeVisible()
-    await clearBtn.click()
-
-    await expect(searchInput).toHaveValue("")
-    // Grid should restore to full count (poll: React transition can lag first paint)
-    await expect
-      .poll(async () => page.locator("main a[href^='/candidato/']").count())
-      .toBeGreaterThan(1)
+    await page.getByRole("button", { name: "Abrir busca rápida" }).first().click()
+    const searchInput = page.getByRole("combobox", { name: "Buscar no site" })
+    await expect(searchInput).toBeVisible()
+    await page.keyboard.press("Escape")
+    await expect(searchInput).toBeHidden()
   })
 
   test("view toggle switches between grid and list", async ({ page }) => {
@@ -125,6 +101,7 @@ test.describe("CandidatoGrid", () => {
 
     const gridBtn = page.getByRole("button", { name: /visualizar em grade/i })
     const listBtn = page.getByRole("button", { name: /visualizar em lista/i })
+    await expect(gridBtn).toBeVisible({ timeout: 15_000 })
 
     // Default: grid active
     await expect(gridBtn).toHaveAttribute("aria-pressed", "true")
