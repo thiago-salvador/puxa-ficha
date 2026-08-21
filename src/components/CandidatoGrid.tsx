@@ -222,32 +222,42 @@ export function CandidatoGrid({
 
             <SortOrderMenu value={sort} onChange={setSort} />
 
-            <div className="flex h-10 overflow-hidden rounded-full border border-foreground">
+            <div className="inline-flex h-11 items-center md:h-10">
               <button
                 type="button"
                 onClick={() => setView("grid")}
-                className={`flex items-center justify-center px-3 transition-colors ${
-                  view === "grid"
-                    ? "bg-foreground text-background"
-                    : "text-foreground"
-                }`}
+                className="flex h-11 w-11 items-center justify-end md:h-10 md:w-10 md:justify-center"
                 aria-label="Visualizar em grade"
                 aria-pressed={view === "grid"}
               >
-                <LayoutGrid className="size-4" />
+                <span
+                  aria-hidden="true"
+                  className={`flex h-10 w-10 items-center justify-center rounded-l-full border border-r-0 border-foreground transition-colors ${
+                    view === "grid"
+                      ? "bg-foreground text-background"
+                      : "text-foreground"
+                  }`}
+                >
+                  <LayoutGrid className="size-4" />
+                </span>
               </button>
               <button
                 type="button"
                 onClick={() => setView("list")}
-                className={`flex items-center justify-center px-3 transition-colors ${
-                  view === "list"
-                    ? "bg-foreground text-background"
-                    : "text-foreground"
-                }`}
+                className="flex h-11 w-11 items-center justify-start md:h-10 md:w-10 md:justify-center"
                 aria-label="Visualizar em lista"
                 aria-pressed={view === "list"}
               >
-                <List className="size-4" />
+                <span
+                  aria-hidden="true"
+                  className={`flex h-10 w-10 items-center justify-center rounded-r-full border border-l-0 border-foreground transition-colors ${
+                    view === "list"
+                      ? "bg-foreground text-background"
+                      : "text-foreground"
+                  }`}
+                >
+                  <List className="size-4" />
+                </span>
               </button>
             </div>
           </div>
@@ -261,9 +271,11 @@ export function CandidatoGrid({
             <button
               type="button"
               onClick={() => setPartidoFilter("")}
-              className="rounded-full border border-border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.05em] text-foreground transition-colors hover:bg-muted"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center p-0.5 md:min-h-0 md:p-0"
             >
-              Partido: {partidoFilter} ×
+              <span className="rounded-full border border-border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.05em] text-foreground transition-colors hover:bg-muted">
+                Partido: {partidoFilter} ×
+              </span>
             </button>
           )}
           {deferredQuery && (
