@@ -29,6 +29,6 @@ test("toda unstable_cache pública inclui o ponto único de bump", () => {
     )
   }
 
-  assert.match(source, /export const CURRENT_DATA_WAVE = "onda-p-20260814"/)
+  assert.match(source, /export const CURRENT_DATA_WAVE = "ceaps-utf8-20260821"/)
   assert.match(source, /\["global-search-index"[^\n]+"party-siglas-lote2-20260815"[^\n]+CURRENT_DATA_WAVE\]/)
 })
