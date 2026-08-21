@@ -8,7 +8,7 @@ test.describe("Copy pública normalizada", () => {
     await page.goto(`/candidato/${FICHA_SLUG}`)
     await page.waitForLoadState("networkidle")
 
-    await expect(page.getByText("Carreira Política", { exact: true })).toBeVisible()
+    await expect(page.getByRole("tab", { name: /^Trajetória(?:\s|\(|$)/i })).toBeVisible()
 
     await page.getByRole("tab", { name: /^Votos(?:\s|\(|$)/i }).click()
     await expect(page.getByText(/^Votações Chave(?:\s+\(\d+\))?$/i)).toBeVisible()
@@ -17,6 +17,8 @@ test.describe("Copy pública normalizada", () => {
     const votingDotsTitle = page.getByText(/Padrão de voto/i)
     if (await votingDotsTitle.count()) {
       await expect(votingDotsTitle).toBeVisible()
+    } else if (await page.getByText(/Não se aplica: mandato legislativo/i).count()) {
+      await expect(page.getByText(/Não se aplica: mandato legislativo/i)).toBeVisible()
     } else {
       await expect(page.getByText(/Votações ainda não coletadas/i)).toBeVisible()
     }

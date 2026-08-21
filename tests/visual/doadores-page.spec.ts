@@ -11,6 +11,12 @@ test.describe("Doadores page SSR", () => {
   })
 
   test("renders valid donor results from fixture when querying 'silva'", async ({ page }) => {
+    const remote = process.env.PF_BASE_URL ?? ""
+    const usesLaunchFixture = !remote || /127\.0\.0\.1|localhost/.test(remote)
+    test.skip(
+      !usesLaunchFixture,
+      "JOAO GONCALVES SILVA só existe com PF_DOADOR_REVERSE_FIXTURE_FILE no job de launch",
+    )
     // PF_DOADOR_REVERSE_FIXTURE_FILE is set in playwright.launch.config.ts
     // Fixture has 2 rows matching "silva": JOAO GONCALVES SILVA and SILVA & ASSOCIADOS LTDA
     await page.goto("/doadores?q=silva")

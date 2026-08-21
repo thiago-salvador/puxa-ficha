@@ -32,6 +32,7 @@
     "test:a11y": "playwright test tests/visual/a11y.spec.ts",
     "test:visual": "playwright test",
     "test:playwright:launch": "playwright test -c playwright.launch.config.ts",
+    "test:search-smoke": "PF_BASE_URL=https://puxaficha.com.br playwright test tests/visual/search-smoke.spec.ts --project=desktop",
     "test:visual:editorial": "playwright test tests/visual/editorial-badges.spec.ts",
     "test:visual:editorial:local": "PF_PLAYWRIGHT_EDITORIAL_WEBSERVER=1 PF_BASE_URL=http://127.0.0.1:3000 playwright test -c playwright.editorial.config.ts --project=desktop",
     "test:visual:mobile": "playwright test --project=mobile",
