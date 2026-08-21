@@ -299,7 +299,7 @@ export function GlobalSearchProvider({
     }
   }, [open, candidateByHref])
 
-  const openSearch = useCallback((_via?: GlobalSearchOpenVia) => {
+  const openSearch = useCallback(() => {
     setOpen(true)
     void loadSearchCandidates()
   }, [loadSearchCandidates])
