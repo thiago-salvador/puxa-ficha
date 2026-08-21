@@ -303,9 +303,10 @@ describe("contrato da view candidatos_publico", () => {
       // Gastos do Executivo: troca o grão mensal de órgão para unidade gestora
       // e acrescenta contagens de sigilo de portador e estabelecimento. Não
       // redefine candidatos_publico. O dado continua sendo do órgão, não da pessoa.
-      // Timestamp depois do topo do ledger (20260820164117): a UG ainda não foi
-      // aplicada; o MCP carimbou a RPC de doadores na frente.
-      "20260820170000_gastos_executivo_ug.sql",
+      // Aplicada em 21/08/2026 como 20260820010000 (versão do arquivo, não MCP).
+      // O rename para 20170000 era só para ficar depois do topo 20164117 enquanto
+      // a UG estava pendente; o ledger já tem 20010000, então o filename volta.
+      "20260820010000_gastos_executivo_ug.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 
