@@ -68,17 +68,19 @@ test("agrupa por órgão, nunca soma órgãos diferentes, e devolve mandato, ano
   const prefeitura = grouped.find((orgao) => orgao.codigo === "99001")
   assert.ok(prefeitura)
   assert.equal(prefeitura.totalMandato, 5_000)
-  assert.equal(prefeitura.totalAnoCorrente, 0)
+  assert.equal(prefeitura.anoCorrente, 2026)
+  assert.equal(prefeitura.totalAnoCorrente, null)
 })
 
-test("ano civil corrente sem linha na série rende total zero, sem inventar mês", () => {
+test("janeiro com relógio em 2026-01-15 e só dezembro 2025 usa o ano do max mes_extrato, não o relógio", () => {
   const grouped = groupGastosExecutivoPorOrgao(
     [row({ id: "2025-12", mes_extrato: "2025-12-01", valor_total: 40 })],
-    new Date("2026-08-19T15:00:00-03:00"),
+    new Date("2026-01-15T12:00:00-03:00"),
   )
 
+  assert.equal(grouped[0].anoCorrente, 2025)
+  assert.equal(grouped[0].totalAnoCorrente, 40)
   assert.equal(grouped[0].totalMandato, 40)
-  assert.equal(grouped[0].totalAnoCorrente, 0)
   assert.equal(grouped[0].ultimoMesComMovimento?.mes_extrato, "2025-12-01")
 })
 

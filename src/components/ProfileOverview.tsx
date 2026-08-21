@@ -512,13 +512,18 @@ function ExecutiveSpendingTeaser({
       </p>
       <p className="mt-0.5 text-[12px] font-medium text-muted-foreground">Total no mandato</p>
       <p
-        data-pf-gastos-executivo-total-ano={orgao.anoCorrente}
-        className="mt-3 text-[15px] font-bold tabular-nums text-foreground"
+        data-pf-gastos-executivo-total-ano={orgao.anoCorrente ?? ""}
+        data-pf-gastos-executivo-total-ano-estado={orgao.totalAnoCorrente == null ? "vazio" : "publicado"}
+        className={
+          orgao.totalAnoCorrente == null
+            ? "mt-3 text-[15px] text-muted-foreground"
+            : "mt-3 text-[15px] font-bold tabular-nums text-foreground"
+        }
       >
-        {formatCompact(orgao.totalAnoCorrente)}
+        {orgao.totalAnoCorrente == null ? "Sem dado neste recorte" : formatCompact(orgao.totalAnoCorrente)}
       </p>
       <p className="mt-0.5 text-[12px] font-medium text-muted-foreground">
-        Total em {orgao.anoCorrente}
+        {orgao.anoCorrente == null ? "Total no recorte" : `Total em ${orgao.anoCorrente}`}
       </p>
       {orgao.ultimoMesComMovimento && (
         <>

@@ -23,7 +23,7 @@
     "build": "next build --turbopack",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "eslint --max-warnings=0",
     "lint:spell": "cspell lint --no-progress \"src/app/(site)/privacidade/page.tsx\" \"src/app/(site)/sobre/page.tsx\" src/app/not-found.tsx \"src/app/(site)/page.tsx\" src/app/layout.tsx",
     "lint:spell:ui": "cspell lint --no-progress \"src/app/**/*.tsx\" \"src/components/**/*.tsx\" --exclude \"**/internaltest/**\" --exclude \"**/styleguide/**\" --exclude \"**/preview/**\"",
     "test": "node --import tsx --test tests/**/*.test.ts tests/**/*.test.tsx",

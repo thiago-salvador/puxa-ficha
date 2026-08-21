@@ -131,7 +131,7 @@ import {
 export { mergeSourceMessages, mergeSourceStatuses } from "@/lib/data-resource"
 
 /** Único ponto de bump para invalidar todas as superfícies públicas em cache. */
-export const CURRENT_DATA_WAVE = "onda-p-20260814"
+export const CURRENT_DATA_WAVE = "ceaps-utf8-20260821"
 
 const supabaseUrl = getAppSupabaseUrl()
 const USE_MOCK = !supabaseUrl || supabaseUrl.includes("placeholder")
