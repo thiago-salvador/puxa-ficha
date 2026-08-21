@@ -1,4 +1,5 @@
 import { supabase } from "./supabase"
+import { assertSemReplacementChar } from "./ceaps-csv-encoding"
 import { loadCandidatosPublicos, resolveCandidatoId } from "./helpers-db"
 import { fetchJSON, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
@@ -290,6 +291,11 @@ export async function ingestCeapsSenado(): Promise<IngestResult[]> {
             valor: Math.round(d.valor * 100) / 100,
             data: d.data,
           }))
+
+          assertSemReplacementChar(
+            JSON.stringify({ detalhamento, gastosDestaque }),
+            `ceaps-senado:${cand.slug}:${ano}`,
+          )
 
           // Checa se ja existe (candidato_id + ano)
           const { data: existing } = await supabase

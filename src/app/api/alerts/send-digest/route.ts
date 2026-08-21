@@ -25,6 +25,9 @@ export const maxDuration = 60
 const DEFAULT_BATCH_LIMIT = 25
 const MAX_BATCH_LIMIT = 50
 const MAX_DIGEST_CHAIN_DEPTH = 20
+const CHAIN_FETCH_ATTEMPTS = 2
+const CHAIN_FETCH_RETRY_DELAY_MS = 3000
+const CHAIN_FETCH_TIMEOUT_MS = 15_000
 const DIGEST_TIME_ZONE = "America/Sao_Paulo"
 type AfterResponseCallback = () => Promise<void> | void
 
@@ -35,6 +38,7 @@ interface SendDigestDeps {
   logAlertsEvent: typeof logAlertsEvent
   afterResponse: (callback: AfterResponseCallback) => void
   fetchImpl: typeof fetch
+  sleep: (ms: number) => Promise<void>
   now: () => Date
 }
 
@@ -45,6 +49,7 @@ const defaultSendDigestDeps: SendDigestDeps = {
   logAlertsEvent,
   afterResponse: after,
   fetchImpl: fetch,
+  sleep: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
   now: () => new Date(),
 }
 
@@ -564,33 +569,46 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
       nextUrl.searchParams.set("depth", String(chainDepth + 1))
 
       deps.afterResponse(async () => {
-        try {
-          const res = await deps.fetchImpl(nextUrl.toString(), {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${expectedSecret}`,
-            },
-            cache: "no-store",
-            // Um redirect aqui e sempre bug (SSO, dominio errado): seguir o 3xx
-            // esconderia a falha de novo.
-            redirect: "manual",
-          })
-          if (!res.ok) {
+        for (let attempt = 1; attempt <= CHAIN_FETCH_ATTEMPTS; attempt += 1) {
+          const ultimaTentativa = attempt === CHAIN_FETCH_ATTEMPTS
+          const eventoDeFalha = ultimaTentativa
+            ? "digest_chain_fetch_failed"
+            : "digest_chain_fetch_retry"
+          try {
+            const res = await deps.fetchImpl(nextUrl.toString(), {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer ${expectedSecret}`,
+              },
+              cache: "no-store",
+              // Um redirect aqui e sempre bug (SSO, dominio errado): seguir o 3xx
+              // esconderia a falha de novo.
+              redirect: "manual",
+              signal: AbortSignal.timeout(CHAIN_FETCH_TIMEOUT_MS),
+            })
+            if (res.ok) break
             deps.logAlertsEvent({
               route: "send-digest",
-              event: "digest_chain_fetch_failed",
+              event: eventoDeFalha,
               level: "error",
-              detail: { nextCursor, status: res.status },
+              detail: { nextCursor, status: res.status, attempt },
+            })
+          } catch (error) {
+            const message =
+              error instanceof Error &&
+              (error.name === "AbortError" || error.name === "TimeoutError")
+                ? "timeout"
+                : error instanceof Error
+                  ? error.message.slice(0, 300)
+                  : "unknown"
+            deps.logAlertsEvent({
+              route: "send-digest",
+              event: eventoDeFalha,
+              level: "error",
+              detail: { nextCursor, message, attempt },
             })
           }
-        } catch (error) {
-          const errMsg = error instanceof Error ? error.message.slice(0, 300) : "unknown"
-          deps.logAlertsEvent({
-            route: "send-digest",
-            event: "digest_chain_fetch_failed",
-            level: "error",
-            detail: { nextCursor, errMsg },
-          })
+          if (!ultimaTentativa) await deps.sleep(CHAIN_FETCH_RETRY_DELAY_MS)
         }
       })
     }

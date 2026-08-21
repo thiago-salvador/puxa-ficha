@@ -1,6 +1,7 @@
 {
   "_comentario": "Conjunto FECHADO das migrations que falham no replay linear REAL (tolerante) em banco vazio, medido pelo harness scripts/audit/replay-migrations.sh. O modo --gate compara o resultado de uma execucao real contra esta lista: falha NOVA e regressao de replay em qualquer posicao (inclusive depois da 179a, que o modo estrito nunca alcanca); falha que sumiu exige regenerar este manifesto deliberadamente no mesmo PR. Regenerar: scripts/audit/replay-migrations.sh linear --tolerante e copiar os nomes.",
-  "aplicadas_esperadas": 322,
+  "aplicadas_esperadas": 323,
+  "_comentario_20260821214601": "aplicadas_esperadas 322 -> 323 em 21/08/2026: entra o UPDATE de categorias CEAPS UTF-8 de alan-rick e mailza-assis (DML, sem RAISE). Conservacao: 323 + 103 = 426. Conjunto de falhas inalterado. Filename bate com o ledger de producao (MCP apply_migration 20260821214601).",
   "_comentario_20260821010000": "aplicadas_esperadas 321 -> 322 em 21/08/2026: entram as RPCs atômicas de cota (schema, CREATE FUNCTION). Conservacao: 322 + 103 = 425. Conjunto de falhas inalterado.",
   "_comentario_20260820121000": "aplicadas_esperadas 320 -> 321 em 20/08/2026: entra o hardening server-only/trgm da RPC de doadores (schema + tabela derivada). Conservacao: 321 + 103 = 424. Conjunto de falhas inalterado.",
   "_comentario_20260820010000": "aplicadas_esperadas 319 -> 320 em 20/08/2026: entra o grão UG de gastos_executivo (schema puro, ALTER TABLE). Conservação: 320 + 103 = 423 migrations. Conjunto de falhas inalterado.",

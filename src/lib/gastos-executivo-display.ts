@@ -34,8 +34,8 @@ export type GastoExecutivoOrgaoResumo = {
   portador: SigiloStatus
   estabelecimento: SigiloStatus
   totalMandato: number
-  anoCorrente: number
-  totalAnoCorrente: number
+  anoCorrente: number | null
+  totalAnoCorrente: number | null
   ultimoMesComMovimento: GastoExecutivoMesResumo | null
   anos: Array<{
     ano: number
@@ -44,19 +44,19 @@ export type GastoExecutivoOrgaoResumo = {
   }>
 }
 
-function currentCalendarYear(now: Date = new Date()): number {
-  return Number(
-    new Intl.DateTimeFormat("en-US", {
-      timeZone: "America/Sao_Paulo",
-      year: "numeric",
-    }).format(now),
-  )
-}
-
 function yearFromMesExtrato(mesExtrato: string): number | null {
   const match = mesExtrato.match(/^(\d{4})-/)
   if (!match) return null
   return Number(match[1])
+}
+
+function anoDoMaximoMesExtrato(rows: GastoExecutivo[]): number | null {
+  let maxMes: string | null = null
+  for (const row of rows) {
+    if (yearFromMesExtrato(row.mes_extrato) == null) continue
+    if (maxMes == null || row.mes_extrato > maxMes) maxMes = row.mes_extrato
+  }
+  return maxMes == null ? null : yearFromMesExtrato(maxMes)
 }
 
 function emptySigilo(): SigiloStatus {
@@ -129,9 +129,11 @@ export function rotuloFonteGastosExecutivo(fonte: string | null | undefined): st
 
 export function groupGastosExecutivoPorOrgao(
   rows: GastoExecutivo[],
-  now: Date = new Date(),
+  // Relógio injetável: o teste de janeiro prova que o ano vem do extrato, não daqui.
+  _now: Date = new Date(),
 ): GastoExecutivoOrgaoResumo[] {
-  const anoCorrente = currentCalendarYear(now)
+  void _now
+  const anoCorrente = anoDoMaximoMesExtrato(rows)
   const byOrgao = new Map<string, GastoExecutivo[]>()
   for (const row of rows) {
     const list = byOrgao.get(row.orgao_codigo) ?? []
@@ -149,11 +151,15 @@ export function groupGastosExecutivoPorOrgao(
     const estabelecimento = emptySigilo()
     let totalMandato = 0
     let totalAnoCorrente = 0
+    let temLinhaNoAnoCorrente = false
 
     for (const row of sorted) {
       totalMandato += row.valor_total
       const ano = yearFromMesExtrato(row.mes_extrato)
-      if (ano === anoCorrente) totalAnoCorrente += row.valor_total
+      if (anoCorrente != null && ano === anoCorrente) {
+        temLinhaNoAnoCorrente = true
+        totalAnoCorrente += row.valor_total
+      }
       addSigilo(portador, row, "portador")
       addSigilo(estabelecimento, row, "estabelecimento")
 
@@ -203,7 +209,7 @@ export function groupGastosExecutivoPorOrgao(
       estabelecimento,
       totalMandato,
       anoCorrente,
-      totalAnoCorrente,
+      totalAnoCorrente: temLinhaNoAnoCorrente ? totalAnoCorrente : null,
       ultimoMesComMovimento: meses.find((mes) => mes.valor_total > 0) ?? null,
       anos: [...byYear.entries()]
         .sort((a, b) => b[0] - a[0])

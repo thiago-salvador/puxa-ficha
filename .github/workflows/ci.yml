@@ -37,7 +37,7 @@ jobs:
         run: npm audit --omit=dev --audit-level=high
 
       - name: Lint
-        run: npm run lint
+        run: npm run lint -- --max-warnings=0
 
       - name: Spellcheck (UI)
         run: npm run lint:spell:ui

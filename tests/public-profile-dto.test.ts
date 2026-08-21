@@ -446,4 +446,17 @@ describe("public profile DTO", () => {
     const dto = toPublicCandidatoProfileDto(ficha)
     assert.equal(dto.processos_criminais, 0)
   })
+
+  it("normaliza acento do resumo processual sem inventar fatos", () => {
+    const ficha = fixtureProfile()
+    ficha.processos[0].descricao = "condenacao 1a instancia"
+
+    const dto = toPublicCandidatoProfileDto(ficha)
+    const descricao = dto.processos[0].descricao
+
+    assert.equal(descricao, "Condenação 1a instância")
+    assert.match(descricao, /condenação/i)
+    assert.match(descricao, /instância/)
+    assert.equal(descricao.split(/\s+/).length, 3)
+  })
 })

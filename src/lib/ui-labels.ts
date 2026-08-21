@@ -228,6 +228,7 @@ const tokenLabels = {
     criminal: "Criminal",
     eleitoral: "Eleitoral",
     improbidade: "Improbidade",
+    representacao: "Representação",
   },
   // Estado público do patrimônio por eleição (>= 2006). Ausência não pode
   // parecer ficha limpa nem ano oculto: vazio_confirmado é a fonte oficial
@@ -358,6 +359,14 @@ export function formatProcessStatusLabel(raw: string | null | undefined): string
 
 export function formatProcessTypeLabel(raw: string | null | undefined): string {
   return resolveTokenLabel(tokenLabels.processType, raw, "title")
+}
+
+/** Texto corrido do resumo processual: acentos PT-BR e inicial maiúscula, sem title-case palavra a palavra. */
+export function formatProcessSummaryLabel(raw: string | null | undefined): string {
+  if (!raw) return ""
+  const sanitized = sanitizePtBrText(raw).trim()
+  if (!sanitized) return ""
+  return sanitized.charAt(0).toUpperCase() + sanitized.slice(1)
 }
 
 /** Rótulo público do estado de patrimônio de uma eleição (publicado, vazio confirmado ou não coletado). */
