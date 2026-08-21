@@ -4,8 +4,8 @@ import {
   sanitizeAnalyticsPayload,
 } from "@/lib/analytics-events"
 import {
-  countRecentAnalyticsEventsByIpHash,
   recordAnalyticsLaunchEvent,
+  recordAnalyticsLaunchEventUnderQuota,
 } from "@/lib/analytics-launch-store"
 import { hashTrustedClientIp } from "@/lib/client-ip"
 import {
@@ -34,14 +34,14 @@ const analyticsEventRateLimiter = createFixedWindowIpRateLimiter({
 
 interface AnalyticsEventDeps {
   recordAnalyticsLaunchEvent: typeof recordAnalyticsLaunchEvent
-  countRecentAnalyticsEventsByIpHash: typeof countRecentAnalyticsEventsByIpHash
+  recordAnalyticsLaunchEventUnderQuota: typeof recordAnalyticsLaunchEventUnderQuota
   rateLimiter: RequestRateLimiter
   now: () => number
 }
 
 const defaultAnalyticsEventDeps: AnalyticsEventDeps = {
   recordAnalyticsLaunchEvent,
-  countRecentAnalyticsEventsByIpHash,
+  recordAnalyticsLaunchEventUnderQuota,
   rateLimiter: analyticsEventRateLimiter,
   now: () => Date.now(),
 }
@@ -108,42 +108,44 @@ export function createAnalyticsEventPostHandler(deps: AnalyticsEventDeps = defau
 
     const payload = sanitizeAnalyticsPayload((body as { payload?: unknown }).payload)
 
-    // Segundo portão, durável. O contador em memória é por instância: em
-    // serverless, cada nova instância nasce com o balde zerado, então o teto real
-    // era `120 × número de instâncias` e não sobrevivia a nenhum reciclo. A
-    // contagem por ip_hash na tabela é compartilhada por todas as instâncias.
-    // Mesma forma do limite de /api/quiz/short-link.
+    // Segundo portão, durável: reserva e grava na mesma transação. O contador
+    // em memória é por instância e não é o teto. Sem a coluna, o evento ainda
+    // entra, só sem ip_hash, até a migration ser aplicada.
     const now = deps.now()
     const ipHash = hashTrustedClientIp(req.headers, RATE_LIMIT_NAMESPACE)
     const sinceIso = new Date(now - RATE_LIMIT_WINDOW_MS).toISOString()
-    let ipHashParaGravar: string | null = ipHash
 
     try {
-      const durable = await deps.countRecentAnalyticsEventsByIpHash(ipHash, sinceIso)
-      if (durable.status === "coluna_ausente") {
-        avisarColunaAusenteUmaVez()
-        ipHashParaGravar = null
-      } else if (durable.count >= RATE_LIMIT_MAX) {
+      const durable = await deps.recordAnalyticsLaunchEventUnderQuota({
+        eventName,
+        payload,
+        ipHash,
+        sinceIso,
+        max: RATE_LIMIT_MAX,
+      })
+      if (durable.status === "quota_exceeded") {
         return rateLimitExceededResponse(
           { allowed: false, remaining: 0, resetAt: now + RATE_LIMIT_WINDOW_MS },
           now,
         )
       }
-    } catch (error) {
-      console.error("analytics event durable rate limit failed closed", error)
-      return NextResponse.json(
-        { ok: false, reason: "rate_limit_failed" },
-        { status: 503, headers: { "cache-control": "no-store" } },
-      )
-    }
-
-    try {
-      await deps.recordAnalyticsLaunchEvent({ eventName, payload, ipHash: ipHashParaGravar })
+      if (durable.status === "coluna_ausente") {
+        avisarColunaAusenteUmaVez()
+        await deps.recordAnalyticsLaunchEvent({ eventName, payload, ipHash: null })
+      }
       return NextResponse.json(
         { ok: true },
         { headers: { "cache-control": "no-store" } },
       )
     } catch (error) {
+      const message = error instanceof Error ? error.message : String(error)
+      if (message.includes("quota insert failed") || message.includes("rate count failed")) {
+        console.error("analytics event durable rate limit failed closed", error)
+        return NextResponse.json(
+          { ok: false, reason: "rate_limit_failed" },
+          { status: 503, headers: { "cache-control": "no-store" } },
+        )
+      }
       console.error("analytics event ingest failed", error)
       return NextResponse.json({ ok: false, reason: "store_failed" }, { status: 503 })
     }

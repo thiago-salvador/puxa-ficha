@@ -89,6 +89,8 @@ export const TABELAS_DE_CONTEUDO: readonly string[] = [
  * candidatos, mas continuam sendo estado privado de reversão, não conteúdo.
  */
 export const TABELAS_DE_ESTADO: readonly string[] = [
+  "alert_subscribers",
+  "analytics_launch_events",
   "coleta_log",
   "financiamento_doador_search",
   "identidade_timeline_quarentena_snapshot",
@@ -392,7 +394,11 @@ export const MEDICAO_REPLAY = Object.freeze({
   // derivado, nao curadoria de ficha. MEDIDO no schema-gate local: aplicadas
   // limpo 86, falhas 0, hash
   // 2a58088b22dd5103f88476ca867cb2fc28bb94411506226d488757acab582662.
-  schemaReplayTamanho: 86,
+  // 86 -> 87 em 21/08/2026: a 20260821010000 reserva cota e grava na mesma
+  // transação (short-link, analytics, alertas). Classe schema (CREATE FUNCTION
+  // + GRANT). MEDIDO no schema-gate local: aplicadas limpo 87, falhas 0, hash
+  // f82a30bfc495c71fa56f123b93bdd2a77250d96bbb4a3abd7b9a7f0220a56566.
+  schemaReplayTamanho: 87,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

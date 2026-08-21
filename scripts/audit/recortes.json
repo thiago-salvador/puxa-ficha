@@ -340,6 +340,13 @@
       "ate": "20260820164117",
       "allowlist": "scripts/audit/allowlist-doador-reverse-trgm-20260820.json",
       "divida": null
+    },
+    {
+      "nome": "quota-atomica-20260821",
+      "desde": "20260821010000",
+      "ate": "20260821010000",
+      "allowlist": "scripts/audit/allowlist-quota-atomica-20260821.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
