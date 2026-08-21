@@ -23,11 +23,13 @@ export function SortOrderMenu({ value, onChange }: SortOrderMenuProps) {
     <Menu.Root modal={false}>
       <Menu.Trigger
         type="button"
-        className="flex h-10 items-center gap-2 rounded-full border border-foreground bg-transparent px-4 text-[12px] font-semibold uppercase tracking-[0.05em] text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        className="inline-flex min-h-11 min-w-11 items-center justify-center bg-transparent p-0.5 text-[12px] font-semibold uppercase tracking-[0.05em] text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:min-h-10 md:p-0"
         aria-label={`Ordenar candidatos: ${current.label}`}
       >
-        {current.label}
-        <ChevronDown className="size-4 shrink-0 opacity-70" aria-hidden />
+        <span className="flex h-10 items-center gap-2 rounded-full border border-foreground bg-transparent px-4">
+          {current.label}
+          <ChevronDown className="size-4 shrink-0 opacity-70" aria-hidden />
+        </span>
       </Menu.Trigger>
       <Menu.Portal>
         <Menu.Positioner sideOffset={8} align="start">
