@@ -21,6 +21,7 @@ import { buildFinanciamentoEleicoes } from "@/lib/financiamento-eleicoes"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
 import { pareceNomeDeInstituicao } from "@/lib/formacao-display"
 import { sanitizePublicText } from "@/lib/public-text"
+import { formatProcessSummaryLabel } from "@/lib/ui-labels"
 import { prepareHistoricoPoliticoPublicDisplayList } from "@/lib/trajetoria-public-display"
 import {
   maskDocumentLikeSequences,
@@ -264,7 +265,7 @@ function publicProcesso(row: Processo, index: number) {
     tipo: row.tipo,
     tribunal: row.tribunal,
     numero_processo: row.numero_processo,
-    descricao: replaceInternalEditorialJargon(row.descricao ?? ""),
+    descricao: formatProcessSummaryLabel(replaceInternalEditorialJargon(row.descricao ?? "")),
     status: row.status,
     data_inicio: row.data_inicio,
     data_decisao: row.data_decisao,

@@ -202,13 +202,18 @@ function GastosExecutivoOrgaoBlock({
           </div>
           <div>
             <p className="text-[length:var(--text-caption)] font-semibold text-muted-foreground">
-              Total em {orgao.anoCorrente}
+              {orgao.anoCorrente == null ? "Total no recorte" : `Total em ${orgao.anoCorrente}`}
             </p>
             <p
-              data-pf-gastos-executivo-total-ano={orgao.anoCorrente}
-              className="mt-1 text-[length:var(--text-heading-lg)] font-bold tracking-tight text-foreground"
+              data-pf-gastos-executivo-total-ano={orgao.anoCorrente ?? ""}
+              data-pf-gastos-executivo-total-ano-estado={orgao.totalAnoCorrente == null ? "vazio" : "publicado"}
+              className={
+                orgao.totalAnoCorrente == null
+                  ? "mt-1 text-[length:var(--text-body)] text-muted-foreground"
+                  : "mt-1 text-[length:var(--text-heading-lg)] font-bold tracking-tight text-foreground"
+              }
             >
-              {formatBRL(orgao.totalAnoCorrente)}
+              {orgao.totalAnoCorrente == null ? "Sem dado neste recorte" : formatBRL(orgao.totalAnoCorrente)}
             </p>
           </div>
           <div>

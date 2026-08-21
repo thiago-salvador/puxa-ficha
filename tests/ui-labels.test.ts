@@ -14,6 +14,7 @@ import {
   formatFixedUiCopy,
   formatGravityLabel,
   formatProcessStatusLabel,
+  formatProcessSummaryLabel,
   formatProcessTypeLabel,
   formatProjectStatusLabel,
   formatPublicLabel,
@@ -44,6 +45,8 @@ describe("ui-labels", () => {
     assert.equal(formatTemaLabel("educacao"), "Educação")
     assert.equal(formatTemaLabel("institucional"), "Institucional")
     assert.equal(formatProcessTypeLabel("criminal"), "Criminal")
+    assert.equal(formatProcessTypeLabel("representacao"), "Representação")
+    assert.equal(formatProcessTypeLabel("Representacao"), "Representação")
     assert.equal(formatProjectStatusLabel("tramitando"), "Tramitando")
     assert.equal(formatCargoDisputadoPublicLabel("Nenhum"), "Sem pleito majoritário em 2026")
     assert.equal(formatCargoDisputadoPublicLabel("Governador"), "Governador")
@@ -82,6 +85,13 @@ describe("ui-labels", () => {
 
   it("formata tokens de status, categoria, gravidade e voto para display-only", () => {
     assert.equal(formatProcessStatusLabel("em_andamento"), "Em andamento")
+    assert.equal(formatProcessSummaryLabel("condenacao 1a instancia"), "Condenação 1a instância")
+    assert.equal(formatProcessSummaryLabel("representacao"), "Representação")
+    assert.equal(formatProcessSummaryLabel("Representacao"), "Representação")
+    assert.equal(
+      formatProcessSummaryLabel("Condenado em 1a instancia por peculato"),
+      "Condenado em 1a instância por peculato",
+    )
     assert.equal(formatAttentionCategoryLabel("processo_grave"), "Processo Grave")
     assert.equal(formatGravityLabel("media"), "Média")
     assert.equal(formatVoteBadgeLabel("não"), "Não")

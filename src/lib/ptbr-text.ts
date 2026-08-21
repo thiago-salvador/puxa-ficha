@@ -26,6 +26,8 @@ const PTBR_TEXT_FIXES: Array<[string, string]> = [
   ["corrupcao ", "corrupção "],
   ["acusacao ", "acusação "],
   ["condenacao ", "condenação "],
+  ["instancia ", "instância "],
+  ["instancias ", "instâncias "],
   ["investigacao ", "investigação "],
   ["organizacao ", "organização "],
   ["educacao ", "educação "],
