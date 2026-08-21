@@ -48,8 +48,8 @@ import {
   isTerminalProcessStatus,
   processoBorderColor,
   processoFonteLabel,
+  urlPublicaDoProcesso,
 } from "@/lib/processos-display"
-import { urlPublicaDoProcesso } from "@/lib/djen-consulta-url"
 import {
   groupGastosExecutivoPorOrgao,
   pickOrgaoMaisRecente,

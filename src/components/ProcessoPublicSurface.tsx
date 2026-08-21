@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactNode } from "react"
-import { urlPublicaDoProcesso } from "@/lib/djen-consulta-url"
+import { urlPublicaDoProcesso } from "@/lib/processos-display"
 import type { Processo } from "@/lib/types"
 
 const LINK_CLASS =

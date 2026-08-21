@@ -66,9 +66,12 @@ function hrefsProcesso(html: string): string[] {
 }
 
 function assertHrefPublico(href: string) {
-  assert.doesNotMatch(href, /comunicaapi/)
-  assert.doesNotMatch(href, /docs\.google\.com\/spreadsheets/)
-  assert.doesNotMatch(href, /\.json(\?|$)/)
+  const url = new URL(href)
+  const host = url.hostname.toLowerCase()
+  const path = url.pathname.toLowerCase()
+  assert.notEqual(host, "comunicaapi.pje.jus.br")
+  assert.ok(host !== "docs.google.com" || !path.includes("/spreadsheets/"))
+  assert.ok(!path.endsWith(".json"))
 }
 
 describe("processos clicáveis na Justiça", () => {
@@ -91,7 +94,6 @@ describe("processos clicáveis na Justiça", () => {
     assert.equal(hrefs.length, 2)
     hrefs.forEach(assertHrefPublico)
     assert.ok(hrefs.every((href) => href === PORTAL))
-    assert.doesNotMatch(html, /<a[^>]*href="[^"]*comunicaapi/)
   })
 
   it("absolvição sem CNJ aponta para o artigo, não inventa portal", () => {

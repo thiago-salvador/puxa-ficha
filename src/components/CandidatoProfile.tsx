@@ -18,9 +18,9 @@ import {
   processoPodeContarComoCriminal,
   processoTemporalLabel,
   processosOverviewDisplay,
+  urlPublicaDoProcesso,
 } from "@/lib/processos-display"
 import { formatCompact, formatDate, safeHref } from "@/lib/utils"
-import { urlPublicaDoProcesso } from "@/lib/djen-consulta-url"
 import { rotuloDoAcervo } from "@/lib/proposicao-natureza"
 import { ProfileTabs, type Tab } from "./ProfileTabs"
 import { GravityBadge } from "./GravityBadge"
