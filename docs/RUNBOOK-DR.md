@@ -56,7 +56,8 @@ Nunca copiar valores para este arquivo, issue, log ou commit.
 4. **Recriar o projeto Vercel.** Importar `thiago-salvador/puxa-ficha-oss`, usar
    Next.js, Node 24.x e região `gru1`. Repor as variáveis pelo inventário acima,
    sem copiar entre Production e Preview por suposição. O arquivo
-   [`vercel.json`](../vercel.json) recria os cinco crons da aplicação.
+   [`vercel.json`](../vercel.json) recria os seis crons da aplicação.
+   Inventário de paths e horários (UTC e BRT) na seção 3; não inventar a lista.
 5. **Ligar domínio.** Adicionar `puxaficha.com.br` ao projeto novo e confirmar
    DNS/certificado no painel antes da troca. A alteração de DNS e a promoção do
    deploy exigem autorização nomeada.
@@ -67,7 +68,10 @@ Nunca copiar valores para este arquivo, issue, log ou commit.
 
 ## 3. Verificação final
 
-Executar depois do deploy autorizado e da troca de domínio:
+Executar depois do deploy autorizado e da troca de domínio. Os três comandos
+abaixo são gates obrigatórios. O último usa `CRON_SECRET` e só passa com
+`.ok == true` e `.total == 6` (cinco checagens públicas mais o
+quiz-short-link). Não pular, não afrouxar o jq, não aceitar total diferente de 6.
 
 ```bash
 curl -fsS https://puxaficha.com.br/api/deployment-info |
@@ -78,11 +82,27 @@ curl -fsS https://puxaficha.com.br/api/candidato-slugs |
 
 curl -fsS -H "Authorization: Bearer ${CRON_SECRET}" \
   https://puxaficha.com.br/api/internal/runtime-smoke |
-  jq -e '.ok == true and .total == 5'
+  jq -e '.ok == true and .total == 6'
 ```
 
-O último comando prova home, ficha, API de perfil, SHA de deploy e 404 real.
-Falha em qualquer um interrompe a promoção do ambiente.
+O runtime-smoke cobre home, ficha (`/candidato/lula`), API de perfil, SHA de
+deploy (`/api/deployment-info`), 404 real e criação/resolução do short-link do
+quiz. Falha em qualquer um dos três comandos interrompe a promoção do ambiente.
+
+### Crons em vercel.json (6)
+
+Fonte: array `crons` de [`vercel.json`](../vercel.json). Os schedules da Vercel
+são UTC. BRT = UTC-3 o ano todo (horário de verão abolido no Brasil). Se este
+quadro divergir do arquivo, o arquivo vence.
+
+| Path | Schedule UTC | BRT (UTC-3) |
+|---|---|---|
+| `/api/alerts/send-digest` | `0 12 * * *` | 09:00 |
+| `/api/news/refresh` | `0 8 * * *` | 05:00 |
+| `/api/news/refresh/recover` | `30 8 * * *` | 05:30 |
+| `/api/internal/published-consistency` | `0 9 * * *` | 06:00 |
+| `/api/internal/runtime-smoke` | `30 9 * * *` | 06:30 |
+| `/api/internal/revalidate-public-cache` | `*/15 * * * *` | a cada 15 min |
 
 ## 4. Confirmar no painel
 
