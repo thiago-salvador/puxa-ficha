@@ -58,6 +58,7 @@ import {
   fixedCopy,
   formatAttentionCategoryLabel,
   formatProcessStatusLabel,
+  formatProcessSummaryLabel,
   formatProcessTypeLabel,
   formatTemaLabel,
   formatVoteBadgeLabel,
@@ -820,7 +821,7 @@ export function CandidatoProfile({
                               })()}
                             </div>
                             <p className="mt-2 text-[length:var(--text-body)] font-medium leading-snug text-foreground">
-                              {p.descricao}
+                              {formatProcessSummaryLabel(p.descricao)}
                             </p>
                             {p.tribunal && (
                               <p className="mt-1 text-[length:var(--text-caption)] font-semibold text-muted-foreground">
@@ -1073,7 +1074,7 @@ export function CandidatoProfile({
                             {processo.tribunal && <MetaBadge tone="muted">{processo.tribunal}</MetaBadge>}
                           </div>
                           <p className="mt-2 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-foreground">
-                            {sanitizePtBrText(processo.descricao ?? "")}
+                            {formatProcessSummaryLabel(processo.descricao)}
                           </p>
                         </div>
                       ))}
