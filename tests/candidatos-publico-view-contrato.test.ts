@@ -307,6 +307,10 @@ describe("contrato da view candidatos_publico", () => {
       // O rename para 20170000 era só para ficar depois do topo 20164117 enquanto
       // a UG estava pendente; o ledger já tem 20010000, então o filename volta.
       "20260820010000_gastos_executivo_ug.sql",
+      // Quotas públicas atômicas: três RPCs com pg_advisory_xact_lock para
+      // short-link, analytics/event e alerts/subscribe. Não redefine
+      // candidatos_publico; só cria/substitui funções de cota por IP.
+      "20260821010000_reserve_ip_quotas_atomicas.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 
