@@ -73,3 +73,63 @@ export function urlFonteEPortalJudiciario(valor: string | null | undefined): boo
     return false
   }
 }
+
+function urlEhPlanilhaOuJson(valor: string): boolean {
+  try {
+    const url = new URL(valor)
+    const host = url.hostname.toLowerCase()
+    const path = url.pathname.toLowerCase()
+    if (host === "comunicaapi.pje.jus.br") return true
+    if (host === "sheets.google.com") return true
+    if (host === "docs.google.com" && path.includes("/spreadsheets/")) return true
+    return /\.(json|csv|xlsx|xls)$/.test(path)
+  } catch {
+    return true
+  }
+}
+
+function urlFrontPublicavel(valor: string): string | null {
+  try {
+    const url = new URL(valor)
+    if (url.protocol !== "http:" && url.protocol !== "https:") return null
+    if (urlEhPlanilhaOuJson(valor)) return null
+    return valor
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Destino clicável do processo no front: portal humano do DJEN ou artigo.
+ * Nunca devolve a API JSON, planilha ou arquivo de dados.
+ */
+export function urlPublicaDoProcesso(
+  processo: Pick<{ numero_processo: string | null; url_fonte?: string | null }, "numero_processo" | "url_fonte">,
+): string | null {
+  const fonte = processo.url_fonte?.trim() || ""
+  const numero = processo.numero_processo?.trim() || ""
+
+  if (numero) {
+    if (fonte) {
+      try {
+        return urlConsultaDjenDeFonte(fonte, numero)
+      } catch {
+        // fonte não é o Comunica PJe deste CNJ
+      }
+    }
+    try {
+      return urlConsultaDjenPorCnj(numero)
+    } catch {
+      // CNJ inválido; cai na fonte humana se houver
+    }
+  } else if (fonte) {
+    try {
+      const cnjNaUrl = numeroProcessoDaUrl(new URL(fonte))
+      if (cnjNaUrl) return urlConsultaDjenDeFonte(fonte, cnjNaUrl)
+    } catch {
+      // ignore
+    }
+  }
+
+  return fonte ? urlFrontPublicavel(fonte) : null
+}
