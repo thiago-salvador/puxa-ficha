@@ -350,8 +350,8 @@
     },
     {
       "nome": "ceaps-categoria-utf8-20260821",
-      "desde": "20260821190000",
-      "ate": "20260821190000",
+      "desde": "20260821214601",
+      "ate": "20260821214601",
       "allowlist": "scripts/audit/allowlist-ceaps-categoria-utf8-20260821.json",
       "divida": null
     }

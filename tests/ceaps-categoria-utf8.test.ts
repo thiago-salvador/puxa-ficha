@@ -12,7 +12,7 @@ import { toPublicCandidatoProfileDto } from "../src/lib/public-profile-dto"
 import type { FichaCandidato } from "../src/lib/types"
 
 const ROOT = process.cwd()
-const MIGRATION = "20260821190000_ceaps_categoria_utf8.sql"
+const MIGRATION = "20260821214601_ceaps_categoria_utf8.sql"
 const LABEL_DIVULGACAO = "Divulgação da atividade parlamentar"
 const LABEL_CONTRATACAO =
   "Contratação de consultorias, assessorias, pesquisas, trabalhos técnicos e outros serviços de apoio ao exercício do mandato parlamentar"
