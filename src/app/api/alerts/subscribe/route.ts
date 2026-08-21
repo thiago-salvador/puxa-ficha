@@ -22,7 +22,7 @@ import {
   normalizeAlertEmail,
   normalizeCandidateSlug,
 } from "@/lib/alerts"
-import { isAlertSubscribeHoneypotFilled } from "@/lib/alerts-shared"
+import { isAlertSubscribeHoneypotFilled } from "@/lib/alerts-honeypot"
 import {
   readAlertManageTokenCookie,
   resolveAlertManageToken,

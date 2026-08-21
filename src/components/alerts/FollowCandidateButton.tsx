@@ -12,7 +12,7 @@ import {
   setStoredCandidateFollowState,
   writeStoredFollowedCandidateSlugs,
 } from "@/lib/alerts-client"
-import { ALERT_SUBSCRIBE_HONEYPOT_FIELD } from "@/lib/alerts-shared"
+import { ALERT_SUBSCRIBE_HONEYPOT_FIELD } from "@/lib/alerts-honeypot"
 
 const ALERTS_EMAIL_ENABLED = process.env.NEXT_PUBLIC_ALERTS_EMAIL_ENABLED === "true"
 
