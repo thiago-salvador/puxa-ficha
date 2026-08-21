@@ -7,6 +7,8 @@ const DJEN_CONSULTA_ORIGEM = "https://comunica.pje.jus.br"
 const DJEN_CONSULTA_CAMINHO = "/consulta"
 const DJEN_API_ORIGEM = "https://comunicaapi.pje.jus.br"
 const DJEN_API_CAMINHO = "/api/v1/comunicacao"
+const DJEN_CONSULTA_HOST = new URL(DJEN_CONSULTA_ORIGEM).hostname
+const DJEN_API_HOST = new URL(DJEN_API_ORIGEM).hostname
 
 function cnjSomenteDigitos(valor: string): string {
   return valor.replace(/\D/g, "")
@@ -52,11 +54,11 @@ export function urlConsultaDjenDeFonte(valor: string, numeroCnj: string): string
   const encontrado = numeroProcessoDaUrl(url)
   const apiOk =
     ehHttpsSemCredencial(url) &&
-    url.hostname === "comunicaapi.pje.jus.br" &&
+    url.hostname === DJEN_API_HOST &&
     url.pathname === DJEN_API_CAMINHO
   const consultaOk =
     ehHttpsSemCredencial(url) &&
-    url.hostname === "comunica.pje.jus.br" &&
+    url.hostname === DJEN_CONSULTA_HOST &&
     url.pathname === DJEN_CONSULTA_CAMINHO
   if (!encontrado || encontrado !== esperado || (!apiOk && !consultaOk)) {
     throw new Error(`${numeroCnj}: URL do Comunica PJe nao prova o proprio CNJ`)
@@ -72,4 +74,64 @@ export function urlFonteEPortalJudiciario(valor: string | null | undefined): boo
   } catch {
     return false
   }
+}
+
+function urlEhPlanilhaOuJson(valor: string): boolean {
+  try {
+    const url = new URL(valor)
+    const host = url.hostname.toLowerCase()
+    const path = url.pathname.toLowerCase()
+    if (host === DJEN_API_HOST) return true
+    if (host === "sheets.google.com") return true
+    if (host === "docs.google.com" && path.includes("/spreadsheets/")) return true
+    return [".json", ".csv", ".xlsx", ".xls"].some((ext) => path.endsWith(ext))
+  } catch {
+    return true
+  }
+}
+
+function urlFrontPublicavel(valor: string): string | null {
+  try {
+    const url = new URL(valor)
+    if (url.protocol !== "http:" && url.protocol !== "https:") return null
+    if (urlEhPlanilhaOuJson(valor)) return null
+    return valor
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Destino clicável do processo no front: portal humano do DJEN ou artigo.
+ * Nunca devolve a API JSON, planilha ou arquivo de dados.
+ */
+export function urlPublicaDoProcesso(
+  processo: Pick<{ numero_processo: string | null; url_fonte?: string | null }, "numero_processo" | "url_fonte">,
+): string | null {
+  const fonte = processo.url_fonte?.trim() || ""
+  const numero = processo.numero_processo?.trim() || ""
+
+  if (numero) {
+    if (fonte) {
+      try {
+        return urlConsultaDjenDeFonte(fonte, numero)
+      } catch {
+        // fonte não é o Comunica PJe deste CNJ
+      }
+    }
+    try {
+      return urlConsultaDjenPorCnj(numero)
+    } catch {
+      // CNJ inválido; cai na fonte humana se houver
+    }
+  } else if (fonte) {
+    try {
+      const cnjNaUrl = numeroProcessoDaUrl(new URL(fonte))
+      if (cnjNaUrl) return urlConsultaDjenDeFonte(fonte, cnjNaUrl)
+    } catch {
+      // ignore
+    }
+  }
+
+  return fonte ? urlFrontPublicavel(fonte) : null
 }

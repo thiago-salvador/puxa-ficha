@@ -30,6 +30,7 @@ import { ChevronRight } from "lucide-react"
 import { ContradictionsHighlight } from "@/components/ContradictionsHighlight"
 import { isContradictionAttentionCategory } from "@/lib/attention-points"
 import { MetaBadge } from "./MetaBadge"
+import { ProcessoPublicSurface } from "./ProcessoPublicSurface"
 import {
   FINANCING_BREAKDOWN_KEYS,
   fixedCopy,
@@ -46,6 +47,8 @@ import {
   isProcessStatusNeutral,
   isTerminalProcessStatus,
   processoBorderColor,
+  processoFonteLabel,
+  urlPublicaDoProcesso,
 } from "@/lib/processos-display"
 import {
   groupGastosExecutivoPorOrgao,
@@ -396,9 +399,12 @@ function ProcessesTeaser({
   return (
     <TeaserCard title="Processos judiciais" linkLabel="TODOS" onNavigate={onNavigate}>
       <div className="space-y-2">
-        {processos.slice(0, 3).map((p) => (
-          <div
+        {processos.slice(0, 3).map((p) => {
+          const href = urlPublicaDoProcesso(p)
+          return (
+          <ProcessoPublicSurface
             key={p.id}
+            processo={p}
             className="rounded-lg border border-border/50 border-l-[3px] px-3 py-2"
             style={{ borderLeftColor: processoBorderColor(p) }}
           >
@@ -423,8 +429,14 @@ function ProcessesTeaser({
             <p className="mt-1 text-[12px] font-medium leading-snug text-foreground">
               {p.descricao ?? p.tipo}
             </p>
-          </div>
-        ))}
+            {href && (
+              <span className="mt-1 inline-flex text-[10px] font-bold text-foreground underline underline-offset-2">
+                {processoFonteLabel({ ...p, url_fonte: href })}
+              </span>
+            )}
+          </ProcessoPublicSurface>
+          )
+        })}
       </div>
     </TeaserCard>
   )

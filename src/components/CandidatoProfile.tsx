@@ -18,6 +18,7 @@ import {
   processoPodeContarComoCriminal,
   processoTemporalLabel,
   processosOverviewDisplay,
+  urlPublicaDoProcesso,
 } from "@/lib/processos-display"
 import { formatCompact, formatDate, safeHref } from "@/lib/utils"
 import { rotuloDoAcervo } from "@/lib/proposicao-natureza"
@@ -28,6 +29,7 @@ import { SancoesSection } from "./SancoesSection"
 import { DataFreshnessNotice } from "./DataFreshnessNotice"
 import { SectionLabel, SectionTitle } from "./SectionHeader"
 import { ProfileOverview } from "./ProfileOverview"
+import { ProcessoPublicSurface } from "./ProcessoPublicSurface"
 import { StateIndicators } from "./StateIndicators"
 import {
   EmptyState,
@@ -789,9 +791,12 @@ export function CandidatoProfile({
                             : formatProcessTypeLabel(tipo)} ({grouped.length})
                       </h3>
                       <div className="space-y-3">
-                        {grouped.map((p) => (
-                          <div
+                        {grouped.map((p) => {
+                          const href = urlPublicaDoProcesso(p)
+                          return (
+                          <ProcessoPublicSurface
                             key={p.id}
+                            processo={p}
                             data-pf-timeline-ref={`processo-${p.id}`}
                             className="rounded-[12px] border border-border/50 border-l-[3px] px-5 py-4"
                             style={{
@@ -822,18 +827,14 @@ export function CandidatoProfile({
                                 {p.tribunal} {p.numero_processo ? `| ${p.numero_processo}` : ""}
                               </p>
                             )}
-                            {p.url_fonte && (
-                              <a
-                                href={p.url_fonte}
-                                target="_blank"
-                                rel="noreferrer noopener"
-                                className="mt-2 inline-flex text-[length:var(--text-caption)] font-bold text-foreground underline underline-offset-2"
-                              >
-                                {processoFonteLabel(p)}
-                              </a>
+                            {href && (
+                              <span className="mt-2 inline-flex text-[length:var(--text-caption)] font-bold text-foreground underline underline-offset-2">
+                                {processoFonteLabel({ ...p, url_fonte: href })}
+                              </span>
                             )}
-                          </div>
-                        ))}
+                          </ProcessoPublicSurface>
+                          )
+                        })}
                       </div>
                     </div>
                   )

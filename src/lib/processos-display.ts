@@ -1,5 +1,7 @@
 import { urlFonteEPortalJudiciario } from "@/lib/djen-consulta-url"
 
+export { urlPublicaDoProcesso } from "@/lib/djen-consulta-url"
+
 /**
  * Display honesto do contador de processos judiciais (2026-08-05).
  *
