@@ -595,7 +595,8 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
             })
           } catch (error) {
             const message =
-              error instanceof Error && error.name === "AbortError"
+              error instanceof Error &&
+              (error.name === "AbortError" || error.name === "TimeoutError")
                 ? "timeout"
                 : error instanceof Error
                   ? error.message.slice(0, 300)

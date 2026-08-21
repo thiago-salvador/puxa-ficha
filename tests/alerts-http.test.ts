@@ -1643,7 +1643,10 @@ describe("alerts HTTP routes", () => {
         },
         fetchImpl: async (input: string | URL | Request, init?: RequestInit) => {
           fetchCalls.push({ url: String(input), init })
-          throw Object.assign(new Error("aborted"), { name: "AbortError" })
+          // AbortController.abort() vira AbortError; AbortSignal.timeout() neste
+          // runtime vira TimeoutError (igual ao transporte em src/lib/email.ts).
+          const name = fetchCalls.length === 1 ? "AbortError" : "TimeoutError"
+          throw Object.assign(new Error("aborted"), { name })
         },
       })
 
