@@ -19,14 +19,6 @@ import { JsonLd } from "@/components/JsonLd"
 import { getHomeHeroMetrics } from "@/lib/home-hero-metrics"
 import { formatCompact } from "@/lib/utils"
 
-// Inerte hoje: o `await headers()` do nonce de CSP no RootLayout torna a
-// árvore inteira dinâmica e nenhuma rota pública gera ISR (medido em produção
-// em 2026-08-04: x-vercel-cache MISS e cache-control no-store em todas). O
-// Data Cache do unstable_cache segue protegendo o Supabase. Este revalidate
-// volta a valer quando a CSP migrar para hash + strict-dynamic (rota do PR
-// #72, pós-lançamento); não remover sem conferir de novo com curl.
-export const revalidate = 3600
-
 export default async function Home() {
   const [todosResumosResource, comparaveisResource] = await Promise.all([
     getCandidatosComResumoResource(),
