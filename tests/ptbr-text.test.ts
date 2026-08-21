@@ -32,4 +32,11 @@ describe("ptbr-text", () => {
     assert.equal(sanitizeNullablePtBrText(null), null)
     assert.equal(sanitizeNullablePtBrText(undefined), undefined)
   })
+
+  it("acentua condenacao e instancia sem inventar fatos", () => {
+    const out = sanitizePtBrText("condenacao 1a instancia")
+    assert.match(out, /condenação/)
+    assert.match(out, /instância/)
+    assert.equal(out, "condenação 1a instância")
+  })
 })

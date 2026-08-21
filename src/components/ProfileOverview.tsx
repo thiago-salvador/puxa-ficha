@@ -37,6 +37,7 @@ import {
   formatFinancingLabel,
   formatPatrimonioEleicaoEstadoLabel,
   formatProcessStatusLabel,
+  formatProcessSummaryLabel,
   formatProcessTypeLabel,
   formatPublicLabel,
   formatVoteBadgeLabel,
@@ -427,7 +428,7 @@ function ProcessesTeaser({
               </span>
             </div>
             <p className="mt-1 text-[12px] font-medium leading-snug text-foreground">
-              {p.descricao ?? p.tipo}
+              {formatProcessSummaryLabel(p.descricao) || formatProcessTypeLabel(p.tipo)}
             </p>
             {href && (
               <span className="mt-1 inline-flex text-[10px] font-bold text-foreground underline underline-offset-2">
