@@ -4,7 +4,7 @@ Data: 2026-08-21. Escopo: todo o pacote local da fila serial, sem escrita remota
 
 ## Veredito
 
-**NÃO HABILITAR AINDA.** Os 104 testes específicos da fila, os 3.433 testes não ignorados do repositório e os dois workflows passam localmente. Os blockers locais encontrados pela revisão foram corrigidos. Falta a prova externa do hold real da Vercel no projeto e ambiente exatos, portanto `enabled` e `SERIAL_MERGE_QUEUE_ENABLED` devem permanecer falsos.
+**NÃO HABILITAR AINDA.** Os 104 testes específicos da fila, os 3.449 testes não ignorados do repositório e os dois workflows passam localmente sobre a `main` atual. Os blockers locais encontrados pela revisão foram corrigidos. Falta a prova externa do hold real da Vercel no projeto e ambiente exatos, portanto `enabled` e `SERIAL_MERGE_QUEUE_ENABLED` devem permanecer falsos.
 
 Re-review após o primeiro ciclo de correções:
 
@@ -198,7 +198,7 @@ Correção mínima e teste:
 
 - `actionlint` passou nos dois workflows.
 - `node --test tests/merge-queue/*.test.mjs` passou: 104/104.
-- `npm test -- --runInBand` registrou 3.433 passes, zero falha e quatro skips; o comando de captura encerrou depois com erro local por tentar atribuir a variável reservada `status`, sem invalidar o sumário TAP já concluído.
+- `npm test` registrou 3.449 passes, zero falha e quatro skips sobre a `main` atual.
 - O `pull_request_target` não faz checkout direto do head do PR e não interpola campos do evento diretamente no shell.
 - Duas labels `active` observadas no mesmo snapshot geram erro fail-closed.
 - Check/deployment/readback de outro SHA não libera o slot no motor puro.

@@ -5,7 +5,7 @@ Scope: rodar a suite do projeto e uma simulacao completa de dez PRs com falhas e
 - [ ] G1: Lint, typecheck, testes e build existentes passam.
   CHECK: npm run lint && npm run typecheck && npm test && npm run build
   EXPECT: /built|passed|PASS|✓/
-  EVIDENCE: lint e typecheck passam; npm test passa com 3433 testes e zero falhas; build Webpack encontra falha preexistente em createDeleteDataHandler de src/app/api/alerts/delete-data/route.ts, arquivo sem diff; Turbopack rejeita o symlink externo de node_modules do worktree
+  EVIDENCE: lint e typecheck passam; npm test passa com 3449 testes e zero falhas; build Webpack encontra falha preexistente em createDeleteDataHandler de src/app/api/alerts/delete-data/route.ts, arquivo sem diff; Turbopack rejeita o symlink externo de node_modules do worktree
 - [x] G2: Suite da fila passa integralmente.
   CHECK: node --test tests/merge-queue/*.test.mjs
   EXPECT: /fail 0/

@@ -44,5 +44,5 @@ Budget note: subsistema de CI/CD com estado persistente, integracao GitHub/Verce
 - 2026-08-21 descoberta GitHub e deploy verificada, contrato de implementacao fixado antes do fan-out
 - 2026-08-21 leaves 1.2.1 e 1.2.2 verificados, motor e workflows integrados
 - 2026-08-21 revisao adversarial encontrou quatro blockers de recovery e uma fronteira de tokens; correcoes e regressions adicionadas
-- 2026-08-21 re-review fechou proveniencia de contexto, CAS de base/head, recovery dispatch, isolamento por runner e draft ativo; 100 testes da fila, actionlint, lint, typecheck e 3433 testes do projeto passam
-- 2026-08-21 fechamento local: 104 testes da fila, 3433 testes do projeto, lint, typecheck, actionlint e dry-run passam; build segue bloqueado por erro preexistente da rota delete-data e ativacao aguarda prova live do hold Vercel
+- 2026-08-21 re-review fechou proveniencia de contexto, CAS de base/head, recovery dispatch, isolamento por runner e draft ativo; testes locais e actionlint passam
+- 2026-08-21 fechamento sobre main atual: 104 testes da fila, 3449 testes do projeto, lint, typecheck, actionlint e dry-run passam; build segue bloqueado por erro preexistente da rota delete-data e ativacao aguarda prova live do hold Vercel

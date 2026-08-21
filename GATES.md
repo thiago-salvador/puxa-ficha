@@ -50,7 +50,7 @@ Scope: entregar uma automacao fail-closed que processa um PR por vez ate produca
 - [ ] G10: A suite completa, lint, typecheck e build do projeto passam sem regressao.
   CHECK: npm run lint && npm run typecheck && npm test && npm run build && node --test tests/merge-queue/*.test.mjs
   EXPECT: /pass/
-  EVIDENCE: lint, typecheck e 3433 testes passam; build Webpack falha em export preexistente createDeleteDataHandler de src/app/api/alerts/delete-data/route.ts, arquivo sem diff neste branch; build Turbopack nao aceita o symlink externo de node_modules do worktree
+  EVIDENCE: lint, typecheck e 3449 testes passam sobre a main atual; build Webpack falha em export preexistente createDeleteDataHandler de src/app/api/alerts/delete-data/route.ts, arquivo sem diff neste branch; build Turbopack nao aceita o symlink externo de node_modules do worktree
 
 - [x] G11: O sistema possui modo dry-run que prova a ordem e as transicoes sem merge, deploy, comentario ou alteracao de labels.
   CHECK: node --test tests/merge-queue/dry-run.test.mjs
