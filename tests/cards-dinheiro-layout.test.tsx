@@ -110,6 +110,24 @@ function renderMoneyTab(args: {
   )
 }
 
+function sliceTotalAnoNode(html: string): string {
+  const marker = "data-pf-gastos-executivo-total-ano"
+  const attr = html.indexOf(marker)
+  assert.ok(attr >= 0, "nó data-pf-gastos-executivo-total-ano ausente")
+  const tagStart = html.lastIndexOf("<", attr)
+  const close = html.indexOf("</p>", attr)
+  assert.ok(tagStart >= 0 && close >= 0, "não recortou o parágrafo do total-ano")
+  return html.slice(tagStart, close + 4)
+}
+
+function sliceOrgaoBlock(html: string, codigo: string): string {
+  const marker = `data-pf-gastos-executivo-orgao="${codigo}"`
+  const start = html.indexOf(marker)
+  assert.ok(start >= 0, `bloco do órgão ${codigo} ausente`)
+  const next = html.indexOf("data-pf-gastos-executivo-orgao=", start + marker.length)
+  return next === -1 ? html.slice(start) : html.slice(start, next)
+}
+
 function buildFicha(partial: Partial<FichaCandidato> = {}): FichaCandidato {
   return {
     id: "candidato-teste",
@@ -544,6 +562,47 @@ test("Visão Geral mostra o card de gastos da estrutura de governo quando há s�
   assert.equal(html.includes("data-pf-gastos-executivo-barras-ano"), false)
   assert.equal(html.includes("data-pf-gastos-executivo-barras-mes"), false)
   assert.equal(html.includes("data-pf-gasto-executivo-mes="), false)
+})
+
+test("série só de dezembro do ano anterior não fabrica Total em 2026 R$ 0 no relógio", () => {
+  const rows = [gastoExecutivoRow({ id: "ge-dez-2025", mes_extrato: "2025-12-01", valor_total: 40 })]
+  const money = renderMoneyTab({ patrimonio: [], gastosExecutivo: rows })
+  const overview = renderToStaticMarkup(
+    <ProfileOverview ficha={buildFicha({ gastos_executivo: rows })} onNavigateTab={() => {}} />,
+  )
+
+  for (const html of [money, overview]) {
+    const node = sliceTotalAnoNode(html)
+    assert.equal(node.includes(formatBRL(0)), false, "nó total-ano não pode carregar formatBRL(0)")
+    assert.equal(node.includes(formatCompact(0)), false, "nó total-ano não pode carregar formatCompact(0)")
+    assert.ok(
+      node.includes(formatBRL(40)) || node.includes(formatCompact(40)),
+      "max mes_extrato 2025-12 deve publicar o total 40, não vazio",
+    )
+    assert.match(node, /data-pf-gastos-executivo-total-ano-estado="publicado"/)
+  }
+})
+
+test("órgão sem linha no ano do recorte mostra vazio na aba Dinheiro, sem R$ 0 no bloco do total-ano", () => {
+  const html = renderMoneyTab({
+    patrimonio: [],
+    gastosExecutivo: [
+      gastoExecutivoRow({
+        id: "ge-pref",
+        mes_extrato: "2024-06-01",
+        valor_total: 5_000,
+        orgao_codigo: "99001",
+        orgao_nome: "Prefeitura",
+      }),
+      gastoExecutivoRow({ id: "ge-2026", mes_extrato: "2026-01-01", valor_total: 60 }),
+    ],
+  })
+
+  const blocoPref = sliceOrgaoBlock(html, "99001")
+  const node = sliceTotalAnoNode(blocoPref)
+  assert.match(node, /data-pf-gastos-executivo-total-ano-estado="vazio"/)
+  assert.ok(node.includes("Sem dado neste recorte"))
+  assert.equal(node.includes(formatBRL(0)), false, "vazio não pode ser formatBRL(0) dentro do bloco do total-ano")
 })
 
 test("teaser de gastos do Executivo nunca soma órgãos diferentes numa cifra só", () => {

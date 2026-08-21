@@ -1,0 +1,21 @@
+{
+  "_comentario": "Restaura categorias CEAPS de alan-rick e mailza-assis gravadas com U+FFFD ao ler despesa_ceaps_{ano}.csv (ISO-8859-1) como UTF-8.",
+  "recorte": "ceaps-categoria-utf8-20260821",
+  "migration": "20260821214601_ceaps_categoria_utf8.sql",
+  "fonte": "CSV oficial do Senado https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps_{ano}.csv (ISO-8859-1); rótulos canônicos iguais aos de cleitinho.",
+  "coorte": ["alan-rick", "mailza-assis"],
+  "fora_por_construcao": { "slugs": [] },
+  "referencias": [],
+  "entries": [
+    {
+      "tabela": "gastos_parlamentares",
+      "slug": "alan-rick",
+      "campos": ["detalhamento", "gastos_destaque"]
+    },
+    {
+      "tabela": "gastos_parlamentares",
+      "slug": "mailza-assis",
+      "campos": ["detalhamento", "gastos_destaque"]
+    }
+  ]
+}

@@ -12,6 +12,7 @@ import { loadCandidatosPublicos, loadVerificacaoCampos, resolveCandidatoId } fro
 import { deveProcessarAcervoLegislativo, reciboAcervoCongelado } from "./acervo-legislativo-congelado"
 import { fetchJSON, sleep } from "./helpers"
 import { namesLookCompatible } from "./name-match"
+import { assertSemReplacementChar } from "./ceaps-csv-encoding"
 import { log, warn, error } from "./logger"
 import { classificarVotacao, type ClassificacaoVotacao } from "./votacao-classificacao"
 import type { IngestResult } from "./types"
@@ -219,6 +220,11 @@ async function ingestGastos(idCamara: number, candidatoId: string, slug: string)
       .eq("candidato_id", candidatoId)
       .eq("ano", ano)
       .single()
+
+    assertSemReplacementChar(
+      JSON.stringify({ detalhamento, gastosDestaque }),
+      `camara:${slug}:${ano}`,
+    )
 
     const row = {
       candidato_id: candidatoId,

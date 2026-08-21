@@ -1,5 +1,5 @@
 import assert from "node:assert/strict"
-import { existsSync, readFileSync } from "node:fs"
+import { existsSync, globSync, readFileSync } from "node:fs"
 import { test } from "node:test"
 
 test("quiz e privacidade expõem imagem social explícita", () => {
@@ -18,15 +18,53 @@ test("quiz e privacidade expõem imagem social explícita", () => {
   }
 })
 
-test("manifest público existe em webmanifest e manifest.json", () => {
+test("manifest público tem um único contrato em /manifest.webmanifest", () => {
   assert.ok(existsSync("src/app/manifest.ts"), "app/manifest.ts deve gerar /manifest.webmanifest")
-  assert.ok(existsSync("src/app/manifest.json/route.ts"), "route deve servir /manifest.json")
+  assert.equal(
+    existsSync("src/app/manifest.json/route.ts"),
+    false,
+    "rota /manifest.json não deve existir",
+  )
+  assert.equal(
+    existsSync("src/app/manifest.json"),
+    false,
+    "diretório da rota /manifest.json não deve existir",
+  )
+  assert.equal(
+    existsSync("public/manifest.json"),
+    false,
+    "public/manifest.json não deve existir",
+  )
 
   const manifest = readFileSync("src/lib/site-manifest.ts", "utf8")
   assert.match(manifest, /name:\s*"Puxa Ficha"/)
   assert.match(manifest, /display:\s*"standalone"/)
   assert.match(manifest, /src:\s*"\/icon-192\.png"/)
   assert.match(manifest, /src:\s*"\/icon-512\.png"/)
+
+  const appManifest = readFileSync("src/app/manifest.ts", "utf8")
+  assert.match(appManifest, /buildSiteManifest/)
+
+  const nextConfig = readFileSync("next.config.ts", "utf8")
+  assert.doesNotMatch(
+    nextConfig,
+    /source:\s*["']\/manifest\.json["']/,
+    "next.config não deve redirecionar /manifest.json",
+  )
+
+  const productFiles = [
+    ...globSync("src/**/*.{ts,tsx,js,jsx,html,json,webmanifest}"),
+    ...globSync("public/**/*.{ts,tsx,js,jsx,html,json,webmanifest}"),
+    "next.config.ts",
+  ]
+  for (const path of productFiles) {
+    const src = readFileSync(path, "utf8")
+    assert.doesNotMatch(
+      src,
+      /["'`]\/manifest\.json["'`]/,
+      `${path} aponta para /manifest.json`,
+    )
+  }
 })
 
 test("bots de auditoria recebem metadata sem streaming tardio", () => {
