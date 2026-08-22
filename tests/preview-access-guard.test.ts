@@ -2,7 +2,6 @@ import assert from "node:assert/strict"
 import { readdirSync, readFileSync } from "node:fs"
 import { join } from "node:path"
 import { describe, it } from "node:test"
-import { config } from "../middleware"
 import { deriveAccessCookieValue } from "@/lib/access-cookie-digest"
 import {
   hasPreviewAccess,
@@ -16,12 +15,9 @@ import {
 } from "@/lib/route-guards"
 
 /**
- * O matcher do middleware pula todo path que contenha ponto. Enquanto `/preview`
- * teve o middleware como única proteção, `/preview/candidato/a.b` chegava na
- * página sem token e ela lê a tabela base com service role (candidato NÃO
- * publicado). O fix foi mover a checagem para dentro da página; estes testes
- * fixam as duas metades: o helper decide certo, e nenhuma superfície protegida
- * volta a depender só do middleware.
+ * O middleware tem matcher literal para `/preview`, inclusive paths com ponto.
+ * A página também mantém sua própria checagem antes da leitura com service
+ * role, como defesa em profundidade caso a configuração do middleware regrida.
  */
 
 const root = process.cwd()
@@ -112,25 +108,6 @@ describe("helper de acesso ao preview", () => {
       true,
     )
     assert.equal(await hasPreviewAccess({ cookieToken: "qualquer-coisa" }, {}), false)
-  })
-})
-
-describe("matcher do middleware", () => {
-  it("ignora path com ponto, então /preview/candidato/a.b não passa pelo middleware", () => {
-    const padrao = config.matcher.find((candidate) => candidate.includes("?!api"))
-    assert.ok(padrao, "o middleware precisa declarar um matcher")
-
-    // O Next ancora o matcher no path inteiro; reproduzimos isso para medir o
-    // regex real, e não uma aproximação.
-    const matcher = new RegExp(`^${padrao}$`)
-
-    assert.equal(matcher.test("/preview/candidato/lula"), true)
-    assert.equal(matcher.test("/preview/candidato/a.b"), false)
-    assert.equal(matcher.test("/internaltest/a.b"), false)
-    assert.equal(matcher.test("/styleguide/a.b"), false)
-
-    assert.ok(config.matcher.includes("/internaltest/:path*"))
-    assert.ok(config.matcher.includes("/styleguide/:path*"))
   })
 })
 

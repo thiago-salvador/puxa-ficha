@@ -1,4 +1,5 @@
 import assert from "node:assert/strict"
+import { createRequire } from "node:module"
 import { afterEach, beforeEach, describe, it } from "node:test"
 import { NextRequest } from "next/server"
 import { config, middleware } from "../middleware"
@@ -13,6 +14,33 @@ import {
 const ENV_KEYS = ["NODE_ENV", "VERCEL", "VERCEL_ENV", "PF_INTERNAL_TOKEN"] as const
 const savedEnv: Partial<Record<(typeof ENV_KEYS)[number], string | undefined>> = {}
 const env = process.env as Record<string, string | undefined>
+const dottedPathByPrefix = new Map([
+  ["/preview", "/preview/candidato/a.b"],
+  ["/internaltest", "/internaltest/a.b"],
+  ["/styleguide", "/styleguide/a.b"],
+  ["/candidato", "/candidato/foo.bar"],
+  ["/rankings", "/rankings/foo.bar"],
+  ["/uf", "/uf/sp.br"],
+])
+
+type NextMiddlewareMatcher = {
+  regexp: string
+}
+
+const { getMiddlewareMatchers } = createRequire(import.meta.url)(
+  "next/dist/build/analysis/get-page-static-info",
+) as {
+  getMiddlewareMatchers: (
+    matcherOrMatchers: string | string[],
+    nextConfig: Record<string, unknown>,
+  ) => NextMiddlewareMatcher[]
+}
+
+function compileMatcher(source: string) {
+  const [matcher] = getMiddlewareMatchers([source], {})
+  assert.ok(matcher, `Next did not compile matcher ${source}`)
+  return new RegExp(matcher.regexp)
+}
 
 function request(pathname: string, cookie?: string) {
   return new NextRequest(`http://localhost${pathname}`, {
@@ -56,13 +84,38 @@ describe("canonical guard inventory", () => {
     assert.equal(findRouteGuard("/styleguides"), null)
   })
 
-  it("keeps explicit middleware matchers for every internal surface subpath", () => {
-    const internal = ROUTE_GUARDS.find(({ id }) => id === "internal-access")
-    assert.ok(internal)
-    assert.deepEqual(
-      config.matcher.slice(0, internal.prefixes.length),
-      internal.prefixes.map((prefix) => `${prefix}/:path*`),
+  it("keeps an exact set of literal Next matchers for every guard prefix", () => {
+    const expectedSources = ROUTE_GUARDS.flatMap(({ prefixes }) =>
+      prefixes.map((prefix) => `${prefix}/:path*`),
     )
+    assert.deepEqual(
+      config.matcher.filter((source) => source.endsWith("/:path*")),
+      expectedSources,
+    )
+
+    for (const guard of ROUTE_GUARDS) {
+      for (const prefix of guard.prefixes) {
+        const matcher = compileMatcher(`${prefix}/:path*`)
+        const dottedPath = dottedPathByPrefix.get(prefix)
+        assert.ok(dottedPath, `missing dotted regression path for ${prefix}`)
+        const matcherPaths = [prefix, `${prefix}/plain`, dottedPath]
+
+        for (const pathname of matcherPaths) {
+          assert.equal(matcher.test(pathname), true, `${pathname} must match ${prefix}`)
+        }
+
+        const guardedPaths =
+          guard.match === "exact-or-subpath" ? matcherPaths : matcherPaths.slice(1)
+        for (const pathname of guardedPaths) {
+          assert.equal(findRouteGuard(pathname)?.guard.id, guard.id, pathname)
+        }
+
+        for (const pathname of [`${prefix}x`, `${prefix}.x`, `${prefix}x/with.dot`]) {
+          assert.equal(matcher.test(pathname), false, `${pathname} must not match ${prefix}`)
+          assert.equal(findRouteGuard(pathname), null, pathname)
+        }
+      }
+    }
   })
 })
 

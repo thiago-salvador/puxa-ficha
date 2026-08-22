@@ -365,8 +365,12 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
+    "/preview/:path*",
     "/internaltest/:path*",
     "/styleguide/:path*",
+    "/candidato/:path*",
+    "/rankings/:path*",
+    "/uf/:path*",
     "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\..*).*)",
   ],
 }
