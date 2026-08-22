@@ -1,7 +1,7 @@
 # Configuração do gitleaks para o Puxa Ficha.
 # Estende as regras padrão e suprime falsos positivos conhecidos: o detector
-# genérico de "api-key" marca IDs públicos de proposições legislativas e nomes
-# de hosts de imagem, que não são segredos.
+# genérico de "api-key" marca IDs públicos, slugs e o identificador público do
+# beacon da Cloudflare, que precisam aparecer no cliente e não são segredos.
 [extend]
 useDefault = true
 
@@ -11,6 +11,10 @@ regexTarget = "line"
 regexes = [
   # IDs de proposição de sistemas legislativos (SAPL etc.), dado público
   '''proposicao_id_api''',
+  # Identificador público que o beacon da Cloudflare inclui no HTML do cliente
+  '''CLOUDFLARE_WEB_ANALYTICS_TOKEN''',
+  # Slug público cujo trecho "api" aciona por engano o detector genérico
+  '''joao-capiberibe''',
 ]
 paths = [
   # lista de hosts de imagem permitidos (hostnames públicos, não segredos)
