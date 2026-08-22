@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import { spawnSync } from "node:child_process"
-import { chmodSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
+import { chmodSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { after, describe, it } from "node:test"
@@ -22,6 +22,7 @@ function runWatchdog(opts: {
   body: string
   cronSecret?: string
   origin?: string
+  runConclusion?: string
 }) {
   const fixture = mkdtempSync(join(tmpdir(), "pf-watchdog-"))
   const bin = join(fixture, "bin")
@@ -41,7 +42,7 @@ if [[ "$1" == "api" ]]; then
   fi
   if [[ "$*" == *"/runs"* ]]; then
     now="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-    printf '{"workflow_runs":[{"conclusion":"success","id":99,"html_url":"https://example.test/run/99","updated_at":"%s","created_at":"%s"}]}\\n' "$now" "$now"
+    printf '{"workflow_runs":[{"conclusion":"'"$PF_FAKE_RUN_CONCLUSION"'","id":99,"html_url":"https://example.test/run/99","updated_at":"%s","created_at":"%s"}]}\\n' "$now" "$now"
     exit 0
   fi
   if [[ "$*" == *"/actions/workflows/"* ]]; then
@@ -83,6 +84,7 @@ printf '%s' "$PF_FAKE_CURL_CODE"
       PF_FIXTURE_CALLS: calls,
       PF_FAKE_CURL_BODY: opts.body,
       PF_FAKE_CURL_CODE: opts.httpCode,
+      PF_FAKE_RUN_CONCLUSION: opts.runConclusion ?? "success",
       WATCHDOG_DRY_RUN: "1",
       CRON_SECRET: opts.cronSecret ?? "test-cron-secret",
       PF_RUNTIME_SMOKE_ORIGIN: opts.origin ?? "https://puxaficha.com.br",
@@ -229,5 +231,38 @@ describe("watchdog dry-run com curl mockado", () => {
     assert.match(output, /ação: criar issue/)
     assert.match(output, /CRON_SECRET ausente/)
     assert.doesNotMatch(run.calls, /^curl:/m)
+  })
+
+  it("declara o marcador de gate desligado e o exige no arquivo do workflow", () => {
+    assert.match(script, /OPTOUT_MARKER="cron-watchdog: skipped-ok-com-gate-desligado"/)
+    assert.match(script, /grep -q "\$OPTOUT_MARKER" "\.github\/workflows\/\$\{workflow_file\}"/)
+    const fila = readFileSync(join(root, ".github/workflows/serial-merge-queue.yml"), "utf8")
+    assert.match(fila, /# cron-watchdog: skipped-ok-com-gate-desligado/)
+    assert.match(fila, /SERIAL_MERGE_QUEUE_ENABLED/)
+  })
+
+  it("skipped só é tolerado no workflow que declara o marcador", () => {
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6 }),
+      runConclusion: "skipped",
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+
+    const toleradas = output.match(/execução pulada com o gate declarado desligado/g) ?? []
+    const comMarcador = readdirSync(join(root, ".github/workflows"))
+      .filter((file) => /\.ya?ml$/.test(file))
+      .filter((file) => {
+        const conteudo = readFileSync(join(root, ".github/workflows", file), "utf8")
+        return (
+          /^ {2}schedule:/m.test(conteudo) &&
+          conteudo.includes("cron-watchdog: skipped-ok-com-gate-desligado")
+        )
+      })
+    assert.equal(toleradas.length, comMarcador.length)
+    assert.ok(comMarcador.length > 0, "nenhum workflow declara o marcador")
+    assert.match(output, /ação: criar issue/)
   })
 })

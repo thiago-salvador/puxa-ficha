@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "enabled": false,
+  "repository": "thiago-salvador/puxa-ficha",
+  "defaultBranch": "main",
+  "concurrency": {
+    "group": "serial-merge-queue",
+    "cancelInProgress": false
+  },
+  "labels": {
+    "active": "merge-queue/active",
+    "preMerge": "merge-queue/pre-merge",
+    "postMerge": "merge-queue/post-merge",
+    "rollback": "merge-queue/rollback",
+    "blocked": "merge-queue/blocked",
+    "rollbackPr": "merge-queue/rollback-pr"
+  },
+  "queue": {
+    "orderBy": [
+      "createdAt",
+      "number"
+    ],
+    "requireUpToDate": true,
+    "baseBranch": "main",
+    "excludeDrafts": true,
+    "excludeLabels": [
+      "merge-queue/rollback-pr"
+    ],
+    "trustedContextActors": [
+      "thiago-salvador"
+    ],
+    "trustedContextApps": []
+  },
+  "checks": {
+    "acceptedConclusions": [
+      "success"
+    ],
+    "preMerge": {
+      "required": [
+        "verify",
+        "Rotas e acessibilidade (build local)",
+        "Cobertura (informativa)",
+        "CodeQL",
+        "Analyze (python)",
+        "Analyze (javascript-typescript)",
+        "Vercel"
+      ],
+      "conditionalRequired": [
+        "Gate de replay (conjunto de falhas congelado)"
+      ],
+      "observedOptional": [
+        "CodeRabbit"
+      ],
+      "includeAllPresent": true
+    },
+    "postMerge": {
+      "required": [
+        "verify",
+        "Rotas e acessibilidade (build local)",
+        "Cobertura (informativa)",
+        "Acessibilidade (produção)",
+        "Ledger do banco vs supabase/migrations",
+        "CodeQL",
+        "Analyze (python)",
+        "Analyze (javascript-typescript)",
+        "Vercel"
+      ],
+      "conditionalRequired": [
+        "Gate de replay (conjunto de falhas congelado)"
+      ],
+      "includeAllPresent": true
+    },
+    "rollback": {
+      "required": [
+        "verify",
+        "Rotas e acessibilidade (build local)",
+        "Cobertura (informativa)",
+        "Acessibilidade (produção)",
+        "Ledger do banco vs supabase/migrations",
+        "CodeQL",
+        "Analyze (python)",
+        "Analyze (javascript-typescript)",
+        "Vercel"
+      ],
+      "conditionalRequired": [
+        "Gate de replay (conjunto de falhas congelado)"
+      ],
+      "includeAllPresent": true
+    }
+  },
+  "production": {
+    "provider": "vercel",
+    "environment": "Production",
+    "url": "https://puxaficha.com.br",
+    "stagedDeployment": {
+      "required": true,
+      "target": "production",
+      "requiredState": "READY",
+      "requireMergeSha": true,
+      "hold": {
+        "provider": "vercel-deployment-checks",
+        "required": true,
+        "githubStatusContext": "Serial release gate"
+      }
+    },
+    "smokes": {
+      "required": true,
+      "checks": [
+        "Launch smoke (produção)",
+        "Busca smoke (produção)",
+        "Acessibilidade smoke (produção)"
+      ],
+      "commands": [
+        {
+          "name": "launch-smoke",
+          "command": "npx tsx scripts/smoke-lancamento.ts"
+        },
+        {
+          "name": "search-smoke",
+          "command": "npm run test:search-smoke"
+        },
+        {
+          "name": "production-a11y",
+          "command": "PF_BASE_URL=https://puxaficha.com.br npm run test:a11y"
+        }
+      ],
+      "private": {
+        "requiredWhenSecretPresent": true,
+        "secret": "PF_RUNTIME_SMOKE_SECRET",
+        "url": "https://puxaficha.com.br/api/internal/runtime-smoke",
+        "expected": {
+          "ok": true,
+          "total": 5
+        }
+      }
+    },
+    "promotion": {
+      "required": true,
+      "checks": [
+        "Serial release gate"
+      ],
+      "mode": "deployment-check-auto-alias",
+      "recoveryMode": "explicit-vercel-promote"
+    },
+    "publicReadback": {
+      "required": true,
+      "checks": [
+        "Production readback"
+      ],
+      "url": "https://puxaficha.com.br/api/deployment-info",
+      "expected": {
+        "httpStatus": 200,
+        "ok": true,
+        "environment": "production",
+        "commitRef": "main",
+        "commitSha": "$MERGE_COMMIT_SHA"
+      }
+    },
+    "rollback": {
+      "mode": "vercel-instant-rollback",
+      "requirePreviousReadyDeployment": true,
+      "verifyPreviousSha": true,
+      "promoteRecoveryDeployment": true
+    }
+  },
+  "releaseGate": {
+    "name": "Serial release gate",
+    "required": true,
+    "initialState": "pending",
+    "successState": "success",
+    "failClosedOnMissingHold": true
+  },
+  "irreversibleChanges": {
+    "pathPatterns": [
+      "supabase/migrations/**",
+      "supabase/migrations-pendentes/**",
+      "supabase/rollback/**",
+      ".github/workflows/**",
+      ".github/serial-merge-queue.json",
+      "scripts/merge-queue/**",
+      "vercel.json",
+      "src/app/api/**/route.*",
+      "scripts/ingest*",
+      "scripts/revalidate*",
+      "scripts/**/*email*"
+    ],
+    "sensitiveTokens": [
+      "SUPABASE_DB_URL",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "RESEND_API_KEY",
+      "CRON_SECRET"
+    ],
+    "manifestPath": ".github/merge-queue/irreversible-change-manifest.json",
+    "requireValidatedManifest": true,
+    "requireNamedRemoteWriteApproval": true,
+    "executePullRequestSql": false
+  },
+  "notifications": {
+    "provider": "github-issue",
+    "assignee": "thiago-salvador",
+    "deduplicateBy": "failure-signature",
+    "watchdogMarker": "serial-merge-queue-watchdog"
+  },
+  "secrets": {
+    "required": [
+      "MERGE_QUEUE_GH_TOKEN",
+      "VERCEL_TOKEN",
+      "VERCEL_ORG_ID",
+      "VERCEL_PROJECT_ID"
+    ],
+    "optional": [
+      "PF_RUNTIME_SMOKE_SECRET"
+    ],
+    "missingPolicy": "block"
+  }
+}

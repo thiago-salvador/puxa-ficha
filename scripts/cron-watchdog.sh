@@ -6,6 +6,7 @@ DRY_RUN="${WATCHDOG_DRY_RUN:-0}"
 GRACE_DAYS="${WATCHDOG_GRACE_DAYS:-8}"
 SELF_FILE="cron-watchdog.yml"
 LABEL="cron-failure"
+OPTOUT_MARKER="cron-watchdog: skipped-ok-com-gate-desligado"
 NOW_EPOCH="$(date +%s)"
 ANOMALIES=0
 
@@ -141,6 +142,16 @@ for workflow_file in "${WORKFLOW_FILES[@]}"; do
   run_completed_at=$(jq -r '.workflow_runs[0].updated_at // .workflow_runs[0].created_at' <<<"$runs_json")
   run_epoch=$(iso_to_epoch "$run_completed_at")
   run_age_days=$(( (NOW_EPOCH - run_epoch) / 86400 ))
+  # Workflow com gate de ativação declarado conclui "skipped" de propósito
+  # enquanto está desligado. O marcador mora no próprio arquivo do workflow,
+  # para o motivo ser lido junto com o gate. Sem marcador, "skipped" continua
+  # sendo anomalia, e o watchdog segue fail-closed.
+  if [[ "$conclusion" == "skipped" ]] &&
+    grep -q "$OPTOUT_MARKER" ".github/workflows/${workflow_file}"; then
+    echo "ok: ${workflow_name}, execução pulada com o gate declarado desligado"
+    continue
+  fi
+
   if [[ "$conclusion" != "success" ]]; then
     # Cron vermelho com rerun posterior em verde (dispatch ou push) está
     # recuperado: senão a issue fecha hoje e o watchdog reabre amanhã.

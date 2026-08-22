@@ -1,0 +1,23 @@
+{
+  "config": {
+    "enabled": true,
+    "checks": {
+      "preMerge": { "required": ["verify"], "includeAllPresent": true }
+    }
+  },
+  "snapshot": {
+    "main": { "sha": "main-before" },
+    "prs": [
+      { "number": 48, "createdAt": "2026-08-20T10:05:00Z", "state": "open", "headSha": "sha-48", "sync": "up_to_date", "mergeable": true, "labels": [], "checks": [{ "name": "verify", "sha": "sha-48", "conclusion": "success" }] },
+      { "number": 43, "createdAt": "2026-08-20T10:00:00Z", "state": "open", "headSha": "sha-43", "sync": "up_to_date", "mergeable": true, "labels": [], "checks": [{ "name": "verify", "sha": "sha-43", "conclusion": "success" }] },
+      { "number": 39, "createdAt": "2026-08-20T10:07:00Z", "state": "open", "headSha": "sha-39", "sync": "up_to_date", "mergeable": true, "labels": [], "checks": [{ "name": "verify", "sha": "sha-39", "conclusion": "success" }] },
+      { "number": 47, "createdAt": "2026-08-20T10:04:00Z", "state": "open", "headSha": "sha-47", "sync": "up_to_date", "mergeable": true, "labels": [], "checks": [{ "name": "verify", "sha": "sha-47", "conclusion": "success" }] },
+      { "number": 35, "createdAt": "2026-08-20T10:09:00Z", "state": "open", "headSha": "sha-35", "sync": "up_to_date", "mergeable": true, "labels": [], "checks": [{ "name": "verify", "sha": "sha-35", "conclusion": "success" }] },
+      { "number": 44, "createdAt": "2026-08-20T10:01:00Z", "state": "open", "headSha": "sha-44", "sync": "up_to_date", "mergeable": true, "labels": [], "checks": [{ "name": "verify", "sha": "sha-44", "conclusion": "success" }] },
+      { "number": 41, "createdAt": "2026-08-20T10:06:00Z", "state": "open", "headSha": "sha-41", "sync": "up_to_date", "mergeable": true, "labels": [], "checks": [{ "name": "verify", "sha": "sha-41", "conclusion": "success" }] },
+      { "number": 45, "createdAt": "2026-08-20T10:02:00Z", "state": "open", "headSha": "sha-45", "sync": "up_to_date", "mergeable": true, "labels": [], "checks": [{ "name": "verify", "sha": "sha-45", "conclusion": "success" }] },
+      { "number": 37, "createdAt": "2026-08-20T10:08:00Z", "state": "open", "headSha": "sha-37", "sync": "up_to_date", "mergeable": true, "labels": [], "checks": [{ "name": "verify", "sha": "sha-37", "conclusion": "success" }] },
+      { "number": 46, "createdAt": "2026-08-20T10:03:00Z", "state": "open", "headSha": "sha-46", "sync": "up_to_date", "mergeable": true, "labels": [], "checks": [{ "name": "verify", "sha": "sha-46", "conclusion": "success" }] }
+    ]
+  }
+}

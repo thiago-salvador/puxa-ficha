@@ -1,0 +1,69 @@
+name: Serial merge queue watchdog
+
+on:
+  workflow_run:
+    workflows:
+      - Serial merge queue
+    types:
+      - completed
+
+permissions:
+  issues: write
+
+jobs:
+  incident:
+    name: Report coordinator failure
+    # Com a fila desligada, todo evento observado produz execução "skipped",
+    # que não é falha do coordenador. O incidente só vale com a fila ativa.
+    if: >-
+      vars.SERIAL_MERGE_QUEUE_ENABLED == 'true'
+      && github.event.workflow_run.conclusion != 'success'
+      && github.event.workflow_run.conclusion != 'skipped'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+      WATCHED_RUN_ID: ${{ github.event.workflow_run.id }}
+      WATCHED_RUN_URL: ${{ github.event.workflow_run.html_url }}
+      WATCHED_RUN_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+      WATCHED_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+    steps:
+      # Uma assinatura estável agrega ocorrências repetidas no mesmo incidente.
+      # Payload externo só entra em jq como dado, nunca como shell.
+      - name: Create deduplicated GitHub incident
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          marker="<!-- serial-merge-queue-watchdog:coordinator-failure -->"
+          existing="$({
+            gh api --paginate "repos/${GITHUB_REPOSITORY}/issues?state=open&per_page=100"
+          } | jq -r --arg marker "$marker" \
+            '.[] | select((.pull_request | not) and ((.body // "") | contains($marker))) | .number' \
+            | sed -n '1p')"
+
+          title="Serial merge queue: coordinator failed"
+          body="$(jq -n -r \
+            --arg marker "$marker" \
+            --arg conclusion "$WATCHED_RUN_CONCLUSION" \
+            --arg run_url "$WATCHED_RUN_URL" \
+            --arg head_sha "$WATCHED_HEAD_SHA" \
+            '[$marker,
+              "The serial merge queue coordinator did not finish successfully.",
+              "",
+              ("Conclusion: `" + $conclusion + "`"),
+              ("Trusted-branch SHA: `" + $head_sha + "`"),
+              ("Run: " + $run_url),
+              "",
+              "The queue remains fail-closed. Inspect the run and recover the active slot before resuming."
+            ] | join("\n")')"
+
+          if [[ -n "$existing" ]]; then
+            gh api --method PATCH "repos/${GITHUB_REPOSITORY}/issues/${existing}" \
+              -f body="$body" >/dev/null
+          else
+            gh api --method POST "repos/${GITHUB_REPOSITORY}/issues" \
+              -f title="$title" \
+              -f body="$body" \
+              -f "assignees[]=thiago-salvador" >/dev/null
+          fi
