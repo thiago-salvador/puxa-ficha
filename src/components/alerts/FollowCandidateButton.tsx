@@ -12,6 +12,7 @@ import {
   setStoredCandidateFollowState,
   writeStoredFollowedCandidateSlugs,
 } from "@/lib/alerts-client"
+import { ALERT_SUBSCRIBE_HONEYPOT_FIELD } from "@/lib/alerts-honeypot"
 
 const ALERTS_EMAIL_ENABLED = process.env.NEXT_PUBLIC_ALERTS_EMAIL_ENABLED === "true"
 
@@ -186,10 +187,17 @@ export function FollowCandidateButton({
     setFeedback(null)
 
     try {
+      const honeypot = String(
+        new FormData(event.currentTarget).get(ALERT_SUBSCRIBE_HONEYPOT_FIELD) ?? "",
+      )
       const response = await fetch("/api/alerts/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, candidateSlug }),
+        body: JSON.stringify({
+          email,
+          candidateSlug,
+          [ALERT_SUBSCRIBE_HONEYPOT_FIELD]: honeypot,
+        }),
       })
       const data = (await response.json().catch(() => null)) as ApiResponse | null
 
@@ -244,6 +252,19 @@ export function FollowCandidateButton({
         : "mt-4 flex flex-col gap-2"}
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <label className="sr-only" htmlFor="alert-subscribe-website">
+          Website
+        </label>
+        <input
+          id="alert-subscribe-website"
+          type="text"
+          name={ALERT_SUBSCRIBE_HONEYPOT_FIELD}
+          autoComplete="off"
+          tabIndex={-1}
+          aria-hidden="true"
+          defaultValue=""
+          className="sr-only"
+        />
         <Input
           type="email"
           inputMode="email"

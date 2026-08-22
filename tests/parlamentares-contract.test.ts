@@ -51,7 +51,7 @@ describe("página /parlamentares", () => {
     const cache = read("scripts/aquecer-cache-publico.ts")
     const search = read("src/components/GlobalSearchProvider.tsx")
 
-    assert.match(sitemap, /https:\/\/puxaficha\.com\.br\/parlamentares/)
+    assert.match(sitemap, /\$\{SITE_ORIGIN\}\/parlamentares/)
     assert.match(cache, /"\/parlamentares"/)
     assert.match(search, /href: "\/parlamentares"/)
     assert.match(search, /Fichas de deputados e senadores ainda não estão prontas/)

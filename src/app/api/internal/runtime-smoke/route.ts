@@ -20,6 +20,8 @@ interface RuntimeCheck {
   marker?: string
 }
 
+// Cinco checagens publicas. O handler concatena quiz-short-link; a resposta
+// usa results.length (6 = estes 5 + quiz). Nao hardcodar o total.
 const CHECKS: RuntimeCheck[] = [
   { name: "home", path: "/", status: 200, marker: "Puxa Ficha" },
   { name: "candidate", path: "/candidato/lula", status: 200, marker: "Lula" },

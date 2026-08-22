@@ -22,6 +22,7 @@ import {
   normalizeAlertEmail,
   normalizeCandidateSlug,
 } from "@/lib/alerts"
+import { isAlertSubscribeHoneypotFilled } from "@/lib/alerts-honeypot"
 import {
   readAlertManageTokenCookie,
   resolveAlertManageToken,
@@ -309,6 +310,11 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
       }
       deps.logAlertsApiExit("subscribe", 400, "invalid_json")
       return NextResponse.json({ error: "Invalid JSON" }, { status: 400 })
+    }
+
+    if (isAlertSubscribeHoneypotFilled(body)) {
+      deps.logAlertsApiExit("subscribe", 204, "honeypot_filled")
+      return new NextResponse(null, { status: 204 })
     }
 
     const email = normalizeAlertEmail(alertBodyStringField(body, "email"))
