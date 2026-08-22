@@ -348,6 +348,20 @@ describe("alerts subscribe scope guard", () => {
     )
   })
 
+  it("avalia CSRF e rate limit antes do honeypot", () => {
+    const subscribeRoute = read("src/app/api/alerts/subscribe/route.ts")
+    const handler = subscribeRoute.slice(subscribeRoute.indexOf("createSubscribeHandler"))
+    const csrfAt = handler.indexOf("rejectCrossSiteAlertsMutation")
+    const rateAt = handler.indexOf("subscribeRateLimiter.check")
+    const honeypotAt = handler.indexOf("isAlertSubscribeHoneypotFilled")
+
+    assert.ok(csrfAt >= 0, "CSRF continua no handler")
+    assert.ok(rateAt >= 0, "rate limit continua no handler")
+    assert.ok(honeypotAt >= 0, "honeypot entra no handler")
+    assert.ok(csrfAt < honeypotAt, "honeypot não pode rodar antes do CSRF")
+    assert.ok(rateAt < honeypotAt, "honeypot não pode rodar antes do rate limit")
+  })
+
   it("nao devolve estado do assinante no corpo do subscribe", () => {
     const subscribeRoute = read("src/app/api/alerts/subscribe/route.ts")
     const corpoDoHandler = subscribeRoute.slice(subscribeRoute.indexOf("createSubscribeHandler"))

@@ -22,6 +22,7 @@ const { ALERT_MANAGE_TOKEN_COOKIE_NAME } = require("../src/lib/alerts-session")
 const { createDeleteDataHandler } = require("../src/app/api/alerts/delete-data/route")
 const { createSendDigestHandler } = require("../src/app/api/alerts/send-digest/route")
 const { createSubscribeHandler } = require("../src/app/api/alerts/subscribe/route")
+const { ALERT_SUBSCRIBE_HONEYPOT_FIELD } = require("../src/lib/alerts-honeypot") as typeof import("../src/lib/alerts-honeypot")
 const { createSessionPostHandler } = require("../src/app/api/alerts/session/route")
 const { createToggleHandler } = require("../src/app/api/alerts/toggle/route")
 const { createUnsubscribeAllHandler } = require("../src/app/api/alerts/unsubscribe-all/route")
@@ -366,6 +367,133 @@ describe("alerts HTTP routes", () => {
 
       assert.equal(response.status, 400)
       assert.deepEqual(await readJson(response), { error: "Invalid payload" })
+    })
+
+    it("returns 204 without creating a subscriber when the honeypot is filled", async () => {
+      const fixture = new AlertsRouteFixture({
+        candidatos_publico: [seedCandidate()],
+      })
+      const handler = createSubscribeHandler(createDeps(fixture))
+
+      const response = await handler(
+        fixture.request("/api/alerts/subscribe", {
+          body: {
+            email: "bot@example.com",
+            candidateSlug: "lula",
+            [ALERT_SUBSCRIBE_HONEYPOT_FIELD]: "https://spam.example",
+          },
+        }),
+      )
+
+      assert.equal(response.status, 204)
+      assert.equal(await response.text(), "")
+      assert.equal(fixture.getTable("alert_subscribers").length, 0)
+      assert.equal(fixture.getTable("alert_subscriptions").length, 0)
+      assert.equal(fixture.emails.length, 0)
+      assert.deepEqual(fixture.apiExits.at(-1), {
+        route: "subscribe",
+        status: 204,
+        reason: "honeypot_filled",
+        detail: undefined,
+      })
+    })
+
+    it("keeps verification email when the honeypot is empty or whitespace", async () => {
+      const fixture = new AlertsRouteFixture({
+        candidatos_publico: [seedCandidate()],
+      })
+      const handler = createSubscribeHandler(createDeps(fixture))
+
+      for (const honeypot of ["", "  \t  "]) {
+        const response = await handler(
+          fixture.request("/api/alerts/subscribe", {
+            body: {
+              email: `eleitor-${honeypot.length}@example.com`,
+              candidateSlug: "lula",
+              [ALERT_SUBSCRIBE_HONEYPOT_FIELD]: honeypot,
+            },
+            headers: {
+              "x-forwarded-for": "198.51.100.70",
+            },
+          }),
+        )
+
+        assert.equal(response.status, 200)
+        const body = await readJson<{ ok: boolean; emailSent: boolean }>(response)
+        assert.equal(body.ok, true)
+        assert.equal(body.emailSent, true)
+      }
+
+      const subscribers = fixture.getTable("alert_subscribers")
+      assert.equal(subscribers.length, 2)
+      assert.equal(
+        subscribers.every((subscriber) => subscriber.verified === false),
+        true,
+      )
+      assert.equal(fixture.getTable("alert_subscriptions").length, 2)
+      assert.equal(fixture.emails.length, 2)
+    })
+
+    it("rejects cross-site subscribe because honeypot does not bypass CSRF", async () => {
+      const fixture = new AlertsRouteFixture({
+        candidatos_publico: [seedCandidate()],
+      })
+      const handler = createSubscribeHandler(createDeps(fixture))
+
+      const response = await handler(
+        fixture.request("/api/alerts/subscribe", {
+          body: {
+            email: "bot@example.com",
+            candidateSlug: "lula",
+            [ALERT_SUBSCRIBE_HONEYPOT_FIELD]: "https://spam.example",
+          },
+          headers: { origin: "https://evil.example" },
+        }),
+      )
+
+      assert.equal(response.status, 403)
+      assert.deepEqual(await readJson(response), { error: "Cross-site request blocked" })
+      assert.equal(fixture.getTable("alert_subscribers").length, 0)
+      assert.equal(fixture.emails.length, 0)
+      assert.equal(fixture.apiExits.at(-1)?.reason, "csrf_origin_not_allowed")
+    })
+
+    it("returns 429 because honeypot does not bypass rate limit", async () => {
+      const fixture = new AlertsRouteFixture({
+        candidatos_publico: [seedCandidate()],
+      })
+      const handler = createSubscribeHandler(createDeps(fixture))
+      const headers = { "x-forwarded-for": "198.51.100.77" }
+
+      for (let i = 0; i < 12; i += 1) {
+        const allowed = await handler(
+          fixture.request("/api/alerts/subscribe", {
+            body: {
+              email: `bot${i}@example.com`,
+              candidateSlug: "lula",
+              [ALERT_SUBSCRIBE_HONEYPOT_FIELD]: "https://spam.example",
+            },
+            headers,
+          }),
+        )
+        assert.equal(allowed.status, 204)
+      }
+
+      const blocked = await handler(
+        fixture.request("/api/alerts/subscribe", {
+          body: {
+            email: "bot12@example.com",
+            candidateSlug: "lula",
+            [ALERT_SUBSCRIBE_HONEYPOT_FIELD]: "https://spam.example",
+          },
+          headers,
+        }),
+      )
+
+      assert.equal(blocked.status, 429)
+      assert.deepEqual(await readJson(blocked), { error: "Too many requests" })
+      assert.equal(fixture.getTable("alert_subscribers").length, 0)
+      assert.equal(fixture.emails.length, 0)
     })
 
     it("returns 404 when the candidate does not exist", async () => {
