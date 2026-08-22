@@ -63,6 +63,13 @@ jobs:
       - name: Resolução das fotos de candidato
         run: npm run audit:fotos:gate
 
+      # Remoção de foto só passa contra o SHA imutável da base do evento e o
+      # snapshot público versionado. Não consulta rede nem banco no CI.
+      - name: Referências runtime das fotos de candidato
+        env:
+          PF_CANDIDATE_ASSET_BASELINE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+        run: npm run audit:candidate-assets:gate
+
       - name: Dead code (knip)
         run: npm run check:dead-code
 

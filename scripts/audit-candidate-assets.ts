@@ -1,15 +1,20 @@
 import { createHash } from "node:crypto"
 import { execFileSync } from "node:child_process"
-import { existsSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs"
-import { extname, join, relative, resolve } from "node:path"
+import {
+  lstatSync,
+  readFileSync,
+  realpathSync,
+  writeFileSync,
+} from "node:fs"
+import { dirname, extname, isAbsolute, relative, resolve, sep } from "node:path"
 
-export type AssetStatus = "referenced" | "ambiguous" | "unreferenced"
+export type AssetStatus = "referenced" | "indeterminate" | "unreferenced"
 
 export interface ReferenceEvidence {
   file: string
   line: number
   excerpt: string
-  kind: "literal" | "dynamic-generator" | "dynamic-input"
+  kind: "literal" | "runtime"
 }
 
 export interface CandidateAssetAudit {
@@ -21,7 +26,7 @@ export interface CandidateAssetAudit {
   present: boolean
   status: AssetStatus
   literalReferences: ReferenceEvidence[]
-  dynamicReferences: ReferenceEvidence[]
+  runtimeReferences: ReferenceEvidence[]
 }
 
 interface SourceFile {
@@ -29,23 +34,43 @@ interface SourceFile {
   content: string
 }
 
+interface GitEntry {
+  mode: string
+  oid: string
+  path: string
+}
+
 interface AuditOptions {
   root: string
   output?: string
   baseline?: string
+  runtimeReferencesFile?: string
   verifyRemovals?: boolean
 }
 
-interface DynamicContext {
-  generatedJpgSlugs: Set<string>
-  generatorEvidence: ReferenceEvidence[]
-  inputEvidenceBySlug: Map<string, ReferenceEvidence[]>
+interface RuntimeReferenceContext {
+  provided: boolean
+  source: string | null
+  references: Set<string>
+}
+
+interface RuntimeReferenceManifest {
+  schemaVersion: 1
+  references: string[]
 }
 
 const CANDIDATES_PREFIX = "public/candidates/"
+const RUNTIME_MANIFEST = "data/candidate-runtime-asset-references.json"
+const MAX_TRACKED_FILES = 20_000
+const MAX_TEXT_FILE_BYTES = 8 * 1024 * 1024
+const MAX_TOTAL_TEXT_BYTES = 96 * 1024 * 1024
+const MAX_RUNTIME_MANIFEST_BYTES = 1024 * 1024
+const MAX_RUNTIME_REFERENCES = 5000
+const MAX_REPO_PATH_BYTES = 4096
 const SELF_EXCLUDES = new Set([
   "scripts/audit-candidate-assets.ts",
   "tests/audit-candidate-assets.test.ts",
+  RUNTIME_MANIFEST,
 ])
 
 function byteSort(a: string, b: string): number {
@@ -56,58 +81,150 @@ function git(root: string, args: string[]): Buffer {
   return execFileSync("git", ["-C", root, ...args], { maxBuffer: 128 * 1024 * 1024 })
 }
 
-function trackedFiles(root: string): string[] {
-  return git(root, ["ls-files", "-z"])
+function validateRepoPath(file: string): string {
+  const segments = file.split("/")
+  if (
+    file.length === 0
+    || Buffer.byteLength(file) > MAX_REPO_PATH_BYTES
+    || file.includes("\0")
+    || file.includes("\\")
+    || file.includes("\n")
+    || file.includes("\r")
+    || file.includes("\t")
+    || isAbsolute(file)
+    || segments.some((segment) => segment.length === 0 || segment === "." || segment === "..")
+  ) {
+    throw new Error(`path de repositorio invalido: ${JSON.stringify(file)}`)
+  }
+  return file
+}
+
+function isContained(root: string, target: string): boolean {
+  const pathFromRoot = relative(root, target)
+  return pathFromRoot === ""
+    || (!isAbsolute(pathFromRoot) && pathFromRoot !== ".." && !pathFromRoot.startsWith(`..${sep}`))
+}
+
+function repoPath(root: string, file: string): string {
+  const rootReal = realpathSync(root)
+  const absolute = resolve(rootReal, validateRepoPath(file))
+  if (!isContained(rootReal, absolute)) throw new Error(`path fora do repositorio: ${file}`)
+  return absolute
+}
+
+function readRegularFile(root: string, file: string, maxBytes: number): Buffer {
+  const rootReal = realpathSync(root)
+  const absolute = repoPath(rootReal, file)
+  const metadata = lstatSync(absolute)
+  if (metadata.isSymbolicLink()) throw new Error(`symlink rejeitado: ${file}`)
+  if (!metadata.isFile()) throw new Error(`arquivo regular esperado: ${file}`)
+  if (metadata.size > maxBytes) throw new Error(`arquivo excede limite de ${maxBytes} bytes: ${file}`)
+  const real = realpathSync(absolute)
+  if (!isContained(rootReal, real)) throw new Error(`realpath fora do repositorio: ${file}`)
+  return readFileSync(real)
+}
+
+function parseIndexEntries(root: string): Map<string, GitEntry> {
+  const records = git(root, ["ls-files", "--stage", "-z"])
     .toString("utf8")
     .split("\0")
     .filter(Boolean)
-    .filter((file) => !file.startsWith(CANDIDATES_PREFIX) && !SELF_EXCLUDES.has(file))
-    .sort(byteSort)
+  if (records.length > MAX_TRACKED_FILES) {
+    throw new Error(`indice excede limite de ${MAX_TRACKED_FILES} arquivos`)
+  }
+  const entries = new Map<string, GitEntry>()
+  for (const record of records) {
+    const separator = record.indexOf("\t")
+    if (separator === -1) throw new Error("entrada invalida no indice Git")
+    const [mode, oid, stage] = record.slice(0, separator).split(" ")
+    const path = validateRepoPath(record.slice(separator + 1))
+    if (!mode || !oid || stage !== "0") throw new Error(`indice Git nao resolvido: ${path}`)
+    entries.set(path, { mode, oid, path })
+  }
+  return entries
 }
 
-function loadTextSources(root: string): SourceFile[] {
+function parseTreeEntries(root: string, ref: string): Map<string, GitEntry> {
+  const records = git(root, ["ls-tree", "-r", "-z", ref])
+    .toString("utf8")
+    .split("\0")
+    .filter(Boolean)
+  if (records.length > MAX_TRACKED_FILES) {
+    throw new Error(`tree excede limite de ${MAX_TRACKED_FILES} arquivos`)
+  }
+  const entries = new Map<string, GitEntry>()
+  for (const record of records) {
+    const separator = record.indexOf("\t")
+    if (separator === -1) throw new Error("entrada invalida no tree Git")
+    const [mode, type, oid] = record.slice(0, separator).split(" ")
+    const path = validateRepoPath(record.slice(separator + 1))
+    if (type !== "blob" || !mode || !oid) continue
+    entries.set(path, { mode, oid, path })
+  }
+  return entries
+}
+
+function assertRegularGitEntry(entry: GitEntry): void {
+  if (entry.mode === "120000") throw new Error(`symlink rejeitado no Git: ${entry.path}`)
+  if (entry.mode !== "100644" && entry.mode !== "100755") {
+    throw new Error(`modo Git nao suportado ${entry.mode}: ${entry.path}`)
+  }
+}
+
+function loadTextSources(
+  root: string,
+  index: Map<string, GitEntry>,
+  runtimeReferencesFile?: string,
+): SourceFile[] {
+  const excludes = new Set(SELF_EXCLUDES)
+  if (runtimeReferencesFile) excludes.add(validateRepoPath(runtimeReferencesFile))
+  const sourcePaths = [...index.keys()]
+    .filter((file) => !file.startsWith(CANDIDATES_PREFIX) && !excludes.has(file))
+    .sort(byteSort)
   const sources: SourceFile[] = []
-  for (const file of trackedFiles(root)) {
-    const absolute = resolve(root, file)
-    if (!existsSync(absolute) || !statSync(absolute).isFile()) continue
-    const bytes = readFileSync(absolute)
+  let totalBytes = 0
+  for (const file of sourcePaths) {
+    const entry = index.get(file)
+    if (!entry) throw new Error(`entrada ausente no indice: ${file}`)
+    assertRegularGitEntry(entry)
+    const bytes = readRegularFile(root, file, MAX_TEXT_FILE_BYTES)
+    totalBytes += bytes.length
+    if (totalBytes > MAX_TOTAL_TEXT_BYTES) {
+      throw new Error(`fontes excedem limite total de ${MAX_TOTAL_TEXT_BYTES} bytes`)
+    }
     if (bytes.includes(0)) continue
     sources.push({ path: file, content: bytes.toString("utf8") })
   }
   return sources
 }
 
-function assetFilesFromWorktree(root: string): string[] {
-  const directory = resolve(root, CANDIDATES_PREFIX)
-  const files: string[] = []
-  const visit = (current: string) => {
-    for (const name of readdirSync(current).sort(byteSort)) {
-      const absolute = join(current, name)
-      if (statSync(absolute).isDirectory()) visit(absolute)
-      else if (statSync(absolute).isFile()) files.push(relative(directory, absolute))
-    }
+function candidateEntries(entries: Map<string, GitEntry>): Map<string, GitEntry> {
+  const candidates = new Map<string, GitEntry>()
+  for (const [path, entry] of entries) {
+    if (!path.startsWith(CANDIDATES_PREFIX)) continue
+    assertRegularGitEntry(entry)
+    candidates.set(path, entry)
   }
-  visit(directory)
-  return files.sort(byteSort)
+  return candidates
 }
 
-function assetFilesFromRef(root: string, ref: string): string[] {
-  return git(root, ["ls-tree", "-r", "--name-only", "-z", ref, "--", CANDIDATES_PREFIX])
-    .toString("utf8")
-    .split("\0")
-    .filter(Boolean)
-    .map((file) => file.slice(CANDIDATES_PREFIX.length))
-    .sort(byteSort)
+function assertFullCommitSha(root: string, baseline: string): void {
+  if (!/^[0-9a-f]{40}$/.test(baseline)) {
+    throw new Error("--baseline exige SHA completo de 40 caracteres")
+  }
+  const resolved = git(root, ["rev-parse", "--verify", `${baseline}^{commit}`]).toString("utf8").trim()
+  if (resolved !== baseline) throw new Error(`baseline nao resolve para o SHA informado: ${baseline}`)
 }
 
-function assetBytes(root: string, file: string, baseline?: string): { bytes: Buffer; present: boolean } {
-  const current = resolve(root, CANDIDATES_PREFIX, file)
-  if (existsSync(current)) return { bytes: readFileSync(current), present: true }
-  if (!baseline) throw new Error(`asset ausente sem baseline: ${file}`)
-  return {
-    bytes: git(root, ["show", `${baseline}:${CANDIDATES_PREFIX}${file}`]),
-    present: false,
-  }
+function assetBytes(
+  root: string,
+  path: string,
+  current: Map<string, GitEntry>,
+  baseline?: string,
+): { bytes: Buffer; present: boolean } {
+  if (current.has(path)) return { bytes: git(root, ["show", `:${path}`]), present: true }
+  if (!baseline) throw new Error(`asset ausente sem baseline: ${path}`)
+  return { bytes: git(root, ["show", `${baseline}:${path}`]), present: false }
 }
 
 function evidence(file: string, line: number, excerpt: string, kind: ReferenceEvidence["kind"]): ReferenceEvidence {
@@ -142,58 +259,56 @@ function literalReferences(file: string, sources: SourceFile[]): ReferenceEviden
   return references.sort((a, b) => byteSort(`${a.file}:${a.line}`, `${b.file}:${b.line}`))
 }
 
-function sourceEvidence(source: SourceFile, needle: string, kind: ReferenceEvidence["kind"]): ReferenceEvidence[] {
-  const found: ReferenceEvidence[] = []
-  let offset = source.content.indexOf(needle)
-  while (offset !== -1) {
-    const location = lineFor(source.content, offset)
-    found.push(evidence(source.path, location.line, location.excerpt, kind))
-    offset = source.content.indexOf(needle, offset + needle.length)
+function parseRuntimeManifest(root: string, file?: string): RuntimeReferenceContext {
+  if (!file) return { provided: false, source: null, references: new Set() }
+  const safeFile = validateRepoPath(file)
+  const bytes = readRegularFile(root, safeFile, MAX_RUNTIME_MANIFEST_BYTES)
+  let parsed: unknown
+  try {
+    parsed = JSON.parse(bytes.toString("utf8"))
+  } catch {
+    throw new Error(`fonte runtime nao e JSON valido: ${safeFile}`)
   }
-  return found
-}
-
-function dynamicContext(sources: SourceFile[]): DynamicContext {
-  const generator = sources.find((source) => source.path === "scripts/ingest-fotos-oficiais.ts")
-  const manifest = sources.find((source) => source.path === "data/fotos-oficiais-2026.json")
-  const generatorNeedle = "/candidates/${slug}.jpg"
-  const generatorEvidence = generator
-    ? sourceEvidence(generator, generatorNeedle, "dynamic-generator")
-    : []
-  const generatedJpgSlugs = new Set<string>()
-  const inputEvidenceBySlug = new Map<string, ReferenceEvidence[]>()
-
-  if (generatorEvidence.length === 0 || !manifest) {
-    return { generatedJpgSlugs, generatorEvidence, inputEvidenceBySlug }
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+    throw new Error(`formato runtime desconhecido: ${safeFile}`)
   }
-
-  const parsed = JSON.parse(manifest.content) as { ancoras?: Array<{ slug?: unknown }> }
-  for (const anchor of parsed.ancoras ?? []) {
-    if (typeof anchor.slug !== "string" || anchor.slug.length === 0) continue
-    generatedJpgSlugs.add(anchor.slug)
-    inputEvidenceBySlug.set(
-      anchor.slug,
-      sourceEvidence(manifest, `"slug": "${anchor.slug}"`, "dynamic-input"),
-    )
+  const candidate = parsed as Partial<RuntimeReferenceManifest>
+  const keys = Object.keys(parsed).sort(byteSort)
+  if (
+    candidate.schemaVersion !== 1
+    || !Array.isArray(candidate.references)
+    || keys.join(",") !== "references,schemaVersion"
+    || candidate.references.length > MAX_RUNTIME_REFERENCES
+  ) {
+    throw new Error(`formato runtime desconhecido: ${safeFile}`)
   }
-  return { generatedJpgSlugs, generatorEvidence, inputEvidenceBySlug }
+  const references = new Set<string>()
+  for (const value of candidate.references) {
+    if (typeof value !== "string") throw new Error(`referencia runtime invalida: ${safeFile}`)
+    const path = validateRepoPath(value)
+    if (!path.startsWith(CANDIDATES_PREFIX) || path.length === CANDIDATES_PREFIX.length) {
+      throw new Error(`referencia runtime fora de ${CANDIDATES_PREFIX}: ${path}`)
+    }
+    if (references.has(path)) throw new Error(`referencia runtime duplicada: ${path}`)
+    references.add(path)
+  }
+  return { provided: true, source: safeFile, references }
 }
 
 export function classifyAsset(params: {
   file: string
   literalReferences: ReferenceEvidence[]
-  dynamicContext: DynamicContext
-}): { status: AssetStatus; dynamicReferences: ReferenceEvidence[] } {
-  if (params.literalReferences.length > 0) return { status: "referenced", dynamicReferences: [] }
-  const slug = params.file.slice(0, -extname(params.file).length)
-  const isGeneratedJpg = extname(params.file).toLowerCase() === ".jpg"
-    && params.dynamicContext.generatedJpgSlugs.has(slug)
-  if (!isGeneratedJpg) return { status: "unreferenced", dynamicReferences: [] }
+  runtimeReferences?: ReadonlySet<string>
+  runtimeSource?: string
+}): { status: AssetStatus; runtimeReferences: ReferenceEvidence[] } {
+  if (params.literalReferences.length > 0) return { status: "referenced", runtimeReferences: [] }
+  const path = `${CANDIDATES_PREFIX}${params.file}`
+  if (!params.runtimeReferences) return { status: "indeterminate", runtimeReferences: [] }
+  if (!params.runtimeReferences.has(path)) return { status: "unreferenced", runtimeReferences: [] }
   return {
-    status: "ambiguous",
-    dynamicReferences: [
-      ...params.dynamicContext.generatorEvidence,
-      ...(params.dynamicContext.inputEvidenceBySlug.get(slug) ?? []),
+    status: "referenced",
+    runtimeReferences: [
+      evidence(params.runtimeSource ?? "<runtime-references>", 1, path, "runtime"),
     ],
   }
 }
@@ -225,40 +340,64 @@ function coverage(sources: SourceFile[]): Record<string, number> {
 }
 
 export function buildInventory(options: AuditOptions) {
-  const sources = loadTextSources(options.root)
-  const dynamic = dynamicContext(sources)
-  const files = options.baseline
-    ? assetFilesFromRef(options.root, options.baseline)
-    : assetFilesFromWorktree(options.root)
-  const assets: CandidateAssetAudit[] = files.map((file) => {
-    const source = assetBytes(options.root, file, options.baseline)
+  const root = realpathSync(options.root)
+  if (options.baseline) assertFullCommitSha(root, options.baseline)
+  const index = parseIndexEntries(root)
+  const currentCandidates = candidateEntries(index)
+  const baselineCandidates = options.baseline
+    ? candidateEntries(parseTreeEntries(root, options.baseline))
+    : currentCandidates
+  const runtime = parseRuntimeManifest(root, options.runtimeReferencesFile)
+  const sources = loadTextSources(root, index, options.runtimeReferencesFile)
+  const files = [...baselineCandidates.keys()].sort(byteSort)
+  const assets: CandidateAssetAudit[] = files.map((path) => {
+    const file = path.slice(CANDIDATES_PREFIX.length)
+    const source = assetBytes(root, path, currentCandidates, options.baseline)
     const literals = literalReferences(file, sources)
-    const classification = classifyAsset({ file, literalReferences: literals, dynamicContext: dynamic })
+    const classification = classifyAsset({
+      file,
+      literalReferences: literals,
+      runtimeReferences: runtime.provided ? runtime.references : undefined,
+      runtimeSource: runtime.source ?? undefined,
+    })
     return {
       file,
-      path: `${CANDIDATES_PREFIX}${file}`,
+      path,
       extension: extname(file).toLowerCase(),
       sha256: createHash("sha256").update(source.bytes).digest("hex"),
       size: source.bytes.length,
       present: source.present,
       status: classification.status,
       literalReferences: literals,
-      dynamicReferences: classification.dynamicReferences,
+      runtimeReferences: classification.runtimeReferences,
     }
   })
   const counts = {
     total: assets.length,
+    currentCandidateAssets: currentCandidates.size,
     present: assets.filter((asset) => asset.present).length,
     removed: assets.filter((asset) => !asset.present).length,
     referenced: assets.filter((asset) => asset.status === "referenced").length,
-    ambiguous: assets.filter((asset) => asset.status === "ambiguous").length,
+    indeterminate: assets.filter((asset) => asset.status === "indeterminate").length,
     unreferenced: assets.filter((asset) => asset.status === "unreferenced").length,
   }
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     baseline: options.baseline ?? null,
+    runtimeReferences: {
+      provided: runtime.provided,
+      source: runtime.source,
+      count: runtime.references.size,
+    },
     scannedTextFiles: sources.length,
     coverage: coverage(sources),
+    limits: {
+      trackedFiles: MAX_TRACKED_FILES,
+      textFileBytes: MAX_TEXT_FILE_BYTES,
+      totalTextBytes: MAX_TOTAL_TEXT_BYTES,
+      runtimeManifestBytes: MAX_RUNTIME_MANIFEST_BYTES,
+      runtimeReferences: MAX_RUNTIME_REFERENCES,
+    },
     counts,
     assets,
   }
@@ -272,15 +411,35 @@ function argument(name: string): string | undefined {
   return value
 }
 
+function writeOutput(root: string, output: string, serialized: string): void {
+  const rootReal = realpathSync(root)
+  const safeOutput = validateRepoPath(output)
+  const absolute = repoPath(rootReal, safeOutput)
+  const parentReal = realpathSync(dirname(absolute))
+  if (!isContained(rootReal, parentReal)) throw new Error(`output fora do repositorio: ${output}`)
+  try {
+    const metadata = lstatSync(absolute)
+    if (metadata.isSymbolicLink()) throw new Error(`symlink rejeitado no output: ${output}`)
+    if (!metadata.isFile()) throw new Error(`output nao e arquivo regular: ${output}`)
+  } catch (error) {
+    if (!(error instanceof Error && "code" in error && error.code === "ENOENT")) throw error
+  }
+  writeFileSync(absolute, serialized)
+}
+
 function main() {
   const root = process.cwd()
   const output = argument("output")
   const baseline = argument("baseline")
+  const runtimeReferencesFile = argument("runtime-references")
   const verifyRemovals = process.argv.includes("--verify-removals")
   if (verifyRemovals && !baseline) throw new Error("--verify-removals exige --baseline")
-  const inventory = buildInventory({ root, output, baseline, verifyRemovals })
+  if (verifyRemovals && !runtimeReferencesFile) {
+    throw new Error("--verify-removals exige --runtime-references")
+  }
+  const inventory = buildInventory({ root, output, baseline, runtimeReferencesFile, verifyRemovals })
   const serialized = `${JSON.stringify(inventory, null, 2)}\n`
-  if (output) writeFileSync(resolve(root, output), serialized)
+  if (output) writeOutput(root, output, serialized)
   else process.stdout.write(serialized)
 
   if (verifyRemovals) {
@@ -290,11 +449,11 @@ function main() {
       process.exitCode = 1
       return
     }
-    console.log(`PF21_REMOVALS_SAFE removed=${inventory.counts.removed}`)
+    console.error(`PF21_REMOVALS_SAFE removed=${inventory.counts.removed}`)
     return
   }
-  console.log(
-    `PF21_INVENTORY total=${inventory.counts.total} referenced=${inventory.counts.referenced} ambiguous=${inventory.counts.ambiguous} unreferenced=${inventory.counts.unreferenced}`,
+  console.error(
+    `PF21_INVENTORY total=${inventory.counts.total} referenced=${inventory.counts.referenced} indeterminate=${inventory.counts.indeterminate} unreferenced=${inventory.counts.unreferenced}`,
   )
 }
 
