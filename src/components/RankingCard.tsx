@@ -13,7 +13,10 @@ export function RankingCard({ dataset }: RankingCardProps) {
   const preview = dataset.entries.slice(0, 3)
 
   return (
-    <article className="rounded-[24px] border border-border/60 bg-card p-5 sm:p-6">
+    <article
+      data-pf-ranking-card
+      className="rounded-[20px] border border-border/60 bg-card p-4 sm:p-5"
+    >
       <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">
         {dataset.definition.eyebrow}
       </p>
@@ -22,15 +25,16 @@ export function RankingCard({ dataset }: RankingCardProps) {
           {dataset.definition.title}
         </Link>
       </h2>
-      <p className="mt-3 text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground">
+      <p className="mt-2.5 text-[length:var(--text-body)] font-medium leading-snug text-muted-foreground">
         {dataset.definition.contextExplanation}
       </p>
-      <div className="mt-5 space-y-3">
+      <div className="mt-4 space-y-2">
         {preview.length > 0 ? (
           preview.map((entry, index) => (
             <div
               key={entry.candidato.slug}
-              className="flex items-center justify-between gap-4 rounded-[16px] bg-muted/35 px-4 py-3"
+              data-pf-ranking-preview-row
+              className="flex items-center justify-between gap-3 rounded-[14px] bg-muted/35 px-3 py-2.5"
             >
               <div className="min-w-0">
                 <p className="text-[length:var(--text-caption)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
@@ -53,7 +57,7 @@ export function RankingCard({ dataset }: RankingCardProps) {
           </div>
         )}
       </div>
-      <div className="mt-5">
+      <div className="mt-4">
         <Link
           href={href}
           className="inline-flex rounded-full border border-foreground px-4 py-2 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.08em] text-foreground transition-colors hover:bg-foreground hover:text-background"
