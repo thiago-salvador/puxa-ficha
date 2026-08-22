@@ -66,7 +66,7 @@ export const ROUTE_GUARDS = [
 
 export type RouteGuard = (typeof ROUTE_GUARDS)[number]
 
-export function matchesRouteGuardPrefix(
+function matchesRouteGuardPrefix(
   pathname: string,
   prefix: string,
   mode: RouteGuardMatchMode,
