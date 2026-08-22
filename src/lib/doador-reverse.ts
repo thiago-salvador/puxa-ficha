@@ -1,7 +1,7 @@
 import "server-only"
 
 import * as Sentry from "@sentry/nextjs"
-import { unstable_cache } from "next/cache"
+import { unstableCacheWithSingleFlight } from "@/lib/cache-single-flight"
 import {
   DOADOR_REVERSE_MAX_QUERY_LENGTH,
   DOADOR_REVERSE_MIN_QUERY_LENGTH,
@@ -153,7 +153,7 @@ class DoadorReverseUnavailableError extends Error {
   }
 }
 
-const getCachedDoadorReverseRows = unstable_cache(
+const getCachedDoadorReverseRows = unstableCacheWithSingleFlight(
   async (normalizedQuery: string) => fetchDoadorReverseRows(normalizedQuery),
   // Sufixo trocado para descartar o cache ja envenenado no deploy, do mesmo jeito
   // que o PR #40 fez com `cache-poison-fix-20260802` nos wrappers de api.ts.
