@@ -1,22 +1,36 @@
 # Configuração do gitleaks para o Puxa Ficha.
-# Estende as regras padrão e suprime falsos positivos conhecidos: o detector
-# genérico de "api-key" marca IDs públicos, slugs e o identificador público do
-# beacon da Cloudflare, que precisam aparecer no cliente e não são segredos.
+# Estende as regras padrão e limita cada falso positivo conhecido ao valor
+# público exato, à regra que o sinaliza e ao arquivo em que ele ocorre.
 [extend]
 useDefault = true
 
-[allowlist]
-description = "Falsos positivos conhecidos (dados públicos, não segredos)"
-regexTarget = "line"
-regexes = [
-  # IDs de proposição de sistemas legislativos (SAPL etc.), dado público
-  '''proposicao_id_api''',
-  # Identificador público que o beacon da Cloudflare inclui no HTML do cliente
-  '''CLOUDFLARE_WEB_ANALYTICS_TOKEN''',
-  # Slug público cujo trecho "api" aciona por engano o detector genérico
-  '''joao-capiberibe''',
-]
-paths = [
-  # lista de hosts de imagem permitidos (hostnames públicos, não segredos)
-  '''src/lib/remote-image-hosts\.ts''',
-]
+[[rules]]
+id = "generic-api-key"
+
+  [[rules.allowlists]]
+  description = "Identificador público do beacon da Cloudflare"
+  condition = "AND"
+  regexTarget = "secret"
+  regexes = ['''^f47edf88957444dc83600ce372955b50$''']
+  paths = ['''^src/components/CloudflareWebAnalytics\.tsx$''']
+
+  [[rules.allowlists]]
+  description = "Hostname público sinalizado pelo detector genérico"
+  condition = "AND"
+  regexTarget = "secret"
+  regexes = ['''^gabriel15\.com\.br$''']
+  paths = ['''^src/lib/remote-image-hosts\.ts$''']
+
+  [[rules.allowlists]]
+  description = "IDs públicos de proposições do SAPL"
+  condition = "AND"
+  regexTarget = "secret"
+  regexes = ['''^(TO-SAPL-12798|TO-SAPL-12705|TO-SAPL-12658)$''']
+  paths = ['''^supabase/migrations/20260510183000_seed_projetos_lei_amelio_soldado_sapl_completo\.sql$''']
+
+  [[rules.allowlists]]
+  description = "ID público da votação do Senado"
+  condition = "AND"
+  regexTarget = "secret"
+  regexes = ['''^539f836a-197b-4176-9861-d58759a5c73b$''']
+  paths = ['''^supabase/rollback/20260811100000_votacoes_senado_chave_exata\.rollback\.sql$''']
