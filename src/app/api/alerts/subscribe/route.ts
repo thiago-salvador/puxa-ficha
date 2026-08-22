@@ -138,7 +138,7 @@ async function reserveEmailIpBudget(
       avisarColunaAusenteUmaVez()
       return { kind: "ok", reserved: false }
     }
-    if (!isMissingQuotaRpc(error)) {
+    if (!isMissingQuotaRpc(error, "reserve_alert_email_ip_budget")) {
       deps.logAlertsApiExit("subscribe", 503, "email_ip_rate_check_failed")
       return {
         kind: "blocked",
@@ -548,7 +548,7 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
       )
 
       if (insertError) {
-        if (isMissingQuotaRpc(insertError)) {
+        if (isMissingQuotaRpc(insertError, "insert_alert_subscriber_under_ip_quota")) {
           const { count, error: countError } = await supabase
             .from("alert_subscribers")
             .select("*", { count: "exact", head: true })
