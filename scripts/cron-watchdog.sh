@@ -19,6 +19,7 @@ require_command() {
 require_command gh
 require_command jq
 require_command node
+require_command curl
 
 iso_to_epoch() {
   node -e 'const value=Date.parse(process.argv[1]); if(!Number.isFinite(value)) process.exit(1); console.log(Math.floor(value/1000))' "$1"
@@ -43,8 +44,15 @@ publish_anomaly() {
   local status_label="$3"
   local run_url="$4"
   local run_id="$5"
+  local source_path="${6:-.github/workflows/${workflow_file}}"
   local marker="<!-- cron-watchdog-workflow:${workflow_file} -->"
   local title="[cron-failure] ${workflow_name}"
+  local recovery_note
+  if [[ "$source_path" == "vercel.json" ]]; then
+    recovery_note="A sonda HTTP autenticada precisa responder 200 com \`ok: true\`."
+  else
+    recovery_note="O watchdog considera a última execução \`schedule\`. Um rerun posterior em verde (dispatch ou push) conta como recuperado."
+  fi
   local run_line
   if [[ -n "$run_id" ]]; then
     run_line="- Última execução agendada concluída: [${run_id}](${run_url})"
@@ -56,12 +64,12 @@ publish_anomaly() {
 ## Anomalia de cron detectada
 
 - Workflow: **${workflow_name}**
-- Arquivo: \`.github/workflows/${workflow_file}\`
+- Arquivo: \`${source_path}\`
 - Estado: **${status_label}**
 ${run_line}
 - Detectado em: $(date -u +%Y-%m-%dT%H:%M:%SZ)
 
-O watchdog considera a última execução \`schedule\`. Um rerun posterior em verde (dispatch ou push) conta como recuperado.
+${recovery_note}
 
 ${marker}
 EOF
@@ -154,5 +162,71 @@ for workflow_file in "${WORKFLOW_FILES[@]}"; do
     echo "ok: ${workflow_name}"
   fi
 done
+
+list_vercel_crons() {
+  local count
+  count="$(jq '.crons | length' vercel.json)"
+  echo "vercel_crons_declarados=${count}"
+  jq -r '.crons[] | "vercel-cron: \(.path) \(.schedule)"' vercel.json
+}
+
+origin_allowed_for_secret() {
+  local origin="$1"
+  case "$origin" in
+    https://*) return 0 ;;
+    http://localhost|http://localhost:*|http://127.0.0.1|http://127.0.0.1:*) return 0 ;;
+    *) return 1 ;;
+  esac
+}
+
+probe_runtime_smoke() {
+  local origin="${PF_RUNTIME_SMOKE_ORIGIN:-https://puxaficha.com.br}"
+  origin="${origin%/}"
+  local smoke_url="${origin}/api/internal/runtime-smoke"
+  local http_code="000"
+  local smoke_ok="false"
+  local smoke_body
+  local status_label
+
+  if ! origin_allowed_for_secret "$origin"; then
+    ANOMALIES=$((ANOMALIES + 1))
+    publish_anomaly "runtime-smoke" "runtime-smoke" \
+      "origem recusada (exige https ou loopback)" "$smoke_url" "" "vercel.json"
+    return 0
+  fi
+
+  if [[ -z "${CRON_SECRET:-}" ]]; then
+    ANOMALIES=$((ANOMALIES + 1))
+    publish_anomaly "runtime-smoke" "runtime-smoke" \
+      "CRON_SECRET ausente no ambiente do watchdog" "$smoke_url" "" "vercel.json"
+    return 0
+  fi
+
+  smoke_body="$(mktemp)"
+  if ! http_code="$(curl -sS -o "$smoke_body" -w "%{http_code}" \
+      --max-time 45 \
+      -H "Authorization: Bearer ${CRON_SECRET}" \
+      -H "User-Agent: puxaficha-cron-watchdog/1.0" \
+      "$smoke_url")"; then
+    http_code="${http_code:-000}"
+    status_label="curl falhou (HTTP ${http_code})"
+  else
+    smoke_ok="$(jq -r '.ok // false' "$smoke_body" 2>/dev/null || echo false)"
+    if [[ "$http_code" == "200" && "$smoke_ok" == "true" ]]; then
+      echo "ok: runtime-smoke"
+      rm -f "$smoke_body"
+      return 0
+    fi
+    status_label="HTTP ${http_code}, ok=${smoke_ok}"
+  fi
+  rm -f "$smoke_body"
+
+  ANOMALIES=$((ANOMALIES + 1))
+  publish_anomaly "runtime-smoke" "runtime-smoke" \
+    "$status_label" "$smoke_url" "" "vercel.json"
+}
+
+list_vercel_crons
+probe_runtime_smoke
 
 echo "anomalias_detectadas=${ANOMALIES}"
