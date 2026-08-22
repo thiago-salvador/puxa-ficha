@@ -54,5 +54,5 @@ jobs:
           git archive "$HEAD_SHA" | tar -x -C "$snapshot"
           (cd "$snapshot" && gitleaks dir . --config .gitleaks.toml --no-banner --redact=100 --exit-code=1)
 
-      - name: Verify controlled fixture is detected and redacted
-        run: node --test --test-name-pattern="fixture" tests/gitleaks-workflow.test.mjs
+      - name: Run all focused gitleaks regressions
+        run: node --test tests/gitleaks-workflow.test.mjs

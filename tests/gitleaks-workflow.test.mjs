@@ -164,6 +164,11 @@ test("workflow is pinned, read-only and fail-closed", () => {
     workflow,
     /gitleaks dir \. .*--redact=100 .*--exit-code=1/,
   )
+  assert.match(
+    workflow,
+    /- name: Run all focused gitleaks regressions\n\s+run: node --test tests\/gitleaks-workflow\.test\.mjs/,
+  )
+  assert.doesNotMatch(workflow, /--test-name-pattern/)
   assert.doesNotMatch(workflow, /continue-on-error/)
 })
 
