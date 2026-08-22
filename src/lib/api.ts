@@ -1,6 +1,6 @@
 import "server-only"
 import { cache } from "react"
-import { unstable_cache, unstable_noStore as noStore } from "next/cache"
+import { unstable_noStore as noStore } from "next/cache"
 import { headers } from "next/headers"
 import { collectQuizVotacaoTitulos, QUIZ_PERGUNTAS } from "@/data/quiz/perguntas"
 import {
@@ -15,6 +15,7 @@ import {
 } from "./supabase"
 import { isSupabaseNoRowError } from "./supabase-errors"
 import { resolveReleaseVerifyCacheBypassToken } from "./production-env"
+import { unstableCacheWithSingleFlight } from "./cache-single-flight"
 import { normalizeVotoFromApi } from "@/lib/quiz-scoring"
 import { SIGLAS_PROJETO_LEI, rotuloDoAcervo } from "@/lib/proposicao-natureza"
 import type {
@@ -812,7 +813,7 @@ async function getCandidatosResourceUncached(
   return liveResource(sanitizePublicPartyFieldsList(data as Candidato[]))
 }
 
-const getCachedCandidatosResource = unstable_cache(
+const getCachedCandidatosResource = unstableCacheWithSingleFlight(
   async (cargo?: string, estado?: string) => getCandidatosResourceUncached(cargo, estado),
   // Bumped 2026-04-26: payload publico agora carrega partido_sigla/partido_atual
   // ja sanitizados (incerto -> null, aliases canonicalizados via formatPartyPublicLabel).
@@ -893,7 +894,7 @@ async function getCandidatoNavResourceUncached(
   return liveResource(data as CandidatoNavItem[])
 }
 
-const getCachedCandidatoNavResource = unstable_cache(
+const getCachedCandidatoNavResource = unstableCacheWithSingleFlight(
   async (cargo?: string, estado?: string) => getCandidatoNavResourceUncached(cargo, estado),
   ["public-candidato-nav-resource", "slug-nome-urna-20260603", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "nav-por-disputa-20260815", CURRENT_DATA_WAVE],
   {
@@ -1012,7 +1013,7 @@ async function getGlobalSearchIndexResourceUncached(): Promise<
   }
 }
 
-const getCachedGlobalSearchIndexResource = unstable_cache(
+const getCachedGlobalSearchIndexResource = unstableCacheWithSingleFlight(
   async () => rejectPartialForCache(getGlobalSearchIndexResourceUncached()),
   // Bumped 2026-04-26 (Bloco 1 review 2026-04-24): force one-time bust of Vercel
   // Data Cache so the new subtitle/searchText (without raw 'incerto') is exercised.
@@ -1133,7 +1134,7 @@ async function getCandidatoSlugParamsUncached(): Promise<{ slug: string }[]> {
   return data.map((row) => ({ slug: String(row.slug) }))
 }
 
-const getCachedCandidatoSlugParams = unstable_cache(
+const getCachedCandidatoSlugParams = unstableCacheWithSingleFlight(
   async () => getCandidatoSlugParamsUncached(),
   ["public-candidato-slugs-static", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "escopo-executivo-20260726", "chapas-tse-20260815", "onda-p-20260814", CURRENT_DATA_WAVE],
   {
@@ -1157,7 +1158,7 @@ async function getCandidatoMetadataResourceUncached(
   return { ...res, data: sanitizePublicPartyFields(res.data) }
 }
 
-const getCachedCandidatoMetadataResource = unstable_cache(
+const getCachedCandidatoMetadataResource = unstableCacheWithSingleFlight(
   async (slug: string) =>
     requireLiveResourceForCache(await getCandidatoMetadataResourceUncached(slug)),
   // Bumped 2026-04-26: payload publico agora carrega partido_sigla/partido_atual
@@ -1990,7 +1991,7 @@ export async function getCandidatoBySlugAuditResource(
   )
 }
 
-const getCachedCandidatoBySlugResource = unstable_cache(
+const getCachedCandidatoBySlugResource = unstableCacheWithSingleFlight(
   async (slug: string) =>
     requireLiveResourceForCache(await getCandidatoBySlugResourceUncached(slug)),
   // Bumped 2026-05-01: payload publico de legislacao_mandato_executivo passou a
@@ -2108,7 +2109,7 @@ async function getCandidatosComResumoResourceUncached(
   return liveResource(data)
 }
 
-const getCachedCandidatosComResumoResource = unstable_cache(
+const getCachedCandidatosComResumoResource = unstableCacheWithSingleFlight(
   async (cargo?: string, estado?: string) =>
     rejectPartialForCache(getCandidatosComResumoResourceUncached(cargo, estado)),
   // Bumped 2026-04-26: dados de candidato vem ja sanitizados via getCandidatosResource;
@@ -2235,7 +2236,7 @@ async function getCandidatosComparaveisResourceUncached(
   return liveResource(sanitizePublicPartyFieldsList(normalizedRows as CandidatoComparavel[]))
 }
 
-const getCachedCandidatosComparaveisResource = unstable_cache(
+const getCachedCandidatosComparaveisResource = unstableCacheWithSingleFlight(
   async (cargo?: string, estado?: string) =>
     getCandidatosComparaveisResourceUncached(cargo, estado),
   // Bumped 2026-04-26: payload publico carrega partido sanitizado.
@@ -2406,7 +2407,7 @@ async function getRankingDataResourceUncached(
   }
 }
 
-const getCachedRankingDataResource = unstable_cache(
+const getCachedRankingDataResource = unstableCacheWithSingleFlight(
   async (slug: string, cargo: string, estado: string) =>
     getRankingDataResourceUncached(slug, cargo || undefined, estado || undefined),
   // Bumped 2026-05-21: copy pública de rankings virou "listas temáticas";
@@ -2767,7 +2768,7 @@ async function getQuizAlignmentDatasetResourceUncached(
   }
 }
 
-const getCachedQuizAlignmentDatasetResource = unstable_cache(
+const getCachedQuizAlignmentDatasetResource = unstableCacheWithSingleFlight(
   async (cargo: string, estado: string) =>
     rejectPartialForCache(getQuizAlignmentDatasetResourceUncached(cargo, estado || undefined)),
   ["quiz-alignment-dataset-resource", "fase2", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "quiz-mudancas-despublicado-v1", CURRENT_DATA_WAVE],
@@ -2849,7 +2850,7 @@ async function getIndicadoresEstadoResourceUncached(
   return liveResource(data.map(mapIndicadorEstadualRow))
 }
 
-const getCachedIndicadoresEstadoResource = unstable_cache(
+const getCachedIndicadoresEstadoResource = unstableCacheWithSingleFlight(
   async (uf: string) => getIndicadoresEstadoResourceUncached(uf),
   ["public-indicadores-estado-resource", "cache-poison-fix-20260802", CURRENT_DATA_WAVE],
   {
@@ -2908,7 +2909,7 @@ async function getIndicadoresAllEstadosResourceUncached(): Promise<
   )
 }
 
-const getCachedIndicadoresAllEstadosResource = unstable_cache(
+const getCachedIndicadoresAllEstadosResource = unstableCacheWithSingleFlight(
   async () => getIndicadoresAllEstadosResourceUncached(),
   ["public-indicadores-all-estados-resource", "cache-poison-fix-20260802", CURRENT_DATA_WAVE],
   {
