@@ -27,6 +27,7 @@
     "lint:spell": "cspell lint --no-progress \"src/app/(site)/privacidade/page.tsx\" \"src/app/(site)/sobre/page.tsx\" src/app/not-found.tsx \"src/app/(site)/page.tsx\" src/app/layout.tsx",
     "lint:spell:ui": "cspell lint --no-progress \"src/app/**/*.tsx\" \"src/components/**/*.tsx\" --exclude \"**/internaltest/**\" --exclude \"**/styleguide/**\" --exclude \"**/preview/**\"",
     "test": "node --import tsx --test tests/**/*.test.ts tests/**/*.test.tsx",
+    "test:alerts:nightly": "node --import tsx --test tests/alerts-nightly-e2e.test.ts",
     "test:coverage:raw": "node scripts/run-c8-node26.mjs --config c8.config.json node --import tsx --test --test-force-exit --test-concurrency=1 tests/**/*.test.ts tests/**/*.test.tsx",
     "check:dead-code": "knip --config knip.json --include files,dependencies,unlisted,unresolved,exports --no-progress --max-issues 0",
     "test:a11y": "playwright test tests/visual/a11y.spec.ts",

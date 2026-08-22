@@ -1,0 +1,38 @@
+name: Alertas E2E nightly
+
+on:
+  schedule:
+    # 00:17 em Brasilia. Minuto deslocado reduz disputa no inicio da hora.
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: alerts-nightly-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  alertas-e2e:
+    name: Pipeline local sem envio real
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Instalar dependencias sem scripts de pacote
+        run: npm ci --ignore-scripts
+
+      - name: Exercitar alertas com fixtures locais
+        env:
+          CI: "true"
+          NODE_ENV: test
+        run: npm run test:alerts:nightly
