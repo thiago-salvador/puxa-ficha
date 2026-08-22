@@ -43,6 +43,7 @@ logs/
 # `.env*` cobre tambem o que `vercel env pull` escreve fora do padrao
 # (`.env.production`, por exemplo).
 .env*
+!.env.example
 
 # local script state (regenerable)
 scripts/audit-factual-*.json
