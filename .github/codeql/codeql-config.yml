@@ -1,0 +1,13 @@
+name: "Puxa Ficha CodeQL"
+
+# Escopo do scan. Fica versionado (advanced setup) em vez do default setup da
+# UI porque o default nao aceita filtro de path nem escolha de suite, e por isso
+# abriu 57 alertas sem nenhum em codigo servido ao usuario.
+#
+# O que continua no scan: src/, middleware.ts, scripts/ (rodam em Actions com
+# secrets de ingestao, entao sao codigo privilegiado) e os configs da raiz.
+paths-ignore:
+  # Testes e specs de Playwright nao sao superficie de ataque: nao vao pro
+  # bundle, nao rodam em producao e nao recebem input de terceiro. Eram 23 dos
+  # 57 alertas, quase todos regex sem ancora dentro de assert.match().
+  - tests/**

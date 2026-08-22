@@ -16,7 +16,7 @@ describe("processos do Renan Santos: assunto e absolvição", () => {
       "0262930-72.2017.8.19.0001",
       "1039971-32.2024.8.26.0002",
     ]) {
-      assert.match(sql, new RegExp(cnj.replace(/[.-]/g, "\\$&")))
+      assert.match(sql, new RegExp(cnj.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")))
     }
     assert.match(sql, /Reclamação disciplinar/)
     assert.match(sql, /Lista de apoiamento para criação de partido político/)

@@ -1,0 +1,59 @@
+name: CodeQL
+
+# Substitui o default setup da UI, que rodava a suite `security-extended` no
+# repo inteiro e nao permite filtrar path. Aqui o escopo vive em
+# .github/codeql/codeql-config.yml e entra em code review como qualquer mudanca.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Segunda 06:12 UTC (03:12 BRT). Mantem a cadencia semanal que o default
+    # setup ja tinha, para pegar query novas do CodeQL sem depender de push.
+    - cron: "12 6 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codeql-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      # security-events: write e o que permite subir o SARIF pro code scanning.
+      security-events: write
+      actions: read
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        # javascript-typescript cobre .js/.mjs/.ts/.tsx num database so.
+        # python cobre os utilitarios de manutencao em scripts/.
+        language: [javascript-typescript, python]
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@db488ddef3bf6cb639b32c2e9a7c0a7ea8271d28 # v4.37.8
+        with:
+          languages: ${{ matrix.language }}
+          config-file: ./.github/codeql/codeql-config.yml
+          # Sem `queries:` de proposito. O default e a suite `code-scanning`,
+          # que so inclui query de seguranca com precision high/very-high. O
+          # default setup rodava `security-extended`, que adiciona precision
+          # medium: era de onde vinham 54 dos 57 alertas (heuristica de fluxo
+          # de dado em script de ingestao de fonte publica fixa).
+
+      - name: Analyze
+        uses: github/codeql-action/analyze@db488ddef3bf6cb639b32c2e9a7c0a7ea8271d28 # v4.37.8
+        with:
+          category: "/language:${{ matrix.language }}"
