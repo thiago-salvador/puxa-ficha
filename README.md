@@ -86,6 +86,10 @@ use o canal privado em [SECURITY.md](SECURITY.md), não uma issue pública.
 - **TypeScript**
 - **Tailwind CSS 4** + shadcn/ui
 
+O HTML público é renderizado sob demanda porque o layout raiz lê o nonce CSP
+específico de cada requisição. O cache de dados do Supabase continua separado
+desse ciclo, por meio de `unstable_cache`.
+
 ## Pré-requisitos
 
 - Node.js **24.x** (ver `.nvmrc`)

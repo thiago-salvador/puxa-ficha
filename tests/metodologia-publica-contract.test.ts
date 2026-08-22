@@ -146,9 +146,9 @@ describe("Metodologia pública contract", () => {
       assert.match(content, /url:\s*"https:\/\/puxaficha\.com\.br\/metodologia"/, "deve usar URL correta no OpenGraph")
     })
 
-    test("exporta revalidate = 3600", () => {
+    test("não exporta revalidate enquanto o RootLayout força renderização dinâmica", () => {
       const content = readFileSync("src/app/(site)/metodologia/page.tsx", "utf-8")
-      assert.match(content, /export const revalidate = 3600/, "deve exportar revalidate = 3600")
+      assert.doesNotMatch(content, /export const revalidate\s*=/, "não deve declarar ISR inerte")
     })
 
     test("importa METHODOLOGY_SOURCES", () => {
@@ -309,9 +309,9 @@ describe("Metodologia pública contract", () => {
       assert.match(content, /url:\s*"https:\/\/puxaficha\.com\.br\/quiz\/metodologia"/, "deve usar URL correta no OpenGraph")
     })
 
-    test("exporta revalidate = 3600", () => {
+    test("não exporta revalidate enquanto o RootLayout força renderização dinâmica", () => {
       const content = readFileSync("src/app/(site)/quiz/metodologia/page.tsx", "utf-8")
-      assert.match(content, /export const revalidate = 3600/, "deve exportar revalidate = 3600")
+      assert.doesNotMatch(content, /export const revalidate\s*=/, "não deve declarar ISR inerte")
     })
 
     test("importa collectQuizVotacaoTitulos", () => {
