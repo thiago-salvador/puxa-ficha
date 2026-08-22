@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next"
-import { SITE_ORIGIN } from "@/lib/metadata"
+import { SITE_ORIGIN } from "./metadata"
 
 export const PREVIEW_NOINDEX_HEADER_VALUE = "noindex, nofollow, noarchive"
 export const EMBED_NOINDEX_HEADER_VALUE = "noindex, nofollow"

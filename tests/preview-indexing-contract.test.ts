@@ -16,6 +16,7 @@ test("preview deployment aplica noindex global e robots bloqueando crawl", () =>
 
   const robots = buildRobotsForDeployment("preview")
 
+  assert.strictEqual(robots.sitemap, undefined)
   assert.deepStrictEqual(robots, {
     rules: [
       {
@@ -24,7 +25,6 @@ test("preview deployment aplica noindex global e robots bloqueando crawl", () =>
       },
     ],
   })
-  assert.strictEqual(robots.sitemap, undefined)
 })
 
 test("producao preserva robots publico e embed noindex estreito", () => {
@@ -58,10 +58,11 @@ test("sitemap e robots de producao usam SITE_ORIGIN, sem dominio hardcoded", () 
   assert.match(metadataHelper, /export const SITE_ORIGIN/)
   assert.match(metadataHelper, /process\.env\.NEXT_PUBLIC_SITE_URL/)
 
-  assert.doesNotMatch(sitemap, /https:\/\/puxaficha\.com\.br/)
+  assert.equal(sitemap.includes("https://puxaficha.com.br"), false)
   assert.match(sitemap, /SITE_ORIGIN/)
 
-  assert.doesNotMatch(robotsHelper, /https:\/\/puxaficha\.com\.br/)
+  assert.equal(robotsHelper.includes("https://puxaficha.com.br"), false)
+  assert.match(robotsHelper, /from ["']\.\/metadata["']/)
   assert.match(robotsHelper, /\$\{SITE_ORIGIN\}\/sitemap\.xml/)
 
   assert.match(robotsRoute, /buildRobotsForDeployment/)
