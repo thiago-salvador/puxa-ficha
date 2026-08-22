@@ -9,11 +9,13 @@ import {
 import { resolveEstadoUf } from "@/lib/br-uf"
 import { buildContentSecurityPolicy } from "@/lib/content-security-policy"
 import { getRankingDefinitionBySlug } from "@/data/ranking-definitions"
-
-const INTERNAL_COOKIE_NAME = "pf_internal_token"
-const PREVIEW_COOKIE_NAME = "pf_preview_token"
-const MIN_PRODUCTION_INTERNAL_TOKEN_LENGTH = 24
-const MIN_PRODUCTION_PREVIEW_TOKEN_LENGTH = 24
+import {
+  findRouteGuard,
+  INTERNAL_COOKIE_NAME,
+  PREVIEW_COOKIE_NAME,
+  resolveInternalRouteAccessPolicy,
+  resolvePreviewToken,
+} from "@/lib/route-guards"
 const applyProductionHttpsHeaders =
   process.env.VERCEL === "1" || process.env.PF_FORCE_PRODUCTION_SECURITY_HEADERS === "1"
 
@@ -268,57 +270,17 @@ async function setAccessCookie(
  * derivado, mudando só o path, então um jar com as duas entradas nunca fica
  * ambíguo na leitura.
  */
-function internalCookiePath(pathname: string): string {
-  return pathname.startsWith("/styleguide") ? "/styleguide" : "/internaltest"
-}
-
-function resolvePreviewToken() {
-  const configuredToken = process.env.PF_PREVIEW_TOKEN?.trim()
-
-  // Qualquer ambiente DEPLOYADO na Vercel (production E preview) exige token forte
-  // configurado, fail-closed. /preview/* le candidatos NAO publicados via service
-  // role (bypassa RLS), entao o fallback "local-preview" so pode existir em dev
-  // local fora da Vercel (review 2026-06-09).
-  const isDeployed =
-    process.env.VERCEL === "1" ||
-    process.env.VERCEL_ENV === "production" ||
-    process.env.VERCEL_ENV === "preview"
-  if (isDeployed) {
-    if (!configuredToken || configuredToken.length < MIN_PRODUCTION_PREVIEW_TOKEN_LENGTH) {
-      return null
-    }
-    return configuredToken
-  }
-
-  // Dev local (nao deployado): aceita token configurado ou o fallback de conveniencia.
-  if (configuredToken) return configuredToken
-  return "local-preview"
-}
-
-function resolveInternalToken() {
-  const configuredToken = process.env.PF_INTERNAL_TOKEN?.trim()
-
-  if (process.env.VERCEL_ENV === "production") {
-    if (!configuredToken || configuredToken.length < MIN_PRODUCTION_INTERNAL_TOKEN_LENGTH) {
-      return null
-    }
-    return configuredToken
-  }
-
-  return configuredToken || null
-}
-
-async function protectInternalRoute(request: NextRequest): Promise<NextResponse | Response | null> {
-  if (process.env.NODE_ENV === "development") {
-    return null
-  }
-
-  const expectedToken = resolveInternalToken()
-  if (!expectedToken) {
+async function protectInternalRoute(
+  request: NextRequest,
+  cookiePath: string,
+): Promise<NextResponse | Response | null> {
+  const policy = resolveInternalRouteAccessPolicy()
+  if (policy.mode === "allow") return null
+  if (policy.mode === "deny") {
     return notFoundResponse()
   }
 
-  const cookiePath = internalCookiePath(request.nextUrl.pathname)
+  const expectedToken = policy.token
 
   if (await hasCookieToken(request, INTERNAL_COOKIE_NAME, expectedToken, "internal")) {
     if (request.nextUrl.searchParams.has("token")) {
@@ -366,30 +328,36 @@ async function protectPreviewRoute(request: NextRequest): Promise<NextResponse |
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
+  const match = findRouteGuard(pathname)
 
-  if (pathname.startsWith("/preview/")) {
-    const response = await protectPreviewRoute(request)
-    return response ? withContentSecurityPolicy(request, response) : nextWithContentSecurityPolicy(request)
-  }
-
-  if (pathname.startsWith("/internaltest") || pathname.startsWith("/styleguide")) {
-    const response = await protectInternalRoute(request)
-    return response ? withContentSecurityPolicy(request, response) : nextWithContentSecurityPolicy(request)
-  }
-
-  if (pathname.startsWith("/candidato/")) {
-    const guardResponse = await guardCandidatoRoute(request)
-    if (guardResponse) return withContentSecurityPolicy(request, guardResponse)
-  }
-
-  if (pathname.startsWith("/rankings/")) {
-    const guardResponse = guardRankingRoute(request)
-    if (guardResponse) return withContentSecurityPolicy(request, guardResponse)
-  }
-
-  if (pathname.startsWith("/uf/")) {
-    const guardResponse = guardUfRoute(request)
-    if (guardResponse) return withContentSecurityPolicy(request, guardResponse)
+  switch (match?.guard.id) {
+    case "preview-access": {
+      const response = await protectPreviewRoute(request)
+      return response
+        ? withContentSecurityPolicy(request, response)
+        : nextWithContentSecurityPolicy(request)
+    }
+    case "internal-access": {
+      const response = await protectInternalRoute(request, match.prefix)
+      return response
+        ? withContentSecurityPolicy(request, response)
+        : nextWithContentSecurityPolicy(request)
+    }
+    case "candidate-slug": {
+      const response = await guardCandidatoRoute(request)
+      if (response) return withContentSecurityPolicy(request, response)
+      break
+    }
+    case "ranking-slug": {
+      const response = guardRankingRoute(request)
+      if (response) return withContentSecurityPolicy(request, response)
+      break
+    }
+    case "uf-slug": {
+      const response = guardUfRoute(request)
+      if (response) return withContentSecurityPolicy(request, response)
+      break
+    }
   }
 
   return nextWithContentSecurityPolicy(request)
@@ -397,6 +365,12 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
+    "/preview/:path*",
+    "/internaltest/:path*",
+    "/styleguide/:path*",
+    "/candidato/:path*",
+    "/rankings/:path*",
+    "/uf/:path*",
     "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\..*).*)",
   ],
 }
