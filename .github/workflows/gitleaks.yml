@@ -1,0 +1,58 @@
+name: Gitleaks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: >-
+    gitleaks-${{ github.workflow }}-${{
+      github.event_name == 'pull_request'
+      && format('pr-{0}-{1}', github.event.pull_request.number, github.head_ref)
+      || format('push-{0}', github.sha)
+    }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  scan:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Scan committed changes
+        uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e # v3.0.0
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITLEAKS_CONFIG: .gitleaks.toml
+          GITLEAKS_ENABLE_COMMENTS: "false"
+          GITLEAKS_ENABLE_SUMMARY: "false"
+          GITLEAKS_ENABLE_UPLOAD_ARTIFACT: "false"
+          GITLEAKS_VERSION: "8.30.1"
+
+      - name: Scan complete commit range and final tree
+        env:
+          BASE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          HEAD_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          git cat-file -e "${BASE_SHA}^{commit}"
+          git cat-file -e "${HEAD_SHA}^{commit}"
+          gitleaks git --config .gitleaks.toml --no-banner --redact=100 --exit-code=1 --log-opts="-m ${BASE_SHA}..${HEAD_SHA}"
+
+          snapshot="$(mktemp -d)"
+          trap 'rm -rf "$snapshot"' EXIT
+          git archive "$HEAD_SHA" | tar -x -C "$snapshot"
+          (cd "$snapshot" && gitleaks dir . --config .gitleaks.toml --no-banner --redact=100 --exit-code=1)
+
+      - name: Run all focused gitleaks regressions
+        run: node --test tests/gitleaks-workflow.test.mjs
