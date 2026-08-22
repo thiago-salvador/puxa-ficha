@@ -3,16 +3,93 @@ import { readFileSync } from "node:fs"
 import test from "node:test"
 
 import {
-  NOTIFICATION_LOG_RETENTION_DAYS,
+  apagarNotificationLogsLote,
+  apagarShortLinksLote,
   parseRetencaoArgs,
   RETENCAO_BATCH_SIZE,
   RETENCAO_MAX_BATCHES_PER_TABLE,
-  notificationLogRetentionCutoffDate,
   runRetencaoOperacional,
+  type EscritorAuditado,
   type RetencaoOperacionalDeps,
+  type RetencaoQueryBuilder,
+  type RetencaoQueryResult,
+  type RetencaoSupabaseClient,
 } from "../scripts/retencao-operacional"
 
 const NOW = new Date("2026-08-15T12:00:00.000Z")
+
+const escreverSemRede: EscritorAuditado = async (_contexto, aplicar) => {
+  const { data, error } = await aplicar()
+  if (error) throw new Error(error.message)
+  return data ?? []
+}
+
+class FakeQueryBuilder implements RetencaoQueryBuilder {
+  constructor(
+    private readonly calls: unknown[][],
+    private readonly result: RetencaoQueryResult,
+  ) {}
+
+  select(columns: string, options?: { count: "exact"; head: true }): this {
+    this.calls.push(["select", columns, options ?? null])
+    return this
+  }
+
+  delete(): this {
+    this.calls.push(["delete"])
+    return this
+  }
+
+  in(column: string, values: string[]): this {
+    this.calls.push(["in", column, values])
+    return this
+  }
+
+  lte(column: string, value: string): this {
+    this.calls.push(["lte", column, value])
+    return this
+  }
+
+  lt(column: string, value: string): this {
+    this.calls.push(["lt", column, value])
+    return this
+  }
+
+  order(column: string, options: { ascending: boolean }): this {
+    this.calls.push(["order", column, options])
+    return this
+  }
+
+  limit(value: number): this {
+    this.calls.push(["limit", value])
+    return this
+  }
+
+  then<TResult1 = RetencaoQueryResult, TResult2 = never>(
+    onfulfilled?: ((value: RetencaoQueryResult) => TResult1 | PromiseLike<TResult1>) | null,
+    onrejected?: ((reason: unknown) => TResult2 | PromiseLike<TResult2>) | null,
+  ): PromiseLike<TResult1 | TResult2> {
+    return Promise.resolve(this.result).then(onfulfilled, onrejected)
+  }
+}
+
+function criarSupabaseFake(resultados: RetencaoQueryResult[]): {
+  calls: unknown[][]
+  client: RetencaoSupabaseClient
+} {
+  const calls: unknown[][] = []
+  return {
+    calls,
+    client: {
+      from: (table) => {
+        calls.push(["from", table])
+        const result = resultados.shift()
+        if (!result) throw new Error(`resultado fake ausente para ${table}`)
+        return new FakeQueryBuilder(calls, result)
+      },
+    },
+  }
+}
 
 function depsBase(
   overrides: Partial<RetencaoOperacionalDeps> = {},
@@ -28,11 +105,9 @@ function depsBase(
   }
 }
 
-test("contrato temporal usa expiração inclusiva e preserva o dia exato do corte de 90 dias", () => {
-  assert.equal(NOTIFICATION_LOG_RETENTION_DAYS, 90)
+test("contrato temporal usa expiração inclusiva e cutoff explícito para notification_log", () => {
   assert.equal(RETENCAO_BATCH_SIZE, 100)
   assert.equal(RETENCAO_MAX_BATCHES_PER_TABLE, 20)
-  assert.equal(notificationLogRetentionCutoffDate(NOW), "2026-05-17")
 
   const source = readFileSync(
     new URL("../scripts/retencao-operacional.ts", import.meta.url),
@@ -43,8 +118,59 @@ test("contrato temporal usa expiração inclusiva e preserva o dia exato do cort
   assert.equal(source.match(/\.limit\(limite\)/g)?.length, 2)
 })
 
-test("dry-run mede as duas tabelas e não chama remoção", async () => {
+test("adaptador de short links limita seleção e restringe DELETE aos tokens selecionados", async () => {
+  const cutoff = NOW.toISOString()
+  const { calls, client } = criarSupabaseFake([
+    { data: [{ token: "token-a" }, { token: "token-b" }], error: null, count: null },
+    { data: [{ token: "token-a" }, { token: "token-b" }], error: null, count: null },
+  ])
+
+  const deleted = await apagarShortLinksLote(cutoff, 2, 1, client, escreverSemRede)
+
+  assert.equal(deleted, 2)
+  assert.deepEqual(calls, [
+    ["from", "quiz_result_short_links"],
+    ["select", "token", null],
+    ["lte", "expires_at", cutoff],
+    ["order", "expires_at", { ascending: true }],
+    ["order", "token", { ascending: true }],
+    ["limit", 2],
+    ["from", "quiz_result_short_links"],
+    ["delete"],
+    ["in", "token", ["token-a", "token-b"]],
+    ["lte", "expires_at", cutoff],
+    ["select", "token", null],
+  ])
+})
+
+test("adaptador de notification_log limita seleção e restringe DELETE aos IDs selecionados", async () => {
+  const cutoff = "2026-05-17"
+  const { calls, client } = criarSupabaseFake([
+    { data: [{ id: "log-a" }, { id: "log-b" }], error: null, count: null },
+    { data: [{ id: "log-a" }, { id: "log-b" }], error: null, count: null },
+  ])
+
+  const deleted = await apagarNotificationLogsLote(cutoff, 2, 1, client, escreverSemRede)
+
+  assert.equal(deleted, 2)
+  assert.deepEqual(calls, [
+    ["from", "notification_log"],
+    ["select", "id", null],
+    ["lt", "digest_date", cutoff],
+    ["order", "digest_date", { ascending: true }],
+    ["order", "id", { ascending: true }],
+    ["limit", 2],
+    ["from", "notification_log"],
+    ["delete"],
+    ["in", "id", ["log-a", "log-b"]],
+    ["lt", "digest_date", cutoff],
+    ["select", "id", null],
+  ])
+})
+
+test("dry-run sem cutoff mede apenas short links e não chama remoção", async () => {
   let chamadasDeRemocao = 0
+  let chamadasNotification = 0
   const result = await runRetencaoOperacional(
     depsBase({
       contarShortLinksExpirados: async (cutoff) => {
@@ -56,6 +182,7 @@ test("dry-run mede as duas tabelas e não chama remoção", async () => {
         return 7
       },
       contarNotificationLogsAntigos: async (cutoff) => {
+        chamadasNotification += 1
         assert.equal(cutoff, "2026-05-17")
         return 4
       },
@@ -67,6 +194,7 @@ test("dry-run mede as duas tabelas e não chama remoção", async () => {
   )
 
   assert.equal(chamadasDeRemocao, 0)
+  assert.equal(chamadasNotification, 0)
   assert.deepEqual(result, {
     mode: "dry-run",
     runAt: NOW.toISOString(),
@@ -82,17 +210,28 @@ test("dry-run mede as duas tabelas e não chama remoção", async () => {
         batches: 0,
         limitReached: false,
       },
-      {
-        table: "notification_log",
-        policy: "digest_date < now - 90 days",
-        cutoff: "2026-05-17",
-        eligible: 4,
-        deleted: 0,
-        batches: 0,
-        limitReached: false,
-      },
     ],
   })
+})
+
+test("--apply sem cutoff não consulta nem apaga notification_log", async () => {
+  let chamadasNotification = 0
+  const result = await runRetencaoOperacional(
+    depsBase({
+      apply: true,
+      contarNotificationLogsAntigos: async () => {
+        chamadasNotification += 1
+        return 1
+      },
+      apagarNotificationLogsLote: async () => {
+        chamadasNotification += 1
+        return 1
+      },
+    }),
+  )
+
+  assert.equal(chamadasNotification, 0)
+  assert.deepEqual(result.tables.map((table) => table.table), ["quiz_result_short_links"])
 })
 
 test("--apply remove em lotes limitados e mede o volume confirmado", async () => {
@@ -105,6 +244,7 @@ test("--apply remove em lotes limitados e mede o volume confirmado", async () =>
   const result = await runRetencaoOperacional(
     depsBase({
       apply: true,
+      notificationBefore: "2026-05-17",
       batchSize: 3,
       maxBatchesPerTable: 5,
       contarShortLinksExpirados: async () => 5,
@@ -168,6 +308,7 @@ test("execução repetida é idempotente e preserva registros nas fronteiras", a
 
   const deps = depsBase({
     apply: true,
+    notificationBefore: "2026-05-17",
     batchSize: 1,
     maxBatchesPerTable: 10,
     contarShortLinksExpirados: async (cutoff) =>
@@ -266,6 +407,19 @@ test("parser exige --apply explícito e rejeita flags ambíguas", () => {
   assert.deepEqual(parseRetencaoArgs([]), { apply: false })
   assert.deepEqual(parseRetencaoArgs(["--dry-run"]), { apply: false })
   assert.deepEqual(parseRetencaoArgs(["--apply"]), { apply: true })
+  assert.deepEqual(parseRetencaoArgs(["--notification-before=2026-05-17"]), {
+    apply: false,
+    notificationBefore: "2026-05-17",
+  })
   assert.throws(() => parseRetencaoArgs(["--apply", "--dry-run"]), /nunca os dois/)
+  assert.throws(() => parseRetencaoArgs(["--notification-before="]), /YYYY-MM-DD/)
+  assert.throws(() => parseRetencaoArgs(["--notification-before=2026-02-30"]), /data válida/)
+  assert.throws(
+    () => parseRetencaoArgs([
+      "--notification-before=2026-05-17",
+      "--notification-before=2026-05-16",
+    ]),
+    /uma única vez/,
+  )
   assert.throws(() => parseRetencaoArgs(["--force"]), /desconhecido/)
 })
