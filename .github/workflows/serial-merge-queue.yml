@@ -24,6 +24,11 @@ on:
     types:
       - serial-merge-queue-post-merge
       - serial-merge-queue-recovery
+  # cron-watchdog: skipped-ok-com-gate-desligado
+  # Enquanto SERIAL_MERGE_QUEUE_ENABLED não for "true", todos os jobs são
+  # pulados e a execução agendada conclui "skipped". O watchdog de crons lê
+  # este marcador e trata a pulada declarada como estado esperado, em vez de
+  # abrir issue todo dia. Com a fila ativa, a execução volta a exigir sucesso.
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:

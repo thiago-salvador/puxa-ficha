@@ -62,6 +62,15 @@ A variável `SERIAL_MERGE_QUEUE_ENABLED` deve permanecer ausente ou `false`.
 Enquanto ela não for `true`, todos os jobs da fila são pulados antes de checkout,
 setup ou leitura de secrets. A config local `enabled` é um segundo lock.
 
+Com a fila desligada, cada evento observado ainda cria uma execução do workflow,
+que conclui `skipped`. Dois alarmes falsos nasceriam daí, e os dois estão
+fechados: o workflow da fila carrega o marcador
+`# cron-watchdog: skipped-ok-com-gate-desligado`, que faz o watchdog de crons
+tratar a pulada declarada como estado esperado em vez de abrir issue todo dia; e
+o job de incidente do watchdog da fila só roda com `SERIAL_MERGE_QUEUE_ENABLED`
+em `true` e ignora conclusão `skipped`. Ao ativar a fila, os dois voltam a
+exigir sucesso sem nenhuma edição, porque as execuções deixam de ser puladas.
+
 | Secret | Obrigatório | Finalidade |
 |---|---:|---|
 | `MERGE_QUEUE_GH_TOKEN` | sim | API de PR, merge, labels, status, dispatch, revert e incidentes que precisam gerar eventos subsequentes. |

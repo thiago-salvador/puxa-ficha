@@ -7,7 +7,10 @@ const watchdogUrl = new URL('../../.github/workflows/serial-merge-queue-watchdog
 test('watchdog runs only for failed coordinator workflow runs', async () => {
   const workflow = await readFile(watchdogUrl, 'utf8');
   assert.match(workflow, /workflow_run:[\s\S]*Serial merge queue[\s\S]*types:\s*\n\s*- completed/);
-  assert.match(workflow, /if: github\.event\.workflow_run\.conclusion != 'success'/);
+  assert.match(workflow, /if: >-/);
+  assert.match(workflow, /vars\.SERIAL_MERGE_QUEUE_ENABLED == 'true'/);
+  assert.match(workflow, /&& github\.event\.workflow_run\.conclusion != 'success'/);
+  assert.match(workflow, /&& github\.event\.workflow_run\.conclusion != 'skipped'/);
   assert.match(workflow, /permissions:\s*\n\s*issues: write/);
 });
 
