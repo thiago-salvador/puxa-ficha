@@ -1,4 +1,8 @@
 import { isValidConfiguredFromEmail, resolveConfiguredFromEmail } from "@/lib/email-from"
+import {
+  isValidConfiguredReplyToEmail,
+  normalizeConfiguredReplyToEmail,
+} from "@/lib/email-reply-to"
 
 /**
  * Validação de ambiente em deploy de produção (Vercel).
@@ -104,6 +108,15 @@ export function validateProductionEnvironment(): void {
 
   if (!hasTrimmed(process.env.RESEND_API_KEY)) {
     degraded.push("RESEND_API_KEY (alertas por email nao serao enviados)")
+  }
+
+  if (!hasTrimmed(process.env.PF_ALERTS_REPLY_TO_EMAIL)) {
+    degraded.push("PF_ALERTS_REPLY_TO_EMAIL (alertas por email nao serao enviados)")
+  } else {
+    const replyToEmail = normalizeConfiguredReplyToEmail(process.env.PF_ALERTS_REPLY_TO_EMAIL)
+    if (!isValidConfiguredReplyToEmail(replyToEmail)) {
+      degraded.push("PF_ALERTS_REPLY_TO_EMAIL em formato invalido")
+    }
   }
 
   const sentryDsn = process.env.SENTRY_DSN?.trim() || process.env.NEXT_PUBLIC_SENTRY_DSN?.trim()
