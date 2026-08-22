@@ -10,6 +10,10 @@ import {
   PREVIEW_COOKIE_NAME,
   resolvePreviewToken,
 } from "@/lib/preview-access"
+import {
+  PREVIEW_COOKIE_NAME as CANONICAL_PREVIEW_COOKIE_NAME,
+  ROUTE_GUARDS,
+} from "@/lib/route-guards"
 
 /**
  * O matcher do middleware pula todo path que contenha ponto. Enquanto `/preview`
@@ -97,13 +101,8 @@ describe("helper de acesso ao preview", () => {
     )
   })
 
-  it("lê o mesmo cookie que o middleware seta", () => {
-    const fonteMiddleware = readFileSync(join(root, "middleware.ts"), "utf8")
-
-    assert.ok(
-      fonteMiddleware.includes(`const PREVIEW_COOKIE_NAME = "${PREVIEW_COOKIE_NAME}"`),
-      `o helper lê ${PREVIEW_COOKIE_NAME}, mas o middleware seta outro cookie`,
-    )
+  it("expõe o mesmo cookie canônico consumido pelo middleware", () => {
+    assert.equal(PREVIEW_COOKIE_NAME, CANONICAL_PREVIEW_COOKIE_NAME)
   })
 
   it("mantém o fallback de conveniência só fora da Vercel", async () => {
@@ -118,7 +117,7 @@ describe("helper de acesso ao preview", () => {
 
 describe("matcher do middleware", () => {
   it("ignora path com ponto, então /preview/candidato/a.b não passa pelo middleware", () => {
-    const [padrao] = config.matcher
+    const padrao = config.matcher.find((candidate) => candidate.includes("?!api"))
     assert.ok(padrao, "o middleware precisa declarar um matcher")
 
     // O Next ancora o matcher no path inteiro; reproduzimos isso para medir o
@@ -129,6 +128,9 @@ describe("matcher do middleware", () => {
     assert.equal(matcher.test("/preview/candidato/a.b"), false)
     assert.equal(matcher.test("/internaltest/a.b"), false)
     assert.equal(matcher.test("/styleguide/a.b"), false)
+
+    assert.ok(config.matcher.includes("/internaltest/:path*"))
+    assert.ok(config.matcher.includes("/styleguide/:path*"))
   })
 })
 
@@ -161,22 +163,6 @@ function aceitaPathComPonto(rota: string): boolean {
   return /\[[^\]]+\]/.test(rota)
 }
 
-function extrairPrefixosProtegidos(fonte: string): string[] {
-  // `await` opcional: os guards viraram assíncronos quando o cookie passou a
-  // guardar HMAC derivado por Web Crypto (2026-08-04).
-  const blocos = fonte.matchAll(
-    /if \(([\s\S]*?)\)\s*\{\s*const response = (?:await )?protect\w+Route\(request\)/g,
-  )
-
-  const prefixos: string[] = []
-  for (const [, condicao] of blocos) {
-    for (const [, prefixo] of condicao.matchAll(/startsWith\("([^"]+)"\)/g)) {
-      prefixos.push(prefixo)
-    }
-  }
-  return prefixos
-}
-
 /**
  * Checagens que valem como defesa própria da página, sem depender do middleware.
  * Procuramos a chamada, e não o identificador, para que um import esquecido sem
@@ -185,14 +171,13 @@ function extrairPrefixosProtegidos(fonte: string): string[] {
 const GUARDS_DE_PAGINA = ["requirePreviewAccess("]
 
 describe("superfícies protegidas pelo middleware não dependem só dele", () => {
-  const fonteMiddleware = readFileSync(join(root, "middleware.ts"), "utf8")
-  const prefixos = extrairPrefixosProtegidos(fonteMiddleware)
+  const prefixos = ROUTE_GUARDS.filter(
+    ({ id }) => id === "preview-access" || id === "internal-access",
+  ).flatMap(({ prefixes }) => prefixes)
   const rotas = listarRotasDePagina(APP_DIR)
 
-  it("enumera os prefixos protegidos direto do middleware", () => {
-    assert.ok(prefixos.includes("/preview/"), "o middleware deveria proteger /preview/")
-    assert.ok(prefixos.includes("/internaltest"), "o middleware deveria proteger /internaltest")
-    assert.ok(prefixos.includes("/styleguide"), "o middleware deveria proteger /styleguide")
+  it("enumera os prefixos protegidos pelo inventário canônico", () => {
+    assert.deepEqual(prefixos, ["/preview", "/internaltest", "/styleguide"])
   })
 
   for (const prefixo of prefixos) {
