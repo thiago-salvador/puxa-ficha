@@ -47,12 +47,8 @@ export function createCardGetHandler(deps: CardRouteDeps = defaultCardRouteDeps)
     request: NextRequest,
     { params }: { params: Promise<{ slug: string }> },
   ) {
-    try {
-      const decision = deps.rateLimiter.check(request.headers)
-      if (!decision.allowed) return rateLimitExceededResponse(decision)
-    } catch (error) {
-      console.warn("card route rate limit failed open", error)
-    }
+    const decision = deps.rateLimiter.check(request.headers)
+    if (!decision.allowed) return rateLimitExceededResponse(decision)
 
     const { slug } = await params
 

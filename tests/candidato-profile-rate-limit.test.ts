@@ -1,6 +1,18 @@
 import assert from "node:assert/strict"
+import { createRequire } from "node:module"
 import test from "node:test"
 import { createFixedWindowIpRateLimiter, rateLimitExceededResponse } from "@/lib/request-rate-limit"
+
+const require = createRequire(import.meta.url)
+const serverOnlyPath = require.resolve("server-only")
+require.cache[serverOnlyPath] = {
+  id: serverOnlyPath,
+  filename: serverOnlyPath,
+  loaded: true,
+  exports: {},
+} as never
+
+const { createCandidatoProfileGetHandler } = require("../src/app/api/candidato-profile/[slug]/route") as typeof import("../src/app/api/candidato-profile/[slug]/route")
 
 /**
  * As tres rotas publicas de leitura de ficha ganharam rate limit em 18/08/2026,
@@ -63,6 +75,41 @@ test("a resposta de recusa diz quando tentar de novo e nao vai para cache", () =
   assert.equal(r.headers.get("cache-control"), "no-store")
 })
 
+test("a rota recusa antes de repetir a leitura pesada com service role", async () => {
+  const limiter = createFixedWindowIpRateLimiter({
+    namespace: "candidato-profile-route-test",
+    max: 1,
+    windowMs: 60_000,
+  })
+  let leituras = 0
+  const handler = createCandidatoProfileGetHandler({
+    rateLimiter: limiter,
+    getCandidatoBySlugResource: async () => {
+      leituras += 1
+      return {
+        data: null,
+        sourceStatus: "live",
+        sourceMessage: "Candidato não encontrado.",
+      }
+    },
+  })
+  const request = () =>
+    new Request("http://localhost/api/candidato-profile/lula", {
+      headers: {
+        "x-forwarded-for": "203.0.113.15",
+        "x-vercel-forwarded-for": "203.0.113.15",
+      },
+    })
+  const params = { params: Promise.resolve({ slug: "lula" }) }
+
+  assert.equal((await handler(request(), params)).status, 404)
+  const recusada = await handler(request(), params)
+  assert.equal(recusada.status, 429)
+  assert.ok(Number(recusada.headers.get("retry-after")) > 0)
+  assert.equal(recusada.headers.get("cache-control"), "no-store")
+  assert.equal(leituras, 1)
+})
+
 test("as tres rotas de leitura de ficha declaram limitador", async () => {
   const { readFile } = await import("node:fs/promises")
   const rotas = [
@@ -76,9 +123,13 @@ test("as tres rotas de leitura de ficha declaram limitador", async () => {
     assert.match(txt, /rateLimitExceededResponse\(decisao\)/, `${r} nao recusa`)
     // A checagem tem que vir ANTES do trabalho caro, senao limita depois de pagar.
     const posCheck = txt.indexOf(".check(request.headers)")
-    const posAwait = txt.indexOf("await getCandidato") >= 0
-      ? txt.indexOf("await getCandidato")
-      : txt.indexOf("await get")
+    const consultas = [
+      txt.indexOf("await getCandidato"),
+      txt.indexOf("await deps.getCandidato"),
+      txt.indexOf("await get"),
+    ].filter((pos) => pos >= 0)
+    assert.ok(consultas.length > 0, `${r} sem consulta identificavel`)
+    const posAwait = Math.min(...consultas)
     assert.ok(posCheck > 0 && posCheck < posAwait, `${r} checa depois da consulta`)
   }
 })

@@ -4,11 +4,13 @@ import { toPublicCandidatoProfileDto } from "@/lib/public-profile-dto"
 import {
   createFixedWindowIpRateLimiter,
   rateLimitExceededResponse,
+  type RequestRateLimiter,
 } from "@/lib/request-rate-limit"
 
-// A ficha ja usa `unstable_cache` com a tag `public-candidato-ficha` em
-// getCandidatoBySlugResource. Manter tambem o Route Cache/CDN por uma hora faz
-// o POST /api/revalidate limpar os dados sem limpar a resposta HTTP antiga.
+// Estado pos-PF-04: o HTML da ficha e esta API sao dinamicos e private/no-store.
+// Nao ha ISR nem defesa de CDN neste caminho. A unica camada persistente e o
+// `unstable_cache` de dados em getCandidatoBySlugResource, invalidado pela tag
+// `public-candidato-ficha`; o rate limit abaixo protege cada invocacao dinamica.
 export const dynamic = "force-dynamic"
 
 /**
@@ -35,37 +37,55 @@ const perfilRateLimiter = createFixedWindowIpRateLimiter({
   windowMs: 60_000,
 })
 
-export async function GET(
-  request: Request,
-  { params }: { params: Promise<{ slug: string }> },
+type CandidatoProfileResource = Awaited<ReturnType<typeof getCandidatoBySlugResource>>
+
+interface CandidatoProfileRouteDeps {
+  getCandidatoBySlugResource: (slug: string) => Promise<CandidatoProfileResource>
+  rateLimiter: RequestRateLimiter
+}
+
+const defaultCandidatoProfileRouteDeps: CandidatoProfileRouteDeps = {
+  getCandidatoBySlugResource,
+  rateLimiter: perfilRateLimiter,
+}
+
+export function createCandidatoProfileGetHandler(
+  deps: CandidatoProfileRouteDeps = defaultCandidatoProfileRouteDeps,
 ) {
-  const decisao = perfilRateLimiter.check(request.headers)
-  if (!decisao.allowed) return rateLimitExceededResponse(decisao)
+  return async function GET(
+    request: Request,
+    { params }: { params: Promise<{ slug: string }> },
+  ) {
+    const decisao = deps.rateLimiter.check(request.headers)
+    if (!decisao.allowed) return rateLimitExceededResponse(decisao)
 
-  const { slug } = await params
-  const resource = await getCandidatoBySlugResource(slug)
+    const { slug } = await params
+    const resource = await deps.getCandidatoBySlugResource(slug)
 
-  if (!resource.data) {
+    if (!resource.data) {
+      return NextResponse.json(
+        {
+          data: null,
+          sourceStatus: resource.sourceStatus,
+          sourceMessage: resource.sourceMessage ?? "Candidato não encontrado.",
+        },
+        { status: resource.sourceStatus === "live" ? 404 : 503 },
+      )
+    }
+
     return NextResponse.json(
       {
-        data: null,
+        data: toPublicCandidatoProfileDto(resource.data),
         sourceStatus: resource.sourceStatus,
-        sourceMessage: resource.sourceMessage ?? "Candidato não encontrado.",
+        sourceMessage: resource.sourceMessage ?? null,
       },
-      { status: resource.sourceStatus === "live" ? 404 : 503 },
+      {
+        headers: {
+          "cache-control": "private, no-store, no-cache, must-revalidate, max-age=0",
+        },
+      },
     )
   }
-
-  return NextResponse.json(
-    {
-      data: toPublicCandidatoProfileDto(resource.data),
-      sourceStatus: resource.sourceStatus,
-      sourceMessage: resource.sourceMessage ?? null,
-    },
-    {
-      headers: {
-        "cache-control": "private, no-store, no-cache, must-revalidate, max-age=0",
-      },
-    },
-  )
 }
+
+export const GET = createCandidatoProfileGetHandler()
