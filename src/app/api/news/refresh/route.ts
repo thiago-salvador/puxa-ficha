@@ -30,7 +30,7 @@ export const dynamic = "force-dynamic"
 // HTTP 508 LOOP_DETECTED e o resto da fila morre em silencio. Menos hops e a
 // unica correcao de causa: com ~4min de orcamento por invocacao, os 194
 // publicaveis cabem em 2-3 invocacoes (1-2 hops), longe do teto da protecao.
-// 300s exige plano Pro, que e o plano deste projeto (4 crons no vercel.json;
+// 300s exige plano Pro, que e o plano deste projeto (6 crons no vercel.json;
 // Hobby para em 2).
 export const maxDuration = 300
 

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next"
+import { SITE_ORIGIN } from "./metadata"
 
 export const PREVIEW_NOINDEX_HEADER_VALUE = "noindex, nofollow, noarchive"
 export const EMBED_NOINDEX_HEADER_VALUE = "noindex, nofollow"
@@ -52,6 +53,6 @@ export function buildRobotsForDeployment(
         disallow: PUBLIC_ROBOTS_DISALLOW,
       },
     ],
-    sitemap: "https://puxaficha.com.br/sitemap.xml",
+    sitemap: `${SITE_ORIGIN}/sitemap.xml`,
   }
 }

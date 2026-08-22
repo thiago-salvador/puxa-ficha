@@ -67,9 +67,10 @@ estrangular tráfego legítimo, o caminho de volta é
 
 ## O que não está configurado
 
-- **Bot Protection / BotID.** Nenhum formulário do site tem captcha, honeypot ou
-  desafio. As regras acima limitam volume, não distinguem humano de script
-  dentro do limite. Se o abuso aparecer, o próximo passo é `@vercel/botid` no
-  formulário de alertas.
+- **Bot Protection / BotID.** Sem captcha e sem `@vercel/botid`. O subscribe de
+  alertas tem honeypot de campo oculto (204 sem inscrição se preenchido); CSRF,
+  rate limit e double opt-in continuam na frente. As regras de WAF limitam
+  volume, não distinguem humano de script dentro do limite. Se o abuso passar
+  do honeypot, o próximo passo é `@vercel/botid` no mesmo formulário.
 - **IP blocks e system bypass.** Zero de cada, de propósito: bloqueio por IP em
   site de consulta pública sobre política é decisão editorial, não operacional.
