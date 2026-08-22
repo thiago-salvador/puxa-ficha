@@ -35,7 +35,7 @@ const entries: RankingEntry[] = [
       partido_sigla: "PT",
       cargo_disputado: "Presidente",
       estado: "SP",
-      foto_url: null,
+      foto_url: "/candidates/ana-silva.webp",
     },
     metricValue: 3000,
   },
@@ -47,7 +47,7 @@ const entries: RankingEntry[] = [
       partido_sigla: "PSOL",
       cargo_disputado: "Presidente",
       estado: "RJ",
-      foto_url: null,
+      foto_url: "/candidates/bruno-souza.webp",
     },
     metricValue: 2000,
   },
@@ -131,6 +131,19 @@ describe("PF-18 ranking compacto", () => {
     assert.equal(countMatches(html, />Bruno Souza</g), 2)
     assert.equal(countMatches(html, /R\$ 3\.000/g), 2)
     assert.equal(countMatches(html, /R\$ 2\.000/g), 2)
+    assert.match(html, />PT · SP</)
+    assert.match(html, />PSOL · RJ</)
+    assert.equal(countMatches(html, />PT</g), 1)
+    assert.equal(countMatches(html, />PSOL</g), 1)
+    assert.equal(countMatches(html, />Presidente</g), 4)
+    assert.equal(countMatches(html, />SP</g), 1)
+    assert.equal(countMatches(html, />RJ</g), 1)
+    assert.equal(countMatches(html, /width="44"/g), 2)
+    assert.equal(countMatches(html, /height="44"/g), 2)
+    assert.equal(countMatches(html, /sizes="44px"/g), 2)
+    assert.equal(countMatches(html, /width="40"/g), 2)
+    assert.equal(countMatches(html, /height="40"/g), 2)
+    assert.equal(countMatches(html, /sizes="40px"/g), 2)
     assert.match(html, /space-y-2 md:hidden/)
     assert.match(html, /bg-card p-3 sm:p-4/)
     assert.match(html, /mt-3 rounded-\[14px\]/)
@@ -204,6 +217,8 @@ describe("PF-18 ranking compacto", () => {
     }
     assert.equal(countMatches(html, />Melhor que a média</g), 2)
     assert.equal(countMatches(html, />Próximo da média</g), 1)
+    assert.equal(countMatches(html, /ano 2025/g), 1)
+    assert.equal(countMatches(html, /ano 2024/g), 2)
     assert.equal(countMatches(html, /min-w-0 rounded-\[14px\][^"]*px-4 py-4/g), 3)
   })
 })
