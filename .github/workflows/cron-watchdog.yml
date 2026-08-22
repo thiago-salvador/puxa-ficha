@@ -8,6 +8,8 @@ on:
 # Limitação conhecida: este watchdog também é um cron e pode ser desativado
 # depois de 60 dias de inatividade do repositório. Mitigação deliberada: o dono
 # do repositório deve assisti-lo no GitHub, pois issue nova gera notificação.
+# CRON_SECRET precisa existir nos secrets do repositório: o job autentica
+# GET /api/internal/runtime-smoke. Sem o secret a sonda abre issue (fail-closed).
 permissions:
   actions: read
   contents: read
@@ -23,4 +25,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
         run: bash scripts/cron-watchdog.sh
