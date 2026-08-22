@@ -25,6 +25,7 @@ provas=(
   scripts/audit/provar-migration-processos-legados-fontes-oficiais.sh
   scripts/audit/provar-migration-orleans-destaques-proveniencia.sh
   scripts/audit/provar-migration-orleans-chaves-canonicas.sh
+  scripts/audit/provar-quota-rpc-pg17.sh
 )
 
 for prova in "${provas[@]}"; do

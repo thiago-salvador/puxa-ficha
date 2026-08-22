@@ -5,6 +5,12 @@ export type QuotaRpcStatus =
   | "reserved"
   | "not_found"
 
+export type QuotaRpcFunctionName =
+  | "insert_quiz_short_link_under_ip_quota"
+  | "insert_analytics_launch_event_under_ip_quota"
+  | "insert_alert_subscriber_under_ip_quota"
+  | "reserve_alert_email_ip_budget"
+
 export function readQuotaRpcStatus(data: unknown): string | null {
   if (typeof data === "string") return data
   if (!data || typeof data !== "object") return null
@@ -18,11 +24,24 @@ export function readQuotaRpcId(data: unknown): string | null {
   return typeof id === "string" && id.length > 0 ? id : null
 }
 
-export function isMissingQuotaRpc(error: { code?: string; message?: string } | null): boolean {
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+}
+
+export function isMissingQuotaRpc(
+  error: { code?: string; message?: string } | null,
+  expectedFunction: QuotaRpcFunctionName,
+): boolean {
   if (!error) return false
-  if (error.code === "PGRST202" || error.code === "42883") return true
-  const message = error.message?.toLowerCase() ?? ""
-  return message.includes("could not find the function") || (
-    message.includes("does not exist") && message.includes("function")
+  const message = (error.message?.toLowerCase() ?? "").replaceAll('"', "")
+  const expected = `(?:public\\.)?${escapeRegExp(expectedFunction)}`
+  const postgrestMissing = new RegExp(
+    `could not find the function\\s+${expected}(?:\\s*\\([^)]*\\))?(?:\\s|$)`,
   )
+  const postgresMissing = new RegExp(
+    `function\\s+${expected}(?:\\s*\\([^)]*\\))?\\s+does not exist\\b`,
+  )
+  if (error.code === "PGRST202") return postgrestMissing.test(message)
+  if (error.code === "42883") return postgresMissing.test(message)
+  return postgrestMissing.test(message) || postgresMissing.test(message)
 }

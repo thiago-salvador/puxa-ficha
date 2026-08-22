@@ -180,7 +180,7 @@ function createSupabaseStore(): QuizShortLinkStore {
         p_max: max,
       })
 
-      if (error && isMissingQuotaRpc(error)) {
+      if (error && isMissingQuotaRpc(error, "insert_quiz_short_link_under_ip_quota")) {
         const count = await countRecentByIpHash(supabase, record.ip_hash, sinceIso)
         if (count >= max) return "quota_exceeded"
         return insertLink(supabase, record)
