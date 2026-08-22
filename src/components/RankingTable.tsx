@@ -32,7 +32,7 @@ export function RankingTable({
 
   return (
     <div data-pf-ranking-entry-count={entries.length}>
-      <div className="space-y-3 md:hidden">
+      <div className="space-y-2 md:hidden">
         {entries.map((entry, index) => (
           <article
             key={entry.candidato.slug}
@@ -40,21 +40,21 @@ export function RankingTable({
             data-pf-ranking-slug={entry.candidato.slug}
             data-pf-ranking-position={index + 1}
             data-pf-ranking-value={entry.metricValue ?? ""}
-            className="rounded-[20px] border border-border/50 bg-card p-4"
+            className="rounded-[16px] border border-border/50 bg-card p-3 sm:p-4"
           >
-            <div className="flex items-start gap-3">
-              <span className="font-heading text-[26px] uppercase leading-none text-muted-foreground">
+            <div className="flex items-start gap-2.5">
+              <span className="font-heading text-[24px] uppercase leading-none text-muted-foreground">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <CandidatePhoto
                 src={entry.candidato.foto_url}
                 alt={entry.candidato.nome_urna}
                 name={entry.candidato.nome_urna}
-                width={48}
-                height={48}
-                sizes="48px"
-                className="size-12 shrink-0 rounded-full object-cover object-top"
-                fallbackClassName="size-12 shrink-0 rounded-full"
+                width={44}
+                height={44}
+                sizes="44px"
+                className="size-11 shrink-0 rounded-full object-cover object-top"
+                fallbackClassName="size-11 shrink-0 rounded-full"
                 initialsClassName="text-sm"
               />
               <div className="min-w-0 flex-1">
@@ -77,11 +77,11 @@ export function RankingTable({
                 </p>
               </div>
             </div>
-            <div className="mt-4 rounded-[16px] bg-muted/40 px-4 py-3">
+            <div className="mt-3 rounded-[14px] bg-muted/40 px-3 py-2.5">
               <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
                 {metricLabel}
               </p>
-              <p className="mt-1 font-heading text-[28px] uppercase leading-none text-foreground">
+              <p className="mt-1 font-heading text-[26px] uppercase leading-none text-foreground">
                 {formatRankingMetricValue(entry.metricValue, definition.metricUnit)}
               </p>
             </div>
@@ -93,22 +93,22 @@ export function RankingTable({
         <table className="w-full text-left">
           <thead>
             <tr className="border-b border-border/60">
-              <th className="pb-3 pr-4 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
+              <th className="pb-2.5 pr-3 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
                 #
               </th>
-              <th className="pb-3 pr-4 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
+              <th className="pb-2.5 pr-3 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
                 Candidato
               </th>
-              <th className="pb-3 pr-4 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
+              <th className="pb-2.5 pr-3 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
                 Partido
               </th>
-              <th className="pb-3 pr-4 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
+              <th className="pb-2.5 pr-3 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
                 Cargo
               </th>
-              <th className="pb-3 pr-4 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
+              <th className="pb-2.5 pr-3 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
                 UF
               </th>
-              <th className="pb-3 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
+              <th className="pb-2.5 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
                 {metricLabel}
               </th>
             </tr>
@@ -123,20 +123,20 @@ export function RankingTable({
                 data-pf-ranking-value={entry.metricValue ?? ""}
                 className="border-b border-border/30"
               >
-                <td className="py-4 pr-4 font-heading text-[22px] uppercase leading-none text-muted-foreground">
+                <td className="py-3 pr-3 font-heading text-[22px] uppercase leading-none text-muted-foreground">
                   {String(index + 1).padStart(2, "0")}
                 </td>
-                <td className="py-4 pr-4">
-                  <div className="flex items-center gap-3">
+                <td className="py-3 pr-3">
+                  <div className="flex items-center gap-2.5">
                     <CandidatePhoto
                       src={entry.candidato.foto_url}
                       alt={entry.candidato.nome_urna}
                       name={entry.candidato.nome_urna}
-                      width={44}
-                      height={44}
-                      sizes="44px"
-                      className="size-11 shrink-0 rounded-full object-cover object-top"
-                      fallbackClassName="size-11 shrink-0 rounded-full"
+                      width={40}
+                      height={40}
+                      sizes="40px"
+                      className="size-10 shrink-0 rounded-full object-cover object-top"
+                      fallbackClassName="size-10 shrink-0 rounded-full"
                       initialsClassName="text-sm"
                     />
                     <div>
@@ -149,16 +149,16 @@ export function RankingTable({
                     </div>
                   </div>
                 </td>
-                <td className="py-4 pr-4 text-[length:var(--text-body-sm)] font-bold text-foreground">
+                <td className="py-3 pr-3 text-[length:var(--text-body-sm)] font-bold text-foreground">
                   {formatPartyPublicLabel(entry.candidato.partido_sigla)}
                 </td>
-                <td className="py-4 pr-4 text-[length:var(--text-body-sm)] font-medium text-foreground">
+                <td className="py-3 pr-3 text-[length:var(--text-body-sm)] font-medium text-foreground">
                   {entry.candidato.cargo_disputado}
                 </td>
-                <td className="py-4 pr-4 text-[length:var(--text-body-sm)] font-medium text-foreground">
+                <td className="py-3 pr-3 text-[length:var(--text-body-sm)] font-medium text-foreground">
                   {entry.candidato.estado ?? "--"}
                 </td>
-                <td className="py-4 text-[length:var(--text-body-sm)] font-bold tabular-nums text-foreground">
+                <td className="py-3 text-[length:var(--text-body-sm)] font-bold tabular-nums text-foreground">
                   {formatRankingMetricValue(entry.metricValue, definition.metricUnit)}
                 </td>
               </tr>

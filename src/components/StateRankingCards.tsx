@@ -53,7 +53,7 @@ export function StateRankingCards({ ranking }: { ranking: StateRankingResult }) 
       >
         Ranking nacional
       </p>
-      <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
+      <div className="mt-4 grid grid-cols-2 gap-2.5 sm:gap-3 lg:grid-cols-3">
         {ordered.map((r) => {
           const cfg = STATE_INDICATOR_CONFIG[r.indicador]
           if (!cfg) return null
@@ -62,13 +62,15 @@ export function StateRankingCards({ ranking }: { ranking: StateRankingResult }) 
           return (
             <div
               key={r.indicador}
-              className="rounded-[16px] border border-border/50 bg-card px-5 py-5"
+              data-pf-state-ranking-card
+              data-pf-state-ranking-indicator={r.indicador}
+              className="min-w-0 rounded-[14px] border border-border/50 bg-card px-4 py-4"
             >
               <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground sm:text-[length:var(--text-eyebrow)]">
                 {cfg.label}
               </p>
-              <div className="mt-2 flex flex-wrap items-center gap-2">
-                <span className="block font-heading text-[24px] leading-[0.95] tracking-tight text-foreground sm:text-[30px]">
+              <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+                <span className="block font-heading text-[22px] leading-[0.95] tracking-tight text-foreground sm:text-[28px]">
                   {cfg.format(r.valor)}
                 </span>
                 <QualityBadge qualidade={r.qualidade} />
@@ -77,12 +79,12 @@ export function StateRankingCards({ ranking }: { ranking: StateRankingResult }) 
                 {r.label} · ano {r.ano}
               </p>
               {r.fonte ? (
-                <div className="mt-2">
+                <div className="mt-1.5">
                   <IndicadorFonteTag fonte={r.fonte} />
                 </div>
               ) : null}
               <div
-                className="mt-3 h-2 w-full overflow-hidden rounded-full bg-muted"
+                className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-muted"
                 role="presentation"
               >
                 <div
