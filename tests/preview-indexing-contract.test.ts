@@ -58,10 +58,14 @@ test("sitemap e robots de producao usam SITE_ORIGIN, sem dominio hardcoded", () 
   assert.match(metadataHelper, /export const SITE_ORIGIN/)
   assert.match(metadataHelper, /process\.env\.NEXT_PUBLIC_SITE_URL/)
 
-  assert.equal(sitemap.includes("https://puxaficha.com.br"), false)
+  // Scan de fonte via split: `.includes("https://...")` dispara
+  // js/incomplete-url-substring-sanitization; regex de URL dispara
+  // js/regex/missing-regexp-anchor. Nenhuma das duas APIs e sanitizacao de URL.
+  const hardcodedHost = "puxaficha.com.br"
+  assert.equal(sitemap.split(hardcodedHost).length, 1)
   assert.match(sitemap, /SITE_ORIGIN/)
 
-  assert.equal(robotsHelper.includes("https://puxaficha.com.br"), false)
+  assert.equal(robotsHelper.split(hardcodedHost).length, 1)
   assert.match(robotsHelper, /from ["']\.\/metadata["']/)
   assert.match(robotsHelper, /\$\{SITE_ORIGIN\}\/sitemap\.xml/)
 
