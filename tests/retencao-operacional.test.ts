@@ -3,13 +3,14 @@ import { readFileSync } from "node:fs"
 import test from "node:test"
 
 import {
-  apagarNotificationLogsLote,
-  apagarShortLinksLote,
   parseRetencaoArgs,
   RETENCAO_BATCH_SIZE,
   RETENCAO_MAX_BATCHES_PER_TABLE,
+  restringirDeleteNotificationLogs,
+  restringirDeleteShortLinks,
   runRetencaoOperacional,
-  type EscritorAuditado,
+  selecionarNotificationLogsLote,
+  selecionarShortLinksLote,
   type RetencaoOperacionalDeps,
   type RetencaoQueryBuilder,
   type RetencaoQueryResult,
@@ -17,12 +18,6 @@ import {
 } from "../scripts/retencao-operacional"
 
 const NOW = new Date("2026-08-15T12:00:00.000Z")
-
-const escreverSemRede: EscritorAuditado = async (_contexto, aplicar) => {
-  const { data, error } = await aplicar()
-  if (error) throw new Error(error.message)
-  return data ?? []
-}
 
 class FakeQueryBuilder implements RetencaoQueryBuilder {
   constructor(
@@ -116,6 +111,9 @@ test("contrato temporal usa expiração inclusiva e cutoff explícito para notif
   assert.equal(source.match(/\.lte\("expires_at", limiteIso\)/g)?.length, 3)
   assert.equal(source.match(/\.lt\("digest_date", limiteData\)/g)?.length, 3)
   assert.equal(source.match(/\.limit\(limite\)/g)?.length, 2)
+  assert.equal(source.match(/\.from\("quiz_result_short_links"\)/g)?.length, 3)
+  assert.equal(source.match(/\.from\("notification_log"\)/g)?.length, 3)
+  assert.doesNotMatch(source, /export async function apagar(?:ShortLinks|NotificationLogs)Lote/)
 })
 
 test("adaptador de short links limita seleção e restringe DELETE aos tokens selecionados", async () => {
@@ -125,9 +123,15 @@ test("adaptador de short links limita seleção e restringe DELETE aos tokens se
     { data: [{ token: "token-a" }, { token: "token-b" }], error: null, count: null },
   ])
 
-  const deleted = await apagarShortLinksLote(cutoff, 2, 1, client, escreverSemRede)
+  const tokens = await selecionarShortLinksLote(client, cutoff, 2)
+  const deleted = await restringirDeleteShortLinks(
+    client.from("quiz_result_short_links").delete(),
+    tokens,
+    cutoff,
+  )
 
-  assert.equal(deleted, 2)
+  assert.deepEqual(tokens, ["token-a", "token-b"])
+  assert.equal(deleted.data?.length, 2)
   assert.deepEqual(calls, [
     ["from", "quiz_result_short_links"],
     ["select", "token", null],
@@ -150,9 +154,15 @@ test("adaptador de notification_log limita seleção e restringe DELETE aos IDs 
     { data: [{ id: "log-a" }, { id: "log-b" }], error: null, count: null },
   ])
 
-  const deleted = await apagarNotificationLogsLote(cutoff, 2, 1, client, escreverSemRede)
+  const ids = await selecionarNotificationLogsLote(client, cutoff, 2)
+  const deleted = await restringirDeleteNotificationLogs(
+    client.from("notification_log").delete(),
+    ids,
+    cutoff,
+  )
 
-  assert.equal(deleted, 2)
+  assert.deepEqual(ids, ["log-a", "log-b"])
+  assert.equal(deleted.data?.length, 2)
   assert.deepEqual(calls, [
     ["from", "notification_log"],
     ["select", "id", null],
@@ -374,6 +384,28 @@ test("teto por execução limita volume mesmo quando a tabela continua crescendo
   })
 })
 
+test("limitReached indica consumo do teto mesmo ao igualar a contagem inicial", async () => {
+  const result = await runRetencaoOperacional(
+    depsBase({
+      apply: true,
+      batchSize: 2,
+      maxBatchesPerTable: 3,
+      contarShortLinksExpirados: async () => 6,
+      apagarShortLinksLote: async () => 2,
+    }),
+  )
+
+  assert.deepEqual(result.tables[0], {
+    table: "quiz_result_short_links",
+    policy: "expires_at <= now",
+    cutoff: NOW.toISOString(),
+    eligible: 6,
+    deleted: 6,
+    batches: 3,
+    limitReached: true,
+  })
+})
+
 test("erro de lote é observável com tabela e número da tentativa", async () => {
   await assert.rejects(
     runRetencaoOperacional(
@@ -404,22 +436,65 @@ test("volume acima do limite é recusado e identifica o lote", async () => {
 })
 
 test("parser exige --apply explícito e rejeita flags ambíguas", () => {
-  assert.deepEqual(parseRetencaoArgs([]), { apply: false })
-  assert.deepEqual(parseRetencaoArgs(["--dry-run"]), { apply: false })
-  assert.deepEqual(parseRetencaoArgs(["--apply"]), { apply: true })
-  assert.deepEqual(parseRetencaoArgs(["--notification-before=2026-05-17"]), {
+  assert.deepEqual(parseRetencaoArgs([], NOW), { apply: false })
+  assert.deepEqual(parseRetencaoArgs(["--dry-run"], NOW), { apply: false })
+  assert.deepEqual(parseRetencaoArgs(["--apply"], NOW), { apply: true })
+  assert.deepEqual(parseRetencaoArgs(["--notification-before=2026-08-14"], NOW), {
     apply: false,
-    notificationBefore: "2026-05-17",
+    notificationBefore: "2026-08-14",
   })
-  assert.throws(() => parseRetencaoArgs(["--apply", "--dry-run"]), /nunca os dois/)
-  assert.throws(() => parseRetencaoArgs(["--notification-before="]), /YYYY-MM-DD/)
-  assert.throws(() => parseRetencaoArgs(["--notification-before=2026-02-30"]), /data válida/)
+  assert.deepEqual(parseRetencaoArgs(["--notification-before=2026-08-15"], NOW), {
+    apply: false,
+    notificationBefore: "2026-08-15",
+  })
+  assert.throws(
+    () => parseRetencaoArgs(["--notification-before=2026-08-16"], NOW),
+    /não pode ser posterior.*America\/Sao_Paulo.*2026-08-15/,
+  )
+  assert.throws(() => parseRetencaoArgs(["--apply", "--dry-run"], NOW), /nunca os dois/)
+  assert.throws(() => parseRetencaoArgs(["--notification-before="], NOW), /YYYY-MM-DD/)
+  assert.throws(() => parseRetencaoArgs(["--notification-before=2026-02-30"], NOW), /data válida/)
   assert.throws(
     () => parseRetencaoArgs([
       "--notification-before=2026-05-17",
       "--notification-before=2026-05-16",
-    ]),
+    ], NOW),
     /uma única vez/,
   )
-  assert.throws(() => parseRetencaoArgs(["--force"]), /desconhecido/)
+  assert.throws(() => parseRetencaoArgs(["--force"], NOW), /desconhecido/)
+})
+
+test("validação do cutoff acompanha a virada do dia em America/Sao_Paulo", () => {
+  const antesDaMeiaNoiteBrt = new Date("2026-08-16T02:59:59.999Z")
+  const meiaNoiteBrt = new Date("2026-08-16T03:00:00.000Z")
+
+  assert.throws(
+    () => parseRetencaoArgs(["--notification-before=2026-08-16"], antesDaMeiaNoiteBrt),
+    /não pode ser posterior/,
+  )
+  assert.deepEqual(
+    parseRetencaoArgs(["--notification-before=2026-08-16"], meiaNoiteBrt),
+    { apply: false, notificationBefore: "2026-08-16" },
+  )
+})
+
+test("execução rejeita cutoff futuro antes de consultar qualquer tabela", async () => {
+  let consultas = 0
+  await assert.rejects(
+    runRetencaoOperacional(
+      depsBase({
+        notificationBefore: "2026-08-16",
+        contarShortLinksExpirados: async () => {
+          consultas += 1
+          return 0
+        },
+        contarNotificationLogsAntigos: async () => {
+          consultas += 1
+          return 0
+        },
+      }),
+    ),
+    /não pode ser posterior/,
+  )
+  assert.equal(consultas, 0)
 })

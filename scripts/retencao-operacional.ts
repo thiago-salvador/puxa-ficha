@@ -14,11 +14,12 @@
 
 import { pathToFileURL } from "node:url"
 
-import { escreverAuditado as escreverAuditadoPadrao } from "./lib/escrita-auditada"
+import { escreverAuditado } from "./lib/escrita-auditada"
 import { supabase } from "./lib/supabase"
 
 export const RETENCAO_BATCH_SIZE = 100
 export const RETENCAO_MAX_BATCHES_PER_TABLE = 20
+const NOTIFICATION_LOG_TIME_ZONE = "America/Sao_Paulo"
 
 type RetentionTable = "quiz_result_short_links" | "notification_log"
 type RetentionPolicy = "expires_at <= now" | "digest_date < operator cutoff"
@@ -46,6 +47,7 @@ export interface RetencaoTableResult {
   eligible: number
   deleted: number
   batches: number
+  /** True quando todos os lotes permitidos foram consumidos; pode haver linhas elegíveis restantes. */
   limitReached: boolean
 }
 
@@ -77,8 +79,6 @@ export interface RetencaoSupabaseClient {
   from: (table: string) => RetencaoQueryBuilder
 }
 
-export type EscritorAuditado = typeof escreverAuditadoPadrao
-
 const retencaoSupabase = supabase as unknown as RetencaoSupabaseClient
 
 interface PurgaTabelaParams {
@@ -92,7 +92,16 @@ interface PurgaTabelaParams {
   apagarLote: (cutoff: string, limite: number, lote: number) => Promise<number>
 }
 
-function validarNotificationBefore(value: string): string {
+function formatNotificationLogToday(now: Date): string {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: NOTIFICATION_LOG_TIME_ZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(now)
+}
+
+function validarNotificationBefore(value: string, now: Date): string {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) {
     throw new Error("--notification-before deve usar YYYY-MM-DD")
   }
@@ -100,11 +109,18 @@ function validarNotificationBefore(value: string): string {
   if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== value) {
     throw new Error("--notification-before deve ser uma data válida em YYYY-MM-DD")
   }
+  const today = formatNotificationLogToday(now)
+  if (value > today) {
+    throw new Error(
+      `--notification-before não pode ser posterior a hoje em ${NOTIFICATION_LOG_TIME_ZONE} (${today})`,
+    )
+  }
   return value
 }
 
 export function parseRetencaoArgs(
   argv: string[],
+  now = new Date(),
 ): { apply: boolean; notificationBefore?: string } {
   const notificationArgs = argv.filter((arg) => arg.startsWith("--notification-before="))
   const desconhecidos = argv.filter(
@@ -126,7 +142,10 @@ export function parseRetencaoArgs(
   if (notificationArgs.length === 0) return { apply }
   return {
     apply,
-    notificationBefore: validarNotificationBefore(notificationArgs[0].slice("--notification-before=".length)),
+    notificationBefore: validarNotificationBefore(
+      notificationArgs[0].slice("--notification-before=".length),
+      now,
+    ),
   }
 }
 
@@ -192,7 +211,7 @@ async function purgarTabela({
     eligible,
     deleted,
     batches,
-    limitReached: apply && batches === maxBatches && eligible > deleted,
+    limitReached: apply && batches === maxBatches,
   }
 }
 
@@ -213,7 +232,7 @@ export async function runRetencaoOperacional({
   const runAt = now.toISOString()
   const notificationCutoff = notificationBefore === undefined
     ? undefined
-    : validarNotificationBefore(notificationBefore)
+    : validarNotificationBefore(notificationBefore, now)
   const shortLinks = await purgarTabela({
     apply,
     table: "quiz_result_short_links",
@@ -258,14 +277,12 @@ async function contarShortLinksExpirados(limiteIso: string): Promise<number> {
   return count
 }
 
-export async function apagarShortLinksLote(
+async function apagarShortLinksLote(
   limiteIso: string,
   limite: number,
   lote: number,
-  client: RetencaoSupabaseClient = retencaoSupabase,
-  escreverAuditado: EscritorAuditado = escreverAuditadoPadrao,
 ): Promise<number> {
-  const tokens = await selecionarShortLinksLote(client, limiteIso, limite)
+  const tokens = await selecionarShortLinksLote(retencaoSupabase, limiteIso, limite)
   if (tokens.length === 0) return 0
 
   const linhas = await escreverAuditado(
@@ -276,12 +293,11 @@ export async function apagarShortLinksLote(
       recorte: `lote ${lote}, até ${limite} linhas, expires_at <= ${limiteIso}`,
     },
     () =>
-      client
-        .from("quiz_result_short_links")
-        .delete()
-        .in("token", tokens)
-        .lte("expires_at", limiteIso)
-        .select("token"),
+      restringirDeleteShortLinks(
+        retencaoSupabase.from("quiz_result_short_links").delete(),
+        tokens,
+        limiteIso,
+      ),
   )
   return linhas.length
 }
@@ -305,6 +321,17 @@ export async function selecionarShortLinksLote(
     .filter((token): token is string => typeof token === "string")
 }
 
+export function restringirDeleteShortLinks(
+  query: RetencaoQueryBuilder,
+  tokens: string[],
+  limiteIso: string,
+): RetencaoQueryBuilder {
+  return query
+    .in("token", tokens)
+    .lte("expires_at", limiteIso)
+    .select("token")
+}
+
 async function contarNotificationLogsAntigos(limiteData: string): Promise<number> {
   const { count, error } = await supabase
     .from("notification_log")
@@ -316,14 +343,12 @@ async function contarNotificationLogsAntigos(limiteData: string): Promise<number
   return count
 }
 
-export async function apagarNotificationLogsLote(
+async function apagarNotificationLogsLote(
   limiteData: string,
   limite: number,
   lote: number,
-  client: RetencaoSupabaseClient = retencaoSupabase,
-  escreverAuditado: EscritorAuditado = escreverAuditadoPadrao,
 ): Promise<number> {
-  const ids = await selecionarNotificationLogsLote(client, limiteData, limite)
+  const ids = await selecionarNotificationLogsLote(retencaoSupabase, limiteData, limite)
   if (ids.length === 0) return 0
 
   const linhas = await escreverAuditado(
@@ -334,12 +359,11 @@ export async function apagarNotificationLogsLote(
       recorte: `lote ${lote}, até ${limite} linhas, digest_date < ${limiteData}`,
     },
     () =>
-      client
-        .from("notification_log")
-        .delete()
-        .in("id", ids)
-        .lt("digest_date", limiteData)
-        .select("id"),
+      restringirDeleteNotificationLogs(
+        retencaoSupabase.from("notification_log").delete(),
+        ids,
+        limiteData,
+      ),
   )
   return linhas.length
 }
@@ -363,11 +387,23 @@ export async function selecionarNotificationLogsLote(
     .filter((id): id is string => typeof id === "string")
 }
 
+export function restringirDeleteNotificationLogs(
+  query: RetencaoQueryBuilder,
+  ids: string[],
+  limiteData: string,
+): RetencaoQueryBuilder {
+  return query
+    .in("id", ids)
+    .lt("digest_date", limiteData)
+    .select("id")
+}
+
 export async function main(argv = process.argv.slice(2)): Promise<void> {
-  const { apply, notificationBefore } = parseRetencaoArgs(argv)
+  const now = new Date()
+  const { apply, notificationBefore } = parseRetencaoArgs(argv, now)
   const result = await runRetencaoOperacional({
     apply,
-    now: new Date(),
+    now,
     notificationBefore,
     contarShortLinksExpirados,
     apagarShortLinksLote,
