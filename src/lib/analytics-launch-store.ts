@@ -196,7 +196,7 @@ export async function recordAnalyticsLaunchEventUnderQuota(input: {
 
   if (error) {
     if (isMissingIpHashColumn(error)) return { status: "coluna_ausente" }
-    if (!isMissingQuotaRpc(error)) {
+    if (!isMissingQuotaRpc(error, "insert_analytics_launch_event_under_ip_quota")) {
       throw new Error(`analytics_launch_events quota insert failed: ${error.message}`)
     }
 
