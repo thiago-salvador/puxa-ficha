@@ -44,7 +44,7 @@ describe("formação híbrida", () => {
 
   it("restaura o grau TSE e a instituição curada nos slugs de instituição-como-grau", () => {
     for (const [slug, grau, instituicao] of HIGIENE) {
-      const instituicaoRe = instituicao.replace(/[()]/g, "\\$&")
+      const instituicaoRe = instituicao.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
       assert.match(
         higiene,
         new RegExp(
