@@ -73,6 +73,44 @@ function scan(directory, exitCode = 17) {
   }
 }
 
+function runGit(directory, args, expectedStatus = 0) {
+  const result = spawnSync("git", args, { cwd: directory, encoding: "utf8" })
+  assert.ifError(result.error)
+  assert.equal(
+    result.status,
+    expectedStatus,
+    `${result.stdout ?? ""}${result.stderr ?? ""}`,
+  )
+  return (result.stdout ?? "").trim()
+}
+
+function scanGit(directory, logOpts, reportName) {
+  const reportPath = path.join(directory, reportName)
+  const result = spawnSync(
+    "gitleaks",
+    [
+      "git",
+      "--config",
+      configPath,
+      "--no-banner",
+      "--redact=100",
+      "--exit-code=17",
+      `--log-opts=${logOpts}`,
+      "--report-format=json",
+      `--report-path=${reportPath}`,
+    ],
+    { cwd: directory, encoding: "utf8" },
+  )
+  const report = readFileSync(reportPath, "utf8")
+
+  return {
+    ...result,
+    output: `${result.stdout ?? ""}${result.stderr ?? ""}`,
+    report,
+    findings: JSON.parse(report),
+  }
+}
+
 function assertDetected(result, secret) {
   assert.ifError(result.error)
   assert.equal(result.status, 17, "controlled fixture must fail the scan")
@@ -110,11 +148,6 @@ test("workflow is pinned, read-only and fail-closed", () => {
   assert.match(workflow, /GITLEAKS_ENABLE_UPLOAD_ARTIFACT:\s+"false"/)
   assert.match(
     workflow,
-    /cancel-in-progress:\s+\$\{\{ github\.event_name == 'pull_request' \}\}/,
-  )
-  assert.doesNotMatch(workflow, /cancel-in-progress:\s+true/)
-  assert.match(
-    workflow,
     /BASE_SHA:\s+\$\{\{ github\.event_name == 'pull_request' && github\.event\.pull_request\.base\.sha \|\| github\.event\.before \}\}/,
   )
   assert.match(
@@ -123,7 +156,7 @@ test("workflow is pinned, read-only and fail-closed", () => {
   )
   assert.match(
     workflow,
-    /gitleaks git .*--redact=100 .*--log-opts="\$\{BASE_SHA\}\.\.\$\{HEAD_SHA\}"/,
+    /gitleaks git .*--redact=100 .*--log-opts="-m \$\{BASE_SHA\}\.\.\$\{HEAD_SHA\}"/,
   )
   assert.doesNotMatch(workflow, /first-parent/)
   assert.match(workflow, /git archive "\$HEAD_SHA" \| tar -x -C "\$snapshot"/)
@@ -132,6 +165,27 @@ test("workflow is pinned, read-only and fail-closed", () => {
     /gitleaks dir \. .*--redact=100 .*--exit-code=1/,
   )
   assert.doesNotMatch(workflow, /continue-on-error/)
+})
+
+test("concurrency isolates every push and only cancels superseded PR revisions", () => {
+  const workflow = read(".github/workflows/gitleaks.yml")
+
+  assert.match(
+    workflow,
+    /format\('push-\{0\}', github\.sha\)/,
+    "every push must have a concurrency group unique to its commit SHA",
+  )
+  assert.match(
+    workflow,
+    /format\('pr-\{0\}-\{1\}', github\.event\.pull_request\.number, github\.head_ref\)/,
+    "revisions of the same PR head must share a stable concurrency group",
+  )
+  assert.match(
+    workflow,
+    /cancel-in-progress:\s+\$\{\{ github\.event_name == 'pull_request' \}\}/,
+  )
+  assert.doesNotMatch(workflow, /cancel-in-progress:\s+true/)
+  assert.doesNotMatch(workflow, /group:.*github\.ref/)
 })
 
 test("allowlists require exact public values and exact paths", () => {
@@ -173,6 +227,59 @@ test("controlled fixture survives every former allowlist bypass and stays redact
     } finally {
       rmSync(directory, { recursive: true, force: true })
     }
+  }
+})
+
+test("merge resolution secret is found only when the range includes parent diffs", () => {
+  const directory = mkdtempSync(path.join(tmpdir(), "puxa-ficha-gitleaks-merge-"))
+  const secret = controlledValue()
+
+  try {
+    runGit(directory, ["init", "-b", "main"])
+    runGit(directory, ["config", "user.name", "Controlled Fixture"])
+    runGit(directory, ["config", "user.email", "fixture@example.invalid"])
+
+    writeFixture(directory, "resolution.env", "state=base\n")
+    runGit(directory, ["add", "resolution.env"])
+    runGit(directory, ["commit", "-m", "base"])
+    const baseSha = runGit(directory, ["rev-parse", "HEAD"])
+
+    runGit(directory, ["checkout", "-b", "side"])
+    writeFixture(directory, "resolution.env", "state=side\n")
+    runGit(directory, ["commit", "-am", "side"])
+
+    runGit(directory, ["checkout", "main"])
+    writeFixture(directory, "resolution.env", "state=main\n")
+    runGit(directory, ["commit", "-am", "main"])
+    runGit(directory, ["merge", "--no-edit", "side"], 1)
+
+    writeFixture(directory, "resolution.env", `CONTROLLED_TEST_VALUE=${secret}\n`)
+    runGit(directory, ["add", "resolution.env"])
+    runGit(directory, ["commit", "-m", "resolve merge"])
+    const mergeParents = runGit(directory, ["rev-list", "--parents", "-n", "1", "HEAD"])
+    assert.equal(mergeParents.split(" ").length, 3, "fixture must contain a real merge commit")
+
+    writeFixture(directory, "resolution.env", "state=clean\n")
+    runGit(directory, ["commit", "-am", "remove controlled value"])
+    const headSha = runGit(directory, ["rev-parse", "HEAD"])
+
+    const withoutParents = scanGit(
+      directory,
+      `${baseSha}..${headSha}`,
+      "without-parent-diffs.json",
+    )
+    assert.ifError(withoutParents.error)
+    assert.equal(withoutParents.status, 0, withoutParents.output)
+    assert.deepEqual(withoutParents.findings, [])
+
+    const withParents = scanGit(
+      directory,
+      `-m ${baseSha}..${headSha}`,
+      "with-parent-diffs.json",
+    )
+    assertDetected(withParents, secret)
+  } finally {
+    rmSync(directory, { recursive: true, force: true })
   }
 })
 

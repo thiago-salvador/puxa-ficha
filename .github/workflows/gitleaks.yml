@@ -10,7 +10,12 @@ permissions:
   pull-requests: read
 
 concurrency:
-  group: gitleaks-${{ github.workflow }}-${{ github.ref }}
+  group: >-
+    gitleaks-${{ github.workflow }}-${{
+      github.event_name == 'pull_request'
+      && format('pr-{0}-{1}', github.event.pull_request.number, github.head_ref)
+      || format('push-{0}', github.sha)
+    }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
@@ -42,7 +47,7 @@ jobs:
           set -euo pipefail
           git cat-file -e "${BASE_SHA}^{commit}"
           git cat-file -e "${HEAD_SHA}^{commit}"
-          gitleaks git --config .gitleaks.toml --no-banner --redact=100 --exit-code=1 --log-opts="${BASE_SHA}..${HEAD_SHA}"
+          gitleaks git --config .gitleaks.toml --no-banner --redact=100 --exit-code=1 --log-opts="-m ${BASE_SHA}..${HEAD_SHA}"
 
           snapshot="$(mktemp -d)"
           trap 'rm -rf "$snapshot"' EXIT
