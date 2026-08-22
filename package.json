@@ -43,6 +43,7 @@
     "cache:aquecer": "tsx scripts/aquecer-cache-publico.ts",
     "audit:public-document-exposure:gate": "tsx scripts/audit-public-document-exposure.ts",
     "audit:public-security-surface:gate": "tsx scripts/audit-public-security-surface.ts",
+    "audit:route-guards": "tsx scripts/audit-route-guards.ts",
     "audit:supabase-abort-signal": "tsx scripts/audit-supabase-abort-signal.ts",
     "audit:superficie": "tsx scripts/audit/audit-superficie.ts",
     "audit:validade-temporal": "tsx scripts/audit/audit-validade-temporal.ts",

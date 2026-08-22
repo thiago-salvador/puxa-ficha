@@ -14,48 +14,17 @@ import { cookies } from "next/headers"
 import { notFound } from "next/navigation"
 import { accessCookieMatches } from "@/lib/access-cookie-digest"
 import { secretsMatch } from "@/lib/crypto-utils"
+import {
+  PREVIEW_COOKIE_NAME,
+  resolvePreviewToken,
+  type RouteGuardEnv,
+} from "@/lib/route-guards"
 
-/** Mesmo cookie que o middleware seta em `/preview` depois do bootstrap por query. */
-export const PREVIEW_COOKIE_NAME = "pf_preview_token"
-
-/** Mesmo piso do middleware: token fraco em ambiente deployado é tratado como ausente. */
-export const MIN_DEPLOYED_PREVIEW_TOKEN_LENGTH = 24
-
-type PreviewEnv = {
-  PF_PREVIEW_TOKEN?: string
-  VERCEL?: string
-  VERCEL_ENV?: string
-}
-
-/** Recorte explícito do ambiente, para os testes injetarem cenário sem mexer em process.env. */
-function readEnv(): PreviewEnv {
-  return {
-    PF_PREVIEW_TOKEN: process.env.PF_PREVIEW_TOKEN,
-    VERCEL: process.env.VERCEL,
-    VERCEL_ENV: process.env.VERCEL_ENV,
-  }
-}
-
-/**
- * Espelha `resolvePreviewToken()` do middleware. Qualquer ambiente deployado na
- * Vercel (production E preview) exige token forte configurado e falha fechado;
- * o fallback de conveniência só existe em dev local fora da Vercel.
- */
-export function resolvePreviewToken(env: PreviewEnv = readEnv()): string | null {
-  const configuredToken = env.PF_PREVIEW_TOKEN?.trim()
-
-  const isDeployed =
-    env.VERCEL === "1" || env.VERCEL_ENV === "production" || env.VERCEL_ENV === "preview"
-  if (isDeployed) {
-    if (!configuredToken || configuredToken.length < MIN_DEPLOYED_PREVIEW_TOKEN_LENGTH) {
-      return null
-    }
-    return configuredToken
-  }
-
-  if (configuredToken) return configuredToken
-  return "local-preview"
-}
+export {
+  MIN_DEPLOYED_PREVIEW_TOKEN_LENGTH,
+  PREVIEW_COOKIE_NAME,
+  resolvePreviewToken,
+} from "@/lib/route-guards"
 
 /**
  * Aceita o cookie setado pelo middleware ou o token de bootstrap na query, que é
@@ -70,7 +39,7 @@ export function resolvePreviewToken(env: PreviewEnv = readEnv()): string | null 
  */
 export async function hasPreviewAccess(
   tokens: { cookieToken?: string | null; queryToken?: string | null },
-  env: PreviewEnv = readEnv(),
+  env: RouteGuardEnv = process.env,
 ): Promise<boolean> {
   const expectedToken = resolvePreviewToken(env)
   if (!expectedToken) return false
