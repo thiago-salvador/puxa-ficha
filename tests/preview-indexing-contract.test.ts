@@ -1,5 +1,7 @@
 import assert from "node:assert/strict"
+import { readFileSync } from "node:fs"
 import test from "node:test"
+import { SITE_ORIGIN } from "@/lib/metadata"
 import {
   buildRobotsForDeployment,
   EMBED_NOINDEX_HEADER_VALUE,
@@ -14,6 +16,7 @@ test("preview deployment aplica noindex global e robots bloqueando crawl", () =>
 
   const robots = buildRobotsForDeployment("preview")
 
+  assert.strictEqual(robots.sitemap, undefined)
   assert.deepStrictEqual(robots, {
     rules: [
       {
@@ -43,5 +46,28 @@ test("producao preserva robots publico e embed noindex estreito", () => {
     "/api/",
     "/embed/",
   ])
-  assert.strictEqual(robots.sitemap, "https://puxaficha.com.br/sitemap.xml")
+  assert.strictEqual(robots.sitemap, `${SITE_ORIGIN}/sitemap.xml`)
+})
+
+test("sitemap e robots de producao usam SITE_ORIGIN, sem dominio hardcoded", () => {
+  const sitemap = readFileSync("src/app/sitemap.ts", "utf8")
+  const robotsHelper = readFileSync("src/lib/preview-indexing.ts", "utf8")
+  const robotsRoute = readFileSync("src/app/robots.ts", "utf8")
+  const metadataHelper = readFileSync("src/lib/metadata.ts", "utf8")
+
+  assert.match(metadataHelper, /export const SITE_ORIGIN/)
+  assert.match(metadataHelper, /process\.env\.NEXT_PUBLIC_SITE_URL/)
+
+  // Scan de fonte via split: `.includes("https://...")` dispara
+  // js/incomplete-url-substring-sanitization; regex de URL dispara
+  // js/regex/missing-regexp-anchor. Nenhuma das duas APIs e sanitizacao de URL.
+  const hardcodedHost = "puxaficha.com.br"
+  assert.equal(sitemap.split(hardcodedHost).length, 1)
+  assert.match(sitemap, /SITE_ORIGIN/)
+
+  assert.equal(robotsHelper.split(hardcodedHost).length, 1)
+  assert.match(robotsHelper, /from ["']\.\/metadata["']/)
+  assert.match(robotsHelper, /\$\{SITE_ORIGIN\}\/sitemap\.xml/)
+
+  assert.match(robotsRoute, /buildRobotsForDeployment/)
 })
