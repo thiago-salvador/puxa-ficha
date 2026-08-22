@@ -270,10 +270,14 @@ describe("fixed-window IP rate limit", () => {
       max: 1,
       windowMs: 60_000,
     })
+    let reads = 0
     let generated = 0
     const handler = createCardGetHandler({
       rateLimiter: limiter,
-      getCandidatoBySlugResource: async () => ({ data: { foto_url: null } }),
+      getCandidatoBySlugResource: async () => {
+        reads += 1
+        return { data: { foto_url: null } }
+      },
       fetchPhotoAsBase64: async () => null,
       extractCardData: () => ({}),
       buildSocialCard: async () => {
@@ -289,8 +293,41 @@ describe("fixed-window IP rate limit", () => {
     const params = { params: Promise.resolve({ slug: "lula" }) }
 
     assert.equal((await handler(request(), params)).status, 200)
-    assert.equal((await handler(request(), params)).status, 429)
+    const denied = await handler(request(), params)
+    assert.equal(denied.status, 429)
+    assert.ok(Number(denied.headers.get("retry-after")) > 0)
+    assert.equal(denied.headers.get("cache-control"), "no-store")
+    assert.equal(reads, 1)
     assert.equal(generated, 1)
+  })
+
+  it("does not fail open when the api/card limiter throws", async () => {
+    let reads = 0
+    const handler = createCardGetHandler({
+      rateLimiter: {
+        check: () => {
+          throw new Error("rate limit unavailable")
+        },
+        reset: () => undefined,
+      },
+      getCandidatoBySlugResource: async () => {
+        reads += 1
+        return { data: { foto_url: null } }
+      },
+      fetchPhotoAsBase64: async () => null,
+      extractCardData: () => ({}),
+      buildSocialCard: async () => new Response("card"),
+      startSpan: (_context: unknown, callback: () => Promise<Response>) => callback(),
+    })
+    const request = new NextRequest("http://localhost/api/card/lula", {
+      headers: { "x-real-ip": "203.0.113.45" },
+    })
+
+    await assert.rejects(
+      handler(request, { params: Promise.resolve({ slug: "lula" }) }),
+      /rate limit unavailable/,
+    )
+    assert.equal(reads, 0)
   })
 })
 
