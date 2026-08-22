@@ -16,6 +16,7 @@ const KEYS = [
   "SENTRY_DSN",
   "NEXT_PUBLIC_SENTRY_DSN",
   "PF_ALERTS_FROM_EMAIL",
+  "PF_ALERTS_REPLY_TO_EMAIL",
   "SMTP_FROM",
 ] as const
 
@@ -30,6 +31,7 @@ function ambienteCompleto() {
   process.env.PF_ALERTS_TOKEN_SALT = "alerts-token-salt-test-32-characters-xx"
   process.env.PF_ALERTS_TOKEN_ENCRYPTION_KEY = "11".repeat(32)
   process.env.RESEND_API_KEY = "re_test_fake_key_for_unit_test_only"
+  process.env.PF_ALERTS_REPLY_TO_EMAIL = "contato@puxaficha.com.br"
   process.env.CRON_SECRET = "cron-secret-test-at-least-24-chars-ok"
   process.env.PF_REVALIDATE_SECRET = "revalidate-secret-test-at-least-24-chars"
   process.env.NEXT_PUBLIC_SENTRY_DSN = "https://public@example.ingest.sentry.io/123"
@@ -84,6 +86,29 @@ describe("validateProductionEnvironment separa critico de degradavel", () => {
     assert.equal(logs.length, 1, "a degradacao precisa aparecer em log, nao sumir em silencio")
     assert.match(logs[0], /RESEND_API_KEY/)
     assert.match(logs[0], /degradada/)
+  })
+
+  it("sem Reply-To o boot sobrevive e registra que os emails nao serao enviados", () => {
+    ambienteCompleto()
+    delete process.env.PF_ALERTS_REPLY_TO_EMAIL
+
+    const { logs } = comConsoleErrorCapturado(() => {
+      assert.doesNotThrow(() => validateProductionEnvironment())
+    })
+
+    assert.match(logs[0], /PF_ALERTS_REPLY_TO_EMAIL/)
+    assert.match(logs[0], /alertas por email nao serao enviados/)
+  })
+
+  it("Reply-To mal formatado degrada o email sem derrubar o site", () => {
+    ambienteCompleto()
+    process.env.PF_ALERTS_REPLY_TO_EMAIL = "Puxa Ficha contato@puxaficha.com.br"
+
+    const { logs } = comConsoleErrorCapturado(() => {
+      assert.doesNotThrow(() => validateProductionEnvironment())
+    })
+
+    assert.match(logs[0], /PF_ALERTS_REPLY_TO_EMAIL em formato invalido/)
   })
 
   it("sem DSN do Sentry o boot sobrevive e registra", () => {

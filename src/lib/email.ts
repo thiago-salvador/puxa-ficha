@@ -1,6 +1,7 @@
 import "server-only"
 
 import { resolveConfiguredFromEmail } from "@/lib/email-from"
+import { resolveConfiguredReplyToEmail } from "@/lib/email-reply-to"
 import { logAlertsEvent } from "@/lib/alerts-log"
 
 export interface SendEmailInput {
@@ -32,6 +33,20 @@ function resolveResendApiKey(): string | null {
   return process.env.RESEND_API_KEY?.trim() || null
 }
 
+function resolveAlertsReplyToEmail(): string {
+  try {
+    return resolveConfiguredReplyToEmail(process.env.PF_ALERTS_REPLY_TO_EMAIL)
+  } catch (error) {
+    logAlertsEvent({
+      route: "email-transport",
+      event: "resend_reply_to_configuration_error",
+      level: "error",
+      detail: { message: error instanceof Error ? error.message : String(error) },
+    })
+    throw error
+  }
+}
+
 export async function sendTransactionalEmail(input: SendEmailInput): Promise<{ id: string | null }> {
   const apiKey = resolveResendApiKey()
   if (!apiKey) {
@@ -42,6 +57,8 @@ export async function sendTransactionalEmail(input: SendEmailInput): Promise<{ i
     })
     throw new Error("Missing RESEND_API_KEY")
   }
+
+  const replyToEmail = resolveAlertsReplyToEmail()
 
   let response: Response
   try {
@@ -56,6 +73,7 @@ export async function sendTransactionalEmail(input: SendEmailInput): Promise<{ i
       body: JSON.stringify({
         from: resolveAlertsFromEmail(),
         to: Array.isArray(input.to) ? input.to : [input.to],
+        reply_to: replyToEmail,
         subject: input.subject,
         html: input.html,
         text: input.text,
