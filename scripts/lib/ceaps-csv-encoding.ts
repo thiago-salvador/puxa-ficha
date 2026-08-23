@@ -9,17 +9,19 @@
  * rótulos, lidos em Latin-1, e o acento sai inteiro.
  */
 
-export const REPLACEMENT_CHAR = "\uFFFD"
+import {
+  assertPublicTextEncodingSafe,
+  REPLACEMENT_CHAR,
+} from "../../src/lib/public-text-encoding"
+
+export { REPLACEMENT_CHAR }
 
 export function textoTemReplacement(value: string): boolean {
   return value.includes(REPLACEMENT_CHAR)
 }
 
 export function assertSemReplacementChar(value: string, origem: string): void {
-  if (!textoTemReplacement(value)) return
-  throw new Error(
-    `${origem}: recusando gravar texto com U+FFFD (CSV Latin-1 lido como UTF-8)`,
-  )
+  assertPublicTextEncodingSafe(value, origem)
 }
 
 export function decodeCeapsCsv(buffer: Buffer): string {

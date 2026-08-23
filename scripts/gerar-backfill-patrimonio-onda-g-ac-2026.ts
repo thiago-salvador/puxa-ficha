@@ -21,7 +21,7 @@ import { resolve } from "node:path"
 
 import { dedupeTsePatrimonioRows } from "../src/lib/tse-patrimonio-dedupe"
 import { maskDocumentLikeSequences } from "../src/lib/public-profile-dto"
-import { sanitizePublicText } from "../src/lib/public-text"
+import { sanitizePublicText, sanitizePublicTextOrThrow } from "../src/lib/public-text"
 import { parseCSV } from "./lib/parse-csv-local"
 
 const SNAPSHOT = "2026-08-15 16:35 BRT"
@@ -131,8 +131,14 @@ async function lerBens(zipPath: string): Promise<Map<string, BemLido[]>> {
         slug: candidato.slug,
         sourceKey: csvPath,
         ordem: row.NR_ORDEM_BEM_CANDIDATO || "",
-        tipo: row.DS_TIPO_BEM_CANDIDATO || "",
-        descricao: row.DS_BEM_CANDIDATO || "",
+        tipo: sanitizePublicTextOrThrow(
+          row.DS_TIPO_BEM_CANDIDATO,
+          `bem-candidato:${candidato.slug}:${sq}:tipo`,
+        ),
+        descricao: sanitizePublicTextOrThrow(
+          maskDocumentLikeSequences(row.DS_BEM_CANDIDATO || ""),
+          `bem-candidato:${candidato.slug}:${sq}:descricao`,
+        ),
         valor: parseBRL(row.VR_BEM_CANDIDATO || "0"),
         geracao: `${row.DT_GERACAO || ""} ${row.HH_GERACAO || ""}`.trim(),
       })

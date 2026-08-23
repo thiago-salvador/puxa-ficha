@@ -6,6 +6,7 @@ import { namesLookCompatible } from "./name-match"
 import { log, warn, error } from "./logger"
 import type { IngestResult } from "./types"
 import { stripAccents } from "../../src/lib/strip-accents"
+import { curateSenadoEmenta } from "./senado-ementa-curation"
 
 const API = "https://legis.senado.leg.br/dadosabertos"
 const HEADERS = { Accept: "application/json" }
@@ -405,7 +406,10 @@ async function ingestAutorias(
     const sigla = String(materia.Sigla || materia.SiglaSubtipoMateria || materia.DescricaoSubtipoMateria || "")
     const numero = String(materia.Numero || materia.NumeroMateria || "")
     const ano = Number(materia.Ano || materia.AnoMateria) || null
-    const ementa = String(materia.Ementa || materia.EmentaMateria || a.DescricaoTextoMateria || "")
+    const ementa = curateSenadoEmenta(
+      materiaId,
+      String(materia.Ementa || materia.EmentaMateria || a.DescricaoTextoMateria || ""),
+    )
 
     // Guard: skip empty rows where all key fields are missing
     if (!sigla && !numero && !ano && !ementa) {

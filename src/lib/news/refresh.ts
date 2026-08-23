@@ -17,6 +17,7 @@ import {
   parseGoogleNewsRss,
 } from "@/lib/news/google-news"
 import { splitNewsByCandidateMention } from "@/lib/news/name-match"
+import { sanitizePublicTextOrThrow } from "@/lib/public-text"
 
 export interface NewsCandidato {
   id: string
@@ -197,8 +198,8 @@ export async function refreshCandidatosNews(
 
       const rows: NoticiaRow[] = newsItems.map((item) => ({
         candidato_id: cand.id,
-        titulo: item.titulo,
-        fonte: item.fonte,
+        titulo: sanitizePublicTextOrThrow(item.titulo, `google-news:${cand.slug}:titulo`),
+        fonte: sanitizePublicTextOrThrow(item.fonte, `google-news:${cand.slug}:fonte`),
         url: item.url,
         data_publicacao: item.data_publicacao,
       }))

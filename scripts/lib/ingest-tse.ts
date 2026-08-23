@@ -21,6 +21,7 @@ import {
   sanitizeMaioresDoadoresForPublic,
 } from "../../src/lib/financiamento-public"
 import { maskDocumentLikeSequences } from "../../src/lib/public-profile-dto"
+import { sanitizePublicTextOrThrow } from "../../src/lib/public-text"
 import { dedupeTsePatrimonioRows } from "../../src/lib/tse-patrimonio-dedupe"
 import { financiamentoReceitasZipUrls } from "./tse-financiamento-receitas-urls"
 import {
@@ -392,8 +393,14 @@ async function processPatrimonio(
         slug: cand.slug,
         sourceKey: csvPath,
         ordem: row.NR_ORDEM_BEM_CANDIDATO || "",
-        tipo: row.DS_TIPO_BEM_CANDIDATO || "",
-        descricao: row.DS_BEM_CANDIDATO || "",
+        tipo: sanitizePublicTextOrThrow(
+          row.DS_TIPO_BEM_CANDIDATO,
+          `bem-candidato:${cand.slug}:${ano}:${sq}:tipo`,
+        ),
+        descricao: sanitizePublicTextOrThrow(
+          maskDocumentLikeSequences(row.DS_BEM_CANDIDATO || ""),
+          `bem-candidato:${cand.slug}:${ano}:${sq}:descricao`,
+        ),
         valor,
       })
     })

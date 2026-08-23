@@ -16,7 +16,7 @@ import {
 import { basename, resolve } from "node:path"
 
 import { maskDocumentLikeSequences } from "../src/lib/public-profile-dto"
-import { sanitizePublicText } from "../src/lib/public-text"
+import { sanitizePublicTextOrThrow } from "../src/lib/public-text"
 import {
   gerarMigrationSql,
   normalizarIdentificadorNumerico,
@@ -191,8 +191,8 @@ function parseBrlCentavos(value: string): number {
   return Math.round(Number(normalizado) * 100)
 }
 
-function textoPublico(value: string): string {
-  return sanitizePublicText(maskDocumentLikeSequences(value))
+function textoPublico(value: string, origin: string): string {
+  return sanitizePublicTextOrThrow(maskDocumentLikeSequences(value), origin)
 }
 
 async function lerBens(
@@ -208,8 +208,8 @@ async function lerBens(
         sq,
         sourceKey: basename(csv),
         ordem: row.NR_ORDEM_BEM_CANDIDATO || "",
-        tipo: textoPublico(row.DS_TIPO_BEM_CANDIDATO || ""),
-        descricao: textoPublico(row.DS_BEM_CANDIDATO || ""),
+        tipo: textoPublico(row.DS_TIPO_BEM_CANDIDATO || "", `bem-candidato:${sq}:tipo`),
+        descricao: textoPublico(row.DS_BEM_CANDIDATO || "", `bem-candidato:${sq}:descricao`),
         valorCentavos: parseBrlCentavos(row.VR_BEM_CANDIDATO || "0"),
         geracao: `${row.DT_GERACAO || ""} ${row.HH_GERACAO || ""}`.trim(),
       })

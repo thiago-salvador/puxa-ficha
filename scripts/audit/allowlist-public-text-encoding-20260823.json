@@ -1,0 +1,32 @@
+{
+  "_comentario": "Corrige por ID os artefatos de encoding encontrados na varredura integral do universo publicado em 23/08/2026.",
+  "recorte": "public-text-encoding-20260823",
+  "migration": "20260823160000_public_text_encoding_cleanup.sql",
+  "fonte": "TSE Dados Abertos, Senado Dados Abertos, CSV CEAPS Latin-1, Camara Dados Abertos, catalogo oficial de legislacao da Prefeitura de Sao Paulo e Google News, todos fechados por identidade de fonte.",
+  "coorte": [
+    "alan-rick",
+    "cicero-lucena",
+    "delcidio-amaral",
+    "haddad-gov-sp",
+    "luiz-franca",
+    "mailza-assis",
+    "patrus-ananias",
+    "ricardo-ferraco",
+    "soldado-sampaio",
+    "wilson-grassi-junior"
+  ],
+  "fora_por_construcao": { "slugs": [] },
+  "referencias": [],
+  "entries": [
+    { "tabela": "patrimonio", "slug": "wilson-grassi-junior", "campos": ["bens"] },
+    { "tabela": "patrimonio", "slug": "luiz-franca", "campos": ["bens"] },
+    { "tabela": "patrimonio", "slug": "soldado-sampaio", "campos": ["bens"] },
+    { "tabela": "projetos_lei", "slug": "cicero-lucena", "campos": ["ementa"] },
+    { "tabela": "projetos_lei", "slug": "ricardo-ferraco", "campos": ["ementa"] },
+    { "tabela": "gastos_parlamentares", "slug": "alan-rick", "campos": ["gastos_destaque"] },
+    { "tabela": "gastos_parlamentares", "slug": "mailza-assis", "campos": ["gastos_destaque"] },
+    { "tabela": "gastos_parlamentares", "slug": "patrus-ananias", "campos": ["detalhamento", "gastos_destaque"] },
+    { "tabela": "legislacao_mandato_executivo", "slug": "haddad-gov-sp", "campos": ["ementa", "metadata"] },
+    { "tabela": "noticias_candidato", "slug": "delcidio-amaral", "campos": ["titulo"] }
+  ]
+}
