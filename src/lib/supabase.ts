@@ -7,16 +7,16 @@ interface SupabaseClientOptions {
   revalidate?: number
 }
 
-// A ficha de candidato dispara 13 consultas num unico `Promise.all`
-// (`fetchCandidatoCompleto` em src/lib/api.ts). Com teto 12 a propria pagina se
-// enfileirava atras de si mesma: a 13a query so comecava depois que outra
+// A ficha de candidato dispara 13 consultas num único `Promise.all`
+// (`fetchCandidatoCompleto` em src/lib/api.ts). Com teto 12 a própria pagina se
+// enfileirava atrás de si mesma: a 13a query so começava depois que outra
 // terminasse. O teto cobre a ficha inteira e ainda sobra folga para o resto do
 // request na mesma instancia Fluid Compute.
 export const DEFAULT_SUPABASE_FETCH_CONCURRENCY = 24
 
-// Teto de espera na fila do semaforo. Sem ele, um slot vazado (tentativa
+// Teto de espera na fila do semáforo. Sem ele, um slot vazado (tentativa
 // abandonada que nunca libera) deixa todo caller seguinte pendurado ate o limite
-// da plataforma; com ele a espera falha rapido e com mensagem propria.
+// da plataforma; com ele a espera falha rápido e com mensagem própria.
 //
 // O numero precisa ficar ABAIXO do timeout por tentativa de `withSupabaseRetry`
 // (SUPABASE_ATTEMPT_TIMEOUT_MS, 15s). Sob fila saturada o caller hoje espera ate

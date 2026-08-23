@@ -5,7 +5,7 @@
  *
  * Antes de 2026-07-26 essas duas rotas repassavam qualquer valor adiante, e
  * /quiz/resultado?cargo=Senador montava um quiz de senadores. Com a
- * despublicacao de Senado e Camara (migration 20260726120000) isso passaria a
+ * despublicacao de Senado e Câmara (migration 20260726120000) isso passaria a
  * renderizar uma coorte vazia, entao a allowlist vira gate explicito e o
  * fallback e Presidente.
  */

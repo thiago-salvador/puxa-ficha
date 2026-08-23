@@ -1,6 +1,6 @@
 /**
  * Contrato de `candidatos.verificacao_campos`: quem pode carimbar data por
- * campo, e quando o agregado do perfil pode avancar.
+ * campo, e quando o agregado do perfil pode avançar.
  *
  * ## Por que existe
  *
@@ -8,7 +8,7 @@
  * (`scripts/generate-b2-current-profile-migration.ts`) lia
  * `source_verification_dates.proposed_value` do ledger da B2 e emitia o mapa
  * VERBATIM como jsonb, e o leitor (`src/lib/api.ts`) pegava a data mais recente
- * de qualquer campo. As duas pontas erravam em direcoes opostas:
+ * de qualquer campo. As duas pontas erravam em direções opostas:
  *
  * - o leitor promovia o perfil inteiro com verificacao PARCIAL;
  * - o escritor gravava `null` em `social_networks` de `cleber-rabelo` e
@@ -21,25 +21,25 @@
  * nunca foram consultados por falta de identidade segura. Data no ledger nunca
  * significou campo confirmado.
  *
- * ## Chave ausente nao e estilo, e o mecanismo da preservacao
+ * ## Chave ausente nao e estilo, e o mecanismo da preservação
  *
  * O merge no banco e `verificacao_campos = COALESCE(verificacao_campos,'{}') ||
  * patch`. Em jsonb, o `||` com null do lado direito SOBRESCREVE:
  * `'{"a":"2026-06-01"}'::jsonb || '{"a":null}'::jsonb` da `{"a": null}`. Emitir
  * `{"social_networks": null}` apagaria uma data boa anterior. Por isso `patch` e
- * tipado `Record<string, string>`: o tipo proibe null, e estado que nao avanca
+ * tipado `Record<string, string>`: o tipo proibe null, e estado que nao avança
  * simplesmente nao entra no objeto.
  *
  * ## Onde mora e por que aqui
  *
  * Em `src/lib` porque o `tsconfig.json` raiz exclui `scripts/`, entao `api.ts`
- * nao pode importar de la; o inverso e legal e ja acontece em varios scripts.
- * Leitor e escritor importam DESTE arquivo. Nao existe gemeo em `scripts/lib`:
- * duplicar o contrato recriaria a divergencia que
+ * nao pode importar de la; o inverso e legal e ja acontece em vários scripts.
+ * Leitor e escritor importam DESTE arquivo. Nao existe gêmeo em `scripts/lib`:
+ * duplicar o contrato recriaria a divergência que
  * `tests/freshness-window.test.ts` existe para policiar.
  */
 
-/** Vocabulario de `Settings/OBJECTIVE.md`, secao "todos os dados possiveis". */
+/** Vocabulário de `Settings/OBJECTIVE.md`, seção "todos os dados possíveis". */
 export type EstadoCampo =
   | "publicado"
   | "vazio_confirmado"
@@ -98,11 +98,11 @@ export function lerEstadoCelulaSuperficie(
 }
 
 /**
- * Unicos estados que podem carimbar data.
+ * Únicos estados que podem carimbar data.
  *
  * `vazio_confirmado` esta aqui de proposito: fonte aplicavel consultada que
  * respondeu sem registros E uma verificacao, e esconder isso transformaria
- * ausencia confirmada em lacuna, que e o defeito inverso.
+ * ausência confirmada em lacuna, que e o defeito inverso.
  */
 export const ESTADOS_QUE_AVANCAM_FRESCOR = ["publicado", "vazio_confirmado"] as const
 
@@ -123,7 +123,7 @@ export type ChaveTsePerfil = (typeof CHAVES_TSE_PERFIL)[number]
 export const CHAVE_AGREGADO_CURADO = "existing_profile_aggregate"
 
 /**
- * Escritas no jsonb, mas fora do bloco de perfil. Declaradas para que a uniao
+ * Escritas no jsonb, mas fora do bloco de perfil. Declaradas para que a união
  * das tres listas possa ser comparada com as 7 chaves que a migration realmente
  * escreve: chave nova no pipeline reprova em teste em vez de ser ignorada em
  * silencio, como estas tres eram pelo leitor antigo.
@@ -140,7 +140,7 @@ export const ROTULO_FONTE_TSE: Readonly<Record<ChaveTsePerfil, string>> = Object
 export interface ResolucaoCampo {
   chave: string
   estado: EstadoCampo
-  /** ISO 8601. Ausente ou invalida com estado que avanca vira rejeicao, nunca `now()`. */
+  /** ISO 8601. Ausente ou invalida com estado que avança vira rejeição, nunca `now()`. */
   verificadoEm?: string | null
 }
 
@@ -153,9 +153,9 @@ export interface CampoPreservado {
 export interface PatchVerificacaoCampos {
   /** Aditivo e sem null por construcao. Aplicar com `||` no banco. */
   patch: Record<string, string>
-  /** Estados que nao avancam. Ficam de fora do patch, preservando a data antiga. */
+  /** Estados que nao avançam. Ficam de fora do patch, preservando a data antiga. */
   preservadas: CampoPreservado[]
-  /** Estados que avancariam, mas sem data utilizavel. Nunca viram `now()`. */
+  /** Estados que avançariam, mas sem data utilizável. Nunca viram `now()`. */
   rejeitadas: CampoPreservado[]
 }
 
@@ -170,22 +170,22 @@ const MOTIVO_PRESERVA: Readonly<Record<string, string>> = Object.freeze({
  * `YYYY-MM-DD`, ou o mesmo com hora ISO. Nada mais.
  *
  * O `new Date()` sozinho e permissivo demais para servir de gate: ele aceita
- * `"Aug 6 2026"`, `"2026"` e, pior, **rola datas impossiveis**:
+ * `"Aug 6 2026"`, `"2026"` e, pior, **rola datas impossíveis**:
  * `new Date("2026-02-30")` devolve 02/03/2026 sem reclamar. Uma data de
- * verificacao que o calendario nao tem so pode ter vindo de erro ou de
- * adulteracao, e transformar 30 de fevereiro em 2 de marco em silencio e
+ * verificacao que o calendário nao tem so pode ter vindo de erro ou de
+ * adulteração, e transformar 30 de fevereiro em 2 de marco em silencio e
  * exatamente o tipo de dado inventado que este contrato existe para impedir.
  */
 const ISO_DATA = /^(\d{4})-(\d{2})-(\d{2})$/
 /**
- * Com hora, o fuso e OBRIGATORIO (`Z` ou offset explicito).
+ * Com hora, o fuso e OBRIGATÓRIO (`Z` ou offset explicito).
  *
  * Sem ele, `new Date("2026-08-06T23:30:00")` interpreta como hora LOCAL, e o
  * mesmo texto vira instantes diferentes conforme a maquina: medido, UTC da
  * `1786059000000` e America/Sao_Paulo da `1786069800000`, tres horas de
- * diferenca. Uma data de verificacao que muda de valor conforme quem le nao e
+ * diferença. Uma data de verificacao que muda de valor conforme quem le nao e
  * verificacao. Data pura (`YYYY-MM-DD`) e ancorada em meia-noite UTC de
- * proposito, que e explicito e estavel.
+ * proposito, que e explicito e estável.
  */
 const ISO_DATA_HORA =
   /^(\d{4})-(\d{2})-(\d{2})[T ](\d{2}):(\d{2})(:\d{2}(\.\d{1,9})?)?(Z|[+-]\d{2}:?\d{2})$/
@@ -196,7 +196,7 @@ function calendarioReal(ano: number, mes: number, dia: number): boolean {
 }
 
 export interface DataDeVerificacao {
-  /** Texto original preservado, para o valor gravado nao perder precisao. */
+  /** Texto original preservado, para o valor gravado nao perder precisão. */
   bruto: string
   /** Instante em ms, para comparacao. Nunca comparar datas por ordem de string. */
   instante: number

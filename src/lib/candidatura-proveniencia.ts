@@ -5,13 +5,13 @@
  * site emitia `cargo_disputado` como se fosse fato oficial. O JSON-LD publicava
  * `jobTitle: "Presidente"` e o payload de `/api/candidato-profile/[slug]`
  * devolvia `situacao_candidatura: "pre-candidato"` sem nenhum campo dizendo de
- * onde aquilo vem. O unico aviso de pre-candidatura vivia no rodape da pagina,
- * longe do dado e invisivel para crawler e para quem consome a API.
+ * onde aquilo vem. O único aviso de pre-candidatura vivia no rodapé da pagina,
+ * longe do dado e invisível para crawler e para quem consome a API.
  *
  * O registro de candidatura de 2026 so existe depois do pedido ao TSE (Lei
  * 9.504/1997, art. 11). Enquanto isso, o pleito publicado aqui e declaracao
  * editorial apurada em fonte publica, nao registro deferido. Este modulo e a
- * fonte unica dessa distincao, consumida pela ficha, pelo DTO publico e por
+ * fonte única dessa distinção, consumida pela ficha, pelo DTO publico e por
  * qualquer superficie nova.
  *
  * Modulo puro: sem import de next/*, server-only, fs ou Supabase.
@@ -27,7 +27,7 @@ export type CargoDisputadoProveniencia =
 
 /**
  * Tokens de `status`/`situacao_candidatura` que significam candidatura ja
- * pedida ou deferida no TSE. Hoje nenhuma linha publicavel esta nesse conjunto
+ * pedida ou deferida no TSE. Hoje nenhuma linha publicável esta nesse conjunto
  * (184 de 184 sao `status = "pre-candidato"`, consultado em 2026-07-26), mas o
  * mapeamento existe para o dia em que o registro abrir e o pipeline atualizar.
  */

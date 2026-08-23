@@ -139,13 +139,13 @@ const USE_MOCK = !supabaseUrl || supabaseUrl.includes("placeholder")
 const IS_DEV = process.env.NODE_ENV === "development"
 /**
  * Fase de curadoria. O DEFAULT E SEGURO: qualquer coisa que nao seja
- * explicitamente `hardening` conta como fase de lancamento, ou seja, o selo de
+ * explicitamente `hardening` conta como fase de lançamento, ou seja, o selo de
  * frescor diz a verdade sobre a idade do dado.
  *
- * Era o contrario ate 2026-08-03, e a variavel nunca chegou a ser definida em
- * Production (conferido com `vercel env ls production`). Efeito: a negacao em
+ * Era o contrario ate 2026-08-03, e a variável nunca chegou a ser definida em
+ * Production (conferido com `vercel env ls production`). Efeito: a negação em
  * `buildSectionFreshness` curto-circuitava e TODA ficha carimbava "Dado atual",
- * inclusive uma parada desde 14/04. Numa plataforma civica cuja proposta e fonte
+ * inclusive uma parada desde 14/04. Numa plataforma cívica cuja proposta e fonte
  * visivel, o default nunca pode ser o que mente.
  *
  * Para voltar ao modo de curadoria (selo sempre "current", sem checagem de
@@ -160,11 +160,11 @@ const APP_DATA_REVALIDATE_SECONDS = 3600
 /**
  * Janela de frescor do bloco `perfil_atual`, em dias.
  *
- * 75 e escolha medida, nao arbitraria (03/08/2026). Distribuicao real das 194
+ * 75 e escolha medida, nao arbitraria (03/08/2026). Distribuição real das 194
  * fichas publicadas naquela data: 66 passariam de 30 dias, 61 de 45, e apenas 1
- * de 60. Os 65 do meio sao um lote unico curado em 09/06, entao qualquer corte
- * entre 45 e 60 marcaria um terco do site de uma vez, e um corte de 60 os
- * marcaria todos cinco dias depois do lancamento.
+ * de 60. Os 65 do meio sao um lote único curado em 09/06, entao qualquer corte
+ * entre 45 e 60 marcaria um terço do site de uma vez, e um corte de 60 os
+ * marcaria todos cinco dias depois do lançamento.
  *
  * 75 dias marca so quem esta genuinamente velho hoje (`felicio-ramuth`, parado
  * desde 14/04) e da folga ate ~23/08 para recurar o lote de 09/06 sem pressa.
@@ -176,7 +176,7 @@ const APP_DATA_REVALIDATE_SECONDS = 3600
 const PROFILE_FRESHNESS_WINDOW_DAYS = 75
 // 2026-08-03: `select("*")` em projetos_lei trazia `metadata` (jsonb), que sozinho
 // responde por 60% do peso da tabela (8,9 MB de 14 MB, media de 651 bytes por linha)
-// e nao e lido em lugar nenhum do app: a unica leitura de `.metadata` no codigo e de
+// e nao e lido em lugar nenhum do app: a única leitura de `.metadata` no codigo e de
 // LegislacaoMandatoExecutivo, entidade diferente. `coverage_scope` (81 bytes por
 // linha) e `created_at` tambem nao sao consumidos. Como esta query e 14,4% do tempo
 // total do banco e sua cauda encostava no teto de `statement_timeout = 3s` do role
@@ -365,7 +365,7 @@ function rankMudancaPartido(item: Pick<MudancaPartido, "data_mudanca" | "ano">):
 //    ..., items over 2MB can not be cached (2971512 bytes)"
 // Slug de pior caso conhecido: romeu-zema (2548 LME rows, 3.21 MB cru).
 //
-// Campos zerados/anulados aqui (sem regressao de UI/UX porque NAO sao lidos
+// Campos zerados/anulados aqui (sem regressão de UI/UX porque NAO sao lidos
 // por src/components/CandidatoProfileSections.tsx nem por outros consumidores
 // do payload publico):
 //   - candidato_id, historico_politico_id, created_at: identificadores
@@ -453,7 +453,7 @@ function buildSectionFreshness(
      * Ultima consulta aos cadastros de sancoes e a curadoria de processos.
      * Entram aqui porque o bloco "Perfil atual" passou a responder "quando
      * qualquer dado deste perfil foi verificado pela ultima vez", e estas sao
-     * verificacoes reais que a ficha ja exibe em outras secoes. Antes de
+     * verificações reais que a ficha ja exibe em outras seções. Antes de
      * 09/08/2026 elas eram ignoradas pelo selo, que por isso anunciava junho em
      * ficha com verificacao de agosto na mesma pagina.
      */
@@ -463,12 +463,12 @@ function buildSectionFreshness(
 ): Partial<Record<SectionFreshnessKey, SectionFreshnessInfo>> {
   const fieldVerification = candidato.verificacao_campos ?? {}
   /**
-   * Contrato em `@/lib/verificacao-campos`. O agregado so avanca com as TRES
-   * frentes TSE resolvidas, e avanca pela data MAIS ANTIGA entre elas.
+   * Contrato em `@/lib/verificacao-campos`. O agregado so avança com as TRES
+   * frentes TSE resolvidas, e avança pela data MAIS ANTIGA entre elas.
    *
    * Antes de 09/08/2026 isto ordenava quatro chaves por data e pegava a mais
    * recente, entao verificacao PARCIAL promovia o perfil inteiro, e o agregado
-   * curado competia com as frentes em vez de ser o fallback. Resolucao parcial
+   * curado competia com as frentes em vez de ser o fallback. Resolução parcial
    * agora nao produz data TSE nenhuma: cai para o curado, que e a ultima
    * verificacao que de fato cobre a ficha toda.
    */
@@ -485,12 +485,12 @@ function buildSectionFreshness(
    * declarada abaixo so desempata datas iguais, e privilegia a fonte que cobre
    * mais campos do perfil.
    *
-   * `exibicao` carrega o valor BRUTO, e `instante` a comparacao. A exibicao nao
+   * `exibicao` carrega o valor BRUTO, e `instante` a comparacao. A exibição nao
    * pode passar por `Date` quando o gravado e data pura: "2026-08-09" ancora em
    * meia-noite UTC e o formatador `America/Sao_Paulo` recuaria para
-   * "08/08/2026", medido em producao em 09/08/2026. `formatDate` ja trata
-   * string data-pura como data de calendario e timestamp com fuso como
-   * instante, que e a semantica de cada forma gravada.
+   * "08/08/2026", medido em produção em 09/08/2026. `formatDate` ja trata
+   * string data-pura como data de calendário e timestamp com fuso como
+   * instante, que e a semântica de cada forma gravada.
    */
   const ultimaVerificacao = resolverUltimaVerificacaoDoPerfil([
     tseVerification.tipo === "completa"

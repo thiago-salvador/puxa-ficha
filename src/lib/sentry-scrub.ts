@@ -1,5 +1,5 @@
 /**
- * O match e exato por Set (nao substring), entao cada nome de parametro que
+ * O match e exato por Set (nao substring), entao cada nome de parâmetro que
  * carrega segredo precisa estar listado aqui literalmente.
  *
  * `manage`, `verify` e `unsubscribe` sao os nomes que os links de email usam de

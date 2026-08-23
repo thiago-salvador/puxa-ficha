@@ -1,7 +1,7 @@
 import { timingSafeEqual } from "node:crypto"
 
 /**
- * Whitelist canonica de tags revalidaveis pelo endpoint protegido `/api/revalidate`.
+ * Whitelist canonica de tags revalidáveis pelo endpoint protegido `/api/revalidate`.
  *
  * Cada entrada aqui DEVE corresponder a um `unstable_cache(..., { tags: [...] })` real
  * em `src/lib/api.ts` ou `src/lib/doador-reverse.ts`. Nunca aceitar tag arbitraria
@@ -147,7 +147,7 @@ export interface RevalidateAllowedTagsResult {
 
 /**
  * Logica pura para o handler: valida secret, parse, whitelist, executa
- * `revalidateFn` para cada tag aceita. Aceita `revalidateFn` como dep injetavel
+ * `revalidateFn` para cada tag aceita. Aceita `revalidateFn` como dep injetável
  * pra teste poder espionar sem mockar `next/cache`.
  */
 export function executeRevalidateRequest(input: {

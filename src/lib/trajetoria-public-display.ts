@@ -20,7 +20,7 @@ function compareHistoricoPoliticoPublicDisplay(
 }
 
 /**
- * Lista já normalizada (`FichaCandidato.historico`) na ordem pública canónica:
+ * Lista já normalizada (`FichaCandidato.historico`) na ordem pública canônica:
  * candidaturas do pleito corrente primeiro e ordem-base intacta no restante,
  * sem o lado descartado das duplicatas comprovadas (C1 de
  * `mandato-precedencia.ts`).
@@ -35,7 +35,7 @@ export function prepareHistoricoPoliticoPublicDisplayList(
   historicoNormalizado: HistoricoPolitico[],
 ): HistoricoPolitico[] {
   // CONTRATO ÚNICO. Qualquer lista normalizada entra aqui e sai pública: sem a
-  // duplicata comprovada (C1) e na ordem canónica. Ter a remoção em outro lugar
+  // duplicata comprovada (C1) e na ordem canônica. Ter a remoção em outro lugar
   // criava dedupe paralelo, e foi assim que a API serviu 11 linhas do Ciro
   // Gomes enquanto a tela mostrava 10.
   const ordenado = removerDuplicatasComprovadas(historicoNormalizado).sort(

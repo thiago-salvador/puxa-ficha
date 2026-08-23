@@ -57,11 +57,11 @@ const CANONICAL_PARTIES: CanonicalPartyDefinition[] = [
   // literal: "Partido da Mobilização Nacional (PMN) Mobilização Nacional
   // (MOBILIZA) PetCiv nº 0001624-23.1996.6.00.0000 05/12/2023".
   //
-  // Fica como entrada PROPRIA, nao como alias de PMN, pelo mesmo motivo ja
+  // Fica como entrada PRÓPRIA, nao como alias de PMN, pelo mesmo motivo ja
   // documentado em scripts/lib/party-canonical.ts (review 2026-06-09): colapsar
   // as duas siglas faria a ficha de quem esta hoje no MOBILIZA exibir "PMN",
   // que e o nome anterior. A continuidade entre as duas eras e resolvida no
-  // grupo historico abaixo, igual PMDB/MDB e PFL/DEM, entao a renomeacao nao
+  // grupo historico abaixo, igual PMDB/MDB e PFL/DEM, entao a renomeação nao
   // conta como troca de partido nem aparece como troca na timeline.
   { sigla: "MOBILIZA", aliases: ["Mobilização Nacional", "Mobilizacao Nacional"] },
   // PATRI e PATRIOTA sao a MESMA legenda: o partido passou a se chamar Patriota
@@ -72,7 +72,7 @@ const CANONICAL_PARTIES: CanonicalPartyDefinition[] = [
   // (sem sigla). O pedido foi deferido pelo TSE, em 26/03/2019."
   //
   // Aqui PATRI entra como ALIAS (e nao como era separada) porque o nome do
-  // partido ja era Patriota nos dois momentos: so a abreviacao mudou. Sem isso,
+  // partido ja era Patriota nos dois momentos: so a abreviação mudou. Sem isso,
   // `partiesEquivalent("PATRI", "PATRIOTA")` devolvia falso e a timeline do
   // cabo-daciolo publicava a descontinuidade "2022 PATRI → PDT" seguida de
   // "2026 PATRIOTA → MOBILIZA" (auditoria 2026-07-24).
@@ -174,9 +174,9 @@ const HISTORICAL_PARTY_GROUPS: HistoricalPartyGroupDefinition[] = [
   { group: "PP", labels: ["PP", "PPB", "PPR", "Progressistas"] },
   { group: "PL", labels: ["PL", "PR", "Partido Liberal", "Partido da Republica"] },
   { group: "AVANTE", labels: ["AVANTE", "PT DO B", "PTDOB", "Partido Trabalhista do Brasil"] },
-  // Renomeacao PMN -> MOBILIZA deferida pelo TSE em 05/12/2023 (fonte citada
+  // Renomeação PMN -> MOBILIZA deferida pelo TSE em 05/12/2023 (fonte citada
   // junto da entrada canonica acima). No grupo historico, uma linha
-  // "PMN -> MOBILIZA" e classificada como renomeacao: nao entra em
+  // "PMN -> MOBILIZA" e classificada como renomeação: nao entra em
   // countPartySwitches e a timeline rotula "(renomeação)" em vez de troca.
   { group: "MOBILIZA", labels: ["MOBILIZA", "PMN", "Mobilização Nacional", "Partido da Mobilização Nacional"] },
 ]

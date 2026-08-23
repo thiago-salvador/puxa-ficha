@@ -1,12 +1,12 @@
 /**
  * published-consistency.ts
  *
- * Logica pura de auditoria de consistencia do recorte PUBLICADO (candidatos_publico).
+ * Logica pura de auditoria de consistência do recorte PUBLICADO (candidatos_publico).
  * Compartilhada entre o gate de CLI (scripts/audit-published-consistency.ts) e o
  * cron interno (/api/internal/published-consistency), pra nao duplicar regra.
  *
  * Barata por design: opera sobre linhas ja carregadas, sem rede e sem IA. O tier
- * caro (validacao de realidade politica via web) NAO vive aqui.
+ * caro (validação de realidade politica via web) NAO vive aqui.
  */
 
 import { SITUACAO_CANDIDATURA_DOMINIO } from "./situacao-candidatura"
@@ -34,17 +34,17 @@ export interface ConsistencyReport {
 /** Status canonico de uma linha publicada. */
 const STATUS_PUBLICADO_OK = new Set(["pre-candidato", "candidato"])
 /**
- * Situacao aceitavel numa linha publicada.
+ * Situacao aceitável numa linha publicada.
  *
  * Ate 16/08/2026 esta lista era escrita a mao e ja nao descrevia o banco: 118
  * das 175 fichas no ar carregavam `registrada, aguardando julgamento` ou
  * `pedido de registro no TSE; situacao nao informada no snapshot`, nenhuma das
  * duas listada aqui, e o gate reclamava de todas elas todo dia. Aviso que
- * dispara sempre e aviso que ninguem le. Agora a lista E o dominio do banco,
- * importado da fonte unica que o CHECK espelha.
+ * dispara sempre e aviso que ninguém le. Agora a lista E o domínio do banco,
+ * importado da fonte única que o CHECK espelha.
  */
 const SITUACAO_PUBLICADO_OK = new Set<string>(SITUACAO_CANDIDATURA_DOMINIO)
-/** Situacao com ano/marcador stale (ex.: residuo "APTO [2022]" do TSE). */
+/** Situacao com ano/marcador stale (ex.: resíduo "APTO [2022]" do TSE). */
 const STALE_SITUACAO = /\b(19|20)\d{2}\b|APTO/i
 
 /**

@@ -22,9 +22,9 @@ import type {
 import { stripAccents } from "@/lib/strip-accents"
 
 /**
- * Eixo economico pesa 1.5x no calculo de distancia. Razao: a grade de arquetipos
- * tem 5 niveis economicos vs 3 sociais, e alinhamento economico e mais saliente
- * na classificacao politica brasileira.
+ * Eixo econômico pesa 1.5x no calculo de distancia. Razão: a grade de arquétipos
+ * tem 5 níveis econômicos vs 3 sociais, e alinhamento econômico e mais saliente
+ * na classificação politica brasileira.
  */
 const ECO_AXIS_WEIGHT = 1.5
 const MAX_EUCLIDEAN = Math.sqrt(ECO_AXIS_WEIGHT * 81 + 81)
@@ -312,8 +312,8 @@ function buildExplanation(
   const de = Math.abs(userEco - candEco)
   const ds = Math.abs(userSoc - candSoc)
   // Proximidade de eixo so pode ser afirmada quando o partido tem espectro
-  // apurado. Sem isso a comparacao seria contra o ponto medio da escala, e a
-  // frase diria ao leitor algo que ninguem mediu.
+  // apurado. Sem isso a comparacao seria contra o ponto médio da escala, e a
+  // frase diria ao leitor algo que ninguém mediu.
   if (temEspectro) {
     if (de <= 2) parts.push("Próximo no eixo econômico")
     else if (de >= 5) parts.push("Distante no eixo econômico")

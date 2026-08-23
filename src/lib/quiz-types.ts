@@ -60,11 +60,11 @@ export interface QuizScoreExplanation {
   candidato_position: { eco: number; soc: number }
   peso_voto_usado: number
   peso_espectro_usado: number
-  /** Fracao efetiva posicoes declaradas no blend fase 2 (0 se fase 1). */
+  /** Fração efetiva posicoes declaradas no blend fase 2 (0 se fase 1). */
   peso_posicoes_usado?: number
-  /** Fracao efetiva projetos por tema no blend fase 2. */
+  /** Fração efetiva projetos por tema no blend fase 2. */
   peso_projetos_usado?: number
-  /** Fracao efetiva financiamento (doadores por setor) no blend fase 2. */
+  /** Fração efetiva financiamento (doadores por setor) no blend fase 2. */
   peso_financiamento_usado?: number
 }
 
@@ -78,7 +78,7 @@ export interface QuizVoteCompareItem {
 }
 
 export interface QuizScoreDetalhe {
-  /** Score medio 0-1 por eixo (votos + espectro simplificado por eixo). */
+  /** Score médio 0-1 por eixo (votos + espectro simplificado por eixo). */
   por_eixo: Record<string, number>
   concordancias_voto: QuizVoteCompareItem[]
   divergencias_voto: QuizVoteCompareItem[]

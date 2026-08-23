@@ -2,15 +2,15 @@
  * Allowlist de origens para escrita publica, compartilhada.
  *
  * Ate 2026-08-03 esta logica existia duas vezes, linha a linha: em
- * `alerts-csrf.ts` (rotas de mutacao de alertas) e em
+ * `alerts-csrf.ts` (rotas de mutação de alertas) e em
  * `public-write-origin-guard.ts` (`/api/analytics/event` e
  * `/api/quiz/short-link`). Duas copias da mesma allowlist significam que
- * acrescentar um dominio novo (ou fechar um buraco) so em um dos lados passa
+ * acrescentar um domínio novo (ou fechar um buraco) so em um dos lados passa
  * despercebido: os dois arquivos ja divergiam em tipo de request e em formato
- * de resposta, o que escondia o fato de que a regra de decisao era identica.
+ * de resposta, o que escondia o fato de que a regra de decisao era idêntica.
  *
  * Aqui fica so a decisao. Cada chamador continua dono do que faz com ela:
- * alertas loga a saida com `logAlertsApiExit`, escrita publica devolve o motivo
+ * alertas loga a saída com `logAlertsApiExit`, escrita publica devolve o motivo
  * no header `x-pf-block-reason`.
  */
 
@@ -26,11 +26,11 @@ export interface CrossSiteWriteGuardOptions {
    * Quando true, request sem header `Origin` e bloqueada em vez de liberada.
    *
    * O default (false) existe porque nem todo cliente legitimo manda `Origin`:
-   * o valor so e obrigatorio no navegador, e um form GET->POST antigo ou um
+   * o valor so e obrigatório no navegador, e um form GET->POST antigo ou um
    * cliente server-to-server nao manda. Rotas que so sao chamadas por
-   * `fetch`/`sendBeacon` do proprio site podem exigir, porque nesses dois casos
+   * `fetch`/`sendBeacon` do próprio site podem exigir, porque nesses dois casos
    * o navegador SEMPRE envia `Origin` em POST (Fetch spec: o header e anexado
-   * quando o metodo nao e GET nem HEAD).
+   * quando o método nao e GET nem HEAD).
    */
   requireOrigin?: boolean
 }

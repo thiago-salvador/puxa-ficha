@@ -26,7 +26,7 @@ function normalizeTema(s: string): string {
 }
 
 /**
- * Mapeia texto livre de `projetos_lei.tema` para eixo do quiz (heuristica editorial).
+ * Mapeia texto livre de `projetos_lei.tema` para eixo do quiz (heurística editorial).
  */
 export function mapProjetoTemaToQuizEixo(tema: string | null | undefined): QuizEixo | null {
   if (!tema) return null

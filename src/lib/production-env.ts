@@ -80,13 +80,13 @@ export function validateProductionEnvironment(): void {
 
   // CRON_SECRET continua FATAL: sem ele as 4 rotas de cron respondem 401 e o
   // digest, o refresh de noticias e os dois gates internos param calados. A
-  // falha nao aparece em lugar nenhum ate alguem reclamar.
+  // falha nao aparece em lugar nenhum ate alguém reclamar.
   if (!hasTrimmed(process.env.CRON_SECRET)) {
     missing.push("CRON_SECRET")
   }
 
   // PF_REVALIDATE_SECRET continua FATAL, e isso e proposital. Sem ele a rota de
-  // revalidacao responde 503 e o site passa a servir dado velho para sempre, em
+  // revalidação responde 503 e o site passa a servir dado velho para sempre, em
   // silencio: o pior modo de falha possivel aqui, porque parece funcionar.
   // tests/revalidate-route.test.ts:342 guarda exatamente esta linha.
   if (!hasTrimmed(process.env.PF_REVALIDATE_SECRET)) {
@@ -94,14 +94,14 @@ export function validateProductionEnvironment(): void {
   }
 
   // ---------------------------------------------------------------------
-  // DEGRADAVEIS: faltar quebra UMA feature, e a quebra e visivel. Nao derruba
+  // DEGRADÁVEIS: faltar quebra UMA feature, e a quebra e visivel. Nao derruba
   // a ficha publica, que e leitura de Supabase e nao depende de nenhuma delas.
   //
   // Antes de 2026-08-03 estas tambem derrubavam o boot. Efeito medido no master
   // review: trocar de provedor de email e apagar a RESEND_API_KEY antiga antes
   // de cadastrar a nova derruba /candidato/*, /rankings, /comparar e /uf no
-  // proximo cold start de qualquer funcao Node, sem precisar de redeploy,
-  // porque `register()` lanca. Desproporcional: email nao tem relacao nenhuma
+  // proximo cold start de qualquer função Node, sem precisar de redeploy,
+  // porque `register()` lança. Desproporcional: email nao tem relação nenhuma
   // com a ficha publica.
   // ---------------------------------------------------------------------
   const degraded: string[] = []
