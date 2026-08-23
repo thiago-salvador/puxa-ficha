@@ -38,7 +38,7 @@ export function MetaBadge({
       data-pf-meta-badge=""
       data-pf-meta-tone={tone}
       className={cn(
-        "inline-flex min-h-[28px] items-center rounded-full border px-2.5 py-1 text-[length:var(--text-caption)] font-bold uppercase leading-tight tracking-[0.05em]",
+        "inline-flex min-h-[28px] min-w-0 max-w-full items-center whitespace-normal rounded-full border px-2.5 py-1 text-[length:var(--text-caption)] font-bold uppercase leading-tight tracking-[0.05em] [overflow-wrap:anywhere]",
         META_BADGE_TONES[surface][tone],
         className,
       )}
