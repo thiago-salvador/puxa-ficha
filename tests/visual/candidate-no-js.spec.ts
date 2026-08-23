@@ -15,6 +15,7 @@ test("candidate keeps identity, sources, legal notice and methodology without Ja
   await expect(
     page.locator('[data-pf-profile-server-disclosure] a[href="/metodologia"]'),
   ).toBeVisible()
+  await expect(page.locator("[data-pf-profile-server-disclosure] + footer")).toBeVisible()
 
   await context.close()
 })
