@@ -69,6 +69,8 @@ export function scanJavaScriptSource(source, file = "<fixture>.ts") {
   const names = new Set()
   const unresolved = []
   const clientViolations = []
+  const origins = new Map()
+  const accountedOrigins = new Set()
   const sourceFile = ts.createSourceFile(
     file,
     source,
@@ -93,13 +95,26 @@ export function scanJavaScriptSource(source, file = "<fixture>.ts") {
     return undefined
   }
 
-  function isProcessObject(node, scope) {
+  function isProcessModuleName(node) {
+    return ts.isStringLiteralLike(node) && (node.text === "node:process" || node.text === "process")
+  }
+
+  function isProcessRequireCall(node, scope) {
+    node = unwrapTypeScriptExpression(node)
+    return Boolean(
+      node &&
+        ts.isCallExpression(node) &&
+        ts.isIdentifier(node.expression) &&
+        node.expression.text === "require" &&
+        !findBinding(scope, "require") &&
+        node.arguments.length === 1 &&
+        isProcessModuleName(node.arguments[0]),
+    )
+  }
+
+  function isGlobalProcessAccess(node, scope) {
     node = unwrapTypeScriptExpression(node)
     if (!node) return false
-    if (ts.isIdentifier(node)) {
-      if (node.text === "process" && !findBinding(scope, "process")) return true
-      return findBinding(scope, node.text)?.kind === "process"
-    }
     if (ts.isPropertyAccessExpression(node) && node.name.text === "process") {
       const owner = unwrapTypeScriptExpression(node.expression)
       return ts.isIdentifier(owner) && owner.text === "globalThis" && !findBinding(scope, "globalThis")
@@ -111,29 +126,103 @@ export function scanJavaScriptSource(source, file = "<fixture>.ts") {
     return false
   }
 
+  function isProcessObject(node, scope) {
+    node = unwrapTypeScriptExpression(node)
+    if (!node) return false
+    if (ts.isIdentifier(node)) {
+      if (node.text === "process" && !findBinding(scope, "process")) return true
+      return findBinding(scope, node.text)?.kind === "process"
+    }
+    return isGlobalProcessAccess(node, scope) || isProcessRequireCall(node, scope)
+  }
+
+  function isDirectEnvAccess(node, scope) {
+    node = unwrapTypeScriptExpression(node)
+    if (!node) return false
+    if (ts.isPropertyAccessExpression(node)) {
+      return node.name.text === "env" && isProcessObject(node.expression, scope)
+    }
+    return Boolean(
+      ts.isElementAccessExpression(node) &&
+        staticString(node.argumentExpression, scope) === "env" &&
+        isProcessObject(node.expression, scope),
+    )
+  }
+
   function isEnvObject(node, scope) {
     node = unwrapTypeScriptExpression(node)
     if (!node) return false
     if (ts.isIdentifier(node)) return findBinding(scope, node.text)?.kind === "env"
-    if (ts.isPropertyAccessExpression(node)) {
-      return isProcessObject(node.expression, scope) && node.name.text === "env"
+    return isDirectEnvAccess(node, scope)
+  }
+
+  function trackOrigin(node, scope) {
+    const current = unwrapTypeScriptExpression(node)
+    if (!current) return
+    if (ts.isImportDeclaration(current) && isProcessModuleName(current.moduleSpecifier)) {
+      origins.set(current, "import de node:process sem binding conhecido")
+    } else if (isProcessRequireCall(current, scope)) {
+      origins.set(current, "require de node:process sem binding conhecido")
+    } else if (isGlobalProcessAccess(current, scope)) {
+      origins.set(current, "globalThis.process sem binding ou chave conhecida")
+    } else if (isDirectEnvAccess(current, scope)) {
+      origins.set(current, "process.env sem binding ou chave conhecida")
     }
-    if (ts.isElementAccessExpression(node) && isProcessObject(node.expression, scope)) {
-      return staticString(node.argumentExpression, scope) === "env"
+  }
+
+  function accountOriginTree(node, scope) {
+    const current = unwrapTypeScriptExpression(node)
+    if (!current) return
+    if (
+      isProcessRequireCall(current, scope) ||
+      isGlobalProcessAccess(current, scope) ||
+      isDirectEnvAccess(current, scope)
+    ) {
+      accountedOrigins.add(current)
     }
-    return false
+    if (isDirectEnvAccess(current, scope)) accountOriginTree(current.expression, scope)
+  }
+
+  function isStaticObjectAssignFromEnv(node, scope) {
+    node = unwrapTypeScriptExpression(node)
+    if (!node || !ts.isCallExpression(node) || node.arguments.length !== 2) return false
+    const callee = unwrapTypeScriptExpression(node.expression)
+    if (
+      !ts.isPropertyAccessExpression(callee) ||
+      callee.name.text !== "assign" ||
+      !ts.isIdentifier(callee.expression) ||
+      callee.expression.text !== "Object" ||
+      findBinding(scope, "Object")
+    ) {
+      return false
+    }
+    const target = unwrapTypeScriptExpression(node.arguments[0])
+    return Boolean(
+      target &&
+        ts.isObjectLiteralExpression(target) &&
+        target.properties.length === 0 &&
+        isEnvObject(node.arguments[1], scope),
+    )
   }
 
   function bindingFor(node, scope) {
     if (!node) return { kind: "other" }
     node = unwrapTypeScriptExpression(node)
-    if (isProcessObject(node, scope)) return { kind: "process" }
-    if (isEnvObject(node, scope)) return { kind: "env" }
+    if (isProcessObject(node, scope)) {
+      accountOriginTree(node, scope)
+      return { kind: "process" }
+    }
+    if (isEnvObject(node, scope)) {
+      accountOriginTree(node, scope)
+      return { kind: "env" }
+    }
     if (
       ts.isBinaryExpression(node) &&
-      node.operatorToken.kind === ts.SyntaxKind.BarBarToken &&
+      (node.operatorToken.kind === ts.SyntaxKind.BarBarToken ||
+        node.operatorToken.kind === ts.SyntaxKind.QuestionQuestionToken) &&
       isEnvObject(node.left, scope)
     ) {
+      accountOriginTree(node.left, scope)
       return { kind: "env" }
     }
     if (
@@ -142,6 +231,15 @@ export function scanJavaScriptSource(source, file = "<fixture>.ts") {
         (property) => ts.isSpreadAssignment(property) && isEnvObject(property.expression, scope),
       )
     ) {
+      for (const property of node.properties) {
+        if (ts.isSpreadAssignment(property) && isEnvObject(property.expression, scope)) {
+          accountOriginTree(property.expression, scope)
+        }
+      }
+      return { kind: "env" }
+    }
+    if (isStaticObjectAssignFromEnv(node, scope)) {
+      accountOriginTree(node.arguments[1], scope)
       return { kind: "env" }
     }
     const value = staticString(node, scope)
@@ -254,22 +352,27 @@ export function scanJavaScriptSource(source, file = "<fixture>.ts") {
       ) {
         declarePattern(statement.name, scope)
       } else if (ts.isImportDeclaration(statement) && statement.importClause) {
+        const moduleName = ts.isStringLiteralLike(statement.moduleSpecifier)
+          ? statement.moduleSpecifier.text
+          : undefined
+        const processModule = moduleName === "node:process" || moduleName === "process"
+        let bindsProcess = false
         if (statement.importClause.name) {
-          const moduleName = ts.isStringLiteralLike(statement.moduleSpecifier)
-            ? statement.moduleSpecifier.text
-            : undefined
           scope.bindings.set(
             statement.importClause.name.text,
-            moduleName === "node:process" || moduleName === "process"
-              ? { kind: "process" }
-              : { kind: "other" },
+            processModule ? { kind: "process" } : { kind: "other" },
           )
+          if (processModule) bindsProcess = true
         }
         const bindings = statement.importClause.namedBindings
-        if (bindings && ts.isNamespaceImport(bindings)) declarePattern(bindings.name, scope)
+        if (bindings && ts.isNamespaceImport(bindings)) {
+          scope.bindings.set(bindings.name.text, processModule ? { kind: "process" } : { kind: "other" })
+          if (processModule) bindsProcess = true
+        }
         if (bindings && ts.isNamedImports(bindings)) {
           for (const element of bindings.elements) declarePattern(element.name, scope)
         }
+        if (bindsProcess) accountedOrigins.add(statement)
       }
     }
   }
@@ -283,6 +386,7 @@ export function scanJavaScriptSource(source, file = "<fixture>.ts") {
   }
 
   function visit(node, scope) {
+    trackOrigin(node, scope)
     if (ts.isSourceFile(node)) {
       scope.kind = "source"
       predeclareLexicalStatements(node.statements, scope)
@@ -350,13 +454,20 @@ export function scanJavaScriptSource(source, file = "<fixture>.ts") {
       }
       return
     }
+    if (ts.isSpreadAssignment(node) && isEnvObject(node.expression, scope)) {
+      accountOriginTree(node.expression, scope)
+    }
     if (ts.isPropertyAccessExpression(node) && isEnvObject(node.expression, scope)) {
+      accountOriginTree(node.expression, scope)
       recordName(node.name.text, node)
     }
     if (ts.isElementAccessExpression(node)) {
       if (isEnvObject(node.expression, scope)) {
         const key = staticString(node.argumentExpression, scope)
-        if (key) recordName(key, node)
+        if (key) {
+          accountOriginTree(node.expression, scope)
+          recordName(key, node)
+        }
         else {
           const line = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile)).line + 1
           unresolved.push(`${file}:${line}:dynamic env key`)
@@ -373,6 +484,11 @@ export function scanJavaScriptSource(source, file = "<fixture>.ts") {
   }
 
   visit(sourceFile, lexicalScope(null, "source"))
+  for (const [node, reason] of origins) {
+    if (accountedOrigins.has(node)) continue
+    const line = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile)).line + 1
+    unresolved.push(`${file}:${line}:${reason}`)
+  }
   return { names, unresolved, clientViolations }
 }
 
@@ -873,13 +989,17 @@ export function scanShellSource(source) {
     return undefined
   }
 
+  function executableBasename(token) {
+    return path.posix.basename(literalWord(token) ?? "")
+  }
+
   function commandWords(command) {
     const tokens = words(command)
     let index = 0
     while (/^[A-Za-z_][A-Za-z0-9_]*\+?=/.test(tokens[index] ?? "")) index += 1
     const wrappers = new Set(["builtin", "command", "exec", "nohup", "sudo"])
     while (wrappers.has(literalWord(tokens[index]))) index += 1
-    if (literalWord(tokens[index]) === "env") {
+    if (executableBasename(tokens[index]) === "env") {
       index += 1
       while (/^(?:-[^-].*|--[^=].*|[A-Za-z_][A-Za-z0-9_]*=)/.test(tokens[index] ?? "")) {
         index += 1
@@ -893,7 +1013,7 @@ export function scanShellSource(source) {
     while (/^[A-Za-z_][A-Za-z0-9_]*\+?=/.test(tokens[index] ?? "")) index += 1
     const wrappers = new Set(["builtin", "command", "exec", "nohup", "sudo"])
     while (wrappers.has(literalWord(tokens[index]))) index += 1
-    if (literalWord(tokens[index]) === "env") {
+    if (executableBasename(tokens[index]) === "env") {
       index += 1
       while (/^(?:-[^-].*|--[^=].*|[A-Za-z_][A-Za-z0-9_]*=)/.test(tokens[index] ?? "")) {
         index += 1
@@ -954,7 +1074,7 @@ export function scanShellSource(source) {
       while (/^[A-Za-z_][A-Za-z0-9_]*\+?=/.test(tokens[index] ?? "")) index += 1
       const wrappers = new Set(["builtin", "command", "exec", "nohup", "sudo"])
       while (wrappers.has(literalWord(tokens[index]))) index += 1
-      if (literalWord(tokens[index]) !== "env") return
+      if (executableBasename(tokens[index]) !== "env") return
       index += 1
       while (index < tokens.length) {
         const token = literalWord(tokens[index])

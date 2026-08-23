@@ -114,6 +114,48 @@ spreadEnvironment.SPREAD_CLIENT_SECRET
     )
   })
 
+  it("contabiliza namespace, require, nullish e Object.assign inclusive em use client", () => {
+    const result = scanJavaScriptSource(`
+"use client"
+import * as importedProcess from "node:process"
+importedProcess.env.NAMESPACE_CLIENT_SECRET
+const requiredProcess = require("node:process")
+requiredProcess.env.REQUIRE_CLIENT_SECRET
+const nullishEnvironment = process.env ?? {}
+nullishEnvironment.NULLISH_CLIENT_SECRET
+const assignedEnvironment = Object.assign({}, process.env)
+assignedEnvironment.ASSIGN_CLIENT_SECRET
+`, "client.tsx")
+
+    const expected = [
+      "ASSIGN_CLIENT_SECRET",
+      "NAMESPACE_CLIENT_SECRET",
+      "NULLISH_CLIENT_SECRET",
+      "REQUIRE_CLIENT_SECRET",
+    ]
+    assert.deepEqual([...result.names].sort(), expected)
+    assert.deepEqual(
+      result.clientViolations.map((violation) => violation.split(":").at(-1)).sort(),
+      expected,
+    )
+    assert.deepEqual(result.unresolved, [])
+  })
+
+  it("falha fechado quando origens de process entram em wrapper desconhecida", () => {
+    const result = scanJavaScriptSource(`
+const wrappedRequire = unknownWrapper(require("node:process"))
+const wrappedGlobal = unknownWrapper(globalThis.process)
+const wrappedEnvironment = unknownWrapper(process.env)
+wrappedEnvironment.NOT_INVENTORIED
+`)
+
+    assert.deepEqual([...result.names], [])
+    assert.equal(result.unresolved.length, 3)
+    assert.match(result.unresolved.join("\n"), /require de node:process sem binding conhecido/)
+    assert.match(result.unresolved.join("\n"), /globalThis\.process sem binding ou chave conhecida/)
+    assert.match(result.unresolved.join("\n"), /process\.env sem binding ou chave conhecida/)
+  })
+
   it("aplica escopo de função a var e não deixa aliases homônimos vazarem", () => {
     const result = scanJavaScriptSource(`
 function readsEnvironment() {
@@ -314,9 +356,14 @@ value = config(key)
 
   it("falha fechado em dump de env e resolve nameref literal", () => {
     assert.throws(() => scanShellSource("env"), /env sem comando expõe ambiente completo/)
+    assert.throws(() => scanShellSource("/usr/bin/env"), /env sem comando expõe ambiente completo/)
     assert.throws(() => scanShellSource("env -i"), /env sem comando expõe ambiente completo/)
+    assert.throws(() => scanShellSource("/bin/env -i"), /env sem comando expõe ambiente completo/)
     assert.throws(() => scanShellSource("env LOCAL_ONLY=value"), /env sem comando expõe ambiente completo/)
     assert.deepEqual([...scanShellSource("env -i printenv ENV_COMMAND_KEY")], ["ENV_COMMAND_KEY"])
+    assert.deepEqual([...scanShellSource("/usr/bin/env -i printenv ENV_PATH_COMMAND_KEY")], [
+      "ENV_PATH_COMMAND_KEY",
+    ])
     assert.deepEqual(
       [...scanShellSource("declare -n reference=NAMEREF_ENV\nprintf '%s\\n' \"$reference\"")],
       ["NAMEREF_ENV"],
@@ -555,6 +602,16 @@ jobs:
 
     assert.notEqual(result.status, 0)
     assert.match(`${result.stdout}\n${result.stderr}`, /UNCLASSIFIED_STRUCTURAL_SECRET/)
+  })
+
+  it("faz wrapper JS desconhecida de process.env reprovar com exit nonzero", () => {
+    const result = runWithTemporaryFixture(
+      "src/__env-contract-negative-unknown-wrapper.ts",
+      "const wrappedEnvironment = unknownWrapper(process.env)\nconsole.log(wrappedEnvironment.UNCLASSIFIED_WRAPPED_SECRET)\n",
+    )
+
+    assert.notEqual(result.status, 0)
+    assert.match(`${result.stdout}\n${result.stderr}`, /process\.env sem binding ou chave conhecida/)
   })
 
   it("faz leitura shell externa autoatribuída reprovar com exit nonzero", () => {
