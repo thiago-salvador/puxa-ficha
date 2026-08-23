@@ -22,6 +22,9 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+          # O auditor compara com o SHA imutável da base do evento. O checkout
+          # raso padrão contém só o head e faz o gate falhar antes da auditoria.
+          fetch-depth: 0
 
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
@@ -62,6 +65,13 @@ jobs:
       # home; recompressão não conserta resolução que nunca existiu (G5-02).
       - name: Resolução das fotos de candidato
         run: npm run audit:fotos:gate
+
+      # Remoção de foto só passa contra o SHA imutável da base do evento e o
+      # snapshot público versionado. Não consulta rede nem banco no CI.
+      - name: Referências runtime das fotos de candidato
+        env:
+          PF_CANDIDATE_ASSET_BASELINE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+        run: npm run audit:candidate-assets:gate
 
       - name: Dead code (knip)
         run: npm run check:dead-code
