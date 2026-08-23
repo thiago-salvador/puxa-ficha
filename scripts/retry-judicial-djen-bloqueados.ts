@@ -16,6 +16,7 @@ import { dirname, resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 
 import { ativarDryRun, exigirDryRun } from "./lib/dry-run"
+import { stripAccents } from "../src/lib/strip-accents"
 
 ativarDryRun()
 exigirDryRun("retry-judicial-djen-bloqueados")
@@ -78,9 +79,7 @@ export function planejarRetomada<
 }
 
 function normalizar(valor: unknown): string {
-  return String(valor ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(String(valor ?? ""))
     .replace(/[^A-Za-z0-9 ]/g, " ")
     .replace(/\s+/g, " ")
     .trim()

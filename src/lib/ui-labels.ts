@@ -1,5 +1,6 @@
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
+import { stripAccents } from "@/lib/strip-accents"
 
 export type LabelCasing = "title" | "sentence"
 
@@ -87,12 +88,8 @@ const WORD_LABELS: Record<string, string> = {
   votacoes: "Votações",
 }
 
-function stripDiacritics(value: string): string {
-  return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-}
-
 function normalizeLookupKey(value: string): string {
-  return stripDiacritics(value)
+  return stripAccents(value)
     .toLowerCase()
     .replace(/[·/]+/g, " ")
     .replace(/[_-]+/g, " ")

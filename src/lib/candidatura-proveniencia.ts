@@ -17,6 +17,8 @@
  * Modulo puro: sem import de next/*, server-only, fs ou Supabase.
  */
 
+import { stripAccents } from "@/lib/strip-accents"
+
 export type CargoDisputadoProveniencia =
   | "declaracao_editorial"
   | "registro_tse_pendente"
@@ -42,9 +44,7 @@ const CHAPAS_POS_REGISTRO_SHA256 =
 
 function normalizeToken(value: string | null | undefined): string {
   if (!value) return ""
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(value)
     .trim()
     .toLowerCase()
 }

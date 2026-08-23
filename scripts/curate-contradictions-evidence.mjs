@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { createRequire } from "node:module";
 import { dirname } from "node:path";
+
+const require = createRequire(import.meta.url);
+const { stripAccents } = require("../src/lib/strip-accents.ts");
 
 const DEFAULT_OUT =
   "/Users/thiagosalvador/.disposable-html/2026-08-05-puxa-ficha-contradicoes-curadoria.evidence.json";
@@ -23,9 +27,7 @@ function loadEnv(path) {
 }
 
 function semAcentos(value) {
-  return String(value ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(String(value ?? ""))
     .toLowerCase();
 }
 

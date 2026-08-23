@@ -3,6 +3,7 @@ import type {
   CandidatePublicSnapshot,
   CandidateSection,
 } from "./audit-types"
+import { stripAccents } from "../../src/lib/strip-accents"
 
 const APPLICABLE_SECTIONS_BY_PROFILE: Record<
   CandidateAuditProfile,
@@ -93,9 +94,7 @@ const PAST_OFFICE_BIO_TOKENS = [
 ]
 
 function normalize(text: string | null | undefined): string {
-  return (text ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents((text ?? ""))
     .replace(/[^a-z0-9]+/gi, " ")
     .trim()
     .toLowerCase()

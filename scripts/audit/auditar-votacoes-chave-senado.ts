@@ -8,6 +8,7 @@
  */
 import { readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
+import { stripAccents } from "../../src/lib/strip-accents"
 
 const API = "https://legis.senado.leg.br/dadosabertos"
 
@@ -64,7 +65,7 @@ async function fetchJSON(url: string): Promise<Record<string, unknown>> {
 }
 
 function votoPublicavel(raw: unknown): string | null {
-  const normalizado = String(raw ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+  const normalizado = stripAccents(String(raw ?? "")).toLowerCase()
   if (normalizado === "sim") return "sim"
   if (normalizado === "nao") return "não"
   if (normalizado.startsWith("absten")) return "abstenção"

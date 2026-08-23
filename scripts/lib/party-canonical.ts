@@ -1,3 +1,5 @@
+import { stripAccents } from "../../src/lib/strip-accents"
+
 export interface CanonicalParty {
   sigla: string
   nome: string
@@ -176,9 +178,7 @@ const PARTIES: CanonicalParty[] = [
 ]
 
 const normalizePartyValue = (value: string): string =>
-  value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  stripAccents(value)
     .replace(/[^A-Za-z0-9]+/g, "")
     .toUpperCase()
 
@@ -217,18 +217,14 @@ export function findCanonicalPartyInText(value: string | null | undefined): Cano
   const direct = resolveCanonicalParty(value)
   if (direct) return direct
 
-  const normalizedText = value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  const normalizedText = stripAccents(value)
     .toUpperCase()
 
   const candidates = PARTIES.flatMap((party) =>
     [party.sigla, party.nome, ...party.aliases].map((candidate) => ({
       party,
       candidate,
-      normalized: candidate
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
+      normalized: stripAccents(candidate)
         .toUpperCase(),
     }))
   ).sort((left, right) => right.normalized.length - left.normalized.length)

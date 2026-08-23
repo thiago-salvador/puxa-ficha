@@ -30,6 +30,7 @@ import {
   type LinhaConsultaCand,
 } from "./lib/patrimonio-nacional-2026"
 import { parseCSV } from "./lib/parse-csv-local"
+import { stripAccents } from "../src/lib/strip-accents"
 
 const FONTE_BENS =
   "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2026.zip"
@@ -159,10 +160,8 @@ function extrairZip(zipPath: string, destino: string): string[] {
 }
 
 function normalizarCargo(value: string): string {
-  return value
-    .trim()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(value
+    .trim())
     .toUpperCase()
 }
 

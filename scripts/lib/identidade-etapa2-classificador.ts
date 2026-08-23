@@ -33,6 +33,8 @@
  * torna a revisao possivel.
  */
 
+import { stripAccents } from "../../src/lib/strip-accents"
+
 export interface LinhaTse {
   SQ_CANDIDATO: string
   NM_CANDIDATO: string
@@ -142,9 +144,7 @@ export interface ResultadoClassificacao {
 }
 
 export function normalizar(valor: unknown): string {
-  return String(valor ?? "")
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
+  return stripAccents(String(valor ?? ""))
     .replace(/[^a-zA-Z0-9]+/g, " ")
     .trim()
     .toUpperCase()

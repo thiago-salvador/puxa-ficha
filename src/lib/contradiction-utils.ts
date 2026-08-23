@@ -1,17 +1,14 @@
 import type { PontoAtencao, VotoCandidato } from "@/lib/types"
+import { stripAccents } from "@/lib/strip-accents"
 
 export interface EnrichedContradiction {
   voto: VotoCandidato
   pontoAtencao: PontoAtencao | null
 }
 
-function stripCombiningMarks(s: string): string {
-  return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-}
-
 /** trim + lower + strip accents (aligns "Tributária" vs "Tributaria"). */
 export function normalizeContradictionText(s: string | null | undefined): string {
-  return stripCombiningMarks((s ?? "").trim().toLowerCase())
+  return stripAccents((s ?? "").trim().toLowerCase())
 }
 
 function voteDateMs(v: VotoCandidato): number {

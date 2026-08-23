@@ -19,6 +19,7 @@ import type {
   QuizVoteCompareItem,
   QuizVotoNormalizado,
 } from "@/lib/quiz-types"
+import { stripAccents } from "@/lib/strip-accents"
 
 /**
  * Eixo economico pesa 1.5x no calculo de distancia. Razao: a grade de arquetipos
@@ -48,9 +49,7 @@ export function dynamicWeights(votosComparados: number): { wVoto: number; wEspec
 }
 
 export function normalizeVotoFromApi(raw: string): QuizVotoNormalizado | null {
-  const n = raw
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  const n = stripAccents(raw)
     .toLowerCase()
     .trim()
   if (n === "sim") return "sim"

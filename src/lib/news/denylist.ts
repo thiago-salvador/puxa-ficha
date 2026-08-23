@@ -57,6 +57,8 @@
  *    obrigatório e o trecho tem que ser longo o bastante para identificar a
  *    matéria, não o assunto.
  */
+import { stripAccents } from "@/lib/strip-accents"
+
 export type NewsDenylistRegra =
   | { readonly tipo: "url"; readonly url: string; readonly motivo: string }
   | { readonly tipo: "fonte"; readonly fonte: string; readonly motivo: string }
@@ -123,9 +125,7 @@ function normalizarUrl(valor: string | null | undefined): string {
  */
 function normalizarTexto(valor: string | null | undefined): string {
   if (!valor) return ""
-  return valor
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(valor)
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, " ")
     .trim()

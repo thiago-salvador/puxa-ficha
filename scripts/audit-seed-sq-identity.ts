@@ -37,6 +37,7 @@ import { createReadStream } from "node:fs"
 import { resolve } from "node:path"
 import { Readable } from "node:stream"
 import { pipeline } from "node:stream/promises"
+import { stripAccents } from "../src/lib/strip-accents"
 
 const CACHE_DIR = resolve(process.cwd(), ".tse-audit-cache")
 const SEED_PATH = resolve(process.cwd(), "data/candidatos.json")
@@ -73,9 +74,7 @@ export interface RegistroTSE {
 
 /** Remove acentos e caixa, porque o TSE grava tudo em maiuscula sem padrao de acento. */
 function normalizar(valor: string | null | undefined): string {
-  return (valor ?? "")
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
+  return stripAccents((valor ?? ""))
     .toUpperCase()
     .replace(/\s+/g, " ")
     .trim()

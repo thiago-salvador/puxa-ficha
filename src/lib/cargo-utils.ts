@@ -3,10 +3,10 @@
  * Mantido alinhado a `scripts/lib/cargo-utils.ts` (re-export) e ingestões TSE/Wikidata.
  */
 
+import { stripAccents } from "@/lib/strip-accents"
+
 const strip = (s: string) =>
-  s
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  stripAccents(s)
     .toLowerCase()
     .trim()
 

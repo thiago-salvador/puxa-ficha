@@ -5,6 +5,7 @@ import {
   partiesMatchForTimeline,
   rankPartyTimelineRow,
 } from "@/lib/party-switches"
+import { stripAccents } from "@/lib/strip-accents"
 
 export interface PartyTimelineContinuityBrokenLink {
   /** Índice da row “destino” na ordem cronológica crescente (a segunda transição da dupla). */
@@ -29,9 +30,7 @@ export interface PartyTimelineContinuityReport {
  */
 export function hasExplicitPartyTimelineGapNote(contexto: string | null | undefined): boolean {
   if (contexto == null || !contexto.trim()) return false
-  const u = contexto
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  const u = stripAccents(contexto)
     .toLowerCase()
   const needles = [
     "lacuna",

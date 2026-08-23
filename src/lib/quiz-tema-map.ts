@@ -1,4 +1,5 @@
 import type { QuizEixo } from "@/data/quiz/perguntas"
+import { stripAccents } from "@/lib/strip-accents"
 
 /**
  * Regras heurísticas (substring) para mapear texto livre de `projetos_lei.tema`
@@ -19,9 +20,7 @@ const TEMA_RULES: ReadonlyArray<{ keywords: ReadonlyArray<string>; eixo: QuizEix
 ]
 
 function normalizeTema(s: string): string {
-  return s
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
+  return stripAccents(s)
     .toLowerCase()
     .trim()
 }

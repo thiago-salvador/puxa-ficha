@@ -1,3 +1,5 @@
+import { stripAccents } from "../../src/lib/strip-accents"
+
 export type OrigemAncora = "frozen_sq" | "pr203_sq" | "seed_sq"
 export type RotaIdentidade = OrigemAncora | "cpf_consulta"
 
@@ -85,10 +87,8 @@ export function normalizarIdentificadorNumerico(value: unknown): string {
 }
 
 function normalizarTexto(value: unknown): string {
-  return String(value ?? "")
-    .trim()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(String(value ?? "")
+    .trim())
     .toUpperCase()
 }
 

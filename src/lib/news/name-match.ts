@@ -27,6 +27,8 @@
  */
 
 /** Conectivos de nome proprio em pt-BR: nunca contam como mencao. */
+import { stripAccents } from "@/lib/strip-accents"
+
 const PARTICULAS = new Set([
   "de",
   "da",
@@ -51,9 +53,7 @@ const SIGLA_CURTA_MAX = 5
 
 function normalizeNewsText(value: string | null | undefined): string {
   if (!value) return ""
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(value)
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, " ")
     .trim()

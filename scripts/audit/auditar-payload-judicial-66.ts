@@ -15,6 +15,7 @@ import { createHash } from "node:crypto"
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { dirname, resolve } from "node:path"
 import { pathToFileURL } from "node:url"
+import { stripAccents } from "../../src/lib/strip-accents"
 
 const HOST_OFICIAL = "comunicaapi.pje.jus.br"
 const CAMINHO_OFICIAL = "/api/v1/comunicacao"
@@ -82,9 +83,7 @@ function somenteDigitos(valor: string | undefined): string {
 }
 
 function normalizarNome(valor: string | undefined): string {
-  return (valor ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents((valor ?? ""))
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, " ")
     .trim()

@@ -23,6 +23,8 @@
  * `desconhecido` e a ficha imprime só o período.
  */
 
+import { stripAccents } from "@/lib/strip-accents"
+
 export type ResultadoEleitoral =
   | "eleito"
   | "eleito_por_qp"
@@ -50,9 +52,7 @@ type LinhaClassificavel = {
 }
 
 function normalizar(valor: string | null | undefined): string {
-  return (valor ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents((valor ?? ""))
     .trim()
     .toLowerCase()
 }

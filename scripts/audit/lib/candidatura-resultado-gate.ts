@@ -1,3 +1,5 @@
+import { stripAccents } from "../../../src/lib/strip-accents"
+
 export interface HistoricoCandidaturaGateRow {
   id: string | null
   tipo_evento: string | null
@@ -17,9 +19,7 @@ const RESULTADOS_FINAIS = [
 ] as const
 
 function normalizar(value: string): string {
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(value)
     .toUpperCase()
 }
 

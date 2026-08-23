@@ -2,6 +2,8 @@
  * Prestações de receitas TSE anteriores a 2018 usam cabeçalhos distintos em
  * cada ciclo. Unifica os campos necessários ao ingest sem sintetizar identidade.
  */
+import { stripAccents } from "../../src/lib/strip-accents"
+
 function firstNonEmpty(row: Record<string, string>, keys: string[]): string {
   for (const k of keys) {
     const v = row[k]
@@ -11,9 +13,7 @@ function firstNonEmpty(row: Record<string, string>, keys: string[]): string {
 }
 
 function normalizeIdentityName(value: string): string {
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(value)
     .toUpperCase()
     .replace(/[^A-Z0-9]+/g, " ")
     .trim()

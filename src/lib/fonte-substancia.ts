@@ -29,6 +29,8 @@
  */
 
 /** Veredito de substância de um corpo de resposta já baixado. */
+import { stripAccents } from "@/lib/strip-accents"
+
 export type SubstanciaVeredito = "com_conteudo" | "sem_substancia" | "indisponivel"
 
 export interface SubstanciaAnalise {
@@ -151,9 +153,7 @@ const TIPOS_NAO_HTML =
 
 /** Remove acento e caixa para o texto casar com os marcadores. */
 function normalizarParaMarcador(texto: string): string {
-  return texto
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(texto)
     .toLowerCase()
 }
 

@@ -21,6 +21,7 @@ import {
   type ResultadoColeta
 } from "./lib/coleta-log"
 import { supabase } from "./lib/supabase"
+import { stripAccents } from "../src/lib/strip-accents"
 
 export type FrenteCuradoria = "processos" | "contradicoes"
 export type ProvaIdentidade = "id-oficial" | "cargo-e-uf" | "nao-confirmada"
@@ -55,7 +56,7 @@ const FLAGS_VALOR = new Set([
 ])
 
 function semAcentos(valor: string): string {
-  return valor.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+  return stripAccents(valor).toLowerCase()
 }
 
 function lerFlagUnica(argv: string[], nome: string): string {

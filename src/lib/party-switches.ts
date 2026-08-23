@@ -5,13 +5,12 @@ import {
   partiesHistoricallyEquivalent,
   resolveCanonicalPartySigla,
 } from "@/lib/party-utils"
+import { stripAccents } from "@/lib/strip-accents"
 
 function normalizePartyToken(value: string | null | undefined) {
   if (!value) return null
 
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(value)
     .replace(/[^a-zA-Z0-9]/g, "")
     .toLowerCase()
 }
@@ -39,9 +38,7 @@ function isObservedCurrentPartyAnchor(
 ) {
   return (
     item?.contexto != null &&
-    item.contexto
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
+    stripAccents(item.contexto)
       .toLowerCase()
       .includes("filiacao atual observada")
   )
@@ -50,9 +47,7 @@ function isObservedCurrentPartyAnchor(
 function isTseObservedPartyChangeContext(contexto: string | null | undefined) {
   return (
     contexto != null &&
-    contexto
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
+    stripAccents(contexto)
       .toLowerCase()
       .includes("mudanca observada entre eleicoes tse")
   )
@@ -61,9 +56,7 @@ function isTseObservedPartyChangeContext(contexto: string | null | undefined) {
 function isWikidataPartyContext(contexto: string | null | undefined) {
   return (
     contexto != null &&
-    contexto
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
+    stripAccents(contexto)
       .toLowerCase()
       .includes("wikidata p102")
   )
@@ -72,16 +65,12 @@ function isWikidataPartyContext(contexto: string | null | undefined) {
 function isCurrentPartyObservationContext(contexto: string | null | undefined) {
   return (
     contexto != null &&
-    contexto
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
+    stripAccents(contexto)
       .toLowerCase()
       .includes("filiacao atual observada")
   ) || (
     contexto != null &&
-    contexto
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
+    stripAccents(contexto)
       .toLowerCase()
       .includes("partido atual")
   )

@@ -28,6 +28,7 @@ import { isDeepStrictEqual } from "node:util"
 import { normalizarCpfTse } from "./lib/cpf"
 import { parseCSV } from "./lib/parse-csv-local"
 import { supabase } from "./lib/supabase"
+import { stripAccents } from "../src/lib/strip-accents"
 
 const DJEN = "https://comunicaapi.pje.jus.br"
 const DATAJUD = "https://api-publica.datajud.cnj.jus.br"
@@ -259,9 +260,7 @@ const CARGOS_EXECUTIVO = /^(governador|prefeito|ministro(?: de estado)?)$/i
 const CARGO_POLITICO = "(?:VICE GOVERNADOR(?:A)?|GOVERNADOR(?:A)?|VICE PREFEIT[OA]|PREFEIT[OA]|SENADOR(?:A)?|DEPUTAD[OA] (?:FEDERAL|ESTADUAL)|MINISTR[OA] DE ESTADO|PRE CANDIDAT[OA] (?:A|AO) (?:PRESIDENCIA|PRESIDENTE|GOVERNO|GOVERNADOR|PREFEITURA|PREFEITO)|CANDIDAT[OA] (?:A|AO) (?:PRESIDENCIA|PRESIDENTE|GOVERNO|GOVERNADOR|PREFEITURA|PREFEITO)|PRESIDENTE DA REPUBLICA)"
 
 function normalizar(valor: unknown): string {
-  return String(valor ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(String(valor ?? ""))
     .replace(/<[^>]+>/g, " ")
     .replace(/&[^;]+;/g, " ")
     .toUpperCase()

@@ -4,6 +4,8 @@
  *
  * "Renúncia de [outra pessoa]" (sucessão) não deve bloquear — não é linha de mandato inválido.
  */
+import { stripAccents } from "../../src/lib/strip-accents"
+
 export function observacoesHistoricoProblematicas(obs: string | null): boolean {
   if (obs == null || !obs.trim()) return false
   const u = obs.toUpperCase()
@@ -18,9 +20,7 @@ export function observacoesHistoricoProblematicas(obs: string | null): boolean {
     return true
   }
 
-  const n = obs
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  const n = stripAccents(obs)
     .toLowerCase()
 
   // Sucessão: "após renúncia de Fulano", "renúncia de Gladson Cameli", etc.

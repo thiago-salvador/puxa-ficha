@@ -24,6 +24,7 @@ import {
   type ProvaIdentidade,
 } from "./registrar-revisao-curadoria"
 import { supabase } from "./lib/supabase"
+import { stripAccents } from "../src/lib/strip-accents"
 
 const TOTAL_CANDIDATOS = 185
 const TOTAL_LOTES = 10
@@ -166,13 +167,11 @@ function textoLimpo(valor: string): string {
 }
 
 function normalizar(valor: string): string {
-  return valor.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+  return stripAccents(valor).toLowerCase()
 }
 
 function normalizarProva(valor: unknown): string {
-  return String(valor ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(String(valor ?? ""))
     .toUpperCase()
     .replace(/[^A-Z0-9]+/g, " ")
     .replace(/\s+/g, " ")
