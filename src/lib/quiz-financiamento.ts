@@ -10,7 +10,7 @@ import {
 
 const FIN_EUCLIDEAN_MAX = Math.sqrt(162)
 
-/** Fracao minima do valor declarado que precisa estar em setores classificados (nao `nao_classificado`). */
+/** Fração minima do valor declarado que precisa estar em setores classificados (nao `nao_classificado`). */
 const QUIZ_FIN_COBERTURA_MINIMA = 0.25
 
 export interface QuizFinanciamentoDoacaoPerfil {

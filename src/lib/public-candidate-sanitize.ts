@@ -1,14 +1,14 @@
 import { formatPartyPublicLabel, isUncertainParty } from "@/lib/party-utils"
 
 /**
- * Centraliza a sanitizacao publica de partido em payloads que cruzam para client/RSC.
+ * Centraliza a sanitização publica de partido em payloads que cruzam para client/RSC.
  *
- * Pos-Bloco 1 (review 2026-04-24), 4 fronteiras pontuais aplicavam essa transformacao
+ * Pos-Bloco 1 (review 2026-04-24), 4 fronteiras pontuais aplicavam essa transformação
  * em CandidatoFichaView, embed/page.tsx, uf/[uf]/page.tsx e preview/candidato/[slug]/page.tsx.
- * Esta funcao e a fonte unica que substitui as 4: aplicada nos resources de
+ * Esta função e a fonte única que substitui as 4: aplicada nos resources de
  * `src/lib/api.ts` ANTES de o payload sair em qualquer rota publica, ela garante que:
  *  - `partido_sigla = "incerto"` (ou variantes uncertain) vira string vazia no payload publico,
- *    mesma semantica que `formatPartyPublicLabel` retorna; preserva back-compat com componentes
+ *    mesma semântica que `formatPartyPublicLabel` retorna; preserva back-compat com componentes
  *    downstream que ainda chamam `.toLowerCase()`/`.includes()` defensivamente sobre o campo;
  *  - partidos reais sao canonicalizados para o display label publico (ex.: PODEMOS -> PODE),
  *    espelhando o que `CandidatoFichaView` ja fazia para `data-pf-hero-party`;
@@ -16,7 +16,7 @@ import { formatPartyPublicLabel, isUncertainParty } from "@/lib/party-utils"
  *  - `situacao_candidatura` NAO e tocada (campo interno legitimo).
  *
  * Componentes downstream (RankingTable, ComparadorPanel, EmbedWidget, etc.) podem
- * continuar chamando `formatPartyPublicLabel` defensivamente -- aplicacao do helper
+ * continuar chamando `formatPartyPublicLabel` defensivamente -- aplicação do helper
  * sobre valor ja sanitizado e idempotente (string vazia segue retornando string vazia).
  */
 export function sanitizePublicPartyValue(

@@ -9,9 +9,9 @@ import {
 } from "@/lib/resultado-eleitoral"
 import type { HistoricoPolitico } from "@/lib/types"
 
-// MANUTENCAO: ano da eleicao em aberto. Marca candidaturas deste ano como
+// MANUTENÇÃO: ano da eleicao em aberto. Marca candidaturas deste ano como
 // "em disputa" no historico. Precisa ser atualizado a cada ciclo eleitoral
-// (proxima revisao: apos a apuracao de 2026, subir para 2028). Se ficar defasado,
+// (proxima revisão: apos a apuração de 2026, subir para 2028). Se ficar defasado,
 // candidaturas ja decididas aparecem como indefinidas.
 const CURRENT_UNDECIDED_ELECTION_YEAR = 2026
 
@@ -67,7 +67,7 @@ export function isHistoricoOpenStale(
 /**
  * Quando um registo aberto é "obsoleto" (há outro aberto mais recente no mesmo cargo),
  * infere o ano de fim como o ano anterior ao `periodo_inicio` do mandato seguinte
- * (qualquer registo do mesmo cargo canónico com início maior), p.ex. 2002 → 2010 se o
+ * (qualquer registo do mesmo cargo canônico com início maior), p.ex. 2002 → 2010 se o
  * próximo Presidente na lista começa em 2011.
  */
 export function inferStaleOpenEndYear(

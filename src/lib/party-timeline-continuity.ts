@@ -57,7 +57,7 @@ export function hasExplicitPartyTimelineGapNote(contexto: string | null | undefi
  *
  * Regra: ordenando do mais antigo ao mais recente, cada transição `prev` (`A→B`) deve ser seguida
  * por uma transição cuja `partido_anterior` encaixa em `B` via `partiesMatchForTimeline`
- * (sigla canónica + grupos históricos já aceites no produto).
+ * (sigla canônica + grupos históricos já aceites no produto).
  *
  * Exceções (não contam como quebra):
  * - `partido_anterior` da row seguinte é token de âncora (`Sem partido`, `Historico anterior nao determinado`, …);

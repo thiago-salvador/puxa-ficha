@@ -24,7 +24,7 @@ export interface StateRankingResult {
   rankings: StateIndicatorRank[]
 }
 
-/** Ultimo valor numerico por UF para um indicador (ano mais recente com valor). */
+/** Ultimo valor numérico por UF para um indicador (ano mais recente com valor). */
 function latestValorPorEstado(
   rows: IndicadorEstadualRanking[],
   indicador: string

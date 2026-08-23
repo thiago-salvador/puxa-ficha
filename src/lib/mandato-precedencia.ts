@@ -22,7 +22,7 @@ import type { HistoricoPolitico } from "@/lib/types"
 import { stripAccents } from "@/lib/strip-accents"
 
 /**
- * Mesma chave canónica de `historicoCanonKey`, reescrita aqui de propósito:
+ * Mesma chave canônica de `historicoCanonKey`, reescrita aqui de propósito:
  * importar de `historico-display` fecharia um ciclo, já que a exibição depende
  * deste módulo para marcar conflito.
  */

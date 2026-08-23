@@ -108,7 +108,7 @@ function bitsPerQuestion(quizVersion: number): number {
  * Codifica respostas para `?r=` na URL.
  * v1: 10 perguntas, 3 bits Likert.
  * v2: todas as perguntas, 3 bits Likert.
- * v3: todas as perguntas, 3 bits Likert + 1 bit importancia.
+ * v3: todas as perguntas, 3 bits Likert + 1 bit importância.
  */
 export function encodeQuizRespostasPayload(
   respostas: Map<string, QuizRespostaCodificada>,
@@ -145,7 +145,7 @@ export function encodeQuizAnswersPayloadFirstN(
 }
 
 /**
- * Codifica todas as perguntas com {@link QUIZ_VERSION}, assumindo importancia falsa
+ * Codifica todas as perguntas com {@link QUIZ_VERSION}, assumindo importância falsa
  * quando a versao atual for v3 (compat com chamadas que so passam Likert).
  */
 export function encodeQuizAnswersPayload(respostas: Map<string, RespostaLikert>): string {

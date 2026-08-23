@@ -38,19 +38,19 @@ export type SupabaseRunResult<T> = {
 }
 
 /**
- * Codigos PostgREST/Postgres deterministicos: o mesmo erro volta identico na
+ * Códigos PostgREST/Postgres determinísticos: o mesmo erro volta idêntico na
  * segunda e na terceira tentativa. PGRST116 e `.single()` sem linha (a ficha
- * inexistente vira 404), 42501 e permissao negada e 42703 e coluna inexistente.
+ * inexistente vira 404), 42501 e permissão negada e 42703 e coluna inexistente.
  * Retentar so gasta 3 round trips, 750ms de backoff e um issue de Sentry para
  * chegar na mesma resposta.
  *
- * 42703 entrou em 2026-08-08 por custo medido, nao por elegancia. O codigo
+ * 42703 entrou em 2026-08-08 por custo medido, nao por elegância. O codigo
  * consulta `verificacao_campos` e cai para CANDIDATO_COLUMNS_LEGACY quando a
  * coluna nao existe (ver isMissingVerificationColumnError em api.ts). Enquanto
  * a migration que cria a coluna nao roda, TODA carga fria de ficha pagava as
  * 3 tentativas com timeout antes de chegar no fallback que sempre funciona:
  * `/candidato/lula` levou 20,9s, sendo 18,2s so nisso, contra 86ms na carga
- * quente. Falha deterministica nao merece retry.
+ * quente. Falha determinística nao merece retry.
  */
 const NON_RETRYABLE_ERROR_CODES = new Set(["PGRST116", "42501", "42703"])
 
@@ -66,15 +66,15 @@ function isNonRetryableError(error: { code?: string } | null | undefined): boole
 
 /**
  * Labels carregam o slug consultado (`patrimonio(ze-batista)`). Para agrupar no
- * Sentry por operacao, e nao um issue por candidato, o fingerprint usa so a
- * parte estavel do label.
+ * Sentry por operação, e nao um issue por candidato, o fingerprint usa so a
+ * parte estável do label.
  */
 function retryGroupKey(label: string): string {
   return label.replace(/\(.*\)\s*$/, "").trim() || label
 }
 
 /**
- * Falha de Supabase que sobrevive a todas as tentativas nao lanca: os callers
+ * Falha de Supabase que sobrevive a todas as tentativas nao lança: os callers
  * degradam a pagina e seguem. Sem isto ela so existiria como `console.error` e
  * um span `internal_error` solto, sem issue, sem alerta e sem agrupamento.
  */
@@ -94,7 +94,7 @@ function reportExhaustedRetries(params: {
     scope.setTag("supabase.operation", retryGroupKey(label))
     scope.setTag("supabase.timed_out", timedOut ? "true" : "false")
     scope.setTag("supabase.outcome", thrown ? "threw" : "error_result")
-    // Sem o codigo, operacoes diferentes do mesmo label caem no mesmo issue e
+    // Sem o codigo, operações diferentes do mesmo label caem no mesmo issue e
     // escondem o PostgREST que realmente falhou.
     if (lastCode) scope.setTag("supabase.code", lastCode)
     scope.setContext("supabase_retry", {

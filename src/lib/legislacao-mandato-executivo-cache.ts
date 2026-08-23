@@ -11,11 +11,11 @@ const EMENTA_CACHE_CAP = 180
  * Aplica a politica de cache do payload publico LME apos o mapper publico
  * (toPublicLegislacaoMandatoExecutivoRow):
  *
- * 1. Dedup de metadata.coverage_id: como `coverage_id` e' identico em todas as
+ * 1. Dedup de metadata.coverage_id: como `coverage_id` e' idêntico em todas as
  *    rows da mesma curadoria (ex.: 2548 rows de Zema com o mesmo coverage_id) e
  *    os consumidores em legislacao-profile-groups
  *    (getCompleteCoverageDescription / resolveExecutiveLegislationInventoryScope)
- *    retornam na primeira ocorrencia, basta manter o coverage_id na primeira
+ *    retornam na primeira ocorrência, basta manter o coverage_id na primeira
  *    row de cada coverage_id distinto. As demais zeram metadata para nao
  *    inflar o payload de unstable_cache.
  *
@@ -25,11 +25,11 @@ const EMENTA_CACHE_CAP = 180
  *
  * 3. Cap em ementa a EMENTA_CACHE_CAP caracteres com sufixo "...".
  *
- * 4. Ordenacao deterministica: data_norma desc (nulls last) -> ano desc ->
+ * 4. Ordenação determinística: data_norma desc (nulls last) -> ano desc ->
  *    tipo_norma asc -> numero asc.
  *
- * Comportamento identico ao bloco anonimo que vivia em api.ts ate 2026-05-01;
- * extraido para isolar a politica que provocou o Build warning de 2 MB. Desde
+ * Comportamento idêntico ao bloco anonimo que vivia em api.ts ate 2026-05-01;
+ * extraído para isolar a politica que provocou o Build warning de 2 MB. Desde
  * 2026-05-05, a politica ficou mais agressiva: campos nao usados no render
  * publico sao omitidos do objeto serializado.
  */

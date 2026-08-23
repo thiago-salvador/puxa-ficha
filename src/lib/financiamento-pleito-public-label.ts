@@ -29,7 +29,7 @@ export type FinanciamentoPleitoPublicLabelResult = {
   resolution: FinanciamentoPleitoPublicResolution
 }
 
-/** Chave estável para dedupe: sigla UF canónica ou fallback explícito para texto não reconhecido. */
+/** Chave estável para dedupe: sigla UF canônica ou fallback explícito para texto não reconhecido. */
 function estadoDedupeKey(estado: string | null | undefined): string {
   const canon = canonicalizeEstadoForStorage(estado)
   if (canon != null) return canon

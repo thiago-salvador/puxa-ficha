@@ -14,10 +14,10 @@ const LEGISLACAO_MANDATO_EXECUTIVO_PAGE_SIZE = 250
  * Quantos atos do Executivo a ficha carrega no caminho de render.
  *
  * O inventario completo (3.600 atos em `ronaldo-caiado`, o maior do site e
- * presidenciavel) saiu do render em 2026-08-03 e e buscado sob demanda quando a
+ * presidenciável) saiu do render em 2026-08-03 e e buscado sob demanda quando a
  * aba Legislacao abre, pelo mesmo caminho que `projetos_lei` ja usava. Este
  * numero espelha o `.limit(25)` de `projetos_lei` de proposito: os dois recortes
- * aparecem lado a lado na mesma aba, e a previa e substituida pelo inventario
+ * aparecem lado a lado na mesma aba, e a previa e substituída pelo inventario
  * inteiro assim que o fetch sob demanda responde.
  */
 export const LEGISLACAO_MANDATO_EXECUTIVO_PROFILE_PREVIEW_LIMIT = 25

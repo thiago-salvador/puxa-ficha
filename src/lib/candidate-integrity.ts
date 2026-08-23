@@ -11,17 +11,17 @@ function normalizePartyValue(value: string | null | undefined): string | null {
 }
 
 /**
- * Devolve a transicao terminal da linha do tempo.
+ * Devolve a transição terminal da linha do tempo.
  *
  * Ordenar so por ano nao basta: quando ha duas ou mais trocas no mesmo ano, o
- * `sort` estavel devolve a ordem de chegada do array, que nao tem relacao com a
+ * `sort` estável devolve a ordem de chegada do array, que nao tem relação com a
  * ordem dos fatos. O caso que expos isso: em 2021 o candidato saiu de
  * REPUBLICANOS para PATRIOTA em maio e de PATRIOTA para PL em novembro. Pelo
  * ano, a primeira do array vencia, a terminal virava PATRIOTA, e a ficha
  * acusava a linha do tempo de nao ter chegado ao partido atual, que era PL.
  *
- * O desempate correto e a propria cadeia, e nao precisa de data: dentro do ano,
- * a transicao cujo `partido_novo` nao aparece como `partido_anterior` de
+ * O desempate correto e a própria cadeia, e nao precisa de data: dentro do ano,
+ * a transição cujo `partido_novo` nao aparece como `partido_anterior` de
  * nenhuma outra e a ultima. `data_mudanca` e nulo em toda a base hoje, entao
  * depender dela seria depender de dado que nao existe.
  */
@@ -39,8 +39,8 @@ function transicaoTerminal(mudancas: MudancaPartido[]): MudancaPartido | null {
     (m) => !anterioresNoAno.has(normalizePartyValue(m.partido_novo))
   )
 
-  // Cadeia bem formada deixa exatamente uma ponta. Se o dado estiver ciclico ou
-  // partido, nao se inventa uma ordem: devolve a primeira e o resto da funcao
+  // Cadeia bem formada deixa exatamente uma ponta. Se o dado estiver cíclico ou
+  // partido, nao se inventa uma ordem: devolve a primeira e o resto da função
   // decide pelo conteudo, nao pela posicao.
   if (terminais.length === 1) return terminais[0] ?? null
   return doAnoMaximo[0] ?? null
@@ -58,7 +58,7 @@ export function hasIncompletePartyTimeline(
   const latestToken = normalizePartyValue(latestPartidoNovo)
 
   // Rede de seguranca: se o partido atual aparece como destino de QUALQUER
-  // transicao do ano mais recente, a linha do tempo chegou nele, e o aviso de
+  // transição do ano mais recente, a linha do tempo chegou nele, e o aviso de
   // desatualizada seria falso mesmo que a cadeia esteja mal formada.
   const anoMaximo = Math.max(...mudancas.map((m) => m.ano))
   const destinosDoAnoMaximo = mudancas
