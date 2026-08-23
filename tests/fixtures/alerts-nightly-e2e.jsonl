@@ -1,0 +1,6 @@
+{"id":"unauthorized-no-side-effects","source":"tests/alerts-http.test.ts:1104","kind":"unauthorized","expectedStatus":401,"expectedSent":0,"expectedFailed":0,"expectedEmails":0}
+{"id":"empty-batch-is-explicit","source":"tests/alerts-http.test.ts:1114","kind":"empty","expectedStatus":200,"expectedSent":0,"expectedFailed":0,"expectedEmails":0}
+{"id":"no-change-skips-without-email","source":"tests/alerts-http.test.ts:1135","kind":"no-change","expectedStatus":200,"expectedSent":0,"expectedFailed":0,"expectedEmails":0}
+{"id":"digest-success-sends-once","source":"tests/alerts-http.test.ts:1159","kind":"success","expectedStatus":200,"expectedSent":1,"expectedFailed":0,"expectedEmails":1}
+{"id":"digest-log-prevents-duplicate","source":"src/app/api/alerts/send-digest/route.ts:163","kind":"preseeded-idempotency","expectedStatus":200,"expectedSent":0,"expectedFailed":0,"expectedEmails":0}
+{"id":"provider-failure-is-not-hidden","source":"src/app/api/alerts/send-digest/route.ts:619","kind":"provider-failure","expectedStatus":500,"expectedSent":0,"expectedFailed":1,"expectedEmails":0}
