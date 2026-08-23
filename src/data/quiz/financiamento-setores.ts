@@ -2,6 +2,8 @@
  * Classificacao editorial de doadores (TSE) por setor, para o sinal de financiamento no quiz.
  * Versao bumpada quando regras ou eixos mudarem (metodologia deve citar a versao).
  */
+import { stripAccents } from "@/lib/strip-accents"
+
 export const QUIZ_FINANCIAMENTO_REGRAS_VERSION = 1
 
 /** Setores com perfil aproximado nos eixos 1-10 (mesma escala do espectro partidario do quiz). */
@@ -46,9 +48,7 @@ const RULES: Rule[] = [
 ]
 
 function norm(s: string): string {
-  return s
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(s)
     .toLowerCase()
     .trim()
 }

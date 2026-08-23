@@ -1,12 +1,13 @@
 import type { BemDeclarado, Doador, Financiamento, Patrimonio } from "@/lib/types"
 import { sanitizePublicText } from "@/lib/public-text"
+import { stripAccents } from "@/lib/strip-accents"
 
 function roundCurrency(value: number): number {
   return Math.round(value * 100) / 100
 }
 
 function normalizeTextKey(value: string | null | undefined): string {
-  return (value ?? "").trim().replace(/\s+/g, " ").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+  return stripAccents((value ?? "").trim().replace(/\s+/g, " ")).toLowerCase()
 }
 
 function pickRicherByScore<T extends { id: string }>(

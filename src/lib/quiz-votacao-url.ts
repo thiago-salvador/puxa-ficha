@@ -3,15 +3,15 @@
  * IDs vêm do pipeline de ingestão (`proposicao_id` na base).
  */
 
+import { stripAccents } from "@/lib/strip-accents"
+
 export function buildVotacaoPublicUrl(
   casa: string | null | undefined,
   proposicaoId: string | null | undefined
 ): string | null {
   const id = proposicaoId?.trim()
   if (!id) return null
-  const c = (casa ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  const c = stripAccents((casa ?? ""))
     .toLowerCase()
   if (c.includes("camara")) {
     return `https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=${encodeURIComponent(id)}`

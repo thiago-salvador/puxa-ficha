@@ -2,6 +2,7 @@ import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 import { isPhotoPlaceholder } from "./photo-placeholder"
 import { REMOTE_IMAGE_HOSTS } from "./remote-image-hosts"
+import { stripAccents } from "@/lib/strip-accents"
 
 export { isPhotoPlaceholder } from "./photo-placeholder"
 
@@ -185,9 +186,7 @@ export function isUiAvatarsPlaceholder(url: string | null | undefined): boolean 
 }
 
 export function getPartyLogoUrl(sigla: string): string | null {
-  const normalized = sigla
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  const normalized = stripAccents(sigla)
     .toLowerCase()
     .replace(/\s/g, "")
   const resolved = PARTY_LOGO_ALIASES[normalized] ?? normalized

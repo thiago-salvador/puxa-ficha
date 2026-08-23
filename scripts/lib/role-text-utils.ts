@@ -1,9 +1,9 @@
+import { stripAccents } from "../../src/lib/strip-accents"
+
 const ROLE_STOPWORDS = new Set(["de", "da", "do", "das", "dos", "e", "em", "na", "no"])
 
 export function normalizeText(value: string | null | undefined): string {
-  return (value ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents((value ?? ""))
     .replace(/[()]/g, "")
     .replace(/[^a-z0-9]+/gi, " ")
     .trim()

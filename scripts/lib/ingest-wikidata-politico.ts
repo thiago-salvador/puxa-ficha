@@ -8,6 +8,7 @@ import { sanitizeTemplateText } from "./ptbr-sanitize"
 import { extractEstadoFromText } from "@/lib/br-uf"
 import { finalizarColeta, registrarErroColeta } from "./coleta-resultado"
 import type { IngestResult } from "./types"
+import { stripAccents } from "../../src/lib/strip-accents"
 
 const SPARQL_ENDPOINT = "https://query.wikidata.org/sparql"
 const HEADERS = {
@@ -94,9 +95,7 @@ export function validarBindingsPoliticos(
 }
 
 function normalizeText(value: string): string {
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(value)
     .replace(/[^a-zA-Z0-9 ]+/g, " ")
     .replace(/\s+/g, " ")
     .trim()

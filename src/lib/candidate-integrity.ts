@@ -1,12 +1,11 @@
 import type { MudancaPartido } from "@/lib/types"
 import { partiesHistoricallyEquivalent } from "@/lib/party-utils"
+import { stripAccents } from "@/lib/strip-accents"
 
 function normalizePartyValue(value: string | null | undefined): string | null {
   if (!value) return null
 
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(value)
     .replace(/[^a-zA-Z0-9]/g, "")
     .toLowerCase()
 }

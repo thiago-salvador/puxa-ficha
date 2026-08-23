@@ -19,6 +19,7 @@ import {
 import { resolve } from "node:path"
 
 import { parseCSV } from "./lib/parse-csv-local"
+import { stripAccents } from "../src/lib/strip-accents"
 
 const SOURCE_URL =
   "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip"
@@ -115,9 +116,7 @@ interface Candidato {
 }
 
 function normalize(value: string): string {
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(value)
     .replace(/[^A-Za-z0-9]+/g, " ")
     .trim()
     .toUpperCase()

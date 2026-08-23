@@ -6,6 +6,8 @@
  * cargo plausibility, and other signals before accepting a discovery.
  */
 
+import { stripAccents } from "../../src/lib/strip-accents"
+
 export type MatchStatus = "accepted" | "suspect" | "rejected"
 
 export interface PlausibilityResult {
@@ -27,9 +29,7 @@ const MUNICIPAL_CARGOS = new Set([
 const MUNICIPAL_YEARS = new Set([2004, 2008, 2012, 2016, 2020, 2024])
 
 export function significantTokens(name: string): string[] {
-  return name
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(name)
     .toUpperCase()
     .trim()
     .split(/\s+/)

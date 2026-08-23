@@ -1,5 +1,6 @@
 import type { Doador, Financiamento } from "@/lib/types"
 import { containsTseTechnicalMarker } from "@/lib/public-text-markers"
+import { stripAccents } from "@/lib/strip-accents"
 
 type DoadorTipo = Doador["tipo"]
 
@@ -19,9 +20,7 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 }
 
 function normalizePublicName(value: string): string {
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(value)
     .replace(/\s+/g, " ")
     .toUpperCase()
     .trim()

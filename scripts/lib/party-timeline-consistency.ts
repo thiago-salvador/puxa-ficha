@@ -1,5 +1,6 @@
 import { canonicalPartiesEquivalent, resolveCanonicalParty } from "./party-canonical"
 import type { ResolveMethod } from "./tse-resolver"
+import { stripAccents } from "../../src/lib/strip-accents"
 
 export interface PartyTimelineRowLike {
   id: string
@@ -62,9 +63,7 @@ const HISTORICAL_SAME_PARTY_INDEX = new Map<string, string>()
 
 for (const group of HISTORICAL_SAME_PARTY_GROUPS) {
   for (const label of group.labels) {
-    const token = label
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
+    const token = stripAccents(label)
       .replace(/[^a-zA-Z0-9]+/g, "")
       .toLowerCase()
     HISTORICAL_SAME_PARTY_INDEX.set(token, group.group)
@@ -77,10 +76,8 @@ function normalizePartyTimelineComparisonToken(value: string | null | undefined)
   const canonical = resolveCanonicalParty(value)
   if (canonical) return canonical.sigla
 
-  const normalized = value
-    .trim()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  const normalized = stripAccents(value
+    .trim())
     .replace(/[^a-zA-Z0-9]+/g, "")
     .toLowerCase()
 
@@ -112,9 +109,7 @@ function normalizePartyTimelineComparisonToken(value: string | null | undefined)
 function normalizeHistoricalPartyGroupToken(value: string | null | undefined): string | null {
   const token = normalizePartyTimelineComparisonToken(value)
   if (!token) return null
-  const normalized = token
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  const normalized = stripAccents(token)
     .replace(/[^a-zA-Z0-9]+/g, "")
     .toLowerCase()
   return HISTORICAL_SAME_PARTY_INDEX.get(normalized) ?? normalized
@@ -215,17 +210,13 @@ function hasAmbiguousCompetingRow<Row extends PartyTimelineRowLike>(
 }
 
 export function isTseObservedPartyChangeContext(contexto: string | null | undefined): boolean {
-  return (contexto ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents((contexto ?? ""))
     .toLowerCase()
     .includes("mudanca observada entre eleicoes tse")
 }
 
 function isCurrentPartyObservationContext(contexto: string | null | undefined): boolean {
-  const normalized = (contexto ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  const normalized = stripAccents((contexto ?? ""))
     .toLowerCase()
 
   return (

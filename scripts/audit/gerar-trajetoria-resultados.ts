@@ -13,6 +13,7 @@ import {
   parseCiclo,
   type HistoricoCandidaturaGateRow,
 } from "./lib/candidatura-resultado-gate"
+import { stripAccents } from "../../src/lib/strip-accents"
 
 interface HistoricoRow extends HistoricoCandidaturaGateRow {
   candidato_id: string
@@ -97,9 +98,7 @@ function extrairSq(observacoes: string | null): string | null {
 }
 
 function normalizarCargo(value: string): string {
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents(value)
     .replace(/^CANDIDATURA\s+(?:A|AO)\s+/i, "")
     .replace(/[^A-Za-z0-9]+/g, " ")
     .trim()

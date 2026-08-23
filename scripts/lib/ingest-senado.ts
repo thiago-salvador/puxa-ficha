@@ -5,6 +5,7 @@ import { fetchJSON, sleep } from "./helpers"
 import { namesLookCompatible } from "./name-match"
 import { log, warn, error } from "./logger"
 import type { IngestResult } from "./types"
+import { stripAccents } from "../../src/lib/strip-accents"
 
 const API = "https://legis.senado.leg.br/dadosabertos"
 const HEADERS = { Accept: "application/json" }
@@ -236,9 +237,7 @@ export interface IngestVotosSenadoOutcome {
 }
 
 function interpretarVotoNominal(raw: unknown): string | null {
-  const normalizado = String(raw ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  const normalizado = stripAccents(String(raw ?? ""))
     .trim()
     .toLowerCase()
 
@@ -397,9 +396,7 @@ async function ingestAutorias(
     // Estrategia: aceitar somente o positivo "Sim" (case-insensitive); qualquer outro valor
     // (vazio, "Nao", "Não", ou ausente) e tratado como subsidiario e descartado.
     const indicadorPrincipalRaw = String(a.IndicadorAutorPrincipal ?? "").trim()
-    const indicadorPrincipalNormalized = indicadorPrincipalRaw
-      .normalize("NFD")
-      .replace(/[̀-ͯ]/g, "")
+    const indicadorPrincipalNormalized = stripAccents(indicadorPrincipalRaw)
       .toLowerCase()
     if (indicadorPrincipalNormalized !== "sim") continue
 

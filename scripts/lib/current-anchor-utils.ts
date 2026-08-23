@@ -1,4 +1,5 @@
 import { canonicalCargo } from "./cargo-utils"
+import { stripAccents } from "../../src/lib/strip-accents"
 
 const BROAD_CURRENT_OFFICE_CANONICAL_MATCH = new Set([
   "Presidente",
@@ -15,9 +16,7 @@ const BROAD_CURRENT_OFFICE_CANONICAL_MATCH = new Set([
 ])
 
 function normalizeText(value: string | null | undefined): string {
-  return (value ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents((value ?? ""))
     .replace(/[^a-z0-9]+/gi, " ")
     .trim()
     .toLowerCase()

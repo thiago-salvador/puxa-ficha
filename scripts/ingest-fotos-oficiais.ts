@@ -14,6 +14,7 @@ import { isPhotoPlaceholder } from "../src/lib/photo-placeholder"
 import { ativarDryRun } from "./lib/dry-run"
 import { escreverAuditado } from "./lib/escrita-auditada"
 import { supabase } from "./lib/supabase"
+import { stripAccents } from "../src/lib/strip-accents"
 
 const DIVULGACAND = "https://divulgacandcontas.tse.jus.br/divulga"
 const MIN_PHOTO_BYTES = 5_000
@@ -80,9 +81,7 @@ export interface RelatorioFotosOficiais {
 }
 
 function normalizarTexto(value: string | null | undefined): string {
-  return (value ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents((value ?? ""))
     .trim()
     .toLowerCase()
 }

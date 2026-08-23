@@ -1,3 +1,5 @@
+import { stripAccents } from "@/lib/strip-accents"
+
 export interface TSEPatrimonioBemInput {
   slug: string
   sourceKey: string
@@ -8,11 +10,9 @@ export interface TSEPatrimonioBemInput {
 }
 
 function normalizeKeyPart(value: string): string {
-  return value
+  return stripAccents(value
     .trim()
-    .replace(/\s+/g, " ")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, " "))
     .toLowerCase()
 }
 

@@ -1,4 +1,5 @@
 import { urlFonteEPortalJudiciario } from "@/lib/djen-consulta-url"
+import { stripAccents } from "@/lib/strip-accents"
 
 export { urlPublicaDoProcesso } from "@/lib/djen-consulta-url"
 
@@ -29,9 +30,7 @@ const TERMINAL_PROCESS_STATUS = new Set([
 ])
 
 function normalizeProcessStatus(status: string | null | undefined): string {
-  return (status ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents((status ?? ""))
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "_")
     .replace(/^_+|_+$/g, "")

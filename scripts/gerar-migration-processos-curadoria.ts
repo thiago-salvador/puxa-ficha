@@ -12,6 +12,7 @@ import { resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 
 import { urlConsultaDjenDeFonte } from "../src/lib/djen-consulta-url"
+import { stripAccents } from "../src/lib/strip-accents"
 
 const MARCADOR_FONTE = "curadoria-djen-20260805"
 const SPLIT_IDENTIDADE_VERSION = "20260811102100"
@@ -83,7 +84,7 @@ export interface LinhaProcesso {
 }
 
 function normalizar(valor: string): string {
-  return valor.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+  return stripAccents(valor).toLowerCase()
 }
 
 export function cnjValido(valor: string): boolean {

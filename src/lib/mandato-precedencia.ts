@@ -19,6 +19,7 @@ import { ehCargoNaoEletivo } from "@/lib/cargo-nao-eletivo"
 import { isHistoricoCandidaturaRow } from "@/lib/historico-tipo-evento"
 import { resolveResultadoEleitoral } from "@/lib/resultado-eleitoral"
 import type { HistoricoPolitico } from "@/lib/types"
+import { stripAccents } from "@/lib/strip-accents"
 
 /**
  * Mesma chave canónica de `historicoCanonKey`, reescrita aqui de propósito:
@@ -169,9 +170,7 @@ function anoDeFimComFonte(row: HistoricoPolitico): number | null {
 }
 
 function normalizarCargo(valor: string | null | undefined): string {
-  return (valor ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents((valor ?? ""))
     .trim()
     .toLowerCase()
 }

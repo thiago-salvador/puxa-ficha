@@ -17,6 +17,8 @@
  * tratamento de pleito (resultado eleitoral e ano de eleição).
  */
 
+import { stripAccents } from "@/lib/strip-accents"
+
 const NAO_OBTIDO_EM_URNA: readonly RegExp[] = [
   // "Presidente Nacional do Partido Missão", "Presidente estadual do PT-AC",
   // "Presidente estadual do Missão Espírito Santo".
@@ -41,9 +43,7 @@ const NAO_OBTIDO_EM_URNA: readonly RegExp[] = [
  */
 /** Sem acento e em minúscula: a base tem "Assembleia" e "Assembléia". */
 function normalizar(cargo: string | null | undefined): string {
-  return (cargo ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  return stripAccents((cargo ?? ""))
     .trim()
     .toLowerCase()
 }
