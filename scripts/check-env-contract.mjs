@@ -95,9 +95,20 @@ export function scanJavaScriptSource(source, file = "<fixture>.ts") {
 
   function isProcessObject(node, scope) {
     node = unwrapTypeScriptExpression(node)
-    if (!node || !ts.isIdentifier(node)) return false
-    if (node.text === "process" && !findBinding(scope, "process")) return true
-    return findBinding(scope, node.text)?.kind === "process"
+    if (!node) return false
+    if (ts.isIdentifier(node)) {
+      if (node.text === "process" && !findBinding(scope, "process")) return true
+      return findBinding(scope, node.text)?.kind === "process"
+    }
+    if (ts.isPropertyAccessExpression(node) && node.name.text === "process") {
+      const owner = unwrapTypeScriptExpression(node.expression)
+      return ts.isIdentifier(owner) && owner.text === "globalThis" && !findBinding(scope, "globalThis")
+    }
+    if (ts.isElementAccessExpression(node) && staticString(node.argumentExpression, scope) === "process") {
+      const owner = unwrapTypeScriptExpression(node.expression)
+      return ts.isIdentifier(owner) && owner.text === "globalThis" && !findBinding(scope, "globalThis")
+    }
+    return false
   }
 
   function isEnvObject(node, scope) {
@@ -118,6 +129,21 @@ export function scanJavaScriptSource(source, file = "<fixture>.ts") {
     node = unwrapTypeScriptExpression(node)
     if (isProcessObject(node, scope)) return { kind: "process" }
     if (isEnvObject(node, scope)) return { kind: "env" }
+    if (
+      ts.isBinaryExpression(node) &&
+      node.operatorToken.kind === ts.SyntaxKind.BarBarToken &&
+      isEnvObject(node.left, scope)
+    ) {
+      return { kind: "env" }
+    }
+    if (
+      ts.isObjectLiteralExpression(node) &&
+      node.properties.some(
+        (property) => ts.isSpreadAssignment(property) && isEnvObject(property.expression, scope),
+      )
+    ) {
+      return { kind: "env" }
+    }
     const value = staticString(node, scope)
     if (value !== undefined) return { kind: "string", value }
     return { kind: "other" }
@@ -160,8 +186,32 @@ export function scanJavaScriptSource(source, file = "<fixture>.ts") {
 
     const fromProcess = initializer && isProcessObject(initializer, scope)
     const fromEnv = initializer && isEnvObject(initializer, scope)
+
+    function bindEnvPattern(pattern) {
+      if (!ts.isObjectBindingPattern(pattern)) {
+        const line = sourceFile.getLineAndCharacterOfPosition(pattern.getStart(sourceFile)).line + 1
+        unresolved.push(`${file}:${line}:unsupported nested env destructuring`)
+        declarePattern(pattern, targetScope)
+        return
+      }
+      for (const nested of pattern.elements) {
+        const property = nested.propertyName ?? nested.name
+        const propertyName = ts.isComputedPropertyName(property)
+          ? staticString(property.expression, scope)
+          : ts.isIdentifier(property) || ts.isStringLiteralLike(property)
+            ? property.text
+            : undefined
+        if (nested.dotDotDotToken || !propertyName) {
+          const line = sourceFile.getLineAndCharacterOfPosition(nested.getStart(sourceFile)).line + 1
+          unresolved.push(`${file}:${line}:dynamic nested env destructuring`)
+        } else {
+          recordName(propertyName, nested)
+        }
+        declarePattern(nested.name, targetScope)
+      }
+    }
+
     for (const element of name.elements) {
-      if (!ts.isIdentifier(element.name)) continue
       const property = element.propertyName ?? element.name
       const propertyName = ts.isComputedPropertyName(property)
         ? staticString(property.expression, scope)
@@ -169,10 +219,17 @@ export function scanJavaScriptSource(source, file = "<fixture>.ts") {
           ? property.text
           : undefined
       if (fromProcess && propertyName === "env") {
-        targetScope.bindings.set(element.name.text, { kind: "env" })
+        if (ts.isIdentifier(element.name)) {
+          targetScope.bindings.set(element.name.text, { kind: "env" })
+        } else {
+          bindEnvPattern(element.name)
+        }
       } else {
         if (fromEnv && propertyName) recordName(propertyName, element)
-        targetScope.bindings.set(element.name.text, { kind: "other" })
+        declarePattern(element.name, targetScope)
+        if (ts.isIdentifier(element.name)) {
+          targetScope.bindings.set(element.name.text, { kind: "other" })
+        }
       }
     }
   }
@@ -197,7 +254,17 @@ export function scanJavaScriptSource(source, file = "<fixture>.ts") {
       ) {
         declarePattern(statement.name, scope)
       } else if (ts.isImportDeclaration(statement) && statement.importClause) {
-        if (statement.importClause.name) declarePattern(statement.importClause.name, scope)
+        if (statement.importClause.name) {
+          const moduleName = ts.isStringLiteralLike(statement.moduleSpecifier)
+            ? statement.moduleSpecifier.text
+            : undefined
+          scope.bindings.set(
+            statement.importClause.name.text,
+            moduleName === "node:process" || moduleName === "process"
+              ? { kind: "process" }
+              : { kind: "other" },
+          )
+        }
         const bindings = statement.importClause.namedBindings
         if (bindings && ts.isNamespaceImport(bindings)) declarePattern(bindings.name, scope)
         if (bindings && ts.isNamedImports(bindings)) {
@@ -447,12 +514,43 @@ class Analyzer(ast.NodeVisitor):
             self.visit(node.value)
         self.bind_target(node.target, value)
 
+    def receiver_kind(self, node):
+        if isinstance(node, ast.NamedExpr):
+            self.visit_NamedExpr(node)
+            return self.kind(node.target)
+        return self.kind(node)
+
     def visit_FunctionDef(self, node):
         self.bind(node.name, ("function", node.name))
         previous = self.current_function
         self.current_function = node.name
-        parameters = [*node.args.posonlyargs, *node.args.args, *node.args.kwonlyargs]
-        self.scopes.append({parameter.arg: ("parameter", index) for index, parameter in enumerate(parameters)})
+        positional = [*node.args.posonlyargs, *node.args.args]
+        parameters = [*positional, *node.args.kwonlyargs]
+        parameter_bindings = {
+            parameter.arg: ("parameter", index) for index, parameter in enumerate(parameters)
+        }
+        positional_defaults = [None] * (len(positional) - len(node.args.defaults)) + list(node.args.defaults)
+        for parameter, default in zip(positional, positional_defaults):
+            if default is None:
+                continue
+            value = self.kind(default)
+            if value[0] == "other":
+                self.visit(default)
+            else:
+                parameter_bindings[parameter.arg] = value
+        for parameter, default in zip(node.args.kwonlyargs, node.args.kw_defaults):
+            if default is None:
+                continue
+            value = self.kind(default)
+            if value[0] == "other":
+                self.visit(default)
+            else:
+                parameter_bindings[parameter.arg] = value
+        if node.args.vararg:
+            parameter_bindings[node.args.vararg.arg] = ("other",)
+        if node.args.kwarg:
+            parameter_bindings[node.args.kwarg.arg] = ("other",)
+        self.scopes.append(parameter_bindings)
         for statement in node.body:
             self.visit(statement)
         self.scopes.pop()
@@ -461,7 +559,7 @@ class Analyzer(ast.NodeVisitor):
     visit_AsyncFunctionDef = visit_FunctionDef
 
     def visit_Subscript(self, node):
-        if self.kind(node.value)[0] == "environ":
+        if self.receiver_kind(node.value)[0] == "environ":
             key = self.static_string(node.slice)
             if isinstance(node.slice, ast.Name) and self.find(node.slice.id)[0] == "parameter" and self.current_function:
                 index = self.find(node.slice.id)[1]
@@ -473,9 +571,9 @@ class Analyzer(ast.NodeVisitor):
 
     def visit_Call(self, node):
         accessor = None
-        if isinstance(node.func, ast.Attribute) and node.func.attr == "get" and self.kind(node.func.value)[0] == "environ":
+        if isinstance(node.func, ast.Attribute) and node.func.attr == "get" and self.receiver_kind(node.func.value)[0] == "environ":
             accessor = "environ.get"
-        elif self.kind(node.func)[0] == "getenv":
+        elif self.receiver_kind(node.func)[0] == "getenv":
             accessor = "getenv"
 
         if accessor:
@@ -650,6 +748,17 @@ export function scanShellSource(source) {
     throw new Error(`substituição shell sem fechamento: ${text.trim()}`)
   }
 
+  function parseBacktick(text, start) {
+    let content = ""
+    for (let index = start; index < text.length; index += 1) {
+      const character = text[index]
+      const previous = index === start ? "" : text[index - 1]
+      if (character === "`" && previous !== "\\") return { content, end: index }
+      content += character
+    }
+    throw new Error(`backtick shell sem fechamento: ${text.trim()}`)
+  }
+
   function commands() {
     const result = []
     let current = ""
@@ -658,9 +767,21 @@ export function scanShellSource(source) {
     for (let index = 0; index < sanitized.length; index += 1) {
       const character = sanitized[index]
       const previous = index === 0 ? "" : sanitized[index - 1]
+      if (!single && character === "`" && previous !== "\\") {
+        const parsed = parseBacktick(sanitized, index + 1)
+        current += `\`${parsed.content}\``
+        index = parsed.end
+        continue
+      }
       if (!single && sanitized.slice(index, index + 2) === "$(") {
         const parsed = parseCommandSubstitution(sanitized, index + 2)
         current += `$(${parsed.content})`
+        index = parsed.end
+        continue
+      }
+      if (!single && !double && /[<>]/.test(character) && sanitized[index + 1] === "(") {
+        const parsed = parseCommandSubstitution(sanitized, index + 2)
+        current += `${character}(${parsed.content})`
         index = parsed.end
         continue
       }
@@ -696,9 +817,21 @@ export function scanShellSource(source) {
     for (let index = 0; index < command.length; index += 1) {
       const character = command[index]
       const previous = index === 0 ? "" : command[index - 1]
+      if (!single && character === "`" && previous !== "\\") {
+        const parsed = parseBacktick(command, index + 1)
+        current += `\`${parsed.content}\``
+        index = parsed.end
+        continue
+      }
       if (!single && command.slice(index, index + 2) === "$(") {
         const parsed = parseCommandSubstitution(command, index + 2)
         current += `$(${parsed.content})`
+        index = parsed.end
+        continue
+      }
+      if (!single && !double && /[<>]/.test(character) && command[index + 1] === "(") {
+        const parsed = parseCommandSubstitution(command, index + 2)
+        current += `${character}(${parsed.content})`
         index = parsed.end
         continue
       }
@@ -781,6 +914,109 @@ export function scanShellSource(source) {
     return nested
   }
 
+  function backtickSources(command) {
+    const nested = []
+    let single = false
+    for (let index = 0; index < command.length; index += 1) {
+      const character = command[index]
+      const previous = index === 0 ? "" : command[index - 1]
+      if (character === "'" && previous !== "\\") single = !single
+      if (!single && character === "`" && previous !== "\\") {
+        const parsed = parseBacktick(command, index + 1)
+        nested.push(parsed.content)
+        index = parsed.end
+      }
+    }
+    return nested
+  }
+
+  function processSubstitutionSources(command) {
+    const nested = []
+    let single = false
+    let double = false
+    for (let index = 0; index < command.length; index += 1) {
+      const character = command[index]
+      const previous = index === 0 ? "" : command[index - 1]
+      if (character === "'" && !double && previous !== "\\") single = !single
+      if (character === '"' && !single && previous !== "\\") double = !double
+      if (!single && !double && /[<>]/.test(character) && command[index + 1] === "(") {
+        const parsed = parseCommandSubstitution(command, index + 2)
+        nested.push(parsed.content)
+        index = parsed.end
+      }
+    }
+    return nested
+  }
+
+  function rejectEnvironmentDump(command) {
+    function checkTokens(tokens) {
+      let index = 0
+      while (/^[A-Za-z_][A-Za-z0-9_]*\+?=/.test(tokens[index] ?? "")) index += 1
+      const wrappers = new Set(["builtin", "command", "exec", "nohup", "sudo"])
+      while (wrappers.has(literalWord(tokens[index]))) index += 1
+      if (literalWord(tokens[index]) !== "env") return
+      index += 1
+      while (index < tokens.length) {
+        const token = literalWord(tokens[index])
+        if (/^[A-Za-z_][A-Za-z0-9_]*=/.test(token ?? "")) {
+          index += 1
+          continue
+        }
+        if (["-u", "-C", "-S", "--unset", "--chdir", "--split-string"].includes(token)) {
+          index += 2
+          continue
+        }
+        if (token === "--") {
+          index += 1
+          break
+        }
+        if (token?.startsWith("-")) {
+          index += 1
+          continue
+        }
+        break
+      }
+      if (index >= tokens.length) {
+        throw new Error(`env sem comando expõe ambiente completo: ${command.trim()}`)
+      }
+    }
+
+    const tokens = words(command)
+    checkTokens(tokens)
+    const controlWords = new Set(["!", "do", "elif", "else", "if", "then", "until", "while"])
+    for (let index = 0; index < tokens.length; index += 1) {
+      if (controlWords.has(literalWord(tokens[index]))) checkTokens(tokens.slice(index + 1))
+    }
+  }
+
+  function recordNameref(command) {
+    const tokens = commandWords(command)
+    const executable = path.posix.basename(literalWord(tokens[0]) ?? "")
+    if (!new Set(["declare", "local", "typeset"]).has(executable)) return
+    let index = 1
+    let nameref = false
+    while (tokens[index]?.startsWith("-")) {
+      const option = literalWord(tokens[index]) ?? ""
+      if (option === "--reference" || /^-[A-Za-z]*n[A-Za-z]*$/.test(option)) nameref = true
+      index += 1
+    }
+    if (!nameref) return
+    if (index >= tokens.length) {
+      throw new Error(`nameref shell sem alvo literal: ${command.trim()}`)
+    }
+    for (; index < tokens.length; index += 1) {
+      const assignment = /^([A-Za-z_][A-Za-z0-9_]*)=(.*)$/.exec(tokens[index])
+      if (!assignment) {
+        throw new Error(`nameref shell sem alvo literal: ${tokens[index]}`)
+      }
+      const target = assignment ? literalWord(assignment[2]) : undefined
+      if (!target || (!/^[A-Z][A-Z0-9_]*$/.test(target) && !locals.has(target))) {
+        throw new Error(`nameref shell com alvo não resolvido: ${tokens[index]}`)
+      }
+      if (!locals.has(target)) names.add(target)
+    }
+  }
+
   function rejectReevaluation(command) {
     const tokens = commandWords(command)
     const executable = path.posix.basename(literalWord(tokens[0]) ?? "")
@@ -830,11 +1066,17 @@ export function scanShellSource(source) {
 
   const locals = new Set()
   for (const command of commands()) {
-    for (const nested of nestedCommandSources(command)) {
+    const nestedSources = [
+      ...nestedCommandSources(command),
+      ...backtickSources(command),
+      ...processSubstitutionSources(command),
+    ]
+    for (const nested of nestedSources) {
       for (const name of scanShellSource(nested)) {
         if (!locals.has(name)) names.add(name)
       }
     }
+    rejectEnvironmentDump(command)
     rejectReevaluation(command)
     const indirect = [
       ...command.matchAll(/(?<!\\)\$\{!([A-Za-z_][A-Za-z0-9_]*)(?:\}|[?*@])/g),
@@ -853,6 +1095,7 @@ export function scanShellSource(source) {
     for (const match of command.matchAll(/process\.env\.([A-Z][A-Z0-9_]*)/g)) {
       names.add(match[1])
     }
+    recordNameref(command)
     recordPrintenv(command)
     for (const name of persistentAssignments(command)) locals.add(name)
   }

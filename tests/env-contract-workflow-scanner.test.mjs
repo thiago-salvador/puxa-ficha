@@ -66,6 +66,54 @@ process!.env.NON_NULL_PROCESS_ENV;
     assert.deepEqual(result.unresolved, [])
   })
 
+  it("resolve import de process, globalThis, destructuring aninhado e wrappers estáticos", () => {
+    const result = scanJavaScriptSource(`
+import runtimeProcess from "node:process"
+runtimeProcess.env.IMPORTED_PROCESS_ENV
+globalThis.process.env.GLOBAL_THIS_PROCESS_ENV
+const { env: { NESTED_DESTRUCTURED_ENV } } = process
+const fallbackEnvironment = process.env || {}
+fallbackEnvironment.FALLBACK_ENV
+const spreadEnvironment = { ...process.env }
+spreadEnvironment.SPREAD_ENV
+`)
+
+    assert.deepEqual([...result.names].sort(), [
+      "FALLBACK_ENV",
+      "GLOBAL_THIS_PROCESS_ENV",
+      "IMPORTED_PROCESS_ENV",
+      "NESTED_DESTRUCTURED_ENV",
+      "SPREAD_ENV",
+    ])
+    assert.deepEqual(result.unresolved, [])
+  })
+
+  it("aplica a fronteira client/server às novas origens JS estruturais", () => {
+    const result = scanJavaScriptSource(`
+"use strict"
+"use client"
+import runtimeProcess from "node:process"
+runtimeProcess.env.IMPORTED_CLIENT_SECRET
+globalThis.process.env.GLOBAL_THIS_CLIENT_SECRET
+const { env: { NESTED_CLIENT_SECRET } } = process
+const fallbackEnvironment = process.env || {}
+fallbackEnvironment.FALLBACK_CLIENT_SECRET
+const spreadEnvironment = { ...process.env }
+spreadEnvironment.SPREAD_CLIENT_SECRET
+`, "client.tsx")
+
+    assert.deepEqual(
+      result.clientViolations.map((violation) => violation.split(":").at(-1)).sort(),
+      [
+        "FALLBACK_CLIENT_SECRET",
+        "GLOBAL_THIS_CLIENT_SECRET",
+        "IMPORTED_CLIENT_SECRET",
+        "NESTED_CLIENT_SECRET",
+        "SPREAD_CLIENT_SECRET",
+      ],
+    )
+  })
+
   it("aplica escopo de função a var e não deixa aliases homônimos vazarem", () => {
     const result = scanJavaScriptSource(`
 function readsEnvironment() {
@@ -166,6 +214,23 @@ print(mapping_getter("PYTHON_ENVIRON_GET_ALIAS_ENV"))
     ])
   })
 
+  it("resolve NamedExpr e defaults de função ligados ao ambiente em Python", () => {
+    const names = scanPythonSource(`
+import os
+print((environment := os.environ)["PYTHON_NAMED_EXPR_ENV"])
+def read_mapping(environment=os.environ):
+    return environment["PYTHON_DEFAULT_ENVIRON_ENV"]
+def read_getter(getter=os.getenv):
+    return getter("PYTHON_DEFAULT_GETENV_ENV")
+`)
+
+    assert.deepEqual([...names].sort(), [
+      "PYTHON_DEFAULT_ENVIRON_ENV",
+      "PYTHON_DEFAULT_GETENV_ENV",
+      "PYTHON_NAMED_EXPR_ENV",
+    ])
+  })
+
   it("resolve helper Python somente quando todas as chaves são literais", () => {
     const names = scanPythonSource(`
 import os
@@ -236,6 +301,31 @@ value = config(key)
       () => scanShellSource('printenv PRINTENV_STATIC "$dynamic_name"'),
       /printenv com chave dinâmica/,
     )
+  })
+
+  it("analisa backticks e process substitution com printenv literal", () => {
+    assert.deepEqual(
+      [...scanShellSource("echo `printenv BACKTICK_ENV`\ndiff <(printenv PROCESS_INPUT_ENV) >(printenv PROCESS_OUTPUT_ENV)")].sort(),
+      ["BACKTICK_ENV", "PROCESS_INPUT_ENV", "PROCESS_OUTPUT_ENV"],
+    )
+    assert.throws(() => scanShellSource("echo `printenv DYNAMIC"), /backtick shell sem fechamento/)
+    assert.throws(() => scanShellSource("diff <(printenv DYNAMIC"), /substituição shell sem fechamento/)
+  })
+
+  it("falha fechado em dump de env e resolve nameref literal", () => {
+    assert.throws(() => scanShellSource("env"), /env sem comando expõe ambiente completo/)
+    assert.throws(() => scanShellSource("env -i"), /env sem comando expõe ambiente completo/)
+    assert.throws(() => scanShellSource("env LOCAL_ONLY=value"), /env sem comando expõe ambiente completo/)
+    assert.deepEqual([...scanShellSource("env -i printenv ENV_COMMAND_KEY")], ["ENV_COMMAND_KEY"])
+    assert.deepEqual(
+      [...scanShellSource("declare -n reference=NAMEREF_ENV\nprintf '%s\\n' \"$reference\"")],
+      ["NAMEREF_ENV"],
+    )
+    assert.throws(
+      () => scanShellSource('local -n reference="$pointer"'),
+      /nameref shell com alvo não resolvido/,
+    )
+    assert.throws(() => scanShellSource("typeset -n reference"), /nameref shell sem alvo literal/)
   })
 
   it("encontra variáveis fornecidas pelo GitHub usadas diretamente em run", () => {
