@@ -1,5 +1,4 @@
 export const REPLACEMENT_CHAR = "\uFFFD"
-export const INVERTED_QUESTION_MARK = "\u00BF"
 
 const C1_CONTROL_RE = /[\u0080-\u009F]/g
 const MOJIBAKE_LEAD_RE = /[ÃÂâ][\u0080-\u00FF]/g
@@ -56,13 +55,6 @@ export function detectPublicTextEncodingArtifacts(
     c1Control: countMatches(text, C1_CONTROL_RE),
     mojibake: countMatches(text, MOJIBAKE_LEAD_RE),
   }
-}
-
-export function hasPublicTextEncodingArtifacts(
-  value: string | null | undefined,
-): boolean {
-  const found = detectPublicTextEncodingArtifacts(value)
-  return Object.values(found).some((count) => count > 0)
 }
 
 function artifactScore(value: string): number {
