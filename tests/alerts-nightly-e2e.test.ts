@@ -142,6 +142,52 @@ function collectStringValues(value: unknown): string[] {
   return Object.values(value).flatMap(collectStringValues)
 }
 
+function collectWorkflowUses(parsed: Record<string, unknown>) {
+  assert.ok(isRecord(parsed.jobs), "workflow precisa declarar jobs como mapa YAML")
+
+  const references: Array<{ path: string; value: unknown }> = []
+  for (const [jobName, jobValue] of Object.entries(parsed.jobs)) {
+    assert.ok(isRecord(jobValue), `jobs.${jobName} precisa ser um mapa YAML`)
+
+    if (Object.hasOwn(jobValue, "uses")) {
+      references.push({ path: `jobs.${jobName}.uses`, value: jobValue.uses })
+    }
+
+    if (jobValue.steps === undefined) continue
+    assert.ok(Array.isArray(jobValue.steps), `jobs.${jobName}.steps precisa ser uma lista YAML`)
+    for (const [stepIndex, stepValue] of jobValue.steps.entries()) {
+      assert.ok(
+        isRecord(stepValue),
+        `jobs.${jobName}.steps.${stepIndex} precisa ser um mapa YAML`,
+      )
+      if (Object.hasOwn(stepValue, "uses")) {
+        references.push({
+          path: `jobs.${jobName}.steps.${stepIndex}.uses`,
+          value: stepValue.uses,
+        })
+      }
+    }
+  }
+
+  return references
+}
+
+function assertWorkflowUsesPinned(parsed: Record<string, unknown>) {
+  const references = collectWorkflowUses(parsed)
+  assert.ok(references.length > 0, "workflow nightly precisa declarar ao menos um uses")
+
+  for (const reference of references) {
+    assert.equal(typeof reference.value, "string", `${reference.path} precisa ser string`)
+    const action = reference.value as string
+    if (action.startsWith("./")) continue
+    assert.match(
+      action,
+      /^[^@\s]+@[0-9a-f]{40}$/i,
+      `${reference.path} externo sem SHA imutavel: ${action}`,
+    )
+  }
+}
+
 function assertWorkflowSecurity(workflow: string) {
   const parsed = parseYaml(workflow) as unknown
   assert.ok(isRecord(parsed), "workflow precisa ser um mapa YAML")
@@ -156,6 +202,7 @@ function assertWorkflowSecurity(workflow: string) {
     [],
     "nenhuma chave YAML secrets, inclusive secrets: inherit, e permitida",
   )
+  assertWorkflowUsesPinned(parsed)
 
   for (const scalar of collectStringValues(parsed)) {
     assert.doesNotMatch(
@@ -465,11 +512,11 @@ describe("PF-26 alertas nightly", () => {
     )
     assert.throws(() => assertWorkflowSecurity(withInheritedSecrets))
 
-    const uses = Array.from(workflow.matchAll(/uses:\s*([^\s#]+)/g), (match) => match[1])
-    assert.ok(uses.length > 0)
-    for (const action of uses) {
-      if (action.startsWith("./")) continue
-      assert.match(action, /@[0-9a-f]{40}$/, `action sem SHA imutavel: ${action}`)
-    }
+    const withQuotedMovingActionAndFalsePinComment = workflow.replace(
+      "      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1",
+      `      - "uses": actions/checkout@v4 # uses: actions/checkout@${"a".repeat(40)}`,
+    )
+    assert.notEqual(withQuotedMovingActionAndFalsePinComment, workflow)
+    assert.throws(() => assertWorkflowSecurity(withQuotedMovingActionAndFalsePinComment))
   })
 })
