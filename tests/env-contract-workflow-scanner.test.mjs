@@ -44,6 +44,54 @@ process["env"]["DIRECT_ENV"]
     assert.deepEqual(result.unresolved, [])
   })
 
+  it("resolve alias de process, parênteses e wrappers TypeScript", () => {
+    const result = scanJavaScriptSource(`
+const processAlias = process
+processAlias.env.PROCESS_ALIAS_ENV;
+(process.env).PARENTHESIZED_ENV;
+(process.env as NodeJS.ProcessEnv).AS_WRAPPED_ENV;
+(process.env satisfies NodeJS.ProcessEnv).SATISFIES_WRAPPED_ENV;
+process!.env.NON_NULL_PROCESS_ENV;
+(<NodeJS.ProcessEnv>process.env).ASSERTED_ENV;
+`)
+
+    assert.deepEqual([...result.names].sort(), [
+      "ASSERTED_ENV",
+      "AS_WRAPPED_ENV",
+      "NON_NULL_PROCESS_ENV",
+      "PARENTHESIZED_ENV",
+      "PROCESS_ALIAS_ENV",
+      "SATISFIES_WRAPPED_ENV",
+    ])
+    assert.deepEqual(result.unresolved, [])
+  })
+
+  it("aplica escopo de função a var e não deixa aliases homônimos vazarem", () => {
+    const result = scanJavaScriptSource(`
+function readsEnvironment() {
+  var processAlias = process
+  var environment = processAlias.env
+  environment.VAR_ALIAS_ENV
+  {
+    var environment = { NOT_AN_ENV: true }
+  }
+  environment.NOT_AN_ENV
+}
+function shadowsProcess() {
+  process.env.NOT_GLOBAL_PROCESS
+  var process = { env: {} }
+}
+try {
+  throw new Error("fixture")
+} catch (process) {
+  process.env.NOT_GLOBAL_PROCESS_EITHER
+}
+process.env.AFTER_CATCH_ENV
+`)
+
+    assert.deepEqual([...result.names].sort(), ["AFTER_CATCH_ENV", "VAR_ALIAS_ENV"])
+  })
+
   it("respeita ordem e escopo de constantes homônimas em JS", () => {
     const result = scanJavaScriptSource(`
 const key = "OUTER_ENV"
@@ -97,6 +145,61 @@ process.env.NODE_ENV
     )
   })
 
+  it("resolve aliases estruturais de os, environ e getenv em Python", () => {
+    const names = scanPythonSource(`
+import os as operating_system
+module_alias = operating_system
+environment = module_alias.environ
+environment_alias = environment
+print(environment_alias["PYTHON_MODULE_ALIAS_ENV"])
+getter = module_alias.getenv
+getter_alias = getter
+print(getter_alias("PYTHON_GETENV_ALIAS_ENV"))
+mapping_getter = module_alias.environ.get
+print(mapping_getter("PYTHON_ENVIRON_GET_ALIAS_ENV"))
+`)
+
+    assert.deepEqual([...names].sort(), [
+      "PYTHON_ENVIRON_GET_ALIAS_ENV",
+      "PYTHON_GETENV_ALIAS_ENV",
+      "PYTHON_MODULE_ALIAS_ENV",
+    ])
+  })
+
+  it("resolve helper Python somente quando todas as chaves são literais", () => {
+    const names = scanPythonSource(`
+import os
+def config(name):
+    return os.environ.get(name)
+first = config("PYTHON_HELPER_FIRST_ENV")
+second = config("PYTHON_HELPER_SECOND_ENV")
+`)
+    assert.deepEqual([...names].sort(), ["PYTHON_HELPER_FIRST_ENV", "PYTHON_HELPER_SECOND_ENV"])
+
+    assert.throws(
+      () =>
+        scanPythonSource(`
+import os
+def config(name):
+    return os.environ.get(name)
+key = input()
+value = config(key)
+`),
+      /Python.*sem resolução estática.*dynamic Python environment key/s,
+    )
+  })
+
+  it("falha fechado em chave ou acessor Python dinâmico", () => {
+    assert.throws(
+      () => scanPythonSource('import os as operating_system\nprint(operating_system.environ[input()])\n'),
+      /dynamic Python environment key/,
+    )
+    assert.throws(
+      () => scanPythonSource('import os\nenvironment = getattr(os, "environ")\n'),
+      /dynamic Python environment accessor/,
+    )
+  })
+
   it("detecta atribuição com igual e printenv literal no shell", () => {
     assert.deepEqual(
       [...scanShellSource('${ASSIGN_DEFAULT_ENV=default}\nprintenv PRINTENV_LITERAL_ENV\n')].sort(),
@@ -106,7 +209,33 @@ process.env.NODE_ENV
 
   it("falha fechado em expansão indireta e printenv dinâmico", () => {
     assert.throws(() => scanShellSource('${!TARGET_NAME}'), /expansão shell indireta/)
+    assert.throws(() => scanShellSource('${!target_name}'), /expansão shell indireta.*target_name/)
+    assert.throws(() => scanShellSource('${!Mixed_Case_Pointer}'), /expansão shell indireta/)
+    assert.throws(() => scanShellSource('${!lowercase_prefix*}'), /expansão shell indireta/)
     assert.throws(() => scanShellSource('printenv "$TARGET_NAME"'), /printenv com chave dinâmica/)
+  })
+
+  it("falha fechado em reavaliação shell sem confundir opções de outras ferramentas", () => {
+    assert.throws(() => scanShellSource('eval "$command"'), /reavaliação shell/)
+    assert.throws(() => scanShellSource('command eval "$command"'), /reavaliação shell/)
+    assert.throws(() => scanShellSource('if eval "$command"; then :; fi'), /reavaliação shell/)
+    assert.throws(() => scanShellSource('bash -lc "$command"'), /reavaliação shell/)
+    assert.throws(() => scanShellSource('printf "%s" "$command" | sh -c "$(cat)"'), /reavaliação shell/)
+    assert.throws(() => scanShellSource('echo "$(eval \'$command\')"'), /reavaliação shell/)
+    assert.doesNotThrow(() => scanShellSource("node --eval 'console.log(1)'"))
+    assert.doesNotThrow(() => scanShellSource('${!versions[@]}'))
+    assert.doesNotThrow(() => scanShellSource('bash -c instalar'))
+  })
+
+  it("registra todos os argumentos literais de printenv", () => {
+    assert.deepEqual(
+      [...scanShellSource('printenv PRINTENV_FIRST PRINTENV_SECOND "PRINTENV_THIRD"')].sort(),
+      ["PRINTENV_FIRST", "PRINTENV_SECOND", "PRINTENV_THIRD"],
+    )
+    assert.throws(
+      () => scanShellSource('printenv PRINTENV_STATIC "$dynamic_name"'),
+      /printenv com chave dinâmica/,
+    )
   })
 
   it("encontra variáveis fornecidas pelo GitHub usadas diretamente em run", () => {
@@ -135,6 +264,17 @@ jobs:
 `)
 
     assert.deepEqual([...names], ["GITHUB_ACTIONS"])
+  })
+
+  it("aceita espaço YAML antes dos dois pontos em run", () => {
+    const names = scanWorkflowSource(`
+jobs:
+  verify:
+    steps:
+      - run   : printenv RUN_SPACE_FIRST RUN_SPACE_SECOND
+`)
+
+    assert.deepEqual([...names].sort(), ["RUN_SPACE_FIRST", "RUN_SPACE_SECOND"])
   })
 
   it("remove aspas YAML de run inline antes de interpretar shell", () => {
@@ -184,11 +324,31 @@ jobs:
   it("falha fechado em bracket notation dinâmica de Actions", () => {
     assert.throws(
       () => scanWorkflowSource("jobs:\n  verify:\n    env:\n      VALUE: ${{ secrets[env.NODE_ENV] }}\n"),
-      /acesso dinâmico de Actions.*secrets\[env\.NODE_ENV\]/,
+      /acesso bare ou dinâmico de Actions.*secrets\[env\.NODE_ENV\]/,
     )
     assert.throws(
       () => scanWorkflowSource("jobs:\n  verify:\n    env:\n      VALUE: ${{ vars[matrix.key] }}\n"),
-      /acesso dinâmico de Actions/,
+      /acesso bare ou dinâmico de Actions/,
+    )
+  })
+
+  it("falha fechado em contextos Actions bare em qualquer expressão bruta", () => {
+    assert.throws(
+      () => scanWorkflowSource("not-even-yaml: ${{ toJSON(secrets) }}\n"),
+      /acesso bare ou dinâmico de Actions.*toJSON\(secrets\)/,
+    )
+    assert.throws(
+      () => scanWorkflowSource("value: ${{ contains(vars, 'x') }}\n"),
+      /acesso bare ou dinâmico de Actions/,
+    )
+    assert.throws(
+      () => scanWorkflowSource("value: ${{ env }}\n"),
+      /acesso bare ou dinâmico de Actions/,
+    )
+    assert.doesNotThrow(() => scanWorkflowSource("value: ${{ format('{0}', 'secrets vars env') }}\n"))
+    assert.deepEqual(
+      [...scanWorkflowSource("value: ${{ format('}}', secrets['ACTION_AFTER_BRACES']) }}\n")],
+      ["ACTION_AFTER_BRACES"],
     )
   })
 
@@ -297,6 +457,16 @@ jobs:
     assert.match(`${result.stdout}\n${result.stderr}`, /UNCLASSIFIED_CHAIN_SECRET/)
   })
 
+  it("faz aliases de process e wrappers TypeScript reprovarem com exit nonzero", () => {
+    const result = runWithTemporaryFixture(
+      "tests/__env-contract-negative-structural.ts",
+      'const runtime = process\nconst environment = (runtime.env as NodeJS.ProcessEnv)\nconsole.log(environment.UNCLASSIFIED_STRUCTURAL_SECRET)\n',
+    )
+
+    assert.notEqual(result.status, 0)
+    assert.match(`${result.stdout}\n${result.stderr}`, /UNCLASSIFIED_STRUCTURAL_SECRET/)
+  })
+
   it("faz leitura shell externa autoatribuída reprovar com exit nonzero", () => {
     const result = runWithTemporaryFixture(
       "scripts/__env-contract-negative-shell.sh",
@@ -324,7 +494,17 @@ jobs:
     )
 
     assert.notEqual(result.status, 0)
-    assert.match(`${result.stdout}\n${result.stderr}`, /acesso dinâmico de Actions/)
+    assert.match(`${result.stdout}\n${result.stderr}`, /acesso bare ou dinâmico de Actions/)
+  })
+
+  it("faz contexto Actions bare reprovar com exit nonzero", () => {
+    const result = runWithTemporaryFixture(
+      ".github/workflows/__env-contract-negative-bare-context.yml",
+      "jobs:\n  verify:\n    env:\n      VALUE: ${{ toJSON(secrets) }}\n",
+    )
+
+    assert.notEqual(result.status, 0)
+    assert.match(`${result.stdout}\n${result.stderr}`, /acesso bare ou dinâmico de Actions/)
   })
 
   it("faz environ importado em Python reprovar com exit nonzero", () => {
@@ -335,6 +515,32 @@ jobs:
 
     assert.notEqual(result.status, 0)
     assert.match(`${result.stdout}\n${result.stderr}`, /UNCLASSIFIED_PYTHON_SECRET/)
+  })
+
+  it("faz alias encadeado de os.environ reprovar com exit nonzero", () => {
+    const result = runWithTemporaryFixture(
+      "scripts/__env-contract-negative-python-alias.py",
+      'import os as operating_system\nenvironment = operating_system.environ\nsecond = environment\nprint(second["UNCLASSIFIED_PYTHON_ALIAS_SECRET"])\n',
+    )
+
+    assert.notEqual(result.status, 0)
+    assert.match(`${result.stdout}\n${result.stderr}`, /UNCLASSIFIED_PYTHON_ALIAS_SECRET/)
+  })
+
+  it("faz indireção minúscula e eval shell reprovarem com exit nonzero", () => {
+    const indirect = runWithTemporaryFixture(
+      "scripts/__env-contract-negative-indirect.sh",
+      'pointer="UNCLASSIFIED_INDIRECT_SECRET"\nprintf "%s\\n" "${!pointer}"\n',
+    )
+    assert.notEqual(indirect.status, 0)
+    assert.match(`${indirect.stdout}\n${indirect.stderr}`, /expansão shell indireta/)
+
+    const reevaluated = runWithTemporaryFixture(
+      "scripts/__env-contract-negative-eval.sh",
+      'command="printf %s \\\"$UNCLASSIFIED_EVAL_SECRET\\\""\neval "$command"\n',
+    )
+    assert.notEqual(reevaluated.status, 0)
+    assert.match(`${reevaluated.stdout}\n${reevaluated.stderr}`, /reavaliação shell/)
   })
 
   it("faz env server-only em use client reprovar com exit nonzero", () => {
