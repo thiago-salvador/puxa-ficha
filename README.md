@@ -100,6 +100,12 @@ desse ciclo, por meio de `unstable_cache`.
 npm ci
 ```
 
+Para rodar a aplicação ou um script que usa integrações, copie somente as
+chaves necessárias de [`.env.example`](.env.example) para `.env.local`. O
+inventário completo, com obrigatoriedade e fallback, fica em
+[`Settings/AUTOMATIONS_AND_ENVIRONMENTS.md`](Settings/AUTOMATIONS_AND_ENVIRONMENTS.md).
+Credenciais reais nunca entram no Git.
+
 Os gates de um PR não pedem banco, conta de nuvem nem arquivo `.env`:
 
 ```bash

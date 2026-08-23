@@ -54,6 +54,9 @@ jobs:
       - name: Typecheck (scripts)
         run: npm run check:scripts
 
+      - name: Environment contract
+        run: npm run check:env-contract
+
       # Valida data/candidatos.json (contrato, slugs únicos, colisões de
       # nome_urna, SQ duplicado). Local e sem segredo, então roda em qualquer
       # PR de fork. Sem este gate, um seed inválido passa no CI e só explode
