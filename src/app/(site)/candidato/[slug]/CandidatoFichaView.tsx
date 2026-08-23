@@ -439,10 +439,6 @@ export async function CandidatoFichaView({
         <DataSourceNotice status={sourceStatus} message={sourceMessage} />
       </div>
 
-      <SectionDivider />
-
-      <ProfileSourceFooter ficha={ficha} />
-
       <DeferredCandidatoProfile ficha={ficha} initialTab={profileInitialTab} />
 
       {ficha.biografia && (
@@ -508,6 +504,10 @@ export async function CandidatoFichaView({
           </nav>
         </>
       )}
+
+      <SectionDivider />
+
+      <ProfileSourceFooter ficha={ficha} />
 
       <Footer />
     </div>
