@@ -21,111 +21,182 @@ function trackedFiles() {
     .filter(Boolean)
 }
 
-function isProcessEnv(node, sourceFile) {
-  return (
-    ts.isPropertyAccessExpression(node) &&
-    node.expression.getText(sourceFile) === "process" &&
-    node.name.text === "env"
+function lexicalScope(parent = null) {
+  return { parent, bindings: new Map() }
+}
+
+function findBinding(scope, name) {
+  for (let current = scope; current; current = current.parent) {
+    if (current.bindings.has(name)) return current.bindings.get(name)
+  }
+  return undefined
+}
+
+function updateBinding(scope, name, binding) {
+  for (let current = scope; current; current = current.parent) {
+    if (current.bindings.has(name)) {
+      current.bindings.set(name, binding)
+      return
+    }
+  }
+  scope.bindings.set(name, binding)
+}
+
+export function scanJavaScriptSource(source, file = "<fixture>.ts") {
+  const names = new Set()
+  const unresolved = []
+  const clientViolations = []
+  const sourceFile = ts.createSourceFile(
+    file,
+    source,
+    ts.ScriptTarget.Latest,
+    true,
+    file.endsWith("x") ? ts.ScriptKind.TSX : ts.ScriptKind.TS,
   )
+  let isClientFile = false
+  for (const statement of sourceFile.statements) {
+    if (!ts.isExpressionStatement(statement) || !ts.isStringLiteral(statement.expression)) break
+    if (statement.expression.text === "use client") isClientFile = true
+  }
+
+  function staticString(node, scope) {
+    if (ts.isStringLiteralLike(node)) return node.text
+    if (ts.isIdentifier(node)) {
+      const binding = findBinding(scope, node.text)
+      if (binding?.kind === "string") return binding.value
+    }
+    return undefined
+  }
+
+  function isProcessObject(node, scope) {
+    return ts.isIdentifier(node) && node.text === "process" && !findBinding(scope, "process")
+  }
+
+  function isEnvObject(node, scope) {
+    if (ts.isIdentifier(node)) return findBinding(scope, node.text)?.kind === "env"
+    if (ts.isPropertyAccessExpression(node)) {
+      return isProcessObject(node.expression, scope) && node.name.text === "env"
+    }
+    if (ts.isElementAccessExpression(node) && isProcessObject(node.expression, scope)) {
+      return staticString(node.argumentExpression, scope) === "env"
+    }
+    return false
+  }
+
+  function bindingFor(node, scope) {
+    if (!node) return { kind: "other" }
+    if (isEnvObject(node, scope)) return { kind: "env" }
+    const value = staticString(node, scope)
+    if (value !== undefined) return { kind: "string", value }
+    return { kind: "other" }
+  }
+
+  function recordName(name, node) {
+    names.add(name)
+    if (isClientFile && name !== "NODE_ENV" && !name.startsWith("NEXT_PUBLIC_")) {
+      const line = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile)).line + 1
+      clientViolations.push(`${file}:${line}:${name}`)
+    }
+  }
+
+  function bindPattern(name, initializer, scope) {
+    if (ts.isIdentifier(name)) {
+      scope.bindings.set(name.text, bindingFor(initializer, scope))
+      return
+    }
+    if (!ts.isObjectBindingPattern(name)) return
+
+    const fromProcess = initializer && isProcessObject(initializer, scope)
+    const fromEnv = initializer && isEnvObject(initializer, scope)
+    for (const element of name.elements) {
+      if (!ts.isIdentifier(element.name)) continue
+      const property = element.propertyName ?? element.name
+      const propertyName = ts.isComputedPropertyName(property)
+        ? staticString(property.expression, scope)
+        : ts.isIdentifier(property) || ts.isStringLiteralLike(property)
+          ? property.text
+          : undefined
+      if (fromProcess && propertyName === "env") {
+        scope.bindings.set(element.name.text, { kind: "env" })
+      } else {
+        if (fromEnv && propertyName) recordName(propertyName, element)
+        scope.bindings.set(element.name.text, { kind: "other" })
+      }
+    }
+  }
+
+  function visit(node, scope) {
+    if (ts.isSourceFile(node)) {
+      for (const statement of node.statements) visit(statement, scope)
+      return
+    }
+    if (ts.isBlock(node)) {
+      const blockScope = lexicalScope(scope)
+      for (const statement of node.statements) visit(statement, blockScope)
+      return
+    }
+    if (ts.isFunctionLike(node)) {
+      if ("name" in node && node.name && ts.isIdentifier(node.name)) {
+        scope.bindings.set(node.name.text, { kind: "other" })
+      }
+      const functionScope = lexicalScope(scope)
+      for (const parameter of node.parameters) {
+        if (parameter.initializer) visit(parameter.initializer, scope)
+        bindPattern(parameter.name, parameter.initializer, functionScope)
+      }
+      if (node.body) visit(node.body, functionScope)
+      return
+    }
+    if (ts.isVariableDeclaration(node)) {
+      if (node.initializer) visit(node.initializer, scope)
+      bindPattern(node.name, node.initializer, scope)
+      return
+    }
+    if (
+      ts.isBinaryExpression(node) &&
+      node.operatorToken.kind === ts.SyntaxKind.EqualsToken &&
+      ts.isIdentifier(node.left)
+    ) {
+      visit(node.right, scope)
+      updateBinding(scope, node.left.text, bindingFor(node.right, scope))
+      return
+    }
+    if (ts.isPropertyAccessExpression(node) && isEnvObject(node.expression, scope)) {
+      recordName(node.name.text, node)
+    }
+    if (ts.isElementAccessExpression(node)) {
+      if (isEnvObject(node.expression, scope)) {
+        const key = staticString(node.argumentExpression, scope)
+        if (key) recordName(key, node)
+        else {
+          const line = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile)).line + 1
+          unresolved.push(`${file}:${line}:dynamic env key`)
+        }
+      } else if (isProcessObject(node.expression, scope)) {
+        const key = staticString(node.argumentExpression, scope)
+        if (key === undefined) {
+          const line = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile)).line + 1
+          unresolved.push(`${file}:${line}:dynamic process key`)
+        }
+      }
+    }
+    ts.forEachChild(node, (child) => visit(child, scope))
+  }
+
+  visit(sourceFile, lexicalScope())
+  return { names, unresolved, clientViolations }
 }
 
 function scanJavaScript(files) {
   const names = new Set()
   const unresolved = []
   const clientViolations = []
-
   for (const file of files.filter((entry) => /\.(?:[cm]?[jt]sx?)$/.test(entry))) {
     const source = readFileSync(path.join(root, file), "utf8")
-    const sourceFile = ts.createSourceFile(
-      file,
-      source,
-      ts.ScriptTarget.Latest,
-      true,
-      file.endsWith("x") ? ts.ScriptKind.TSX : ts.ScriptKind.TS,
-    )
-    const envAliases = new Set()
-    const stringConstants = new Map()
-    const isClientFile =
-      sourceFile.statements.length > 0 &&
-      ts.isExpressionStatement(sourceFile.statements[0]) &&
-      ts.isStringLiteral(sourceFile.statements[0].expression) &&
-      sourceFile.statements[0].expression.text === "use client"
-
-    function collect(node) {
-      if (ts.isVariableDeclaration(node) && ts.isIdentifier(node.name)) {
-        if (node.initializer && isProcessEnv(node.initializer, sourceFile)) {
-          envAliases.add(node.name.text)
-        }
-        if (node.initializer && ts.isStringLiteralLike(node.initializer)) {
-          stringConstants.set(node.name.text, node.initializer.text)
-        }
-      }
-      if (
-        ts.isVariableDeclaration(node) &&
-        ts.isObjectBindingPattern(node.name) &&
-        node.initializer?.getText(sourceFile) === "process"
-      ) {
-        for (const element of node.name.elements) {
-          const property = element.propertyName ?? element.name
-          if (
-            ts.isIdentifier(property) &&
-            property.text === "env" &&
-            ts.isIdentifier(element.name)
-          ) {
-            envAliases.add(element.name.text)
-          }
-        }
-      }
-      if (
-        ts.isParameter(node) &&
-        ts.isIdentifier(node.name) &&
-        node.initializer &&
-        isProcessEnv(node.initializer, sourceFile)
-      ) {
-        envAliases.add(node.name.text)
-      }
-      ts.forEachChild(node, collect)
-    }
-    collect(sourceFile)
-
-    function isEnvObject(node) {
-      return isProcessEnv(node, sourceFile) || (ts.isIdentifier(node) && envAliases.has(node.text))
-    }
-
-    function recordName(name, node) {
-      names.add(name)
-      if (isClientFile && name !== "NODE_ENV" && !name.startsWith("NEXT_PUBLIC_")) {
-        const line = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile)).line + 1
-        clientViolations.push(`${file}:${line}:${name}`)
-      }
-    }
-
-    function visit(node) {
-      if (ts.isPropertyAccessExpression(node) && isEnvObject(node.expression)) {
-        recordName(node.name.text, node)
-      }
-      if (ts.isElementAccessExpression(node) && isEnvObject(node.expression)) {
-        const argument = node.argumentExpression
-        if (ts.isStringLiteralLike(argument)) {
-          recordName(argument.text, node)
-        } else if (ts.isIdentifier(argument) && stringConstants.has(argument.text)) {
-          recordName(stringConstants.get(argument.text), node)
-        } else {
-          const line = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile)).line + 1
-          unresolved.push(`${file}:${line}`)
-        }
-      }
-      if (ts.isVariableDeclaration(node) && ts.isObjectBindingPattern(node.name) && node.initializer) {
-        if (isEnvObject(node.initializer)) {
-          for (const element of node.name.elements) {
-            const property = element.propertyName ?? element.name
-            if (ts.isIdentifier(property)) recordName(property.text, element)
-          }
-        }
-      }
-      ts.forEachChild(node, visit)
-    }
-    visit(sourceFile)
+    const result = scanJavaScriptSource(source, file)
+    for (const name of result.names) names.add(name)
+    unresolved.push(...result.unresolved)
+    clientViolations.push(...result.clientViolations)
   }
 
   const allowedDynamicPrefixes = [
@@ -151,17 +222,29 @@ function scanJavaScript(files) {
   return names
 }
 
-function scanPython(files) {
+export function scanPythonSource(source) {
   const names = new Set()
   const patterns = [
     /(?:os\.)?getenv\(\s*["']([A-Z][A-Z0-9_]*)["']/g,
     /os\.environ(?:\.get\(\s*|\[\s*)["']([A-Z][A-Z0-9_]*)["']/g,
   ]
+  for (const match of source.matchAll(/from\s+os\s+import\s+environ(?:\s+as\s+([A-Za-z_][A-Za-z0-9_]*))?/g)) {
+    const alias = match[1] ?? "environ"
+    patterns.push(
+      new RegExp(`\\b${alias}(?:\\.get\\(\\s*|\\[\\s*)["']([A-Z][A-Z0-9_]*)["']`, "g"),
+    )
+  }
+  for (const pattern of patterns) {
+    for (const match of source.matchAll(pattern)) names.add(match[1])
+  }
+  return names
+}
+
+function scanPython(files) {
+  const names = new Set()
   for (const file of files.filter((entry) => entry.endsWith(".py"))) {
     const source = readFileSync(path.join(root, file), "utf8")
-    for (const pattern of patterns) {
-      for (const match of source.matchAll(pattern)) names.add(match[1])
-    }
+    for (const name of scanPythonSource(source)) names.add(name)
   }
   return names
 }
@@ -186,12 +269,12 @@ export function scanShellSource(source) {
     }
     if (singleQuoted) {
       if (character === "'") singleQuoted = false
-      sanitized += " "
+      sanitized += character === "$" ? " " : character
       continue
     }
     if (character === "'" && !doubleQuoted) {
       singleQuoted = true
-      sanitized += " "
+      sanitized += character
       continue
     }
     if (character === '"' && previous !== "\\") doubleQuoted = !doubleQuoted
@@ -206,13 +289,15 @@ export function scanShellSource(source) {
   function commands() {
     const result = []
     let current = ""
-    let quoted = false
+    let single = false
+    let double = false
     for (let index = 0; index < sanitized.length; index += 1) {
       const character = sanitized[index]
       const previous = index === 0 ? "" : sanitized[index - 1]
-      if (character === '"' && previous !== "\\") quoted = !quoted
+      if (character === "'" && !double) single = !single
+      if (character === '"' && !single && previous !== "\\") double = !double
       const pair = sanitized.slice(index, index + 2)
-      if (!quoted && (character === "\n" || character === ";" || pair === "&&" || pair === "||")) {
+      if (!single && !double && (character === "\n" || character === ";" || pair === "&&" || pair === "||")) {
         if (current.trim()) result.push(current)
         current = ""
         if (pair === "&&" || pair === "||") index += 1
@@ -227,15 +312,17 @@ export function scanShellSource(source) {
   function words(command) {
     const result = []
     let current = ""
-    let quoted = false
+    let single = false
+    let double = false
     let substitutionDepth = 0
     for (let index = 0; index < command.length; index += 1) {
       const character = command[index]
       const previous = index === 0 ? "" : command[index - 1]
-      if (character === '"' && previous !== "\\") quoted = !quoted
-      if (!quoted && command.slice(index, index + 2) === "$(") substitutionDepth += 1
-      if (!quoted && character === ")" && substitutionDepth > 0) substitutionDepth -= 1
-      if (!quoted && substitutionDepth === 0 && /\s/.test(character)) {
+      if (character === "'" && !double) single = !single
+      if (character === '"' && !single && previous !== "\\") double = !double
+      if (!single && command.slice(index, index + 2) === "$(") substitutionDepth += 1
+      if (!single && character === ")" && substitutionDepth > 0) substitutionDepth -= 1
+      if (!single && !double && substitutionDepth === 0 && /\s/.test(character)) {
         if (current) result.push(current)
         current = ""
         continue
@@ -262,7 +349,13 @@ export function scanShellSource(source) {
 
   const locals = new Set()
   for (const command of commands()) {
-    for (const match of command.matchAll(/(?<!\\)\$\{([A-Z][A-Z0-9_]*)(?=[:}?+\-])/g)) {
+    const indirect = [...command.matchAll(/(?<!\\)\$\{!([A-Z][A-Z0-9_]*)\}/g)]
+    if (indirect.length > 0) {
+      throw new Error(
+        `expansão shell indireta sem resolução estática: ${indirect.map((match) => match[1]).join(", ")}`,
+      )
+    }
+    for (const match of command.matchAll(/(?<!\\)\$\{([A-Z][A-Z0-9_]*)(?=[:}?+\-=])/g)) {
       if (!locals.has(match[1])) names.add(match[1])
     }
     for (const match of command.matchAll(/(?<![\\$])\$([A-Z][A-Z0-9_]*)\b/g)) {
@@ -270,6 +363,16 @@ export function scanShellSource(source) {
     }
     for (const match of command.matchAll(/process\.env\.([A-Z][A-Z0-9_]*)/g)) {
       names.add(match[1])
+    }
+    for (const match of command.matchAll(/\bprintenv\s+(?:--\s+)?(?:(?:"([^"$]+)")|(?:'([^'$]+)')|([A-Z][A-Z0-9_]*))/g)) {
+      const key = match[1] ?? match[2] ?? match[3]
+      if (!/^[A-Z][A-Z0-9_]*$/.test(key)) {
+        throw new Error(`printenv com chave dinâmica: ${key}`)
+      }
+      if (!locals.has(key)) names.add(key)
+    }
+    if (/\bprintenv(?:\s|$)/.test(command) && !/\bprintenv\s+(?:--\s+)?(?:"[^"$]+"|'[^'$]+'|[A-Z][A-Z0-9_]*)/.test(command)) {
+      throw new Error(`printenv com chave dinâmica ou ausente: ${command.trim()}`)
     }
     for (const name of persistentAssignments(command)) locals.add(name)
   }
@@ -297,7 +400,17 @@ function workflowRunBlocks(source) {
     const runIndent = match[1].length
     const value = match[2].trim()
     if (value && !/^[>|][+-]?$/.test(value)) {
-      blocks.push(value)
+      if (value.startsWith("'") && value.endsWith("'")) {
+        blocks.push(value.slice(1, -1).replace(/''/g, "'"))
+      } else if (value.startsWith('"') && value.endsWith('"')) {
+        try {
+          blocks.push(JSON.parse(value))
+        } catch {
+          throw new Error(`run inline YAML com aspas inválidas: ${value}`)
+        }
+      } else {
+        blocks.push(value)
+      }
       continue
     }
 
@@ -314,7 +427,8 @@ function workflowRunBlocks(source) {
       blockLines.push(line)
     }
     const strip = contentIndent ?? runIndent + 2
-    blocks.push(blockLines.map((line) => line.slice(Math.min(strip, line.length))).join("\n"))
+    const normalized = blockLines.map((line) => line.slice(Math.min(strip, line.length)))
+    blocks.push(value.startsWith(">") ? normalized.join(" ") : normalized.join("\n"))
   }
 
   return blocks
@@ -325,10 +439,18 @@ export function scanWorkflowSource(source) {
   for (const match of source.matchAll(/^\s{2,12}([A-Z][A-Z0-9_]*):\s*(?!$)/gm)) {
     names.add(match[1])
   }
-  for (const match of source.matchAll(
-    /\$\{\{\s*(?:secrets|vars|env)(?:\.([A-Z][A-Z0-9_]*)|\[\s*["']([A-Z][A-Z0-9_]*)["']\s*\])/g,
-  )) {
-    names.add(match[1] ?? match[2])
+  for (const expressionMatch of source.matchAll(/\$\{\{([\s\S]*?)\}\}/g)) {
+    const expression = expressionMatch[1]
+    for (const match of expression.matchAll(/\b(?:secrets|vars|env)\.([A-Z][A-Z0-9_]*)/g)) {
+      names.add(match[1])
+    }
+    for (const match of expression.matchAll(/\b(secrets|vars|env)\s*\[([^\]]+)\]/g)) {
+      const keyMatch = /^\s*["']([A-Z][A-Z0-9_]*)["']\s*$/.exec(match[2])
+      if (!keyMatch) {
+        throw new Error(`acesso dinâmico de Actions sem resolução estática: ${match[0]}`)
+      }
+      names.add(keyMatch[1])
+    }
   }
   for (const block of workflowRunBlocks(source)) {
     for (const name of scanShellSource(block)) names.add(name)

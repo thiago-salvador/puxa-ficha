@@ -7,6 +7,9 @@ import { fileURLToPath } from "node:url"
 import {
   checkDocs,
   checkRunbookVercelInventory,
+  scanJavaScriptSource,
+  scanPythonSource,
+  scanShellSource,
   scanWorkflowSource,
 } from "../scripts/check-env-contract.mjs"
 
@@ -26,6 +29,86 @@ function runWithTemporaryFixture(relativePath, source) {
 }
 
 describe("env contract workflow scanner", () => {
+  it("propaga aliases JS encadeados, computados e bracket notation direta", () => {
+    const result = scanJavaScriptSource(`
+const first = process.env
+const second = first
+second.CHAINED_ENV
+const processKey = "env"
+const computed = process[processKey]
+computed.COMPUTED_ENV
+process["env"]["DIRECT_ENV"]
+`)
+
+    assert.deepEqual([...result.names].sort(), ["CHAINED_ENV", "COMPUTED_ENV", "DIRECT_ENV"])
+    assert.deepEqual(result.unresolved, [])
+  })
+
+  it("respeita ordem e escopo de constantes homônimas em JS", () => {
+    const result = scanJavaScriptSource(`
+const key = "OUTER_ENV"
+process.env[key]
+{
+  const key = "INNER_ENV"
+  process.env[key]
+}
+process.env[key]
+`)
+
+    assert.deepEqual([...result.names].sort(), ["INNER_ENV", "OUTER_ENV"])
+  })
+
+  it("não promove aliases locais homônimos a process.env", () => {
+    const result = scanJavaScriptSource(`
+const source = { value: "local" }
+const alias = source
+alias.NOT_AN_ENV
+{
+  const source = process.env
+  source.REAL_ENV
+}
+alias.STILL_NOT_AN_ENV
+`)
+
+    assert.deepEqual([...result.names], ["REAL_ENV"])
+  })
+
+  it("percorre todo o directive prologue para a fronteira client/server", () => {
+    const blocked = scanJavaScriptSource(`
+"use strict"
+"use client"
+process.env.SUPABASE_SERVICE_ROLE_KEY
+`, "client.tsx")
+    assert.match(blocked.clientViolations[0], /SUPABASE_SERVICE_ROLE_KEY/)
+
+    const allowed = scanJavaScriptSource(`
+"use strict"
+"use client"
+process.env.NEXT_PUBLIC_SITE_URL
+process.env.NODE_ENV
+`, "client.tsx")
+    assert.deepEqual(allowed.clientViolations, [])
+  })
+
+  it("inclui from os import environ no scanner Python", () => {
+    assert.deepEqual(
+      [...scanPythonSource('from os import environ\nprint(environ["PYTHON_IMPORTED_ENV"])\n')],
+      ["PYTHON_IMPORTED_ENV"],
+    )
+  })
+
+  it("detecta atribuição com igual e printenv literal no shell", () => {
+    assert.deepEqual(
+      [...scanShellSource('${ASSIGN_DEFAULT_ENV=default}\nprintenv PRINTENV_LITERAL_ENV\n')].sort(),
+      ["ASSIGN_DEFAULT_ENV", "PRINTENV_LITERAL_ENV"],
+    )
+  })
+
+  it("falha fechado em expansão indireta e printenv dinâmico", () => {
+    assert.throws(() => scanShellSource('${!TARGET_NAME}'), /expansão shell indireta/)
+    assert.throws(() => scanShellSource('printenv "$TARGET_NAME"'), /printenv com chave dinâmica/)
+  })
+
   it("encontra variáveis fornecidas pelo GitHub usadas diretamente em run", () => {
     const names = scanWorkflowSource(`
 jobs:
@@ -54,6 +137,37 @@ jobs:
     assert.deepEqual([...names], ["GITHUB_ACTIONS"])
   })
 
+  it("remove aspas YAML de run inline antes de interpretar shell", () => {
+    const singleQuoted = scanWorkflowSource(`
+jobs:
+  verify:
+    steps:
+      - run: 'echo "$SINGLE_QUOTED_YAML_ENV"'
+`)
+    const doubleQuoted = scanWorkflowSource(`
+jobs:
+  verify:
+    steps:
+      - run: "echo \\"$DOUBLE_QUOTED_YAML_ENV\\""
+`)
+
+    assert.deepEqual([...singleQuoted], ["SINGLE_QUOTED_YAML_ENV"])
+    assert.deepEqual([...doubleQuoted], ["DOUBLE_QUOTED_YAML_ENV"])
+  })
+
+  it("interpreta bloco YAML dobrado como um único comando shell", () => {
+    const names = scanWorkflowSource(`
+jobs:
+  verify:
+    steps:
+      - run: >-
+          FOLDED_ENV="\${FOLDED_ENV:-fallback}"
+          printenv FOLDED_PRINTENV
+`)
+
+    assert.deepEqual([...names].sort(), ["FOLDED_ENV", "FOLDED_PRINTENV"])
+  })
+
   it("encontra bracket notation de secrets, vars e env", () => {
     const names = scanWorkflowSource(`
 jobs:
@@ -65,6 +179,17 @@ jobs:
 `)
 
     assert.deepEqual([...names].sort(), ["BRACKET_SECRET", "BRACKET_VAR", "LOCAL_ENV"])
+  })
+
+  it("falha fechado em bracket notation dinâmica de Actions", () => {
+    assert.throws(
+      () => scanWorkflowSource("jobs:\n  verify:\n    env:\n      VALUE: ${{ secrets[env.NODE_ENV] }}\n"),
+      /acesso dinâmico de Actions.*secrets\[env\.NODE_ENV\]/,
+    )
+    assert.throws(
+      () => scanWorkflowSource("jobs:\n  verify:\n    env:\n      VALUE: ${{ vars[matrix.key] }}\n"),
+      /acesso dinâmico de Actions/,
+    )
   })
 
   it("não classifica variáveis locais do próprio bloco run", () => {
@@ -162,6 +287,16 @@ jobs:
     assert.match(`${result.stdout}\n${result.stderr}`, /UNCLASSIFIED_ALIAS_SECRET/)
   })
 
+  it("faz alias JS encadeado e computado reprovar com exit nonzero", () => {
+    const result = runWithTemporaryFixture(
+      "tests/__env-contract-negative-chain.ts",
+      'const key = "env"\nconst first = process[key]\nconst second = first\nconsole.log(second.UNCLASSIFIED_CHAIN_SECRET)\n',
+    )
+
+    assert.notEqual(result.status, 0)
+    assert.match(`${result.stdout}\n${result.stderr}`, /UNCLASSIFIED_CHAIN_SECRET/)
+  })
+
   it("faz leitura shell externa autoatribuída reprovar com exit nonzero", () => {
     const result = runWithTemporaryFixture(
       "scripts/__env-contract-negative-shell.sh",
@@ -182,10 +317,30 @@ jobs:
     assert.match(`${result.stdout}\n${result.stderr}`, /UNCLASSIFIED_BRACKET_SECRET/)
   })
 
+  it("faz bracket notation dinâmica de Actions reprovar com exit nonzero", () => {
+    const result = runWithTemporaryFixture(
+      ".github/workflows/__env-contract-negative-dynamic.yml",
+      "jobs:\n  verify:\n    env:\n      VALUE: ${{ secrets[env.NODE_ENV] }}\n",
+    )
+
+    assert.notEqual(result.status, 0)
+    assert.match(`${result.stdout}\n${result.stderr}`, /acesso dinâmico de Actions/)
+  })
+
+  it("faz environ importado em Python reprovar com exit nonzero", () => {
+    const result = runWithTemporaryFixture(
+      "scripts/__env-contract-negative-python.py",
+      'from os import environ\nprint(environ["UNCLASSIFIED_PYTHON_SECRET"])\n',
+    )
+
+    assert.notEqual(result.status, 0)
+    assert.match(`${result.stdout}\n${result.stderr}`, /UNCLASSIFIED_PYTHON_SECRET/)
+  })
+
   it("faz env server-only em use client reprovar com exit nonzero", () => {
     const result = runWithTemporaryFixture(
       "src/__env-contract-negative-client.tsx",
-      '"use client"\nconsole.log(process.env.SUPABASE_SERVICE_ROLE_KEY)\n',
+      '"use strict"\n"use client"\nconsole.log(process.env.SUPABASE_SERVICE_ROLE_KEY)\n',
     )
 
     assert.notEqual(result.status, 0)
