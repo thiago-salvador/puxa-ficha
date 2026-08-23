@@ -120,16 +120,18 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value)
 }
 
-function collectPermissionPaths(value: unknown, path: string[] = []): string[] {
+function collectKeyPaths(value: unknown, targetKey: string, path: string[] = []): string[] {
   if (Array.isArray(value)) {
-    return value.flatMap((item, index) => collectPermissionPaths(item, [...path, String(index)]))
+    return value.flatMap((item, index) =>
+      collectKeyPaths(item, targetKey, [...path, String(index)]),
+    )
   }
   if (!isRecord(value)) return []
 
   return Object.entries(value).flatMap(([key, nested]) => {
     const nextPath = [...path, key]
-    const current = key === "permissions" ? [nextPath.join(".")] : []
-    return [...current, ...collectPermissionPaths(nested, nextPath)]
+    const current = key === targetKey ? [nextPath.join(".")] : []
+    return [...current, ...collectKeyPaths(nested, targetKey, nextPath)]
   })
 }
 
@@ -145,9 +147,14 @@ function assertWorkflowSecurity(workflow: string) {
   assert.ok(isRecord(parsed), "workflow precisa ser um mapa YAML")
   assert.deepEqual(parsed.permissions, { contents: "read" })
   assert.deepEqual(
-    collectPermissionPaths(parsed),
+    collectKeyPaths(parsed, "permissions"),
     ["permissions"],
     "permissions extras, inclusive em jobs, nao sao permitidas",
+  )
+  assert.deepEqual(
+    collectKeyPaths(parsed, "secrets"),
+    [],
+    "nenhuma chave YAML secrets, inclusive secrets: inherit, e permitida",
   )
 
   for (const scalar of collectStringValues(parsed)) {
@@ -451,6 +458,12 @@ describe("PF-26 alertas nightly", () => {
       'CI: "true"\n          LEAK: "${{ secrets[matrix.secret_name] }}"',
     )
     assert.throws(() => assertWorkflowSecurity(withDynamicSecret))
+
+    const withInheritedSecrets = workflow.replace(
+      "jobs:\n  alertas-e2e:",
+      "jobs:\n  reusable:\n    uses: ./.github/workflows/reusable.yml\n    secrets: inherit\n\n  alertas-e2e:",
+    )
+    assert.throws(() => assertWorkflowSecurity(withInheritedSecrets))
 
     const uses = Array.from(workflow.matchAll(/uses:\s*([^\s#]+)/g), (match) => match[1])
     assert.ok(uses.length > 0)
