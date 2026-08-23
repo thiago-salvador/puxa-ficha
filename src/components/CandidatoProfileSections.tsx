@@ -677,7 +677,7 @@ export function MoneyTabSection({
           <div className="mt-6 space-y-3">
             {[...patrimonio]
               .sort((a, b) => b.ano_eleicao - a.ano_eleicao)
-              .map((item) => (
+              .map((item, index) => (
                 <div
                   key={item.id}
                   data-pf-timeline-ref={`patrimonio-${item.id}`}
@@ -692,7 +692,9 @@ export function MoneyTabSection({
                       title={`${item.ano_eleicao}`}
                       valor={formatBRL(item.valor_total)}
                       defaultOpen={
-                        expandAllForAudit || highlightTimelineRef === `patrimonio-${item.id}`
+                        index === 0 ||
+                        expandAllForAudit ||
+                        highlightTimelineRef === `patrimonio-${item.id}`
                       }
                     >
                       <div className="space-y-2">

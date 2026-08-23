@@ -241,6 +241,7 @@ test("a ordem é do ano, não do formato de card", () => {
     [2022, 2018, 2014, 2010],
     "mais recente primeiro, alternando os dois formatos de card",
   )
+  assert.equal((html.match(/aria-expanded="true"/g) ?? []).length, 1)
 })
 
 test("cada declaração tem exatamente um alvo de scroll da timeline", () => {
