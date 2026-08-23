@@ -84,13 +84,14 @@ segura.
 | `PF_EXPECTED_DEPLOY_SHA`, `PF_EXPECTED_SHA` | SHA esperado nos readbacks e applies | Obrigatórias somente para os scripts que as leem; ausência aborta o gate correspondente. | Operador ou workflow |
 | `PF_PUBLIC_SITE_URL`, `PF_PUBLIC_ORIGIN`, `PF_URL_PARA_VALIDAR` | Alvo de readbacks HTTP | Opcionais ou obrigatórias conforme o script; fallbacks e validações ficam no próprio gate. | Operador local |
 | `PF_OUTPUT_DIR` | Diretório de evidência do readback | Opcional, cai para o diretório datado do script. | Operador local |
-| `PF_REPLAY_POSTGRES_IMAGE` | Imagem usada no replay efêmero | Opcional, cai para a imagem Postgres 17 declarada pelo script. | Operador local |
+| `PF_REPLAY_POSTGRES_IMAGE` | Override diagnóstico da imagem usada no replay efêmero | Opcional. Ausente ou vazia, preserva o digest Postgres 17 fixado pelos scripts; não usar tag móvel como `postgres:17-alpine`. | Operador local |
 | `PF_ENV_FILE` | Arquivo carregado por utilitário Python | Opcional, aponta para um arquivo local de ambiente; nunca deve ser versionado com valores. | Operador local |
 
 ### QA e testes focados
 
 | Variáveis | Contexto | Obrigatoriedade e fallback | Responsável |
 |---|---|---|---|
+| `PUXAFICHA_DEV_NO_KILL_PORT` | Proteção do servidor local contra encerramento do processo que ocupa a porta 3000 | Opcional; somente `1` impede `scripts/dev.sh` de encerrar o processo existente. Ausente, o script preserva o comportamento padrão de liberar a porta. | Desenvolvimento local |
 | `PF_BASE_URL`, `PF_QUIZ_OG_BASE_URL` | Base URL de Playwright e quiz OG | Opcionais; caem para loopback nas configs que suportam servidor local. | Teste local ou CI |
 | `PF_PLAYWRIGHT_EDITORIAL_WEBSERVER` | Sobe servidor editorial local | Opcional; somente `1` ativa. | Teste local |
 | `PF_RUN_SEARCH_SMOKE`, `PF_EXPECT_PLACEHOLDER_DATA` | Seleção de cenários visuais | Opcionais; valores truthy esperados pelas specs ativam o cenário. | CI ou teste local |
@@ -108,7 +109,7 @@ mascarar o ambiente real.
 |---|---|---|---|
 | `NODE_ENV`, `NEXT_RUNTIME`, `CI` | Runtime Node, Next e CI | Fornecidas pelo runner. O código usa os valores para escolher runtime e política de segurança. | Node, Next ou GitHub |
 | `VERCEL`, `VERCEL_ENV`, `NEXT_PUBLIC_VERCEL_ENV`, `VERCEL_GIT_COMMIT_REF`, `VERCEL_GIT_COMMIT_SHA` | Ambiente e identidade do deploy | Fornecidas pela Vercel. A ausência caracteriza execução local em vários guards. | Vercel |
-| `HOME`, `PATH`, `TMPDIR`, `USER`, `USERNAME`, `GITHUB_PATH`, `GITHUB_REF`, `GITHUB_RUN_ID`, `GITHUB_RUN_ATTEMPT`, `GITHUB_ACTOR` | Diretórios, executáveis e identidade do run | Fornecidas pelo sistema ou GitHub runner. | Sistema ou GitHub |
+| `HOME`, `PATH`, `TMPDIR`, `USER`, `USERNAME`, `GITHUB_PATH`, `GITHUB_OUTPUT`, `GITHUB_STEP_SUMMARY`, `GITHUB_REF`, `GITHUB_REPOSITORY`, `GITHUB_RUN_ID`, `GITHUB_RUN_ATTEMPT`, `GITHUB_ACTOR` | Diretórios, arquivos de saída e resumo, repositório e identidade do run | Fornecidas pelo sistema ou GitHub runner. `GITHUB_OUTPUT` e `GITHUB_STEP_SUMMARY` apontam para arquivos efêmeros do step; `GITHUB_REPOSITORY` identifica o repositório no formato `owner/name`. | Sistema ou GitHub |
 | `BACKUP_ENCRYPTION_KEY`, `MERGE_QUEUE_GH_TOKEN`, `PF_RUNTIME_SMOKE_SECRET`, `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` | Segredos de backup e fila serial | Obrigatórias somente nos workflows que as referenciam. `PF_RUNTIME_SMOKE_SECRET` deve carregar o mesmo valor aceito como `CRON_SECRET`; é nome do secret do workflow, não leitura do app. | GitHub secrets |
 | `GH_TOKEN`, `GITHUB_TOKEN`, `VERCEL_TEAM_ID` | Aliases consumidos pelas CLIs dentro dos workflows | Injetados pelo workflow; `VERCEL_TEAM_ID` recebe o org id já autorizado. | GitHub workflow |
 | `GITLEAKS_CONFIG`, `GITLEAKS_ENABLE_COMMENTS`, `GITLEAKS_ENABLE_SUMMARY`, `GITLEAKS_ENABLE_UPLOAD_ARTIFACT`, `GITLEAKS_VERSION` | Configuração fixa da action de secret scanning | Definidas no próprio workflow. Fixam o arquivo de regras, desabilitam comentários, resumo e upload de artefato, e selecionam a versão do scanner; não são configuração de operador e não entram em `.env.example`. | GitHub workflow |

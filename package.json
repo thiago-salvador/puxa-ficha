@@ -39,6 +39,7 @@
     "test:visual:quiz": "playwright test tests/visual/quiz.spec.ts",
     "test:visual:quiz:mobile": "playwright test --project=mobile tests/visual/quiz.spec.ts",
     "test:visual:quiz-og": "npm run build && playwright test -c playwright.quiz-og.config.ts",
+    "check:env-contract": "node --test tests/env-contract-workflow-scanner.test.mjs && node scripts/check-env-contract.mjs",
     "check:scripts": "tsc --project tsconfig.scripts.json",
     "cache:aquecer": "tsx scripts/aquecer-cache-publico.ts",
     "audit:public-document-exposure:gate": "tsx scripts/audit-public-document-exposure.ts",

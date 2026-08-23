@@ -5,17 +5,12 @@ import { createRequire } from "node:module"
 import { readFileSync } from "node:fs"
 import path from "node:path"
 import process from "node:process"
+import { fileURLToPath } from "node:url"
 
 const require = createRequire(import.meta.url)
 const ts = require("typescript")
 const root = process.cwd()
-const mode = process.argv[2] ?? "all"
 const supportedModes = new Set(["all", "--check-example", "--check-docs"])
-
-if (!supportedModes.has(mode)) {
-  console.error(`modo desconhecido: ${mode}`)
-  process.exit(2)
-}
 
 function trackedFiles() {
   return execFileSync("git", ["ls-files", "--cached", "--others", "--exclude-standard", "-z"], {
@@ -37,6 +32,7 @@ function isProcessEnv(node, sourceFile) {
 function scanJavaScript(files) {
   const names = new Set()
   const unresolved = []
+  const clientViolations = []
 
   for (const file of files.filter((entry) => /\.(?:[cm]?[jt]sx?)$/.test(entry))) {
     const source = readFileSync(path.join(root, file), "utf8")
@@ -49,6 +45,11 @@ function scanJavaScript(files) {
     )
     const envAliases = new Set()
     const stringConstants = new Map()
+    const isClientFile =
+      sourceFile.statements.length > 0 &&
+      ts.isExpressionStatement(sourceFile.statements[0]) &&
+      ts.isStringLiteral(sourceFile.statements[0].expression) &&
+      sourceFile.statements[0].expression.text === "use client"
 
     function collect(node) {
       if (ts.isVariableDeclaration(node) && ts.isIdentifier(node.name)) {
@@ -57,6 +58,22 @@ function scanJavaScript(files) {
         }
         if (node.initializer && ts.isStringLiteralLike(node.initializer)) {
           stringConstants.set(node.name.text, node.initializer.text)
+        }
+      }
+      if (
+        ts.isVariableDeclaration(node) &&
+        ts.isObjectBindingPattern(node.name) &&
+        node.initializer?.getText(sourceFile) === "process"
+      ) {
+        for (const element of node.name.elements) {
+          const property = element.propertyName ?? element.name
+          if (
+            ts.isIdentifier(property) &&
+            property.text === "env" &&
+            ts.isIdentifier(element.name)
+          ) {
+            envAliases.add(element.name.text)
+          }
         }
       }
       if (
@@ -75,16 +92,24 @@ function scanJavaScript(files) {
       return isProcessEnv(node, sourceFile) || (ts.isIdentifier(node) && envAliases.has(node.text))
     }
 
+    function recordName(name, node) {
+      names.add(name)
+      if (isClientFile && name !== "NODE_ENV" && !name.startsWith("NEXT_PUBLIC_")) {
+        const line = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile)).line + 1
+        clientViolations.push(`${file}:${line}:${name}`)
+      }
+    }
+
     function visit(node) {
       if (ts.isPropertyAccessExpression(node) && isEnvObject(node.expression)) {
-        names.add(node.name.text)
+        recordName(node.name.text, node)
       }
       if (ts.isElementAccessExpression(node) && isEnvObject(node.expression)) {
         const argument = node.argumentExpression
         if (ts.isStringLiteralLike(argument)) {
-          names.add(argument.text)
+          recordName(argument.text, node)
         } else if (ts.isIdentifier(argument) && stringConstants.has(argument.text)) {
-          names.add(stringConstants.get(argument.text))
+          recordName(stringConstants.get(argument.text), node)
         } else {
           const line = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile)).line + 1
           unresolved.push(`${file}:${line}`)
@@ -94,7 +119,7 @@ function scanJavaScript(files) {
         if (isEnvObject(node.initializer)) {
           for (const element of node.name.elements) {
             const property = element.propertyName ?? element.name
-            if (ts.isIdentifier(property)) names.add(property.text)
+            if (ts.isIdentifier(property)) recordName(property.text, element)
           }
         }
       }
@@ -117,6 +142,11 @@ function scanJavaScript(files) {
   if (unexpectedDynamic.length > 0) {
     throw new Error(`acessos dinâmicos a process.env sem classificação: ${unexpectedDynamic.join(", ")}`)
   }
+  if (clientViolations.length > 0) {
+    throw new Error(
+      `variáveis server-only em arquivo use client: ${clientViolations.sort().join(", ")}`,
+    )
+  }
 
   return names
 }
@@ -136,27 +166,172 @@ function scanPython(files) {
   return names
 }
 
+export function scanShellSource(source) {
+  const names = new Set()
+  let singleQuoted = false
+  let doubleQuoted = false
+  let commented = false
+  let sanitized = ""
+  for (let index = 0; index < source.length; index += 1) {
+    const character = source[index]
+    const previous = index === 0 ? "\n" : source[index - 1]
+    if (character === "\n") {
+      commented = false
+      sanitized += character
+      continue
+    }
+    if (commented) {
+      sanitized += " "
+      continue
+    }
+    if (singleQuoted) {
+      if (character === "'") singleQuoted = false
+      sanitized += " "
+      continue
+    }
+    if (character === "'" && !doubleQuoted) {
+      singleQuoted = true
+      sanitized += " "
+      continue
+    }
+    if (character === '"' && previous !== "\\") doubleQuoted = !doubleQuoted
+    if (character === "#" && !doubleQuoted && /\s/.test(previous)) {
+      commented = true
+      sanitized += " "
+      continue
+    }
+    sanitized += character
+  }
+
+  function commands() {
+    const result = []
+    let current = ""
+    let quoted = false
+    for (let index = 0; index < sanitized.length; index += 1) {
+      const character = sanitized[index]
+      const previous = index === 0 ? "" : sanitized[index - 1]
+      if (character === '"' && previous !== "\\") quoted = !quoted
+      const pair = sanitized.slice(index, index + 2)
+      if (!quoted && (character === "\n" || character === ";" || pair === "&&" || pair === "||")) {
+        if (current.trim()) result.push(current)
+        current = ""
+        if (pair === "&&" || pair === "||") index += 1
+        continue
+      }
+      current += character
+    }
+    if (current.trim()) result.push(current)
+    return result
+  }
+
+  function words(command) {
+    const result = []
+    let current = ""
+    let quoted = false
+    let substitutionDepth = 0
+    for (let index = 0; index < command.length; index += 1) {
+      const character = command[index]
+      const previous = index === 0 ? "" : command[index - 1]
+      if (character === '"' && previous !== "\\") quoted = !quoted
+      if (!quoted && command.slice(index, index + 2) === "$(") substitutionDepth += 1
+      if (!quoted && character === ")" && substitutionDepth > 0) substitutionDepth -= 1
+      if (!quoted && substitutionDepth === 0 && /\s/.test(character)) {
+        if (current) result.push(current)
+        current = ""
+        continue
+      }
+      current += character
+    }
+    if (current) result.push(current)
+    return result
+  }
+
+  function persistentAssignments(command) {
+    const tokens = words(command)
+    if (tokens.length === 0) return []
+    if (["export", "local", "readonly"].includes(tokens[0])) tokens.shift()
+    if (tokens[0] === "declare") {
+      tokens.shift()
+      while (tokens[0]?.startsWith("-")) tokens.shift()
+    }
+    const assignments = tokens.filter((token) => /^[A-Z][A-Z0-9_]*\+?=/.test(token))
+    return assignments.length === tokens.length
+      ? assignments.map((token) => /^([A-Z][A-Z0-9_]*)/.exec(token)[1])
+      : []
+  }
+
+  const locals = new Set()
+  for (const command of commands()) {
+    for (const match of command.matchAll(/(?<!\\)\$\{([A-Z][A-Z0-9_]*)(?=[:}?+\-])/g)) {
+      if (!locals.has(match[1])) names.add(match[1])
+    }
+    for (const match of command.matchAll(/(?<![\\$])\$([A-Z][A-Z0-9_]*)\b/g)) {
+      if (!locals.has(match[1])) names.add(match[1])
+    }
+    for (const match of command.matchAll(/process\.env\.([A-Z][A-Z0-9_]*)/g)) {
+      names.add(match[1])
+    }
+    for (const name of persistentAssignments(command)) locals.add(name)
+  }
+
+  return names
+}
+
 function scanShell(files) {
   const names = new Set()
   for (const file of files.filter((entry) => entry.endsWith(".sh"))) {
     const source = readFileSync(path.join(root, file), "utf8")
-    const lines = source.split(/\r?\n/)
-    const assigned = new Set()
-    for (const line of lines) {
-      for (const match of line.matchAll(/(?:^|[\s;])(?:export\s+)?([A-Z][A-Z0-9_]*)=/g)) {
-        assigned.add(match[1])
+    for (const name of scanShellSource(source)) names.add(name)
+  }
+  return names
+}
+
+function workflowRunBlocks(source) {
+  const lines = source.split(/\r?\n/)
+  const blocks = []
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const match = /^(\s*)(?:-\s+)?run:\s*(.*)$/.exec(lines[index])
+    if (!match) continue
+
+    const runIndent = match[1].length
+    const value = match[2].trim()
+    if (value && !/^[>|][+-]?$/.test(value)) {
+      blocks.push(value)
+      continue
+    }
+
+    const blockLines = []
+    let contentIndent = null
+    for (index += 1; index < lines.length; index += 1) {
+      const line = lines[index]
+      const indent = /^\s*/.exec(line)[0].length
+      if (line.trim() && indent <= runIndent) {
+        index -= 1
+        break
       }
+      if (line.trim() && contentIndent === null) contentIndent = indent
+      blockLines.push(line)
     }
-    const withoutComments = lines.map((line) => line.replace(/#.*$/, "")).join("\n")
-    for (const match of withoutComments.matchAll(/\$\{([A-Z][A-Z0-9_]*)(?=[:}?+\-])/g)) {
-      if (!assigned.has(match[1])) names.add(match[1])
-    }
-    for (const match of withoutComments.matchAll(/(?<!\$)\$([A-Z][A-Z0-9_]*)\b/g)) {
-      if (!assigned.has(match[1])) names.add(match[1])
-    }
-    for (const match of source.matchAll(/process\.env\.([A-Z][A-Z0-9_]*)/g)) {
-      names.add(match[1])
-    }
+    const strip = contentIndent ?? runIndent + 2
+    blocks.push(blockLines.map((line) => line.slice(Math.min(strip, line.length))).join("\n"))
+  }
+
+  return blocks
+}
+
+export function scanWorkflowSource(source) {
+  const names = new Set()
+  for (const match of source.matchAll(/^\s{2,12}([A-Z][A-Z0-9_]*):\s*(?!$)/gm)) {
+    names.add(match[1])
+  }
+  for (const match of source.matchAll(
+    /\$\{\{\s*(?:secrets|vars|env)(?:\.([A-Z][A-Z0-9_]*)|\[\s*["']([A-Z][A-Z0-9_]*)["']\s*\])/g,
+  )) {
+    names.add(match[1] ?? match[2])
+  }
+  for (const block of workflowRunBlocks(source)) {
+    for (const name of scanShellSource(block)) names.add(name)
   }
   return names
 }
@@ -165,12 +340,7 @@ function scanWorkflows(files) {
   const names = new Set()
   for (const file of files.filter((entry) => entry.startsWith(".github/") && /\.ya?ml$/.test(entry))) {
     const source = readFileSync(path.join(root, file), "utf8")
-    for (const match of source.matchAll(/^\s{2,12}([A-Z][A-Z0-9_]*):\s*(?!$)/gm)) {
-      names.add(match[1])
-    }
-    for (const match of source.matchAll(/\$\{\{\s*(?:secrets|vars|env)\.([A-Z][A-Z0-9_]*)/g)) {
-      names.add(match[1])
-    }
+    for (const name of scanWorkflowSource(source)) names.add(name)
   }
   return names
 }
@@ -180,6 +350,30 @@ function contractBlock() {
   const match = docs.match(/<!-- env-contract:start -->([\s\S]*?)<!-- env-contract:end -->/)
   if (!match) throw new Error("bloco env-contract ausente na documentação")
   return match[1]
+}
+
+function recoveryRunbook() {
+  return readFileSync(path.join(root, "docs/RUNBOOK-DR.md"), "utf8")
+}
+
+export function checkRunbookVercelInventory(documented, source = recoveryRunbook()) {
+  const row = source.split(/\r?\n/).find((line) => line.startsWith("| Vercel, runtime |"))
+  if (!row) throw new Error("inventário Vercel ausente em docs/RUNBOOK-DR.md")
+
+  const keys = new Set([...row.matchAll(/`([A-Z][A-Z0-9_]*)`/g)].map((match) => match[1]))
+  const required = ["PF_ALERTS_REPLY_TO_EMAIL"]
+  const missing = required.filter((key) => !keys.has(key))
+  const unknown = [...keys].filter((key) => !documented.has(key)).sort()
+  if (missing.length || unknown.length) {
+    throw new Error(
+      [
+        missing.length ? `runbook Vercel sem variável obrigatória: ${missing.join(", ")}` : "",
+        unknown.length ? `runbook Vercel fora do contrato: ${unknown.join(", ")}` : "",
+      ]
+        .filter(Boolean)
+        .join("; "),
+    )
+  }
 }
 
 function documentedKeys() {
@@ -230,7 +424,6 @@ const safeNonEmptyExamples = new Map([
   ["PF_TSE_INGEST_DRY_RUN", "1"],
   ["PF_TSE_INGEST_SKIP_PATRIMONIO", "0"],
   ["PF_KEEP_TSE_DOWNLOADS", "0"],
-  ["PF_REPLAY_POSTGRES_IMAGE", "postgres:17-alpine"],
   ["PF_PLAYWRIGHT_EDITORIAL_WEBSERVER", "0"],
   ["PF_QUIZ_OG_BASE_URL", "http://127.0.0.1:3000"],
   ["PF_RUN_SEARCH_SMOKE", "0"],
@@ -259,10 +452,9 @@ function checkExample(references, documented) {
   console.log(`PASS: exemplo seguro (${entries.size} chaves, nenhum segredo versionado)`)
 }
 
-function checkDocs(references, documented) {
+export function checkDocs(references, documented, block = contractBlock()) {
   const missing = [...references].filter((key) => !documented.has(key)).sort()
   const stale = [...documented].filter((key) => !references.has(key)).sort()
-  const block = contractBlock()
   const requiredMarkers = [
     "Obrigatoriedade e fallback",
     "Responsável",
@@ -288,22 +480,34 @@ function checkDocs(references, documented) {
         .join("; "),
     )
   }
+  checkRunbookVercelInventory(documented)
   console.log(`PASS: documentação alinhada (${documented.size} variáveis classificadas)`)
 }
 
-try {
-  const references = referenceKeys()
-  const documented = documentedKeys()
-  if (mode === "--check-example") {
-    checkExample(references, documented)
-  } else if (mode === "--check-docs") {
-    checkDocs(references, documented)
-  } else {
-    checkDocs(references, documented)
-    checkExample(references, documented)
-    console.log("PASS: 0 referências sem classificação")
+function main() {
+  const mode = process.argv[2] ?? "all"
+  if (!supportedModes.has(mode)) {
+    console.error(`modo desconhecido: ${mode}`)
+    process.exitCode = 2
+    return
   }
-} catch (error) {
-  console.error(`FAIL: ${error instanceof Error ? error.message : String(error)}`)
-  process.exit(1)
+
+  try {
+    const references = referenceKeys()
+    const documented = documentedKeys()
+    if (mode === "--check-example") {
+      checkExample(references, documented)
+    } else if (mode === "--check-docs") {
+      checkDocs(references, documented)
+    } else {
+      checkDocs(references, documented)
+      checkExample(references, documented)
+      console.log("PASS: 0 referências sem classificação")
+    }
+  } catch (error) {
+    console.error(`FAIL: ${error instanceof Error ? error.message : String(error)}`)
+    process.exitCode = 1
+  }
 }
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main()
