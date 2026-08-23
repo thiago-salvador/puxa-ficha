@@ -259,18 +259,18 @@ function literalReferences(file: string, sources: SourceFile[]): ReferenceEviden
   return references.sort((a, b) => byteSort(`${a.file}:${a.line}`, `${b.file}:${b.line}`))
 }
 
-function parseRuntimeManifest(root: string, file?: string): RuntimeReferenceContext {
-  if (!file) return { provided: false, source: null, references: new Set() }
-  const safeFile = validateRepoPath(file)
-  const bytes = readRegularFile(root, safeFile, MAX_RUNTIME_MANIFEST_BYTES)
+function parseRuntimeManifestBytes(bytes: Buffer, source: string): RuntimeReferenceContext {
+  if (bytes.length > MAX_RUNTIME_MANIFEST_BYTES) {
+    throw new Error(`arquivo excede limite de ${MAX_RUNTIME_MANIFEST_BYTES} bytes: ${source}`)
+  }
   let parsed: unknown
   try {
     parsed = JSON.parse(bytes.toString("utf8"))
   } catch {
-    throw new Error(`fonte runtime nao e JSON valido: ${safeFile}`)
+    throw new Error(`fonte runtime nao e JSON valido: ${source}`)
   }
   if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
-    throw new Error(`formato runtime desconhecido: ${safeFile}`)
+    throw new Error(`formato runtime desconhecido: ${source}`)
   }
   const candidate = parsed as Partial<RuntimeReferenceManifest>
   const keys = Object.keys(parsed).sort(byteSort)
@@ -280,11 +280,11 @@ function parseRuntimeManifest(root: string, file?: string): RuntimeReferenceCont
     || keys.join(",") !== "references,schemaVersion"
     || candidate.references.length > MAX_RUNTIME_REFERENCES
   ) {
-    throw new Error(`formato runtime desconhecido: ${safeFile}`)
+    throw new Error(`formato runtime desconhecido: ${source}`)
   }
   const references = new Set<string>()
   for (const value of candidate.references) {
-    if (typeof value !== "string") throw new Error(`referencia runtime invalida: ${safeFile}`)
+    if (typeof value !== "string") throw new Error(`referencia runtime invalida: ${source}`)
     const path = validateRepoPath(value)
     if (!path.startsWith(CANDIDATES_PREFIX) || path.length === CANDIDATES_PREFIX.length) {
       throw new Error(`referencia runtime fora de ${CANDIDATES_PREFIX}: ${path}`)
@@ -292,7 +292,38 @@ function parseRuntimeManifest(root: string, file?: string): RuntimeReferenceCont
     if (references.has(path)) throw new Error(`referencia runtime duplicada: ${path}`)
     references.add(path)
   }
-  return { provided: true, source: safeFile, references }
+  return { provided: true, source, references }
+}
+
+function parseRuntimeManifest(
+  root: string,
+  index: Map<string, GitEntry>,
+  file?: string,
+): RuntimeReferenceContext {
+  if (!file) return { provided: false, source: null, references: new Set() }
+  const safeFile = validateRepoPath(file)
+  const entry = index.get(safeFile)
+  if (!entry) throw new Error(`fonte runtime nao rastreada no indice Git: ${safeFile}`)
+  assertRegularGitEntry(entry)
+  const bytes = readRegularFile(root, safeFile, MAX_RUNTIME_MANIFEST_BYTES)
+  return parseRuntimeManifestBytes(bytes, safeFile)
+}
+
+function parseBaselineRuntimeManifest(
+  root: string,
+  baseline: string,
+  tree: Map<string, GitEntry>,
+  file: string,
+): RuntimeReferenceContext | undefined {
+  const entry = tree.get(file)
+  if (!entry) return undefined
+  assertRegularGitEntry(entry)
+  const size = Number(git(root, ["cat-file", "-s", entry.oid]).toString("utf8").trim())
+  if (!Number.isSafeInteger(size) || size < 0 || size > MAX_RUNTIME_MANIFEST_BYTES) {
+    throw new Error(`arquivo excede limite de ${MAX_RUNTIME_MANIFEST_BYTES} bytes: ${baseline}:${file}`)
+  }
+  const bytes = git(root, ["cat-file", "blob", entry.oid])
+  return parseRuntimeManifestBytes(bytes, `${baseline}:${file}`)
 }
 
 export function classifyAsset(params: {
@@ -300,17 +331,29 @@ export function classifyAsset(params: {
   literalReferences: ReferenceEvidence[]
   runtimeReferences?: ReadonlySet<string>
   runtimeSource?: string
+  baselineRuntimeReferences?: ReadonlySet<string>
+  baselineRuntimeSource?: string
 }): { status: AssetStatus; runtimeReferences: ReferenceEvidence[] } {
   if (params.literalReferences.length > 0) return { status: "referenced", runtimeReferences: [] }
   const path = `${CANDIDATES_PREFIX}${params.file}`
-  if (!params.runtimeReferences) return { status: "indeterminate", runtimeReferences: [] }
-  if (!params.runtimeReferences.has(path)) return { status: "unreferenced", runtimeReferences: [] }
-  return {
-    status: "referenced",
-    runtimeReferences: [
-      evidence(params.runtimeSource ?? "<runtime-references>", 1, path, "runtime"),
-    ],
+  if (params.runtimeReferences?.has(path)) {
+    return {
+      status: "referenced",
+      runtimeReferences: [
+        evidence(params.runtimeSource ?? "<runtime-references>", 1, path, "runtime"),
+      ],
+    }
   }
+  if (params.baselineRuntimeReferences?.has(path)) {
+    return {
+      status: "referenced",
+      runtimeReferences: [
+        evidence(params.baselineRuntimeSource ?? "<baseline-runtime-references>", 1, path, "runtime"),
+      ],
+    }
+  }
+  if (!params.runtimeReferences) return { status: "indeterminate", runtimeReferences: [] }
+  return { status: "unreferenced", runtimeReferences: [] }
 }
 
 function coverage(sources: SourceFile[]): Record<string, number> {
@@ -342,12 +385,23 @@ function coverage(sources: SourceFile[]): Record<string, number> {
 export function buildInventory(options: AuditOptions) {
   const root = realpathSync(options.root)
   if (options.baseline) assertFullCommitSha(root, options.baseline)
+  if (options.verifyRemovals && options.runtimeReferencesFile !== RUNTIME_MANIFEST) {
+    throw new Error(`--verify-removals exige manifesto runtime canonico: ${RUNTIME_MANIFEST}`)
+  }
   const index = parseIndexEntries(root)
   const currentCandidates = candidateEntries(index)
-  const baselineCandidates = options.baseline
-    ? candidateEntries(parseTreeEntries(root, options.baseline))
-    : currentCandidates
-  const runtime = parseRuntimeManifest(root, options.runtimeReferencesFile)
+  const baselineTree = options.baseline ? parseTreeEntries(root, options.baseline) : undefined
+  const baselineCandidates = baselineTree ? candidateEntries(baselineTree) : currentCandidates
+  const runtime = parseRuntimeManifest(root, index, options.runtimeReferencesFile)
+  const baselineRuntime = options.baseline && baselineTree && runtime.source
+    ? parseBaselineRuntimeManifest(root, options.baseline, baselineTree, runtime.source)
+    : undefined
+  const runtimeBootstrap = Boolean(options.baseline && runtime.provided && !baselineRuntime)
+  const removedRuntimeReferences = baselineRuntime
+    ? [...baselineRuntime.references]
+        .filter((path) => !runtime.references.has(path))
+        .sort(byteSort)
+    : []
   const sources = loadTextSources(root, index, options.runtimeReferencesFile)
   const files = [...baselineCandidates.keys()].sort(byteSort)
   const assets: CandidateAssetAudit[] = files.map((path) => {
@@ -359,6 +413,8 @@ export function buildInventory(options: AuditOptions) {
       literalReferences: literals,
       runtimeReferences: runtime.provided ? runtime.references : undefined,
       runtimeSource: runtime.source ?? undefined,
+      baselineRuntimeReferences: baselineRuntime?.references,
+      baselineRuntimeSource: baselineRuntime?.source ?? undefined,
     })
     return {
       file,
@@ -388,6 +444,13 @@ export function buildInventory(options: AuditOptions) {
       provided: runtime.provided,
       source: runtime.source,
       count: runtime.references.size,
+      baseline: {
+        provided: Boolean(baselineRuntime),
+        source: baselineRuntime?.source ?? null,
+        count: baselineRuntime?.references.size ?? 0,
+        bootstrap: runtimeBootstrap,
+        removedReferences: removedRuntimeReferences,
+      },
     },
     scannedTextFiles: sources.length,
     coverage: coverage(sources),
@@ -443,6 +506,13 @@ function main() {
   else process.stdout.write(serialized)
 
   if (verifyRemovals) {
+    if (inventory.runtimeReferences.baseline.removedReferences.length > 0) {
+      for (const path of inventory.runtimeReferences.baseline.removedReferences) {
+        console.error(`PF21_RUNTIME_REFERENCE_REMOVAL_REQUIRES_INDEPENDENT_PROOF ${path}`)
+      }
+      process.exitCode = 1
+      return
+    }
     const unsafe = inventory.assets.filter((asset) => !asset.present && asset.status !== "unreferenced")
     if (unsafe.length > 0) {
       for (const asset of unsafe) console.error(`PF21_UNSAFE_REMOVAL ${asset.file} ${asset.status}`)
