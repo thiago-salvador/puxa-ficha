@@ -722,7 +722,7 @@ export function CandidatoProfile({
               </div>
             )}
 
-            {/* MIDIA TAB */}
+            {/* MÍDIA TAB */}
             {activeTab === "media" && (
               ficha.noticias && ficha.noticias.length > 0 ? (
                 <NewsSection noticias={ficha.noticias} />
