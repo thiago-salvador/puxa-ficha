@@ -506,6 +506,13 @@ function main() {
   else process.stdout.write(serialized)
 
   if (verifyRemovals) {
+    if (inventory.runtimeReferences.baseline.bootstrap && inventory.counts.removed > 0) {
+      for (const asset of inventory.assets.filter((candidate) => !candidate.present)) {
+        console.error(`PF21_BOOTSTRAP_REMOVAL_FORBIDDEN ${asset.path}`)
+      }
+      process.exitCode = 1
+      return
+    }
     if (inventory.runtimeReferences.baseline.removedReferences.length > 0) {
       for (const path of inventory.runtimeReferences.baseline.removedReferences) {
         console.error(`PF21_RUNTIME_REFERENCE_REMOVAL_REQUIRES_INDEPENDENT_PROOF ${path}`)

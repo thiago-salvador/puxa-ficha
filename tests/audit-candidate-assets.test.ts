@@ -168,7 +168,10 @@ interface CandidateAssetAuditForTest {
 }
 
 test("concatenação em código não enfraquece a referência runtime", () => {
-  const { root, baseline } = fixture('const foto = "/candidates/" + slug + ".jpg"\n')
+  const { root, baseline } = fixture(
+    'const foto = "/candidates/" + slug + ".jpg"\n',
+    [candidatePath],
+  )
   try {
     const manifest = runtimeManifest(root)
     git(root, ["rm", "-q", candidatePath])
@@ -242,6 +245,32 @@ test("bootstrap sem manifesto no baseline exige path canônico rastreado", () =>
     ])
     assert.notEqual(rejected.status, 0)
     assert.match(rejected.stderr, /manifesto runtime canonico/)
+  } finally {
+    removeFixture(root)
+  }
+})
+
+test("bootstrap sem manifesto bloqueia asset removido e omitido da fonte runtime", () => {
+  const { root, baseline } = fixture('const foto = "/candidates/" + slug + ".jpg"\n')
+  try {
+    const manifest = runtimeManifest(root, [])
+    git(root, ["rm", "-q", candidatePath])
+    const result = runAudit(root, [
+      "--verify-removals",
+      "--baseline", baseline,
+      "--runtime-references", manifest,
+    ])
+    assert.equal(result.status, 1)
+    assert.match(
+      result.stderr,
+      /PF21_BOOTSTRAP_REMOVAL_FORBIDDEN public\/candidates\/example\.jpg/,
+    )
+    const inventory = JSON.parse(result.stdout) as {
+      runtimeReferences: { baseline: { bootstrap: boolean } }
+      counts: { removed: number }
+    }
+    assert.equal(inventory.runtimeReferences.baseline.bootstrap, true)
+    assert.equal(inventory.counts.removed, 1)
   } finally {
     removeFixture(root)
   }
