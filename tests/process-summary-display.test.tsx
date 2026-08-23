@@ -3,6 +3,7 @@ import { describe, it } from "node:test"
 import { renderToStaticMarkup } from "react-dom/server"
 
 import { CandidatoProfile } from "@/components/CandidatoProfile"
+import { MetaBadge } from "@/components/MetaBadge"
 import { ProfileOverview } from "@/components/ProfileOverview"
 import type { FichaCandidato, Processo } from "@/lib/types"
 
@@ -101,5 +102,40 @@ describe("resumo processual com acento na ficha", () => {
     assert.match(html, />Condenação 1a instância</)
     assert.doesNotMatch(html, /por peculato/)
     assert.doesNotMatch(html, /absolvido/i)
+  })
+})
+
+describe("contenção de textos longos nos cards", () => {
+  it("badge compartilhado quebra sequências sem espaços dentro do contêiner", () => {
+    const html = renderToStaticMarkup(
+      <MetaBadge>{"STATUSPROCESSUAL".repeat(40)}</MetaBadge>,
+    )
+
+    assert.match(html, /min-w-0/)
+    assert.match(html, /max-w-full/)
+    assert.match(html, /whitespace-normal/)
+    assert.match(html, /\[overflow-wrap:anywhere\]/)
+  })
+
+  it("superfícies de processo contêm status e descrições extensos", () => {
+    const textoSemEspacos = "STATUSPROCESSUAL".repeat(40)
+    const html = renderToStaticMarkup(
+      <CandidatoProfile
+        ficha={fichaComResumo([
+          processo({
+            status: textoSemEspacos,
+            descricao: textoSemEspacos,
+            url_fonte: "https://example.org/processo",
+          }),
+        ])}
+        initialTab="justica"
+      />,
+    )
+
+    assert.match(
+      html,
+      /class="min-w-0 max-w-full \[overflow-wrap:anywhere\][^"]*"[^>]*data-pf-timeline-ref=/,
+    )
+    assert.doesNotMatch(html, /whitespace-nowrap/)
   })
 })

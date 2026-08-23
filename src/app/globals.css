@@ -124,6 +124,7 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+    overflow-wrap: anywhere;
   }
   html {
     @apply font-sans;
