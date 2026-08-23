@@ -395,6 +395,7 @@ export function CandidatoProfile({
 
   const tabDefsById: Record<CandidatoProfileNavTabId, { label: string; dataCount: number }> = {
     geral: { label: fixedCopy.generalOverview, dataCount: 0 },
+    media: { label: "Mídia", dataCount: ficha.noticias?.length ?? 0 },
     dinheiro: {
       label: "Dinheiro",
       dataCount:
@@ -718,11 +719,25 @@ export function CandidatoProfile({
                   candidateName={ficha.nome_urna}
                   candidateSlug={ficha.slug}
                 />
-
-                {ficha.noticias && ficha.noticias.length > 0 && (
-                  <NewsSection noticias={ficha.noticias} />
-                )}
               </div>
+            )}
+
+            {/* MÍDIA TAB */}
+            {activeTab === "media" && (
+              ficha.noticias && ficha.noticias.length > 0 ? (
+                <NewsSection noticias={ficha.noticias} />
+              ) : (
+                <div data-pf-media-empty>
+                  <SectionLabel>Mídia</SectionLabel>
+                  <SectionTitle>Notícias recentes</SectionTitle>
+                  <NoticePanel
+                    className="mt-6"
+                    tone="neutral"
+                    rail={false}
+                    description="Ainda não há notícias exibidas nesta ficha."
+                  />
+                </div>
+              )
             )}
 
             {/* TIMELINE TAB */}

@@ -48,7 +48,7 @@ export function NewsSection({ noticias }: { noticias: NoticiaCandidato[] }) {
             Na mídia
           </span>
           <span className="text-[12px] font-medium text-muted-foreground">
-            {sorted.length} noticia{sorted.length !== 1 ? "s" : ""} recente{sorted.length !== 1 ? "s" : ""}
+            {sorted.length} notícia{sorted.length !== 1 ? "s" : ""} recente{sorted.length !== 1 ? "s" : ""}
             {contextoCount > 0
               ? `, ${contextoCount} sem citar o nome do candidato`
               : ""}
