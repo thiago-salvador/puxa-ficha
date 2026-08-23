@@ -44,7 +44,7 @@ const WIKIDATA_QID_ONLY_RE = /^Q\d+$/i
 function replaceInternalEditorialJargon(value: string): string {
   // Fonte única em `observacao-publica.ts`: tira o rótulo SQ_CANDIDATO E o
   // número, que antes sobrevivia sozinho na ficha.
-  return sanitizeObservacaoPublica(value) ?? ""
+  return sanitizePublicText(sanitizeObservacaoPublica(value) ?? "")
 }
 
 function publicTaxonomyValue(value: string | null | undefined): string | null {
@@ -414,7 +414,7 @@ function publicSancao(row: SancaoAdministrativa, index: number) {
 function publicNoticia(row: FichaCandidato["noticias"][number], index: number) {
   return {
     id: compactPublicId("noticia", row.id, index),
-    titulo: row.titulo,
+    titulo: replaceInternalEditorialJargon(row.titulo),
     fonte: row.fonte,
     url: row.url,
     data_publicacao: row.data_publicacao,

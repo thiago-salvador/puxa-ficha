@@ -315,6 +315,9 @@ describe("contrato da view candidatos_publico", () => {
       // Só UPDATE em gastos_parlamentares; não redefine candidatos_publico.
       // Filename bate com o ledger de produção (MCP apply_migration).
       "20260821214601_ceaps_categoria_utf8.sql",
+      // Corrige textos em tabelas satélite e acrescenta gates de encoding.
+      // Não redefine candidatos_publico nem altera sua lista de colunas.
+      "20260823160000_public_text_encoding_cleanup.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

@@ -13,6 +13,7 @@ import { deveProcessarAcervoLegislativo, reciboAcervoCongelado } from "./acervo-
 import { fetchJSON, sleep } from "./helpers"
 import { namesLookCompatible } from "./name-match"
 import { assertSemReplacementChar } from "./ceaps-csv-encoding"
+import { sanitizePublicTextOrThrow } from "../../src/lib/public-text"
 import { log, warn, error } from "./logger"
 import { classificarVotacao, type ClassificacaoVotacao } from "./votacao-classificacao"
 import type { IngestResult } from "./types"
@@ -649,7 +650,10 @@ async function ingestProjetos(
       tipo: String(p.siglaTipo || ""),
       numero: String(p.numero || ""),
       ano: Number(p.ano) || null,
-      ementa: String(p.ementa || ""),
+      ementa: sanitizePublicTextOrThrow(
+        String(p.ementa || ""),
+        `camara:${slug}:proposicao:${propId}:ementa`,
+      ),
       situacao: p.statusProposicao
         ? String((p.statusProposicao as Record<string, unknown>).descricaoSituacao || "")
         : null,

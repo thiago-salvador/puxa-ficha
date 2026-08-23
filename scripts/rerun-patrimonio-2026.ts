@@ -42,7 +42,6 @@ import { Readable } from "node:stream"
 import { pipeline } from "node:stream/promises"
 import { execFileSync } from "node:child_process"
 import { readdirSync } from "node:fs"
-
 import { ativarDryRun, exigirDryRun, relatorioDryRun } from "./lib/dry-run"
 import { log, warn } from "./lib/logger"
 import { parseCSV } from "./lib/parse-csv-local"
@@ -57,7 +56,7 @@ import {
 } from "./lib/rerun-patrimonio-baseline"
 import { dedupeTsePatrimonioRows } from "../src/lib/tse-patrimonio-dedupe"
 import { maskDocumentLikeSequences } from "../src/lib/public-profile-dto"
-import { sanitizePublicText } from "../src/lib/public-text"
+import { sanitizePublicText, sanitizePublicTextOrThrow } from "../src/lib/public-text"
 import { semDescricoesDeBens } from "./lib/patrimonio-evidence"
 
 ativarDryRun()
@@ -207,8 +206,11 @@ async function main(): Promise<void> {
           slug: celula.slug,
           sourceKey: csv,
           ordem: row.NR_ORDEM_BEM_CANDIDATO || "",
-          tipo: row.DS_TIPO_BEM_CANDIDATO || "",
-          descricao: row.DS_BEM_CANDIDATO || "",
+          tipo: sanitizePublicTextOrThrow(row.DS_TIPO_BEM_CANDIDATO, `bem-candidato:${celula.slug}:${sq}:tipo`),
+          descricao: sanitizePublicTextOrThrow(
+            maskDocumentLikeSequences(row.DS_BEM_CANDIDATO || ""),
+            `bem-candidato:${celula.slug}:${sq}:descricao`,
+          ),
           valor: parseBRL(row.VR_BEM_CANDIDATO || "0"),
         })
         rowsPorSq.set(sq, lista)

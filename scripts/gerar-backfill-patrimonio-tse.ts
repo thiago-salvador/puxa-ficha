@@ -16,7 +16,7 @@ import { pathToFileURL } from "node:url"
 import { execFileSync } from "node:child_process"
 import { dedupeTsePatrimonioRows } from "../src/lib/tse-patrimonio-dedupe"
 import { maskDocumentLikeSequences } from "../src/lib/public-profile-dto"
-import { sanitizePublicText } from "../src/lib/public-text"
+import { sanitizePublicText, sanitizePublicTextOrThrow } from "../src/lib/public-text"
 import { parseCSV } from "./lib/parse-csv-local"
 
 const EXEC_DIR = "/tmp/pf-patrimonio-20260807T170643Z"
@@ -177,8 +177,14 @@ async function coletarBens(
           slug: celula.slug,
           sourceKey: csvPath,
           ordem: row.NR_ORDEM_BEM_CANDIDATO || "",
-          tipo: row.DS_TIPO_BEM_CANDIDATO || "",
-          descricao: row.DS_BEM_CANDIDATO || "",
+          tipo: sanitizePublicTextOrThrow(
+            row.DS_TIPO_BEM_CANDIDATO,
+            `bem-candidato:${celula.slug}:${celula.ano}:${celula.sq}:tipo`,
+          ),
+          descricao: sanitizePublicTextOrThrow(
+            maskDocumentLikeSequences(row.DS_BEM_CANDIDATO || ""),
+            `bem-candidato:${celula.slug}:${celula.ano}:${celula.sq}:descricao`,
+          ),
           valor,
           uf: (row.SG_UF || "").trim().toUpperCase(),
         })

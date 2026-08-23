@@ -354,6 +354,13 @@
       "ate": "20260821214601",
       "allowlist": "scripts/audit/allowlist-ceaps-categoria-utf8-20260821.json",
       "divida": null
+    },
+    {
+      "nome": "public-text-encoding-20260823",
+      "desde": "20260823160000",
+      "ate": "20260823160000",
+      "allowlist": "scripts/audit/allowlist-public-text-encoding-20260823.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
