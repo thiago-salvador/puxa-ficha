@@ -21,6 +21,7 @@ describe("candidato profile tab navigation", () => {
   it("keeps supported visible tabs navigable", () => {
     assert.deepEqual([...CANDIDATO_PROFILE_NAV_TAB_IDS], [
       "geral",
+      "media",
       "dinheiro",
       "justica",
       "votos",
@@ -30,6 +31,7 @@ describe("candidato profile tab navigation", () => {
     ])
     assert.equal(normalizeCandidatoProfileNavTab("legislacao"), "legislacao")
     assert.equal(normalizeCandidatoProfileNavTab("trajetoria"), "trajetoria")
+    assert.equal(normalizeCandidatoProfileNavTab("media"), "media")
   })
 
   it("uses visible-tab normalization for UI navigation and query params", () => {
