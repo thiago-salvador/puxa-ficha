@@ -1,6 +1,6 @@
 import { expect, test, type Locator, type Page } from "playwright/test"
 
-// cspell:ignore Bolsonaro daciolo Datafolha domcontentloaded marcal networkidle pablo
+// cspell:ignore AtlasIntel Bolsonaro daciolo Datafolha domcontentloaded Ipsos marcal networkidle pablo
 
 const WITH_DATA_SLUG = "lula"
 const WITHOUT_DATA_SLUG = "pablo-marcal"
@@ -35,7 +35,7 @@ async function waitForProfile(page: Page) {
 }
 
 test.describe("pesquisas presidenciais v2", () => {
-  test("hero alterna somente primeiro turno e pausa com movimento reduzido", async ({ page }, testInfo) => {
+  test("hero exibe somente a fonte publicável e respeita movimento reduzido", async ({ page }, testInfo) => {
     await page.goto(`/candidato/${WITH_DATA_SLUG}`, { waitUntil: "domcontentloaded" })
 
     const fullHero = page.locator("[data-pf-hero]")
@@ -57,9 +57,9 @@ test.describe("pesquisas presidenciais v2", () => {
     expect(horizontalGap).toBeLessThanOrEqual(32)
     await fullHero.screenshot({ path: testInfo.outputPath("pesquisas-hero-desktop.png") })
 
-    await expect.poll(() => hero.textContent(), { timeout: 6_500 }).toContain("PoderData")
-    await expect(hero).toContainText("41%")
-    await expect(hero).not.toContainText("46%")
+    await page.waitForTimeout(5_300)
+    await expect(hero).toContainText("Datafolha")
+    await expect(hero).toContainText("39%")
 
     await page.emulateMedia({ reducedMotion: "reduce" })
     await page.reload({ waitUntil: "domcontentloaded" })
@@ -74,7 +74,7 @@ test.describe("pesquisas presidenciais v2", () => {
     await fullHero.screenshot({ path: testInfo.outputPath("pesquisas-hero-mobile.png") })
   })
 
-  test("Visão geral troca toda a pesquisa por setas acessíveis", async ({ page }, testInfo) => {
+  test("Visão geral mantém o card único e desabilita navegação sem alternativa", async ({ page }, testInfo) => {
     await page.goto(`/candidato/${WITH_DATA_SLUG}`, { waitUntil: "networkidle" })
     await waitForProfile(page)
 
@@ -100,6 +100,8 @@ test.describe("pesquisas presidenciais v2", () => {
     const previous = overview.getByRole("button", { name: "Pesquisa anterior" })
     await expect(next).toHaveCSS("width", "44px")
     await expect(previous).toHaveCSS("height", "44px")
+    await expect(next).toBeDisabled()
+    await expect(previous).toBeDisabled()
     await expect(current).toContainText("Datafolha")
     await expect(current).toContainText("39%")
     await expect(current).toContainText("18/08/2026 a 19/08/2026")
@@ -108,21 +110,8 @@ test.describe("pesquisas presidenciais v2", () => {
       /folha\.uol\.com\.br/,
     )
 
-    await next.focus()
-    await expect(next).toBeFocused()
-    await next.press("Enter")
-    await expect(current).toContainText("PoderData")
-    await expect(current).toContainText("41%")
-    await expect(current).toContainText("26/07/2026 a 29/07/2026")
-    await expect(current.locator("[data-pf-pesquisa-link]")).toHaveAttribute(
-      "href",
-      /poder360\.com\.br/,
-    )
-
-    await next.press("Enter")
-    await expect(current).toContainText("46%")
-    await expect(current).toContainText("2º turno")
-    await expect(current).toContainText("Flávio Bolsonaro e Lula")
+    await expect(current).not.toContainText("PoderData")
+    await expect(current).not.toContainText("2º turno")
     await expect(overview.locator("[data-pf-pesquisa-card]")).toHaveCount(1)
 
     const overviewGrid = page.locator("[data-pf-profile-overview-grid]")
@@ -133,7 +122,7 @@ test.describe("pesquisas presidenciais v2", () => {
     await overview.screenshot({ path: testInfo.outputPath("pesquisas-overview-mobile.png") })
   })
 
-  test("aba abre por link e query, lista todos os resultados e funciona no mobile", async ({ page }, testInfo) => {
+  test("aba abre por link e query, lista somente fontes publicáveis e funciona no mobile", async ({ page }, testInfo) => {
     await page.goto(`/candidato/${WITH_DATA_SLUG}`, { waitUntil: "networkidle" })
     await waitForProfile(page)
 
@@ -143,11 +132,12 @@ test.describe("pesquisas presidenciais v2", () => {
 
     const tab = page.locator("[data-pf-pesquisas-tab]")
     await expect(tab).toBeVisible()
-    await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(3)
+    await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(1)
     await expect(tab).toContainText("39%")
-    await expect(tab).toContainText("41%")
-    await expect(tab).toContainText("46%")
-    await expect(tab).toContainText("2º turno")
+    await expect(tab).not.toContainText("PoderData")
+    await expect(tab).not.toContainText("AtlasIntel")
+    await expect(tab).not.toContainText("Ipsos-Ipec")
+    await expect(tab).not.toContainText("2º turno")
 
     await page.goto(`/candidato/${WITH_DATA_SLUG}?tab=pesquisas`, { waitUntil: "networkidle" })
     await waitForProfile(page)
@@ -155,7 +145,7 @@ test.describe("pesquisas presidenciais v2", () => {
       "aria-selected",
       "true",
     )
-    await expect(page.locator("[data-pf-pesquisas-tab] [data-pf-pesquisa-card]")).toHaveCount(3)
+    await expect(page.locator("[data-pf-pesquisas-tab] [data-pf-pesquisa-card]")).toHaveCount(1)
 
     await page.setViewportSize({ width: 390, height: 844 })
     const mobileTab = page.locator("[data-pf-pesquisas-tab]")
@@ -167,6 +157,42 @@ test.describe("pesquisas presidenciais v2", () => {
     await pesquisasTabButton.focus()
     await pesquisasTabButton.press("ArrowRight")
     await expect(page.getByRole("tab", { name: /^Mídia/ })).toBeFocused()
+  })
+
+  test("grade permanece íntegra com uma, duas e três fontes", async ({ page }, testInfo) => {
+    await page.goto(`/candidato/${WITH_DATA_SLUG}?tab=pesquisas`, { waitUntil: "networkidle" })
+    await waitForProfile(page)
+    const tab = page.locator("[data-pf-pesquisas-tab]")
+    const grid = tab.locator("[data-pf-pesquisa-card]").first().locator("..")
+    await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(1)
+
+    for (const count of [1, 2, 3]) {
+      await grid.evaluate((node, targetCount) => {
+        const cards = Array.from(node.querySelectorAll<HTMLElement>("[data-pf-pesquisa-card]"))
+        while (cards.length > 1) cards.pop()?.remove()
+        const source = cards[0]
+        if (!source) throw new Error("card base ausente")
+        const labels = ["Fonte de teste 2", "Fonte de teste 3"]
+        for (let index = 1; index < targetCount; index += 1) {
+          const clone = source.cloneNode(true) as HTMLElement
+          clone.dataset.pfPesquisaSource = `fixture-layout-${index + 1}`
+          const headerLabel = clone.querySelector<HTMLElement>("div > div > p")
+          if (headerLabel) headerLabel.textContent = labels[index - 1]
+          const instituteTerm = Array.from(clone.querySelectorAll("dt")).find(
+            (term) => term.textContent === "Instituto",
+          )
+          const metadataLabel = instituteTerm?.parentElement?.querySelector("dd")
+          if (metadataLabel) metadataLabel.textContent = labels[index - 1]
+          node.appendChild(clone)
+          cards.push(clone)
+        }
+      }, count)
+
+      await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(count)
+      await expect(tab.locator("[data-pf-pesquisas-empty]")).toHaveCount(0)
+      await expectNoHorizontalOverflow(page, tab)
+      await tab.screenshot({ path: testInfo.outputPath(`pesquisas-tab-${count}-fontes.png`) })
+    }
   })
 
   test("estado vazio é honesto no hero, Visão geral e aba", async ({ page }, testInfo) => {

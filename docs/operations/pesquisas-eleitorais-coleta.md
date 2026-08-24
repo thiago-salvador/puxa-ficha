@@ -2,7 +2,7 @@
 
 ## Escopo
 
-Este runbook cobre somente pesquisas nacionais para Presidente em 2026. O piloto guarda cada cenário separadamente, não calcula média e não compara turnos ou listas incompatíveis.
+Este runbook cobre somente pesquisas nacionais para Presidente em 2026 do conjunto preferencial Datafolha, AtlasIntel e Ipsos-Ipec. O piloto guarda cada cenário separadamente, não calcula média, não compara turnos ou listas incompatíveis e não substitui uma fonte ausente por outro instituto.
 
 O artefato versionado é `scripts/data/pesquisas-presidencia-2026.json`. Cada ausência usa `value: null` e `status: indeterminado`. Falha de fonte nunca vira zero.
 
@@ -11,11 +11,10 @@ O artefato versionado é `scripts/data/pesquisas-presidencia-2026.json`. Cada au
 | Fonte | Rota | Evidência pública | Justificativa |
 |---|---|---|---|
 | Datafolha | `direta_automatizavel` | [Folha, 21/08/2026](https://www1.folha.uol.com.br/poder/2026/08/datafolha-lula-marca-39-no-1o-turno-e-flavio-bolsonaro-tem-33.shtml) | O HTML da contratante traz resultados e metadados em texto. Uma leitura pontual separa o cenário com Marçal do cenário sem Marçal. |
-| Genial/Quaest | `direta_automatizavel` | [página oficial da Quaest, 05/08/2026](https://quaest.com.br/pesquisa-genial-quaest-recuperacao-de-flavio-bolsonaro/) | A página oficial traz resultados, método, campo, contratante e registro em HTML. Uma mídia íntegra serve apenas para conferir opções que não pontuaram. |
-| PoderData/Aya | `direta_automatizavel` | [página do PoderData, 30/07/2026](https://www.poder360.com.br/poderdata/leia-os-resultados-da-pesquisa-poderdata-aya-para-presidente/) | O HTML tem resultados e ficha técnica. O PDF integral expõe perguntas, rótulos e valores em texto extraível, sem OCR. |
-| AtlasIntel | `importacao_manual_auditada` | [relatório integral no CDN do instituto](https://cdn.atlasintel.org/498dd172-4381-4192-977c-c4af9787434f.pdf) | O PDF é estável, mas a extração textual omite os valores dos gráficos. A fonte é condicional, o contratante fica indeterminado até confirmação no PesqEle e a rodada nunca fica publicável por padrão. |
+| AtlasIntel | `importacao_manual_auditada` | [relatório integral no CDN do instituto](https://cdn.atlasintel.org/498dd172-4381-4192-977c-c4af9787434f.pdf) | O PDF é estável, mas a extração textual omite os valores dos gráficos. O PesqEle confirma recursos próprios, mas a fonte continua condicional e nunca fica publicável por padrão. |
+| Ipsos-Ipec | `sem_pesquisa_qualificada` | [índice oficial de eleições](https://www.ipsos.com/pt-br/topic/eleicoes) | Não há rodada nacional atual aprovada. A rodada de dezembro de 2025 é antiga e a publicação de agosto de 2026 é estadual, portanto a ausência é preservada. |
 
-No scorecard atual, Datafolha e PoderData estão `aprovado`. Genial/Quaest e AtlasIntel estão `condicional` e nunca ficam publicáveis por padrão. A Quaest tem página e método adequados, mas a ouvidoria genérica não prova uma trilha pública de correções.
+No conjunto preferencial atual, Datafolha está `aprovado`, AtlasIntel está `condicional` e Ipsos-Ipec está sem rodada nacional atual aprovada. O arquivo ainda preserva rodadas anteriores de outros institutos como evidência versionada, mas o contrato de publicação não as usa como fallback.
 
 O registro eleitoral é conferido pelo código no [PesqEle do TSE](https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml). O portal não oferece, neste piloto, URL pública permanente por código. Por isso o código e a URL do portal ficam em campos separados.
 
@@ -26,7 +25,7 @@ O registro eleitoral é conferido pelo código no [PesqEle do TSE](https://pesqe
 1. Abrir o índice oficial do instituto ou a página pública da contratante.
 2. Confirmar instituto, eleição, cargo, geografia, publicação e código de registro.
 3. Se o instituto não publicar o resultado acessível, usar mídia pública que reproduza números e metodologia. Marcar `source_kind` sem promover a mídia a fonte primária.
-4. Ler `scripts/data/pesquisas-eleitorais-fontes.json`: somente `aprovado` usa `publishable_by_default: true`; `condicional` exige revisão manual por rodada.
+4. Ler `preferred_source_ids` em `scripts/data/pesquisas-eleitorais-fontes.json`: somente fonte preferencial `aprovado` usa `publishable_by_default: true`; `condicional` exige revisão manual por rodada.
 
 ### Passo 2: capturar e normalizar
 
@@ -51,7 +50,7 @@ Não remover partido, título, acento ou sufixo para forçar vínculo. `Veterin�
 2. Validar cada linha do golden com `jq -c . tests/fixtures/pesquisas-eleitorais-golden.jsonl`.
 3. Rodar `node --import tsx --test tests/pesquisas-eleitorais-golden.test.ts` quando o teste do contrato estiver presente.
 4. Conferir que não existem duas chaves iguais de pesquisa, cenário e rótulo.
-5. Conferir que cenários comparados têm o mesmo `comparability_key`.
+5. Conferir que cenários publicados têm exatamente o `comparability_key` de `publication_scope`.
 6. Reabrir a URL pública e comparar ao menos um percentual, o período de campo e o registro.
 
 Totais de 99% ou 101% podem decorrer do arredondamento publicado. Preservar os percentuais brutos e nunca corrigir a soma por conta própria.

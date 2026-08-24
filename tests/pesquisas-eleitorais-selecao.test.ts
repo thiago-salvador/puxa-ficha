@@ -94,6 +94,32 @@ describe("seleção da pesquisa mais recente comparável", () => {
     assert.equal(selected[0].id, newer.id)
   })
 
+  it("não volta para rodada antiga quando o candidato está ausente na mais recente", () => {
+    const data = catalogo()
+    const original = data.pesquisas[0]
+    const scenario = original.cenarios[0]
+    const result = scenario.resultados.find((entry) => entry.candidateSlug)
+    assert.ok(result?.candidateSlug)
+    const newer = structuredClone(original)
+    newer.id = `${original.id}-sem-candidato`
+    newer.publicationDate.value = "2099-01-01"
+    newer.cenarios[0].resultados = newer.cenarios[0].resultados.filter(
+      (entry) => entry.candidateSlug !== result.candidateSlug,
+    )
+    data.pesquisas.push(newer)
+
+    assert.deepEqual(
+      selecionarPesquisasMaisRecentesComparaveis(data, result.candidateSlug, {
+        electionYear: original.electionYear,
+        office: original.office,
+        geographyCode: original.geography.code,
+        turn: scenario.turn,
+        comparabilityKey: scenario.comparabilityKey,
+      }),
+      [],
+    )
+  })
+
   it("preserva rótulo bruto, resultado canônico, estados e proveniência", () => {
     const data = catalogo()
     const poll = data.pesquisas[0]

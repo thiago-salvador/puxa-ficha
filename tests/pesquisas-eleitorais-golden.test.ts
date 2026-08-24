@@ -31,6 +31,7 @@ type Dataset = {
 };
 
 type SourceScorecard = {
+  preferred_source_ids: string[];
   sources: Array<{ id: string; status: string }>;
 };
 
@@ -55,6 +56,7 @@ const golden = goldenLines.map((line) => JSON.parse(line) as GoldenCase);
 
 const pollsById = new Map(dataset.pesquisas.map((poll) => [poll.id, poll]));
 const sourceStatusById = new Map(scorecard.sources.map((source) => [source.id, source.status]));
+const preferredSourceIds = new Set(scorecard.preferred_source_ids);
 const aliases = new Map(dataset.exact_aliases.map((alias) => [alias.raw_label, alias.candidate_slug]));
 
 function findScenario(surveyId: string, scenarioId: string): Scenario {
@@ -167,7 +169,11 @@ test("source ids and publication status match the scorecard", () => {
     const scorecardStatus = sourceStatusById.get(poll.source_id);
     assert.ok(scorecardStatus, `unknown source_id ${poll.source_id}`);
     assert.equal(poll.source_status, scorecardStatus, poll.id);
-    assert.equal(poll.publishable_by_default, scorecardStatus === "aprovado", poll.id);
+    assert.equal(
+      poll.publishable_by_default,
+      scorecardStatus === "aprovado" && preferredSourceIds.has(poll.source_id),
+      poll.id,
+    );
   }
 
   for (const goldenCase of golden) {

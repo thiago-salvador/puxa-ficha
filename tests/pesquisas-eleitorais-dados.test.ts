@@ -52,7 +52,11 @@ interface FonteFixture {
 function inputs() {
   return {
     pesquisas: JSON.parse(pesquisasText) as { pesquisas: PesquisaFixture[]; [key: string]: unknown },
-    fontes: JSON.parse(fontesText) as { sources: FonteFixture[]; [key: string]: unknown },
+    fontes: JSON.parse(fontesText) as {
+      preferred_source_ids: string[]
+      sources: FonteFixture[]
+      [key: string]: unknown
+    },
   }
 }
 
@@ -69,16 +73,25 @@ function rejects(run: () => unknown, pattern: RegExp) {
 }
 
 describe("contrato dos dados de pesquisas eleitorais", () => {
-  it("carrega os JSONs versionados e publica somente fontes aprovadas pelo scorecard", () => {
+  it("publica somente fontes preferenciais e aprovadas pelo scorecard", () => {
     const catalogo = carregarPesquisasEleitorais()
-    const fontes = JSON.parse(fontesText) as { sources: Array<{ id: string; status: string }> }
+    const fontes = JSON.parse(fontesText) as {
+      preferred_source_ids: string[]
+      sources: Array<{ id: string; status: string }>
+    }
     const aprovadas = new Set(fontes.sources.filter((source) => source.status === "aprovado").map((source) => source.id))
+    const preferenciais = new Set(fontes.preferred_source_ids)
 
     assert.ok(catalogo.schemaVersion)
     assert.ok(catalogo.aliasesVersion)
     assert.ok(catalogo.pesquisas.length > 0)
     assert.ok(catalogo.pesquisas.every((poll) => aprovadas.has(poll.sourceId)))
+    assert.ok(catalogo.pesquisas.every((poll) => preferenciais.has(poll.sourceId)))
     assert.ok(catalogo.pesquisas.every((poll) => poll.sourceStatus === "aprovado"))
+    assert.deepEqual(catalogo.preferredSourceIds, fontes.preferred_source_ids)
+    assert.deepEqual(catalogo.pesquisas.map((poll) => poll.sourceId), [
+      "datafolha-folha-globo-nacional-2026",
+    ])
     assert.strictEqual(carregarPesquisasEleitorais(), catalogo)
   })
 
@@ -143,7 +156,10 @@ describe("contrato dos dados de pesquisas eleitorais", () => {
   })
 
   it("rejeita propriedade JSON duplicada antes de JSON.parse", () => {
-    const duplicate = pesquisasText.replace('"schema_version": "1.0.0",', '"schema_version": "1.0.0", "schema_version": "2.0.0",')
+    const duplicate = pesquisasText.replace(
+      /"schema_version": "[^"]+",/,
+      '"schema_version": "1.1.0", "schema_version": "2.0.0",',
+    )
     rejects(() => parsePesquisasEleitoraisJson(duplicate, fontesText), /propriedade JSON duplicada/)
   })
 
@@ -157,5 +173,37 @@ describe("contrato dos dados de pesquisas eleitorais", () => {
     pesquisas.pesquisas[0].publishable_by_default = false
     const parsed = parse(pesquisas, fontes)
     assert.equal(parsed.pesquisas.some((poll) => poll.sourceId === sourceId), false)
+  })
+
+  it("mantém AtlasIntel fail-closed enquanto o scorecard estiver condicional", () => {
+    const { pesquisas, fontes } = inputs()
+    const atlas = fontes.sources.find((source) => source.id === "atlasintel-bloomberg-nacional-2026")
+    assert.equal(atlas?.status, "condicional")
+    assert.equal(
+      parse(pesquisas, fontes).pesquisas.some(
+        (poll) => poll.sourceId === "atlasintel-bloomberg-nacional-2026",
+      ),
+      false,
+    )
+  })
+
+  it("não substitui fonte preferencial ausente por instituto aprovado fora do conjunto", () => {
+    const { pesquisas, fontes } = inputs()
+    assert.equal(
+      fontes.sources.find((source) => source.id === "poderdata-aya-nacional-2026")?.status,
+      "aprovado",
+    )
+    assert.equal(
+      parse(pesquisas, fontes).pesquisas.some(
+        (poll) => poll.sourceId === "poderdata-aya-nacional-2026",
+      ),
+      false,
+    )
+  })
+
+  it("rejeita fonte preferencial inexistente no scorecard", () => {
+    const { pesquisas, fontes } = inputs()
+    fontes.preferred_source_ids.push("fonte-inexistente")
+    rejects(() => parse(pesquisas, fontes), /preferred_source_ids referencia fonte inexistente/)
   })
 })

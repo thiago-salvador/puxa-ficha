@@ -5,9 +5,14 @@
     "country": "BR",
     "office": "presidente",
     "geography": "Brasil",
-    "purpose": "fontes qualificadas para o piloto de pesquisas nas fichas de candidatos a Presidente, sem ranking absoluto de confiabilidade"
+    "purpose": "conjunto preferencial de fontes para pesquisas nacionais nas fichas de candidatos a Presidente, sem substituição por outros institutos"
   },
-  "consulted_at": "2026-08-23T22:29:25-03:00",
+  "preferred_source_ids": [
+    "datafolha-folha-globo-nacional-2026",
+    "atlasintel-bloomberg-nacional-2026",
+    "ipsos-ipec-nacional-2026"
+  ],
+  "consulted_at": "2026-08-24T19:07:12-03:00",
   "status_values": [
     "aprovado",
     "condicional",
@@ -316,7 +321,7 @@
       "source_kind": "instituto_com_resultado_primário",
       "roles": {
         "institute": "AtlasIntel",
-        "commissioner": "indeterminado no relatório consultado",
+        "commissioner": "AtlasIntel Tecnologia de Dados Ltda., recursos próprios",
         "official_registry": "TSE/PesqEle",
         "publication_vehicle": "AtlasIntel",
         "dissemination_partner": "Bloomberg, conforme co-branding do relatório"
@@ -371,7 +376,8 @@
         }
       },
       "conditions": [
-        "Confirmar o contratante legal no PesqEle por rodada.",
+        "O PesqEle confirma AtlasIntel como contratante e pagante, com recursos próprios.",
+        "Resolver a diferença entre 5.000 entrevistados registrados e 5.021 respondentes informados na divulgação.",
         "Registrar manualmente eventual substituição ou correção do PDF."
       ],
       "historical_accuracy": {
@@ -392,7 +398,7 @@
         ],
         "note": "Evidência de uma única eleição; não implica ranking absoluto."
       },
-      "consulted_at": "2026-08-23T22:29:25-03:00"
+      "consulted_at": "2026-08-24T19:07:12-03:00"
     },
     {
       "id": "parana-pesquisas-nacional-2026",
@@ -480,13 +486,13 @@
       "consulted_at": "2026-08-23T22:29:25-03:00"
     },
     {
-      "id": "ipsos-ipec-nacional-2025",
+      "id": "ipsos-ipec-nacional-2026",
       "status": "excluído",
-      "source_kind": "instituto_com_resultado_primário_antigo",
+      "source_kind": "instituto_preferencial_sem_resultado_nacional_atual",
       "roles": {
         "institute": "Ipsos-Ipec",
         "commissioner": "Ipsos-Ipec",
-        "official_registry": null,
+        "official_registry": "TSE/PesqEle, exigido por rodada nacional de 2026",
         "publication_vehicle": "Ipsos",
         "dissemination_partner": null
       },
@@ -518,7 +524,8 @@
         "result_access": {
           "pass": true,
           "evidence_urls": [
-            "https://www.ipsos.com/pt-br/lula-lidera-hoje-todos-os-cenarios-testados-para-eleicoes-de-2026"
+            "https://www.ipsos.com/pt-br/lula-lidera-hoje-todos-os-cenarios-testados-para-eleicoes-de-2026",
+            "https://www.ipsos.com/pt-br/topic/eleicoes"
           ]
         },
         "corrections": {
@@ -538,13 +545,13 @@
           ]
         }
       },
-      "exclusion_reason": "O resultado nacional localizado é de dezembro de 2025, anterior ao registro obrigatório de 2026 e antigo para o piloto atual.",
+      "exclusion_reason": "A rodada presidencial nacional mais recente localizada é de dezembro de 2025. A publicação atual de agosto de 2026 mede o Ceará e é incompatível com o escopo nacional, portanto Ipsos-Ipec permanece ausente nas fichas.",
       "historical_accuracy": {
         "status": "nao_medido",
         "evidence_urls": [],
         "note": "A comparação de 2022 usa Ipec antes da aquisição e não foi promovida à identidade atual Ipsos-Ipec sem prova adicional de continuidade comparável."
       },
-      "consulted_at": "2026-08-23T22:29:25-03:00"
+      "consulted_at": "2026-08-24T19:07:12-03:00"
     },
     {
       "id": "plano-politico-agregador-presidente-2026",
