@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "scope": {
+    "election_year": 2026,
+    "country": "BR",
+    "office": "presidente",
+    "geography": "Brasil",
+    "purpose": "fontes qualificadas para o piloto de pesquisas nas fichas de candidatos a Presidente, sem ranking absoluto de confiabilidade"
+  },
+  "consulted_at": "2026-08-23T22:29:25-03:00",
+  "status_values": [
+    "aprovado",
+    "condicional",
+    "excluído"
+  ],
+  "criteria_definitions": {
+    "methodology_transparency": "Método, campo, margem e confiança estão públicos.",
+    "result_access": "Resultado ou relatório integral está em URL pública identificável.",
+    "corrections": "Há política específica, trilha pública de erratas ou correção visível e versionada; contato ou Ouvidoria genérica, isoladamente, não passa.",
+    "sample_identification": "Tamanho e população alvo estão explícitos.",
+    "publication_stability": "Existe arquivo, landing page ou URL permanente com rodadas identificáveis."
+  },
+  "status_rule": {
+    "aprovado": "Os quatro critérios duros estão verdadeiros e há política ou trilha pública específica de correções. Aprovação significa qualificação operacional para o piloto, não ranking absoluto de confiabilidade.",
+    "condicional": "Há uma lacuna que exige revisão manual antes de incluir uma rodada.",
+    "excluído": "Há incompatibilidade semântica ou falta de atualidade para o piloto."
+  },
+  "historical_accuracy_definition": {
+    "separate_from_operational_status": true,
+    "consulted_at": "2026-08-23T22:42:04-03:00",
+    "benchmark_id": "br-presidente-2022-1t-comparacao-dois-lideres",
+    "benchmark_scope": "Primeiro turno presidencial nacional de 2022; comparação de uma rodada próxima da eleição com o resultado oficial dos dois candidatos líderes.",
+    "metric": "Erro absoluto médio, em pontos percentuais, das parcelas de votos válidos de Lula e Jair Bolsonaro.",
+    "official_result_pct": {
+      "lula": 48.43,
+      "jair_bolsonaro": 43.2
+    },
+    "evidence_urls": [
+      "https://static.poder360.com.br/2022/10/oficio-cade-institutos-de-pesquisas-eleicoes-13out2022.pdf",
+      "https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/100-das-secoes-totalizadas-confira-como-ficou-o-quadro-eleitoral-apos-o-1o-turno"
+    ],
+    "caveats": [
+      "É uma única eleição e considera somente dois candidatos.",
+      "As rodadas comparadas têm datas de campo distintas.",
+      "O indicador não controla mudança tardia de voto, modo de coleta, desenho amostral ou incerteza além da margem publicada.",
+      "Não deve ser usado como ranking absoluto de confiabilidade para 2026."
+    ]
+  },
+  "official_registry": {
+    "id": "tse-pesqele-2026",
+    "role": "registro_oficial",
+    "status": "aprovado",
+    "name": "Tribunal Superior Eleitoral, PesqEle",
+    "query_url": "https://www.tse.jus.br/eleicoes/pesquisa-eleitorais/consulta-as-pesquisas-registradas",
+    "open_data_url": "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026",
+    "update_frequency": "diária",
+    "caveat": "O TSE não faz controle prévio dos resultados divulgados; o registro comprova metadados declarados, não endossa o resultado.",
+    "consulted_at": "2026-08-23T22:29:25-03:00"
+  },
+  "sources": [
+    {
+      "id": "quaest-genial-nacional-2026",
+      "status": "condicional",
+      "source_kind": "instituto_com_resultado_primário",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Genial Investimentos",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "Quaest",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-07-31",
+          "end": "2026-08-03"
+        },
+        "published_at": "2026-08-05",
+        "sample_size": 2004,
+        "method": "presencial",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "presidente",
+        "geography": "Brasil",
+        "rounds": [1, 2],
+        "registration_id": "BR-06591/2026",
+        "result_url": "https://quaest.com.br/pesquisa-genial-quaest-recuperacao-de-flavio-bolsonaro/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/"
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://quaest.com.br/pesquisa-genial-quaest-recuperacao-de-flavio-bolsonaro/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://quaest.com.br/pesquisa-genial-quaest-recuperacao-de-flavio-bolsonaro/",
+            "https://quaest.com.br/relatorios/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "A página identifica Ouvidoria no rodapé, mas um canal genérico não prova política ou trilha pública de correções."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://quaest.com.br/pesquisa-genial-quaest-recuperacao-de-flavio-bolsonaro/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://quaest.com.br/relatorios/"
+          ]
+        }
+      },
+      "conditions": [
+        "Registrar manualmente eventual substituição, errata ou correção do resultado.",
+        "Não tratar a Ouvidoria genérica como prova isolada de correção."
+      ],
+      "historical_accuracy": {
+        "status": "evidencia_limitada",
+        "benchmark_id": "br-presidente-2022-1t-comparacao-dois-lideres",
+        "observed_poll_pct": {
+          "lula": 49,
+          "jair_bolsonaro": 38
+        },
+        "absolute_error_pp": {
+          "lula": 0.57,
+          "jair_bolsonaro": 5.2
+        },
+        "mean_absolute_error_pp": 2.89,
+        "evidence_urls": [
+          "https://static.poder360.com.br/2022/10/oficio-cade-institutos-de-pesquisas-eleicoes-13out2022.pdf",
+          "https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/100-das-secoes-totalizadas-confira-como-ficou-o-quadro-eleitoral-apos-o-1o-turno"
+        ],
+        "note": "Evidência de uma única eleição; não implica ranking absoluto."
+      },
+      "consulted_at": "2026-08-23T22:29:25-03:00"
+    },
+    {
+      "id": "poderdata-aya-nacional-2026",
+      "status": "aprovado",
+      "source_kind": "instituto_e_veículo_com_resultado_primário",
+      "roles": {
+        "institute": "PoderData",
+        "commissioner": "PoderData, recursos próprios",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "Poder360",
+        "dissemination_partner": "Aya Bancah"
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-07-26",
+          "end": "2026-07-29"
+        },
+        "published_at": "2026-07-30",
+        "sample_size": 2400,
+        "municipalities": 677,
+        "method": "telefônico por URA",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "presidente",
+        "geography": "Brasil",
+        "rounds": [1, 2],
+        "registration_id": "BR-07845/2026",
+        "result_url": "https://www.poder360.com.br/poderdata/leia-os-resultados-da-pesquisa-poderdata-aya-para-presidente/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/"
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poderdata/leia-os-resultados-da-pesquisa-poderdata-aya-para-presidente/",
+            "https://www.poder360.com.br/poderdata/entenda-como-e-realizada-a-pesquisa-poderdata/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poderdata/leia-os-resultados-da-pesquisa-poderdata-aya-para-presidente/"
+          ]
+        },
+        "corrections": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poderdata/leia-os-resultados-da-pesquisa-poderdata-aya-para-presidente/",
+            "https://www.poder360.com.br/pesquisas/poderdata-acerta-resultado-de-lula-e-ascensao-de-bolsonaro/"
+          ],
+          "note": "A publicação oferece canal para apontar erros e existe exemplo público de correção identificada."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poderdata/leia-os-resultados-da-pesquisa-poderdata-aya-para-presidente/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poderdata/entenda-como-e-realizada-a-pesquisa-poderdata/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "evidencia_limitada",
+        "benchmark_id": "br-presidente-2022-1t-comparacao-dois-lideres",
+        "observed_poll_pct": {
+          "lula": 48,
+          "jair_bolsonaro": 38
+        },
+        "absolute_error_pp": {
+          "lula": 0.43,
+          "jair_bolsonaro": 5.2
+        },
+        "mean_absolute_error_pp": 2.82,
+        "evidence_urls": [
+          "https://static.poder360.com.br/2022/10/oficio-cade-institutos-de-pesquisas-eleicoes-13out2022.pdf",
+          "https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/100-das-secoes-totalizadas-confira-como-ficou-o-quadro-eleitoral-apos-o-1o-turno"
+        ],
+        "note": "Evidência de uma única eleição; não implica ranking absoluto."
+      },
+      "consulted_at": "2026-08-23T22:29:25-03:00"
+    },
+    {
+      "id": "datafolha-folha-globo-nacional-2026",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veículo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Datafolha",
+        "commissioner": "Folha de S.Paulo e TV Globo",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "Folha de S.Paulo",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-18",
+          "end": "2026-08-19"
+        },
+        "published_at": "2026-08-21",
+        "sample_size": 2058,
+        "municipalities": 128,
+        "method": "presencial em pontos de fluxo",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "presidente",
+        "geography": "Brasil",
+        "rounds": [1, 2],
+        "registration_id": "BR-04496/2026",
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/08/datafolha-lula-marca-39-no-1o-turno-e-flavio-bolsonaro-tem-33.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/"
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/08/datafolha-lula-marca-39-no-1o-turno-e-flavio-bolsonaro-tem-33.shtml",
+            "https://www1.folha.uol.com.br/poder/2026/08/datafolha-50-dos-brasileiros-veem-chance-de-interferencia-estrangeira-nas-eleicoes.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/08/datafolha-lula-marca-39-no-1o-turno-e-flavio-bolsonaro-tem-33.shtml"
+          ],
+          "note": "O veículo é a fonte pública do resultado e permanece separado do instituto."
+        },
+        "corrections": {
+          "pass": true,
+          "evidence_urls": [
+            "https://temas.folha.uol.com.br/folha-projeto-editorial/manual-de-redacao-conduta/erramos.shtml",
+            "https://www1.folha.uol.com.br/erramos/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/08/datafolha-lula-marca-39-no-1o-turno-e-flavio-bolsonaro-tem-33.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/08/datafolha-lula-marca-39-no-1o-turno-e-flavio-bolsonaro-tem-33.shtml"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "evidencia_limitada",
+        "benchmark_id": "br-presidente-2022-1t-comparacao-dois-lideres",
+        "observed_poll_pct": {
+          "lula": 50,
+          "jair_bolsonaro": 36
+        },
+        "absolute_error_pp": {
+          "lula": 1.57,
+          "jair_bolsonaro": 7.2
+        },
+        "mean_absolute_error_pp": 4.39,
+        "evidence_urls": [
+          "https://static.poder360.com.br/2022/10/oficio-cade-institutos-de-pesquisas-eleicoes-13out2022.pdf",
+          "https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/100-das-secoes-totalizadas-confira-como-ficou-o-quadro-eleitoral-apos-o-1o-turno"
+        ],
+        "note": "Evidência de uma única eleição; não implica ranking absoluto."
+      },
+      "consulted_at": "2026-08-23T22:29:25-03:00"
+    },
+    {
+      "id": "atlasintel-bloomberg-nacional-2026",
+      "status": "condicional",
+      "source_kind": "instituto_com_resultado_primário",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": "indeterminado no relatório consultado",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "AtlasIntel",
+        "dissemination_partner": "Bloomberg, conforme co-branding do relatório"
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-07-22",
+          "end": "2026-07-27"
+        },
+        "published_at": "2026-07-29",
+        "sample_size": 5021,
+        "method": "recrutamento digital aleatório, Atlas RDR",
+        "margin_of_error_pp": 1,
+        "confidence_level_pct": 95,
+        "office": "presidente",
+        "geography": "Brasil",
+        "rounds": [1, 2],
+        "registration_id": "BR-08602/2026",
+        "result_url": "https://cdn.atlasintel.org/498dd172-4381-4192-977c-c4af9787434f.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/"
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://cdn.atlasintel.org/498dd172-4381-4192-977c-c4af9787434f.pdf"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://atlasintel.org/polls/exclusive-polls",
+            "https://cdn.atlasintel.org/498dd172-4381-4192-977c-c4af9787434f.pdf"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Não foi localizada trilha pública específica de correções."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://cdn.atlasintel.org/498dd172-4381-4192-977c-c4af9787434f.pdf"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://atlasintel.org/polls/exclusive-polls"
+          ]
+        }
+      },
+      "conditions": [
+        "Confirmar o contratante legal no PesqEle por rodada.",
+        "Registrar manualmente eventual substituição ou correção do PDF."
+      ],
+      "historical_accuracy": {
+        "status": "evidencia_limitada",
+        "benchmark_id": "br-presidente-2022-1t-comparacao-dois-lideres",
+        "observed_poll_pct": {
+          "lula": 50.3,
+          "jair_bolsonaro": 41.1
+        },
+        "absolute_error_pp": {
+          "lula": 1.87,
+          "jair_bolsonaro": 2.1
+        },
+        "mean_absolute_error_pp": 1.99,
+        "evidence_urls": [
+          "https://static.poder360.com.br/2022/10/oficio-cade-institutos-de-pesquisas-eleicoes-13out2022.pdf",
+          "https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/100-das-secoes-totalizadas-confira-como-ficou-o-quadro-eleitoral-apos-o-1o-turno"
+        ],
+        "note": "Evidência de uma única eleição; não implica ranking absoluto."
+      },
+      "consulted_at": "2026-08-23T22:29:25-03:00"
+    },
+    {
+      "id": "parana-pesquisas-nacional-2026",
+      "status": "condicional",
+      "source_kind": "instituto_com_resultado_primário",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "indeterminado no relatório consultado",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "Paraná Pesquisas",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-03-25",
+          "end": "2026-03-28"
+        },
+        "published_at": "2026-03-30",
+        "sample_size": 2080,
+        "municipalities": 158,
+        "method": "presencial domiciliar",
+        "margin_of_error_pp": 2.2,
+        "confidence_level_pct": 95,
+        "office": "presidente",
+        "geography": "Brasil",
+        "rounds": [1, 2],
+        "registration_id": "BR-00873/2026",
+        "result_url": "https://paranapesquisas.com.br/wp-content/uploads/2026/03/Nacional_Mar26-3.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/"
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/03/Nacional_Mar26-3.pdf"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/03/Nacional_Mar26-3.pdf"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Não foi localizada política pública específica de correções."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/03/Nacional_Mar26-3.pdf"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/"
+          ]
+        }
+      },
+      "conditions": [
+        "Confirmar contratante no PesqEle por rodada.",
+        "Não tratar a rodada nacional de março como atual se houver fonte aprovada mais recente.",
+        "Registrar manualmente eventual substituição ou correção do PDF."
+      ],
+      "historical_accuracy": {
+        "status": "evidencia_limitada",
+        "benchmark_id": "br-presidente-2022-1t-comparacao-dois-lideres",
+        "observed_poll_pct": {
+          "lula": 47.1,
+          "jair_bolsonaro": 40
+        },
+        "absolute_error_pp": {
+          "lula": 1.33,
+          "jair_bolsonaro": 3.2
+        },
+        "mean_absolute_error_pp": 2.27,
+        "evidence_urls": [
+          "https://static.poder360.com.br/2022/10/oficio-cade-institutos-de-pesquisas-eleicoes-13out2022.pdf",
+          "https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/100-das-secoes-totalizadas-confira-como-ficou-o-quadro-eleitoral-apos-o-1o-turno"
+        ],
+        "note": "Evidência de uma única eleição; não implica ranking absoluto."
+      },
+      "consulted_at": "2026-08-23T22:29:25-03:00"
+    },
+    {
+      "id": "ipsos-ipec-nacional-2025",
+      "status": "excluído",
+      "source_kind": "instituto_com_resultado_primário_antigo",
+      "roles": {
+        "institute": "Ipsos-Ipec",
+        "commissioner": "Ipsos-Ipec",
+        "official_registry": null,
+        "publication_vehicle": "Ipsos",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2025-12-04",
+          "end": "2025-12-08"
+        },
+        "published_at": "2025-12-10",
+        "sample_size": 2000,
+        "municipalities": 131,
+        "method": "presencial domiciliar",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "presidente",
+        "geography": "Brasil",
+        "rounds": [1],
+        "registration_id": null,
+        "result_url": "https://www.ipsos.com/pt-br/lula-lidera-hoje-todos-os-cenarios-testados-para-eleicoes-de-2026",
+        "registry_url": null
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.ipsos.com/pt-br/lula-lidera-hoje-todos-os-cenarios-testados-para-eleicoes-de-2026"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.ipsos.com/pt-br/lula-lidera-hoje-todos-os-cenarios-testados-para-eleicoes-de-2026"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": []
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.ipsos.com/pt-br/lula-lidera-hoje-todos-os-cenarios-testados-para-eleicoes-de-2026"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.ipsos.com/pt-br/lula-lidera-hoje-todos-os-cenarios-testados-para-eleicoes-de-2026"
+          ]
+        }
+      },
+      "exclusion_reason": "O resultado nacional localizado é de dezembro de 2025, anterior ao registro obrigatório de 2026 e antigo para o piloto atual.",
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A comparação de 2022 usa Ipec antes da aquisição e não foi promovida à identidade atual Ipsos-Ipec sem prova adicional de continuidade comparável."
+      },
+      "consulted_at": "2026-08-23T22:29:25-03:00"
+    },
+    {
+      "id": "plano-politico-agregador-presidente-2026",
+      "status": "excluído",
+      "source_kind": "agregador_modelado",
+      "roles": {
+        "institute": null,
+        "commissioner": null,
+        "official_registry": "reutiliza registros TSE de terceiros",
+        "publication_vehicle": "Plano Político",
+        "dissemination_partner": null
+      },
+      "representative_poll": null,
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.planopolitico.com.br/agregador/presidente/"
+          ]
+        },
+        "result_access": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.planopolitico.com.br/agregador/presidente/"
+          ],
+          "note": "A página publica resultado modelado, não o resultado primário de um instituto."
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": []
+        },
+        "sample_identification": {
+          "pass": false,
+          "evidence_urls": []
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.planopolitico.com.br/agregador/presidente/"
+          ]
+        }
+      },
+      "exclusion_reason": "Aplica ponderação, tendência e agregação próprias, incompatíveis com o contrato do piloto.",
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "Não é instituto e não produz uma rodada primária comparável."
+      },
+      "consulted_at": "2026-08-23T22:29:25-03:00"
+    }
+  ],
+  "media_fallback_policy": {
+    "allowed": true,
+    "only_when": "A página ou relatório do instituto não está publicamente acessível.",
+    "required_fields": [
+      "institute",
+      "commissioner",
+      "official_registry",
+      "publication_vehicle",
+      "result_url",
+      "registry_url"
+    ],
+    "prohibitions": [
+      "Não promover veículo a instituto.",
+      "Não usar agregador como resultado primário.",
+      "Não transformar falha de acesso em zero."
+    ]
+  },
+  "research_safety": {
+    "external_content_treated_as_data": true,
+    "instructions_from_external_pages_executed": false,
+    "messages_sent": false,
+    "accounts_changed": false,
+    "remote_database_changed": false
+  }
+}

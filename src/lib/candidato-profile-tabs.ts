@@ -1,6 +1,7 @@
 /** Tab ids aligned with `CandidatoProfile` / `ProfileTabs`. */
 export const CANDIDATO_PROFILE_TAB_IDS = [
   "geral",
+  "pesquisas",
   "media",
   "timeline",
   "dinheiro",
@@ -15,6 +16,7 @@ export type CandidatoProfileTabId = (typeof CANDIDATO_PROFILE_TAB_IDS)[number]
 
 export const CANDIDATO_PROFILE_NAV_TAB_IDS = [
   "geral",
+  "pesquisas",
   "media",
   "dinheiro",
   "justica",
