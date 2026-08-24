@@ -4,7 +4,10 @@ import { renderToStaticMarkup } from "react-dom/server"
 
 import { MoneyTabSection } from "@/components/CandidatoProfileSections"
 import { ProfileOverview } from "@/components/ProfileOverview"
-import { PATRIMONIO_EVOLUCAO_ALERTA_LIMITE } from "@/lib/evolucao-patrimonial"
+import {
+  fonteDadosAbertosPatrimonioTse,
+  PATRIMONIO_EVOLUCAO_ALERTA_LIMITE,
+} from "@/lib/evolucao-patrimonial"
 import type { FichaCandidato, Patrimonio } from "@/lib/types"
 import { formatBRL } from "@/lib/utils"
 
@@ -59,6 +62,8 @@ test("exibe o sinal na visão geral e na aba Dinheiro quando o aumento passa de 
     )
     assert.ok(html.includes("entre 2022 e 2026"))
     assert.ok(html.includes("não determina sua causa"))
+    assert.ok(html.includes(`href="${fonteDadosAbertosPatrimonioTse(2022)}"`))
+    assert.ok(html.includes(`href="${fonteDadosAbertosPatrimonioTse(2026)}"`))
   }
 })
 

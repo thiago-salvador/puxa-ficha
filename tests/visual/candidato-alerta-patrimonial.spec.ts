@@ -2,7 +2,10 @@ import { execFileSync } from "node:child_process"
 import path from "node:path"
 import { expect, test } from "playwright/test"
 
-import { PATRIMONIO_EVOLUCAO_ALERTA_LIMITE } from "@/lib/evolucao-patrimonial"
+import {
+  fonteDadosAbertosPatrimonioTse,
+  PATRIMONIO_EVOLUCAO_ALERTA_LIMITE,
+} from "@/lib/evolucao-patrimonial"
 import { formatBRL } from "@/lib/utils"
 
 const FIXTURE_RENDERER = path.join(process.cwd(), "tests/helpers/render-candidato-alerta-patrimonial.tsx")
@@ -42,6 +45,12 @@ test("alerta patrimonial fica legível na ficha", async ({ page }, testInfo) => 
   expect(estilo.borderStyle).toBe("solid")
   expect(estilo.borderRadius).not.toBe("0px")
   expect(estilo.fontFamily.toLowerCase()).toContain("inter")
+
+  for (const ano of [2022, 2026]) {
+    const fontes = page.getByRole("link", { name: `TSE ${ano}`, exact: true })
+    await expect(fontes).toHaveCount(2)
+    await expect(fontes.first()).toHaveAttribute("href", fonteDadosAbertosPatrimonioTse(ano))
+  }
 
   await page.screenshot({
     path: testInfo.outputPath("candidato-alerta-patrimonial.png"),

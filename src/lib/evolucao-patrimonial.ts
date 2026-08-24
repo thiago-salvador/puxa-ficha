@@ -7,6 +7,10 @@ const PATRIMONIO_EVOLUCAO_ANO_ALVO = 2026
 
 export const PATRIMONIO_EVOLUCAO_ALERTA_LIMITE = 1_000_000
 
+export function fonteDadosAbertosPatrimonioTse(ano: number): string {
+  return `https://dadosabertos.tse.jus.br/dataset/candidatos-${ano}`
+}
+
 export type PatrimonioAnoValor = {
   ano_eleicao: number
   valor_total: number | null
