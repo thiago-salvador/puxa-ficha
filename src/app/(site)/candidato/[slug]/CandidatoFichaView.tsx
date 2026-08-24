@@ -22,6 +22,7 @@ import { DataSourceNotice } from "@/components/DataSourceNotice"
 import { DataUnavailableState } from "@/components/DataUnavailableState"
 import { ProfileSourceFooter } from "@/components/ProfileSourceFooter"
 import { CandidatePhotoCredit } from "@/components/CandidatePhotoCredit"
+import { PartyLogoMark } from "@/components/PartyLogoMark"
 import { JsonLd } from "@/components/JsonLd"
 import {
   buildCandidateMetadataDescription,
@@ -307,15 +308,18 @@ export async function CandidatoFichaView({
           )}
 
           <div className="flex flex-col justify-end">
-            <span
-              data-pf-hero-party={partyPublicLabel || undefined}
-              data-pf-hero-role={ficha.cargo_disputado}
-              className="text-[10px] font-bold uppercase tracking-[0.12em] text-foreground sm:text-[length:var(--text-eyebrow)]"
-            >
-              {partyPublicLabel
-                ? `${partyPublicLabel} · ${cargoDisputadoLabel}`
-                : cargoDisputadoLabel}
-            </span>
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              <PartyLogoMark sigla={ficha.partido_sigla} priority />
+              <span
+                data-pf-hero-party={partyPublicLabel || undefined}
+                data-pf-hero-role={ficha.cargo_disputado}
+                className="text-[10px] font-bold uppercase tracking-[0.12em] text-foreground sm:text-[length:var(--text-eyebrow)]"
+              >
+                {partyPublicLabel
+                  ? `${partyPublicLabel} · ${cargoDisputadoLabel}`
+                  : cargoDisputadoLabel}
+              </span>
+            </div>
 
             {/* Marcador de procedência colado no dado (achado A0.1). O aviso
                 de pré-candidatura existia só no rodapé, longe do pleito.
