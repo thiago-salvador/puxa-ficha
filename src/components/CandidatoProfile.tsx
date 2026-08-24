@@ -47,6 +47,7 @@ import type { TimelineNavigateOptions } from "./timeline/TimelineTooltip"
 import { buildTimelineEvents } from "@/lib/timeline-utils"
 import { groupLegislacaoProfileItems } from "@/lib/legislacao-profile-groups"
 import { FollowCandidateButton } from "./alerts/FollowCandidateButton"
+import { CandidateGeneralData } from "./CandidateGeneralData"
 import { EditorialBadge } from "./attention-points/EditorialBadge"
 import {
   FONTES_LINK_CLASS_ALERTAS,
@@ -739,6 +740,7 @@ export function CandidatoProfile({
                   candidateName={ficha.nome_urna}
                   candidateSlug={ficha.slug}
                 />
+                <CandidateGeneralData ficha={ficha} />
               </div>
             )}
 
