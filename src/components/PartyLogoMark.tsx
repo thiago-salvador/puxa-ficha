@@ -18,7 +18,7 @@ export function PartyLogoMark({
       aria-hidden="true"
       data-pf-party-logo={sigla}
       className={cn(
-        "inline-flex h-9 w-12 shrink-0 items-center justify-center rounded-[10px] border border-border/70 bg-white p-1.5 shadow-sm sm:h-11 sm:w-14 sm:rounded-xl sm:p-2",
+        "inline-flex h-10 w-14 shrink-0 items-center justify-center rounded-[10px] border border-border/70 bg-white p-1 shadow-sm sm:h-12 sm:w-16 sm:rounded-xl sm:p-1.5",
         className,
       )}
     >

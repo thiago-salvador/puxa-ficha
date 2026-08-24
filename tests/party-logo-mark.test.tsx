@@ -22,7 +22,7 @@ describe("PartyLogoMark", () => {
     assert.equal(renderToStaticMarkup(<PartyLogoMark sigla={null} />), "")
   })
 
-  it("renderiza todas as siglas canônicas da referência do TSE", () => {
+  it("renderiza todas as siglas canônicas e está integrado em todas as fichas", () => {
     const referencia = JSON.parse(
       readFileSync(
         join(import.meta.dirname, "..", "data", "referencia-tse-partidos-2026-08-14.json"),
@@ -35,6 +35,17 @@ describe("PartyLogoMark", () => {
       const html = renderToStaticMarkup(<PartyLogoMark sigla={sigla} />)
       assert.match(html, /data-pf-party-logo=/, sigla)
       assert.match(html, /src="\/partidos\/[a-z0-9-]+\.png"/, sigla)
+    }
+
+    const integrationFiles = [
+      "src/app/(site)/candidato/[slug]/CandidatoFichaView.tsx",
+      "src/app/(site)/preview/candidato/[slug]/page.tsx",
+      "src/components/EmbedWidget.tsx",
+    ]
+
+    for (const file of integrationFiles) {
+      const source = readFileSync(join(import.meta.dirname, "..", file), "utf8")
+      assert.match(source, /<PartyLogoMark sigla=\{ficha\.partido_sigla\} priority \/>/, file)
     }
   })
 })
