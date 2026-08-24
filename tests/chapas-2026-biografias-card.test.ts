@@ -31,7 +31,7 @@ test("migration corrige exatamente as seis biografias incompatíveis", () => {
 })
 
 test("hero destaca somente o vice abaixo do nome do candidato", () => {
-  assert.match(view, /<\/h1>\s*\{ficha\.chapa_2026 && \(/)
+  assert.match(view, /data-pf-hero-name[\s\S]*?data-pf-chapa-2026/)
   assert.match(view, /data-pf-chapa-vice/)
   assert.match(view, /Vice:\{" "\}/)
   assert.doesNotMatch(view, /data-pf-chapa-titular/)

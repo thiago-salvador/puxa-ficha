@@ -654,11 +654,13 @@ function CareerTeaser({
 export function ProfileOverview({
   ficha,
   onNavigateTab,
+  leadingCard,
 }: {
   ficha: FichaCandidato
   onNavigateTab: (tabId: string) => void
+  leadingCard?: React.ReactNode
 }) {
-  if (!hasOverviewData(ficha)) {
+  if (!hasOverviewData(ficha) && !leadingCard) {
     return <EmptyOverviewState />
   }
 
@@ -687,13 +689,14 @@ export function ProfileOverview({
     // `items-start` porque a grade esticava cada card até a altura do vizinho:
     // um card curto (patrimônio de registro único) ao lado do card denso de
     // financiamento virava uma caixa com centenas de pixels vazios dentro.
-    <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2">
+    <div data-pf-profile-overview-grid="" className="grid grid-cols-1 items-start gap-6 md:grid-cols-2">
       <PatrimonioTeaser
         patrimonio={patrimonio}
         summary={patrimonioSummary}
         eleicoes={patrimonioEleicoes}
         onNavigate={() => onNavigateTab("dinheiro")}
       />
+      {leadingCard}
       <FinancingTeaser
         latestFin={latestFin}
         pleitoLabel={latestFinPleitoLabel}
