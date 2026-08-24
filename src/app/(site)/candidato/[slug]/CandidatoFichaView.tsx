@@ -19,6 +19,7 @@ import {
 } from "@/components/DeferredCandidateClientWidgets"
 import { SocialLinks } from "@/components/SocialLinks"
 import { DataSourceNotice } from "@/components/DataSourceNotice"
+import { PesquisasPresidenciaisHero } from "@/components/PesquisasPresidenciaisSection"
 import { DataUnavailableState } from "@/components/DataUnavailableState"
 import { ProfileSourceFooter } from "@/components/ProfileSourceFooter"
 import { CandidatePhotoCredit } from "@/components/CandidatePhotoCredit"
@@ -38,6 +39,7 @@ import {
 } from "@/lib/candidatura-proveniencia"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
+import { listarPesquisasPresidenciaisPorSlug } from "@/lib/pesquisas-eleitorais"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
@@ -95,6 +97,9 @@ export async function CandidatoFichaView({
     }
     notFound()
   }
+
+  const pesquisasEnabled = ficha.cargo_disputado === "Presidente" && seoSubpath !== "timeline"
+  const pesquisas = pesquisasEnabled ? listarPesquisasPresidenciaisPorSlug(slug) : []
 
   // Presidente é disputa nacional (anel único); qualquer outra disputa navega
   // dentro da própria UF. Sem estado na ficha, degrada para o anel do cargo.
@@ -307,7 +312,7 @@ export async function CandidatoFichaView({
             </figure>
           )}
 
-          <div className="flex flex-col justify-end">
+          <div className="flex min-w-0 flex-1 flex-col justify-end">
             <div className="flex items-center gap-2.5 sm:gap-3">
               <PartyLogoMark sigla={ficha.partido_sigla} priority />
               <span
@@ -337,13 +342,16 @@ export async function CandidatoFichaView({
             </span>
             <span className="sr-only">{cargoProvenienciaNota}</span>
 
-            <h1
-              data-pf-hero-name
-              className="mt-1.5 font-heading uppercase leading-[0.85] tracking-[-0.02em] text-foreground sm:mt-2"
-              style={{ fontSize: "clamp(36px, 8vw, 80px)" }}
-            >
-              {ficha.nome_urna}
-            </h1>
+            <div className="mt-1.5 flex min-w-0 flex-col gap-3 sm:mt-2 lg:flex-row lg:flex-wrap lg:items-end lg:gap-5">
+              <h1
+                data-pf-hero-name
+                className="min-w-0 shrink-0 font-heading uppercase leading-[0.85] tracking-[-0.02em] text-foreground"
+                style={{ fontSize: "clamp(36px, 8vw, 80px)" }}
+              >
+                {ficha.nome_urna}
+              </h1>
+              {pesquisasEnabled && <PesquisasPresidenciaisHero pesquisas={pesquisas} />}
+            </div>
 
             {ficha.nome_completo !== ficha.nome_urna && (
               <p className="mt-1.5 text-[length:var(--text-body-sm)] font-medium text-foreground sm:mt-2 sm:text-[length:var(--text-body)]">
@@ -443,7 +451,12 @@ export async function CandidatoFichaView({
         <DataSourceNotice status={sourceStatus} message={sourceMessage} />
       </div>
 
-      <DeferredCandidatoProfile ficha={ficha} initialTab={profileInitialTab} />
+      <DeferredCandidatoProfile
+        ficha={ficha}
+        initialTab={profileInitialTab}
+        pesquisasEnabled={pesquisasEnabled}
+        pesquisas={pesquisas}
+      />
 
       {ficha.biografia && (
         <section className="mx-auto max-w-7xl px-5 py-6 sm:hidden">

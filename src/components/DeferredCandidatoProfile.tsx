@@ -1,5 +1,6 @@
 import type { FichaCandidato } from "@/lib/types"
 import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
+import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
 import { hasWideManualOverlappingSegmentedMandates } from "@/lib/historico-dedupe"
 import { countPartySwitches, hasSameYearPartyReversal } from "@/lib/party-switches"
 import {
@@ -10,9 +11,13 @@ import { DeferredCandidatoProfileClient } from "@/components/DeferredCandidatoPr
 export function DeferredCandidatoProfile({
   ficha,
   initialTab,
+  pesquisasEnabled = false,
+  pesquisas = [],
 }: {
   ficha: FichaCandidato
   initialTab?: CandidatoProfileTabId
+  pesquisasEnabled?: boolean
+  pesquisas?: PesquisaEleitoralDoCandidato[]
 }) {
   const historico = ficha.historico ?? []
   const mudancas = ficha.mudancas_partido ?? []
@@ -46,6 +51,8 @@ export function DeferredCandidatoProfile({
       <DeferredCandidatoProfileClient
         slug={ficha.slug}
         initialTab={initialTab}
+        pesquisasEnabled={pesquisasEnabled}
+        pesquisas={pesquisas}
         overview={{
           processos: ficha.total_processos ?? 0,
           processosVerificacao: ficha.processos_verificacao,

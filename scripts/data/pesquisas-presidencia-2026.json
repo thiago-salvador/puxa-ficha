@@ -1,0 +1,362 @@
+{
+  "schema_version": "1.0.0",
+  "schema": {
+    "missing_value_rule": "Todo metadado ausente usa value null e status indeterminado.",
+    "survey_states": [
+      "publicado",
+      "antigo",
+      "indeterminado",
+      "erro",
+      "sem_pesquisa_qualificada"
+    ],
+    "route_classes": [
+      "direta_automatizavel",
+      "extracao_pontual",
+      "importacao_manual_auditada"
+    ],
+    "result_contract": {
+      "raw_label": "Rótulo exatamente como publicado pela fonte usada para o resultado.",
+      "candidate_slug": "Slug público somente quando houver alias exato e escopado; caso contrário, null.",
+      "match_status": "exact_alias, not_candidate ou indeterminado.",
+      "value_percent": "Percentual publicado, sem cálculo ou arredondamento adicional.",
+      "status": "publicado ou indeterminado. Falha nunca vira zero."
+    }
+  },
+  "election_scope": {
+    "year": 2026,
+    "office": "Presidente",
+    "geography": "Brasil"
+  },
+  "consulted_at": "2026-08-24T01:30:06Z",
+  "exact_aliases_version": "2026-08-24.1",
+  "exact_aliases": [
+    { "raw_label": "Lula", "candidate_slug": "lula" },
+    { "raw_label": "Lula (PT)", "candidate_slug": "lula" },
+    { "raw_label": "Flávio Bolsonaro", "candidate_slug": "flavio-bolsonaro" },
+    { "raw_label": "Flávio Bolsonaro (PL)", "candidate_slug": "flavio-bolsonaro" },
+    { "raw_label": "Ronaldo Caiado", "candidate_slug": "ronaldo-caiado" },
+    { "raw_label": "Ronaldo Caiado (PSD)", "candidate_slug": "ronaldo-caiado" },
+    { "raw_label": "Renan Santos", "candidate_slug": "renan-santos" },
+    { "raw_label": "Renan Santos (Missão)", "candidate_slug": "renan-santos" },
+    { "raw_label": "Romeu Zema", "candidate_slug": "romeu-zema" },
+    { "raw_label": "Romeu Zema (Novo)", "candidate_slug": "romeu-zema" },
+    { "raw_label": "Augusto Cury", "candidate_slug": "augusto-cury" },
+    { "raw_label": "Augusto Cury (Avante)", "candidate_slug": "augusto-cury" },
+    { "raw_label": "Samara Martins (UP)", "candidate_slug": "samara-martins" },
+    { "raw_label": "Rui Costa Pimenta (PCO)", "candidate_slug": "rui-costa-pimenta" },
+    { "raw_label": "Edmilson Costa (PCB)", "candidate_slug": "edmilson-costa" },
+    { "raw_label": "Hertz Dias (PSTU)", "candidate_slug": "hertz-dias" },
+    { "raw_label": "Clariana Barão (DC)", "candidate_slug": "clariana-barao" },
+    { "raw_label": "Veterinário Wilson Grassi (Democrata)", "candidate_slug": "wilson-grassi-junior" }
+  ],
+  "alias_scope": {
+    "year": 2026,
+    "office": "Presidente",
+    "geography": "Brasil",
+    "rule": "Correspondência literal do raw_label. Não remover partido, título, acento ou sufixo para forçar vínculo."
+  },
+  "pesquisas": [
+    {
+      "id": "datafolha-br-04496-2026",
+      "source_id": "datafolha-folha-globo-nacional-2026",
+      "source_status": "aprovado",
+      "publishable_by_default": true,
+      "state": "publicado",
+      "instituto": { "value": "Datafolha", "status": "publicado" },
+      "contratante": { "value": "Folha de S.Paulo e TV Globo", "status": "publicado" },
+      "fieldwork": {
+        "start": { "value": "2026-08-18", "status": "publicado" },
+        "end": { "value": "2026-08-19", "status": "publicado" }
+      },
+      "publication_date": { "value": "2026-08-21", "status": "publicado" },
+      "sample": {
+        "size": { "value": 2058, "status": "publicado" },
+        "population": { "value": "Eleitores de 16 anos ou mais em 128 cidades", "status": "publicado" }
+      },
+      "margin_error_pp": { "value": 2, "status": "publicado" },
+      "confidence_percent": { "value": 95, "status": "publicado" },
+      "method": { "value": "Entrevistas presenciais em pontos de fluxo", "status": "publicado" },
+      "registration": {
+        "code": { "value": "BR-04496/2026", "status": "publicado" },
+        "url": { "value": "https://pesqele-divulgacandcontas.tse.jus.br/pesqele-publico/app/pesquisa/listar.xhtml", "status": "publicado" }
+      },
+      "geography": { "type": "nacional", "label": "Brasil", "code": "BR" },
+      "office": "Presidente",
+      "provenance": {
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/08/datafolha-lula-marca-39-no-1o-turno-e-flavio-bolsonaro-tem-33.shtml",
+        "supporting_urls": [
+          "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/08/21/pesquisa-datafolha-lula-tem-47-e-flavio-bolsonaro-soma-43-em-eventual-segundo-turno.htm"
+        ],
+        "source_kind": "divulgacao_jornalistica_publica",
+        "route_class": "direta_automatizavel",
+        "route_reason": "A página HTML da contratante publica resultados e metadados em texto simples. A conferência humana continua obrigatória quando houver mais de um cenário.",
+        "consulted_at": "2026-08-24T01:30:06Z",
+        "capture": {
+          "format": "html",
+          "sha256": "0d2ed034604585e09a3169a55207b150d0e37c366face54a855f5fe5ca92a461",
+          "status": "publicado"
+        }
+      },
+      "cenarios": [
+        {
+          "id": "datafolha-2026-08-21-primeiro-turno-sem-marcal",
+          "turn": 1,
+          "geography": "Brasil",
+          "label_raw": "Pesquisa estimulada, cenário sem Pablo Marçal",
+          "question": { "value": null, "status": "indeterminado" },
+          "comparability_key": "2026|Presidente|BR|1|estimulado|sem-marcal|datafolha",
+          "resultados": [
+            { "raw_label": "Lula (PT)", "candidate_slug": "lula", "match_status": "exact_alias", "value_percent": 39, "status": "publicado" },
+            { "raw_label": "Flávio Bolsonaro (PL)", "candidate_slug": "flavio-bolsonaro", "match_status": "exact_alias", "value_percent": 33, "status": "publicado" },
+            { "raw_label": "Ronaldo Caiado (PSD)", "candidate_slug": "ronaldo-caiado", "match_status": "exact_alias", "value_percent": 5, "status": "publicado" },
+            { "raw_label": "Renan Santos (Missão)", "candidate_slug": "renan-santos", "match_status": "exact_alias", "value_percent": 4, "status": "publicado" },
+            { "raw_label": "Romeu Zema (Novo)", "candidate_slug": "romeu-zema", "match_status": "exact_alias", "value_percent": 3, "status": "publicado" },
+            { "raw_label": "Augusto Cury (Avante)", "candidate_slug": "augusto-cury", "match_status": "exact_alias", "value_percent": 2, "status": "publicado" },
+            { "raw_label": "Samara Martins (UP)", "candidate_slug": "samara-martins", "match_status": "exact_alias", "value_percent": 1, "status": "publicado" },
+            { "raw_label": "Rui Costa Pimenta (PCO)", "candidate_slug": "rui-costa-pimenta", "match_status": "exact_alias", "value_percent": 1, "status": "publicado" },
+            { "raw_label": "Veterinário Wilson Grassi (Democrata)", "candidate_slug": "wilson-grassi-junior", "match_status": "exact_alias", "value_percent": 1, "status": "publicado" },
+            { "raw_label": "Edmilson Costa (PCB)", "candidate_slug": "edmilson-costa", "match_status": "exact_alias", "value_percent": 1, "status": "publicado" },
+            { "raw_label": "Hertz Dias (PSTU)", "candidate_slug": "hertz-dias", "match_status": "exact_alias", "value_percent": 0, "status": "publicado" },
+            { "raw_label": "Clariana Barão (DC)", "candidate_slug": "clariana-barao", "match_status": "exact_alias", "value_percent": 0, "status": "publicado" },
+            { "raw_label": "Brancos e nulos", "candidate_slug": null, "match_status": "not_candidate", "value_percent": 7, "status": "publicado" },
+            { "raw_label": "Indecisos", "candidate_slug": null, "match_status": "not_candidate", "value_percent": 4, "status": "publicado" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quaest-genial-br-06591-2026",
+      "source_id": "quaest-genial-nacional-2026",
+      "source_status": "condicional",
+      "publishable_by_default": false,
+      "state": "publicado",
+      "instituto": { "value": "Quaest", "status": "publicado" },
+      "contratante": { "value": "Genial Investimentos", "status": "publicado" },
+      "fieldwork": {
+        "start": { "value": "2026-07-31", "status": "publicado" },
+        "end": { "value": "2026-08-03", "status": "publicado" }
+      },
+      "publication_date": { "value": "2026-08-05", "status": "publicado" },
+      "sample": {
+        "size": { "value": 2004, "status": "publicado" },
+        "population": { "value": "Eleitores brasileiros de 16 anos ou mais", "status": "publicado" }
+      },
+      "margin_error_pp": { "value": 2, "status": "publicado" },
+      "confidence_percent": { "value": 95, "status": "publicado" },
+      "method": { "value": "Entrevistas presenciais domiciliares", "status": "publicado" },
+      "registration": {
+        "code": { "value": "BR-06591/2026", "status": "publicado" },
+        "url": { "value": "https://pesqele-divulgacandcontas.tse.jus.br/pesqele-publico/app/pesquisa/listar.xhtml", "status": "publicado" }
+      },
+      "geography": { "type": "nacional", "label": "Brasil", "code": "BR" },
+      "office": "Presidente",
+      "provenance": {
+        "result_url": "https://quaest.com.br/pesquisa-genial-quaest-recuperacao-de-flavio-bolsonaro/",
+        "supporting_urls": [
+          "https://www.otempo.com.br/eleicoes/2026/pesquisas/2026/8/5/flavio-bolsonaro-diminui-diferenca-para-lula-no-primeiro-e-no-segundo-turno-mostra-nova-pesquisa",
+          "https://quaest.com.br/relatorios/"
+        ],
+        "source_kind": "instituto_com_resultado_primario",
+        "route_class": "direta_automatizavel",
+        "route_reason": "A página oficial da Quaest publica resultados, metodologia, contratante e registro em HTML. A mídia é usada somente para conferir opções que não pontuaram.",
+        "consulted_at": "2026-08-24T01:30:06Z",
+        "capture": {
+          "format": "html",
+          "sha256": "4f00d99f600f1448cdfc911ac2f2bef97cd9b3c240c5cff403c0e6f68ab394a9",
+          "status": "publicado"
+        }
+      },
+      "cenarios": [
+        {
+          "id": "quaest-genial-2026-08-05-primeiro-turno-estimulado",
+          "turn": 1,
+          "geography": "Brasil",
+          "label_raw": "Pesquisa estimulada: quando são apresentados os nomes dos candidatos",
+          "question": { "value": null, "status": "indeterminado" },
+          "comparability_key": "2026|Presidente|BR|1|estimulado|lista-quaest-genial-2026-08-05|quaest",
+          "resultados": [
+            { "raw_label": "Lula (PT)", "candidate_slug": "lula", "match_status": "exact_alias", "value_percent": 39, "status": "publicado" },
+            { "raw_label": "Flávio Bolsonaro (PL)", "candidate_slug": "flavio-bolsonaro", "match_status": "exact_alias", "value_percent": 30, "status": "publicado" },
+            { "raw_label": "Ronaldo Caiado (PSD)", "candidate_slug": "ronaldo-caiado", "match_status": "exact_alias", "value_percent": 4, "status": "publicado" },
+            { "raw_label": "Renan Santos (Missão)", "candidate_slug": "renan-santos", "match_status": "exact_alias", "value_percent": 4, "status": "publicado" },
+            { "raw_label": "Romeu Zema (Novo)", "candidate_slug": "romeu-zema", "match_status": "exact_alias", "value_percent": 2, "status": "publicado" },
+            { "raw_label": "Cabo Daciolo (Mobiliza)", "candidate_slug": null, "match_status": "indeterminado", "value_percent": 1, "status": "publicado" },
+            { "raw_label": "Augusto Cury (Avante)", "candidate_slug": "augusto-cury", "match_status": "exact_alias", "value_percent": 1, "status": "publicado" },
+            { "raw_label": "Samara Martins (UP)", "candidate_slug": "samara-martins", "match_status": "exact_alias", "value_percent": 1, "status": "publicado" },
+            { "raw_label": "Clariana Barão (DC)", "candidate_slug": "clariana-barao", "match_status": "exact_alias", "value_percent": 0, "status": "publicado" },
+            { "raw_label": "Edmilson Costa (PCB)", "candidate_slug": "edmilson-costa", "match_status": "exact_alias", "value_percent": 0, "status": "publicado" },
+            { "raw_label": "Hertz Dias (PSTU)", "candidate_slug": "hertz-dias", "match_status": "exact_alias", "value_percent": 0, "status": "publicado" },
+            { "raw_label": "Branco/nulo/não vai votar", "candidate_slug": null, "match_status": "not_candidate", "value_percent": 8, "status": "publicado" },
+            { "raw_label": "Indecisos", "candidate_slug": null, "match_status": "not_candidate", "value_percent": 10, "status": "publicado" }
+          ]
+        },
+        {
+          "id": "quaest-genial-2026-08-05-segundo-turno-lula-flavio",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Lula (PT) x Flávio Bolsonaro",
+          "question": { "value": null, "status": "indeterminado" },
+          "comparability_key": "2026|Presidente|BR|2|lula-flavio|quaest",
+          "resultados": [
+            { "raw_label": "Lula (PT)", "candidate_slug": "lula", "match_status": "exact_alias", "value_percent": 44, "status": "publicado" },
+            { "raw_label": "Flávio Bolsonaro (PL)", "candidate_slug": "flavio-bolsonaro", "match_status": "exact_alias", "value_percent": 39, "status": "publicado" },
+            { "raw_label": "Branco/nulo/não vai votar", "candidate_slug": null, "match_status": "not_candidate", "value_percent": 13, "status": "publicado" },
+            { "raw_label": "Indecisos", "candidate_slug": null, "match_status": "not_candidate", "value_percent": 4, "status": "publicado" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "poderdata-br-07845-2026",
+      "source_id": "poderdata-aya-nacional-2026",
+      "source_status": "aprovado",
+      "publishable_by_default": true,
+      "state": "publicado",
+      "instituto": { "value": "PoderData", "status": "publicado" },
+      "contratante": { "value": "PoderData, recursos próprios", "status": "publicado" },
+      "fieldwork": {
+        "start": { "value": "2026-07-26", "status": "publicado" },
+        "end": { "value": "2026-07-29", "status": "publicado" }
+      },
+      "publication_date": { "value": "2026-07-30", "status": "publicado" },
+      "sample": {
+        "size": { "value": 2400, "status": "publicado" },
+        "population": { "value": "Eleitores de 16 anos ou mais em 677 municípios das 27 unidades da Federação", "status": "publicado" }
+      },
+      "margin_error_pp": { "value": 2, "status": "publicado" },
+      "confidence_percent": { "value": 95, "status": "publicado" },
+      "method": { "value": "Entrevistas por telefone fixo e celular via URA", "status": "publicado" },
+      "registration": {
+        "code": { "value": "BR-07845/2026", "status": "publicado" },
+        "url": { "value": "https://pesqele-divulgacandcontas.tse.jus.br/pesqele-publico/app/pesquisa/listar.xhtml", "status": "publicado" }
+      },
+      "geography": { "type": "nacional", "label": "Brasil", "code": "BR" },
+      "office": "Presidente",
+      "provenance": {
+        "result_url": "https://www.poder360.com.br/poderdata/leia-os-resultados-da-pesquisa-poderdata-aya-para-presidente/",
+        "supporting_urls": [
+          "https://static.poder360.com.br/uploads/2026/07/Relatorio-PoderData-Eleitoral-29jul26-3.pdf"
+        ],
+        "source_kind": "instituto_e_veiculo_com_resultado_primario",
+        "route_class": "direta_automatizavel",
+        "route_reason": "O HTML publica resultados e ficha técnica, e o PDF integral tem texto extraível com perguntas, rótulos e percentuais.",
+        "consulted_at": "2026-08-24T01:30:06Z",
+        "capture": {
+          "format": "html+pdf",
+          "sha256": "3854314a57c3bfb6cb3dc092331501f0c979e57108e2495b19cd87693c3acfc2",
+          "supporting_pdf_sha256": "50ae270dad241ba2fca783dccf483961c996ac07eabf52705ddd8a4648ab21c6",
+          "status": "publicado"
+        }
+      },
+      "cenarios": [
+        {
+          "id": "poderdata-2026-07-30-primeiro-turno",
+          "turn": 1,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 1º turno",
+          "question": { "value": "Em outubro teremos eleição para presidente do Brasil. Se a eleição fosse hoje, em qual dos candidatos que vou falar em ordem alfabética você votaria?", "status": "publicado" },
+          "comparability_key": "2026|Presidente|BR|1|lista-poderdata-2026-07-30|poderdata",
+          "resultados": [
+            { "raw_label": "Flávio Bolsonaro", "candidate_slug": "flavio-bolsonaro", "match_status": "exact_alias", "value_percent": 35, "status": "publicado" },
+            { "raw_label": "Lula", "candidate_slug": "lula", "match_status": "exact_alias", "value_percent": 41, "status": "publicado" },
+            { "raw_label": "Renan Santos", "candidate_slug": "renan-santos", "match_status": "exact_alias", "value_percent": 4, "status": "publicado" },
+            { "raw_label": "Ronaldo Caiado", "candidate_slug": "ronaldo-caiado", "match_status": "exact_alias", "value_percent": 5, "status": "publicado" },
+            { "raw_label": "Romeu Zema", "candidate_slug": "romeu-zema", "match_status": "exact_alias", "value_percent": 3, "status": "publicado" },
+            { "raw_label": "Augusto Cury", "candidate_slug": "augusto-cury", "match_status": "exact_alias", "value_percent": 3, "status": "publicado" },
+            { "raw_label": "Branco/Nulo", "candidate_slug": null, "match_status": "not_candidate", "value_percent": 5, "status": "publicado" },
+            { "raw_label": "Não sabe", "candidate_slug": null, "match_status": "not_candidate", "value_percent": 4, "status": "publicado" }
+          ]
+        },
+        {
+          "id": "poderdata-2026-07-30-segundo-turno-lula-flavio",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 2º turno: Flávio Bolsonaro e Lula",
+          "question": { "value": "E se houver um 2º turno entre Flávio Bolsonaro e Lula, em quem você votaria?", "status": "publicado" },
+          "comparability_key": "2026|Presidente|BR|2|lula-flavio|poderdata",
+          "resultados": [
+            { "raw_label": "Flávio Bolsonaro", "candidate_slug": "flavio-bolsonaro", "match_status": "exact_alias", "value_percent": 43, "status": "publicado" },
+            { "raw_label": "Lula", "candidate_slug": "lula", "match_status": "exact_alias", "value_percent": 46, "status": "publicado" },
+            { "raw_label": "Branco/Nulo", "candidate_slug": null, "match_status": "not_candidate", "value_percent": 9, "status": "publicado" },
+            { "raw_label": "Não sabe", "candidate_slug": null, "match_status": "not_candidate", "value_percent": 2, "status": "publicado" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "atlasintel-br-08602-2026",
+      "source_id": "atlasintel-bloomberg-nacional-2026",
+      "source_status": "condicional",
+      "publishable_by_default": false,
+      "state": "publicado",
+      "instituto": { "value": "AtlasIntel", "status": "publicado" },
+      "contratante": { "value": null, "status": "indeterminado" },
+      "fieldwork": {
+        "start": { "value": "2026-07-22", "status": "publicado" },
+        "end": { "value": "2026-07-27", "status": "publicado" }
+      },
+      "publication_date": { "value": "2026-07-29", "status": "publicado" },
+      "sample": {
+        "size": { "value": 5021, "status": "publicado" },
+        "population": { "value": "População adulta brasileira", "status": "publicado" }
+      },
+      "margin_error_pp": { "value": 1, "status": "publicado" },
+      "confidence_percent": { "value": 95, "status": "publicado" },
+      "method": { "value": "Recrutamento digital aleatório (Atlas RDR)", "status": "publicado" },
+      "registration": {
+        "code": { "value": "BR-08602/2026", "status": "publicado" },
+        "url": { "value": "https://pesqele-divulgacandcontas.tse.jus.br/pesqele-publico/app/pesquisa/listar.xhtml", "status": "publicado" }
+      },
+      "geography": { "type": "nacional", "label": "Brasil", "code": "BR" },
+      "office": "Presidente",
+      "provenance": {
+        "result_url": "https://cdn.atlasintel.org/498dd172-4381-4192-977c-c4af9787434f.pdf",
+        "supporting_urls": [
+          "https://static.poder360.com.br/uploads/2026/07/AtlasIntel-nacional-29jul2026.pdf",
+          "https://www.poder360.com.br/poder-eleicoes-2026/lula-lidera-no-1o-turno-e-vence-todos-os-adversarios-no-2o-turno/"
+        ],
+        "source_kind": "relatorio_integral_do_instituto_em_mirror_publico",
+        "route_class": "importacao_manual_auditada",
+        "route_reason": "O PDF é estável e completo, mas os números dos gráficos não aparecem na extração textual. A transcrição visual por página e o SHA do arquivo são necessários.",
+        "consulted_at": "2026-08-24T01:30:06Z",
+        "capture": {
+          "format": "pdf",
+          "sha256": "c06872cf91ead52fa5d302213ab6187c51667f159acc54e735c90bb210d514dc",
+          "status": "publicado"
+        }
+      },
+      "cenarios": [
+        {
+          "id": "atlasintel-2026-07-29-primeiro-turno-cenario-1",
+          "turn": 1,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto para Presidente - 1º Turno [Cenário 1]",
+          "question": { "value": "Se esses fossem os candidatos, em quem você votaria nas próximas eleições para presidente?", "status": "publicado" },
+          "comparability_key": "2026|Presidente|BR|1|atlas-cenario-1|atlasintel",
+          "resultados": [
+            { "raw_label": "Lula", "candidate_slug": "lula", "match_status": "exact_alias", "value_percent": 45, "status": "publicado" },
+            { "raw_label": "Flávio Bolsonaro", "candidate_slug": "flavio-bolsonaro", "match_status": "exact_alias", "value_percent": 36, "status": "publicado" },
+            { "raw_label": "Renan Santos", "candidate_slug": "renan-santos", "match_status": "exact_alias", "value_percent": 8, "status": "publicado" },
+            { "raw_label": "Outros", "candidate_slug": null, "match_status": "not_candidate", "value_percent": 4, "status": "publicado" },
+            { "raw_label": "Ronaldo Caiado", "candidate_slug": "ronaldo-caiado", "match_status": "exact_alias", "value_percent": 3, "status": "publicado" },
+            { "raw_label": "Romeu Zema", "candidate_slug": "romeu-zema", "match_status": "exact_alias", "value_percent": 3, "status": "publicado" },
+            { "raw_label": "Não sei/Branco/Nulo", "candidate_slug": null, "match_status": "not_candidate", "value_percent": 2, "status": "publicado" }
+          ]
+        },
+        {
+          "id": "atlasintel-2026-07-29-segundo-turno-lula-flavio",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto para Presidente - 2º Turno [Lula vs Flávio Bolsonaro]",
+          "question": { "value": "Em um eventual segundo turno nas próximas eleições para Presidente da República em 2026, como você votaria no seguinte cenário?", "status": "publicado" },
+          "comparability_key": "2026|Presidente|BR|2|lula-flavio|atlasintel",
+          "resultados": [
+            { "raw_label": "Lula", "candidate_slug": "lula", "match_status": "exact_alias", "value_percent": 49.2, "status": "publicado" },
+            { "raw_label": "Flávio Bolsonaro", "candidate_slug": "flavio-bolsonaro", "match_status": "exact_alias", "value_percent": 42.9, "status": "publicado" },
+            { "raw_label": "Não sei/Branco/Nulo", "candidate_slug": null, "match_status": "not_candidate", "value_percent": 7.9, "status": "publicado" }
+          ]
+        }
+      ]
+    }
+  ]
+}

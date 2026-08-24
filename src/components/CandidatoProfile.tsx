@@ -3,6 +3,7 @@
 import { memo, useCallback, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react"
 import dynamic from "next/dynamic"
 import type { FichaCandidato, LegislacaoMandatoExecutivo, ProjetoLei } from "@/lib/types"
+import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
 import {
   descreverEstadoDaFonte,
   montarDestaquesDaFicha,
@@ -54,6 +55,10 @@ import {
 import { FontesList } from "./attention-points/FontesList"
 import { MetaBadge } from "./MetaBadge"
 import { NoticePanel } from "./NoticePanel"
+import {
+  PesquisasPresidenciaisOverview,
+  PesquisasPresidenciaisTab,
+} from "./PesquisasPresidenciaisSection"
 import {
   fixedCopy,
   formatAttentionCategoryLabel,
@@ -271,12 +276,16 @@ async function fetchLegislacaoExecutivoCompleto(
 export function CandidatoProfile({
   ficha,
   initialTab,
+  pesquisasEnabled = false,
+  pesquisas = [],
   initialLegislationSubtab,
   initialLegislationPage,
 }: {
   ficha: FichaCandidato
   /** Definido no servidor (`?tab=` ou rota `/timeline`). */
   initialTab?: CandidatoProfileTabId
+  pesquisasEnabled?: boolean
+  pesquisas?: PesquisaEleitoralDoCandidato[]
   /** Apenas para render determinístico de cada subaba no auditor de release. */
   initialLegislationSubtab?: LegislationSubtabId
   /** Apenas para render determinístico das páginas 2+ no auditor de release. */
@@ -395,6 +404,7 @@ export function CandidatoProfile({
 
   const tabDefsById: Record<CandidatoProfileNavTabId, { label: string; dataCount: number }> = {
     geral: { label: fixedCopy.generalOverview, dataCount: 0 },
+    pesquisas: { label: "Pesquisas", dataCount: pesquisas.length },
     media: { label: "Mídia", dataCount: ficha.noticias?.length ?? 0 },
     dinheiro: {
       label: "Dinheiro",
@@ -415,7 +425,9 @@ export function CandidatoProfile({
   }
 
   const tabDefs: { id: CandidatoProfileNavTabId; label: string; dataCount: number }[] =
-    CANDIDATO_PROFILE_NAV_TAB_IDS.map((id) => ({ id, ...tabDefsById[id] }))
+    CANDIDATO_PROFILE_NAV_TAB_IDS
+      .filter((id) => id !== "pesquisas" || pesquisasEnabled)
+      .map((id) => ({ id, ...tabDefsById[id] }))
 
   const locationSearch = useSyncExternalStore(
     subscribeToLocationSearch,
@@ -428,7 +440,11 @@ export function CandidatoProfile({
   // ainda nao ha ?tab. Gatear urlSelectedTab em `initialTab === undefined` travava a
   // navegacao por tabs na rota /timeline (review 2026-06-09).
   const urlSelectedTab = normalizeCandidatoProfileNavTab(tabParam)
-  const activeTab = urlSelectedTab ?? resolveInitialTab(initialTab)
+  const requestedTab = urlSelectedTab ?? resolveInitialTab(initialTab)
+  const activeTab =
+    requestedTab === "timeline" || tabDefs.some((tab) => tab.id === requestedTab)
+      ? requestedTab
+      : "geral"
   const [tabHighlightRef, setTabHighlightRef] = useState<string | null>(null)
   const tabContentRef = useRef<HTMLDivElement>(null)
 
@@ -472,14 +488,14 @@ export function CandidatoProfile({
 
   const navigateToTab = useCallback((tabId: string, opts?: TimelineNavigateOptions) => {
     const next = normalizeCandidatoProfileNavTab(tabId)
-    if (!next) return
+    if (!next || (next === "pesquisas" && !pesquisasEnabled)) return
     pushProfileTabUrl(next)
     if (opts?.timelineEventId) {
       setTabHighlightRef(opts.timelineEventId)
     } else {
       setTabHighlightRef(null)
     }
-  }, [])
+  }, [pesquisasEnabled])
 
   // Scroll tab content into view after React commits the new tab DOM
   useEffect(() => {
@@ -711,6 +727,12 @@ export function CandidatoProfile({
                 {sectionFreshness.perfil_atual && (
                   <DataFreshnessNotice info={sectionFreshness.perfil_atual} />
                 )}
+                {pesquisasEnabled && (
+                  <PesquisasPresidenciaisOverview
+                    pesquisas={pesquisas}
+                    onOpenTab={() => navigateToTab("pesquisas")}
+                  />
+                )}
                 <ProfileOverview ficha={ficha} onNavigateTab={navigateToTab} />
                 {ficha.cargo_disputado === "Governador" && (ficha.indicadores_estaduais ?? []).length > 0 && (
                   <StateIndicators indicadores={ficha.indicadores_estaduais!} estado={ficha.estado ?? ""} />
@@ -720,6 +742,11 @@ export function CandidatoProfile({
                   candidateSlug={ficha.slug}
                 />
               </div>
+            )}
+
+            {/* PESQUISAS TAB */}
+            {activeTab === "pesquisas" && pesquisasEnabled && (
+              <PesquisasPresidenciaisTab pesquisas={pesquisas} />
             )}
 
             {/* MÍDIA TAB */}
