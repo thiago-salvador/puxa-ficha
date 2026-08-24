@@ -7,6 +7,7 @@
     "scripts/*.ts",
     "scripts/audit/*.ts",
     "tests/**/*.test.{ts,tsx}",
+    "tests/helpers/render-candidato-alerta-patrimonial.tsx",
     "tests/visual/**/*.spec.ts"
   ],
   "project": [
