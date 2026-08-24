@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs"
 import { resolve } from "node:path"
 
 import { carregarPesquisasEleitorais } from "../../src/lib/pesquisas-eleitorais"
+import { detectarAcessosRede } from "./lib/pesquisas-sem-rede"
 
 const ROOT = process.cwd()
 const LIB_PATH = resolve(ROOT, "src/lib/pesquisas-eleitorais.ts")
@@ -12,7 +13,8 @@ function assert(condition: unknown, message: string): asserts condition {
 }
 
 assert(/^import "server-only"/m.test(libSource), "contrato não está marcado como server-only")
-assert(!/\b(?:fetch|axios)\s*\(/.test(libSource), "contrato não pode fazer rede")
+const acessosRede = detectarAcessosRede(libSource)
+assert(acessosRede.length === 0, `contrato não pode fazer rede: ${acessosRede.join(", ")}`)
 assert(!/supabase/i.test(libSource), "contrato não pode acessar Supabase")
 assert(!/["']use client["']/.test(libSource), "contrato não pode ser Client Component")
 

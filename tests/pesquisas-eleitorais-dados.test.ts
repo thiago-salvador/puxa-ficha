@@ -79,6 +79,7 @@ describe("contrato dos dados de pesquisas eleitorais", () => {
     assert.ok(catalogo.pesquisas.length > 0)
     assert.ok(catalogo.pesquisas.every((poll) => aprovadas.has(poll.sourceId)))
     assert.ok(catalogo.pesquisas.every((poll) => poll.sourceStatus === "aprovado"))
+    assert.strictEqual(carregarPesquisasEleitorais(), catalogo)
   })
 
   it("rejeita percentual fora do intervalo, sem converter falha em zero", () => {
@@ -121,6 +122,10 @@ describe("contrato dos dados de pesquisas eleitorais", () => {
     const { pesquisas, fontes } = inputs()
     delete pesquisas.pesquisas[0].source_id
     rejects(() => parse(pesquisas, fontes), /source_id/)
+
+    const next = inputs()
+    next.pesquisas.pesquisas[0].source_id = "fonte-inexistente"
+    rejects(() => parse(next.pesquisas, next.fontes), /source_id não existe/)
   })
 
   it("deduplica resultado integralmente idêntico e rejeita colisão conflitante", () => {

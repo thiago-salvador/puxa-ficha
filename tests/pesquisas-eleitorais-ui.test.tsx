@@ -96,7 +96,10 @@ describe("experiência v2 de pesquisas presidenciais", () => {
   it("troca pesquisa antiga por estado textual e preserva zero publicado", () => {
     const oldPoll = structuredClone(pesquisasLula[0])
     oldPoll.state = "antigo"
+    const errorPoll = structuredClone(pesquisasLula[0])
+    errorPoll.state = "erro"
     const oldHtml = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={[oldPoll]} />)
+    const errorHtml = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={[errorPoll]} />)
     const zeroHtml = renderToStaticMarkup(
       <PesquisasPresidenciaisTab
         pesquisas={listarPesquisasPresidenciaisPorSlug("hertz-dias")}
@@ -105,6 +108,8 @@ describe("experiência v2 de pesquisas presidenciais", () => {
 
     assert.match(oldHtml, /Pesquisa antiga/)
     assert.doesNotMatch(oldHtml, />39%<|>39%<!-- -->/)
+    assert.match(errorHtml, /Resultado indisponível/)
+    assert.doesNotMatch(errorHtml, />39%<|>39%<!-- -->/)
     assert.match(zeroHtml, />0%<|>0%<!-- -->/)
   })
 })

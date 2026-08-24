@@ -72,7 +72,7 @@ export interface CenarioPesquisaEleitoral {
 export interface PesquisaEleitoral {
   id: string
   sourceId: string
-  sourceStatus: "aprovado"
+  sourceStatus: StatusFonte
   state: EstadoPesquisa
   electionYear: number
   instituto: { value: string | null; status: EstadoPesquisa }
@@ -592,7 +592,7 @@ function parsePoll(
   return {
     id: text(raw.id, `${path}.id`),
     sourceId: source.id,
-    sourceStatus: "aprovado",
+    sourceStatus: source.status,
     state: state(raw.state, `${path}.state`),
     electionYear: electionScope.year,
     instituto: valueStatus(raw.instituto, `${path}.instituto`, nullableText),
@@ -643,14 +643,19 @@ export function parsePesquisasEleitoraisJson(
   }
 }
 
+let catalogoCache: CatalogoPesquisasEleitorais | null = null
+
 export function carregarPesquisasEleitorais(): CatalogoPesquisasEleitorais {
+  if (catalogoCache) return catalogoCache
   const pesquisasPath = resolve(process.cwd(), "scripts/data/pesquisas-presidencia-2026.json")
   const fontesPath = resolve(process.cwd(), "scripts/data/pesquisas-eleitorais-fontes.json")
   try {
-    return parsePesquisasEleitoraisJson(
+    const catalogo = parsePesquisasEleitoraisJson(
       readFileSync(pesquisasPath, "utf8"),
       readFileSync(fontesPath, "utf8"),
     )
+    catalogoCache = catalogo
+    return catalogo
   } catch (error) {
     if (error instanceof ErroValidacaoPesquisasEleitorais) throw error
     throw new ErroValidacaoPesquisasEleitorais([

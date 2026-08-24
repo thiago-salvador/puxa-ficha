@@ -78,7 +78,7 @@
       "method": { "value": "Entrevistas presenciais em pontos de fluxo", "status": "publicado" },
       "registration": {
         "code": { "value": "BR-04496/2026", "status": "publicado" },
-        "url": { "value": "https://pesqele-divulgacandcontas.tse.jus.br/pesqele-publico/app/pesquisa/listar.xhtml", "status": "publicado" }
+        "url": { "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml", "status": "publicado" }
       },
       "geography": { "type": "nacional", "label": "Brasil", "code": "BR" },
       "office": "Presidente",
@@ -146,7 +146,7 @@
       "method": { "value": "Entrevistas presenciais domiciliares", "status": "publicado" },
       "registration": {
         "code": { "value": "BR-06591/2026", "status": "publicado" },
-        "url": { "value": "https://pesqele-divulgacandcontas.tse.jus.br/pesqele-publico/app/pesquisa/listar.xhtml", "status": "publicado" }
+        "url": { "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml", "status": "publicado" }
       },
       "geography": { "type": "nacional", "label": "Brasil", "code": "BR" },
       "office": "Presidente",
@@ -228,7 +228,7 @@
       "method": { "value": "Entrevistas por telefone fixo e celular via URA", "status": "publicado" },
       "registration": {
         "code": { "value": "BR-07845/2026", "status": "publicado" },
-        "url": { "value": "https://pesqele-divulgacandcontas.tse.jus.br/pesqele-publico/app/pesquisa/listar.xhtml", "status": "publicado" }
+        "url": { "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml", "status": "publicado" }
       },
       "geography": { "type": "nacional", "label": "Brasil", "code": "BR" },
       "office": "Presidente",
@@ -305,7 +305,7 @@
       "method": { "value": "Recrutamento digital aleatório (Atlas RDR)", "status": "publicado" },
       "registration": {
         "code": { "value": "BR-08602/2026", "status": "publicado" },
-        "url": { "value": "https://pesqele-divulgacandcontas.tse.jus.br/pesqele-publico/app/pesquisa/listar.xhtml", "status": "publicado" }
+        "url": { "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml", "status": "publicado" }
       },
       "geography": { "type": "nacional", "label": "Brasil", "code": "BR" },
       "office": "Presidente",

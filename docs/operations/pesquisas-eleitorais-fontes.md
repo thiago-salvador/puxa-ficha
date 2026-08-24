@@ -52,7 +52,7 @@ Foi localizado um benchmark público limitado para o primeiro turno presidencial
 | Quaest | 49,0% e 38,0% | 0,57 | 5,20 | 2,89 | evidência limitada |
 | PoderData | 48,0% e 38,0% | 0,43 | 5,20 | 2,82 | evidência limitada |
 | Datafolha | 50,0% e 36,0% | 1,57 | 7,20 | 4,39 | evidência limitada |
-| AtlasIntel | 50,3% e 41,1% | 1,87 | 2,10 | 1,98 | evidência limitada |
+| AtlasIntel | 50,3% e 41,1% | 1,87 | 2,10 | 1,99 | evidência limitada |
 | Paraná Pesquisas | 47,1% e 40,0% | 1,33 | 3,20 | 2,27 | evidência limitada |
 | Ipsos-Ipec | Não comparado | Não medido | Não medido | Não medido | `nao_medido`, a linha histórica é Ipec antes da aquisição e não foi tratada como identidade equivalente sem prova adicional |
 | Plano Político | Não é instituto | Não medido | Não medido | Não medido | `nao_medido` |
@@ -67,7 +67,7 @@ Esse benchmark não produz ranking absoluto. É uma única eleição, considera 
 | --- | --- | --- | ---: | --- | --- | --- | --- |
 | Genial/Quaest | 31/07 a 03/08/2026 | 05/08/2026 | 2.004 | Presencial | 2 p.p.; 95% | Presidente, Brasil, 1º e 2º turnos | `BR-06591/2026` |
 | PoderData/Aya | 26 a 29/07/2026 | 30/07/2026 | 2.400 | Telefônico por URA | 2 p.p.; 95% | Presidente, Brasil, 1º e 2º turnos | `BR-07845/2026` |
-| Datafolha | 18 a 20/08/2026 | 21/08/2026 | 2.058 | Presencial em pontos de fluxo | 2 p.p.; 95% | Presidente, Brasil, 1º e 2º turnos | `BR-04496/2026` |
+| Datafolha | 18 a 19/08/2026 | 21/08/2026 | 2.058 | Presencial em pontos de fluxo | 2 p.p.; 95% | Presidente, Brasil, 1º e 2º turnos | `BR-04496/2026` |
 | AtlasIntel/Bloomberg | 22 a 27/07/2026 | 29/07/2026 | 5.021 | Recrutamento digital aleatório, RDR | 1 p.p.; 95% | Presidente, Brasil, 1º e 2º turnos | `BR-08602/2026` |
 | Paraná Pesquisas | 25 a 28/03/2026 | 30/03/2026 | 2.080 | Presencial domiciliar | 2,2 p.p.; 95% | Presidente, Brasil, 1º e 2º turnos | `BR-00873/2026` |
 

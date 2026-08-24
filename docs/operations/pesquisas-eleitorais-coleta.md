@@ -17,7 +17,7 @@ O artefato versionado é `scripts/data/pesquisas-presidencia-2026.json`. Cada au
 
 No scorecard atual, Datafolha e PoderData estão `aprovado`. Genial/Quaest e AtlasIntel estão `condicional` e nunca ficam publicáveis por padrão. A Quaest tem página e método adequados, mas a ouvidoria genérica não prova uma trilha pública de correções.
 
-O registro eleitoral é conferido pelo código no [PesqEle do TSE](https://pesqele-divulgacandcontas.tse.jus.br/pesqele-publico/app/pesquisa/listar.xhtml). O portal não oferece, neste piloto, URL pública permanente por código. Por isso o código e a URL do portal ficam em campos separados.
+O registro eleitoral é conferido pelo código no [PesqEle do TSE](https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml). O portal não oferece, neste piloto, URL pública permanente por código. Por isso o código e a URL do portal ficam em campos separados.
 
 ## Atualização em quatro passes
 

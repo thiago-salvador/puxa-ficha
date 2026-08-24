@@ -240,7 +240,7 @@
       "representative_poll": {
         "field_period": {
           "start": "2026-08-18",
-          "end": "2026-08-20"
+          "end": "2026-08-19"
         },
         "published_at": "2026-08-21",
         "sample_size": 2058,
@@ -385,7 +385,7 @@
           "lula": 1.87,
           "jair_bolsonaro": 2.1
         },
-        "mean_absolute_error_pp": 1.98,
+        "mean_absolute_error_pp": 1.99,
         "evidence_urls": [
           "https://static.poder360.com.br/2022/10/oficio-cade-institutos-de-pesquisas-eleicoes-13out2022.pdf",
           "https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/100-das-secoes-totalizadas-confira-como-ficou-o-quadro-eleitoral-apos-o-1o-turno"
