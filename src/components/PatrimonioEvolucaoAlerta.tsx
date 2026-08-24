@@ -1,5 +1,8 @@
 import type { PatrimonioAnoValor } from "@/lib/evolucao-patrimonial"
-import { alertaEvolucaoPatrimonialVs2026 } from "@/lib/evolucao-patrimonial"
+import {
+  alertaEvolucaoPatrimonialVs2026,
+  PATRIMONIO_EVOLUCAO_ALERTA_LIMITE,
+} from "@/lib/evolucao-patrimonial"
 import { formatBRL } from "@/lib/utils"
 import { NoticePanel } from "./NoticePanel"
 
@@ -18,7 +21,7 @@ export function PatrimonioEvolucaoAlerta({
       role="note"
       tone="caution"
       eyebrow="Sinal de alerta"
-      title="Evolução patrimonial acima de R$ 1 milhão"
+      title={`Evolução patrimonial acima de ${formatBRL(PATRIMONIO_EVOLUCAO_ALERTA_LIMITE)}`}
       description={
         <>
           O patrimônio declarado aumentou <strong>{formatBRL(alerta.aumento)}</strong> entre {alerta.anoAnterior} e{" "}

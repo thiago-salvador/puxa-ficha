@@ -68,4 +68,32 @@ describe("alertaEvolucaoPatrimonialVs2026", () => {
       null,
     )
   })
+
+  it("ignora linhas inválidas sem perder uma referência válida", () => {
+    assert.deepEqual(
+      alertaEvolucaoPatrimonialVs2026([
+        { ano_eleicao: 2022, valor_total: 500_000 },
+        { ano_eleicao: 2024, valor_total: Number.NaN },
+        { ano_eleicao: 2025, valor_total: null },
+        { ano_eleicao: Number.POSITIVE_INFINITY, valor_total: 9_000_000 },
+        { ano_eleicao: 2026, valor_total: 1_500_001 },
+      ]),
+      {
+        anoAnterior: 2022,
+        anoAlvo: 2026,
+        valorAnterior: 500_000,
+        valorAlvo: 1_500_001,
+        aumento: 1_000_001,
+      },
+    )
+
+    assert.equal(
+      alertaEvolucaoPatrimonialVs2026([
+        { ano_eleicao: 2022, valor_total: null },
+        { ano_eleicao: 2025, valor_total: Number.NaN },
+        { ano_eleicao: 2026, valor_total: Number.POSITIVE_INFINITY },
+      ]),
+      null,
+    )
+  })
 })
