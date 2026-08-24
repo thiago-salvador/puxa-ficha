@@ -2,11 +2,7 @@ import { execFileSync } from "node:child_process"
 import path from "node:path"
 import { expect, test } from "playwright/test"
 
-import {
-  fonteDadosAbertosPatrimonioTse,
-  PATRIMONIO_EVOLUCAO_ALERTA_LIMITE,
-} from "@/lib/evolucao-patrimonial"
-import { formatBRL } from "@/lib/utils"
+import { fonteDadosAbertosPatrimonioTse } from "@/lib/evolucao-patrimonial"
 
 const FIXTURE_RENDERER = path.join(process.cwd(), "tests/helpers/render-candidato-alerta-patrimonial.tsx")
 
@@ -29,9 +25,7 @@ test("alerta patrimonial fica legível na ficha", async ({ page }, testInfo) => 
   await expect(alertas).toHaveCount(2)
   for (const alerta of await alertas.all()) {
     await expect(alerta).toBeVisible()
-    await expect(alerta).toContainText(
-      `Evolução patrimonial acima de ${formatBRL(PATRIMONIO_EVOLUCAO_ALERTA_LIMITE)}`,
-    )
+    await expect(alerta).toContainText("Aumento patrimonial expressivo")
     await expect(alerta).toContainText("entre 2022 e 2026")
   }
   const estilo = await alertas.first().evaluate((element) => {
