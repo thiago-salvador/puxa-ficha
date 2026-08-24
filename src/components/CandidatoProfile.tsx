@@ -720,13 +720,6 @@ export function CandidatoProfile({
             {/* VISAO GERAL TAB */}
             {activeTab === "geral" && (
               <div className="space-y-12">
-                {/* Achado A0.4 (auditoria 2026-07-24): perfil_atual era a outra
-                    chave de frescor computada e nunca renderizada. A visão
-                    geral é o lugar dela, porque descreve o bloco factual do
-                    próprio perfil. */}
-                {sectionFreshness.perfil_atual && (
-                  <DataFreshnessNotice info={sectionFreshness.perfil_atual} />
-                )}
                 <ProfileOverview
                   ficha={ficha}
                   onNavigateTab={navigateToTab}

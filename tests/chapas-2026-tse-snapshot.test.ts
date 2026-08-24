@@ -363,7 +363,7 @@ describe("superfície pública das chapas de 2026", () => {
     }
   })
 
-  test("a API e o HTML SSR expõem a composição e a proveniência da chapa", () => {
+  test("a API expõe a composição e o HTML SSR destaca somente o vice", () => {
     const dto = readFileSync(join(ROOT, "src", "lib", "public-profile-dto.ts"), "utf8")
     const view = readFileSync(
       join(ROOT, "src", "app", "(site)", "candidato", "[slug]", "CandidatoFichaView.tsx"),
@@ -371,49 +371,13 @@ describe("superfície pública das chapas de 2026", () => {
     )
     assert.match(dto, /chapa_2026: ficha\.chapa_2026 \?\? null/)
     assert.match(view, /data-pf-chapa-2026/)
-    assert.match(view, /data-pf-chapa-titular/)
     assert.match(view, /data-pf-chapa-vice/)
     assert.match(view, /data-pf-chapa-parceiro/)
-    assert.match(view, /chapaTitularEhAtual/)
     assert.match(view, /chapaViceEhAtual/)
-    assert.match(view, /Titular:\{" "\}/)
     assert.match(view, /Vice:\{" "\}/)
     assert.match(view, /data-pf-chapa-identidade/)
-    assert.match(view, /cargoProveniencia === "registro_tse_pendente"/)
-    assert.match(view, /registrada, aguardando julgamento/)
-    assert.match(view, /situação do pedido ainda não informada no arquivo/)
-
-    // A data do snapshot sai do dado, nunca do código. Este teste já exigiu as strings
-    // "snapshot de 15/08/2026" e "snapshot de 12/08/2026" escritas à mão no JSX, e foi por
-    // isso que a ficha do Pablo Marçal ficou anunciando 12/08 com o banco em 16/08: a data
-    // não tinha como acompanhar o dado. Agora o teste exige o contrário, que nenhuma data
-    // literal apareça na frase do snapshot.
-    assert.match(view, /data-pf-chapa-snapshot/)
-    assert.match(view, /dataDoSnapshot\(ficha\.chapa_2026\.snapshot_em\)/)
-    assert.doesNotMatch(view, /snapshot de \d{2}\/\d{2}\/\d{4}/)
-  })
-
-  test("dataDoSnapshot formata a data UTC do carimbo, sem converter fuso", () => {
-    const view = readFileSync(
-      join(ROOT, "src", "app", "(site)", "candidato", "[slug]", "CandidatoFichaView.tsx"),
-      "utf8",
-    )
-    const corpo = view.match(/const dataDoSnapshot = \([\s\S]*?\n}/)
-    assert.ok(corpo, "helper dataDoSnapshot não encontrado")
-
-    // Converter para o fuso do servidor faria a mesma chapa mostrar dias diferentes conforme
-    // onde a página renderizasse. Um carimbo de 2026-08-16T01:00:00Z viraria 15/08 no horário
-    // de Brasília. O helper tem que ler o trecho de data do ISO e não passar por Date.
-    assert.doesNotMatch(corpo[0], /new Date|toLocaleDateString|getFullYear|getMonth/)
-
-    const formatar = (iso: string | null | undefined): string | null => {
-      const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso ?? "")
-      return m ? `${m[3]}/${m[2]}/${m[1]}` : null
-    }
-    assert.equal(formatar("2026-08-16T18:05:40.516249+00:00"), "16/08/2026")
-    assert.equal(formatar("2026-08-16T01:00:00.000Z"), "16/08/2026")
-    assert.equal(formatar(null), null)
-    assert.equal(formatar(""), null)
-    assert.equal(formatar("sem data"), null)
+    assert.doesNotMatch(view, /data-pf-chapa-titular/)
+    assert.doesNotMatch(view, /Chapa registrada no snapshot do TSE/)
+    assert.doesNotMatch(view, /data-pf-chapa-snapshot/)
   })
 })

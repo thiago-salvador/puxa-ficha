@@ -64,4 +64,11 @@ describe("candidato profile tab navigation", () => {
     assert.match(profileSrc, /role="tabpanel"/)
     assert.match(profileSrc, /aria-labelledby=\{\(CANDIDATO_PROFILE_NAV_TAB_IDS as readonly string\[\]\)\.includes\(activeTab\)/)
   })
+
+  it("does not render the profile freshness box in Visão Geral", () => {
+    const profileSrc = readFileSync("src/components/CandidatoProfile.tsx", "utf-8")
+
+    assert.doesNotMatch(profileSrc, /sectionFreshness\.perfil_atual/)
+    assert.match(profileSrc, /DataFreshnessNotice info=\{sectionFreshness\.votos_candidato\}/)
+  })
 })
