@@ -727,13 +727,18 @@ export function CandidatoProfile({
                 {sectionFreshness.perfil_atual && (
                   <DataFreshnessNotice info={sectionFreshness.perfil_atual} />
                 )}
-                {pesquisasEnabled && (
-                  <PesquisasPresidenciaisOverview
-                    pesquisas={pesquisas}
-                    onOpenTab={() => navigateToTab("pesquisas")}
-                  />
-                )}
-                <ProfileOverview ficha={ficha} onNavigateTab={navigateToTab} />
+                <ProfileOverview
+                  ficha={ficha}
+                  onNavigateTab={navigateToTab}
+                  leadingCard={
+                    pesquisasEnabled ? (
+                      <PesquisasPresidenciaisOverview
+                        pesquisas={pesquisas}
+                        onOpenTab={() => navigateToTab("pesquisas")}
+                      />
+                    ) : undefined
+                  }
+                />
                 {ficha.cargo_disputado === "Governador" && (ficha.indicadores_estaduais ?? []).length > 0 && (
                   <StateIndicators indicadores={ficha.indicadores_estaduais!} estado={ficha.estado ?? ""} />
                 )}

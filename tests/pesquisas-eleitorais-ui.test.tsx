@@ -122,6 +122,7 @@ describe("integração e transporte", () => {
   const deferredSource = readFileSync("src/components/DeferredCandidatoProfile.tsx", "utf8")
   const clientSource = readFileSync("src/components/DeferredCandidatoProfileClient.tsx", "utf8")
   const profileSource = readFileSync("src/components/CandidatoProfile.tsx", "utf8")
+  const overviewSource = readFileSync("src/components/ProfileOverview.tsx", "utf8")
 
   it("carrega pesquisas uma vez no server e remove a seção grande antiga", () => {
     assert.match(
@@ -138,6 +139,12 @@ describe("integração e transporte", () => {
     assert.match(clientSource, /pesquisas=\{pesquisas\}/)
     assert.match(profileSource, /pesquisas=\{pesquisas\}/)
     assert.doesNotMatch(`${deferredSource}${clientSource}${profileSource}`, /listarPesquisasPresidenciaisPorSlug/)
+  })
+
+  it("encaixa a pesquisa como um card da mesma grade da Visão geral", () => {
+    assert.match(profileSource, /leadingCard=\{[\s\S]*<PesquisasPresidenciaisOverview/)
+    assert.match(overviewSource, /data-pf-profile-overview-grid=/)
+    assert.match(overviewSource, /<PatrimonioTeaser[\s\S]*\{leadingCard\}/)
   })
 
   it("isola timeline e não-presidentes por autorização explícita do servidor", () => {

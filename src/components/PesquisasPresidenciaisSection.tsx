@@ -221,54 +221,127 @@ export function PesquisasPresidenciaisOverview({
   }
 
   return (
-    <section data-pf-pesquisas-overview="" aria-labelledby="pesquisas-overview-title">
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <SectionLabel>Eleições 2026</SectionLabel>
-          <SectionTitle>
-            <span id="pesquisas-overview-title">Intenção de voto</span>
-          </SectionTitle>
-        </div>
+    <section
+      data-pf-pesquisas-overview=""
+      data-pf-overview-grid-card=""
+      aria-labelledby="pesquisas-overview-title"
+      className="min-w-0 rounded-[12px] border border-border/50 bg-card px-5 py-4"
+    >
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h2 id="pesquisas-overview-title" className="text-[13px] font-semibold text-foreground">
+          Intenção de voto
+        </h2>
         <button
           type="button"
           onClick={onOpenTab}
-          className="min-h-11 text-[length:var(--text-caption)] font-bold text-foreground underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
+          aria-label="Ver todas na aba Pesquisas"
+          className="inline-flex items-center gap-0.5 text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
         >
-          Ver todas na aba Pesquisas
+          Pesquisas <ChevronRight className="size-3" aria-hidden="true" />
         </button>
       </div>
 
       {pesquisa ? (
-        <div className="mt-6 grid min-w-0 grid-cols-[44px_minmax(0,1fr)_44px] items-center gap-2 sm:gap-3">
-          <button
-            type="button"
-            onClick={selectPrevious}
-            disabled={!hasMultiple}
-            aria-label="Pesquisa anterior"
-            className="flex size-11 items-center justify-center rounded-full border border-border bg-card text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-35"
-          >
-            <ChevronLeft className="size-5" aria-hidden="true" />
-          </button>
-          <div data-pf-pesquisa-overview-current={activeIndex} className="min-w-0">
-            <PesquisaDetalhada key={pesquisaKey(pesquisa)} pesquisa={pesquisa} />
+        <article
+          data-pf-pesquisa-card=""
+          data-pf-pesquisa-source={pesquisa.sourceId}
+          data-pf-pesquisa-turno={pesquisa.cenario.turn}
+          data-pf-pesquisa-overview-current={activeIndex}
+          className="min-w-0"
+        >
+          <div className="flex min-w-0 items-start justify-between gap-4">
+            <div className="min-w-0">
+              <p className="truncate text-[11px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                {pesquisa.instituto.value ?? "Instituto não informado"}
+              </p>
+              <p
+                data-pf-pesquisa-resultado=""
+                className={
+                  resultadoPublicado(pesquisa)
+                    ? "mt-1.5 font-heading text-[36px] leading-none tabular-nums text-foreground"
+                    : "mt-1.5 text-[length:var(--text-body)] font-bold leading-snug text-foreground"
+                }
+              >
+                {resultadoLabel(pesquisa)}
+              </p>
+            </div>
+            <span className="shrink-0 rounded-full bg-secondary px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+              {pesquisa.cenario.turn}º turno
+            </span>
           </div>
-          <button
-            type="button"
-            onClick={selectNext}
-            disabled={!hasMultiple}
-            aria-label="Próxima pesquisa"
-            className="flex size-11 items-center justify-center rounded-full border border-border bg-card text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-35"
-          >
-            <ChevronRight className="size-5" aria-hidden="true" />
-          </button>
-        </div>
+
+          <p data-pf-pesquisa-cenario="" className="mt-2 line-clamp-2 text-[12px] font-semibold leading-snug text-foreground">
+            {pesquisa.cenario.labelRaw}
+          </p>
+
+          <dl className="mt-4 grid min-w-0 grid-cols-2 gap-x-4 gap-y-3 border-t border-border/60 pt-3 text-[11px]">
+            <div className="min-w-0">
+              <dt className="font-bold uppercase tracking-[0.06em] text-muted-foreground">Período</dt>
+              <dd data-pf-pesquisa-periodo="" className="mt-0.5 font-semibold leading-snug text-foreground">
+                {formatarPeriodo(pesquisa)}
+              </dd>
+            </div>
+            <div className="min-w-0">
+              <dt className="font-bold uppercase tracking-[0.06em] text-muted-foreground">Amostra</dt>
+              <dd className="mt-0.5 font-semibold leading-snug text-foreground">
+                {formatarAmostra(pesquisa)}
+              </dd>
+            </div>
+            <div className="col-span-2 min-w-0">
+              <dt className="font-bold uppercase tracking-[0.06em] text-muted-foreground">Margem de erro</dt>
+              <dd className="mt-0.5 font-semibold leading-snug text-foreground">
+                {formatarMargem(pesquisa)}
+              </dd>
+            </div>
+          </dl>
+
+          <div className="mt-4 flex min-w-0 items-center justify-between gap-3 border-t border-border/60 pt-3">
+            <a
+              data-pf-pesquisa-link=""
+              href={pesquisa.provenance.resultUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex min-h-11 min-w-0 items-center gap-1.5 text-[11px] font-bold text-foreground underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
+              aria-label={`Ver divulgação pública de ${pesquisa.instituto.value ?? "instituto não informado"} (abre em nova aba)`}
+            >
+              <span className="truncate">Fonte pública</span>
+              <ExternalLink className="size-3.5 shrink-0" aria-hidden="true" />
+            </a>
+            <div className="flex shrink-0 gap-2">
+              <button
+                type="button"
+                onClick={selectPrevious}
+                disabled={!hasMultiple}
+                aria-label="Pesquisa anterior"
+                className="flex size-11 items-center justify-center rounded-full border border-border bg-card text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-35"
+              >
+                <ChevronLeft className="size-5" aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                onClick={selectNext}
+                disabled={!hasMultiple}
+                aria-label="Próxima pesquisa"
+                className="flex size-11 items-center justify-center rounded-full border border-border bg-card text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-35"
+              >
+                <ChevronRight className="size-5" aria-hidden="true" />
+              </button>
+            </div>
+          </div>
+        </article>
       ) : (
-        <EmptyResearchState className="mt-6" />
+        <div data-pf-pesquisas-empty="" className="flex min-h-44 flex-col justify-center border-t border-border/60 py-4">
+          <p className="text-[13px] font-semibold leading-snug text-foreground">
+            Sem pesquisa qualificada recente para este candidato
+          </p>
+          <p className="mt-1 text-[11px] font-medium leading-relaxed text-muted-foreground">
+            As fontes do piloto ainda não publicaram um resultado comparável para esta candidatura.
+          </p>
+        </div>
       )}
 
-      <p className="mt-5 max-w-3xl text-[length:var(--text-caption)] font-medium leading-relaxed text-muted-foreground">
-        Esta é uma fotografia do período em que as entrevistas foram realizadas, não uma previsão
-        do resultado da eleição.
+      <p className="mt-3 text-[10px] font-medium leading-relaxed text-muted-foreground">
+        Fotografia do período das entrevistas, não uma previsão eleitoral.
       </p>
     </section>
   )
