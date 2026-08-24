@@ -4,6 +4,7 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import { ArrowLeft } from "lucide-react"
 import { CandidatePhoto } from "@/components/CandidatePhoto"
+import { PartyLogoMark } from "@/components/PartyLogoMark"
 import { Footer } from "@/components/Footer"
 import { CandidatoProfile } from "@/components/CandidatoProfile"
 import { DataSourceNotice } from "@/components/DataSourceNotice"
@@ -98,17 +99,20 @@ export default async function PreviewCandidatoPage({
           )}
 
           <div className="flex flex-col justify-end">
-            <span
-              data-pf-hero-party={formatPartyPublicLabel(ficha.partido_sigla) || undefined}
-              data-pf-hero-role={ficha.cargo_disputado}
-              className="text-[10px] font-bold uppercase tracking-[0.12em] text-foreground sm:text-[length:var(--text-eyebrow)]"
-            >
-              {(() => {
-                const partyLabel = formatPartyPublicLabel(ficha.partido_sigla)
-                const cargoLabel = formatCargoDisputadoPublicLabel(ficha.cargo_disputado)
-                return partyLabel ? `${partyLabel} · ${cargoLabel}` : cargoLabel
-              })()}
-            </span>
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              <PartyLogoMark sigla={ficha.partido_sigla} priority />
+              <span
+                data-pf-hero-party={formatPartyPublicLabel(ficha.partido_sigla) || undefined}
+                data-pf-hero-role={ficha.cargo_disputado}
+                className="text-[10px] font-bold uppercase tracking-[0.12em] text-foreground sm:text-[length:var(--text-eyebrow)]"
+              >
+                {(() => {
+                  const partyLabel = formatPartyPublicLabel(ficha.partido_sigla)
+                  const cargoLabel = formatCargoDisputadoPublicLabel(ficha.cargo_disputado)
+                  return partyLabel ? `${partyLabel} · ${cargoLabel}` : cargoLabel
+                })()}
+              </span>
+            </div>
 
             <h1
               data-pf-hero-name

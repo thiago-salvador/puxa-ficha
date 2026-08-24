@@ -3,6 +3,7 @@ import type { FichaCandidato } from "@/lib/types"
 import { resolvePatrimonioEleicoes, type PatrimonioEleicaoPublico } from "@/lib/public-profile-dto"
 import { formatCompact } from "@/lib/utils"
 import { CandidatePhoto } from "@/components/CandidatePhoto"
+import { PartyLogoMark } from "@/components/PartyLogoMark"
 import { SITE_ORIGIN } from "@/lib/metadata"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
@@ -23,7 +24,14 @@ function MetaLine({ ficha }: { ficha: FichaCandidato }) {
         : null,
     }),
   ].filter(Boolean)
-  return <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground">{parts.join(" · ")}</p>
+  return (
+    <div className="flex items-start gap-2">
+      <PartyLogoMark sigla={ficha.partido_sigla} priority />
+      <p className="min-w-0 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+        {parts.join(" · ")}
+      </p>
+    </div>
+  )
 }
 
 function StatRow({
