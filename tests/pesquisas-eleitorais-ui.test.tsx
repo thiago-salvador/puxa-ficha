@@ -5,7 +5,7 @@ import { describe, it } from "node:test"
 import React from "react"
 import { renderToStaticMarkup } from "react-dom/server"
 
-// cspell:ignore cenario Datafolha Bolsonaro marcal
+// cspell:ignore AtlasIntel cenario Datafolha Bolsonaro Ipsos marcal
 
 const require = createRequire(import.meta.url)
 const serverOnlyPath = require.resolve("server-only")
@@ -66,18 +66,35 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     assert.doesNotMatch(html, /41%|46%/)
   })
 
-  it("expande os três resultados na aba Pesquisas", () => {
+  it("lista somente a fonte preferencial atualmente publicável na aba Pesquisas", () => {
     const html = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={pesquisasLula} />)
 
-    assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, 3)
+    assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, 1)
     assert.match(html, /39%/)
-    assert.match(html, /41%/)
-    assert.match(html, /46%/)
     assert.match(html, /1º turno/)
-    assert.match(html, /2º turno/)
     assert.match(html, /Ver divulgação pública/)
     assert.match(html, /fotografia do período/)
+    assert.doesNotMatch(html, /PoderData|AtlasIntel|Ipsos-Ipec|41%|46%|2º turno/)
     assert.doesNotMatch(html.toLowerCase(), /média|ranking|empate|lidera/)
+  })
+
+  it("aceita uma, duas ou três fontes sem reservar espaço vazio", () => {
+    const datafolha = pesquisasLula[0]
+    assert.ok(datafolha)
+    const atlas = structuredClone(datafolha)
+    atlas.id = `${datafolha.id}-layout-atlas`
+    atlas.sourceId = "atlasintel-bloomberg-nacional-2026"
+    atlas.instituto.value = "AtlasIntel"
+    const ipsos = structuredClone(datafolha)
+    ipsos.id = `${datafolha.id}-layout-ipsos`
+    ipsos.sourceId = "ipsos-ipec-nacional-2026"
+    ipsos.instituto.value = "Ipsos-Ipec"
+
+    for (const pesquisas of [[datafolha], [datafolha, atlas], [datafolha, atlas, ipsos]]) {
+      const html = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={pesquisas} />)
+      assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, pesquisas.length)
+      assert.doesNotMatch(html, /data-pf-pesquisas-empty=/)
+    }
   })
 
   it("mantém estado vazio explícito nas três superfícies", () => {

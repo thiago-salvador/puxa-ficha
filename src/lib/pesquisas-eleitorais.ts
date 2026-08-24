@@ -103,6 +103,8 @@ export interface CatalogoPesquisasEleitorais {
   schemaVersion: string
   aliasesVersion: string
   electionScope: { year: number; office: string; geography: string }
+  publicationScope: EscopoComparabilidade
+  preferredSourceIds: string[]
   aliases: AliasExato[]
   pesquisas: PesquisaEleitoral[]
 }
@@ -402,7 +404,10 @@ interface FonteValidada {
   rounds: number[] | null
 }
 
-function parseSources(raw: unknown): Map<string, FonteValidada> {
+function parseSources(raw: unknown): {
+  fontes: Map<string, FonteValidada>
+  preferredSourceIds: string[]
+} {
   const root = object(raw, "fontes")
   text(root.schema_version, "fontes.schema_version")
   const parsed = array(root.sources, "fontes.sources").map((entry, index): FonteValidada => {
@@ -435,7 +440,18 @@ function parseSources(raw: unknown): Map<string, FonteValidada> {
     }
   })
   assertUnique(parsed.map((source) => source.id), "fontes.sources.id")
-  return new Map(parsed.map((source) => [source.id, source]))
+  const fontes = new Map(parsed.map((source) => [source.id, source]))
+  const preferredSourceIds = array(root.preferred_source_ids, "fontes.preferred_source_ids")
+    .map((entry, index) => text(entry, `fontes.preferred_source_ids[${index}]`))
+  assertUnique(preferredSourceIds, "fontes.preferred_source_ids")
+  for (const sourceId of preferredSourceIds) {
+    if (!fontes.has(sourceId)) {
+      throw new ErroValidacaoPesquisasEleitorais([
+        `fontes.preferred_source_ids referencia fonte inexistente: ${sourceId}`,
+      ])
+    }
+  }
+  return { fontes, preferredSourceIds }
 }
 
 function parseResult(
@@ -471,6 +487,7 @@ function parsePoll(
   value: unknown,
   path: string,
   source: FonteValidada,
+  isPreferredSource: boolean,
   electionScope: { year: number; office: string; geography: string },
   aliases: AliasExato[],
 ): PesquisaEleitoral {
@@ -479,8 +496,10 @@ function parsePoll(
   if (sourceStatus !== source.status) {
     throw new ErroValidacaoPesquisasEleitorais([`${path}.source_status diverge do scorecard`])
   }
-  if (raw.publishable_by_default !== (source.status === "aprovado")) {
-    throw new ErroValidacaoPesquisasEleitorais([`${path}.publishable_by_default diverge do scorecard`])
+  if (raw.publishable_by_default !== (source.status === "aprovado" && isPreferredSource)) {
+    throw new ErroValidacaoPesquisasEleitorais([
+      `${path}.publishable_by_default diverge do scorecard ou do conjunto preferencial`,
+    ])
   }
   const office = text(raw.office, `${path}.office`)
   const geography = object(raw.geography, `${path}.geography`)
@@ -619,9 +638,32 @@ export function parsePesquisasEleitoraisJson(
   fontesJson: string,
 ): CatalogoPesquisasEleitorais {
   const pesquisasRoot = object(parseJson(pesquisasJson, "pesquisas"), "pesquisas")
-  const fontes = parseSources(parseJson(fontesJson, "fontes"))
+  const { fontes, preferredSourceIds } = parseSources(parseJson(fontesJson, "fontes"))
   const schemaVersion = text(pesquisasRoot.schema_version, "pesquisas.schema_version")
   const { aliases, aliasesVersion, scope } = parseAliases(pesquisasRoot)
+  const publicationScopeRaw = object(pesquisasRoot.publication_scope, "pesquisas.publication_scope")
+  const publicationTurn = finiteNumber(publicationScopeRaw.turn, "pesquisas.publication_scope.turn")
+  if (publicationTurn !== 1 && publicationTurn !== 2) {
+    throw new ErroValidacaoPesquisasEleitorais(["pesquisas.publication_scope.turn inválido"])
+  }
+  const publicationScope: EscopoComparabilidade = {
+    electionYear: finiteNumber(publicationScopeRaw.election_year, "pesquisas.publication_scope.election_year"),
+    office: text(publicationScopeRaw.office, "pesquisas.publication_scope.office"),
+    geographyCode: text(publicationScopeRaw.geography_code, "pesquisas.publication_scope.geography_code"),
+    turn: publicationTurn as 1 | 2,
+    comparabilityKey: text(publicationScopeRaw.comparability_key, "pesquisas.publication_scope.comparability_key"),
+  }
+  const expectedPublicationPrefix = `${scope.year}|${scope.office}|BR|${publicationScope.turn}|`
+  if (
+    publicationScope.electionYear !== scope.year ||
+    publicationScope.office !== scope.office ||
+    publicationScope.geographyCode !== "BR" ||
+    !publicationScope.comparabilityKey.startsWith(expectedPublicationPrefix)
+  ) {
+    throw new ErroValidacaoPesquisasEleitorais([
+      "pesquisas.publication_scope é incompatível com o escopo eleitoral",
+    ])
+  }
   const polls = array(pesquisasRoot.pesquisas, "pesquisas.pesquisas").map((entry, index) => {
     const raw = object(entry, `pesquisas.pesquisas[${index}]`)
     const sourceId = text(raw.source_id, `pesquisas.pesquisas[${index}].source_id`)
@@ -629,7 +671,17 @@ export function parsePesquisasEleitoraisJson(
     if (!source) {
       throw new ErroValidacaoPesquisasEleitorais([`pesquisas.pesquisas[${index}].source_id não existe no scorecard`])
     }
-    return { source, poll: parsePoll(entry, `pesquisas.pesquisas[${index}]`, source, scope, aliases) }
+    return {
+      source,
+      poll: parsePoll(
+        entry,
+        `pesquisas.pesquisas[${index}]`,
+        source,
+        preferredSourceIds.includes(source.id),
+        scope,
+        aliases,
+      ),
+    }
   })
   assertUnique(polls.map(({ poll }) => poll.id), "pesquisas.pesquisas.id")
   assertUnique(polls.flatMap(({ poll }) => poll.cenarios.map((scenario) => scenario.id)), "pesquisas.cenarios.id")
@@ -638,8 +690,12 @@ export function parsePesquisasEleitoraisJson(
     schemaVersion,
     aliasesVersion,
     electionScope: scope,
+    publicationScope,
+    preferredSourceIds,
     aliases,
-    pesquisas: polls.filter(({ source }) => source.status === "aprovado").map(({ poll }) => poll),
+    pesquisas: polls
+      .filter(({ source }) => source.status === "aprovado" && preferredSourceIds.includes(source.id))
+      .map(({ poll }) => poll),
   }
 }
 
@@ -680,17 +736,31 @@ export function selecionarPesquisasMaisRecentesComparaveis(
   scope: EscopoComparabilidade,
 ): PesquisaEleitoralDoCandidato[] {
   if (!candidateSlug) return []
-  const bySource = new Map<string, PesquisaEleitoralDoCandidato>()
+  const latestBySource = new Map<
+    string,
+    { poll: PesquisaEleitoral; scenario: CenarioPesquisaEleitoral }
+  >()
   for (const poll of catalogo.pesquisas) {
     for (const scenario of poll.cenarios) {
       if (!sameScope(poll, scenario, scope)) continue
+      const previous = latestBySource.get(poll.sourceId)
+      if (
+        !previous ||
+        (poll.publicationDate.value ?? "") > (previous.poll.publicationDate.value ?? "")
+      ) {
+        latestBySource.set(poll.sourceId, { poll, scenario })
+      }
+    }
+  }
+  return [...latestBySource.values()]
+    .flatMap(({ poll, scenario }) => {
       const result = scenario.resultados.find(
         (entry) => entry.matchStatus === "exact_alias" && entry.candidateSlug === candidateSlug,
       )
-      if (!result) continue
+      if (!result) return []
       const { cenarios: _cenarios, ...pollWithoutScenarios } = poll
       void _cenarios
-      const candidate: PesquisaEleitoralDoCandidato = {
+      return [{
         ...pollWithoutScenarios,
         cenario: {
           id: scenario.id,
@@ -701,16 +771,13 @@ export function selecionarPesquisasMaisRecentesComparaveis(
           comparabilityKey: scenario.comparabilityKey,
         },
         resultado: result,
-      }
-      const previous = bySource.get(poll.sourceId)
-      if (!previous || (poll.publicationDate.value ?? "") > (previous.publicationDate.value ?? "")) {
-        bySource.set(poll.sourceId, candidate)
-      }
-    }
-  }
-  return [...bySource.values()].sort((left, right) =>
-    (right.publicationDate.value ?? "").localeCompare(left.publicationDate.value ?? ""),
-  )
+      }]
+    })
+    .sort(
+      (left, right) =>
+        catalogo.preferredSourceIds.indexOf(left.sourceId) -
+        catalogo.preferredSourceIds.indexOf(right.sourceId),
+    )
 }
 
 export function listarPesquisasPresidenciaisPorSlug(
@@ -721,25 +788,9 @@ export function listarPesquisasPresidenciaisPorSlug(
   if (scope) {
     return selecionarPesquisasMaisRecentesComparaveis(catalogo, candidateSlug, scope)
   }
-
-  const scopes = new Map<string, EscopoComparabilidade>()
-  for (const poll of catalogo.pesquisas) {
-    for (const scenario of poll.cenarios) {
-      const candidateResult = scenario.resultados.some(
-        (result) => result.matchStatus === "exact_alias" && result.candidateSlug === candidateSlug,
-      )
-      if (!candidateResult) continue
-      const comparableScope = {
-        electionYear: poll.electionYear,
-        office: poll.office,
-        geographyCode: poll.geography.code,
-        turn: scenario.turn,
-        comparabilityKey: scenario.comparabilityKey,
-      }
-      scopes.set(JSON.stringify(comparableScope), comparableScope)
-    }
-  }
-  return [...scopes.values()].flatMap((comparableScope) =>
-    selecionarPesquisasMaisRecentesComparaveis(catalogo, candidateSlug, comparableScope),
+  return selecionarPesquisasMaisRecentesComparaveis(
+    catalogo,
+    candidateSlug,
+    catalogo.publicationScope,
   )
 }
