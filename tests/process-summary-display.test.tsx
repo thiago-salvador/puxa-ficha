@@ -113,6 +113,7 @@ describe("contenção de textos longos nos cards", () => {
 
     assert.match(html, /min-w-0/)
     assert.match(html, /max-w-full/)
+    assert.match(html, /shrink-0/)
     assert.match(html, /whitespace-normal/)
     assert.match(html, /\[overflow-wrap:anywhere\]/)
   })
