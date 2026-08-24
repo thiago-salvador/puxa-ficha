@@ -3,6 +3,7 @@ import assert from "node:assert/strict"
 import { describe, it } from "node:test"
 
 import dataset from "../scripts/data/debates-presidencia-band-2026-imprensa.json"
+import { decodeHtml } from "../scripts/collect-debate-press-quotes"
 
 const EXPECTED_CANDIDATES = new Map([
   ["augusto-cury", "5a4d76d2-6243-41b9-88b2-e94c68383e52"],
@@ -16,6 +17,12 @@ function sha256(value: string): string {
 }
 
 describe("coleta de aspas jornalísticas do debate da Band", () => {
+  it("decodifica entidades uma única vez", () => {
+    assert.equal(decodeHtml("&lt;b&gt;&amp;&#39;&#x21;"), "<b>&'!")
+    assert.equal(decodeHtml("&amp;lt;script&amp;gt;"), "&lt;script&gt;")
+    assert.equal(decodeHtml("&#38;lt;script&#38;gt;"), "&lt;script&gt;")
+  })
+
   it("fecha identidade, evento e fonte sem vínculo por nome sozinho", () => {
     assert.equal(dataset.event.id, "br_presidente_2026_1t_band_2026_08_23")
     assert.equal(dataset.event.occurred_at, "2026-08-23T20:00:00-03:00")

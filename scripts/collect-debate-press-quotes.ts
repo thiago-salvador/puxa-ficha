@@ -42,20 +42,24 @@ function sha256(value: string): string {
   return createHash("sha256").update(value, "utf8").digest("hex")
 }
 
-function decodeHtml(value: string): string {
-  const numericEntities = value
-    .replace(/&#(\d+);/g, (_, code: string) => String.fromCodePoint(Number(code)))
-    .replace(/&#x([0-9a-f]+);/gi, (_, code: string) =>
-      String.fromCodePoint(Number.parseInt(code, 16)),
-    )
+export function decodeHtml(value: string): string {
+  const namedEntities: Record<string, string> = {
+    nbsp: " ",
+    amp: "&",
+    quot: '"',
+    apos: "'",
+    lt: "<",
+    gt: ">",
+  }
 
-  return numericEntities
-    .replace(/&nbsp;/gi, " ")
-    .replace(/&amp;/gi, "&")
-    .replace(/&quot;/gi, '"')
-    .replace(/&apos;|&#39;/gi, "'")
-    .replace(/&lt;/gi, "<")
-    .replace(/&gt;/gi, ">")
+  return value.replace(
+    /&(?:#(\d+)|#x([0-9a-f]+)|(nbsp|amp|quot|apos|lt|gt));/gi,
+    (entity, decimalCode: string | undefined, hexCode: string | undefined, name: string | undefined) => {
+      if (decimalCode) return String.fromCodePoint(Number(decimalCode))
+      if (hexCode) return String.fromCodePoint(Number.parseInt(hexCode, 16))
+      return name ? namedEntities[name.toLowerCase()] : entity
+    },
+  )
 }
 
 function textContent(value: string): string {
