@@ -123,7 +123,9 @@ export async function collectDebatePressQuotes() {
     throw new Error("Metadados obrigatórios da matéria ausentes")
   }
 
-  const candidateByName = new Map(CANDIDATES.map((candidate) => [candidate.candidate_name, candidate]))
+  const candidateByName = new Map<string, (typeof CANDIDATES)[number]>(
+    CANDIDATES.map((candidate) => [candidate.candidate_name, candidate]),
+  )
   const allowedTopics = new Set<string>(TOPICS)
   const selections = new Map<string, { fullQuote: string; quoteText: string }>()
   const sourceBlocks: string[] = []
