@@ -1,12 +1,22 @@
 import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
+import { createRequire } from "node:module"
 import { describe, it } from "node:test"
 
-import {
+const require = createRequire(import.meta.url)
+const serverOnlyPath = require.resolve("server-only")
+require.cache[serverOnlyPath] = {
+  id: serverOnlyPath,
+  filename: serverOnlyPath,
+  loaded: true,
+  exports: {},
+} as never
+
+const {
   listarPesquisasPresidenciaisPorSlug,
   parsePesquisasEleitoraisJson,
   selecionarPesquisasMaisRecentesComparaveis,
-} from "@/lib/pesquisas-eleitorais"
+} = require("../src/lib/pesquisas-eleitorais") as typeof import("@/lib/pesquisas-eleitorais")
 
 function catalogo() {
   return parsePesquisasEleitoraisJson(
