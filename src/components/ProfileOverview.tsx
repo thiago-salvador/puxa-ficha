@@ -32,6 +32,10 @@ import { isContradictionAttentionCategory } from "@/lib/attention-points"
 import { MetaBadge } from "./MetaBadge"
 import { ProcessoPublicSurface } from "./ProcessoPublicSurface"
 import {
+  CandidateDebatesBentoCard,
+  hasCandidateDebatePressQuotes,
+} from "./CandidateDebatesBentoCard"
+import {
   FINANCING_BREAKDOWN_KEYS,
   fixedCopy,
   formatFinancingLabel,
@@ -656,7 +660,9 @@ export function ProfileOverview({
   ficha: FichaCandidato
   onNavigateTab: (tabId: string) => void
 }) {
-  if (!hasOverviewData(ficha)) {
+  const hasDebateQuotes = hasCandidateDebatePressQuotes(ficha.slug, ficha.id)
+
+  if (!hasOverviewData(ficha) && !hasDebateQuotes) {
     return <EmptyOverviewState />
   }
 
@@ -722,6 +728,9 @@ export function ProfileOverview({
         historicoOrdenado={historicoOrdenado}
         onNavigate={() => onNavigateTab("trajetoria")}
       />
+      {hasDebateQuotes && (
+        <CandidateDebatesBentoCard candidateSlug={ficha.slug} candidateId={ficha.id} />
+      )}
     </div>
   )
 }

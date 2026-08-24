@@ -2,7 +2,11 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { safeHref } from "@/lib/utils"
-import { ReducedMotionReader, ScrollBehaviorDemo } from "./InternalTestClient"
+import {
+  DebatesPressQuotesDemo,
+  ReducedMotionReader,
+  ScrollBehaviorDemo,
+} from "./InternalTestClient"
 
 /** SVG local: build nao precisa buscar rede. Em producao, fotos raster remotas usariam Image sem unoptimized + remotePatterns. */
 const DEMO_LOCAL = "/vercel.svg"
@@ -129,6 +133,14 @@ export default function InternalTestPage() {
             </p>
           </Block>
 
+          <Block id="debates-imprensa" title="Debates, aspas da imprensa">
+            <Explain>
+              <p>
+                Montagem técnica do mesmo box integrado à Visão geral das fichas presidenciais participantes.
+              </p>
+            </Explain>
+            <DebatesPressQuotesDemo />
+          </Block>
           <Block id="next-image" title="2. next/image vs img">
             <Explain>
               <p>
