@@ -42,22 +42,6 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
 
-/**
- * Data do snapshot do TSE que a chapa carrega, em dd/mm/aaaa.
- *
- * Vinha escrita à mão no JSX, com 15/08 num ramo e 12/08 no outro, enquanto o banco já estava
- * em 16/08. O leitor via uma data quatro dias mais velha que o dado, e nenhum deploy consertava
- * isso porque a data não vinha do dado. Regra do projeto: número exibido tem fonte rastreável.
- *
- * Formata a partir do trecho de data do ISO, sem passar por Date. O snapshot é um artefato
- * carimbado em UTC e é a data UTC dele que estamos citando; converter para o fuso do servidor
- * faria a mesma chapa aparecer com dias diferentes dependendo de onde a página renderizou.
- */
-const dataDoSnapshot = (iso: string | null | undefined): string | null => {
-  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso ?? "")
-  return m ? `${m[3]}/${m[2]}/${m[1]}` : null
-}
-
 export interface CandidatoFichaViewProps {
   slug: string
   profileInitialTab?: CandidatoProfileTabId
@@ -166,7 +150,6 @@ export async function CandidatoFichaView({
   const heroMeta = heroMetaParts.length > 0
     ? heroMetaParts.join(" · ")
     : "Dados pessoais ainda não coletados"
-  const chapaTitularEhAtual = ficha.chapa_2026?.titular_slug === slug
   const chapaViceEhAtual = ficha.chapa_2026?.vice_slug === slug
 
   const schema =
@@ -345,6 +328,28 @@ export async function CandidatoFichaView({
               {ficha.nome_urna}
             </h1>
 
+            {ficha.chapa_2026 && (
+              <p
+                data-pf-chapa-2026
+                data-pf-chapa-identidade={ficha.chapa_2026.identidade_status}
+                data-pf-chapa-vice
+                {...(!chapaViceEhAtual ? { "data-pf-chapa-parceiro": "vice" } : {})}
+                className="mt-2 text-base font-bold leading-snug text-foreground sm:mt-3 sm:text-lg"
+              >
+                Vice:{" "}
+                {ficha.chapa_2026.vice_slug && !chapaViceEhAtual ? (
+                  <Link
+                    className="underline-offset-4 hover:underline focus-visible:underline"
+                    href={`/candidato/${ficha.chapa_2026.vice_slug}`}
+                  >
+                    {ficha.chapa_2026.vice_nome_urna} ({ficha.chapa_2026.vice_partido_sigla})
+                  </Link>
+                ) : (
+                  `${ficha.chapa_2026.vice_nome_urna} (${ficha.chapa_2026.vice_partido_sigla})`
+                )}
+              </p>
+            )}
+
             {ficha.nome_completo !== ficha.nome_urna && (
               <p className="mt-1.5 text-[length:var(--text-body-sm)] font-medium text-foreground sm:mt-2 sm:text-[length:var(--text-body)]">
                 {ficha.nome_completo}
@@ -366,54 +371,6 @@ export async function CandidatoFichaView({
               >
                 {sanitizePtBrText(ficha.biografia)}
               </p>
-            )}
-            {ficha.chapa_2026 && (
-              <div
-                data-pf-chapa-2026
-                data-pf-chapa-identidade={ficha.chapa_2026.identidade_status}
-                className="mt-4 max-w-2xl rounded-xl border border-border bg-secondary/50 px-4 py-3 text-[length:var(--text-body-sm)] text-foreground"
-              >
-                <p className="font-bold uppercase tracking-[0.08em]">Chapa registrada no snapshot do TSE</p>
-                <p className="mt-1">
-                  <span
-                    data-pf-chapa-titular
-                    {...(!chapaTitularEhAtual ? { "data-pf-chapa-parceiro": "titular" } : {})}
-                  >
-                    Titular:{" "}
-                    {ficha.chapa_2026.titular_slug && !chapaTitularEhAtual ? (
-                      <Link className="underline underline-offset-2" href={`/candidato/${ficha.chapa_2026.titular_slug}`}>
-                        {ficha.chapa_2026.titular_nome_urna} ({ficha.chapa_2026.titular_partido_sigla})
-                      </Link>
-                    ) : (
-                      `${ficha.chapa_2026.titular_nome_urna} (${ficha.chapa_2026.titular_partido_sigla})`
-                    )}
-                  </span>
-                  <span aria-hidden="true"> · </span>
-                  <span
-                    data-pf-chapa-vice
-                    {...(!chapaViceEhAtual ? { "data-pf-chapa-parceiro": "vice" } : {})}
-                  >
-                    Vice:{" "}
-                    {ficha.chapa_2026.vice_slug && !chapaViceEhAtual ? (
-                      <Link className="underline underline-offset-2" href={`/candidato/${ficha.chapa_2026.vice_slug}`}>
-                        {ficha.chapa_2026.vice_nome_urna} ({ficha.chapa_2026.vice_partido_sigla})
-                      </Link>
-                    ) : (
-                      `${ficha.chapa_2026.vice_nome_urna} (${ficha.chapa_2026.vice_partido_sigla})`
-                    )}
-                  </span>
-                </p>
-                <p className="mt-1 text-muted-foreground" data-pf-chapa-snapshot>
-                  {[
-                    dataDoSnapshot(ficha.chapa_2026.snapshot_em)
-                      ? `TSE · snapshot de ${dataDoSnapshot(ficha.chapa_2026.snapshot_em)}`
-                      : "TSE",
-                    cargoProveniencia === "registro_tse_pendente"
-                      ? "candidatura registrada, aguardando julgamento."
-                      : "situação do pedido ainda não informada no arquivo.",
-                  ].join(" · ")}
-                </p>
-              </div>
             )}
             <div className="mt-4 space-y-3">
               {hasSocialLinks && (

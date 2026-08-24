@@ -30,13 +30,13 @@ test("migration corrige exatamente as seis biografias incompatíveis", () => {
   assert.match(rollback, /DELETE FROM supabase_migrations\.schema_migrations WHERE version='20260813111700'/)
 })
 
-test("card sempre rotula titular e vice uma única vez", () => {
-  assert.match(view, /data-pf-chapa-titular/)
+test("hero destaca somente o vice abaixo do nome do candidato", () => {
+  assert.match(view, /<\/h1>\s*\{ficha\.chapa_2026 && \(/)
   assert.match(view, /data-pf-chapa-vice/)
-  assert.match(view, /Titular:\{" "\}/)
   assert.match(view, /Vice:\{" "\}/)
-  assert.doesNotMatch(view, /const chapaParceiro/)
-  assert.doesNotMatch(view, /\{chapaParceiro\?\.label\}/)
+  assert.doesNotMatch(view, /data-pf-chapa-titular/)
+  assert.doesNotMatch(view, /Chapa registrada no snapshot do TSE/)
+  assert.doesNotMatch(view, /data-pf-chapa-snapshot/)
 })
 
 test("cache da ficha muda junto com biografia e card", () => {
