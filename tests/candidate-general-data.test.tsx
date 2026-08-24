@@ -44,6 +44,7 @@ test("renderiza os dados gerais públicos com fonte e atualização", () => {
   assert.match(html, /<section/)
   assert.match(html, /<h2[^>]*>Dados gerais<\/h2>/)
   assert.match(html, /<dl/)
+  assert.match(html, /<dl[^>]*data-pf-candidate-general-field="nome-completo"[^>]*><dt/)
   assert.match(html, /<dt[^>]*>Nome completo<\/dt>/)
   assert.match(html, /<dd[^>]*>Luiz Inácio Lula da Silva<\/dd>/)
   assert.match(html, /<dt[^>]*>Formação<\/dt>/)

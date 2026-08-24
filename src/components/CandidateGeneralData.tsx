@@ -104,11 +104,11 @@ export function CandidateGeneralData({ ficha }: { ficha: CandidateGeneralDataFie
         Dados gerais
       </h2>
 
-      <dl className="mt-4 grid grid-cols-1 gap-x-8 sm:grid-cols-2">
+      <div className="mt-4 grid grid-cols-1 gap-x-8 sm:grid-cols-2">
         {fieldColumns.map((column, columnIndex) => (
           <div key={columnIndex} className="min-w-0">
             {column.map((field) => (
-              <div
+              <dl
                 key={field.key}
                 className={`grid min-w-0 grid-cols-1 gap-1 border-t border-border/70 py-3 sm:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] sm:gap-4 ${
                   columnIndex === 0 ? "first:border-t-0" : "sm:first:border-t-0"
@@ -121,11 +121,11 @@ export function CandidateGeneralData({ ficha }: { ficha: CandidateGeneralDataFie
                 <dd className="min-w-0 break-words text-[length:var(--text-body-sm)] text-foreground [overflow-wrap:anywhere]">
                   {field.value}
                 </dd>
-              </div>
+              </dl>
             ))}
           </div>
         ))}
-      </dl>
+      </div>
 
       <div className="mt-2 flex flex-col gap-2 border-t border-border pt-4 text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
         <p
