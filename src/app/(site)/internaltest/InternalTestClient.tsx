@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useSyncExternalStore } from "react"
+import { CandidateDebatesBentoCard } from "@/components/CandidateDebatesBentoCard"
 
 function subscribeReducedMotion(cb: () => void) {
   const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
@@ -65,6 +66,17 @@ export function ScrollBehaviorDemo() {
       >
         Alvo do scroll (use os botoes acima)
       </div>
+    </div>
+  )
+}
+
+export function DebatesPressQuotesDemo() {
+  return (
+    <div className="mx-auto max-w-[620px]" data-pf-debates-press-demo>
+      <CandidateDebatesBentoCard
+        candidateSlug="augusto-cury"
+        candidateId="5a4d76d2-6243-41b9-88b2-e94c68383e52"
+      />
     </div>
   )
 }

@@ -33,6 +33,7 @@
     "test:pesquisas:ui": "node --import tsx --test tests/pesquisas-eleitorais-ui.test.tsx",
     "test:pesquisas": "npm run test:pesquisas:dados && npm run test:pesquisas:identidade && npm run test:pesquisas:selecao && npm run test:pesquisas:ui && node --import tsx --test tests/pesquisas-eleitorais-audit.test.ts tests/pesquisas-eleitorais-golden.test.ts tests/candidato-profile-tabs.test.ts",
     "test:visual:pesquisas": "npm run build && playwright test -c tests/visual/pesquisas-eleitorais.playwright.config.ts",
+    "test:visual:debates": "playwright test -c tests/visual/debates-imprensa.playwright.config.ts",
     "audit:pesquisas:gate": "node --conditions react-server --import tsx scripts/audit/audit-pesquisas-eleitorais.ts",
     "verify:pesquisas": "npm run audit:pesquisas:gate && npm run test:pesquisas && npm run test:visual:pesquisas && npm run lint && npm run lint:spell:ui && npm run typecheck && npm run check:scripts && git diff --check",
     "test:alerts:nightly": "node --import tsx --test tests/alerts-nightly-e2e.test.ts",

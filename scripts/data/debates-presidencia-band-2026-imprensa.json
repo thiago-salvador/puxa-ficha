@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-24T05:00:03-03:00",
+  "source_policy": {
+    "mode": "press_quotes_fail_closed",
+    "requires_human_review": false,
+    "direct_quotes_only": true,
+    "allowed_publishers": [
+      "Band"
+    ],
+    "allowed_domains": [
+      "www.band.com.br"
+    ],
+    "max_quote_words": 40,
+    "selection_rule": "primeira aspa de cada candidato em Segurança Pública, Educação e Economia; primeira frase se tiver até 40 palavras; se exceder, primeira frase curta com marcador explícito de ação"
+  },
+  "event": {
+    "id": "br_presidente_2026_1t_band_2026_08_23",
+    "title": "Primeiro debate presidencial das Eleições 2026",
+    "organizer": "Grupo Bandeirantes de Comunicação",
+    "occurred_at": "2026-08-23T20:00:00-03:00"
+  },
+  "source": {
+    "publisher": "Band",
+    "article_title": "Band faz 1º debate presidencial: veja como ele foi por aspas dos candidatos",
+    "article_url": "https://www.band.com.br/politica/eleicoes/2026/band-faz-1-debate-presidencial-veja-como-ele-foi-por-aspas-dos-candidatos-202608240052",
+    "article_author": "Da redação",
+    "article_published_at": "2026-08-24T05:00:03-03:00",
+    "source_content_sha256": "3476f06e85754dfa83da298a475e7995dad7eab0e711f4b0bdebd911694859e1"
+  },
+  "candidates": [
+    {
+      "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+      "candidate_slug": "augusto-cury",
+      "candidate_name": "Augusto Cury",
+      "quotes": [
+        {
+          "id": "br_presidente_2026_1t_band_2026_08_23:augusto-cury:seguranca-publica",
+          "topic": "Segurança Pública",
+          "quote_text": "Meu estimado amigo Ronaldo Caiado, meu colega médico, você sabe que se eu me tornar presidente, você que defende tanta segurança, Eu vou criar um ministério, Ministério da Segurança, e você vai ser o xerife do Brasil.",
+          "quote_text_sha256": "8b3c140d7c0f65cc9ed3b4e9c01c154951730e9427e9c9aec66c37575c9f8753",
+          "source_quote_sha256": "f8fbb178d4a3d161512f664e7b60b7355f2db67be9cad10f4679662282f11a2d",
+          "attribution_method": "publisher_candidate_section_heading"
+        },
+        {
+          "id": "br_presidente_2026_1t_band_2026_08_23:augusto-cury:educacao",
+          "topic": "Educação",
+          "quote_text": "95% dos nossos jovens não aprendem matemática quando terminam o ensino médio.",
+          "quote_text_sha256": "a7f41f9c223a3eaf9ed409c09443bab5fa4eebb2a191f4502e2303678b7629c8",
+          "source_quote_sha256": "fcd398981be7e784ef1188b6ccb811aaa44fa3166422e8c121392125e4b6f060",
+          "attribution_method": "publisher_candidate_section_heading"
+        },
+        {
+          "id": "br_presidente_2026_1t_band_2026_08_23:augusto-cury:economia",
+          "topic": "Economia",
+          "quote_text": "No meu governo, pode ter certeza, eu vou financiar mais de 10 milhões de microempresas.",
+          "quote_text_sha256": "2a0f6f4b2a2ddd1bdab21fd04e19e3a4303af94b1eb2b5d5fa91c59fa89bea90",
+          "source_quote_sha256": "348db4c63928efd09d1a052021e5b2508688069af41b573830bb1845338ede03",
+          "attribution_method": "publisher_candidate_section_heading"
+        }
+      ]
+    },
+    {
+      "candidate_id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
+      "candidate_slug": "renan-santos",
+      "candidate_name": "Renan Santos",
+      "quotes": [
+        {
+          "id": "br_presidente_2026_1t_band_2026_08_23:renan-santos:seguranca-publica",
+          "topic": "Segurança Pública",
+          "quote_text": "Em resumo, o primeiro dia de governo Renan Santo --acho que o Curi vai falar que eu sou muito agressivo novamente, faz parte--, eu vou iniciar um banho de sangue contra os membros das facções.",
+          "quote_text_sha256": "ee8abbccfae2b6474027747eab93f6d295a2993324b133861f4f6398b548754a",
+          "source_quote_sha256": "9911f80263c829fdc4b5230e4a3c5d7bb7f713b8802642527a6bca5759b1aebe",
+          "attribution_method": "publisher_candidate_section_heading"
+        },
+        {
+          "id": "br_presidente_2026_1t_band_2026_08_23:renan-santos:educacao",
+          "topic": "Educação",
+          "quote_text": "Há no Brasil uma sabotagem ao ensino fundamental.",
+          "quote_text_sha256": "4b435e1eb1d57000215daf612074c4a18f52a27565958de137a43b733f839d64",
+          "source_quote_sha256": "c50ed58b31581051b6b7b4a4e3cf00af549a983b6afc14a7544659461e1b8df2",
+          "attribution_method": "publisher_candidate_section_heading"
+        },
+        {
+          "id": "br_presidente_2026_1t_band_2026_08_23:renan-santos:economia",
+          "topic": "Economia",
+          "quote_text": "Vamos fazer a reforma trabalhista que permita que você seja contratado por hora.",
+          "quote_text_sha256": "4465edf5e2adc2679d0d5df303a9b303bb98244801499e175fdcf567c6251b3d",
+          "source_quote_sha256": "99ecb6b5d153a3f3249b096235ab0734a1c647d3cb996939c4b194162945fc35",
+          "attribution_method": "publisher_candidate_section_heading"
+        }
+      ]
+    },
+    {
+      "candidate_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+      "candidate_slug": "ronaldo-caiado",
+      "candidate_name": "Ronaldo Caiado",
+      "quotes": [
+        {
+          "id": "br_presidente_2026_1t_band_2026_08_23:ronaldo-caiado:seguranca-publica",
+          "topic": "Segurança Pública",
+          "quote_text": "Em Goiás, meti algema, meti tornozeleira no covarde.",
+          "quote_text_sha256": "880d3cbc5516d09dc4c89641803e3ae07a329c3e3fe5482a147b41cd2b857232",
+          "source_quote_sha256": "ea4e56d16e9f7d648044c8de8fd304a4995d58827372304be954b21495b1ac4d",
+          "attribution_method": "publisher_candidate_section_heading"
+        },
+        {
+          "id": "br_presidente_2026_1t_band_2026_08_23:ronaldo-caiado:educacao",
+          "topic": "Educação",
+          "quote_text": "A educação é um ponto que nós temos que avançar muito neste momento.",
+          "quote_text_sha256": "b0dcf2c9d538adb015803fc80bb2fa12274f5f0a843acc0d18fffbd8c5fb6dda",
+          "source_quote_sha256": "13abecf97a0cc0807c878c0c2ce0b71a57f8f2c23f8c9b7103823c4dc443afec",
+          "attribution_method": "publisher_candidate_section_heading"
+        },
+        {
+          "id": "br_presidente_2026_1t_band_2026_08_23:ronaldo-caiado:economia",
+          "topic": "Economia",
+          "quote_text": "Eu pergunto à senhora que vai ao supermercado, consegue ter o carrinho de supermercado com o mesmo volume que conseguia para a sua alimentação e da sua família há três, quatro, cinco meses atrás?",
+          "quote_text_sha256": "b392cc42a38f550aaf1b8327daa1caf9dfdd373138be52e0bd14a9d701aced88",
+          "source_quote_sha256": "cf2c4cea98e16fe9ad923dd3203fbcd29ca7dd40d16769ce224424b292ed3073",
+          "attribution_method": "publisher_candidate_section_heading"
+        }
+      ]
+    }
+  ]
+}
