@@ -1,7 +1,11 @@
 import assert from "node:assert/strict"
 import { createRequire } from "node:module"
 import { describe, it } from "node:test"
-import type { AliasExato, EscopoAlias } from "@/lib/pesquisas-eleitorais"
+import type {
+  AliasExato,
+  EscopoAlias,
+  resolverAliasExato as ResolverAliasExatoExport,
+} from "@/lib/pesquisas-eleitorais"
 
 const require = createRequire(import.meta.url)
 const serverOnlyPath = require.resolve("server-only")
@@ -14,7 +18,9 @@ require.cache[serverOnlyPath] = {
 
 const { resolverAliasExato } = require(
   "../src/lib/pesquisas-eleitorais",
-) as typeof import("@/lib/pesquisas-eleitorais")
+) as typeof import("@/lib/pesquisas-eleitorais") & {
+  resolverAliasExato: typeof ResolverAliasExatoExport
+}
 
 const scope: EscopoAlias = {
   year: 2026,

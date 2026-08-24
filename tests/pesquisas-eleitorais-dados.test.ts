@@ -2,6 +2,10 @@ import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import { createRequire } from "node:module"
 import { describe, it } from "node:test"
+import type {
+  ErroValidacaoPesquisasEleitorais as ErroValidacaoPesquisasEleitoraisExport,
+  parsePesquisasEleitoraisJson as ParsePesquisasEleitoraisJsonExport,
+} from "@/lib/pesquisas-eleitorais"
 
 const require = createRequire(import.meta.url)
 const serverOnlyPath = require.resolve("server-only")
@@ -16,7 +20,10 @@ const {
   ErroValidacaoPesquisasEleitorais,
   carregarPesquisasEleitorais,
   parsePesquisasEleitoraisJson,
-} = require("../src/lib/pesquisas-eleitorais") as typeof import("@/lib/pesquisas-eleitorais")
+} = require("../src/lib/pesquisas-eleitorais") as typeof import("@/lib/pesquisas-eleitorais") & {
+  ErroValidacaoPesquisasEleitorais: typeof ErroValidacaoPesquisasEleitoraisExport
+  parsePesquisasEleitoraisJson: typeof ParsePesquisasEleitoraisJsonExport
+}
 
 const pesquisasText = readFileSync("scripts/data/pesquisas-presidencia-2026.json", "utf8")
 const fontesText = readFileSync("scripts/data/pesquisas-eleitorais-fontes.json", "utf8")

@@ -2,6 +2,10 @@ import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import { createRequire } from "node:module"
 import { describe, it } from "node:test"
+import type {
+  parsePesquisasEleitoraisJson as ParsePesquisasEleitoraisJsonExport,
+  selecionarPesquisasMaisRecentesComparaveis as SelecionarPesquisasMaisRecentesComparaveisExport,
+} from "@/lib/pesquisas-eleitorais"
 
 const require = createRequire(import.meta.url)
 const serverOnlyPath = require.resolve("server-only")
@@ -16,7 +20,10 @@ const {
   listarPesquisasPresidenciaisPorSlug,
   parsePesquisasEleitoraisJson,
   selecionarPesquisasMaisRecentesComparaveis,
-} = require("../src/lib/pesquisas-eleitorais") as typeof import("@/lib/pesquisas-eleitorais")
+} = require("../src/lib/pesquisas-eleitorais") as typeof import("@/lib/pesquisas-eleitorais") & {
+  parsePesquisasEleitoraisJson: typeof ParsePesquisasEleitoraisJsonExport
+  selecionarPesquisasMaisRecentesComparaveis: typeof SelecionarPesquisasMaisRecentesComparaveisExport
+}
 
 function catalogo() {
   return parsePesquisasEleitoraisJson(
