@@ -28,6 +28,7 @@ import { PatrimonioChart } from "./BarChart"
 import { DonutChart } from "./DonutChart"
 import { ChevronRight } from "lucide-react"
 import { ContradictionsHighlight } from "@/components/ContradictionsHighlight"
+import { PatrimonioEvolucaoAlerta } from "@/components/PatrimonioEvolucaoAlerta"
 import { isContradictionAttentionCategory } from "@/lib/attention-points"
 import { MetaBadge } from "./MetaBadge"
 import { ProcessoPublicSurface } from "./ProcessoPublicSurface"
@@ -291,6 +292,7 @@ function PatrimonioTeaser({
       <PatrimonioChart
         data={patrimonio.map((p) => ({ id: p.id, ano: p.ano_eleicao, valor: p.valor_total }))}
       />
+      <PatrimonioEvolucaoAlerta patrimonio={patrimonio} className="mt-4 rounded-[12px] px-3 py-3 sm:px-3" />
     </TeaserCard>
   )
 }

@@ -5,14 +5,28 @@
  */
 const PATRIMONIO_EVOLUCAO_ANO_ALVO = 2026
 
+export const PATRIMONIO_EVOLUCAO_ALERTA_LIMITE = 1_000_000
+
+export function fonteDadosAbertosPatrimonioTse(ano: number): string {
+  return `https://dadosabertos.tse.jus.br/dataset/candidatos-${ano}`
+}
+
 export type PatrimonioAnoValor = {
   ano_eleicao: number
   valor_total: number | null
 }
 
-export function evolucaoPatrimonialVs2026(
+export type AlertaEvolucaoPatrimonial = {
+  anoAnterior: number
+  anoAlvo: number
+  valorAnterior: number
+  valorAlvo: number
+  aumento: number
+}
+
+function referenciaEvolucaoPatrimonialVs2026(
   series: PatrimonioAnoValor[],
-): number | null {
+): Omit<AlertaEvolucaoPatrimonial, "aumento"> | null {
   const byYear = new Map<number, number>()
   for (const row of series) {
     if (!Number.isFinite(row.ano_eleicao)) continue
@@ -20,20 +34,54 @@ export function evolucaoPatrimonialVs2026(
     byYear.set(row.ano_eleicao, row.valor_total)
   }
 
-  const valor2026 = byYear.get(PATRIMONIO_EVOLUCAO_ANO_ALVO)
-  if (valor2026 == null) return null
+  const valorAlvo = byYear.get(PATRIMONIO_EVOLUCAO_ANO_ALVO)
+  if (valorAlvo == null) return null
 
   const anosAnteriores = [...byYear.keys()].filter(
     (ano) => ano < PATRIMONIO_EVOLUCAO_ANO_ALVO,
   )
   if (anosAnteriores.length === 0) return null
 
-  const ultimoAno = Math.max(...anosAnteriores)
-  const valorAnterior = byYear.get(ultimoAno)
-  // Divisão por zero não produz porcentagem real. Preferir N/A a 0% inventado.
-  if (valorAnterior == null || valorAnterior === 0) return null
+  const anoAnterior = Math.max(...anosAnteriores)
+  const valorAnterior = byYear.get(anoAnterior)
+  if (valorAnterior == null) return null
 
-  return ((valor2026 - valorAnterior) / valorAnterior) * 100
+  return {
+    anoAnterior,
+    anoAlvo: PATRIMONIO_EVOLUCAO_ANO_ALVO,
+    valorAnterior,
+    valorAlvo,
+  }
+}
+
+export function evolucaoPatrimonialVs2026(
+  series: PatrimonioAnoValor[],
+): number | null {
+  const referencia = referenciaEvolucaoPatrimonialVs2026(series)
+  if (!referencia) return null
+  // Divisão por zero não produz porcentagem real. Preferir N/A a 0% inventado.
+  if (referencia.valorAnterior === 0) return null
+
+  return (
+    ((referencia.valorAlvo - referencia.valorAnterior) / referencia.valorAnterior) * 100
+  )
+}
+
+/**
+ * Sinal factual, sem inferência sobre a origem da variação: compara a
+ * declaração de 2026 com a declaração mais recente anterior e só passa quando
+ * o aumento absoluto é estritamente maior que R$ 1 milhão.
+ */
+export function alertaEvolucaoPatrimonialVs2026(
+  series: PatrimonioAnoValor[],
+): AlertaEvolucaoPatrimonial | null {
+  const referencia = referenciaEvolucaoPatrimonialVs2026(series)
+  if (!referencia) return null
+
+  const aumento = referencia.valorAlvo - referencia.valorAnterior
+  if (aumento <= PATRIMONIO_EVOLUCAO_ALERTA_LIMITE) return null
+
+  return { ...referencia, aumento }
 }
 
 export function formatEvolucaoPatrimonialPct(pct: number | null): string {
