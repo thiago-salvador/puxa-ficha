@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { CheckCircle2, LoaderCircle, TriangleAlert } from "lucide-react"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
@@ -46,6 +47,7 @@ function verifyErrorMessage(reason: unknown): string {
 }
 
 export function AlertVerifyClient({ initialToken }: AlertVerifyClientProps) {
+  const router = useRouter()
   const [status, setStatus] = useState<"loading" | "success" | "error">("loading")
   const [message, setMessage] = useState("Validando seu link...")
 
@@ -132,7 +134,7 @@ export function AlertVerifyClient({ initialToken }: AlertVerifyClientProps) {
       )}
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-        <Button type="button" size="lg" onClick={() => window.location.assign("/alertas/gerenciar")}>
+        <Button type="button" size="lg" onClick={() => router.push("/alertas/gerenciar")}>
           Abrir gestão dos alertas
         </Button>
         <Link href="/" className="inline-flex h-9 items-center justify-center rounded-lg border border-border px-3 text-sm font-medium text-foreground">
