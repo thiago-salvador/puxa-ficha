@@ -4,12 +4,8 @@ import { renderToStaticMarkup } from "react-dom/server"
 
 import { MoneyTabSection } from "@/components/CandidatoProfileSections"
 import { ProfileOverview } from "@/components/ProfileOverview"
-import {
-  fonteDadosAbertosPatrimonioTse,
-  PATRIMONIO_EVOLUCAO_ALERTA_LIMITE,
-} from "@/lib/evolucao-patrimonial"
+import { fonteDadosAbertosPatrimonioTse } from "@/lib/evolucao-patrimonial"
 import type { FichaCandidato, Patrimonio } from "@/lib/types"
-import { formatBRL } from "@/lib/utils"
 
 function patrimonioRow(ano_eleicao: number, valor_total: number): Patrimonio {
   return {
@@ -57,9 +53,7 @@ test("exibe o sinal na visão geral e na aba Dinheiro quando o aumento passa de 
 
   for (const html of [moneyHtml, overviewHtml]) {
     assert.ok(html.includes('data-pf-patrimonio-evolucao-alerta="1500000"'))
-    assert.ok(
-      html.includes(`Evolução patrimonial acima de ${formatBRL(PATRIMONIO_EVOLUCAO_ALERTA_LIMITE)}`),
-    )
+    assert.ok(html.includes("Aumento patrimonial expressivo"))
     assert.ok(html.includes("entre 2022 e 2026"))
     assert.ok(html.includes("não determina sua causa"))
     assert.ok(html.includes(`href="${fonteDadosAbertosPatrimonioTse(2022)}"`))
