@@ -83,6 +83,17 @@ test.describe("pesquisas presidenciais v2", () => {
     await overview.scrollIntoViewIfNeeded()
     await expectStylesLoaded(overview)
     await expect(overview.locator("[data-pf-pesquisa-card]")).toHaveCount(1)
+    await expect(overview).toHaveAttribute("data-pf-overview-grid-card", "")
+
+    const gridLayout = await page.locator("[data-pf-profile-overview-grid]").evaluate((grid) => {
+      const cards = Array.from(grid.children)
+        .map((card) => card.getBoundingClientRect())
+        .filter((rect) => rect.width > 0 && rect.height > 0)
+      return cards.slice(0, 2).map((rect) => ({ width: rect.width, top: rect.top }))
+    })
+    expect(gridLayout).toHaveLength(2)
+    expect(Math.abs(gridLayout[0].width - gridLayout[1].width)).toBeLessThanOrEqual(1)
+    expect(Math.abs(gridLayout[0].top - gridLayout[1].top)).toBeLessThanOrEqual(1)
 
     const current = overview.locator("[data-pf-pesquisa-overview-current]")
     const next = overview.getByRole("button", { name: "Próxima pesquisa" })
@@ -114,7 +125,12 @@ test.describe("pesquisas presidenciais v2", () => {
     await expect(current).toContainText("Flávio Bolsonaro e Lula")
     await expect(overview.locator("[data-pf-pesquisa-card]")).toHaveCount(1)
 
-    await overview.screenshot({ path: testInfo.outputPath("pesquisas-overview-desktop.png") })
+    const overviewGrid = page.locator("[data-pf-profile-overview-grid]")
+    await overviewGrid.screenshot({ path: testInfo.outputPath("pesquisas-overview-desktop.png") })
+
+    await page.setViewportSize({ width: 390, height: 844 })
+    await expectNoHorizontalOverflow(page, overview)
+    await overview.screenshot({ path: testInfo.outputPath("pesquisas-overview-mobile.png") })
   })
 
   test("aba abre por link e query, lista todos os resultados e funciona no mobile", async ({ page }, testInfo) => {
