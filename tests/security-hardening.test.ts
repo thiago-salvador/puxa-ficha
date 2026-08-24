@@ -72,6 +72,15 @@ describe("production CSP contract", () => {
 })
 
 describe("Sentry source map build contract", () => {
+  it("exports the App Router transition hook required by Sentry", () => {
+    const clientInstrumentation = read("instrumentation-client.ts")
+
+    assert.match(
+      clientInstrumentation,
+      /export const onRouterTransitionStart = Sentry\.captureRouterTransitionStart/,
+    )
+  })
+
   it("configures upload env keys and deletes generated maps after upload without requiring a local token", () => {
     const nextConfig = read("next.config.ts")
 

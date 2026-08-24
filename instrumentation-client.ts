@@ -2,6 +2,8 @@ import * as Sentry from "@sentry/nextjs"
 import { sentryHabilitadoNesteAmbiente } from "@/lib/sentry-env"
 import { redactSensitiveUrl, scrubSentryEvent } from "@/lib/sentry-scrub"
 
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart
+
 const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN?.trim() || process.env.SENTRY_DSN?.trim()
 if (dsn && sentryHabilitadoNesteAmbiente()) {
   Sentry.init({
