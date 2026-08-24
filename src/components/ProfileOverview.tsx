@@ -28,6 +28,7 @@ import { PatrimonioChart } from "./BarChart"
 import { DonutChart } from "./DonutChart"
 import { ChevronRight } from "lucide-react"
 import { ContradictionsHighlight } from "@/components/ContradictionsHighlight"
+import { PatrimonioEvolucaoAlerta } from "@/components/PatrimonioEvolucaoAlerta"
 import { isContradictionAttentionCategory } from "@/lib/attention-points"
 import { MetaBadge } from "./MetaBadge"
 import { ProcessoPublicSurface } from "./ProcessoPublicSurface"
@@ -295,6 +296,7 @@ function PatrimonioTeaser({
       <PatrimonioChart
         data={patrimonio.map((p) => ({ id: p.id, ano: p.ano_eleicao, valor: p.valor_total }))}
       />
+      <PatrimonioEvolucaoAlerta patrimonio={patrimonio} className="mt-4 rounded-[12px] px-3 py-3 sm:px-3" />
     </TeaserCard>
   )
 }
@@ -656,13 +658,15 @@ function CareerTeaser({
 export function ProfileOverview({
   ficha,
   onNavigateTab,
+  leadingCard,
 }: {
   ficha: FichaCandidato
   onNavigateTab: (tabId: string) => void
+  leadingCard?: React.ReactNode
 }) {
   const hasDebateQuotes = hasCandidateDebatePressQuotes(ficha.slug, ficha.id)
 
-  if (!hasOverviewData(ficha) && !hasDebateQuotes) {
+  if (!hasOverviewData(ficha) && !leadingCard && !hasDebateQuotes) {
     return <EmptyOverviewState />
   }
 
@@ -691,13 +695,14 @@ export function ProfileOverview({
     // `items-start` porque a grade esticava cada card até a altura do vizinho:
     // um card curto (patrimônio de registro único) ao lado do card denso de
     // financiamento virava uma caixa com centenas de pixels vazios dentro.
-    <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2">
+    <div data-pf-profile-overview-grid="" className="grid grid-cols-1 items-start gap-6 md:grid-cols-2">
       <PatrimonioTeaser
         patrimonio={patrimonio}
         summary={patrimonioSummary}
         eleicoes={patrimonioEleicoes}
         onNavigate={() => onNavigateTab("dinheiro")}
       />
+      {leadingCard}
       <FinancingTeaser
         latestFin={latestFin}
         pleitoLabel={latestFinPleitoLabel}

@@ -2,6 +2,8 @@ import { readFileSync } from "node:fs"
 import assert from "node:assert/strict"
 import { describe, it } from "node:test"
 
+// cspell:ignore labelledby
+
 import {
   CANDIDATO_PROFILE_NAV_TAB_IDS,
   CANDIDATO_PROFILE_TAB_IDS,
@@ -21,6 +23,7 @@ describe("candidato profile tab navigation", () => {
   it("keeps supported visible tabs navigable", () => {
     assert.deepEqual([...CANDIDATO_PROFILE_NAV_TAB_IDS], [
       "geral",
+      "pesquisas",
       "media",
       "dinheiro",
       "justica",
@@ -32,12 +35,13 @@ describe("candidato profile tab navigation", () => {
     assert.equal(normalizeCandidatoProfileNavTab("legislacao"), "legislacao")
     assert.equal(normalizeCandidatoProfileNavTab("trajetoria"), "trajetoria")
     assert.equal(normalizeCandidatoProfileNavTab("media"), "media")
+    assert.equal(normalizeCandidatoProfileNavTab("pesquisas"), "pesquisas")
   })
 
   it("uses visible-tab normalization for UI navigation and query params", () => {
     const src = readFileSync("src/components/CandidatoProfile.tsx", "utf-8")
 
-    assert.match(src, /CANDIDATO_PROFILE_NAV_TAB_IDS\.map/)
+    assert.match(src, /CANDIDATO_PROFILE_NAV_TAB_IDS\s*\.filter[\s\S]*\.map/)
     assert.match(src, /normalizeCandidatoProfileNavTab\(tabParam\)/)
     assert.match(src, /normalizeCandidatoProfileNavTab\(tabId\)/)
     assert.match(src, /pushProfileTabUrl\(next\)/)
@@ -45,6 +49,8 @@ describe("candidato profile tab navigation", () => {
     assert.match(src, /window\.addEventListener\("popstate", onStoreChange\)/)
     assert.match(src, /window\.history\.pushState/)
     assert.doesNotMatch(src, /id:\s*["']timeline["'],\s*label:\s*["']Linha do tempo["']/)
+    assert.match(src, /id !== "pesquisas" \|\| pesquisasEnabled/)
+    assert.match(src, /requestedTab === "timeline" \|\| tabDefs\.some/)
   })
 
   it("renders semantic tablist/tab/tabpanel wiring", () => {
@@ -57,5 +63,12 @@ describe("candidato profile tab navigation", () => {
     assert.match(tabsSrc, /aria-controls=\{`profile-panel-\$\{tab\.id\}`\}/)
     assert.match(profileSrc, /role="tabpanel"/)
     assert.match(profileSrc, /aria-labelledby=\{\(CANDIDATO_PROFILE_NAV_TAB_IDS as readonly string\[\]\)\.includes\(activeTab\)/)
+  })
+
+  it("does not render the profile freshness box in Visão Geral", () => {
+    const profileSrc = readFileSync("src/components/CandidatoProfile.tsx", "utf-8")
+
+    assert.doesNotMatch(profileSrc, /sectionFreshness\.perfil_atual/)
+    assert.match(profileSrc, /DataFreshnessNotice info=\{sectionFreshness\.votos_candidato\}/)
   })
 })

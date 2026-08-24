@@ -37,6 +37,7 @@ import {
 } from "@/lib/verificacao-campos"
 import { ExternalLink } from "lucide-react"
 import { DataFreshnessNotice } from "./DataFreshnessNotice"
+import { PatrimonioEvolucaoAlerta } from "./PatrimonioEvolucaoAlerta"
 import * as historicoDisplay from "@/lib/historico-display"
 import { countPartySwitches, formatPartyTransitionLabel, hasSameYearPartyReversal } from "@/lib/party-switches"
 import { isUncertainParty, normalizePartySigla } from "@/lib/party-utils"
@@ -656,6 +657,7 @@ export function MoneyTabSection({
           <div className="mt-4">
             <DataFreshnessNotice info={freshness?.patrimonio} />
           </div>
+          <PatrimonioEvolucaoAlerta patrimonio={patrimonio} className="mt-4" />
           {patrimonio.length > 1 && (
             <div className="mt-6">
               <PatrimonioChart

@@ -19,6 +19,7 @@ import {
 } from "@/components/DeferredCandidateClientWidgets"
 import { SocialLinks } from "@/components/SocialLinks"
 import { DataSourceNotice } from "@/components/DataSourceNotice"
+import { PesquisasPresidenciaisHero } from "@/components/PesquisasPresidenciaisSection"
 import { DataUnavailableState } from "@/components/DataUnavailableState"
 import { ProfileSourceFooter } from "@/components/ProfileSourceFooter"
 import { CandidatePhotoCredit } from "@/components/CandidatePhotoCredit"
@@ -38,25 +39,10 @@ import {
 } from "@/lib/candidatura-proveniencia"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
+import { listarPesquisasPresidenciaisPorSlug } from "@/lib/pesquisas-eleitorais"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
-
-/**
- * Data do snapshot do TSE que a chapa carrega, em dd/mm/aaaa.
- *
- * Vinha escrita à mão no JSX, com 15/08 num ramo e 12/08 no outro, enquanto o banco já estava
- * em 16/08. O leitor via uma data quatro dias mais velha que o dado, e nenhum deploy consertava
- * isso porque a data não vinha do dado. Regra do projeto: número exibido tem fonte rastreável.
- *
- * Formata a partir do trecho de data do ISO, sem passar por Date. O snapshot é um artefato
- * carimbado em UTC e é a data UTC dele que estamos citando; converter para o fuso do servidor
- * faria a mesma chapa aparecer com dias diferentes dependendo de onde a página renderizou.
- */
-const dataDoSnapshot = (iso: string | null | undefined): string | null => {
-  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso ?? "")
-  return m ? `${m[3]}/${m[2]}/${m[1]}` : null
-}
 
 export interface CandidatoFichaViewProps {
   slug: string
@@ -95,6 +81,9 @@ export async function CandidatoFichaView({
     }
     notFound()
   }
+
+  const pesquisasEnabled = ficha.cargo_disputado === "Presidente" && seoSubpath !== "timeline"
+  const pesquisas = pesquisasEnabled ? listarPesquisasPresidenciaisPorSlug(slug) : []
 
   // Presidente é disputa nacional (anel único); qualquer outra disputa navega
   // dentro da própria UF. Sem estado na ficha, degrada para o anel do cargo.
@@ -166,7 +155,6 @@ export async function CandidatoFichaView({
   const heroMeta = heroMetaParts.length > 0
     ? heroMetaParts.join(" · ")
     : "Dados pessoais ainda não coletados"
-  const chapaTitularEhAtual = ficha.chapa_2026?.titular_slug === slug
   const chapaViceEhAtual = ficha.chapa_2026?.vice_slug === slug
 
   const schema =
@@ -307,7 +295,7 @@ export async function CandidatoFichaView({
             </figure>
           )}
 
-          <div className="flex flex-col justify-end">
+          <div className="flex min-w-0 flex-1 flex-col justify-end">
             <div className="flex items-center gap-2.5 sm:gap-3">
               <PartyLogoMark sigla={ficha.partido_sigla} priority />
               <span
@@ -337,13 +325,38 @@ export async function CandidatoFichaView({
             </span>
             <span className="sr-only">{cargoProvenienciaNota}</span>
 
-            <h1
-              data-pf-hero-name
-              className="mt-1.5 font-heading uppercase leading-[0.85] tracking-[-0.02em] text-foreground sm:mt-2"
-              style={{ fontSize: "clamp(36px, 8vw, 80px)" }}
-            >
-              {ficha.nome_urna}
-            </h1>
+            <div className="mt-1.5 flex min-w-0 flex-col gap-3 sm:mt-2 lg:flex-row lg:flex-wrap lg:items-end lg:gap-5">
+              <h1
+                data-pf-hero-name
+                className="min-w-0 shrink-0 font-heading uppercase leading-[0.85] tracking-[-0.02em] text-foreground"
+                style={{ fontSize: "clamp(36px, 8vw, 80px)" }}
+              >
+                {ficha.nome_urna}
+              </h1>
+              {pesquisasEnabled && <PesquisasPresidenciaisHero pesquisas={pesquisas} />}
+            </div>
+
+            {ficha.chapa_2026 && (
+              <p
+                data-pf-chapa-2026
+                data-pf-chapa-identidade={ficha.chapa_2026.identidade_status}
+                data-pf-chapa-vice
+                {...(!chapaViceEhAtual ? { "data-pf-chapa-parceiro": "vice" } : {})}
+                className="mt-2 text-base font-bold leading-snug text-foreground sm:mt-3 sm:text-lg"
+              >
+                Vice:{" "}
+                {ficha.chapa_2026.vice_slug && !chapaViceEhAtual ? (
+                  <Link
+                    className="underline-offset-4 hover:underline focus-visible:underline"
+                    href={`/candidato/${ficha.chapa_2026.vice_slug}`}
+                  >
+                    {ficha.chapa_2026.vice_nome_urna} ({ficha.chapa_2026.vice_partido_sigla})
+                  </Link>
+                ) : (
+                  `${ficha.chapa_2026.vice_nome_urna} (${ficha.chapa_2026.vice_partido_sigla})`
+                )}
+              </p>
+            )}
 
             {ficha.nome_completo !== ficha.nome_urna && (
               <p className="mt-1.5 text-[length:var(--text-body-sm)] font-medium text-foreground sm:mt-2 sm:text-[length:var(--text-body)]">
@@ -366,54 +379,6 @@ export async function CandidatoFichaView({
               >
                 {sanitizePtBrText(ficha.biografia)}
               </p>
-            )}
-            {ficha.chapa_2026 && (
-              <div
-                data-pf-chapa-2026
-                data-pf-chapa-identidade={ficha.chapa_2026.identidade_status}
-                className="mt-4 max-w-2xl rounded-xl border border-border bg-secondary/50 px-4 py-3 text-[length:var(--text-body-sm)] text-foreground"
-              >
-                <p className="font-bold uppercase tracking-[0.08em]">Chapa registrada no snapshot do TSE</p>
-                <p className="mt-1">
-                  <span
-                    data-pf-chapa-titular
-                    {...(!chapaTitularEhAtual ? { "data-pf-chapa-parceiro": "titular" } : {})}
-                  >
-                    Titular:{" "}
-                    {ficha.chapa_2026.titular_slug && !chapaTitularEhAtual ? (
-                      <Link className="underline underline-offset-2" href={`/candidato/${ficha.chapa_2026.titular_slug}`}>
-                        {ficha.chapa_2026.titular_nome_urna} ({ficha.chapa_2026.titular_partido_sigla})
-                      </Link>
-                    ) : (
-                      `${ficha.chapa_2026.titular_nome_urna} (${ficha.chapa_2026.titular_partido_sigla})`
-                    )}
-                  </span>
-                  <span aria-hidden="true"> · </span>
-                  <span
-                    data-pf-chapa-vice
-                    {...(!chapaViceEhAtual ? { "data-pf-chapa-parceiro": "vice" } : {})}
-                  >
-                    Vice:{" "}
-                    {ficha.chapa_2026.vice_slug && !chapaViceEhAtual ? (
-                      <Link className="underline underline-offset-2" href={`/candidato/${ficha.chapa_2026.vice_slug}`}>
-                        {ficha.chapa_2026.vice_nome_urna} ({ficha.chapa_2026.vice_partido_sigla})
-                      </Link>
-                    ) : (
-                      `${ficha.chapa_2026.vice_nome_urna} (${ficha.chapa_2026.vice_partido_sigla})`
-                    )}
-                  </span>
-                </p>
-                <p className="mt-1 text-muted-foreground" data-pf-chapa-snapshot>
-                  {[
-                    dataDoSnapshot(ficha.chapa_2026.snapshot_em)
-                      ? `TSE · snapshot de ${dataDoSnapshot(ficha.chapa_2026.snapshot_em)}`
-                      : "TSE",
-                    cargoProveniencia === "registro_tse_pendente"
-                      ? "candidatura registrada, aguardando julgamento."
-                      : "situação do pedido ainda não informada no arquivo.",
-                  ].join(" · ")}
-                </p>
-              </div>
             )}
             <div className="mt-4 space-y-3">
               {hasSocialLinks && (
@@ -443,7 +408,12 @@ export async function CandidatoFichaView({
         <DataSourceNotice status={sourceStatus} message={sourceMessage} />
       </div>
 
-      <DeferredCandidatoProfile ficha={ficha} initialTab={profileInitialTab} />
+      <DeferredCandidatoProfile
+        ficha={ficha}
+        initialTab={profileInitialTab}
+        pesquisasEnabled={pesquisasEnabled}
+        pesquisas={pesquisas}
+      />
 
       {ficha.biografia && (
         <section className="mx-auto max-w-7xl px-5 py-6 sm:hidden">

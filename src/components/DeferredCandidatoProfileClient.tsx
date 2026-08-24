@@ -3,11 +3,14 @@
 import { useEffect, useState, type ComponentType } from "react"
 import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import type { FichaCandidato } from "@/lib/types"
+import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
 import { processosOverviewDisplay } from "@/lib/processos-display"
 
 type CandidatoProfileProps = {
   ficha: FichaCandidato
   initialTab?: CandidatoProfileTabId
+  pesquisasEnabled?: boolean
+  pesquisas?: PesquisaEleitoralDoCandidato[]
 }
 
 type ProfileComponent = ComponentType<CandidatoProfileProps>
@@ -150,10 +153,14 @@ export function DeferredCandidatoProfileClient({
   slug,
   initialTab,
   overview,
+  pesquisasEnabled = false,
+  pesquisas = [],
 }: {
   slug: string
   initialTab?: CandidatoProfileTabId
   overview: DeferredProfileOverview
+  pesquisasEnabled?: boolean
+  pesquisas?: PesquisaEleitoralDoCandidato[]
 }) {
   const shouldLoad = useDeferredBelowFoldLoad()
   const [Profile, setProfile] = useState<ProfileComponent | null>(null)
@@ -187,7 +194,12 @@ export function DeferredCandidatoProfileClient({
   }
 
   return Profile && ficha ? (
-    <Profile ficha={ficha} initialTab={initialTab} />
+    <Profile
+      ficha={ficha}
+      initialTab={initialTab}
+      pesquisasEnabled={pesquisasEnabled}
+      pesquisas={pesquisas}
+    />
   ) : (
     <CandidatoProfileSkeleton overview={overview} />
   )
