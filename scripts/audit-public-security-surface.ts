@@ -41,12 +41,12 @@ export async function auditPublicSecuritySurface(
   }
   // Tabelas internas: RLS ligado E sem grant nenhum para anon/authenticated.
   //
-  // O linter do Supabase marca as 13 como `rls_enabled_no_policy` em nivel INFO,
+  // O linter do Supabase marca as 14 como `rls_enabled_no_policy` em nivel INFO,
   // porque ele olha policy e nao olha grant. A postura real e mais forte do que o
   // linter enxerga: o privilegio nem existe, entao nao ha o que a policy liberar.
-  // Conferido em 18/08/2026 com a chave anon contra producao: as 13 devolvem 401.
+  // Conferido em 23/08/2026 com a chave anon contra producao: as 14 devolvem 401.
   //
-  // Este gate existe para impedir o conserto ERRADO. Quem olhar 13 lints INFO e
+  // Este gate existe para impedir o conserto ERRADO. Quem olhar 14 lints INFO e
   // quiser zerar o painel pode ser tentado a criar `POLICY ... USING (true)`, o
   // que abriria e-mail de inscrito em alerta, hash de IP e o log interno de
   // proveniencia. Se isso acontecer, o check abaixo fica vermelho.
@@ -57,6 +57,7 @@ export async function auditPublicSecuritySurface(
     "candidate_changes",
     "coleta_log",
     "financiamento_quarentena",
+    "financiamento_doador_search",
     "financiamento_verificacoes",
     "identidade_timeline_quarentena_snapshot",
     "link_check_url_observacao",

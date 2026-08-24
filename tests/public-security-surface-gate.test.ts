@@ -15,11 +15,15 @@ describe("public security surface gate", () => {
       { url: "https://example.supabase.co", anonKey: "anon-test" },
       fetchImpl,
     )
-    // 7 checagens originais mais as 13 tabelas internas, que o linter do Supabase
+    // 7 checagens originais mais as 14 tabelas internas, que o linter do Supabase
     // marca como rls_enabled_no_policy e que precisam continuar negando anon.
-    assert.equal(results.length, 20)
+    assert.equal(results.length, 21)
     const internas = results.filter((result) => result.name.startsWith("interna-negada-"))
-    assert.equal(internas.length, 13)
+    assert.equal(internas.length, 14)
+    assert.ok(
+      internas.some((result) => result.name === "interna-negada-financiamento_doador_search"),
+      "o probe precisa cobrir a tabela interna de busca de doadores",
+    )
     assert.ok(internas.every((result) => result.passed))
     assert.ok(results.every((result) => result.passed))
     const patch = seen.find((entry) => entry.method === "PATCH")
@@ -27,20 +31,22 @@ describe("public security surface gate", () => {
   })
 
   test("reprova se uma tabela interna passar a responder para anon", async () => {
-    // Gate verde so vale se ele souber ficar vermelho. Aqui o coleta_log responde
+    // Gate verde so vale se ele souber ficar vermelho. Aqui a busca de doadores responde
     // 200 para anon, que e exatamente o que aconteceria se alguem criasse
     // `POLICY ... USING (true)` para zerar os lints INFO do painel do Supabase.
     const fetchImpl: typeof fetch = async (input) => {
       const path = String(input)
       const isView = path.includes("candidatos_publico") || path.includes("financiamento_publico")
-      const vazou = path.includes("coleta_log")
+      const vazou = path.includes("financiamento_doador_search")
       return new Response(null, { status: isView || vazou ? 200 : 401 })
     }
     const results = await auditPublicSecuritySurface(
       { url: "https://example.supabase.co", anonKey: "anon-test" },
       fetchImpl,
     )
-    const vazada = results.find((result) => result.name === "interna-negada-coleta_log")
+    const vazada = results.find(
+      (result) => result.name === "interna-negada-financiamento_doador_search",
+    )
     assert.equal(vazada?.status, 200)
     assert.equal(vazada?.passed, false, "o gate precisa reprovar tabela interna legivel por anon")
     assert.equal(
