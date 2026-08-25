@@ -11,7 +11,7 @@ const LINK_CLASS =
   "block transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
 const TEXT_CONTAINMENT_CLASS = "min-w-0 max-w-full [overflow-wrap:anywhere]"
 
-export function ProcessoPublicSurface({
+function ProcessoPublicSurface({
   processo,
   className,
   style,
