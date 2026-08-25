@@ -652,10 +652,10 @@ describe("o registro real, contra a passagem vazia", () => {
     // promoção reclassificou sem mexer no universo dos 71.
     assert.equal(
       recomputarDiagnosticoSha256(todos),
-      // v3, regeneracao de 17/08 contra o snapshot de 16/08. O valor anterior era
-      // `c08b3ef0…6fd282d5`, da v2 (09/08). Trocar este literal exige dizer por que, e o
-      // motivo esta na contagem acima.
-      "e229a61e70ee9f9bbadde107f2005fca9ad9377a191e98078984cb2c80410641",
+      // v4, regeneracao de 25/08 contra o snapshot publicado pelo TSE em 24/08. As
+      // classes e contagens ficaram estaveis, mas sete entradas receberam evidencia
+      // oficial atualizada. O valor anterior era `e229a61e…0410641`, da v3 (17/08).
+      "1d1f45b9df8318e00511a9461385f6d1a9859404daa2178a8553597d3ae8030b",
     )
     assert.equal(
       recomputarSlugsHash(todos),
