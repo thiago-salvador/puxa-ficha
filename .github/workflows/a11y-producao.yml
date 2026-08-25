@@ -1,32 +1,162 @@
 name: Acessibilidade (produção)
 
-# So no push da main. Num PR este workflow nao aparece, para nao listar o
-# check "skipped" que dava a impressao de a11y nao ter rodado. O axe do
-# codigo do PR vive no job "Rotas e acessibilidade" do ci.yml, contra o
+# Dispara no DEPLOY, nao no push. Num PR este workflow nao aparece, para nao
+# listar o check "skipped" que dava a impressao de a11y nao ter rodado. O axe
+# do codigo do PR vive no job "Rotas e acessibilidade" do ci.yml, contra o
 # build local. Aqui o alvo e puxaficha.com.br: o HTML com dados reais.
+#
+# POR QUE `deployment_status` E NAO `push` (2026-08-24). Com o gatilho em
+# `push` o axe chegava antes de a producao servir o commit que o disparou, e o
+# gate media o DEPLOY ANTERIOR. Prova do dia: o commit `ca84b66` (PR #89)
+# introduziu `dt` e `dd` sem `<dl>` pai; o deploy dele ficou pronto as
+# 20:21:56 e o job do MESMO commit terminou verde as 20:23:04. Quem pegou a
+# regressao foi o job do merge seguinte, `4a97b15`, 52 minutos depois. Se a
+# #89 fosse o ultimo merge do dia, a violacao teria ficado em producao com
+# check verde.
+#
+# Duas condicoes, nao uma. O evento sozinho nao basta:
+#   1. `deployment_status.state == 'success'` e `deployment.environment` igual
+#      a `Production`, senao cada deploy de preview dispararia o job.
+#   2. readback de `/api/deployment-info` ate o alias publico devolver o SHA
+#      exato do deployment. E o mesmo padrao ja usado no bloco "Production
+#      readback" de serial-merge-queue.yml, com a mesma asserção jq
+#      (`.ok == true and .environment == "production" and .commitRef == "main"
+#      and .commitSha == $sha`). Evento de deploy pronto nao e o mesmo que
+#      alias promovido, e e o alias que o leitor acessa.
 
 on:
-  push:
-    branches: [main]
+  deployment_status:
 
 permissions:
   contents: read
 
-concurrency:
-  group: a11y-prod-${{ github.ref }}
-  cancel-in-progress: true
+env:
+  PRODUCTION_URL: https://puxaficha.com.br
 
 jobs:
   a11y:
     name: Acessibilidade (produção)
+    # Preview e deploy que falhou nao entram. `environment` vem da API de
+    # deployments do GitHub, onde a Vercel grava "Production" com P maiusculo.
+    # NAO filtrar por `github.event.deployment.ref == 'main'`: medido em
+    # 24/08, a Vercel grava o SHA em `ref`, nao o nome da branch, e a condicao
+    # seria sempre falsa. Quem garante que e a main e o `.commitRef == "main"`
+    # do readback abaixo, que le VERCEL_GIT_COMMIT_REF.
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment.environment == 'Production'
+    # Concorrencia DENTRO do job, colada no `if`, e nao no nivel do workflow.
+    # No nivel do workflow o grupo e resolvido para TODO evento, antes de o
+    # `if` rodar: um `deployment_status` de Preview, ou um status que nem vai
+    # virar job, entraria em `a11y-prod` e cancelaria o a11y de Production em
+    # andamento so para depois ser marcado como skipped. Job que nao satisfaz
+    # o `if` nao entra em grupo nenhum, entao aqui dentro so concorre entre
+    # deploys de producao de verdade.
+    #
+    # Grupo UNICO, nao um por SHA: producao e um recurso so. Com grupo por SHA
+    # os dois jobs coexistiam e o do SHA velho terminava vermelho por
+    # obsolescencia, porque o alias ja tinha avancado. Falso negativo treina a
+    # ignorar o gate.
+    concurrency:
+      group: a11y-prod
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     # 15 min matava o job no meio do apt: o passo abaixo tem duas tentativas
     # de 5 min (teto 22 no step), e em 19/08 o apt rodou 14m47s ate o
     # cancelamento (run 32258909527). 30 min e o mesmo teto do verify.
-    timeout-minutes: 30
+    #
+    # Orcamento medido em 24/08 nos tres ultimos runs: 2,0 / 2,4 / 2,2 min de
+    # ponta a ponta, com o apt em 28 a 35s por cache hit e o axe em 66 a 74s.
+    # O readback normalmente resolve na primeira tentativa e custa zero.
+    #
+    # O teto e 60, e nao 30, porque o CAMINHO AUTORIZADO por este proprio
+    # arquivo soma mais que 30: readback 10 (40 tentativas de 15s) + apt 22
+    # (dois ciclos de 5 min mais limpeza, teto do step) + navegadores 10
+    # (teto do step) = 42, antes de checkout, `npm ci` e axe. Com 30 o job
+    # morria por timeout dentro de um caminho que ele mesmo permite, e o gate
+    # ficava vermelho sem nada a ver com acessibilidade. Gate nao pode ter teto
+    # menor que o proprio caminho autorizado.
+    timeout-minutes: 60
     steps:
+      # PRIMEIRO PASSO, DE PROPOSITO. Ate 24/08 este readback vinha depois do
+      # checkout, do `npm ci`, do apt (teto de 22 min) e da instalacao dos
+      # navegadores. Nesse lugar ele podia consumir mais 10 min ja perto do
+      # teto de 30 do job, e sobrava pouco ou nada para o axe. Aqui em cima ele
+      # so gasta curl e jq, que o runner ja tem, e um deploy que nunca promove
+      # falha em 10 min sem ter pago nenhuma instalacao.
+      #
+      # Mesmo padrao do bloco "Production readback" de serial-merge-queue.yml:
+      # o alias publico so e considerado pronto quando devolve o SHA exato.
+      # 40 tentativas de 15s dao ate 10 min, o mesmo teto de la.
+      - name: Readback de produção no SHA do deployment
+        env:
+          EXPECTED_SHA: ${{ github.event.deployment.sha }}
+        run: |
+          set -euo pipefail
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+
+          # DEADLINE ABSOLUTO, nao contagem de tentativas. A versao anterior
+          # fazia "40 tentativas de 15s" e chamava isso de 10 min, mas cada
+          # curl era ilimitado: um endpoint que aceita a conexao e nunca
+          # responde travava a tentativa por tempo indefinido, e o passo
+          # estourava o orcamento que o comentario prometia. Agora todo curl
+          # tem teto e o laco para no relogio.
+          #
+          # Aritmetica do teto, com folga real:
+          #   ORCAMENTO_S    570  teto duro do passo, abaixo dos 600s (10 min)
+          #   RESERVA_DIAG_S  25  curl de diagnostico (max-time 10) + saida
+          #   limite_poll    545  = 570 - 25
+          #   pior volta       25  = CURL_MAX_S 10 + INTERVALO_S 15
+          # A ultima volta so comeca com decorrido < 545 e custa no maximo 10s,
+          # entao o laco termina em 555s no pior caso; mais o diagnostico de
+          # 10s da 565s, dentro dos 570 e 35s abaixo dos 600 declarados.
+          readonly ORCAMENTO_S=570
+          readonly RESERVA_DIAG_S=25
+          readonly INTERVALO_S=15
+          readonly CURL_MAX_S=10
+          readonly CONNECT_S=3
+          limite_poll=$(( ORCAMENTO_S - RESERVA_DIAG_S ))
+          # `SECONDS=0` nao e enfeite, e obrigatorio por dois motivos. Ele
+          # zera o contador do bash no inicio do passo, o que dispensa o
+          # `inicio` e deixa `$SECONDS` valer o proprio decorrido. E, sem a
+          # atribuicao, `npm run check:env-contract` reprova o verify com
+          # "referencias sem documentacao: SECONDS": o scanner varre os `run:`
+          # dos workflows e trata todo nome lido e nunca atribuido como
+          # variavel de ambiente sem contrato, sem conhecer a lista de
+          # builtins do bash. Medido em 24/08 neste proprio arquivo.
+          SECONDS=0
+          tentativa=0
+
+          while [ "$SECONDS" -lt "$limite_poll" ]; do
+            tentativa=$(( tentativa + 1 ))
+            if readback="$(curl -fsS --connect-timeout "$CONNECT_S" --max-time "$CURL_MAX_S" \
+                  "${PRODUCTION_URL}/api/deployment-info" 2>/dev/null)" && \
+              jq -e --arg sha "$EXPECTED_SHA" \
+                '.ok == true and .environment == "production" and .commitRef == "main" and .commitSha == $sha' \
+                <<<"$readback" >/dev/null; then
+              echo "producao serve $EXPECTED_SHA na tentativa $tentativa, ${SECONDS}s"
+              exit 0
+            fi
+            # So dorme se ainda cabe uma volta INTEIRA. Sem isto o sleep final
+            # empurraria o passo para fora do orcamento.
+            if [ $(( limite_poll - SECONDS )) -le $(( INTERVALO_S + CURL_MAX_S )) ]; then
+              break
+            fi
+            sleep "$INTERVALO_S"
+          done
+
+          decorrido=$SECONDS
+          echo "::error::producao nao passou a servir ${EXPECTED_SHA} em ${decorrido}s (${tentativa} tentativas); o axe mediria o deploy anterior." >&2
+          curl -fsS --connect-timeout "$CONNECT_S" --max-time "$CURL_MAX_S" \
+            "${PRODUCTION_URL}/api/deployment-info" || true
+          exit 1
+
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          # O axe roda contra producao, mas a spec e a config de Playwright tem
+          # que ser as do commit que acabou de subir, e nao as da main de agora:
+          # entre o deploy e este job outro merge pode ter entrado.
+          ref: ${{ github.event.deployment.sha }}
           persist-credentials: false
 
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -77,7 +207,7 @@ jobs:
 
       - name: Axe (moderate, serious e critical)
         env:
-          PF_BASE_URL: https://puxaficha.com.br
+          PF_BASE_URL: ${{ env.PRODUCTION_URL }}
         run: npm run test:a11y
 
       - name: Publicar relatório em caso de falha
