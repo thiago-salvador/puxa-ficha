@@ -17,6 +17,8 @@ require.cache[serverOnlyPath] = {
 } as never
 
 const {
+  carregarPesquisasGovernadores,
+  listarPesquisasGovernadorPorSlug,
   listarPesquisasPresidenciaisPorSlug,
   parsePesquisasEleitoraisJson,
   selecionarPesquisasMaisRecentesComparaveis,
@@ -140,5 +142,54 @@ describe("seleção da pesquisa mais recente comparável", () => {
     assert.equal(selected.state, poll.state)
     assert.equal(selected.provenance.resultUrl, poll.provenance.resultUrl)
     assert.equal(selected.provenance.capture.sha256, poll.provenance.capture.sha256)
+  })
+})
+
+describe("seleção estadual por UF", () => {
+  it("carrega somente os seis estados que passaram pelo gate", () => {
+    assert.deepEqual(
+      [...carregarPesquisasGovernadores().keys()].sort(),
+      ["DF", "MG", "PE", "PI", "RJ", "SP"],
+    )
+  })
+
+  it("não cruza candidaturas ou resultados entre estados", () => {
+    assert.equal(listarPesquisasGovernadorPorSlug("tarcisio-gov-sp", "SP")[0]?.resultado.valuePercent, 45)
+    assert.equal(listarPesquisasGovernadorPorSlug("tarcisio-gov-sp", "RJ").length, 0)
+    assert.equal(listarPesquisasGovernadorPorSlug("eduardo-paes", "RJ")[0]?.resultado.valuePercent, 41)
+    assert.equal(listarPesquisasGovernadorPorSlug("eduardo-paes", "SP").length, 0)
+  })
+
+  it("preserva zero publicado e mantém UF sem rodada qualificada vazia", () => {
+    assert.equal(listarPesquisasGovernadorPorSlug("henrique-areas", "MG")[0]?.resultado.valuePercent, 0)
+    assert.deepEqual(listarPesquisasGovernadorPorSlug("ciro-gomes-gov-ce", "CE"), [])
+    assert.deepEqual(listarPesquisasGovernadorPorSlug("governador-inexistente", "SP"), [])
+  })
+
+  it("vincula cada alias publicado a uma candidatura de governador na mesma UF", () => {
+    const payload = JSON.parse(readFileSync("data/candidatos.json", "utf8")) as unknown
+    const candidatos = Array.isArray(payload)
+      ? payload
+      : ((payload as { candidatos?: unknown[] }).candidatos ?? [])
+
+    for (const [uf, data] of carregarPesquisasGovernadores()) {
+      for (const poll of data.pesquisas) {
+        for (const scenario of poll.cenarios) {
+          for (const result of scenario.resultados.filter(
+            (entry) => entry.matchStatus === "exact_alias",
+          )) {
+            const candidato = candidatos.find(
+              (entry) =>
+                typeof entry === "object" &&
+                entry !== null &&
+                (entry as { slug?: string }).slug === result.candidateSlug,
+            ) as { cargo_disputado?: string; estado?: string } | undefined
+            assert.ok(candidato, `${uf}: slug ausente ${result.candidateSlug}`)
+            assert.equal(candidato.cargo_disputado, "Governador")
+            assert.equal(candidato.estado, uf)
+          }
+        }
+      }
+    }
   })
 })

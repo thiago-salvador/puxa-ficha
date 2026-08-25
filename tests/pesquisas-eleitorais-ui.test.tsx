@@ -21,7 +21,10 @@ const {
   PesquisasPresidenciaisOverview,
   PesquisasPresidenciaisTab,
 } = require("../src/components/PesquisasPresidenciaisSection") as typeof import("@/components/PesquisasPresidenciaisSection")
-const { listarPesquisasPresidenciaisPorSlug } = require(
+const {
+  listarPesquisasGovernadorPorSlug,
+  listarPesquisasPresidenciaisPorSlug,
+} = require(
   "../src/lib/pesquisas-eleitorais",
 ) as typeof import("@/lib/pesquisas-eleitorais")
 
@@ -129,6 +132,21 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     assert.doesNotMatch(errorHtml, />39%<|>39%<!-- -->/)
     assert.match(zeroHtml, />0%<|>0%<!-- -->/)
   })
+
+  it("reutiliza as três superfícies para candidaturas estaduais qualificadas", () => {
+    const pesquisas = listarPesquisasGovernadorPorSlug("tarcisio-gov-sp", "SP")
+    const hero = renderToStaticMarkup(<PesquisasPresidenciaisHero pesquisas={pesquisas} />)
+    const overview = renderToStaticMarkup(
+      <PesquisasPresidenciaisOverview pesquisas={pesquisas} onOpenTab={() => {}} />,
+    )
+    const tab = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={pesquisas} />)
+
+    assert.match(hero, /Datafolha/)
+    assert.match(hero, /45%/)
+    assert.match(overview, /São Paulo/)
+    assert.match(tab, /datafolha-tarcisio-lidera-disputa/)
+    assert.equal(pesquisas[0]?.registration.code.value, "SP-01806/2026")
+  })
 })
 
 describe("integração e transporte", () => {
@@ -142,10 +160,8 @@ describe("integração e transporte", () => {
   const overviewSource = readFileSync("src/components/ProfileOverview.tsx", "utf8")
 
   it("carrega pesquisas uma vez no server e remove a seção grande antiga", () => {
-    assert.match(
-      viewSource,
-      /const pesquisas = pesquisasEnabled \? listarPesquisasPresidenciaisPorSlug\(slug\) : \[\]/,
-    )
+    assert.match(viewSource, /listarPesquisasPresidenciaisPorSlug\(slug\)/)
+    assert.match(viewSource, /listarPesquisasGovernadorPorSlug\(slug, ficha\.estado\)/)
     assert.equal((viewSource.match(/listarPesquisasPresidenciaisPorSlug\(slug\)/g) ?? []).length, 1)
     assert.doesNotMatch(viewSource, /<PesquisasPresidenciaisSection/)
     assert.match(viewSource, /<PesquisasPresidenciaisHero pesquisas=\{pesquisas\} \/>/)
@@ -164,11 +180,12 @@ describe("integração e transporte", () => {
     assert.match(overviewSource, /<PatrimonioTeaser[\s\S]*\{leadingCard\}/)
   })
 
-  it("isola timeline e não-presidentes por autorização explícita do servidor", () => {
+  it("autoriza presidente e governador, mantendo timeline isolada", () => {
     assert.match(
       viewSource,
-      /ficha\.cargo_disputado === "Presidente" && seoSubpath !== "timeline"/,
+      /ficha\.cargo_disputado === "Presidente" \|\| ficha\.cargo_disputado === "Governador"/,
     )
+    assert.match(viewSource, /seoSubpath !== "timeline"/)
     assert.match(profileSource, /id !== "pesquisas" \|\| pesquisasEnabled/)
     assert.match(profileSource, /next === "pesquisas" && !pesquisasEnabled/)
   })

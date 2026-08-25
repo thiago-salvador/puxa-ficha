@@ -39,7 +39,10 @@ import {
 } from "@/lib/candidatura-proveniencia"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
-import { listarPesquisasPresidenciaisPorSlug } from "@/lib/pesquisas-eleitorais"
+import {
+  listarPesquisasGovernadorPorSlug,
+  listarPesquisasPresidenciaisPorSlug,
+} from "@/lib/pesquisas-eleitorais"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
@@ -82,8 +85,16 @@ export async function CandidatoFichaView({
     notFound()
   }
 
-  const pesquisasEnabled = ficha.cargo_disputado === "Presidente" && seoSubpath !== "timeline"
-  const pesquisas = pesquisasEnabled ? listarPesquisasPresidenciaisPorSlug(slug) : []
+  const pesquisasEnabled =
+    (ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador") &&
+    seoSubpath !== "timeline"
+  const pesquisas = !pesquisasEnabled
+    ? []
+    : ficha.cargo_disputado === "Presidente"
+      ? listarPesquisasPresidenciaisPorSlug(slug)
+      : ficha.estado
+        ? listarPesquisasGovernadorPorSlug(slug, ficha.estado)
+        : []
 
   // Presidente é disputa nacional (anel único); qualquer outra disputa navega
   // dentro da própria UF. Sem estado na ficha, degrada para o anel do cargo.

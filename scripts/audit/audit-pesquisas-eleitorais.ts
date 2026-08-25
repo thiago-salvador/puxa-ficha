@@ -1,7 +1,10 @@
 import { readFileSync } from "node:fs"
 import { resolve } from "node:path"
 
-import { carregarPesquisasEleitorais } from "../../src/lib/pesquisas-eleitorais"
+import {
+  carregarPesquisasEleitorais,
+  carregarPesquisasGovernadores,
+} from "../../src/lib/pesquisas-eleitorais"
 import { detectarAcessosRede } from "./lib/pesquisas-sem-rede"
 
 const ROOT = process.cwd()
@@ -18,9 +21,10 @@ assert(acessosRede.length === 0, `contrato não pode fazer rede: ${acessosRede.j
 assert(!/supabase/i.test(libSource), "contrato não pode acessar Supabase")
 assert(!/["']use client["']/.test(libSource), "contrato não pode ser Client Component")
 
-const catalogo = carregarPesquisasEleitorais()
-assert(catalogo.pesquisas.length > 0, "nenhuma pesquisa de fonte aprovada foi publicada")
-assert(catalogo.pesquisas.every((poll) => poll.sourceStatus === "aprovado"), "fonte não aprovada vazou para a saída")
+const catalogos = [carregarPesquisasEleitorais(), ...carregarPesquisasGovernadores().values()]
+const pesquisas = catalogos.flatMap((catalogo) => catalogo.pesquisas)
+assert(pesquisas.length > 0, "nenhuma pesquisa de fonte aprovada foi publicada")
+assert(pesquisas.every((poll) => poll.sourceStatus === "aprovado"), "fonte não aprovada vazou para a saída")
 
 const privateKeys = new Set([
   "conditions",
@@ -48,9 +52,9 @@ function inspectPublicShape(value: unknown, path = "catalogo"): void {
   }
 }
 
-inspectPublicShape(catalogo)
+catalogos.forEach((catalogo) => inspectPublicShape(catalogo))
 
-for (const poll of catalogo.pesquisas) {
+for (const poll of pesquisas) {
   assert(/^https?:\/\//.test(poll.provenance.resultUrl), `${poll.id} perdeu URL de proveniência`)
   assert(/^[a-f0-9]{64}$/i.test(poll.provenance.capture.sha256), `${poll.id} perdeu SHA-256 da captura`)
   for (const scenario of poll.cenarios) {
@@ -64,4 +68,4 @@ for (const poll of catalogo.pesquisas) {
   }
 }
 
-console.log(`PASS: ${catalogo.pesquisas.length} pesquisas aprovadas; contrato server-only, fail-closed, sem rede/Supabase e sem campos privados`)
+console.log(`PASS: ${pesquisas.length} pesquisas aprovadas; contrato server-only, fail-closed, sem rede/Supabase e sem campos privados`)
