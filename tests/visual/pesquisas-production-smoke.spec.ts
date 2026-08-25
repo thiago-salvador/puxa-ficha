@@ -2,7 +2,7 @@ import AxeBuilder from "@axe-core/playwright"
 import { expect, test, type Locator, type Page } from "playwright/test"
 
 const EXPECTED_SHA = process.env.PF_EXPECTED_DEPLOY_SHA ?? ""
-const EMPTY_SLUG = process.env.PF_PESQUISAS_EMPTY_SLUG ?? "ciro-gomes-gov-ce"
+const EMPTY_SLUG = process.env.PF_PESQUISAS_EMPTY_SLUG?.trim() || "ciro-gomes-gov-ce"
 
 type BrowserGuard = {
   browserErrors: string[]
