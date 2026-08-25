@@ -146,10 +146,10 @@ describe("seleção da pesquisa mais recente comparável", () => {
 })
 
 describe("seleção estadual por UF", () => {
-  it("carrega somente os seis estados que passaram pelo gate", () => {
+  it("carrega somente os oito estados que passaram pelo gate", () => {
     assert.deepEqual(
       [...carregarPesquisasGovernadores().keys()].sort(),
-      ["DF", "MG", "PE", "PI", "RJ", "SP"],
+      ["CE", "DF", "MG", "PE", "PI", "RJ", "RS", "SP"],
     )
   })
 
@@ -158,11 +158,18 @@ describe("seleção estadual por UF", () => {
     assert.equal(listarPesquisasGovernadorPorSlug("tarcisio-gov-sp", "RJ").length, 0)
     assert.equal(listarPesquisasGovernadorPorSlug("eduardo-paes", "RJ")[0]?.resultado.valuePercent, 41)
     assert.equal(listarPesquisasGovernadorPorSlug("eduardo-paes", "SP").length, 0)
+    assert.equal(listarPesquisasGovernadorPorSlug("ciro-gomes-gov-ce", "CE")[0]?.resultado.valuePercent, 52)
+    assert.equal(listarPesquisasGovernadorPorSlug("ciro-gomes-gov-ce", "RS").length, 0)
+    assert.equal(listarPesquisasGovernadorPorSlug("juliana-brizola", "RS")[0]?.resultado.valuePercent, 38)
+    assert.equal(listarPesquisasGovernadorPorSlug("juliana-brizola", "CE").length, 0)
   })
 
   it("preserva zero publicado e mantém UF sem rodada qualificada vazia", () => {
     assert.equal(listarPesquisasGovernadorPorSlug("henrique-areas", "MG")[0]?.resultado.valuePercent, 0)
-    assert.deepEqual(listarPesquisasGovernadorPorSlug("ciro-gomes-gov-ce", "CE"), [])
+    assert.equal(listarPesquisasGovernadorPorSlug("serley-leal", "CE")[0]?.resultado.valuePercent, 0)
+    assert.equal(listarPesquisasGovernadorPorSlug("ze-batista", "CE")[0]?.resultado.valuePercent, 0)
+    assert.deepEqual(listarPesquisasGovernadorPorSlug("alan-rick", "AC"), [])
+    assert.deepEqual(listarPesquisasGovernadorPorSlug("jhc", "AL"), [])
     assert.deepEqual(listarPesquisasGovernadorPorSlug("governador-inexistente", "SP"), [])
   })
 

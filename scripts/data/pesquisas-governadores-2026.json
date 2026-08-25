@@ -1405,6 +1405,401 @@
           ]
         }
       ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "election_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "Ceará"
+      },
+      "alias_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "Ceará"
+      },
+      "publication_scope": {
+        "election_year": 2026,
+        "office": "Governador",
+        "geography_code": "CE",
+        "turn": 1,
+        "comparability_key": "2026|Governador|CE|1|estimulado|lista-divulgada-datafolha-2026-08-13|datafolha"
+      },
+      "exact_aliases_version": "2026-08-25.CE",
+      "exact_aliases": [
+        {
+          "raw_label": "Ciro Gomes (PSDB)",
+          "candidate_slug": "ciro-gomes-gov-ce"
+        },
+        {
+          "raw_label": "Elmano de Freitas (PT)",
+          "candidate_slug": "elmano-de-freitas"
+        },
+        {
+          "raw_label": "Delegado Huggo (Missão)",
+          "candidate_slug": "huggo-leonardo"
+        },
+        {
+          "raw_label": "Serley Leal (UP)",
+          "candidate_slug": "serley-leal"
+        },
+        {
+          "raw_label": "Zé Batista (PSTU)",
+          "candidate_slug": "ze-batista"
+        }
+      ],
+      "pesquisas": [
+        {
+          "id": "datafolha-ce-ce-04292-2026",
+          "source_id": "datafolha-folha-globo-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Datafolha",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "O POVO",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-10",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-08-12",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-08-13",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1022,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores de 16 anos ou mais em 51 municípios do Ceará",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Entrevistas presenciais em pontos de fluxo populacional",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "CE-04292/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Ceará",
+            "code": "CE"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www1.folha.uol.com.br/poder/2026/08/datafolha-ciro-gomes-lidera-com-52-no-ceara-contra-33-de-elmano-de-freitas.shtml",
+            "supporting_urls": [
+              "https://www.opovo.com.br/noticias/politica/eleicoes/2026/08/18/integra-da-pesquisa-datafolha-ceara-e-divulgada-pelo-o-povo-.html",
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "O resultado público reúne percentuais e ficha técnica. O registro oficial é conferido separadamente no PesqEle.",
+            "consulted_at": "2026-08-25T22:30:00-03:00",
+            "capture": {
+              "format": "html",
+              "sha256": "5935cde5fd4839e0e8ee0d2ef39b217cca9934b028572228e6a6f885944ccff2",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "datafolha-ce-2026-08-13-primeiro-turno-estimulado",
+              "turn": 1,
+              "geography": "Ceará",
+              "label_raw": "Pesquisa estimulada para o Governo de Ceará",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|CE|1|estimulado|lista-divulgada-datafolha-2026-08-13|datafolha",
+              "resultados": [
+                {
+                  "raw_label": "Ciro Gomes (PSDB)",
+                  "candidate_slug": "ciro-gomes-gov-ce",
+                  "match_status": "exact_alias",
+                  "value_percent": 52,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Elmano de Freitas (PT)",
+                  "candidate_slug": "elmano-de-freitas",
+                  "match_status": "exact_alias",
+                  "value_percent": 33,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Pedro Brito (Novo)",
+                  "candidate_slug": null,
+                  "match_status": "indeterminado",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Delegado Huggo (Missão)",
+                  "candidate_slug": "huggo-leonardo",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Danilo Soares (Democrata)",
+                  "candidate_slug": null,
+                  "match_status": "indeterminado",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Serley Leal (UP)",
+                  "candidate_slug": "serley-leal",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Zé Batista (PSTU)",
+                  "candidate_slug": "ze-batista",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco, nulo ou nenhum",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "election_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "Rio Grande do Sul"
+      },
+      "alias_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "Rio Grande do Sul"
+      },
+      "publication_scope": {
+        "election_year": 2026,
+        "office": "Governador",
+        "geography_code": "RS",
+        "turn": 1,
+        "comparability_key": "2026|Governador|RS|1|estimulado|lista-divulgada-rtbd-2026-08-25|real-time-big-data"
+      },
+      "exact_aliases_version": "2026-08-25.RS",
+      "exact_aliases": [
+        {
+          "raw_label": "Juliana Brizola (PDT)",
+          "candidate_slug": "juliana-brizola"
+        },
+        {
+          "raw_label": "Luciano Zucco (PL)",
+          "candidate_slug": "luciano-zucco"
+        },
+        {
+          "raw_label": "Gabriel Souza (MDB)",
+          "candidate_slug": "gabriel-souza"
+        },
+        {
+          "raw_label": "Marcelo Maranata (PSDB)",
+          "candidate_slug": "marcelo-maranata"
+        }
+      ],
+      "pesquisas": [
+        {
+          "id": "real-time-big-data-rs-rs-09640-2026",
+          "source_id": "real-time-big-data-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Real Time Big Data",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Real Time Big Data",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-20",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-08-24",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-08-25",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1600,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores do Rio Grande do Sul",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Abordagens telefônicas e digitais com questionário estruturado",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "RS-09640/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Rio Grande do Sul",
+            "code": "RS"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/08/real-time-big-data-mostra-juliana-brizola-com-38-e-luciano-zucco-com-32-das-intencoes-de-voto-para-o-governo-do-rs-cmt8o9qxe00hk015gm9om5ee6.html",
+            "supporting_urls": [
+              "https://www.cnnbrasil.com.br/eleicoes/real-time-rs-juliana-lidera-1o-turno-e-empata-com-zucco-no-2o-ao-governo/",
+              "https://noticias.uol.com.br/eleicoes/2026/08/25/real-time-big-data-juliana-brizola-lidera-ao-governo-do-rs-com-38.ghtm",
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "O resultado público reúne percentuais e ficha técnica. O registro oficial é conferido separadamente no PesqEle.",
+            "consulted_at": "2026-08-25T22:30:00-03:00",
+            "capture": {
+              "format": "html",
+              "sha256": "aae9eae4bd3e2178aec338c86c33173918fa10c915c9456b5ef5ab1beb946693",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "real-time-big-data-rs-2026-08-25-primeiro-turno-estimulado",
+              "turn": 1,
+              "geography": "Rio Grande do Sul",
+              "label_raw": "Pesquisa estimulada para o Governo de Rio Grande do Sul",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|RS|1|estimulado|lista-divulgada-rtbd-2026-08-25|real-time-big-data",
+              "resultados": [
+                {
+                  "raw_label": "Juliana Brizola (PDT)",
+                  "candidate_slug": "juliana-brizola",
+                  "match_status": "exact_alias",
+                  "value_percent": 38,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Luciano Zucco (PL)",
+                  "candidate_slug": "luciano-zucco",
+                  "match_status": "exact_alias",
+                  "value_percent": 32,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Gabriel Souza (MDB)",
+                  "candidate_slug": "gabriel-souza",
+                  "match_status": "exact_alias",
+                  "value_percent": 19,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Marcelo Maranata (PSDB)",
+                  "candidate_slug": "marcelo-maranata",
+                  "match_status": "exact_alias",
+                  "value_percent": 4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Outros",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo ou branco",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe ou não respondeu",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
