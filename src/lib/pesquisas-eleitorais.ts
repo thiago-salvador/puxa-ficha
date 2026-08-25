@@ -653,11 +653,10 @@ export function parsePesquisasEleitoraisJson(
     turn: publicationTurn as 1 | 2,
     comparabilityKey: text(publicationScopeRaw.comparability_key, "pesquisas.publication_scope.comparability_key"),
   }
-  const expectedPublicationPrefix = `${scope.year}|${scope.office}|BR|${publicationScope.turn}|`
+  const expectedPublicationPrefix = `${scope.year}|${scope.office}|${publicationScope.geographyCode}|${publicationScope.turn}|`
   if (
     publicationScope.electionYear !== scope.year ||
     publicationScope.office !== scope.office ||
-    publicationScope.geographyCode !== "BR" ||
     !publicationScope.comparabilityKey.startsWith(expectedPublicationPrefix)
   ) {
     throw new ErroValidacaoPesquisasEleitorais([
@@ -685,6 +684,11 @@ export function parsePesquisasEleitoraisJson(
   })
   assertUnique(polls.map(({ poll }) => poll.id), "pesquisas.pesquisas.id")
   assertUnique(polls.flatMap(({ poll }) => poll.cenarios.map((scenario) => scenario.id)), "pesquisas.cenarios.id")
+  if (polls.some(({ poll }) => poll.geography.code !== publicationScope.geographyCode)) {
+    throw new ErroValidacaoPesquisasEleitorais([
+      "pesquisas.publication_scope diverge da geografia das pesquisas",
+    ])
+  }
 
   return {
     schemaVersion,
@@ -700,6 +704,7 @@ export function parsePesquisasEleitoraisJson(
 }
 
 let catalogoCache: CatalogoPesquisasEleitorais | null = null
+let catalogosGovernadoresCache: Map<string, CatalogoPesquisasEleitorais> | null = null
 
 export function carregarPesquisasEleitorais(): CatalogoPesquisasEleitorais {
   if (catalogoCache) return catalogoCache
@@ -716,6 +721,44 @@ export function carregarPesquisasEleitorais(): CatalogoPesquisasEleitorais {
     if (error instanceof ErroValidacaoPesquisasEleitorais) throw error
     throw new ErroValidacaoPesquisasEleitorais([
       `falha fechada ao carregar JSONs versionados: ${error instanceof Error ? error.message : "erro desconhecido"}`,
+    ])
+  }
+}
+
+export function carregarPesquisasGovernadores(): Map<string, CatalogoPesquisasEleitorais> {
+  if (catalogosGovernadoresCache) return catalogosGovernadoresCache
+  const pesquisasPath = resolve(process.cwd(), "scripts/data/pesquisas-governadores-2026.json")
+  const fontesPath = resolve(process.cwd(), "scripts/data/pesquisas-governadores-fontes.json")
+  try {
+    const root = object(
+      parseJson(readFileSync(pesquisasPath, "utf8"), "pesquisas de governadores"),
+      "pesquisas de governadores",
+    )
+    text(root.schema_version, "pesquisas de governadores.schema_version")
+    const fontesJson = readFileSync(fontesPath, "utf8")
+    const catalogos = array(root.datasets, "pesquisas de governadores.datasets").map(
+      (dataset, index) => {
+        const catalogo = parsePesquisasEleitoraisJson(JSON.stringify(dataset), fontesJson)
+        if (catalogo.electionScope.office !== "Governador") {
+          throw new ErroValidacaoPesquisasEleitorais([
+            `pesquisas de governadores.datasets[${index}] possui cargo incompatível`,
+          ])
+        }
+        return catalogo
+      },
+    )
+    assertUnique(
+      catalogos.map((catalogo) => catalogo.publicationScope.geographyCode),
+      "pesquisas de governadores.datasets.geography_code",
+    )
+    catalogosGovernadoresCache = new Map(
+      catalogos.map((catalogo) => [catalogo.publicationScope.geographyCode, catalogo]),
+    )
+    return catalogosGovernadoresCache
+  } catch (error) {
+    if (error instanceof ErroValidacaoPesquisasEleitorais) throw error
+    throw new ErroValidacaoPesquisasEleitorais([
+      `falha fechada ao carregar pesquisas de governadores: ${error instanceof Error ? error.message : "erro desconhecido"}`,
     ])
   }
 }
@@ -788,6 +831,19 @@ export function listarPesquisasPresidenciaisPorSlug(
   if (scope) {
     return selecionarPesquisasMaisRecentesComparaveis(catalogo, candidateSlug, scope)
   }
+  return selecionarPesquisasMaisRecentesComparaveis(
+    catalogo,
+    candidateSlug,
+    catalogo.publicationScope,
+  )
+}
+
+export function listarPesquisasGovernadorPorSlug(
+  candidateSlug: string,
+  geographyCode: string,
+): PesquisaEleitoralDoCandidato[] {
+  const catalogo = carregarPesquisasGovernadores().get(geographyCode.toUpperCase())
+  if (!catalogo) return []
   return selecionarPesquisasMaisRecentesComparaveis(
     catalogo,
     candidateSlug,

@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0.0",
+  "scope": {
+    "election_year": 2026,
+    "country": "BR",
+    "office": "governador",
+    "purpose": "fontes aprovadas para pesquisas estaduais nas fichas de candidatos a governador"
+  },
+  "preferred_source_ids": [
+    "datafolha-folha-globo-estaduais-2026"
+  ],
+  "consulted_at": "2026-08-25T17:50:00-03:00",
+  "status_values": [
+    "aprovado",
+    "condicional",
+    "excluído"
+  ],
+  "criteria_definitions": {
+    "methodology_transparency": "Método, campo, margem e confiança estão públicos.",
+    "result_access": "Resultado integral está em URL pública identificável.",
+    "corrections": "Há política específica ou trilha pública de correções.",
+    "sample_identification": "Tamanho e população alvo estão explícitos.",
+    "publication_stability": "Existe URL permanente para a rodada."
+  },
+  "status_rule": {
+    "aprovado": "Todos os critérios duros estão verdadeiros.",
+    "condicional": "Há lacuna que exige revisão humana antes da publicação.",
+    "excluído": "Há incompatibilidade semântica ou falta de atualidade."
+  },
+  "official_registry": {
+    "id": "tse-pesqele-2026",
+    "role": "registro_oficial",
+    "name": "Tribunal Superior Eleitoral, PesqEle",
+    "query_url": "https://www.tse.jus.br/eleicoes/pesquisa-eleitorais/consulta-as-pesquisas-registradas",
+    "caveat": "O registro comprova metadados declarados e não endossa o resultado."
+  },
+  "sources": [
+    {
+      "id": "datafolha-folha-globo-estaduais-2026",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Datafolha",
+        "commissioner": "Folha de S.Paulo, TV Globo ou afiliada indicada na rodada",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "Folha de S.Paulo",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-18",
+          "end": "2026-08-21"
+        },
+        "published_at": "2026-08-22",
+        "sample_size": 826,
+        "method": "presencial em pontos de fluxo",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": null,
+        "rounds": [
+          1
+        ],
+        "registration_id": "PI-06656/2026",
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/08/datafolha-rafael-fonteles-tem-56-das-intencoes-de-voto-no-piaui-e-venceria-no-1o-turno.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/08/datafolha-tarcisio-lidera-disputa-para-governo-de-sp-com-45-contra-27-de-haddad.shtml",
+            "https://www1.folha.uol.com.br/poder/2026/08/datafolha-rafael-fonteles-tem-56-das-intencoes-de-voto-no-piaui-e-venceria-no-1o-turno.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/08/datafolha-raquel-lyra-tem-47-em-pernambuco-contra-40-de-joao-campos.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": true,
+          "evidence_urls": [
+            "https://temas.folha.uol.com.br/folha-projeto-editorial/manual-de-redacao-conduta/erramos.shtml",
+            "https://www1.folha.uol.com.br/erramos/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/08/datafolha-celina-leao-e-jose-roberto-arruda-empatam-na-disputa-pelo-governo-do-df.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/08/datafolha-cleitinho-lidera-disputa-em-mg-com-32-patrus-e-kalil-tem-12-cada.shtml"
+          ]
+        }
+      },
+      "consulted_at": "2026-08-25T17:50:00-03:00"
+    },
+    {
+      "id": "ipsos-ipec-estaduais-2026",
+      "status": "condicional",
+      "source_kind": "instituto_com_resultado_primario",
+      "roles": {
+        "institute": "Ipsos-Ipec",
+        "commissioner": "Rádio Costa do Sol Ltda.",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "Ipsos",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-14",
+          "end": "2026-08-17"
+        },
+        "published_at": "2026-08-20",
+        "sample_size": 800,
+        "method": "presencial",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Ceará",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "CE00195/2026",
+        "result_url": "https://www.ipsos.com/pt-br/campanha-eleitoral-do-ceara-comeca-com-ciro-gomes-liderando-a-disputa-pelo-governo",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.ipsos.com/pt-br/campanha-eleitoral-do-ceara-comeca-com-ciro-gomes-liderando-a-disputa-pelo-governo"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.ipsos.com/pt-br/campanha-eleitoral-do-ceara-comeca-com-ciro-gomes-liderando-a-disputa-pelo-governo"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Não foi localizada política ou trilha pública específica de correções para a rodada brasileira."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.ipsos.com/pt-br/campanha-eleitoral-do-ceara-comeca-com-ciro-gomes-liderando-a-disputa-pelo-governo"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.ipsos.com/pt-br/topic/eleicoes"
+          ]
+        }
+      },
+      "conditions": [
+        "Não publicar até existir prova de correção pública ou revisão manual formal da rodada."
+      ],
+      "consulted_at": "2026-08-25T17:50:00-03:00"
+    }
+  ]
+}

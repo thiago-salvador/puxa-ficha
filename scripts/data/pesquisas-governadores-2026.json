@@ -1,0 +1,1410 @@
+{
+  "schema_version": "1.0.0",
+  "datasets": [
+    {
+      "schema_version": "1.0.0",
+      "election_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "Distrito Federal"
+      },
+      "alias_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "Distrito Federal"
+      },
+      "publication_scope": {
+        "election_year": 2026,
+        "office": "Governador",
+        "geography_code": "DF",
+        "turn": 1,
+        "comparability_key": "2026|Governador|DF|1|estimulado|lista-oficial-datafolha-2026-08-21|datafolha"
+      },
+      "exact_aliases_version": "2026-08-25.DF",
+      "exact_aliases": [
+        {
+          "raw_label": "Celina Leão (PP)",
+          "candidate_slug": "celina-leao"
+        },
+        {
+          "raw_label": "José Roberto Arruda (PSD)",
+          "candidate_slug": "jose-roberto-arruda"
+        },
+        {
+          "raw_label": "Leandro Grass (PT)",
+          "candidate_slug": "leandro-grass"
+        },
+        {
+          "raw_label": "Paula Belmonte (PSDB)",
+          "candidate_slug": "paula-belmonte"
+        },
+        {
+          "raw_label": "Ricardo Cappelli (PSB)",
+          "candidate_slug": "ricardo-cappelli"
+        },
+        {
+          "raw_label": "Kiko Caputo (Novo)",
+          "candidate_slug": "kiko-caputo"
+        },
+        {
+          "raw_label": "Professora Samara Mineiro (UP)",
+          "candidate_slug": "samara-mineiro"
+        },
+        {
+          "raw_label": "Elisson (Agir)",
+          "candidate_slug": "elisson-ferreira"
+        },
+        {
+          "raw_label": "Professor Robson (PSTU)",
+          "candidate_slug": "robson-raymundo"
+        }
+      ],
+      "pesquisas": [
+        {
+          "id": "datafolha-df-df-07561-2026",
+          "source_id": "datafolha-folha-globo-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Datafolha",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Folha de S.Paulo e TV Globo",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-18",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-08-21",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-08-21",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 910,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores de 16 anos ou mais em 28 regiões administrativas do Distrito Federal",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Entrevistas presenciais em pontos de fluxo populacional",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "DF-07561/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Distrito Federal",
+            "code": "DF"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www1.folha.uol.com.br/poder/2026/08/datafolha-celina-leao-e-jose-roberto-arruda-empatam-na-disputa-pelo-governo-do-df.shtml",
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "A página da contratante publica o resultado e a ficha técnica em HTML. O registro oficial é conferido separadamente no PesqEle.",
+            "consulted_at": "2026-08-25T20:50:00Z",
+            "capture": {
+              "format": "html",
+              "sha256": "882e3de362908fb73d84bbaeaa92944f68a8b16d9e009475289f04157c994657",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "datafolha-df-2026-08-21-primeiro-turno-estimulado",
+              "turn": 1,
+              "geography": "Distrito Federal",
+              "label_raw": "Pesquisa estimulada para o Governo de Distrito Federal",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|DF|1|estimulado|lista-oficial-datafolha-2026-08-21|datafolha",
+              "resultados": [
+                {
+                  "raw_label": "Celina Leão (PP)",
+                  "candidate_slug": "celina-leao",
+                  "match_status": "exact_alias",
+                  "value_percent": 30,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "José Roberto Arruda (PSD)",
+                  "candidate_slug": "jose-roberto-arruda",
+                  "match_status": "exact_alias",
+                  "value_percent": 28,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Leandro Grass (PT)",
+                  "candidate_slug": "leandro-grass",
+                  "match_status": "exact_alias",
+                  "value_percent": 11,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Paula Belmonte (PSDB)",
+                  "candidate_slug": "paula-belmonte",
+                  "match_status": "exact_alias",
+                  "value_percent": 4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ricardo Cappelli (PSB)",
+                  "candidate_slug": "ricardo-cappelli",
+                  "match_status": "exact_alias",
+                  "value_percent": 3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Kiko Caputo (Novo)",
+                  "candidate_slug": "kiko-caputo",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professora Samara Mineiro (UP)",
+                  "candidate_slug": "samara-mineiro",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Elisson (Agir)",
+                  "candidate_slug": "elisson-ferreira",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professor Robson (PSTU)",
+                  "candidate_slug": "robson-raymundo",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Expedito Mendonça (PCO)",
+                  "candidate_slug": null,
+                  "match_status": "indeterminado",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/nenhum",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 11,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 8,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "election_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "Minas Gerais"
+      },
+      "alias_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "Minas Gerais"
+      },
+      "publication_scope": {
+        "election_year": 2026,
+        "office": "Governador",
+        "geography_code": "MG",
+        "turn": 1,
+        "comparability_key": "2026|Governador|MG|1|estimulado|lista-oficial-datafolha-2026-08-21|datafolha"
+      },
+      "exact_aliases_version": "2026-08-25.MG",
+      "exact_aliases": [
+        {
+          "raw_label": "Cleitinho Azevedo (Republicanos)",
+          "candidate_slug": "cleitinho"
+        },
+        {
+          "raw_label": "Patrus Ananias (PT)",
+          "candidate_slug": "patrus-ananias"
+        },
+        {
+          "raw_label": "Alexandre Kalil (PDT)",
+          "candidate_slug": "alexandre-kalil"
+        },
+        {
+          "raw_label": "Mateus Simões (PSD)",
+          "candidate_slug": "mateus-simoes"
+        },
+        {
+          "raw_label": "Gabriel Azevedo (MDB)",
+          "candidate_slug": "gabriel-azevedo"
+        },
+        {
+          "raw_label": "Túlio Lopes (PCB)",
+          "candidate_slug": "tulio-lopes"
+        },
+        {
+          "raw_label": "Rafael Duda (PSTU)",
+          "candidate_slug": "rafael-duda"
+        },
+        {
+          "raw_label": "Ben Mendes (Missão)",
+          "candidate_slug": "ben-mendes"
+        },
+        {
+          "raw_label": "Indira Xavier (UP)",
+          "candidate_slug": "indira-xavier"
+        },
+        {
+          "raw_label": "Henrique Áreas (PCO)",
+          "candidate_slug": "henrique-areas"
+        }
+      ],
+      "pesquisas": [
+        {
+          "id": "datafolha-mg-mg-00446-2026",
+          "source_id": "datafolha-folha-globo-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Datafolha",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Folha de S.Paulo e TV Globo",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-18",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-08-20",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-08-21",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1204,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores de 16 anos ou mais no estado de Minas Gerais",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Entrevistas presenciais em pontos de fluxo populacional",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "MG-00446/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Minas Gerais",
+            "code": "MG"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www1.folha.uol.com.br/poder/2026/08/datafolha-cleitinho-lidera-disputa-em-mg-com-32-patrus-e-kalil-tem-12-cada.shtml",
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "A página da contratante publica o resultado e a ficha técnica em HTML. O registro oficial é conferido separadamente no PesqEle.",
+            "consulted_at": "2026-08-25T20:50:00Z",
+            "capture": {
+              "format": "html",
+              "sha256": "820d8a174f5b214beaaade2866ca4b2d8bf33d800a12911de96313fb576bba09",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "datafolha-mg-2026-08-21-primeiro-turno-estimulado",
+              "turn": 1,
+              "geography": "Minas Gerais",
+              "label_raw": "Pesquisa estimulada para o Governo de Minas Gerais",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|MG|1|estimulado|lista-oficial-datafolha-2026-08-21|datafolha",
+              "resultados": [
+                {
+                  "raw_label": "Cleitinho Azevedo (Republicanos)",
+                  "candidate_slug": "cleitinho",
+                  "match_status": "exact_alias",
+                  "value_percent": 32,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Patrus Ananias (PT)",
+                  "candidate_slug": "patrus-ananias",
+                  "match_status": "exact_alias",
+                  "value_percent": 12,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Alexandre Kalil (PDT)",
+                  "candidate_slug": "alexandre-kalil",
+                  "match_status": "exact_alias",
+                  "value_percent": 12,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Mateus Simões (PSD)",
+                  "candidate_slug": "mateus-simoes",
+                  "match_status": "exact_alias",
+                  "value_percent": 4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Flávio Roscoe (PL)",
+                  "candidate_slug": null,
+                  "match_status": "indeterminado",
+                  "value_percent": 4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Gabriel Azevedo (MDB)",
+                  "candidate_slug": "gabriel-azevedo",
+                  "match_status": "exact_alias",
+                  "value_percent": 4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Túlio Lopes (PCB)",
+                  "candidate_slug": "tulio-lopes",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Rafael Duda (PSTU)",
+                  "candidate_slug": "rafael-duda",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ben Mendes (Missão)",
+                  "candidate_slug": "ben-mendes",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indira Xavier (UP)",
+                  "candidate_slug": "indira-xavier",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Henrique Áreas (PCO)",
+                  "candidate_slug": "henrique-areas",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 14,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 13,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "election_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "Pernambuco"
+      },
+      "alias_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "Pernambuco"
+      },
+      "publication_scope": {
+        "election_year": 2026,
+        "office": "Governador",
+        "geography_code": "PE",
+        "turn": 1,
+        "comparability_key": "2026|Governador|PE|1|estimulado|lista-oficial-datafolha-2026-08-21|datafolha"
+      },
+      "exact_aliases_version": "2026-08-25.PE",
+      "exact_aliases": [
+        {
+          "raw_label": "Raquel Lyra (PSD)",
+          "candidate_slug": "raquel-lyra"
+        },
+        {
+          "raw_label": "João Campos (PSB)",
+          "candidate_slug": "joao-campos"
+        },
+        {
+          "raw_label": "Ivan Moraes (PSOL)",
+          "candidate_slug": "ivan-moraes"
+        },
+        {
+          "raw_label": "Renan Hallais (Missão)",
+          "candidate_slug": "renan-hallais"
+        },
+        {
+          "raw_label": "Professora Camila (UP)",
+          "candidate_slug": "camila-falcao"
+        },
+        {
+          "raw_label": "Guilherme Fonseca (PSTU)",
+          "candidate_slug": "guilherme-fonseca"
+        },
+        {
+          "raw_label": "Professor Jeremias do Banco (Democrata)",
+          "candidate_slug": "jeremias-cosmo"
+        }
+      ],
+      "pesquisas": [
+        {
+          "id": "datafolha-pe-pe-01528-2026",
+          "source_id": "datafolha-folha-globo-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Datafolha",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Folha de S.Paulo e TV Globo",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-18",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-08-20",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-08-21",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1204,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores de 16 anos ou mais no estado de Pernambuco",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Entrevistas presenciais em pontos de fluxo populacional",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "PE-01528/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Pernambuco",
+            "code": "PE"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www1.folha.uol.com.br/poder/2026/08/datafolha-raquel-lyra-tem-47-em-pernambuco-contra-40-de-joao-campos.shtml",
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "A página da contratante publica o resultado e a ficha técnica em HTML. O registro oficial é conferido separadamente no PesqEle.",
+            "consulted_at": "2026-08-25T20:50:00Z",
+            "capture": {
+              "format": "html",
+              "sha256": "186ec04a8c455cfde16ac4d5dfaba94b2629467d57a088f62907be3db1a36566",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "datafolha-pe-2026-08-21-primeiro-turno-estimulado",
+              "turn": 1,
+              "geography": "Pernambuco",
+              "label_raw": "Pesquisa estimulada para o Governo de Pernambuco",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PE|1|estimulado|lista-oficial-datafolha-2026-08-21|datafolha",
+              "resultados": [
+                {
+                  "raw_label": "Raquel Lyra (PSD)",
+                  "candidate_slug": "raquel-lyra",
+                  "match_status": "exact_alias",
+                  "value_percent": 47,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "João Campos (PSB)",
+                  "candidate_slug": "joao-campos",
+                  "match_status": "exact_alias",
+                  "value_percent": 40,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ivan Moraes (PSOL)",
+                  "candidate_slug": "ivan-moraes",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Renan Hallais (Missão)",
+                  "candidate_slug": "renan-hallais",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professora Camila (UP)",
+                  "candidate_slug": "camila-falcao",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Guilherme Fonseca (PSTU)",
+                  "candidate_slug": "guilherme-fonseca",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professor Jeremias do Banco (Democrata)",
+                  "candidate_slug": "jeremias-cosmo",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Victor Assis (PCO)",
+                  "candidate_slug": null,
+                  "match_status": "indeterminado",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/nenhum",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "election_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "Piauí"
+      },
+      "alias_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "Piauí"
+      },
+      "publication_scope": {
+        "election_year": 2026,
+        "office": "Governador",
+        "geography_code": "PI",
+        "turn": 1,
+        "comparability_key": "2026|Governador|PI|1|estimulado|lista-oficial-datafolha-2026-08-22|datafolha"
+      },
+      "exact_aliases_version": "2026-08-25.PI",
+      "exact_aliases": [
+        {
+          "raw_label": "Rafael Fonteles (PT)",
+          "candidate_slug": "rafael-fonteles"
+        },
+        {
+          "raw_label": "Joel Rodrigues (PP)",
+          "candidate_slug": "joel-rodrigues"
+        },
+        {
+          "raw_label": "Dra. Lúcia Santos (PSDB)",
+          "candidate_slug": "lucia-santos"
+        },
+        {
+          "raw_label": "Geraldo Carvalho (PSTU)",
+          "candidate_slug": "geraldo-carvalho"
+        },
+        {
+          "raw_label": "Lourdes Melo (PCO)",
+          "candidate_slug": "lourdes-melo"
+        },
+        {
+          "raw_label": "Professor Gisvaldo (PSOL)",
+          "candidate_slug": "gisvaldo-oliveira"
+        },
+        {
+          "raw_label": "Professor Jurity (DC)",
+          "candidate_slug": "francisco-jurity"
+        },
+        {
+          "raw_label": "Elizeu Aguiar (Novo)",
+          "candidate_slug": "elizeu-aguiar"
+        },
+        {
+          "raw_label": "Santiago Belizário (UP)",
+          "candidate_slug": "santiago-belizario"
+        },
+        {
+          "raw_label": "Ravenna da Inclusão (Democrata)",
+          "candidate_slug": "ravenna-castro"
+        }
+      ],
+      "pesquisas": [
+        {
+          "id": "datafolha-pi-pi-06656-2026",
+          "source_id": "datafolha-folha-globo-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Datafolha",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "TV Clube de Teresina",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-18",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-08-21",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-08-22",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 826,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores de 16 anos ou mais no estado do Piauí",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Entrevistas presenciais em pontos de fluxo populacional",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "PI-06656/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Piauí",
+            "code": "PI"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www1.folha.uol.com.br/poder/2026/08/datafolha-rafael-fonteles-tem-56-das-intencoes-de-voto-no-piaui-e-venceria-no-1o-turno.shtml",
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "A página da contratante publica o resultado e a ficha técnica em HTML. O registro oficial é conferido separadamente no PesqEle.",
+            "consulted_at": "2026-08-25T20:50:00Z",
+            "capture": {
+              "format": "html",
+              "sha256": "008d07c6e3137a69de84c378ab4c5f93117d0e6756f47370288391aa106ab29b",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "datafolha-pi-2026-08-22-primeiro-turno-estimulado",
+              "turn": 1,
+              "geography": "Piauí",
+              "label_raw": "Pesquisa estimulada para o Governo de Piauí",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PI|1|estimulado|lista-oficial-datafolha-2026-08-22|datafolha",
+              "resultados": [
+                {
+                  "raw_label": "Rafael Fonteles (PT)",
+                  "candidate_slug": "rafael-fonteles",
+                  "match_status": "exact_alias",
+                  "value_percent": 56,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Joel Rodrigues (PP)",
+                  "candidate_slug": "joel-rodrigues",
+                  "match_status": "exact_alias",
+                  "value_percent": 21,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Dra. Lúcia Santos (PSDB)",
+                  "candidate_slug": "lucia-santos",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Geraldo Carvalho (PSTU)",
+                  "candidate_slug": "geraldo-carvalho",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Lourdes Melo (PCO)",
+                  "candidate_slug": "lourdes-melo",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professor Gisvaldo (PSOL)",
+                  "candidate_slug": "gisvaldo-oliveira",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professor Jurity (DC)",
+                  "candidate_slug": "francisco-jurity",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Elizeu Aguiar (Novo)",
+                  "candidate_slug": "elizeu-aguiar",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Santiago Belizário (UP)",
+                  "candidate_slug": "santiago-belizario",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ravenna da Inclusão (Democrata)",
+                  "candidate_slug": "ravenna-castro",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 10,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 5,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "election_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "Rio de Janeiro"
+      },
+      "alias_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "Rio de Janeiro"
+      },
+      "publication_scope": {
+        "election_year": 2026,
+        "office": "Governador",
+        "geography_code": "RJ",
+        "turn": 1,
+        "comparability_key": "2026|Governador|RJ|1|estimulado|lista-oficial-datafolha-2026-08-21|datafolha"
+      },
+      "exact_aliases_version": "2026-08-25.RJ",
+      "exact_aliases": [
+        {
+          "raw_label": "Eduardo Paes (PSD)",
+          "candidate_slug": "eduardo-paes"
+        },
+        {
+          "raw_label": "Douglas Ruas (PL)",
+          "candidate_slug": "douglas-ruas"
+        },
+        {
+          "raw_label": "Anthony Garotinho (Republicanos)",
+          "candidate_slug": "garotinho"
+        },
+        {
+          "raw_label": "Coronel Busnello (Missão)",
+          "candidate_slug": "coronel-busnello"
+        },
+        {
+          "raw_label": "Cyro Garcia (PSTU)",
+          "candidate_slug": "cyro-garcia"
+        },
+        {
+          "raw_label": "William Siri (PSOL)",
+          "candidate_slug": "william-siri"
+        },
+        {
+          "raw_label": "André Marinho (Novo)",
+          "candidate_slug": "andre-marinho"
+        },
+        {
+          "raw_label": "Juliete Pantoja (UP)",
+          "candidate_slug": "juliete-pantoja"
+        },
+        {
+          "raw_label": "Luan Monteiro (PCO)",
+          "candidate_slug": "luan-monteiro"
+        }
+      ],
+      "pesquisas": [
+        {
+          "id": "datafolha-rj-rj-02945-2026",
+          "source_id": "datafolha-folha-globo-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Datafolha",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Folha de S.Paulo e TV Globo",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-18",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-08-21",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-08-21",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1204,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores de 16 anos ou mais em 35 municípios do estado do Rio de Janeiro",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Entrevistas presenciais em pontos de fluxo populacional",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "RJ-02945/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Rio de Janeiro",
+            "code": "RJ"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www1.folha.uol.com.br/poder/2026/08/datafolha-eduardo-paes-tem-41-no-rio-contra-19-de-douglas-ruas.shtml",
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "A página da contratante publica o resultado e a ficha técnica em HTML. O registro oficial é conferido separadamente no PesqEle.",
+            "consulted_at": "2026-08-25T20:50:00Z",
+            "capture": {
+              "format": "html",
+              "sha256": "56bee334dfc70fb55c0be56fa47fcb4e6e6d3927b06143cd885e6d4709eb7650",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "datafolha-rj-2026-08-21-primeiro-turno-estimulado",
+              "turn": 1,
+              "geography": "Rio de Janeiro",
+              "label_raw": "Pesquisa estimulada para o Governo de Rio de Janeiro",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|RJ|1|estimulado|lista-oficial-datafolha-2026-08-21|datafolha",
+              "resultados": [
+                {
+                  "raw_label": "Eduardo Paes (PSD)",
+                  "candidate_slug": "eduardo-paes",
+                  "match_status": "exact_alias",
+                  "value_percent": 41,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Douglas Ruas (PL)",
+                  "candidate_slug": "douglas-ruas",
+                  "match_status": "exact_alias",
+                  "value_percent": 19,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Anthony Garotinho (Republicanos)",
+                  "candidate_slug": "garotinho",
+                  "match_status": "exact_alias",
+                  "value_percent": 9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Coronel Busnello (Missão)",
+                  "candidate_slug": "coronel-busnello",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Cyro Garcia (PSTU)",
+                  "candidate_slug": "cyro-garcia",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "William Siri (PSOL)",
+                  "candidate_slug": "william-siri",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "André Marinho (Novo)",
+                  "candidate_slug": "andre-marinho",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Juliete Pantoja (UP)",
+                  "candidate_slug": "juliete-pantoja",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Luan Monteiro (PCO)",
+                  "candidate_slug": "luan-monteiro",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/não vai votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 16,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "election_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "São Paulo"
+      },
+      "alias_scope": {
+        "year": 2026,
+        "office": "Governador",
+        "geography": "São Paulo"
+      },
+      "publication_scope": {
+        "election_year": 2026,
+        "office": "Governador",
+        "geography_code": "SP",
+        "turn": 1,
+        "comparability_key": "2026|Governador|SP|1|estimulado|lista-oficial-datafolha-2026-08-21|datafolha"
+      },
+      "exact_aliases_version": "2026-08-25.SP",
+      "exact_aliases": [
+        {
+          "raw_label": "Tarcísio de Freitas (Republicanos)",
+          "candidate_slug": "tarcisio-gov-sp"
+        },
+        {
+          "raw_label": "Fernando Haddad (PT)",
+          "candidate_slug": "haddad-gov-sp"
+        },
+        {
+          "raw_label": "Vera Lúcia (PSTU)",
+          "candidate_slug": "vera-lucia"
+        },
+        {
+          "raw_label": "Carlos Machado (PCB)",
+          "candidate_slug": "carlos-machado"
+        },
+        {
+          "raw_label": "Vivian Mendes (UP)",
+          "candidate_slug": "vivian-mendes"
+        },
+        {
+          "raw_label": "Izadora Dias (PCO)",
+          "candidate_slug": "izadora-dias"
+        }
+      ],
+      "pesquisas": [
+        {
+          "id": "datafolha-sp-sp-01806-2026",
+          "source_id": "datafolha-folha-globo-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Datafolha",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Folha de S.Paulo e TV Globo",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-18",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-08-19",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-08-21",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1610,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores de 16 anos ou mais em 65 municípios do estado de São Paulo",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Entrevistas presenciais em pontos de fluxo populacional",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "SP-01806/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "São Paulo",
+            "code": "SP"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www1.folha.uol.com.br/poder/2026/08/datafolha-tarcisio-lidera-disputa-para-governo-de-sp-com-45-contra-27-de-haddad.shtml",
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "A página da contratante publica o resultado e a ficha técnica em HTML. O registro oficial é conferido separadamente no PesqEle.",
+            "consulted_at": "2026-08-25T20:50:00Z",
+            "capture": {
+              "format": "html",
+              "sha256": "01d1ae1dfd7b9cf031e33a780f1bd154defd1ac16ffba14960941cc454f62270",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "datafolha-sp-2026-08-21-primeiro-turno-estimulado",
+              "turn": 1,
+              "geography": "São Paulo",
+              "label_raw": "Pesquisa estimulada para o Governo de São Paulo",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|SP|1|estimulado|lista-oficial-datafolha-2026-08-21|datafolha",
+              "resultados": [
+                {
+                  "raw_label": "Tarcísio de Freitas (Republicanos)",
+                  "candidate_slug": "tarcisio-gov-sp",
+                  "match_status": "exact_alias",
+                  "value_percent": 45,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Fernando Haddad (PT)",
+                  "candidate_slug": "haddad-gov-sp",
+                  "match_status": "exact_alias",
+                  "value_percent": 27,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Vera Lúcia (PSTU)",
+                  "candidate_slug": "vera-lucia",
+                  "match_status": "exact_alias",
+                  "value_percent": 4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Carlos Machado (PCB)",
+                  "candidate_slug": "carlos-machado",
+                  "match_status": "exact_alias",
+                  "value_percent": 3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Policial Edjane (Agir)",
+                  "candidate_slug": null,
+                  "match_status": "indeterminado",
+                  "value_percent": 3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Vivian Mendes (UP)",
+                  "candidate_slug": "vivian-mendes",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Izadora Dias (PCO)",
+                  "candidate_slug": "izadora-dias",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/nenhum",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 11,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

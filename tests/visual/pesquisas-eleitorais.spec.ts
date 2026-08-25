@@ -4,7 +4,8 @@ import { expect, test, type Locator, type Page } from "playwright/test"
 
 const WITH_DATA_SLUG = "lula"
 const WITHOUT_DATA_SLUG = "pablo-marcal"
-const NON_PRESIDENT_SLUG = "cabo-daciolo"
+const GOVERNOR_WITH_DATA_SLUG = "tarcisio-gov-sp"
+const GOVERNOR_WITHOUT_QUALIFIED_DATA_SLUG = "ciro-gomes-gov-ce"
 
 async function expectStylesLoaded(element: Locator) {
   await expect
@@ -214,14 +215,57 @@ test.describe("pesquisas presidenciais v2", () => {
     await tab.screenshot({ path: testInfo.outputPath("pesquisas-vazio-desktop.png") })
   })
 
-  test("timeline e não-presidente não recebem a experiência", async ({ page }) => {
+  test("governador usa a mesma experiência, com isolamento por UF e vazio explícito", async ({ page }, testInfo) => {
+    await page.goto(`/candidato/${GOVERNOR_WITH_DATA_SLUG}`, { waitUntil: "networkidle" })
+    await waitForProfile(page)
+
+    const hero = page.locator("[data-pf-pesquisa-hero]")
+    const fullHero = page.locator("[data-pf-hero]")
+    await expect(hero).toBeVisible()
+    await expect(hero).toContainText("Datafolha")
+    await expect(hero).toContainText("45%")
+    await expectNoHorizontalOverflow(page, fullHero)
+    await fullHero.screenshot({ path: testInfo.outputPath("pesquisas-governador-sp-hero-desktop.png") })
+
+    const overview = page.locator("[data-pf-pesquisas-overview]")
+    await expect(overview).toContainText("São Paulo")
+    await overview.screenshot({ path: testInfo.outputPath("pesquisas-governador-sp-overview-desktop.png") })
+    await page.getByRole("tab", { name: /^Pesquisas/ }).click()
+    const tab = page.locator("[data-pf-pesquisas-tab]")
+    await expect(tab).toContainText("45%")
+    await expectNoHorizontalOverflow(page, tab)
+    await tab.screenshot({ path: testInfo.outputPath("pesquisas-governador-sp-desktop.png") })
+
+    await page.setViewportSize({ width: 390, height: 844 })
+    await expectNoHorizontalOverflow(page, tab)
+    await tab.screenshot({ path: testInfo.outputPath("pesquisas-governador-sp-mobile.png") })
+
+    await page.goto(`/candidato/${GOVERNOR_WITH_DATA_SLUG}`, { waitUntil: "networkidle" })
+    await waitForProfile(page)
+    await expectNoHorizontalOverflow(page, page.locator("[data-pf-hero]"))
+    await page
+      .locator("[data-pf-hero]")
+      .screenshot({ path: testInfo.outputPath("pesquisas-governador-sp-hero-mobile.png") })
+
+    await page.goto(`/candidato/${GOVERNOR_WITHOUT_QUALIFIED_DATA_SLUG}`, {
+      waitUntil: "networkidle",
+    })
+    await waitForProfile(page)
+    await expect(page.locator("[data-pf-pesquisa-hero]")).toContainText(
+      "Sem pesquisa qualificada recente",
+    )
+    await expect(page.getByRole("tab", { name: /^Pesquisas/ })).toBeVisible()
+    await expect(page.getByText("45%", { exact: true })).toHaveCount(0)
+    await page.getByRole("tab", { name: /^Pesquisas/ }).click()
+    const emptyTab = page.locator("[data-pf-pesquisas-tab]")
+    await expect(emptyTab.locator("[data-pf-pesquisas-empty]")).toBeVisible()
+    await expectNoHorizontalOverflow(page, emptyTab)
+    await emptyTab.screenshot({ path: testInfo.outputPath("pesquisas-governador-ce-vazio-mobile.png") })
+  })
+
+  test("timeline não recebe a experiência", async ({ page }) => {
     await page.goto(`/candidato/${WITH_DATA_SLUG}/timeline`, { waitUntil: "networkidle" })
     await expect(page.locator("[data-pf-pesquisa-hero]")).toHaveCount(0)
-    await expect(page.getByRole("tab", { name: /^Pesquisas/ })).toHaveCount(0)
-
-    await page.goto(`/candidato/${NON_PRESIDENT_SLUG}`, { waitUntil: "networkidle" })
-    await expect(page.locator("[data-pf-pesquisa-hero]")).toHaveCount(0)
-    await waitForProfile(page)
     await expect(page.getByRole("tab", { name: /^Pesquisas/ })).toHaveCount(0)
   })
 })
