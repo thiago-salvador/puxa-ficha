@@ -321,7 +321,10 @@ describe("classificador puro (#136)", () => {
     // (DML, sem RAISE). Conservação: 323 + 103 = 426.
     // 323 -> 324 em 23/08/2026: a limpeza de encoding retorna cedo com coorte
     // vazia e foi provada com fixtures em Postgres 17. Conservação: 324 + 103 = 427.
-    assert.equal(manifesto.aplicadas_esperadas, 324)
+    // 324 -> 325 em 25/08/2026: a curadoria da issue #96 aceita coorte vazia
+    // no replay e preserva guards exatos para as 15 linhas de produção.
+    // Conservação medida: 325 + 103 = 428.
+    assert.equal(manifesto.aplicadas_esperadas, 325)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

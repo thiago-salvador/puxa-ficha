@@ -361,6 +361,13 @@
       "ate": "20260823160000",
       "allowlist": "scripts/audit/allowlist-public-text-encoding-20260823.json",
       "divida": null
+    },
+    {
+      "nome": "issue-96-link-check-20260825",
+      "desde": "20260825123000",
+      "ate": "20260825123000",
+      "allowlist": "scripts/audit/allowlist-issue-96-link-check-20260825.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
