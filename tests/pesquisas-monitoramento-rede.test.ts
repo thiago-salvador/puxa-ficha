@@ -1,11 +1,20 @@
 import assert from "node:assert/strict"
+import { createRequire } from "node:module"
 import test from "node:test"
 
-import {
+const require = createRequire(import.meta.url)
+const serverOnlyPath = require.resolve("server-only")
+require.cache[serverOnlyPath] = {
+  id: serverOnlyPath,
+  filename: serverOnlyPath,
+  loaded: true,
+  exports: {},
+} as never
+const {
   caminhoPermitidoPorRobots,
   criarClienteHttpMonitoramento,
   redigirUrlParaLog,
-} from "../scripts/lib/pesquisas-monitoramento-rede"
+} = require("../scripts/lib/pesquisas-monitoramento-rede") as typeof import("../scripts/lib/pesquisas-monitoramento-rede")
 
 test("robots permite pagina publica e bloqueia rota proibida", () => {
   const robots = "User-agent: *\nDisallow: /wordpress/wp-admin/\nAllow: /wordpress/wp-admin/admin-ajax.php\n"

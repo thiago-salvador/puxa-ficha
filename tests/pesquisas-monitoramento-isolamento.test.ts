@@ -1,11 +1,20 @@
 import assert from "node:assert/strict"
 import { createHash } from "node:crypto"
 import { mkdtempSync, readFileSync, readdirSync, rmSync } from "node:fs"
+import { createRequire } from "node:module"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import test from "node:test"
 
-import { executarMonitoramentoComFixtures } from "../scripts/lib/pesquisas-monitoramento"
+const require = createRequire(import.meta.url)
+const serverOnlyPath = require.resolve("server-only")
+require.cache[serverOnlyPath] = {
+  id: serverOnlyPath,
+  filename: serverOnlyPath,
+  loaded: true,
+  exports: {},
+} as never
+const { executarMonitoramentoComFixtures } = require("../scripts/lib/pesquisas-monitoramento") as typeof import("../scripts/lib/pesquisas-monitoramento")
 
 const catalogs = [
   "scripts/data/pesquisas-presidencia-2026.json",

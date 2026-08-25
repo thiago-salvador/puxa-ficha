@@ -1,12 +1,21 @@
 import assert from "node:assert/strict"
+import { createRequire } from "node:module"
 import { deflateRawSync } from "node:zlib"
 import test from "node:test"
 
-import {
+const require = createRequire(import.meta.url)
+const serverOnlyPath = require.resolve("server-only")
+require.cache[serverOnlyPath] = {
+  id: serverOnlyPath,
+  filename: serverOnlyPath,
+  loaded: true,
+  exports: {},
+} as never
+const {
   descobrirUrlZipTse,
   extrairCsvDoZipTse,
   parseRegistrosTse,
-} from "../scripts/lib/pesquisas-monitoramento-tse"
+} = require("../scripts/lib/pesquisas-monitoramento-tse") as typeof import("../scripts/lib/pesquisas-monitoramento-tse")
 
 function zipSingle(name: string, content: Buffer): Buffer {
   const compressed = deflateRawSync(content)

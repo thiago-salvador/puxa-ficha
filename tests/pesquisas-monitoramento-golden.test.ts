@@ -1,13 +1,23 @@
 import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
+import { createRequire } from "node:module"
 import { resolve } from "node:path"
 import test from "node:test"
 
-import {
-  avaliarCasoMonitoramento,
-  type CasoGoldenMonitoramento,
-  type EvidenciaPesquisaCandidata,
+import type {
+  CasoGoldenMonitoramento,
+  EvidenciaPesquisaCandidata,
 } from "../scripts/lib/pesquisas-monitoramento"
+
+const require = createRequire(import.meta.url)
+const serverOnlyPath = require.resolve("server-only")
+require.cache[serverOnlyPath] = {
+  id: serverOnlyPath,
+  filename: serverOnlyPath,
+  loaded: true,
+  exports: {},
+} as never
+const { avaliarCasoMonitoramento } = require("../scripts/lib/pesquisas-monitoramento") as typeof import("../scripts/lib/pesquisas-monitoramento")
 
 const FIXTURES = resolve("tests/fixtures/pesquisas-monitoramento")
 const cases = readFileSync("tests/fixtures/pesquisas-monitoramento-golden.jsonl", "utf8")
