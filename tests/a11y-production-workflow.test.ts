@@ -168,7 +168,7 @@ function structurePass(check: StructureCase["check"]): boolean {
     case "polling-smoke-contract":
       return (
         smokeSpecText.includes('"/candidato/tarcisio-gov-sp"') &&
-        smokeSpecText.includes('"ciro-gomes-gov-ce"') &&
+        smokeSpecText.includes('"alan-rick"') &&
         smokeSpecText.includes('toContainText("Datafolha")') &&
         smokeSpecText.includes('toContainText("45%")') &&
         smokeSpecText.includes('"Sem pesquisa qualificada recente"') &&
