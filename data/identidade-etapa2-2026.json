@@ -3,7 +3,7 @@
   "versao": 2,
   "execucao": "pf-reverificacao-20260809",
   "pleito": 2026,
-  "decidido_em": "2026-08-17",
+  "decidido_em": "2026-08-25",
   "total": 71,
   "contrato": {
     "classe_que_promove_chave": "match_fresco",
@@ -14,7 +14,7 @@
     "janela_registro": "convencoes ate 05/08; pedidos de registro ate 15/08 as 19h (Resolucao TSE 23.609/2019, art. 19). As nao-localizacoes EXIGEM recheque apos 15/08 e nunca sao lidas como ausencia de registro."
   },
   "renovacao": {
-    "revalidar_ate": "2026-08-24",
+    "revalidar_ate": "2026-09-01",
     "responsavel": "dono do repositorio, unico autor de migrations e unico operador do banco (Settings/WORKFLOWS.md)",
     "procedimento": [
       "npm run data:identidade-etapa2:fontes",
@@ -35,19 +35,19 @@
     "gerador": "scripts/audit/gerar-identidade-etapa2.ts",
     "modo": "reclassificar",
     "diagnostico_gitignorado": "output/pf-reverificacao-20260809/diagnostico-final-71.json",
-    "diagnostico_final_71_sha256": "e229a61e70ee9f9bbadde107f2005fca9ad9377a191e98078984cb2c80410641",
+    "diagnostico_final_71_sha256": "1d1f45b9df8318e00511a9461385f6d1a9859404daa2178a8553597d3ae8030b",
     "slugs_derivados_71_sha256": "c05993541835f5ee06879ae084b96450fd78f44e97feffac86987431e22bcff9",
     "universo_83_sha256": "653fff9c9ec7391eeeb5ee16b5d98c64182abb057b356fe1bd1a8df973385b53",
     "db_snapshot_83_sha256": "4d7a002c09ba6182792e60d86ca179d9070ec2dc487ac256e63bd71dbe2f9f99",
     "ledger_b2_sha256": "78dec9789bdd4952cbf781f5bd4952a75f919b4a82903e6869a42468cc168fc0",
     "nascimentos": "data/identidade-etapa2-nascimentos.json",
     "nascimentos_sha256": "5a87f9d786c723425fd1ad0ad1e7ff4ecdc7872b6a4fe1cdf6841467f540cc37",
-    "catalog_sha256": "2a28e49750180ef50b8b31818bfb90f6ad8e96c6f35e9056096a0f974f6f2445",
-    "catalog_fetched_at": "2026-08-17T21:31:38.119Z",
-    "snapshot_tse_sha256": "a9813a9ea95d5f63ec1a560e520c0467b5f63261d0ec60058f180dab6e7c1736",
-    "snapshot_complemento_sha256": "56903f93712ac339008bb02845dafd2f97022473d02498cf876834bba001832f",
-    "snapshot_redes_sha256": "e3bcc01d7ba42b450badd3bf09e339c05562524778734ca7ba423e584eeee472",
-    "dt_geracao_tse": "17/08/2026 12:31:17"
+    "catalog_sha256": "49b41db53eb6c9f9ade5e181c0ba452fcab36f5d7a48f68b7c60d8c41b5142cf",
+    "catalog_fetched_at": "2026-08-25T02:30:53.017Z",
+    "snapshot_tse_sha256": "f4e2d7d05daf5d1bfc704db8c63a9017bda879982040bc2e2e53f6cf3c455cfa",
+    "snapshot_complemento_sha256": "fe4f1d081d79abd8ea707fdb8adf68f1fa8579b02f3173fb3250f4ff6019e55b",
+    "snapshot_redes_sha256": "ce88eba8c54926b4ccea589f0f429eebcc057d9456ae550c134918c20ec3ad0a",
+    "dt_geracao_tse": "24/08/2026 16:31:10"
   },
   "contagem": {
     "proxima_possivel_urna": 5,
@@ -385,7 +385,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 8
+        "social_count": 9
       }
     },
     {
@@ -625,7 +625,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 46
+        "social_count": 83
       }
     },
     {
@@ -685,7 +685,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 6
+        "social_count": 7
       }
     },
     {
@@ -935,7 +935,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 4
+        "social_count": 5
       }
     },
     {
@@ -1205,7 +1205,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 8
+        "social_count": 12
       }
     },
     {
@@ -1395,7 +1395,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 15
+        "social_count": 17
       }
     },
     {
@@ -1625,7 +1625,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 7
+        "social_count": 10
       }
     },
     {
