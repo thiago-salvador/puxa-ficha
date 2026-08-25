@@ -130,6 +130,7 @@ const MARCADORES_VEDACAO: RegExp[] = [
 /** Marcadores de desafio anti-robô (WAF, captcha, verificação de navegador). */
 const MARCADORES_ANTI_ROBO: RegExp[] = [
   /visitante humano/,
+  /verify that you(?:'|’|\s+)re not a robot/,
   /support id:/,
   /captcha/,
   /just a moment/,
@@ -193,6 +194,19 @@ export function pareceDesafioAntiRobo(texto: string): boolean {
 }
 
 /**
+ * Texto dentro de `<noscript>`, exibido justamente quando o bloqueio exige
+ * JavaScript. Ele não conta como conteúdo da fonte, mas pode explicar por que
+ * o robô recebeu uma casca vazia em vez do documento.
+ */
+export function extrairTextoNoscript(html: string): string {
+  const trechos: string[] = []
+  for (const match of html.matchAll(/<noscript[^>]*>([\s\S]*?)<\/noscript[^>]*>/gi)) {
+    if (match[1]) trechos.push(extrairTextoUtil(match[1]))
+  }
+  return trechos.join(" ").trim()
+}
+
+/**
  * Título e primeiro `<h1>` de um HTML, já normalizados. Vazio quando o corpo
  * não tem nenhum dos dois.
  */
@@ -245,12 +259,17 @@ export function corpoDeErroIndicaBloqueio(entrada: Omit<SubstanciaEntrada, "http
   }
 
   const texto = extrairTextoUtil(corpo)
+  const textoNoscript = extrairTextoNoscript(corpo)
 
   if (pareceVedacaoEleitoral(texto)) {
     return { bloqueio: true, motivo: "404 com aviso de legislacao eleitoral no corpo, nao e pagina inexistente" }
   }
 
-  if (texto.length < LIMITE_PAGINA_DE_DESAFIO && pareceDesafioAntiRobo(texto)) {
+  const textoDeBloqueio = `${texto} ${textoNoscript}`.trim()
+  if (
+    textoDeBloqueio.length < LIMITE_PAGINA_DE_DESAFIO &&
+    pareceDesafioAntiRobo(textoDeBloqueio)
+  ) {
     return { bloqueio: true, motivo: "404 com desafio anti-robo no corpo (WAF respondendo 404 em vez de 403)" }
   }
 
@@ -306,6 +325,7 @@ export function analisarSubstancia(entrada: SubstanciaEntrada): SubstanciaAnalis
   }
 
   const texto = extrairTextoUtil(corpo)
+  const textoNoscript = extrairTextoNoscript(corpo)
 
   if (pareceVedacaoEleitoral(texto)) {
     return {
@@ -315,7 +335,11 @@ export function analisarSubstancia(entrada: SubstanciaEntrada): SubstanciaAnalis
     }
   }
 
-  if (texto.length < LIMITE_PAGINA_DE_DESAFIO && pareceDesafioAntiRobo(texto)) {
+  const textoDeBloqueio = `${texto} ${textoNoscript}`.trim()
+  if (
+    textoDeBloqueio.length < LIMITE_PAGINA_DE_DESAFIO &&
+    pareceDesafioAntiRobo(textoDeBloqueio)
+  ) {
     return {
       veredito: "indisponivel",
       motivo: "desafio anti-robo no lugar do conteudo (WAF, captcha ou verificacao de navegador)",

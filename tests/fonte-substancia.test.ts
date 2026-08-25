@@ -20,6 +20,7 @@ import {
   DOMINIOS_VERIFICACAO_MANUAL,
   dominioExigeVerificacaoManual,
   ehTipoNaoHtml,
+  extrairTextoNoscript,
   extrairTextoUtil,
   LIMITE_PAGINA_DE_DESAFIO,
   pareceCorpoDeErro,
@@ -77,6 +78,19 @@ describe("extrairTextoUtil", () => {
       '<html><head><script>conteudo que nao deve contar</script foo="bar">' +
       "<style>a{b:c}</style\t\n x></head><body><h1>Titulo</h1></body></html>"
     assert.equal(extrairTextoUtil(corpo), "Titulo")
+  })
+})
+
+describe("extrairTextoNoscript", () => {
+  it("preserva a mensagem de bloqueio sem transformar noscript em conteúdo", () => {
+    const corpo =
+      "<html><body><noscript><h1>JavaScript is disabled</h1>" +
+      "In order to continue, we need to verify that you're not a robot.</noscript></body></html>"
+    assert.equal(extrairTextoUtil(corpo), "")
+    assert.equal(
+      extrairTextoNoscript(corpo),
+      "JavaScript is disabled In order to continue, we need to verify that you're not a robot.",
+    )
   })
 })
 
@@ -194,6 +208,27 @@ describe("analisarSubstancia", () => {
     })
     assert.equal(r.veredito, "indisponivel")
     assert.match(r.motivo, /anti-robo/)
+  })
+
+  it("bloqueio real do Portal da Transparência em noscript é indisponível", () => {
+    const corpo =
+      "<html><head><title></title></head><body><noscript>" +
+      "<h1>JavaScript is disabled</h1>In order to continue, we need to verify that you&#39;re not a robot. " +
+      "This requires JavaScript. Enable JavaScript and then reload the page.</noscript></body></html>"
+    const r = analisarSubstancia({
+      httpStatus: 202,
+      contentType: "text/html; charset=UTF-8",
+      corpo,
+      bytes: Buffer.byteLength(corpo),
+    })
+    assert.equal(r.veredito, "indisponivel")
+    assert.match(r.motivo, /anti-robo/)
+  })
+
+  it("noscript genérico não absolve uma casca de SPA", () => {
+    const corpo =
+      "<html><body><app-root></app-root><noscript>JavaScript is disabled. Enable JavaScript to use this application.</noscript></body></html>"
+    assert.equal(html({ corpo }).veredito, "sem_substancia")
   })
 
   it("matéria longa que cita 'acesso negado' no texto continua com conteúdo", () => {

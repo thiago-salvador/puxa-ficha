@@ -1,0 +1,24 @@
+{
+  "_comentario": "Allowlist fechada da issue #96. A migration contém guards por 15 UUIDs e aceita somente a preimagem medida ou a posimagem exata.",
+  "recorte": "issue-96-link-check-20260825",
+  "migration": "20260825123000_fix_public_attention_sources_issue_96.sql",
+  "fonte": "Issue #96 e auditoria manual das fontes oficiais em 2026-08-25",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "pontos_atencao",
+      "ref": "issue_96",
+      "campos": [
+        "titulo",
+        "descricao",
+        "fontes",
+        "visivel",
+        "despublicacao_motivo",
+        "despublicado_em",
+        "dados_relacionados"
+      ]
+    }
+  ]
+}

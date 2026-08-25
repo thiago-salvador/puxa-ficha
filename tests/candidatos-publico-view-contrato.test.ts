@@ -318,6 +318,9 @@ describe("contrato da view candidatos_publico", () => {
       // Corrige textos em tabelas satélite e acrescenta gates de encoding.
       // Não redefine candidatos_publico nem altera sua lista de colunas.
       "20260823160000_public_text_encoding_cleanup.sql",
+      // Curadoria da issue #96: corrige fontes em pontos_atencao e despublica
+      // cinco claims sem lastro. Não redefine candidatos_publico.
+      "20260825123000_fix_public_attention_sources_issue_96.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 
