@@ -7,7 +7,8 @@
     "purpose": "fontes aprovadas para pesquisas estaduais nas fichas de candidatos a governador"
   },
   "preferred_source_ids": [
-    "datafolha-folha-globo-estaduais-2026"
+    "datafolha-folha-globo-estaduais-2026",
+    "real-time-big-data-estaduais-2026"
   ],
   "consulted_at": "2026-08-25T17:50:00-03:00",
   "status_values": [
@@ -167,6 +168,139 @@
         "Não publicar até existir prova de correção pública ou revisão manual formal da rodada."
       ],
       "consulted_at": "2026-08-25T17:50:00-03:00"
+    },
+    {
+      "id": "real-time-big-data-estaduais-2026",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculos_como_fontes_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": "Real Time Big Data",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "GZH e CNN Brasil",
+        "dissemination_partner": "UOL"
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-20",
+          "end": "2026-08-24"
+        },
+        "published_at": "2026-08-25",
+        "sample_size": 1600,
+        "method": "abordagens telefônicas e digitais",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio Grande do Sul",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "RS-09640/2026",
+        "result_url": "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/08/real-time-big-data-mostra-juliana-brizola-com-38-e-luciano-zucco-com-32-das-intencoes-de-voto-para-o-governo-do-rs-cmt8o9qxe00hk015gm9om5ee6.html",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/08/real-time-big-data-mostra-juliana-brizola-com-38-e-luciano-zucco-com-32-das-intencoes-de-voto-para-o-governo-do-rs-cmt8o9qxe00hk015gm9om5ee6.html"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-rs-juliana-lidera-1o-turno-e-empata-com-zucco-no-2o-ao-governo/"
+          ]
+        },
+        "corrections": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/08/25/real-time-big-data-juliana-brizola-lidera-ao-governo-do-rs-com-38.ghtm"
+          ],
+          "note": "A errata pública corrige o método de presencial para abordagens telefônicas e digitais."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/08/real-time-big-data-mostra-juliana-brizola-com-38-e-luciano-zucco-com-32-das-intencoes-de-voto-para-o-governo-do-rs-cmt8o9qxe00hk015gm9om5ee6.html"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-rs-juliana-lidera-1o-turno-e-empata-com-zucco-no-2o-ao-governo/"
+          ]
+        }
+      },
+      "consulted_at": "2026-08-25T22:30:00-03:00"
+    },
+    {
+      "id": "quaest-estaduais-2026",
+      "status": "condicional",
+      "source_kind": "instituto_com_veiculos_como_fontes_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Genial Investimentos ou afiliada indicada na rodada",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "UOL e Folha de S.Paulo",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-20",
+          "end": "2026-08-23"
+        },
+        "published_at": "2026-08-24",
+        "sample_size": 804,
+        "method": "presencial",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Alagoas",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "AL-05503/2026",
+        "result_url": "https://noticias.uol.com.br/eleicoes/2026/08/24/pesquisa-para-governador-de-alagoas-al-veja-novos-numeros-da-quaest.amp.htm",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/08/24/pesquisa-para-governador-de-alagoas-al-veja-novos-numeros-da-quaest.amp.htm"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/08/quaest-renan-filho-tem-42-contra-40-de-jhc-em-alagoas.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Não foi formalizada uma trilha pública de correções específica para as rodadas estaduais avaliadas."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/08/24/pesquisa-para-governador-de-alagoas-al-veja-novos-numeros-da-quaest.amp.htm"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/08/24/pesquisa-para-governador-de-alagoas-al-veja-novos-numeros-da-quaest.amp.htm"
+          ]
+        }
+      },
+      "conditions": [
+        "Não publicar até existir prova pública de correção da rodada ou revisão manual formal registrada no scorecard."
+      ],
+      "consulted_at": "2026-08-25T22:30:00-03:00"
     }
   ]
 }

@@ -21,7 +21,8 @@ assert(acessosRede.length === 0, `contrato não pode fazer rede: ${acessosRede.j
 assert(!/supabase/i.test(libSource), "contrato não pode acessar Supabase")
 assert(!/["']use client["']/.test(libSource), "contrato não pode ser Client Component")
 
-const catalogos = [carregarPesquisasEleitorais(), ...carregarPesquisasGovernadores().values()]
+const governorCatalogs = carregarPesquisasGovernadores()
+const catalogos = [carregarPesquisasEleitorais(), ...governorCatalogs.values()]
 const pesquisas = catalogos.flatMap((catalogo) => catalogo.pesquisas)
 assert(pesquisas.length > 0, "nenhuma pesquisa de fonte aprovada foi publicada")
 assert(pesquisas.every((poll) => poll.sourceStatus === "aprovado"), "fonte não aprovada vazou para a saída")
@@ -68,4 +69,75 @@ for (const poll of pesquisas) {
   }
 }
 
-console.log(`PASS: ${pesquisas.length} pesquisas aprovadas; contrato server-only, fail-closed, sem rede/Supabase e sem campos privados`)
+const coverage = JSON.parse(
+  readFileSync(
+    resolve(ROOT, "scripts/data/pesquisas-governadores-cobertura-21-ufs.json"),
+    "utf8",
+  ),
+) as {
+  scope: { ufs: string[] }
+  summary: {
+    published_ufs_in_scope: number
+    published_profiles_in_scope: number
+    total_catalog_ufs: number
+    total_catalog_profiles: number
+  }
+  states: Array<{ uf: string; status: string; reason: string }>
+}
+
+const statusValues = new Set([
+  "publicada",
+  "condicional",
+  "sem resultado público verificável",
+  "sem fonte qualificada",
+])
+assert(coverage.scope.ufs.length === 21, "inventário estadual não cobre as 21 UFs")
+assert(coverage.states.length === 21, "inventário estadual não tem 21 estados")
+assert(
+  coverage.states.every((entry) => statusValues.has(entry.status) && entry.reason.length > 0),
+  "inventário estadual contém status ou razão inválida",
+)
+
+const publishedStates = coverage.states.filter((entry) => entry.status === "publicada")
+assert(
+  publishedStates.every((entry) => governorCatalogs.has(entry.uf)),
+  "UF marcada como publicada não existe no catálogo",
+)
+assert(
+  coverage.states
+    .filter((entry) => entry.status !== "publicada")
+    .every((entry) => !governorCatalogs.has(entry.uf)),
+  "UF condicional ou sem fonte vazou para o catálogo público",
+)
+
+function countProfiles(entries: Iterable<(typeof governorCatalogs extends Map<string, infer V> ? V : never)>) {
+  const slugs = new Set<string>()
+  for (const catalog of entries) {
+    for (const poll of catalog.pesquisas) {
+      for (const scenario of poll.cenarios) {
+        for (const result of scenario.resultados) {
+          if (result.matchStatus === "exact_alias" && result.candidateSlug) {
+            slugs.add(result.candidateSlug)
+          }
+        }
+      }
+    }
+  }
+  return slugs.size
+}
+
+const inScopeCatalogs = [...governorCatalogs].filter(([uf]) => coverage.scope.ufs.includes(uf))
+const computedSummary = {
+  published_ufs_in_scope: inScopeCatalogs.length,
+  published_profiles_in_scope: countProfiles(inScopeCatalogs.map(([, catalog]) => catalog)),
+  total_catalog_ufs: governorCatalogs.size,
+  total_catalog_profiles: countProfiles(governorCatalogs.values()),
+}
+assert(
+  JSON.stringify(coverage.summary) === JSON.stringify(computedSummary),
+  "contagens do inventário divergiram dos catálogos finais",
+)
+
+console.log(
+  `PASS: ${pesquisas.length} pesquisas aprovadas; contrato server-only, fail-closed, sem rede/Supabase e sem campos privados; ${computedSummary.published_ufs_in_scope} novas UFs e ${computedSummary.published_profiles_in_scope} perfis no escopo`,
+)

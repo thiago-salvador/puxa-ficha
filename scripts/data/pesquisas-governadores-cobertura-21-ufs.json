@@ -1,0 +1,288 @@
+{
+  "schema_version": "1.0.0",
+  "scope": {
+    "election_year": 2026,
+    "office": "Governador",
+    "ufs": [
+      "AC",
+      "AL",
+      "AM",
+      "AP",
+      "BA",
+      "CE",
+      "ES",
+      "GO",
+      "MA",
+      "MS",
+      "MT",
+      "PA",
+      "PB",
+      "PR",
+      "RN",
+      "RO",
+      "RR",
+      "RS",
+      "SC",
+      "SE",
+      "TO"
+    ],
+    "cutoff": "2026-08-25"
+  },
+  "derivation": "Estado derivado do catálogo publicável, do scorecard estadual e da auditoria de registro, resultado, metodologia, recência e identidade.",
+  "official_registry": {
+    "id": "tse-pesqele-2026",
+    "query_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+    "caveat": "Registro comprova metadados declarados, mas não aprova nem publica resultados."
+  },
+  "summary": {
+    "published_ufs_in_scope": 2,
+    "published_profiles_in_scope": 9,
+    "total_catalog_ufs": 8,
+    "total_catalog_profiles": 60
+  },
+  "states": [
+    {
+      "uf": "AC",
+      "status": "sem fonte qualificada",
+      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador no Acre até o corte.",
+      "evidence_urls": [
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": []
+    },
+    {
+      "uf": "AL",
+      "status": "condicional",
+      "reason": "A rodada Quaest AL-05503/2026 tem resultado e metodologia públicos, mas a fonte permanece condicional por falta de trilha pública de correções formalizada.",
+      "evidence_urls": [
+        "https://noticias.uol.com.br/eleicoes/2026/08/24/pesquisa-para-governador-de-alagoas-al-veja-novos-numeros-da-quaest.amp.htm",
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [
+        "AL-05503/2026"
+      ],
+      "candidate_source_ids": [
+        "quaest-estaduais-2026"
+      ]
+    },
+    {
+      "uf": "AM",
+      "status": "sem fonte qualificada",
+      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador no Amazonas até o corte.",
+      "evidence_urls": [
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": []
+    },
+    {
+      "uf": "AP",
+      "status": "sem fonte qualificada",
+      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador no Amapá até o corte.",
+      "evidence_urls": [
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": []
+    },
+    {
+      "uf": "BA",
+      "status": "condicional",
+      "reason": "Há divulgação de rodada estadual da Quaest, mas a fonte permanece condicional no scorecard e não pode alimentar a ficha.",
+      "evidence_urls": [
+        "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/07/31/veja-o-cenario-eleitoral-para-governos-de-10-estados-segundo-pesquisa-quaest.htm?forcedFormat=NORMAL&iap=true&uol_app=uolnoticias%3Ft%3Ft",
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": [
+        "quaest-estaduais-2026"
+      ]
+    },
+    {
+      "uf": "CE",
+      "status": "publicada",
+      "reason": "Datafolha CE-04292/2026 passou por registro, resultado público, metodologia, recência, scorecard aprovado e aliases literais na mesma UF.",
+      "evidence_urls": [
+        "https://www1.folha.uol.com.br/poder/2026/08/datafolha-ciro-gomes-lidera-com-52-no-ceara-contra-33-de-elmano-de-freitas.shtml",
+        "https://www.opovo.com.br/noticias/politica/eleicoes/2026/08/18/integra-da-pesquisa-datafolha-ceara-e-divulgada-pelo-o-povo-.html",
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [
+        "CE-04292/2026"
+      ],
+      "candidate_source_ids": [
+        "datafolha-folha-globo-estaduais-2026"
+      ]
+    },
+    {
+      "uf": "ES",
+      "status": "sem resultado público verificável",
+      "reason": "Não foi localizada URL pública permanente que reunisse resultado da rodada, metodologia suficiente e vínculo verificável ao registro para publicação.",
+      "evidence_urls": [
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": []
+    },
+    {
+      "uf": "GO",
+      "status": "condicional",
+      "reason": "Há resultado estadual público da Quaest sob GO-01701/2026, mas a fonte permanece condicional no scorecard.",
+      "evidence_urls": [
+        "https://www.bol.uol.com.br/noticias/2026/07/30/genialquaest-governo-go.ghtm",
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [
+        "GO-01701/2026"
+      ],
+      "candidate_source_ids": [
+        "quaest-estaduais-2026"
+      ]
+    },
+    {
+      "uf": "MA",
+      "status": "sem resultado público verificável",
+      "reason": "Não foi localizada URL pública permanente com resultado, metodologia suficiente e trilha verificável para uma fonte aprovada.",
+      "evidence_urls": [
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": []
+    },
+    {
+      "uf": "MS",
+      "status": "sem resultado público verificável",
+      "reason": "Não foi localizada URL pública permanente com resultado, metodologia suficiente e trilha verificável para uma fonte aprovada.",
+      "evidence_urls": [
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": []
+    },
+    {
+      "uf": "MT",
+      "status": "sem resultado público verificável",
+      "reason": "Não foi localizada URL pública permanente com resultado, metodologia suficiente e trilha verificável para uma fonte aprovada.",
+      "evidence_urls": [
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": []
+    },
+    {
+      "uf": "PA",
+      "status": "condicional",
+      "reason": "Há divulgação de rodada estadual da Quaest, mas a fonte permanece condicional no scorecard e não pode alimentar a ficha.",
+      "evidence_urls": [
+        "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/07/31/veja-o-cenario-eleitoral-para-governos-de-10-estados-segundo-pesquisa-quaest.htm?forcedFormat=NORMAL&iap=true&uol_app=uolnoticias%3Ft%3Ft",
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": [
+        "quaest-estaduais-2026"
+      ]
+    },
+    {
+      "uf": "PB",
+      "status": "sem fonte qualificada",
+      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador na Paraíba até o corte.",
+      "evidence_urls": [
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": []
+    },
+    {
+      "uf": "PR",
+      "status": "condicional",
+      "reason": "Há divulgação de rodada estadual da Quaest, mas a fonte permanece condicional no scorecard e não pode alimentar a ficha.",
+      "evidence_urls": [
+        "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/07/31/veja-o-cenario-eleitoral-para-governos-de-10-estados-segundo-pesquisa-quaest.htm?forcedFormat=NORMAL&iap=true&uol_app=uolnoticias%3Ft%3Ft",
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": [
+        "quaest-estaduais-2026"
+      ]
+    },
+    {
+      "uf": "RN",
+      "status": "sem fonte qualificada",
+      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador no Rio Grande do Norte até o corte.",
+      "evidence_urls": [
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": []
+    },
+    {
+      "uf": "RO",
+      "status": "sem fonte qualificada",
+      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador em Rondônia até o corte.",
+      "evidence_urls": [
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": []
+    },
+    {
+      "uf": "RR",
+      "status": "sem fonte qualificada",
+      "reason": "Nenhuma rodada da Eleição Geral de 2026 com fonte aprovada passou pelos gates; pesquisas de outra eleição permanecem incompatíveis.",
+      "evidence_urls": [
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": []
+    },
+    {
+      "uf": "RS",
+      "status": "publicada",
+      "reason": "Real Time Big Data RS-09640/2026 passou por registro, resultado público, metodologia corrigida publicamente, recência, scorecard aprovado e aliases literais na mesma UF.",
+      "evidence_urls": [
+        "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/08/real-time-big-data-mostra-juliana-brizola-com-38-e-luciano-zucco-com-32-das-intencoes-de-voto-para-o-governo-do-rs-cmt8o9qxe00hk015gm9om5ee6.html",
+        "https://www.cnnbrasil.com.br/eleicoes/real-time-rs-juliana-lidera-1o-turno-e-empata-com-zucco-no-2o-ao-governo/",
+        "https://noticias.uol.com.br/eleicoes/2026/08/25/real-time-big-data-juliana-brizola-lidera-ao-governo-do-rs-com-38.ghtm",
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [
+        "RS-09640/2026"
+      ],
+      "candidate_source_ids": [
+        "real-time-big-data-estaduais-2026"
+      ]
+    },
+    {
+      "uf": "SC",
+      "status": "sem fonte qualificada",
+      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador em Santa Catarina até o corte.",
+      "evidence_urls": [
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": []
+    },
+    {
+      "uf": "SE",
+      "status": "sem resultado público verificável",
+      "reason": "Não foi localizada URL pública permanente com resultado, metodologia suficiente e trilha verificável para uma fonte aprovada.",
+      "evidence_urls": [
+        "https://www.tre-se.jus.br/eleicoes/resolucoes-2026/pesquisas-eleitorais",
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": []
+    },
+    {
+      "uf": "TO",
+      "status": "sem fonte qualificada",
+      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador no Tocantins até o corte.",
+      "evidence_urls": [
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      ],
+      "registration_ids": [],
+      "candidate_source_ids": []
+    }
+  ]
+}
