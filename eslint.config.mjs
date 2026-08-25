@@ -34,6 +34,7 @@ const eslintConfig = [
       ".tmp/**",
       "next-env.d.ts",
       ".claude/**",
+      ".codex/**",
       "playwright-report/**",
       "test-results/**",
     ],
