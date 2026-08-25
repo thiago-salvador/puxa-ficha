@@ -56,6 +56,7 @@ function eventAllowed(c: EventCase): boolean {
 
 function readbackStep(): Record<string, unknown> {
   const first = workflow.jobs?.a11y?.steps?.[0]
+  assert.ok(first)
   assert.equal(typeof first?.run, "string")
   return first
 }
