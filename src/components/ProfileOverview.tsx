@@ -31,7 +31,7 @@ import { ContradictionsHighlight } from "@/components/ContradictionsHighlight"
 import { PatrimonioEvolucaoAlerta } from "@/components/PatrimonioEvolucaoAlerta"
 import { isContradictionAttentionCategory } from "@/lib/attention-points"
 import { MetaBadge } from "./MetaBadge"
-import { ProcessoPublicSurface } from "./ProcessoPublicSurface"
+import { ProcessoPublicGroupSurface } from "./ProcessoPublicSurface"
 import {
   CandidateDebatesBentoCard,
   hasCandidateDebatePressQuotes,
@@ -50,10 +50,12 @@ import {
 import { financiamentoPleitoSubtitulo } from "@/lib/financiamento-pleito-display"
 import { buildFinancingComposition } from "@/lib/financiamento-display"
 import {
+  groupProcessosForDisplay,
   isProcessStatusNeutral,
   isTerminalProcessStatus,
   processoBorderColor,
   processoFonteLabel,
+  processStatusRepeatsDescription,
   urlPublicaDoProcesso,
 } from "@/lib/processos-display"
 import {
@@ -403,15 +405,22 @@ function ProcessesTeaser({
   onNavigate: () => void
 }) {
   if (processos.length === 0) return null
+  const processGroups = groupProcessosForDisplay(processos).slice(0, 3)
   return (
     <TeaserCard title="Processos judiciais" linkLabel="TODOS" onNavigate={onNavigate}>
       <div className="space-y-2">
-        {processos.slice(0, 3).map((p) => {
+        {processGroups.map((processGroup) => {
+          const p = processGroup[0]
           const href = urlPublicaDoProcesso(p)
+          const independentStatuses = [...new Set(
+            processGroup
+              .filter((item) => !processStatusRepeatsDescription(item))
+              .map((item) => item.status),
+          )]
           return (
-          <ProcessoPublicSurface
-            key={p.id}
-            processo={p}
+          <ProcessoPublicGroupSurface
+            key={processGroup.map((item) => item.id).join(":")}
+            processos={processGroup}
             className="rounded-lg border border-border/50 border-l-[3px] px-3 py-2"
             style={{ borderLeftColor: processoBorderColor(p) }}
           >
@@ -429,19 +438,28 @@ function ProcessesTeaser({
                     ? "Comunicação processual"
                     : formatProcessTypeLabel(p.tipo)}
               </MetaBadge>
-              <span className="text-[10px] font-semibold text-muted-foreground">
-                {formatProcessStatusLabel(p.status)}
-              </span>
+              {independentStatuses.length === 1 && (
+                <span className="text-[10px] font-semibold text-muted-foreground">
+                  {formatProcessStatusLabel(independentStatuses[0])}
+                </span>
+              )}
             </div>
             <p className="mt-1 text-[12px] font-medium leading-snug text-foreground">
               {formatProcessSummaryLabel(p.descricao) || formatProcessTypeLabel(p.tipo)}
             </p>
-            {href && (
+            {processGroup.length > 1 ? (
+              <span className="mt-1 inline-flex text-[10px] font-semibold text-muted-foreground">
+                {processGroup.length} processos relacionados
+                {independentStatuses.length > 1
+                  ? `, ${independentStatuses.length} situações processuais`
+                  : ""}
+              </span>
+            ) : href ? (
               <span className="mt-1 inline-flex text-[10px] font-bold text-foreground underline underline-offset-2">
                 {processoFonteLabel({ ...p, url_fonte: href })}
               </span>
-            )}
-          </ProcessoPublicSurface>
+            ) : null}
+          </ProcessoPublicGroupSurface>
           )
         })}
       </div>

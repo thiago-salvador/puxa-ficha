@@ -12,12 +12,14 @@ import {
 import { classifyAttentionPoints } from "@/lib/attention-points"
 import { resolvePatrimonioEleicoes } from "@/lib/public-profile-dto"
 import {
+  groupProcessosForDisplay,
   isProcessStatusNeutral,
   isTerminalProcessStatus,
   processoBorderColor,
   processoFonteLabel,
   processoPodeContarComoCriminal,
   processoTemporalLabel,
+  processStatusRepeatsDescription,
   processosOverviewDisplay,
   urlPublicaDoProcesso,
 } from "@/lib/processos-display"
@@ -30,7 +32,10 @@ import { SancoesSection } from "./SancoesSection"
 import { DataFreshnessNotice } from "./DataFreshnessNotice"
 import { SectionLabel, SectionTitle } from "./SectionHeader"
 import { ProfileOverview } from "./ProfileOverview"
-import { ProcessoPublicSurface } from "./ProcessoPublicSurface"
+import {
+  ProcessoGroupSources,
+  ProcessoPublicGroupSurface,
+} from "./ProcessoPublicSurface"
 import { StateIndicators } from "./StateIndicators"
 import {
   EmptyState,
@@ -824,6 +829,7 @@ export function CandidatoProfile({
                         !isProcessStatusNeutral(p.status),
                   )
                   if (grouped.length === 0) return null
+                  const processGroups = groupProcessosForDisplay(grouped)
                   return (
                     <div key={tipo} className="mt-6">
                       <h3 className="mb-3 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">
@@ -834,12 +840,18 @@ export function CandidatoProfile({
                             : formatProcessTypeLabel(tipo)} ({grouped.length})
                       </h3>
                       <div className="space-y-3">
-                        {grouped.map((p) => {
+                        {processGroups.map((processGroup) => {
+                          const p = processGroup[0]
                           const href = urlPublicaDoProcesso(p)
+                          const independentStatuses = [...new Set(
+                            processGroup
+                              .filter((item) => !processStatusRepeatsDescription(item))
+                              .map((item) => item.status),
+                          )]
                           return (
-                          <ProcessoPublicSurface
-                            key={p.id}
-                            processo={p}
+                          <ProcessoPublicGroupSurface
+                            key={processGroup.map((item) => item.id).join(":")}
+                            processos={processGroup}
                             data-pf-timeline-ref={`processo-${p.id}`}
                             className="rounded-[12px] border border-border/50 border-l-[3px] px-5 py-4"
                             style={{
@@ -850,9 +862,11 @@ export function CandidatoProfile({
                               {!isTerminalProcessStatus(p.status) && p.gravidade && (
                                 <GravityBadge gravidade={p.gravidade} />
                               )}
-                              <MetaBadge tone="muted">
-                                {formatProcessStatusLabel(p.status)}
-                              </MetaBadge>
+                              {independentStatuses.length === 1 && (
+                                <MetaBadge tone="muted">
+                                  {formatProcessStatusLabel(independentStatuses[0])}
+                                </MetaBadge>
+                              )}
                               {(() => {
                                 const temporal = processoTemporalLabel(p)
                                 return temporal ? (
@@ -870,12 +884,18 @@ export function CandidatoProfile({
                                 {p.tribunal} {p.numero_processo ? `| ${p.numero_processo}` : ""}
                               </p>
                             )}
-                            {href && (
+                            {processGroup.length > 1 ? (
+                              <ProcessoGroupSources
+                                processos={processGroup}
+                                className="mt-3"
+                                showStatusDetails={independentStatuses.length > 1}
+                              />
+                            ) : href ? (
                               <span className="mt-2 inline-flex text-[length:var(--text-caption)] font-bold text-foreground underline underline-offset-2">
                                 {processoFonteLabel({ ...p, url_fonte: href })}
                               </span>
-                            )}
-                          </ProcessoPublicSurface>
+                            ) : null}
+                          </ProcessoPublicGroupSurface>
                           )
                         })}
                       </div>
