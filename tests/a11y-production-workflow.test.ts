@@ -7,6 +7,17 @@ import { parse } from "yaml"
 
 const ROOT = process.cwd()
 const workflowText = readFileSync(join(ROOT, ".github/workflows/a11y-producao.yml"), "utf8")
+const smokeSpecText = readFileSync(
+  join(ROOT, "tests/visual/pesquisas-production-smoke.spec.ts"),
+  "utf8",
+)
+const smokeConfigText = readFileSync(
+  join(ROOT, "tests/visual/pesquisas-production-smoke.playwright.config.ts"),
+  "utf8",
+)
+const packageJson = JSON.parse(readFileSync(join(ROOT, "package.json"), "utf8")) as {
+  scripts?: Record<string, string>
+}
 const workflow = parse(workflowText) as {
   on?: Record<string, unknown>
   concurrency?: unknown
@@ -42,6 +53,10 @@ type StructureCase = {
     | "jq-contract"
     | "checkout-ref"
     | "deadline"
+    | "polling-smoke-step"
+    | "polling-smoke-artifact"
+    | "polling-smoke-read-only"
+    | "polling-smoke-contract"
   expected: boolean
 }
 
@@ -63,6 +78,10 @@ function readbackStep(): Record<string, unknown> {
 
 function readbackRun(): string {
   return readbackStep().run as string
+}
+
+function namedStep(name: string): Record<string, unknown> | undefined {
+  return workflow.jobs?.a11y?.steps?.find((step) => step.name === name)
 }
 
 function structurePass(check: StructureCase["check"]): boolean {
@@ -115,11 +134,54 @@ function structurePass(check: StructureCase["check"]): boolean {
         570 < 600 &&
         25 >= 15 + 10
       )
+    case "polling-smoke-step": {
+      const step = namedStep("Smoke visual de pesquisas em produção")
+      const env = step?.env as Record<string, string> | undefined
+      return (
+        step?.run === "npm run test:pesquisas:production-smoke" &&
+        env?.PF_BASE_URL === "${{ env.PRODUCTION_URL }}" &&
+        env?.PF_EXPECTED_DEPLOY_SHA === "${{ github.event.deployment.sha }}"
+      )
+    }
+    case "polling-smoke-artifact": {
+      const step = namedStep("Publicar capturas do smoke de pesquisas")
+      const withConfig = step?.with as Record<string, unknown> | undefined
+      return (
+        step?.if === "success()" &&
+        String(step?.uses ?? "").startsWith("actions/upload-artifact@") &&
+        withConfig?.name === "pesquisas-production-smoke-${{ github.event.deployment.sha }}" &&
+        withConfig?.path === "test-results/pesquisas-production-smoke/**/*.png" &&
+        withConfig?.["if-no-files-found"] === "error" &&
+        withConfig?.["retention-days"] === 14
+      )
+    }
+    case "polling-smoke-read-only": {
+      const script = packageJson.scripts?.["test:pesquisas:production-smoke"] ?? ""
+      const mutationPattern = /\b(?:post|put|patch|delete|deploy|revalid|supabase|database)\b/i
+      return (
+        smokeSpecText.includes('page.route("**/*"') &&
+        smokeSpecText.includes('method !== "GET" && method !== "HEAD"') &&
+        smokeSpecText.includes('route.fulfill({ status: 204, body: "" })') &&
+        !mutationPattern.test(script)
+      )
+    }
+    case "polling-smoke-contract":
+      return (
+        smokeSpecText.includes('"/candidato/tarcisio-gov-sp"') &&
+        smokeSpecText.includes('"ciro-gomes-gov-ce"') &&
+        smokeSpecText.includes('toContainText("Datafolha")') &&
+        smokeSpecText.includes('toContainText("45%")') &&
+        smokeSpecText.includes('"Sem pesquisa qualificada recente"') &&
+        smokeSpecText.includes('getByText("0%", { exact: true })') &&
+        smokeConfigText.includes('viewport: { width: 1440, height: 1000 }') &&
+        smokeConfigText.includes('viewport: { width: 390, height: 844 }') &&
+        smokeConfigText.includes('"https://puxaficha.com.br"')
+      )
   }
 }
 
 describe("workflow de acessibilidade em produção", () => {
-  assert.equal(cases.length, 20, "o golden set precisa manter 20 casos")
+  assert.equal(cases.length, 24, "o golden set precisa manter 24 casos")
 
   for (const c of cases) {
     it(c.id, () => {
