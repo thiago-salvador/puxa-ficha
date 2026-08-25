@@ -47,5 +47,5 @@ Scope: ampliar a cobertura estadual somente quando registro, resultado, metodolo
   EXPECT: escopo do PR verificado
   EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha/.codex/worktrees/pesquisas-governadores-cobertura-21-ufs; path=8e956bdc6e1c/24 entries; EXPECT=matched; output-sha256=c639ed46ece0db00fb1b03f24ce0507ab4d9e28b506e9326cef6bde9afdaa8c0; output-bytes=48
 
-- [ ] G9: o PR foi aberto na branch solicitada, com autoria do Thiago, fontes, limitacoes e provas no corpo, sem merge ou deploy
-  EVIDENCE: pending
+- [x] G9: o PR foi aberto na branch solicitada, com autoria do Thiago, fontes, limitacoes e provas no corpo, sem merge ou deploy
+  EVIDENCE: PR https://github.com/thiago-salvador/puxa-ficha/pull/102 aberto a partir de codex/pesquisas-governadores-cobertura-21-ufs; commit 2c9b5111807bd77946c9b73d17ac825b6d77dd9a por Thiago Salvador <contato.thiagosalvador@gmail.com>; estado OPEN, sem merge ou deploy.
