@@ -1,0 +1,75 @@
+name: Monitoramento de pesquisas eleitorais
+
+# Infraestrutura manual e fail-closed. Este workflow nao publica dados, nao
+# recebe secrets e nao possui cron. Agendamento exige prova previa deste modo
+# manual e um PR separado.
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_id:
+        description: "Fonte aprovada para diagnostico"
+        required: false
+        default: "poderdata-aya-nacional-2026"
+      uf:
+        description: "UF opcional para diagnostico, ou BR para Presidente"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pesquisas-monitoramento-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  dry-run:
+    name: Gerar proposta para revisao humana
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Instalar dependencias sem scripts de pacote
+        run: npm ci --ignore-scripts
+
+      - name: Provar golden set e isolamento antes da rede
+        run: |
+          npm run test:pesquisas:monitoramento
+          npm run test:pesquisas:monitoramento:isolamento
+          npm run test:pesquisas:monitoramento:rede
+
+      - name: Coletar em dry-run
+        env:
+          monitor_source_id: ${{ inputs.source_id }}
+          monitor_uf: ${{ inputs.uf }}
+        run: |
+          args=("--out=reports/pesquisas-monitoramento" "--source=$monitor_source_id")
+          if [ -n "$monitor_uf" ]; then args+=("--uf=$monitor_uf"); fi
+          npm run monitor:pesquisas -- "${args[@]}"
+
+      - name: Resumir proposta
+        if: always()
+        run: |
+          if [ -f reports/pesquisas-monitoramento/summary.md ]; then
+            cat reports/pesquisas-monitoramento/summary.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Monitoramento falhou antes de gerar relatorio." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Publicar artefato para revisao
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: pesquisas-monitoramento-${{ github.run_id }}
+          path: reports/pesquisas-monitoramento/
+          if-no-files-found: error
+          retention-days: 14
