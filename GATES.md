@@ -57,5 +57,5 @@ Scope: descobrir e validar evidencias de fontes publicas aprovadas, produzindo s
   EXPECT: MONITORAMENTO_SCOPE_PASS
   EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=cb785c2bbcf5b0db04b5b4c504ddca7166b88d84f1b5a58d4d6778d60c45e67d; output-bytes=168
 
-- [ ] G11: o PR tem autoria do Thiago, branch exata, nenhum cron, merge ou efeito em producao
-  EVIDENCE: pending
+- [x] G11: o PR tem autoria do Thiago, branch exata, nenhum cron, merge ou efeito em producao
+  EVIDENCE: PR #104 aberto em https://github.com/thiago-salvador/puxa-ficha/pull/104; branch codex/pesquisas-monitoramento-automatizado; commits f34025b e 19edbb1 com Thiago Salvador <contato.thiagosalvador@gmail.com>; workflow somente workflow_dispatch; PR aberto e nao mergeado; nenhuma escrita em Supabase ou producao.
