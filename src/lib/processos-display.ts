@@ -1,5 +1,6 @@
 import { urlFonteEPortalJudiciario } from "@/lib/djen-consulta-url"
 import { stripAccents } from "@/lib/strip-accents"
+import type { Processo } from "@/lib/types"
 
 export { urlPublicaDoProcesso } from "@/lib/djen-consulta-url"
 
@@ -34,6 +35,60 @@ function normalizeProcessStatus(status: string | null | undefined): string {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "_")
     .replace(/^_+|_+$/g, "")
+}
+
+function normalizeProcessNarrative(value: string | null | undefined): string {
+  return stripAccents(value ?? "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+}
+
+/**
+ * Processos diferentes podem compartilhar uma única síntese editorial. A UI
+ * agrupa somente descrições iguais dentro da mesma categoria, sem eliminar os
+ * CNJs nem as fontes que sustentam o grupo.
+ */
+export function groupProcessosForDisplay<T extends Processo>(processos: T[]): T[][] {
+  const groups = new Map<string, T[]>()
+
+  for (const processo of processos) {
+    const narrative = normalizeProcessNarrative(processo.descricao)
+    const key = narrative ? `${processo.tipo}:${narrative}` : `id:${processo.id}`
+    const current = groups.get(key)
+
+    if (current) current.push(processo)
+    else groups.set(key, [processo])
+  }
+
+  return [...groups.values()]
+}
+
+/**
+ * Algumas cargas antigas usaram `status` como uma segunda narrativa. O badge
+ * só deve aparecer quando acrescenta informação independente da descrição.
+ */
+export function processStatusRepeatsDescription(
+  processo: Pick<Processo, "descricao" | "status">,
+): boolean {
+  const description = normalizeProcessNarrative(processo.descricao)
+  const status = normalizeProcessNarrative(processo.status)
+
+  if (!description || !status) return false
+  if (description === status) return true
+  if (Math.min(description.length, status.length) < 80) return false
+
+  const descriptionWords = new Set(description.split(" "))
+  const statusWords = new Set(status.split(" "))
+  const smallerSize = Math.min(descriptionWords.size, statusWords.size)
+  if (smallerSize === 0) return false
+
+  let sharedWords = 0
+  for (const word of descriptionWords) {
+    if (statusWords.has(word)) sharedWords += 1
+  }
+
+  return sharedWords / smallerSize >= 0.8
 }
 
 /** Status terminal governa cor, gravidade e linguagem temporal da UI. */

@@ -13,7 +13,11 @@ import {
   formatProcessStatusLabel,
   formatProcessTypeLabel,
 } from "@/lib/ui-labels"
-import { isProcessStatusNeutral } from "@/lib/processos-display"
+import {
+  groupProcessosForDisplay,
+  isProcessStatusNeutral,
+  processStatusRepeatsDescription,
+} from "@/lib/processos-display"
 import { formatPartyTransitionLabel } from "@/lib/party-switches"
 import { getCurrentPublicYear } from "@/lib/public-date"
 import { formatBRL } from "@/lib/utils"
@@ -253,21 +257,39 @@ export function buildTimelineEvents(ficha: FichaCandidato): TimelineEvent[] {
     })
   }
 
-  for (const proc of ficha.processos ?? []) {
-    const startDate = parseTimelineDate(proc.data_inicio)
-    const endDate = parseTimelineDate(proc.data_decisao)
-    const hasStart = startDate.valid && startDate.year != null
-    const hasEnd = endDate.valid && endDate.year != null
-    const statusLabel = formatProcessStatusLabel(proc.status)
+  for (const processGroup of groupProcessosForDisplay(ficha.processos ?? [])) {
+    const proc = processGroup[0]
+    const startDates = processGroup
+      .map((item) => ({ raw: item.data_inicio, parsed: parseTimelineDate(item.data_inicio) }))
+      .filter((item) => item.parsed.valid && item.parsed.year != null)
+      .sort((a, b) => a.parsed.year! - b.parsed.year!)
+    const endDates = processGroup
+      .map((item) => parseTimelineDate(item.data_decisao))
+      .filter((item) => item.valid && item.year != null)
+      .sort((a, b) => b.year! - a.year!)
+    const startDate = startDates[0]?.parsed
+    const endDate = endDates[0]
+    const independentStatuses = [...new Set(
+      processGroup
+        .filter((item) => !processStatusRepeatsDescription(item))
+        .map((item) => formatProcessStatusLabel(item.status)),
+    )]
+    const statusDetail = independentStatuses.length === 0
+      ? null
+      : independentStatuses.length === 1
+        ? `Status: ${independentStatuses[0]}`
+        : `Situações processuais: ${independentStatuses.join("; ")}`
     events.push({
       id: `processo-${proc.id}`,
       type: "processo",
-      label: `${isProcessStatusNeutral(proc.status) ? "Comunicação processual" : formatProcessTypeLabel(proc.tipo)}, ${proc.tribunal}`,
-      description: [proc.descricao, `Status: ${statusLabel}`].filter(Boolean).join(" · "),
-      year_start: hasStart ? startDate.year! : processFallback,
-      year_end: hasEnd ? endDate.year : hasStart ? undefined : processFallback,
-      date: proc.data_inicio ?? undefined,
-      date_unknown: !hasStart,
+      label: processGroup.length > 1
+        ? `${formatProcessTypeLabel(proc.tipo)}, ${processGroup.length} processos`
+        : `${isProcessStatusNeutral(proc.status) ? "Comunicação processual" : formatProcessTypeLabel(proc.tipo)}, ${proc.tribunal}`,
+      description: [proc.descricao, statusDetail].filter(Boolean).join(" · "),
+      year_start: startDate?.year ?? processFallback,
+      year_end: endDate?.year ?? (startDate ? undefined : processFallback),
+      date: startDates[0]?.raw ?? undefined,
+      date_unknown: !startDate,
       severity: proc.gravidade ?? undefined,
       tab_link: "justica",
     })
