@@ -210,6 +210,21 @@ jobs:
           PF_BASE_URL: ${{ env.PRODUCTION_URL }}
         run: npm run test:a11y
 
+      - name: Smoke visual de pesquisas em produção
+        env:
+          PF_BASE_URL: ${{ env.PRODUCTION_URL }}
+          PF_EXPECTED_DEPLOY_SHA: ${{ github.event.deployment.sha }}
+        run: npm run test:pesquisas:production-smoke
+
+      - name: Publicar capturas do smoke de pesquisas
+        if: success()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: pesquisas-production-smoke-${{ github.event.deployment.sha }}
+          path: test-results/pesquisas-production-smoke/**/*.png
+          if-no-files-found: error
+          retention-days: 14
+
       - name: Publicar relatório em caso de falha
         if: failure()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0

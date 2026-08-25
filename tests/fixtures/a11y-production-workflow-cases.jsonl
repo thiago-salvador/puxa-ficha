@@ -18,3 +18,7 @@
 {"id":"readback-requires-exact-production-sha","kind":"structure","check":"jq-contract","expected":true}
 {"id":"checkout-uses-deployment-sha","kind":"structure","check":"checkout-ref","expected":true}
 {"id":"deadline-has-real-budget-and-seconds-reset","kind":"structure","check":"deadline","expected":true}
+{"id":"polling-smoke-reuses-production-deployment-sha","kind":"structure","check":"polling-smoke-step","expected":true}
+{"id":"polling-smoke-publishes-success-screenshots","kind":"structure","check":"polling-smoke-artifact","expected":true}
+{"id":"polling-smoke-blocks-mutating-browser-requests","kind":"structure","check":"polling-smoke-read-only","expected":true}
+{"id":"polling-smoke-locks-candidates-content-and-viewports","kind":"structure","check":"polling-smoke-contract","expected":true}
