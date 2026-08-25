@@ -10,7 +10,7 @@ Scope: descobrir e validar evidencias de fontes publicas aprovadas, produzindo s
 - [x] G1: a referencia resolve 100 por cento do golden set hermetico, incluindo os dez modos de falha obrigatorios
   CHECK: npm run test:pesquisas:monitoramento
   EXPECT: MONITORAMENTO_GOLDEN_100_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=03322ee287cd3084e9e7b861a24be581e7d8c73d9e5a2f5f7b40137e9ae5daa1; output-bytes=1792
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=5fd212ea68174ff9edefe8a070250a15b98718d6a733e3b6e89d21753db02a1c; output-bytes=1791
 
 - [x] G2: somente fontes aprovadas e publicas chegam aos adaptadores, e conteudo externo permanece dado inerte
   CHECK: npm run audit:pesquisas:monitoramento
@@ -20,22 +20,22 @@ Scope: descobrir e validar evidencias de fontes publicas aprovadas, produzindo s
 - [x] G3: o dry-run gera proposta, diff estruturado e resumo sem modificar nenhum catalogo publicado
   CHECK: npm run test:pesquisas:monitoramento:isolamento
   EXPECT: MONITORAMENTO_ISOLAMENTO_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=ca40fe3648e8cdcadbd1fddee30c4c05ec697ead668a559d98126fc2f0bd7d65; output-bytes=467
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=a37718e131672c040aa30607c4bc5d07362488b50e278be56e090e6b069203d6; output-bytes=470
 
 - [x] G4: novo, alterado, inalterado, vencido, conflitante, fonte indisponivel e identidade nao resolvida sao classificacoes alcancaveis e fail-closed
   CHECK: npm run test:pesquisas:monitoramento
   EXPECT: MONITORAMENTO_CLASSIFICACOES_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=3c3e36af8622485551bc4b0eb4e37b7eea5eb4522d1fd969fc34617697f9a020; output-bytes=1793
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=465b1f61ff1121e29a00c712cfecfdcd0a374672006f0128820b1f32bbbfe066; output-bytes=1793
 
 - [x] G5: a coleta aplica timeout, retry limitado, rate limit, robots e logs sem segredos
   CHECK: npm run test:pesquisas:monitoramento:rede
   EXPECT: MONITORAMENTO_REDE_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=eb23a9cb2e2c0a7bed8142bc1a3db41f5ea32aa81f4d34fbf0f6a3cb26d28842; output-bytes=1495
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=e9d3c55c9968b23f6c51ca03ea2c669f543864a2b6693272d60640e19318c8a4; output-bytes=1496
 
 - [x] G6: o workflow possui somente workflow_dispatch, filtros de fonte ou UF, resumo e artefato com retencao definida
   CHECK: npm run test:pesquisas:monitoramento:workflow
   EXPECT: MONITORAMENTO_WORKFLOW_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=70ee1f2d668c82b607f2408ef9a0be29d9f70b4daafa6d191910bea72307d300; output-bytes=469
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=4d8faf432bbd3cd945942d5791441ea8decaafc14e80aeb24dd1b56eefc37004; output-bytes=469
 
 - [x] G7: uma coleta manual controlada observa a pagina publica aprovada do PoderData e valida robots, registro, amostra, campo e hash
   CHECK: npm run monitor:pesquisas:manual -- --source=poderdata-aya-nacional-2026 --out=/private/tmp/pf-monitoramento-manual-gate
@@ -45,7 +45,7 @@ Scope: descobrir e validar evidencias de fontes publicas aprovadas, produzindo s
 - [x] G8: o gate canonico de pesquisas permanece integralmente verde
   CHECK: npm run verify:pesquisas
   EXPECT: fail 0
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=dd25580362e384dbcf9fa694b2aba0287162243d104fe6f2c29e238bb2c0b2ae; output-bytes=20336
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=4612ef4e59758788798d86a7c6da6f4fb70b4849f1858a98d47bb984d81bb38e; output-bytes=20344
 
 - [x] G9: lint, typecheck e auditorias de seguranca aplicaveis passam no diff final
   CHECK: npm run lint && npm run typecheck && npm run audit:public-security-surface:gate && npm run audit:route-guards && node -e "console.log('MONITORAMENTO_SECURITY_PASS')"
