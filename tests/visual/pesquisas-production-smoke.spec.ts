@@ -2,7 +2,7 @@ import AxeBuilder from "@axe-core/playwright"
 import { expect, test, type Locator, type Page } from "playwright/test"
 
 const EXPECTED_SHA = process.env.PF_EXPECTED_DEPLOY_SHA ?? ""
-const EMPTY_SLUG = process.env.PF_PESQUISAS_EMPTY_SLUG?.trim() || "ciro-gomes-gov-ce"
+const EMPTY_SLUG = process.env.PF_PESQUISAS_EMPTY_SLUG?.trim() || "alan-rick"
 
 type BrowserGuard = {
   browserErrors: string[]
@@ -139,7 +139,7 @@ test.describe("smoke somente leitura de pesquisas em produção", () => {
     await expectReadOnlyAndClean(guard)
   })
 
-  test("Ciro mantém vazio explícito sem resultado de outra UF", async ({ page }, testInfo) => {
+  test("Alan Rick mantém vazio explícito sem resultado de outra UF", async ({ page }, testInfo) => {
     const guard = await installReadOnlyBrowserGuard(page)
     await page.goto(`/candidato/${EMPTY_SLUG}`, { waitUntil: "domcontentloaded" })
     await waitForProfile(page)
@@ -158,7 +158,7 @@ test.describe("smoke somente leitura de pesquisas em produção", () => {
       "[data-pf-pesquisas-overview]",
     ])
     await page.screenshot({
-      path: testInfo.outputPath(`ciro-${testInfo.project.name}-visao-geral.png`),
+      path: testInfo.outputPath(`alan-rick-${testInfo.project.name}-visao-geral.png`),
       fullPage: true,
       animations: "disabled",
     })
@@ -172,7 +172,7 @@ test.describe("smoke somente leitura de pesquisas em produção", () => {
     await expectNoHorizontalOverflow(page, [tab])
     await expectBasicAccessibility(page, ["[data-pf-pesquisas-tab]"])
     await page.screenshot({
-      path: testInfo.outputPath(`ciro-${testInfo.project.name}-pesquisas.png`),
+      path: testInfo.outputPath(`alan-rick-${testInfo.project.name}-pesquisas.png`),
       fullPage: true,
       animations: "disabled",
     })
