@@ -213,7 +213,7 @@ describe("analisarSubstancia", () => {
   it("bloqueio real do Portal da Transparência em noscript é indisponível", () => {
     const corpo =
       "<html><head><title></title></head><body><noscript>" +
-      "<h1>JavaScript is disabled</h1>In order to continue, we need to verify that you're not a robot. " +
+      "<h1>JavaScript is disabled</h1>In order to continue, we need to verify that you&#39;re not a robot. " +
       "This requires JavaScript. Enable JavaScript and then reload the page.</noscript></body></html>"
     const r = analisarSubstancia({
       httpStatus: 202,

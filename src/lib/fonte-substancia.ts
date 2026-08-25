@@ -130,7 +130,7 @@ const MARCADORES_VEDACAO: RegExp[] = [
 /** Marcadores de desafio anti-robô (WAF, captcha, verificação de navegador). */
 const MARCADORES_ANTI_ROBO: RegExp[] = [
   /visitante humano/,
-  /verify that you(?:'|’)re not a robot/,
+  /verify that you(?:'|’|\s+)re not a robot/,
   /support id:/,
   /captcha/,
   /just a moment/,
