@@ -28,10 +28,6 @@ jobs:
     name: Gerar proposta para revisao humana
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    env:
-      PF_PESQUISAS_DRY_RUN: "1"
-      SOURCE_ID: ${{ inputs.source_id }}
-      UF: ${{ inputs.uf }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -52,9 +48,12 @@ jobs:
           npm run test:pesquisas:monitoramento:rede
 
       - name: Coletar em dry-run
+        env:
+          monitor_source_id: ${{ inputs.source_id }}
+          monitor_uf: ${{ inputs.uf }}
         run: |
-          args=("--out=reports/pesquisas-monitoramento" "--source=$SOURCE_ID")
-          if [ -n "$UF" ]; then args+=("--uf=$UF"); fi
+          args=("--out=reports/pesquisas-monitoramento" "--source=$monitor_source_id")
+          if [ -n "$monitor_uf" ]; then args+=("--uf=$monitor_uf"); fi
           npm run monitor:pesquisas -- "${args[@]}"
 
       - name: Resumir proposta
