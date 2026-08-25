@@ -116,28 +116,36 @@ jobs:
           readonly CURL_MAX_S=10
           readonly CONNECT_S=3
           limite_poll=$(( ORCAMENTO_S - RESERVA_DIAG_S ))
-          inicio=$SECONDS
+          # `SECONDS=0` nao e enfeite, e obrigatorio por dois motivos. Ele
+          # zera o contador do bash no inicio do passo, o que dispensa o
+          # `inicio` e deixa `$SECONDS` valer o proprio decorrido. E, sem a
+          # atribuicao, `npm run check:env-contract` reprova o verify com
+          # "referencias sem documentacao: SECONDS": o scanner varre os `run:`
+          # dos workflows e trata todo nome lido e nunca atribuido como
+          # variavel de ambiente sem contrato, sem conhecer a lista de
+          # builtins do bash. Medido em 24/08 neste proprio arquivo.
+          SECONDS=0
           tentativa=0
 
-          while [ $(( SECONDS - inicio )) -lt "$limite_poll" ]; do
+          while [ "$SECONDS" -lt "$limite_poll" ]; do
             tentativa=$(( tentativa + 1 ))
             if readback="$(curl -fsS --connect-timeout "$CONNECT_S" --max-time "$CURL_MAX_S" \
                   "${PRODUCTION_URL}/api/deployment-info" 2>/dev/null)" && \
               jq -e --arg sha "$EXPECTED_SHA" \
                 '.ok == true and .environment == "production" and .commitRef == "main" and .commitSha == $sha' \
                 <<<"$readback" >/dev/null; then
-              echo "producao serve $EXPECTED_SHA na tentativa $tentativa, $(( SECONDS - inicio ))s"
+              echo "producao serve $EXPECTED_SHA na tentativa $tentativa, ${SECONDS}s"
               exit 0
             fi
             # So dorme se ainda cabe uma volta INTEIRA. Sem isto o sleep final
             # empurraria o passo para fora do orcamento.
-            if [ $(( limite_poll - (SECONDS - inicio) )) -le $(( INTERVALO_S + CURL_MAX_S )) ]; then
+            if [ $(( limite_poll - SECONDS )) -le $(( INTERVALO_S + CURL_MAX_S )) ]; then
               break
             fi
             sleep "$INTERVALO_S"
           done
 
-          decorrido=$(( SECONDS - inicio ))
+          decorrido=$SECONDS
           echo "::error::producao nao passou a servir ${EXPECTED_SHA} em ${decorrido}s (${tentativa} tentativas); o axe mediria o deploy anterior." >&2
           curl -fsS --connect-timeout "$CONNECT_S" --max-time "$CURL_MAX_S" \
             "${PRODUCTION_URL}/api/deployment-info" || true
