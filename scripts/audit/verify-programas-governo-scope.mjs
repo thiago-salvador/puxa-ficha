@@ -1,0 +1,84 @@
+import { execFileSync } from "node:child_process"
+
+const EXACT = new Set([
+  ".gitattributes",
+  "GATES.md",
+  "package.json",
+  "docs/operations/programas-governo-presidencia-eval.md",
+  "docs/plans/2026-08-25-programa-governo-presidencia-design.md",
+  "docs/plans/2026-08-25-programa-governo-presidencia-implementation.md",
+  "scripts/audit/audit-programas-governo.ts",
+  "scripts/audit/verify-programas-governo-scope.mjs",
+  "scripts/data/programas-governo-presidencia-2026-fontes.json",
+  "scripts/generate-programa-pdfs.mjs",
+  "scripts/lib/ocr-programa-governo.swift",
+  "scripts/lib/programas-governo-extracao.ts",
+  "scripts/programas-governo-presidencia.ts",
+  "scripts/programas-governo-approve.ts",
+  "scripts/programas-governo-stage.ts",
+  "scripts/test-fixtures/generate-programa-pdfs.mjs",
+  "scripts/prompts/programa-governo-judge-v1.schema.json",
+  "scripts/prompts/programa-governo-resumo-v1.md",
+  "scripts/prompts/programa-governo-resumo-v1.schema.json",
+  "src/app/(site)/candidato/[slug]/CandidatoFichaView.tsx",
+  "src/app/api/candidato-profile/[slug]/programa/route.ts",
+  "src/components/CandidatoProfile.tsx",
+  "src/components/DeferredCandidatoProfile.tsx",
+  "src/components/DeferredCandidatoProfileClient.tsx",
+  "src/components/ProgramaGovernoSection.tsx",
+  "src/data/programas-governo-presidencia-2026.ts",
+  "src/lib/candidato-profile-tabs.ts",
+  "src/lib/programa-governo-server.ts",
+  "src/lib/programa-governo.ts",
+  "tests/candidato-profile-rate-limit.test.ts",
+  "tests/candidato-profile-tabs.test.ts",
+  "tests/programa-governo-data.test.ts",
+  "tests/programa-governo-extracao.test.ts",
+  "tests/programa-governo-route.test.ts",
+  "tests/programa-governo-schema.test.ts",
+  "tests/programa-governo-ui.test.tsx",
+  "tests/visual/programa-governo.playwright.config.ts",
+  "tests/visual/programa-governo.spec.ts",
+])
+
+const PREFIXES = [
+  "src/data/programas-governo/presidencia-2026/",
+  "tests/fixtures/programas-governo/",
+]
+
+export function isProgramaGovernoPathAllowed(file) {
+  return EXACT.has(file) || PREFIXES.some((prefix) => file.startsWith(prefix))
+}
+
+function lines(command, args) {
+  return execFileSync(command, args, { encoding: "utf8" })
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+}
+
+function currentFiles() {
+  return new Set([
+    ...lines("git", ["diff", "--name-only", "origin/main...HEAD"]),
+    ...lines("git", ["diff", "--name-only"]),
+    ...lines("git", ["ls-files", "--others", "--exclude-standard"]),
+  ])
+}
+
+if (isProgramaGovernoPathAllowed("supabase/migrations/20990101000000_programa.sql")) {
+  throw new Error("controle positivo falhou: migration indevida foi aceita")
+}
+if (isProgramaGovernoPathAllowed("src/data/pesquisas-eleitorais.ts")) {
+  throw new Error("controle positivo falhou: dado de pesquisas foi aceito")
+}
+if (isProgramaGovernoPathAllowed("src/data/programas-governo/governador-2026/sp.json")) {
+  throw new Error("controle positivo falhou: programa estadual foi aceito")
+}
+
+const files = [...currentFiles()].sort()
+const unexpected = files.filter((file) => !isProgramaGovernoPathAllowed(file))
+if (unexpected.length > 0) {
+  throw new Error(`arquivos fora do escopo:\n${unexpected.join("\n")}`)
+}
+
+console.log(`PROGRAMAS_SCOPE_PASS arquivos=${files.length} controles_positivos=3`)

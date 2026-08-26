@@ -1,0 +1,434 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "PRESIDENTE",
+    "uf": "BR",
+    "sqCandidato": "280002551975",
+    "slug": "edmilson-costa",
+    "nomeUrna": "EDMILSON COSTA",
+    "partido": "PCB",
+    "arquivoNome": "2026BR280002551975_01.pdf",
+    "arquivoNoPacote": "BR/2026BR280002551975_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-25T09:46:00Z"
+  },
+  "extracao": {
+    "sourceSha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+    "extractedTextSha256": "a51c5283c0e436ff52ec27a5ec0a8f8b2bdfc21fa8ae0b64b82b451dc969ebfc",
+    "paginas": 16,
+    "secoes": [
+      {
+        "id": "programa-do-partido-comunista-brasileiro-pcb-para-as",
+        "titulo": "Programa do Partido Comunista Brasileiro (PCB) para as",
+        "nivel": 1,
+        "paginaInicial": 1,
+        "paginaFinal": 1,
+        "origem": "pdftotext",
+        "conteudo": "Programa do Partido Comunista Brasileiro (PCB) para as\nEleições Presidenciais de 2026\nConstruir o Poder Popular, rumo ao Socialismo\nIntrodução\nO Partido Comunista Brasileiro (PCB), em Convenção Nacional realizada no dia\n01/08/2026 na Câmara Municipal de São Paulo, aprovou os nomes de Edmilson Costa e\nCleusa Santos para concorrer na chapa do PCB para Presidente e Vice-presidente da\nRepública.\nMilitante histórico da causa socialista desde os tempos de juventude, Edmilson Costa é\ndoutor em Economia pela Unicamp, com pós-doutorado no Instituto de Filosofia e\nCiências Humanas da mesma instituição, sendo autor de diversos livros sobre o\ncapitalismo contemporâneo e a crise econômica mundial, além de vários livros de\npoesias.\nEdmilson Costa esteve sempre junto às lutas de nosso povo: foi dirigente estudantil e\nperseguido no período da ditadura e esteve presente em todas as lutas em defesa das\nliberdades democráticas e pelo socialismo no Brasil. A candidatura de Edmilson Costa\nvem para qualificar o debate sobre o Brasil e apresentar soluções para um conjunto de\nproblemas que as outras candidaturas não têm coragem de discutir, como a dramática\ncrise social, as precárias condições de vida dos trabalhadores e trabalhadoras, o\nenfrentamento ao imperialismo, além de reafirmar a solidariedade com todos os povos\nem luta por sua soberania e autodeterminação.\nCleusa Santos é professora titular aposentada da Escola de Serviço Social da\nUniversidade Federal do Rio de Janeiro, doutora em Serviço Social pela Pontifícia\nUniversidade Católica de São Paulo. Atuou em diferentes funções na Associação\nBrasileira de Ensino e Pesquisa em Serviço Social, contribuindo para a defesa de uma\nformação profissional crítica, pública, laica e comprometida com a realidade brasileira.\nTambém participou ativamente do movimento docente desde 1989, primeiro na UEPG,\nno Paraná, e depois na UFRJ, onde integrou três diretorias da ADUFRJ-SSind, seção\nsindical do ANDES-SN, tendo presidido a entidade entre 2002 e 2003. Atualmente, é\nsecretária política, em Santos, do Coletivo Feminista Classista Ana Montenegro,\norganização ligada ao Partido Comunista Brasileiro. Essa atuação reafirma sua\nmilitância classista, feminista e socialista, articulada à defesa das mulheres\ntrabalhadoras, da organização popular e da luta por uma sociedade emancipada.\nAs eleições no Brasil ocorrem numa conjuntura complexa. Para o PCB, o Brasil vive\num momento decisivo. Face à ofensiva reacionária contra as liberdades democráticas\noperada pelas candidaturas de Flávio Bolsonaro, Renan Santos, Zema e Caiado, não\npodemos nos bastar a uma luta defensiva: devemos associar a luta pelas liberdades\ndemocráticas à luta pelo Poder Popular, sem cair em concepções liberais da democracia,\no que significa erguer também bandeiras radicais, baseadas em nossas concepções de\npoder popular e democracia direta. O PCB compreende que não existem soluções para\nos problemas das massas trabalhadoras sob a forma capitalista, a economia mercantil e a\nsociedade burguesa, portanto, rejeitamos quaisquer saídas meramente reformistas.\nSomente a Revolução Socialista, entendida como um forte e poderoso processo de lutas"
+      },
+      {
+        "id": "populares-que-desemboque-na-construcao-de-uma-sociedade-alternativa-ao-c",
+        "titulo": "populares que desemboque na construção de uma sociedade alternativa ao capitalismo e",
+        "nivel": 1,
+        "paginaInicial": 2,
+        "paginaFinal": 2,
+        "origem": "pdftotext",
+        "conteudo": "populares que desemboque na construção de uma sociedade alternativa ao capitalismo e\nà ordem burguesa, será capaz de realmente resolver os problemas vividos pela classe\ntrabalhadora e pelos setores populares.\nMesmo entendendo que as eleições burguesas são uma arena limitada de luta, trata-se de\num espaço importante para discutirmos com o conjunto da sociedade as nossas\npropostas de mudanças e apresentarmos candidaturas com independência de classe.\nDeste modo, estaremos contribuindo para a elevação do patamar de organização e\nconsciência de classe, com vistas a, partindo da luta pelos interesses imediatos da classe\ntrabalhadora, criar condições para a contraofensiva das forças socialistas. Para traduzir\nessa tarefa nas eleições deste ano, nosso programa político e nossa candidatura visam\nalcançar três objetivos fundamentais:\nA) O PCB vai participar da disputa colocando a política no posto de comando,\ndebatendo um conjunto de temas que as outras candidaturas não querem ou não podem\nabordar em função de suas identidades de classe ou alianças políticas. Para nós é\nfundamental pautar o combate sem tréguas à ideologia neofascista e neoliberal, a\ndestruição da ideologia do empreendedorismo e da precarização de direitos e a\nsolidariedade internacionalista aos povos em luta contra as agressões imperialistas.\nB) Nosso programa busca atingir objetivos políticos, econômicos e sociais. Dentre eles,\ndesenvolvemos a luta permanente contra o imperialismo e a solidariedade militante a\nCuba, à Palestina, ao povo do Irã, da Venezuela e todos os povos que enfrentam a velha\nordem imperial e defendem sua soberania e autodeterminação. Defendemos o fim dos\nmonopólios nas comunicações; a estatização das áreas estratégicas da economia e dos\nsetores produtores de bens necessários à vida, como água, energia, saneamento etc.; a\nproteção ao meio ambiente; um amplo programa de moradia popular digna; o combate\nàs opressões e a todo e qualquer tipo de discriminação e preconceito.\nC) Propomos reformas estruturais nas áreas sociais e do mundo do trabalho, com a\nimplantação da jornada de 30 horas semanais sem redução salarial e o fim da escala 6x1;\na revogação das contrarreformas que tanto prejuízos trazem à vida do povo trabalhador\nbrasileiro; a reforma agrária popular; a recomposição do poder de compra de\ntrabalhadores e trabalhadoras através do salário-mínimo necessário (de acordo com\ndados do Dieese); o fim do arcabouço fiscal; saúde, transporte coletivo e educação\n100% públicos e de qualidade para todos e todas; adoção de uma lei de responsabilidade\nsocial para garantir recursos à implementação de políticas sociais voltadas a atender as\nreais necessidades da população.\nNo Brasil, milhões de famílias enfrentam diariamente os baixos salários, moram em\nhabitações precárias, em favelas e cortiços, enfrentam um transporte caótico,\nsaneamento precário, saúde degradante e serviços públicos que não chegam para todos.\nEnquanto isso, os banqueiros e grandes empresários continuam acumulando lucros\ngigantescos às custas do povo trabalhador. É por isso que o PCB apresenta uma\nalternativa revolucionária: a construção do Poder Popular para transformar\nradicalmente o Brasil na perspectiva socialista, visando devolver o país ao seu\nverdadeiro dono - o povo trabalhador brasileiro. Esta campanha nasce da necessidade\nurgente de transformar o Brasil por dentro, com coragem, com intensa participação\npopular, com a adoção de iniciativas que estimulem mecanismos de democracia direta\nnos bairros, locais de trabalho, locais de estudo e territórios."
+      },
+      {
+        "id": "todos-os-problemas-que-o-nosso-pais-esta-vivendo-tem-responsaveis-os-mil",
+        "titulo": "Todos os problemas que o nosso país está vivendo têm responsáveis: os milionários e",
+        "nivel": 1,
+        "paginaInicial": 3,
+        "paginaFinal": 3,
+        "origem": "pdftotext",
+        "conteudo": "Todos os problemas que o nosso país está vivendo têm responsáveis: os milionários e\npoderosos nacionais e internacionais. Esses milionários e poderosos têm nome: são\nempresários industriais, comerciais e de serviços, os banqueiros, especuladores, os\nlatifundiários, os grandes proprietários do agronegócio, do ensino e da saúde privada, as\nmultinacionais, enfim, as classes dominantes que saqueiam o fundo público e\naprofundam a superexploração dos trabalhadores e das trabalhadoras. Mesmo diante da\ncrise social que o país vive, esses ricos e poderosos querem avançar ainda mais sobre os\ndireitos da classe trabalhadora, mediante a desumana política neoliberal, o arcabouço\nfiscal e corte nos gastos públicos para privilegiar os grupos dominantes e isolar a\nesquerda da disputa política.\nPor isso, é hora de mudar de verdade. Esse tipo de democracia viciada, onde a maioria\nsocial é transformada em minoria parlamentar, não nos interessa, porque é a democracia\ndos milionários e poderosos, onde as decisões tomadas pelos governos representam um\nataque aos interesses populares. O sistema partidário brasileiro não representa a imensa\nmaioria do povo brasileiro. Trata-se de um sistema viciado, no qual as eleições são\ndefinidas pelo poder econômico, os candidatos se elegem prometendo mundos e fundos\npara a população e, quando chegam ao poder, governam para a burguesia, esquecem as\npromessas do passado, ignoram as necessidades do povo e vão se enriquecer com o\ndinheiro público - mantendo assim um sistema apodrecido, antipopular e antinacional.\nNessa perspectiva, a candidatura do PCB propõe um novo caminho para o Brasil,\ncolocando um conjunto de questões para debate na sociedade. Nosso objetivo é romper\ncom a velha ordem oligárquica, excludente e subordinada ao capital internacional que\nmarca a sociedade brasileira, inaugurando um novo tempo político, econômico e social,\nfundado na soberania popular e na autodeterminação nacional. Essa revolução política,\neconômica e social se materializa em cinco grandes transformações estruturais,\ncapazes de mudar concretamente a vida do povo brasileiro.\nAcreditamos plenamente que as propostas que integram o Programa Político do PCB\nsão viáveis porque o Brasil está maduro para o Socialismo. Todas as transformações\nrevolucionárias realizadas no Século XX se deram em países agrárias, partindo de um\npatamar de baixo desenvolvimento das forças produtivas, o que dificultou\nacentuadamente o processo de mudanças. O Brasil pelo contrário, é uma nação\nindustrializada, com terra e água em abundância, força de trabalho jovem, matériasprimas e terra raras necessárias para o desenvolvimento econômico e social calcado no\natendimento às necessidades da população e não nos interesses e lucros da burguesia\ninterna e do imperialismo.\n\nUm Programa de transformações estruturais e radicais\n1. NA POLÍTICA:\nA primeira grande transformação consiste na reconstrução radical do sistema político\nbrasileiro. Instituiremos o Orçamento Popular 100% deliberativo, ou seja, os\ntrabalhadores decidirão onde o governo aplicará os recursos. O governo do Poder\nPopular convocará, no prazo de dois anos, uma Assembleia Constituinte de Novo Tipo,\ncuja representação deverá refletir a maioria social do país: metade de seus membros será\neleita pelas organizações sociais e populares através de grandes Encontros da Classe"
+      },
+      {
+        "id": "trabalhadora-enclats-e-a-outra-metade-pelo-voto-universal-o-senado-sera",
+        "titulo": "Trabalhadora (ENCLATs) e a outra metade pelo voto universal. O Senado será extinto e",
+        "nivel": 1,
+        "paginaInicial": 4,
+        "paginaFinal": 4,
+        "origem": "pdftotext",
+        "conteudo": "Trabalhadora (ENCLATs) e a outra metade pelo voto universal. O Senado será extinto e\nsubstituído por um Parlamento Unicameral, com os mesmos critérios da Constituinte.\nVisando aprofundar as liberdades democráticas e implantar mecanismos de democracia\ndireta, serão instituídos os Conselhos Populares, eleitos nos locais de trabalho, moradia\ne estudo, como instrumentos permanentes de participação popular.\nPara garantir que os representantes eleitos cumpram os programas e reivindicações de\nquem os elegeu, os mandatos poderão ser revogados pela população através de\nreferendos, garantindo-se assim uma representação de acordo com os interesses\npopulares. Nos cargos executivos (presidência, governos estaduais e prefeituras)\npoderão ser revogados após o primeiro ano de mandato e nos cargos legislativos\n(senadores, deputados e vereadores) após 6 meses de mandato, sendo realizados após a\ncoleta de assinaturas de pelo menos 1% do eleitorado. Revogaremos a reforma eleitoral\nde Eduardo Cunha (Lei 13165/2015 e Emenda Constitucional 91/2016), junto com a\ncláusula de barreira e o financiamento privado eleitoral.\nVisando aprofundar as liberdades democráticas e implantar mecanismos de democracia\ndireta, serão instituídos os Conselhos Populares, eleitos nos locais de trabalho, moradia\ne estudo, como instrumentos permanentes de participação popular. O governo popular\nrealizará a democratização dos meios de comunicação, com a transformação dos\nmonopólios privados de comunicações em cooperativas dos trabalhadores e o\nfortalecimento da Empresa Brasileira de Comunicação (EBC), sob a direção de um\nConselho de Trabalhadores. Haverá forte regulação das Big Techs e redes sociais\nimperialistas, com ampliação dos investimentos públicos para a criação de redes sociais\nestatais nacionais. O Judiciário também será democratizado, com mandatos por tempo\ndefinido para os Tribunais Regionais e Superiores.\n\n2. NA ECONOMIA:\nA segunda grande transformação a ser realizada pelo governo do Poder Popular será a\nnacionalização, o controle público e a estatização do sistema monetário e financeiro.\nCriaremos ainda o Banco dos Trabalhadores, que será responsável pela gestão dos\nfundos previdenciários e de seguridade social dos trabalhadores e das trabalhadoras. A\ndívida pública será reestruturada e seu passivo será substituído por títulos de longo\nprazo. Também será criada uma Comissão Especial para investigar a origem da dívida e,\ndurante o período de investigação, serão suspensos os pagamentos dos juros e\namortizações da dívida.\nAs empresas estratégicas privatizadas serão retomadas para o patrimônio público, será\ninvestigado todo o processo de privatizações, com a punição dos responsáveis por\nadoção de medidas ilícitas, através da criação de uma comissão da verdade das\nprivatizações. O governo popular retomará o controle do câmbio e do comércio exterior\ne realizará uma reforma tributária com impostos progressivos, com isenção do imposto\nde renda para quem ganha até 1 salário-mínimo do Dieese. Será desenvolvida uma nova\npolítica industrial, com estímulo à introdução dos ramos constitutivos das fronteiras\ntecnológicas.\nAgiremos para promover a revogação do Arcabouço Fiscal, da Lei de Responsabilidade\nFiscal, da Lei das Estatais (13.303/2016), a retomada do Banco Central (fim da\nautonomia), desmontando todo fiscalismo e arcabouço jurídico e institucional neoliberal"
+      },
+      {
+        "id": "que-trava-os-investimentos-sociais-faremos-uma-reestruturacao-tanto-no-c",
+        "titulo": "que trava os investimentos sociais. Faremos uma reestruturação tanto no Conselho",
+        "nivel": 1,
+        "paginaInicial": 5,
+        "paginaFinal": 5,
+        "origem": "pdftotext",
+        "conteudo": "que trava os investimentos sociais. Faremos uma reestruturação tanto no Conselho\nMonetário Nacional quanto na diretoria do Banco Central. Ampliaremos o CNM com\nrepresentações das centrais sindicais, Contraf, BNDES, Cofecon e Dieese. A diretoria\ndo Banco Central será composta por representantes dos trabalhadores do Bacen junto\ncom pessoas indicadas pelas centrais sindicais, pelas entidades dos bancários, Cofecon e\npelo Dieese.\nDefendemos a Petrobras 100% estatal, com a redução do ritmo da exploração do\npetróleo e a criação de um fundo, a partir da renda do petróleo, para financiar a pesquisa\ne a substituição do petróleo com vistas à geração de energia limpa. A Petrobrás tem um\npapel especial num programa político-eleitoral comprometido com a classe trabalhadora.\nNossa política é de usar os recursos e a expertise dessa gigante nascida das lutas\npopulares a serviço da reindustrialização, da criação de milhões de empregos de\nqualidade, da transição energética e de uma política ambiental classista, da soberania\npopular e da melhor qualidade de vida para o proletariado brasileiro. A Petrobrás\ncumprirá uma tarefa central na construção do socialismo no Brasil.\n\n3. NA ÁREA SOCIAL E NO MUNDO DO TRABALHO:\nA terceira grande transformação do governo popular vai garantir os direitos e a\ndignidade da classe trabalhadora. Revogaremos as contrarreformas trabalhista,\nprevidenciária e criaremos a Lei de Responsabilidade Social, com o objetivo de garantir\nrecursos para atender as demandas populares. O governo popular se compromete a\nrecuperar gradualmente o poder de compra dos salários, especialmente do saláriomínimo, de forma a que num prazo de quatro anos alcance o piso do salário-mínimo do\nDieese. Garantiremos o direito ao trabalho para todos, com redução da jornada de\ntrabalho para 30 horas sem redução de salário e o fim da escala 6x1. Garantiremos\ntambém o registro em carteira e piso salarial para os trabalhadores e as trabalhadoras de\nplataformas de aplicativos, garantindo todos os direitos e pondo fim as jornadas\nexaustivas. Criaremos uma plataforma pública de transporte, em parceria com os\nmunicípios, garantindo pontos de apoio em todo o país para estes trabalhadores (para\ndescansarem, usarem o banheiro, carregarem os celulares etc.). Serão convocados\nconcursos públicos para provimento das vagas hoje existentes e expansão dos serviços\nessenciais, e convocaremos imediatamente todas as pessoas aprovadas em concursos\nanteriores.\nAtravés de amplos Encontros Nacionais da Classe Trabalhadora (ENCLATs)\nconstruiremos uma verdadeira reforma trabalhista que amplie os direitos dos\ntrabalhadores e reforce as entidades sindicais e operárias. Defendemos que a taxa\nnegocial seja ampliada para todos os trabalhadores que forem beneficiados pelas\nnegociações coletivas. Resgataremos o direito à estabilidade no trabalho, em\nconsonância com a convenção 158 da OIT, que combate a demissão sem justa causa.\nNum primeiro momento, após 5 anos de vínculo, todos os trabalhadores terão direito à\nestabilidade. Em diálogo com o Fonasefe, Dieese e demais entidades dos trabalhadores\nno serviço público, criaremos uma legislação que obrigará a negociação coletiva entre a\nadministração pública e os servidores. Da mesma maneira criaremos uma legislação\npara o setor privado, obrigando as empresas a negociarem as convenções coletivas com\nos sindicatos proletários."
+      },
+      {
+        "id": "no-campo-realizaremos-a-reforma-agraria-popular-e-todos-os-latifundios-i",
+        "titulo": "No campo, realizaremos a reforma agrária popular, e todos os latifúndios improdutivos,",
+        "nivel": 1,
+        "paginaInicial": 6,
+        "paginaFinal": 6,
+        "origem": "pdftotext",
+        "conteudo": "No campo, realizaremos a reforma agrária popular, e todos os latifúndios improdutivos,\náreas de trabalho escravo ou as fazendas que não cumpram sua função social serão\ndesapropriados sem indenização. Nossa proposta de reforma agrária também será para\nas periferias das cidades, com transferência de títulos da terra em pequenos lotes sem\ndireito de revenda, fomento à organização de cooperativas com apoio de políticas\npúblicas para a produção agroecológica, armazenamento e escoamento de gêneros para\nalimentação; implementação de políticas públicas de compras para fornecimento às\nredes escolares, hospitalares, restaurantes populares e outras redes semelhantes. Nas\ncidades, imóveis ociosos serão reformados e destinados à moradia popular, para\nocupação imediata das famílias sem teto e vivendo de aluguel, processo que se\ncomplementará com a realização de um amplo programa de habitações populares até\nacabar com o déficit habitacional existente no Brasil.\nO governo do Poder Popular agirá com rigor no combate ao genocídio da população\nnegra, pondo fim à política de “guerra às drogas”, para o que se faz necessária a\ncompleta desmilitarização da segurança pública, com unificação das polícias e\ninstituição do ciclo completo junto com a desvinculação das forças de segurança do\nexército, sob bases curriculares e formativas completamente reestruturadas numa lógica\ndemocrática. Será desenvolvida uma política de segurança dos direitos humanos, no\nlugar da segurança pública baseada na repressão à classe trabalhadora, à população\npobre e aos moradores das periferias, com a criação de um ministério voltado à\naplicação das medidas necessárias à garantia desses direitos e a revogação completa da\nlei antiterrorismo (12.850/2013). Serão adotadas políticas públicas de combate radical\nao machismo, à misoginia, ao racismo, à lgbtfobia, ao capacitismo, em defesa dos\ndireitos das mulheres, da juventude, do povo negro, dos povos originários, quilombolas\ne das pessoas com deficiência.\n\n4. NOS SERVIÇOS PÚBLICOS E NO MEIO AMBIENTE:\nA quarta das grandes transformações do governo do poder popular universaliza os\ndireitos essenciais e busca garantir serviços públicos de qualidade para o povo\ntrabalhador. Na saúde o governo do poder popular tornará público todo o sistema de\nsaúde, integrado com assistência (hospitais, serviços ambulatoriais, de apoio\ndiagnóstico e terapêutico), pesquisa, produção de medicamentos, vacinas e\nequipamentos, com fortalecimento da atenção básica em todos os bairros, visando\ngarantir atendimento à saúde a todas as pessoas o mais próximo possível de seus locais\nde moradia ou trabalho.\nUsaremos o BNDES e demais ferramentas públicas de financiamento para ampliação\ndos investimentos no Complexo Econômico-Industrial da Saúde (CEIS), vetor\nimportante para a criação de empregos qualificados, para a produção de medicamentos,\ninsumos, material médico-hospitalar e equipamentos, contribuindo para o\ndesenvolvimento de ciência e tecnologia públicas e soberanas. Um SUS forte, público,\ngratuito e de qualidade só será possível com um CEIS planejado, forte e soberano. A\nintegração do SUS se dará a partir da atenção primária à saúde, evoluindo até os níveis\nde maior complexidade, processo que deverá ser conjugado com ações de promoção,\nprevenção, cura e reabilitação dos pacientes. Criaremos os Conselhos Populares de\nSaúde, eleitos pelos trabalhadores, para o controle do sistema de saúde em todos os\nníveis. Serão reforçados os programas de distribuição de medicamentos pelo SUS, com\na ampliação da diversificação dos medicamentos oferecidos. Será criado um programa"
+      },
+      {
+        "id": "de-contratacao-de-medicos-e-pessoal-de-saude-para-as-regioes-menos-assis",
+        "titulo": "de contratação de médicos e pessoal de saúde para as regiões menos assistidas do país e",
+        "nivel": 1,
+        "paginaInicial": 7,
+        "paginaFinal": 7,
+        "origem": "pdftotext",
+        "conteudo": "de contratação de médicos e pessoal de saúde para as regiões menos assistidas do país e\npara as regiões periféricas aos grandes centros urbanos.\nNa educação, implantaremos o ensino 100% público e gratuito, das creches à pósgraduação, com a estatização do sistema privado de ensino. Os Institutos Federais e as\nEscolas Técnicas serão ampliados para o interior do Brasil, haverá um amplo programa\nde valorização dos profissionais da educação e cada estudante terá acesso a um\ncomputador em todos os níveis. Promoveremos o fim do vestibular nas universidades\nfederais e a ampliação das cotas (54% para a população negra, refletindo o censo do\nIBGE e estabelecendo 70 ou 80% de cota para estudantes das escolas\npúblicas). Universalização das cotas para a população trans.\nA educação básica pública brasileira constitui o maior sistema educacional da América\nLatina e um dos maiores do mundo. Segundo os dados mais recentes do Censo Escolar,\no país conta com aproximadamente 2,4 milhões de professores e professoras atuando na\neducação básica, distribuídos entre a educação infantil, os anos iniciais e finais do\nensino fundamental e o ensino médio. Esses profissionais atendem mais de 46 milhões\nde estudantes em todo o território nacional. É preciso implantar em definitivo o Piso\nSalarial Profissional Nacional como vencimento básico do primeiro nível da carreira,\nproduzindo reflexos em toda a estrutura remuneratória da categoria, preservando assim\nos planos de carreira, valorizando a formação, reconhecendo o tempo de serviço e\nimpedindo o achatamento salarial.\nNa cultura, será desenvolvida uma política que estimule a criatividade, experimentação\ne as mais diversas expressões da juventude e dos artistas brasileiros; resgate da cultura\npopular e de massas, buscando romper com os interesses dos monopólios dominantes\nnacionais e internacionais e com a mercantilização da cultura e das artes. O sistema\ncapitalista brasileiro mercantilizou e elitizou a cultura e transformou a indústria cultural\ncapitalista num instrumento de luta ideológica permanente para a defesa de seus\ninteresses. A cultura popular ficou sufocada em pequenos núcleos de resistência nos\nbairros populares, em pequenos grupos nas cidades e a grande maioria da população é\nobrigada a consumir diariamente essa cultura alienante e manipulada cujo objetivo é\nperpetuar os privilégios e os interesses das classes dominantes.\nNo transporte será implantada a tarifa zero com transporte 100% público em todo\nterritório nacional, acabando com a política de emendas parlamentares para contribuir\ncom o custeio, processo que se complementará com ampliação da malha ferroviária e\nhidroviária. Defendemos a expansão da malha metro-ferroviária de transporte de\npassageiros e cargas por todo o país; passe-livre para estudantes e trabalhadores isentos\ndo imposto de renda e implementação do transporte público 24 horas nas médias e\ngrandes cidades.\nNo meio ambiente, o governo do Poder Popular desenvolverá uma política radical de\ncombate à destruição da natureza promovida pelo capitalismo. O PCB entende que a\nluta pela sustentabilidade ambiental é uma luta anticapitalista, pois os padrões de\nprodução industrial e agrícola em escalas cada vez mais elevadas por grandes\nconglomerados nacionais e internacionais, com o uso intensivo de agrotóxicos e\nfertilizantes químicos em grandes plantações com monocultura e mecanização,\npromovem um processo de esgotamento dos recursos naturais, contaminação dos solos,"
+      },
+      {
+        "id": "emissoes-de-gases-do-efeito-estufa-e-geracao-de-efluentes-liquidos-conta",
+        "titulo": "emissões de gases do efeito estufa e geração de efluentes líquidos contaminantes do",
+        "nivel": 1,
+        "paginaInicial": 8,
+        "paginaFinal": 8,
+        "origem": "pdftotext",
+        "conteudo": "emissões de gases do efeito estufa e geração de efluentes líquidos contaminantes do\nmeio ambiente.\nDadas a gravidade e a intensidade dos efeitos da degradação ambiental em geral e das\nmudanças climáticas faz-se necessária a adoção de ações emergenciais voltadas à\npreservação ambiental, como a emissão de alertas de tempestades e temperaturas\nelevadas; a obrigatoriedade da oferta de água potável em toda a cidade e de refrigeração\nno transporte público, nas redes públicas e privadas de saúde e educação; a verificação\nda adequação das condições ambientais de trabalho na indústria e no comércio à\nlegislação brasileira e a realização de intervenções imediatas quando necessário. Outros\npontos são a luta pelo cumprimento da Política Nacional de Resíduos Sólidos; a\npromoção do trabalho dos catadores e catadoras, com garantias sociais, com o incentivo\nà formação de cooperativas e associações e a ampliação das Unidades de Conservação\nem todos os biomas brasileiros.\nSerá promovida a integração das políticas ambientais com as políticas industrial, de\nenergia, de ciência e tecnologia, de educação, de agropecuária, de comércio exterior, de\ncidades e outras. Serão reforçadas as ações voltadas para a redução das emissões de\ngases do efeito estufa, o combate ao desmatamento, a promoção de ações de\nreflorestamento, de fortalecimento e ampliação da coleta e do reaproveitamento de\nresíduos sólidos (lixo). Promoveremos o fim dos “lixões” descobertos, a redução da\nescala da atividade pecuária e da geração de energia pela queima de combustíveis\nfósseis, com estímulo a programas de reciclagem de materiais, de reuso e de\nremanufatura de produtos. Serão adotadas restrições crescentes à produção e ao\nconsumo de produtos descartáveis de plástico. Serão expandidas as reservas florestais e\nas áreas de proteção ambiental atuais, com a revisão do Código Florestal, ampliação das\nmatas ciliares e da cobertura florestal, proteção e recuperação de nascentes, de rios,\nlagos e fontes, manguezais, restingas e outros sistemas naturais. Será operada\nimplantação de taxação sobre emissões de gases poluentes e sobre e outros danos\nambientais, como a contaminação dos solos e das águas. Serão reativados e reforçados\nos órgãos de fiscalização e controle ambiental.\n\n5. NAS RELAÇÕES INTERNACIONAIS:\nA quinta das grandes transformações do governo do poder popular vai afirmar o\ninternacionalismo e a autodeterminação dos povos. Diante da atual agressividade do\nimperialismo, o governo do poder popular fortalecerá todos os processos de integração,\ntanto regionais quanto internacionais, reafirmará a soberania dos povos e prestará ativa\nsolidariedade a Cuba, Palestina, Venezuela, Irã, Saara Ocidental e todos os povos em\nluta contra o imperialismo. O governo do poder popular atuará visando a construção de\numa nova ordem internacional, baseada na cooperação, na autodeterminação dos povos,\nno internacionalismo proletário, na paz entre as nações, e nas relações mutuamente\nvantajosos entre todas os países, com a promoção de esforços no sentido da criação de\nespaços comuns de integração voltados a estreitar os vínculos econômicos, sociais,\nculturais e de comunicação entre os povos da América Latina, a partir do fortalecimento\nde iniciativas como a ALBA e UNASUL. O governo do poder popular atuará visando a\nconstrução de uma nova ordem internacional, baseada na cooperação, na paz entre as\nnações, e nas relações mutuamente vantajosos entre todas os países. Propomos a\nrealização de parcerias comerciais estratégicas priorizando o desenvolvimento industrial\ne tecnológico, assim como a retenção das riquezas e lucros em nosso país."
+      },
+      {
+        "id": "21-pontos-da-plataforma-anticapitalista-e-anti-imperialista",
+        "titulo": "21 pontos da Plataforma Anticapitalista e Anti-imperialista",
+        "nivel": 1,
+        "paginaInicial": 9,
+        "paginaFinal": 9,
+        "origem": "pdftotext",
+        "conteudo": "21 pontos da Plataforma Anticapitalista e Anti-imperialista\n1 – Construção do Poder Popular\nOs Conselhos Populares serão a espinha dorsal do novo poder, tanto para a implantação\nde uma cultura verdadeiramente democrática no país, mas especialmente como\ninstrumento fundamental da democracia direta dos trabalhadores e das trabalhadoras e\nde defesa da nova ordem institucional, estruturada no poder popular. Em conjunto com\nos conselhos populares, a população também será chamada a governar através da\nrealização de plebiscitos e referendos sobre todas as questões relevantes em discussão\nna sociedade, retirando do Congresso a exclusividade de convocação de tais\nmecanismos de consulta popular.\n2 – Combate à fome e política de pleno emprego\nCriação de uma rede de restaurantes e mercados populares nos municípios, começando\npelas áreas mais pobres do país, como forma de reduzir emergencialmente a fome e o\npreço dos alimentos, devendo o governo suprir essas instituições mediante a aquisição\nde grãos, verduras e legumes diretamente do produtor. Fortalecimento e ampliação dos\nestoques reguladores através da Conab (Companhia Nacional de Abastecimento) e em\nparceria com os movimentos populares e a agricultura familiar. Criação em massa de\nempregos, controle de preços dos itens da cesta básica, recomposição completa dos\nestoques reguladores, restaurantes populares, dentre outros, visando a eliminação da\nfome e a resolução do problema das pessoas em situação de rua. Organização das\nfrentes de trabalho urbanas e rurais nos bairros mais pobres, associadas a funções de\nzeladoria, obras de saneamento, habitação, de reforma de escolas e hospitais,\nprivilegiando os desempregados e setores mais precários da classe trabalhadora, como\nas famílias inscritas no CadÚnico.\n3 – Reforma Agrária Popular\nA reforma agrária popular tem perspectiva anticapitalista, respeitando os povos\noriginários e quilombolas e buscando configurar uma nova relação campo-cidade, com\nênfase nas formas coletiva e estatal de propriedade. Adoção de políticas de\ninfraestrutura, de crédito, de apoio técnico, de armazenagem e transporte de produtos\npara atendimento às necessidades da população. Apoio às atividades agroecológicas que,\npor um lado, movimentam a ocupação do espaço rural com a recomposição de espécies\nnativas dos diversos biomas existentes em nosso território e, por outro, podem reocupar\no espaço urbano com produção alimentar mais próxima do conjunto da população\nnacional (respectivamente, com as práticas agroflorestais e da permacultura).\nExpropriação do agronegócio, não apenas para garantir comida na mesa do povo\ntrabalhador brasileiro, mas também como necessidade humanitária, uma vez que o\nagronegócio é o principal destruidor do meio ambiente e um dos grandes financiadores\ndo crime organizado e da violência no campo. O Brasil carrega o agro nas costas e o\ngoverno do Poder Popular dará um basta nisso.\n4 – Moradia digna, saneamento e energia para todo o povo"
+      },
+      {
+        "id": "moradia-digna-para-toda-a-populacao-partindo-da-utilizacao-imediata-dos",
+        "titulo": "Moradia digna para toda a população, partindo da utilização imediata dos imóveis e",
+        "nivel": 1,
+        "paginaInicial": 10,
+        "paginaFinal": 10,
+        "origem": "pdftotext",
+        "conteudo": "Moradia digna para toda a população, partindo da utilização imediata dos imóveis e\nterrenos da União para ajudar a suprir essa demanda. Política de saneamento básico,\ntratamento de esgoto e energia para todos (com a reestatização da Eletrobras), visando\nacabar com o problema dos milhões de moradias sem banheiro, sem acesso a tratamento\nde esgoto e sem acesso à energia. Revogação do marco legal do saneamento básico (que\nfacilitou as privatizações), federalizando empresas de tratamento de água e esgoto e\nimplantando o monopólio estatal nos setores de gás, energia e saneamento.\n5 – Saúde 100% pública\nExpansão do sistema público de saúde, com a reversão das privatizações e revogação\ndos contratos de todas as OSs no setor, bem como estatização de todo o setor privado de\nsaúde. Proibição das comunidades terapêuticas e fortalecimento do SUS na perspectiva\nda luta antimanicomial; expansão da Fiocruz e do Instituto Butantã para outros estados,\ncom ampliação dos investimentos públicos; investimento de 10% do PIB na saúde\npública. Ampliação dos investimentos no Complexo Econômico-Industrial da Saúde\n(CEIS), para garantir um SUS totalmente público, gratuito e de qualidade. Integração do\nSUS a partir da atenção primária à saúde, evoluindo até os níveis de maior\ncomplexidade. Criação dos Conselhos Populares de Saúde, eleitos pelos trabalhadores,\npara o controle do sistema de saúde em todos os níveis.\n6 – Educação pública de qualidade para toda a população\nEducação 100% pública e gratuita, com a estatização do sistema privado de ensino.\nAmpliação dos Institutos Federais e as Escolas Técnicas. Programa de valorização dos\nprofissionais da educação. Fim do vestibular e ampliação das cotas. Piso Salarial\nProfissional Nacional como vencimento básico do primeiro nível da carreira de\nprofessores e professoras da educação básica. Fim das escolas cívico-militares. Defesa\nde uma educação laica e socialmente referenciada e de políticas de ciência e tecnologia\nem prol de um projeto popular de soberania nacional. Aumento da dotação orçamentária\npara a promoção do desenvolvimento científico e tecnológico realizado a partir das\nuniversidades, instituições públicas e empresas estatais. Expansão dos programas de\nbolsas de mestrado e doutorado e de apoio à pesquisa, para o atendimento prioritário das\ndemandas da classe trabalhadora, como meio ambiente, desenvolvimento urbano,\ntecnologias de saúde e produção de medicamentos, estudos sociais, artes, formação de\nprofessores/as e outros. Investimentos robustos no CEITEC (Centro Nacional de\nTecnologia Eletrônica Avançada), única fábrica de chips semicondutores da América\nLatina. O Conselho Administrativo do CEITEC terá representação majoritária dos\ntrabalhadores em geral e dos trabalhadores da empresa. Política de reindustrialização e\ncriação de Big Techs públicas e nacionais, articulada com o monopólio estatal e\nsoberano das terras raras e minerais críticos.\n7 – Cultura Popular\nResgate da cultura popular e de massas, de forma a envolver intelectuais, artistas, novos\nformadores e a juventude no desenvolvimento de uma cultura democrática, na qual\ntodos possam ter acesso, buscando romper com os interesses dos monopólios\ndominantes nacionais e internacionais e com a mercantilização da cultura e das artes.\nIncentivar os jovens artistas a criar e expor sua criatividade cultural tanto nos bairros\npopulares quanto nos locais tradicionais da cultura. Estímulo à criação de novos espaços"
+      },
+      {
+        "id": "culturais-nos-bairros-e-territorios-como-forma-de-garantir-o-amplo-acess",
+        "titulo": "culturais nos bairros e territórios, como forma de garantir o amplo acesso da população",
+        "nivel": 1,
+        "paginaInicial": 11,
+        "paginaFinal": 11,
+        "origem": "pdftotext",
+        "conteudo": "culturais nos bairros e territórios, como forma de garantir o amplo acesso da população\nàs artes e o surgimento de novos talentos culturais nas regiões populares.\n8 – Transportes públicos para todas e todos\nEstatização completa do sistema de transportes em grande escala, sob o controle de\nConselhos Populares: serão reestatizados portos, aeroportos, ferrovias e rodovias.\nModernização e ampliação da malha ferroviária e hidroviária nacional, reduzindo o\ncusto do transporte das mercadorias e racionalizando os fluxos comerciais no interior do\npaís. Estímulo à encampação pública pelos municípios de todo o transporte de\npassageiros nas cidades, centralizando e renovando a estrutura de transporte, com a\nmodernização e ampliação da frota de ônibus, a produção de veículos leves sobre trilhos,\nampliação dos metrôs, trens e barcas, especialmente nas grandes metrópoles, de forma a\ngarantir a tarifa zero para toda a população.\n9 – Preservação do meio ambiente\nCombate rigoroso ao desmatamento em todos os ecossistemas, à mineração ilegal, com\numa profunda revisão nos processos de produção mineral em curso. Proteção, titulação,\ndemarcação e expansão das terras indígenas, quilombolas e populações tradicionais,\ndotando esses segmentos de efetiva tutela e condições de permanência e vivência em\nseus territórios. Programas de reflorestamento com espécies nativas e incentivo à\nprodução agroflorestal, com base no conhecimento empírico de povos e comunidades,\nalém da ampliação dos parques nacionais e das reservas florestais. Controle sobre a\nregião amazônica, pantanal e outros biomas, visando a eliminação do desmatamento e\ndo garimpo ilegal, garantindo plena proteção aos povos originários. Defesa dos recursos\nnaturais da biodiversidade e todos os biomas do país, bem como a construção de uma\nempresa pública para gerir e produzir de forma sustentável bens e serviços ambientais.\nProteção aos aquíferos em território brasileiro e negociação com os países vizinhos para\na utilização sustentável dessa imensa fonte de água. Investimentos em energias\nalternativas (solar, eólica, biomassa, de maré) e biocombustíveis, aumentando a\ndiversificação, soberania e segurança energética e diminuindo os impactos ambientais,\natravés de destinação de percentual do lucro da produção para este fim.\n10 – Combate às opressões, ao machismo e à violência contra as mulheres\nO combate permanente a todas as formas de opressão (como o machismo, o racismo, a\nLGBTfobia) deve realizar-se não apenas em uma dimensão cultural e de valores, mas\npor meio da efetiva garantia dos direitos e condições dignas de vida desses grupos\noprimidos. Ampliação da licença-maternidade e paternidade para um ano. Direito à\nestabilidade para as pessoas responsáveis legais dos recém-nascidos. Legalização do\naborto, com garantia de atendimento na rede pública de saúde, bem como políticas\npúblicas que possibilitem a emancipação da mulher dos trabalhos domésticos, zerando\nas filas de creches, ampliando a educação integral e efetuando a construção massiva de\nrestaurantes e lavanderias populares. Criminalização da misoginia. Reestruturação dos\ncurrículos da educação básica para incluir o trabalho de reprodução e as tarefas\ndomésticas, para meninos e meninas aprendam desde cedo as tarefas domésticas,\nreduzindo o impacto da divisão sexual do trabalho. Será uma prioridade do governo do\nPoder Popular acabar com baixíssima expectativa de vida da população Trans e Travesti,\natravés de políticas de garantia de emprego, acesso a saúde pública, moradia e educação."
+      },
+      {
+        "id": "universalizacao-das-cotas-universitarias-para-a-populacao-trans",
+        "titulo": "Universalização das cotas universitárias para a população Trans.",
+        "nivel": 1,
+        "paginaInicial": 12,
+        "paginaFinal": 12,
+        "origem": "pdftotext",
+        "conteudo": "Universalização das cotas universitárias para a população Trans.\n11 – Enfrentamento radical ao racismo e defesa dos povos originários\nDefesa da liberdade de culto religioso, com o combate ao preconceito e aos ataques às\nreligiões de matriz africana e o fim do genocídio dos povos indígenas e do povo negro.\nFim do vestibular nas universidades federais e ampliação das cotas (54% para a\npopulação negra, refletindo o censo do IBGE). Titulação imediata dos territórios\nquilombolas. Contra a criminalização das culturas periféricas e dos bailes funks, com a\ncriação e destinação de espaços públicos para os bailes. Massificação de centros\nculturais, teatros, bibliotecas e outros equipamentos culturais nos bairros periféricos.\nContra a redução da maioridade penal e ampliação das medidas socioeducativas.\nRevogação da Lei Antidrogas e fim da privatização dos presídios. Expropriação dos\nempregadores que estimulam e toleram racismo nos locais de trabalho. Apoio à carta\naberta da FENATRAD, ampliação de direitos para as trabalhadoras domésticas.\nDemarcação e proteção integral de todos os territórios indígenas, que serão geridos por\nconselhos populares dos povos originários. Fim do Marco Temporal. No governo do\nPoder Popular, o Ministério dos Povos Indígenas terá orçamento robusto e poder\ndecisório sobre a demarcação das terras indígenas. O Ministério por sua vez responderá\na um conselho popular nacional dos povos indígenas, fruto de Encontros Nacionais dos\nPovos Indígenas.\n12 – Garantia plena dos direitos às pessoas com deficiência\nCampanhas amplas contra o capacitismo, acessíveis e com forte divulgação nos meios\nde comunicação de massa. Garantia de ledores, intérpretes de Libras e mediadores\nconcursados em todas as escolas e universidades, com a implementação de aulas de\nLibras Língua Brasileira de Sinais e Libras táteis como disciplina obrigatória nas\nescolas. Acessibilidade arquitetônica e comunicacional em escolas, universidades,\nhospitais, centros de lazer e cultura, segundo os princípios do desenho universal.\nConstrução de uma política pública do cuidado, com a garantia de profissionais de\napoio para acompanhamento diário, no próprio domicílio, de idosos e pessoas com\ndeficiência com alto nível de dependência. Fornecimento, de forma gratuita, de\nequipamentos de tecnologia assistiva para todas as pessoas com deficiência. Campanhas\nde saúde acessíveis, com audiodescrição, intérprete de Libras e linguagem simples.\nCriação do Programa Nacional do cão-guia, com a construção de centros de treinamento\ne garantia ao usuário da manutenção da saúde e bem-estar destes animais.\n13 – Segurança dos Direitos no lugar da velha “Segurança Pública”\nA segurança pública será desmilitarizada e reorganizada sob o marco civil, com controle\nsocial substituindo uma política e um ministério de segurança pública para uma política\nde segurança dos direitos, com base na criminologia crítica e no acúmulo político e\nprogramático dos movimentos negros e populares. Expropriação do sistema financeiro,\npois é a “Faria Lima” quem financia o crime organizado. Adoção das 16 medidas contra\no encarceramento em massa do IBCCRIM. Implementação da política de cotas raciais\nem todos os concursos públicos federais e estaduais das forças de segurança.\nDescriminalização do uso de drogas, com legalização da maconha a curto prazo.\nOcupação dos territórios dominados pelo crime organizado com centros culturais,\nescolas públicas de qualidade, unidades de saúde, faculdades públicas, saneamento"
+      },
+      {
+        "id": "basico-internet-e-energia-e-demais-servicos-publicos-as-forcas-armadas-p",
+        "titulo": "básico, internet e energia, e demais serviços públicos. As forças armadas priorizarão o",
+        "nivel": 1,
+        "paginaInicial": 13,
+        "paginaFinal": 13,
+        "origem": "pdftotext",
+        "conteudo": "básico, internet e energia, e demais serviços públicos. As forças armadas priorizarão o\ncuidado das fronteiras, em conjunto com a polícia federal e demais órgãos de\ninteligência. Proibição das BETs com a expropriação dos seus ativos.\n14 – Democratização do Judiciário\nO Judiciário brasileiro tem sido, ao longo dos tempos, um instrumento das classes\ndominantes para punir os pobres e proteger os ricos, adotando uma lógica de atuação\nreacionária e antipopular e um funcionamento corporativo sob o qual viceja a corrupção,\ne no qual os magistrados que cometem crimes raramente são punidos. Os membros dos\ntribunais superiores são nomeados por governantes de plantão, com mandato vitalício, o\nque consolida os interesses corporativos, antidemocráticos e antipopulares na instituição\njudiciária. Para reverter essa situação propomos uma reforma estrutural profunda de\ntodo o judiciário brasileiro (incluindo necessariamente o Ministério Público), tanto do\nponto de vista da legislação, quanto do controle social e transparência sobre a atividade\nda justiça e, especialmente, que os juízes nomeados para os tribunais regionais e\nsuperiores tenham mandato fixo sob controle social: mandatos de 10 anos elegíveis e\nrevogáveis pelo Poder Popular em sua respectiva jurisdição. Fim de todas as verbas e\npenduricalhos que ultrapassarem o teto constitucional.\n15 – Socialização dos meios de comunicação\nHoje os meios de comunicação no Brasil são dominados por meia dúzia de famílias que\nse comportam como verdadeiros partidos políticos reacionários e são um dos principais\nresponsáveis pela manipulação da opinião pública e difusão do obscurantismo\nreacionário. O governo do Poder Popular deve realizar a democratização radical dos\nmeios de comunicação, com uma nova Lei Geral das Comunicações, baseada no fim do\noligopólio privado e da propriedade cruzada atualmente existentes nos meios de\ncomunicação e na internet. É necessária a revisão das concessões de rádio e teledifusão,\nassegurando ampla liberdade para que organizações sociais dos trabalhadores e do povo\nconstruam seus veículos próprios. Defendemos a forte regulação das Big Techs e redes\nsociais imperialistas e o monopólio estatal das telecomunicações, da telefonia e da\ninternet, com incentivo à criação de cooperativas dos trabalhadores.\n16 – Uma política econômica anticapitalista\nRevogação de todas as contrarreformas neoliberais, como a previdenciária e a\ntrabalhista e do Arcabouço Fiscal, bem como da autonomia do Banco Central. Fim das\nterceirizações, das privatizações e de todas as flexibilizações legais e tributárias em\nfavor dos grandes capitalistas. Revogação de todos os cortes orçamentários nos setores\nde interesse social. Criação da Lei de Responsabilidade Social, que assegure recursos\npara educação, saúde, saneamento, programas sociais e investimentos públicos.\nRevogação da Lei de Responsabilidade Fiscal. Restrição dos privilégios e vencimentos\ndos altos mandatários dos poderes civis e militares. Reestatização das empresas\nestratégicas, com a adoção de uma política de massivos investimentos públicos e ensino\ntécnico de qualidade, visando a ampliação dos setores de tecnologia/informática e\ntelecomunicações, com vistas à criação de empregos. Reestruturação da dívida interna a\npartir da criação de uma Comissão Especial para analisar todo o processo de\nconstituição da dívida, bem como suspensão do pagamento dos juros pelo período em\nestiver sendo realizada a investigação. Recuperar as prerrogativas do BNDES como"
+      },
+      {
+        "id": "instrumento-financiador-do-governo-e-supridor-das-necessidades-de-liquid",
+        "titulo": "instrumento financiador do governo e supridor das necessidades de liquidez da",
+        "nivel": 1,
+        "paginaInicial": 14,
+        "paginaFinal": 14,
+        "origem": "pdftotext",
+        "conteudo": "instrumento financiador do governo e supridor das necessidades de liquidez da\neconomia. Reforma tributária: redução da tributação sobre o consumo, com cobrança\nprogressiva de impostos, de acordo com o rendimento de cada contribuinte, além da\ncriação de um imposto especial sobre lucros e dividendos, grandes fortunas, transações\nfinanceiras e heranças.\n17 – Direitos Sociais e Trabalhistas, Previdência e Assistência Social\nRecuperação gradual do poder de compra dos salários, especialmente do salário-mínimo,\nvisando alcançar o piso do salário-mínimo do Dieese. Garantia do direito ao trabalho\npara todos, com redução da jornada de trabalho para 30 horas sem redução de salário e o\nfim da escala 6x1. Expansão da previdência pública para a universalidade, com a\ngarantia da cobertura de aposentadorias, pensões e benefícios para todos e todas.\nAmpliação dos serviços de assistência para a infância, com o fortalecimento e a\nexpansão dos conselhos tutelares, creches e orfanatos, o incentivo à adoção e o combate\nà exploração do trabalho infantil. Maior atenção aos adolescentes e adultos, com o\nfortalecimento e a expansão dos Caps e dos abrigos para pessoas em condição de rua,\npara mulheres vítimas de violência, além de abrigos e de serviço de acompanhamento\npara idosos e idosas. Será reforçado e ampliado o seguro-desemprego e garantido o\nprovimento de auxílios emergenciais e outras formas de cobertura para situações de\nvulnerabilidade.\n18 – Petrobrás 100% estatal a serviço dos interesses populares\nA Petrobrás deve ser uma empresa integrada de energia e 100% estatal, sobre o controle\ndemocrático dos/as trabalhadores/as, com planejamento estratégico debatido\namplamente com a população e a categoria petroleira, através de Congressos e Fóruns\nNacionais periódicos, plebiscitos, referendos e conselhos populares. Reestruturação\ncompleta do Conselho Administrativo da empresa, cuja composição será de ⅓ do\ngoverno federal, ⅓ de representantes da população brasileira através das entidades de\ntrabalhadores e ⅓ de representantes da categoria petroleira através das suas entidades.\nRetomada da BR distribuidora e de todos os ativos da Petrobrás privatizados pelos\ngovernos neoliberais. Transição para o regime de monopólio estatal da exploração,\nprodução, refino, petroquímica e distribuição; retirada das ações da Petrobrás das bolsas\nde valores estrangeiras, visando o resgate da soberania energética do Brasil; fim do PPI\ne das políticas de precificação artificialmente altas, que têm sacrificado a população\ncom valores estratosféricos de combustíveis, gás de cozinha e outros derivados de\npetróleo. Operação de navios de apoio offshore e sondas pela Transpetro, cessando o\npagamento de fretamentos a preços altos para o setor privado e internacional. Fim da\npolítica de exportação de óleo cru, que visa beneficiar os acionistas e o grande capital\ninternacional, submetendo a empresa a uma lógica de subordinação e exploração.\nInvestimento e ampliação da capacidade de produção das refinarias. Contra a ociosidade\ndas plantas, pela conclusão de obras inacabadas e pela retomada de novos projetos nessa\nárea. Criação de empresas estatais de serviços e tecnologias petrolíferas (sondas,\nexploração, engenharia e construção, logística, estaleiros etc.), que devem ser\nfomentadas pela renda petrolífera. No lugar da exploração da Margem Equatorial,\ndefendemos pesquisas e buscas em outras áreas e uma melhor exploração do Pré-Sal,\nreduzindo os lucros e a extração desenfreada, que visam apenas beneficiar o grande\ncapital, drenando nossas reservas e encarecendo produtos e serviços. Anistia para os\npetroleiros perseguidos pela Ditadura Militar e pelos governos neoliberais. Fim das"
+      },
+      {
+        "id": "punicoes-arbitrarias-e-dos-assedios-dentro-da-empresa-resgate-das-perdas",
+        "titulo": "punições arbitrárias e dos assédios dentro da empresa. Resgate das perdas dos",
+        "nivel": 1,
+        "paginaInicial": 15,
+        "paginaFinal": 15,
+        "origem": "pdftotext",
+        "conteudo": "punições arbitrárias e dos assédios dentro da empresa. Resgate das perdas dos\nAposentados e Pensionistas do Sistema Petrobrás. Fim das terceirizações no Sistema\nPetrobrás, com a incorporação dos trabalhadores terceirizados.\n19 – Uma nova política de Defesa\nAs Forças Armadas têm se constituído num bastião das classes dominantes e dos\ninteresses do imperialismo, com uma formação antipopular e antidemocrática, voltada\nmuito mais para o combate ao chamado “inimigo interno” do que para a defesa da\nsoberania nacional. Por isso, nosso programa propõe uma reestruturação profunda nos\ncomandos hierárquicos das três forças e uma nova política de formação militar, com\numa nova orientação para as escolas de formação de oficiais e sargentos, voltada para os\ninteresses nacionais e populares. Estatização de toda indústria bélica brasileira,\ncomeçando pela Avibrás e pela Taurus, pois trata-se de ativos estratégicos. Retomada da\nbase de Alcântara e revogação do contrato de entrega das terras raras, com monopólio\nestatal das terras raras e minerais críticos. Fim de todos os acordos militares com os\nEUA. Fim do serviço militar obrigatório. A prioridade de atuação das forças armadas\nserá na defesa das fronteiras no apoio aos programas de infraestrutura e indústria,\nutilizando a força de trabalho do ITA e instituições semelhantes. Fim dos concursos\npara oficiais, ingresso único na carreira militar, diminuindo as diferenças de classe.\nRedução da discrepância de contingente entre o exército e as duas outras forças. Fim da\nJustiça Militar (estará ativa somente em tempos de guerra).\n20 - Memória, Verdade, Justiça e Reparação.\nJulgamento e punição dos responsáveis pelas torturas, assassinatos e outras violências\ncometidas pelos aparatos de repressão e seus agentes contra o povo brasileiro, desde a\nditadura empresarial militar de 1964-1985 até os dias de hoje. Combate ao legado\nideológico não apenas da ditadura, mas também da escravidão, com a abertura total dos\narquivos dos órgãos de repressão, preservando a documentação existente e ampliando\ndo acesso ao conhecimento sobre os períodos da escravidão, das ditaduras e sobre o\ngenocídio da população negra e dos povos indígenas ainda em curso. Reconhecimento\ndo Estado aos crimes cometidos pela ditadura, com a justiça e a reparação a todos os\npartidos (dentre os quais o PCB), organizações políticas e sociais, lutadoras e lutadores\nque sofreram com a perseguição política e as violências cometidas pelos agentes da\nrepressão.\n21 - Solidariedade internacional e combate ao imperialismo\nPromoveremos o forte combate e a denúncia às investidas imperialistas da OTAN, OEA\ne Cúpula das Américas contra os povos. Defendemos: o estabelecimento de relações\ndiplomáticas plenas com Estados de fato: Autoridade Nacional Palestina, Frente\nPolisário, etc; a defesa do fim da OTAN em todos os fóruns internacionais; relações\ndiplomáticas e econômicas com os países em África levando em conta as vantagens\nmútuas, trabalhando para quebrar a relação subimperialista da burguesia brasileira com\nesses países; a criação de uma organização de Países Exportadores de Energia, Petróleo\ne Riquezas Minerais em âmbito latino-americano e africano, para proteger os interesses\ndessas regiões frente às investidas imperialistas. Rompimento imediato de todas as\nrelações econômicas e diplomáticas com o estado sionista de Israel. Defenderemos o"
+      },
+      {
+        "id": "fim-da-otan-do-conselho-de-seguranca-da-onu-e-demais-instituicoes-imperi",
+        "titulo": "fim da OTAN, do conselho de segurança da ONU e demais instituições imperialistas em",
+        "nivel": 1,
+        "paginaInicial": 16,
+        "paginaFinal": 16,
+        "origem": "pdftotext",
+        "conteudo": "fim da OTAN, do conselho de segurança da ONU e demais instituições imperialistas em\ntodos os fóruns internacionais.\n\nPARTIDO COMUNISTA BRASILEIRO (PCB) – Nº 21"
+      }
+    ]
+  },
+  "resumo": {
+    "texto": "O Partido Comunista Brasileiro (PCB) apresenta Edmilson Costa e Cleusa Santos como candidatos a presidente e vice-presidente nas eleições de 2026. O programa defende a construção do Poder Popular como caminho para o socialismo, rejeitando soluções reformistas. O documento propõe a convocação de uma Assembleia Constituinte de Novo Tipo e a extinção do Senado, substituído por um Parlamento Unicameral. O programa propõe a nacionalização e estatização do sistema monetário e financeiro, incluindo a criação do Banco dos Trabalhadores. O texto defende que a Petrobras seja 100% estatal. O programa propõe a redução da jornada de trabalho para 30 horas semanais sem redução salarial e o fim da escala 6x1. O documento defende a reforma agrária popular, com desapropriação sem indenização de latifúndios improdutivos que não cumpram função social. O programa afirma solidariedade a Cuba, Palestina, Venezuela e Irã, entre outros povos em luta contra o imperialismo.",
+    "frases": [
+      {
+        "texto": "O Partido Comunista Brasileiro (PCB) apresenta Edmilson Costa e Cleusa Santos como candidatos a presidente e vice-presidente nas eleições de 2026.",
+        "evidencias": [
+          {
+            "pagina": 1,
+            "trecho": "aprovou os nomes de Edmilson Costa e Cleusa Santos para concorrer na chapa do PCB para Presidente e Vice-presidente da República"
+          }
+        ]
+      },
+      {
+        "texto": "O programa defende a construção do Poder Popular como caminho para o socialismo, rejeitando soluções reformistas.",
+        "evidencias": [
+          {
+            "pagina": 1,
+            "trecho": "Construir o Poder Popular, rumo ao Socialismo"
+          },
+          {
+            "pagina": 1,
+            "trecho": "rejeitamos quaisquer saídas meramente reformistas"
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe a convocação de uma Assembleia Constituinte de Novo Tipo e a extinção do Senado, substituído por um Parlamento Unicameral.",
+        "evidencias": [
+          {
+            "pagina": 3,
+            "trecho": "convocará, no prazo de dois anos, uma Assembleia Constituinte de Novo Tipo"
+          },
+          {
+            "pagina": 4,
+            "trecho": "O Senado será extinto e substituído por um Parlamento Unicameral"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe a nacionalização e estatização do sistema monetário e financeiro, incluindo a criação do Banco dos Trabalhadores.",
+        "evidencias": [
+          {
+            "pagina": 4,
+            "trecho": "a nacionalização, o controle público e a estatização do sistema monetário e financeiro. Criaremos ainda o Banco dos Trabalhadores"
+          }
+        ]
+      },
+      {
+        "texto": "O texto defende que a Petrobras seja 100% estatal.",
+        "evidencias": [
+          {
+            "pagina": 5,
+            "trecho": "Defendemos a Petrobras 100% estatal, com a redução do ritmo da exploração do"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe a redução da jornada de trabalho para 30 horas semanais sem redução salarial e o fim da escala 6x1.",
+        "evidencias": [
+          {
+            "pagina": 5,
+            "trecho": "redução da jornada de trabalho para 30 horas sem redução de salário e o fim da escala 6x1"
+          }
+        ]
+      },
+      {
+        "texto": "O documento defende a reforma agrária popular, com desapropriação sem indenização de latifúndios improdutivos que não cumpram função social.",
+        "evidencias": [
+          {
+            "pagina": 6,
+            "trecho": "realizaremos a reforma agrária popular, e todos os latifúndios improdutivos, áreas de trabalho escravo ou as fazendas que não cumpram sua função social serão desapropriados sem indenização"
+          }
+        ]
+      },
+      {
+        "texto": "O programa afirma solidariedade a Cuba, Palestina, Venezuela e Irã, entre outros povos em luta contra o imperialismo.",
+        "evidencias": [
+          {
+            "pagina": 8,
+            "trecho": "prestará ativa solidariedade a Cuba, Palestina, Venezuela, Irã, Saara Ocidental e todos os povos em luta contra o imperialismo"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "reforma-politica",
+        "titulo": "Reforma do sistema político",
+        "descricao": "O programa propõe convocar uma Assembleia Constituinte de Novo Tipo, extinguir o Senado em favor de um Parlamento Unicameral, instituir Conselhos Populares e permitir a revogação de mandatos por referendo popular.",
+        "evidencias": [
+          {
+            "pagina": 3,
+            "trecho": "convocará, no prazo de dois anos, uma Assembleia Constituinte de Novo Tipo"
+          },
+          {
+            "pagina": 4,
+            "trecho": "O Senado será extinto e substituído por um Parlamento Unicameral"
+          },
+          {
+            "pagina": 4,
+            "trecho": "os mandatos poderão ser revogados pela população através de referendos"
+          }
+        ]
+      },
+      {
+        "id": "economia-estatizacoes",
+        "titulo": "Estatização da economia e do sistema financeiro",
+        "descricao": "O programa propõe nacionalizar o sistema monetário e financeiro, criar o Banco dos Trabalhadores, reestruturar a dívida pública e manter a Petrobras como empresa 100% estatal.",
+        "evidencias": [
+          {
+            "pagina": 4,
+            "trecho": "a nacionalização, o controle público e a estatização do sistema monetário e financeiro"
+          },
+          {
+            "pagina": 4,
+            "trecho": "A dívida pública será reestruturada e seu passivo será substituído por títulos de longo prazo"
+          },
+          {
+            "pagina": 5,
+            "trecho": "Defendemos a Petrobras 100% estatal, com a redução do ritmo da exploração do"
+          }
+        ]
+      },
+      {
+        "id": "direitos-trabalhistas-agrarios",
+        "titulo": "Direitos trabalhistas e reforma agrária",
+        "descricao": "O programa propõe reduzir a jornada de trabalho para 30 horas semanais sem redução salarial, revogar as reformas trabalhista e previdenciária e realizar reforma agrária popular com desapropriação sem indenização de latifúndios improdutivos.",
+        "evidencias": [
+          {
+            "pagina": 5,
+            "trecho": "redução da jornada de trabalho para 30 horas sem redução de salário e o fim da escala 6x1"
+          },
+          {
+            "pagina": 5,
+            "trecho": "Revogaremos as contrarreformas trabalhista, previdenciária"
+          },
+          {
+            "pagina": 6,
+            "trecho": "No campo, realizaremos a reforma agrária popular, e todos os latifúndios improdutivos,"
+          }
+        ]
+      },
+      {
+        "id": "servicos-publicos",
+        "titulo": "Universalização de serviços públicos",
+        "descricao": "O programa propõe tornar 100% público o sistema de saúde, estatizar o sistema privado de ensino e implantar transporte público com tarifa zero em todo o território nacional.",
+        "evidencias": [
+          {
+            "pagina": 6,
+            "trecho": "tornará público todo o sistema de saúde"
+          },
+          {
+            "pagina": 7,
+            "trecho": "aos grandes centros urbanos. Na educação, implantaremos o ensino 100% público e gratuito, das creches à pósgraduação, com a estatização do sistema privado de"
+          },
+          {
+            "pagina": 7,
+            "trecho": "será implantada a tarifa zero com transporte 100% público em todo território nacional"
+          }
+        ]
+      },
+      {
+        "id": "politica-internacional",
+        "titulo": "Política internacional e combate ao imperialismo",
+        "descricao": "O programa afirma solidariedade a Cuba, Palestina, Venezuela, Irã e outros povos em luta contra o imperialismo, defende o fim da OTAN e propõe o rompimento das relações econômicas e diplomáticas com Israel.",
+        "evidencias": [
+          {
+            "pagina": 8,
+            "trecho": "prestará ativa solidariedade a Cuba, Palestina, Venezuela, Irã, Saara Ocidental e todos os povos em luta contra o imperialismo"
+          },
+          {
+            "pagina": 15,
+            "trecho": "Rompimento imediato de todas as relações econômicas e diplomáticas com o estado sionista de Israel"
+          },
+          {
+            "pagina": 16,
+            "trecho": "fim da OTAN, do conselho de segurança da ONU e demais instituições imperialistas em todos os fóruns internacionais"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-resumo-v1",
+    "model": "Anthropic Claude Sonnet",
+    "generatedAt": "2026-08-26T02:48:46.251Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT-5.4",
+    "judgedAt": "2026-08-26T03:25:59.329Z",
+    "verdicts": [
+      {
+        "id": "edmilson-costa:frase:1",
+        "verdict": "yes",
+        "reason": "A página 1 afirma que o PCB aprovou Edmilson Costa e Cleusa Santos para a chapa presidencial de 2026."
+      },
+      {
+        "id": "edmilson-costa:frase:2",
+        "verdict": "yes",
+        "reason": "A página 1 sustenta a construção do Poder Popular rumo ao socialismo e rejeita saídas meramente reformistas."
+      },
+      {
+        "id": "edmilson-costa:frase:3",
+        "verdict": "yes",
+        "reason": "As páginas 3 e 4 propõem Assembleia Constituinte de Novo Tipo e extinção do Senado em favor de Parlamento unicameral."
+      },
+      {
+        "id": "edmilson-costa:frase:4",
+        "verdict": "yes",
+        "reason": "A página 4 propõe nacionalização e estatização do sistema monetário e financeiro e a criação do Banco dos Trabalhadores."
+      },
+      {
+        "id": "edmilson-costa:frase:5",
+        "verdict": "yes",
+        "reason": "A página 5 defende a Petrobras 100% estatal."
+      },
+      {
+        "id": "edmilson-costa:frase:6",
+        "verdict": "yes",
+        "reason": "A página 5 propõe jornada de 30 horas sem redução salarial e fim da escala 6x1."
+      },
+      {
+        "id": "edmilson-costa:frase:7",
+        "verdict": "yes",
+        "reason": "A página 6 defende reforma agrária popular com desapropriação sem indenização de latifúndios improdutivos e propriedades sem função social."
+      },
+      {
+        "id": "edmilson-costa:frase:8",
+        "verdict": "yes",
+        "reason": "A página 8 afirma solidariedade a Cuba, Palestina, Venezuela, Irã e outros povos em luta contra o imperialismo."
+      },
+      {
+        "id": "edmilson-costa:tema:reforma-politica",
+        "verdict": "yes",
+        "reason": "As páginas 3 e 4 sustentam Assembleia Constituinte de Novo Tipo, Parlamento unicameral, Conselhos Populares e revogação de mandatos por referendo."
+      },
+      {
+        "id": "edmilson-costa:tema:economia-estatizacoes",
+        "verdict": "yes",
+        "reason": "As páginas 4 e 5 sustentam nacionalização do sistema financeiro, Banco dos Trabalhadores, reestruturação da dívida pública e Petrobras 100% estatal."
+      },
+      {
+        "id": "edmilson-costa:tema:direitos-trabalhistas-agrarios",
+        "verdict": "yes",
+        "reason": "As páginas 5 e 6 sustentam jornada de 30 horas sem redução salarial, revogação das contrarreformas e reforma agrária com desapropriação sem indenização."
+      },
+      {
+        "id": "edmilson-costa:tema:servicos-publicos",
+        "verdict": "yes",
+        "reason": "As páginas 6 e 7 sustentam tornar público todo o sistema de saúde, estatizar o sistema privado de ensino e implantar tarifa zero com transporte 100% público."
+      },
+      {
+        "id": "edmilson-costa:tema:politica-internacional",
+        "verdict": "yes",
+        "reason": "As páginas 8, 15 e 16 sustentam solidariedade a Cuba, Palestina, Venezuela e Irã, fim da OTAN e rompimento de relações com Israel."
+      }
+    ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+    "extractedTextSha256": "a51c5283c0e436ff52ec27a5ec0a8f8b2bdfc21fa8ae0b64b82b451dc969ebfc"
+  }
+}

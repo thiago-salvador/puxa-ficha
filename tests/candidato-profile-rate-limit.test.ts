@@ -15,7 +15,7 @@ require.cache[serverOnlyPath] = {
 const { createCandidatoProfileGetHandler } = require("../src/app/api/candidato-profile/[slug]/route") as typeof import("../src/app/api/candidato-profile/[slug]/route")
 
 /**
- * As tres rotas publicas de leitura de ficha ganharam rate limit em 18/08/2026,
+ * As rotas publicas de leitura de ficha têm rate limit antes do trabalho caro.
  * vespera do lancamento. Antes disso nao havia nenhum.
  *
  * O que a auditoria daquele dia mediu, e que decidiu quais rotas tratar:
@@ -110,12 +110,13 @@ test("a rota recusa antes de repetir a leitura pesada com service role", async (
   assert.equal(leituras, 1)
 })
 
-test("as tres rotas de leitura de ficha declaram limitador", async () => {
+test("as quatro rotas de leitura de ficha declaram limitador", async () => {
   const { readFile } = await import("node:fs/promises")
   const rotas = [
     "src/app/api/candidato-profile/[slug]/route.ts",
     "src/app/api/candidato-profile/[slug]/projetos-lei/route.ts",
     "src/app/api/candidato-profile/[slug]/legislacao-executivo/route.ts",
+    "src/app/api/candidato-profile/[slug]/programa/route.ts",
   ]
   for (const r of rotas) {
     const txt = await readFile(new URL(`../${r}`, import.meta.url), "utf8")
@@ -126,6 +127,7 @@ test("as tres rotas de leitura de ficha declaram limitador", async () => {
     const consultas = [
       txt.indexOf("await getCandidato"),
       txt.indexOf("await deps.getCandidato"),
+      txt.indexOf("await deps.getPrograma"),
       txt.indexOf("await get"),
     ].filter((pos) => pos >= 0)
     assert.ok(consultas.length > 0, `${r} sem consulta identificavel`)

@@ -157,6 +157,9 @@ test.describe("pesquisas presidenciais v2", () => {
     const pesquisasTabButton = page.getByRole("tab", { name: /^Pesquisas/ })
     await pesquisasTabButton.focus()
     await pesquisasTabButton.press("ArrowRight")
+    const programaTabButton = page.getByRole("tab", { name: /^Programa/ })
+    await expect(programaTabButton).toBeFocused()
+    await programaTabButton.press("ArrowRight")
     await expect(page.getByRole("tab", { name: /^Mídia/ })).toBeFocused()
   })
 
