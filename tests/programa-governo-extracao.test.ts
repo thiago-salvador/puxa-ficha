@@ -15,8 +15,19 @@ const fixtures = resolve(import.meta.dirname, "fixtures/programas-governo")
 
 test("extracts textual PDF deterministically with page mapping", async () => {
   const pdf = join(fixtures, "textual.pdf")
-  const first = await extractProgramaPdf(pdf)
-  const second = await extractProgramaPdf(pdf)
+  const adapters: Partial<ProgramaGovernoExtractionAdapters> = {
+    run: async (command, args) => {
+      if (command === "pdfinfo") return Buffer.from("Pages: 2\n")
+      if (command === "pdftotext") {
+        return Buffer.from(args[1] === "1"
+          ? "Primeiro parágrafo\n• Item preservado\n"
+          : "Segundo parágrafo\n")
+      }
+      throw new Error(`comando inesperado: ${command}`)
+    },
+  }
+  const first = await extractProgramaPdf(pdf, adapters)
+  const second = await extractProgramaPdf(pdf, adapters)
 
   assert.equal(first.paginas, 2)
   assert.match(first.sourceSha256, /^[a-f0-9]{64}$/)
@@ -31,8 +42,16 @@ test("extracts textual PDF deterministically with page mapping", async () => {
 })
 
 test("fails explicitly when a PDF page has no trustworthy text", async () => {
+  const adapters: Partial<ProgramaGovernoExtractionAdapters> = {
+    run: async (command) => {
+      if (command === "pdfinfo") return Buffer.from("Pages: 1\n")
+      if (command === "pdftoppm") return Buffer.alloc(0)
+      if (command === "pdftotext" || command === "xcrun") return Buffer.from(" \n")
+      throw new Error(`comando inesperado: ${command}`)
+    },
+  }
   await assert.rejects(
-    () => extractProgramaPdf(join(fixtures, "scan-sem-texto.pdf")),
+    () => extractProgramaPdf(join(fixtures, "scan-sem-texto.pdf"), adapters),
     (error: unknown) => error instanceof Error && error.name === "ProgramaGovernoExtractionError" && /extracao_falhou/.test(error.message),
   )
 })
