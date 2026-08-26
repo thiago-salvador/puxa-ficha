@@ -17,7 +17,11 @@ require.cache[serverOnlyPath] = {
   loaded: true,
   exports: {},
 } as never
-const { avaliarCasoMonitoramento } = require("../scripts/lib/pesquisas-monitoramento") as typeof import("../scripts/lib/pesquisas-monitoramento")
+const {
+  avaliarCasoMonitoramento,
+  listarAlvosMonitoramento,
+  listarFontesAprovadasUtilizadas,
+} = require("../scripts/lib/pesquisas-monitoramento") as typeof import("../scripts/lib/pesquisas-monitoramento")
 
 const FIXTURES = resolve("tests/fixtures/pesquisas-monitoramento")
 const cases = readFileSync("tests/fixtures/pesquisas-monitoramento-golden.jsonl", "utf8")
@@ -30,17 +34,37 @@ test("golden set cobre os modos de falha exigidos", () => {
     new Set(cases.map((entry) => entry.case_id)),
     new Set([
       "publicacao-nova-valida",
+      "sucesso-datafolha-nacional",
+      "sucesso-datafolha-estadual",
+      "sucesso-real-time-big-data-estadual",
       "fonte-condicional",
       "registro-conflitante",
+      "instituto-conflitante-tse",
       "alias-ambiguo",
       "mudanca-retroativa",
       "zero-publicado",
       "timeout",
       "html-inesperado",
+      "layout-alterado-datafolha",
       "evidencia-inalterada",
       "evidencia-vencida",
     ]),
   )
+})
+
+test("inventario calcula quatro adaptadores e 18 combinacoes aprovadas", () => {
+  assert.deepEqual(listarFontesAprovadasUtilizadas(), [
+    "datafolha-folha-globo-estaduais-2026",
+    "datafolha-folha-globo-nacional-2026",
+    "poderdata-aya-nacional-2026",
+    "real-time-big-data-estaduais-2026",
+  ])
+  assert.equal(listarAlvosMonitoramento().length, 18)
+  assert.equal(listarAlvosMonitoramento({ sourceId: "datafolha-folha-globo-estaduais-2026" }).length, 7)
+  assert.equal(listarAlvosMonitoramento({ sourceId: "real-time-big-data-estaduais-2026" }).length, 9)
+  assert.equal(listarAlvosMonitoramento({ uf: "CE" }).length, 1)
+  assert.equal(listarAlvosMonitoramento({ uf: "BR" }).length, 2)
+  assert.throws(() => listarAlvosMonitoramento({ sourceId: "quaest-genial-nacional-2026" }), /sem adaptador aprovado/)
 })
 
 test("reference solution passa em 100 por cento dos casos", () => {
@@ -83,6 +107,36 @@ test("evidencia normalizada preserva todos os campos obrigatorios e zero real", 
   assert.equal(evidence.results[0]?.value_percent, 0)
   assert.match(evidence.observed_at, /^2026-08-25T/)
   assert.match(evidence.evidence_sha256, /^[a-f0-9]{64}$/)
+})
+
+test("cada adaptador extrai o contrato completo da fixture sanitizada", () => {
+  const successIds = [
+    "publicacao-nova-valida",
+    "sucesso-datafolha-nacional",
+    "sucesso-datafolha-estadual",
+    "sucesso-real-time-big-data-estadual",
+  ]
+  for (const caseId of successIds) {
+    const goldenCase = cases.find((entry) => entry.case_id === caseId)
+    assert.ok(goldenCase)
+    const evidence = avaliarCasoMonitoramento(goldenCase, FIXTURES).evidence
+    assert.ok(evidence, caseId)
+    assert.equal(evidence.source_status, "aprovado", caseId)
+    assert.match(evidence.url, /^https:\/\//, caseId)
+    assert.ok(evidence.institute, caseId)
+    assert.match(evidence.registration.id, /^(?:BR|[A-Z]{2})-\d{5}\/2026$/, caseId)
+    assert.ok(evidence.scenario.office, caseId)
+    assert.match(evidence.scenario.geography_code, /^(?:BR|[A-Z]{2})$/, caseId)
+    assert.equal(evidence.scenario.turn, 1, caseId)
+    assert.ok(evidence.scenario.label, caseId)
+    assert.match(evidence.fieldwork.start, /^2026-\d{2}-\d{2}$/, caseId)
+    assert.match(evidence.fieldwork.end, /^2026-\d{2}-\d{2}$/, caseId)
+    assert.ok(evidence.sample.size > 0, caseId)
+    assert.ok(evidence.margin_error_pp > 0, caseId)
+    assert.ok(evidence.results.length >= 2, caseId)
+    assert.match(evidence.observed_at, /^2026-08-/, caseId)
+    assert.match(evidence.evidence_sha256, /^[a-f0-9]{64}$/, caseId)
+  }
 })
 
 test("instrucao embutida em HTML nao entra na evidencia", () => {

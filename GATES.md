@@ -1,43 +1,58 @@
-# Gates: cobertura de pesquisas para governos em 19 UFs
+# Gates: monitoramento das fontes eleitorais aprovadas
 
-Scope: pesquisar as 19 UFs ainda vazias, publicar somente rodadas recentes com evidencia publica qualificada e manter vazias as UFs que nao fecharem todos os criterios.
+Scope: cobrir em dry-run todas as fontes aprovadas e efetivamente usadas nos catálogos presidencial e estadual, sem publicar nem alterar dados versionados.
 
-- [x] G0: o eval cobre outcome, policy, routing, custo e os modos de falha exigidos
-  CHECK: python3 /Users/thiagosalvador/.claude/skills/eval/scripts/eval_lint.py docs/operations/pesquisas-governadores-cobertura-19-ufs-eval.md && node -e "console.log('EVAL_19_UFS_PASS')"
-  EXPECT: EVAL_19_UFS_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=439212e4dfaaf037055abe83349fce0c857f05739f935c0fc0c279cbf41126ba; output-bytes=22
+- [x] G0: o eval e este ledger definem outcomes verificáveis para automação, política, routing e custo
+  CHECK: python3 /Users/thiagosalvador/.codex/skills/eval/scripts/eval_lint.py docs/operations/pesquisas-monitoramento-automatizado-eval.md && node /Users/thiagosalvador/.codex/skills/unlazy/scripts/gate-lint.mjs GATES.md && node -e "console.log('MONITOR_EVAL_LEDGER_PASS')"
+  EXPECT: MONITOR_EVAL_LEDGER_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=5adb1602005f15a495d2d6af2d4f39711bf59a5dc70978f5a1a504dc0c9b29b3; output-bytes=38
 
-- [x] G1: as 19 UFs foram pesquisadas e cada uma termina publicada ou com ausencia objetiva e rastreavel
-  CHECK: node --conditions react-server --import tsx --test tests/pesquisas-governadores-cobertura.test.ts && node -e "console.log('COBERTURA_19_UFS_PASS')"
-  EXPECT: COBERTURA_19_UFS_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=2bbe02c15a1a43f6e9d2460fa2467c417ff4793bdb277a129520ce34395a08db; output-bytes=1515
+- [x] G1: toda fonte aprovada e usada possui um adaptador explícito e nenhuma fonte condicional ou excluída possui adaptador
+  CHECK: npm run audit:pesquisas:monitoramento && node -e "console.log('MONITOR_ADAPTER_COVERAGE_PASS')"
+  EXPECT: MONITOR_ADAPTER_COVERAGE_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=03405418cd7da857c1d7ea01275556987463fdf3b69fb55ee9e76aed9aabe6fb; output-bytes=200
 
-- [x] G2: somente fonte aprovada, resultado publico completo, metodologia suficiente e rodada atual entram no catalogo
-  CHECK: npm run audit:pesquisas:gate && npm run test:pesquisas:dados && node -e "console.log('FONTES_19_UFS_PASS')"
-  EXPECT: FONTES_19_UFS_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=25d4a56e1b8a3028787df0491b6f6b9fbf8d1ca6cd20dbb8c0d68cc354fe346e; output-bytes=3207
+- [x] G2: fixtures sanitizadas e golden set provam os quatro adaptadores e todos os modos de falha obrigatórios sem rede
+  CHECK: npm run test:pesquisas:monitoramento && node -e "console.log('MONITOR_GOLDEN_PASS')"
+  EXPECT: MONITOR_GOLDEN_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=265d8952f99c3d0c1955f3bf54aae93275bfdbfae8b55590875526d730733885; output-bytes=2210
 
-- [x] G3: isolamento por UF, fonte condicional, alias literal, zero real e ausencia explicita permanecem fail-closed
-  CHECK: npm run test:pesquisas:identidade && npm run test:pesquisas:selecao && node -e "console.log('POLICY_19_UFS_PASS')"
-  EXPECT: POLICY_19_UFS_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=808a5cb8249fc5e228af9bc781b2f20ce7e8465386e535e6ed1c26181e94a3f7; output-bytes=3899
+- [x] G3: allowlist, robots, timeout, rate limit, limite de resposta, redirects e retry controlado falham fechados
+  CHECK: npm run test:pesquisas:monitoramento:rede && npm run audit:pesquisas:monitoramento && node -e "console.log('MONITOR_NETWORK_POLICY_PASS')"
+  EXPECT: MONITOR_NETWORK_POLICY_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=255665cdabf4ba097e421327a504240a0020379c59fe19121a1753b2b9329ef5; output-bytes=1689
 
-- [x] G4: uma nova UF publicada e duas vazias passam em desktop e celular com screenshots reais
-  CHECK: npm run test:visual:pesquisas && node -e "console.log('VISUAL_19_UFS_PASS')"
-  EXPECT: VISUAL_19_UFS_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=9658582865eb832715e12f92c37061a2110a60ff1a20ffb5ab9e084b84d2a35a; output-bytes=4876
+- [x] G4: toda proposta cruza o TSE e preserva metadados completos, evidência pública, horário e SHA-256
+  CHECK: npm run test:pesquisas:monitoramento:tse && npm run test:pesquisas:monitoramento && node -e "console.log('MONITOR_TSE_EVIDENCE_PASS')"
+  EXPECT: MONITOR_TSE_EVIDENCE_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=25c3a693d8f9ebe654dd49178e7c52603ce5b72f53d2d99fca1aae893cd59e19; output-bytes=3005
 
-- [x] G5: o gate canonico de pesquisas permanece integralmente verde no diff final
-  CHECK: npm run verify:pesquisas && node -e "console.log('VERIFY_19_UFS_PASS')"
-  EXPECT: VERIFY_19_UFS_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=69b990f2fa6ac39530d5cf48636437b8bc4dfdb973e023e22271c26065ccda96; output-bytes=20672
+- [x] G5: o dry-run consolidado escreve somente proposal.json, diff.json e summary.md e não altera catálogos ou produção
+  CHECK: npm run test:pesquisas:monitoramento:isolamento && npm run audit:pesquisas:monitoramento && node -e "console.log('MONITOR_ISOLATION_PASS')"
+  EXPECT: MONITOR_ISOLATION_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=6d9c02dcee2e5909570026514efecab3fb5deb6b91960ce85d1efaf23e365e34; output-bytes=663
 
-- [x] G6: o diff contem somente catalogos, scorecard, inventario, documentacao, auditor e testes necessarios
-  CHECK: node scripts/audit/verify-pesquisas-governadores-scope.mjs && node -e "console.log('SCOPE_19_UFS_PASS')"
-  EXPECT: SCOPE_19_UFS_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=10d3362b8db14d49401aa51181dfd2fea86c7790c42f5f8d1feb776f077c1825; output-bytes=66
+- [x] G6: o workflow manual aceita uma fonte, uma UF ou todas as combinações aprovadas, consolida artefato e resumo, mantém contents read e não possui cron nem secrets
+  CHECK: npm run test:pesquisas:monitoramento:workflow && node -e "console.log('MONITOR_WORKFLOW_PASS')"
+  EXPECT: MONITOR_WORKFLOW_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=b55b2719b37d4c92757446e45b1e46b901bd975f9c1788d55bae217c4bcdf1cc; output-bytes=490
 
-- [x] G7: branch, autoria, commit, push e PR exclusivo estao comprovados sem merge, deploy ou escrita em producao
-  CHECK: test "$(git branch --show-current)" = "codex/pesquisas-cobertura-19-ufs" && test "$(git config user.name)" = "Thiago Salvador" && test "$(git config user.email)" = "contato.thiagosalvador@gmail.com" && gh pr view --json state,isDraft,headRefName,baseRefName,mergeStateStatus,url >/dev/null && node -e "console.log('PR_19_UFS_PASS')"
-  EXPECT: PR_19_UFS_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=1ea3079d66e32283b0dc8609fb6546524e7c76d1060580a1f8165addeb449020; output-bytes=15
+- [x] G7: um dry-run real por adaptador está registrado com estado comprovado ou bloqueio objetivo
+  CHECK: node scripts/audit/verify-pesquisas-monitoramento-live-proof.mjs && node -e "console.log('MONITOR_LIVE_PROOF_PASS')"
+  EXPECT: MONITOR_LIVE_PROOF_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=cb745a3734eb80cdebd1f913171960708d0cc9acccf3cdcc7291c4ff2a7a54c9; output-bytes=83
+
+- [x] G8: todos os gates específicos de monitoramento e o escopo estreito passam no diff final
+  CHECK: npm run verify:pesquisas:monitoramento && npm run audit:pesquisas:monitoramento:scope && node -e "console.log('MONITOR_SCOPE_PASS')"
+  EXPECT: MONITOR_SCOPE_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=73ad46ca3aae0a4f4b18cbee6a95bd88c24076ee2908c497938a61537d7b6955; output-bytes=5249
+
+- [x] G9: o gate canônico de pesquisas passa integralmente no diff final
+  CHECK: npm run verify:pesquisas && node -e "console.log('MONITOR_VERIFY_PESQUISAS_PASS')"
+  EXPECT: MONITOR_VERIFY_PESQUISAS_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=212532f68f13a9d3beae80f916e813c70ca9f30fbbc7268f24719accc9257042; output-bytes=20677
+
+- [ ] G10: branch, autoria, commit, push e PR exclusivo estão comprovados sem merge, cron ou publicação
+  CHECK: test "$(git branch --show-current)" = "codex/pesquisas-monitoramento-fontes-estaduais" && test "$(git config user.name)" = "Thiago Salvador" && test "$(git config user.email)" = "contato.thiagosalvador@gmail.com" && gh pr view --json state,headRefName,baseRefName,url --jq 'select(.state == "OPEN" and .headRefName == "codex/pesquisas-monitoramento-fontes-estaduais" and .baseRefName == "main") | "MONITOR_PR_PASS"'
+  EXPECT: MONITOR_PR_PASS
+  EVIDENCE: pending

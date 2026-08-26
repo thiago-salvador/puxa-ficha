@@ -1,36 +1,39 @@
-## Eval: monitoramento automatizado de pesquisas eleitorais
+## Eval: monitoramento das fontes eleitorais aprovadas
 
 Tipo: automacao
 
-| # | Criterio pass/fail | Grader | Dimensao |
+| # | Critério pass/fail | Grader | Dimensão |
 |---|---|---|---|
-| 1 | A reference solution classifica corretamente todos os casos do golden set e passa 100 por cento dos graders. | code: `npm run test:pesquisas:monitoramento` | outcome |
-| 2 | Cada evidencia candidata inclui URL publica, instituto, registro TSE, campo, cenario, amostra, margem, resultados, horario observado e SHA-256. | code: teste de schema em `tests/pesquisas-monitoramento-golden.test.ts` | outcome |
-| 3 | O run produz `proposal.json`, `diff.json` e `summary.md`, e nenhum arquivo de catalogo muda antes ou depois do processo. | code: `npm run test:pesquisas:monitoramento:isolamento` | outcome |
-| 4 | Os estados novo, alterado, inalterado, vencido, conflitante, fonte indisponivel e identidade nao resolvida aparecem no golden set e sao decididos sem fallback aberto. | code: `npm run test:pesquisas:monitoramento` | outcome |
-| 5 | Fonte condicional, origem fora da allowlist, alias ambiguo, registro insuficiente, timeout e HTML inesperado nunca ficam promoviveis. | code: `npm run audit:pesquisas:monitoramento` e golden set | policy |
-| 6 | O coletor nao importa Supabase, nao recebe secrets, nao executa git ou GitHub e nao expoe API de publicacao. | code: `npm run audit:pesquisas:monitoramento` | policy |
-| 7 | O workflow contem apenas `workflow_dispatch`, permissao `contents: read`, filtros de fonte ou UF, resumo e artefato com retencao explicita. | code: `npm run test:pesquisas:monitoramento:workflow` | policy |
-| 8 | O cliente de rede respeita robots, limita tentativas e concorrencia, aplica timeout e redige URLs sensiveis nos logs. | code: `npm run test:pesquisas:monitoramento:rede` | policy |
-| 9 | Um run controlado observa a pagina publica aprovada do PoderData sem autenticar, contornar paywall ou acessar rota bloqueada. | code: `npm run monitor:pesquisas:manual -- --source=poderdata-aya-nacional-2026 --out=.artifacts/pesquisas-monitoramento-manual` | routing |
-| 10 | Nenhuma dependencia e adicionada, e um diagnostico limita o run a uma fonte ou UF. | code: scope audit e testes da CLI | custo |
-| 11 | O gate `verify:pesquisas`, lint, typecheck e auditorias de seguranca aplicaveis passam sobre o diff final. | code: comandos G8 e G9 de `GATES.md` | outcome |
+| 1 | A lista calculada de fontes `aprovado` e usadas nos catálogos coincide exatamente com o registro de adaptadores. | code: `npm run audit:pesquisas:monitoramento` | outcome |
+| 2 | Cada um dos quatro adaptadores transforma sua fixture real sanitizada em evidência completa e a reference solution passa 100% do golden set. | code: `npm run test:pesquisas:monitoramento` | outcome |
+| 3 | Toda evidência contém instituto, registro TSE, cargo, UF, turno, cenário, campo, amostra, margem, resultados, URL pública, horário observado e SHA-256. | code: testes de schema e TSE em `npm run test:pesquisas:monitoramento` | outcome |
+| 4 | Cada proposta é confrontada com registro, cargo, geografia, campo, amostra, margem e instituto do dataset oficial do TSE antes de ficar elegível. | code: `npm run test:pesquisas:monitoramento:tse` | outcome |
+| 5 | O run consolidado escreve somente `proposal.json`, `diff.json` e `summary.md`, sem alterar catálogos antes ou depois. | code: `npm run test:pesquisas:monitoramento:isolamento` | policy |
+| 6 | Fonte condicional ou excluída, domínio fora da allowlist, HTML inesperado, layout alterado, conflito, timeout e alias ambíguo nunca ficam elegíveis. | code: golden set e `npm run audit:pesquisas:monitoramento` | policy |
+| 7 | O cliente respeita robots.txt, HTTPS, timeout, rate limit, limite de resposta, redirects e no máximo três tentativas. | code: `npm run test:pesquisas:monitoramento:rede` | policy |
+| 8 | O workflow contém somente `workflow_dispatch`, `contents: read`, nenhuma credencial persistida ou secret, seleção por fonte ou UF e modo para todas as combinações. | code: `npm run test:pesquisas:monitoramento:workflow` | policy |
+| 9 | Um dry-run local real por adaptador registra estado `comprovado` ou bloqueio objetivo, sem contornar robots, paywall ou autenticação. | code: `node scripts/audit/verify-pesquisas-monitoramento-live-proof.mjs` | routing |
+| 10 | O monitor não importa Supabase, não executa Git ou GitHub e não contém caminho de publicação. | code: `npm run audit:pesquisas:monitoramento` | policy |
+| 11 | A seleção de uma fonte, uma UF e todas as combinações gera um único conjunto consolidado de três artefatos. | code: testes de CLI em `npm run test:pesquisas:monitoramento` e workflow | outcome |
+| 12 | Nenhuma dependência nova é adicionada, cada URL recebe no máximo três tentativas e o workflow mantém timeout de 15 minutos. | code: scope audit e testes de rede/workflow | custo |
+| 13 | `npm run verify:pesquisas:monitoramento`, `npm run verify:pesquisas` e o scope audit passam no diff final. | code: G8 e G9 de `GATES.md` | outcome |
 
-Gate: Done somente com 100% PASS registrado e evidencia atual por criterio.
+Gate: Done somente com 100% PASS registrado e evidência atual por critério.
 
-Custo esperado: zero dependencia nova, no maximo tres tentativas por URL, concorrencia padrao um e uma unica pagina publica no teste manual. Golden set: `tests/fixtures/pesquisas-monitoramento-golden.jsonl`.
+Custo esperado: zero dependência nova, uma coleta sequencial por URL, no máximo três tentativas por URL e uma única obtenção do dataset TSE por execução. Golden set: `tests/fixtures/pesquisas-monitoramento-golden.jsonl`.
 
-## Casos obrigatorios do golden set
+### Casos obrigatórios do golden set
 
-- Publicacao nova valida baseada em rodada aprovada existente.
-- Fonte condicional existente no scorecard.
-- Conflito entre registro e divulgacao.
-- Alias ambiguo derivado das regras literais atuais.
-- Mudanca retroativa em evidencia ja observada.
-- Percentual zero realmente publicado.
-- Timeout de fonte.
-- HTML inesperado.
-- Evidencia inalterada.
-- Evidencia vencida pela politica de recencia.
+- sucesso PoderData nacional;
+- sucesso Datafolha nacional;
+- sucesso Datafolha estadual;
+- sucesso Real Time Big Data estadual por formato de veículo sanitizado;
+- zero publicado preservado como zero;
+- conflito com o TSE;
+- fonte condicional;
+- timeout;
+- layout alterado ou HTML inesperado;
+- alias ambíguo;
+- inalterado e vencido para regressão das classificações existentes.
 
-O runner resolve cada caso sem rede e compara a saida exata com `reference_solution`. Se a referencia nao passar todos os casos, o eval esta quebrado e a entrega permanece bloqueada.
+A reference solution usa somente fixtures locais e precisa passar todos os graders sem rede. Alterar o parser sem repetir o golden set invalida a prova.

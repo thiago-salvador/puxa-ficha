@@ -8,13 +8,20 @@ on:
   workflow_dispatch:
     inputs:
       source_id:
-        description: "Fonte aprovada para diagnostico"
-        required: false
-        default: "poderdata-aya-nacional-2026"
+        description: "Uma fonte aprovada ou todas"
+        required: true
+        type: choice
+        default: "all"
+        options:
+          - "all"
+          - "poderdata-aya-nacional-2026"
+          - "datafolha-folha-globo-nacional-2026"
+          - "datafolha-folha-globo-estaduais-2026"
+          - "real-time-big-data-estaduais-2026"
       uf:
-        description: "UF opcional para diagnostico, ou BR para Presidente"
-        required: false
-        default: ""
+        description: "Uma UF, BR para Presidente ou all"
+        required: true
+        default: "all"
 
 permissions:
   contents: read
@@ -52,8 +59,7 @@ jobs:
           monitor_source_id: ${{ inputs.source_id }}
           monitor_uf: ${{ inputs.uf }}
         run: |
-          args=("--out=reports/pesquisas-monitoramento" "--source=$monitor_source_id")
-          if [ -n "$monitor_uf" ]; then args+=("--uf=$monitor_uf"); fi
+          args=("--out=reports/pesquisas-monitoramento" "--source=$monitor_source_id" "--uf=$monitor_uf")
           npm run monitor:pesquisas -- "${args[@]}"
 
       - name: Resumir proposta

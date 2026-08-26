@@ -3,15 +3,26 @@ import { resolve } from "node:path"
 import {
   avaliarEvidenciaAoVivo,
   escreverRelatorios,
+  listarAlvosMonitoramento,
   obterContratoFonte,
-  parsePoderDataPublicacao,
+  resultadoEvidenciaBloqueada,
   resultadoFonteIndisponivel,
+  type EvidenciaPesquisaCandidata,
 } from "./lib/pesquisas-monitoramento"
-import { criarClienteHttpMonitoramento } from "./lib/pesquisas-monitoramento-rede"
+import {
+  obterAdaptadorMonitoramento,
+  parsePublicacaoMonitorada,
+  type AlvoMonitoramento,
+} from "./lib/pesquisas-monitoramento-adapters"
+import {
+  criarClienteHttpMonitoramento,
+  type ClienteHttpMonitoramento,
+} from "./lib/pesquisas-monitoramento-rede"
 import {
   descobrirUrlZipTse,
   extrairCsvDoZipTse,
   parseRegistrosTse,
+  type RegistroTseMonitoramento,
 } from "./lib/pesquisas-monitoramento-tse"
 
 interface Args {
@@ -47,11 +58,11 @@ function applyOption(parsed: Args, argv: string[], index: number, arg: string): 
   return index + Number(option.consumedNext)
 }
 
-function parseArgs(argv: string[]): Args {
+export function parseArgs(argv: string[]): Args {
   const parsed: Args = {
     liveCheck: false,
     out: ".artifacts/pesquisas-monitoramento",
-    source: "poderdata-aya-nacional-2026",
+    source: "all",
     uf: null,
   }
   for (let index = 0; index < argv.length; index += 1) {
@@ -65,90 +76,167 @@ function parseArgs(argv: string[]): Args {
   return parsed
 }
 
-type Source = ReturnType<typeof obterContratoFonte>
-type Client = ReturnType<typeof criarClienteHttpMonitoramento>
 type MonitoringResult = ReturnType<typeof resultadoFonteIndisponivel>
+
+interface CapturaAoVivo {
+  evidence: EvidenciaPesquisaCandidata | null
+  html: string | null
+  observedAt: string | null
+  target: AlvoMonitoramento
+  result: MonitoringResult
+}
 
 function errorMessage(error: unknown): string {
   return error instanceof Error ? error.message : String(error)
-}
-
-function skipUnsupportedGeography(args: Args, geographyCode: string | null): boolean {
-  if (!args.uf || args.uf === geographyCode) return false
-  escreverRelatorios([], resolve(args.out))
-  console.log(`nenhum adaptador aprovado configurado para UF ${args.uf}`)
-  if (args.liveCheck) throw new Error("teste manual nao observou fonte para a UF solicitada")
-  return true
-}
-
-async function evaluateWithTse(client: Client, source: Source, html: string, observedAt: string, registrationId: string): Promise<MonitoringResult> {
-  try {
-    const dataset = await client.getText("https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026")
-    const zip = await client.getBytes(descobrirUrlZipTse(dataset.body))
-    const registry = parseRegistrosTse(extrairCsvDoZipTse(zip.body))
-    const result = avaliarEvidenciaAoVivo({ source, html, observedAt, registry })
-    if (registry.some((entry) => entry.registration_id === registrationId)) console.log("TSE_REGISTRY_OBSERVED")
-    return result
-  } catch (error) {
-    console.error(`TSE fail-closed: ${errorMessage(error)}`)
-    return resultadoFonteIndisponivel("tse_registry_unavailable")
-  }
-}
-
-function evidenceIsComplete(evidence: ReturnType<typeof parsePoderDataPublicacao>, expectedRegistration: string): boolean {
-  return [
-    evidence.registration.id === expectedRegistration,
-    evidence.sample.size > 0,
-    Boolean(evidence.fieldwork.start),
-    Boolean(evidence.fieldwork.end),
-    /^[a-f0-9]{64}$/.test(evidence.evidence_sha256),
-  ].every(Boolean)
 }
 
 function sourceFailureReason(error: unknown): "source_timeout" | "source_unavailable" {
   return /timeout/i.test(errorMessage(error)) ? "source_timeout" : "source_unavailable"
 }
 
-async function collectLive(client: Client, source: Source): Promise<{ liveObserved: boolean; result: MonitoringResult }> {
-  const representative = source.representative_poll
-  if (!representative) throw new Error("fonte sem rodada representativa no scorecard")
+function evidenceIsComplete(evidence: EvidenciaPesquisaCandidata, target: AlvoMonitoramento): boolean {
+  return [
+    evidence.registration.id === target.registration_id,
+    evidence.scenario.office === target.office,
+    evidence.scenario.geography_code === target.geography_code,
+    evidence.scenario.turn === target.turn,
+    evidence.sample.size > 0,
+    evidence.results.length >= 2,
+    Boolean(evidence.fieldwork.start),
+    Boolean(evidence.fieldwork.end),
+    /^[a-f0-9]{64}$/.test(evidence.evidence_sha256),
+  ].every(Boolean)
+}
+
+async function collectSource(
+  client: ClienteHttpMonitoramento,
+  target: AlvoMonitoramento,
+): Promise<CapturaAoVivo> {
+  const source = obterContratoFonte(target.source_id)
   try {
-    const response = await client.getText(representative.result_url)
-    const evidence = parsePoderDataPublicacao({ source, html: response.body, observedAt: response.observedAt })
-    const liveObserved = evidenceIsComplete(evidence, representative.registration_id)
-    const result = await evaluateWithTse(client, source, response.body, response.observedAt, evidence.registration.id)
-    return { liveObserved, result }
+    const response = await client.getText(target.url)
+    const evidence = parsePublicacaoMonitorada({
+      source,
+      target,
+      html: response.body,
+      observedAt: response.observedAt,
+    })
+    if (!evidenceIsComplete(evidence, target)) throw new Error("evidencia publica incompleta")
+    console.log(`SOURCE_ADAPTER_OBSERVED: ${target.source_id} ${target.poll_id}`)
+    return {
+      evidence,
+      html: response.body,
+      observedAt: response.observedAt,
+      target,
+      result: resultadoFonteIndisponivel("tse_registry_pending"),
+    }
   } catch (error) {
-    console.error(errorMessage(error))
-    return { liveObserved: false, result: resultadoFonteIndisponivel(sourceFailureReason(error)) }
+    console.error(`[${target.poll_id}] ${errorMessage(error)}`)
+    return {
+      evidence: null,
+      html: null,
+      observedAt: null,
+      target,
+      result: resultadoFonteIndisponivel(sourceFailureReason(error)),
+    }
   }
 }
 
-function assertLiveCheck(liveCheck: boolean, liveObserved: boolean): void {
-  if (!liveCheck) return
-  if (!liveObserved) throw new Error("fonte publica aprovada nao produziu evidencia controlada completa")
-  console.log("MONITORAMENTO_LIVE_SOURCE_PASS")
+async function loadTseRegistry(client: ClienteHttpMonitoramento): Promise<RegistroTseMonitoramento[]> {
+  const dataset = await client.getText("https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026")
+  const zip = await client.getBytes(descobrirUrlZipTse(dataset.body))
+  return parseRegistrosTse(extrairCsvDoZipTse(zip.body))
+}
+
+function reconcileCapture(capture: CapturaAoVivo, registry: RegistroTseMonitoramento[]): CapturaAoVivo {
+  if (!capture.html || !capture.observedAt || !capture.evidence) return capture
+  const source = obterContratoFonte(capture.target.source_id)
+  return {
+    ...capture,
+    result: avaliarEvidenciaAoVivo({
+      source,
+      target: capture.target,
+      html: capture.html,
+      observedAt: capture.observedAt,
+      registry,
+    }),
+  }
+}
+
+function buildSourceClient(targets: AlvoMonitoramento[]): ClienteHttpMonitoramento {
+  const allowedOrigins = new Set<string>()
+  for (const target of targets) {
+    const adapter = obterAdaptadorMonitoramento(target.source_id)
+    const origin = new URL(target.url).origin
+    if (!adapter.allowed_origins.includes(origin)) {
+      throw new Error(`origem fora da allowlist do adaptador: ${origin}`)
+    }
+    allowedOrigins.add(origin)
+  }
+  return criarClienteHttpMonitoramento({
+    allowedOrigins: [...allowedOrigins],
+    logger: (message) => console.error(`[monitor:fonte] ${message}`),
+    maxBytes: 2_000_000,
+  })
+}
+
+function buildTseClient(): ClienteHttpMonitoramento {
+  return criarClienteHttpMonitoramento({
+    allowedOrigins: ["https://dadosabertos.tse.jus.br", "https://cdn.tse.jus.br"],
+    logger: (message) => console.error(`[monitor:tse] ${message}`),
+    maxBytes: 20_000_000,
+  })
+}
+
+function assertLiveCheck(args: Args, captures: CapturaAoVivo[]): void {
+  if (!args.liveCheck) return
+  const complete = captures.filter((capture) => (
+    capture.evidence &&
+    capture.result.decision.reason !== "tse_registry_unavailable" &&
+    capture.result.decision.reason !== "tse_registry_pending"
+  ))
+  if (complete.length !== captures.length) {
+    throw new Error(`dry-run real incompleto: ${complete.length}/${captures.length} combinações comprovadas`)
+  }
+  console.log(`MONITORAMENTO_LIVE_SOURCE_PASS: ${complete.length}/${captures.length}`)
 }
 
 async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2))
-  const source = obterContratoFonte(args.source)
-  const representative = source.representative_poll
-  if (!representative) throw new Error("fonte sem rodada representativa no scorecard")
-  const geographyCode = representative.geography === "Brasil" ? "BR" : null
-  if (skipUnsupportedGeography(args, geographyCode)) return
+  const targets = listarAlvosMonitoramento({ sourceId: args.source, uf: args.uf })
+  if (targets.length === 0) {
+    escreverRelatorios([], resolve(args.out))
+    console.log("nenhuma combinação aprovada corresponde aos filtros")
+    if (args.liveCheck) throw new Error("dry-run real não observou combinação aprovada")
+    return
+  }
 
-  const url = new URL(representative.result_url)
-  const client = criarClienteHttpMonitoramento({
-    allowedOrigins: [url.origin, "https://dadosabertos.tse.jus.br", "https://cdn.tse.jus.br"],
-    logger: (message) => console.error(`[monitor] ${message}`),
-    maxBytes: 20_000_000,
-  })
-  const { liveObserved, result } = await collectLive(client, source)
+  const sourceClient = buildSourceClient(targets)
+  const captures: CapturaAoVivo[] = []
+  for (const target of targets) captures.push(await collectSource(sourceClient, target))
 
-  escreverRelatorios([{ case_id: `${args.source}-live`, result }], resolve(args.out))
-  console.log(`dry-run concluido: ${result.decision.classification}; revisao humana obrigatoria`)
-  assertLiveCheck(args.liveCheck, liveObserved)
+  let reconciled = captures
+  try {
+    const registry = await loadTseRegistry(buildTseClient())
+    reconciled = captures.map((capture) => reconcileCapture(capture, registry))
+    console.log(`TSE_REGISTRY_OBSERVED: ${registry.length} registros`)
+  } catch (error) {
+    console.error(`TSE fail-closed: ${errorMessage(error)}`)
+    reconciled = captures.map((capture) => capture.evidence
+      ? { ...capture, result: resultadoEvidenciaBloqueada(capture.evidence, "tse_registry_unavailable") }
+      : capture)
+  }
+
+  escreverRelatorios(
+    reconciled.map((capture) => ({
+      case_id: `${capture.target.poll_id}-live`,
+      result: capture.result,
+    })),
+    resolve(args.out),
+  )
+  const eligible = reconciled.filter((capture) => capture.result.decision.eligible_for_human_review).length
+  console.log(`dry-run concluído: ${reconciled.length} combinações, ${eligible} elegíveis; revisão humana obrigatória`)
+  assertLiveCheck(args, reconciled)
 }
 
 main().catch((error) => {
