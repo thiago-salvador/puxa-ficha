@@ -6,6 +6,7 @@ import { join, resolve } from "node:path"
 import { promisify } from "node:util"
 
 import type { ProgramaGovernoExtracao, ProgramaGovernoSecao } from "../../src/lib/programa-governo"
+import { stripAccents } from "../../src/lib/strip-accents"
 
 const execFileAsync = promisify(execFile)
 const OFFICIAL_TSE_HOSTS = new Set(["cdn.tse.jus.br", "dadosabertos.tse.jus.br", "divulgacandcontas.tse.jus.br"])
@@ -68,9 +69,7 @@ function isTrustworthyText(text: string): boolean {
 }
 
 function stableId(title: string, page: number, used: Set<string>): string {
-  const base = title
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  const base = stripAccents(title)
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
