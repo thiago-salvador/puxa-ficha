@@ -130,6 +130,12 @@ export type ProgramaGovernoManifestoPublico = {
   reviewedAt?: string
 }
 
+export type ProgramaGovernoApiResponse = {
+  data: ProgramaGovernoPublico | null
+  estado: ProgramaGovernoEstado
+  fonte: ProgramaGovernoFontePublica
+}
+
 const SHA256_PATTERN = /^[a-f0-9]{64}$/
 const SQ_PATTERN = /^\d{12}$/
 const ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/

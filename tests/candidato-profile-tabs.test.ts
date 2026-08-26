@@ -24,6 +24,7 @@ describe("candidato profile tab navigation", () => {
     assert.deepEqual([...CANDIDATO_PROFILE_NAV_TAB_IDS], [
       "geral",
       "pesquisas",
+      "programa",
       "media",
       "dinheiro",
       "justica",
@@ -36,6 +37,7 @@ describe("candidato profile tab navigation", () => {
     assert.equal(normalizeCandidatoProfileNavTab("trajetoria"), "trajetoria")
     assert.equal(normalizeCandidatoProfileNavTab("media"), "media")
     assert.equal(normalizeCandidatoProfileNavTab("pesquisas"), "pesquisas")
+    assert.equal(normalizeCandidatoProfileNavTab("programa"), "programa")
   })
 
   it("uses visible-tab normalization for UI navigation and query params", () => {
@@ -50,6 +52,7 @@ describe("candidato profile tab navigation", () => {
     assert.match(src, /window\.history\.pushState/)
     assert.doesNotMatch(src, /id:\s*["']timeline["'],\s*label:\s*["']Linha do tempo["']/)
     assert.match(src, /id !== "pesquisas" \|\| pesquisasEnabled/)
+    assert.match(src, /id !== "programa" \|\| programaEnabled/)
     assert.match(src, /requestedTab === "timeline" \|\| tabDefs\.some/)
   })
 

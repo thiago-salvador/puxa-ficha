@@ -44,6 +44,7 @@ import {
   listarPesquisasPresidenciaisPorSlug,
 } from "@/lib/pesquisas-eleitorais"
 import { ArrowLeft, ArrowRight } from "lucide-react"
+import { getProgramaGovernoManifesto } from "@/lib/programa-governo-server"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
 
@@ -95,6 +96,10 @@ export async function CandidatoFichaView({
       : ficha.estado
         ? listarPesquisasGovernadorPorSlug(slug, ficha.estado)
         : []
+  const programaGoverno =
+    ficha.cargo_disputado === "Presidente" && seoSubpath !== "timeline"
+      ? await getProgramaGovernoManifesto(slug)
+      : null
 
   // Presidente é disputa nacional (anel único); qualquer outra disputa navega
   // dentro da própria UF. Sem estado na ficha, degrada para o anel do cargo.
@@ -424,6 +429,7 @@ export async function CandidatoFichaView({
         initialTab={profileInitialTab}
         pesquisasEnabled={pesquisasEnabled}
         pesquisas={pesquisas}
+        programaGoverno={programaGoverno}
       />
 
       {ficha.biografia && (
