@@ -1,7 +1,8 @@
 import assert from "node:assert/strict"
-import { readFileSync } from "node:fs"
+import { mkdtempSync, readFileSync, rmSync } from "node:fs"
 import { createRequire } from "node:module"
-import { resolve } from "node:path"
+import { tmpdir } from "node:os"
+import { join, resolve } from "node:path"
 import test from "node:test"
 
 import type {
@@ -19,6 +20,7 @@ require.cache[serverOnlyPath] = {
 } as never
 const {
   avaliarCasoMonitoramento,
+  escreverRelatorios,
   listarAlvosMonitoramento,
   listarFontesAprovadasUtilizadas,
 } = require("../scripts/lib/pesquisas-monitoramento") as typeof import("../scripts/lib/pesquisas-monitoramento")
@@ -136,6 +138,28 @@ test("cada adaptador extrai o contrato completo da fixture sanitizada", () => {
     assert.ok(evidence.results.length >= 2, caseId)
     assert.match(evidence.observed_at, /^2026-08-/, caseId)
     assert.match(evidence.evidence_sha256, /^[a-f0-9]{64}$/, caseId)
+  }
+})
+
+test("contrato normalizado distingue geografia nacional de unidade federativa", () => {
+  const nationalCase = cases.find((entry) => entry.case_id === "sucesso-datafolha-nacional")
+  const stateCase = cases.find((entry) => entry.case_id === "sucesso-datafolha-estadual")
+  assert.ok(nationalCase)
+  assert.ok(stateCase)
+
+  const outputDir = mkdtempSync(join(tmpdir(), "pesquisas-monitoramento-geografia-"))
+  try {
+    escreverRelatorios([
+      { case_id: nationalCase.case_id, result: avaliarCasoMonitoramento(nationalCase, FIXTURES) },
+      { case_id: stateCase.case_id, result: avaliarCasoMonitoramento(stateCase, FIXTURES) },
+    ], outputDir)
+    const proposal = JSON.parse(readFileSync(join(outputDir, "proposal.json"), "utf8")) as {
+      items: Array<{ normalized_contract: { geography: { type: string } } }>
+    }
+    assert.equal(proposal.items[0]?.normalized_contract.geography.type, "nacional")
+    assert.equal(proposal.items[1]?.normalized_contract.geography.type, "unidade_federativa")
+  } finally {
+    rmSync(outputDir, { recursive: true, force: true })
   }
 })
 
