@@ -33,6 +33,7 @@
     "test:programas-governo:dados": "node --conditions react-server --import tsx --test tests/programa-governo-data.test.ts",
     "test:programas-governo:route": "node --conditions react-server --import tsx --test tests/programa-governo-route.test.ts tests/candidato-profile-rate-limit.test.ts",
     "test:programas-governo:ui": "node --import tsx --test tests/candidato-profile-tabs.test.ts tests/programa-governo-ui.test.tsx",
+    "test:visual:programas-governo": "npm run build && playwright test -c tests/visual/programa-governo.playwright.config.ts",
     "test:pesquisas:identidade": "node --conditions react-server --import tsx --test tests/pesquisas-eleitorais-identidade.test.ts",
     "test:pesquisas:selecao": "node --conditions react-server --import tsx --test tests/pesquisas-eleitorais-selecao.test.ts",
     "test:pesquisas:ui": "node --import tsx --test tests/pesquisas-eleitorais-ui.test.tsx",
