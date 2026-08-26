@@ -1,58 +1,50 @@
-# Gates: monitoramento das fontes eleitorais aprovadas
+# Gates: atualização agendada de pesquisas eleitorais
 
-Scope: cobrir em dry-run todas as fontes aprovadas e efetivamente usadas nos catálogos presidencial e estadual, sem publicar nem alterar dados versionados.
+OWNS: .github/workflows/pesquisas-monitoramento.yml, GATES.md, docs/operations/pesquisas-monitoramento-automatizado-eval.md, package.json, scripts/pesquisas-atualizacao-agendada/**, scripts/audit/verify-pesquisas-atualizacao-agendada-scope.mjs, tests/pesquisas-atualizacao-agendada.test.ts, tests/pesquisas-monitoramento-workflow.test.ts, tests/fixtures/pesquisas-atualizacao-agendada/**
 
-- [x] G0: o eval e este ledger definem outcomes verificáveis para automação, política, routing e custo
-  CHECK: python3 /Users/thiagosalvador/.codex/skills/eval/scripts/eval_lint.py docs/operations/pesquisas-monitoramento-automatizado-eval.md && node /Users/thiagosalvador/.codex/skills/unlazy/scripts/gate-lint.mjs GATES.md && node -e "console.log('MONITOR_EVAL_LEDGER_PASS')"
-  EXPECT: MONITOR_EVAL_LEDGER_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=5adb1602005f15a495d2d6af2d4f39711bf59a5dc70978f5a1a504dc0c9b29b3; output-bytes=38
+Scope: executar diariamente a coleta aprovada e preparar, sem merge ou publicação, um único draft PR somente quando toda mudança passar pelos gates.
 
-- [x] G1: toda fonte aprovada e usada possui um adaptador explícito e nenhuma fonte condicional ou excluída possui adaptador
-  CHECK: npm run audit:pesquisas:monitoramento && node -e "console.log('MONITOR_ADAPTER_COVERAGE_PASS')"
-  EXPECT: MONITOR_ADAPTER_COVERAGE_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=03405418cd7da857c1d7ea01275556987463fdf3b69fb55ee9e76aed9aabe6fb; output-bytes=200
+- [x] G0: o eval e este ledger definem outcomes verificáveis de automação, política, routing e custo
+  CHECK: python3 "${CODEX_HOME:-$HOME/.codex}/skills/eval/scripts/eval_lint.py" docs/operations/pesquisas-monitoramento-automatizado-eval.md && node "${CODEX_HOME:-$HOME/.codex}/skills/unlazy/scripts/gate-lint.mjs" GATES.md && node -e "console.log('SCHEDULED_EVAL_LEDGER_PASS')"
+  EXPECT: SCHEDULED_EVAL_LEDGER_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=9425e83c6536f3d7438db34356642fd681eeb1ddbd8988a2c9ab61b4740c57f1; output-bytes=40
 
-- [x] G2: fixtures sanitizadas e golden set provam os quatro adaptadores e todos os modos de falha obrigatórios sem rede
-  CHECK: npm run test:pesquisas:monitoramento && node -e "console.log('MONITOR_GOLDEN_PASS')"
-  EXPECT: MONITOR_GOLDEN_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=265d8952f99c3d0c1955f3bf54aae93275bfdbfae8b55590875526d730733885; output-bytes=2210
+- [x] G1: workflow diário preserva dispatch, usa matriz completa, consolida após todos os adaptadores e isola permissões de escrita
+  CHECK: npm run test:pesquisas:monitoramento:workflow && node -e "console.log('SCHEDULED_WORKFLOW_PASS')"
+  EXPECT: SCHEDULED_WORKFLOW_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=9ad4edf0a03deebfd81868c002b73ef66e1b1948b1f344739477595446885e29; output-bytes=1487
 
-- [x] G3: allowlist, robots, timeout, rate limit, limite de resposta, redirects e retry controlado falham fechados
-  CHECK: npm run test:pesquisas:monitoramento:rede && npm run audit:pesquisas:monitoramento && node -e "console.log('MONITOR_NETWORK_POLICY_PASS')"
-  EXPECT: MONITOR_NETWORK_POLICY_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=255665cdabf4ba097e421327a504240a0020379c59fe19121a1753b2b9329ef5; output-bytes=1689
+- [x] G2: golden set de promoção passa para no-change, mudança válida e todos os bloqueios fail-closed
+  CHECK: npm run test:pesquisas:atualizacao-agendada && node -e "console.log('SCHEDULED_GOLDEN_PASS')"
+  EXPECT: SCHEDULED_GOLDEN_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=9db4112ffb764c26f4bf8f89f1b74d0eb36cbf43ef905baa6f8c6a74c7c9b2a4; output-bytes=4031
 
-- [x] G4: toda proposta cruza o TSE e preserva metadados completos, evidência pública, horário e SHA-256
-  CHECK: npm run test:pesquisas:monitoramento:tse && npm run test:pesquisas:monitoramento && node -e "console.log('MONITOR_TSE_EVIDENCE_PASS')"
-  EXPECT: MONITOR_TSE_EVIDENCE_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=25c3a693d8f9ebe654dd49178e7c52603ce5b72f53d2d99fca1aae893cd59e19; output-bytes=3005
+- [x] G3: falha do verificador e draft existente impedem push e duplicação
+  CHECK: npm run test:pesquisas:atualizacao-agendada && node -e "console.log('SCHEDULED_GUARDS_PASS')"
+  EXPECT: SCHEDULED_GUARDS_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=8c8b7e257c4cadbf495d6b94e5cd8924d1bcbd87b9cef578395e5c724707a552; output-bytes=4027
 
-- [x] G5: o dry-run consolidado escreve somente proposal.json, diff.json e summary.md e não altera catálogos ou produção
-  CHECK: npm run test:pesquisas:monitoramento:isolamento && npm run audit:pesquisas:monitoramento && node -e "console.log('MONITOR_ISOLATION_PASS')"
-  EXPECT: MONITOR_ISOLATION_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=6d9c02dcee2e5909570026514efecab3fb5deb6b91960ce85d1efaf23e365e34; output-bytes=663
+- [x] G4: nenhum caminho executa merge, deploy, Supabase, revalidação de produção ou force-push
+  CHECK: npm run test:pesquisas:atualizacao-agendada && node -e "console.log('SCHEDULED_POLICY_PASS')"
+  EXPECT: SCHEDULED_POLICY_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=c10a14f25c15d6ed100c1b89311bd6d2c033aef3681031384419fea4ffc4aa7c; output-bytes=4027
 
-- [x] G6: o workflow manual aceita uma fonte, uma UF ou todas as combinações aprovadas, consolida artefato e resumo, mantém contents read e não possui cron nem secrets
-  CHECK: npm run test:pesquisas:monitoramento:workflow && node -e "console.log('MONITOR_WORKFLOW_PASS')"
-  EXPECT: MONITOR_WORKFLOW_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=b55b2719b37d4c92757446e45b1e46b901bd975f9c1788d55bae217c4bcdf1cc; output-bytes=490
+- [x] G5: o diff final altera somente o workflow, testes, fixtures, documentação e scripts permitidos
+  CHECK: npm run audit:pesquisas:atualizacao-agendada:scope && node -e "console.log('SCHEDULED_SCOPE_PASS')"
+  EXPECT: SCHEDULED_SCOPE_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=57d6a64b0c16d232968158c2222b7cf42234573903dd2b2c6bbf88a0532521f5; output-bytes=247
 
-- [x] G7: um dry-run real por adaptador está registrado com estado comprovado ou bloqueio objetivo
-  CHECK: node scripts/audit/verify-pesquisas-monitoramento-live-proof.mjs && node -e "console.log('MONITOR_LIVE_PROOF_PASS')"
-  EXPECT: MONITOR_LIVE_PROOF_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=cb745a3734eb80cdebd1f913171960708d0cc9acccf3cdcc7291c4ff2a7a54c9; output-bytes=83
+- [x] G6: todos os gates específicos da atualização agendada passam no estado final
+  CHECK: npm run verify:pesquisas:atualizacao-agendada && node -e "console.log('SCHEDULED_VERIFY_PASS')"
+  EXPECT: SCHEDULED_VERIFY_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=391c2c82a5fe8808bc78ff26342d2d2daeda4898a52d3086ba14907f9b60d2e4; output-bytes=6144
 
-- [x] G8: todos os gates específicos de monitoramento e o escopo estreito passam no diff final
-  CHECK: npm run verify:pesquisas:monitoramento && npm run audit:pesquisas:monitoramento:scope && node -e "console.log('MONITOR_SCOPE_PASS')"
-  EXPECT: MONITOR_SCOPE_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=73ad46ca3aae0a4f4b18cbee6a95bd88c24076ee2908c497938a61537d7b6955; output-bytes=5249
+- [x] G7: o gate canônico de pesquisas passa integralmente no diff final
+  CHECK: npm run verify:pesquisas && node -e "console.log('SCHEDULED_VERIFY_PESQUISAS_PASS')"
+  EXPECT: SCHEDULED_VERIFY_PESQUISAS_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=25633413605d36dcbb9e326a10e4f4282abb1341feff1ba3f6f998d463208eb8; output-bytes=20681
 
-- [x] G9: o gate canônico de pesquisas passa integralmente no diff final
-  CHECK: npm run verify:pesquisas && node -e "console.log('MONITOR_VERIFY_PESQUISAS_PASS')"
-  EXPECT: MONITOR_VERIFY_PESQUISAS_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=212532f68f13a9d3beae80f916e813c70ca9f30fbbc7268f24719accc9257042; output-bytes=20677
-
-- [x] G10: branch, autoria, commit, push e PR exclusivo estão comprovados sem merge, cron ou publicação
-  CHECK: test "$(git branch --show-current)" = "codex/pesquisas-monitoramento-fontes-estaduais" && test "$(git config user.name)" = "Thiago Salvador" && test "$(git config user.email)" = "contato.thiagosalvador@gmail.com" && gh pr view --json state,headRefName,baseRefName,url --jq 'select(.state == "OPEN" and .headRefName == "codex/pesquisas-monitoramento-fontes-estaduais" and .baseRefName == "main") | "MONITOR_PR_PASS"'
-  EXPECT: MONITOR_PR_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=245edd19c3fc97c511fdf00c55a0913774eaf1dda02f45d7864b4abfda265d09; output-bytes=16
+- [x] G8: autoria e branch local correspondem exatamente ao contrato do PR
+  CHECK: test "$(git branch --show-current)" = "codex/pesquisas-atualizacao-agendada" && test "$(git config user.name)" = "Thiago Salvador" && test "$(git config user.email)" = "contato.thiagosalvador@gmail.com" && node -e "console.log('SCHEDULED_AUTHORSHIP_PASS')"
+  EXPECT: SCHEDULED_AUTHORSHIP_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=06cbda863b00115d87b6a3b01a9cea73ed50b5d758be8174289ac843c187f807; output-bytes=26

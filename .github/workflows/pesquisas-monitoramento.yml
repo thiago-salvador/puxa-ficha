@@ -1,9 +1,7 @@
 name: Monitoramento de pesquisas eleitorais
 
-# Infraestrutura manual e fail-closed. Este workflow nao publica dados, nao
-# recebe secrets e nao possui cron. Agendamento exige prova previa deste modo
-# manual e um PR separado.
-
+# Cron diário às 10:17 UTC. A promoção continua bloqueada até a autorização
+# explícita via PESQUISAS_DRAFT_PR_ENABLED.
 on:
   workflow_dispatch:
     inputs:
@@ -22,6 +20,13 @@ on:
         description: "Uma UF, BR para Presidente ou all"
         required: true
         default: "all"
+      create_draft_pr:
+        description: "Criar draft PR se tudo passar; exige autorização explícita"
+        required: true
+        type: boolean
+        default: false
+  schedule:
+    - cron: "17 10 * * *"
 
 permissions:
   contents: read
@@ -31,10 +36,15 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  dry-run:
-    name: Gerar proposta para revisao humana
+  preparar-matriz:
+    name: Preparar matriz aprovada
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+      expected: ${{ steps.matrix.outputs.expected }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -45,37 +55,260 @@ jobs:
           node-version: "24"
           cache: npm
 
-      - name: Instalar dependencias sem scripts de pacote
+      - name: Instalar dependências sem scripts de pacote
         run: npm ci --ignore-scripts
 
-      - name: Provar golden set e isolamento antes da rede
+      - name: Provar fixtures e isolamento antes da rede
         run: |
           npm run test:pesquisas:monitoramento
           npm run test:pesquisas:monitoramento:isolamento
           npm run test:pesquisas:monitoramento:rede
+          npm run test:pesquisas:atualizacao-agendada
 
-      - name: Coletar em dry-run
+      - name: Calcular todas as fontes e UFs aprovadas
+        id: matrix
         env:
-          monitor_source_id: ${{ inputs.source_id }}
-          monitor_uf: ${{ inputs.uf }}
+          monitor_source_id: ${{ inputs.source_id || 'all' }}
+          monitor_uf: ${{ inputs.uf || 'all' }}
         run: |
-          args=("--out=reports/pesquisas-monitoramento" "--source=$monitor_source_id" "--uf=$monitor_uf")
-          npm run monitor:pesquisas -- "${args[@]}"
+          npm run pesquisas:atualizacao:matrix -- \
+            --source="$monitor_source_id" \
+            --uf="$monitor_uf" \
+            --out=reports/pesquisas-monitoramento/matrix.json
 
-      - name: Resumir proposta
-        if: always()
+      - name: Publicar inventário da matriz
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: pesquisas-monitoramento-matrix-${{ github.run_id }}
+          path: reports/pesquisas-monitoramento/matrix.json
+          if-no-files-found: error
+          retention-days: 14
+
+  coletar:
+    name: Coletar ${{ matrix.target.source_id }} ${{ matrix.target.uf }}
+    needs: preparar-matriz
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        target: ${{ fromJSON(needs.preparar-matriz.outputs.matrix).include }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Instalar dependências sem scripts de pacote
+        run: npm ci --ignore-scripts
+
+      - name: Coletar em dry-run sem credencial de escrita
+        env:
+          monitor_source_id: ${{ matrix.target.source_id }}
+          monitor_uf: ${{ matrix.target.uf }}
+          monitor_key: ${{ matrix.target.key }}
         run: |
-          if [ -f reports/pesquisas-monitoramento/summary.md ]; then
-            cat reports/pesquisas-monitoramento/summary.md >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "Monitoramento falhou antes de gerar relatorio." >> "$GITHUB_STEP_SUMMARY"
-          fi
+          npm run monitor:pesquisas -- \
+            --out="reports/pesquisas-monitoramento/$monitor_key" \
+            --source="$monitor_source_id" \
+            --uf="$monitor_uf"
 
-      - name: Publicar artefato para revisao
+      - name: Publicar artefato individual
         if: always()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
-          name: pesquisas-monitoramento-${{ github.run_id }}
-          path: reports/pesquisas-monitoramento/
+          name: pesquisas-monitoramento-part-${{ matrix.target.key }}
+          path: reports/pesquisas-monitoramento/${{ matrix.target.key }}/
           if-no-files-found: error
           retention-days: 14
+
+  consolidar:
+    name: Consolidar somente após todos os adaptadores
+    if: always()
+    needs:
+      - preparar-matriz
+      - coletar
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    outputs:
+      status: ${{ steps.consolidar.outputs.status }}
+      change_count: ${{ steps.consolidar.outputs.change_count }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Instalar dependências sem scripts de pacote
+        run: npm ci --ignore-scripts
+
+      - name: Baixar inventário esperado
+        continue-on-error: true
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: pesquisas-monitoramento-matrix-${{ github.run_id }}
+          path: reports/matrix
+
+      - name: Baixar todos os artefatos de coleta
+        continue-on-error: true
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          pattern: pesquisas-monitoramento-part-*
+          path: reports/parts
+
+      - name: Falhar fechado se o inventário não estiver disponível
+        run: |
+          if [ ! -f reports/matrix/matrix.json ]; then
+            mkdir -p reports/matrix
+            echo '{"include":[{"key":"manifest-missing","source_id":"missing","uf":"missing","poll_ids":["manifest-missing"]}]}' > reports/matrix/matrix.json
+          fi
+
+      - name: Consolidar e falhar fechado
+        id: consolidar
+        run: |
+          npm run pesquisas:atualizacao:consolidate -- \
+            --matrix=reports/matrix/matrix.json \
+            --input=reports/parts \
+            --out=reports/consolidated
+
+      - name: Publicar resumo e proposta consolidada
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: pesquisas-monitoramento-consolidado-${{ github.run_id }}
+          path: reports/consolidated/
+          if-no-files-found: error
+          retention-days: 14
+
+  promover:
+    name: Preparar draft PR de dados
+    needs: consolidar
+    if: >-
+      needs.consolidar.outputs.status == 'ready' &&
+      vars.PESQUISAS_DRAFT_PR_ENABLED == 'true' &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'schedule' || inputs.create_draft_pr == true)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Instalar dependências sem scripts de pacote
+        run: npm ci --ignore-scripts
+
+      - name: Baixar proposta consolidada
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: pesquisas-monitoramento-consolidado-${{ github.run_id }}
+          path: reports/consolidated
+
+      - name: Impedir duplicação de draft
+        id: draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          draft_numbers="$(mktemp)"
+          if ! gh api --paginate "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" \
+            --jq '.[] | select(.draft and (.head.ref | startswith("automation/pesquisas-refresh-"))) | .number' \
+            > "$draft_numbers"; then
+            echo "Falha ao consultar drafts existentes. Rodada bloqueada." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+          count="$(wc -l < "$draft_numbers" | tr -d ' ')"
+          case "$count" in
+            ''|*[!0-9]*)
+              echo "Contagem de drafts inválida. Rodada bloqueada." >> "$GITHUB_STEP_SUMMARY"
+              exit 1
+              ;;
+          esac
+          if [ "$count" -gt 0 ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Draft de atualização já aberto. Rodada encerrada sem sobrescrever." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Aplicar somente catálogos permitidos
+        if: steps.draft.outputs.exists == 'false'
+        id: apply
+        run: |
+          npm run pesquisas:atualizacao:apply -- --diff=reports/consolidated/diff.json
+          if git diff --quiet -- scripts/data/pesquisas-presidencia-2026.json scripts/data/pesquisas-governadores-2026.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Nenhuma mudança material após comparar os catálogos. Sem branch ou PR." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Verificar pesquisas antes de qualquer push
+        if: steps.apply.outputs.changed == 'true'
+        run: npm run verify:pesquisas
+
+      - name: Criar branch, commit e push sem force
+        if: steps.apply.outputs.changed == 'true'
+        id: push
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          branch="automation/pesquisas-refresh-$(date -u +%F)"
+          if ! remote_refs="$(git ls-remote --heads origin "$branch")"; then
+            echo "Falha ao consultar a branch remota $branch. Rodada bloqueada." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+          if [ -n "$remote_refs" ]; then
+            echo "Branch remota $branch já existe. Rodada encerrada sem sobrescrever." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "Thiago Salvador"
+          git config user.email "contato.thiagosalvador@gmail.com"
+          git switch -c "$branch"
+          git add scripts/data/pesquisas-presidencia-2026.json scripts/data/pesquisas-governadores-2026.json
+          git commit -m "data: atualizar pesquisas eleitorais em $(date -u +%F)"
+          gh auth setup-git
+          git push origin "HEAD:refs/heads/$branch"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+
+      - name: Abrir exatamente um draft PR
+        if: steps.push.outputs.branch != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr create \
+            --draft \
+            --base main \
+            --head "${{ steps.push.outputs.branch }}" \
+            --title "data: atualização diária de pesquisas $(date -u +%F)" \
+            --body-file reports/consolidated/pr-body.md
+
+      - name: Registrar draft preparado
+        if: steps.push.outputs.branch != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr view "${{ steps.push.outputs.branch }}" --json url --jq '.url' >> "$GITHUB_STEP_SUMMARY"
