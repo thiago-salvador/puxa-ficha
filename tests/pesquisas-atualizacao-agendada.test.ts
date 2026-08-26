@@ -1,23 +1,43 @@
 import assert from "node:assert/strict"
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
+import { createRequire } from "node:module"
 import { tmpdir } from "node:os"
 import { resolve } from "node:path"
 import test from "node:test"
 
-import {
+import type {
+  CATALOGOS_PERMITIDOS as CatalogosPermitidosExport,
+  CatalogosAgendados,
+  ContratoPesquisaAgendada,
+  DependenciasPromocaoAgendada,
+  DocumentoPropostaAgendada,
+  executarPromocaoAgendada as ExecutarPromocaoAgendadaExport,
+  ItemPropostaAgendada,
+  OperacaoCatalogoAgendada,
+} from "../scripts/pesquisas-atualizacao-agendada/model"
+
+type CatalogosPermitidosExportType = typeof CatalogosPermitidosExport
+type ExecutarPromocaoAgendadaExportType = typeof ExecutarPromocaoAgendadaExport
+
+const require = createRequire(import.meta.url)
+const serverOnlyPath = require.resolve("server-only")
+require.cache[serverOnlyPath] = {
+  id: serverOnlyPath,
+  filename: serverOnlyPath,
+  loaded: true,
+  exports: {},
+} as never
+const {
   CATALOGOS_PERMITIDOS,
   aplicarOperacoesAgendadas,
   consolidarPropostasAgendadas,
   construirMatrizAgendada,
   executarPromocaoAgendada,
   validarDocumentoDiffAgendado,
-  type CatalogosAgendados,
-  type ContratoPesquisaAgendada,
-  type DependenciasPromocaoAgendada,
-  type DocumentoPropostaAgendada,
-  type ItemPropostaAgendada,
-  type OperacaoCatalogoAgendada,
-} from "../scripts/pesquisas-atualizacao-agendada/model"
+} = require("../scripts/pesquisas-atualizacao-agendada/model") as typeof import("../scripts/pesquisas-atualizacao-agendada/model")
+
+const catalogosPermitidosTipados: CatalogosPermitidosExportType = CATALOGOS_PERMITIDOS
+const executarPromocaoTipado: ExecutarPromocaoAgendadaExportType = executarPromocaoAgendada
 
 interface FixtureCase {
   case_id: string
@@ -106,8 +126,8 @@ const matrix = [{
 
 function writeCatalogs(baseDir: string, value: CatalogosAgendados = catalogs): void {
   mkdirSync(resolve(baseDir, "scripts/data"), { recursive: true })
-  writeFileSync(resolve(baseDir, CATALOGOS_PERMITIDOS[0]), `${JSON.stringify(value.presidente, null, 2)}\n`)
-  writeFileSync(resolve(baseDir, CATALOGOS_PERMITIDOS[1]), `${JSON.stringify(value.governadores, null, 2)}\n`)
+  writeFileSync(resolve(baseDir, catalogosPermitidosTipados[0]), `${JSON.stringify(value.presidente, null, 2)}\n`)
+  writeFileSync(resolve(baseDir, catalogosPermitidosTipados[1]), `${JSON.stringify(value.governadores, null, 2)}\n`)
 }
 
 function normalizedFromBaseline(): typeof baseline {
@@ -195,7 +215,7 @@ test("mudança válida produz uma operação allowlisted e diff por candidato", 
   const result = consolidate(validItem(proposed))
   assert.equal(result.status, "ready")
   assert.equal(result.diff.operations.length, 1)
-  assert.equal(result.diff.operations[0].file, CATALOGOS_PERMITIDOS[0])
+  assert.equal(result.diff.operations[0].file, catalogosPermitidosTipados[0])
   assert.equal(result.diff.operations[0].candidate_diff.length, 1)
   assert.equal(result.diff.operations[0].candidate_diff[0].scenario_id, "cenario-1")
   assert.match(result.prBody, /## Fontes/)
@@ -257,7 +277,7 @@ test("artefato de matriz ausente bloqueia promoção", () => {
 
 test("mudança válida cria exatamente um draft depois do verify", async () => {
   const fake = promotionDependencies()
-  const result = await executarPromocaoAgendada({ status: "ready", date: new Date("2026-08-26T12:00:00Z") }, fake.dependencies)
+  const result = await executarPromocaoTipado({ status: "ready", date: new Date("2026-08-26T12:00:00Z") }, fake.dependencies)
   assert.equal(result.status, "draft_created")
   assert.equal(result.draftPrCount, 1)
   assert.deepEqual(fake.events, [
@@ -274,7 +294,7 @@ test("mudança válida cria exatamente um draft depois do verify", async () => {
 
 test("no-change não cria branch, push ou PR", async () => {
   const fake = promotionDependencies({ hasChanges: false })
-  const result = await executarPromocaoAgendada({ status: "ready" }, fake.dependencies)
+  const result = await executarPromocaoTipado({ status: "ready" }, fake.dependencies)
   assert.equal(result.status, "no_changes")
   assert.equal(result.draftPrCount, 0)
   assert.deepEqual(fake.events, ["existing-draft", "apply", "has-changes"])
@@ -282,7 +302,7 @@ test("no-change não cria branch, push ou PR", async () => {
 
 test("draft existente impede qualquer alteração ou duplicação", async () => {
   const fake = promotionDependencies({ existingDraft: true })
-  const result = await executarPromocaoAgendada({ status: "ready" }, fake.dependencies)
+  const result = await executarPromocaoTipado({ status: "ready" }, fake.dependencies)
   assert.equal(result.status, "existing_draft")
   assert.equal(result.draftPrCount, 0)
   assert.deepEqual(fake.events, ["existing-draft"])
@@ -291,7 +311,7 @@ test("draft existente impede qualquer alteração ou duplicação", async () => 
 test("falha em verify impede branch, push e PR", async () => {
   const fake = promotionDependencies({ verifyFailure: true })
   await assert.rejects(
-    executarPromocaoAgendada({ status: "ready" }, fake.dependencies),
+    executarPromocaoTipado({ status: "ready" }, fake.dependencies),
     /verify failed/,
   )
   assert.deepEqual(fake.events, ["existing-draft", "apply", "has-changes", "verify"])
@@ -300,7 +320,7 @@ test("falha em verify impede branch, push e PR", async () => {
 
 test("status bloqueado nunca toca a promoção", async () => {
   const fake = promotionDependencies()
-  const result = await executarPromocaoAgendada({ status: "blocked" }, fake.dependencies)
+  const result = await executarPromocaoTipado({ status: "blocked" }, fake.dependencies)
   assert.equal(result.status, "blocked")
   assert.equal(result.draftPrCount, 0)
   assert.deepEqual(fake.events, [])
@@ -314,8 +334,8 @@ test("aplicação altera somente catálogo allowlisted e preserva metadados de r
   try {
     writeCatalogs(temp)
     const touched = aplicarOperacoesAgendadas(result.diff.operations, temp)
-    assert.deepEqual(touched, [CATALOGOS_PERMITIDOS[0]])
-    const updated = JSON.parse(readFileSync(resolve(temp, CATALOGOS_PERMITIDOS[0]), "utf8")) as typeof catalogs.presidente
+    assert.deepEqual(touched, [catalogosPermitidosTipados[0]])
+    const updated = JSON.parse(readFileSync(resolve(temp, catalogosPermitidosTipados[0]), "utf8")) as typeof catalogs.presidente
     const poll = updated.pesquisas.find((candidate) => candidate.id === baseline.id)
     assert.ok(poll)
     assert.equal(poll.state, "indeterminado")
@@ -341,10 +361,10 @@ test("arquivo fora da allowlist falha antes de qualquer escrita", () => {
   const temp = mkdtempSync(resolve(tmpdir(), "pesquisas-refresh-forbidden-"))
   try {
     writeCatalogs(temp)
-    const before = CATALOGOS_PERMITIDOS.map((file) => readFileSync(resolve(temp, file), "utf8"))
+    const before = catalogosPermitidosTipados.map((file) => readFileSync(resolve(temp, file), "utf8"))
     assert.throws(() => aplicarOperacoesAgendadas([operation], temp), /arquivo fora da allowlist/)
     assert.deepEqual(
-      CATALOGOS_PERMITIDOS.map((file) => readFileSync(resolve(temp, file), "utf8")),
+      catalogosPermitidosTipados.map((file) => readFileSync(resolve(temp, file), "utf8")),
       before,
     )
   } finally {
@@ -362,7 +382,7 @@ test("diff.json incompatível falha antes da aplicação", () => {
     /não pode autorizar aplicação automática/,
   )
   assert.throws(
-    () => validarDocumentoDiffAgendado({ ...result.diff, allowed_files: [CATALOGOS_PERMITIDOS[0]] }),
+    () => validarDocumentoDiffAgendado({ ...result.diff, allowed_files: [catalogosPermitidosTipados[0]] }),
     /allowed_files incompatível/,
   )
 })
@@ -384,7 +404,7 @@ test("poll_id duplicado em datasets estaduais bloqueia antes da escrita", () => 
   const proposed = structuredClone(governor)
   proposed.cenarios[0].resultados[0].value_percent += 1
   const operation: OperacaoCatalogoAgendada = {
-    file: CATALOGOS_PERMITIDOS[1],
+    file: catalogosPermitidosTipados[1],
     poll_id: governor.id!,
     geography_code: governor.geography.code,
     source_id: governor.source_id,
@@ -395,12 +415,12 @@ test("poll_id duplicado em datasets estaduais bloqueia antes da escrita", () => 
   const temp = mkdtempSync(resolve(tmpdir(), "pesquisas-refresh-duplicate-"))
   try {
     writeCatalogs(temp, duplicatedCatalogs)
-    const before = readFileSync(resolve(temp, CATALOGOS_PERMITIDOS[1]), "utf8")
+    const before = readFileSync(resolve(temp, catalogosPermitidosTipados[1]), "utf8")
     assert.throws(
       () => aplicarOperacoesAgendadas([operation], temp),
       /poll_id ambíguo em múltiplos datasets/,
     )
-    assert.equal(readFileSync(resolve(temp, CATALOGOS_PERMITIDOS[1]), "utf8"), before)
+    assert.equal(readFileSync(resolve(temp, catalogosPermitidosTipados[1]), "utf8"), before)
   } finally {
     rmSync(temp, { recursive: true, force: true })
   }
@@ -430,13 +450,13 @@ test("golden set executa todos os casos e seus resultados declarados", async () 
     if (fixture.mode === "no_changes") {
       const result = consolidate(validItem())
       actualStatus = result.status
-      actualDraftPrs = (await executarPromocaoAgendada({ status: result.status }, promotionDependencies().dependencies)).draftPrCount
+      actualDraftPrs = (await executarPromocaoTipado({ status: result.status }, promotionDependencies().dependencies)).draftPrCount
     } else if (fixture.mode === "valid_change") {
       const proposed = normalizedFromBaseline()
       proposed.cenarios[0].resultados[0].value_percent += 1
       const result = consolidate(validItem(proposed))
       actualStatus = result.status
-      actualDraftPrs = (await executarPromocaoAgendada({ status: result.status }, promotionDependencies().dependencies)).draftPrCount
+      actualDraftPrs = (await executarPromocaoTipado({ status: result.status }, promotionDependencies().dependencies)).draftPrCount
     } else if (fixture.mode === "blocked") {
       const result = consolidate({
         ...validItem(),
@@ -449,7 +469,7 @@ test("golden set executa todos os casos e seus resultados declarados", async () 
         normalized_contract: null,
       })
       actualStatus = result.status
-      actualDraftPrs = (await executarPromocaoAgendada({ status: result.status }, promotionDependencies().dependencies)).draftPrCount
+      actualDraftPrs = (await executarPromocaoTipado({ status: result.status }, promotionDependencies().dependencies)).draftPrCount
     } else if (fixture.mode === "missing_metadata") {
       const proposed = normalizedFromBaseline()
       Reflect.deleteProperty(proposed, "registration")
@@ -461,7 +481,7 @@ test("golden set executa todos os casos e seus resultados declarados", async () 
       const result = consolidate(validItem(proposed))
       actualStatus = result.status
       await assert.rejects(
-        executarPromocaoAgendada({ status: result.status }, promotionDependencies({ verifyFailure: true }).dependencies),
+        executarPromocaoTipado({ status: result.status }, promotionDependencies({ verifyFailure: true }).dependencies),
         /verify failed/,
       )
     } else if (fixture.mode === "existing_draft") {
@@ -469,7 +489,7 @@ test("golden set executa todos os casos e seus resultados declarados", async () 
       proposed.cenarios[0].resultados[0].value_percent += 1
       const result = consolidate(validItem(proposed))
       actualStatus = result.status
-      actualDraftPrs = (await executarPromocaoAgendada(
+      actualDraftPrs = (await executarPromocaoTipado(
         { status: result.status },
         promotionDependencies({ existingDraft: true }).dependencies,
       )).draftPrCount
