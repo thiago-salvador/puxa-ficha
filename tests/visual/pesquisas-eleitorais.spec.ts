@@ -4,7 +4,7 @@ import { expect, test, type Locator, type Page } from "playwright/test"
 
 const WITH_DATA_SLUG = "lula"
 const WITHOUT_DATA_SLUG = "pablo-marcal"
-const GOVERNOR_WITH_DATA_SLUG = "ciro-gomes-gov-ce"
+const GOVERNOR_WITH_DATA_SLUG = "omar-aziz"
 const GOVERNOR_WITHOUT_QUALIFIED_DATA_SLUGS = ["alan-rick", "jhc"]
 
 async function expectStylesLoaded(element: Locator) {
@@ -222,30 +222,30 @@ test.describe("pesquisas presidenciais v2", () => {
     const hero = page.locator("[data-pf-pesquisa-hero]")
     const fullHero = page.locator("[data-pf-hero]")
     await expect(hero).toBeVisible()
-    await expect(hero).toContainText("Datafolha")
-    await expect(hero).toContainText("52%")
+    await expect(hero).toContainText("Real Time Big Data")
+    await expect(hero).toContainText("34%")
     await expectNoHorizontalOverflow(page, fullHero)
-    await fullHero.screenshot({ path: testInfo.outputPath("pesquisas-governador-ce-hero-desktop.png") })
+    await fullHero.screenshot({ path: testInfo.outputPath("pesquisas-governador-am-hero-desktop.png") })
 
     const overview = page.locator("[data-pf-pesquisas-overview]")
-    await expect(overview).toContainText("Ceará")
-    await overview.screenshot({ path: testInfo.outputPath("pesquisas-governador-ce-overview-desktop.png") })
+    await expect(overview).toContainText("Amazonas")
+    await overview.screenshot({ path: testInfo.outputPath("pesquisas-governador-am-overview-desktop.png") })
     await page.getByRole("tab", { name: /^Pesquisas/ }).click()
     const tab = page.locator("[data-pf-pesquisas-tab]")
-    await expect(tab).toContainText("52%")
+    await expect(tab).toContainText("34%")
     await expectNoHorizontalOverflow(page, tab)
-    await tab.screenshot({ path: testInfo.outputPath("pesquisas-governador-ce-desktop.png") })
+    await tab.screenshot({ path: testInfo.outputPath("pesquisas-governador-am-desktop.png") })
 
     await page.setViewportSize({ width: 390, height: 844 })
     await expectNoHorizontalOverflow(page, tab)
-    await tab.screenshot({ path: testInfo.outputPath("pesquisas-governador-ce-mobile.png") })
+    await tab.screenshot({ path: testInfo.outputPath("pesquisas-governador-am-mobile.png") })
 
     await page.goto(`/candidato/${GOVERNOR_WITH_DATA_SLUG}`, { waitUntil: "networkidle" })
     await waitForProfile(page)
     await expectNoHorizontalOverflow(page, page.locator("[data-pf-hero]"))
     await page
       .locator("[data-pf-hero]")
-      .screenshot({ path: testInfo.outputPath("pesquisas-governador-ce-hero-mobile.png") })
+      .screenshot({ path: testInfo.outputPath("pesquisas-governador-am-hero-mobile.png") })
 
     for (const slug of GOVERNOR_WITHOUT_QUALIFIED_DATA_SLUGS) {
       await page.setViewportSize({ width: 1440, height: 900 })
@@ -255,7 +255,7 @@ test.describe("pesquisas presidenciais v2", () => {
         "Sem pesquisa qualificada recente",
       )
       await expect(page.getByRole("tab", { name: /^Pesquisas/ })).toBeVisible()
-      await expect(page.getByText("52%", { exact: true })).toHaveCount(0)
+      await expect(page.getByText("34%", { exact: true })).toHaveCount(0)
       await page.getByRole("tab", { name: /^Pesquisas/ }).click()
       const emptyTab = page.locator("[data-pf-pesquisas-tab]")
       await expect(emptyTab.locator("[data-pf-pesquisas-empty]")).toBeVisible()

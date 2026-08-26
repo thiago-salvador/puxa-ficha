@@ -3,7 +3,7 @@
   "scope": {
     "election_year": 2026,
     "office": "Governador",
-    "ufs": [
+      "ufs": [
       "AC",
       "AL",
       "AM",
@@ -24,32 +24,57 @@
       "RS",
       "SC",
       "SE",
-      "TO"
-    ],
-    "cutoff": "2026-08-25"
+        "TO"
+      ],
+      "search_ufs": [
+        "AC",
+        "AL",
+        "AM",
+        "AP",
+        "BA",
+        "ES",
+        "GO",
+        "MA",
+        "MS",
+        "MT",
+        "PA",
+        "PB",
+        "PR",
+        "RN",
+        "RO",
+        "RR",
+        "SC",
+        "SE",
+        "TO"
+      ],
+      "cutoff": "2026-08-26"
   },
   "derivation": "Estado derivado do catálogo publicável, do scorecard estadual e da auditoria de registro, resultado, metodologia, recência e identidade.",
   "official_registry": {
     "id": "tse-pesqele-2026",
     "query_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+    "open_data_url": "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026",
     "caveat": "Registro comprova metadados declarados, mas não aprova nem publica resultados."
   },
   "summary": {
-    "published_ufs_in_scope": 2,
-    "published_profiles_in_scope": 9,
-    "total_catalog_ufs": 8,
-    "total_catalog_profiles": 60
+    "published_ufs_in_scope": 10,
+    "published_profiles_in_scope": 46,
+    "total_catalog_ufs": 16,
+    "total_catalog_profiles": 97,
+    "additional_published_ufs": 8,
+    "additional_published_profiles": 37
   },
   "states": [
     {
       "uf": "AC",
-      "status": "sem fonte qualificada",
-      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador no Acre até o corte.",
+      "status": "condicional",
+      "reason": "A rodada Atlas AC-07815/2026 tem página pública, período, amostra e margem, mas a fonte permanece condicional por falta de trilha pública de correções formalizada.",
       "evidence_urls": [
+        "https://atlasintel.org/poll/brazil-acre-pesquisa-atlas-ac-24-horas-2026-08-03",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": []
+      "registration_ids": ["AC-07815/2026"],
+      "candidate_source_ids": ["atlasintel-estaduais-2026"]
     },
     {
       "uf": "AL",
@@ -68,36 +93,37 @@
     },
     {
       "uf": "AM",
-      "status": "sem fonte qualificada",
-      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador no Amazonas até o corte.",
+      "status": "publicada",
+      "reason": "Real Time Big Data AM-09965/2026 passou por registro, resultado público, metodologia, recência e aliases literais na mesma UF.",
       "evidence_urls": [
+        "https://noticias.r7.com/eleicoes/2026/amazonas-omar-aziz-lidera-com-34-no-1-turno-roberto-cidade-tem-22-e-maria-do-carmo-21-26082026/",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": []
+      "registration_ids": ["AM-09965/2026"],
+      "candidate_source_ids": ["real-time-big-data-estaduais-2026"]
     },
     {
       "uf": "AP",
-      "status": "sem fonte qualificada",
-      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador no Amapá até o corte.",
+      "status": "sem resultado público verificável",
+      "reason": "A divulgação de AP-02970/2026 publica percentuais, período, amostra e margem, mas declara que o método de coleta não foi informado; a rodada permanece vazia.",
       "evidence_urls": [
+        "https://noticias.r7.com/eleicoes/2026/real-time-dr-furlan-lidera-corrida-pelo-governo-do-amapa-rayssa-e-randolfe-pelo-senado-24072026/",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": []
+      "registration_ids": ["AP-02970/2026"],
+      "candidate_source_ids": ["real-time-big-data-estaduais-2026"]
     },
     {
       "uf": "BA",
-      "status": "condicional",
-      "reason": "Há divulgação de rodada estadual da Quaest, mas a fonte permanece condicional no scorecard e não pode alimentar a ficha.",
+      "status": "publicada",
+      "reason": "Real Time Big Data BA-00277/2026, cenário 1, passou por registro, resultado público, metodologia, aliases literais e preservação do zero publicado.",
       "evidence_urls": [
-        "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/07/31/veja-o-cenario-eleitoral-para-governos-de-10-estados-segundo-pesquisa-quaest.htm?forcedFormat=NORMAL&iap=true&uol_app=uolnoticias%3Ft%3Ft",
+        "https://exame.com/brasil/real-time-big-data-acm-neto-tem-44-e-jeronimo-42-no-1o-turno/",
+        "https://noticias.uol.com.br/politica/ultimas-noticias/2026/08/11/pesquisa-realtime-big-data-mostra-empate-tecnico-entre-jeronimo-e-acm.amp.htm",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": [
-        "quaest-estaduais-2026"
-      ]
+      "registration_ids": ["BA-00277/2026"],
+      "candidate_source_ids": ["real-time-big-data-estaduais-2026"]
     },
     {
       "uf": "CE",
@@ -118,113 +144,124 @@
     {
       "uf": "ES",
       "status": "sem resultado público verificável",
-      "reason": "Não foi localizada URL pública permanente que reunisse resultado da rodada, metodologia suficiente e vínculo verificável ao registro para publicação.",
+      "reason": "A rodada Real Time Big Data ES-05096/2026 encerra o campo no corte, mas ainda não tinha resultado público verificável; registro sem resultado não autoriza publicação.",
       "evidence_urls": [
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": []
+      "registration_ids": ["ES-05096/2026"],
+      "candidate_source_ids": ["real-time-big-data-estaduais-2026"]
     },
     {
       "uf": "GO",
       "status": "condicional",
-      "reason": "Há resultado estadual público da Quaest sob GO-01701/2026, mas a fonte permanece condicional no scorecard.",
+      "reason": "A Quaest GO-01701/2026 permanece condicional; a rodada Real Time Big Data GO-00954/2026 ainda estava em campo e sem resultado público no corte.",
       "evidence_urls": [
         "https://www.bol.uol.com.br/noticias/2026/07/30/genialquaest-governo-go.ghtm",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
       "registration_ids": [
-        "GO-01701/2026"
+        "GO-01701/2026",
+        "GO-00954/2026"
       ],
       "candidate_source_ids": [
-        "quaest-estaduais-2026"
+        "quaest-estaduais-2026",
+        "real-time-big-data-estaduais-2026"
       ]
     },
     {
       "uf": "MA",
       "status": "sem resultado público verificável",
-      "reason": "Não foi localizada URL pública permanente com resultado, metodologia suficiente e trilha verificável para uma fonte aprovada.",
+      "reason": "A rodada Real Time Big Data MA-04311/2026 é anterior ao registro definitivo e omite Saulo Arcangeli; o cenário atual não pode herdar uma lista incompleta.",
       "evidence_urls": [
+        "https://exame.com/brasil/real-time-big-data-braide-tem-44-e-brandao-31-no-1o-turno-no-maranhao/",
+        "https://linharesjr.com.br/justica-eleitoral-diverge-sobre-pesquisas-no-maranhao/",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": []
+      "registration_ids": ["MA-04311/2026"],
+      "candidate_source_ids": ["real-time-big-data-estaduais-2026"]
     },
     {
       "uf": "MS",
-      "status": "sem resultado público verificável",
-      "reason": "Não foi localizada URL pública permanente com resultado, metodologia suficiente e trilha verificável para uma fonte aprovada.",
+      "status": "publicada",
+      "reason": "Real Time Big Data MS-07706/2026 passou por registro, resultado público, metodologia, scorecard aprovado e aliases literais na mesma UF.",
       "evidence_urls": [
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-governador-senador-mato-grosso-do-sul-agosto-2026/",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": []
+      "registration_ids": ["MS-07706/2026"],
+      "candidate_source_ids": ["real-time-big-data-estaduais-2026"]
     },
     {
       "uf": "MT",
-      "status": "sem resultado público verificável",
-      "reason": "Não foi localizada URL pública permanente com resultado, metodologia suficiente e trilha verificável para uma fonte aprovada.",
+      "status": "publicada",
+      "reason": "Real Time Big Data MT-04560/2026 passou por registro, resultado público, metodologia, aliases literais e preservação do zero de Maurício Coelho.",
       "evidence_urls": [
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-governador-senador-mato-grosso-agosto-2026/",
+        "https://www.reporternews.com.br/noticia/473565/Pesquisa_traz_WF_com_34%25__Pivetta_com_26%25_e_Natasha_com_13%25",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": []
+      "registration_ids": ["MT-04560/2026"],
+      "candidate_source_ids": ["real-time-big-data-estaduais-2026"]
     },
     {
       "uf": "PA",
       "status": "condicional",
-      "reason": "Há divulgação de rodada estadual da Quaest, mas a fonte permanece condicional no scorecard e não pode alimentar a ficha.",
+      "reason": "Quaest permanece condicional; a Atlas PA-04533/2026 tem divulgação pública e decisão que afastou a suspensão, mas a fonte ainda não tem trilha pública de correções aprovada.",
       "evidence_urls": [
         "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/07/31/veja-o-cenario-eleitoral-para-governos-de-10-estados-segundo-pesquisa-quaest.htm?forcedFormat=NORMAL&iap=true&uol_app=uolnoticias%3Ft%3Ft",
+        "https://fatoregional.com.br/governo-do-para-pesquisa-atlasintel-aponta-hana-ghassan-com-42-e-daniel-santos-com-38/",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
+      "registration_ids": ["PA-04533/2026"],
       "candidate_source_ids": [
-        "quaest-estaduais-2026"
+        "quaest-estaduais-2026",
+        "atlasintel-estaduais-2026"
       ]
     },
     {
       "uf": "PB",
-      "status": "sem fonte qualificada",
-      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador na Paraíba até o corte.",
+      "status": "publicada",
+      "reason": "Real Time Big Data PB-07790/2026 passou por registro, resultado público, método, recência e aliases literais na mesma UF; a amostra de 1.600 foi confirmada por duas divulgações da rodada.",
       "evidence_urls": [
+        "https://exame.com/brasil/real-time-big-data-ribeiro-abre-10-pontos-sobre-lucena-no-1o-turno-na-paraiba/",
+        "https://exame.com/brasil/real-time-big-data-azevedo-e-veneziano-lideram-corrida-ao-senado-na-paraiba-2/",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": []
+      "registration_ids": ["PB-07790/2026"],
+      "candidate_source_ids": ["real-time-big-data-estaduais-2026"]
     },
     {
       "uf": "PR",
-      "status": "condicional",
-      "reason": "Há divulgação de rodada estadual da Quaest, mas a fonte permanece condicional no scorecard e não pode alimentar a ficha.",
+      "status": "publicada",
+      "reason": "Real Time Big Data PR-09262/2026 passou por registro, resultado público, metodologia, cenário explícito e aliases literais na mesma UF.",
       "evidence_urls": [
-        "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/07/31/veja-o-cenario-eleitoral-para-governos-de-10-estados-segundo-pesquisa-quaest.htm?forcedFormat=NORMAL&iap=true&uol_app=uolnoticias%3Ft%3Ft",
+        "https://ric.com.br/politica/eleicoes/pesquisa-real-time-big-data-governo-parana-sergio-moro-37-sandro-alex-22-e-requiao-20/",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": [
-        "quaest-estaduais-2026"
-      ]
+      "registration_ids": ["PR-09262/2026"],
+      "candidate_source_ids": ["real-time-big-data-estaduais-2026"]
     },
     {
       "uf": "RN",
-      "status": "sem fonte qualificada",
-      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador no Rio Grande do Norte até o corte.",
+      "status": "condicional",
+      "reason": "A rodada Atlas RN-04754/2026 tem página pública, período, amostra e margem, mas a fonte permanece condicional por falta de trilha pública de correções formalizada.",
       "evidence_urls": [
+        "https://atlasintel.org/poll/brazil-rio-grande-do-norte-2026-07-22",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": []
+      "registration_ids": ["RN-04754/2026"],
+      "candidate_source_ids": ["atlasintel-estaduais-2026"]
     },
     {
       "uf": "RO",
-      "status": "sem fonte qualificada",
-      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador em Rondônia até o corte.",
+      "status": "publicada",
+      "reason": "Real Time Big Data RO-04369/2026 passou por registro, resultado público completo, metodologia, aliases literais e preservação do zero publicado.",
       "evidence_urls": [
+        "https://www.rondoniaaovivo.com/noticia/eleicoes2026/2026/07/16/governo-de-ro-furia-abre-15-pontos-sobre-hildon-e-consolida-polarizacao-com-marcos-rogerio.html",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": []
+      "registration_ids": ["RO-04369/2026"],
+      "candidate_source_ids": ["real-time-big-data-estaduais-2026"]
     },
     {
       "uf": "RR",
@@ -255,34 +292,37 @@
     },
     {
       "uf": "SC",
-      "status": "sem fonte qualificada",
-      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador em Santa Catarina até o corte.",
+      "status": "condicional",
+      "reason": "A rodada Quaest SC-00517/2026 é a mais recente com resultado e metodologia públicos, mas a fonte permanece condicional por falta de trilha pública de correções formalizada.",
       "evidence_urls": [
+        "https://noticias.uol.com.br/eleicoes/2026/08/24/pesquisa-para-governo-de-santa-catarina-sc-veja-numeros-da-quaest.ghtm",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": []
+      "registration_ids": ["SC-00517/2026"],
+      "candidate_source_ids": ["quaest-estaduais-2026"]
     },
     {
       "uf": "SE",
-      "status": "sem resultado público verificável",
-      "reason": "Não foi localizada URL pública permanente com resultado, metodologia suficiente e trilha verificável para uma fonte aprovada.",
+      "status": "publicada",
+      "reason": "Real Time Big Data SE-07327/2026 passou por registro, resultado público em duas divulgações, metodologia e aliases literais na mesma UF.",
       "evidence_urls": [
-        "https://www.tre-se.jus.br/eleicoes/resolucoes-2026/pesquisas-eleitorais",
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-governador-senado-sergipe-agosto-2026/",
+        "https://noticias.uol.com.br/eleicoes/2026/08/03/real-time-governador-sergipe.amp.htm",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": []
+      "registration_ids": ["SE-07327/2026"],
+      "candidate_source_ids": ["real-time-big-data-estaduais-2026"]
     },
     {
       "uf": "TO",
-      "status": "sem fonte qualificada",
-      "reason": "Nenhuma fonte avaliada no scorecard estadual ficou aprovada para uma rodada de Governador no Tocantins até o corte.",
+      "status": "sem resultado público verificável",
+      "reason": "A divulgação de 26 de agosto atribui o resultado a TO-09655/2026, mas a consulta direta ao PesqEle encontrou somente TO-09665/2026 para a Real Time Big Data no Tocantins; sem vínculo registral inequívoco, a UF permanece vazia.",
       "evidence_urls": [
+        "https://noticias.r7.com/eleicoes/2026/real-time-professora-dorinha-e-vicentinho-junior-empatam-no-primeiro-turno-no-tocantins-26082026/",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
       ],
-      "registration_ids": [],
-      "candidate_source_ids": []
+      "registration_ids": ["TO-09665/2026"],
+      "candidate_source_ids": ["real-time-big-data-estaduais-2026"]
     }
   ]
 }

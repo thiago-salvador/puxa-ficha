@@ -75,12 +75,14 @@ const coverage = JSON.parse(
     "utf8",
   ),
 ) as {
-  scope: { ufs: string[] }
+  scope: { ufs: string[]; search_ufs: string[] }
   summary: {
     published_ufs_in_scope: number
     published_profiles_in_scope: number
     total_catalog_ufs: number
     total_catalog_profiles: number
+    additional_published_ufs: number
+    additional_published_profiles: number
   }
   states: Array<{ uf: string; status: string; reason: string }>
 }
@@ -92,6 +94,8 @@ const statusValues = new Set([
   "sem fonte qualificada",
 ])
 assert(coverage.scope.ufs.length === 21, "inventário estadual não cobre as 21 UFs")
+assert(coverage.scope.search_ufs.length === 19, "inventário da busca não cobre as 19 UFs")
+assert(!coverage.scope.search_ufs.includes("CE") && !coverage.scope.search_ufs.includes("RS"), "busca de 19 UFs incluiu cobertura anterior")
 assert(coverage.states.length === 21, "inventário estadual não tem 21 estados")
 assert(
   coverage.states.every((entry) => statusValues.has(entry.status) && entry.reason.length > 0),
@@ -127,11 +131,14 @@ function countProfiles(entries: Iterable<(typeof governorCatalogs extends Map<st
 }
 
 const inScopeCatalogs = [...governorCatalogs].filter(([uf]) => coverage.scope.ufs.includes(uf))
+const additionalCatalogs = inScopeCatalogs.filter(([uf]) => coverage.scope.search_ufs.includes(uf))
 const computedSummary = {
   published_ufs_in_scope: inScopeCatalogs.length,
   published_profiles_in_scope: countProfiles(inScopeCatalogs.map(([, catalog]) => catalog)),
   total_catalog_ufs: governorCatalogs.size,
   total_catalog_profiles: countProfiles(governorCatalogs.values()),
+  additional_published_ufs: additionalCatalogs.length,
+  additional_published_profiles: countProfiles(additionalCatalogs.map(([, catalog]) => catalog)),
 }
 assert(
   JSON.stringify(coverage.summary) === JSON.stringify(computedSummary),
@@ -139,5 +146,5 @@ assert(
 )
 
 console.log(
-  `PASS: ${pesquisas.length} pesquisas aprovadas; contrato server-only, fail-closed, sem rede/Supabase e sem campos privados; ${computedSummary.published_ufs_in_scope} novas UFs e ${computedSummary.published_profiles_in_scope} perfis no escopo`,
+  `PASS: ${pesquisas.length} pesquisas aprovadas; contrato server-only, fail-closed, sem rede/Supabase e sem campos privados; ${computedSummary.additional_published_ufs} UFs e ${computedSummary.additional_published_profiles} perfis adicionais`,
 )

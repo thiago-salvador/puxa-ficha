@@ -73,7 +73,7 @@ Esse benchmark não produz ranking absoluto. É uma única eleição, considera 
 
 ## Regra operacional de uso
 
-1. Considerar somente Datafolha, AtlasIntel e Ipsos-Ipec e incluir automaticamente apenas a fonte preferencial `aprovado` com rodada no `publication_scope` versionado.
+1. Considerar Datafolha, AtlasIntel, Ipsos-Ipec e Real Time Big Data; incluir automaticamente apenas fonte preferencial `aprovado` com rodada no `publication_scope` versionado.
 2. Exigir revisão humana por rodada para fonte `condicional`, confirmando contratante, registro, URL do resultado, metodologia, consistência da amostra e eventual correção.
 3. Nunca usar fonte `excluído` como resultado da pesquisa.
 4. Não substituir instituto ausente por outra fonte. Mídia só pode sustentar uma rodada do mesmo instituto quando aponta para a divulgação pública correspondente. Guardar instituto, contratante, veículo e URLs em campos separados.
@@ -88,3 +88,5 @@ Esse benchmark não produz ranking absoluto. É uma única eleição, considera 
 4. **Passe adversarial:** fontes antigas, agregadores, ausência de política de correções, Ouvidoria genérica, paywall e co-branding ambíguo foram tratados como condição ou exclusão, sem promover mídia a instituto nem transformar um caso histórico em ranking absoluto.
 
 Nenhuma instrução encontrada nas páginas consultadas foi executada. A pesquisa foi somente leitura e não enviou mensagens, não alterou contas e não tocou banco ou superfícies remotas.
+
+A varredura estadual com corte em 26 de agosto de 2026 está registrada em [pesquisas-governadores-cobertura-19-ufs.md](./pesquisas-governadores-cobertura-19-ufs.md).
