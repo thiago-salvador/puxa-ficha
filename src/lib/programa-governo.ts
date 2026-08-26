@@ -308,7 +308,20 @@ export function toProgramaGovernoPublico(value: unknown): ProgramaGovernoPublico
   if (value.estado !== "aprovado" || !value.extracao || !value.resumo || !value.revisao) {
     fail("registro.estado", "somente registros aprovados podem ser publicados")
   }
-  const { coletadoEm: _coletadoEm, ...fonte } = value.fonte
+  const fonte: ProgramaGovernoPublico["fonte"] = {
+    ano: value.fonte.ano,
+    cargo: value.fonte.cargo,
+    uf: value.fonte.uf,
+    sqCandidato: value.fonte.sqCandidato,
+    slug: value.fonte.slug,
+    nomeUrna: value.fonte.nomeUrna,
+    partido: value.fonte.partido,
+    arquivoNome: value.fonte.arquivoNome,
+    arquivoNoPacote: value.fonte.arquivoNoPacote,
+    pacoteUrl: value.fonte.pacoteUrl,
+    datasetUrl: value.fonte.datasetUrl,
+    pdfOriginalUrl: value.fonte.pdfOriginalUrl,
+  }
   return {
     version: 1,
     estado: "aprovado",

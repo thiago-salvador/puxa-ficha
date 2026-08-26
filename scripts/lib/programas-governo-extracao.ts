@@ -105,7 +105,6 @@ function sectionsFromPages(pages: ExtractedPage[]): ProgramaGovernoSecao[] {
 
 export function assertTseProgramaUrl(
   raw: string,
-  _adapters: Partial<ProgramaGovernoExtractionAdapters> = {},
 ): URL {
   let url: URL
   try {

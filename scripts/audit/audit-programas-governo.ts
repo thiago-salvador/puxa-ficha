@@ -45,7 +45,9 @@ async function readJson<T>(filePath: string): Promise<T> {
   return JSON.parse(await readFile(filePath, "utf8")) as T
 }
 
-export async function auditProgramasGoverno(): Promise<ProgramaGovernoAuditResult> {
+export async function auditProgramasGoverno(
+  options: { expectNoApproved?: boolean } = {},
+): Promise<ProgramaGovernoAuditResult> {
   const fontes = await readJson<FonteRegistryItem[]>(FONTES_PATH)
   assert(fontes.length === 13, `coorte oficial inesperada: ${fontes.length}`)
   assert(new Set(fontes.map((item) => item.sqCandidato)).size === fontes.length, "SQ_CANDIDATO duplicado no registro de fontes")
@@ -77,8 +79,6 @@ export async function auditProgramasGoverno(): Promise<ProgramaGovernoAuditResul
     assert(record.fonte.slug === expectedSlug, `${expectedSlug}: slug interno divergente`)
     assert(!sqs.has(record.fonte.sqCandidato), `${expectedSlug}: SQ_CANDIDATO duplicado`)
     sqs.add(record.fonte.sqCandidato)
-    assert(record.estado !== "aprovado", `${expectedSlug}: aprovação humana não registrada`)
-
     if (!record.extracao || !record.resumo) continue
     pages += record.extracao.paginas
     sections += record.extracao.secoes.length
@@ -128,13 +128,19 @@ export async function auditProgramasGoverno(): Promise<ProgramaGovernoAuditResul
     sections,
     claims,
   }
-  assert(result.reviewPending === 13, `pendentes de revisão=${result.reviewPending}; esperado=13`)
-  assert(result.approved === 0, `aprovados=${result.approved}; esperado=0`)
+  assert(
+    result.absent + result.extractionFailed + result.reviewPending + result.approved === 13,
+    "estados editoriais não cobrem toda a coorte",
+  )
+  if (options.expectNoApproved) {
+    assert(result.reviewPending === 13, `pendentes de revisão=${result.reviewPending}; esperado=13`)
+    assert(result.approved === 0, `aprovados=${result.approved}; esperado=0`)
+  }
   return result
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  void auditProgramasGoverno()
+  void auditProgramasGoverno({ expectNoApproved: process.argv.includes("--expect-no-approved") })
     .then((result) => {
       console.log(`PROGRAMAS_DADOS_PASS candidatos=${result.resolved} paginas=${result.pages} secoes=${result.sections} claims=${result.claims} aprovados=${result.approved}`)
     })

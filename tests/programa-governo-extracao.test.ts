@@ -5,9 +5,9 @@ import { join, resolve } from "node:path"
 import test from "node:test"
 
 import {
-  assertTseProgramaUrl,
   createProgramaTempWorkspace,
   extractProgramaPdf,
+  fetchTseProgramaBytes,
   type ProgramaGovernoExtractionAdapters,
 } from "../scripts/lib/programas-governo-extracao"
 
@@ -45,7 +45,10 @@ test("refuses non-TSE source before invoking network", async () => {
       return Buffer.from("never")
     },
   }
-  assert.throws(() => assertTseProgramaUrl("https://example.com/programa.pdf", adapters), /dominio oficial do TSE/)
+  await assert.rejects(
+    () => fetchTseProgramaBytes("https://example.com/programa.pdf", adapters),
+    /dominio oficial do TSE/,
+  )
   assert.equal(networkCalls, 0)
 })
 
