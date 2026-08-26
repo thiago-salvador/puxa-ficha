@@ -52,7 +52,7 @@ Scope: cobrir em dry-run todas as fontes aprovadas e efetivamente usadas nos cat
   EXPECT: MONITOR_VERIFY_PESQUISAS_PASS
   EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=212532f68f13a9d3beae80f916e813c70ca9f30fbbc7268f24719accc9257042; output-bytes=20677
 
-- [ ] G10: branch, autoria, commit, push e PR exclusivo estão comprovados sem merge, cron ou publicação
+- [x] G10: branch, autoria, commit, push e PR exclusivo estão comprovados sem merge, cron ou publicação
   CHECK: test "$(git branch --show-current)" = "codex/pesquisas-monitoramento-fontes-estaduais" && test "$(git config user.name)" = "Thiago Salvador" && test "$(git config user.email)" = "contato.thiagosalvador@gmail.com" && gh pr view --json state,headRefName,baseRefName,url --jq 'select(.state == "OPEN" and .headRefName == "codex/pesquisas-monitoramento-fontes-estaduais" and .baseRefName == "main") | "MONITOR_PR_PASS"'
   EXPECT: MONITOR_PR_PASS
-  EVIDENCE: pending
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=5be2df5db96c/28 entries; EXPECT=matched; output-sha256=245edd19c3fc97c511fdf00c55a0913774eaf1dda02f45d7864b4abfda265d09; output-bytes=16
