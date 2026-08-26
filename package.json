@@ -28,6 +28,7 @@
     "lint:spell:ui": "cspell lint --no-progress \"src/app/**/*.tsx\" \"src/components/**/*.tsx\" --exclude \"**/internaltest/**\" --exclude \"**/styleguide/**\" --exclude \"**/preview/**\"",
     "test": "node --import tsx --test tests/**/*.test.ts tests/**/*.test.tsx",
     "test:pesquisas:dados": "node --conditions react-server --import tsx --test tests/pesquisas-eleitorais-dados.test.ts",
+    "test:programas-governo:schema": "node --conditions react-server --import tsx --test tests/programa-governo-schema.test.ts",
     "test:pesquisas:identidade": "node --conditions react-server --import tsx --test tests/pesquisas-eleitorais-identidade.test.ts",
     "test:pesquisas:selecao": "node --conditions react-server --import tsx --test tests/pesquisas-eleitorais-selecao.test.ts",
     "test:pesquisas:ui": "node --import tsx --test tests/pesquisas-eleitorais-ui.test.tsx",
