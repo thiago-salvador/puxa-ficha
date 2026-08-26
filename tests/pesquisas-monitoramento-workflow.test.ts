@@ -14,16 +14,11 @@ function job(name: string, nextName?: string): string {
 
 test("workflow mantém dispatch e cron diário controlado", () => {
   assert.match(workflow, /^\s*workflow_dispatch:/m)
-  assert.match(workflow, /create_draft_pr:/)
-  assert.match(workflow, /default:\s*false/)
-  if (process.env.PESQUISAS_CRON_DISABLED === "1") {
-    assert.doesNotMatch(workflow, /^\s*schedule:/m)
-    assert.match(workflow, /^\s*# schedule:/m)
-    assert.match(workflow, /^\s*#\s+- cron:\s*"17 10 \* \* \*"/m)
-  } else {
-    assert.equal((workflow.match(/^\s*schedule:/gm) ?? []).length, 1)
-    assert.equal((workflow.match(/cron:\s*"17 10 \* \* \*"/g) ?? []).length, 1)
-  }
+  assert.match(workflow, /create_draft_pr:\n[\s\S]*?default:\s*false[\s\S]*?^  schedule:/m)
+  assert.equal((workflow.match(/^  schedule:/gm) ?? []).length, 1)
+  assert.equal((workflow.match(/cron:\s*"17 10 \* \* \*"/g) ?? []).length, 1)
+  assert.match(workflow, /concurrency:\n\s+group:\s*pesquisas-monitoramento-/)
+  assert.match(workflow, /cancel-in-progress:\s*false/)
 })
 
 test("matriz cobre fonte e UF e consolida depois de todas as coletas", () => {
@@ -63,6 +58,8 @@ test("somente promoção tem escrita e exige autorização posterior", () => {
   assert.equal((workflow.match(/contents:\s*write/g) ?? []).length, 1)
   assert.equal((workflow.match(/pull-requests:\s*write/g) ?? []).length, 1)
   assert.match(promote, /vars\.PESQUISAS_DRAFT_PR_ENABLED == 'true'/)
+  assert.match(promote, /needs\.consolidar\.outputs\.status == 'ready'/)
+  assert.match(promote, /github\.ref == 'refs\/heads\/main'/)
   assert.match(promote, /inputs\.create_draft_pr == true/)
   assert.match(promote, /permissions:\n\s+contents:\s*write\n\s+pull-requests:\s*write/)
   assert.match(promote, /persist-credentials:\s*false/)
@@ -80,8 +77,12 @@ test("draft existente, no-change e verify falho impedem push e PR", () => {
   assert.match(promote, /if git diff --quiet/)
   assert.match(promote, /npm run verify:pesquisas/)
   assert.match(promote, /gh api --paginate/)
+  assert.match(promote, /if ! gh api --paginate/)
+  assert.match(promote, /Contagem de drafts inválida/)
   assert.match(promote, /startswith\("automation\/pesquisas-refresh-"\)/)
-  assert.match(promote, /git ls-remote --exit-code --heads origin "\$branch"/)
+  assert.match(promote, /if ! remote_refs="\$\(git ls-remote --heads origin "\$branch"\)"/)
+  assert.match(promote, /Falha ao consultar a branch remota/)
+  assert.match(promote, /ref:\s*\$\{\{ github\.sha \}\}/)
   assert.equal((promote.match(/gh pr create/g) ?? []).length, 1)
   assert.match(promote, /gh pr create[\s\\]+--draft/)
 })

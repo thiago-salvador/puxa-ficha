@@ -18,13 +18,15 @@ import {
   type DocumentoColetadoAgendado,
   type DocumentoPropostaAgendada,
   type ItemMatrizAgendada,
-  type OperacaoCatalogoAgendada,
+  validarDocumentoDiffAgendado,
 } from "./model"
 
 function parseOptions(argv: string[]): Map<string, string> {
   const options = new Map<string, string>()
   for (let index = 0; index < argv.length; index += 1) {
-    const [key, inline] = argv[index].split("=", 2)
+    const separator = argv[index].indexOf("=")
+    const key = separator >= 0 ? argv[index].slice(0, separator) : argv[index]
+    const inline = separator >= 0 ? argv[index].slice(separator + 1) : undefined
     if (!key.startsWith("--")) throw new Error(`argumento inesperado: ${argv[index]}`)
     const value = inline ?? argv[index + 1]
     if (!value || value.startsWith("--")) throw new Error(`valor ausente para ${key}`)
@@ -101,9 +103,9 @@ function consolidateCommand(options: Map<string, string>): void {
 }
 
 function applyCommand(options: Map<string, string>): void {
-  const diff = JSON.parse(readFileSync(resolve(required(options, "--diff")), "utf8")) as {
-    operations: OperacaoCatalogoAgendada[]
-  }
+  const diff = validarDocumentoDiffAgendado(
+    JSON.parse(readFileSync(resolve(required(options, "--diff")), "utf8")) as unknown,
+  )
   const touched = aplicarOperacoesAgendadas(diff.operations)
   console.log(`PESQUISAS_APPLY_TOUCHED=${touched.join(",") || "none"}`)
 }

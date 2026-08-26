@@ -199,6 +199,7 @@ jobs:
     if: >-
       needs.consolidar.outputs.status == 'ready' &&
       vars.PESQUISAS_DRAFT_PR_ENABLED == 'true' &&
+      github.ref == 'refs/heads/main' &&
       (github.event_name == 'schedule' || inputs.create_draft_pr == true)
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -208,7 +209,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: main
+          ref: ${{ github.sha }}
           persist-credentials: false
 
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -230,9 +231,21 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          count=$(gh api --paginate "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" \
+          set -euo pipefail
+          draft_numbers="$(mktemp)"
+          if ! gh api --paginate "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" \
             --jq '.[] | select(.draft and (.head.ref | startswith("automation/pesquisas-refresh-"))) | .number' \
-            | wc -l | tr -d ' ')
+            > "$draft_numbers"; then
+            echo "Falha ao consultar drafts existentes. Rodada bloqueada." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+          count="$(wc -l < "$draft_numbers" | tr -d ' ')"
+          case "$count" in
+            ''|*[!0-9]*)
+              echo "Contagem de drafts inválida. Rodada bloqueada." >> "$GITHUB_STEP_SUMMARY"
+              exit 1
+              ;;
+          esac
           if [ "$count" -gt 0 ]; then
             echo "exists=true" >> "$GITHUB_OUTPUT"
             echo "Draft de atualização já aberto. Rodada encerrada sem sobrescrever." >> "$GITHUB_STEP_SUMMARY"
@@ -262,10 +275,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          set -euo pipefail
           branch="automation/pesquisas-refresh-$(date -u +%F)"
-          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
-            echo "Branch remota $branch já existe. Rodada encerrada sem sobrescrever." >> "$GITHUB_STEP_SUMMARY"
+          if ! remote_refs="$(git ls-remote --heads origin "$branch")"; then
+            echo "Falha ao consultar a branch remota $branch. Rodada bloqueada." >> "$GITHUB_STEP_SUMMARY"
             exit 1
+          fi
+          if [ -n "$remote_refs" ]; then
+            echo "Branch remota $branch já existe. Rodada encerrada sem sobrescrever." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
           fi
           git config user.name "Thiago Salvador"
           git config user.email "contato.thiagosalvador@gmail.com"

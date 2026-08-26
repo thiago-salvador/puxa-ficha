@@ -90,26 +90,32 @@ export interface DocumentoPropostaAgendada {
 export interface OperacaoCatalogoAgendada {
   file: typeof CATALOGOS_PERMITIDOS[number]
   poll_id: string
+  geography_code: string
   source_id: string
   registration_id: string
   proposed: ContratoPesquisaAgendada
   candidate_diff: Array<{
+    scenario_id: string
+    turn: number
+    geography: string
     candidate_slug: string
     before: number | null
     after: number | null
   }>
 }
 
+export interface DocumentoDiffAgendado {
+  schema_version: "1.0.0"
+  applies_automatically: false
+  allowed_files: readonly string[]
+  operations: OperacaoCatalogoAgendada[]
+}
+
 export interface ResultadoConsolidacaoAgendada {
   status: "blocked" | "no_changes" | "ready"
   alerts: string[]
   proposal: DocumentoPropostaAgendada
-  diff: {
-    schema_version: "1.0.0"
-    applies_automatically: false
-    allowed_files: readonly string[]
-    operations: OperacaoCatalogoAgendada[]
-  }
+  diff: DocumentoDiffAgendado
   summary: string
   prBody: string
 }
@@ -220,25 +226,51 @@ function pollIdFromItem(item: ItemPropostaAgendada): string {
   return item.id.endsWith("-live") ? item.id.slice(0, -5) : item.id
 }
 
-function findPoll(catalogs: CatalogosAgendados, pollId: string): {
+interface PesquisaLocalizadaAgendada {
   file: typeof CATALOGOS_PERMITIDOS[number]
   poll: ContratoPesquisaAgendada
-} | null {
-  const president = catalogs.presidente.pesquisas.find((poll) => poll.id === pollId)
-  if (president) return { file: CATALOGOS_PERMITIDOS[0], poll: president }
-  for (const dataset of catalogs.governadores.datasets ?? []) {
-    const poll = dataset.pesquisas.find((candidate) => candidate.id === pollId)
-    if (poll) return { file: CATALOGOS_PERMITIDOS[1], poll }
-  }
-  return null
+  datasetIndex: number | null
 }
 
-function candidateValues(contract: ContratoPesquisaAgendada): Map<string, number> {
-  const values = new Map<string, number>()
+function findPollMatches(catalogs: CatalogosAgendados, pollId: string): PesquisaLocalizadaAgendada[] {
+  const matches: PesquisaLocalizadaAgendada[] = []
+  for (const poll of catalogs.presidente.pesquisas) {
+    if (poll.id === pollId) matches.push({ file: CATALOGOS_PERMITIDOS[0], poll, datasetIndex: null })
+  }
+  for (const [datasetIndex, dataset] of (catalogs.governadores.datasets ?? []).entries()) {
+    for (const poll of dataset.pesquisas) {
+      if (poll.id === pollId) matches.push({ file: CATALOGOS_PERMITIDOS[1], poll, datasetIndex })
+    }
+  }
+  return matches
+}
+
+function findPoll(catalogs: CatalogosAgendados, pollId: string): PesquisaLocalizadaAgendada | null {
+  const matches = findPollMatches(catalogs, pollId)
+  return matches.length === 1 ? matches[0] : null
+}
+
+interface CandidateScenarioValue {
+  scenario_id: string
+  turn: number
+  geography: string
+  candidate_slug: string
+  value: number
+}
+
+function candidateValues(contract: ContratoPesquisaAgendada): Map<string, CandidateScenarioValue> {
+  const values = new Map<string, CandidateScenarioValue>()
   for (const scenario of contract.cenarios ?? []) {
     for (const result of scenario.resultados ?? []) {
       if (isNonEmptyString(result.candidate_slug) && Number.isFinite(result.value_percent)) {
-        values.set(result.candidate_slug, result.value_percent)
+        const key = `${scenario.id}\u0000${result.candidate_slug}`
+        values.set(key, {
+          scenario_id: scenario.id,
+          turn: scenario.turn,
+          geography: scenario.geography,
+          candidate_slug: result.candidate_slug,
+          value: result.value_percent,
+        })
       }
     }
   }
@@ -248,14 +280,20 @@ function candidateValues(contract: ContratoPesquisaAgendada): Map<string, number
 function candidateDiff(before: ContratoPesquisaAgendada, after: ContratoPesquisaAgendada): OperacaoCatalogoAgendada["candidate_diff"] {
   const previous = candidateValues(before)
   const proposed = candidateValues(after)
-  const slugs = [...new Set([...previous.keys(), ...proposed.keys()])].sort()
-  return slugs
-    .filter((slug) => previous.get(slug) !== proposed.get(slug))
-    .map((slug) => ({
-      candidate_slug: slug,
-      before: previous.get(slug) ?? null,
-      after: proposed.get(slug) ?? null,
-    }))
+  const keys = [...new Set([...previous.keys(), ...proposed.keys()])].sort()
+  return keys
+    .filter((key) => previous.get(key)?.value !== proposed.get(key)?.value)
+    .map((key) => {
+      const identity = proposed.get(key) ?? previous.get(key)!
+      return {
+        scenario_id: identity.scenario_id,
+        turn: identity.turn,
+        geography: identity.geography,
+        candidate_slug: identity.candidate_slug,
+        before: previous.get(key)?.value ?? null,
+        after: proposed.get(key)?.value ?? null,
+      }
+    })
 }
 
 export function construirMatrizAgendada(filters: { sourceId?: string | null; uf?: string | null } = {}): ItemMatrizAgendada[] {
@@ -320,7 +358,7 @@ function buildSummary(input: {
       lines.push(`### ${operation.poll_id}`)
       if (operation.candidate_diff.length === 0) lines.push("- metadados alterados, sem mudança percentual por candidato")
       for (const entry of operation.candidate_diff) {
-        lines.push(`- ${entry.candidate_slug}: ${entry.before ?? "ausente"} -> ${entry.after ?? "ausente"}`)
+        lines.push(`- cenário ${entry.scenario_id}, turno ${entry.turn}, ${entry.geography}, ${entry.candidate_slug}: ${entry.before ?? "ausente"} -> ${entry.after ?? "ausente"}`)
       }
     }
   }
@@ -404,6 +442,7 @@ export function consolidarPropostasAgendadas(input: {
     operations.push({
       file: baseline.file,
       poll_id: pollId,
+      geography_code: item.normalized_contract.geography.code,
       source_id: item.normalized_contract.source_id,
       registration_id: item.normalized_contract.registration.code.value,
       proposed: item.normalized_contract,
@@ -444,6 +483,34 @@ export function consolidarPropostasAgendadas(input: {
   }
 }
 
+export function validarDocumentoDiffAgendado(value: unknown): DocumentoDiffAgendado {
+  if (!value || typeof value !== "object" || Array.isArray(value)) throw new Error("diff.json deve ser um objeto")
+  const diff = value as Record<string, unknown>
+  if (diff.schema_version !== "1.0.0") throw new Error("schema_version incompatível no diff.json")
+  if (diff.applies_automatically !== false) throw new Error("diff.json não pode autorizar aplicação automática")
+  if (!Array.isArray(diff.allowed_files) || stable(diff.allowed_files) !== stable(CATALOGOS_PERMITIDOS)) {
+    throw new Error("allowed_files incompatível no diff.json")
+  }
+  if (!Array.isArray(diff.operations)) throw new Error("operations ausente no diff.json")
+  for (const [index, entry] of diff.operations.entries()) {
+    if (!entry || typeof entry !== "object" || Array.isArray(entry)) throw new Error(`operação ${index} inválida`)
+    const operation = entry as Partial<OperacaoCatalogoAgendada>
+    if (!operation.file || !CATALOGOS_PERMITIDOS.includes(operation.file)) throw new Error(`arquivo fora da allowlist na operação ${index}`)
+    if (!isNonEmptyString(operation.poll_id)) throw new Error(`poll_id ausente na operação ${index}`)
+    if (!isNonEmptyString(operation.geography_code)) throw new Error(`geography_code ausente na operação ${index}`)
+    if (!isNonEmptyString(operation.source_id)) throw new Error(`source_id ausente na operação ${index}`)
+    if (!isNonEmptyString(operation.registration_id)) throw new Error(`registration_id ausente na operação ${index}`)
+    if (!operation.proposed || typeof operation.proposed !== "object") throw new Error(`proposed ausente na operação ${index}`)
+    const missing = requiredMetadata(operation.proposed)
+    if (missing.length > 0) throw new Error(`metadado ausente na operação ${index}: ${missing.join(", ")}`)
+    if (operation.proposed.source_id !== operation.source_id) throw new Error(`source_id divergente na operação ${index}`)
+    if (operation.proposed.registration.code.value !== operation.registration_id) throw new Error(`registration_id divergente na operação ${index}`)
+    if (operation.proposed.geography.code !== operation.geography_code) throw new Error(`geography_code divergente na operação ${index}`)
+    if (!Array.isArray(operation.candidate_diff)) throw new Error(`candidate_diff ausente na operação ${index}`)
+  }
+  return diff as unknown as DocumentoDiffAgendado
+}
+
 function mergeProposedPoll(current: ContratoPesquisaAgendada, proposed: ContratoPesquisaAgendada): ContratoPesquisaAgendada {
   return {
     ...current,
@@ -482,25 +549,39 @@ export function aplicarOperacoesAgendadas(
 ): string[] {
   const catalogs = carregarCatalogosAgendados(baseDir)
   const touched = new Set<string>()
+  const expectedReadback = new Map<string, ContratoPesquisaAgendada>()
   for (const operation of operations) {
     if (!CATALOGOS_PERMITIDOS.includes(operation.file)) throw new Error(`arquivo fora da allowlist: ${operation.file}`)
-    const located = findPoll(catalogs, operation.poll_id)
-    if (!located || located.file !== operation.file) throw new Error(`pesquisa base ausente: ${operation.poll_id}`)
+    const matches = findPollMatches(catalogs, operation.poll_id)
+    if (matches.length === 0) throw new Error(`pesquisa base ausente: ${operation.poll_id}`)
+    if (matches.length > 1) throw new Error(`poll_id ambíguo em múltiplos datasets: ${operation.poll_id}`)
+    const located = matches[0]
+    if (located.file !== operation.file) throw new Error(`arquivo divergente para pesquisa: ${operation.poll_id}`)
+    if (located.poll.geography.code !== operation.geography_code) throw new Error(`geografia divergente para pesquisa: ${operation.poll_id}`)
     const replacement = mergeProposedPoll(located.poll, operation.proposed)
     if (operation.file === CATALOGOS_PERMITIDOS[0]) {
       const index = catalogs.presidente.pesquisas.findIndex((poll) => poll.id === operation.poll_id)
       catalogs.presidente.pesquisas[index] = replacement
     } else {
-      for (const dataset of catalogs.governadores.datasets) {
-        const index = dataset.pesquisas.findIndex((poll) => poll.id === operation.poll_id)
-        if (index >= 0) dataset.pesquisas[index] = replacement
-      }
+      if (located.datasetIndex === null) throw new Error(`dataset estadual ausente: ${operation.poll_id}`)
+      const dataset = catalogs.governadores.datasets[located.datasetIndex]
+      const index = dataset.pesquisas.findIndex((poll) => poll.id === operation.poll_id)
+      dataset.pesquisas[index] = replacement
     }
     touched.add(operation.file)
+    expectedReadback.set(`${operation.file}\u0000${operation.poll_id}`, replacement)
   }
   for (const file of touched) {
     const value = file === CATALOGOS_PERMITIDOS[0] ? catalogs.presidente : catalogs.governadores
     writeFileSync(resolve(baseDir, file), `${JSON.stringify(value, null, 2)}\n`)
+  }
+  const persisted = carregarCatalogosAgendados(baseDir)
+  for (const [key, expected] of expectedReadback) {
+    const [, pollId] = key.split("\u0000")
+    const matches = findPollMatches(persisted, pollId)
+    if (matches.length !== 1 || stable(contractComparable(matches[0].poll)) !== stable(contractComparable(expected))) {
+      throw new Error(`readback falhou após gravar pesquisa: ${pollId}`)
+    }
   }
   return [...touched].sort()
 }
