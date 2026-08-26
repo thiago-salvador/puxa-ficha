@@ -1,4 +1,7 @@
-import type { ProgramaGovernoRegistro } from "@/lib/programa-governo"
+import {
+  assertProgramaGovernoRegistro,
+  type ProgramaGovernoRegistro,
+} from "@/lib/programa-governo"
 
 export const PROGRAMA_GOVERNO_PRESIDENCIA_2026_SLUGS = [
   "samara-martins",
@@ -18,7 +21,7 @@ export const PROGRAMA_GOVERNO_PRESIDENCIA_2026_SLUGS = [
 
 export type ProgramaGovernoPresidencia2026Slug = (typeof PROGRAMA_GOVERNO_PRESIDENCIA_2026_SLUGS)[number]
 
-const loaders: Record<ProgramaGovernoPresidencia2026Slug, () => Promise<{ default: ProgramaGovernoRegistro }>> = {
+const loaders: Record<ProgramaGovernoPresidencia2026Slug, () => Promise<{ default: unknown }>> = {
   "samara-martins": () => import("./programas-governo/presidencia-2026/samara-martins.json"),
   "romeu-zema": () => import("./programas-governo/presidencia-2026/romeu-zema.json"),
   "renan-santos": () => import("./programas-governo/presidencia-2026/renan-santos.json"),
@@ -39,5 +42,7 @@ export function isProgramaGovernoPresidencia2026Slug(value: string): value is Pr
 }
 
 export async function loadProgramaGovernoPresidencia2026(slug: ProgramaGovernoPresidencia2026Slug): Promise<ProgramaGovernoRegistro> {
-  return (await loaders[slug]()).default
+  const record = (await loaders[slug]()).default
+  assertProgramaGovernoRegistro(record)
+  return record
 }

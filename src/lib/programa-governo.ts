@@ -108,6 +108,28 @@ export type ProgramaGovernoPublico = {
   reviewedAt: string
 }
 
+export type ProgramaGovernoFontePublica = Pick<
+  ProgramaGovernoFonte,
+  | "ano"
+  | "cargo"
+  | "uf"
+  | "sqCandidato"
+  | "nomeUrna"
+  | "partido"
+  | "arquivoNome"
+  | "pacoteUrl"
+  | "datasetUrl"
+  | "pdfOriginalUrl"
+>
+
+export type ProgramaGovernoManifestoPublico = {
+  estado: ProgramaGovernoEstado
+  fonte: ProgramaGovernoFontePublica
+  resumo?: ProgramaGovernoResumo
+  paginas?: number
+  reviewedAt?: string
+}
+
 const SHA256_PATTERN = /^[a-f0-9]{64}$/
 const SQ_PATTERN = /^\d{12}$/
 const ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
@@ -288,6 +310,44 @@ export function toProgramaGovernoPublico(value: unknown): ProgramaGovernoPublico
     resumo: value.resumo,
     paginas: value.extracao.paginas,
     secoes: value.extracao.secoes,
+    reviewedAt: value.revisao.reviewedAt,
+  }
+}
+
+export function toProgramaGovernoManifestoPublico(value: unknown): ProgramaGovernoManifestoPublico {
+  assertProgramaGovernoRegistro(value)
+  const {
+    ano,
+    cargo,
+    uf,
+    sqCandidato,
+    nomeUrna,
+    partido,
+    arquivoNome,
+    pacoteUrl,
+    datasetUrl,
+    pdfOriginalUrl,
+  } = value.fonte
+  const fonte = {
+    ano,
+    cargo,
+    uf,
+    sqCandidato,
+    nomeUrna,
+    partido,
+    arquivoNome,
+    pacoteUrl,
+    datasetUrl,
+    pdfOriginalUrl,
+  }
+  if (value.estado !== "aprovado" || !value.extracao || !value.resumo || !value.revisao) {
+    return { estado: value.estado, fonte }
+  }
+  return {
+    estado: "aprovado",
+    fonte,
+    resumo: value.resumo,
+    paginas: value.extracao.paginas,
     reviewedAt: value.revisao.reviewedAt,
   }
 }
