@@ -69,6 +69,7 @@ supabase/.branches/
 # AI assistant / local tooling (not part of the product)
 .claude/
 .codex/
+.unlazy/
 .cursor/
 **/CLAUDE.md
 **/AGENTS.md

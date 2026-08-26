@@ -5,6 +5,8 @@ import { join, resolve } from "node:path"
 import test from "node:test"
 
 import {
+  PROGRAMA_GOVERNO_EXTRACTION_METHOD,
+  PROGRAMA_GOVERNO_EXTRACTION_VERSION,
   createProgramaTempWorkspace,
   extractProgramaPdf,
   fetchTseProgramaBytes,
@@ -30,15 +32,50 @@ test("extracts textual PDF deterministically with page mapping", async () => {
   const second = await extractProgramaPdf(pdf, adapters)
 
   assert.equal(first.paginas, 2)
+  assert.equal(first.extractionVersion, PROGRAMA_GOVERNO_EXTRACTION_VERSION)
+  assert.equal(first.method, PROGRAMA_GOVERNO_EXTRACTION_METHOD)
   assert.match(first.sourceSha256, /^[a-f0-9]{64}$/)
   assert.match(first.extractedTextSha256, /^[a-f0-9]{64}$/)
   assert.equal(first.extractedTextSha256, second.extractedTextSha256)
   assert.deepEqual(first.secoes.map((section) => section.id), second.secoes.map((section) => section.id))
   assert.deepEqual(first.secoes.map((section) => section.paginaInicial), [1, 2])
   assert.deepEqual(first.secoes.map((section) => section.origem), ["pdftotext", "pdftotext"])
+  assert.deepEqual(first.pageMap.map((page) => page.pagina), [1, 2])
+  assert.deepEqual(first.pageMap.map((page) => page.origem), ["pdftotext", "pdftotext"])
+  assert.equal(first.pageMap.every((page) => /^[a-f0-9]{64}$/u.test(page.textSha256)), true)
+  assert.deepEqual(first.pageMap, second.pageMap)
   assert.match(first.secoes[0].conteudo, /Primeiro parágrafo/u)
   assert.match(first.secoes[0].conteudo, /• Item preservado/u)
   assert.match(first.secoes[1].conteudo, /Segundo parágrafo/u)
+})
+
+test("uses OCR only for the page without trustworthy embedded text", async () => {
+  const commands: string[] = []
+  let removed = false
+  const adapters: Partial<ProgramaGovernoExtractionAdapters> = {
+    readBytes: async () => Buffer.from("fixture-pdf"),
+    makeTempDir: async () => join(tmpdir(), "pf-programa-ocr-hermetic"),
+    remove: async () => {
+      removed = true
+    },
+    run: async (command, args) => {
+      commands.push(`${command}:${args.join(" ")}`)
+      if (command === "pdfinfo") return Buffer.from("Pages: 2\n")
+      if (command === "pdftotext") {
+        return Buffer.from(args[1] === "1" ? "Texto confiável da página um.\n" : " \n")
+      }
+      if (command === "pdftoppm") return Buffer.alloc(0)
+      if (command === "xcrun") return Buffer.from("Texto recuperado por OCR na página dois.\n")
+      throw new Error(`comando inesperado: ${command}`)
+    },
+  }
+
+  const result = await extractProgramaPdf("/fixture/governador.pdf", adapters)
+
+  assert.deepEqual(result.pageMap.map((page) => page.origem), ["pdftotext", "ocr"])
+  assert.equal(commands.filter((command) => command.startsWith("pdftoppm:")).length, 1)
+  assert.equal(commands.filter((command) => command.startsWith("xcrun:")).length, 1)
+  assert.equal(removed, true)
 })
 
 test("fails explicitly when a PDF page has no trustworthy text", async () => {

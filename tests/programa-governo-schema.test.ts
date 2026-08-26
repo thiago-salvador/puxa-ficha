@@ -3,9 +3,17 @@ import { readFileSync } from "node:fs"
 import test from "node:test"
 
 import {
+  assertProgramaGovernoIdentidade,
+  assertProgramaGovernoIdentidadeCorresponde,
+  assertProgramaGovernoDocumento,
   assertProgramaGovernoFonte,
   assertProgramaGovernoRegistro,
+  normalizarProgramaGovernoEstado,
+  programaGovernoChave,
+  toProgramaGovernoManifestoPublico,
   toProgramaGovernoPublico,
+  type ProgramaGovernoDocumento,
+  type ProgramaGovernoIdentidade,
   type ProgramaGovernoRegistro,
 } from "../src/lib/programa-governo"
 
@@ -48,6 +56,24 @@ function validRecord(): ProgramaGovernoRegistro {
   }
 }
 
+function syntheticGovernorRecord(): ProgramaGovernoRegistro {
+  const record = validRecord()
+  record.estado = "em_revisao"
+  record.fonte = {
+    ...record.fonte,
+    cargo: "GOVERNADOR",
+    uf: "SP",
+    sqCandidato: "250000000001",
+    slug: "candidatura-governador-teste",
+    nomeUrna: "CANDIDATURA DE TESTE",
+    partido: "TESTE",
+    arquivoNome: "2026SP250000000001_01.pdf",
+    arquivoNoPacote: "SP/2026SP250000000001_01.pdf",
+  }
+  delete record.revisao
+  return record
+}
+
 test("registry covers the 13 current official presidential documents by SQ", () => {
   assert.equal(registry.length, 13)
   const sqs = new Set<string>()
@@ -84,6 +110,127 @@ test("approved content requires bounded summary and evidence", () => {
   assert.throws(() => assertProgramaGovernoRegistro(tooShort), /120 e 180 palavras/)
 })
 
+test("common contract accepts governor identity and canonical editorial states", () => {
+  const record = syntheticGovernorRecord()
+  assert.doesNotThrow(() => assertProgramaGovernoRegistro(record))
+  assert.equal(programaGovernoChave(record.fonte), "2026:GOVERNADOR:SP:250000000001")
+  assert.equal(normalizarProgramaGovernoEstado("aguardando_revisao"), "em_revisao")
+  assert.equal(normalizarProgramaGovernoEstado("fonte_ausente"), "sem_documento_oficial")
+
+  for (const estado of ["sem_documento_oficial", "falha_de_extracao", "perfil_local_ausente"] as const) {
+    const terminal = syntheticGovernorRecord()
+    terminal.estado = estado
+    delete terminal.extracao
+    delete terminal.resumo
+    delete terminal.geracao
+    delete terminal.julgamento
+    if (estado === "sem_documento_oficial") {
+      terminal.fonte.arquivoNome = null
+      terminal.fonte.arquivoNoPacote = null
+    }
+    assert.doesNotThrow(() => assertProgramaGovernoRegistro(terminal))
+  }
+})
+
+test("package-only source never invents a document filename", () => {
+  const record = syntheticGovernorRecord()
+  record.estado = "sem_documento_oficial"
+  record.fonte.arquivoNome = null
+  record.fonte.arquivoNoPacote = null
+  delete record.extracao
+  delete record.resumo
+  delete record.geracao
+  delete record.julgamento
+
+  assert.doesNotThrow(() => assertProgramaGovernoRegistro(record))
+  const manifesto = toProgramaGovernoManifestoPublico(record)
+  assert.equal(manifesto.fonte.arquivoNome, null)
+  assert.equal(manifesto.fonte.consultadoEm, record.fonte.coletadoEm)
+  assert.doesNotMatch(JSON.stringify(manifesto), /2026SP250000000001_01\.pdf/u)
+
+  const invented = structuredClone(record)
+  invented.fonte.arquivoNome = "2026SP250000000001_01.pdf"
+  invented.fonte.arquivoNoPacote = "SP/2026SP250000000001_01.pdf"
+  assert.throws(() => assertProgramaGovernoRegistro(invented), /package-only/u)
+
+  const invalidConsultationDate = structuredClone(record)
+  invalidConsultationDate.fonte.coletadoEm = "2026-02-30T12:00:00Z"
+  assert.throws(() => assertProgramaGovernoRegistro(invalidConsultationDate), /ISO UTC existente/u)
+})
+
+test("document identity accepts all 27 governor UFs, including PI", () => {
+  const ufs = [
+    "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG",
+    "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO",
+  ] as const
+  for (const uf of ufs) {
+    const identidade: ProgramaGovernoIdentidade = {
+      ano: 2026,
+      cargo: "GOVERNADOR",
+      uf,
+      sqCandidato: "250000000001",
+      slug: `candidatura-${uf.toLocaleLowerCase("pt-BR")}`,
+      nomeUrna: `CANDIDATURA ${uf}`,
+      partido: "TESTE",
+    }
+    const documento: ProgramaGovernoDocumento = {
+      documentoId: `${uf}:250000000001:01`,
+      fonte: {
+        arquivoNome: `2026${uf}250000000001_01.pdf`,
+        arquivoNoPacote: `${uf}/2026${uf}250000000001_01.pdf`,
+        pacoteUrl: `https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_${uf}.zip`,
+        datasetUrl: "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        pdfOriginalUrl: null,
+        coletadoEm: "2026-08-26T12:00:00Z",
+      },
+      extracao: {
+        sourceSha256: "a".repeat(64),
+        extractedTextSha256: "b".repeat(64),
+        paginas: 1,
+        secoes: [{
+          id: "pagina-1",
+          titulo: "Página 1",
+          nivel: 1,
+          paginaInicial: 1,
+          paginaFinal: 1,
+          origem: "pdftotext",
+          conteudo: "Texto",
+        }],
+      },
+    }
+    assert.doesNotThrow(() => assertProgramaGovernoDocumento(documento, identidade, 1))
+  }
+})
+
+test("office and UF combinations fail closed", () => {
+  const governorInBr = syntheticGovernorRecord().fonte
+  governorInBr.uf = "BR"
+  assert.throws(() => assertProgramaGovernoIdentidade(governorInBr), /governador deve usar uma UF valida/)
+
+  const presidentInState = structuredClone(validRecord().fonte)
+  presidentInState.uf = "SP"
+  assert.throws(() => assertProgramaGovernoIdentidade(presidentInState), /presidencia deve usar BR/)
+})
+
+test("compound identity rejects cross-candidate, cross-office and cross-UF matches", () => {
+  const expected = syntheticGovernorRecord().fonte
+  assert.doesNotThrow(() => assertProgramaGovernoIdentidadeCorresponde(expected, structuredClone(expected)))
+
+  for (const mutation of [
+    { sqCandidato: "250000000002" },
+    { uf: "RJ" as const },
+    { cargo: "PRESIDENTE" as const, uf: "BR" as const },
+    { slug: "outra-candidatura" },
+    { partido: "OUTRO" },
+  ]) {
+    const actual = { ...expected, ...mutation }
+    assert.throws(
+      () => assertProgramaGovernoIdentidadeCorresponde(actual, expected),
+      /identidade eleitoral diverge/,
+    )
+  }
+})
+
 test("changed source or extracted text invalidates approval", () => {
   const record = validRecord()
   record.revisao!.sourceSha256 = "c".repeat(64)
@@ -100,7 +247,26 @@ test("public conversion fails closed and strips editorial internals", () => {
   assert.equal("geracao" in publicRecord, false)
   assert.equal("reviewer" in publicRecord, false)
   assert.equal("coletadoEm" in publicRecord.fonte, false)
+  assert.equal(publicRecord.fonte.consultadoEm, validRecord().fonte.coletadoEm)
   assert.equal(publicRecord.estado, "aprovado")
+})
+
+test("non-approved manifest never exposes draft content, claims or editorial metadata", () => {
+  const pending = syntheticGovernorRecord()
+  pending.geracao = { promptVersion: "segredo", model: "modelo-interno", generatedAt: "2026-08-25T10:00:00Z" }
+  pending.julgamento = {
+    model: "juiz-interno",
+    judgedAt: "2026-08-25T10:30:00Z",
+    verdicts: [{ id: "claim-1", verdict: "yes", reason: "metadado editorial" }],
+  }
+
+  const manifesto = toProgramaGovernoManifestoPublico(pending)
+  const serialized = JSON.stringify(manifesto)
+  assert.equal(manifesto.estado, "em_revisao")
+  assert.equal("resumo" in manifesto, false)
+  assert.equal("paginas" in manifesto, false)
+  assert.equal("reviewedAt" in manifesto, false)
+  assert.doesNotMatch(serialized, /palavra1|claim-1|segredo|modelo-interno|juiz-interno|metadado editorial/)
 })
 
 test("PROGRAMAS_SCHEMA_PASS", () => {

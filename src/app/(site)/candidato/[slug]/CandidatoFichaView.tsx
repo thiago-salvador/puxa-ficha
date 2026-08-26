@@ -97,7 +97,8 @@ export async function CandidatoFichaView({
         ? listarPesquisasGovernadorPorSlug(slug, ficha.estado)
         : []
   const programaGoverno =
-    ficha.cargo_disputado === "Presidente" && seoSubpath !== "timeline"
+    (ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador")
+      && seoSubpath !== "timeline"
       ? await getProgramaGovernoManifesto(slug)
       : null
 

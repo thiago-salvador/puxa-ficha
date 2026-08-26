@@ -73,6 +73,7 @@ import {
   ProgramaGovernoOverview,
   ProgramaGovernoTab,
   type ProgramaGovernoLoadState,
+  useProgramaGovernoDocuments,
 } from "./ProgramaGovernoSection"
 import {
   fixedCopy,
@@ -402,7 +403,7 @@ export function CandidatoProfile({
   const gastos = ficha.gastos_parlamentares ?? []
   const gastosExecutivo = ficha.gastos_executivo ?? []
   const sectionFreshness = ficha.section_freshness ?? {}
-  const programaEnabled = ficha.cargo_disputado === "Presidente" && programaGoverno !== null
+  const programaEnabled = programaGoverno !== null
   const [programaResponse, setProgramaResponse] = useState<ProgramaGovernoApiResponse | null>(null)
   const [programaLoadState, setProgramaLoadState] = useState<ProgramaGovernoLoadState>("idle")
   const programaLoadStateRef = useRef<ProgramaGovernoLoadState>("idle")
@@ -483,11 +484,21 @@ export function CandidatoProfile({
     requestedTab === "timeline" || tabDefs.some((tab) => tab.id === requestedTab)
       ? requestedTab
       : "geral"
+  const programaDocuments = useProgramaGovernoDocuments({
+    active: activeTab === "programa" && programaEnabled,
+    slug: ficha.slug,
+    manifesto: programaGoverno,
+  })
   const [tabHighlightRef, setTabHighlightRef] = useState<string | null>(null)
   const tabContentRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (activeTab !== "programa" || !programaEnabled || programaLoadStateRef.current !== "idle") return
+    if (
+      activeTab !== "programa"
+      || !programaEnabled
+      || programaDocuments.isMultiDocument
+      || programaLoadStateRef.current !== "idle"
+    ) return
     const controller = new AbortController()
     programaLoadStateRef.current = "loading"
     setProgramaLoadState("loading")
@@ -507,7 +518,7 @@ export function CandidatoProfile({
         setProgramaLoadState("failed")
       })
     return () => controller.abort()
-  }, [activeTab, ficha.slug, programaEnabled, programaRetryKey])
+  }, [activeTab, ficha.slug, programaDocuments.isMultiDocument, programaEnabled, programaRetryKey])
 
   useEffect(() => {
     if (activeTab !== "legislacao" || projetosLeiLoadStateRef.current !== "idle") return
@@ -830,6 +841,11 @@ export function CandidatoProfile({
                 loadState={programaLoadState}
                 response={programaResponse}
                 onRetry={retryProgramaGoverno}
+                selectedDocumentId={programaDocuments.activeDocumentId}
+                documentLoadState={programaDocuments.loadState}
+                loadedDocument={programaDocuments.loadedDocument}
+                onSelectDocument={programaDocuments.selectDocument}
+                onRetryDocument={programaDocuments.retryDocument}
               />
             )}
 
