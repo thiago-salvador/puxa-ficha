@@ -20,3 +20,12 @@ Tipo: codigo e research
 Gate: Done somente com 100% PASS, 12 de 12 criterios, e evidencia atual por criterio.
 
 Custo esperado: 3 a 6 horas, concentradas em pesquisa publica, verificacao de identidade e prova visual. Golden set: as 19 UFs nomeadas no pedido, com os cinco modos de falha obrigatorios de isolamento, fonte condicional, alias, zero real e ausencia explicita.
+
+## Resultado final
+
+Resultado: **12/12 PASS, 100%**.
+
+- Criterios 1 a 8: auditor, contrato de dados, testes de identidade, selecao e cobertura passaram com 8 UFs e 37 perfis adicionais.
+- Criterio 9: Amazonas publicada, Acre vazio e Alagoas vazia foram inspecionados em desktop e celular; os 7 testes visuais passaram.
+- Criterios 10 e 11: `npm run verify:pesquisas` e o verificador de escopo passaram; a documentacao registra PesqEle, dados abertos, paginas dos institutos e divulgacoes rastreaveis.
+- Criterio 12: contagens derivadas pelos testes e PR exclusivo [#106](https://github.com/thiago-salvador/puxa-ficha/pull/106), sem merge, deploy ou escrita em producao.
