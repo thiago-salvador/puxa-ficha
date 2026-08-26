@@ -4,6 +4,11 @@ import { createHash } from "node:crypto"
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 
+import {
+  ADAPTADORES_MONITORAMENTO,
+  parsePublicacaoMonitorada,
+  type AlvoMonitoramento,
+} from "./pesquisas-monitoramento-adapters"
 import type { RegistroTseMonitoramento } from "./pesquisas-monitoramento-tse"
 
 export type ClassificacaoMonitoramento =
@@ -46,7 +51,7 @@ export interface EvidenciaPesquisaCandidata {
   evidence_sha256: string
 }
 
-interface SourceContract {
+export interface SourceContract {
   id: string
   status: string
   roles: { institute: string }
@@ -68,12 +73,14 @@ export interface DecisaoMonitoramento {
 export interface CasoGoldenMonitoramento {
   case_id: string
   source_id: string
+  poll_id?: string
   html_fixture?: string
   registry_fixture: string
   observed_at: string
   network_error?: "timeout"
   html_replacements?: Array<[string, string]>
   registry_registration_override?: string
+  registry_institute_override?: string
   baseline?: "same_as_observed"
   baseline_result_values?: number[]
   reference_solution: DecisaoMonitoramento
@@ -85,9 +92,6 @@ interface ResultadoAvaliacao {
   baseline: EvidenciaPesquisaCandidata | null
 }
 
-const RESULT_URL = "https://www.poder360.com.br/poderdata/leia-os-resultados-da-pesquisa-poderdata-aya-para-presidente/"
-const REGISTRY_URL = "https://pesqele-divulgacao.tse.jus.br/"
-const SUPPORTED_SOURCE_ID = "poderdata-aya-nacional-2026"
 const STALE_AFTER_DAYS = 45
 
 function loadSources(): Map<string, SourceContract> {
@@ -102,171 +106,121 @@ function loadSources(): Map<string, SourceContract> {
   return new Map(sources.map((source) => [source.id, source]))
 }
 
-function loadAliases(): Map<string, string | null> {
-  const paths = [
-    "scripts/data/pesquisas-presidencia-2026.json",
-    "scripts/data/pesquisas-governadores-2026.json",
-  ]
+interface CatalogPoll {
+  id: string
+  source_id: string
+  source_status: string
+  office: string
+  geography: { label: string; code: string }
+  registration: {
+    code: { value: string }
+    url: { value: string }
+  }
+  sample: { population: { value: string } }
+  provenance: { result_url: string }
+  cenarios: Array<{
+    id: string
+    turn: 1 | 2
+    label_raw: string
+    question: { value: string | null }
+  }>
+}
+
+function loadCatalogPolls(): CatalogPoll[] {
+  const president = JSON.parse(readFileSync("scripts/data/pesquisas-presidencia-2026.json", "utf8")) as {
+    pesquisas: CatalogPoll[]
+  }
+  const governors = JSON.parse(readFileSync("scripts/data/pesquisas-governadores-2026.json", "utf8")) as {
+    datasets: Array<{ pesquisas: CatalogPoll[] }>
+  }
+  return [...president.pesquisas, ...governors.datasets.flatMap((dataset) => dataset.pesquisas)]
+}
+
+function targetFromPoll(poll: CatalogPoll): AlvoMonitoramento {
+  const scenario = poll.cenarios[0]
+  if (!scenario) throw new Error(`pesquisa sem cenário monitorável: ${poll.id}`)
+  return {
+    poll_id: poll.id,
+    source_id: poll.source_id,
+    url: poll.provenance.result_url,
+    registration_id: poll.registration.code.value,
+    registry_url: poll.registration.url.value,
+    office: poll.office,
+    geography: poll.geography.label,
+    geography_code: poll.geography.code,
+    turn: scenario.turn,
+    scenario_id: scenario.id,
+    scenario_label: scenario.label_raw,
+    scenario_question: scenario.question.value,
+    population: poll.sample.population.value,
+  }
+}
+
+export function listarAlvosMonitoramento(filters: {
+  sourceId?: string | null
+  uf?: string | null
+} = {}): AlvoMonitoramento[] {
+  const sourceFilter = filters.sourceId && filters.sourceId !== "all" ? filters.sourceId : null
+  const ufFilter = filters.uf && filters.uf !== "ALL" ? filters.uf.toLocaleUpperCase("pt-BR") : null
+  const approvedSources = loadSources()
+  const adapterIds = new Set(ADAPTADORES_MONITORAMENTO.map((adapter) => adapter.source_id))
+  if (sourceFilter && !adapterIds.has(sourceFilter)) {
+    throw new Error(`fonte sem adaptador aprovado: ${sourceFilter}`)
+  }
+  return loadCatalogPolls()
+    .filter((poll) => poll.source_status === "aprovado")
+    .filter((poll) => approvedSources.get(poll.source_id)?.status === "aprovado")
+    .filter((poll) => adapterIds.has(poll.source_id))
+    .filter((poll) => !sourceFilter || poll.source_id === sourceFilter)
+    .filter((poll) => !ufFilter || poll.geography.code === ufFilter)
+    .map(targetFromPoll)
+    .sort((left, right) => left.source_id.localeCompare(right.source_id) || left.geography_code.localeCompare(right.geography_code))
+}
+
+export function listarFontesAprovadasUtilizadas(): string[] {
+  const used = new Set(
+    loadCatalogPolls()
+      .filter((poll) => poll.source_status === "aprovado")
+      .map((poll) => poll.source_id),
+  )
+  return [...loadSources().values()]
+    .filter((source) => source.status === "aprovado" && used.has(source.id))
+    .map((source) => source.id)
+    .sort()
+}
+
+export function obterAlvoMonitoramento(sourceId: string, pollId?: string): AlvoMonitoramento {
+  const targets = listarAlvosMonitoramento({ sourceId })
+  const target = pollId
+    ? targets.find((candidate) => candidate.poll_id === pollId)
+    : targets.find((candidate) => candidate.registration_id === loadSources().get(sourceId)?.representative_poll?.registration_id) ?? targets[0]
+  if (!target) throw new Error(`fonte aprovada sem alvo publicado: ${sourceId}`)
+  return target
+}
+
+function loadAliases(target: AlvoMonitoramento): Map<string, string | null> {
   const aliases = new Map<string, string | null>()
   function add(rawLabel: string, candidateSlug: string): void {
     const previous = aliases.get(rawLabel)
     aliases.set(rawLabel, previous === undefined || previous === candidateSlug ? candidateSlug : null)
   }
-  const president = JSON.parse(readFileSync(paths[0], "utf8")) as {
+  const president = JSON.parse(readFileSync("scripts/data/pesquisas-presidencia-2026.json", "utf8")) as {
     exact_aliases: Array<{ raw_label: string; candidate_slug: string }>
   }
-  president.exact_aliases.forEach((alias) => add(alias.raw_label, alias.candidate_slug))
-  const governors = JSON.parse(readFileSync(paths[1], "utf8")) as {
-    datasets: Array<{ exact_aliases: Array<{ raw_label: string; candidate_slug: string }> }>
+  if (target.office === "Presidente") {
+    president.exact_aliases.forEach((alias) => add(alias.raw_label, alias.candidate_slug))
+    return aliases
   }
-  governors.datasets.flatMap((dataset) => dataset.exact_aliases).forEach((alias) => add(alias.raw_label, alias.candidate_slug))
+  const governors = JSON.parse(readFileSync("scripts/data/pesquisas-governadores-2026.json", "utf8")) as {
+    datasets: Array<{
+      publication_scope: { geography_code: string }
+      exact_aliases: Array<{ raw_label: string; candidate_slug: string }>
+    }>
+  }
+  const dataset = governors.datasets.find((candidate) => candidate.publication_scope.geography_code === target.geography_code)
+  if (!dataset) throw new Error(`aliases ausentes para ${target.geography_code}`)
+  dataset.exact_aliases.forEach((alias) => add(alias.raw_label, alias.candidate_slug))
   return aliases
-}
-
-function stripExternalMarkup(html: string): string {
-  const withoutExecutable = html
-    .replace(/<!--[\s\S]*?-->/g, " ")
-    .replace(/<(script|style|template|noscript)\b[^>]*>[\s\S]*?<\/\1>/gi, " ")
-  return withoutExecutable
-    .replace(/<[^>]+>/g, " ")
-    .replace(/&nbsp;|&#160;/gi, " ")
-    .replace(/&ordm;|&#186;/gi, "o")
-    .replace(/&[a-z]+;/gi, " ")
-    .replace(/&#(\d+);/g, (_, code: string) => String.fromCodePoint(Number(code)))
-    .replace(/\s+/g, " ")
-    .trim()
-}
-
-const MONTHS: Record<string, string> = {
-  jan: "01",
-  janeiro: "01",
-  fev: "02",
-  fevereiro: "02",
-  mar: "03",
-  marco: "03",
-  março: "03",
-  abr: "04",
-  abril: "04",
-  maio: "05",
-  jun: "06",
-  junho: "06",
-  jul: "07",
-  julho: "07",
-  ago: "08",
-  agosto: "08",
-  set: "09",
-  setembro: "09",
-  out: "10",
-  outubro: "10",
-  nov: "11",
-  novembro: "11",
-  dez: "12",
-  dezembro: "12",
-}
-
-function isoDate(day: string, month: string, year: string): string {
-  const normalizedMonth = MONTHS[month.toLocaleLowerCase("pt-BR")]
-  if (!normalizedMonth) throw new Error(`mes invalido: ${month}`)
-  return `${year}-${normalizedMonth}-${day.padStart(2, "0")}`
-}
-
-function extractPublicationDate(html: string, text: string): string {
-  const machine = html.match(/(?:datePublished|datetime)[^0-9]{0,20}(20\d{2}-\d{2}-\d{2})/i)?.[1]
-  if (machine) return machine
-  const human = text.match(/publicad[oa]\s+em\s+(\d{1,2})\s+de\s+([a-zçã]+)\s+de\s+(20\d{2})/i)
-  if (human) return isoDate(human[1], human[2], human[3])
-  const compact = text.match(/\b(\d{1,2})\.([a-zçã]{3,9})\.(20\d{2})\b/i)
-  if (compact) return isoDate(compact[1], compact[2], compact[3])
-  throw new Error("data de publicacao ausente")
-}
-
-function normalizeNumber(raw: string): number {
-  return Number(raw.replace(/\./g, "").replace(",", "."))
-}
-
-function requireMatch(text: string, pattern: RegExp, label: string): RegExpMatchArray {
-  const match = text.match(pattern)
-  if (!match) throw new Error(`HTML inesperado: ${label} ausente`)
-  return match
-}
-
-function requireFirstMatch(text: string, patterns: RegExp[], label: string): RegExpMatchArray {
-  for (const pattern of patterns) {
-    const match = text.match(pattern)
-    if (match) return match
-  }
-  throw new Error(`HTML inesperado: ${label} ausente`)
-}
-
-function assertPoderDataSource(source: SourceContract): void {
-  if (source.id !== SUPPORTED_SOURCE_ID || source.status !== "aprovado") {
-    throw new Error("adaptador exige fonte PoderData aprovada")
-  }
-}
-
-function resultUrlFor(input: { source: SourceContract; url?: string }): string {
-  if (input.url) return input.url
-  if (input.source.representative_poll) return input.source.representative_poll.result_url
-  return RESULT_URL
-}
-
-export function parsePoderDataPublicacao(input: {
-  html: string
-  observedAt: string
-  source: SourceContract
-  url?: string
-}): EvidenciaPesquisaCandidata {
-  assertPoderDataSource(input.source)
-  const text = stripExternalMarkup(input.html)
-  if (!/PoderData/i.test(text)) throw new Error("HTML inesperado: instituto ausente")
-  const publicationDate = extractPublicationDate(input.html, text)
-  const registration = requireMatch(text, /\b(?:BR|[A-Z]{2})-\d{5}\/2026\b/, "registro")[0]
-  const fieldwork = requireMatch(text, /(\d{1,2})\s+a\s+(\d{1,2})\s+de\s+([a-zçã]+)(?:\s+de\s+(20\d{2}))?/i, "periodo de campo")
-  const sample = requireFirstMatch(text, [
-    /(?:ouviu|ouvidos|entrevistou|entrevistados|foram ouvidos)[^0-9]{0,30}(\d{1,3}(?:\.\d{3})+|\d{3,6})\s+(?:eleitores|pessoas|entrevistas)/i,
-    /(?:foram|total de)[^0-9]{0,20}(\d{1,3}(?:\.\d{3})+|\d{3,6})\s+entrevistas/i,
-  ], "amostra")[1]
-  const margin = requireMatch(text, /margem de erro[^0-9]{0,20}(\d+(?:[,.]\d+)?)\s+pontos?/i, "margem de erro")[1]
-  const confidence = requireMatch(text, /(?:intervalo|nivel) de confian[cç]a[^0-9]{0,20}(\d+(?:[,.]\d+)?)%/i, "confianca")[1]
-  const result = requireMatch(text, /([A-ZÀ-Ü][^.%]{1,80}?\([A-ZÀ-Ü]{2,20}\))\s+(?:aparece\s+)?com\s+(\d+(?:[,.]\d+)?)%[^.]{0,100}?contra\s+(\d+(?:[,.]\d+)?)%\s+(?:do|da|de)\s+(?:senador(?:a)?\s+|presidente\s+)?([A-ZÀ-Ü][^.%]{1,80}?\([A-ZÀ-Ü]{2,20}\))\s+no\s+cen[aá]rio\s+de\s+1[oº]\s+turno/i, "resultados")
-  const method = /\bURA\b/i.test(text) ? "telefonico por URA" : "indeterminado"
-  const resultUrl = resultUrlFor(input)
-  const evidenceSha = createHash("sha256").update(input.html).digest("hex")
-  const fieldYear = fieldwork[4] ?? publicationDate.slice(0, 4)
-  return {
-    source_id: input.source.id,
-    source_status: input.source.status,
-    url: resultUrl,
-    institute: input.source.roles.institute,
-    registration: {
-      id: registration,
-      url: input.source.representative_poll?.registry_url ?? REGISTRY_URL,
-    },
-    fieldwork: {
-      start: isoDate(fieldwork[1], fieldwork[3], fieldYear),
-      end: isoDate(fieldwork[2], fieldwork[3], fieldYear),
-    },
-    publication_date: publicationDate,
-    scenario: {
-      id: `${registration.toLocaleLowerCase("pt-BR").replace(/[^a-z0-9]+/g, "-")}-1t-principal`,
-      office: "Presidente",
-      geography: "Brasil",
-      geography_code: "BR",
-      turn: 1,
-      label: "cenario de 1o turno",
-      question: null,
-    },
-    sample: { size: normalizeNumber(sample), population: "eleitorado brasileiro" },
-    margin_error_pp: normalizeNumber(margin),
-    confidence_percent: normalizeNumber(confidence),
-    method,
-    results: [
-      { raw_label: result[1].trim(), candidate_slug: null, match_status: "indeterminado", value_percent: normalizeNumber(result[2]) },
-      { raw_label: result[4].trim(), candidate_slug: null, match_status: "indeterminado", value_percent: normalizeNumber(result[3]) },
-    ],
-    observed_at: input.observedAt,
-    evidence_sha256: evidenceSha,
-  }
 }
 
 function parseTseRegistryCsv(csv: string): RegistroTseMonitoramento[] {
@@ -344,7 +298,11 @@ function classify(input: {
     registry.field_start !== input.evidence.fieldwork.start ||
     registry.field_end !== input.evidence.fieldwork.end ||
     registry.sample_size !== input.evidence.sample.size ||
-    (registry.margin_error_pp !== null && registry.margin_error_pp !== input.evidence.margin_error_pp)
+    (registry.margin_error_pp !== null && registry.margin_error_pp !== input.evidence.margin_error_pp) ||
+    !(
+      registry.institute.toLocaleLowerCase("pt-BR").includes(input.evidence.institute.toLocaleLowerCase("pt-BR")) ||
+      input.evidence.institute.toLocaleLowerCase("pt-BR").includes(registry.institute.toLocaleLowerCase("pt-BR"))
+    )
   ) {
     return { decision: decision("conflitante", false, "registry_conflict"), evidence: input.evidence, baseline: input.baseline }
   }
@@ -401,13 +359,18 @@ export function avaliarCasoMonitoramento(
   for (const [before, after] of goldenCase.html_replacements ?? []) html = html.replace(before, after)
   let evidence: EvidenciaPesquisaCandidata | null = null
   let parseError = false
+  const target = obterAlvoMonitoramento(source.id, goldenCase.poll_id)
   try {
-    evidence = parsePoderDataPublicacao({ html, observedAt: goldenCase.observed_at, source })
+    evidence = parsePublicacaoMonitorada({ html, observedAt: goldenCase.observed_at, source, target })
   } catch {
     parseError = true
   }
   const registry = parseTseRegistryCsv(readFileSync(resolve(fixturesDir, goldenCase.registry_fixture), "utf8"))
   if (goldenCase.registry_registration_override) registry[0].registration_id = goldenCase.registry_registration_override
+  if (goldenCase.registry_institute_override) {
+    const expected = registry.find((entry) => entry.registration_id === evidence?.registration.id)
+    if (expected) expected.institute = goldenCase.registry_institute_override
+  }
 
   let baseline: EvidenciaPesquisaCandidata | null = null
   if (evidence && goldenCase.baseline === "same_as_observed") baseline = structuredClone(evidence)
@@ -422,7 +385,7 @@ export function avaliarCasoMonitoramento(
     source,
     evidence,
     registry,
-    aliases: loadAliases(),
+    aliases: loadAliases(target),
     baseline,
     observedAt: goldenCase.observed_at,
     parseError,
@@ -508,6 +471,12 @@ export function escreverRelatorios(results: Array<{ case_id: string; result: Res
     ...Object.entries(counts).map(([classification, count]) => `- ${classification}: ${count}`),
     "",
     `Propostas elegiveis para revisao: ${diff.operations.length}`,
+    "",
+    "## Itens observados",
+    "",
+    ...results.map(({ case_id, result }) => (
+      `- ${case_id}: ${result.decision.classification} (${result.decision.reason})`
+    )),
   ].join("\n")
   writeFileSync(resolve(resolvedOutput, "proposal.json"), `${JSON.stringify(proposal, null, 2)}\n`)
   writeFileSync(resolve(resolvedOutput, "diff.json"), `${JSON.stringify(diff, null, 2)}\n`)
@@ -540,17 +509,21 @@ export function obterContratoFonte(sourceId: string): SourceContract {
 
 export function avaliarEvidenciaAoVivo(input: {
   source: SourceContract
+  target: AlvoMonitoramento
   html: string
   observedAt: string
   registry?: RegistroTseMonitoramento[]
 }): ResultadoAvaliacao {
-  const evidence = parsePoderDataPublicacao({ html: input.html, observedAt: input.observedAt, source: input.source })
-  const representative = input.source.representative_poll
-  if (!representative) throw new Error("fonte aprovada sem rodada representativa")
+  const evidence = parsePublicacaoMonitorada({
+    html: input.html,
+    observedAt: input.observedAt,
+    source: input.source,
+    target: input.target,
+  })
   const registry: RegistroTseMonitoramento[] = input.registry ?? [{
-    registration_id: representative.registration_id,
-    office: "Presidente",
-    geography: "Brasil",
+    registration_id: input.target.registration_id,
+    office: input.target.office,
+    geography: input.target.geography,
     field_start: evidence.fieldwork.start,
     field_end: evidence.fieldwork.end,
     sample_size: evidence.sample.size,
@@ -561,7 +534,7 @@ export function avaliarEvidenciaAoVivo(input: {
     source: input.source,
     evidence,
     registry,
-    aliases: loadAliases(),
+    aliases: loadAliases(input.target),
     baseline: null,
     observedAt: input.observedAt,
   })
@@ -571,6 +544,17 @@ export function resultadoFonteIndisponivel(reason: string): ResultadoAvaliacao {
   return {
     decision: decision("fonte indisponivel", false, reason),
     evidence: null,
+    baseline: null,
+  }
+}
+
+export function resultadoEvidenciaBloqueada(
+  evidence: EvidenciaPesquisaCandidata,
+  reason: string,
+): ResultadoAvaliacao {
+  return {
+    decision: decision("fonte indisponivel", false, reason),
+    evidence,
     baseline: null,
   }
 }

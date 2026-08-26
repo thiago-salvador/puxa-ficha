@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "baseline_sha": "55399644c40f9eca65527dfbdc0e3e3781730375",
+  "attempted_at": "2026-08-26T11:01:42-03:00",
+  "rules": {
+    "fixture_proof_required": true,
+    "live_status_values": [
+      "comprovado",
+      "bloqueado"
+    ],
+    "blocked_is_not_success": true
+  },
+  "adapters": [
+    {
+      "source_id": "poderdata-aya-nacional-2026",
+      "fixture_proof": "comprovado",
+      "live_status": "bloqueado",
+      "live_source_observed": true,
+      "stage": "tse_registry",
+      "reason": "O HTML público foi extraído com evidência completa, mas o robots.txt do portal de dados abertos do TSE respondeu HTTP 403. O cruzamento oficial falhou fechado.",
+      "evidence_sha256": "646c9f2eab85f49ecc2c619f24c722f0446e1a03979cfce0bd06143f29e294f3",
+      "registration_id": "BR-07845/2026",
+      "command": "npm run monitor:pesquisas:manual -- --source=poderdata-aya-nacional-2026 --uf=BR"
+    },
+    {
+      "source_id": "datafolha-folha-globo-nacional-2026",
+      "fixture_proof": "comprovado",
+      "live_status": "bloqueado",
+      "live_source_observed": false,
+      "stage": "source_layout",
+      "reason": "A página pública não expõe o período de campo no formato exigido pelo adaptador e também não expõe confiança na leitura textual. O parser recusou a evidência.",
+      "evidence_sha256": null,
+      "registration_id": "BR-04496/2026",
+      "command": "npm run monitor:pesquisas:manual -- --source=datafolha-folha-globo-nacional-2026 --uf=BR"
+    },
+    {
+      "source_id": "datafolha-folha-globo-estaduais-2026",
+      "fixture_proof": "comprovado",
+      "live_status": "bloqueado",
+      "live_source_observed": false,
+      "stage": "scenario_identity",
+      "reason": "A página pública do Ceará não identifica explicitamente o cenário principal como primeiro turno. O adaptador recusou inferir o turno.",
+      "evidence_sha256": null,
+      "registration_id": "CE-04292/2026",
+      "command": "npm run monitor:pesquisas:manual -- --source=datafolha-folha-globo-estaduais-2026 --uf=CE"
+    },
+    {
+      "source_id": "real-time-big-data-estaduais-2026",
+      "fixture_proof": "comprovado",
+      "live_status": "bloqueado",
+      "live_source_observed": true,
+      "stage": "tse_registry",
+      "reason": "O HTML público do Rio Grande do Sul foi extraído com evidência completa, mas o robots.txt do portal de dados abertos do TSE respondeu HTTP 403. O cruzamento oficial falhou fechado.",
+      "evidence_sha256": "a5fb3659786debca3e2cf10896a07cdba6653e66acf9b67bfd30d257982e364e",
+      "registration_id": "RS-09640/2026",
+      "command": "npm run monitor:pesquisas:manual -- --source=real-time-big-data-estaduais-2026 --uf=RS"
+    }
+  ]
+}
