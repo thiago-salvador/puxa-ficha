@@ -10,6 +10,20 @@ import { stripAccents } from "../../src/lib/strip-accents"
 
 const execFileAsync = promisify(execFile)
 const OFFICIAL_TSE_HOSTS = new Set(["cdn.tse.jus.br", "dadosabertos.tse.jus.br", "divulgacandcontas.tse.jus.br"])
+export const PROGRAMA_GOVERNO_EXTRACTION_VERSION = "programa-governo-extracao-v2" as const
+export const PROGRAMA_GOVERNO_EXTRACTION_METHOD = "pdftotext-pagewise-with-ocr-fallback" as const
+
+export type ProgramaGovernoPaginaMapeada = {
+  pagina: number
+  origem: ProgramaGovernoSecao["origem"]
+  textSha256: string
+}
+
+export type ProgramaGovernoExtracaoRastreavel = ProgramaGovernoExtracao & {
+  extractionVersion: typeof PROGRAMA_GOVERNO_EXTRACTION_VERSION
+  method: typeof PROGRAMA_GOVERNO_EXTRACTION_METHOD
+  pageMap: ProgramaGovernoPaginaMapeada[]
+}
 
 export class ProgramaGovernoExtractionError extends Error {
   constructor(message: string) {
@@ -136,7 +150,7 @@ export async function fetchTseProgramaBytes(
 export async function extractProgramaPdf(
   pdfPath: string,
   overrides: Partial<ProgramaGovernoExtractionAdapters> = {},
-): Promise<ProgramaGovernoExtracao> {
+): Promise<ProgramaGovernoExtracaoRastreavel> {
   const adapters = adaptersWith(overrides)
   const bytes = await adapters.readBytes(pdfPath)
   let info: string
@@ -190,9 +204,16 @@ export async function extractProgramaPdf(
 
   const canonicalText = pageTexts.map((page) => page.text).join("\n\f\n")
   return {
+    extractionVersion: PROGRAMA_GOVERNO_EXTRACTION_VERSION,
+    method: PROGRAMA_GOVERNO_EXTRACTION_METHOD,
     sourceSha256: sha256(bytes),
     extractedTextSha256: sha256(canonicalText),
     paginas,
     secoes: sectionsFromPages(pageTexts),
+    pageMap: pageTexts.map((page, index) => ({
+      pagina: index + 1,
+      origem: page.origin,
+      textSha256: sha256(page.text),
+    })),
   }
 }

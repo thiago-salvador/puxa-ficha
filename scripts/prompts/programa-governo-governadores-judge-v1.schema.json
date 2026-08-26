@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["avaliacoes"],
+  "properties": {
+    "avaliacoes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "claimId",
+          "dimension",
+          "identityKey",
+          "documentoIds",
+          "evidencias",
+          "verdict",
+          "reason"
+        ],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "claimId": { "type": "string", "minLength": 1 },
+          "dimension": {
+            "type": "string",
+            "enum": ["suporte", "numeros", "neutralidade", "mistura", "identidade", "cobertura"]
+          },
+          "identityKey": { "type": "string", "pattern": "^2026:GOVERNADOR:[A-Z]{2}:[0-9]{11,12}$" },
+          "documentoIds": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "type": "string", "pattern": "^[A-Z]{2}:[0-9]{11,12}:[0-9]{2}$" }
+          },
+          "evidencias": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["documentoId", "pagina", "trecho"],
+              "properties": {
+                "documentoId": { "type": "string", "pattern": "^[A-Z]{2}:[0-9]{11,12}:[0-9]{2}$" },
+                "pagina": { "type": "integer", "minimum": 1 },
+                "trecho": { "type": "string", "minLength": 1 }
+              }
+            }
+          },
+          "verdict": { "type": "string", "enum": ["yes", "no", "unknown"] },
+          "reason": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

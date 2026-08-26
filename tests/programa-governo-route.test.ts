@@ -75,13 +75,23 @@ test("rota retorna o DTO aprovado e remove campos editoriais", async () => {
 
   assert.equal(response.status, 200)
   assert.match(response.headers.get("cache-control") ?? "", /s-maxage=3600/)
+  assert.deepEqual(Object.keys(body).sort(), ["data", "estado", "fonte"])
   assert.equal(body.estado, "aprovado")
   assert.ok(body.data.secoes.length > 0)
   assert.doesNotMatch(JSON.stringify(body), /reviewer|julgamento|geracao|promptVersion/)
 })
 
 test("todos os estados não aprovados são explícitos e não vazam rascunho", async () => {
-  for (const estado of ["nao_coletado", "fonte_ausente", "extracao_falhou", "aguardando_revisao"] as const) {
+  for (const estado of [
+    "nao_coletado",
+    "fonte_ausente",
+    "extracao_falhou",
+    "aguardando_revisao",
+    "sem_documento_oficial",
+    "falha_de_extracao",
+    "perfil_local_ausente",
+    "em_revisao",
+  ] as const) {
     const resource = await getProgramaGovernoPublicResource("lula", async () => ({
       ...pendingRecord(),
       estado,
@@ -97,6 +107,22 @@ test("todos os estados não aprovados são explícitos e não vazam rascunho", a
     assert.equal(body.data, null)
     assert.doesNotMatch(JSON.stringify(body), /O programa de governo apresenta/)
   }
+})
+
+test("manifest identity mismatch fails closed without exposing another candidate", async () => {
+  const crossed = approvedRecord()
+  crossed.fonte.partido = "PARTIDO-DIVERGENTE"
+  const resource = await getProgramaGovernoPublicResource("lula", async () => crossed)
+
+  assert.deepEqual(resource, { known: false, manifesto: null, data: null })
+
+  const handler = createProgramaGovernoGetHandler({
+    rateLimiter: createFixedWindowIpRateLimiter({ namespace: "programa-route-identity", max: 5, windowMs: 60_000 }),
+    getProgramaGovernoPublicResource: async () => resource,
+  })
+  const response = await handler(request(), params("lula"))
+  assert.equal(response.status, 404)
+  assert.doesNotMatch(await response.text(), /PARTIDO-DIVERGENTE|O programa de governo apresenta/)
 })
 
 test("slug desconhecido, traversal e slug malformado retornam 404", async () => {

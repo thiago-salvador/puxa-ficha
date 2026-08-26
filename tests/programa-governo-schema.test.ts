@@ -3,8 +3,13 @@ import { readFileSync } from "node:fs"
 import test from "node:test"
 
 import {
+  assertProgramaGovernoIdentidade,
+  assertProgramaGovernoIdentidadeCorresponde,
   assertProgramaGovernoFonte,
   assertProgramaGovernoRegistro,
+  normalizarProgramaGovernoEstado,
+  programaGovernoChave,
+  toProgramaGovernoManifestoPublico,
   toProgramaGovernoPublico,
   type ProgramaGovernoRegistro,
 } from "../src/lib/programa-governo"
@@ -48,6 +53,24 @@ function validRecord(): ProgramaGovernoRegistro {
   }
 }
 
+function syntheticGovernorRecord(): ProgramaGovernoRegistro {
+  const record = validRecord()
+  record.estado = "em_revisao"
+  record.fonte = {
+    ...record.fonte,
+    cargo: "GOVERNADOR",
+    uf: "SP",
+    sqCandidato: "250000000001",
+    slug: "candidatura-governador-teste",
+    nomeUrna: "CANDIDATURA DE TESTE",
+    partido: "TESTE",
+    arquivoNome: "2026SP250000000001_01.pdf",
+    arquivoNoPacote: "SP/2026SP250000000001_01.pdf",
+  }
+  delete record.revisao
+  return record
+}
+
 test("registry covers the 13 current official presidential documents by SQ", () => {
   assert.equal(registry.length, 13)
   const sqs = new Set<string>()
@@ -84,6 +107,53 @@ test("approved content requires bounded summary and evidence", () => {
   assert.throws(() => assertProgramaGovernoRegistro(tooShort), /120 e 180 palavras/)
 })
 
+test("common contract accepts governor identity and canonical editorial states", () => {
+  const record = syntheticGovernorRecord()
+  assert.doesNotThrow(() => assertProgramaGovernoRegistro(record))
+  assert.equal(programaGovernoChave(record.fonte), "2026:GOVERNADOR:SP:250000000001")
+  assert.equal(normalizarProgramaGovernoEstado("aguardando_revisao"), "em_revisao")
+  assert.equal(normalizarProgramaGovernoEstado("fonte_ausente"), "sem_documento_oficial")
+
+  for (const estado of ["sem_documento_oficial", "falha_de_extracao", "perfil_local_ausente"] as const) {
+    const terminal = syntheticGovernorRecord()
+    terminal.estado = estado
+    delete terminal.extracao
+    delete terminal.resumo
+    delete terminal.geracao
+    delete terminal.julgamento
+    assert.doesNotThrow(() => assertProgramaGovernoRegistro(terminal))
+  }
+})
+
+test("office and UF combinations fail closed", () => {
+  const governorInBr = syntheticGovernorRecord().fonte
+  governorInBr.uf = "BR"
+  assert.throws(() => assertProgramaGovernoIdentidade(governorInBr), /governador deve usar uma UF valida/)
+
+  const presidentInState = structuredClone(validRecord().fonte)
+  presidentInState.uf = "SP"
+  assert.throws(() => assertProgramaGovernoIdentidade(presidentInState), /presidencia deve usar BR/)
+})
+
+test("compound identity rejects cross-candidate, cross-office and cross-UF matches", () => {
+  const expected = syntheticGovernorRecord().fonte
+  assert.doesNotThrow(() => assertProgramaGovernoIdentidadeCorresponde(expected, structuredClone(expected)))
+
+  for (const mutation of [
+    { sqCandidato: "250000000002" },
+    { uf: "RJ" as const },
+    { cargo: "PRESIDENTE" as const, uf: "BR" as const },
+    { slug: "outra-candidatura" },
+    { partido: "OUTRO" },
+  ]) {
+    const actual = { ...expected, ...mutation }
+    assert.throws(
+      () => assertProgramaGovernoIdentidadeCorresponde(actual, expected),
+      /identidade eleitoral diverge/,
+    )
+  }
+})
+
 test("changed source or extracted text invalidates approval", () => {
   const record = validRecord()
   record.revisao!.sourceSha256 = "c".repeat(64)
@@ -101,6 +171,24 @@ test("public conversion fails closed and strips editorial internals", () => {
   assert.equal("reviewer" in publicRecord, false)
   assert.equal("coletadoEm" in publicRecord.fonte, false)
   assert.equal(publicRecord.estado, "aprovado")
+})
+
+test("non-approved manifest never exposes draft content, claims or editorial metadata", () => {
+  const pending = syntheticGovernorRecord()
+  pending.geracao = { promptVersion: "segredo", model: "modelo-interno", generatedAt: "2026-08-25T10:00:00Z" }
+  pending.julgamento = {
+    model: "juiz-interno",
+    judgedAt: "2026-08-25T10:30:00Z",
+    verdicts: [{ id: "claim-1", verdict: "yes", reason: "metadado editorial" }],
+  }
+
+  const manifesto = toProgramaGovernoManifestoPublico(pending)
+  const serialized = JSON.stringify(manifesto)
+  assert.equal(manifesto.estado, "em_revisao")
+  assert.equal("resumo" in manifesto, false)
+  assert.equal("paginas" in manifesto, false)
+  assert.equal("reviewedAt" in manifesto, false)
+  assert.doesNotMatch(serialized, /palavra1|claim-1|segredo|modelo-interno|juiz-interno|metadado editorial/)
 })
 
 test("PROGRAMAS_SCHEMA_PASS", () => {

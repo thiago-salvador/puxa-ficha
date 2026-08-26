@@ -1,0 +1,23 @@
+## Eval: pipeline dos programas de governo para governadores de 2026
+
+Tipo: automacao
+
+| # | Critério (pass/fail) | Grader | Dimensão |
+|---|---|---|---|
+| 1 | Cada documento mantém `documentoId` estável e produz uma seção para cada página, na ordem interna original, com origem do texto, SHA-256 da página, SHA-256 da fonte, SHA-256 do texto canônico, método e versão da extração. | code: `node --conditions react-server --import tsx --test tests/programa-governo-extracao.test.ts tests/programa-governo-pipeline.test.ts` | outcome |
+| 2 | O OCR é acionado somente quando o texto da página não é confiável, usa workspace temporário removido ao final e falha de modo explícito quando o documento inteiro continua sem texto. | code: casos herméticos com adapters em `tests/programa-governo-extracao.test.ts` | policy |
+| 3 | Cada execução fica isolada em uma única combinação de eleição, cargo e UF, e cada claim carrega a chave `{ano}:{cargo}:{uf}:{sqCandidato}` e os `documentoId` exatos das evidências, sem casamento apenas por nome ou slug. | code: casos de mistura de UF, SQ, slug e documento em `tests/programa-governo-pipeline.test.ts` | policy |
+| 4 | Cada frase e tema recebe um ID determinístico vinculado ao conjunto ordenado de documentos e avaliações separadas para suporte factual, números, neutralidade, mistura de assuntos, identidade e cobertura. | code: matriz de claims, documentos e dimensões em `tests/programa-governo-pipeline.test.ts` | outcome |
+| 5 | O judge usa família diferente do gerador, registra versão de rubric, modelo e data, retorna somente `yes`, `no` ou `unknown`, e `unknown` permanece um bloqueio explícito em vez de ser convertido em aprovação. | code: validação de envelope e metadados em `tests/programa-governo-pipeline.test.ts` | policy |
+| 6 | Um registro só fica elegível para `em_revisao` quando todos os IDs e dimensões esperados têm veredito `yes`; ID ausente, duplicado, estranho, `no` ou `unknown` bloqueia a elegibilidade. | code: casos positivos e negativos em `tests/programa-governo-pipeline.test.ts` | outcome |
+| 7 | O pacote de revisão separa todos os documentos do candidato e mostra, para cada um, `documentoId`, fonte, arquivo interno, hashes, páginas e seções; claims e evidências exibem documento e página sem concatenação de proveniência. | code: inspeção estrutural e negativa do HTML em `tests/programa-governo-pipeline.test.ts` | outcome |
+| 8 | A aprovação estadual exige decisão humana explícita vinculada à chave eleitoral, ao estado elegível, à versão do registro e ao fingerprint do conjunto completo e ordenado de documentos, fontes, hashes, extrações, prompt e rubric. | code: aprovação pura com recibo correto e recibos alterados em `tests/programa-governo-pipeline.test.ts` | policy |
+| 9 | Ausência, duplicidade, reordenação, documento cruzado ou qualquer mudança posterior em documento, fonte, extração, evidência, conteúdo, hash, prompt ou rubric invalida a decisão antes de qualquer escrita. | code: casos de proveniência inválida e stale approval em `tests/programa-governo-pipeline.test.ts` | policy |
+| 10 | O modo presidencial mantém os diretórios, estados e IDs legados aceitos, enquanto o modo estadual exige o contrato novo e nunca aprova automaticamente. | code: fixtures presidencial e estadual em `tests/programa-governo-pipeline.test.ts` | outcome |
+| 11 | A auditoria aceita caminhos e escopo explícitos, recusa arquivo extra, candidato ou documento duplicado, registro de outro cargo ou UF, evidência em documento ou página errados e cobertura incompleta do judge. | code: `node --conditions react-server --import tsx --test tests/programa-governo-pipeline.test.ts` | policy |
+| 12 | Geração e julgamento ficam fora do runtime público, com no máximo duas tentativas por etapa e nenhuma dependência nova de aplicativo. | code: inspeção de imports e constantes em `tests/programa-governo-pipeline.test.ts`; `git diff -- package.json src` deve estar vazio para esta folha | custo |
+| 13 | Os testes focados rodam em Node 24 e terminam com `PROGRAMAS_EXTRACAO_PASS` e `PROGRAMAS_PIPELINE_PASS`. | code: checks G1 a G3 de `.unlazy/programas-governo-governadores-2026/gates/leaf-1.3b.md` | outcome |
+
+Gate: Done só com 100% PASS registrado, evidência atual por critério e zero aprovação estadual sem decisão humana explícita.
+
+Custo esperado: no máximo duas tentativas do gerador e duas do judge por candidato extraível, extração sequencial por documento, zero chamada de IA no runtime público e zero dependência nova. Golden set: `tests/programa-governo-pipeline.test.ts`, com fixture multi-documento de referência e perturbações de ausência, duplicidade, reordenação, documento cruzado, `unknown`, cobertura incompleta e decisão stale.

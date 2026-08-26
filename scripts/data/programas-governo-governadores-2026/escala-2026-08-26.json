@@ -1,0 +1,150 @@
+{
+  "versao": 1,
+  "medidoEm": "2026-08-26T15:44:40Z",
+  "build": {
+    "sha": "72b1ba223ce5c5418222bc03ef309eefa2bbfd95",
+    "node": "24.15.0",
+    "duracaoMs": 21730,
+    "arquivos": 998,
+    "outputBytesSemCache": 29666132,
+    "staticFiles": 82,
+    "staticBytes": 3841008,
+    "funcoesRoute": 40,
+    "candidatoProfileTracePath": ".next/server/app/api/candidato-profile/[slug]/route.js.nft.json",
+    "candidatoProfileTraceFiles": 264,
+    "candidatoProfileTraceBytes": 4974012,
+    "candidatoProfileRouteJsBytes": 779,
+    "relatorioPayloadBytes": 5174
+  },
+  "corpusPresidencial": {
+    "files": 13,
+    "pages": 816,
+    "jsonBytes": 2168492,
+    "contentBytes": 1711933,
+    "serializedContentBytes": 1746483,
+    "averageStructuralOverheadBytes": 32463,
+    "serializationRatio": 1.020181864594,
+    "payloadExpansionRatio": 1.2666920960107668,
+    "maxPayloadBytes": 388291
+  },
+  "inventarioGovernadores": {
+    "ufs": 27,
+    "candidaturasOficiais": 198,
+    "gruposLogicos": 197,
+    "gruposAmbiguos": 1,
+    "linhasEmGruposAmbiguos": 2,
+    "perfisLocaisVinculados": 148,
+    "perfisLocaisAusentes": 50,
+    "pacotes": 27,
+    "documentosTotais": 212,
+    "documentosDeCandidaturasAtuais": 206,
+    "documentosSemCandidaturaAtual": 6,
+    "candidaturasComDocumento": 193,
+    "candidaturasSemDocumento": 5,
+    "paginasCandidaturasAtuais": 11087,
+    "paginasDocumentosOrfaos": 229,
+    "pdfBytesCandidaturasAtuais": 268215277,
+    "pdfBytesDocumentosOrfaos": 4098087,
+    "pacoteBytesTotais": 276739049,
+    "textoExtraidoBytesCandidaturasAtuais": 21874177,
+    "documentosTextoExtraivel": 201,
+    "documentosRequeremOcr": 5,
+    "inventarioPayloadBytes": 346768
+  },
+  "projecaoGovernadores": {
+    "candidatosComTexto": 193,
+    "textoExtraidoBytes": 21874177,
+    "jsonServerOnlyProjetadoBytes": 27707942,
+    "funcaoProjetadaBytes": 32681954,
+    "maiorCandidatoSq": "40002532272",
+    "maiorCandidatoTextoBytes": 3332441,
+    "maiorPayloadProjetadoBytes": 4221177,
+    "maiorDocumentoId": "DF:70002547775:01",
+    "maiorDocumentoTextoBytes": 813012,
+    "maiorDocumentoPayloadProjetadoBytes": 1029836,
+    "payloadPorDocumentoComMargem": true,
+    "payloadInteiroComMargem": false,
+    "funcaoComMargem": true
+  },
+  "casoLimiteOmarAziz": {
+    "sqCandidato": "40002532272",
+    "classificacao": "partes_segmentadas_distintas",
+    "criterio": "oito hashes PDF e texto distintos; baixa sobreposição textual; aberturas temáticas diferentes",
+    "documentos": [
+      {
+        "id": "AM:40002532272:01",
+        "paginas": 243,
+        "pdfBytes": 8459864,
+        "textoExtraidoBytes": 517693,
+        "sha256": "154c981e4aee62d4f59ebe700c38e5f8ead53c32729be464c1fb0e25137d80e6"
+      },
+      {
+        "id": "AM:40002532272:02",
+        "paginas": 262,
+        "pdfBytes": 10195164,
+        "textoExtraidoBytes": 549515,
+        "sha256": "525ae31d6031e72374f5abfb39156b826ff0753bf2b99ec3e49326dd5aa25ad5"
+      },
+      {
+        "id": "AM:40002532272:03",
+        "paginas": 211,
+        "pdfBytes": 10167090,
+        "textoExtraidoBytes": 440994,
+        "sha256": "1d26104c99596077ac63fd3bf65085002294c31377c144106b33af9c2b048b66"
+      },
+      {
+        "id": "AM:40002532272:04",
+        "paginas": 215,
+        "pdfBytes": 10203763,
+        "textoExtraidoBytes": 442353,
+        "sha256": "5907da46ac3a2a3bbaf6c3fbb26c680945d59a8d1e3ae7dc0c411efe96f914e7"
+      },
+      {
+        "id": "AM:40002532272:05",
+        "paginas": 274,
+        "pdfBytes": 10285667,
+        "textoExtraidoBytes": 581584,
+        "sha256": "c00bedc1f5443c2ab238e26eebe5a522a41afd76a1b76b73fefebfe5cf1b94d9"
+      },
+      {
+        "id": "AM:40002532272:06",
+        "paginas": 49,
+        "pdfBytes": 1145980,
+        "textoExtraidoBytes": 104324,
+        "sha256": "6f91717227deed0589596df0a400afd62a7926fd9f1bd2535d7bf425c7f68173"
+      },
+      {
+        "id": "AM:40002532272:07",
+        "paginas": 83,
+        "pdfBytes": 10170299,
+        "textoExtraidoBytes": 174405,
+        "sha256": "767d2062c62de7c4dbdfbf36b2ab724ba230d6806f3266569580957803662076"
+      },
+      {
+        "id": "AM:40002532272:08",
+        "paginas": 215,
+        "pdfBytes": 10162707,
+        "textoExtraidoBytes": 521573,
+        "sha256": "4cf49f539f36d6c3a77406dd23f27ca8d59c53b8e0dd9cc1a9738bcad742e3d0"
+      }
+    ]
+  },
+  "limites": {
+    "vercelFunctionUncompressedBytes": 262144000,
+    "functionSafetyTargetPercent": 70,
+    "functionSafetyBytes": 183500800,
+    "vercelRequestResponseBytes": 4718592,
+    "payloadSafetyTargetPercent": 80,
+    "payloadSafetyBytes": 3774873,
+    "fonteFunction": "https://vercel.com/docs/functions/limitations#bundle-size-limits",
+    "fontePayload": "https://vercel.com/docs/functions/limitations#request-body-size",
+    "fonteBuild": "https://vercel.com/docs/limits#build-time-per-deployment"
+  },
+  "decisao": {
+    "arquiteturaEstaticaCabeComMargem": true,
+    "payloadUnicoPorCandidatoCabeComMargem": false,
+    "resultado": "estatica_fragmentada_cabe_com_margem",
+    "requisito": "carregar por documento ou por seção; não responder todo o candidato em um único payload",
+    "infraestruturaExternaNecessaria": false
+  }
+}

@@ -2,22 +2,33 @@ import { execFileSync } from "node:child_process"
 
 const EXACT = new Set([
   ".gitattributes",
+  ".gitignore",
   "GATES.md",
   "package.json",
+  "package-lock.json",
   "docs/operations/programas-governo-presidencia-eval.md",
+  "docs/operations/programas-governo-governadores-2026-escala.md",
+  "docs/operations/programas-governo-governadores-2026-eval.md",
+  "docs/operations/programas-governo-governadores-2026-inventario.md",
+  "docs/operations/programas-governo-governadores-2026-ingestao.md",
   "docs/plans/2026-08-25-programa-governo-presidencia-design.md",
   "docs/plans/2026-08-25-programa-governo-presidencia-implementation.md",
   "scripts/audit/audit-programas-governo.ts",
+  "scripts/audit/audit-programas-governo-governadores-inventario.ts",
   "scripts/audit/verify-programas-governo-scope.mjs",
   "scripts/data/programas-governo-presidencia-2026-fontes.json",
   "scripts/generate-programa-pdfs.mjs",
   "scripts/lib/ocr-programa-governo.swift",
   "scripts/lib/programas-governo-extracao.ts",
   "scripts/programas-governo-presidencia.ts",
+  "scripts/programas-governo-governadores-2026-inventario.ts",
+  "scripts/programas-governo-governadores-2026-models.ts",
+  "scripts/programas-governo-governadores-2026.ts",
   "scripts/programas-governo-approve.ts",
   "scripts/programas-governo-stage.ts",
   "scripts/test-fixtures/generate-programa-pdfs.mjs",
   "scripts/prompts/programa-governo-judge-v1.schema.json",
+  "scripts/prompts/programa-governo-governadores-judge-v1.schema.json",
   "scripts/prompts/programa-governo-resumo-v1.md",
   "scripts/prompts/programa-governo-resumo-v1.schema.json",
   "src/app/(site)/candidato/[slug]/CandidatoFichaView.tsx",
@@ -27,6 +38,7 @@ const EXACT = new Set([
   "src/components/DeferredCandidatoProfileClient.tsx",
   "src/components/ProgramaGovernoSection.tsx",
   "src/data/programas-governo-presidencia-2026.ts",
+  "src/data/programas-governo-2026.ts",
   "src/lib/candidato-profile-tabs.ts",
   "src/lib/programa-governo-server.ts",
   "src/lib/programa-governo.ts",
@@ -34,6 +46,10 @@ const EXACT = new Set([
   "tests/candidato-profile-tabs.test.ts",
   "tests/programa-governo-data.test.ts",
   "tests/programa-governo-extracao.test.ts",
+  "tests/programa-governo-governadores-inventario.test.ts",
+  "tests/programa-governo-governadores-ingestao.test.ts",
+  "tests/programa-governo-pipeline.test.ts",
+  "tests/programa-governo-chunking.test.ts",
   "tests/programa-governo-route.test.ts",
   "tests/programa-governo-schema.test.ts",
   "tests/programa-governo-ui.test.tsx",
@@ -42,6 +58,9 @@ const EXACT = new Set([
 ])
 
 const PREFIXES = [
+  "docs/reviews/programas-governo-governadores-2026/",
+  "scripts/data/programas-governo-governadores-2026/",
+  "src/data/programas-governo/governadores-2026/",
   "src/data/programas-governo/presidencia-2026/",
   "tests/fixtures/programas-governo/",
 ]
@@ -71,8 +90,8 @@ if (isProgramaGovernoPathAllowed("supabase/migrations/20990101000000_programa.sq
 if (isProgramaGovernoPathAllowed("src/data/pesquisas-eleitorais.ts")) {
   throw new Error("controle positivo falhou: dado de pesquisas foi aceito")
 }
-if (isProgramaGovernoPathAllowed("src/data/programas-governo/governador-2026/sp.json")) {
-  throw new Error("controle positivo falhou: programa estadual foi aceito")
+if (isProgramaGovernoPathAllowed("src/data/programas-governo/governador-2025/sp.json")) {
+  throw new Error("controle positivo falhou: eleição estadual fora do escopo foi aceita")
 }
 
 const files = [...currentFiles()].sort()
