@@ -146,10 +146,10 @@ describe("seleção da pesquisa mais recente comparável", () => {
 })
 
 describe("seleção estadual por UF", () => {
-  it("carrega somente os oito estados que passaram pelo gate", () => {
+  it("carrega somente os dezesseis estados que passaram pelo gate", () => {
     assert.deepEqual(
       [...carregarPesquisasGovernadores().keys()].sort(),
-      ["CE", "DF", "MG", "PE", "PI", "RJ", "RS", "SP"],
+      ["AM", "BA", "CE", "DF", "MG", "MS", "MT", "PB", "PE", "PI", "PR", "RJ", "RO", "RS", "SE", "SP"],
     )
   })
 

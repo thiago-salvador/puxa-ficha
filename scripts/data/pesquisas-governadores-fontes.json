@@ -10,7 +10,7 @@
     "datafolha-folha-globo-estaduais-2026",
     "real-time-big-data-estaduais-2026"
   ],
-  "consulted_at": "2026-08-25T17:50:00-03:00",
+  "consulted_at": "2026-08-26T07:50:00-03:00",
   "status_values": [
     "aprovado",
     "condicional",
@@ -191,7 +191,7 @@
         "margin_of_error_pp": 2,
         "confidence_level_pct": 95,
         "office": "Governador",
-        "geography": "Rio Grande do Sul",
+      "geography": null,
         "rounds": [
           1,
           2
@@ -301,6 +301,69 @@
         "Não publicar até existir prova pública de correção da rodada ou revisão manual formal registrada no scorecard."
       ],
       "consulted_at": "2026-08-25T22:30:00-03:00"
+    },
+    {
+      "id": "atlasintel-estaduais-2026",
+      "status": "condicional",
+      "source_kind": "instituto_com_resultado_primario",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": "Veículo estadual indicado na rodada",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "AtlasIntel",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": { "start": "2026-07-28", "end": "2026-08-02" },
+        "published_at": "2026-08-03",
+        "sample_size": 997,
+        "method": "recrutamento digital aleatório Atlas RDR",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": null,
+        "rounds": [1],
+        "registration_id": "AC-07815/2026",
+        "result_url": "https://atlasintel.org/poll/brazil-acre-pesquisa-atlas-ac-24-horas-2026-08-03",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://atlasintel.org/poll/brazil-acre-pesquisa-atlas-ac-24-horas-2026-08-03",
+            "https://atlasintel.org/practices"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://atlasintel.org/poll/brazil-acre-pesquisa-atlas-ac-24-horas-2026-08-03",
+            "https://atlasintel.org/poll/brazil-rio-grande-do-norte-2026-07-22"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Não foi localizada política ou trilha pública específica de correções para as rodadas estaduais avaliadas."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.atlasintel.org/polls/exclusive-polls"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.atlasintel.org/polls/exclusive-polls"
+          ]
+        }
+      },
+      "conditions": [
+        "Não publicar até existir prova pública de correção da rodada ou revisão manual formal registrada no scorecard."
+      ],
+      "consulted_at": "2026-08-26T07:50:00-03:00"
     }
   ]
 }
