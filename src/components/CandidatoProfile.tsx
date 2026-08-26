@@ -4,6 +4,10 @@ import { memo, useCallback, useEffect, useLayoutEffect, useRef, useState, useSyn
 import dynamic from "next/dynamic"
 import type { FichaCandidato, LegislacaoMandatoExecutivo, ProjetoLei } from "@/lib/types"
 import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
+import type {
+  ProgramaGovernoApiResponse,
+  ProgramaGovernoManifestoPublico,
+} from "@/lib/programa-governo"
 import {
   descreverEstadoDaFonte,
   montarDestaquesDaFicha,
@@ -65,6 +69,11 @@ import {
   PesquisasPresidenciaisOverview,
   PesquisasPresidenciaisTab,
 } from "./PesquisasPresidenciaisSection"
+import {
+  ProgramaGovernoOverview,
+  ProgramaGovernoTab,
+  type ProgramaGovernoLoadState,
+} from "./ProgramaGovernoSection"
 import {
   fixedCopy,
   formatAttentionCategoryLabel,
@@ -279,11 +288,26 @@ async function fetchLegislacaoExecutivoCompleto(
   return rows
 }
 
+async function fetchProgramaGoverno(
+  slug: string,
+  signal: AbortSignal,
+): Promise<ProgramaGovernoApiResponse> {
+  const response = await fetch(
+    `/api/candidato-profile/${encodeURIComponent(slug)}/programa`,
+    { credentials: "same-origin", signal },
+  )
+  if (!response.ok) throw new Error(`programa_governo_fetch_failed:${response.status}`)
+  const body = (await response.json()) as ProgramaGovernoApiResponse
+  if (!body.estado || !body.fonte) throw new Error("programa_governo_fetch_empty")
+  return body
+}
+
 export function CandidatoProfile({
   ficha,
   initialTab,
   pesquisasEnabled = false,
   pesquisas = [],
+  programaGoverno = null,
   initialLegislationSubtab,
   initialLegislationPage,
 }: {
@@ -292,6 +316,7 @@ export function CandidatoProfile({
   initialTab?: CandidatoProfileTabId
   pesquisasEnabled?: boolean
   pesquisas?: PesquisaEleitoralDoCandidato[]
+  programaGoverno?: ProgramaGovernoManifestoPublico | null
   /** Apenas para render determinístico de cada subaba no auditor de release. */
   initialLegislationSubtab?: LegislationSubtabId
   /** Apenas para render determinístico das páginas 2+ no auditor de release. */
@@ -377,6 +402,11 @@ export function CandidatoProfile({
   const gastos = ficha.gastos_parlamentares ?? []
   const gastosExecutivo = ficha.gastos_executivo ?? []
   const sectionFreshness = ficha.section_freshness ?? {}
+  const programaEnabled = ficha.cargo_disputado === "Presidente" && programaGoverno !== null
+  const [programaResponse, setProgramaResponse] = useState<ProgramaGovernoApiResponse | null>(null)
+  const [programaLoadState, setProgramaLoadState] = useState<ProgramaGovernoLoadState>("idle")
+  const programaLoadStateRef = useRef<ProgramaGovernoLoadState>("idle")
+  const [programaRetryKey, setProgramaRetryKey] = useState(0)
   const { alertasNaoPositivos, pontosPositivos } = classifyAttentionPoints(pontosAtencao)
   /**
    * Itens 4 e 14. A aba mostrava só `pontos_atencao` e por isso saía com 0 ou 1
@@ -411,6 +441,7 @@ export function CandidatoProfile({
   const tabDefsById: Record<CandidatoProfileNavTabId, { label: string; dataCount: number }> = {
     geral: { label: fixedCopy.generalOverview, dataCount: 0 },
     pesquisas: { label: "Pesquisas", dataCount: pesquisas.length },
+    programa: { label: "Programa", dataCount: 0 },
     media: { label: "Mídia", dataCount: ficha.noticias?.length ?? 0 },
     dinheiro: {
       label: "Dinheiro",
@@ -433,6 +464,7 @@ export function CandidatoProfile({
   const tabDefs: { id: CandidatoProfileNavTabId; label: string; dataCount: number }[] =
     CANDIDATO_PROFILE_NAV_TAB_IDS
       .filter((id) => id !== "pesquisas" || pesquisasEnabled)
+      .filter((id) => id !== "programa" || programaEnabled)
       .map((id) => ({ id, ...tabDefsById[id] }))
 
   const locationSearch = useSyncExternalStore(
@@ -453,6 +485,29 @@ export function CandidatoProfile({
       : "geral"
   const [tabHighlightRef, setTabHighlightRef] = useState<string | null>(null)
   const tabContentRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (activeTab !== "programa" || !programaEnabled || programaLoadStateRef.current !== "idle") return
+    const controller = new AbortController()
+    programaLoadStateRef.current = "loading"
+    setProgramaLoadState("loading")
+    fetchProgramaGoverno(ficha.slug, controller.signal)
+      .then((body) => {
+        setProgramaResponse(body)
+        programaLoadStateRef.current = "loaded"
+        setProgramaLoadState("loaded")
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === "AbortError") {
+          programaLoadStateRef.current = "idle"
+          setProgramaLoadState("idle")
+          return
+        }
+        programaLoadStateRef.current = "failed"
+        setProgramaLoadState("failed")
+      })
+    return () => controller.abort()
+  }, [activeTab, ficha.slug, programaEnabled, programaRetryKey])
 
   useEffect(() => {
     if (activeTab !== "legislacao" || projetosLeiLoadStateRef.current !== "idle") return
@@ -495,13 +550,21 @@ export function CandidatoProfile({
   const navigateToTab = useCallback((tabId: string, opts?: TimelineNavigateOptions) => {
     const next = normalizeCandidatoProfileNavTab(tabId)
     if (!next || (next === "pesquisas" && !pesquisasEnabled)) return
+    if (next === "programa" && !programaEnabled) return
     pushProfileTabUrl(next)
     if (opts?.timelineEventId) {
       setTabHighlightRef(opts.timelineEventId)
     } else {
       setTabHighlightRef(null)
     }
-  }, [pesquisasEnabled])
+  }, [pesquisasEnabled, programaEnabled])
+
+  const retryProgramaGoverno = useCallback(() => {
+    programaLoadStateRef.current = "idle"
+    setProgramaLoadState("idle")
+    setProgramaResponse(null)
+    setProgramaRetryKey((value) => value + 1)
+  }, [])
 
   // Scroll tab content into view after React commits the new tab DOM
   useEffect(() => {
@@ -738,6 +801,12 @@ export function CandidatoProfile({
                     ) : undefined
                   }
                 />
+                {programaEnabled && programaGoverno && (
+                  <ProgramaGovernoOverview
+                    manifesto={programaGoverno}
+                    onOpenTab={() => navigateToTab("programa")}
+                  />
+                )}
                 {ficha.cargo_disputado === "Governador" && (ficha.indicadores_estaduais ?? []).length > 0 && (
                   <StateIndicators indicadores={ficha.indicadores_estaduais!} estado={ficha.estado ?? ""} />
                 )}
@@ -752,6 +821,16 @@ export function CandidatoProfile({
             {/* PESQUISAS TAB */}
             {activeTab === "pesquisas" && pesquisasEnabled && (
               <PesquisasPresidenciaisTab pesquisas={pesquisas} />
+            )}
+
+            {/* PROGRAMA TAB */}
+            {activeTab === "programa" && programaEnabled && programaGoverno && (
+              <ProgramaGovernoTab
+                manifesto={programaGoverno}
+                loadState={programaLoadState}
+                response={programaResponse}
+                onRetry={retryProgramaGoverno}
+              />
             )}
 
             {/* MÍDIA TAB */}

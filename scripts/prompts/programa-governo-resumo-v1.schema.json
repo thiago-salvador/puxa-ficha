@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["texto", "frases", "temas"],
+  "properties": {
+    "texto": { "type": "string" },
+    "frases": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["texto", "evidencias"],
+        "properties": {
+          "texto": { "type": "string" },
+          "evidencias": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["pagina", "trecho"],
+              "properties": {
+                "pagina": { "type": "integer", "minimum": 1 },
+                "trecho": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "temas": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "titulo", "descricao", "evidencias"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "titulo": { "type": "string" },
+          "descricao": { "type": "string" },
+          "evidencias": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["pagina", "trecho"],
+              "properties": {
+                "pagina": { "type": "integer", "minimum": 1 },
+                "trecho": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

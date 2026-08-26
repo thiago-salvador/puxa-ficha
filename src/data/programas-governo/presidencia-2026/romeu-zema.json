@@ -1,0 +1,1079 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "PRESIDENTE",
+    "uf": "BR",
+    "sqCandidato": "280002539826",
+    "slug": "romeu-zema",
+    "nomeUrna": "ZEMA",
+    "partido": "NOVO",
+    "arquivoNome": "2026BR280002539826_01.pdf",
+    "arquivoNoPacote": "BR/2026BR280002539826_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-25T09:46:00Z"
+  },
+  "extracao": {
+    "sourceSha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e",
+    "extractedTextSha256": "e63a8dac7ccef2df3ffe28ff6e0ead250b753d26caceaf301b2916a0742eca73",
+    "paginas": 81,
+    "secoes": [
+      {
+        "id": "pagina-1",
+        "titulo": "\u001f\u001e\u001d\u001c\u001b",
+        "nivel": 1,
+        "paginaInicial": 1,
+        "paginaFinal": 1,
+        "origem": "pdftotext",
+        "conteudo": "\u001f\u001e\u001d\u001c\u001b\n\u001a\u0019\u001f\u001e\u001d\u0018\u0017\u0016\u0015\u001e\nPropostas concretas para\nos maiores problemas do país"
+      },
+      {
+        "id": "sumario",
+        "titulo": "SUMÁRIO",
+        "nivel": 1,
+        "paginaInicial": 2,
+        "paginaFinal": 2,
+        "origem": "pdftotext",
+        "conteudo": "SUMÁRIO\nCarta de Abertura\n\n03\n\nSEGURANÇA PÚBLICA\n\n05\n\nCOMBATE À CORRUPÇÃO E AOS PRIVILÉGIOS\n\n08\n\nREFORMA DO JUDICIÁRIO E DOS ÓRGÃOS DE CONTROLE\n\n11\n\nFINANÇAS PÚBLICAS\n\n14\n\nDESENVOLVIMENTO ECONÔMICO\n\n17\n\nTRABALHO E EMPREGO\n\n23\n\nINFRAESTRUTURA E SANEAMENTO\n\n26\n\nMINAS E ENERGIA\n\n32\n\nPOLÍTICA EXTERNA\n\n36\n\nGESTÃO PÚBLICA E EFICIÊNCIA NO GOVERNO\n\n39\n\nAGRONEGÓCIO\n\n43\n\nMEIO AMBIENTE\n\n47\n\nEDUCAÇÃO BÁSICA\n\n50\n\nEDUCAÇÃO SUPERIOR, CIÊNCIA E TECNOLOGIA\n\n54\n\nSAÚDE\n\n57\n\nDESENVOLVIMENTO SOCIAL\n\n62\n\nESPORTE\n\n67\n\nCULTURA E TURISMO\n\n69\n\nREFORMA INSTITUCIONAL\n\n73\n\nDEFESA E SEGURANÇA NACIONAL\n\n77\n\nEquipe e Agradecimentos\n\n79"
+      },
+      {
+        "id": "carta-de-abertura",
+        "titulo": "CARTA DE ABERTURA",
+        "nivel": 1,
+        "paginaInicial": 3,
+        "paginaFinal": 3,
+        "origem": "pdftotext",
+        "conteudo": "CARTA DE ABERTURA\nCandidato à Presidência da República\nNunca fui político profissional. Venho de uma família italiana pobre que\nchegou ao Brasil para trabalhar na lavoura e prosperou pelo próprio esforço. Muito cedo, aos sete anos, comecei a trabalhar na oficina do meu\npai. Ainda jovem, criei meu próprio negócio e expandi uma rede de lojas\npelo interior do Brasil. Durante a maior parte da minha vida, fiquei longe\nda política. Para mim, ela não era um espaço para cidadãos de bem que\nqueriam apenas prosperar de forma digna.\nFoi a crise de 2015 e 2016 provocada pelo PT que me tirou da indiferença.\nVi o Brasil em recessão. Vi Minas arrasada. Estava indignado e encontrei\nno NOVO um partido diferente: pequeno, mas cheio de brasileiros como\neu: gente comum que não aguentava mais ver o governo atrapalhando a\nprópria vida. Decidi agir. Concorri ao governo de Minas em 2018 contra\ntudo e contra todos. As máquinas do PT e do PSDB diziam que era impossível. Mas venci.\nO que encontrei foi muito pior do que o imaginado: contas no vermelho,\nservidores sem salário, criminalidade em alta, obras paradas, hospitais\ncolapsando e escolas que não ensinavam. Um governo inchado, voltado\npara os amigos do rei, cheio de mordomias e apadrinhamento. Fiz o que\nprecisava ser feito. Cortei privilégios, reduzi secretarias, acabei com a\ngastança. Deixei de morar no palácio para viver numa casa cujo aluguel\nsaía do meu próprio bolso. E recoloquei Minas nos trilhos.\nValeu cada decisão difícil. Minas melhorou em educação, segurança e\nsaúde. Os servidores voltaram a receber em dia. O estado atraiu mais\nde meio trilhão de reais em investimentos privados e criou mais de um\nmilhão de empregos.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 3"
+      },
+      {
+        "id": "o-mineiro-voltou-a-ter-orgulho-de",
+        "titulo": "O mineiro voltou a ter orgulho de",
+        "nivel": 1,
+        "paginaInicial": 4,
+        "paginaFinal": 4,
+        "origem": "pdftotext",
+        "conteudo": "O mineiro voltou a ter orgulho de\nMinas. Em 2022, fui reeleito no primeiro turno.\nO Brasil de hoje está como Minas\nestava em 2018. Uma elite de intocáveis que vive acima da lei. Um\ndinheiro que não fecha a conta. O\ncrime que avança onde o governo\nrecuou. Conheço bem esse cenário, e sei o que é preciso fazer. Não\npor teoria, mas por experiência.\nCortar mordomias, respeitar o dinheiro de quem trabalha, resgatar\no respeito e o cumprimento das\nleis: foi isso que fizemos em Minas.\nÉ isso que podemos fazer no Brasil. Não somos um país fracassado.\nSomos um país roubado. Eu acredito que é possível, e vou trabalhar\nfirme para fazer a mudança que\nprecisamos.\n\nROMEU\n\nZEMA\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 4"
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "SEGURANÇA PÚBLICA",
+        "nivel": 1,
+        "paginaInicial": 5,
+        "paginaFinal": 5,
+        "origem": "pdftotext",
+        "conteudo": "SEGURANÇA PÚBLICA\nA segurança pública segue sendo a principal preocupação dos brasileiros, e os dados comprovam que isso tem motivo. Viramos o país do “prende e solta”, onde 4 em\ncada 10 criminosos capturados são liberados em menos de 24 horas, após a audiência de custódia.\nAlém disso, em um período de 20 anos, o Brasil ultrapassou a marca de um milhão\nde homicídios, com perdas de vidas que superam as registradas em conflitos como\na Guerra Civil da Síria e a guerra entre Rússia e Ucrânia. Desde 1997, são registrados\nmais de 40 mil homicídios por ano. Considerando que o país tem, em média, 38 mil\nhabitantes por município, na prática, nós testemunhamos o assassinato de uma cidade brasileira todos os anos, há três décadas.\nAo mesmo tempo, nestes últimos anos, as cerca de 90 facções que atuam no Brasil\nexpandem seu controle sobre o território nacional. Estudos recentes apontam que\nentre 28 e 60 milhões de pessoas vivem sob o domínio do crime organizado. No entanto, as políticas de segurança pública e o sistema judiciário brasileiros se mostram\npouco eficazes no combate ao crime, contribuindo para o aumento da sensação de\ninsegurança nas ruas. O resultado é um país em que o bandido perdeu o medo e o\ncidadão de bem perdeu a paz.\nPara virar esse jogo, fazer o crime voltar a temer a lei e devolver ao brasileiro o direito\nde viver sem medo, apresentamos soluções em cinco eixos centrais:\n\nRECUPERAR TERRITÓRIOS DOMINADOS\nPELO CRIME ORGANIZ ADO\nClassificar, nacional e internacionalmente, as facções criminosas\ncomo organizações terroristas:\nEnquadrar como terroristas os criminosos que usam táticas e armamentos de guerra\npara dominar territórios, de modo a permitir o uso da Força Nacional, das Forças\nArmadas, dos órgãos de controle e da colaboração internacional para combatê-los,\nalém de garantir penas mais altas e a impossibilidade de progressão de regime.\nEmpregar as Forças Armadas de forma integrada às polícias para\nretomar territórios dominados pelo crime organizado:\nRetomar os territórios dominados pelas facções com operações que envolvam colaboração entre as Forças Armadas, as polícias estaduais e a Polícia Federal, garantindo a paz aos brasileiros que vivem nessas regiões.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 5"
+      },
+      {
+        "id": "construir-presidios-de-seguranca-maxima-para-confinamento-de",
+        "titulo": "Construir presídios de segurança máxima para confinamento de",
+        "nivel": 1,
+        "paginaInicial": 6,
+        "paginaFinal": 6,
+        "origem": "pdftotext",
+        "conteudo": "Construir presídios de segurança máxima para confinamento de\nfaccionados:\nConstruir presídios de segurança máxima, em regiões remotas e isoladas com um\nregime diferenciado de detenção e estrutura capaz de conter terroristas e isolar os\nmembros das facções.\nSecar as fontes de dinheiro que mantêm as facções vivas:\nSufocar todas as fontes de renda das facções, ampliando a fiscalização sobre as\nempresas que as organizações criminosas usam para lavar dinheiro e combatendo o\ncontrabando, o garimpo e o desmatamento ilegais, além da receptação de produtos\nroubados.\n\nACABAR COM O PRENDE\nE SOLTA NO BRASIL\nAmpliar a prisão obrigatória nas audiências de custódia para todo\ncriminoso pego pela terceira vez:\nPrever em lei que bandidos presos em flagrante pela terceira vez tenham a prisão\nconvertida em preventiva, vedando o relaxamento durante a audiência de custódia,\netapa em que o preso é apresentado à Justiça.\n\nREDUZIR A MAIORIDADE PENAL\nE ENDURECER A LEGISL AÇÃO\nReduzir a maioridade penal para 16 anos ou menos:\nReduzir a maioridade penal para 16 anos, assegurando a responsabilização criminal\nde adolescentes a partir dessa idade e permitindo, excepcionalmente, a imputação\npenal de pessoas ainda mais jovens nos casos de crimes graves, como homicídio e\nestupro, ou reincidência.\nReformar o Código Penal garantindo penas duras e proporcionais à\ngravidade de crimes violentos, hediondos e patrimoniais:\nAdequar o Código Penal ao contexto de combate à criminalidade no país, com uma\nsistematização clara das penas que garanta punições duras para crimes violentos e\nhediondos como homicídio, latrocínio, pedofilia e estupro, e corrija distorções que\nhoje permitem que crimes graves sejam punidos com mais leveza do que merecem.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 6"
+      },
+      {
+        "id": "substituir-o-modelo-de-regimes-de-pena-atual-pelo-cumprimento",
+        "titulo": "Substituir o modelo de regimes de pena atual pelo cumprimento",
+        "nivel": 1,
+        "paginaInicial": 7,
+        "paginaFinal": 7,
+        "origem": "pdftotext",
+        "conteudo": "Substituir o modelo de regimes de pena atual pelo cumprimento\nde prisão efetivo na cadeia, seguido de liberdade condicional com\nmonitoramento:\nGarantir que o criminoso fique efetivamente preso durante o cumprimento da pena\nsubstituindo o modelo atual em que o preso progride rapidamente do regime fechado para o semiaberto e aberto, por um modelo de restrição de liberdade seguido de\nliberdade condicional com monitoramento eletrônico.\n\nFORTALECER A ATUAÇÃO DOS\nESTADOS NA SEGURANÇA\nDar aos estados autonomia para definir seus próprios crimes e\npenas, adicionalmente às regras federais:\nConceder autonomia para que cada estado endureça o combate ao crime, com a\npossibilidade de instituir novos crimes e agravar penas e regimes de cumprimento\nde pena em relação ao previsto na legislação federal.\nDar respaldo legal e condições materiais e tecnológicas para as\npolícias poderem agir com firmeza e segurança:\nFortalecer a atuação policial, garantindo proteção legal na legítima defesa contra\ncriminosos armados, especialmente com fuzis, e fornecer estrutura para o trabalho\npolicial, integrando em tempo real as informações entre as polícias federal e estaduais e ampliando o acesso a equipamentos e tecnologias.\n\nREDUZIR A SUBNOTIFICAÇÃO E REINCIDÊNCIA\nDE CASOS DE VIOLÊNCIA CONTRA A MULHER\nFortalecer a porta de entrada da denúncia:\nAmpliar a rede de delegacias da mulher com atuação 24 horas e equipes preferencialmente femininas capacitadas em violência de gênero, e apoiar os estados na\nconstrução de sistemas integrados entre Saúde, Segurança Pública e delegacias.\nProteger a mulher e monitorar o agressor após a denúncia:\nExpandir nas redes de segurança pública e saúde de estados e municípios as Patrulhas Maria da Penha, que monitoram o cumprimento de medidas protetivas para\nreduzir a reincidência, e as Salas Lilás, com espaços de acolhimento às vítimas em\nunidades policiais.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 7"
+      },
+      {
+        "id": "combate-a-corrupcao",
+        "titulo": "COMBATE À CORRUPÇÃO",
+        "nivel": 1,
+        "paginaInicial": 8,
+        "paginaFinal": 8,
+        "origem": "pdftotext",
+        "conteudo": "COMBATE À CORRUPÇÃO\nE AOS PRIVILÉGIOS\nO Brasil convive há décadas com um problema estrutural de privilégios, corrupção\ne baixa responsabilização dos políticos e agentes do Estado que cometem crimes.\nO país manteve a 107a posição no Índice de Percepção da Corrupção em 2025, mesma\ncolocação de 2024, evidenciando a dificuldade de sustentar avanços consistentes na\nárea. Ao mesmo tempo, a própria estrutura do Estado abriga distorções graves: hoje,\nmais de 53 mil servidores ativos e inativos recebem acima do teto constitucional,\ncom custo anual estimado em cerca de R$ 20 bilhões, enquanto o orçamento público segue sendo desviado para privilégios e fins eleitorais, com bilhões em emendas\nparlamentares distribuídas sem transparência adequada.\nO resultado é a percepção, cada vez mais evidente para a população, de que a lei\nnão vale da mesma forma para todos: quem está próximo do poder paga menos\npelos seus erros, custa caro ao contribuinte e segue protegido por um sistema de\nprivilégios. Essa assimetria não é apenas um problema ético, mas um entrave direto\nao desenvolvimento do país, corroendo a confiança nas instituições, piorando a qualidade do gasto público e afastando investimentos. Enfrentar esse quadro exige uma\nação em três eixos principais:\n\nFA ZER A LEI VALER\nPARA TODOS\nLimitar o foro privilegiado, garantindo que a Justiça investigue e\nprenda os políticos corruptos:\nLimitar drasticamente o foro privilegiado, mantendo-o apenas para o Presidente da\nRepública, de modo que as autoridades não possam se beneficiar da morosidade do\nJudiciário e, eventualmente, da sua proximidade com o STF para não serem julgadas,\nlevando os hoje intocáveis a uma justiça mais célere e imparcial.\nEndurecer a pena do crime de corrupção e autorizar a progressão\nde regime somente após a devolução do dinheiro desviado:\nAumentar as penas aplicáveis aos crimes de corrupção e condicionar a progressão\nde regime à devolução integral dos recursos desviados, para que ninguém fique com\nos recursos dos brasileiros indevidamente.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 8"
+      },
+      {
+        "id": "indicar-um-procurador-geral-da-republica-e-ministros-do-supremo",
+        "titulo": "Indicar um Procurador-Geral da República e ministros do Supremo",
+        "nivel": 1,
+        "paginaInicial": 9,
+        "paginaFinal": 9,
+        "origem": "pdftotext",
+        "conteudo": "Indicar um Procurador-Geral da República e ministros do Supremo\nTribunal Federal comprometidos com o combate à corrupção, sem\nexceções:\nAssegurar que as indicações para a Procuradoria-Geral da República e para o Supremo Tribunal Federal sejam técnicas e de profissionais comprometidos com uma\nagenda de combate à corrupção em todos os poderes e níveis de governo.\nTornar automática a investigação de enriquecimento incompatível\nde agentes públicos:\nEstabelecer que toda variação patrimonial incompatível com os rendimentos declarados por titulares de cargos eletivos, funções de confiança e empregos públicos,\nacima de determinado patamar, dispare automaticamente uma sindicância patrimonial no âmbito da Controladoria-Geral da União, com prazo definido e responsabilização em caso de omissão.\n\nELIMINAR PRIVILÉGIOS E MORDOMIAS\nDA ELITE POLÍTICA\nAcabar com privilégios como supersalários, férias de 60 dias e a\naposentadoria compulsória da elite do funcionalismo:\nRegulamentar as verbas indenizatórias que podem ser pagas acima do limite remuneratório previsto na Constituição Federal, aplicar esse limite a todos os profissionais do setor público, reduzir férias e licenças especiais, limitando as férias a 30 dias\nanuais, extinguir auxílios e licenças não previstos no setor privado e acabar com a\npossibilidade de aposentadoria compulsória como punição.\nAcabar com os abusos e luxos nos gastos da classe política:\nProibir o uso de recursos públicos para fins privados ou para a aquisição de itens de\nluxo, reservando aviões oficiais e carros de representação exclusivamente a deslocamentos com finalidade oficial ou de segurança e vedando viagens sem finalidade\noficial justificada, cartões corporativos sem prestação de contas, reformas e mobiliário em residências oficiais sem licitação e refeições e itens de luxo custeados pelo\nExecutivo, Legislativo e Judiciário.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 9"
+      },
+      {
+        "id": "tornar-a-transparencia",
+        "titulo": "TORNAR A TRANSPARÊNCIA",
+        "nivel": 1,
+        "paginaInicial": 10,
+        "paginaFinal": 10,
+        "origem": "pdftotext",
+        "conteudo": "TORNAR A TRANSPARÊNCIA\nA REGRA NO GOVERNO\nAcabar com sigilo de 100 anos e ampliar a transparência pública:\nTornar a transparência a regra na gestão pública, avançando com a digitalização do\ngoverno e a divulgação dos dados em formato aberto, acabando com a possibilidade\nde sigilos de 100 anos e ampliando as informações divulgadas sobre as despesas\npúblicas, incluindo  notas fiscais, uso de imóveis e repasses a organizações da sociedade civil conveniadas.\nGarantir que qualquer cidadão possa acessar dados do governo\nsem burocracia:\nPermitir a realização de solicitações de informação em anonimato e deixar explícito\nque a proteção de dados pessoais ou fundamentações genéricas, como “segurança\npessoal”, não podem ser utilizadas para restringir o acesso a informações de interesse público, como dados sobre agentes públicos, contratos, convênios e o uso de\nrecursos públicos.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 10"
+      },
+      {
+        "id": "reforma-do-judiciario-e",
+        "titulo": "REFORMA DO JUDICIÁRIO E",
+        "nivel": 1,
+        "paginaInicial": 11,
+        "paginaFinal": 11,
+        "origem": "pdftotext",
+        "conteudo": "REFORMA DO JUDICIÁRIO E\nDOS ÓRGÃOS DE CONTROLE\nO Brasil precisa reformar o Judiciário e os órgãos de controle, pois os casos de conflito de interesse e falta de freios institucionais não param de crescer.\nO STF extrapola suas atribuições constitucionais atuando em temas que deveriam\nser decididos pelo Congresso. São  inúmeros os episódios que desgastam a confiança pública na Suprema Corte, como os negócios de escritórios de advocacia ligados\na parentes de ministros em causas de grande valor, o fato de que oito ministros\ndo STF têm parentes advogados com processos na própria Corte, a tolerância com\nverbas e penduricalhos acima do teto no próprio sistema de Justiça e a dificuldade\nde submeter as Cortes e os órgãos de controle a uma fiscalização efetiva e independente.\nO mesmo padrão se repete nos Tribunais de Contas: tanto o TCU quanto os TCEs\ntornaram-se destino recorrente de indicações políticas, com parlamentares, ex-ministros e parentes de figuras partidárias ocupando vagas que deveriam ser reservadas a técnicos independentes com real capacidade de fiscalizar o uso do dinheiro\npúblico. Até mesmo em casos sensíveis do sistema financeiro vieram à tona tentativas de usar o Supremo Tribunal Federal e o Tribunal de Contas da União para interferir ou contornar as investigações.\nPor isso, reformar esse arranjo é, na prática, restabelecer limites ao ativismo judicial,\nmoralizar o funcionamento do Judiciário e dos órgãos de controle e criar mecanismos efetivos de fiscalização das  Cortes, dando ao Senado condições reais de exercer o papel que a Constituição lhe atribuiu. Dessa forma, apresentamos soluções em\ntrês eixos principais:\n\nLIMITAR O PODER\nDO SUPREMO\nAumentar os requisitos para indicação de ministros do STF:\nRobustecer os requisitos mínimos para a indicação de ministros do STF, exigindo\nidade mínima de 60 anos e implementando mecanismos para evitar a vinculação política dos indicados, de modo que a ida ao Supremo seja a coroação de uma carreira\njurídica exemplar.\nProibir que um único Ministro suspenda leis, bloqueie políticas\npúblicas ou imponha obrigações ao governo:\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 11"
+      },
+      {
+        "id": "acabar-com-as-decisoes-monocraticas-e-estabelecer-prazo-limite-para-pedi",
+        "titulo": "Acabar com as decisões monocráticas e estabelecer prazo limite para pedido de",
+        "nivel": 1,
+        "paginaInicial": 12,
+        "paginaFinal": 12,
+        "origem": "pdftotext",
+        "conteudo": "Acabar com as decisões monocráticas e estabelecer prazo limite para pedido de\nvistas, evitando que um único ministro decida sozinho sobre temas de relevância\nnacional ou impeça o andamento de decisões na Corte por convicções pessoais.\nReduzir as matérias que podem ser levadas ao STF, acabando com\ncompetências como matérias criminais e tributárias:\nRestringir as competências do STF à sua função constitucional,  retirando da Corte\nmatérias tributárias e penais.\nLimitar as possibilidades de reversão de decisões do Congresso\npelo STF, acabando com o ativismo judicial:\nRestabelecer os limites entre os poderes, impedindo que o STF utilize lacunas ou\nomissões legislativas para legislar no lugar do Parlamento, assegurando que o controle de constitucionalidade não seja usado como instrumento de interferência política sobre escolhas legítimas do Congresso.\n\nMORALIZ AR O JUDICIÁRIO\nE OS ÓRGÃOS DE CONTROLE\nProibir que parentes de ministros dos Tribunais Superiores\nadvoguem nestes tribunais:\nProibir que escritórios de advocacia que tenham em seus quadros parentes de até 3o\ngrau dos ministros dos Tribunais Superiores possam advogar nesses tribunais.\nProibir que os membros do Judiciário e dos Tribunais de Contas\nsejam sócios de empresas e participem de eventos que gerem\nconflito de interesse:\nProibir que os membros do Judiciário e dos Tribunais de Contas tenham empresas,\nsejam diretores de institutos, deem entrevistas e participem de eventos patrocinados enquanto estiverem no cargo, mantendo sua atuação fora dos tribunais restrita\nà  área acadêmica para evitar conflitos de interesse e politização de suas decisões.\nProibir a indicação de políticos, ministros ou secretários de estado,\npessoas com vínculos partidários e seus parentes para qualquer\ntribunal:\nProibir a indicação, para qualquer tribunal, de políticos, ministros, secretários de Estado, pessoas ligadas a partidos e movimentos sociais, bem como de seus parentes\nou de qualquer outra pessoa com vínculo político ou familiar que comprometa sua\nimparcialidade, favorecendo a indicação de profissionais técnicos, independentes,\nrenomados e com propósito de servir.\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 12"
+      },
+      {
+        "id": "indicar-ministros-do-stf-e-do-tcu-com-base-em-criterios-tecnicos-e",
+        "titulo": "Indicar ministros do STF e do TCU com base em critérios técnicos e",
+        "nivel": 1,
+        "paginaInicial": 13,
+        "paginaFinal": 13,
+        "origem": "pdftotext",
+        "conteudo": "Indicar ministros do STF e do TCU com base em critérios técnicos e\nsem vínculos políticos:\nIndicar para o Supremo Tribunal Federal e para o Tribunal de Contas da União pessoas com trajetória jurídica respeitada, sem militância partidária e comprometidas em\njulgar de acordo com o texto da Lei, com imparcialidade, prezando pela segurança\njurídica e o respeito aos limites constitucionais de cada Poder.\nCriar uma corregedoria para o STF:\nCriar uma corregedoria independente para o STF, composta por pessoas indicadas\npor diferentes entidades independentes e capaz de investigar e responsabilizar administrativamente os ministros, bem como encaminhá-los para responsabilização\npenal.\n\nDAR AO SENADO CONDIÇÕES RE AIS\nDE FISCALIZ AR O SUPREMO\nTornar obrigatória a investigação de ministros do STF quando\napoiada pela maioria do Senado ou por iniciativa popular:\nImpedir que o presidente do Senado blinde ministros do STF, tornando obrigatória a\ninvestigação e votação do impeachment quando requerida pela maioria dos senadores ou com grande apoio popular.\nLimitar o foro privilegiado para que nenhum ministro do Supremo\nuse o cargo para coagir Senadores:\nDeslocar para a primeira instância a competência para julgar os senadores da República, limitando o foro privilegiado para evitar que quem julga os crimes dos ministros do STF seja também julgado por eles.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 13"
+      },
+      {
+        "id": "financas-publicas",
+        "titulo": "FINANÇAS PÚBLICAS",
+        "nivel": 1,
+        "paginaInicial": 14,
+        "paginaFinal": 14,
+        "origem": "pdftotext",
+        "conteudo": "FINANÇAS PÚBLICAS\nO Brasil entrou em 2026 com a maior carga tributária da sua história, em torno de\n32,4% do PIB, déficit nas contas públicas e uma dívida que já ultrapassa os R$10\ntrilhões, próximo de 80% do PIB. O problema não é só o tamanho do rombo, mas a\ntrajetória da dívida, que era de 71% do PIB em 2023 e segue crescendo sem controle.\nEm virtude desse cenário, a SELIC está próxima a 15% e, com isso, o pagamento de\njuros consome cerca de R$1 trilhão por ano, drenando recursos que deveriam estar\nfinanciando investimentos, infraestrutura e serviços essenciais.\nAlém disso, convivemos com um orçamento capturado por despesas obrigatórias, o\nque deixa cada vez menos espaço para decidir prioridades, investir e corrigir rumos.\nO resultado é um país sufocado por impostos, travado por juros altos e empurrado\npara mais endividamento. Fazer o ajuste fiscal de verdade exige atacar a raiz do problema: cortar gastos, reduzir o peso do Estado onde ele não é essencial e devolver\nao orçamento a capacidade de investir, crescer e aliviar a pressão sobre famílias e\nempresas. Por isso, defendemos um plano de ação dividido em três eixos principais:\n\nRE ALIZ AR UM CHOQUE FISCAL\nNOS GASTOS DO GOVERNO\nReformar a Previdência de forma definitiva:\nFazer uma Reforma da Previdência envolvendo estados e municípios, bem como a\nprevidência rural e militar, criando também um mecanismo de reajuste automático\nda idade mínima para aposentadoria com base na expectativa de vida da população\ne na sustentabilidade do sistema previdenciário no longo prazo, para que as futuras\ngerações tenham segurança de que serão protegidas na velhice.\nDesengessar o orçamento público, contendo os gastos que crescem\nno piloto automático:\nRevisar o crescimento automático das despesas obrigatórias e das regras que fazem\no gasto público se expandir sozinho, inclusive as emendas parlamentares, ampliando\no espaço do orçamento destinado a investimento e devolvendo ao país a capacidade\nde realizar obras, equipar hospitais e melhorar escolas.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 14"
+      },
+      {
+        "id": "eliminar-fraudes-e-ineficiencias-nos-programas-sociais-para-que-o",
+        "titulo": "Eliminar fraudes e ineficiências nos programas sociais para que o",
+        "nivel": 1,
+        "paginaInicial": 15,
+        "paginaFinal": 15,
+        "origem": "pdftotext",
+        "conteudo": "Eliminar fraudes e ineficiências nos programas sociais para que o\ndinheiro chegue a quem mais precisa:\nUnificar programas de transferência de renda e aumentar a qualidade do CadÚnico,\nintegrando fontes alternativas de informação para evitar fraudes e duplicidade de\nbenefícios, de modo que os esforços do governo sejam voltados para tirar as pessoas da pobreza de forma definitiva.\nFazer uma ampla Reforma Administrativa que reduza gastos e deixe\no governo enxuto e eficiente:\nFazer uma Reforma Administrativa para enxugar a estrutura do Governo Federal e\ndeixá-la mais eficiente, reduzindo os ministérios, cortando cargos comissionados e\nrevisando as autarquias e fundações do governo.\n\nRETIRAR O GOVERNO DE\nONDE ELE NÃO É ESSENCIAL\nPrivatizar todas as empresas estatais:\nPrivatizar todas as empresas estatais para que o governo possa se concentrar naquilo que de fato lhe cabe, como segurança pública e educação, reduzindo o espaço\npara escândalos de corrupção e garantindo maior eficiência no uso dos recursos\npúblicos e mais competição na economia brasileira.\nAmpliar as parcerias público-privadas em todos os serviços\npúblicos, inclusive saúde e educação:\nAumentar o investimento privado no país por meio da ampliação das parcerias público-privadas em todos os setores da administração pública, inclusive em projetos\nque geram impacto direto na qualidade dos serviços e na vida da população, como\nsaúde e educação.\nVender os imóveis e ativos públicos sem uso ou não essenciais:\nMapear o patrimônio imobiliário federal e vender, por venda direta ao ocupante ou\nleilão, os imóveis desocupados, subutilizados ou sem função pública, com metas\nanuais de arrecadação e destinação dos recursos para investimentos públicos.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 15"
+      },
+      {
+        "id": "cortar-os-impostos-que",
+        "titulo": "CORTAR OS IMPOSTOS QUE",
+        "nivel": 1,
+        "paginaInicial": 16,
+        "paginaFinal": 16,
+        "origem": "pdftotext",
+        "conteudo": "CORTAR OS IMPOSTOS QUE\nSUFOCAM O BRASILEIRO\nDefinir metas de redução de impostos que forcem o corte efetivo de\ngastos:\nFixar metas progressivas de redução da carga tributária que imponham os cortes de\ngastos necessários para atingi-las, invertendo a lógica atual em que o gasto define\no imposto.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 16"
+      },
+      {
+        "id": "desenvolvimento-economico",
+        "titulo": "DESENVOLVIMENTO ECONÔMICO",
+        "nivel": 1,
+        "paginaInicial": 17,
+        "paginaFinal": 17,
+        "origem": "pdftotext",
+        "conteudo": "DESENVOLVIMENTO ECONÔMICO\nEm 1960, o Brasil era mais rico que a Coreia do Sul. Hoje um país com um quarto da\nnossa população produz tanto quanto o Brasil inteiro, e o coreano ganha três vezes\nmais que o brasileiro. Não ficamos para trás por falta de talento: o brasileiro luta, cria\ne arrisca. Nosso ativo mais estratégico é a nossa gente, trabalhadora e empreendedora. O problema é o sistema que nos cerca.\nEsse sistema tem nome: Custo Brasil. É o peso invisível que encarece tudo no país\ne custa R$1,7 trilhão por ano, dinheiro que poderia virar emprego e renda, mas se\nperde em ineficiência. Antes de vender o primeiro produto ou contratar o primeiro\nfuncionário, o empreendedor brasileiro já esbarra em um dos juros mais altos do\nmundo, impostos incompreensíveis, infraestrutura ruim, insegurança jurídica e uma\ndas economias mais fechadas do planeta. Cada uma dessas barreiras é um pedaço\nde riqueza que o Brasil destrói antes mesmo de gerar.\nDesatar esse nó nunca foi tão urgente. O mundo vive uma das maiores ondas de\ninvestimento da nossa geração. Só em inteligência artificial, as maiores empresas\ndo planeta devem investir cerca de US$750 bilhões em 2026 na construção de data\ncenters e infraestrutura digital, e a corrida por energia limpa, minerais críticos e novas tecnologias movimenta trilhões mundo afora. A boa notícia é que aquilo que esse\ndinheiro procura, o Brasil tem de sobra.\nTemos 88% da nossa matriz elétrica vinda de fontes renováveis. Temos a segunda\nmaior reserva de terras raras do mundo, além de liderança em nióbio e reservas relevantes de lítio. Somos um país neutro e confiável em meio à disputa entre Estados\nUnidos e China. Temos um mercado de 200 milhões de consumidores conectados,\nque adotou o Pix mais rapidamente do que quase qualquer país adotou qualquer\ninovação. No entanto, sem as condições certas, esse capital irá para outro lugar.\nPara os grandes e para os pequenos negócios, precisamos ser um país de oportunidades. O brasileiro acredita que o empreendedorismo é a principal forma de mudar\nsua realidade e uma prova disso é que empreender é o maior sonho dos moradores\nde favelas para 2026. O caminho para o Brasil transformar esse sonho em realidade\nestá à nossa frente:  derrubar os juros, libertar as famílias das dívidas, simplificar os\nimpostos, destravar a infraestrutura, dar segurança a quem empreende e abrir o país\nao mundo\nAssim, o Brasil terá as condições para atrair os investimentos das novas tecnologias\ne transformar nossas vantagens em riqueza. Para trilhá-lo, apresentamos soluções\nem sete eixos centrais:\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 17"
+      },
+      {
+        "id": "derrubar-um-dos-juros",
+        "titulo": "DERRUBAR UM DOS JUROS",
+        "nivel": 1,
+        "paginaInicial": 18,
+        "paginaFinal": 18,
+        "origem": "pdftotext",
+        "conteudo": "DERRUBAR UM DOS JUROS\nMAIS ALTOS DO MUNDO\nCriar condições para a queda da taxa de juros:\nGarantir a queda da curva de juros por meio de um choque fiscal para estabilizar a\nrelação dívida/PIB, promovendo reformas e mantendo superávits primários que permitam o pagamento da dívida.\nReduzir os impostos dos empréstimos:\nReduzir os custos diretos das operações financeiras começando pela redução do\nIOF, alinhando o Brasil às práticas dos países desenvolvidos.\nAmpliar a concorrência entre bancos, reduzindo o direcionamento\npolítico do crédito a setores e programas específicos:\nReduzir gradualmente os programas de crédito direcionado, incluindo linhas subsidiadas do BNDES, para setores escolhidos politicamente, visando ampliar a concorrência entre bancos e baratear o crédito no Brasil.\n\nA JUDAR AS FAMÍLIAS ENDIVIDADAS\nA SAIR DO ENDIVIDAMENTO\nFacilitar a renegociação e a portabilidade de dívidas, gerando novas\noportunidades de refinanciamento:\nFacilitar a portabilidade do crédito com o uso do Open Finance, para que o cliente\npossa comparar propostas com mais facilidade e levar sua dívida para bancos com\njuros menores.\nAumentar a segurança jurídica e a concorrência entre instituições\nfinanceiras para forçar a queda dos juros ao consumidor:\nAumentar a concorrência no mercado e modernizar o sistema de garantias, alienação fiduciária e recuperação de crédito em casos de inadimplência, permitindo que\no mercado opere com menos riscos e abrindo espaço para redução dos juros finais\nao consumidor.\nCriar uma cultura de educação financeira na sociedade brasileira a\npartir do programa Sócios do Brasil:\nDepositar R$1.000 para cada brasileiro ao nascer, com o valor aplicado em fundos de\nações e saque permitido apenas aos 18 anos, para estimular desde cedo a formação\nde patrimônio e a educação financeira.\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 18"
+      },
+      {
+        "id": "simplificar-o-empreendedorismo",
+        "titulo": "SIMPLIFICAR O EMPREENDEDORISMO",
+        "nivel": 1,
+        "paginaInicial": 19,
+        "paginaFinal": 19,
+        "origem": "pdftotext",
+        "conteudo": "SIMPLIFICAR O EMPREENDEDORISMO\nE REDUZIR OS IMPOSTOS\nReduzir o imposto de renda das empresas para o nível dos países\ndesenvolvidos:\nReduzir gradualmente o imposto de renda das empresas para aproximar o Brasil das\neconomias desenvolvidas e permitir que mais recursos fiquem na atividade produtiva impulsinando investimento, expansão e geração de empregos.\nAssegurar uma implementação eficaz da Reforma Tributária:\nEvitar que a regulamentação da Reforma Tributária replique a complexidade do sistema atual por meio de burocracias desnecessárias, regimes especiais, exceções\ne tratamentos favorecidos, garantindo monitoramento técnico, transparência sobre\nimpactos setoriais e compromisso verificável de neutralidade da carga tributária.\nReformar o IRPJ e simplificar de vez o pagamento de impostos das\nempresas:\nReformar a tributação das empresas, em especial os impostos diretos como o IRPJ,\npartindo do princípio de que é o Estado, e não o contribuinte, que deve calcular o\nimposto, com a Receita apurando o valor automaticamente a partir da nota fiscal\neletrônica e eliminando anexos, faixas e obrigações acessórias, para que o empreendedor troque tempo e dinheiro gastos com burocracia por investimento, crescimento\ne geração de empregos.\nFacilitar a abertura, operação e o fechamento de empresas:\nPromover o diálogo com o setor produtivo por meio de mesas executivas com vários atores nas principais cadeias de suprimentos para eliminar todas as barreiras\nno Brasil e avançar com a integração dos municípios brasileiros à REDESIM, além\nde incentivar que todos os estados e municípios regulamentem a Lei de Liberdade\nEconômica, nos moldes da Lei Federal.\n\nPROVOCAR UM CHOQUE DE INVESTIMENTOS\nPRIVADOS EM INFRAESTRUTURA\nConceder os ativos de infraestrutura economicamente viáveis e\nrealizar investimentos públicos preferencialmente por meio de PPPs:\nConceder à iniciativa privada a construção, operação e manutenção dos ativos com\nviabilidade econômica e, onde o mercado não chega sozinho, garantir a presença do\nEstado via PPPs, unindo investimento público com execução privada eficiente.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 19"
+      },
+      {
+        "id": "revisar-os-marcos-regulatorios-facilitando-a-operacao-do-setor",
+        "titulo": "Revisar os marcos regulatórios, facilitando a operação do setor",
+        "nivel": 1,
+        "paginaInicial": 20,
+        "paginaFinal": 20,
+        "origem": "pdftotext",
+        "conteudo": "Revisar os marcos regulatórios, facilitando a operação do setor\nprivado em todas as áreas da infraestrutura, especialmente\ntransportes e energia:\nRevisar os marcos regulatórios da infraestrutura para eliminar restrições, burocracias e exigências que limitam os investimentos nos setores, facilitando a atração de\nnovas empresas e a formulação de novos projetos, permitindo serviços melhores e\npreços mais baixos, especialmente no setor de transportes e energia.\nFortalecer a independência das agências reguladoras, combatendo\na captura por interesses políticos e setoriais:\nFortalecer a autonomia das agências reguladoras por meio de critérios rígidos e\ntransparentes para a seleção de dirigentes, transparência ativa e qualificação contínua das equipes técnicas, garantindo sua integridade, eficiência e proteção contra\ninterferências.\n\nDAR PRE VISIBILIDADE A QUEM INVESTE\nE EMPREENDE NO BRASIL\nGarantir segurança, previsibilidade e eficiência dos sistemas\njurídico e regulatório:\nReduzir a insegurança jurídica e regulatória, uniformizando regras, padronizando\nfunções, prazos e procedimentos e dando mais previsibilidade a decisões tributárias, administrativas, regulatórias e de licenciamento em todos os níveis de governo.\nReduzir o contencioso e acelerar a resolução de conflitos:\nAmpliar o uso de métodos alternativos de resolução de conflitos, como mediação,\nconciliação, transação e arbitragem, para destravar disputas tributárias, regulatórias,\ncontratuais e administrativas com mais rapidez, previsibilidade e menor custo.\n\nCONECTAR O BRASIL\nCOM O MUNDO\nRealizar novos acordos comerciais e abrir mais mercados para os\nprodutos brasileiros:\nIntegrar a economia brasileira ao mundo por meio da expansão de acordos comerciais, da diversificação de parcerias e da entrada na OCDE, impulsionando a atração\nde investimentos e ampliando as oportunidades de exportação para as empresas\nbrasileiras.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 20"
+      },
+      {
+        "id": "facilitar-e-baratear-a-importacao-de-equipamentos-insumos-e",
+        "titulo": "Facilitar e baratear a importação de equipamentos, insumos e",
+        "nivel": 1,
+        "paginaInicial": 21,
+        "paginaFinal": 21,
+        "origem": "pdftotext",
+        "conteudo": "Facilitar e baratear a importação de equipamentos, insumos e\nprodutos:\nAlinhar gradualmente as tarifas de importação brasileiras à média dos países em\ndesenvolvimento à medida que o Custo Brasil for reduzido, acabando com a dupla\ntributação e reduzindo as barreiras não tarifárias.\n\nATRAIR INVESTIMENTOS\nEM NOVAS TECNOLOGIAS\nDestravar investimentos, principalmente em setores de forte\ncrescimento como data centers:\nAtrair investimentos internacionais em inovação e tecnologia, principalmente em\ndata centers, aproveitando a energia barata em excesso, a disponibilidade de recursos hídricos e a posição geopolítica favorável, por meio de um ambiente regulatório\nestável, remoção de burocracias e oferta de mão de obra qualificada.\nGarantir que o Brasil não irá restringir o mercado de IA por meio de\nregulações excessivas e inadequadas:\nAtrair investimentos para as cadeias de IA, evitando uma regulação precoce e ampla\nda inteligência artificial, garantindo segurança jurídica para o setor e regulando pontualmente apenas onde surgirem danos concretos comprovados.\nFacilitar a extração e o processamento dos recursos do subsolo,\ncomo terras raras:\nFacilitar a atuação de empresas privadas para a exploração sustentável das riquezas\ndo nosso subsolo, principalmente terras raras e outros minerais de alto valor, o que\npor consequência promoverá a cadeia produtiva para além da extração bruta,  transformando esse patrimônio mineral em geração de riqueza e empregos qualificados.\nAtrair empresas interessadas em expandir suas operações pelo\nmundo, principalmente em setores em que o Brasil tenha vantagens\ncompetitivas como o setor aeroespacial:\nFacilitar a entrada de investimentos estrangeiros no Brasil, removendo barreiras e\nfazendo road shows junto com parceiros privados para apresentar as diversas oportunidades em nosso território e nossas vantagens competitivas, como a sua localização privilegiada para o lançamento de satélites e foguetes.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 21"
+      },
+      {
+        "id": "impulsionar-a-tecnologia-brasileira-aplicada-onde-o-setor-privado",
+        "titulo": "Impulsionar a tecnologia brasileira aplicada onde o setor privado",
+        "nivel": 1,
+        "paginaInicial": 22,
+        "paginaFinal": 22,
+        "origem": "pdftotext",
+        "conteudo": "Impulsionar a tecnologia brasileira aplicada onde o setor privado\natua, como na biotecnologia agrícola:\nRedirecionar os investimentos públicos em pesquisa e desenvolvimento para complementar investimentos privados e eliminar barreiras ao avanço da biotecnologia\nagrícola brasileira por meio da modernização do marco regulatório para edição gênica de sementes, da aceleração dos processos de aprovação de bioinsumos, da\nsimplificação de procedimentos do SISGEN e das regras de propriedade intelectual\npara patrimônio genético, com prazos máximos de análise, e da redução de barreiras\nburocráticas para testes e escalonamento, criando um ambiente que permita ao setor privado e às instituições de pesquisa inovar e comercializar com previsibilidade.\nFortalecer a concorrência na economia brasileira para fomentar a\ninovação:\nReduzir as barreiras à entrada e ampliar a inserção comercial em todos os setores,\ngarantindo juros baixos e segurança jurídica para as empresas e usando a concorrência como principal motor de inovação e ganho de eficiência para o consumidor.\nAprimorar o mercado de capitais brasileiro para facilitar\ninvestimentos de risco:\nAperfeiçoar os mecanismos do mercado de capitais brasileiro, como regras de venture capital, estruturação de fundos, garantias de investimento e segurança jurídica\npara vesting e equity, a fim de atrair capital nacional e estrangeiro para os setores\nestratégicos da economia do futuro.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 22"
+      },
+      {
+        "id": "trabalho-e-emprego",
+        "titulo": "TRABALHO E EMPREGO",
+        "nivel": 1,
+        "paginaInicial": 23,
+        "paginaFinal": 23,
+        "origem": "pdftotext",
+        "conteudo": "TRABALHO E EMPREGO\nA força de trabalho é o maior ativo de uma nação. O Brasil, porém, ainda não conseguiu transformar seu potencial humano em produtividade e prosperidade. Apesar\ndo avanço da escolaridade nas últimas décadas, a mão de obra brasileira segue com\nbaixa qualificação técnica e distante das exigências da economia moderna.\nA realidade do mundo do trabalho mudou: no trimestre encerrado em janeiro de\n2026, o país tinha 38,5 milhões de trabalhadores informais, o equivalente a 37,5% da\npopulação ocupada fora da CLT. Além disso, cerca de 1,7 milhão de pessoas estavam\ntrabalhando por meio de plataformas digitais em 2024. Ao mesmo tempo, a busca\npor flexibilidade e autonomia ganhou peso entre os brasileiros: 83% consideram a\nflexibilidade de horário uma prioridade ao escolher um emprego.\nTudo isso mostra que o modelo tradicional já não responde às necessidades de\nquem quer trabalhar, ganhar mais e organizar melhor a própria vida. O problema é\nque as regras trabalhistas continuam no século passado, impõem uma dinâmica de\ntrabalho rígida, e encarecem a contratação, o que dificulta a formalização e deixa\nmilhões de trabalhadores em um limbo entre a proteção insuficiente e a burocracia\nexcessiva.\nPreparar o Brasil para o trabalho no século XXI exige reconhecer essa transformação, modernizar as regras trabalhistas, reduzir o custo de contratar e construir um\nsistema que combine liberdade econômica, proteção social e mais oportunidades\npara quem quer produzir e prosperar. Por isso, propomos enfrentar esses desafios\nem quatro eixos principais:\n\nCRIAR UMA ALTERNATIVA\nFLE XÍVEL À CLT\nOferecer ao trabalhador e ao empregador um regime alternativo à\nCLT, com mais liberdade para negociarem as regras da contratação:\nPermitir que trabalhador e empregador ajustem o modelo de contratação às suas\npreferências e à realidade de cada atividade, com prevalência do negociado sobre\no legislado. Nesse marco trabalhista alternativo, as partes poderão definir consensualmente regras como o percentual e o valor da remuneração variável atrelada ao\ndesempenho; a periodicidade do pagamento dos salários (diária, semanal ou quinzenal), a jornada diária, que poderá ultrapassar 8 horas, desde que respeitado o limite de 44 horas semanais, o número de dias trabalhados por semana; e a livre divisão\ndos períodos de férias.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 23"
+      },
+      {
+        "id": "remover-os-obstaculos-a",
+        "titulo": "REMOVER OS OBSTÁCULOS À",
+        "nivel": 1,
+        "paginaInicial": 24,
+        "paginaFinal": 24,
+        "origem": "pdftotext",
+        "conteudo": "REMOVER OS OBSTÁCULOS À\nGERAÇÃO DE EMPREGOS FORMAIS\nReduzir os custos de contratar para retirar os brasileiros da\ninformalidade:\nZerar os encargos sobre o equivalente a um salário mínimo na contratação de quem\nestá há mais de um ano na informalidade, em empresas de todos os setores, estimulando a contratação formal, principalmente em pequenas e médias empresas.\nReduzir burocracias, encargos e contribuições sobre a folha de\npagamento:\nAcabar com contribuições sobre a folha sem relação com o trabalho, como o repasse\nao INCRA, e simplificar obrigações acessórias, como exames ocupacionais, gestão\nde vales, preenchimento do e-Social e o aviso prévio de concessão de férias, reduzindo o custo oculto de contratar.\n\nQUALIFICAR A MÃO DE OBRA PARA\nO MERCADO DE TRABALHO\nDirecionar o ensino técnico e profissionalizante para as demandas e\noportunidades reais do mercado de trabalho:\nImplementar programas que conectem trabalhadores a cursos técnicos em áreas\ncom vagas reais abertas, usando vouchers e parcerias com o setor privado e o Sistema S, e condicionando os repasses a metas de empregabilidade efetiva.\n\nAMPLIAR A LIBERDADE\nDE TRABALHO\nLibertar o trabalhador dos custos e amarras de sindicatos e\nconselhos:\nEncerrar o monopólio sindical, assegurando ao profissional o direito de não se filiar\nou contribuir para sindicatos, e limitar o poder regulatório e disciplinar dos conselhos\nprofissionais, com mais transparência, redução de custos e foco exclusivo em atividades que envolvam risco real ao cidadão, devolvendo ao trabalhador a liberdade\nde associação e o dinheiro hoje retido por estruturas que pouco entregam em troca.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 24"
+      },
+      {
+        "id": "acabar-com-as-reservas-de-mercado-corporativistas",
+        "titulo": "Acabar com as reservas de mercado corporativistas:",
+        "nivel": 1,
+        "paginaInicial": 25,
+        "paginaFinal": 25,
+        "origem": "pdftotext",
+        "conteudo": "Acabar com as reservas de mercado corporativistas:\nDesregulamentar profissões que não envolvam risco à saúde ou segurança da população, eliminando exigências corporativistas que existem apenas para proteger\ngrupos estabelecidos e abrindo o mercado de trabalho a milhões de brasileiros hoje\nimpedidos de exercer livremente seu ofício.\nGarantir aos indígenas o direito de trabalhar e prosperar com o seu\ntrabalho:\nGarantir às comunidades indígenas o pleno direito de exploração econômica de suas\nterras, permitindo e regulamentando o exercício de atividades como agricultura, pecuária, extrativismo e turismo.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 25"
+      },
+      {
+        "id": "infraestrutura-e-saneamento",
+        "titulo": "INFRAESTRUTURA E SANEAMENTO",
+        "nivel": 1,
+        "paginaInicial": 26,
+        "paginaFinal": 26,
+        "origem": "pdftotext",
+        "conteudo": "INFRAESTRUTURA E SANEAMENTO\nUm dos grandes entraves ao desenvolvimento econômico no Brasil continua sendo\nsua infraestrutura. O investimento total, público e privado, em infraestrutura no país\nrepresenta 2,22% do PIB, cerca da metade de outros países de renda média, que\ninvestem entre 3,5% e 5,5%. Os custos logísticos consomem 15,5% do PIB, o pior\npatamar entre as 20 maiores economias do mundo. No saneamento, mais de 90 milhões de pessoas não têm acesso à coleta de esgoto no país, e 32 milhões não têm\nágua tratada.\nO problema tem raízes antigas: há mais de duas décadas o país não investe sequer\n1% do PIB em infraestrutura de transportes, enquanto estudos indicam que seriam\nnecessários cerca de 4% ao ano só para conservar o que já existe e reduzir o déficit\nestrutural em relação ao restante do mundo.\nO dinheiro público não é suficiente para cobrir esse volume e, ainda assim, o Brasil\ntrava o capital privado que poderia suprir a diferença. Há poucos projetos, o licenciamento é lento, a burocracia atrasa investimentos, os marcos legais estão desatualizados e as agências reguladoras foram progressivamente enfraquecidas. O investidor olha para o Brasil, encontra insegurança jurídica e prazos imprevisíveis e leva\nseu capital para outro lugar.\nO resultado recai sobre quem produz e quem consome: a logística vira um imposto\ninvisível embutido no preço de tudo. A competitividade do país despenca e o cidadão\npaga mais caro e perde tempo em estradas, ferrovias, hidrovias, portos e transporte\nurbano que não acompanham suas necessidades. Conectar o Brasil de ponta a ponta requer um robusto plano de investimentos em infraestrutura, com a participação\nfundamental do capital privado, previsibilidade para quem investe e capacidade de\nenfrentar os desafios dos diferentes setores. Para isso, apresentamos soluções em\nquatro eixos centrais:\n\nDESTRAVAR INVESTIMENTOS\nEM INFRAESTRUTURA\nConstruir e executar o maior portfólio de investimentos em\ninfraestrutura da história do país:\nElaborar um portfólio robusto de projetos nos mais diferentes setores, com cronograma previsível de oportunidades de investimentos, e promover esses ativos combinando arranjos financeiros que viabilizem investimentos públicos, privados e internacionais, inclusive apoiando estados e municípios a estruturarem seus próprios\nprojetos e ampliarem a carteira de obras viáveis pelo país.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 26"
+      },
+      {
+        "id": "ampliar-e-diversificar-o-mercado-de-financiamento-e",
+        "titulo": "Ampliar e diversificar o mercado de financiamento e",
+        "nivel": 1,
+        "paginaInicial": 27,
+        "paginaFinal": 27,
+        "origem": "pdftotext",
+        "conteudo": "Ampliar e diversificar o mercado de financiamento e\ndesenvolvimento de projetos de infraestrutura:\nReduzir a dependência dos bancos públicos federais e multilaterais nas etapas de\nestruturação e financiamento dos projetos; aprimorar os mecanismos de project finance, visando à ampliação da participação do mercado de capitais e de fontes privadas no financiamento dos projetos; e criar um ambiente institucional que estimule\na participação de outros atores na estruturação de projetos, de maneira a ampliar a\noferta de projetos de infraestrutura nos níveis federal, estadual e municipal.\nDesenvolvimento de novos mecanismos de mitigação de riscos para\nprojetos de infraestrutura:\nAmpliar os instrumentos de garantia, seguros e compartilhamento de riscos,  fortalecendo o cardápio dos bancos públicos na oferta de garantias e contas vinculadas,\nde forma a reduzir o custo de capital, ampliar a bancabilidade dos projetos e atrair\nmais investidores nacionais e internacionais.\n\nGARANTIR SEGURANÇA JURÍDICA PARA\nINVESTIDORES E OPERADORES\nSimplificar o processo de licenciamento conforme a nova Lei Geral\ndo Licenciamento Ambiental:\nFazer valer, na prática, a nova Lei Geral do Licenciamento Ambiental, garantindo o\ncumprimento dos novos prazos e regras pelos órgãos ambientais federais, estaduais\ne municipais, para que os projetos de infraestrutura deixem de travar por insegurança e demora na obtenção das licenças.\nCriar um regime de “Projetos de Interesse Nacional”, com tramitação\nprioritária:\nEstabelecer uma via rápida para obras estratégicas, com prazos e ritos mais céleres\ne prioridade junto a todos os órgãos licenciadores e intervenientes do processo, assegurando previsibilidade e um rito simplificado de aprovações nas diversas instâncias e com o aval também dos órgãos de controle.\nAprimorar os marcos legais dos setores da infraestrutura,\npriorizando a abertura dos mercados, proteção do capital privado e\na facilitação de investimentos:\nAvançar na aprovação e implementação dos marcos legais da infraestrutura que\nainda permanecem inacabados em diferentes setores, como ferrovias e hidrovias.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 27"
+      },
+      {
+        "id": "fortalecer-a-adocao-de-mecanismos-consensuais-de-prevencao-e",
+        "titulo": "Fortalecer a adoção de mecanismos consensuais de prevenção e",
+        "nivel": 1,
+        "paginaInicial": 28,
+        "paginaFinal": 28,
+        "origem": "pdftotext",
+        "conteudo": "Fortalecer a adoção de mecanismos consensuais de prevenção e\nresolução de controvérsias em contratos de infraestrutura:\nInstitucionalizar o uso de instrumentos como mesas de conciliação, mediação, arbitragem e dispute boards, estimulando a atuação preventiva e coordenada entre\npoder concedente, agências reguladoras, concessionárias e órgãos de controle para\nreduzir litígios, preservar investimentos, buscar soluções ágeis para situações imprevistas e evitar a paralisação de projetos estratégicos e a descontinuidade dos\nserviços.\nModernizar as Leis de Concessões e PPPs:\nAtualizar a legislação para viabilizar projetos integrados de infraestrutura, permitindo\na reunião de serviços públicos complementares em uma mesma concessão ou PPP\ne a inclusão de obras e investimentos vinculados a serviços públicos distintos daqueles diretamente concedidos, desde que contribuam de forma comprovada para\na viabilidade técnica, econômica ou financeira do empreendimento, assegurando\ntransparência, competição e segurança jurídica.\n\nFORTALECER A INDEPENDÊNCIA DA REGUL AÇÃO\nE A GOVERNANÇA DA INFRAESTRUTURA\nRecuperar a independência e a capacidade institucional das\nAgências Reguladoras:\nReconstruir as agências como instituições técnicas fortes e autônomas, com dirigentes de reputação ilibada, mandatos independentes, quadros técnicos qualificados e\nautonomia administrativa, financeira e decisória, blindando-as da captura política e\nassegurando estabilidade regulatória aos investimentos de longo prazo.\nRobustecer a governança do PPI para acelerar a atração de\ninvestimentos:\nFortalecer o PPI como estrutura permanente de coordenação da política nacional de\ninfraestrutura, assegurando continuidade aos projetos entre governos, integração\nentre Ministérios, agências reguladoras, órgãos ambientais e órgãos de controle, gerando a previsibilidade que atrai o investimento privado.\nFortalecer a coordenação entre reguladores e órgãos de controle:\nPromover uma atuação mais integrada entre agências reguladoras, órgãos de controle e administração pública, privilegiando ações preventivas, uniformizando entendimentos e reduzindo incertezas regulatórias que atrasam investimentos e elevam\ncustos dos projetos.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 28"
+      },
+      {
+        "id": "reunificar-o-ministerio-da-infraestrutura",
+        "titulo": "Reunificar o Ministério da Infraestrutura:",
+        "nivel": 1,
+        "paginaInicial": 29,
+        "paginaFinal": 29,
+        "origem": "pdftotext",
+        "conteudo": "Reunificar o Ministério da Infraestrutura:\nConcentrar o planejamento e a execução da política nacional de infraestrutura e dos\ndiferentes modais em uma única pasta, fortalecendo a coordenação logística nacional, eliminando sobreposições institucionais e promovendo uma visão integrada da\ninfraestrutura de transportes .\nFortalecer a Agência Nacional de Águas e Saneamento Básico\n(ANA) como agência reguladora:\nConsolidar a ANA como coordenadora nacional da regulação do saneamento, ampliando a adoção de suas normas de referência pelas entidades reguladoras subnacionais e estabelecendo mecanismos de alinhamento de incentivos que condicionem o acesso a recursos e instrumentos federais à observância das diretrizes\nregulatórias da agência, especialmente quanto a governança, autonomia institucional, capacidade técnica, transparência e qualidade dos dados, de modo a fortalecer\na harmonização regulatória e a efetividade do Novo Marco do Saneamento.\n\nSUPERAR OS DESAFIOS DOS DIFERENTES\nSETORES DA INFRAESTRUTURA\nAmpliar e modernizar a malha ferroviária nacional:\nDar destinação célere aos trechos ferroviários ociosos ou devolvidos, estimulando\ndiferentes modelos de exploração, como autorizações ferroviárias, short lines, operadores independentes e novas concessões, assegurando a efetiva aplicação do direito de passagem e avançando também na implantação de corredores ferroviários\nestruturantes, com prioridade para projetos estratégicos como a FICO, a FIOL e a\nFerrogrão, de modo a ampliar a integração logística nacional e reduzir os custos do\ntransporte.\nExpandir a capacidade e aumentar a eficiência do sistema portuário\nnacional:\nExpandir a infraestrutura portuária, por meio da modernização da gestão e dos processos operacionais, da melhoria dos acessos terrestres e aquaviários, da integração\nlogística dos portos com as malhas ferroviária e rodoviária e do aperfeiçoamento dos\nmodelos de gestão, ampliando a participação privada, observadas as características\nde cada complexo, para elevar a produtividade, reduzir custos logísticos e fortalecer\na competitividade do comércio exterior brasileiro.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 29"
+      },
+      {
+        "id": "modernizar-a-gestao-da-infraestrutura-rodoviaria-nacional",
+        "titulo": "Modernizar a gestão da infraestrutura rodoviária nacional:",
+        "nivel": 1,
+        "paginaInicial": 30,
+        "paginaFinal": 30,
+        "origem": "pdftotext",
+        "conteudo": "Modernizar a gestão da infraestrutura rodoviária nacional:\nAperfeiçoar os modelos de contratação, financiamento e gestão dos ativos rodoviários, ampliando o uso de concessões e PPPs e de contratos de longo prazo orientados por indicadores de desempenho, inclusive para trechos de menor viabilidade\neconômica, além de promover o planejamento integrado das malhas federais e estaduais e acelerar a adoção de tecnologias inteligentes para monitoramento, operação, fiscalização e segurança viária, elevando a qualidade da infraestrutura, reduzindo custos logísticos e aumentando a segurança dos usuários.\nFortalecer a mobilidade urbana como política nacional de\ninfraestrutura:\nIntegrar o planejamento da mobilidade urbana ao Ministério da Infraestrutura, articulando-o com os demais modais e com a logística nacional, e instituir uma política nacional de implantação e expansão dos sistemas estruturantes de transporte\ncoletivo de alta capacidade, com o Governo Federal  apoiando a  estruturação dos\nprojetos, a  coordenação federativa e o cofinanciamento dos investimentos em parceria com estados e municípios, de modo a acelerar a expansão de redes de metrô,\ntrens urbanos, VLTs e outros sistemas de transporte de massa nas principais regiões\nmetropolitanas do país.\nAvançar na concessão de aeroportos e aprimorar os modelos\ncontratuais:\nAtrair investimentos privados para a gestão dos aeroportos brasileiros, com foco na\nqualidade e eficiência dos serviços, avaliando a viabilidade de integrar os projetos de\nconcessão a outros modais de transporte e de aprimorar a infraestrutura de acesso\naos aeroportos.\nConsolidar as hidrovias como corredor estratégico de transporte :\nIntegrar o desenvolvimento da infraestrutura hidroviária ao planejamento logístico\nnacional, estruturando uma carteira de projetos voltada à expansão da navegação\ninterior, à modernização da infraestrutura aquaviária e à integração com portos, ferrovias e rodovias, e aperfeiçoar os modelos de investimento e gestão para assegurar\nmaior participação privada na execução de obras estruturantes, como dragagem,\nsinalização, eclusas e acessos hidroviários.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 30"
+      },
+      {
+        "id": "acelerar-a-universalizacao-do-saneamento-basico",
+        "titulo": "Acelerar a universalização do saneamento básico:",
+        "nivel": 1,
+        "paginaInicial": 31,
+        "paginaFinal": 31,
+        "origem": "pdftotext",
+        "conteudo": "Acelerar a universalização do saneamento básico:\nFortalecer a regionalização da prestação dos serviços, ampliar a estruturação de\nprojetos de concessão e PPPs e promover soluções que ampliem a escala, a eficiência operacional e a capacidade de investimento dos prestadores, em articulação\nentre a União, estados e municípios, para cumprir as metas do Novo Marco do Saneamento.\nConectar todo o Brasil à internet de qualidade:\nEstruturar a abertura de novas faixas de espectro para o 5G, atraindo novos concorrentes para baixar preços e melhorar o serviço ao consumidor, e usar parcerias com\no setor privado e incentivos econômicos para levar conectividade de qualidade ao\ninterior, ao campo e às regiões isoladas do país, conectando também escolas, postos\nde saúde e demais serviços públicos que hoje ficam à margem da rede.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 31"
+      },
+      {
+        "id": "minas-e-energia",
+        "titulo": "MINAS E ENERGIA",
+        "nivel": 1,
+        "paginaInicial": 32,
+        "paginaFinal": 32,
+        "origem": "pdftotext",
+        "conteudo": "MINAS E ENERGIA\nO Brasil é uma potência energética que cobra caro do próprio povo. Poucos países\npartem de uma posição tão privilegiada: temos energia de sobra com 88% da nossa\neletricidade vindo de fontes renováveis e fomos o 5a maior produtor de petróleo do\nmundo em 2024. Essa dupla riqueza nos dá uma vocação para explorar e exportar\nnosso petróleo para gerar receita e divisas e, ao mesmo tempo, usar nossa abundância de energia limpa para abastecer o brasileiro e a indústria. Deveríamos ter, com\nisso, uma das contas de luz mais baixas e um dos setores mais dinâmicos do planeta.\nAcontece o contrário.\nO brasileiro paga uma das contas de luz mais caras do mundo. A conta de luz subiu mais de 400% nos últimos 20 anos, bem acima da inflação, que foi de 177%.  E\ngrande parte do preço não tem nada a ver com gerar e distribuir eletricidade: nós\ndesperdiçamos cerca de 20% da nossa energia solar e eólica e 44% da conta vem de\nencargos setoriais e impostos, subsídios embutidos que privilegiam setores escolhidos pelo governo e são pagos por todos os consumidores.\nNo petróleo e gás, uma única empresa, a Petrobras, controla praticamente toda a\ncadeia, da produção ao refino, ao transporte e à logística, protegida pelo governo e\npelos reguladores, o que afasta investimentos e mantém preços reféns da política.\nE, mesmo sendo o 2o maior produtor de biocombustíveis do mundo, com essa fonte\njá respondendo por mais de 30% da nossa oferta energética, o Brasil desperdiça a\nchance de transformar essa liderança em ainda mais riqueza, emprego e exportação.\nNa mineração, o problema se repete. Temos a segunda maior reserva de terras raras\ndo mundo, liderança global em nióbio e reservas relevantes de lítio, exatamente o\nque a indústria global de tecnologia disputa hoje, e ainda assim quem quer investir\nna mineração legal enfrenta anos de fila.\nA conta de toda essa ineficiência recai sobre o cidadão e sobre quem produz: energia cara na tomada, combustível refém da política, investimento que não chega e\numa vocação natural que rende muito menos do que poderia. O Brasil precisa fazer o\noposto do que fez nas últimas décadas: baixar a conta de luz do brasileiro, destravar\nos investimentos em petróleo e gás e transformar a energia limpa em riqueza. Para\nisso, apresentamos soluções em quatro eixos centrais:\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 32"
+      },
+      {
+        "id": "baixar-a-conta-de-luz",
+        "titulo": "BAIXAR A CONTA DE LUZ",
+        "nivel": 1,
+        "paginaInicial": 33,
+        "paginaFinal": 33,
+        "origem": "pdftotext",
+        "conteudo": "BAIXAR A CONTA DE LUZ\nDO BRASILEIRO\nReestruturar a forma como o preço da energia é definido\nModernizar as regras de formação de preços e de contratação de energia para que\no sistema escolha a fonte mais barata e mais segura, sem privilegiar tecnologias ou\nsetores específicos, com preços que reflitam a oferta e a demanda reais e atraiam\nnovos investimentos.\nReduzir encargos setoriais da tarifa de energia elétrica:\nRetirar da conta de luz a grande quantidade de encargos e subsídios que hoje são\npagos por todo consumidor, mas privilegiam setores escolhidos pelo governo.\nAcabar com o desperdício da energia gerada em excesso no país:\nAcabar com o desperdício de energia limpa, aprimorando a regulação para que os\ncustos da energia gerada em excesso e não aproveitada sejam alocados aos próprios geradores, inclusive no mercado regulado, evitando que o consumidor pague\npelas ineficiências do sistema e incentivando cada agente a buscar a solução mais\neficiente para sua produção.\n\nDESTRAVAR OS INVESTIMENTOS\nEM PETRÓLEO E GÁS\nPreservar o protagonismo global em exploração e produção de\npetróleo e gás:\nManter um calendário regular e previsível de leilões de áreas de exploração e produção, com análise ambiental prévia para áreas estratégicas, dando segurança aos\ninvestidores e ampliando as exportações para países que ainda dependem de combustíveis fósseis e têm dificuldade de se eletrificar.\nAbrir o setor de petróleo à concorrência:\nDesverticalizar a Petrobras, separando as operações de produção, refino, transporte\ne logística em diferentes empresas para permitir a entrada de novos concorrentes e\nampliar a concorrência em igualdade de condições.\nModernizar as contrapartidas de conteúdo local que encarecem a\nexploração de petróleo e gás:\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 33"
+      },
+      {
+        "id": "substituir-o-modelo-rigido-de-exigencias-de-conteudo-local-e-penalidades",
+        "titulo": "Substituir o modelo rígido de exigências de conteúdo local e penalidades por um",
+        "nivel": 1,
+        "paginaInicial": 34,
+        "paginaFinal": 34,
+        "origem": "pdftotext",
+        "conteudo": "Substituir o modelo rígido de exigências de conteúdo local e penalidades por um\nsistema de incentivos baseado em desempenho, premiando operadoras que comprovem avanços no desenvolvimento da cadeia, sem encarecer artificialmente a exploração ou afastar investimentos.\nTirar o preço dos combustíveis das mãos da política:\nImpedir o uso político dos preços dos combustíveis, assegurando que sigam referências de mercado e fiquem livres da interferência de governos, para dar previsibilidade ao consumidor e reduzir o risco de desabastecimento.\nPotencialização da competição no gás natural:\nRacionalizar as  tarifas de transporte e eliminar o monopólio dos estados na distribuição do gás natural, permitindo uma redução significativa no custo do gás entregue ao consumidor.\n\nTRANSFORMAR A ENERGIA LIMPA\nE BARATA EM RIQUE Z A\nAlavancar a energia limpa e barata para expansão dos investimentos\nna indústria e tecnologia:\nAproveitar a abundância de energia limpa e competitiva do país para acelerar a eletrificação da economia e atrair indústrias intensivas em energia, inteligência artificial\ne data centers, gerando empregos qualificados e novos investimentos no Brasil.\nCapturar oportunidades existentes para combustíveis limpos em\nmercados internacionais:\nEngajar institucionalmente com os principais  mercados internacionais, como Europa, Estados Unidos e Japão, posicionando o Brasil como parceiro no fornecimento de\nbiocombustíveis avançados e na cadeia do hidrogênio verde, por meio da adequação aos requerimentos técnicos, de sustentabilidade e certificações.\nFazer do Brasil o maior fornecedor global de remoção de carbono:\nEngajar os grandes compradores dos mercados voluntário e regulado e alinhar o\npaís às exigências de certificação e sustentabilidade desses mercados, destravando\ninvestimentos em reflorestamento, sequestro de carbono no solo, bioenergia com\ncaptura e biocarvão, gerando uma nova frente de renda e empregos no Brasil.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 34"
+      },
+      {
+        "id": "aproveitar-a-rique-z-a",
+        "titulo": "APROVEITAR A RIQUE Z A",
+        "nivel": 1,
+        "paginaInicial": 35,
+        "paginaFinal": 35,
+        "origem": "pdftotext",
+        "conteudo": "APROVEITAR A RIQUE Z A\nDO NOSSO SUBSOLO\nDestravar a fila de autorizações da mineração:\nReduzir o tempo de análise dos pedidos de pesquisa e lavra na Agência Nacional de\nMineração, com prazos definidos, processo digital e decisão técnica, para que quem\ninveste dentro da lei não perca anos parado numa fila enquanto o investimento vai\npara outro país, garantindo conservação sem travar o desenvolvimento.\nConhecer o que existe debaixo do solo brasileiro:\nRetomar o levantamento geológico do território nacional com dados abertos e padrão internacional, para que que empresas possam identificar novas jazidas de minerais de alto valor e transformar as descobertas em investimento, emprego qualificado e arrecadação nos municípios mineradores.\nAcabar com o garimpo ilegal e a mineração do crime organizado:\nEnfrentar a mineração ilegal como política de segurança pública, integrando forças\npoliciais, órgãos de fiscalização e inteligência financeira, com rastreabilidade da origem do ouro e responsabilização de quem compra minério de origem criminosa,\nprotegendo as comunidades da Amazônia e a reputação da mineração brasileira no\nexterior.\nTransformar rejeito parado em minério novo:\nDestravar o aproveitamento econômico dos rejeitos e das estruturas já existentes,\ncom regras claras sobre titularidade e responsabilidade pelo material, descomissionando barragens antigas e gerando produção, emprego e arrecadação a partir do\nque hoje é apenas passivo.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 35"
+      },
+      {
+        "id": "politica-externa",
+        "titulo": "POLÍTICA EXTERNA",
+        "nivel": 1,
+        "paginaInicial": 36,
+        "paginaFinal": 36,
+        "origem": "pdftotext",
+        "conteudo": "POLÍTICA EXTERNA\nO Brasil já foi uma voz respeitada no mundo, com uma diplomacia reconhecida pelo\npragmatismo e pela capacidade de defender os interesses nacionais. Esse patrimônio foi dilapidado nos últimos anos. Em vez de servir ao desenvolvimento do país, a\npolítica externa passou a ser orientada por afinidades ideológicas, aproximando o\nBrasil de regimes autoritários e afastando-o das democracias que são seus parceiros\nnaturais e seus maiores mercados.\nOs números expõem o tamanho do retrocesso. O Brasil tem uma das economias\nmais fechadas do planeta: apesar de ser a nona maior economia do mundo, o país\nocupa apenas a 22a posição em exportações. Dentre 203 países, o Brasil tem a quinta\nmenor proporção entre importações e seu PIB (15,7%). Enquanto vizinhos avançam\nem acordos e atraem investimentos, seguimos no final da fila do comércio mundial\ne fora da OCDE.\nNa vizinhança, o país que um dia liderou a integração regional perdeu protagonismo\ne credibilidade, justamente quando o crime organizado transnacional avança sobre\nas fronteiras e a crise venezuelana ameaça a estabilidade de toda a América do Sul.\nO resultado é um Brasil isolado, menos próspero e menos seguro, ausente das grandes decisões que afetam diretamente o país. Essa escolha não é apenas um erro\ndiplomático, mas sim um entrave ao crescimento, ao emprego e à segurança da população. Recolocar o Brasil no mundo exige uma diplomacia pragmática e soberana.\nPor isso, apresentamos propostas em três eixos centrais:\n\nRECUPERAR A CREDIBILIDADE E A\nINFLUÊNCIA DO BRASIL NO MUNDO\nRecuperar o protagonismo regional do Brasil na América do Sul:\nRestabelecer parcerias estratégicas com os países do Mercosul, em especial a Argentina, e aproximar-se dos países da bacia do Pacífico e da Amazônia, devolvendo\nao Brasil a influência que perdeu na região e transformando a vizinhança em plataforma de comércio, integração de infraestrutura e segurança comum.\nOrientar a política externa como instrumento de promoção dos interesses nacionais:\nColocar a política externa a serviço do desenvolvimento do país, e não de alinhamentos ideológicos, orientando cada iniciativa por seu retorno em mercados, investimentos e tecnologia e trazendo o setor produtivo para o centro da atuação diplomática.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 36"
+      },
+      {
+        "id": "pagina-37",
+        "titulo": "Página 37",
+        "nivel": 1,
+        "paginaInicial": 37,
+        "paginaFinal": 37,
+        "origem": "pdftotext",
+        "conteudo": "Recuperar o prestígio e a credibilidade da diplomacia brasileira, preservando a nossa independência para mediar disputas e conflitos\nque ameaçam a ordem e a paz internacional:\nResgatar a tradição de um Brasil respeitado e independente, capaz de auxiliar na\nmediação de disputas e conflitos, sobretudo no entorno regional, que ameaçam a\nordem e a paz internacional.\nAdotar uma política de vistos e imigração de um país aberto ao mundo:\nIsentar de visto os turistas de países seguros e abrir caminhos legais à imigração de\ntalentos e profissionais qualificados, reafirmando a tradição brasileira de ser um país\naberto ao mundo.\nRetomar o compromisso do Brasil com a condenação do antissemitismo:\nReafirmar o compromisso do Brasil com o combate ao antissemitismo no mundo,\nretomando a participação do país na Aliança Internacional para a Memória do Holocausto (IHRA) como parte do resgate de uma tradição diplomática de defesa da\nliberdade e da dignidade humana.\nAssumir o protagonismo do Brasil no meio ambiente, segurança alimentar e transição energética:\nEstreitar a cooperação com os países da bacia amazônica para que o Brasil volte a\nliderar as agendas de meio ambiente, segurança alimentar e transição energética,\nsetores nos quais o país tem competitividade inquestionável, transformando nossos\nativos naturais em poder diplomático.\n\nALINHAR O BRASIL ÀS DEMOCRACIAS\nE AOS MERCADOS GLOBAIS\nSair do BRICS:\nRetirar o Brasil do BRICS de forma diplomática, preservando pragmaticamente as\nrelações comerciais com todos os países do bloco e recusando qualquer direcionamento que comprometa valores constitucionais e democráticos do Brasil.\nIngressar na OCDE, fazendo as reformas institucionais e\neconômicas necessárias para aderir ao bloco:\nRetomar o processo de adesão do Brasil à OCDE,  promovendo as reformas institucionais e econômicas necessárias para aderir ao bloco e tornando o país mais competitivo, ampliando o grau de investimento e abrindo novos mercados às empresas\nbrasileiras.\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 37"
+      },
+      {
+        "id": "transformar-o-mercosul-em-zona-de-livre-comercio-para-destravar",
+        "titulo": "Transformar o Mercosul em zona de livre comércio para destravar",
+        "nivel": 1,
+        "paginaInicial": 38,
+        "paginaFinal": 38,
+        "origem": "pdftotext",
+        "conteudo": "Transformar o Mercosul em zona de livre comércio para destravar\nnovos acordos direto com mais países:\nFlexibilizar a estrutura atual do Mercosul, hoje uma união aduaneira que impede os\npaíses membros de negociarem sozinhos, transformando-o em zona de livre comércio, para que o Brasil assine acordos comerciais e de investimentos com países e\nblocos que ampliem seu acesso a novos mercados, tecnologia e inovação.\nPromover os produtos brasileiros no mundo e cultivar as parcerias\ncomerciais com os países que desejam fazer negócio com o Brasil:\nOportunizar a venda de produtos brasileiros para mais países, abandonando a lentidão em fechar acordos comerciais e a escolha de parceiros com base em critério\nideológico, que  afastam investimentos e fecham mercados ao produto brasileiro.\n\nCOMBATER AS AME AÇAS\nQUE CRUZ AM FRONTEIRAS\nAssumir protagonismo regional no combate ao crime que extrapola\nnossas fronteiras:\nAmpliar a presença do Estado brasileiro nos postos de fronteira e na Amazônia, integrando inteligência, vigilância e forças de segurança para sufocar a entrada de\ndrogas e armas que abastecem o crime organizado.\nBuscar a cooperação internacional para combater e eliminar as facções criminosas:\nCoordenar com os Estados Unidos, países sul americanos e demais países e atores\ninteressados no combate ao PCC, ao CV e às demais facções terroristas, compartilhando inteligência e atuando de forma conjunta contra suas redes financeiras e\noperacionais que atravessam fronteiras.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 38"
+      },
+      {
+        "id": "gestao-publica-e-eficiencia",
+        "titulo": "GESTÃO PÚBLICA E EFICIÊNCIA",
+        "nivel": 1,
+        "paginaInicial": 39,
+        "paginaFinal": 39,
+        "origem": "pdftotext",
+        "conteudo": "GESTÃO PÚBLICA E EFICIÊNCIA\nNO GOVERNO\nO Brasil tem um Estado caro que entrega pouco, e que, no caminho, também não valoriza quem se dedica. Embora os servidores sejam apenas 12% da força de trabalho\nformal, abaixo da média da OCDE (18%) e de vizinhos como Argentina (19%) e Chile\n(13%), o gasto com pessoal consome 13,5% do PIB, contra 9,3% nos países da OCDE.\nGastamos como um país rico e entregamos como um país pobre: o Brasil ocupa a\n102a posição, entre 179 países, na provisão de serviços públicos essenciais, atrás de\nArgentina, Uruguai e Chile, no Índice de Fragilidade dos Estados do Fund for Peace.\nO problema não é só o tamanho da folha, mas como o Estado é planejado, gerido\ne organizado, e como trata desigualmente quem nele trabalha. Na gestão para resultados, mesmo com 94% dos brasileiros apoiando uma gestão pública que avalie,\nrecompense e cobre por resultados, as avaliações de desempenho viraram formalidade e a demissão por baixo desempenho, prevista na Constituição, nunca foi regulamentada. Na gestão de pessoas, convivemos com um setor público desigual: mais\nde 300 tabelas salariais só na União, uma elite do funcionalismo com prêmio salarial\nde 96% em relação ao setor privado e supersalários acima do teto constitucional.\nEnquanto isso, a maioria dos servidores, sobretudo os que atendem a população na\nponta, enfrentam salários achatados, às vezes atrasados, chefias por indicação política e falta de infraestrutura para trabalhar. Na estrutura, o atual governo ampliou a\nmáquina de 23 para 38 ministérios, o maior número da América Latina, multiplicando\ncargos, sobrepondo funções e tornando cada decisão mais lenta.\nCada uma dessas falhas custa caro ao contribuinte, rouba o tempo de quem só queria resolver a vida sem enfrentar fila e desperdiça o esforço do bom servidor que quer\ninovar e ser reconhecido. Reformar a administração pública é reorganizar o Estado\npara que custe menos, entregue mais, funcione para todos e valorize quem serve\nbem. Essa transformação precisa avançar em três eixos centrais:\n\nFORTALECER A GESTÃO POR\nRESULTADOS FOCADA NO CIDADÃO\nMedir a eficiência do governo pela qualidade da entrega ao cidadão:\nMudar a lógica do controle para priorizar os resultados entregues ao cidadão, e não\napenas o cumprimento de métricas-meio e exigências formais, utilizando também\npesquisas de satisfação dos usuários para avaliar a qualidade dos serviços públicos.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 39"
+      },
+      {
+        "id": "transformar-o-planejamento-do-governo-em-compromisso-real",
+        "titulo": "Transformar o planejamento do governo em compromisso real:",
+        "nivel": 1,
+        "paginaInicial": 40,
+        "paginaFinal": 40,
+        "origem": "pdftotext",
+        "conteudo": "Transformar o planejamento do governo em compromisso real:\nElevar a qualidade do planejamento plurianual e integrá-lo   ao orçamento anual,\ntraduzindo o plano em metas claras e finalísticas para cada órgão e servidor, com indicadores estáveis e confiáveis, para que cada real gasto sirva para gerar resultados\nconcretos nos serviços públicos.\nPactuar metas de desempenho com cada órgão e entidade pública:\nColocar em uso efetivo o contrato de desempenho, ampliando a autonomia de gestão em troca de metas objetivas, prazos e indicadores, de modo que cada órgão\nresponda por resultados concretos.\nAprimorar de forma contínua as políticas públicas:\nAmpliar e dar consequência às avaliações de impacto das políticas públicas e programas governamentais, aplicando avaliações ex-ante e ex-post para todas as políticas e condicionando o orçamento aos resultados, visando expandir o que funciona\ne reformular ou encerrar o que não entrega.\n\nTRANSFORMAR A FORMA DE\nTRABALHAR NO SETOR PÚBLICO\nModernizar a gestão de desempenho e dar consequência aos resultados:\nUnificar e simplificar os modelos de avaliação, com instrumentos como a avaliação\n360 graus e a curva forçada de desempenho, para medir a entrega de forma justa,\ngarantindo que quem entrega avance na carreira, ganhe bônus e mais autonomia de\natuação, enquanto quem não evolui possa ser recuperado com Planos de Desenvolvimento Individuais ou até ser desligado.\nAprimorar modelo de seleção e ingresso no funcionalismo público:\nModernizar os concursos públicos, instituindo provas de competências e habilidades, além do teste de conhecimentos, inclusive com cursos ou programas de formação quando aplicável.\nReorganizar as carreiras do setor público:\nUnificar carreiras e eliminar cargos obsoletos, com tabela remuneratória transparente e liberdade para o servidor transitar entre órgãos como servidor do Estado, criando trajetórias mais longas, nas quais o crescimento na carreira seja determinado\npelo desempenho ao longo da vida funcional.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 40"
+      },
+      {
+        "id": "profissionalizar-a-lideranca-do-setor-publico",
+        "titulo": "Profissionalizar a liderança do setor público:",
+        "nivel": 1,
+        "paginaInicial": 41,
+        "paginaFinal": 41,
+        "origem": "pdftotext",
+        "conteudo": "Profissionalizar a liderança do setor público:\nConsolidar e aprimorar os programas de seleção e desenvolvimento de lideranças\nno setor público, promovendo a escolha de cargos de chefia por mérito e competência e preparando os gestores públicos de forma contínua para entregar melhores\nresultados ao cidadão.\nModernizar os vínculos e formas de trabalho no setor público:\nFlexibilizar a composição da força de trabalho do setor público, reformulando os\nmodelos de contratação existentes e instituindo novos vínculos adaptados a diferentes necessidades, como contratos por tempo determinado para projetos específicos,\nvínculos por tempo indeterminado sem estabilidade ampla e   definição clara dos\ncargos típicos de estado.\n\nTORNAR O ESTADO DIGITAL\nE TRANSPARENTE\nMelhorar a prestação de serviços públicos por meios digitais:\nAumentar a qualidade de entrega dos serviços públicos por meio da digitalização do\ngoverno, permitindo que o cidadão resolva suas demandas sem burocracia e sem\nprecisar enfrentar filas ou deslocamentos, com prazo máximo definido e público para\na entrega de cada serviço.\nGarantir transparência ativa sobre o gasto e as decisões:\nObrigar o governo a divulgar quanto custa cada serviço para que o cidadão saiba o\nque paga e possa rastrear e questionar qualquer decisão.\nTrazer a inovação do setor privado para dentro do governo:\nUsar tecnologia, parcerias e soluções já desenvolvidas pelo mercado, capacitando\ngestores para usarem essas ferramentas existentes e acelerar a prestação dos serviços públicos.\nConectar estados e municípios ao governo digital:\nPadronizar sistemas e integrar bases de dados para que estados e municípios operem juntos, permitindo que o cidadão informe seus dados uma única vez e seja atendido em qualquer lugar do país.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 41"
+      },
+      {
+        "id": "enxugar-a-maquina-publica",
+        "titulo": "Enxugar a máquina pública:",
+        "nivel": 1,
+        "paginaInicial": 42,
+        "paginaFinal": 42,
+        "origem": "pdftotext",
+        "conteudo": "Enxugar a máquina pública:\nReduzir o número de cargos, ministérios, secretarias e órgãos para que o setor público trabalhe com propósito comum e informação compartilhada, em um governo\nmais ágil e eficiente.\nModernizar as estruturas da Administração Pública:\nModernizar os regimes jurídicos da administração pública indireta, reduzindo complexidades, simplificando as regras e inserindo metas de desempenho e prazo de\nvalidade que justifiquem a manutenção das estruturas a cada período de tempo.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 42"
+      },
+      {
+        "id": "agronegocio",
+        "titulo": "AGRONEGÓCIO",
+        "nivel": 1,
+        "paginaInicial": 43,
+        "paginaFinal": 43,
+        "origem": "pdftotext",
+        "conteudo": "AGRONEGÓCIO\nO agronegócio é o motor do Brasil. Entre 1995 e 2022, o agro brasileiro avançou 5,5%\nao ano, puxado por tecnologia e inovação. Hoje, o país alimenta cerca de 900 milhões de pessoas, 11% da população mundial, lidera as exportações globais de soja,\nmilho, café, açúcar, carne bovina e frango e atende mais de 150 países, tudo isso\nmantendo dois terços do território com vegetação nativa. Poucos setores no mundo\nentregam tanto, com tanta eficiência e tanto cuidado com o meio ambiente.\nEsse sucesso, porém, acontece apesar do Estado, não por causa dele. Barreiras burocráticas, regulatórias e logísticas impedem a inovação e seguram o setor, que poderia crescer muito mais. O frete da soja do Centro-Oeste até o porto chega a custar\ntrês vezes o de um trajeto equivalente nos Estados Unidos, e estradas ruins fazem as\nperdas de soja e milho passarem de R$5 bilhões em uma única safra.\nAlém disso, a liberação de defensivos mais modernos, que permitiriam o aumento de\nprodutividade, esbarra em entraves dos órgãos licenciadores, falta acesso a seguros\ne a insegurança jurídica sobre a posse da terra, somada à ação de invasores, inibe o\ninvestimento de quem produz dentro da lei.\nCada um desses obstáculos reduz a renda dos produtores rurais, inibe a geração\nde empregos no campo e piora a competitividade dos produtos brasileiros nos mercados internacionais. O Estado não pode atrapalhar quem produz, ele precisa abrir\ncaminho: reduzir burocracia, garantir a propriedade, destravar a logística e deixar o\nsetor privado fazer o que faz de melhor, que é gerar riqueza. Para isso, apresentamos\nsoluções em quatro eixos centrais:\n\nIMPULSIONAR A PRODUTIVIDADE\nDA AGROINDÚSTRIA\nFacilitar a produção nacional e a compra de fertilizantes e defensivos\nagrícolas de alta qualidade do mundo:\nAbrir o mercado à concorrência, facilitando importações e reduzindo a dependência\nexterna de insumos, além de destravar projetos minerais nacionais para eliminar\nburocracias que dificultam a produção nacional.\nFacilitar a inovação privada no agro:\nFacilitar a entrada de capital internacional e privado para P&D no campo, conectando centros de pesquisa nacionais aos internacionais, avançando na conectividade\nrural com banda larga e 5G e reorientando a Embrapa para inovação aplicada.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 43"
+      },
+      {
+        "id": "melhorar-a-logistica-de-transporte-de-cargas-para-reduzir-o-custo-do",
+        "titulo": "Melhorar a logística de transporte de cargas para reduzir o custo do",
+        "nivel": 1,
+        "paginaInicial": 44,
+        "paginaFinal": 44,
+        "origem": "pdftotext",
+        "conteudo": "Melhorar a logística de transporte de cargas para reduzir o custo do\nfrete:\nExpandir rodovias, ferrovias, hidrovias, portos e capacidade de armazenagem de\ngrãos por meio da redução dos juros no país e de parcerias com o setor privado,\nreduzindo o custo do frete e garantindo que a produtividade do campo se converta\nem competitividade global.\nReduzir entraves do licenciamento ambiental à atividade agropecuária:\nGarantir a implementação efetiva da Nova Lei do Licenciamento Ambiental, com\nprazos definidos e critérios técnicos objetivos, distinguindo os diferentes graus de\nimpacto e simplificando o licenciamento de atividades de baixo risco, para atrair investimentos sem abrir mão da conservação ambiental.\nAmpliar o acesso dos produtores rurais a tecnologia e assistência\ntécnica:\nMelhorar o ambiente econômico nacional para permitir que produtores acessem\ntecnologias modernas e ampliar a oferta de assistência técnica qualificada, adotando medidas como o condicionamento dos repasses às EMATERs ao cumprimento de\nmetas de produtividade para que os avanços do agro cheguem também aos pequenos e médios produtores.\nFacilitar a venda dos produtos do agro brasileiro com o mundo:\nAbrir mercados com novos países e retirar barreiras que limitam o acesso do agro\nbrasileiro ao comércio internacional , reconhecendo os padrões sanitários e ambientais adotados pelo setor produtivo nacional para acelerar suas exportações.\n\nPROTEGER A RENDA DE QUEM\nPRODUZ NO BRASIL\nFacilitar o desenvolvimento do mercado de seguro rural no Brasil:\nReduzir entraves ao desenvolvimento do setor de seguros rurais, com um fundo privado de aportes públicos e privados que cubram perdas por eventos climáticos, pragas e oscilações de mercado, garantindo sustentabilidade financeira e efetiva proteção da renda agrícola.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 44"
+      },
+      {
+        "id": "acelerar-a-construcao-de-barragens-e-estruturas-de-irrigacao-em-conjunto",
+        "titulo": "Acelerar a construção de barragens e estruturas de irrigação em conjunto com o setor privado:",
+        "nivel": 1,
+        "paginaInicial": 45,
+        "paginaFinal": 45,
+        "origem": "pdftotext",
+        "conteudo": "Acelerar a construção de barragens e estruturas de irrigação em conjunto com o setor privado:\nExpandir reservatórios e sistemas de irrigação por meio de parcerias com o setor privado, ampliando a oferta de água para o agro e reduzindo perdas causadas por secas, com modelos que garantam acesso também a pequenos e médios produtores.\n\nAPROXIMAR O AGRONEGÓCIO\nE O MEIO AMBIENTE\nConquistar mercados e desenvolver a economia por meio de biocombustíveis:\nPosicionar o Brasil como protagonista global na produção e exportação de biocombustíveis, abrindo portas com novos países para acelerar sua inserção em mercados\ninternacionais e atrair investimentos privados.\nFortalecer a imagem internacional do agro brasileiro como responsável pela segurança alimentar, energética e ambiental do mundo:\nPromover ativamente os produtos brasileiros junto a governos e consumidores do\nmundo todo, destacando os avanços reais do agro em produtividade, sustentabilidade e rastreabilidade, com ênfase em tecnologias  sustentáveis desenvolvidas no\nBrasil.\n\nDEFENDER A PROPRIEDADE RURAL\nGarantir o porte de armas em toda a extensão da propriedade rural e\no direito à autodefesa do produtor:\nConsolidar e ampliar o direito do produtor rural de portar arma em toda a extensão\nde sua propriedade, avançando para além da posse estendida já prevista em lei, com\nsegurança jurídica para o exercício da legítima defesa e proteção efetiva do Estado\ncontra invasões.\nCombater o ativismo judicial e a insegurança jurídica contra quem\nproduz dentro da lei:\nGarantir o cumprimento do Código Florestal, sem impor novas restrições sem base\ntécnica ou compensação econômica, assegurando previsibilidade e segurança jurídica para viabilizar investimentos no campo.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 45"
+      },
+      {
+        "id": "regularizar-titulos-de-propriedades-rurais",
+        "titulo": "Regularizar títulos de propriedades rurais:",
+        "nivel": 1,
+        "paginaInicial": 46,
+        "paginaFinal": 46,
+        "origem": "pdftotext",
+        "conteudo": "Regularizar títulos de propriedades rurais:\nPriorizar a emissão ágil de títulos de propriedade rural para dar segurança aos proprietários e conferir maior clareza ao poder público sobre a situação das terras brasileiras.\nCombater a grilagem e a entrada do crime organizado no agro:\nAprimorar o monitoramento do território nacional e o combate à grilagem com uso\nde sensoriamento remoto por satélite, para enfrentar o avanço do crime organizado\ne proteger a reputação internacional do agronegócio brasileiro.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 46"
+      },
+      {
+        "id": "meio-ambiente",
+        "titulo": "MEIO AMBIENTE",
+        "nivel": 1,
+        "paginaInicial": 47,
+        "paginaFinal": 47,
+        "origem": "pdftotext",
+        "conteudo": "MEIO AMBIENTE\nO Brasil é uma potência ambiental: abriga a maior biodiversidade do planeta, conserva mais de dois terços do seu território com vegetação nativa e é referência mundial em energia limpa e produção agropecuária sustentável. Nenhum outro país reúne tantos ativos naturais.\nContudo, seguimos desperdiçando o potencial de transformar isso em riqueza. O\nBrasil poderia suprir até 20% da demanda mundial por créditos de carbono e mal\nparticipa desse mercado. Além disso, o mercado global de fitoterápicos deve movimentar mais de US$400 bilhões até 2032 e respondemos por menos de 0,1% desse\nmercado.\nEnquanto isso, a agenda de preservação segue fraca, o desmatamento ilegal avança, puxado pela grilagem e pelo crime organizado. Só entre 2023 e 2024, os alertas\nde degradação na Amazônia subiram 44%, e cerca de metade do desmatamento\nocorreu em florestas públicas sem destinação, onde o Estado perdeu o controle do\nterritório.\nA conta da falta de atenção a uma agenda ambiental séria é paga pelo cidadão, às\nvezes com a vida. Em 2024, as enchentes no Rio Grande do Sul expuseram a fragilidade do país diante de eventos climáticos extremos: 94,7% dos municípios não têm\nplano de drenagem, mais de 3,7 mil cidades convivem com risco de inundação, e o\npaís ainda descarta de forma inadequada cerca de 40% do lixo que produz.\nTratar o meio ambiente como ativo, e não como entrave, é proteger vidas, gerar emprego e renda e colocar o Brasil na vanguarda do mundo. Conservar a natureza,\ntransformar o potencial ambiental em riqueza e preparar as cidades para o clima\nextremo são objetivos que caminham juntos. Para isso, apresentamos soluções em\nquatro eixos centrais:\n\nCONSERVAR A NATURE Z A SEM\nTRAVAR O DESENVOLVIMENTO\nGarantir um licenciamento ambiental que proteja o meio ambiente\nsem prejudicar o desenvolvimento econômico:\nGarantir critérios técnicos, previsibilidade e segurança jurídica no licenciamento ambiental, assegurando o cumprimento do Código Florestal e a análise do CAR, sem\npenalizar quem produz e investe dentro da lei.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 47"
+      },
+      {
+        "id": "enfrentar-a-grilagem-e-o-desmatamento-ilegal",
+        "titulo": "Enfrentar a grilagem e o desmatamento ilegal:",
+        "nivel": 1,
+        "paginaInicial": 48,
+        "paginaFinal": 48,
+        "origem": "pdftotext",
+        "conteudo": "Enfrentar a grilagem e o desmatamento ilegal:\nCombater com rigor a grilagem e o desmatamento ilegal, integrando forças de segurança, órgãos ambientais e o sistema de justiça, com monitoramento por satélite,\npunição efetiva dos infratores e proteção às comunidades indígenas.\nMelhorar o saneamento básico e a gestão de resíduos no país, atraindo investimentos para alcançar as metas do Novo Marco do Saneamento:\nAvançar na implementação do Novo Marco do Saneamento, atraindo investimentos\nnacionais e internacionais para universalizar o acesso à água potável, à coleta e ao\ntratamento de esgoto e viabilizar a eliminação de lixões.\n\nTRANSFORMAR O NOSSO POTENCIAL\nAMBIENTAL EM RIQUE Z A\nAgregar valor aos produtos da bioeconomia nacional:\nSimplificar regras e remover empecilhos a indústrias e startups ligadas à biodiversidade e ao manejo sustentável de espécies nativas, como açaí, castanhas e fármacos\nvegetais, criando as condições necessárias para que o setor privado lidere o desenvolvimento de diversas regiões do país.\nDesenvolver o turismo com as belezas naturais brasileiras:\nEstruturar destinos de turismo sustentável, aproveitando a biodiversidade e os biomas brasileiros, concedendo parques nacionais, qualificando mão de obra local e\ngarantindo infraestrutura e marco regulatório que preservem o patrimônio natural.\nAproveitar oportunidades de atração de recursos internacionais em\nmercados de carbono:\nEstabelecer um ambiente de negócios seguro e desburocratizado para a comercialização voluntária de créditos de carbono com o mercado internacional, garantindo\nque o patrimônio ambiental seja um ativo lucrativo para produtores e comunidades,\nsem criar novos tributos ou custos para os brasileiros.\n\nPROTEGER O BRASILEIRO\nDE TRAGÉDIAS AMBIENTAIS\nAmpliar investimentos em tecnologia e infraestrutura contra desastres climáticos:\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 48"
+      },
+      {
+        "id": "pagina-49",
+        "titulo": "Página 49",
+        "nivel": 1,
+        "paginaInicial": 49,
+        "paginaFinal": 49,
+        "origem": "pdftotext",
+        "conteudo": "Atrair investimento privado em infraestrutura de contenção e sistemas de monitoramento climático, prevenção e resposta rápida a desastres, integrando ciência, tecnologia e gestão territorial para reduzir riscos ambientais no campo e nas cidades.\nExpandir reservatórios, barragens e sistemas de irrigação para aumentar segurança hídrica:\nPromover a recuperação e o monitoramento de reservatórios e barragens  para ampliar a segurança hídrica da população, da agricultura e da geração de energia, com\nparticipação do setor privado e avaliação técnica rigorosa dos projetos.\nMelhorar o urbanismo e o planejamento territorial das cidades brasileiras:\nApoiar estados e municípios na elaboração de planos diretores modernos, ampliando\no ampliando o adensamento urbano nas áreas centrais, habitação em áreas seguras\ne investimentos em drenagem urbana, para reduzir a vulnerabilidade a enchentes e\ndeslizamentos.\n\nPROMOVER EDUCAÇÃO\nAMBIENTAL SEM RADICALISMO\nPromover visões que colocam preservação e desenvolvimento como\nobjetivos complementares:\nPromover educação ambiental baseada em evidências e no pensamento crítico, valorizando os avanços brasileiros em tecnologia agroambiental e energia renovável\ncomo prova de que crescimento e conservação são compatíveis.\nFortalecer oportunidades de educação profissional e tecnológica\nvoltada a mercados agroambientais:\nAproximar escolas, universidades, setor produtivo e pesquisa aplicada para formar\nprofissionais capazes de atuar em bioeconomia, energias renováveis e produção\nsustentável, conciliando prosperidade e conservação ambiental.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 49"
+      },
+      {
+        "id": "educacao-basica",
+        "titulo": "EDUCAÇÃO BÁSICA",
+        "nivel": 1,
+        "paginaInicial": 50,
+        "paginaFinal": 50,
+        "origem": "pdftotext",
+        "conteudo": "EDUCAÇÃO BÁSICA\nA educação básica brasileira ainda enfrenta problemas graves: apenas 13,3% dos\nalunos saem do ensino fundamental sabendo Português e Matemática de forma\nadequada. No ensino médio, a situação é ainda mais trágica: somente 4,5% dos\nestudantes se formam com conhecimento adequado. Esses números são refletidos\nnos resultados do Brasil em exames internacionais, como o PISA, em que o país recorrentemente está entre os 25% piores países, com desempenho muito aquém do\ndesejado em Matemática, Leitura e Ciências.\nO problema começa cedo e atravessa todas as etapas. Cerca de 826 mil crianças\nestão na fila de espera por vagas em creches, 4 em cada 10 alunos do 2o ano do\nensino fundamental ainda não estão alfabetizados e cerca de 230 mil estudantes\nabandonam o ensino médio todos os anos. Na educação profissional, somente 17,2%\ndos alunos estão matriculados em cursos técnicos, contra 37% na média da OCDE,\ngerando uma lacuna de 9,6 milhões de profissionais qualificados no mercado de\ntrabalho.\nO resultado é um sistema que falha em todas as etapas: não desenvolve as crianças\nna primeira infância, não alfabetiza na idade certa e não qualifica para o mercado de\ntrabalho no ensino médio. O Brasil precisa mudar essa rota e finalmente colocar no\ncentro o que realmente importa: a aprendizagem do aluno. Por isso, apresentamos\npropostas em seis eixos centrais:\n\nOFERECER A MELHOR PRIMEIRA INFÂNCIA\nA TODAS AS CRIANÇAS\nAmpliar a oferta de vagas em creches e pré-escolas com foco em\nqualidade e acesso, priorizando parcerias com o setor privado:\nAumentar o acesso à educação infantil, especialmente para famílias mais vulneráveis, por meio do fortalecimento das redes públicas e de parcerias com entidades\nprivadas e comunitárias, com e sem fins lucrativos, priorizando a expansão com qualidade, a transparência no uso dos recursos e metas claras de atendimento, aprendizagem e desenvolvimento.\nAmpliar o sistema de avaliação da educação básica para abarcar\ntambém a educação infantil:\nGarantir que creches e pré-escolas sejam ambientes de desenvolvimento integral\ndas crianças, promovendo aprendizagem, socialização, cuidado e estímulos adequados à primeira infância, com parâmetros nacionais de qualidade, monitoramento\ncontínuo, formação de profissionais e práticas educacionais baseadas em evidências\ne referências internacionais.\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 50"
+      },
+      {
+        "id": "integrar-as-politicas-de-primeira-infancia-de-diferentes-setores-de-form",
+        "titulo": "Integrar as políticas de primeira infância de diferentes setores de forma coordenada e eficiente:",
+        "nivel": 1,
+        "paginaInicial": 51,
+        "paginaFinal": 51,
+        "origem": "pdftotext",
+        "conteudo": "Integrar as políticas de primeira infância de diferentes setores de forma coordenada e eficiente:\nCoordenar uma estratégia nacional de integração da educação, saúde, assistência\nsocial e segurança pública pela primeira infância, apoiando estados e municípios\ncom metas compartilhadas, integração de dados e acompanhamento permanente\ndos resultados.\n\nTORNAR A APRENDIZ AGEM DOS ESTUDANTES\nA PRIORIDADE DA EDUCAÇÃO BÁSICA\nAprimorar o sistema nacional de avaliação de aprendizagem, garantindo que ele oriente políticas educacionais:\nFortalecer o Sistema de Avaliação da Educação Básica (Saeb), principal instrumento nacional de monitoramento da aprendizagem, com foco na avaliação de competências analíticas, resolução de problemas e aplicação prática do conhecimento, de\nmodo que seus resultados orientem as políticas educacionais.\nRecuperar a alfabetização e recompor aprendizagem de estudantes\ncom defasagem:\nTransformar o Pacto Nacional pela Recomposição das Aprendizagens em uma estratégia nacional clara, com prioridade para alfabetização na idade certa e apoio\nintensivo aos estudantes com defasagens acumuladas.\nAmpliar a oferta de ensino integral com foco em aprendizagem e desenvolvimento:\nAmpliar a oferta de ensino integral por meio de financiamento ao EMI e parcerias\ncom organizações privadas, condicionadas a critérios de qualidade e resultados\neducacionais.\nModernizar a Base Nacional Comum Curricular:\nRevisar e aprimorar a BNCC para torná-la mais clara, objetiva e focada nas aprendizagens essenciais de cada etapa da educação básica, alinhando o currículo às\ncompetências necessárias para o século XXI, com prioridade para a alfabetização, o\nraciocínio lógico, as ciências e as competências digitais.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 51"
+      },
+      {
+        "id": "dedicar-o-mec-apenas-a-educacao-basica-e-formacao-de-professores",
+        "titulo": "Dedicar o MEC apenas à educação básica e formação de professores:",
+        "nivel": 1,
+        "paginaInicial": 52,
+        "paginaFinal": 52,
+        "origem": "pdftotext",
+        "conteudo": "Dedicar o MEC apenas à educação básica e formação de professores:\nTransferir as atribuições relacionadas ao ensino superior do atual Ministério da Educação para o Ministério de Ciência e Tecnologia, permitindo que o MEC esteja exclusivamente focado na aprendizagem das crianças e jovens e nos desafios inerentes à\nprimeira infância, alfabetização, ensinos fundamental e médio e na educação profissional e tecnológica.\n\nFORMAR E VALORIZ AR PROFESSORES QUE ENSINAM\nCOM E XCELÊNCIA E DIRETORES QUE LIDERAM\nAprimorar a formação de professores na graduação:\nFortalecer a formação dos professores na graduação para aproximá-la da prática em\nsala de aula e das evidências científicas sobre aprendizagem, com prioridade para\nalfabetização, matemática e ensino estruturado, fortalecendo os critérios de qualidade para cursos de licenciatura, ampliando residências pedagógicas e incentivando\nprogramas que atraiam e desenvolvam os melhores talentos para a carreira docente.\nFortalecer a gestão e liderança escolar:\nAvançar na adoção de boas práticas de gestão educacional e formação de diretores\nescolares, condicionando parte dos repasses financeiros ao cumprimento de critérios técnicos para a seleção e o desenvolvimento de gestores escolares.\nCriar diretrizes nacionais para carreiras docentes baseadas em desenvolvimento e desempenho:\nAvançar na adoção de modelos mais modernos de valorização docente, para que a\nprogressão na carreira dependa do desenvolvimento profissional, do desempenho\npedagógico e da atuação em contextos vulneráveis, e não do tempo de serviço.\n\nTRANSFORMAR O ENSINO MÉDIO\nEM PORTA DE ENTRADA PARA O TRABALHO\nE OPORTUNIDADES PARA A VIDA\nExpandir a educação profissional e tecnológica conectada ao mercado de trabalho:\nAmpliar a oferta de cursos técnicos e profissionalizantes, concomitantes ou subsequentes ao Ensino Médio, alinhados às demandas da economia e às vocações regionais, em parceria com o setor produtivo, instituições privadas de ensino, o Sistema S,\ninstitutos federais e redes estaduais de educação.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 52"
+      },
+      {
+        "id": "vincular-o-pe-de-meia-ao-aprendizado-do-aluno",
+        "titulo": "Vincular o Pé-de-Meia ao aprendizado do aluno:",
+        "nivel": 1,
+        "paginaInicial": 53,
+        "paginaFinal": 53,
+        "origem": "pdftotext",
+        "conteudo": "Vincular o Pé-de-Meia ao aprendizado do aluno:\nElevar a exigência de frequência escolar do programa e premiar os estudantes de\nexcelência ao fim do ensino médio com o pagamento do valor máximo, fortalecendo\no incentivo à aprendizagem e alinhando os recursos aos objetivos de aprendizado,\ninclusive com a exigência de nota mínima no Enem para o recebimento da parcela.\nAprimorar a focalização do Pé-de-Meia:\nMelhorar a focalização do programa Pé-de-Meia para torná-lo mais efetivo junto aos\nestudantes com maior propensão a deixar a escola, de modo a conciliar o combate à\nevasão escolar com as demais necessidades de investimento na educação.\n\nDAR ÀS FAMÍLIAS MAIS LIBERDADE DE ESCOLHA\nE PLURALIDADE DE MODELOS EDUCACIONAIS\nAumentar as opções de modelos educacionais no país:\nDar mais liberdade aos pais de escolher o modelo educacional de seus filhos,  facilitando a formalização de parcerias com instituições comunitárias, filantrópicas e\nconfessionais, avançando em uma agenda de parcerias com escolas conveniadas na\neducação, escolas cívico-militares e regulamentando o homeschooling.\nMonitorar a qualidade dos diferentes modelos educacionais para assegurar resultados:\nAssegurar que todos os modelos educacionais adotem critérios claros de avaliação\nperiódica da aprendizagem e mecanismos de proteção ao desenvolvimento educacional e social das crianças e adolescentes.\n\nAMPLIAR A EDUCAÇÃO INCLUSIVA E\nDE QUALIDADE NA REDE PÚBLICA\nAmpliar as opções de atendimento para estudantes com deficiências\ne transtorno do espectro autista:\nAmpliar o acesso de estudantes com deficiência e TEA a  atendimento adequado às\nsuas necessidades em ambientes inclusivos, com professores e profissionais especializados capacitados, plano educacional individualizado obrigatório, autorização\nde matrícula em escolas especializadas e instrumentos específicos de avaliação da\naprendizagem, assegurando a participação ativa das famílias na escolha do modelo\nmais adequado para cada estudante.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 53"
+      },
+      {
+        "id": "educacao-superior",
+        "titulo": "EDUCAÇÃO SUPERIOR,",
+        "nivel": 1,
+        "paginaInicial": 54,
+        "paginaFinal": 54,
+        "origem": "pdftotext",
+        "conteudo": "EDUCAÇÃO SUPERIOR,\nCIÊNCIA E TECNOLOGIA\nO Brasil investe no ensino superior público cerca de 0,7% do PIB, patamar próximo\nao da União Europeia, mas não tem nenhuma universidade entre as 100 melhores\ndo mundo. Gastamos mais de 15 mil dólares por aluno no ensino superior, acima da\nmédia da OCDE, e ainda assim cerca de metade dos brasileiros com diploma não\npossuem domínio proficiente do próprio português. Na ciência, somos o 13o país que\nmais produz ciência no mundo e apenas o 50o em inovação, porque o conhecimento\nproduzido aqui quase nunca vira patente, produto ou empresa.\nO problema atravessa os dois lados do sistema. No setor público, reitores são escolhidos por eleições internas que priorizam critérios ideológicos, não a capacidade de gestão, e a rede cresceu sem foco e pouca conexão com as necessidades reais do país.\nNo setor privado, responsável por quase 80% das matrículas, a expansão do acesso não veio acompanhada de qualidade e de conexão com o mercado de trabalho.\nParte do problema está na formação que o país escolhe oferecer: apenas 16% se\nformam em ciências, tecnologia, engenharia e matemática, contra 23% na média da\nOCDE. Formamos pouco justamente nas áreas que mais geram inovação e ganhos\nde produtividade na economia.\nO resultado é caro para o país e injusto com todos os brasileiros. O país precisa\nrepensar a educação superior e a ciência brasileira, aprimorando a gestão das universidades públicas, focando investimentos nas vocações reais de cada instituição\ne aproximando a formação e a pesquisa das necessidades da economia. Um sistema mais eficiente e mais conectado ao mercado amplia oportunidades, premia\nquem ensina bem e transforma a universidade em motor de inovação, oportunidade\ne desenvolvimento. Para virar esse jogo, apresentamos soluções em quatro eixos\ncentrais:\n\nDAR UM CHOQUE DE GESTÃO E EFICIÊNCIA\nNAS UNIVERSIDADES E INSTITUTOS FEDERAIS\nTransferir o ensino superior para o Ministério de Ciência e Tecnologia:\nTransferir a gestão do ensino superior do Ministério da Educação para o Ministério\nde Ciência e Tecnologia, de forma a integrar o ensino superior, o financiamento à\npesquisa e o desenvolvimento tecnológico em uma única direção.\nAdotar critérios técnicos para a escolha de reitores das universidades e institutos federais:\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 54"
+      },
+      {
+        "id": "substituir-o-atual-modelo-de-eleicao-interna-de-reitores-por-um-processo",
+        "titulo": "Substituir o atual modelo de eleição interna de reitores por um processo de escolha",
+        "nivel": 1,
+        "paginaInicial": 55,
+        "paginaFinal": 55,
+        "origem": "pdftotext",
+        "conteudo": "Substituir o atual modelo de eleição interna de reitores por um processo de escolha\ntécnico e transparente, com participação de conselhos externos e critérios objetivos\nde capacidade de gestão, despolitizando as universidades e profissionalizando sua\ngestão.\nPremiar universidades e institutos federais por desempenho acadêmico e empregabilidade dos estudantes:\nCriar incentivos financeiros para universidades e institutos federais com base em\nindicadores objetivos de qualidade da gestão e acadêmica, como resultados em exames padronizados, empregabilidade dos egressos e produção científica relevante,\nestimulando as instituições a aprimorar sua gestão e entregar melhores resultados\nà sociedade.\n\nIMPULSIONAR A CIÊNCIA E\nTECNOLOGIA BRASILEIRA\nImpulsionar as instituições que desenvolvem pesquisa, ciência e tecnologia de ponta:\nConcentrar recursos de pesquisa, ciência e tecnologia nas instituições com histórico\ncomprovado de produção científica relevante, criando um modelo de financiamento\nbaseado em desempenho que premie resultados e atraia talentos.\nPermitir que universidades públicas federais tenham profissionais\ndedicados unicamente ao ensino ou à pesquisa:\nPermitir que as universidades tenham professores e pesquisadores de excelência\nsem que necessariamente o mesmo profissional precise exercer as duas funções.\nVincular bolsas de mestrado e doutorado à relevância científica das\npesquisas e sua aplicação prática:\nReformular os critérios de concessão de bolsas, como as da Capes e do CNPq, para\npriorizar pesquisas com impacto científico mensurável ou que resolvam um problema real do mercado, utilizando também bolsas dentro de empresas privadas.\nAmpliar a transparência do gasto público à inovação:\nPublicar em formato aberto quem recebeu recursos de apoio público à inovação, com\nnome do beneficiário, valor e resultado alcançado, como os da Lei do Bem, os editais\ne a subvenção econômica da Finep, os empréstimos do FNDCT, os repasses a organizações sociais e as chamadas do CNPq, permitindo que a sociedade cobre entrega\nde quem recebe dinheiro do contribuinte.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 55"
+      },
+      {
+        "id": "conectar-as-universidades",
+        "titulo": "CONECTAR AS UNIVERSIDADES",
+        "nivel": 1,
+        "paginaInicial": 56,
+        "paginaFinal": 56,
+        "origem": "pdftotext",
+        "conteudo": "CONECTAR AS UNIVERSIDADES\nÀS DEMANDAS DO MERCADO\nFortalecer a formação dos brasileiros em ciências, tecnologias, engenharias e matemáticas:\nAmpliar as vagas e o financiamento de bolsas de pesquisa para as áreas de ciências, tecnologia, engenharia e matemática, alinhando a oferta do ensino superior às\ndemandas da economia e aos setores com maior potencial de geração de renda e\ninovação para o Brasil.\nEliminar barreiras à criação de centros de inovação e pesquisa de\nempresas dentro das universidades brasileiras:\nCriar um ambiente regulatório que facilite a instalação de centros de pesquisa e\ndesenvolvimento, com apoio do setor produtivo dentro das universidades públicas,\naproximando a produção científica das demandas reais do mercado e gerando o\nfinanciamento privado complementar às instituições.\n\nATRAIR E FORMAR AS MELHORES\nMENTES PARA A ECONOMIA DO FUTURO\nFormar profissionais para a economia do futuro em parceria com o\nsetor privado:\nEstruturar programas de formação técnica e superior em setores de fronteira tecnológica, em parceria com o setor privado, aproximando os currículos das demandas\nreais do mercado.\nFacilitar a entrada de especialistas no Brasil:\nSimplificar os processos de reconhecimento de qualificações e de concessão de vistos para especialistas em setores de fronteira tecnológica, reduzindo os obstáculos\nà entrada desses profissionais no mercado e nas universidades brasileiras e permitindo que o setor privado tenha acesso aos talentos de que necessita para crescer.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 56"
+      },
+      {
+        "id": "saude",
+        "titulo": "SAÚDE",
+        "nivel": 1,
+        "paginaInicial": 57,
+        "paginaFinal": 57,
+        "origem": "pdftotext",
+        "conteudo": "SAÚDE\nTrês em cada quatro brasileiros dependem exclusivamente do SUS e, muitas vezes, o\nque encontram é fila: fila para consultas, exames e cirurgias que não podem esperar.\nO orçamento da saúde já passa de R$230 bilhões por ano e boa parte desse recurso\né mal aplicada. O problema é de gestão: o sistema é dividido entre União, estados e\nmunicípios, pouco articulado e com poucos mecanismos de incentivo a resultados.\nA atenção primária, que deveria evitar a doença antes que ela se agrave, promovida\npela Estratégia de Saúde da Família, ainda não alcança 72 milhões de brasileiros. Um\nbom acompanhamento poderia evitar 3 milhões de internações por ano.\nFalta integração na tecnologia. Apesar de a maioria das unidades básicas já utilizarem o prontuário eletrônico, apenas uma pequena parte está conectada à rede nacional de dados, e o histórico do paciente se perde a cada unidade que ele procura.\nO setor privado, que tem estrutura e capacidade ociosa, é subutilizado para desafogar o sistema público e o excesso de regulação e a judicialização encarecem a saúde\nsuplementar e empurram ainda mais pessoas para o SUS.\nO resultado é um sistema que custa caro, que trata tarde e cansa o cidadão. Cada\ndoença que avança por falta de prevenção e cada fila que se arrasta significam mais\nvidas em risco, trabalho perdido e aumento do  gasto público no futuro. Cuidar da\nsaúde do brasileiro exige prevenir doenças, integrar a rede com tecnologia, usar melhor a capacidade do setor privado para reduzir filas, reduzir a burocracia da saúde\nsuplementar, que a encarece, e organizar o sistema em torno do que importa: o cuidado que chega ao paciente. Para virar esse jogo, apresentamos soluções em cinco\neixos centrais:\n\nTRANSFORMAR A SAÚDE BRASILEIRA\nEM UMA SAÚDE DIGITAL\nInvestir em infraestrutura e capacitação dos profissionais para\natendimento por telemedicina:\nExpandir o acesso a consultas médicas e ao monitoramento de doenças por meio da\ntelemedicina, reduzindo a escassez de especialistas em regiões remotas, as longas\nfilas de espera nos grandes centros urbanos e os vazios assistenciais.\nCentralizar o histórico clínico de todos os pacientes em um registro\nnacional de saúde, com controle dos dados pelo cidadão:\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 57"
+      },
+      {
+        "id": "construir-um-registro-nacional-de-saude-unificado-e-sob-controle-do-cida",
+        "titulo": "Construir um registro nacional de saúde unificado e sob controle do cidadão por",
+        "nivel": 1,
+        "paginaInicial": 58,
+        "paginaFinal": 58,
+        "origem": "pdftotext",
+        "conteudo": "Construir um registro nacional de saúde unificado e sob controle do cidadão por\nmeio do prontuário eletrônico, centralizando o histórico clínico do paciente, garantindo a continuidade do cuidado em qualquer unidade de  atendimento e garantindo\na privacidade dos dados, com o Governo Federal liderando essa infraestrutura.\nGarantir a interoperabilidade dos dados de saúde entre os sistemas\npúblico e privado:\nFazer com que os sistemas de saúde públicos e privados se comuniquem e alimentem o registro nacional, permitindo que médicos e unidades acessem o histórico\ncompleto do paciente independentemente de onde ele tenha sido atendido, mediante autorização do cidadão.\nMelhorar a conectividade nas unidades de saúde de todo o Brasil:\nGarantir acesso a internet de qualidade em todas as unidades públicas de saúde do\npaís, para que o prontuário eletrônico, a telemedicina e os sistemas de gestão funcionem de forma efetiva.\n\nCUIDAR DO BRASILEIRO ANTES\nDE A DOENÇA CHEGAR\nAmpliar a cobertura da atenção primária por meio da Estratégia de\nSaúde da Família e de programas de vacinação:\nFortalecer a Estratégia de Saúde da Família, de forma conectada à saúde digital,\ncomo porta de entrada do sistema de saúde, ampliando sua cobertura para que mais\nbrasileiros tenham atendimento perto de casa e garantindo que os programas de\nvacinação alcancem todo o território nacional.\nGarantir acompanhamento a pessoas com doenças crônicas:\nAprimorar os incentivos por resultados no financiamento da atenção primária a estados e municípios, priorizando a redução efetiva de doenças crônicas, como diabetes,\nhipertensão e doenças cardiovasculares.\nGarantir acompanhamento pré-natal de qualidade para todas as\ngestantes do Brasil:\nAssegurar que todas as gestantes, independentemente de onde vivam, realizem o\nconjunto completo de consultas e exames do pré-natal, reduzindo riscos para a mãe\ne para a criança e prevenindo complicações evitáveis no parto e nos primeiros anos\nde vida.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 58"
+      },
+      {
+        "id": "aprimorar-os-servicos-de-saude-indigena-para-antecipar-doencas-e",
+        "titulo": "Aprimorar os serviços de saúde indígena para antecipar doenças e",
+        "nivel": 1,
+        "paginaInicial": 59,
+        "paginaFinal": 59,
+        "origem": "pdftotext",
+        "conteudo": "Aprimorar os serviços de saúde indígena para antecipar doenças e\ngarantir atendimento:\nFortalecer a atenção à saúde indígena, capacitando os profissionais para lidar com\nas especificidades dessa população, com respeito à sua língua e cultura, assegurando infraestrutura mínima e conectividade que viabilizem ações de telemedicina\ne organizando a logística de distribuição de medicamentos e de transporte ágil de\npacientes para centros de média e alta complexidade, quando houver necessidade.\nPromover hábitos saudáveis entre a população para reduzir\ndoenças:\nFortalecer a promoção de hábitos saudáveis, como atividade física, alimentação\nequilibrada, cuidado com a saúde mental e redução do consumo de álcool e tabaco,\npor meio de campanhas de conscientização e da integração entre as políticas de\nsaúde, educação e assistência social, reduzindo o custo do sistema público no longo\nprazo.\nDesenvolver políticas de promoção à saúde e bem-estar entre idosos:\nApoiar estados e municípios na implementação de políticas voltadas à saúde na\nterceira idade, diante da tendência de envelhecimento da população, promovendo\natividades físicas e de socialização para prevenir ou retardar problemas de saúde\nfísica e mental entre idosos.\nFortalecer a rede de apoio à saúde mental:\nCriar indicadores para que a saúde mental seja tratada com maior eficiência, capacitando profissionais dos Caps, Cras, Creas e escolas para identificar, acolher e\nencaminhar casos, com financiamento estável e compartilhado entre União, estados\ne municípios.\n\nGARANTIR ATENDIMENTO RÁPIDO E HUMANIZ ADO\nEM CLÍNICAS E HOSPITAIS PÚBLICOS\nMelhorar a coordenação e integração entre as unidades de\nurgência, clínicas especializadas e hospitais de diferentes\nmunicípios:\nOrganizar a rede de saúde de forma regionalizada, integrando unidades de urgência,\nclínicas especializadas e hospitais de diferentes municípios, com apoio de sistemas\nde inteligência artificial para otimizar a gestão das filas e direcionar cada paciente ao\nserviço mais adequado às suas necessidades.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 59"
+      },
+      {
+        "id": "ampliar-a-oferta-de-residencias-medicas-para-suprir-a-carencia-de",
+        "titulo": "Ampliar a oferta de residências médicas para suprir a carência de",
+        "nivel": 1,
+        "paginaInicial": 60,
+        "paginaFinal": 60,
+        "origem": "pdftotext",
+        "conteudo": "Ampliar a oferta de residências médicas para suprir a carência de\nespecialistas em regiões desassistidas:\nAmpliar as vagas em programas de residência médica, aproveitando a capacidade\noperacional já existente nos hospitais brasileiros.\nAmpliar cuidados paliativos e um fim de vida humanizado a quem\nprecisa:\nAssegurar que todo brasileiro, no fim da vida, tenha acesso a cuidados paliativos de\nqualidade, com alívio da dor, suporte emocional e a presença da família.\n\nUTILIZ AR O SETOR PRIVADO PARA AMPLIAR\nO ATENDIMENTO E APRIMORAR A QUALIDADE\nDA SAÚDE PÚBLICA\nReduzir o tempo das filas dos atendimentos por meio de integração\ncom clínicas e hospitais privados:\nReduzir as filas e o tempo de espera no SUS por meio de parcerias com clínicas e\nhospitais privados para realização de consultas, exames e cirurgias, com metas claras de atendimentos e qualidade dos serviços, aproveitando a capacidade ociosa\ndessas unidades de saúde privadas.\nExpandir a rede de hospitais, UPAs e atendimentos com\nespecialistas por meio de concessões, PPPs e parcerias com OSs:\nAmpliar o uso de parcerias público-privadas para construir e gerir as unidades de\nsaúde, garantindo maior eficiência operacional, melhor experiência para o paciente\ne controle rigoroso de resultados por parte do poder público.\nAmpliar a inovação no setor público de saúde com o apoio de\nempresas:\nConectar startups e empresas inovadoras do setor da saúde aos hospitais universitários para facilitar o desenvolvimento de inovações e melhorias nos serviços prestados.\nFacilitar a integração entre empresas do setor da saúde e\nuniversidades:\nFacilitar a conexão entre universidades e empresas dos setores médico e farmacêutico para fortalecer a inovação e desenvolver soluções de mercado que atendam às\nnecessidades da saúde brasileira e diminuam a dependência externa de insumos e\nequipamentos.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 60"
+      },
+      {
+        "id": "ampliar-a-integracao-com-o-setor-privado-nas-acoes-de-cuidados-a",
+        "titulo": "Ampliar a integração com o setor privado nas ações de cuidados a",
+        "nivel": 1,
+        "paginaInicial": 61,
+        "paginaFinal": 61,
+        "origem": "pdftotext",
+        "conteudo": "Ampliar a integração com o setor privado nas ações de cuidados a\npessoas com TEA:\nExpandir o credenciamento de clínicas e profissionais especializados no atendimento a pessoas com TEA, permitindo seu financiamento com recursos públicos e ampliando o acesso aos tratamentos, sem depender exclusivamente da oferta estatal.\n\nCOMBATER AS INTERFERÊNCIAS E XCESSIVAS\nSOBRE O SETOR DA SAÚDE\nAumentar a segurança jurídica no setor da saúde:\nEstabelecer critérios técnicos vinculantes para decisões judiciais em saúde, com\nprotocolos clínicos e listas de referência obrigatórias, reduzindo insegurança jurídica\ne a interferência judicial nas políticas públicas e na regulação da saúde.\nModernizar a regulação sobre planos de saúde para ampliar opções\naos pacientes:\nCombater entraves excessivos do marco regulatório da ANS para permitir modelos\ndiferenciados de planos de saúde, com variações de cobertura, segmentação de\nserviços e mecanismos de compartilhamento de custos flexíveis, ampliando a competição no setor e as opções disponíveis aos beneficiários, para que o aumento da\nconcorrência se traduza em mais escolhas e melhor custo-benefício para os beneficiários.\nReduzir o custo da regulação sobre o setor privado de saúde:\nRevisar obrigações regulatórias que oneram desproporcionalmente hospitais, clínicas e demais prestadores privados de saúde, inclusive relacionadas ao uso de IA,\ngarantindo que as regras do setor sejam sustentáveis, baseadas em evidências e não\nresultem em redução da oferta de serviços à população.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 61"
+      },
+      {
+        "id": "desenvolvimento-social",
+        "titulo": "DESENVOLVIMENTO SOCIAL",
+        "nivel": 1,
+        "paginaInicial": 62,
+        "paginaFinal": 62,
+        "origem": "pdftotext",
+        "conteudo": "DESENVOLVIMENTO SOCIAL\nNenhum brasileiro deveria ficar preso à pobreza por falta de oportunidade ou depender de benefícios sociais para sempre. O Brasil tem cerca de 60 milhões de pessoas vivendo em situação de pobreza e mais de 9 milhões em extrema pobreza. Ao\nmesmo tempo, cerca de 40% das famílias permanecem no Bolsa Família por mais\nde sete anos, e o número de beneficiários já supera o de trabalhadores formais em\n12 estados. Esse cenário deixa claro que a saída da pobreza e a conquista da própria\nautonomia por todos os cidadãos só tem um caminho: a renda do trabalho.\nPor isso, sem descuidar de quem está em situação de vulnerabilidade, é preciso criar\numa porta de saída estruturada, que conecte os beneficiários dos programas sociais\na oportunidades de capacitação e trabalho para superarmos a pobreza no Brasil.\nO país também observa o crescimento rápido da população em situação de rua, que\njá passa de 388 mil brasileiros. Essas pessoas, que tiveram suas vidas destruídas por\nquestões como ruptura familiar, dependência química, falta de moradia e de desenvolvimento econômico, precisam ser tratadas com dignidade, mas o poder público\ntambém não pode aceitar a desordem e a insegurança nas cidades.\nAlém disso, o Brasil convive com um déficit de 5,9 milhões de moradias, e programas\ncomo o Minha Casa, Minha Vida não se preocuparam na última década com a qualidade e localização dos imóveis, afastando famílias de empregos e serviços públicos.\nPor fim, o Brasil ainda falha em proteger quem está mais exposto ao risco. Crianças,\nidosos e pessoas com deficiência dependem de uma rede de amparo que, na prática,\nmuitas vezes não garante segurança e dignidade. A violência doméstica e o feminicídio seguem em patamares inaceitáveis.\nEnfrentar esse conjunto de problemas exige uma agenda que conecte proteção social, inclusão produtiva e moradia digna, além de serviços públicos capazes de proteger os mais vulneráveis. O assistencialismo sem uma porta de saída não resolve\nos problemas do país. O Brasil precisa de políticas que ofereçam uma oportunidade\nde autonomia, geração de renda e superação da pobreza. Por isso, para acabar com\na pobreza no Brasil de forma definitiva, apresentamos soluções em cinco eixos centrais:\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 62"
+      },
+      {
+        "id": "oferecer-uma-porta-de-saida-para-os",
+        "titulo": "OFERECER UMA PORTA DE SAÍDA PARA OS",
+        "nivel": 1,
+        "paginaInicial": 63,
+        "paginaFinal": 63,
+        "origem": "pdftotext",
+        "conteudo": "OFERECER UMA PORTA DE SAÍDA PARA OS\nPROGRAMAS SOCIAIS POR MEIO DO TRABALHO\nCriar o programa Casas da Cidadania:\nReestruturar os esforços do governo na superação da pobreza, oferecendo a cada\nfamília em situação de vulnerabilidade um programa de apoio baseado em  um Plano\nde Desenvolvimento Social familiar integrando ações de capacitação, inclusão no\nmercado de trabalho, incremento de renda, acesso à moradia e acesso a outros serviços e programas sociais a partir de diagnósticos individualizados que considerem\nas competências, interesses e trajetórias de cada pessoa.\nImpedir que adultos saudáveis permaneçam no Bolsa Família se\nrecusarem trabalho ou não estiverem cursando EJA ou cursos\nprofissionalizantes:\nPermitir que adultos saudáveis e aptos ao trabalho permaneçam no Bolsa Família\napenas enquanto estiverem buscando emprego, estudando ou se qualificando profissionalmente, com possibilidade de suspensão do benefício para quem, sem justificativa, recusar ofertas formais de trabalho intermediadas pelo poder público, exceto\nos brasileiros responsáveis pelos cuidados de crianças pequenas, idosos e pessoas\ncom deficiência em situação de dependência.\nPremiar as famílias que conseguirem deixar a dependência dos\nprogramas sociais:\nConceder um prêmio de R$5 mil às famílias que deixarem o Bolsa Família após superar o limite de renda, premiando quem aceita uma oportunidade, entra na formalidade, começa a empreender e conquista sua própria autonomia.\n\nCOMBATER FRAUDES E MELHORAR O\nFUNCIONAMENTO DOS PROGRAMAS SOCIAIS\nUnificar os critérios de pobreza no Brasil:\nUnificar os critérios de pobreza no Brasil adotados nas políticas públicas de assistência social, definindo com clareza quem é o público-alvo dos programas sociais e\ngarantindo que os esforços do Estado sejam voltados para retirar essas pessoas da\npobreza de forma definitiva.\nConcentrar recursos de transferências de renda no Bolsa Família:\nUnificar os programas federais que atendem os mesmos públicos no Bolsa Família,\naprimorando a focalização do gasto nas famílias que mais precisam e reduzindo\nfraudes e custos administrativos desnecessários.\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 63"
+      },
+      {
+        "id": "aprimorar-os-dados-cadastrados-no-cadunico",
+        "titulo": "Aprimorar os dados cadastrados no CadÚnico:",
+        "nivel": 1,
+        "paginaInicial": 64,
+        "paginaFinal": 64,
+        "origem": "pdftotext",
+        "conteudo": "Aprimorar os dados cadastrados no CadÚnico:\nModernizar o CadÚnico, integrando fontes alternativas de dados, como consumo\nde energia, para capturar com mais precisão a real situação de vulnerabilidade das\nfamílias e otimizar a gestão dos programas sociais brasileiros.\nEliminar as fraudes nos programas de transferência de renda:\nIntensificar o cruzamento de informações entre bases de dados federais para identificar beneficiários que não atendem aos critérios de elegibilidade, e incentivar os\nCRAS a manterem o CadÚnico atualizado com mais agilidade e precisão, reduzindo\no recebimento indevido de benefícios.\n\nENFRENTAR O DESAFIO DE REDUZIR A\nPOPUL AÇÃO EM SITUAÇÃO DE RUA\nProibir a instalação de barracas e abrigos improvisados nas\ncalçadas, praças e espaços públicos:\nFacilitar a remoção de moradias irregulares, como barracas e abrigos improvisados\ninstalados em espaços públicos, para preservar a ordem urbana, garantindo o encaminhamento das pessoas para abrigos e para os serviços de saúde e assistência\nsocial.\nFacilitar o acesso a moradias de interesse social, conciliando essa\npolítica com ações alinhadas às necessidades de cada público e a\nentrada no mercado de trabalho:\nAmpliar projetos de moradia de interesse social (housing first), especialmente por\nmeio de aluguel social, como ponto de partida para a ressocialização, vinculando\nessas ações ao acompanhamento individualizado das pessoas em situação de rua e\nà qualificação para ingresso no mercado de trabalho.\nApoiar estados e municípios a fazer a internação involuntária de\ndependentes de drogas e álcool que vivem nas ruas:\nEstruturar um programa nacional que permita identificar, com avaliação médica e\ndiálogo com as famílias, os casos em que a dependência química impede a ressocialização, garantindo a internação involuntária nos termos da legislação e o acompanhamento em comunidades terapêuticas credenciadas e fiscalizadas pelo poder\npúblico.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 64"
+      },
+      {
+        "id": "garantir-que-o-brasileiro",
+        "titulo": "GARANTIR QUE O BRASILEIRO",
+        "nivel": 1,
+        "paginaInicial": 65,
+        "paginaFinal": 65,
+        "origem": "pdftotext",
+        "conteudo": "GARANTIR QUE O BRASILEIRO\nMORE COM DIGNIDADE\nFacilitar o uso do solo nas cidades para expandir a oferta de\nmoradias:\nApoiar municípios na revisão de seus Planos Diretores, removendo restrições de zoneamento que impedem o adensamento urbano em áreas centrais já estruturadas,\nreduzindo o custo das moradias e aproximando  as famílias de empregos e serviços\npúblicos.\nRegularizar os títulos de propriedade em todas as regiões\nbrasileiras:\nEstruturar um programa federal de apoio técnico aos estados e municípios para a\nregularização fundiária urbana e rural, garantindo a entrega de títulos de propriedade às famílias que vivem em residências ainda sem documentação por excesso de\nburocracia.\nMelhorar a qualidade e localização das casas entregues no Minha\nCasa, Minha Vida:\nReformular o Minha Casa, Minha Vida para priorizar investimentos em áreas com infraestrutura e serviços públicos já instalados,  superando o modelo atual que entrega\nmoradias de baixa qualidade em regiões isoladas, longe de escolas, postos de saúde\ne transporte público.\n\nPROTEGER AS PESSOAS EM SITUAÇÃO\nDE VULNERABILIDADE\nGarantir a qualidade dos serviços de cuidado a idosos em\nInstituições de Longa Permanência para Idosos:\nCondicionar os repasses federais às Instituições de Longa Permanência para Idosos\n(ILPIs) à adoção de procedimentos  de fiscalização e à capacitação de suas equipes,\ngarantindo tratamento digno aos idosos que dependem dessas instituições.\nFortalecer os mecanismos de proteção ao desenvolvimento\nsaudável das crianças:\nFortalecer o Programa Criança Feliz com foco em resultados mensuráveis de desenvolvimento infantil, condicionando os repasses de outros programas de transferência de renda às famílias ao cumprimento das visitas domiciliares e integrando o programa aos serviços de saúde e educação infantil para garantir uma rede coordenada\nde proteção nos primeiros anos de vida.\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 65"
+      },
+      {
+        "id": "garantir-o-cuidado-com-pessoas-em-vulnerabilidade-que-sao-vitimas",
+        "titulo": "Garantir o cuidado com pessoas em vulnerabilidade que são vítimas",
+        "nivel": 1,
+        "paginaInicial": 66,
+        "paginaFinal": 66,
+        "origem": "pdftotext",
+        "conteudo": "Garantir o cuidado com pessoas em vulnerabilidade que são vítimas\nde violência:\nExpandir a oferta de casas-abrigo, centros de referência e serviços de acolhimento,\ncom equipes capacitadas para responder aos diferentes tipos de violência que demandam atendimento específico, como violência doméstica, garantindo às  vítimas\nproteção imediata e acompanhamento até a reconstrução de suas vidas.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 66"
+      },
+      {
+        "id": "esporte",
+        "titulo": "ESPORTE",
+        "nivel": 1,
+        "paginaInicial": 67,
+        "paginaFinal": 67,
+        "origem": "pdftotext",
+        "conteudo": "ESPORTE\nO Brasil lidera o Global Soft Power Index, na categoria de esportes. Contudo, faltam\ngestão eficiente e incentivos adequados para transformar esses investimentos em\nbem-estar para a população e preparar o país para a alta performance. O problema\ncomeça na forma como os recursos públicos são usados. Em 2024, 74% da verba\ndo Ministério do Esporte veio de emendas parlamentares, distribuídas sem critério\nde qualidade do gasto ou alinhamento com  uma agenda nacional de esporte. Da\nmesma forma, programas como o Bolsa Atleta e a Lei de Incentivo ao Esporte movimentam mais de R$1 bilhão por ano, mas  poderiam gerar mais resultados.\nAlém disso,  a gestão do esporte no Brasil segue desconectada de uma estratégia\nclara de uso do esporte como meio para alcançar objetivos sociais relevantes. O governo mantém cerca de 66% das escolas públicas sem quadra esportiva, e a falta de\nintegração entre as políticas de esporte e saúde agrava o problema, em um país em\nque 40% da população adulta é insuficientemente ativa e, por isso , mais suscetível\na doenças provocadas por sedentarismo.\nComo consequência, tanto no esporte profissional quanto no recreativo, gasta-se\nmuito sem medir os resultados. O resultado é que formamos muito menos atletas de\nelite do que poderíamos, afastando investimentos privados no setor do esporte que\npoderiam gerar empregos e movimentar a economia em todo o país, e perdemos a\nchance de apoiar mais ativamente a melhoria da qualidade de vida da população\nbrasileira por meio da atividade esportiva. Para virar esse jogo, apresentamos soluções em dois eixos centrais:\n\nUSAR O ESPORTE COMO MOTOR\nDE DESENVOLVIMENTO\nAtrair investimentos privados para desenvolver o esporte nacional e\ngerar empregos:\nAmpliar a capacidade de confederações e federações esportivas de atrair investimentos privados, gerar empregos e dinamizar as economias locais, reduzindo a dependência de subsídios públicos nas áreas em que o esporte tem potencial para\ncaptação privada.\nCondicionar repasses públicos à gestão profissional das\nconfederações e federações de esportes:\nFortalecer os critérios de condicionalidade dos repasses públicos às confederações\ne federações esportivas, tornando as exigências de governança, transparência e impacto social mais rigorosas e diretamente vinculadas à obtenção de resultados esportivos e sociais mensuráveis.\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 67"
+      },
+      {
+        "id": "melhorar-o-uso-dos-recursos-publicos-do-esporte-em-conjunto-com",
+        "titulo": "Melhorar o uso dos recursos públicos do esporte em conjunto com",
+        "nivel": 1,
+        "paginaInicial": 68,
+        "paginaFinal": 68,
+        "origem": "pdftotext",
+        "conteudo": "Melhorar o uso dos recursos públicos do esporte em conjunto com\nos clubes e universidades públicas:\nOtimizar os recursos destinados ao esporte por meio de parcerias com os clubes\nbrasileiros e universidades públicas, aproveitando a infraestrutura existente e tratando o esporte como parte importante da formação dos jovens brasileiros.\nPriorizar projetos esportivos nos investimentos públicos no esporte:\nFocalizar os recursos públicos destinados ao esporte em projetos que tenham como\nmissão formar cidadãos e atletas e fortalecer os mecanismos de captação de recursos privados para os eventos esportivos.\n\nCUIDAR DO BRASILEIRO\nPOR MEIO DO ESPORTE\nConectar o esporte às políticas de saúde para prevenir doenças e\nassegurar qualidade de vida:\nConectar as políticas de esporte às estratégias de saúde pública, reconhecendo a\natividade física regular como instrumento de prevenção de doenças crônicas e redução de custos ao sistema de saúde, com metas mensuráveis em todos os projetos.\nFormar bons cidadãos por meio da conexão entre o esporte e a\neducação:\nAproximar o esporte da educação básica por meio de parcerias com organizações\nsociais e o setor privado, utilizando a prática esportiva como ferramenta de redução\nda evasão escolar e da exposição à violência entre jovens, além de desenvolver disciplina, foco e resiliência.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 68"
+      },
+      {
+        "id": "cultura-e-turismo",
+        "titulo": "CULTURA E TURISMO",
+        "nivel": 1,
+        "paginaInicial": 69,
+        "paginaFinal": 69,
+        "origem": "pdftotext",
+        "conteudo": "CULTURA E TURISMO\nA cultura é a expressão da liberdade e da identidade do brasileiro, e o turismo é a\nporta pela qual o Brasil se apresenta ao mundo. Juntos, formam um dos maiores ativos econômicos do país.  A indústria criativa já representa 3,59% do PIB, movimenta\ncerca de R$393 bilhões por ano e emprega 1,26 milhão de profissionais formais. O\nturismo movimenta R$207 bilhões, mas ainda representa menos de 2% do PIB em\num país com praias, florestas, parques e patrimônio histórico capazes de atrair investimentos e visitantes de todo o mundo.\nMesmo assim, o Brasil insiste em tratar a cultura como bandeira ideológica e o turismo como pauta secundária. O resultado aparece dos dois lados: o patrimônio é\nnegligenciado, o financiamento é ineficiente e mal direcionado, com a Lei Rouanet\nconcentrando renúncias fiscais em grandes produtores que poderiam se sustentar\npor conta própria,  enquanto mecanismos como a Lei Aldir Blanc ampliam a dependência do orçamento público sem avaliação de resultados.\nQuanto ao turismo, o Brasil recebe apenas 6,7 milhões de turistas internacionais por\nano, número irrisório comparado aos 45 milhões do México ou aos 32 milhões da\nTailândia, enquanto quase metade dos parques nacionais brasileiros permanecem\nfechados ou sem controle de visitação.\nA conta é paga pelo país inteiro: patrimônio que se perde, identidade que se enfraquece e bilhões em oportunidades que não se convertem em emprego e renda.\nCultura e turismo não podem seguir reféns do Estado e da ideologia. É preciso protegê-los como patrimônio e atividade econômica, destravar o investimento privado,\nprofissionalizar a gestão e usar esses setores para gerar emprego, renda e projeção\ndo Brasil no mundo. Para isso, apresentamos soluções em cinco eixos centrais:\n\nPROTEGER O PATRIMÔNIO\nHISTÓRICO E CULTURAL\nFocar o dinheiro da cultura nos artistas locais e produções\nregionais:\nConcentrar os mecanismos de financiamento à cultura na produção cultural regional\ne nos artistas locais, com critérios objetivos de elegibilidade e limites de captação\npara grandes artistas e produtores já consolidados.\nFortalecer a autonomia de estados e municípios na gestão da cultura:\nReformar mecanismos de financiamento para ampliar a autonomia de estados e municípios na definição de suas prioridades culturais, garantindo que os recursos cheguem em projetos com maior impacto social onde a cultura acontece.\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 69"
+      },
+      {
+        "id": "incentivar-parcerias-com-o-setor-privado-e-gestao-profissional-de",
+        "titulo": "Incentivar parcerias com o setor privado e gestão profissional de",
+        "nivel": 1,
+        "paginaInicial": 70,
+        "paginaFinal": 70,
+        "origem": "pdftotext",
+        "conteudo": "Incentivar parcerias com o setor privado e gestão profissional de\nmuseus e equipamentos culturais:\nApoiar tecnicamente a estruturação de fundos patrimoniais (endowments) para instituições culturais e realizar parcerias com o terceiro setor e empresas  na gestão de\nmuseus e espaços culturais, aprimorando sua administração.\nModernizar as ferramentas de proteção do patrimônio histórico e\ncultural:\nRevisar o sistema de proteção do patrimônio histórico e cultural para modernizar\nos institutos jurídicos existentes, como o do tombamento, reduzindo ou eliminando\nrestrições desnecessárias aos direitos de propriedade e implementando uma política de incentivos que concilie a preservação da história nacional e das manifestações\nculturais do povo brasileiro.\nMelhorar a governança dos organismos nacionais de cultura:\nModernizar a gestão de instituições federais ligadas à cultura, fortalecendo sua capacidade técnica, sua transparência e sua atuação na realização e atração de investimentos para  equipamentos e eventos culturais.\n\nGERAR EMPREGO E RENDA\nPOR MEIO DA CULTURA\nTratar a cultura como vetor de desenvolvimento econômico:\nApoiar estados e municípios na estruturação de rotas culturais, gastronômicas e patrimoniais que integrem cultura, turismo e economia criativa como vetores de desenvolvimento regional, com apoio técnico federal, redução de barreiras regulatórias e\nprotagonismo do setor privado na atração de investimentos e na gestão das iniciativas.\nTrabalhar a cultura como ferramenta de soft power brasileiro:\nProjetar internacionalmente elementos da cultura brasileira, como gastronomia, arquitetura, música, festas populares e esportes, por meio de um programa permanente de exportação de cultura, diplomacia cultural e promoção comercial da cultura\nbrasileira.\nCapacitar empreendedores da cultura em habilidades de gestão:\nOferecer junto ao setor privado e ao Sistema S capacitação em gestão, marketing, finanças, acesso a editais e mecanismos de financiamento, prestação de contas e outras\nhabilidades relevantes para para qualificar a atuação de artistas e produtores culturais.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 70"
+      },
+      {
+        "id": "destravar-o-investimento",
+        "titulo": "DESTRAVAR O INVESTIMENTO",
+        "nivel": 1,
+        "paginaInicial": 71,
+        "paginaFinal": 71,
+        "origem": "pdftotext",
+        "conteudo": "DESTRAVAR O INVESTIMENTO\nPRIVADO EM TURISMO\nTratar o turismo como vetor de desenvolvimento econômico\nregional:\nReconhecer o turismo como vetor de desenvolvimento econômico, geração de empregos, preservação do patrimônio e redução das desigualdades regionais.\nAumentar a atratividade de parques e destinos turísticos naturais e\nhistóricos com a ajuda do setor privado:\nAumentar a atratividade de parques nacionais, estaduais e municipais e de  outros\natrativos naturais e históricos, fortalecendo sua gestão   por meio de concessões,\nparcerias com o setor privado e apoio técnico federal aos estados e municípios, com\nmetas de visitação, conservação e geração de renda local.\n\nQUALIFICAR OS DESTINOS TURÍSTICOS\nE ATRAIR VISITANTES\nMelhorar a infraestrutura de apoio ao turismo:\nDesenvolver a infraestrutura turística por meio de concessões, parcerias e investimentos privados na gestão e manutenção de aeroportos, portos, rodovias, terminais,\ncentros de convenções, equipamentos turísticos e espaços públicos de visitação,\npriorizando projetos com elevado potencial de geração de emprego, renda e desenvolvimento regional.\nGarantir a segurança nos destinos turísticos:\nEnfrentar o maior obstáculo à vinda de turistas ao Brasil, que é a segurança pública, por meio de um programa com metas verificáveis de redução da criminalidade,\npoliciamento ostensivo integrado e monitoramento tecnológico nos destinos mais\nvisitados do país, garantindo ambientes seguros para os moradores e visitantes.\n\nPROFISSIONALIZ AR A GESTÃO\nE A GOVERNANÇA DO TURISMO\nCapacitar profissionais para o desenvolvimento do setor do turismo:\nExpandir a formação técnica e profissional em turismo, hotelaria, gastronomia, eventos, comércio e economia criativa em parceria com o Sistema S, instituições de ensino e a iniciativa privada, fortalecendo o ensino de idiomas, competências digitais,\nhospitalidade, inovação e empreendedorismo.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 71"
+      },
+      {
+        "id": "fortalecer-a-promocao-nacional-e-internacional-dos-destinos-brasileiros",
+        "titulo": "Fortalecer a promoção nacional e internacional dos destinos brasileiros:",
+        "nivel": 1,
+        "paginaInicial": 72,
+        "paginaFinal": 72,
+        "origem": "pdftotext",
+        "conteudo": "Fortalecer a promoção nacional e internacional dos destinos brasileiros:\nPosicionar o Brasil entre os principais destinos turísticos do mundo por meio de\ncampanhas baseadas em inteligência de mercado.\nFortalecer a governança e a competitividade dos destinos\nturísticos:\nApoiar tecnicamente estados, municípios e regiões turísticas na estruturação de planos de desenvolvimento, observatórios de turismo e sistemas de inteligência baseados em indicadores de desempenho e na captação de congressos, feiras, festivais\nculturais, eventos esportivos e encontros de negócios, promovendo uma gestão profissional, integrada e orientada por resultados, capaz de atrair investimentos privados e aumentar a competitividade do turismo brasileiro.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 72"
+      },
+      {
+        "id": "reforma-institucional",
+        "titulo": "REFORMA INSTITUCIONAL",
+        "nivel": 1,
+        "paginaInicial": 73,
+        "paginaFinal": 73,
+        "origem": "pdftotext",
+        "conteudo": "REFORMA INSTITUCIONAL\nA política brasileira ficou cara, distante e voltada para si mesma. O cidadão paga a\nconta de um sistema construído para servir aos próprios donos do poder, e não a\nquem vota. Só em 2026, os partidos terão acesso a mais de R$ 6,3 bilhões em dinheiro público, sendo R$ 4,9 bilhões do Fundo Eleitoral e R$ 1,4 bilhão do Fundo Partidário, enquanto o eleitor segue sem saber quem realmente influencia as decisões que\nafetam sua vida e sem conseguir cobrar de quem o representa.\nO problema está na própria arquitetura das instituições. A União concentra em Brasília a maior parte da receita tributária e do poder de decisão, ao passo que estados\ne municípios são responsáveis por entregar ao cidadão a maioria dos serviços públicos. Soma-se a isso a multiplicação de municípios, que já chegam a cerca de 5.570,\nsendo que um em cada quatro não gera receita suficiente para custear sua própria\nmáquina pública. Na ponta, o brasileiro é obrigado a sustentar milhares de prefeituras, câmaras de vereadores e órgãos públicos caros, com recursos que poderiam ser\ndestinados  à educação, à saúde e à segurança.\nA esse cenário soma-se uma classe política cada vez mais distante do eleitor, que\namplia as regras que blindam os mandatários e dificultam a renovação. O Congresso, que deveria ser a casa das decisões nacionais, passou a sequestrar o orçamento\npúblico e ocupar o espaço do Poder Executivo nos gastos discricionários, ao mesmo\ntempo em que cede poder ao Judiciário por meio da crescente judicialização da política.\nPara completar o quadro, o Brasil viveu nos últimos anos episódios graves de censura, remoção arbitrária de conteúdos, bloqueio de perfis e até suspensão de redes sociais inteiras. A ausência de parâmetros claros e a ampliação de poderes discricionários do Estado — inclusive de agentes do sistema de Justiça — criaram um ambiente\nde insegurança jurídica e intimidação que atinge cidadãos, veículos de imprensa e o\npróprio debate público.\nO resultado é um Estado em que o poder está longe do cidadão, o dinheiro público\nsustenta a própria classe política e as decisões que mais importam escapam do controle de quem deveria mandar: o eleitor. Reformar as instituições é reaproximar as\npessoas do poder, devolver a política a quem vota, tornar o Congresso mais eficiente\ne transparente e garantir um ambiente de liberdade em que cada brasileiro possa\npensar, falar e escrever sem medo. Por isso, apresentamos soluções em quatro eixos\ncentrais:\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 73"
+      },
+      {
+        "id": "garantir-a-efetiva-protecao-a",
+        "titulo": "GARANTIR A EFETIVA PROTEÇÃO À",
+        "nivel": 1,
+        "paginaInicial": 74,
+        "paginaFinal": 74,
+        "origem": "pdftotext",
+        "conteudo": "GARANTIR A EFETIVA PROTEÇÃO À\nLIBERDADE DE E XPRESSÃO NO BRASIL\nDescriminalizar a opinião e punir quem censura:\nDeslocar os crimes de injúria e difamação para a esfera cível, revogar o crime de desacato e tipificar como abuso de autoridade qualquer ato estatal de censura, remoção arbitrária de conteúdo ou restrição injustificada da expressão, para que nenhum\nbrasileiro viva com medo de ser preso ou perseguido por aquilo que pensa, diz ou\nescreve.\nProibir a censura nas redes sociais:\nVedar a exclusão de perfis e a moderação de opiniões pelas plataformas, inclusive\npor determinação judicial, substituindo esses mecanismos por procedimentos administrativos e judiciais que garantam direito à retratação e indenização, assegurando\nque o debate público no Brasil seja resolvido pela livre circulação de ideias e não\npelo controle de juízes ou empresas de tecnologia.\nProteger a imprensa livre da interferência do governo:\nReforçar na Constituição a proibição absoluta de censura prévia, tipificar como abuso de autoridade qualquer conduta estatal que intimide ou restrinja o jornalismo,\nacabar com a publicidade estatal como instrumento de favorecimento político e despolitizar a concessão de rádios e TVs, para que a imprensa cumpra seu papel de\nfiscalizar o poder sem depender de verbas oficiais nem temer represálias de quem\ngoverna.\n\nAPROXIMAR O PODER E O DINHEIRO DO\nCIDADÃO E RE VER O PACTO FEDERATIVO\nEstimular a união de municípios para dar escala aos serviços públicos e tornar o governo mais eficiente:\nCriar um programa que estimule a união progressiva de municípios sem sustentação\nfinanceira para ampliar a escala na prestação de serviços, devolvendo ao cidadão\nos recursos hoje gastos com estruturas que entregam pouco, mas sem abrir mão do\nnome e da identidade de cada comunidade.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 74"
+      },
+      {
+        "id": "fortalecer-a-autonomia-dos-estados",
+        "titulo": "Fortalecer a autonomia dos estados:",
+        "nivel": 1,
+        "paginaInicial": 75,
+        "paginaFinal": 75,
+        "origem": "pdftotext",
+        "conteudo": "Fortalecer a autonomia dos estados:\nReequilibrar a federação brasileira, ampliando a autonomia dos estados sobre receitas, competências administrativas e capacidade legislativa, de modo que as decisões\npúblicas sejam tomadas mais perto do cidadão, com maior responsabilidade sobre\nresultados, menor dependência de repasses federais e incentivo real ao desenvolvimento de todas as regiões do país.\nRedistribuir as vagas da Câmara pela população de cada estado:\nAtualizar a representação na Câmara de acordo com a população de cada estado,\ncorrigindo a distorção que faz o voto de um brasileiro valer mais que o de outro e\nrestaurando o equilíbrio federativo sem aumentar o número de deputados federais.\n\nDE VOLVER A POLÍTICA AO ELEITOR\nAdotar o voto distrital misto para aproximar o mandatário do eleitor:\nPromover a substituição do atual modelo proporcional de lista aberta por um sistema distrital misto com dois votos: um para a eleição majoritária do representante do\ndistrito e outro para representação de ideias no parlamento.\nExtinguir o Fundo Partidário e o Fundo Eleitoral:\nExtinguir o Fundo Partidário e o Fundo Eleitoral, substituindo-os por um modelo de\nfinanciamento privado de campanhas, com doações permitidas por pessoas físicas\ne jurídicas, havendo critérios rígidos de transparência, rastreabilidade e limites que\npreservem a justa competição entre os candidatos.\nAutorizar candidaturas independentes:\nLiberar o cidadão para disputar eleições sem precisar de filiação partidária, quebrando o monopólio dos partidos sobre quem pode concorrer e ampliando a liberdade de\nescolha do eleitor e a renovação na política.\n\nAMPLIAR A EFICIÊNCIA E\nTRANSPARÊNCIA DO CONGRESSO\nRacionalizar o uso das emendas parlamentares:\nLimitar as emendas parlamentares a um percentual reduzido do orçamento discricionário e condicionar sua destinação ao cumprimento de critérios objetivos de interesse público e transparência, evitando a fragmentação do orçamento em projetos\nde baixo impacto ou com finalidade meramente eleitoral.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 75"
+      },
+      {
+        "id": "pagina-76",
+        "titulo": "Página 76",
+        "nivel": 1,
+        "paginaInicial": 76,
+        "paginaFinal": 76,
+        "origem": "pdftotext",
+        "conteudo": "Reduzir os gastos com publicidade estatal, acabando com a promoção do governo na imprensa e mantendo apenas campanhas de interesse público:\nRestringir a publicidade do governo apenas às campanhas essenciais de interesse\npúblico, como as de educação, saúde e segurança, para que o dinheiro do contribuinte deixe de financiar a autopromoção de quem governa.\nConter os gastos excessivos do legislativo e do judiciário:\nEnxugar o custo do Legislativo e do Judiciário, atacando o excesso de pessoal e os\nsalários acima da média que sustentam essas estruturas, além de moralizar  despesas como verba de gabinete e cota parlamentar, devolvendo ao contribuinte recursos hoje gastos com o conforto dos ocupantes dos cargos.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 76"
+      },
+      {
+        "id": "defesa-e-seguranca-nacional",
+        "titulo": "DEFESA E SEGURANÇA NACIONAL",
+        "nivel": 1,
+        "paginaInicial": 77,
+        "paginaFinal": 77,
+        "origem": "pdftotext",
+        "conteudo": "DEFESA E SEGURANÇA NACIONAL\nGarantir a paz, o desenvolvimento e a soberania do Brasil requer uma política de defesa e segurança nacional com visão de longo prazo, capaz de articular suas diferentes dimensões de forma coerente e de priorizar ações nas frentes em que existirem\nas maiores vulnerabilidades do país, garantindo a dissuasão de riscos.\nEsse desafio é especialmente relevante em um mundo marcado por uma rápida reconfiguração geopolítica e conflitos potencializados pelo avanço tecnológico, que\nmultiplicam e sofisticam as ameaças. Pela sua posição geográfica, com fronteiras\nque tocam quase todos os países da América do Sul e exposição direta às crises\nregionais, o Brasil  tem preocupações relevantes no campo da Defesa.\nPara concretizar seus objetivos estratégicos, o Brasil depende de capacidades e\ncompetências de defesa e inteligência que permitam ao país antecipar cenários, tomar decisões e dispor de suprimentos essenciais para proteger o país de ameaças e\ncrises. A segurança das fronteiras torna-se ainda mais urgente  diante do avanço do\ncrime organizado transnacional e da instabilidade no entorno regional. A segurança\ncibernética é um desafio importante da modernidade, pois a vulnerabilidade nessa\nárea amplia os riscos de interferência externa e de perda de controle sobre infraestrutura crítica.\nSem modernizar seus sistemas de defesa e inteligência, o país reduz sua margem\nde decisão e se torna mais suscetível à influência de potências estrangeiras sobre\nsuas instituições e seus recursos. Desenvolver capacidades humanas, técnicas e\noperacionais sólidas e alinhadas às prioridades nacionais é essencial para preservar\na autonomia, proteger a população e garantir que o país possa decidir livremente os\nrumos de seu próprio desenvolvimento. Para avançar essa agenda, apresentamos\nsoluções em dois eixos:\n\nROBUSTECER OS SISTEMAS DE DEFESA\nNACIONAL E AS FORÇAS ARMADAS\nAprimorar a atuação conjunta dos braços das Forças Armadas em\ntorno das prioridades nacionais:\nPromover uma real integração entre Marinha, Exército e Aeronáutica por meio do\nEstado-Maior Conjunto, estabelecendo doutrinas efetivas de operações conjuntas,\nobjetivos estratégicos e metas alinhadas às capacidades que o Brasil precisa desenvolver.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 77"
+      },
+      {
+        "id": "otimizar-o-orcamento-da-defesa",
+        "titulo": "Otimizar o orçamento da Defesa:",
+        "nivel": 1,
+        "paginaInicial": 78,
+        "paginaFinal": 78,
+        "origem": "pdftotext",
+        "conteudo": "Otimizar o orçamento da Defesa:\nRacionalizar o gasto em defesa, priorizando investimentos em capacitação, equipamentos e desenvolvimento tecnológico.\nAumentar a capacidade institucional e de governança da Defesa do\nBrasil:\nPromover a formação de quadros civis qualificados para atuar em instâncias de administração e planejamento estratégico das Forças Armadas, além de adotar modelos de gestão orientados a resultados em todos os projetos da Defesa.\n\nAMPLIAR AS CAPACIDADES DO GOVERNO\nEM AÇÕES DE INTELIGÊNCIA\nModernizar os sistemas de inteligência brasileiros:\nModernizar a capacidade institucional e a governança do sistema de inteligência\nbrasileiro, garantindo a integração efetiva entre órgãos e ministérios e alinhando a\nsua atuação aos desafios críticos do país.\nAumentar a segurança jurídica das ações de inteligência:\nGarantir segurança jurídica para que agentes da Abin possam portar armas quando\na natureza de suas funções exigir, assegurando também o direito a identidades de\ncobertura para agentes da Abin em operações de inteligência.\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 78"
+      },
+      {
+        "id": "equipe",
+        "titulo": "Equipe",
+        "nivel": 1,
+        "paginaInicial": 79,
+        "paginaFinal": 79,
+        "origem": "pdftotext",
+        "conteudo": "Equipe\n\nCoordenadores-Gerais\ndo Plano de Governo:\n\nCoordenação-Executiva e Equipe\nTécnica do Plano de Governo:\n\nCarlos Da Costa\nChristian Lohbauer\nLuiz Felipe D’Ávila\nTiago Mitraud\n\nDiego Luz\nVitor Beux Martins\nJoão Pedro Borges\nRafael Mendonça\n\nCoordenadores Temáticos do Plano de Governo:\nSEGURANÇA PÚBLICA\nRogério Greco\n\nAGRONEGÓCIO\nChristian Lohbauer\n\nCOMBATE À CORRUPÇÃO\nE AOS PRIVILÉGIOS\nDeltan Dallagnol\n\nMEIO AMBIENTE\nSamanta Pineda\n\nREFORMA INSTITUCIONAL\nE POLÍTICA EXTERNA\nFelipe D’Ávila\nECONOMIA\nCarlos Da Costa\nLuiz Fernando Figueiredo\nINFRAESTRUTURA\nE SANEAMENTO\nPedro Bruno Barros de Souza\n\nEDUCAÇÃO BÁSICA\nDiego Calegari\nEDUCAÇÃO SUPERIOR,\nCIÊNCIA E TECNOLOGIA\nTiago Mitraud\nSAÚDE\nAdriana Ventura\nDESENVOLVIMENTO SOCIAL\nElizabeth Jucá\n\nMINAS E ENERGIA\nJosé de Sá\n\nESPORTE\nLuiz Lima\n\nGESTÃO PÚBLICA E\nEFICIÊNCIA NO GOVERNO\nLuciana Lopes\n\nCULTURA E TURISMO\nBárbara Botega\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 79"
+      },
+      {
+        "id": "agradecimentos",
+        "titulo": "Agradecimentos",
+        "nivel": 1,
+        "paginaInicial": 80,
+        "paginaFinal": 80,
+        "origem": "pdftotext",
+        "conteudo": "Agradecimentos\nA elaboração deste plano para transformar o Brasil contou com sugestões e\nanálises de mais de 350 especialistas e organizações privadas e do terceiro\nsetor. Registramos, em especial, nosso agradecimento às contribuições dos\nespecialistas relacionados a seguir, cujas opiniões não estão necessariamente\nrefletidas neste documento, mas foram fundamentais para aprofundar o debate\ne aprimorar a compreensão dos desafios do país. As análises e propostas aqui\napresentadas representam exclusivamente a visão da campanha de Romeu\nZema à Presidência da República.\n\nAlberto Pfeifer\n\nGiovanna Úbida\n\nLuís Sobral\n\nAlessandro Visacro\n\nGiovanni Guido Cerri\n\nLuiz Angelo Coutinho Gonçalves\n\nAlexandre Uehara\n\nGuilherme da Cunha\n\nMagno Karl\n\nAndré Pessoa\n\nGuilherme Gassenferth\n\nMarco Antonio Jorge\n\nAndré Portela\n\nGustavo Frohlich\n\nMarcos Jank\n\nArmando Castelar Pinheiro\n\nHenrique Lago da Silveira\n\nMarina Helena\n\nAry Rocco Jr.\n\nJerson Kelman\n\nMaurício Nogueira da Cruz Pessôa\n\nCaio Megale\n\nJoão Emílio Gonçalves\n\nPaulo Guerra\n\nCarolina Ricardo\n\nJoão Henrique Martins\n\nPery Shikida\n\nCláudio Frischtak\n\nJoão Paulo Alcántara\n\nRafael Erthal\n\nCristiano Carvalho\n\nJosé Pio Borges\n\nRafaela Guedes\n\nDaniel Vargas\n\nJosé Teófilo Oliveira\n\nRespício Espírito Santo\n\nDaniel Uzueli\n\nJuliana Dias Leite\n\nRicardo Paes de Barros\n\nDiego Zancan Bonomo\n\nJuliano Alves Pinto\n\nRogério Caiuby\n\nEcio Costa\n\nLaura Abreu\n\nSérgio Guerra\n\nFabiano Pompermayer\n\nLaura Müller Machado\n\nSérgio Pataca\n\nFabio Teizo\n\nLeonardo Novo\n\nVictor Carvalho Pinto\n\nFelipe Tavares\n\nLeandro Piquet Carneiro\n\nVinícius Botelho\n\nFernando Dutra\n\nLeonardo Sultani\n\nWagner Lenhart\n\nFernando Veloso\n\nLucas Sancassani\n\nWagner Menezes\n\nFilomena Siqueira e Silva Krauel\n\nLuciana Yeung\n\nFrederico Papatella\n\nLucelmo Lacerda\n\nP L A N O I M P L A C ÁV E L\n\n●\n\nROMEU ZEMA\n\n| 80"
+      },
+      {
+        "id": "presidente",
+        "titulo": "PRESIDENTE",
+        "nivel": 1,
+        "paginaInicial": 81,
+        "paginaFinal": 81,
+        "origem": "ocr",
+        "conteudo": "PRESIDENTE\nVICE EDUARDO GIRÃO"
+      }
+    ]
+  },
+  "resumo": {
+    "frases": [
+      {
+        "texto": "O documento reúne propostas de governo organizadas em áreas temáticas como segurança pública, economia, trabalho, saúde, educação, meio ambiente e política externa.",
+        "evidencias": [
+          {
+            "pagina": 1,
+            "trecho": "Propostas concretas para os maiores problemas do país"
+          },
+          {
+            "pagina": 2,
+            "trecho": "SEGURANÇA PÚBLICA"
+          },
+          {
+            "pagina": 2,
+            "trecho": "DESENVOLVIMENTO ECONÔMICO"
+          },
+          {
+            "pagina": 2,
+            "trecho": "TRABALHO E EMPREGO"
+          },
+          {
+            "pagina": 2,
+            "trecho": "SAÚDE"
+          },
+          {
+            "pagina": 2,
+            "trecho": "EDUCAÇÃO BÁSICA"
+          },
+          {
+            "pagina": 2,
+            "trecho": "MEIO AMBIENTE"
+          },
+          {
+            "pagina": 2,
+            "trecho": "POLÍTICA EXTERNA"
+          }
+        ]
+      },
+      {
+        "texto": "Na área de segurança pública, o documento propõe classificar as facções criminosas que atuam no país como organizações terroristas.",
+        "evidencias": [
+          {
+            "pagina": 5,
+            "trecho": "Classificar, nacional e internacionalmente, as facções criminosas como organizações terroristas:"
+          }
+        ]
+      },
+      {
+        "texto": "O texto defende reduzir a maioridade penal para 16 anos ou menos, permitindo excepcionalmente a responsabilização de pessoas mais jovens em casos de crimes graves.",
+        "evidencias": [
+          {
+            "pagina": 6,
+            "trecho": "Reduzir a maioridade penal para 16 anos, assegurando a responsabilização criminal de adolescentes a partir dessa idade e permitindo, excepcionalmente, a imputação penal de pessoas ainda mais jovens nos casos de crimes graves, como homicídio e estupro, ou reincidência."
+          }
+        ]
+      },
+      {
+        "texto": "No eixo de combate à corrupção, o documento propõe limitar drasticamente o foro privilegiado, mantendo-o apenas para o Presidente da República.",
+        "evidencias": [
+          {
+            "pagina": 8,
+            "trecho": "Limitar drasticamente o foro privilegiado, mantendo-o apenas para o Presidente da República"
+          }
+        ]
+      },
+      {
+        "texto": "Nas finanças públicas, o documento propõe privatizar todas as empresas estatais.",
+        "evidencias": [
+          {
+            "pagina": 15,
+            "trecho": "Privatizar todas as empresas estatais para que o governo possa se concentrar naquilo que de fato lhe cabe"
+          }
+        ]
+      },
+      {
+        "texto": "No mercado de trabalho, o documento propõe criar um regime de contratação alternativo à CLT, com prevalência do negociado entre as partes sobre o legislado.",
+        "evidencias": [
+          {
+            "pagina": 23,
+            "trecho": "com prevalência do negociado sobre o legislado"
+          }
+        ]
+      },
+      {
+        "texto": "Na área de desenvolvimento social, o documento propõe condicionar a permanência no programa Bolsa Família à busca de emprego ou qualificação profissional, prevendo a suspensão do benefício em caso de recusa de trabalho.",
+        "evidencias": [
+          {
+            "pagina": 63,
+            "trecho": "Permitir que adultos saudáveis e aptos ao trabalho permaneçam no Bolsa Família apenas enquanto estiverem buscando emprego, estudando ou se qualificando profissionalmente, com possibilidade de suspensão do benefício para quem, sem justificativa, recusar ofertas formais de trabalho intermediadas pelo poder público"
+          }
+        ]
+      },
+      {
+        "texto": "Na política externa, o documento defende a retirada do Brasil do bloco BRICS.",
+        "evidencias": [
+          {
+            "pagina": 37,
+            "trecho": "Retirar o Brasil do BRICS de forma diplomática, preservando pragmaticamente as relações comerciais com todos os países do bloco"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública e combate ao crime organizado",
+        "descricao": "O documento propõe classificar as facções criminosas como organizações terroristas, permitir o emprego das Forças Armadas de forma integrada às polícias para retomar territórios dominados pelo crime organizado, reduzir a maioridade penal para 16 anos ou menos e prever a prisão preventiva obrigatória para quem for preso em flagrante pela terceira vez.",
+        "evidencias": [
+          {
+            "pagina": 5,
+            "trecho": "Classificar, nacional e internacionalmente, as facções criminosas como organizações terroristas:"
+          },
+          {
+            "pagina": 5,
+            "trecho": "Empregar as Forças Armadas de forma integrada às polícias para retomar territórios dominados pelo crime organizado:"
+          },
+          {
+            "pagina": 6,
+            "trecho": "Reduzir a maioridade penal para 16 anos ou menos:"
+          },
+          {
+            "pagina": 6,
+            "trecho": "Prever em lei que bandidos presos em flagrante pela terceira vez tenham a prisão convertida em preventiva, vedando o relaxamento durante a audiência de custódia"
+          }
+        ]
+      },
+      {
+        "id": "financas-publicas-e-estado",
+        "titulo": "Ajuste fiscal e redução do tamanho do Estado",
+        "descricao": "O programa propõe uma reforma da Previdência com reajuste automático da idade mínima de aposentadoria conforme a expectativa de vida, a privatização de todas as empresas estatais, a ampliação das parcerias público-privadas em diferentes setores e metas progressivas de redução da carga tributária vinculadas a cortes de gastos.",
+        "evidencias": [
+          {
+            "pagina": 14,
+            "trecho": "criando também um mecanismo de reajuste automático da idade mínima para aposentadoria com base na expectativa de vida da população"
+          },
+          {
+            "pagina": 15,
+            "trecho": "Privatizar todas as empresas estatais para que o governo possa se concentrar naquilo que de fato lhe cabe"
+          },
+          {
+            "pagina": 15,
+            "trecho": "Aumentar o investimento privado no país por meio da ampliação das parcerias público-privadas em todos os setores da administração pública"
+          },
+          {
+            "pagina": 16,
+            "trecho": "Fixar metas progressivas de redução da carga tributária que imponham os cortes de gastos necessários para atingi-las"
+          }
+        ]
+      },
+      {
+        "id": "reforma-institucional-e-judiciario",
+        "titulo": "Reforma do Judiciário e das instituições políticas",
+        "descricao": "O documento propõe limitar o foro privilegiado a apenas o Presidente da República, restringir as matérias que podem ser levadas ao STF e proibir decisões monocráticas de ministros, além de extinguir o Fundo Partidário e o Fundo Eleitoral e adotar o voto distrital misto.",
+        "evidencias": [
+          {
+            "pagina": 8,
+            "trecho": "Limitar drasticamente o foro privilegiado, mantendo-o apenas para o Presidente da República"
+          },
+          {
+            "pagina": 12,
+            "trecho": "Reduzir as matérias que podem ser levadas ao STF, acabando com competências como matérias criminais e tributárias"
+          },
+          {
+            "pagina": 12,
+            "trecho": "Acabar com as decisões monocráticas e estabelecer prazo limite para pedido de vistas"
+          },
+          {
+            "pagina": 75,
+            "trecho": "Extinguir o Fundo Partidário e o Fundo Eleitoral, substituindo-os por um modelo de financiamento privado de campanhas"
+          },
+          {
+            "pagina": 75,
+            "trecho": "Adotar o voto distrital misto para aproximar o mandatário do eleitor"
+          }
+        ]
+      },
+      {
+        "id": "economia-e-trabalho",
+        "titulo": "Desenvolvimento econômico e mercado de trabalho",
+        "descricao": "O programa propõe reduzir os juros e os impostos, simplificar a tributação das empresas, ampliar concessões e PPPs em infraestrutura e criar um regime de contratação alternativo à CLT com prevalência do negociado entre trabalhador e empregador sobre o legislado.",
+        "evidencias": [
+          {
+            "pagina": 18,
+            "trecho": "Reduzir os custos diretos das operações financeiras começando pela redução do IOF"
+          },
+          {
+            "pagina": 19,
+            "trecho": "Reduzir gradualmente o imposto de renda das empresas para aproximar o Brasil das economias desenvolvidas"
+          },
+          {
+            "pagina": 19,
+            "trecho": "Conceder à iniciativa privada a construção, operação e manutenção dos ativos com viabilidade econômica"
+          },
+          {
+            "pagina": 23,
+            "trecho": "com prevalência do negociado sobre o legislado"
+          }
+        ]
+      },
+      {
+        "id": "politica-externa",
+        "titulo": "Reposicionamento da política externa",
+        "descricao": "O documento defende a retirada do Brasil do BRICS, o ingresso do país na OCDE e a transformação do Mercosul em zona de livre comércio para permitir novos acordos comerciais diretos.",
+        "evidencias": [
+          {
+            "pagina": 37,
+            "trecho": "Retirar o Brasil do BRICS de forma diplomática, preservando pragmaticamente as relações comerciais com todos os países do bloco"
+          },
+          {
+            "pagina": 37,
+            "trecho": "Retomar o processo de adesão do Brasil à OCDE"
+          },
+          {
+            "pagina": 38,
+            "trecho": "transformando-o em zona de livre comércio, para que o Brasil assine acordos comerciais e de investimentos com países e blocos"
+          }
+        ]
+      },
+      {
+        "id": "desenvolvimento-social",
+        "titulo": "Programas sociais com porta de saída pelo trabalho",
+        "descricao": "O programa propõe condicionar a permanência de adultos saudáveis no Bolsa Família à busca de emprego, estudo ou qualificação profissional, com possibilidade de suspensão do benefício em caso de recusa de trabalho, e prevê um prêmio de R$5 mil às famílias que superarem o limite de renda e deixarem o programa.",
+        "evidencias": [
+          {
+            "pagina": 63,
+            "trecho": "Permitir que adultos saudáveis e aptos ao trabalho permaneçam no Bolsa Família apenas enquanto estiverem buscando emprego, estudando ou se qualificando profissionalmente, com possibilidade de suspensão do benefício para quem, sem justificativa, recusar ofertas formais de trabalho intermediadas pelo poder público"
+          },
+          {
+            "pagina": 63,
+            "trecho": "Conceder um prêmio de R$5 mil às famílias que deixarem o Bolsa Família após superar o limite de renda"
+          }
+        ]
+      }
+    ],
+    "texto": "O documento reúne propostas de governo organizadas em áreas temáticas como segurança pública, economia, trabalho, saúde, educação, meio ambiente e política externa. Na área de segurança pública, o documento propõe classificar as facções criminosas que atuam no país como organizações terroristas. O texto defende reduzir a maioridade penal para 16 anos ou menos, permitindo excepcionalmente a responsabilização de pessoas mais jovens em casos de crimes graves. No eixo de combate à corrupção, o documento propõe limitar drasticamente o foro privilegiado, mantendo-o apenas para o Presidente da República. Nas finanças públicas, o documento propõe privatizar todas as empresas estatais. No mercado de trabalho, o documento propõe criar um regime de contratação alternativo à CLT, com prevalência do negociado entre as partes sobre o legislado. Na área de desenvolvimento social, o documento propõe condicionar a permanência no programa Bolsa Família à busca de emprego ou qualificação profissional, prevendo a suspensão do benefício em caso de recusa de trabalho. Na política externa, o documento defende a retirada do Brasil do bloco BRICS."
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-resumo-v1",
+    "model": "Anthropic Claude Sonnet",
+    "generatedAt": "2026-08-26T02:31:37.861Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT-5.4",
+    "judgedAt": "2026-08-26T03:25:59.329Z",
+    "verdicts": [
+      {
+        "id": "romeu-zema:frase:1",
+        "verdict": "yes",
+        "reason": "As páginas 1 e 2 mostram que o documento reúne propostas em áreas temáticas como segurança, economia, trabalho, saúde, educação, meio ambiente e política externa."
+      },
+      {
+        "id": "romeu-zema:frase:2",
+        "verdict": "yes",
+        "reason": "A página 5 propõe classificar as facções criminosas, nacional e internacionalmente, como organizações terroristas."
+      },
+      {
+        "id": "romeu-zema:frase:3",
+        "verdict": "yes",
+        "reason": "A página 6 propõe reduzir a maioridade penal para 16 anos e admitir imputação excepcional de pessoas mais jovens em crimes graves."
+      },
+      {
+        "id": "romeu-zema:frase:4",
+        "verdict": "yes",
+        "reason": "A página 8 propõe limitar drasticamente o foro privilegiado, mantendo-o apenas para o Presidente da República."
+      },
+      {
+        "id": "romeu-zema:frase:5",
+        "verdict": "yes",
+        "reason": "A página 15 propõe privatizar todas as empresas estatais."
+      },
+      {
+        "id": "romeu-zema:frase:6",
+        "verdict": "yes",
+        "reason": "A página 23 propõe um regime alternativo à CLT com prevalência do negociado sobre o legislado."
+      },
+      {
+        "id": "romeu-zema:frase:7",
+        "verdict": "yes",
+        "reason": "A página 63 condiciona a permanência de adultos aptos no Bolsa Família à busca de emprego, estudo ou qualificação, com suspensão em caso de recusa injustificada."
+      },
+      {
+        "id": "romeu-zema:frase:8",
+        "verdict": "yes",
+        "reason": "A página 37 defende retirar o Brasil do BRICS."
+      },
+      {
+        "id": "romeu-zema:tema:seguranca-publica",
+        "verdict": "yes",
+        "reason": "As páginas 5 e 6 sustentam classificação das facções como terroristas, uso integrado das Forças Armadas, redução da maioridade penal e prisão preventiva na terceira prisão em flagrante."
+      },
+      {
+        "id": "romeu-zema:tema:financas-publicas-e-estado",
+        "verdict": "yes",
+        "reason": "As páginas 14, 15 e 16 sustentam reajuste automático da idade mínima, privatização de estatais, ampliação de PPPs e metas progressivas de redução da carga tributária."
+      },
+      {
+        "id": "romeu-zema:tema:reforma-institucional-e-judiciario",
+        "verdict": "yes",
+        "reason": "As páginas 8, 12 e 75 sustentam limitação do foro, restrição de matérias no STF, fim de decisões monocráticas, extinção dos fundos partidário e eleitoral e voto distrital misto."
+      },
+      {
+        "id": "romeu-zema:tema:economia-e-trabalho",
+        "verdict": "yes",
+        "reason": "As páginas 18, 19 e 23 sustentam redução de custos financeiros e impostos, simplificação tributária, concessões/PPPs em infraestrutura e regime alternativo à CLT com negociado sobre legislado."
+      },
+      {
+        "id": "romeu-zema:tema:politica-externa",
+        "verdict": "yes",
+        "reason": "As páginas 37 e 38 sustentam saída do BRICS, ingresso na OCDE e transformação do Mercosul em zona de livre comércio."
+      },
+      {
+        "id": "romeu-zema:tema:desenvolvimento-social",
+        "verdict": "yes",
+        "reason": "A página 63 sustenta tanto a condicionalidade do Bolsa Família quanto o prêmio de R$ 5 mil para famílias que deixam o programa após superar o limite de renda."
+      }
+    ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e",
+    "extractedTextSha256": "e63a8dac7ccef2df3ffe28ff6e0ead250b753d26caceaf301b2916a0742eca73"
+  }
+}

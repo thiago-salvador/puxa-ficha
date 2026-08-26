@@ -1,0 +1,583 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "PRESIDENTE",
+    "uf": "BR",
+    "sqCandidato": "280002541457",
+    "slug": "hertz-dias",
+    "nomeUrna": "HERTZ DIAS",
+    "partido": "PSTU",
+    "arquivoNome": "2026BR280002541457_01.pdf",
+    "arquivoNoPacote": "BR/2026BR280002541457_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-25T09:46:00Z"
+  },
+  "extracao": {
+    "sourceSha256": "1868565fb0d5de77d40a982a1be07dc7f44f7af7565ee3b40d93b31407d31468",
+    "extractedTextSha256": "c61aaf89a9524de81520e49678ac6a412cfaeffe4819f33efe791c32ecdf1be4",
+    "paginas": 33,
+    "secoes": [
+      {
+        "id": "com-os",
+        "titulo": "COM OS",
+        "nivel": 1,
+        "paginaInicial": 1,
+        "paginaFinal": 1,
+        "origem": "pdftotext",
+        "conteudo": "COM OS\n\nlhadores\nCONTRA O\n\nsistema\n\nPOR UM BRASIL\nSOBERANO E\nSOCIALISTA\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA"
+      },
+      {
+        "id": "eleicoes-2026",
+        "titulo": "ELEIÇÕES 2026",
+        "nivel": 1,
+        "paginaInicial": 2,
+        "paginaFinal": 2,
+        "origem": "pdftotext",
+        "conteudo": "ELEIÇÕES 2026\n\nCOM OS TRABALHADORES\nCONTRA O SISTEMA\nPOR UM BRASIL SOBERANO E SOCIALISTA\n\nO Brasil é um país rico, figurando entre as dez maiores economias do mundo segundo o\nFundo Monetário Internacional (FMI). Ao mesmo tempo, é um dos países mais desiguais\ndo planeta, com mais de dois terços da população recebendo até dois salários mínimos\nsegundo o IBGE. A vida real da classe trabalhadora e do povo pobre, assim, não reflete os\ndados oficiais e o discurso do governo, de um suposto aumento da renda e baixa na\ninflação. Ao contrário, o custo de vida só aumenta a cada dia. A inflação, principalmente\ndos produtos mais básicos como os alimentos, corroi o poder de compra das famílias,\nassim como o elevado preço dos aluguéis, inflacionado pela especulação imobiliária, ou a\nalta na conta de luz, no esteio da privatização do setor elétrico no país.\nEssa grande maioria da população, que custa a fazer com que os salários cheguem até o\nfinal do mês, dependem de serviços públicos cada vez mais precários. Na Saúde, o SUS,\numa conquista da classe trabalhadora, sofre um verdadeiro processo de destruição. Filas\nextensas, exames e agendamento com especialistas são hoje um verdadeiro calvário\npara a grande maioria da população. O ensino público segue pelo mesmo caminho, da\neducação básica às universidades públicas.\nComo se não bastasse, a violência urbana vem se transformando num dos principais\nproblemas das famílias. Nas periferias e nos grandes centros urbanos, a violência policial\npor meio, principalmente, da Polícia Militar, submete toda uma população a um estado de\nexceção permanente, com execuções sumárias, chacinas e o encarceramento em massa,\nsob a justificativa da “guerra às drogas”. Essa mesma população, muitas vezes, sobrevive\nsob o domínio do crime organizado, transfigurado hoje em verdadeiras empresas\ncapitalistas que exploram e oprimem populações inteiras. No dia a dia, o trabalhador sai\nde casa sem saber se vai voltar devido à criminalidade urbana.\nMas por que num país tão rico a imensa maioria do povo ganha tão pouco e vive cada vez\npior?\nAo contrário de um falso discurso inspirado e propagado pela extrema direita, não é\n\"preguiça\" ou \"falta de trabalhar\" devido a políticas como o Bolsa Família, bastante\ninsuficiente por sinal. No Brasil, trabalha-se muito. Mais de 60% dos trabalhadores\nformais se submetem à escala 6×1 e bem acima de 40 horas semanais (dados do Anuário\nEstatístico do Ilaese-2025). Já os trabalhadores fora da formalidade, como os de\naplicativos, são obrigados a realizar jornadas muitas vezes acima disso, sem nenhuma\nproteção social e ainda deixando boa parte da renda às grandes plataformas\nestrangeiras, como a estadunidense Uber ou a chinesa 99. No Brasil, trabalha-se cada\nvez mais para se viver cada vez pior.\nO problema é que o Brasil é controlado por cerca de 250 grandes conglomerados\ncapitalistas, grande parte transnacionais, cujo único interesse é explorar ao máximo a\nmão de obra do trabalhador brasileiro e nossos recursos naturais, como as cobiçadas\n\"terras raras\". A riqueza produzida aqui, assim, não é reinvestida no país, muito menos se\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n01"
+      },
+      {
+        "id": "transforma-em-melhorias-para-a-populacao-como-renda-direitos-sociais-ou",
+        "titulo": "transforma em melhorias para a população, como renda, direitos sociais ou serviços",
+        "nivel": 1,
+        "paginaInicial": 3,
+        "paginaFinal": 3,
+        "origem": "pdftotext",
+        "conteudo": "transforma em melhorias para a população, como renda, direitos sociais ou serviços\npúblicos. Ao contrário, quanto mais avança e aprofunda essa exploração, mais o país se\nempobrece, pois não há nenhum interesse em reindustrializar e desenvolver o Brasil e\ngarantir o que quer que seja aos trabalhadores.\nO projeto das grandes potências capitalistas é, por meio de seus monopólios, sugar o\nmáximo das riquezas produzidas aqui. Nessa configuração, o país vai se convertendo\ncada vez mais em uma grande plataforma de exportação de produtos primários, como\ncafé, soja, minério de ferro e terras raras. São produtos que abastecem o mercado\ninternacional, e, lá fora, passam por processos de beneficiamento, enquanto aqui\ncontinuamos cada vez mais dependentes de produtos industrializados, de alto valor\nagregado.\nTrata-se de uma política de uma verdadeira reversão colonial, que, nas últimas três\ndécadas, vem fazendo o Brasil regredir cada vez mais. Fora das cadeias de produção de\nalto valor, resta ao Brasil o papel de fornecer as chamadas commodities ao mercado\nexterno. O que sobra para o país? Sem indústria de ponta, com um peso cada vez maior\ndo grande agronegócio e com uma economia desnacionalizada, dominada por grandes\nmonopólios estrangeiros, restam os empregos de baixos salários, precarizados, e uma\nbrutal superexploração. O resultado é um país, na prática, pobre que se degrada cada vez\nmais.\nA voracidade do capital internacional imperialista avança sobre as áreas estratégicas e os\nserviços públicos. O setor elétrico é um forte exemplo disso, refletindo nas altas contas\nde luz e em serviços cada vez piores. Até mesmo o saneamento básico está sendo\nentregue aos grupos estrangeiros, num sentido inverso a diversos países da Europa que\nhoje estão sendo obrigados a reverterem uma série de privatizações do setor de\nsaneamento.\nSe neste projeto não cabem investimentos em industrialização, tampouco faz sentido\ngarantir educação, saúde, segurança e desenvolver pesquisa ou tecnologia. Essa é a\nrazão pela qual vemos o sucateamento de universidades, centros e agências de fomento.\nO que o imperialismo deseja, seus governos aplicam e uma submissa burguesia nacional\napoia, é o aprofundamento de uma mão de obra cada vez mais barata, disciplinada, com\ncada vez menos direitos e dependente do capital, ou seja das grandes empresas e\nmultinacionais, para garantir o mínimo de sobrevivência.\nNão é por menos que, nos governos estaduais, sejam governadas pelo PT ou a extrema\ndireita, o que chamam de \"segurança pública\", na verdade, aparatos de repressão\npolicial, sejam priorizados como política pública. Porque isso não tem nada a ver com\ngarantir a segurança do trabalhador e das famílias brasileiras. Isso tem a ver com conter\ne disciplinar, seja pelo encarceramento em massa, seja pelo genocídio da juventude,\nprincipalmente negra e periférica, qualquer expressão de revolta ou descontentamento\nsocial.\nSe o Brasil sempre foi, nestes 526 anos de existência, marcado pela submissão, primeiro\nà então metrópole portuguesa, e depois às grandes potências capitalistas, o que ensejou\numa desigualdade e dependência estrutural, hoje, essa subserviência, nos marcos de\numa crise capitalista mundial, continua se expressando de forma cada vez mais\ndramática. Em praticamente todos os setores da sociedade. Dos baixos salários, à\nsuperexploração, à degradação dos serviços públicos, retirada de direitos, entrega e\nprivatização e na violência urbana que afeta, sobretudo, as famílias da classe\ntrabalhadora. É um verdadeiro processo de retrocesso social que tem como raiz o\ndomínio de um pequeno grupo de monopólios e a subserviência às grandes potências\ncapitalistas.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n02"
+      },
+      {
+        "id": "enfrentar-os-capitalistas-e-o",
+        "titulo": "Enfrentar os capitalistas e o",
+        "nivel": 1,
+        "paginaInicial": 4,
+        "paginaFinal": 4,
+        "origem": "pdftotext",
+        "conteudo": "Enfrentar os capitalistas e o\nimperialismo em defesa da\nsoberania nacional\nAs candidaturas do PT, do centrão e da extrema direita prometem, de forma vaga,\nmelhorar a vida da população. Mas isso é simplesmente impossível mantendo o país\ndominado pelo imperialismo. E enfrentar as grandes potências capitalistas é algo que não\nvão fazer, seja porque não é seu projeto, seja porque são aliadas a uma burguesia\nnacional que tem em seu DNA a submissão, e, como projeto, se perpetuar enquanto\nsócia-menor do imperialismo, satisfazendo-se com as migalhas que caem da mesa dos\npoderosos.\nOs sucessivos ataques imperialistas de Trump à América Latina, que no Brasil se\nconcretizaram no tarifaço, apoiado na extrema direita bolsonarista, é um exemplo\ninconteste disso. Mesmo os setores mais afetados com a taxação do governo dos EUA\nsuplicam para que não haja, por parte do governo Lula, qualquer retaliação ou política de\nreciprocidade. Confirmam, assim, seu papel intrinsecamente subserviente aos mandos\nde Trump e dos EUA. Uma burguesia covarde que prefere abrir mão da soberania de seu\npróprio país para garantir seus centavos.\nIsso significa que, se enfrentar o imperialismo é condição primordial para desatar os nós\nque fazem o país retroceder cada vez mais, e abrir a possibilidade de um real\ndesenvolvimento do país, com uma reindustrialização que sirva à classe trabalhadora, é\na própria classe trabalhadora, e os setores mais oprimidos da sociedade que podem\nencabeçar uma verdadeira luta anti-imperialista e conquistar a real soberania do Brasil.\n\nENQUANTO A EXTREMA DIREITA ARTICULA ATAQUE COM TRUMP,\nPT NÃO É CONTRA O IMPERIALISMO\nA candidatura de Flávio Bolsonaro, assim como as outras alternativas de extrema direita,\ntem como projeto acelerar essa entrega do país. Flávio Bolsonaro, junto com sua família,\narticulou o tarifaço contra o Brasil em Washington, pediu ajuda a Trump nas eleições e\nchegou ao cúmulo de oferecer uma equipe de transição com o governo estadunidense\ncaso vença as eleições. Ou seja, numa ação sem precedentes, ofereceu entregar\nformalmente a administração do Brasil a uma potência estrangeira imperialista. Ele não\nquer só aprofundar a dominação imperialista no Brasil, mas passar formalmente a\nadministração do país às mãos do imperialismo.\nSeu programa é, desta forma, a entrega do Brasil aos EUA, sem abrir mão de um projeto\nautoritário que caracteriza o bolsonarismo.\nMas também é preciso dizer a verdade: o governo Lula não representa uma alternativa\npara romper com esse sistema. Apesar do discurso social, governa em aliança com\ngrandes empresários, bancos, o grande agronegócio e centrão, mantendo a total\nsubmissão do país à rapina imperialista. Mantém o arcabouço fiscal e a agiotagem\nescandalosa do pagamento da dívida, preserva os lucros dos bilionários, concede\nsubsídios às multinacionais e submete o país às exigências do imperialismo. Administra,\nassim, a crise do capitalismo brasileiro e a tremenda decadência do país sem enfrentar\nsuas causas estruturais.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n03"
+      },
+      {
+        "id": "enquanto-o-bolsonarismo-promete-entregar-o-brasil-aos-eua-o-governo-lula",
+        "titulo": "Enquanto o bolsonarismo promete entregar o Brasil aos EUA, o governo Lula negocia com",
+        "nivel": 1,
+        "paginaInicial": 5,
+        "paginaFinal": 5,
+        "origem": "pdftotext",
+        "conteudo": "Enquanto o bolsonarismo promete entregar o Brasil aos EUA, o governo Lula negocia com\nTrump, como na questão das terras raras, mas mantém um leque de possibilidades para\nnegociar nossas riquezas com outras potências, abrindo mão da soberania. Como o\ndecadente imperialismo europeu, como vimos recentemente com o acordo Mercosul e\nUnião Europeia, em que o país acessa o mercado europeu com produtos primários, e se\nabre aos automóveis e demais produtos de alto valor agregado de países como\nAlemanha e França. Ou mesmo a China, uma potência em ascensão que avança sobre\nparte cada vez maior de nossa economia.\n\nNÃO É POSSÍVEL UMA REAL SOBERANIA SEM ROMPER COM O IMPERIALISMO\nNão é possível falar em um país soberano sem problematizar uma ruptura com o\nimperialismo, isto é, com os países dominantes na atual divisão internacional do trabalho.\nOs Estados Unidos e os países europeus, que dominam a cadeia de produção com maior\nvalor agregado existente no Brasil, há décadas apenas extraem a riqueza produzida pela\nclasse trabalhadora brasileira sem realizar nenhum investimento de maior monta.\nParasitam nossos recursos e alimentam suas matrizes: eis a fuga de capitais que\nconstantemente desvaloriza nossa moeda, exigindo que se queimem os royalties do\npetróleo e da mineração, bem como os excedentes do agronegócio e outros setores\nexportadores em meras operações cambiais.\nTampouco a China é uma alternativa. O gigante asiático tem priorizado adquirir empresas\nbrasileiras em vez de construir novas, isto é, realizar a compra de ativos já existentes –\nfusões e aquisições –, sobretudo em setores como energia, mineração e infraestrutura.\nNesses casos, o investimento estrangeiro entra no país apenas para trocar a propriedade\ndo capital: nem uma nova unidade produtiva é criada, nem um emprego adicional surge,\ne a produção nacional não aumenta um só centavo. Mesmo quando novas instalações\nsão abertas, como no caso da BYD, grande parte da cadeia produtiva permanece na\nChina, cabendo ao Brasil apenas a etapa final de montagem. O resultado é que, à medida\nque empresas chinesas substituem outras no mercado automobilístico brasileiro,\ndefinham as empresas nacionais de autopeças, siderúrgicas e químicas que até então\nabasteciam as montadoras instaladas no país.\nDefender a soberania do Brasil, neste marco, significa garantir que as riquezas\nproduzidas no país permaneçam sob controle nacional e sejam direcionadas às\nnecessidades da população. Isso implica enfrentar os interesses do grande capital e dos\nmonopólios estratégicos, inclusive por meio da retomada e do controle de setores\nfundamentais hoje privatizados.\nÉ a classe trabalhadora, em toda sua diversidade atual, incluindo trabalhadores formais e\ninformais, de aplicativos, do campo e da cidade, o sujeito capaz de enfrentar o grande\ncapital, o imperialismo e a burguesia nacional a eles associada. Seus aliados são os\nsetores oprimidos, os povos indígenas, os camponeses, os pequenos proprietários e\ntodos aqueles que sofrem com essa estrutura de dominação.\nO programa do PSTU, representado nestas eleições na candidatura de Hertz Dias à\nPresidência, com Vanessa Portugal vice, aponta que o caminho para uma verdadeira\nsoberania, e desenvolvimento do país para atender as necessidades da classe\ntrabalhadora, não passa pela conciliação de classes, com a direita, o centrão ou o próprio\nimperialismo. É sim o da organização, luta e da construção de instrumentos próprios da\nclasse trabalhadora. Só desta forma será possível romper com o ciclo de dominação e da\ncondição de colônia e semicolônia que, desde sempre, marcou a realidade brasileira.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n04"
+      },
+      {
+        "id": "estatizacao-das-empresas",
+        "titulo": "Estatização das empresas",
+        "nivel": 1,
+        "paginaInicial": 6,
+        "paginaFinal": 6,
+        "origem": "pdftotext",
+        "conteudo": "Estatização das empresas\nestratégicas do país\nPara prover serviços públicos gratuitos e de qualidade, como saúde, educação, moradia,\nsaneamento, bem como concentrar a riqueza apropriada pelos múltiplos capitais\nindividuais e direcioná-los para investimentos produtivos, é necessário expropriar as\nempresas estratégicas que acumulam bilhões ou dezenas de bilhões de reais em setores\ndiretamente dependentes de recursos naturais como mineração, petróleo e energia.\nSão empresas como a Petrobras e a Vale, que distribuíram respectivamente uma média\nde R$ 100 bilhões e R$ 30 bilhões em dividendos nos últimos quatro anos. É necessário\nexpropriar, ainda, setores estratégicos antes estatais, como a siderurgia e o de derivados\ndo petróleo. É necessário controlar o topo da hierarquia do agronegócio, hoje operado\npor empresas estrangeiras ou grandes conglomerados brasileiros, como a JBS, os quais\ndirecionam, administram e orientam toda produção nacional ao mercado externo,\nseguindo seus preços e cotações.\nÉ necessário uma taxação fortemente progressiva sobre os lucros das empresas\nbilionárias nos mais diversos ramos e, em particular, o controle da conta de capitais\ncontinuamente evadidos para fora do país tanto por capitalistas nacionais quanto\nestrangeiros: cerca de meio trilhão de reais anuais desde 2020. Ao lado disso, é\nfundamental o controle do sistema financeiro e dos grandes bancos, de modo a canalizar\nos recursos para o que realmente importa.\nSem interromper essa drenagem da riqueza nacional para fora do Brasil ou para títulos da\ndívida pública, não há projeto nacional viável. Somente por meio de medidas que\ncoloquem em questão a propriedade do capital e o destino dos excedentes será possível\nfinanciar um projeto nacional de desenvolvimento que assegure, de um lado, o\ncrescimento da riqueza produzida no país e, de outro, a permanência dessa riqueza no\npróprio país.\nTecnologias que concentram décadas de conhecimento acumulado, como os\nsemicondutores, poderão ser adquiridas estrategicamente; já aquelas oriundas do\ndesenvolvimento técnico recente – como a inteligência artificial e suas aplicações em\nplataformas de comércio, transporte e serviços – deverão ser desenvolvidas sob controle\ndo Estado, com a participação organizada dos trabalhadores que as produzem, dos\ntrabalhadores autônomos e das pequenas empresas que delas dependem. O vasto\nacervo científico, técnico e cultural incorporado em seu treinamento deve ser\nreconhecido, remunerando seus efetivos criadores. Conselhos formados por produtores,\nusuários e detentores de direitos intelectuais devem definir seus critérios de\nfuncionamento, seus limites e suas finalidades, de modo que essas ferramentas sejam\nestruturadas para servir a quem trabalha e utiliza, e não para submetê-los a mecanismos\nautomáticos voltados exclusivamente ao lucro de grandes empresas estrangeiras. Tais\nferramentas devem, de imediato, ser incorporadas de forma coordenada ao serviço\npúblico e às empresas estatais, agora substancialmente ampliadas.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n05"
+      },
+      {
+        "id": "planejamento-economico-e",
+        "titulo": "Planejamento econômico e",
+        "nivel": 1,
+        "paginaInicial": 7,
+        "paginaFinal": 7,
+        "origem": "pdftotext",
+        "conteudo": "Planejamento econômico e\npleno emprego\nNão é possível falar em pleno emprego e renda sem vinculá-los a um conjunto de\nprofundas transformações. Emprego depende de um planejamento econômico que\narticule produção e consumo, que direcione investimentos para setores capazes de\nampliar a base produtiva e que converta ganhos tecnológicos e de produtividade em\nredução da jornada de trabalho – e, por consequência, em ampliação do número de\npostos de trabalho.\nAo mesmo tempo, é necessário que a produção esteja voltada prioritariamente para o\nmercado interno, de modo que a produção crescente se vincule ao consumo também\ncrescente dos trabalhadores, sem que um obstaculize o desenvolvimento do outro. Isso\napenas é possível com planejamento econômico. Não o mercado que impulsiona de\nmodo irracional a produção e a oferta, restringindo o poder de compra daqueles capazes\nde consumir essa produção agora alargada. Nem o intervencionismo Estatal via mercado,\nque procura alargar o consumo por meio de gastos estatais e tributação excessiva,\nrestringindo a capacidade de produção de capitalistas dispersos e alheios a qualquer\ninteresse nacional. O que é necessário é a vinculação da produção ao consumo, da\nprodução de riqueza às necessidades dos trabalhadores e da população.\n\nRomper as engrenagens do sistema\nPara mudar as condições de vida da classe trabalhadora e da grande maioria da\npopulação, é necessário estancar e reverter o processo de degradação econômica e\nsocial, a brutal desigualdade social, os baixos salários, a precarização e a exploração\ncrescentes, acabar com a escala 6×1 que rouba o tempo de vida de grande parte dos\ntrabalhadores; ter saúde, educação e serviços públicos de qualidade, é necessário\nromper com as engrenagens de um sistema de exploração e opressão. Uma engrenagem\nque funciona para manter as riquezas de 0,1% de bilionários aqui às custas do\nempobrecimento do restante da população, do retrocesso semicolonial do país e da\ndestruição do meio ambiente, tendo como pano de fundo o aprofundamento da\nsubmissão do país às potências capitalistas.\nO programa da candidatura Hertz Dias e Vanessa Portugal, neste quadro, não é um\nconjunto de promessas eleitorais. É, antes de tudo, um chamado à ação em torno a\nmedidas para mudar as condições de vida da classe trabalhadora e do povo pobre,\ngarantir soberania e libertar as amarras do Brasil das correntes que nos mantém\nsubmissos ao imperialismo e presos a um ciclo de dominação que impossibilita qualquer\ntipo de desenvolvimento nacional.\nNão se trata de medidas isoladas, mas das reivindicações mais sentidas pela classe\ntrabalhadora, que, para serem atendidas, precisam avançar por medidas que questionem\na grande propriedade e o próprio sistema.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n06"
+      },
+      {
+        "id": "trabalho-melhores-condicoes-de-vida",
+        "titulo": "Trabalho, melhores condições de vida,",
+        "nivel": 1,
+        "paginaInicial": 8,
+        "paginaFinal": 8,
+        "origem": "pdftotext",
+        "conteudo": "Trabalho, melhores condições de vida,\nserviços públicos, direitos,\nmeio ambiente, terra e segurança\nPELO DIREITO À VIDA ALÉM DO TRABALHO\nO trabalho é a principal fonte de riqueza da sociedade. Entretanto, milhões estão\ndesempregados, e a classe trabalhadora empregada continua enfrentando baixos\nsalários, jornadas excessivas, precarização das relações de trabalho e perda de direitos\nconquistados ao longo de décadas de luta.\nOs avanços tecnológicos e o aumento da produtividade poderiam proporcionar mais\ntempo livre, pleno emprego e melhores condições de vida. Mas, sob a lógica do lucro e\nda acumulação de capital, são utilizados para aumentar a exploração, o desemprego, a\njornada, a precarização do trabalho e rebaixar os salários.\nFim da escala 6×1 sem redução de salários e direitos, sem pejotização e sem\ndemissões\nRedução da jornada de trabalho para 36 horas, sem redução dos salários e sem\nflexibilização de direitos, rumo à escala móvel de horas de trabalho (pleno\nemprego). Trabalhar menos para que todos trabalhem!\nAumento de 100% no salário mínimo, rumo ao salário mínimo necessário,\ncalculado pelo Dieese.\nBolsa equivalente a um salário mínimo para trabalhadores desempregados\nenquanto não houver pleno emprego.\nPlano nacional de obras públicas voltado à geração de empregos, universalização\ndo saneamento básico, construção de escolas, hospitais, creches, infraestrutura\nambiental, entre outras obras necessárias e respeitadoras do meio ambiente.\nRevogação da reforma trabalhista\nRevogação da lei das terceirizações. Fim da terceirização, salário igual para\ntrabalho igual e direitos para todos os trabalhadores. Incorporação dos\ntrabalhadores terceirizados no quadro efetivo do serviço público e realização de\nconcurso público para novas contratações.\nRevogação da reforma da Previdência\nCorreção anual e atualização integral da tabela do Imposto de Renda para os\nassalariados\nAo lutar por salário, jornada e direitos, os trabalhadores se deparam com os limites\nimpostos pelas empresas, pelo mercado e pela lógica do lucro, o que abre o caminho para\nquestionarmos quem controla a produção e a riqueza.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n07"
+      },
+      {
+        "id": "trabalhadores-de-aplicativos-e-plataformas",
+        "titulo": "TRABALHADORES DE APLICATIVOS E PLATAFORMAS",
+        "nivel": 1,
+        "paginaInicial": 9,
+        "paginaFinal": 9,
+        "origem": "pdftotext",
+        "conteudo": "TRABALHADORES DE APLICATIVOS E PLATAFORMAS\nA expansão das plataformas digitais transformou completamente o mercado de trabalho.\nMilhões de trabalhadores passaram a depender de aplicativos para obter renda. Os\naplicativos, porém, transferem todos os riscos da atividade econômica aos\ntrabalhadores, não há transparência em seus algoritmos e não há nenhum controle\npúblico. Defendemos aqui as reivindicações atuais dos trabalhadores de aplicativos,\nsurgidas em suas lutas e no tópico seguinte fazemos uma proposta para que possamos\nrealmente garantir transparência nos algoritmos e melhores condições para os\ntrabalhadores de aplicativos.\nReconhecimento do vínculo empregatício\nGarantia de todos os direitos: previdência, férias, 13º, descanso remunerado,\nseguro contra acidentes, licença-maternidade e proteção social efetiva\nRegulamentação sem direitos é fraude! Não ao PLP 152, que legaliza a\nprecarização!\nContra jornadas exaustivas! Piso salarial para carga horária mínima logada de 36\nhoras e remuneração mínima por corrida/entrega ou serviço prestado para\njornadas menores que 36 horas\nFiscalização pública das condições de trabalho nas plataformas digitais. Contra\nas punições arbitrárias!\nTransparência dos algoritmos, com obrigação das empresas a informarem sobre\nos critérios de distribuição de corridas, bloqueios e remuneração, que devem ser\nsubmetidos à fiscalização pública e ao controle dos trabalhadores.\n\nPLATAFORMAS DIGITAIS PÚBLICAS E CONTROLADAS PELOS TRABALHADORES\nA plataformização do trabalho fragmentou a classe trabalhadora, individualizou a\nprestação dos serviços e transferiu para grandes monopólios internacionais o controle\ndas regras de remuneração, da distribuição das tarefas e da apropriação dos\nexcedentes. Motoristas, entregadores, trabalhadores de microtarefas, freelancers e\npequenos empreendimentos passaram a depender de sistemas cujo funcionamento lhes\né inteiramente ocultado.\nÉ necessário transformar a própria base técnica hoje utilizada para a precarização em\ninstrumento de organização econômica sob controle dos que nela trabalham. Associadas\nao programa de soberania digital, as plataformas públicas devem constituir uma\nalternativa superior, mais rentável e socialmente orientada do que as atualmente\nexistentes sob o monopólio de empresas privadas estrangeiras.\n\nPELO CONTROLE DOS TRABALHADORES SOBRE AS PLATAFORMAS DIGITAIS\nCriação de plataformas públicas nacionais de transporte, entrega, comércio\neletrônico, microtarefas e trabalho freelancer, financiadas com recursos das\nempresas estratégicas expropriadas.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n08"
+      },
+      {
+        "id": "gestao-dessas-plataformas-por-conselhos-de-trabalhadores-usuarios",
+        "titulo": "Gestão dessas plataformas por conselhos de trabalhadores usuários,",
+        "nivel": 1,
+        "paginaInicial": 10,
+        "paginaFinal": 10,
+        "origem": "pdftotext",
+        "conteudo": "Gestão dessas plataformas por conselhos de trabalhadores usuários,\nresponsáveis por deliberar sobre as regras de remuneração, funcionamento e\ndestino dos excedentes gerados pela plataforma.\nGarantia de ganhos superiores à praticada pelas plataformas privadas\ninternacionais, assegurando maior estabilidade de renda aos trabalhadores.\nInstituição de alternativas de contribuições públicas para previdência, férias\nremuneradas, descanso semanal e fundo de garantia para essas modalidades de\ntrabalho, com adesão voluntária e proteção social progressiva aos trabalhadores\nde plataforma.\nCondições preferenciais para pequenos empreendimentos nacionais nas\nplataformas públicas de comércio eletrônico.\nIntegração entre a plataforma pública de e-commerce e um plano nacional de\nmodernização dos Correios, transformando-os em eixo logístico estatal moderno\ne tecnologicamente avançado com custos diferenciados para usuários\nindividuais ou pequenos empreendimentos.\nTransparência integral dos algoritmos de distribuição de tarefas, avaliação e\nremuneração, com auditoria permanente pelos conselhos de trabalhadores.\nProibição de bloqueios automáticos, punições algorítmicas opacas e alterações\nunilaterais nas regras de remuneração e operação das plataformas.\nReinvestimento integral dos excedentes das plataformas públicas na melhoria\ntecnológica, na ampliação da proteção social e na redução de tarifas para\ntrabalhadores e pequenos produtores.\n\nDireitos, serviços públicos e\nmelhores condições de vida\nSAÚDE, EDUCAÇÃO, MORADIA, TRANSPORTE PÚBLICO, APOSENTADORIA\nAssim como no trabalho, na terra e no meio ambiente, a luta por serviços públicos de\nqualidade leva a um confronto direto com a forma como a riqueza é apropriada e\ndistribuída na sociedade.\nOs direitos sociais e os serviços públicos fazem parte das condições de vida da classe\ntrabalhadora. Não são áreas separadas, mas dimensões de uma mesma realidade:\ndeterminam quanto custa viver, em que condições a população trabalha, se desloca, se\nreproduz e envelhece.\nSão também o principal instrumento de garantia de direitos – e, por isso, um dos terrenos\ncentrais de disputa na sociedade.\nHoje, esses direitos são atacados por um modelo que transforma tudo em mercadoria. A\nprivatização, as Parcerias Público-Privadas (PPPs,) a precarização e o subfinanciamento\ntransferem recursos públicos para grandes empresas, enquanto a população paga mais\ncaro por serviços piores.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n09"
+      },
+      {
+        "id": "a-crise-ambiental-e-urbana-agrava-esse-cenario-enchentes-falta-de-saneam",
+        "titulo": "A crise ambiental e urbana agrava esse cenário: enchentes, falta de saneamento,",
+        "nivel": 1,
+        "paginaInicial": 11,
+        "paginaFinal": 11,
+        "origem": "pdftotext",
+        "conteudo": "A crise ambiental e urbana agrava esse cenário: enchentes, falta de saneamento,\naumento do custo de vida e expansão desordenada das cidades recaem diretamente\nsobre os trabalhadores.\nPor isso, a luta por direitos e serviços públicos de qualidade é também parte da disputa\nsobre quem controla os recursos, o território e a organização da sociedade.\nÉ resultado de um modelo que subordina tudo aos interesses do capital. Esse processo\nnão ocorre de forma isolada: ele está diretamente ligado à forma como os recursos\nproduzidos na sociedade são apropriados por grandes grupos econômicos.\nRECONSTRUIR OS SERVIÇOS PÚBLICOS SOB CONTROLE OPERÁRIO E POPULAR\nPara garantir esses direitos, é necessário enfrentar os interesses que controlam os\nrecursos e definir quem decide o destino do orçamento e do investimento público. É\npreciso impedir a privatização destes serviços ou mesmo da gestão deles. A gestão deve\nser realizada pelos trabalhadores do serviço público sob controle dos trabalhadores\nusuários, nos bairros e comunidades\nSAÚDE\nA crise do SUS expressa diretamente esse conflito: garantir saúde pública universal\nimplica enfrentar os mecanismos que drenam recursos e subordinam o sistema à lógica\nprivada.\nDefesa do sus público, universal, gratuito e 100% estatal\nFim da privatização e da gestão privada da saúde (OS, Fundações e PPP)\nProibição da transferência de leitos públicos para planos privados\nAmpliação do investimento público em saúde, com prioridade para a atenção\nbásica\nCuidado com a saúde mental: ampliação do investimento público nos Centros de\nAtenção Psicossocial (Caps), no Serviço de Residências Terapêuticas e Centros\nde Convivência. Nenhum investimento público em Comunidades Terapêuticas!\nContratação via concurso público e valorização dos trabalhadores da saúde\nProdução pública de medicamentos e insumos estratégicos\nExpansão da rede pública de hospitais, upas e Unidades Básicas de Saúde (UBS)\nIntegração entre saúde e saneamento, enfrentando doenças relacionadas à falta\nde infraestrutura.\nEDUCAÇÃO\nDa mesma forma, garantir educação pública de qualidade exige romper com a lógica que\nsubordina a formação e o conhecimento às necessidades do mercado.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n10"
+      },
+      {
+        "id": "os-grandes-grupos-empresariais-da-educacao-avancam-hoje-sobre-a-educacao",
+        "titulo": "Os grandes grupos empresariais da educação avançam hoje sobre a educação básica.",
+        "nivel": 1,
+        "paginaInicial": 12,
+        "paginaFinal": 12,
+        "origem": "pdftotext",
+        "conteudo": "Os grandes grupos empresariais da educação avançam hoje sobre a educação básica.\nPor intermédio de institutos, fundações e movimentos como o Todos Pela Educação,\ndefinem as políticas públicas e influenciam legislações que abrem espaço para diversos\nmecanismos de apropriação das verbas públicas.\nCada vez mais se aprofunda a desigualdade educacional no país: enquanto os filhos dos\nricos têm acesso a escolas equipadas e a um ensino completo para aprender a mandar,\nos filhos da classe trabalhadora estudam em escolas sem estrutura, com um currículo\ncada vez mais simplificado para aprender a obedecer e se submeter ao trabalho precário.\nPor isso, o projeto da burguesia para a juventude trabalhadora é a militarização e a\nplataformização que condicione o aluno a uma realidade de opressão e exploração. O\nnosso projeto de educação deve buscar transmitir o conhecimento socialmente\nacumulado e voltado à produção social e coletiva na mão dos trabalhadores.\nNenhuma verba pública para os grandes empresários da educação!\nFim das Parcerias Público-Privadas (PPP), das terceirizações e da aquisição de\nmateriais e serviços dessas empresas pelas redes públicas de ensino\nRevogação das propostas curriculares elaboradas pelos grandes empresários da\neducação e fundações privadas (BNCC e Novo Ensino Médio). Por propostas\ncurriculares elaboradas pelos trabalhadores da educação.\nNão à militarização das escolas e a projetos de controle ideológico, como Escola\nSem Partido!\nNão à plataformização da educação! Por uma formação completa, crítica e\ncientífica nas escolas públicas.\nValorização dos profissionais da educação, com carreira e salários dignos\nAmpliação de vagas em creches, escolas e universidades públicas\nGarantia de permanência estudantil (transporte, alimentação, bolsas)\nInvestimento massivo na educação pública.\nProdução de conhecimento voltada às necessidades sociais, e não ao mercado\nPor um sistema único de educação para todas as crianças e adolescentes. Abaixo\no abismo entre educação de ricos e pobres!\nMORADIA\nO Brasil precisa de uma revolução urbana. A questão da moradia revela de forma direta o\nconflito entre o direito à vida e a lógica da propriedade privada e da especulação.\nEnquanto milhões de trabalhadores vivem em moradias precárias ou comprometem\ngrande parte da sua renda com aluguel, enormes áreas urbanas permanecem\nsubutilizadas ou destinadas à especulação imobiliária.\nMilhares de imóveis permanecem vazios ou abandonados nas regiões centrais, ao mesmo\ntempo que a população trabalhadora é empurrada para as periferias, enquanto o capital se\napropriou das melhores áreas e transformou o espaço urbano em ativo financeiro.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n11"
+      },
+      {
+        "id": "os-bancos-e-as-grandes-construtoras-tratam-a-terra-e-a-moradia-como-merc",
+        "titulo": "Os bancos e as grandes construtoras tratam a terra e a moradia como mercadoria e fonte",
+        "nivel": 1,
+        "paginaInicial": 13,
+        "paginaFinal": 13,
+        "origem": "pdftotext",
+        "conteudo": "Os bancos e as grandes construtoras tratam a terra e a moradia como mercadoria e fonte\nde lucro, quando a classe trabalhadora depende do território como condição de vida, de\nmoradia e de reprodução social.\nO resultado são grandes cidades profundamente marcadas pela desigualdade,\nsegregação e violência, onde a maioria da nossa classe, negra, periférica e migrante, não\ntem acesso a serviços básicos, como moradia, lazer, transporte, educação e saúde.\nO direito à cidade e à moradia digna para todos só pode ser plenamente garantido com a\nsuperação do capitalismo e a construção de uma sociedade na qual o território deixe de\nser mercadoria e passe a servir à vida.\nCasa para morar, não para especular!\nEnquanto morar for um privilégio, ocupar é um direito!\nFim dos despejos de famílias sem alternativa habitacional\nConstrução massiva de moradias populares e infraestrutura por empresa pública\nde obras\nUrbanização das periferias e comunidades populares\nUniversalização do saneamento básico\nGarantia de infraestrutura, transporte, educação e saúde nos bairros populares\nExpropriação dos imóveis urbanos abandonados, ociosos ou destinados\nexclusivamente à especulação imobiliária.\nPlano diretor com garantia de acesso a serviços e direitos\nIPTU progressivo com isenção para baixa renda\nParticipação popular no planejamento urbano, que deve ser decidido pelo povo\norganizado.\nTRANSPORTE PÚBLICO\nO transporte público é um direito social e condição fundamental para o acesso ao\ntrabalho, à educação, à saúde, à cultura e ao lazer. Mas, ao articular território, trabalho e\nacesso a direitos, mostra como a organização da cidade está subordinada ao lucro e não\nàs necessidades da população.\nAvançam processos de privatização e concessão de metrôs, estradas e ferrovias,\naprofundando a mercantilização da mobilidade.\nHoje, setores empresariais passam a defender a tarifa zero como forma de ampliar\nsubsídios estatais, garantindo lucros sem assegurar qualidade, expansão da rede ou\ncondições dignas de trabalho. Nesse modelo, o Estado paga mais caro por um serviço\nque permanece sob controle privado, enquanto a população segue enfrentando\nsuperlotação, longas filas e deslocamentos exaustivos.\nDefendemos outra lógica: transporte público, estatal, de qualidade e voltado às\nnecessidades da população, e não aos interesses das empresas.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n12"
+      },
+      {
+        "id": "tarifa-zero-no-transporte-publico",
+        "titulo": "Tarifa zero no transporte público",
+        "nivel": 1,
+        "paginaInicial": 14,
+        "paginaFinal": 14,
+        "origem": "pdftotext",
+        "conteudo": "Tarifa zero no transporte público\nTransporte público estatal, sob controle público e dos trabalhadores\nEstatização dos sistemas de transporte urbano e reversão das concessões\nprivadas\nContra a privatização de metrôs, estradas e ferrovias\nFim dos subsídios públicos às empresas privadas de transporte\nAmpliação e integração da rede (ônibus, metrô, trem)\nGarantia de qualidade, manutenção adequada e ampliação do número de linhas\nRedução do tempo de deslocamento da população trabalhadora\nPrioridade para transporte coletivo sobre o individual\nCondições dignas de trabalho para os trabalhadores do transporte\nAPOSENTADORIA\nA aposentadoria é um direito construído ao longo de toda uma vida de trabalho. A\ndestruição da previdência expressa a tentativa de subordinar o direito à velhice digna aos\ninteresses do capital financeiro.\nRevogação da reforma da Previdência\nDefesa da previdência pública, solidária e universal\nGarantia de aposentadoria digna para todos os trabalhadores\nRedução da idade mínima para aposentadoria\nValorização real dos benefícios\nInclusão de trabalhadores informais e precarizados na proteção previdenciária\nCombate a qualquer forma de privatização da previdência social\nGarantir saúde, educação, moradia, transporte e aposentadoria para todos exige\nrecursos, investimento e planejamento que entram em choque direto com os interesses\nque hoje controlam a economia.\nÉ esse choque que leva, na prática, à necessidade de enfrentar os mecanismos que\nconcentram e drenam a riqueza produzida no país.\nA luta por direitos e serviços públicos de qualidade responde às necessidades\ndemocráticas e mínimas da população. Mas sua realização entra em choque direto com\nos interesses de grandes empresas e do sistema financeiro.\nPor isso, garantir esses direitos até o final exige organização, mobilização e\nenfrentamento junto com toda a classe trabalhadora, por outro projeto de país.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n13"
+      },
+      {
+        "id": "meio-ambiente",
+        "titulo": "MEIO AMBIENTE",
+        "nivel": 1,
+        "paginaInicial": 15,
+        "paginaFinal": 15,
+        "origem": "pdftotext",
+        "conteudo": "MEIO AMBIENTE\nA questão ambiental se tornou uma das principais questões do nosso tempo. Seus efeitos\njá são sentidos agora.\nA crise ambiental expressa o esgotamento do próprio sistema e modelo de produção,\nmostrando que não é possível garantir condições de vida dignas sem enfrentar os\ninteresses econômicos que sustentam a destruição ambiental.\nO novo relatório do Programa das Nações Unidas para o Meio Ambiente (Pnuma) reforça\no avanço acelerado da crise climática e o fracasso iminente das metas estabelecidas no\nAcordo de Paris. Mesmo que todos os compromissos atualmente assumidos pelos países\nsejam cumpridos na íntegra, a temperatura média global deve aumentar entre 2,5°C e\n2,9°C até o fim do século – um patamar considerado extremamente perigoso por\ncientistas.\nIsso significaria cruzar vários pontos de não retorno, tornando o aquecimento global\nincontrolável. Um mundo acima de 2°C seria varrido por pandemias, cidades costeiras\ndestruídas, florestas colapsadas e extensas áreas continentais impossíveis de serem\nhabitadas pelos humanos devido ao calor extremo.\nO grande agronegócio, mineradoras e petroleiras aprofundam a crise ambiental, a qual se\nconverte em enchentes, tornados, incêndios e desastres ambientais como os de Mariana\ne Brumadinho, que recaem sobre os trabalhadores e a população mais vulnerável.\nO grande agronegócio é um modelo agrícola destrutivo e no Brasil tem um caráter\ntotalmente predatório. A expansão desse modelo é responsável por aproximadamente\n75% das emissões nacionais de gases de efeito estufa. A expansão da fronteira agrícola\njá destruiu metade do Cerrado, ameaça o Pantanal e pressiona cada vez mais a\nAmazônia.\nSe a extrema direita e o bolsonarismo não escondem que desejam destruir a floresta,\nliberar agrotóxicos proibidos e acabar de vez com os povos originários, Lula também\ngoverna com e para o grande agronegócio e as mineradoras. Autorizou a exploração de\npetróleo na Margem Equatorial, enquanto o Congresso aprovou o Projeto de Lei da\nDevastação e o Marco Temporal\nÉ preciso enfrentar o agronegócio e os governos capitalistas e defender medidas visando\no fim do uso de agrotóxicos, a recuperação de áreas degradadas, a promoção da\nagroecologia e a aceleração da demarcação de terras indígenas e territórios quilombolas:\nFim dos créditos públicos e dos subsídios estatais ao grande agronegócio\nRecuperação das áreas desmatadas e dos biomas devastados pelo agronegócio.\nReparação e demarcação imediata das terras indígenas, titulação dos territórios\nquilombolas e proteção das comunidades tradicionais\nReconhecimento e reparação das populações atingidas por crimes ambientais\nGarantia do direito à autodefesa de todas as comunidades e militantes que lutam\nem defesa do meio ambiente diante da violência patronal e estatal.\nNão à exploração do petróleo da Margem Equatorial!\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n14"
+      },
+      {
+        "id": "nao-a-privatizacao-dos-rios-da-amazonia-das-hidrovias",
+        "titulo": "Não à privatização dos rios da Amazônia das hidrovias!",
+        "nivel": 1,
+        "paginaInicial": 16,
+        "paginaFinal": 16,
+        "origem": "pdftotext",
+        "conteudo": "Não à privatização dos rios da Amazônia das hidrovias!\nPlanos de prevenção contra os efeitos do aquecimento global, tais como:\nprevenção contra enchentes; prevenção contra deslizamentos de áreas de risco,\nque atingem as moradias mais precárias.\nPlanos de emergência e defesa civil: alertas e evacuação, com participação\ncomunitária\nImpedir que a ocupação do solo seja feita pela especulação imobiliária.\nReflorestamento urbano\nDefesa dos rios e recursos hídricos que foram privatizados.\nÉ preciso superar o modelo do grande agronegócio e construir formas de\nprodução que respeitem os territórios, os povos e os limites ecológicos da Terra.\nTambém para garantir soberania alimentar, acabar com a fome no Brasil e\nproduzir uma agricultura livre de agrotóxicos.\nÉ crescente a incompatibilidade entre a expansão do agronegócio e a preservação da\nAmazônia em um contexto de crise climática global.\nDiante do colapso ambiental em curso, torna-se cada vez mais evidente que não é\npossível continuar apostando em um modelo agrícola baseado na destruição de florestas,\nna exportação de commodities e na apropriação de territórios tradicionais. Em um\nplaneta que já enfrenta eventos climáticos extremos cada vez mais frequentes, insistir\nnesse caminho significa aprofundar uma crise que ameaça tanto a natureza quanto a\nprópria sobrevivência humana.\n\nTerra para quem nela vive e trabalha!\nO campo brasileiro vive uma escalada de conflitos e violência. O avanço do grande\nagronegócio sobre o Cerrado e a Amazônia intensifica expulsões, concentra terras e\ninstitucionaliza a violência por meio de grupos que atuam como milícias contra\ntrabalhadores. Mais de sete milhões de camponeses sem terra enfrentam precariedade\nextrema, exploração e risco constante de despejo, enquanto cerca de um milhão vivem\nem acampamentos sem condições básicas; mesmo os assentamentos não garantem\nautonomia produtiva. O problema não é a falta de terra, mas quem a controla.\nTerra a quem nela trabalha! Por reforma agrária e por uma revolução na estrutura\ndo campo brasileiro! Transferir o controle das terras para os trabalhadores rurais,\ntransformando estruturalmente as relações de propriedade, poder e produção no\ncampo, pondo fim à exploração que enriquece bilionários.\nDemarcação de terras indígenas e quilombolas\nDesapropriação das áreas utilizadas para especulação fundiária – incluindo terras\npúblicas devolutas, latifúndios improdutivos, áreas griladas, terras concentradas\nem monoculturas voltadas à exportação, propriedades subutilizadas e áreas sob\ncontrole do capital financeiro.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n15"
+      },
+      {
+        "id": "assentamentos-com-garantia-de-infraestrutura-rural-como-moradia-agua",
+        "titulo": "Assentamentos com garantia de infraestrutura rural, como moradia, água,",
+        "nivel": 1,
+        "paginaInicial": 17,
+        "paginaFinal": 17,
+        "origem": "pdftotext",
+        "conteudo": "Assentamentos com garantia de infraestrutura rural, como moradia, água,\nenergia e estradas\nAssistência técnica e garantia de comercialização, articulando o acesso à terra\ncom condições reais de permanência no campo.\nCriação de redes locais de produção, voltadas à produção, comercialização e\nresistência, capazes de enfrentar o agronegócio.\nAUTONOMIA PARA QUEM PRODUZ ALIMENTOS E SOBERANIA ALIMENTAR\nOs pequenos e médios produtores são estratégicos para a soberania alimentar e a\nprodução de alimentos no Brasil, mas não controlam o processo produtivo. Estão\nsubordinados às cadeias do agronegócio, que impõem o que produzir, os preços e as\ncondições de comercialização, transferindo riscos e custos aos produtores, enquanto o\ncontrole e a apropriação do valor permanecem com os grandes grupos econômicos.\nCrédito público direcionado, sem intermediação privada, com juros baixos,\ncombinado com subsídios ao pequeno produtor, incluindo isenção de impostos,\nseguro agrícola e políticas que evitem endividamento.\nRegulação e proteção do mercado interno, com preços mínimos, estoques\nreguladores e compras públicas (merenda escolar, hospitais e programas\nsociais), reduzindo a dependência em relação às grandes empresas.\nPrioridade à produção de alimentos da cesta básica, com apoio à diversificação\nagrícola voltada ao abastecimento interno, livre de transgênicos e agrotóxicos,\npreservando a saúde da população e o meio ambiente.\nIncentivo a modelos produtivos com menor dependência de insumos externos,\nincluindo a transição para uma agricultura popular e agroecológica.\nDesenvolver tecnologias próprias de produção de defensivos, manejo e controle\nde pragas, adaptadas às condições do território brasileiro, sob controle público,\na partir de pesquisas nas universidades públicas e institutos nacionais.\nProdução nacional de maquinário agrícola, como colheitadeiras e tratores,\nrompendo a dependência das importações.\nFortalecimento da organização coletiva, com cooperativas e associações,\ncondições de produção que permitam aos pequenos produtores disputar não\napenas a produção, mas também a circulação e a definição do que se produz,\ndeslocando o centro de decisão hoje concentrado no agronegócio para os\npróprios trabalhadores do campo.\nIncentivo ao processamento da produção pelas próprias famílias e organizações\ncamponesas, agregando valor e gerando renda no campo.\nEducação no campo, combate ao analfabetismo e valorização dos saberes locais.\nDIREITOS PARA OS TRABALHADORES ASSALARIADOS DO CAMPO\nOs trabalhadores assalariados do campo constituem uma parcela fundamental da força\nde trabalho rural no Brasil, mas enfrentam condições marcadas por precarização,\ninformalidade, baixos salários e instabilidade. A remuneração média permanece\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n16"
+      },
+      {
+        "id": "significativamente-inferior-a-urbana-frequentemente-proxima-a-um-salario",
+        "titulo": "significativamente inferior à urbana, frequentemente próxima a um salário mínimo,",
+        "nivel": 1,
+        "paginaInicial": 18,
+        "paginaFinal": 18,
+        "origem": "pdftotext",
+        "conteudo": "significativamente inferior à urbana, frequentemente próxima a um salário mínimo,\nenquanto a terceirização, o trabalho temporário e as condições degradantes são\nrecorrentes, inclusive com casos de trabalho análogo à escravidão.\nGarantia de direitos trabalhistas plenos, com equiparação aos direitos urbanos,\nincluindo jornadas regulamentadas, descanso semanal e previdência.\nCombate efetivo ao trabalho análogo à escravidão, com fiscalização rigorosa,\npunição exemplar aos responsáveis e expropriação das empresas onde essas\npráticas forem identificadas, colocando-as sob controle dos trabalhadores.\nFim da terceirização e da informalidade no campo\nCondições de trabalho seguras, com acesso a equipamentos de proteção e\npolíticas de saúde e segurança.\nEXPROPRIAR O GRANDE AGRONEGÓCIO, GARANTIR AUTONOMIA PRODUTIVA\nExpropriação das grandes propriedades rurais e das empresas do agronegócio,\nretirando o controle da produção do grande capital e das multinacionais, sem\nindenização aos grandes grupos e sob controle dos trabalhadores rurais.\nFim dos subsídios públicos bilionários ao grande agronegócio e aos monopólios,\nnacionais e internacionais, com redirecionamento desses recursos para a\nprodução de alimentos voltada à soberania alimentar.\nRomper com a subordinação dos pequenos e médios produtores à lógica do\nagronegócio, garantindo autonomia produtiva e capacidade de decisão sobre o\nque e como produzir.\n\nSegurança pública\nA população trabalhadora convive diariamente com diferentes formas de violência:\ndesde aquelas que são fruto do desespero social até assaltos, roubos, feminicídios,\nviolência contra as mulheres, atuação de organizações criminosas – tráfico, milícias,\nfacções ou outras organizações –, além da violência praticada pelo próprio Estado contra\nas periferias, especialmente contra a juventude negra e pobre e os movimentos\npopulares.\nAs instituições que, em tese, deveriam garantir a segurança da população são, dentro do\nsistema capitalista, organizadas para preservar a ordem social existente. À medida que a\ncrise e a decadência do capitalismo se aprofundam, essas mesmas instituições,\njustamente para sustentar um sistema cada vez mais em crise, tornam-se também fonte\nde violência e insegurança, atingindo principalmente a população trabalhadora. Por isso,\nfracassa a política dos governos do sistema, que alternam entre o abandono das\ncomunidades e a repressão indiscriminada da população pobre, sem enfrentar os\ngrandes interesses econômicos, políticos e estatais – muitas vezes também corruptos –\nque sustentam a criminalidade organizada.\nCoerentes com esse papel, as atuais instituições policiais estão organizadas para exercer\no controle social sobre a população pobre e trabalhadora, e não para garantir sua\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n17"
+      },
+      {
+        "id": "seguranca-o-carater-militar-dessas-instituicoes-presente-nas-pms-e-cada",
+        "titulo": "segurança. O caráter militar dessas instituições – presente nas pms e cada vez mais",
+        "nivel": 1,
+        "paginaInicial": 19,
+        "paginaFinal": 19,
+        "origem": "pdftotext",
+        "conteudo": "segurança. O caráter militar dessas instituições – presente nas pms e cada vez mais\nampliado em parte das demais polícias – é funcional a esse objetivo. No caso das PMs,\nisso é ainda mais grave, pois elas constituem uma extensão do Exército voltada para\natuar na ordem interna. Enquanto existir esse sistema, essas instituições permanecerão\ncumprindo esse papel. Por isso, o objetivo estratégico da classe trabalhadora deve ser\nsua dissolução e a construção de um sistema de segurança pública baseado na\nauto-organização da população trabalhadora ou sob seu estrito controle em outra\nsociedade.\nIsso não nos exime de lutar desde já; por um lado, em defesa de mudanças no sentido de\nbuscar garantir os direitos democráticos da população a uma segurança efetiva. Isso\ninclui medidas que coíbam a violência policial contra a população e para um maior\ncontrole social sobre essas instituições.\nPor outro lado, em defesa dos direitos democráticos dos próprios policiais frente a seus\ncomandos, aos governos e ao sistema. Diferentemente de seus comandos, a base\ndessas instituições vem da classe trabalhadora, embora sejam separados dela e\ntreinados para reprimir suas lutas. Também sofrem com baixos salários, precarização,\njornadas exaustivas e diversas restrições a direitos democráticos. Assim, defendemos\nliberdade de organização e os direitos econômicos e democráticos da base das polícias.\nCombater o crime organizado, as máfias, as milícias, as facções e demais\norganizações criminosas por meio da investigação, inteligência e desarticulação\nde seus negócios, atingindo seu patrimônio, suas fontes de financiamento e suas\nrelações com agentes públicos, políticos, empresários e, em especial, com o\nsistema financeiro, em vez de realizar operações militares que vitimam\nprincipalmente a população trabalhadora. O crime organizado e o narcotráfico\nsão empresas capitalistas ilegais que mantêm relações com o sistema financeiro,\nsetores do Estado e empresários.\nConfisco dos bens obtidos por atividades criminosas, punição dos agentes\npúblicos envolvidos com organizações criminosas e dissolução dos grupos e\nestruturas milicianizadas existentes no aparelho de Estado.\nInvestigação e punição de corruptos e corruptores, com confisco dos bens\nobtidos por meio da corrupção.\nDescriminalização das drogas e revogação da Lei Antidrogas, para efetivamente\ncombater e acabar com o narcotráfico, junto com políticas públicas de\nprevenção, tratamento e redução de danos.\nImplantação de câmeras corporais para todos os agentes de segurança pública,\ncom gravação ininterrupta e armazenamento das imagens sob controle de\nórgãos civis, garantindo acesso às gravações quando houver processo legal.\nFim da Justiça Militar\nPunição exemplar para tortura, execuções, desaparecimentos forçados, chacinas\ne demais crimes praticados por agentes do Estado, responsabilizando também\nseus comandantes militares e civis.\nDesmilitarização da Polícia Militar e reversão da dinâmica de militarização das\ndemais polÍcias e guardas municipais.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n18"
+      },
+      {
+        "id": "unificacao-das-policias-em-uma-unica-instituicao-de-carater-civil-com-el",
+        "titulo": "Unificação das polícias em uma única instituição de caráter civil, com eleição de",
+        "nivel": 1,
+        "paginaInicial": 20,
+        "paginaFinal": 20,
+        "origem": "pdftotext",
+        "conteudo": "Unificação das polícias em uma única instituição de caráter civil, com eleição de\ncomandantes e delegados pela população e mandatos revogáveis\nDireito de organização e sindicalização dos policiais. Fim dos abusos e do\ndesrespeito que caracterizam o tratamento dos policiais dentro das instituições\nde segurança pública, com controle popular sobre essas instituições.\nContra as milícias e bandos paramilitares organizados por agentes do Estado.\nExpulsão de todos os envolvidos das polícias, dissolução imediata dos batalhões\nmilicianizados, punição de todos os políticos envolvidos com as milícias e\nproibição de que qualquer agente do Estado envolvido com essas organizações\nvolte a exercer cargo público.\nResponsabilização de bancos, fintechs e plataformas digitais pela adoção de\nmecanismos efetivos de prevenção às fraudes. Restituição imediata de valores\ndesviados em casos de fraude eletrônica. A digitalização dos serviços não pode\ntransferir à população os riscos das operações financeiras.\nDIREITO E ESTÍMULO À ORGANIZAÇÃO DA AUTODEFESA\nA luta para que as instituições de segurança pública atuem para garantir a segurança da\npopulação – e não seu controle social – é parte da luta pelos direitos democráticos da\npopulação trabalhadora. Mas ela não pode parar aí.\nDesde já, é preciso estimular a população a se auto-organizar para garantir sua\nprópria segurança, seja diante do crime organizado e da criminalidade em geral,\nseja diante da violência do Estado por suas polícias.\nA organização da autodefesa dos trabalhadores deve, sempre que possível,\ncombinar-se com o chamado aos policiais e aos demais integrantes da base das\ninstituições armadas do Estado para que se unam aos trabalhadores e defendam\nsuas reivindicações. Afinal, os responsáveis pelas mazelas impostas à classe\ntrabalhadora em nome do lucro dos grandes monopólios são os mesmos\nresponsáveis pelas condições de vida dos próprios policiais e de suas famílias.\nEsse é o caminho que nos permitirá atingir o objetivo estratégico que buscamos.\n\nCombate às opressões: abaixo o\nracismo, o machismo, a lgbtfobia,\na xenofobia. Defesa dos povos\nindígenas!\nA unidade e a emancipação da classe trabalhadora não é possível sem o combate a toda\nopressão. Não pode ser livre quem oprime o outro.\nAs opressões cumprem o papel de dividir a classe trabalhadora e permitir níveis mais\naltos de exploração.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n19"
+      },
+      {
+        "id": "negras-e-negros",
+        "titulo": "NEGRAS E NEGROS",
+        "nivel": 1,
+        "paginaInicial": 21,
+        "paginaFinal": 21,
+        "origem": "pdftotext",
+        "conteudo": "NEGRAS E NEGROS\nO Brasil de hoje não é mais o da década de 1980, quando a Política de Reparação ganhou\nvisibilidade com as mobilizações contra a comemoração dos 100 anos da abolição, em\n1988, e com a disputa da Constituição. O mundo mudou, a localização do Brasil na ordem\nmundial mudou, a classe trabalhadora mudou. E a situação da população negra, maioria\nabsoluta do proletariado brasileiro, não ficou imune. Pelo contrário: o trabalhador negro\nfoi o setor mais atingido pela reestruturação capitalista dos últimos trinta anos.\nA extrema direita nega os impactos da escravidão porque é contra qualquer política\npública. Já a esquerda lulista e institucional se apega à reparação de forma esvaziada:\njoga todos os problemas do povo negro para o passado, isentando seus próprios\ngovernos que aprofundaram a desigualdade racial, e reduz reparação a ações afirmativas\nou assistencialismo, sem tocar na grande propriedade privada. A PEC 27/2024, do União\nBrasil e abraçada por PT, PSOL e PCdoB como “PEC da Reparação”, é o exemplo mais\nsintomático. Serviu só para desviar o foco do Banco do Brasil, identificado como maior\nfinanciador do tráfico de africanos escravizados na história do capitalismo.\nNossa política de reparação deve combinar as questões históricas da escravidão e da\nabolição sem reparação com os problemas que se intensificaram nos últimos trinta anos,\nfrutos da nova inserção do Brasil na divisão internacional do trabalho e da decadência do\npaís.\nPROGRAMA PARA A QUESTÃO NEGRA\nExpropriação imediata, sem indenização, de todas as fazendas do agronegócio\nque atuam sobre territórios indígenas e quilombolas.\nTitulação já dos territórios quilombolas!\nFim da escala 6×1! Pela redução da jornada para 36 horas semanais, escala 4×3,\nsem redução de salário. O povo negro é maioria nos empregos precarizados e\nnão aguenta mais essa superexploração.\nFim das terceirizações. Salário igual para trabalho igual nos serviços públicos\nManutenção e ampliação de cotas para negros nas universidades e serviços\npúblicos\nCombate à intolerância às religiões de matriz africana, como expressão do\nracismo religioso no Brasil\nContra a criminalização das culturas periféricas: funk e batalhas de rima não são\ncasos de polícia.\nContra a redução da maioridade penal\nDesmilitarização da pm e unificação das polícias sob controle dos trabalhadores\nRevogação da Lei Antidrogas e fim da privatização dos presídios.\nDesencarceramento em massa\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n20"
+      },
+      {
+        "id": "implementacao-efetiva-da-lei-1645-2008-com-ensino-de-historia-e-cultura",
+        "titulo": "Implementação efetiva da Lei 1645/2008, com ensino de história e cultura",
+        "nivel": 1,
+        "paginaInicial": 22,
+        "paginaFinal": 22,
+        "origem": "pdftotext",
+        "conteudo": "Implementação efetiva da Lei 1645/2008, com ensino de história e cultura\nafro-brasileira e indígena em toda rede de ensino\nPunição severa (multas de caráter confiscatório ou mesmo expropriação) dos\nempregadores que estimulam ou toleram racismo nos locais de trabalho.\nQue o Banco do Brasil destine suas verbas para a agricultura familiar, quilombola\ne indígena, e não para o agronegócio escravista.\nExpropriação de todos os bilionários herdeiros de famílias escravocratas\nMULHERES\nAs mulheres compõem uma parte decisiva da classe trabalhadora brasileira e estão entre\nas mais atingidas pela decadência econômica e social do país. São maioria nos trabalhos\nmais precarizados, informais e mal remunerados, concentradas nos setores de serviços,\ncuidado e reprodução social, recebendo salários inferiores mesmo quando exercem as\nmesmas funções.\nA reestruturação produtiva, a terceirização, a plataformização e a destruição de direitos\naprofundaram essa realidade. Essa situação atinge de forma ainda mais brutal as\nmulheres negras, que ocupam a base da pirâmide social, combinando superexploração\ncom racismo.\nAo mesmo tempo, o capitalismo se sustenta na dupla jornada das mulheres\ntrabalhadoras. Milhões garantem gratuitamente a reprodução da força de trabalho por\nmeio do trabalho doméstico e de cuidado, enquanto o capital reduz custos e amplia seus\nlucros. Em um cenário de crise, desemprego e cortes sociais, essa sobrecarga aumenta,\nampliando a dependência econômica e aprisionando muitas mulheres em relações de\nviolência.\nA violência contra as mulheres, incluindo o feminicídio, não é um fenômeno isolado nem\nmeramente cultural. Está diretamente ligada à desigualdade material, à dependência\neconômica e à estrutura de poder da sociedade de classes. No Brasil, essa violência tem\ncor: as mulheres negras são as principais vítimas.\nA opressão das mulheres cumpre um papel funcional no capitalismo: divide a classe\ntrabalhadora, rebaixa salários e amplia a exploração. Por isso, não será superada por\npolíticas pontuais ou dentro dos limites do sistema. Ao mesmo tempo, não desaparecerá de\nforma automática com a luta econômica: exige medidas concretas, mobilização e\nauto-organização das mulheres trabalhadoras, ligadas à luta de toda a classe trabalhadora.\nBASTA DE FEMINICÍDIO E VIOLÊNCIA CONTRA AS MULHERES!\nProteção real para as mulheres: delegacias especializadas abertas 24 horas,\ncasas-abrigo e rede de atendimento conforme a demanda, com recursos\ngarantidos pelo Estado e sob controle das trabalhadoras e da população.\nPunição efetiva aos agressores, com garantia de proteção às vítimas\nCampanhas massivas de combate à violência nas escolas, locais de trabalho e\nmeios de comunicação\nOrganização de comissões de mulheres nos locais de trabalho, estudo e moradia\npara prevenir e enfrentar a violência.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n21"
+      },
+      {
+        "id": "emprego-renda-e-moradia-como-condicao-concreta-para-romper-ciclos-de",
+        "titulo": "Emprego, renda e moradia como condição concreta para romper ciclos de",
+        "nivel": 1,
+        "paginaInicial": 23,
+        "paginaFinal": 23,
+        "origem": "pdftotext",
+        "conteudo": "Emprego, renda e moradia como condição concreta para romper ciclos de\nviolência.\nCombate às ideologias misóginas e responsabilização das plataformas que\nlucram com a disseminação do ódio contra as mulheres.\nPOR EMPREGO, SALÁRIO DIGNO E DIREITOS PARA AS MULHERES!\nSalário igual para trabalho igual\nCombate à desigualdade salarial e à superexploração das mulheres, em especial\ndas mulheres negras\nGarantia de direitos para todas as trabalhadoras (aposentadoria, licença\nmaternidade, auxílio-doença etc.), independentemente do vínculo empregatício\nProteção social (aposentadoria, licença maternidade, auxílio-doença etc.) para\ntodas: formais, informais e desempregadas\nPrioridade de acesso ao emprego e às políticas públicas para mulheres\ntrabalhadoras, em especial as mais precarizadas\nCHEGA DE DUPLA JORNADA! PELA SOCIALIZAÇÃO DO TRABALHO DOMÉSTICO!\nCreches e escolas públicas, gratuitas e em tempo integral para todas as crianças,\ncomo condição para a independência das mulheres\nRestaurantes populares e lavanderias públicas em todos os bairros\nAmpliação dos serviços públicos de cuidado (idosos, pessoas com necessidades\nespeciais) retirando das mulheres essa sobrecarga.\nRedução da jornada de trabalho sem redução salarial como medida para\nenfrentar a dupla jornada e garantir qualidade de vida.\nPELO DIREITO AO CORPO E À MATERNIDADE LIVRE!\nEducação sexual para decidir, contraceptivo para não engravidar, aborto legal e\nseguro para não morrer.\nAborto legal, seguro e gratuito pelo sus, contra qualquer interferência de igrejas\ne setores reacionários\nLicença parental de um ano, compartilhada entre responsáveis.\nMaternidade como direito, e não como obrigação\nGarantia de condições materiais para quem deseja maternar.\nFim de toda forma de controle sobre o corpo das mulheres.\nMULHERES NEGRAS: NA BASE DA EXPLORAÇÃO E DA OPRESSÃO\nAs mulheres negras expressam de forma mais brutal a combinação entre exploração de\nclasse e opressões. São maioria no trabalho precário, no desemprego e entre as vítimas\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n22"
+      },
+      {
+        "id": "da-violencia-estatal-e-do-feminicidio-essa-realidade-e-produto-direto-da",
+        "titulo": "da violência estatal e do feminicídio. Essa realidade é produto direto da formação",
+        "nivel": 1,
+        "paginaInicial": 24,
+        "paginaFinal": 24,
+        "origem": "pdftotext",
+        "conteudo": "da violência estatal e do feminicídio. Essa realidade é produto direto da formação\nhistórica do país e da permanência do racismo no capitalismo brasileiro.\nPrioridade de acesso ao emprego, renda e políticas públicas para mulheres\nnegras\nCombate à superexploração das trabalhadoras negras\nGarantia de direitos às trabalhadoras domésticas\nEnfrentamento ao genocídio da população negra, que atinge diretamente as\nmulheres como vítimas e como mães.\nUMA LUTA QUE EXIGE RUPTURA\nA opressão das mulheres não será superada por políticas compensatórias nem dentro\ndos limites do capitalismo. Enquanto existir uma sociedade baseada na exploração, na\npropriedade privada e na desigualdade, a opressão de gênero seguirá sendo funcional ao\nsistema.\nAs reivindicações aqui apresentadas partem das necessidades mais imediatas das\nmulheres trabalhadoras, mas sua plena realização entra em choque com os limites do\ncapitalismo, exigindo enfrentar os interesses dos grandes capitalistas e do Estado que os\nsustenta.\nPor isso, a luta das mulheres trabalhadoras deve estar ligada à luta de toda a classe\ntrabalhadora pela transformação da sociedade, pela expropriação dos grandes\ncapitalistas e pela construção de uma sociedade socialista, baseada na igualdade\nmaterial e na libertação de toda forma de opressão.\nLGBTQIAPN+\nNo capitalismo, a sexualidade é moldada pela necessidade da reprodução da força de\ntrabalho e da família tradicional. O gênero é aprisionado nesse modelo\nheteronormativo, em que a disforia entre o sexo/fenótipo biológico e o gênero social é\ntaxado como doença, e pessoas trans e não binárias são tratadas como pessoas de\nsegunda categoria, desumanizadas.\nO Estado nega direitos básicos à população LGBTQIAPN+ e é cúmplice da brutal\nviolência que ela sofre no cotidiano. A burguesia se aproveita da lgbtifobia para\nrelegá-los aos postos de trabalho mais precários e com menores salários, quando não\nestão compondo as fileiras do exército industrial de reserva no subemprego ou na\nprostituição. Defendemos um programa que enfrente a violência, garanta acesso ao\ntrabalho e à renda, à saúde e à educação, assegure direitos sociais plenos e combata\ntodas as formas de discriminação, unificando a luta da população lgbti+ com a luta de\ntoda a classe trabalhadora.\nVidas LGBTQIAPN+ importam: basta de violência! Criminalização da lgbtfobia\njá!\nCasas-abrigo e proteção para vítimas de violência!\nDireito ao nome social, sem burocracia e sem taxas!\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n23"
+      },
+      {
+        "id": "investimento-na-saude-especializada-para-pessoas-lgbtqiapn-direito-a",
+        "titulo": "Investimento na saúde especializada para pessoas LGBTQIAPN+. Direito à",
+        "nivel": 1,
+        "paginaInicial": 25,
+        "paginaFinal": 25,
+        "origem": "pdftotext",
+        "conteudo": "Investimento na saúde especializada para pessoas LGBTQIAPN+. Direito à\nterapia hormonal e à cirurgia de redesignação pelo sus, com acompanhamento\nadequado. Políticas de prevenção de ISTs e tratamento para pessoas com HIV,\nem especial nas periferias.\nContra a patologização das identidades LGBTQIAPN+: não à “cura gay”!\nEducação sexual nas escolas e fim do financiamento de comunidades\nterapêuticas e manicômios\nPelo direito de existir, contra o apartheid trans! Trabalho, direitos, renda e\ndignidade! Cotas trans nas universidades e concursos públicos, rumo ao pleno\nemprego!\nPor banheiros multigênero em órgãos públicos e o direito de pessoas trans e\nnão binárias de usarem o banheiro no qual se sintam seguras.\nEmprego, qualificação profissional e políticas públicas para travestis e\ntransexuais que queiram sair da prostituição.\nPOVOS INDÍGENAS\nAo lado da escravidão, houve no Brasil um genocídio indígena. A luta que derrubou a\nditadura conquistou a reserva das terras indígenas para impedir o seu extermínio e\ninscreveu esse direito na Constituição de 1988, mas, como tantos outros, ele nunca foi\nregulamentado. E mineradoras, madeireiras, agronegócio, fazendeiros e seus jagunços\ne o próprio Estado promovem uma violência enorme para expulsá-los das suas terras,\nprivatizando e contaminando seus rios e o solo, promovendo chacinas, tentativas de\ngenocídio e instituição do Marco Temporal, que na prática impede a demarcação da\nmaioria das terras indígenas\nDemarcação e regulamentação já de todas terras indígenas é uma medida\ndemocrática mínima.\nDireito a reparações aos povos indígenas\nIMIGRANTES\nBasta de xenofobia e superexploração!\nDireito imediato à nacionalidade: legalização dos papéis de haitianos,\nbolivianos, venezuelanos, cubanos, angolanos e todos os africanos\nDireitos civis, trabalhistas e sociais\nA classe trabalhadora é uma só, seja brasileira, seja estrangeira.\nPESSOAS COM DEFICIÊNCIA\nNo Brasil, segundo o IBGE, são mais de 18 milhões de pessoas com deficiência, e elas\nterminam sendo discriminadas e oprimidas por uma forma de sociedade que se recusa\na se adaptar às diferentes formas de existência humana, porque está voltada para a\nacumulação de capital.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n24"
+      },
+      {
+        "id": "mais-oportunidades-de-emprego-e-condicoes-de-trabalho-e-de-estudo-mais-c",
+        "titulo": "Mais oportunidades de emprego e condições de trabalho e de estudo. Mais cotas",
+        "nivel": 1,
+        "paginaInicial": 26,
+        "paginaFinal": 26,
+        "origem": "pdftotext",
+        "conteudo": "Mais oportunidades de emprego e condições de trabalho e de estudo. Mais cotas\nGarantia de intérprete de libras nas universidades e meios de comunicação\nAcessibilidade: rampas e elevadores para cadeirantes nos serviços públicos,\nbancos, supermercados\nEspaços que abafem ruídos para autistas com sensibilidade auditiva, em\nespecial nas escolas.\nAssistência médica gratuita e de qualidade no sus\nTodas essas lutas – por soberania, trabalho, terra, meio ambiente, serviços públicos,\nsegurança, contra as opressões de negros e negras, mulheres, das LGBTQIAPN+,\npovos indígenas – partem das necessidades imediatas da população.\nMas, ao avançarem, entram em conflito com os interesses dos grandes grupos\neconômicos, do sistema financeiro e da forma como a economia está organizada.\nÉ esse processo que coloca a necessidade de ir além das reivindicações imediatas e\nenfrentar as engrenagens do sistema que bloqueiam sua realização.\n\nAs medidas de um plano\neconômico dos trabalhadores\nREESTATIZAÇÃO DAS EMPRESAS ESTRATÉGICAS:\nPELO CONTROLE SOCIAL DOS SETORES ESTRATÉGICOS\nExpropriação imediata (em grande parte dos casos, reversão de privatização)\ndas grandes empresas privadas dos setores de mineração, petróleo, energia,\nsiderurgia, celulose e das grandes comercializadoras e centralizadoras do\nagronegócio, incorporando seus ativos ao patrimônio público nacional.\nProibição da privatização de empresas estratégicas e reversão das privatizações\nrealizadas nos setores considerados essenciais à soberania econômica, militar e\nsocial.\nPetrobras 100% estatal e sob controle dos trabalhadores já!\nDestinação prioritária dos excedentes dessas empresas à criação e expansão de\nsetores de alta complexidade tecnológica, especialmente nos ramos de refino e\nde separação de alta pureza de terras raras e minerais críticos, máquinas e\nequipamentos associadas à estrutura produtiva nacional, infraestrutura digital,\nquímica fina e defesa.\nAs terras raras são nossas! Pela criação de uma empresa estatal de terras raras\nsob controle dos trabalhadores\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n25"
+      },
+      {
+        "id": "limitacao-em-25-da-distribuicao-de-dividendos-das-grandes-empresas-priva",
+        "titulo": "Limitação em 25% da distribuição de dividendos das grandes empresas privadas",
+        "nivel": 1,
+        "paginaInicial": 27,
+        "paginaFinal": 27,
+        "origem": "pdftotext",
+        "conteudo": "Limitação em 25% da distribuição de dividendos das grandes empresas privadas\nremanescentes, com reinvestimento obrigatório do excedente produtivo no\nterritório nacional.\nExpropriação integral da produção nacional de ouro e metais preciosos\nestratégicos, com incorporação automática às reservas cambiais públicas com\nvistas à redução da dependência das reservas em dólar e títulos estrangeiros,\nsejam eles originários, sejam de que país for.\nCriação de fundos públicos de investimento produtivo, abastecidos pelos\nexcedentes das empresas expropriadas, e não por impostos, voltados à\nindustrialização, inovação tecnológica e expansão da infraestrutura nacional\norganicamente associados a todas as universidades e institutos públicos de\npesquisa e desenvolvimento.\nBancos públicos 100% estatais e reestruturados de modo a se adequarem a uma\nestratégia nacional de desenvolvimento.\nAo passo que essas medidas entrem em pauta, elas colocam diretamente o\nenfrentamento com os grandes grupos econômicos, o sistema financeiro e o\nimperialismo, que se apoiam justamente na apropriação desses excedentes.\n\nO financiamento do plano\ndos trabalhadores\nO financiamento dessas medidas se dá ao interromper os mecanismos pelos quais a\nriqueza produzida é apropriada por uma minoria.\nTributação fortemente progressiva sobre lucros empresariais e taxação ampliada\nsobre remessas de capital ao exterior, impedindo a evasão do excedente\nproduzido pelos trabalhadores brasileiros.\nImposto progressivo sobre as verdadeiras grandes fortunas, o topo da pirâmide,\nos que possuem de R$ 1 bilhão para cima.\nFim dos benefícios fiscais e tributários às grandes empresas\nIsenção de ir até dez salários mínimos, atualizando a tabela à 1996, a partir de\nquando deixou de ser corrigida pela inflação, fazendo cada vez mais pobres\npagarem ir. A partir daí, alíquotas progressivas.\nCobrança da dívida ativa das grandes empresas com a União (entre elas, Vale,\nJBS, Coca-Cola, Raízen, Gerdau e tantas outras), sob pena de expropriação. A\nsoma da dívida das grandes empresas ultrapassa R$ 1 trilhão, grande parte com\nINSS e FGTS.\nProibição das Bets, expropriação de seu capital e de seus proprietários e sua\nreversão a um fundo público de saúde para o tratamento de ludopatia, com a\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n26"
+      },
+      {
+        "id": "proibicao-aos-bancos-de-realizarem-transacoes-financeiras-a-essas-empres",
+        "titulo": "proibição aos bancos de realizarem transações financeiras a essas empresas.",
+        "nivel": 1,
+        "paginaInicial": 28,
+        "paginaFinal": 28,
+        "origem": "pdftotext",
+        "conteudo": "proibição aos bancos de realizarem transações financeiras a essas empresas.\nSuspensão do pagamento da dívida pública aos grandes investidores e auditoria\nFim a Lei de Responsabilidade Fiscal\nA estatização do sistema financeiro e centralização do crédito em um banco\núnico é essencial para planejar a economia e garantir o controle de capitais.\nO controle do sistema financeiro não aparece aqui como uma escolha isolada, mas como\nconsequência necessária do enfrentamento com os mecanismos que bloqueiam o\nfinanciamento das demandas sociais.\nSOBERANIA DIGITAL\nO avanço das tecnologias e da economia digital amplia ainda mais esse problema, ao\ndeslocar o controle do excedente e das decisões econômicas para fora do país.\nO domínio tecnológico se tornou base central da dependência econômica\ncontemporânea, sobretudo nos novos ramos produtivos oriundos das últimas revoluções\ntecnológicas. Estes nem sequer dependem de unidades produtivas instaladas próximo\ndos locais de consumo. Esse cenário enterrou de vez os projetos de desenvolvimento\nnacional, subordinados ao capital internacional sob o eufemismo de globalização.\nO controle das infraestruturas digitais, dados, plataformas e ia se concentra em grandes\nconglomerados estrangeiros, submetendo Estado, produção nacional e trabalhadores a\ninteresses privados e leis externas. A exposição de dados públicos – defesa,\nadministração, empresas estratégicas – implica a perda completa de soberania sobre\ninformações sensíveis nos campos econômico, político e militar.\nAo mesmo tempo, a relativa novidade tecnológica de áreas como inteligência artificial,\nmodelos de linguagem, automação de processos e infraestrutura de dados abre uma\njanela histórica para reduzir o atraso acumulado. O país deve utilizar os excedentes das\nempresas estratégicas expropriadas para construir uma base tecnológica própria,\narticulada às universidades públicas, aos institutos de pesquisa, sob controle dos\nconselhos de trabalhadores que produzem e utilizam essas ferramentas.\nPELA CONSTRUÇÃO DE UMA INFRAESTRUTURA DIGITAL\nSOB CONTROLE DOS TRABALHADORES\nProibição da hospedagem de dados governamentais sensíveis em nuvens\nestrangeiras e vedação de contratos que submetam dados nacionais a\nlegislações externas.\nDesenvolvimento de uma inteligência artificial pública nacional, financiada por\nexcedentes de empresas estratégicas expropriadas, com uso obrigatório na\ngestão e em empresas públicas e como opção subsidiada às diversas\nmodalidades de trabalho por plataformas e aos consumidores em geral.\nPrioridade nacional ao desenvolvimento e uso de softwares livres e bens públicos\ndigitais, em parceria com universidades públicas e institutos de pesquisa\nGarantia de remuneração continuada aos trabalhadores e produtores de\nconhecimento cujos conteúdos e dados sejam utilizados no treinamento de\nsistemas de inteligência artificial estatais.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n27"
+      },
+      {
+        "id": "gestao-democratica-da-infraestrutura-digital-por-conselhos-compostos-por",
+        "titulo": "Gestão democrática da infraestrutura digital por conselhos compostos por",
+        "nivel": 1,
+        "paginaInicial": 29,
+        "paginaFinal": 29,
+        "origem": "pdftotext",
+        "conteudo": "Gestão democrática da infraestrutura digital por conselhos compostos por\ntrabalhadores da tecnologia, dos trabalhadores que utilizam esses sistemas e\ndaqueles cujo conhecimento é embutido nos sistemas, com poder de auditoria\nsobre algoritmos e sistemas automatizados.\nRedução automática da jornada de trabalho, sem redução salarial, na proporção\ndos ganhos de produtividade oriundos do uso de ferramentas de inteligência\nartificial e correlatas.\nGarantia do direito à desconexão no trabalho remoto, proibindo mecanismos de\ndisponibilidade permanente e jornada invisível.\nProibição de sistemas invasivos de vigilância digital e de monitoramento opaco\nde desempenho, assegurando transparência e controle social sobre todas as\nferramentas digitais utilizadas no trabalho.\nA construção de uma infraestrutura digital sob controle público e dos trabalhadores\ntambém se coloca como parte desse mesmo processo: garantir soberania sobre os\ndados, a produção e o conhecimento implica enfrentar o controle privado e estrangeiro\ndessas ferramentas.\nTodas essas medidas, no entanto, não podem ser implementadas dentro dos limites\natuais da institucionalidade e da correlação de forças existente.\nElas exigem mobilização;organização; e enfrentamento direto com os interesses\ndominantes.Ao lutar pelas suas reivindicações até o final, a classe trabalhadora é levada\na esse enfrentamento.\nÉ esse processo que coloca, na prática, a necessidade de organização independente e\nda construção de poder por parte dos trabalhadores.\nSem isso, mesmo as medidas mais necessárias permanecem bloqueadas.\n\nPor um governo socialista da classe\ntrabalhadora e dos povos originários,\nquilombolas, mulheres e juventude\npobre e negra, sem capitalistas\nAs tarefas colocadas por este programa não são frases para um futuro distante. São\nnecessidades reais da classe trabalhadora e dos setores oprimidos: emprego, salário,\nterra, moradia, transporte, saúde, educação, aposentadoria, soberania nacional, controle\ndas riquezas do país, enfrentamento dos monopólios, fim da violência policial e\nreorganização da economia em função das necessidades da maioria da população.\nMas essas medidas, quando tomadas a sério e levadas à luta, chocam-se diretamente\ncom os interesses que comandam o Brasil.\nDefender uma Petrobras 100% estatal, sem entregar bilhões em lucros e dividendos a\nacionistas privados e estrangeiros, significa enfrentar bancos, Bolsa de Valores,\nimperialismo e grandes meios de comunicação. Estatizar a Vale sob controle dos\ntrabalhadores significa enfrentar mineradoras, acionistas, Judiciário, Congresso e\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n28"
+      },
+      {
+        "id": "governos-que-protegem-os-monopolios-colocar-as-terras-raras-a-energia-e",
+        "titulo": "governos que protegem os monopólios. Colocar as terras raras, a energia e os setores",
+        "nivel": 1,
+        "paginaInicial": 30,
+        "paginaFinal": 30,
+        "origem": "pdftotext",
+        "conteudo": "governos que protegem os monopólios. Colocar as terras raras, a energia e os setores\nestratégicos sob controle nacional significa enfrentar o capital estrangeiro e a burguesia\nbrasileira associada aos imperialismos. Defender uma educação totalmente pública, sem\nfundações empresariais definindo a política educacional, significa enfrentar o poder\neconômico dentro do próprio Estado.\nDa mesma forma, exigir o fim da matança e do encarceramento em massa da juventude\npobre e negra, a desmilitarização da PM, a eleição de delegados pelas comunidades e o\ncontrole popular da segurança significa enfrentar o braço armado do Estado burguês nas\nperiferias, assim como as relações entre repressão, milícias, tráfico, poder econômico e\npoder político.\nAs lutas começam muitas vezes separadas: contra o aumento de tarifas de transporte,\ncontra a privatização de um rio, uma greve por salário, uma ocupação por moradia, uma\nluta contra privatizações, contra chacinas policiais, contra demissões ou pela defesa da\neducação pública. Mas, quando essas lutas começam a se encontrar e a se ampliar,\nsurgem obstáculos cada vez maiores, mas também tomamos consciência da força que\ntem a classe trabalhadora mobilizada, unificada e organizada. Os monopólios, o\nimperialismo e seus aparatos entram em cena para bloquear qualquer mudança profunda.\nEntão o problema deixa de ser apenas como conquistar uma reivindicação isolada. Surge\na necessidade de unificar as lutas, fortalecer a mobilização e disputar a maioria da classe\ntrabalhadora e de seus aliados para um caminho de enfrentamento dos monopólios, do\nimperialismo e do próprio Estado burguês.\nÉ nesse sentido que este programa não é um conjunto de promessas eleitorais para que\noutros governem por nós. É um guia para a ação, para a luta, para a organização, para a\nelevação da consciência e para a mobilização com independência de classe.\nNão se trata de dizer ao povo “vote em nós e faremos por vocês”. Trata-se de nos\norganizarmos para lutar, enfrentar o capital, impor nossas reivindicações e desenvolver a\ncapacidade da própria classe trabalhadora – em especial da classe operária – e de seus\naliados de governarem diretamente a sociedade.\nA classe operária, que é diversa, ocupa um papel decisivo porque está no coração da\nprodução, da energia, da mineração, da indústria, dos transportes, da logística e dos\ngrandes serviços que movem o país. Ao lado dela estão os demais setores da classe\ntrabalhadora e do proletariado, assim como os seus aliados do campo e da cidade, os\npovos indígenas, os quilombolas, os camponeses pobres, os sem-terra. Também os\nmovimentos populares, em especial o imenso setor popular dos bairros proletários e das\nperiferias das grandes cidades. É essa força social organizada que pode enfrentar os\nmonopólios, paralisar o funcionamento normal da sociedade burguesa e reorganizar o\npaís sobre novas bases.\nPor isso, a mobilização direta deve ser prioritária em relação à ação institucional. Não\nsomos cretinos antiparlamentares. A disputa eleitoral e institucional pode ter importância\ntática e, se realizada à maneira revolucionária, pode servir, e muito, para denunciar os\nmonopólios, fortalecer lutas e ampliar a consciência política. Mas deve estar subordinada\nà mobilização, à ação direta, à auto-organização e à estratégia de conquista do poder\npolítico pela classe trabalhadora e seus aliados.\nQuando ocorre o contrário, como ocorre hoje, quando a luta passa a servir à\ngovernabilidade, à eleição de parlamentares, ao parlamento e à administração do Estado\nburguês, a mobilização é contida, a ação direta é desorganizada e as organizações da\nclasse são adaptadas à ordem existente.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n29"
+      },
+      {
+        "id": "foi-esse-o-caminho-seguido-pelo-pt-e-que-esta-sendo-seguido-pelo-psol-o",
+        "titulo": "Foi esse o caminho seguido pelo PT e que está sendo seguido pelo PSOL. O PT surgiu",
+        "nivel": 1,
+        "paginaInicial": 31,
+        "paginaFinal": 31,
+        "origem": "pdftotext",
+        "conteudo": "Foi esse o caminho seguido pelo PT e que está sendo seguido pelo PSOL. O PT surgiu\napoiado nas grandes greves operárias e mobilizações que enfrentaram a ditadura militar\ne colocaram milhões de trabalhadores em cena. Mesmo sem uma estratégia\nrevolucionária consequente, expressava, de maneira contraditória, a entrada da classe\ntrabalhadora como sujeito político nacional. Não por acaso, nas greves do abc ecoava a\npalavra de ordem: “Lutar, vencer, operários no poder!”.\nMas, ao adotar a colaboração de classes e a administração do capitalismo brasileiro em\nacordo com a burguesia nacional e os imperialismos, o PT transformou-se de possível\nponte para o avanço da mobilização em barreira contra esse caminho. Subordinou a ação\ndireta à governabilidade e aos acordos parlamentares, integrou organizações dos\ntrabalhadores ao Estado e administrou os limites impostos pelos bancos, pelo\nagronegócio, pelos monopólios e pelo imperialismo.\nJunho de 2013 mostrou esse impasse de forma explosiva. Milhões foram às ruas contra\na precarização da vida, os serviços públicos degradados, os gastos bilionários com a\nCopa, a violência policial e a crise de representação política.\nUm governo apoiado na mobilização poderia ter atuado contra a ordem, a\ninstitucionalidade e o sistema, impulsionado assembleias populares, fortalecido a\norganização nos bairros, locais de trabalho e estudo, apoiado a entrada organizada da\nclasse trabalhadora nas ruas, defendido transporte público de qualidade, saúde e\neducação “padrão Fifa”, suspendido o pagamento da dívida pública e utilizado as\nriquezas do país para garantir direitos sociais à população.\nMas isso exigiria enfrentar bancos, empreiteiras, monopólios, Congresso, Judiciário,\ngrandes meios de comunicação e aparatos repressivos. O caminho escolhido foi outro:\nconter, reprimir e reconduzir a crise para os limites da institucionalidade burguesa e das\neleições.\nA lição é decisiva: o problema não é apenas quem ocupa o governo, mas qual classe\nexerce o poder. Um governo dos trabalhadores sem capitalistas pode ser ponte para o\navanço da mobilização, da auto-organização e da luta pelo poder político da classe\ntrabalhadora e de seus aliados. Mas, se é de colaboração de classes ou passa a governar\npara administrar a institucionalidade burguesa, preservar a ordem e conciliar com a\nburguesia, transforma-se na maior barreira contra esse caminho.\nPor isso, um governo dos trabalhadores sem capitalistas deve apoiar-se prioritariamente\nna mobilização direta e na auto-organização da classe trabalhadora e de seus aliados\ncontra a ordem, e não nos acordos com os partidos da burguesia, no Congresso inimigo\ndo povo, no Judiciário ou nos aparatos construídos para defender a propriedade\ncapitalista.\nIsso significa impulsionar assembleias, comitês nos bairros, organismos nos locais de\ntrabalho, estudo e moradia, conselhos populares e formas de auto-organização e\nautodefesa.\nEsses organismos não surgem por decreto. Nos períodos de ascenso da luta de classes\ne de processos revolucionários, podem surgir rápido, reunindo trabalhadores, juventude,\nperiferias, movimentos populares, camponeses e setores oprimidos em luta. Mas sua\npreparação começa antes: nas greves, ocupações, piquetes, organizações de bairro e\nlocais de trabalho, comissões de fábrica e destacamentos de autodefesa, nos sindicatos,\ncentrais e organizações combativas e independentes dos patrões e governos, na\nconstrução cotidiana de laços de solidariedade, mobilização e independência de classe.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n30"
+      },
+      {
+        "id": "quando-as-lutas-se-generalizam-o-problema-e-harmonizar-as-diversas-reivi",
+        "titulo": "Quando as lutas se generalizam o problema é harmonizar as diversas reivindicações e",
+        "nivel": 1,
+        "paginaInicial": 32,
+        "paginaFinal": 32,
+        "origem": "pdftotext",
+        "conteudo": "Quando as lutas se generalizam o problema é harmonizar as diversas reivindicações e\nformas de luta, mesmo nos limites de uma cidade. Os conselhos e organismos\ndemocráticos de luta cumprem esse papel: reúnem os diversos setores em movimento,\ncoordenam reivindicações, organizam a luta, centralizam forças e podem transformar-se\nem embriões de um novo poder.\nAs crises econômicas, políticas e sociais que atravessam o Brasil e o mundo tendem a\nproduzir novos processos de luta, radicalização e enfrentamento social. Argentina,\nBolívia, Chile, Equador, Colômbia e o próprio Brasil mostram que explosões sociais e\ngrandes mobilizações podem voltar a colocar milhões em movimento.\nMas não existe resultado automático. Essas lutas podem ser desviadas, derrotadas ou\nreconduzidas aos limites da institucionalidade burguesa. Por isso, precisamos disputar\ndesde já a maioria da classe trabalhadora e de seus aliados para este programa, esta\nestratégia e este caminho.\n\nPor um governo socialista\ndos trabalhadores baseado\nna democracia operária\nA luta pelas tarefas colocadas neste programa entrará inevitavelmente em choque com o\nEstado burguês, suas instituições e seus aparatos repressivos.\nEsse Estado não é neutro. Ele aparece de forma concreta na vida da classe trabalhadora\npor meio do Congresso que bloqueia direitos, do Judiciário que protege os ricos, das\nForças Armadas que tutelam o regime, das pms militarizadas, da polícia que mata nossos\nfilhos nas periferias, do encarceramento em massa, das milícias, da repressão às greves,\nocupações e protestos.\nPor isso, a luta não coloca apenas a necessidade de outro governo. Coloca a necessidade\nde outro poder e de outro Estado.\nFora do poder político, todas as conquistas da classe trabalhadora permanecem\nlimitadas, ameaçadas ou reversíveis. A luta para realizar plenamente as tarefas colocadas\nneste programa conduz inevitavelmente à necessidade de derrotar o poder econômico e\npolítico da burguesia e construir um Estado dos trabalhadores.\nDefendemos um Estado operário revolucionário, uma ditadura revolucionária do\nproletariado contra a burguesia, os monopólios e o imperialismo, sobretudo fundada na\nmais ampla democracia operária e popular.\nO Estado burguês pode apresentar-se na forma de um regime ditatorial ou de\ndemocracia burguesa, limitada pelo domínio econômico e político dos monopólios e do\ncapital financeiro. Nos dois casos ele representará fundamentalmente os interesses de\numa minoria de 0,8%. O Estado operário representará efetivamente a maioria da\npopulação, o proletariado e seus aliados. E o Estado operário revolucionário, ao contrário\ndo que fez o stalinismo, deve apoiar-se na democracia operária: na participação direta da\nclasse trabalhadora e dos setores explorados e oprimidos nas decisões políticas,\neconômicas e sociais do país.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n31"
+      },
+      {
+        "id": "defendemos-um-poder-baseado-em-organismos-democraticos-construidos-pela",
+        "titulo": "Defendemos um poder baseado em organismos democráticos construídos pela própria",
+        "nivel": 1,
+        "paginaInicial": 33,
+        "paginaFinal": 33,
+        "origem": "pdftotext",
+        "conteudo": "Defendemos um poder baseado em organismos democráticos construídos pela própria\nclasse trabalhadora e seus aliados em luta, com representantes eleitos e revogáveis, sob\ncontrole permanente da base.\nAo contrário das experiências burocráticas que transformaram a classe em objeto,\nadministrando o Estado operário por aparelhos separados da população, defendemos a\nclasse trabalhadora como sujeito político consciente da transformação revolucionária da\nsociedade.\nNão queremos substituir a classe por uma burocracia. Queremos que a própria classe\ntrabalhadora e seus aliados governem diretamente a sociedade, organizem a economia,\ncontrolem as riquezas do país e decidam os rumos políticos da nova sociedade.\nEsse processo inclui organizar a autodefesa dos trabalhadores e também disputar a base\ndas Forças Armadas e das polícias, composta majoritariamente por filhos da própria\nclasse trabalhadora, para que rompam com os comandos burgueses e se coloquem ao\nlado do povo.\nÉ esse o caminho necessário para conquistar plenamente as reivindicações da maioria da\npopulação, derrotar a extrema direita, enfrentar os monopólios e imperialismos e abrir\ncaminho ao socialismo e à revolução latino-americana e internacional.\n\nPSTU ELEIÇÕES 2026 | COM OS TRABALHADORES CONTRA O SISTEMA\n\n32"
+      }
+    ]
+  },
+  "resumo": {
+    "texto": "O documento defende que a soberania nacional depende de as riquezas produzidas no país permanecerem sob controle nacional e serem direcionadas às necessidades da população. O programa propõe a expropriação de empresas estratégicas dos setores de mineração, petróleo e energia. No campo do trabalho, defende o fim da escala 6x1 sem redução de salários e direitos. Propõe a redução da jornada de trabalho para 36 horas semanais sem redução dos salários. Na saúde, defende um SUS público, universal, gratuito e 100% estatal. No meio ambiente, defende medidas como o fim do uso de agrotóxicos e a aceleração da demarcação de terras indígenas e territórios quilombolas. Na segurança pública, defende a desmilitarização da Polícia Militar e a unificação das polícias em uma única instituição de caráter civil. O documento se apresenta como parte de uma estratégia de construção de um governo socialista da classe trabalhadora, sem capitalistas.",
+    "frases": [
+      {
+        "texto": "O documento defende que a soberania nacional depende de as riquezas produzidas no país permanecerem sob controle nacional e serem direcionadas às necessidades da população.",
+        "evidencias": [
+          {
+            "pagina": 5,
+            "trecho": "Defender a soberania do Brasil, neste marco, significa garantir que as riquezas produzidas no país permaneçam sob controle nacional e sejam direcionadas às necessidades da população."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe a expropriação de empresas estratégicas dos setores de mineração, petróleo e energia.",
+        "evidencias": [
+          {
+            "pagina": 6,
+            "trecho": "é necessário expropriar as empresas estratégicas que acumulam bilhões ou dezenas de bilhões de reais em setores diretamente dependentes de recursos naturais como mineração, petróleo e energia."
+          }
+        ]
+      },
+      {
+        "texto": "No campo do trabalho, defende o fim da escala 6x1 sem redução de salários e direitos.",
+        "evidencias": [
+          {
+            "pagina": 8,
+            "trecho": "Fim da escala 6×1 sem redução de salários e direitos, sem pejotização e sem demissões"
+          }
+        ]
+      },
+      {
+        "texto": "Propõe a redução da jornada de trabalho para 36 horas semanais sem redução dos salários.",
+        "evidencias": [
+          {
+            "pagina": 8,
+            "trecho": "Redução da jornada de trabalho para 36 horas, sem redução dos salários e sem flexibilização de direitos, rumo à escala móvel de horas de trabalho (pleno emprego)."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, defende um SUS público, universal, gratuito e 100% estatal.",
+        "evidencias": [
+          {
+            "pagina": 11,
+            "trecho": "Defesa do sus público, universal, gratuito e 100% estatal"
+          }
+        ]
+      },
+      {
+        "texto": "No meio ambiente, defende medidas como o fim do uso de agrotóxicos e a aceleração da demarcação de terras indígenas e territórios quilombolas.",
+        "evidencias": [
+          {
+            "pagina": 15,
+            "trecho": "defender medidas visando o fim do uso de agrotóxicos, a recuperação de áreas degradadas, a promoção da agroecologia e a aceleração da demarcação de terras indígenas e territórios quilombolas"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, defende a desmilitarização da Polícia Militar e a unificação das polícias em uma única instituição de caráter civil.",
+        "evidencias": [
+          {
+            "pagina": 19,
+            "trecho": "Desmilitarização da Polícia Militar e reversão da dinâmica de militarização das demais polÍcias e guardas municipais."
+          },
+          {
+            "pagina": 20,
+            "trecho": "Unificação das polícias em uma única instituição de caráter civil, com eleição de comandantes e delegados pela população e mandatos revogáveis"
+          }
+        ]
+      },
+      {
+        "texto": "O documento se apresenta como parte de uma estratégia de construção de um governo socialista da classe trabalhadora, sem capitalistas.",
+        "evidencias": [
+          {
+            "pagina": 29,
+            "trecho": "Por um governo socialista da classe trabalhadora e dos povos originários, quilombolas, mulheres e juventude pobre e negra, sem capitalistas"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "soberania-nacional-e-antiimperialismo",
+        "titulo": "Soberania nacional e enfrentamento do imperialismo",
+        "descricao": "O documento defende a ruptura com o imperialismo e o controle nacional das riquezas produzidas no país como condição para a soberania do Brasil.",
+        "evidencias": [
+          {
+            "pagina": 5,
+            "trecho": "Não é possível falar em um país soberano sem problematizar uma ruptura com o imperialismo, isto é, com os países dominantes na atual divisão internacional do trabalho."
+          },
+          {
+            "pagina": 5,
+            "trecho": "Defender a soberania do Brasil, neste marco, significa garantir que as riquezas produzidas no país permaneçam sob controle nacional e sejam direcionadas às necessidades da população."
+          }
+        ]
+      },
+      {
+        "id": "estatizacao-empresas-estrategicas",
+        "titulo": "Estatização de empresas estratégicas",
+        "descricao": "O programa propõe a expropriação de empresas estratégicas dos setores de mineração, petróleo e energia, incluindo a manutenção da Petrobras sob controle estatal e dos trabalhadores.",
+        "evidencias": [
+          {
+            "pagina": 6,
+            "trecho": "é necessário expropriar as empresas estratégicas que acumulam bilhões ou dezenas de bilhões de reais em setores diretamente dependentes de recursos naturais como mineração, petróleo e energia."
+          },
+          {
+            "pagina": 26,
+            "trecho": "Petrobras 100% estatal e sob controle dos trabalhadores já!"
+          }
+        ]
+      },
+      {
+        "id": "trabalho-e-jornada",
+        "titulo": "Condições de trabalho e redução da jornada",
+        "descricao": "O documento defende o fim da escala 6x1 e a redução da jornada de trabalho para 36 horas semanais sem redução de salários.",
+        "evidencias": [
+          {
+            "pagina": 8,
+            "trecho": "Fim da escala 6×1 sem redução de salários e direitos, sem pejotização e sem demissões"
+          },
+          {
+            "pagina": 8,
+            "trecho": "Redução da jornada de trabalho para 36 horas, sem redução dos salários e sem flexibilização de direitos, rumo à escala móvel de horas de trabalho (pleno emprego)."
+          }
+        ]
+      },
+      {
+        "id": "saude-publica",
+        "titulo": "Saúde pública estatal",
+        "descricao": "O programa defende o SUS público, universal, gratuito e 100% estatal, com fim da privatização e da gestão privada da saúde.",
+        "evidencias": [
+          {
+            "pagina": 11,
+            "trecho": "Defesa do sus público, universal, gratuito e 100% estatal"
+          },
+          {
+            "pagina": 11,
+            "trecho": "Fim da privatização e da gestão privada da saúde (OS, Fundações e PPP)"
+          }
+        ]
+      },
+      {
+        "id": "meio-ambiente-e-reforma-agraria",
+        "titulo": "Meio ambiente e reforma agrária",
+        "descricao": "O documento defende medidas contra o agronegócio, como o fim do uso de agrotóxicos, a demarcação de terras indígenas e territórios quilombolas e a reforma agrária.",
+        "evidencias": [
+          {
+            "pagina": 15,
+            "trecho": "defender medidas visando o fim do uso de agrotóxicos, a recuperação de áreas degradadas, a promoção da agroecologia e a aceleração da demarcação de terras indígenas e territórios quilombolas"
+          },
+          {
+            "pagina": 16,
+            "trecho": "Terra a quem nela trabalha! Por reforma agrária e por uma revolução na estrutura do campo brasileiro!"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Reorganização da segurança pública",
+        "descricao": "O documento defende a desmilitarização da Polícia Militar e a unificação das polícias em uma única instituição de caráter civil, com comandantes eleitos.",
+        "evidencias": [
+          {
+            "pagina": 19,
+            "trecho": "Desmilitarização da Polícia Militar e reversão da dinâmica de militarização das demais polÍcias e guardas municipais."
+          },
+          {
+            "pagina": 20,
+            "trecho": "Unificação das polícias em uma única instituição de caráter civil, com eleição de comandantes e delegados pela população e mandatos revogáveis"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-resumo-v1",
+    "model": "Anthropic Claude Sonnet",
+    "generatedAt": "2026-08-26T02:38:33.498Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT-5.4",
+    "judgedAt": "2026-08-26T03:25:59.329Z",
+    "verdicts": [
+      {
+        "id": "hertz-dias:frase:1",
+        "verdict": "yes",
+        "reason": "A página 5 afirma que soberania exige que as riquezas produzidas no país permaneçam sob controle nacional e sejam direcionadas às necessidades da população."
+      },
+      {
+        "id": "hertz-dias:frase:2",
+        "verdict": "yes",
+        "reason": "A página 6 propõe expropriar empresas estratégicas de mineração, petróleo e energia."
+      },
+      {
+        "id": "hertz-dias:frase:3",
+        "verdict": "yes",
+        "reason": "A página 8 defende o fim da escala 6x1 sem redução de salários e direitos."
+      },
+      {
+        "id": "hertz-dias:frase:4",
+        "verdict": "yes",
+        "reason": "A página 8 propõe reduzir a jornada para 36 horas semanais sem redução dos salários."
+      },
+      {
+        "id": "hertz-dias:frase:5",
+        "verdict": "yes",
+        "reason": "A página 11 defende SUS público, universal, gratuito e 100% estatal."
+      },
+      {
+        "id": "hertz-dias:frase:6",
+        "verdict": "yes",
+        "reason": "A página 15 defende o fim do uso de agrotóxicos e a aceleração da demarcação de terras indígenas e territórios quilombolas."
+      },
+      {
+        "id": "hertz-dias:frase:7",
+        "verdict": "yes",
+        "reason": "As páginas 19 e 20 defendem desmilitarização da PM e unificação das polícias em instituição civil."
+      },
+      {
+        "id": "hertz-dias:frase:8",
+        "verdict": "yes",
+        "reason": "A página 29 apresenta explicitamente a defesa de um governo socialista da classe trabalhadora, sem capitalistas."
+      },
+      {
+        "id": "hertz-dias:tema:soberania-nacional-e-antiimperialismo",
+        "verdict": "yes",
+        "reason": "A página 5 sustenta ruptura com o imperialismo e controle nacional das riquezas como condição de soberania."
+      },
+      {
+        "id": "hertz-dias:tema:estatizacao-empresas-estrategicas",
+        "verdict": "yes",
+        "reason": "As páginas 6 e 26 sustentam expropriação de empresas estratégicas e Petrobras 100% estatal sob controle dos trabalhadores."
+      },
+      {
+        "id": "hertz-dias:tema:trabalho-e-jornada",
+        "verdict": "yes",
+        "reason": "A página 8 sustenta o fim da escala 6x1 e a redução da jornada para 36 horas sem redução salarial."
+      },
+      {
+        "id": "hertz-dias:tema:saude-publica",
+        "verdict": "yes",
+        "reason": "A página 11 sustenta SUS público, universal, gratuito e 100% estatal, com fim da privatização e da gestão privada."
+      },
+      {
+        "id": "hertz-dias:tema:meio-ambiente-e-reforma-agraria",
+        "verdict": "yes",
+        "reason": "As páginas 15 e 16 sustentam fim de agrotóxicos, demarcação de terras indígenas e quilombolas e defesa da reforma agrária."
+      },
+      {
+        "id": "hertz-dias:tema:seguranca-publica",
+        "verdict": "yes",
+        "reason": "As páginas 19 e 20 sustentam desmilitarização da PM e unificação das polícias em instituição civil com comandantes eleitos."
+      }
+    ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "1868565fb0d5de77d40a982a1be07dc7f44f7af7565ee3b40d93b31407d31468",
+    "extractedTextSha256": "c61aaf89a9524de81520e49678ac6a412cfaeffe4819f33efe791c32ecdf1be4"
+  }
+}
