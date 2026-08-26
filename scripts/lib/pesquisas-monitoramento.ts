@@ -411,7 +411,11 @@ function normalizedContract(result: ResultadoAvaliacao): Record<string, unknown>
     confidence_percent: { value: evidence.confidence_percent, status: "indeterminado" },
     method: { value: evidence.method, status: "indeterminado" },
     registration: { code: { value: evidence.registration.id, status: "indeterminado" }, url: { value: evidence.registration.url, status: "indeterminado" } },
-    geography: { type: "pais", label: evidence.scenario.geography, code: evidence.scenario.geography_code },
+    geography: {
+      type: evidence.scenario.geography_code === "BR" ? "nacional" : "unidade_federativa",
+      label: evidence.scenario.geography,
+      code: evidence.scenario.geography_code,
+    },
     office: evidence.scenario.office,
     provenance: {
       result_url: evidence.url,
