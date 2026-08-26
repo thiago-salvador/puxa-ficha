@@ -15,12 +15,12 @@ Scope: publicar somente programas presidenciais de 2026 com fonte TSE, resumo po
 - [x] G2: o schema e o registro oficial preservam identidade TSE, estados fail-closed, hashes e evidências
   CHECK: npm run test:programas-governo:schema
   EXPECT: PROGRAMAS_SCHEMA_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-wt-programa-governo-2026; path=7de86363e2b4/25 entries; EXPECT=matched; output-sha256=43b7b40ede0d71d399741de2d4d10644f2544138b3c4495625233bdf92305021; output-bytes=603
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-wt-programa-governo-2026; path=7de86363e2b4/25 entries; EXPECT=matched; output-sha256=61bfd29fbc1407821e90878c8990ac9c17770dc0091d3de77978a942a537b431; output-bytes=604
 
 - [x] G3: a extração preserva páginas e texto, rejeita fonte não oficial e não deixa arquivos temporários no repositório
   CHECK: npm run test:programas-governo:extracao
   EXPECT: PROGRAMAS_EXTRACAO_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-wt-programa-governo-2026; path=7de86363e2b4/25 entries; EXPECT=matched; output-sha256=0c01ad8fe2991a1e26ce4db912955bf1f9458afbffb45e4e15559ce321c9d809; output-bytes=607
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-wt-programa-governo-2026; path=7de86363e2b4/25 entries; EXPECT=matched; output-sha256=1ffe17822eebee7dfcaeb476c6b43f4807427ddd0b94f63e7dccbcabb96bfde3; output-bytes=609
 
 - [x] G4: o lote editorial cobre a coorte presidencial, não publica pendências e respeita limites de resumo, evidência e custo
   CHECK: npm run audit:programas-governo
@@ -30,17 +30,17 @@ Scope: publicar somente programas presidenciais de 2026 com fonte TSE, resumo po
 - [x] G5: a rota entrega conteúdo somente aprovado, limita antes da leitura e não vaza metadados internos
   CHECK: npm run test:programas-governo:route
   EXPECT: PROGRAMAS_ROUTE_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-wt-programa-governo-2026; path=7de86363e2b4/25 entries; EXPECT=matched; output-sha256=3fc0673c0009ef249d5bee2b913aa8529a6059cab6217f4af00273bc17ba3f1f; output-bytes=1258
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-wt-programa-governo-2026; path=7de86363e2b4/25 entries; EXPECT=matched; output-sha256=507765afcacfcd81fcc1b4ca4dd9ee8cf16d4987c0d41e07c65a2b05a6f257f0; output-bytes=1258
 
 - [x] G6: a Visão geral e a aba Programa obedecem elegibilidade, estados, busca, semântica e carregamento sob demanda
   CHECK: npm run test:programas-governo:ui
   EXPECT: PROGRAMAS_UI_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-wt-programa-governo-2026; path=7de86363e2b4/25 entries; EXPECT=matched; output-sha256=5e3062fafd47d1a19150bcff128f077da761edefa648c7be6f776fc0a73b62e4; output-bytes=1546
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-wt-programa-governo-2026; path=7de86363e2b4/25 entries; EXPECT=matched; output-sha256=5db827540687e56be67efb5d0a28e7c5224bdb658d9bfbdabe2b5a0f6743646d; output-bytes=1547
 
 - [x] G7: a rota real passa por desktop, mobile, teclado, busca, Axe, screenshots e ausência de overflow
   CHECK: npm run test:visual:programas-governo
   EXPECT: PROGRAMAS_VISUAL_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-wt-programa-governo-2026; path=7de86363e2b4/25 entries; EXPECT=matched; output-sha256=d22d250e71ab18d87f38b089a6f9ba49aa693e34d0c5d951c78aeea11014550b; output-bytes=3878
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-wt-programa-governo-2026; path=7de86363e2b4/25 entries; EXPECT=matched; output-sha256=42fce775a2cf9fb93b9c11c0c00d7adfa98546f4ec10aaf48d6212e86368045e; output-bytes=3877
 
 - [x] G8: guardas de rota e superfície pública continuam fechados para abuso e dados internos
   CHECK: npm run audit:route-guards && npm run audit:public-security-surface:gate && node -e "console.log('PROGRAMAS_SECURITY_PASS')"
@@ -50,7 +50,7 @@ Scope: publicar somente programas presidenciais de 2026 com fonte TSE, resumo po
 - [x] G9: lint, typecheck, build e diff mecânico passam no estado final
   CHECK: npm run lint && npm run typecheck && npm run build && git diff --check && node -e "console.log('PROGRAMAS_QUALITY_PASS')"
   EXPECT: PROGRAMAS_QUALITY_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-wt-programa-governo-2026; path=7de86363e2b4/25 entries; EXPECT=matched; output-sha256=aa90264e5d2011e4a4094956f1432f1417d6831451abd9725aec39348e008003; output-bytes=3093
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-wt-programa-governo-2026; path=7de86363e2b4/25 entries; EXPECT=matched; output-sha256=ae3458fbf58f46660717cd9ceedc82c9356a9a5fa8d45a30b485cacc2e1ba74c; output-bytes=3091
 
 - [x] G10: o diff fica restrito ao piloto presidencial e não inclui banco, deploy, governadores ou ações remotas
   CHECK: npm run audit:programas-governo:scope

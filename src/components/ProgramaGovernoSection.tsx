@@ -1,5 +1,7 @@
 "use client"
 
+// cspell:words nivel secoes
+
 import {
   useCallback,
   useMemo,
