@@ -1,15 +1,19 @@
 import { createHash } from "node:crypto"
-import { readFile, readdir, rename, writeFile } from "node:fs/promises"
+import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises"
 import path from "node:path"
 import { fileURLToPath, pathToFileURL } from "node:url"
 
-import { assertProgramaGovernoRegistro, type ProgramaGovernoRegistro } from "../src/lib/programa-governo"
 import {
-  PROGRAMA_GOVERNO_JUDGE_PROMPT_VERSION,
+  assertProgramaGovernoRegistro,
+  programaGovernoRevisaoHashes,
+  type ProgramaGovernoRegistro,
+} from "../src/lib/programa-governo"
+import {
   assertProgramaGovernoModelSeparation,
   assessProgramaGovernoJudgeVerdicts,
   buildProgramaGovernoJudgeClaims,
   programaGovernoDocumentos,
+  programaGovernoExpectedPromptVersions,
   programaGovernoIdentityKey,
   type ProgramaGovernoPipelineRecord,
 } from "./programas-governo-stage"
@@ -52,6 +56,24 @@ function hashJson(value: unknown): string {
   return createHash("sha256").update(JSON.stringify(value)).digest("hex")
 }
 
+function isMissingFile(error: unknown): boolean {
+  return error instanceof Error && "code" in error && error.code === "ENOENT"
+}
+
+type ProgramaGovernoApprovalWriteAdapters = {
+  mkdir(path: string): Promise<void>
+  readFile(path: string): Promise<string>
+  writeFile(path: string, value: string): Promise<void>
+  rename(from: string, to: string): Promise<void>
+}
+
+const approvalWriteAdapters: ProgramaGovernoApprovalWriteAdapters = {
+  mkdir: (directory) => mkdir(directory, { recursive: true }).then(() => undefined),
+  readFile: (file) => readFile(file, "utf8"),
+  writeFile: (file, value) => writeFile(file, value, "utf8"),
+  rename,
+}
+
 function judgePromptVersion(record: ProgramaGovernoPipelineRecord): string {
   return record.julgamento?.promptVersion ?? "programa-governo-judge-v1-legacy"
 }
@@ -72,31 +94,32 @@ export function programaGovernoApprovalFingerprint(
   const firstDocument = documents[0]
   const stableContent = {
     version: record.version,
-    fonte: {
-      ano: record.fonte.ano,
-      cargo: record.fonte.cargo,
-      uf: record.fonte.uf,
-      sqCandidato: record.fonte.sqCandidato,
-      slug: record.fonte.slug,
-    },
+    fonte: record.fonte,
     documentos: documentSet,
     resumo: record.resumo,
     geracao: record.geracao,
     julgamento: record.julgamento,
   }
+  const reviewHashes = record.documentos
+    ? programaGovernoRevisaoHashes(record as ProgramaGovernoRegistro)
+    : {
+        documentCount: documents.length,
+        documentSetSha256: hashJson(documentSet),
+        contentSha256: hashJson(stableContent),
+      }
   return {
     identityKey: programaGovernoIdentityKey(record.fonte),
     slug: record.fonte.slug,
     recordVersion: record.version,
     sourceSha256: firstDocument.extracao.sourceSha256,
     extractedTextSha256: firstDocument.extracao.extractedTextSha256,
-    documentCount: documents.length,
-    documentSetSha256: hashJson(documentSet),
+    documentCount: reviewHashes.documentCount,
+    documentSetSha256: reviewHashes.documentSetSha256,
     generatorPromptVersion: record.geracao.promptVersion,
     generatorModel: record.geracao.model,
     judgePromptVersion: judgePromptVersion(record),
     judgeModel: record.julgamento.model,
-    contentSha256: hashJson(stableContent),
+    contentSha256: reviewHashes.contentSha256,
   }
 }
 
@@ -128,9 +151,23 @@ function assertEligibleForApproval(record: ProgramaGovernoPipelineRecord): void 
     return
   }
   assert(record.estado === "em_revisao", `${record.fonte.slug}: estado=${record.estado}; esperado=em_revisao`)
-  assert(record.julgamento.promptVersion === PROGRAMA_GOVERNO_JUDGE_PROMPT_VERSION, `${record.fonte.slug}: rubric do judge ausente ou stale`)
+  const expectedPrompts = programaGovernoExpectedPromptVersions(record.fonte)
+  assert(record.geracao.promptVersion === expectedPrompts.generatorPromptVersion, `${record.fonte.slug}: prompt do gerador ausente ou stale`)
+  assert(record.julgamento.promptVersion === expectedPrompts.judgePromptVersion, `${record.fonte.slug}: rubric do judge ausente ou stale`)
   const assessment = assessProgramaGovernoJudgeVerdicts(buildProgramaGovernoJudgeClaims([record]), record.julgamento.verdicts)
   assert(assessment.eligible, `${record.fonte.slug}: Eval tem ${assessment.blockers.length} bloqueio(s)`)
+  const ingestion = record as ProgramaGovernoPipelineRecord & {
+    ingestao?: { etapa?: string; erro?: string | null; eval?: { completo?: boolean; blockers?: number } | null }
+  }
+  if (ingestion.ingestao) {
+    assert(
+      ingestion.ingestao.etapa === "concluida"
+        && ingestion.ingestao.erro === null
+        && ingestion.ingestao.eval?.completo === true
+        && ingestion.ingestao.eval.blockers === 0,
+      `${record.fonte.slug}: ingestao ou Eval nao esta completa`,
+    )
+  }
 }
 
 export function prepareProgramaGovernoApproval(
@@ -151,16 +188,66 @@ export function prepareProgramaGovernoApproval(
       extractedTextSha256: fingerprint.extractedTextSha256,
       documentCount: fingerprint.documentCount,
       documentSetSha256: fingerprint.documentSetSha256,
-      decisionVersion: decision.decisionVersion,
-      identityKey: fingerprint.identityKey,
-      recordVersion: fingerprint.recordVersion,
-      generatorPromptVersion: fingerprint.generatorPromptVersion,
-      judgePromptVersion: fingerprint.judgePromptVersion,
       contentSha256: fingerprint.contentSha256,
     },
   }
   assertProgramaGovernoRegistro(next)
   return next
+}
+
+export async function writeProgramaGovernoApprovals(
+  prepared: readonly { file: string; record: ProgramaGovernoRegistro }[],
+  options: {
+    apply: boolean
+    recordsDir: string
+    backupDir: string
+    receiptPath: string
+    readAt: string
+  },
+  adapters: ProgramaGovernoApprovalWriteAdapters = approvalWriteAdapters,
+): Promise<{ applied: boolean }> {
+  for (const { record } of prepared) {
+    assertProgramaGovernoRegistro(record)
+    assert(record.estado === "aprovado", `${record.fonte.slug}: escrita de approval exige estado aprovado`)
+  }
+  if (!options.apply) return { applied: false }
+
+  await adapters.mkdir(options.backupDir)
+  for (const { file } of prepared) {
+    const finalPath = path.join(options.recordsDir, file)
+    try {
+      const existing = await adapters.readFile(finalPath)
+      await adapters.writeFile(path.join(options.backupDir, file), existing)
+    } catch (error) {
+      if (!isMissingFile(error)) throw error
+    }
+  }
+  const temporary = await Promise.all(prepared.map(async ({ file, record }) => {
+    const finalPath = path.join(options.recordsDir, file)
+    const temporaryPath = `${finalPath}.approval-${process.pid}.tmp`
+    await adapters.writeFile(temporaryPath, `${JSON.stringify(record, null, 2)}\n`)
+    return { file, record, finalPath, temporaryPath }
+  }))
+  for (const item of temporary) await adapters.rename(item.temporaryPath, item.finalPath)
+  for (const item of temporary) {
+    const readback = JSON.parse(await adapters.readFile(item.finalPath)) as ProgramaGovernoRegistro
+    assertProgramaGovernoRegistro(readback)
+    assert(hashJson(readback) === hashJson(item.record), `${item.file}: readback divergiu da aprovacao`)
+  }
+  const receipt = {
+    operation: "programas-governo-approve",
+    applied: true,
+    readAt: options.readAt,
+    records: temporary.map(({ file, record }) => ({
+      file,
+      fingerprint: programaGovernoApprovalFingerprint(record as ProgramaGovernoPipelineRecord),
+      reviewer: record.revisao?.reviewer,
+      reviewedAt: record.revisao?.reviewedAt,
+    })),
+  }
+  await adapters.mkdir(path.dirname(options.receiptPath))
+  await adapters.writeFile(options.receiptPath, `${JSON.stringify(receipt, null, 2)}\n`)
+  return { applied: true }
 }
 
 function parseDecisionFile(value: unknown): ProgramaGovernoApprovalDecision[] {
@@ -174,6 +261,8 @@ function parseDecisionFile(value: unknown): ProgramaGovernoApprovalDecision[] {
 }
 
 async function approve(): Promise<void> {
+  const apply = process.argv.includes("--apply")
+  if (apply && process.argv.includes("--dry-run")) throw new Error("use somente --apply ou --dry-run")
   const recordsDir = path.resolve(argument("records-dir") ?? LEGACY_RECORDS_DIR)
   const files = (await readdir(recordsDir)).filter((file) => file.endsWith(".json")).sort()
   assert(files.length > 0, "nenhum registro para aprovar")
@@ -211,14 +300,19 @@ async function approve(): Promise<void> {
     return { file, record: prepareProgramaGovernoApproval(record, decision) }
   })
 
-  const temporary = await Promise.all(prepared.map(async ({ file, record }) => {
-    const finalPath = path.join(recordsDir, file)
-    const temporaryPath = `${finalPath}.approval-${process.pid}.tmp`
-    await writeFile(temporaryPath, `${JSON.stringify(record, null, 2)}\n`, "utf8")
-    return { finalPath, temporaryPath }
-  }))
-  await Promise.all(temporary.map(({ finalPath, temporaryPath }) => rename(temporaryPath, finalPath)))
-  console.log(`PROGRAMAS_APPROVAL_PASS candidatos=${prepared.length} decision_file=${decisionFile ? path.resolve(decisionFile) : "legacy-presidential-batch"}`)
+  const readAt = new Date().toISOString()
+  const parentDir = path.dirname(recordsDir)
+  const backupDir = path.resolve(argument("backup-dir") ?? path.join(parentDir, ".programas-governo-backups", `approval-${readAt.replace(/[:.]/gu, "-")}`))
+  const receiptPath = path.resolve(argument("receipt") ?? path.join(parentDir, `programas-governo-approval-receipt-${readAt.replace(/[:.]/gu, "-")}.json`))
+  const result = await writeProgramaGovernoApprovals(prepared, {
+    apply,
+    recordsDir,
+    backupDir,
+    receiptPath,
+    readAt,
+  })
+  const marker = result.applied ? "PROGRAMAS_APPROVAL_PASS" : "PROGRAMAS_APPROVAL_DRY_RUN_PASS"
+  console.log(`${marker} candidatos=${prepared.length} decision_file=${decisionFile ? path.resolve(decisionFile) : "legacy-presidential-batch"}${result.applied ? ` backup=${backupDir} receipt=${receiptPath}` : ""}`)
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {

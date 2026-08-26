@@ -176,7 +176,17 @@ function stringValue(value: unknown, path: string): string {
 }
 
 function modelFamily(name: string): string {
-  return stringValue(name, "modelo.name").trim().toLocaleLowerCase("pt-BR").split(/[\s/:@-]+/u)[0]
+  const tokens = stringValue(name, "modelo.name")
+    .trim()
+    .toLocaleLowerCase("pt-BR")
+    .split(/[\s/:@-]+/u)
+    .filter(Boolean)
+  if (tokens.some((token) => /^(?:openai|gpt|codex|o[1-9])(?:\d.*)?$/u.test(token))) return "openai"
+  if (tokens.some((token) => /^(?:anthropic|claude)$/u.test(token))) return "anthropic"
+  if (tokens.some((token) => /^(?:google|gemini)$/u.test(token))) return "google"
+  if (tokens.some((token) => /^mistral/u.test(token))) return "mistral"
+  if (tokens.some((token) => /^(?:meta|llama)$/u.test(token))) return "meta"
+  return tokens[0]
 }
 
 function assertCommand(config: ProgramaGovernoModelCommand, path: string): void {
@@ -187,7 +197,7 @@ function assertCommand(config: ProgramaGovernoModelCommand, path: string): void 
   if (!Number.isInteger(config.timeoutMs) || config.timeoutMs < 1 || config.timeoutMs > 30 * 60 * 1000) {
     throw new Error(`${path}.timeoutMs: fora do limite`)
   }
-  if (config.maxAttempts < 1 || config.maxAttempts > PROGRAMA_GOVERNO_GOV_MODEL_MAX_ATTEMPTS) {
+  if (!Number.isInteger(config.maxAttempts) || config.maxAttempts < 1 || config.maxAttempts > PROGRAMA_GOVERNO_GOV_MODEL_MAX_ATTEMPTS) {
     throw new Error(`${path}.maxAttempts: maximo ${PROGRAMA_GOVERNO_GOV_MODEL_MAX_ATTEMPTS}`)
   }
 }
@@ -217,6 +227,26 @@ function validateSummary(value: unknown): ProgramaGovernoResumo {
   const temas = value.temas
   if (!Array.isArray(frases) || frases.length < 6 || frases.length > 8) throw new Error("generator.frases: quantidade invalida")
   if (!Array.isArray(temas) || temas.length < 4 || temas.length > 6) throw new Error("generator.temas: quantidade invalida")
+  const normalizedThemes = temas.map((item, index) => {
+    if (!isObject(item) || !Array.isArray(item.evidencias) || item.evidencias.length === 0) {
+      throw new Error(`generator.temas[${index}]: invalido`)
+    }
+    assertOnlyKeys(item, ["id", "titulo", "descricao", "evidencias"], `generator.temas[${index}]`)
+    const id = stringValue(item.id, `generator.temas[${index}].id`)
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(id)) throw new Error(`generator.temas[${index}].id: invalido`)
+    return {
+      id,
+      titulo: stringValue(item.titulo, `generator.temas[${index}].titulo`),
+      descricao: stringValue(item.descricao, `generator.temas[${index}].descricao`),
+      evidencias: item.evidencias.map((itemEvidence, evidenceIndex) => evidence(
+        itemEvidence,
+        `generator.temas[${index}].evidencias[${evidenceIndex}]`,
+      )),
+    }
+  })
+  if (new Set(normalizedThemes.map(({ id }) => id)).size !== normalizedThemes.length) {
+    throw new Error("generator.temas: id duplicado")
+  }
   return {
     texto: stringValue(value.texto, "generator.texto"),
     frases: frases.map((item, index) => {
@@ -232,23 +262,7 @@ function validateSummary(value: unknown): ProgramaGovernoResumo {
         )),
       }
     }),
-    temas: temas.map((item, index) => {
-      if (!isObject(item) || !Array.isArray(item.evidencias) || item.evidencias.length === 0) {
-        throw new Error(`generator.temas[${index}]: invalido`)
-      }
-      assertOnlyKeys(item, ["id", "titulo", "descricao", "evidencias"], `generator.temas[${index}]`)
-      const id = stringValue(item.id, `generator.temas[${index}].id`)
-      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(id)) throw new Error(`generator.temas[${index}].id: invalido`)
-      return {
-        id,
-        titulo: stringValue(item.titulo, `generator.temas[${index}].titulo`),
-        descricao: stringValue(item.descricao, `generator.temas[${index}].descricao`),
-        evidencias: item.evidencias.map((itemEvidence, evidenceIndex) => evidence(
-          itemEvidence,
-          `generator.temas[${index}].evidencias[${evidenceIndex}]`,
-        )),
-      }
-    }),
+    temas: normalizedThemes,
   }
 }
 
@@ -327,6 +341,7 @@ export const runProgramaGovernoModelProcess: ProgramaGovernoModelProcessRunner =
     finish(() => reject(new Error(`${command}: timeout depois de ${timeoutMs}ms`)))
   }, timeoutMs)
   child.on("error", (error) => finish(() => reject(error)))
+  child.stdin.on("error", (error) => finish(() => reject(error)))
   child.stdout.on("data", (chunk: Buffer) => {
     stdout.push(chunk)
     stdoutBytes += chunk.length
@@ -390,12 +405,20 @@ export function createProgramaGovernoModelAdapters(
   if (modelFamily(config.generator.name) === modelFamily(config.judge.name)) {
     throw new Error("generator e judge devem usar familias diferentes")
   }
+  const generator = Object.freeze({
+    ...config.generator,
+    args: Object.freeze([...(config.generator.args ?? [])]),
+  }) as ProgramaGovernoModelCommand
+  const judge = Object.freeze({
+    ...config.judge,
+    args: Object.freeze([...(config.judge.args ?? [])]),
+  }) as ProgramaGovernoModelCommand
   return {
-    generator: Object.freeze({ ...config.generator, args: Object.freeze([...(config.generator.args ?? [])]) }) as ProgramaGovernoModelCommand,
-    judge: Object.freeze({ ...config.judge, args: Object.freeze([...(config.judge.args ?? [])]) }) as ProgramaGovernoModelCommand,
+    generator,
+    judge,
     generate(input) {
       return runStructured(
-        config.generator,
+        generator,
         PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION,
         PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA,
         GENERATOR_INSTRUCTIONS,
@@ -406,7 +429,7 @@ export function createProgramaGovernoModelAdapters(
     },
     judgeClaims(input) {
       return runStructured(
-        config.judge,
+        judge,
         PROGRAMA_GOVERNO_GOV_JUDGE_PROMPT_VERSION,
         judgeSchema,
         JUDGE_INSTRUCTIONS,

@@ -6,6 +6,7 @@ import { renderToStaticMarkup } from "react-dom/server"
 import {
   findProgramaTextMatches,
   loadProgramaGovernoDocumentoCompleto,
+  programaGovernoDocumentoCacheKey,
   ProgramaGovernoOverview,
   ProgramaGovernoTab,
 } from "../src/components/ProgramaGovernoSection"
@@ -22,19 +23,22 @@ const fonte: ProgramaGovernoFontePublica = {
   cargo: "PRESIDENTE",
   uf: "BR",
   sqCandidato: "280002542548",
+  slug: "lula",
   nomeUrna: "LULA",
   partido: "PT",
   arquivoNome: "2026BR280002542548_01.pdf",
   pacoteUrl: "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
   datasetUrl: "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
   pdfOriginalUrl: null,
+  consultadoEm: "2026-08-25T12:00:00Z",
 }
 
-const fonteGovernador = {
+const fonteGovernador: ProgramaGovernoFontePublica = {
   ano: 2026,
   cargo: "GOVERNADOR",
   uf: "SP",
   sqCandidato: "000000000001",
+  slug: "candidata-teste-sp",
   nomeUrna: "CANDIDATA TESTE",
   partido: "PTESTE",
   arquivoNome: "2026SP000000000001_01.pdf",
@@ -42,7 +46,7 @@ const fonteGovernador = {
   datasetUrl: "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
   pdfOriginalUrl: null,
   consultadoEm: "2026-08-25T12:00:00Z",
-} as ProgramaGovernoFontePublica
+}
 
 function documentoGovernador(
   index: number,
@@ -57,6 +61,7 @@ function documentoGovernador(
       pacoteUrl: fonteGovernador.pacoteUrl,
       datasetUrl: fonteGovernador.datasetUrl,
       pdfOriginalUrl: null,
+      consultadoEm: fonteGovernador.consultadoEm,
     },
     sourceSha256: String(index).repeat(64).slice(0, 64),
     extractedTextSha256: String(index + 1).repeat(64).slice(0, 64),
@@ -111,7 +116,6 @@ const programa: ProgramaGovernoPublico = {
   estado: "aprovado",
   fonte: {
     ...fonte,
-    slug: "lula",
     arquivoNoPacote: "BR/2026BR280002542548_01.pdf",
   },
   resumo: manifestoAprovado.resumo!,
@@ -267,7 +271,6 @@ describe("aba Programa", () => {
       ...programa,
       fonte: {
         ...fonteGovernador,
-        slug: "candidata-teste-sp",
         arquivoNoPacote: "SP/2026SP000000000001_01.pdf",
       },
     }
@@ -296,6 +299,8 @@ describe("aba Programa", () => {
         documentLoadState="loaded"
         loadedDocument={{
           documentoId: selected.documentoId,
+          sourceSha256: selected.sourceSha256,
+          extractedTextSha256: selected.extractedTextSha256,
           secoes: [section("somente-documento-2", 1, "CONTEUDO_DOCUMENTO_2")],
         }}
         onSelectDocument={() => {}}
@@ -314,6 +319,42 @@ describe("aba Programa", () => {
     )
     assert.match(overview, /Ler documentos completos/)
     assert.doesNotMatch(overview, /Ler programa completo/)
+  })
+
+  it("não combina texto cacheado com uma nova versão do mesmo documento", () => {
+    const previous = documentosGovernador[0]
+    const updated = {
+      ...previous,
+      sourceSha256: "c".repeat(64),
+      extractedTextSha256: "d".repeat(64),
+    }
+    assert.notEqual(
+      programaGovernoDocumentoCacheKey(previous),
+      programaGovernoDocumentoCacheKey(updated),
+    )
+
+    const html = renderToStaticMarkup(
+      <ProgramaGovernoTab
+        manifesto={{ ...manifestoMultidocumento, documentos: [updated] }}
+        loadState="idle"
+        response={null}
+        onRetry={() => {}}
+        selectedDocumentId={updated.documentoId}
+        documentLoadState="loaded"
+        loadedDocument={{
+          documentoId: previous.documentoId,
+          sourceSha256: previous.sourceSha256,
+          extractedTextSha256: previous.extractedTextSha256,
+          secoes: [section("versao-antiga", 1, "TEXTO_CACHEADO_ANTIGO")],
+        }}
+        onSelectDocument={() => {}}
+        onRetryDocument={() => {}}
+      />,
+    )
+    assert.doesNotMatch(html, /TEXTO_CACHEADO_ANTIGO/)
+    assert.match(html, /1 documento oficial\./)
+    assert.doesNotMatch(html, /1 documentos oficiais/)
+    assert.match(html, /O documento carregado não corresponde à seleção atual/)
   })
 
   it("busca sem diferenciar acentos ou caixa e preserva os índices originais", () => {
@@ -358,6 +399,8 @@ describe("carregamento multidocumento em chunks", () => {
       fetcher,
     )
     assert.deepEqual(loaded.secoes.map(({ conteudo }) => conteudo), ["PRIMEIRO_CHUNK", "SEGUNDO_CHUNK"])
+    assert.equal(loaded.sourceSha256, selected.sourceSha256)
+    assert.equal(loaded.extractedTextSha256, selected.extractedTextSha256)
     assert.equal(requested.length, 2)
     assert.match(requested[0], new RegExp(`documentoId=${encodeURIComponent(selected.documentoId)}`))
     assert.match(requested[1], new RegExp(`cursor=${encodeURIComponent(`${selected.documentoId}@1`)}`))

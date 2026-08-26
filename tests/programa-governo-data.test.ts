@@ -65,6 +65,7 @@ test("audita toda a coorte presidencial sem publicar rascunhos", async () => {
         pacoteUrl: record.fonte.pacoteUrl,
         datasetUrl: record.fonte.datasetUrl,
         pdfOriginalUrl: record.fonte.pdfOriginalUrl,
+        consultadoEm: record.fonte.coletadoEm,
       },
       resumo: record.resumo,
       paginas: record.extracao.paginas,

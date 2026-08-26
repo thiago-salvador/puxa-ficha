@@ -5,12 +5,15 @@ import test from "node:test"
 import {
   assertProgramaGovernoIdentidade,
   assertProgramaGovernoIdentidadeCorresponde,
+  assertProgramaGovernoDocumento,
   assertProgramaGovernoFonte,
   assertProgramaGovernoRegistro,
   normalizarProgramaGovernoEstado,
   programaGovernoChave,
   toProgramaGovernoManifestoPublico,
   toProgramaGovernoPublico,
+  type ProgramaGovernoDocumento,
+  type ProgramaGovernoIdentidade,
   type ProgramaGovernoRegistro,
 } from "../src/lib/programa-governo"
 
@@ -121,7 +124,81 @@ test("common contract accepts governor identity and canonical editorial states",
     delete terminal.resumo
     delete terminal.geracao
     delete terminal.julgamento
+    if (estado === "sem_documento_oficial") {
+      terminal.fonte.arquivoNome = null
+      terminal.fonte.arquivoNoPacote = null
+    }
     assert.doesNotThrow(() => assertProgramaGovernoRegistro(terminal))
+  }
+})
+
+test("package-only source never invents a document filename", () => {
+  const record = syntheticGovernorRecord()
+  record.estado = "sem_documento_oficial"
+  record.fonte.arquivoNome = null
+  record.fonte.arquivoNoPacote = null
+  delete record.extracao
+  delete record.resumo
+  delete record.geracao
+  delete record.julgamento
+
+  assert.doesNotThrow(() => assertProgramaGovernoRegistro(record))
+  const manifesto = toProgramaGovernoManifestoPublico(record)
+  assert.equal(manifesto.fonte.arquivoNome, null)
+  assert.equal(manifesto.fonte.consultadoEm, record.fonte.coletadoEm)
+  assert.doesNotMatch(JSON.stringify(manifesto), /2026SP250000000001_01\.pdf/u)
+
+  const invented = structuredClone(record)
+  invented.fonte.arquivoNome = "2026SP250000000001_01.pdf"
+  invented.fonte.arquivoNoPacote = "SP/2026SP250000000001_01.pdf"
+  assert.throws(() => assertProgramaGovernoRegistro(invented), /package-only/u)
+
+  const invalidConsultationDate = structuredClone(record)
+  invalidConsultationDate.fonte.coletadoEm = "2026-02-30T12:00:00Z"
+  assert.throws(() => assertProgramaGovernoRegistro(invalidConsultationDate), /ISO UTC existente/u)
+})
+
+test("document identity accepts all 27 governor UFs, including PI", () => {
+  const ufs = [
+    "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG",
+    "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO",
+  ] as const
+  for (const uf of ufs) {
+    const identidade: ProgramaGovernoIdentidade = {
+      ano: 2026,
+      cargo: "GOVERNADOR",
+      uf,
+      sqCandidato: "250000000001",
+      slug: `candidatura-${uf.toLocaleLowerCase("pt-BR")}`,
+      nomeUrna: `CANDIDATURA ${uf}`,
+      partido: "TESTE",
+    }
+    const documento: ProgramaGovernoDocumento = {
+      documentoId: `${uf}:250000000001:01`,
+      fonte: {
+        arquivoNome: `2026${uf}250000000001_01.pdf`,
+        arquivoNoPacote: `${uf}/2026${uf}250000000001_01.pdf`,
+        pacoteUrl: `https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_${uf}.zip`,
+        datasetUrl: "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        pdfOriginalUrl: null,
+        coletadoEm: "2026-08-26T12:00:00Z",
+      },
+      extracao: {
+        sourceSha256: "a".repeat(64),
+        extractedTextSha256: "b".repeat(64),
+        paginas: 1,
+        secoes: [{
+          id: "pagina-1",
+          titulo: "Página 1",
+          nivel: 1,
+          paginaInicial: 1,
+          paginaFinal: 1,
+          origem: "pdftotext",
+          conteudo: "Texto",
+        }],
+      },
+    }
+    assert.doesNotThrow(() => assertProgramaGovernoDocumento(documento, identidade, 1))
   }
 })
 
@@ -170,6 +247,7 @@ test("public conversion fails closed and strips editorial internals", () => {
   assert.equal("geracao" in publicRecord, false)
   assert.equal("reviewer" in publicRecord, false)
   assert.equal("coletadoEm" in publicRecord.fonte, false)
+  assert.equal(publicRecord.fonte.consultadoEm, validRecord().fonte.coletadoEm)
   assert.equal(publicRecord.estado, "aprovado")
 })
 

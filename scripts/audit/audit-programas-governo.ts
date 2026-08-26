@@ -12,14 +12,13 @@ import {
   type ProgramaGovernoRegistro,
 } from "../../src/lib/programa-governo"
 import {
-  PROGRAMA_GOVERNO_JUDGE_PROMPT_VERSION,
-  PROGRAMA_GOVERNO_GENERATOR_PROMPT_VERSION,
   assertProgramaGovernoModelSeparation,
   assertLiteralEvidence,
   assessProgramaGovernoJudgeVerdicts,
   buildProgramaGovernoJudgeClaims,
   assertProgramaGovernoDocumentSetMatchesSource,
   programaGovernoDocumentos,
+  programaGovernoExpectedPromptVersions,
   programaGovernoIdentityKey,
   type ProgramaGovernoPipelineRecord,
   type ProgramaGovernoStageSource,
@@ -145,8 +144,6 @@ export function auditProgramaGovernoRecordSet(
     const expected = expectedBySlug.get(slug)
     assert(expected, `${slug}: arquivo extra ou slug fora da coorte`)
     assertProgramaGovernoIdentidadeCorresponde(record.fonte, expected, `${slug}.fonte`)
-    assertProgramaGovernoDocumentSetMatchesSource(expected, record)
-    assertProgramaGovernoRegistro(record)
     const identity = programaGovernoIdentityKey(record.fonte)
     assert(!seenIdentities.has(identity), `${slug}: identidade duplicada`)
     assert(!seenSlugs.has(slug), `${slug}: slug duplicado`)
@@ -154,7 +151,18 @@ export function auditProgramaGovernoRecordSet(
     seenSlugs.add(slug)
 
     const state = normalizarProgramaGovernoEstado(record.estado as ProgramaGovernoRegistro["estado"])
-    if (state === "sem_documento_oficial" || state === "falha_de_extracao" || state === "perfil_local_ausente") continue
+    if (state === "sem_documento_oficial" || state === "falha_de_extracao" || state === "perfil_local_ausente") {
+      assertProgramaGovernoRegistro(record)
+      continue
+    }
+    assertProgramaGovernoDocumentSetMatchesSource(expected, record)
+    const ingestion = record as ProgramaGovernoPipelineRecord & {
+      ingestao?: { etapa?: string; erro?: string | null; eval?: { completo?: boolean; blockers?: number } | null }
+    }
+    if (ingestion.ingestao?.etapa === "modelos" && ingestion.ingestao.erro) {
+      throw new Error(`${slug}: ingestao bloqueada em modelos: ${ingestion.ingestao.erro}`)
+    }
+    assertProgramaGovernoRegistro(record)
     assert(record.resumo && record.geracao && record.julgamento, `${slug}: conteudo editorial incompleto`)
     assertProgramaGovernoModelSeparation(record)
     assertLiteralEvidence(record)
@@ -174,11 +182,13 @@ export function auditProgramaGovernoRecordSet(
       assert(record.julgamento.verdicts.every((item) => item.verdict === "yes"), `${slug}: judge legado bloqueou claim`)
       evalItems += record.julgamento.verdicts.length
     } else {
-      assert(record.geracao.promptVersion === PROGRAMA_GOVERNO_GENERATOR_PROMPT_VERSION, `${slug}: prompt do gerador inesperado`)
-      assert(judgmentPromptVersion === PROGRAMA_GOVERNO_JUDGE_PROMPT_VERSION, `${slug}: rubric do judge inesperada`)
+      const expectedPrompts = programaGovernoExpectedPromptVersions(record.fonte)
+      assert(record.geracao.promptVersion === expectedPrompts.generatorPromptVersion, `${slug}: prompt do gerador inesperado`)
+      assert(judgmentPromptVersion === expectedPrompts.judgePromptVersion, `${slug}: rubric do judge inesperada`)
       const expectedClaims = buildProgramaGovernoJudgeClaims([record])
       const assessment = assessProgramaGovernoJudgeVerdicts(expectedClaims, record.julgamento.verdicts)
       assert(assessment.eligible, `${slug}: Eval tem ${assessment.blockers.length} bloqueio(s)`)
+      assert(ingestion.ingestao?.eval?.completo !== false, `${slug}: Eval marcado como incompleto`)
       evalItems += expectedClaims.length
     }
   }

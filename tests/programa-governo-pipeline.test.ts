@@ -8,20 +8,21 @@ import type {
   ProgramaGovernoJulgamento,
 } from "../src/lib/programa-governo"
 import {
-  PROGRAMA_GOVERNO_GENERATOR_PROMPT_VERSION,
-  PROGRAMA_GOVERNO_JUDGE_PROMPT_VERSION,
   PROGRAMA_GOVERNO_EVAL_DIMENSIONS,
   assertProgramaGovernoSingleScope,
   assessProgramaGovernoJudgeVerdicts,
   buildProgramaGovernoJudgeClaims,
   buildProgramaGovernoJudgeInput,
   programaGovernoIdentityKey,
+  programaGovernoExpectedPromptVersions,
   renderProgramaGovernoReviewHtml,
+  writeProgramaGovernoStageRecords,
   type ProgramaGovernoPipelineRecord,
 } from "../scripts/programas-governo-stage"
 import {
   prepareProgramaGovernoApproval,
   programaGovernoApprovalFingerprint,
+  writeProgramaGovernoApprovals,
   type ProgramaGovernoApprovalDecision,
 } from "../scripts/programas-governo-approve"
 import { auditProgramaGovernoRecordSet } from "../scripts/audit/audit-programas-governo"
@@ -99,6 +100,7 @@ function extraction(text: string, sourceLabel: string): ProgramaGovernoExtracaoR
 }
 
 function draftRecord(source = governorSource(), multiDocument = true): ProgramaGovernoPipelineRecord {
+  const prompts = programaGovernoExpectedPromptVersions(source)
   const documentIds = [`${source.uf}:${source.sqCandidato}:01`, `${source.uf}:${source.sqCandidato}:02`]
   const documentTexts = [
     `${sentences[0]} ${sentences[2]} ${sentences[4]}`,
@@ -124,7 +126,7 @@ function draftRecord(source = governorSource(), multiDocument = true): ProgramaG
       ],
     },
     geracao: {
-      promptVersion: PROGRAMA_GOVERNO_GENERATOR_PROMPT_VERSION,
+      promptVersion: prompts.generatorPromptVersion,
       model: "Anthropic Claude Sonnet",
       generatedAt: "2026-08-26T12:10:00.000Z",
     },
@@ -144,10 +146,11 @@ function draftRecord(source = governorSource(), multiDocument = true): ProgramaG
 function evaluatedRecord(source = governorSource(), multiDocument = true): ProgramaGovernoPipelineRecord {
   const record = draftRecord(source, multiDocument)
   const claims = buildProgramaGovernoJudgeClaims([record])
+  const prompts = programaGovernoExpectedPromptVersions(source)
   return {
     ...record,
     julgamento: {
-      promptVersion: PROGRAMA_GOVERNO_JUDGE_PROMPT_VERSION,
+      promptVersion: prompts.judgePromptVersion,
       model: "OpenAI GPT-5.4",
       judgedAt: "2026-08-26T12:20:00.000Z",
       verdicts: claims.map((claim) => ({ id: claim.id, verdict: "yes", reason: "rubric satisfeita" })),
@@ -168,6 +171,10 @@ function approvalDecision(record: ProgramaGovernoPipelineRecord): ProgramaGovern
 test("isolates election, office, UF and candidate identity", () => {
   const source = governorSource()
   assert.equal(programaGovernoIdentityKey(source), "2026:GOVERNADOR:SP:000000000001")
+  assert.equal(
+    programaGovernoIdentityKey(governorSource({ sqCandidato: "40000000000" })),
+    "2026:GOVERNADOR:SP:40000000000",
+  )
   assert.deepEqual(assertProgramaGovernoSingleScope([source]), { ano: 2026, cargo: "GOVERNADOR", uf: "SP" })
 
   const otherUf = governorSource({
@@ -285,6 +292,18 @@ test("approval is deterministic and rejects stale content or identity", () => {
   changedEvidence.resumo!.frases[0].evidencias[0].trecho = sentences[2]
   assert.throws(() => prepareProgramaGovernoApproval(changedEvidence, decision), /decisao stale em contentSha256/u)
 
+  const changedCandidateLabel = structuredClone(record)
+  changedCandidateLabel.fonte.nomeUrna = "Nome de urna alterado"
+  changedCandidateLabel.fonte.partido = "BBB"
+  assert.throws(() => prepareProgramaGovernoApproval(changedCandidateLabel, decision), /decisao stale em contentSha256/u)
+
+  const changedCompleteSource = structuredClone(record)
+  changedCompleteSource.fonte.datasetUrl = "https://dadosabertos.tse.jus.br/dataset/candidatos-2026-retificado"
+  for (const document of changedCompleteSource.documentos!) {
+    document.fonte.datasetUrl = changedCompleteSource.fonte.datasetUrl
+  }
+  assert.throws(() => prepareProgramaGovernoApproval(changedCompleteSource, decision), /decisao stale em (?:documentSetSha256|contentSha256)/u)
+
   const otherCandidate = evaluatedRecord(governorSource({
     sqCandidato: "000000000002",
     slug: "outro-candidato-sp",
@@ -307,6 +326,15 @@ test("approval refuses unknown and incomplete Eval", () => {
   const sameFamily = evaluatedRecord()
   sameFamily.julgamento!.model = sameFamily.geracao!.model
   assert.throws(() => programaGovernoApprovalFingerprint(sameFamily), /familia diferente/u)
+
+  const markedIncomplete = evaluatedRecord() as ProgramaGovernoPipelineRecord & {
+    ingestao: { etapa: string; erro: string | null; eval: { completo: boolean; blockers: number } }
+  }
+  markedIncomplete.ingestao = { etapa: "modelos", erro: "judge incompleto", eval: { completo: false, blockers: 1 } }
+  assert.throws(
+    () => prepareProgramaGovernoApproval(markedIncomplete, approvalDecision(markedIncomplete)),
+    /ingestao ou Eval nao esta completa/u,
+  )
 })
 
 test("audits governor provenance, page hashes and complete Eval", () => {
@@ -328,7 +356,7 @@ test("audits governor provenance, page hashes and complete Eval", () => {
   const stalePage = structuredClone(record)
   const extraction = stalePage.documentos![1].extracao as ProgramaGovernoExtracaoRastreavel
   extraction.pageMap[0].textSha256 = sha("outro texto")
-  assert.throws(() => auditProgramaGovernoRecordSet([source], [stalePage]), /hash divergente/u)
+  assert.throws(() => auditProgramaGovernoRecordSet([source], [stalePage]), /hash divergente|diverge do texto canonico/u)
 
   const missingDocument = structuredClone(record)
   missingDocument.documentos!.pop()
@@ -357,6 +385,77 @@ test("preserves the legacy presidential approval path", () => {
   }
   const approved = prepareProgramaGovernoApproval(presidential, approvalDecision(presidential))
   assert.equal(approved.estado, "aprovado")
+})
+
+test("stage and approval default to dry-run, then backup, validate readback and write receipt", async () => {
+  const evaluated = evaluatedRecord()
+  const approved = prepareProgramaGovernoApproval(evaluated, approvalDecision(evaluated))
+  const dryRunAdapters = {
+    mkdir: async () => { throw new Error("dry-run nao pode criar diretorio") },
+    readFile: async () => { throw new Error("dry-run nao pode ler destino") },
+    writeFile: async () => { throw new Error("dry-run nao pode escrever") },
+    rename: async () => { throw new Error("dry-run nao pode renomear") },
+  }
+  const stageDryRun = await writeProgramaGovernoStageRecords([evaluated], {
+    apply: false,
+    recordsDir: "/records",
+    backupDir: "/backup-stage",
+    receiptPath: "/receipts/stage.json",
+    readAt: "2026-08-26T16:00:00.000Z",
+  }, dryRunAdapters)
+  assert.equal(stageDryRun.applied, false)
+  assert.deepEqual(stageDryRun.receipt.records, [{
+    file: "candidata-sp.json",
+    contentSha256: programaGovernoApprovalFingerprint(evaluated).contentSha256,
+  }])
+  assert.deepEqual(await writeProgramaGovernoApprovals([{ file: "candidata-sp.json", record: approved }], {
+    apply: false,
+    recordsDir: "/records",
+    backupDir: "/backup-approval",
+    receiptPath: "/receipts/approval.json",
+    readAt: "2026-08-26T16:00:00.000Z",
+  }, dryRunAdapters), { applied: false })
+
+  const files = new Map<string, string>([["/records/candidata-sp.json", "registro anterior\n"]])
+  const reads: string[] = []
+  const adapters = {
+    mkdir: async () => undefined,
+    readFile: async (file: string) => {
+      reads.push(file)
+      const value = files.get(file)
+      if (value === undefined) throw Object.assign(new Error("ausente"), { code: "ENOENT" })
+      return value
+    },
+    writeFile: async (file: string, value: string) => { files.set(file, value) },
+    rename: async (from: string, to: string) => {
+      const value = files.get(from)
+      assert.notEqual(value, undefined)
+      files.set(to, value!)
+      files.delete(from)
+    },
+  }
+  const stageResult = await writeProgramaGovernoStageRecords([evaluated], {
+    apply: true,
+    recordsDir: "/records",
+    backupDir: "/backup-stage",
+    receiptPath: "/receipts/stage.json",
+    readAt: "2026-08-26T16:00:00.000Z",
+  }, adapters)
+  assert.equal(stageResult.applied, true)
+  assert.equal(files.get("/backup-stage/candidata-sp.json"), "registro anterior\n")
+  assert.ok(reads.filter((file) => file === "/records/candidata-sp.json").length >= 2)
+  assert.ok(files.has("/receipts/stage.json"))
+
+  const approvalResult = await writeProgramaGovernoApprovals([{ file: "candidata-sp.json", record: approved }], {
+    apply: true,
+    recordsDir: "/records",
+    backupDir: "/backup-approval",
+    receiptPath: "/receipts/approval.json",
+    readAt: "2026-08-26T16:05:00.000Z",
+  }, adapters)
+  assert.equal(approvalResult.applied, true)
+  assert.match(files.get("/backup-approval/candidata-sp.json") ?? "", /"estado": "em_revisao"/u)
+  assert.match(files.get("/receipts/approval.json") ?? "", /"fingerprint"/u)
 })
 
 test("PROGRAMAS_PIPELINE_PASS", () => {

@@ -1,4 +1,4 @@
-## Eval: pipeline dos programas de governo para governadores de 2026
+# Eval: pipeline dos programas de governo para governadores de 2026
 
 Tipo: automacao
 
@@ -15,8 +15,8 @@ Tipo: automacao
 | 9 | Ausência, duplicidade, reordenação, documento cruzado ou qualquer mudança posterior em documento, fonte, extração, evidência, conteúdo, hash, prompt ou rubric invalida a decisão antes de qualquer escrita. | code: casos de proveniência inválida e stale approval em `tests/programa-governo-pipeline.test.ts` | policy |
 | 10 | O modo presidencial mantém os diretórios, estados e IDs legados aceitos, enquanto o modo estadual exige o contrato novo e nunca aprova automaticamente. | code: fixtures presidencial e estadual em `tests/programa-governo-pipeline.test.ts` | outcome |
 | 11 | A auditoria aceita caminhos e escopo explícitos, recusa arquivo extra, candidato ou documento duplicado, registro de outro cargo ou UF, evidência em documento ou página errados e cobertura incompleta do judge. | code: `node --conditions react-server --import tsx --test tests/programa-governo-pipeline.test.ts` | policy |
-| 12 | Geração e julgamento ficam fora do runtime público, com no máximo duas tentativas por etapa e nenhuma dependência nova de aplicativo. | code: inspeção de imports e constantes em `tests/programa-governo-pipeline.test.ts`; `git diff -- package.json src` deve estar vazio para esta folha | custo |
-| 13 | Os testes focados rodam em Node 24 e terminam com `PROGRAMAS_EXTRACAO_PASS` e `PROGRAMAS_PIPELINE_PASS`. | code: checks G1 a G3 de `.unlazy/programas-governo-governadores-2026/gates/leaf-1.3b.md` | outcome |
+| 12 | Geração e julgamento ficam fora do runtime público, com no máximo duas tentativas inteiras por etapa e nenhuma dependência de modelo no aplicativo. | code: `node --conditions react-server --import tsx --test tests/programa-governo-models.test.ts tests/programa-governo-pipeline.test.ts` e inspeção dos imports versionados | custo |
+| 13 | Os testes focados rodam em Node 24 e terminam com `PROGRAMAS_EXTRACAO_PASS`, `PROGRAMAS_MODELS_PASS` e `PROGRAMAS_PIPELINE_PASS`. | code: `npm run verify:programas-governo:governadores` definido em `package.json` | outcome |
 
 Gate: Done só com 100% PASS registrado, evidência atual por critério e zero aprovação estadual sem decisão humana explícita.
 

@@ -92,8 +92,15 @@ test("todos os estados não aprovados são explícitos e não vazam rascunho", a
     "perfil_local_ausente",
     "em_revisao",
   ] as const) {
+    const record = pendingRecord()
+    if (["nao_coletado", "fonte_ausente", "sem_documento_oficial"].includes(estado)) {
+      record.fonte.arquivoNome = null
+      record.fonte.arquivoNoPacote = null
+      delete record.extracao
+      delete record.documentos
+    }
     const resource = await getProgramaGovernoPublicResource("lula", async () => ({
-      ...pendingRecord(),
+      ...record,
       estado,
     }))
     const handler = createProgramaGovernoGetHandler({
@@ -154,6 +161,24 @@ test("rate limit recusa antes de carregar o arquivo", async () => {
   assert.equal(blocked.status, 429)
   assert.equal(blocked.headers.get("cache-control"), "no-store")
   assert.equal(loads, 1)
+})
+
+test("aceita documento oficial do PI", async () => {
+  let requestedDocument = ""
+  const handler = createProgramaGovernoGetHandler({
+    rateLimiter: createFixedWindowIpRateLimiter({ namespace: "programa-route-pi", max: 2, windowMs: 60_000 }),
+    getProgramaGovernoPublicResource: async () => ({ known: false, manifesto: null, data: null }),
+    getProgramaGovernoPublicChunk: async (_slug, documentoId) => {
+      requestedDocument = documentoId
+      return { known: false, manifesto: null, chunk: null }
+    },
+  })
+  const response = await handler(
+    new Request("http://localhost/api/candidato-profile/elizeu/programa?documentoId=PI:180002549920:01"),
+    params("elizeu"),
+  )
+  assert.equal(response.status, 404)
+  assert.equal(requestedDocument, "PI:180002549920:01")
 })
 
 test("endpoint pai não importa nem serializa o programa integral", async () => {

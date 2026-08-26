@@ -537,9 +537,11 @@ function assertScale(scale: Scale): void {
   );
   assert.equal(scale.limites.vercelRequestResponseBytes, VERCEL_PAYLOAD_LIMIT);
   assert.equal(scale.decisao.arquiteturaEstaticaCabeComMargem, true);
-  assert.equal(scale.decisao.payloadUnicoPorCandidatoCabeComMargem, false);
   assert.equal(scale.projecaoGovernadores.payloadPorDocumentoComMargem, true);
-  assert.equal(scale.decisao.resultado, "estatica_fragmentada_cabe_com_margem");
+  const expectedResult = scale.decisao.payloadUnicoPorCandidatoCabeComMargem
+    ? "estatica_integral_cabe_com_margem"
+    : "estatica_fragmentada_cabe_com_margem";
+  assert.equal(scale.decisao.resultado, expectedResult);
   assert.equal(scale.decisao.infraestruturaExternaNecessaria, false);
   assert.equal(scale.build.relatorioPayloadBytes, statSync(SCALE_PATH).size);
 }

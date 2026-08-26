@@ -160,6 +160,10 @@ function normalize(value: string): string {
     .toUpperCase();
 }
 
+function candidateKey(uf: string, sqCandidato: string): string {
+  return `${uf}:${sqCandidato}`;
+}
+
 function zipEntries(path: string): string[] {
   return execFileSync("unzip", ["-Z1", path], {
     encoding: "utf8",
@@ -219,7 +223,7 @@ function profileCrosswalk(): Map<string, ChapaSnapshot> {
           row.titular.sq_candidato &&
           row.titular.perfil_slug,
       )
-      .map((row) => [row.titular.sq_candidato as string, row]),
+      .map((row) => [candidateKey(row.uf as string, row.titular.sq_candidato as string), row]),
   );
 }
 
@@ -252,14 +256,15 @@ function inspectPdf(
   const pages = Number(info.match(/^Pages:\s+(\d+)$/m)?.[1]);
   if (!Number.isInteger(pages) || pages <= 0)
     throw new Error(`${entry}: páginas inválidas`);
-  let text = Buffer.alloc(0);
+  let text: Buffer;
   try {
     text = execFileSync("pdftotext", ["-enc", "UTF-8", localPath, "-"], {
       maxBuffer: 128 * 1024 * 1024,
-      stdio: ["ignore", "pipe", "ignore"],
+      stdio: ["ignore", "pipe", "pipe"],
     });
-  } catch {
-    text = Buffer.alloc(0);
+  } catch (error) {
+    const detail = error instanceof Error ? error.message : String(error);
+    throw new Error(`${entry}: pdftotext falhou: ${detail}`);
   }
   const normalizedText = text.toString("utf8").replace(/\s+/g, " ").trim();
   return {
@@ -292,9 +297,11 @@ function main(): void {
   }
   const candidateBytes = readFileSync(args.candidateArchive);
   const candidates = readCandidateRows(args.candidateArchive);
-  const sqs = new Set(candidates.map((row) => row.SQ_CANDIDATO));
-  if (sqs.size !== candidates.length)
-    throw new Error("SQ_CANDIDATO duplicado no recorte GOVERNADOR");
+  const candidateKeys = new Set(
+    candidates.map((row) => candidateKey(row.SG_UF, row.SQ_CANDIDATO)),
+  );
+  if (candidateKeys.size !== candidates.length)
+    throw new Error("chave UF + SQ_CANDIDATO duplicada no recorte GOVERNADOR");
   const foundUfs = [...new Set(candidates.map((row) => row.SG_UF))].sort();
   if (JSON.stringify(foundUfs) !== JSON.stringify([...UFS].sort())) {
     throw new Error(`UFs incompletas: ${foundUfs.join(",")}`);
@@ -317,7 +324,7 @@ function main(): void {
     values.push(row);
     groups.set(groupKey, values);
   }
-  const ambiguousGroupBySq = new Map<
+  const ambiguousGroupByKey = new Map<
     string,
     { id: string; alternatives: Raw[] }
   >();
@@ -325,7 +332,10 @@ function main(): void {
     if (rows.length < 2) continue;
     const id = `duplicidade-${sha256(key).slice(0, 12)}`;
     for (const row of rows)
-      ambiguousGroupBySq.set(row.SQ_CANDIDATO, { id, alternatives: rows });
+      ambiguousGroupByKey.set(candidateKey(row.SG_UF, row.SQ_CANDIDATO), {
+        id,
+        alternatives: rows,
+      });
   }
 
   const tempDir = mkdtempSync(join(tmpdir(), "pf-programas-governadores-"));
@@ -362,7 +372,7 @@ function main(): void {
           pacoteUrl: `https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_${uf}.zip`,
           pdfOriginalUrl: null,
           ...inspectPdf(bytes, entry, tempDir),
-          candidaturaAtual: sqs.has(sqCandidato),
+          candidaturaAtual: candidateKeys.has(candidateKey(uf, sqCandidato)),
         });
         documentIds.push(id);
       }
@@ -386,19 +396,21 @@ function main(): void {
   const documentIds = new Set(documentos.map((document) => document.id));
   if (documentIds.size !== documentos.length)
     throw new Error("ID de documento duplicado");
-  const documentsBySq = new Map<string, Documento[]>();
+  const documentsByCandidate = new Map<string, Documento[]>();
   for (const document of documentos) {
-    const values = documentsBySq.get(document.sqCandidato) ?? [];
+    const key = candidateKey(document.uf, document.sqCandidato);
+    const values = documentsByCandidate.get(key) ?? [];
     values.push(document);
-    documentsBySq.set(document.sqCandidato, values);
+    documentsByCandidate.set(key, values);
   }
 
   const crosswalk = profileCrosswalk();
   const inventario = candidates.map((row) => {
-    const documents = (documentsBySq.get(row.SQ_CANDIDATO) ?? []).sort(
+    const key = candidateKey(row.SG_UF, row.SQ_CANDIDATO);
+    const documents = (documentsByCandidate.get(key) ?? []).sort(
       (a, b) => a.sequencia - b.sequencia,
     );
-    const previous = crosswalk.get(row.SQ_CANDIDATO);
+    const previous = crosswalk.get(key);
     if (
       previous &&
       (previous.uf !== row.SG_UF ||
@@ -410,7 +422,7 @@ function main(): void {
         `${row.SQ_CANDIDATO}: vínculo local diverge da identidade TSE atual`,
       );
     }
-    const ambiguity = ambiguousGroupBySq.get(row.SQ_CANDIDATO);
+    const ambiguity = ambiguousGroupByKey.get(key);
     const slug = previous?.titular.perfil_slug ?? null;
     const perfilEstado = slug ? "vinculado" : "perfil_local_ausente";
     const fonteEstado = documents.length
@@ -500,7 +512,7 @@ function main(): void {
       gruposLogicos: groups.size,
       gruposAmbiguos: [...groups.values()].filter((rows) => rows.length > 1)
         .length,
-      linhasEmGruposAmbiguos: ambiguousGroupBySq.size,
+      linhasEmGruposAmbiguos: ambiguousGroupByKey.size,
       perfisLocaisVinculados: profilesLinked,
       perfisLocaisAusentes: inventario.length - profilesLinked,
       pacotes: pacotes.length,

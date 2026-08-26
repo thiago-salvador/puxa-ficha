@@ -1,4 +1,5 @@
 import assert from "node:assert/strict"
+import { createHash } from "node:crypto"
 import { readFile } from "node:fs/promises"
 import { createRequire } from "node:module"
 import test, { before } from "node:test"
@@ -6,6 +7,7 @@ import test, { before } from "node:test"
 import {
   assertProgramaGovernoRegistro,
   createProgramaGovernoChunk,
+  programaGovernoRevisaoHashes,
   toProgramaGovernoManifestoPublico,
   toProgramaGovernoPublico,
   type ProgramaGovernoDocumento,
@@ -49,9 +51,22 @@ function words(count: number): string {
   return Array.from({ length: count }, (_, index) => `palavra${index + 1}`).join(" ")
 }
 
+function sha(value: string): string {
+  return createHash("sha256").update(value).digest("hex")
+}
+
 function syntheticDocument(index: number, sectionBytes = 80): ProgramaGovernoDocumento {
   const sequence = String(index + 1).padStart(2, "0")
   const documentoId = `AM:${syntheticIdentity.sqCandidato}:${sequence}`
+  const secoes = Array.from({ length: 4 }, (_, sectionIndex) => ({
+    id: `parte-${sequence}-secao-${sectionIndex + 1}`,
+    titulo: `Seção sintética ${sectionIndex + 1}`,
+    nivel: 1,
+    paginaInicial: sectionIndex + 1,
+    paginaFinal: sectionIndex + 1,
+    origem: "pdftotext" as const,
+    conteudo: `${sequence}:${sectionIndex + 1}:${"x".repeat(sectionBytes)}`,
+  }))
   return {
     documentoId,
     fonte: {
@@ -64,16 +79,15 @@ function syntheticDocument(index: number, sectionBytes = 80): ProgramaGovernoDoc
     },
     extracao: {
       sourceSha256: ((index + 1) % 16).toString(16).repeat(64),
-      extractedTextSha256: ((index + 9) % 16).toString(16).repeat(64),
+      extractedTextSha256: sha(secoes.map(({ conteudo }) => conteudo).join("\n\f\n")),
       paginas: 4,
-      secoes: Array.from({ length: 4 }, (_, sectionIndex) => ({
-        id: `parte-${sequence}-secao-${sectionIndex + 1}`,
-        titulo: `Seção sintética ${sectionIndex + 1}`,
-        nivel: 1,
-        paginaInicial: sectionIndex + 1,
-        paginaFinal: sectionIndex + 1,
-        origem: "pdftotext" as const,
-        conteudo: `${sequence}:${sectionIndex + 1}:${"x".repeat(sectionBytes)}`,
+      secoes,
+      extractionVersion: "programa-governo-extracao-v2",
+      method: "pdftotext-pagewise-with-ocr-fallback",
+      pageMap: secoes.map((section) => ({
+        pagina: section.paginaInicial,
+        origem: section.origem,
+        textSha256: sha(section.conteudo),
       })),
     },
   }
@@ -87,7 +101,7 @@ function syntheticMultipartRecord(sectionBytes = 80): ProgramaGovernoRegistro {
     pagina,
     trecho: `Trecho sintético ${documentIndex + 1}:${pagina}`,
   })
-  return {
+  const record: ProgramaGovernoRegistro = {
     version: 1,
     estado: "aprovado",
     fonte: { ...syntheticIdentity, ...documentos[0].fonte },
@@ -118,6 +132,8 @@ function syntheticMultipartRecord(sectionBytes = 80): ProgramaGovernoRegistro {
       extractedTextSha256: documentos[0].extracao.extractedTextSha256,
     },
   }
+  Object.assign(record.revisao!, programaGovernoRevisaoHashes(record))
+  return record
 }
 
 test("schema preserves eight sequential documents and document-scoped evidence", () => {
@@ -139,6 +155,36 @@ test("schema preserves eight sequential documents and document-scoped evidence",
   const skippedSequence = structuredClone(record)
   skippedSequence.documentos![1].fonte.arquivoNome = `2026AM${syntheticIdentity.sqCandidato}_03.pdf`
   assert.throws(() => assertProgramaGovernoRegistro(skippedSequence), /parte sequencial 02/)
+})
+
+test("multipart approval binds every document, page map and editorial field", () => {
+  const original = syntheticMultipartRecord()
+
+  const changedSecondDocument = structuredClone(original)
+  const changedExtraction = changedSecondDocument.documentos![1].extracao
+  changedExtraction.secoes[0].conteudo += " alterado depois da revisão"
+  changedExtraction.pageMap![0].textSha256 = sha(changedExtraction.secoes[0].conteudo)
+  changedExtraction.extractedTextSha256 = sha(
+    changedExtraction.secoes.map(({ conteudo }) => conteudo).join("\n\f\n"),
+  )
+  assert.throws(
+    () => assertProgramaGovernoRegistro(changedSecondDocument),
+    /documentSetSha256.*conjunto documental mudou/u,
+  )
+
+  const changedPageMap = structuredClone(original)
+  changedPageMap.documentos![2].extracao.extractionVersion = "programa-governo-extracao-v3"
+  assert.throws(
+    () => assertProgramaGovernoRegistro(changedPageMap),
+    /documentSetSha256.*conjunto documental mudou/u,
+  )
+
+  const changedSummary = structuredClone(original)
+  changedSummary.resumo!.temas[0].titulo = "Tema alterado depois da revisão"
+  assert.throws(
+    () => assertProgramaGovernoRegistro(changedSummary),
+    /contentSha256.*conteudo editorial mudou/u,
+  )
 })
 
 test("multipart public DTO exposes only the light document index", () => {
@@ -227,6 +273,76 @@ test("server manifest loads only the requested document", async () => {
     () => divergentManifest.loadDocumentoBySlug(syntheticIdentity.slug, requestedId),
     /documento carregado diverge/,
   )
+
+  const forgedText = structuredClone(record)
+  forgedText.documentos![3].extracao.secoes[0].conteudo += " adulterado"
+  const forgedTextManifest = createProgramaGovernoManifestoServer([{
+    identidade: syntheticIdentity,
+    manifesto,
+    load: async () => ({ default: structuredClone(record) }),
+    documentos: forgedText.documentos!.map((documento) => ({
+      documentoId: documento.documentoId,
+      load: async () => ({ default: structuredClone(documento) }),
+    })),
+  }])
+  await assert.rejects(
+    () => forgedTextManifest.loadDocumentoBySlug(syntheticIdentity.slug, requestedId),
+    /documento carregado diverge/,
+  )
+
+  const forgedPageMap = structuredClone(record)
+  forgedPageMap.documentos![3].extracao.pageMap![0].textSha256 = "0".repeat(64)
+  const forgedPageMapManifest = createProgramaGovernoManifestoServer([{
+    identidade: syntheticIdentity,
+    manifesto,
+    load: async () => ({ default: structuredClone(record) }),
+    documentos: forgedPageMap.documentos!.map((documento) => ({
+      documentoId: documento.documentoId,
+      load: async () => ({ default: structuredClone(documento) }),
+    })),
+  }])
+  await assert.rejects(
+    () => forgedPageMapManifest.loadDocumentoBySlug(syntheticIdentity.slug, requestedId),
+    /documento carregado diverge/,
+  )
+})
+
+test("multipart manifest requires exact public index and loader parity", async () => {
+  const record = syntheticMultipartRecord()
+  const manifesto = toProgramaGovernoManifestoPublico(record)
+  let recordLoads = 0
+  const load = async () => {
+    recordLoads += 1
+    return { default: structuredClone(record) }
+  }
+
+  assert.throws(
+    () => createProgramaGovernoManifestoServer([{ identidade: syntheticIdentity, manifesto, load }]),
+    /indice multidocumento e loaders devem coexistir/,
+  )
+  assert.throws(
+    () => createProgramaGovernoManifestoServer([{
+      identidade: syntheticIdentity,
+      manifesto,
+      load,
+      documentos: record.documentos!.slice(0, -1).map((documento) => ({
+        documentoId: documento.documentoId,
+        load: async () => ({ default: structuredClone(documento) }),
+      })),
+    }]),
+    /loaders divergem dos documentos publicos/,
+  )
+  assert.equal(recordLoads, 0)
+
+  const unindexed = createProgramaGovernoManifestoServer([{
+    identidade: syntheticIdentity,
+    load,
+  }])
+  assert.equal(
+    await unindexed.loadDocumentoBySlug(syntheticIdentity.slug, record.documentos![0].documentoId),
+    null,
+  )
+  assert.equal(recordLoads, 0, "entrada estadual sem indice nunca deve carregar o registro integral")
 })
 
 test("pending state blocks document loader and approved chunk is bounded", async () => {

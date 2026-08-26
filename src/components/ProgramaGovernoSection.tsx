@@ -31,6 +31,8 @@ export type ProgramaGovernoLoadState = "idle" | "loading" | "loaded" | "failed"
 
 export type ProgramaGovernoDocumentoCarregado = {
   documentoId: string
+  sourceSha256: string
+  extractedTextSha256: string
   secoes: ProgramaGovernoSecao[]
 }
 
@@ -87,13 +89,7 @@ function sourceHref(fonte: ProgramaGovernoLinkFonte) {
 }
 
 function sourceConsultedAt(fonte: ProgramaGovernoFontePublica): string | null {
-  const sourceWithConsultationDate = fonte as ProgramaGovernoFontePublica & {
-    consultadoEm?: unknown
-    coletadoEm?: unknown
-  }
-  const value = sourceWithConsultationDate.consultadoEm ?? sourceWithConsultationDate.coletadoEm
-  if (typeof value !== "string" || Number.isNaN(Date.parse(value))) return null
-  return value
+  return Number.isNaN(Date.parse(fonte.consultadoEm)) ? null : fonte.consultadoEm
 }
 
 function formatDate(value: string) {
@@ -284,6 +280,26 @@ function sameDocumento(
     && actual.fonte.pdfOriginalUrl === expected.fonte.pdfOriginalUrl
 }
 
+export function programaGovernoDocumentoCacheKey(
+  documento: Pick<
+    ProgramaGovernoDocumentoPublico,
+    "documentoId" | "sourceSha256" | "extractedTextSha256"
+  >,
+) {
+  return [
+    documento.documentoId,
+    documento.sourceSha256,
+    documento.extractedTextSha256,
+  ].join(":")
+}
+
+function loadedDocumentoMatches(
+  loaded: ProgramaGovernoDocumentoCarregado,
+  expected: ProgramaGovernoDocumentoPublico,
+) {
+  return programaGovernoDocumentoCacheKey(loaded) === programaGovernoDocumentoCacheKey(expected)
+}
+
 function nextCursorIndex(documentoId: string, cursor: string) {
   const prefix = `${documentoId}@`
   if (!cursor.startsWith(prefix)) return null
@@ -342,7 +358,12 @@ export async function loadProgramaGovernoDocumentoCompleto(
       if (chunk.nextCursor !== null || secoes.length !== documento.secoes) {
         throw new Error("programa_governo_documento_incomplete")
       }
-      return { documentoId: documento.documentoId, secoes }
+      return {
+        documentoId: documento.documentoId,
+        sourceSha256: documento.sourceSha256,
+        extractedTextSha256: documento.extractedTextSha256,
+        secoes,
+      }
     }
 
     const nextCursor = chunk.nextCursor
@@ -401,7 +422,8 @@ export function useProgramaGovernoDocuments({
     if (!active || !isMultiDocument || !activeDocumentId) return
     const document = documents.find((candidate) => candidate.documentoId === activeDocumentId)
     if (!document) return
-    const cached = cacheRef.current.get(document.documentoId)
+    const cacheKey = programaGovernoDocumentoCacheKey(document)
+    const cached = cacheRef.current.get(cacheKey)
     if (cached) {
       setLoadedDocument(cached)
       setLoadState("loaded")
@@ -415,7 +437,7 @@ export function useProgramaGovernoDocuments({
     loadProgramaGovernoDocumentoCompleto(slug, document, controller.signal)
       .then((loaded) => {
         if (cancelled) return
-        cacheRef.current.set(document.documentoId, loaded)
+        cacheRef.current.set(cacheKey, loaded)
         setLoadedDocument(loaded)
         setLoadState("loaded")
       })
@@ -431,8 +453,9 @@ export function useProgramaGovernoDocuments({
   }, [active, activeDocumentId, documents, isMultiDocument, retryKey, slug])
 
   const selectDocument = useCallback((documentoId: string) => {
-    if (!documents.some((document) => document.documentoId === documentoId)) return
-    const cached = cacheRef.current.get(documentoId) ?? null
+    const document = documents.find((candidate) => candidate.documentoId === documentoId)
+    if (!document) return
+    const cached = cacheRef.current.get(programaGovernoDocumentoCacheKey(document)) ?? null
     setSelectedDocumentId(documentoId)
     setLoadedDocument(cached)
     setLoadState(cached ? "loaded" : "idle")
@@ -440,11 +463,14 @@ export function useProgramaGovernoDocuments({
 
   const retryDocument = useCallback(() => {
     if (!activeDocumentId) return
-    cacheRef.current.delete(activeDocumentId)
+    const document = documents.find((candidate) => candidate.documentoId === activeDocumentId)
+    if (document) {
+      cacheRef.current.delete(programaGovernoDocumentoCacheKey(document))
+    }
     setLoadedDocument(null)
     setLoadState("idle")
     setRetryKey((value) => value + 1)
-  }, [activeDocumentId])
+  }, [activeDocumentId, documents])
 
   return {
     activeDocumentId,
@@ -644,7 +670,8 @@ export function ProgramaGovernoTab({
 
   if (isMultiDocument && selectedDocument) {
     const context = electionContext(manifesto.fonte)
-    const selectedLoadedDocument = loadedDocument?.documentoId === selectedDocument.documentoId
+    const selectedLoadedDocument = loadedDocument
+      && loadedDocumentoMatches(loadedDocument, selectedDocument)
       ? loadedDocument
       : null
     return (
@@ -656,7 +683,7 @@ export function ProgramaGovernoTab({
             </p>
             <h2 className="mt-1 text-3xl font-semibold tracking-tight text-foreground">Programa de governo</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              {documents.length} documentos oficiais. Cada arquivo é carregado somente após a seleção.
+              {documents.length} documento{documents.length === 1 ? " oficial" : "s oficiais"}. Cada arquivo é carregado somente após a seleção.
             </p>
           </div>
           <SourceLink fonte={selectedDocument.fonte} />

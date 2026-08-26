@@ -22,8 +22,8 @@ Formato:
 ```json
 {
   "texto": "Resumo de 120 a 180 palavras.",
-  "frases": [{ "texto": "Frase idêntica à usada no resumo.", "evidencias": [{ "pagina": 1, "trecho": "Trecho curto." }] }],
-  "temas": [{ "id": "id-estavel", "titulo": "Tema", "descricao": "Descrição neutra.", "evidencias": [{ "pagina": 1, "trecho": "Trecho curto." }] }]
+  "frases": [{ "texto": "Frase idêntica à usada no resumo.", "evidencias": [{ "documentoId": "UF:SQ_CANDIDATO:01", "pagina": 1, "trecho": "Trecho curto." }] }],
+  "temas": [{ "id": "id-estavel", "titulo": "Tema", "descricao": "Descrição neutra.", "evidencias": [{ "documentoId": "UF:SQ_CANDIDATO:01", "pagina": 1, "trecho": "Trecho curto." }] }]
 }
 ```
 

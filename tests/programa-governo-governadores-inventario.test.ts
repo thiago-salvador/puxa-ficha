@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 import { auditProgramasGovernadoresInventory } from "../scripts/audit/audit-programas-governo-governadores-inventario";
@@ -127,6 +128,25 @@ test("registra proveniência de pacote e integridade sem confundir transporte co
     observacao:
       "O navegador obteve os arquivos pelos links do catálogo. A integridade é provada por ZIP válido e hashes, não pelo método de download.",
   });
+});
+
+test("vincula candidatura e documento pela chave composta UF + SQ", async () => {
+  const source = await readFile(
+    new URL("../scripts/programas-governo-governadores-2026-inventario.ts", import.meta.url),
+    "utf8",
+  );
+  assert.match(source, /candidateKey\(document\.uf, document\.sqCandidato\)/);
+  assert.match(source, /documentsByCandidate\.get\(key\)/);
+  assert.doesNotMatch(source, /documentsBySq/);
+});
+
+test("falha explicitamente quando pdftotext encerra com erro", async () => {
+  const source = await readFile(
+    new URL("../scripts/programas-governo-governadores-2026-inventario.ts", import.meta.url),
+    "utf8",
+  );
+  assert.match(source, /pdftotext falhou/);
+  assert.doesNotMatch(source, /catch\s*\{[\s\S]*?text = Buffer\.alloc\(0\)/);
 });
 
 console.log("PROGRAMAS_GOVERNADORES_INVENTARIO_PASS");

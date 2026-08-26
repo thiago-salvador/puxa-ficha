@@ -48,6 +48,7 @@ const EXACT = new Set([
   "tests/programa-governo-extracao.test.ts",
   "tests/programa-governo-governadores-inventario.test.ts",
   "tests/programa-governo-governadores-ingestao.test.ts",
+  "tests/programa-governo-models.test.ts",
   "tests/programa-governo-pipeline.test.ts",
   "tests/programa-governo-chunking.test.ts",
   "tests/programa-governo-route.test.ts",

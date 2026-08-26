@@ -8,12 +8,14 @@ const fonte = {
   cargo: "PRESIDENTE",
   uf: "BR",
   sqCandidato: "280002542548",
+  slug: "lula",
   nomeUrna: "LULA",
   partido: "PT",
   arquivoNome: "2026BR280002542548_01.pdf",
   pacoteUrl: "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
   datasetUrl: "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
   pdfOriginalUrl: null,
+  consultadoEm: "2026-08-25T12:00:00Z",
 }
 
 const fonteGovernador = {
@@ -21,6 +23,7 @@ const fonteGovernador = {
   cargo: "GOVERNADOR",
   uf: "SP",
   sqCandidato: "000000000001",
+  slug: "candidata-teste-sp",
   nomeUrna: "CANDIDATA TESTE",
   partido: "PTESTE",
   arquivoNome: "2026SP000000000001_01.pdf",
@@ -101,6 +104,7 @@ const chunkDocuments = Array.from({ length: 8 }, (_, index) => {
       pacoteUrl: fonteGovernador.pacoteUrl,
       datasetUrl: fonteGovernador.datasetUrl,
       pdfOriginalUrl: null,
+      consultadoEm: fonteGovernador.consultadoEm,
     },
     sourceSha256: String(index + 1).repeat(64).slice(0, 64),
     extractedTextSha256: String(index + 2).repeat(64).slice(0, 64),

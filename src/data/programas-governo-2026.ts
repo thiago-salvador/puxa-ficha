@@ -101,12 +101,13 @@ export function createProgramaGovernoManifestoServer(
         throw new Error(`manifesto: documento fora da sequencia ${esperado}`)
       }
     }
-    if (stableEntry.manifesto?.documentos && stableEntry.documentos) {
-      const publicIds = stableEntry.manifesto.documentos.map(({ documentoId }) => documentoId)
-      const loaderIds = stableEntry.documentos.map(({ documentoId }) => documentoId)
-      if (JSON.stringify(publicIds) !== JSON.stringify(loaderIds)) {
-        throw new Error("manifesto: loaders divergem dos documentos publicos")
-      }
+    const publicIds = stableEntry.manifesto?.documentos?.map(({ documentoId }) => documentoId)
+    const loaderIds = stableEntry.documentos?.map(({ documentoId }) => documentoId)
+    if ((publicIds === undefined) !== (loaderIds === undefined)) {
+      throw new Error("manifesto: indice multidocumento e loaders devem coexistir")
+    }
+    if (publicIds && loaderIds && JSON.stringify(publicIds) !== JSON.stringify(loaderIds)) {
+      throw new Error("manifesto: loaders divergem dos documentos publicos")
     }
 
     const { slug } = stableEntry.identidade
@@ -149,12 +150,18 @@ export function createProgramaGovernoManifestoServer(
       }
       if (entry.documentos) return null
 
+      const legacyPresidency = entry.identidade.cargo === "PRESIDENTE" && entry.identidade.uf === "BR"
+      if (!legacyPresidency) return null
+      const legacyId = `${entry.identidade.uf}:${entry.identidade.sqCandidato}:01`
+      if (documentoId !== legacyId) return null
+
       const record = await this.loadBySlug(slug)
       if (!record || record.estado !== "aprovado") return null
-      if (record.documentos) return record.documentos.find((item) => item.documentoId === documentoId) ?? null
+      if (record.documentos) return null
       if (!record.extracao) return null
-      const legacyId = `${record.fonte.uf}:${record.fonte.sqCandidato}:01`
-      if (documentoId !== legacyId) return null
+      if (typeof record.fonte.arquivoNome !== "string" || typeof record.fonte.arquivoNoPacote !== "string") {
+        return null
+      }
       return {
         documentoId: legacyId,
         fonte: {

@@ -20,6 +20,7 @@ import {
   type ProgramaGovernoModelAdapters,
   type ProgramaGovernoModelsConfig,
 } from "./programas-governo-governadores-2026-models"
+import { programaGovernoExpectedPromptVersions } from "./programas-governo-stage"
 import {
   assertProgramaGovernoDocumento,
   assertProgramaGovernoFonte,
@@ -29,13 +30,14 @@ import {
   type ProgramaGovernoDocumentoFonte,
   type ProgramaGovernoEvidencia,
   type ProgramaGovernoFonte,
+  type ProgramaGovernoFonteSemDocumento,
   type ProgramaGovernoRegistro,
   type ProgramaGovernoResumo,
   type ProgramaGovernoUf,
 } from "../src/lib/programa-governo"
 
 const execFileAsync = promisify(execFile)
-const UF_PATTERN = /^(?:A[CLMP]|BA|CE|DF|ES|GO|MA|M[GST]|P[ABER]|R[JNSOR]|S[CEP]|TO)$/u
+const UF_PATTERN = /^(?:A[CLMP]|BA|CE|DF|ES|GO|MA|M[GST]|P[ABEIR]|R[JNSOR]|S[CEP]|TO)$/u
 const SHA256_PATTERN = /^[a-f0-9]{64}$/u
 
 export type ProgramaGovernoGovInventoryCandidate = {
@@ -114,6 +116,11 @@ export type ProgramaGovernoGovIngestionResult = {
   ufs: string[]
   records: ProgramaGovernoGovIngestionRecord[]
   counts: Record<ProgramaGovernoGovIngestionState, number>
+  blockers: Array<{
+    identityKey: string
+    etapa: ProgramaGovernoGovIngestionRecord["ingestao"]["etapa"]
+    motivo: string
+  }>
 }
 
 export type ProgramaGovernoGovCliOptions = {
@@ -261,8 +268,7 @@ function sourceFor(
   inventory: ProgramaGovernoGovInventory,
   packageInfo: ProgramaGovernoGovInventoryPackage,
   firstDocument?: ProgramaGovernoGovInventoryDocument,
-): ProgramaGovernoFonte {
-  const arquivoNome = firstDocument?.arquivoNome ?? `2026${candidate.uf}${candidate.sqCandidato}_01.pdf`
+): ProgramaGovernoFonte | ProgramaGovernoFonteSemDocumento {
   return {
     ano: 2026,
     cargo: "GOVERNADOR",
@@ -271,8 +277,9 @@ function sourceFor(
     slug: candidate.slug,
     nomeUrna: candidate.nomeUrna,
     partido: candidate.partido,
-    arquivoNome,
-    arquivoNoPacote: firstDocument?.arquivoNoPacote ?? `${candidate.uf}/${arquivoNome}`,
+    ...(firstDocument
+      ? { arquivoNome: firstDocument.arquivoNome, arquivoNoPacote: firstDocument.arquivoNoPacote }
+      : { arquivoNome: null, arquivoNoPacote: null }),
     pacoteUrl: packageInfo.pacoteUrl,
     datasetUrl: inventory.fonte.datasetUrl,
     pdfOriginalUrl: firstDocument?.pdfOriginalUrl ?? null,
@@ -444,7 +451,7 @@ function terminalRecord(
   state: Exclude<ProgramaGovernoGovIngestionState, "em_revisao">,
   candidate: ProgramaGovernoGovInventoryCandidate,
   inventory: ProgramaGovernoGovInventory,
-  source: ProgramaGovernoFonte,
+  source: ProgramaGovernoFonte | ProgramaGovernoFonteSemDocumento,
   error: string | null,
   etapa: ProgramaGovernoGovIngestionRecord["ingestao"]["etapa"] = "ausencia",
   documents?: ProgramaGovernoDocumento[],
@@ -498,16 +505,17 @@ async function ingestCandidate(
   models: ProgramaGovernoModelAdapters | null,
   adapters: ProgramaGovernoGovIngestionAdapters,
 ): Promise<ProgramaGovernoGovIngestionRecord> {
-  const source = sourceFor(candidate, inventory, packageInfo, documents[0])
-  assertProgramaGovernoFonte(source, `fonte.${candidate.chave}`)
   const profileMissing = candidate.perfilEstado !== "vinculado" || candidate.slug === null
   if (candidate.fonteEstado !== "documento_oficial_encontrado" || documents.length === 0) {
+    const source = sourceFor(candidate, inventory, packageInfo)
+    assertProgramaGovernoFonte(source, `fonte.${candidate.chave}`)
     return profileMissing
       ? terminalRecord("perfil_local_ausente", candidate, inventory, source, "perfil local nao vinculado por SQ_CANDIDATO")
       : terminalRecord("sem_documento_oficial", candidate, inventory, source, null)
   }
-  let failureStage: "extracao" | "modelos" = "extracao"
-  let extracted: ProgramaGovernoDocumento[] | undefined
+  const source = sourceFor(candidate, inventory, packageInfo, documents[0]) as ProgramaGovernoFonte
+  assertProgramaGovernoFonte(source, `fonte.${candidate.chave}`)
+  let extracted: ProgramaGovernoDocumento[]
   try {
     const archiveBytes = await loadArchive()
     extracted = await extractDocuments(candidate, inventory, documents, packageInfo, archiveDir, archiveBytes, adapters)
@@ -525,9 +533,17 @@ async function ingestCandidate(
         extracted,
       )
     }
-    failureStage = "modelos"
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error)
+    return terminalRecord("falha_de_extracao", candidate, inventory, source, message, "extracao")
+  }
+  try {
     if (!models) throw new Error("configuracao de generator e judge ausente")
+    const expectedPrompts = programaGovernoExpectedPromptVersions(source)
     const generated = await models.generate(generatorInput(candidate.chave, extracted))
+    if (generated.metadata.promptVersion !== expectedPrompts.generatorPromptVersion) {
+      throw new Error(`generator prompt stale: ${generated.metadata.promptVersion}`)
+    }
     assertLiteralEvidence(generated.output, extracted)
     const draft: ProgramaGovernoRegistro = {
       version: 1,
@@ -544,8 +560,12 @@ async function ingestCandidate(
     assertProgramaGovernoRegistro(draft)
     const claims = judgeItems(candidate.chave, generated.output)
     const judged = await models.judgeClaims({ claims, paginasCitadas: citedPages(claims, extracted) })
+    if (judged.metadata.promptVersion !== expectedPrompts.judgePromptVersion) {
+      throw new Error(`judge prompt stale: ${judged.metadata.promptVersion}`)
+    }
     assertJudgeCoverage(claims, judged.output)
     const blockers = judged.output.avaliacoes.filter(({ verdict }) => verdict !== "yes").length
+    const evalCompleto = blockers === 0
     const record: ProgramaGovernoGovIngestionRecord = {
       ...draft,
       estado: "em_revisao",
@@ -556,10 +576,15 @@ async function ingestCandidate(
         verdicts: judged.output.avaliacoes.map(({ id, verdict, reason }) => ({ id, verdict, reason })),
       },
       ingestao: {
-        ...baseIngestion(candidate, inventory, "concluida", null),
+        ...baseIngestion(
+          candidate,
+          inventory,
+          evalCompleto ? "concluida" : "modelos",
+          evalCompleto ? null : `Eval bloqueado por ${blockers} veredito(s) no/unknown`,
+        ),
         modelos: { generator: generated.metadata, judge: judged.metadata },
         eval: {
-          completo: true,
+          completo: evalCompleto,
           blockers,
           dimensoes: PROGRAMA_GOVERNO_GOV_EVAL_DIMENSIONS,
         },
@@ -569,7 +594,16 @@ async function ingestCandidate(
     return record
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error)
-    return terminalRecord("falha_de_extracao", candidate, inventory, source, message, failureStage, extracted)
+    return {
+      version: 1,
+      estado: "em_revisao",
+      fonte: source,
+      documentos: extracted,
+      ingestao: {
+        ...baseIngestion(candidate, inventory, "modelos", message),
+        eval: { completo: false, blockers: 1, dimensoes: PROGRAMA_GOVERNO_GOV_EVAL_DIMENSIONS },
+      },
+    }
   }
 }
 
@@ -656,8 +690,23 @@ export async function ingestProgramaGovernoGovernadores(
     falha_de_extracao: 0,
   }
   for (const record of records) counts[record.estado] += 1
-  const result = { ufs: [...options.ufs], records, counts }
-  await adapters.writeText(resolve(options.outputDir, "manifesto-ingestao.json"), `${JSON.stringify({ ufs: result.ufs, counts }, null, 2)}\n`)
+  const blockers = records.flatMap((record) => {
+    const failed = record.estado === "falha_de_extracao"
+      || record.ingestao.eval?.completo === false
+      || (record.ingestao.etapa === "modelos" && record.ingestao.erro !== null)
+    return failed
+      ? [{
+          identityKey: record.ingestao.identityKey,
+          etapa: record.ingestao.etapa,
+          motivo: record.ingestao.erro ?? "falha sem motivo materializado",
+        }]
+      : []
+  })
+  const result = { ufs: [...options.ufs], records, counts, blockers }
+  await adapters.writeText(
+    resolve(options.outputDir, "manifesto-ingestao.json"),
+    `${JSON.stringify({ ufs: result.ufs, counts, blockers }, null, 2)}\n`,
+  )
   return result
 }
 
@@ -676,7 +725,11 @@ export async function runProgramaGovernoGovernadoresCli(
     const config = JSON.parse(await adapters.readText(options.modelsConfigPath)) as ProgramaGovernoModelsConfig
     models = createProgramaGovernoModelAdapters(config)
   }
-  return ingestProgramaGovernoGovernadores(options, { ...dependencies, models: models ?? null })
+  const result = await ingestProgramaGovernoGovernadores(options, { ...dependencies, models: models ?? null })
+  if (result.blockers.length > 0) {
+    throw new Error(`ingestao materializou ${result.blockers.length} bloqueio(s); consulte manifesto-ingestao.json`)
+  }
+  return result
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

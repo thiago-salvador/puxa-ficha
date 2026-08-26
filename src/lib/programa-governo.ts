@@ -1,3 +1,5 @@
+import { createHash } from "node:crypto"
+
 const PROGRAMA_GOVERNO_ESTADOS_CANONICOS = [
   "em_revisao",
   "sem_documento_oficial",
@@ -76,13 +78,21 @@ export type ProgramaGovernoSecao = {
   conteudo: string
 }
 
-export type ProgramaGovernoFonte = ProgramaGovernoIdentidade & {
-  arquivoNome: string
-  arquivoNoPacote: string
+type ProgramaGovernoFonteBase = ProgramaGovernoIdentidade & {
   pacoteUrl: string
   datasetUrl: string
   pdfOriginalUrl: string | null
   coletadoEm: string
+}
+
+export type ProgramaGovernoFonte = ProgramaGovernoFonteBase & {
+  arquivoNome: string
+  arquivoNoPacote: string
+}
+
+export type ProgramaGovernoFonteSemDocumento = ProgramaGovernoFonteBase & {
+  arquivoNome?: null
+  arquivoNoPacote?: null
 }
 
 export type ProgramaGovernoDocumentoFonte = Pick<
@@ -100,6 +110,13 @@ export type ProgramaGovernoExtracao = {
   extractedTextSha256: string
   paginas: number
   secoes: ProgramaGovernoSecao[]
+  extractionVersion?: string
+  method?: string
+  pageMap?: Array<{
+    pagina: number
+    origem: ProgramaGovernoSecao["origem"]
+    textSha256: string
+  }>
 }
 
 export type ProgramaGovernoDocumento = {
@@ -116,6 +133,7 @@ export type ProgramaGovernoGeracao = {
 
 export type ProgramaGovernoJulgamento = {
   model: string
+  promptVersion?: string
   judgedAt: string
   verdicts: Array<{
     id: string
@@ -129,12 +147,15 @@ export type ProgramaGovernoRevisao = {
   reviewedAt: string
   sourceSha256: string
   extractedTextSha256: string
+  documentCount?: number
+  documentSetSha256?: string
+  contentSha256?: string
 }
 
 export type ProgramaGovernoRegistro = {
   version: 1
   estado: ProgramaGovernoEstado
-  fonte: ProgramaGovernoFonte
+  fonte: ProgramaGovernoFonte | ProgramaGovernoFonteSemDocumento
   extracao?: ProgramaGovernoExtracao
   documentos?: ProgramaGovernoDocumento[]
   resumo?: ProgramaGovernoResumo
@@ -146,7 +167,7 @@ export type ProgramaGovernoRegistro = {
 export type ProgramaGovernoPublico = {
   version: 1
   estado: "aprovado"
-  fonte: Omit<ProgramaGovernoFonte, "coletadoEm">
+  fonte: ProgramaGovernoFontePublica & { arquivoNoPacote: string }
   resumo: ProgramaGovernoResumo
   paginas: number
   secoes: ProgramaGovernoSecao[]
@@ -155,23 +176,16 @@ export type ProgramaGovernoPublico = {
 }
 
 export type ProgramaGovernoFontePublica = Pick<
-  ProgramaGovernoFonte,
-  | "ano"
-  | "cargo"
-  | "uf"
-  | "sqCandidato"
-  | "nomeUrna"
-  | "partido"
-  | "arquivoNome"
-  | "pacoteUrl"
-  | "datasetUrl"
-  | "pdfOriginalUrl"
->
+  ProgramaGovernoFonteBase,
+  "ano" | "cargo" | "uf" | "sqCandidato" | "slug" | "nomeUrna" | "partido" | "pacoteUrl" | "datasetUrl" | "pdfOriginalUrl"
+> & {
+  arquivoNome: string | null
+  consultadoEm: string
+}
 
-export type ProgramaGovernoDocumentoFontePublica = Omit<
-  ProgramaGovernoDocumentoFonte,
-  "coletadoEm"
->
+export type ProgramaGovernoDocumentoFontePublica = Omit<ProgramaGovernoDocumentoFonte, "coletadoEm"> & {
+  consultadoEm: string
+}
 
 export type ProgramaGovernoDocumentoPublico = {
   documentoId: string
@@ -210,7 +224,7 @@ export type ProgramaGovernoApiResponse = {
 const SHA256_PATTERN = /^[a-f0-9]{64}$/
 const SQ_PATTERN = /^\d{11,12}$/
 const ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
-const DOCUMENTO_ID_PATTERN = /^(BR|A[CLMP]|BA|CE|DF|ES|GO|MA|M[GST]|P[ABER]|R[JNSOR]|S[CEP]|TO):\d{11,12}:\d{2}$/
+const DOCUMENTO_ID_PATTERN = /^(BR|A[CLMP]|BA|CE|DF|ES|GO|MA|M[GST]|P[ABEIR]|R[JNSOR]|S[CEP]|TO):\d{11,12}:\d{2}$/
 const SLUG_PATTERN = ID_PATTERN
 const PROGRAMA_GOVERNO_CARGOS_SET = new Set<string>(PROGRAMA_GOVERNO_CARGOS)
 const PROGRAMA_GOVERNO_UFS_SET = new Set<string>(PROGRAMA_GOVERNO_UFS)
@@ -247,6 +261,10 @@ function isoDateAt(value: unknown, path: string): string {
   const date = stringAt(value, path)
   if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/.test(date)) {
     fail(path, "deve ser data ISO em UTC")
+  }
+  const canonical = date.includes(".") ? date : date.replace("Z", ".000Z")
+  if (Number.isNaN(Date.parse(date)) || new Date(date).toISOString() !== canonical) {
+    fail(path, "deve ser data ISO UTC existente")
   }
   return date
 }
@@ -388,19 +406,34 @@ function wordCount(value: string): number {
   return value.trim().split(/\s+/u).filter(Boolean).length
 }
 
-export function assertProgramaGovernoFonte(value: unknown, path = "fonte"): asserts value is ProgramaGovernoFonte {
+function fonteTemDocumento(
+  fonte: ProgramaGovernoFonte | ProgramaGovernoFonteSemDocumento,
+): fonte is ProgramaGovernoFonte {
+  return typeof fonte.arquivoNome === "string" && typeof fonte.arquivoNoPacote === "string"
+}
+
+export function assertProgramaGovernoFonte(
+  value: unknown,
+  path = "fonte",
+): asserts value is ProgramaGovernoFonte | ProgramaGovernoFonteSemDocumento {
   const fonte = objectAt(value, path)
   assertProgramaGovernoIdentidade(fonte, path)
   const source = fonte as ProgramaGovernoIdentidade & Record<string, unknown>
   const ano = source.ano
   const uf = source.uf
   const sq = source.sqCandidato
-  const arquivoNome = stringAt(source.arquivoNome, `${path}.arquivoNome`)
-  if (arquivoNome !== `${ano}${uf}${sq}_01.pdf`) {
-    fail(`${path}.arquivoNome`, "deve corresponder a eleicao, UF e SQ_CANDIDATO")
+  const packageOnly = source.arquivoNome == null && source.arquivoNoPacote == null
+  if (packageOnly && source.pdfOriginalUrl !== null) {
+    fail(`${path}.pdfOriginalUrl`, "fonte package-only nao pode apontar documento individual")
   }
-  const arquivoNoPacote = stringAt(source.arquivoNoPacote, `${path}.arquivoNoPacote`)
-  if (arquivoNoPacote !== `${uf}/${arquivoNome}`) fail(`${path}.arquivoNoPacote`, "caminho inesperado no pacote TSE")
+  if (!packageOnly) {
+    const arquivoNome = stringAt(source.arquivoNome, `${path}.arquivoNome`)
+    if (arquivoNome !== `${ano}${uf}${sq}_01.pdf`) {
+      fail(`${path}.arquivoNome`, "deve corresponder a eleicao, UF e SQ_CANDIDATO")
+    }
+    const arquivoNoPacote = stringAt(source.arquivoNoPacote, `${path}.arquivoNoPacote`)
+    if (arquivoNoPacote !== `${uf}/${arquivoNome}`) fail(`${path}.arquivoNoPacote`, "caminho inesperado no pacote TSE")
+  }
   tseUrlAt(source.pacoteUrl, `${path}.pacoteUrl`, "zip")
   tseUrlAt(source.datasetUrl, `${path}.datasetUrl`, "dataset")
   if (source.pdfOriginalUrl !== null) tseUrlAt(source.pdfOriginalUrl, `${path}.pdfOriginalUrl`, "pdf")
@@ -458,6 +491,78 @@ function assertProgramaGovernoExtracao(
   }
 }
 
+function sha256(value: string): string {
+  return createHash("sha256").update(value).digest("hex")
+}
+
+function textoCanonicoExtracao(extracao: ProgramaGovernoExtracao): string {
+  return extracao.secoes.map(({ conteudo }) => conteudo).join("\n\f\n")
+}
+
+function assertProgramaGovernoDocumentoIntegridade(
+  documento: ProgramaGovernoDocumento,
+  path = "documento",
+): void {
+  const { extracao } = documento
+  if (!Array.isArray(extracao.pageMap) || extracao.pageMap.length !== extracao.paginas) {
+    fail(`${path}.extracao.pageMap`, "deve mapear todas as paginas")
+  }
+  if (extracao.secoes.length !== extracao.paginas) {
+    fail(`${path}.extracao.secoes`, "deve conter exatamente uma secao por pagina")
+  }
+  for (let index = 0; index < extracao.paginas; index += 1) {
+    const pagina = index + 1
+    const section = extracao.secoes[index]
+    const mapped = extracao.pageMap[index]
+    if (
+      section.paginaInicial !== pagina
+      || section.paginaFinal !== pagina
+      || mapped.pagina !== pagina
+      || mapped.origem !== section.origem
+    ) {
+      fail(`${path}.extracao.pageMap[${index}]`, "diverge da secao canonica da pagina")
+    }
+    if (!SHA256_PATTERN.test(mapped.textSha256) || mapped.textSha256 !== sha256(section.conteudo)) {
+      fail(`${path}.extracao.pageMap[${index}].textSha256`, "diverge do texto canonico da pagina")
+    }
+  }
+  const extractedTextSha256 = sha256(textoCanonicoExtracao(extracao))
+  if (extracao.extractedTextSha256 !== extractedTextSha256) {
+    fail(`${path}.extracao.extractedTextSha256`, "diverge do texto canonico extraido")
+  }
+}
+
+function hashJson(value: unknown): string {
+  return sha256(JSON.stringify(value))
+}
+
+export function programaGovernoRevisaoHashes(
+  record: Pick<ProgramaGovernoRegistro, "version" | "fonte" | "documentos" | "resumo" | "geracao" | "julgamento">,
+): { documentCount: number; documentSetSha256: string; contentSha256: string } {
+  if (!record.documentos?.length) fail("registro.documentos", "necessario para calcular a revisao multi-documento")
+  if (!record.resumo || !record.geracao || !record.julgamento) {
+    fail("registro.revisao", "conteudo completo necessario para calcular a revisao")
+  }
+  const documentSet = record.documentos.map((documento) => ({
+    documentoId: documento.documentoId,
+    fonte: documento.fonte,
+    extracao: documento.extracao,
+  }))
+  const stableContent = {
+    version: record.version,
+    fonte: record.fonte,
+    documentos: documentSet,
+    resumo: record.resumo,
+    geracao: record.geracao,
+    julgamento: record.julgamento,
+  }
+  return {
+    documentCount: documentSet.length,
+    documentSetSha256: hashJson(documentSet),
+    contentSha256: hashJson(stableContent),
+  }
+}
+
 export function assertProgramaGovernoDocumento(
   value: unknown,
   identidade: ProgramaGovernoIdentidade,
@@ -484,13 +589,27 @@ export function assertProgramaGovernoRegistro(value: unknown): asserts value is 
   assertProgramaGovernoFonte(record.fonte, "registro.fonte")
   const estado = record.estado as ProgramaGovernoEstado
   const estadoCanonico = normalizarProgramaGovernoEstado(estado)
+  const fonteRegistro = record.fonte as ProgramaGovernoFonte | ProgramaGovernoFonteSemDocumento
+  const sourceHasDocument = fonteTemDocumento(fonteRegistro)
   if (
     estadoCanonico === "sem_documento_oficial"
     || estadoCanonico === "falha_de_extracao"
     || estadoCanonico === "perfil_local_ausente"
-  ) return
+  ) {
+    if (estadoCanonico === "sem_documento_oficial" && sourceHasDocument) {
+      fail("registro.fonte.arquivoNome", "fonte sem documento deve ser package-only")
+    }
+    if (estadoCanonico === "falha_de_extracao" && !sourceHasDocument) {
+      fail("registro.fonte.arquivoNome", "falha de extracao exige documento identificado")
+    }
+    if ((record.extracao !== undefined || record.documentos !== undefined) && !sourceHasDocument) {
+      fail("registro.fonte.arquivoNome", "conteudo documental exige arquivo identificado")
+    }
+    return
+  }
+  if (!sourceHasDocument) fail("registro.fonte.arquivoNome", "registro com documento exige arquivo identificado")
 
-  const fonte = record.fonte as ProgramaGovernoFonte
+  const fonte = fonteRegistro
   const documentoLegadoId = `${fonte.uf}:${fonte.sqCandidato}:01`
   const documentos = new Map<string, ProgramaGovernoDocumento>()
   const isMultiDocument = record.documentos !== undefined
@@ -502,6 +621,7 @@ export function assertProgramaGovernoRegistro(value: unknown): asserts value is 
     for (const [index, raw] of record.documentos.entries()) {
       const path = `registro.documentos[${index}]`
       assertProgramaGovernoDocumento(raw, fonte, index + 1, path)
+      assertProgramaGovernoDocumentoIntegridade(raw, path)
       if (documentos.has(raw.documentoId)) fail(`${path}.documentoId`, "duplicado")
       documentos.set(raw.documentoId, raw)
     }
@@ -579,6 +699,21 @@ export function assertProgramaGovernoRegistro(value: unknown): asserts value is 
   if (revisao.extractedTextSha256 !== extractedTextSha256) {
     fail("registro.revisao.extractedTextSha256", "o texto extraido mudou depois da revisao")
   }
+  if (isMultiDocument) {
+    const expected = programaGovernoRevisaoHashes(record as ProgramaGovernoRegistro)
+    const documentCount = integerAt(revisao.documentCount, "registro.revisao.documentCount")
+    const documentSetSha256 = stringAt(revisao.documentSetSha256, "registro.revisao.documentSetSha256")
+    const contentSha256 = stringAt(revisao.contentSha256, "registro.revisao.contentSha256")
+    if (documentCount !== expected.documentCount) {
+      fail("registro.revisao.documentCount", "o conjunto documental mudou depois da revisao")
+    }
+    if (!SHA256_PATTERN.test(documentSetSha256) || documentSetSha256 !== expected.documentSetSha256) {
+      fail("registro.revisao.documentSetSha256", "o conjunto documental mudou depois da revisao")
+    }
+    if (!SHA256_PATTERN.test(contentSha256) || contentSha256 !== expected.contentSha256) {
+      fail("registro.revisao.contentSha256", "o conteudo editorial mudou depois da revisao")
+    }
+  }
 }
 
 function toProgramaGovernoDocumentoPublico(
@@ -592,6 +727,7 @@ function toProgramaGovernoDocumentoPublico(
       pacoteUrl: documento.fonte.pacoteUrl,
       datasetUrl: documento.fonte.datasetUrl,
       pdfOriginalUrl: documento.fonte.pdfOriginalUrl,
+      consultadoEm: documento.fonte.coletadoEm,
     },
     sourceSha256: documento.extracao.sourceSha256,
     extractedTextSha256: documento.extracao.extractedTextSha256,
@@ -604,6 +740,11 @@ export function programaGovernoDocumentoPublicoCorresponde(
   documento: ProgramaGovernoDocumento,
   esperado: ProgramaGovernoDocumentoPublico,
 ): boolean {
+  try {
+    assertProgramaGovernoDocumentoIntegridade(documento)
+  } catch {
+    return false
+  }
   const atual = toProgramaGovernoDocumentoPublico(documento)
   return atual.documentoId === esperado.documentoId
     && atual.sourceSha256 === esperado.sourceSha256
@@ -615,6 +756,7 @@ export function programaGovernoDocumentoPublicoCorresponde(
     && atual.fonte.pacoteUrl === esperado.fonte.pacoteUrl
     && atual.fonte.datasetUrl === esperado.fonte.datasetUrl
     && atual.fonte.pdfOriginalUrl === esperado.fonte.pdfOriginalUrl
+    && atual.fonte.consultadoEm === esperado.fonte.consultadoEm
 }
 
 export function toProgramaGovernoPublico(value: unknown): ProgramaGovernoPublico {
@@ -626,6 +768,9 @@ export function toProgramaGovernoPublico(value: unknown): ProgramaGovernoPublico
     || !value.revisao
   ) {
     fail("registro.estado", "somente registros aprovados podem ser publicados")
+  }
+  if (!fonteTemDocumento(value.fonte)) {
+    fail("registro.fonte.arquivoNome", "registro aprovado exige arquivo identificado")
   }
   const fonte: ProgramaGovernoPublico["fonte"] = {
     ano: value.fonte.ano,
@@ -640,6 +785,7 @@ export function toProgramaGovernoPublico(value: unknown): ProgramaGovernoPublico
     pacoteUrl: value.fonte.pacoteUrl,
     datasetUrl: value.fonte.datasetUrl,
     pdfOriginalUrl: value.fonte.pdfOriginalUrl,
+    consultadoEm: value.fonte.coletadoEm,
   }
   const documentos = value.documentos?.map(toProgramaGovernoDocumentoPublico)
   return {
@@ -662,6 +808,7 @@ export function toProgramaGovernoManifestoPublico(value: unknown): ProgramaGover
     cargo,
     uf,
     sqCandidato,
+    slug,
     nomeUrna,
     partido,
     arquivoNome,
@@ -674,12 +821,14 @@ export function toProgramaGovernoManifestoPublico(value: unknown): ProgramaGover
     cargo,
     uf,
     sqCandidato,
+    slug,
     nomeUrna,
     partido,
-    arquivoNome,
+    arquivoNome: arquivoNome ?? null,
     pacoteUrl,
     datasetUrl,
     pdfOriginalUrl,
+    consultadoEm: value.fonte.coletadoEm,
   }
   const estadoCanonico = normalizarProgramaGovernoEstado(value.estado)
   const documentos = estadoCanonico === "em_revisao" || estadoCanonico === "aprovado"

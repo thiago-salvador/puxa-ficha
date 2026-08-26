@@ -11,6 +11,7 @@ import {
 import {
   ingestProgramaGovernoGovernadores,
   parseProgramaGovernoGovernadoresArgs,
+  runProgramaGovernoGovernadoresCli,
   type ProgramaGovernoGovInventory,
   type ProgramaGovernoGovInventoryCandidate,
   type ProgramaGovernoGovInventoryDocument,
@@ -22,6 +23,16 @@ import {
   type ProgramaGovernoModelProcessRunner,
   type ProgramaGovernoModelsConfig,
 } from "../scripts/programas-governo-governadores-2026-models"
+import { auditProgramaGovernoRecordSet } from "../scripts/audit/audit-programas-governo"
+import {
+  prepareProgramaGovernoApproval,
+  programaGovernoApprovalFingerprint,
+} from "../scripts/programas-governo-approve"
+import {
+  programaGovernoExpectedPromptVersions,
+  type ProgramaGovernoPipelineRecord,
+  type ProgramaGovernoStageSource,
+} from "../scripts/programas-governo-stage"
 
 const UFS = [
   "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA",
@@ -173,7 +184,7 @@ function modelConfig(): ProgramaGovernoModelsConfig {
   }
 }
 
-function hermeticModels(documentoId: string, observations: string[]) {
+function hermeticModels(documentoId: string, observations: string[], firstVerdict: "yes" | "no" | "unknown" = "yes") {
   let generatorAttempts = 0
   const runner: ProgramaGovernoModelProcessRunner = async (command, _args, rawInput) => {
     observations.push(command)
@@ -194,7 +205,11 @@ function hermeticModels(documentoId: string, observations: string[]) {
     const claims = envelope.input.claims ?? []
     return {
       stdout: JSON.stringify({
-        avaliacoes: claims.map((claim) => ({ ...(claim as object), verdict: "yes", reason: "evidencia sintetica suficiente" })),
+        avaliacoes: claims.map((claim, index) => ({
+          ...(claim as object),
+          verdict: index === 0 ? firstVerdict : "yes",
+          reason: firstVerdict === "yes" || index > 0 ? "evidencia sintetica suficiente" : "evidencia sintetica bloqueada",
+        })),
       }),
       stderr: "",
     }
@@ -204,12 +219,12 @@ function hermeticModels(documentoId: string, observations: string[]) {
 
 test("CLI exige UFs, inventario, arquivos e saida explicitamente", () => {
   const parsed = parseProgramaGovernoGovernadoresArgs([
-    "--ufs=AM,AC,AM",
+    "--ufs=AM,PI,AC,AM",
     "--inventory=fixtures/inventory.json",
     "--archive-dir=fixtures/archives",
     "--output-dir=fixtures/output",
   ])
-  assert.deepEqual(parsed.ufs, ["AC", "AM"])
+  assert.deepEqual(parsed.ufs, ["AC", "AM", "PI"])
   assert.throws(() => parseProgramaGovernoGovernadoresArgs(["--ufs=XX"]), /use --ufs/)
 })
 
@@ -243,6 +258,8 @@ test("importador contabiliza as 27 UFs por identidade composta e materializa per
   assert.equal(new Set(result.records.map(({ ingestao }) => ingestao.identityKey)).size, 27)
   assert.equal(result.counts.perfil_local_ausente, 27)
   assert.equal(result.records.some(({ estado }) => String(estado) === "aprovado"), false)
+  assert.equal(result.records.every(({ fonte }) => fonte.arquivoNome == null && fonte.arquivoNoPacote == null), true)
+  assert.equal([...writes.values()].some((value) => /_01\.pdf/u.test(value)), false)
   assert.equal(extractionCalls, 0)
   assert.equal(writes.size, 28)
 })
@@ -300,6 +317,82 @@ test("ingere todos os documentos sequenciais com hash, paginas, modelos separado
   assert.equal(record.julgamento?.verdicts.length, (6 + 4) * 6)
   assert.equal(record.julgamento?.verdicts.every(({ verdict }) => verdict === "yes"), true)
   assert.equal(record.estado === ("aprovado" as string), false)
+  assert.equal(typeof record.fonte.arquivoNome, "string")
+  assert.ok(record.documentos)
+  const pipelineRecord = record as ProgramaGovernoPipelineRecord
+
+  const expectedPrompts = programaGovernoExpectedPromptVersions(pipelineRecord.fonte)
+  assert.equal(pipelineRecord.geracao?.promptVersion, expectedPrompts.generatorPromptVersion)
+  assert.equal(pipelineRecord.julgamento?.promptVersion, expectedPrompts.judgePromptVersion)
+  const auditSource = {
+    ...pipelineRecord.fonte,
+    documentos: pipelineRecord.documentos!.map(({ documentoId, fonte }) => ({ documentoId, fonte })),
+  } as ProgramaGovernoStageSource
+  const audit = auditProgramaGovernoRecordSet([auditSource], [pipelineRecord], {
+    expected: { ano: 2026, cargo: "GOVERNADOR", uf: "AM" },
+    expectNoApproved: true,
+  })
+  assert.equal(audit.evalItems, (6 + 4) * 6)
+  const fingerprint = programaGovernoApprovalFingerprint(pipelineRecord)
+  const approved = prepareProgramaGovernoApproval(pipelineRecord, {
+    ...fingerprint,
+    decisionVersion: 1,
+    decision: "approve",
+    reviewer: "Revisora humana",
+    reviewedAt: "2026-08-26T17:00:00.000Z",
+  })
+  assert.equal(approved.estado, "aprovado")
+})
+
+test("Eval incompleto e falha de modelo ficam em revisao bloqueada e o batch termina nonzero", async () => {
+  const archive = Buffer.from("archive-AM")
+  const pdf = Buffer.from("pdf-one")
+  const sq = "40000000000"
+  const doc = document("AM", sq, 1, pdf)
+  const item = candidate("AM", sq, {
+    slug: "candidatura-bloqueada",
+    perfilEstado: "vinculado",
+    fonteEstado: "documento_oficial_encontrado",
+    estadoInventario: "documento_oficial_encontrado",
+    documentoIds: [doc.id],
+  })
+  const source = inventory([item], [doc], new Map([["AM", archive]]))
+  const writes = new Map<string, string>()
+  const adapters = {
+    readText: async () => JSON.stringify(source),
+    readBytes: async () => archive,
+    extractArchiveEntry: async () => pdf,
+    extractPdf: async () => extraction(pdf, "parte-1"),
+    ensureDir: async () => undefined,
+    writeText: async (path: string, value: string) => { writes.set(path, value) },
+    now: () => "2026-08-26T16:00:00Z",
+  }
+  const incomplete = await ingestProgramaGovernoGovernadores({
+    ufs: ["AM"], inventoryPath: "/inventory.json", archiveDir: "/archives", outputDir: "/output",
+  }, { models: hermeticModels(doc.id, [], "unknown"), adapters })
+  assert.equal(incomplete.records[0].estado, "em_revisao")
+  assert.equal(incomplete.records[0].ingestao.eval?.completo, false)
+  assert.equal(incomplete.records[0].ingestao.eval?.blockers, 1)
+  assert.match(incomplete.records[0].ingestao.erro ?? "", /Eval bloqueado/u)
+  assert.equal(incomplete.blockers.length, 1)
+
+  const invalidModels = createProgramaGovernoModelAdapters(modelConfig(), async () => ({ stdout: "{}", stderr: "" }))
+  await assert.rejects(
+    () => runProgramaGovernoGovernadoresCli([
+      "--ufs=AM",
+      "--inventory=/inventory.json",
+      "--archive-dir=/archives",
+      "--output-dir=/output",
+    ], { models: invalidModels, adapters }),
+    /materializou 1 bloqueio/u,
+  )
+  const blockedRecord = [...writes.entries()]
+    .filter(([path]) => path.endsWith("candidatura-bloqueada.json"))
+    .map(([, value]) => JSON.parse(value))[0]
+  assert.equal(blockedRecord.estado, "em_revisao")
+  assert.equal(blockedRecord.ingestao.etapa, "modelos")
+  assert.match(blockedRecord.ingestao.erro, /falhou apos 2 tentativa/u)
+  assert.match(writes.get("/output/manifesto-ingestao.json") ?? "", /"blockers"/u)
 })
 
 test("perfil ausente preserva todos os documentos extraidos sem executar modelos", async () => {

@@ -37,7 +37,7 @@ const defaultDeps: ProgramaGovernoRouteDeps = {
 
 const PUBLIC_CACHE = "public, max-age=60, s-maxage=3600, stale-while-revalidate=3600"
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
-const DOCUMENTO_ID_PATTERN = /^(BR|A[CLMP]|BA|CE|DF|ES|GO|MA|M[GST]|P[ABER]|R[JNSOR]|S[CEP]|TO):\d{11,12}:\d{2}$/
+const DOCUMENTO_ID_PATTERN = /^(BR|A[CLMP]|BA|CE|DF|ES|GO|MA|M[GST]|P[ABEIR]|R[JNSOR]|S[CEP]|TO):\d{11,12}:\d{2}$/
 
 function invalidRequest(message: string) {
   return NextResponse.json(
