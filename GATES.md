@@ -57,5 +57,5 @@ Scope: publicar somente programas presidenciais de 2026 com fonte TSE, resumo po
   EXPECT: PROGRAMAS_SCOPE_PASS
   EVIDENCE: pending
 
-- [ ] G11: todos os resumos publicados passaram por judge de família diferente e revisão humana sobre evidências e PDF oficial
-  EVIDENCE: pending
+- [x] G11: todos os resumos publicados passaram por judge de família diferente e revisão humana sobre evidências e PDF oficial
+  EVIDENCE: Thiago Salvador aprovou os 13 resumos e o fallback temporário para o pacote oficial do TSE em 2026-08-26; cada registro foi promovido com hashes coincidentes de fonte e texto extraído, e a auditoria pós-revisão confirmou 13 aprovados e 179 claims com verdict yes.

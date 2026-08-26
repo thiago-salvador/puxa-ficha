@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "aguardando_revisao",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "PRESIDENTE",
@@ -1002,5 +1002,11 @@
         "reason": "As páginas 65 e 66 sustentam fim das competências criminais originárias do STF, limitação de decisões monocráticas e fim da reeleição presidencial."
       }
     ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "7d1d95075e11e3c4113e8dcd502438049a34f5147a84cb0f746bf59046e477a4",
+    "extractedTextSha256": "b2ef37342deaaf44bcd742bd7ec0068ca3e42970a476f66135329987e0afdd6c"
   }
 }

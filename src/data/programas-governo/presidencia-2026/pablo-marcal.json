@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "aguardando_revisao",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "PRESIDENTE",
@@ -532,5 +532,11 @@
         "reason": "A página 26 sustenta estratégias de relacionamento comercial e diplomático com América Latina, Estados Unidos, Ásia, Europa e África para posicionar o Brasil entre as potências globais."
       }
     ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "0159b1f854deec5ec1fe9d28784807353bd61c249680ddaa143b9891b034f33d",
+    "extractedTextSha256": "d441afca2a2a03c9e134d7071a87b3ce75935ee0984b0471ce4ffb3a5531fc10"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "aguardando_revisao",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "PRESIDENTE",
@@ -1156,5 +1156,11 @@
         "reason": "A página 14 sustenta elevar o investimento total para cerca de 25% do PIB e instituir a Estratégia Brasil 2040 com metas de produtividade e investimento."
       }
     ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "b0ba46eb58d1827c99167a0df60e539b6bfa8a70fa247e4653ba2fcca8ade415",
+    "extractedTextSha256": "ac2f111f92045cfcdbaab5ff2cd022b0a55186ac40b4b81db89e3d24d0aecbe4"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "aguardando_revisao",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "PRESIDENTE",
@@ -775,5 +775,11 @@
         "reason": "A página 49 sustenta a desfavelização integral em dez anos por meio do Marco Nacional da Desfavelização, com conversão em bairros formais."
       }
     ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "cdece60b71117c7820dbf90a7d795f76f3b1d1aaa5ebb8ce11f47e9ca6227b5a",
+    "extractedTextSha256": "ad885415e1fa47472e2ebd41e595b5b26c2eb2997f6bbbce1352585084d1f7dc"
   }
 }

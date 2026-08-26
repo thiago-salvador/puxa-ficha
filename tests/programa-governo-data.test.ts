@@ -16,8 +16,8 @@ test("audita toda a coorte presidencial sem publicar rascunhos", async () => {
   assert.equal(result.claims, 179)
 })
 
-test("checkpoint pré-revisão confirma zero aprovação automática", async () => {
-  const result = await auditProgramasGoverno({ expectNoApproved: true })
-  assert.equal(result.reviewPending, 13)
-  assert.equal(result.approved, 0)
+test("checkpoint pós-revisão confirma a aprovação humana da coorte", async () => {
+  const result = await auditProgramasGoverno({ expectAllApproved: true })
+  assert.equal(result.reviewPending, 0)
+  assert.equal(result.approved, 13)
 })

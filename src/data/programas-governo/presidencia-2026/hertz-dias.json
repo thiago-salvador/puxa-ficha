@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "aguardando_revisao",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "PRESIDENTE",
@@ -573,5 +573,11 @@
         "reason": "As páginas 19 e 20 sustentam desmilitarização da PM e unificação das polícias em instituição civil com comandantes eleitos."
       }
     ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "1868565fb0d5de77d40a982a1be07dc7f44f7af7565ee3b40d93b31407d31468",
+    "extractedTextSha256": "c61aaf89a9524de81520e49678ac6a412cfaeffe4819f33efe791c32ecdf1be4"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "aguardando_revisao",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "PRESIDENTE",
@@ -798,5 +798,11 @@
         "reason": "As páginas 49 e 50 sustentam o piso de 2% do PIB para defesa e a proposta de soldo mínimo não inferior ao salário mínimo nacional."
       }
     ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "df2acdb7a6d8b080d6d8a235b8fe8f0d987bf0f24be4f4aa9abc80e4ebb24904",
+    "extractedTextSha256": "2307958587c6a764a28dd9e34f51e811e0377c7a7c36c51e38bbe5e995f78b63"
   }
 }

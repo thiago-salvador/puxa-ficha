@@ -46,7 +46,7 @@ async function readJson<T>(filePath: string): Promise<T> {
 }
 
 export async function auditProgramasGoverno(
-  options: { expectNoApproved?: boolean } = {},
+  options: { expectNoApproved?: boolean; expectAllApproved?: boolean } = {},
 ): Promise<ProgramaGovernoAuditResult> {
   const fontes = await readJson<FonteRegistryItem[]>(FONTES_PATH)
   assert(fontes.length === 13, `coorte oficial inesperada: ${fontes.length}`)
@@ -136,11 +136,18 @@ export async function auditProgramasGoverno(
     assert(result.reviewPending === 13, `pendentes de revisão=${result.reviewPending}; esperado=13`)
     assert(result.approved === 0, `aprovados=${result.approved}; esperado=0`)
   }
+  if (options.expectAllApproved) {
+    assert(result.reviewPending === 0, `pendentes de revisão=${result.reviewPending}; esperado=0`)
+    assert(result.approved === 13, `aprovados=${result.approved}; esperado=13`)
+  }
   return result
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  void auditProgramasGoverno({ expectNoApproved: process.argv.includes("--expect-no-approved") })
+  void auditProgramasGoverno({
+    expectNoApproved: process.argv.includes("--expect-no-approved"),
+    expectAllApproved: process.argv.includes("--expect-all-approved"),
+  })
     .then((result) => {
       console.log(`PROGRAMAS_DADOS_PASS candidatos=${result.resolved} paginas=${result.pages} secoes=${result.sections} claims=${result.claims} aprovados=${result.approved}`)
     })

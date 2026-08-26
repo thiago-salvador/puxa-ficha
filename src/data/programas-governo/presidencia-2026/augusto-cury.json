@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "aguardando_revisao",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "PRESIDENTE",
@@ -2092,5 +2092,11 @@
         "reason": "As páginas 53 e 54 sustentam o Programa Mulheres Vivas, resposta rápida às vítimas e o enfrentamento da desigualdade salarial."
       }
     ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "fc0872d2b68aad863c8d62575323cf413a616b23d0f7ca4fd7f4558112c07b38",
+    "extractedTextSha256": "81c526c1f332fc2ed30271289dfe4ea73d198d7eefdf4505e6aecd40028e5920"
   }
 }

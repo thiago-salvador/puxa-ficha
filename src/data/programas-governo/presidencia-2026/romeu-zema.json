@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "aguardando_revisao",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "PRESIDENTE",
@@ -1069,5 +1069,11 @@
         "reason": "A página 63 sustenta tanto a condicionalidade do Bolsa Família quanto o prêmio de R$ 5 mil para famílias que deixam o programa após superar o limite de renda."
       }
     ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e",
+    "extractedTextSha256": "e63a8dac7ccef2df3ffe28ff6e0ead250b753d26caceaf301b2916a0742eca73"
   }
 }

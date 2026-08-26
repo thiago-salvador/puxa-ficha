@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "aguardando_revisao",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "PRESIDENTE",
@@ -1036,5 +1036,11 @@
         "reason": "As páginas 36 e 37 sustentam a ampliação do Farmácia Popular e os dados de cirurgias, consultas e exames do Agora Tem Especialistas em 2025."
       }
     ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "e1c162c20c81dafadf69b10bab230b5a6dc48f6b6c27c2cfce853b131a8bcc36",
+    "extractedTextSha256": "b75a12221c3c5045ba39e985ddb56582293ebef4671e0c315a8f66be394149b6"
   }
 }

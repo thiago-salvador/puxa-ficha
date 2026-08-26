@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "aguardando_revisao",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "PRESIDENTE",
@@ -379,5 +379,11 @@
         "reason": "As páginas 5 e 6 sustentam dissolução da polícia militar, fim do STF e eleição popular de juízes e procuradores."
       }
     ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9",
+    "extractedTextSha256": "7038fd8efdf79b7e62b89ce8f3eb90ee1275ddb2cd68b534d17c617fac2bca18"
   }
 }

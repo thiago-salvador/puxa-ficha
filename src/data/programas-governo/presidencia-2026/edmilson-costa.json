@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "aguardando_revisao",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "PRESIDENTE",
@@ -424,5 +424,11 @@
         "reason": "As páginas 8, 15 e 16 sustentam solidariedade a Cuba, Palestina, Venezuela e Irã, fim da OTAN e rompimento de relações com Israel."
       }
     ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+    "extractedTextSha256": "a51c5283c0e436ff52ec27a5ec0a8f8b2bdfc21fa8ae0b64b82b451dc969ebfc"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "aguardando_revisao",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "PRESIDENTE",
@@ -895,5 +895,11 @@
         "reason": "As páginas 43 e 44 sustentam reforma agrária popular, nacionalização da terra, fim do monopólio privado e destinação de terras improdutivas."
       }
     ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "23c510d5b06bb149bb9390bbc144dcda9cfd2b6a677a854b3d993b16ed7a94e6",
+    "extractedTextSha256": "1d14ace31fdee029663df8b2a4d970804c726c47d84d8ffb6bd12f2b00cdc31e"
   }
 }

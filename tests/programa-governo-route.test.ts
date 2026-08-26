@@ -16,18 +16,25 @@ require.cache[serverOnlyPath] = {
 
 const { getProgramaGovernoPublicResource } = require("../src/lib/programa-governo-server") as typeof import("../src/lib/programa-governo-server")
 const { createProgramaGovernoGetHandler } = require("../src/app/api/candidato-profile/[slug]/programa/route") as typeof import("../src/app/api/candidato-profile/[slug]/programa/route")
-const pendingRecord = require("../src/data/programas-governo/presidencia-2026/lula.json") as ProgramaGovernoRegistro
+const sourceRecord = require("../src/data/programas-governo/presidencia-2026/lula.json") as ProgramaGovernoRegistro
+
+function pendingRecord(): ProgramaGovernoRegistro {
+  const record = structuredClone(sourceRecord)
+  record.estado = "aguardando_revisao"
+  delete record.revisao
+  return record
+}
 
 function approvedRecord(): ProgramaGovernoRegistro {
-  assert.ok(pendingRecord.extracao)
+  assert.ok(sourceRecord.extracao)
   return {
-    ...structuredClone(pendingRecord),
+    ...structuredClone(sourceRecord),
     estado: "aprovado",
     revisao: {
       reviewer: "Revisor interno que não pode ser publicado",
       reviewedAt: "2026-08-26T12:00:00Z",
-      sourceSha256: pendingRecord.extracao.sourceSha256,
-      extractedTextSha256: pendingRecord.extracao.extractedTextSha256,
+      sourceSha256: sourceRecord.extracao.sourceSha256,
+      extractedTextSha256: sourceRecord.extracao.extractedTextSha256,
     },
   }
 }
@@ -43,7 +50,7 @@ function params(slug: string) {
 }
 
 test("servidor publica conteúdo somente depois da aprovação", async () => {
-  const pending = await getProgramaGovernoPublicResource("lula", async () => pendingRecord)
+  const pending = await getProgramaGovernoPublicResource("lula", async () => pendingRecord())
   assert.equal(pending.known, true)
   assert.equal(pending.data, null)
   assert.equal("resumo" in pending.manifesto!, false)
@@ -76,7 +83,7 @@ test("rota retorna o DTO aprovado e remove campos editoriais", async () => {
 test("todos os estados não aprovados são explícitos e não vazam rascunho", async () => {
   for (const estado of ["nao_coletado", "fonte_ausente", "extracao_falhou", "aguardando_revisao"] as const) {
     const resource = await getProgramaGovernoPublicResource("lula", async () => ({
-      ...structuredClone(pendingRecord),
+      ...pendingRecord(),
       estado,
     }))
     const handler = createProgramaGovernoGetHandler({

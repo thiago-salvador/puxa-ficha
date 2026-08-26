@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "aguardando_revisao",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "PRESIDENTE",
@@ -483,5 +483,11 @@
         "reason": "As páginas 13 e 14 sustentam governo digital com pedido único de dados, gestão por metas e evidências, integridade, transparência e pactos federativos."
       }
     ]
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-26T10:30:33Z",
+    "sourceSha256": "6390152c66285558ecd5459f4f73f3f65650beb77022b14e7750190b1b536d68",
+    "extractedTextSha256": "be5a92fc6a099e4e38d0128ca648e5ddf39520d360fe1eec1ca81b52f3dbcb2a"
   }
 }

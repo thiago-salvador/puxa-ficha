@@ -62,7 +62,7 @@ const approvedResponse = {
   },
 }
 
-test("estado real pendente é explícito, lazy e acessível", async ({ browser }, testInfo) => {
+test("estado real aprovado é explícito, lazy e acessível", async ({ browser }, testInfo) => {
   const context = await browser.newContext({ viewport: { width: 1440, height: 900 } })
   const page = await context.newPage()
   let programRequests = 0
@@ -72,16 +72,16 @@ test("estado real pendente é explícito, lazy e acessível", async ({ browser }
 
   await page.goto("/candidato/lula")
   await expect(page.locator("[data-pf-programa-overview]")).toBeVisible()
-  await expect(page.locator("[data-pf-programa-state=aguardando_revisao]")).toBeVisible()
+  await expect(page.getByText("Resumo por IA, revisado editorialmente")).toBeVisible()
   expect(programRequests).toBe(0)
-  await page.screenshot({ path: testInfo.outputPath("pending-overview-desktop.png"), fullPage: true })
+  await page.screenshot({ path: testInfo.outputPath("approved-overview-desktop.png"), fullPage: true })
 
   await page.getByRole("tab", { name: "Programa" }).click()
-  await expect(page.locator("[data-pf-programa-state=aguardando_revisao]")).toBeVisible()
+  await expect(page.locator("[data-pf-programa-document]")).toBeVisible()
   expect(programRequests).toBe(1)
   await page.getByRole("tab", { name: "Mídia" }).click()
   await page.getByRole("tab", { name: "Programa" }).click()
-  await expect(page.locator("[data-pf-programa-state=aguardando_revisao]")).toBeVisible()
+  await expect(page.locator("[data-pf-programa-document]")).toBeVisible()
   expect(programRequests).toBe(1)
   await page.goBack()
   await expect(page.getByRole("tab", { name: "Mídia" })).toHaveAttribute("aria-selected", "true")

@@ -14,6 +14,7 @@ const EXACT = new Set([
   "scripts/lib/ocr-programa-governo.swift",
   "scripts/lib/programas-governo-extracao.ts",
   "scripts/programas-governo-presidencia.ts",
+  "scripts/programas-governo-approve.ts",
   "scripts/programas-governo-stage.ts",
   "scripts/test-fixtures/generate-programa-pdfs.mjs",
   "scripts/prompts/programa-governo-judge-v1.schema.json",
