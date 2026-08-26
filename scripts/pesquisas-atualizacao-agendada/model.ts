@@ -586,7 +586,7 @@ export function aplicarOperacoesAgendadas(
   return [...touched].sort()
 }
 
-export function branchAtualizacaoAgendada(date = new Date()): string {
+function branchAtualizacaoAgendada(date = new Date()): string {
   return `automation/pesquisas-refresh-${date.toISOString().slice(0, 10)}`
 }
 
