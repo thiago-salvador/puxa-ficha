@@ -26,11 +26,11 @@ function validRecord(): ProgramaGovernoRegistro {
       sourceSha256: "a".repeat(64),
       extractedTextSha256: "b".repeat(64),
       paginas: 2,
-      secoes: [{ id: "introducao", titulo: "Introdução", nivel: 1, paginaInicial: 1, paginaFinal: 2, conteudo: "Conteúdo" }],
+      secoes: [{ id: "introducao", titulo: "Introdução", nivel: 1, paginaInicial: 1, paginaFinal: 2, origem: "pdftotext", conteudo: "Conteúdo" }],
     },
     resumo: {
       texto,
-      frases: [{ texto, evidencias: [{ pagina: 1, trecho: "Trecho da fonte" }] }],
+      frases: Array.from({ length: 6 }, () => ({ texto, evidencias: [{ pagina: 1, trecho: "Trecho da fonte" }] })),
       temas: Array.from({ length: 4 }, (_, index) => ({
         id: `tema-${index + 1}`,
         titulo: `Tema ${index + 1}`,

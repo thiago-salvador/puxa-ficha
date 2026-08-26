@@ -1,0 +1,487 @@
+{
+  "version": 1,
+  "estado": "aguardando_revisao",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "PRESIDENTE",
+    "uf": "BR",
+    "sqCandidato": "280002552484",
+    "slug": "clariana-barao",
+    "nomeUrna": "CLARIANA BARAO",
+    "partido": "DC",
+    "arquivoNome": "2026BR280002552484_01.pdf",
+    "arquivoNoPacote": "BR/2026BR280002552484_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-25T09:46:00Z"
+  },
+  "extracao": {
+    "sourceSha256": "6390152c66285558ecd5459f4f73f3f65650beb77022b14e7750190b1b536d68",
+    "extractedTextSha256": "be5a92fc6a099e4e38d0128ca648e5ddf39520d360fe1eec1ca81b52f3dbcb2a",
+    "paginas": 15,
+    "secoes": [
+      {
+        "id": "plano-de-governo",
+        "titulo": "PLANO DE GOVERNO",
+        "nivel": 1,
+        "paginaInicial": 1,
+        "paginaFinal": 1,
+        "origem": "pdftotext",
+        "conteudo": "PLANO DE GOVERNO\nProteger Hoje, Transformar o Amanhã\n\nVersão estruturada para desenvolvimento programático,\ndebate técnico e posterior definição de metas quantitativas.\n\nNota metodológica: os indicadores abaixo são propostos para acompanhamento. Metas numéricas finais\ndevem ser calibradas com diagnóstico oficial, linha de base, estimativa fiscal, competências federativas e\navaliação jurídica.\n\nPágina 1"
+      },
+      {
+        "id": "arquitetura-do-plano",
+        "titulo": "Arquitetura do plano",
+        "nivel": 1,
+        "paginaInicial": 2,
+        "paginaFinal": 2,
+        "origem": "pdftotext",
+        "conteudo": "Arquitetura do plano\nO plano organiza a ação pública em seis capítulos integrados. O primeiro - proteção de\nmulheres e crianças - funciona como eixo transversal. Os demais tratam dos meios\nnecessários para produzir autonomia, oportunidade, liberdade, saúde e capacidade de\nentrega.\n\nPágina 2"
+      },
+      {
+        "id": "1-mulheres-e-criancas-em-primeiro-lugar",
+        "titulo": "1. Mulheres e crianças em primeiro lugar",
+        "nivel": 1,
+        "paginaInicial": 3,
+        "paginaFinal": 3,
+        "origem": "pdftotext",
+        "conteudo": "1. Mulheres e crianças em primeiro lugar\n1.1 Rede nacional de proteção e resposta à violência\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Atendimento integrado e humanizado\n• Integração entre saúde, assistência, segurança e justiça\n• Protocolos de risco e acompanhamento de reincidência\nIndicadores sugeridos: tempo médio de atendimento; cobertura territorial da rede; reincidência de violência;\nmedidas protetivas acompanhadas.\n\n1.2 Primeira infância como prioridade nacional\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Pré-natal e cuidado materno-infantil\n• Nutrição, vacinação e desenvolvimento infantil\n• Creches e apoio às famílias vulneráveis\nIndicadores sugeridos: cobertura pré-natal; vacinação; déficit de vagas em creche; indicadores de\ndesenvolvimento infantil.\n\n1.3 Autonomia econômica das mulheres\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Qualificação e reinserção profissional\n• Empreendedorismo e acesso a crédito responsável\n• Rede de cuidado para ampliar participação no trabalho\nIndicadores sugeridos: taxa de participação feminina; formalização; renda média; sobrevivência de negócios\nliderados por mulheres.\n\n1.4 Proteção de crianças e adolescentes\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Prevenção de abuso e exploração\n• Ambiente digital seguro e educação para riscos\n• Busca ativa de crianças fora da escola\nIndicadores sugeridos: notificações com resposta concluída; evasão escolar; tempo de resposta a denúncias;\ncobertura de programas preventivos.\n\n1.5 Governança transversal de proteção\n\nPágina 3"
+      },
+      {
+        "id": "objetivo-transformar-o-eixo-em-uma-agenda-executavel-com-responsabilidad",
+        "titulo": "Objetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,",
+        "nivel": 1,
+        "paginaInicial": 4,
+        "paginaFinal": 4,
+        "origem": "pdftotext",
+        "conteudo": "Objetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Orçamento orientado a resultados\n• Painel público de indicadores\n• Avaliação de impacto sobre mulheres e crianças\nIndicadores sugeridos: execução orçamentária; indicadores publicados no prazo; políticas avaliadas; metas\ninterministeriais cumpridas.\n\nPágina 4"
+      },
+      {
+        "id": "2-economia-prosperidade-que-protege",
+        "titulo": "2. Economia - prosperidade que protege",
+        "nivel": 1,
+        "paginaInicial": 5,
+        "paginaFinal": 5,
+        "origem": "pdftotext",
+        "conteudo": "2. Economia - prosperidade que protege\n2.1 Ambiente de negócios simples e previsível\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Simplificação regulatória\n• Digitalização e abertura rápida de empresas\n• Segurança jurídica e avaliação de normas\nIndicadores sugeridos: tempo e custo para abrir empresa; estoque regulatório revisado; investimento privado;\nprodutividade.\n\n2.2 Pequenos negócios e empreendedorismo\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Crédito produtivo e garantias\n• Capacitação gerencial e digital\n• Compras públicas acessíveis a pequenos negócios\nIndicadores sugeridos: acesso a crédito; inadimplência; sobrevivência empresarial; participação de MPEs em\ncompras públicas.\n\n2.3 Infraestrutura e logística\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Rodovias e manutenção baseada em desempenho\n• Ferrovias, hidrovias, portos e cabotagem\n• Concessões, PPPs e planejamento de longo prazo\nIndicadores sugeridos: custo logístico; tempo de transporte; investimento contratado; qualidade da\ninfraestrutura.\n\n2.4 Energia, conectividade e competitividade\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Segurança e confiabilidade energética\n• Expansão de conectividade\n• Ambiente para indústria, inovação e economia digital\nIndicadores sugeridos: custo e interrupções de energia; cobertura de banda larga; investimento produtivo;\nexportações de maior valor agregado.\n\n2.5 Responsabilidade fiscal com foco em resultado\n\nPágina 5"
+      },
+      {
+        "id": "objetivo-transformar-o-eixo-em-uma-agenda-executavel-com-responsabilidad-2",
+        "titulo": "Objetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,",
+        "nivel": 1,
+        "paginaInicial": 6,
+        "paginaFinal": 6,
+        "origem": "pdftotext",
+        "conteudo": "Objetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Revisão de gastos e subsídios\n• Planejamento plurianual orientado a metas\n• Transparência de benefícios e avaliação de impacto\nIndicadores sugeridos: resultado fiscal; dívida/PIB; programas avaliados; economia obtida por revisão de\ngastos.\n\nPágina 6"
+      },
+      {
+        "id": "3-educacao-preparar-para-o-futuro",
+        "titulo": "3. Educação - preparar para o futuro",
+        "nivel": 1,
+        "paginaInicial": 7,
+        "paginaFinal": 7,
+        "origem": "pdftotext",
+        "conteudo": "3. Educação - preparar para o futuro\n3.1 Primeira infância e prontidão para aprender\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Qualidade pedagógica na educação infantil\n• Apoio ao desenvolvimento e às famílias\n• Transição estruturada para alfabetização\nIndicadores sugeridos: cobertura; qualidade observada; desenvolvimento infantil; frequência.\n\n3.2 Alfabetização e aprendizagem essencial\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Alfabetização na idade adequada\n• Recomposição de aprendizagem\n• Avaliação frequente com intervenção pedagógica\nIndicadores sugeridos: percentual alfabetizado; proficiência em português e matemática; abandono;\nrecuperação de defasagens.\n\n3.3 Professor valorizado e apoiado\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Formação inicial e continuada baseada em evidências\n• Carreira, liderança escolar e boas práticas\n• Redução de burocracia e apoio pedagógico\nIndicadores sugeridos: formação concluída; absenteísmo; permanência na carreira; evolução de aprendizagem.\n\n3.4 Escola para o século XXI\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Tecnologia e inteligência artificial com uso responsável\n• Pensamento crítico, ciência e resolução de problemas\n• Educação financeira, cidadania e competências digitais\nIndicadores sugeridos: conectividade escolar; competências digitais; desempenho em ciências; participação\nem programas.\n\n3.5 Ensino médio, técnico e transição para o trabalho\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n\nPágina 7"
+      },
+      {
+        "id": "expansao-de-formacao-tecnica-conectada-as-vocacoes-regionais",
+        "titulo": "• Expansão de formação técnica conectada às vocações regionais",
+        "nivel": 1,
+        "paginaInicial": 8,
+        "paginaFinal": 8,
+        "origem": "pdftotext",
+        "conteudo": "• Expansão de formação técnica conectada às vocações regionais\n• Orientação de carreira e aprendizagem profissional\n• Parcerias com setor produtivo e ensino superior\nIndicadores sugeridos: matrículas técnicas; conclusão; emprego após formação; aderência entre curso e\nocupação.\n\nPágina 8"
+      },
+      {
+        "id": "4-seguranca-proteger-a-vida-e-garantir",
+        "titulo": "4. Segurança - proteger a vida e garantir",
+        "nivel": 1,
+        "paginaInicial": 9,
+        "paginaFinal": 9,
+        "origem": "pdftotext",
+        "conteudo": "4. Segurança - proteger a vida e garantir\nliberdade\n4.1 Fronteiras inteligentes e integradas\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Sensores, radares e monitoramento remoto\n• Drones e análise de imagens dentro do marco legal\n• Centros integrados de comando e compartilhamento de dados\nIndicadores sugeridos: cobertura monitorada; apreensões qualificadas; tempo de resposta; operações\nintegradas.\n\n4.2 Combate ao narcotráfico e ao tráfico de armas\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Inteligência sobre rotas e redes\n• Cooperação interestadual e internacional\n• Prioridade a grandes organizações e cadeias de abastecimento\nIndicadores sugeridos: organizações desarticuladas; armas e drogas apreendidas; investigações concluídas;\ncooperações realizadas.\n\n4.3 Sufocamento financeiro das facções\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Inteligência financeira e patrimonial\n• Rastreamento de lavagem de dinheiro\n• Recuperação de ativos com devido processo\nIndicadores sugeridos: ativos bloqueados/recuperados; investigações financeiras; condenações sustentadas;\ntempo de tramitação.\n\n4.4 Segurança urbana orientada por dados\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Policiamento baseado em evidências\n• Integração de informações e mapas de risco\n• Proteção específica a mulheres, escolas e áreas vulneráveis\nIndicadores sugeridos: homicídios; roubos; violência contra mulheres; tempo de resposta; percepção de\nsegurança.\n\n4.5 Sistema prisional e redução da reincidência\nPágina 9"
+      },
+      {
+        "id": "objetivo-transformar-o-eixo-em-uma-agenda-executavel-com-responsabilidad-3",
+        "titulo": "Objetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,",
+        "nivel": 1,
+        "paginaInicial": 10,
+        "paginaFinal": 10,
+        "origem": "pdftotext",
+        "conteudo": "Objetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Separação e gestão de lideranças criminosas conforme a lei\n• Trabalho, educação e qualificação\n• Inteligência penitenciária e controle de comunicações ilícitas\nIndicadores sugeridos: reincidência; presos em educação/trabalho; incidentes; apreensões e comunicações\nilícitas detectadas.\n\nPágina 10"
+      },
+      {
+        "id": "5-saude-cuidar-antes-da-doenca",
+        "titulo": "5. Saúde - cuidar antes da doença",
+        "nivel": 1,
+        "paginaInicial": 11,
+        "paginaFinal": 11,
+        "origem": "pdftotext",
+        "conteudo": "5. Saúde - cuidar antes da doença\n5.1 Atenção primária resolutiva\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Equipes completas e acesso territorial\n• Coordenação do cuidado e prontuário interoperável\n• Metas de acompanhamento de condições crônicas\nIndicadores sugeridos: cobertura efetiva; internações evitáveis; controle de hipertensão/diabetes; continuidade\ndo cuidado.\n\n5.2 Prevenção e diagnóstico precoce\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Vacinação e rastreamento baseado em evidências\n• Saúde da mulher e da criança\n• Promoção de alimentação, sono e hábitos saudáveis\nIndicadores sugeridos: cobertura vacinal; rastreamento adequado; mortalidade materna/infantil; fatores de\nrisco populacionais.\n\n5.3 Inovação e terapias com avaliação científica\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Via transparente de avaliação de novas tecnologias\n• Pesquisa clínica e produção nacional\n• Incorporação ao SUS baseada em segurança, eficácia e custo-efetividade\nIndicadores sugeridos: tempo de avaliação; estudos nacionais; tecnologias avaliadas; desfechos e custo por\nbenefício.\n\n5.4 Esporte e atividade física como saúde\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Programas comunitários de movimento\n• Uso ampliado de espaços escolares e públicos\n• Prescrição e encaminhamento para atividade física quando indicado\nIndicadores sugeridos: nível de atividade física; participação; obesidade e sedentarismo; cobertura territorial.\n\n5.5 Saúde digital e acesso\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n\nPágina 11"
+      },
+      {
+        "id": "telemedicina-integrada-a-rede",
+        "titulo": "• Telemedicina integrada à rede",
+        "nivel": 1,
+        "paginaInicial": 12,
+        "paginaFinal": 12,
+        "origem": "pdftotext",
+        "conteudo": "• Telemedicina integrada à rede\n• Regulação inteligente de filas\n• IA como apoio clínico e administrativo com governança, auditoria e privacidade\nIndicadores sugeridos: tempo de espera; teleatendimentos resolutivos; absenteísmo em consultas; segurança\ne qualidade dos sistemas.\n\nPágina 12"
+      },
+      {
+        "id": "6-estado-que-funciona",
+        "titulo": "6. Estado que funciona",
+        "nivel": 1,
+        "paginaInicial": 13,
+        "paginaFinal": 13,
+        "origem": "pdftotext",
+        "conteudo": "6. Estado que funciona\n6.1 Governo digital e simples\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Identidade e serviços digitais integrados\n• Princípio de pedir dados uma única vez\n• Atendimento multicanal para não excluir quem está offline\nIndicadores sugeridos: serviços digitalizados; satisfação; tempo de atendimento; redução de exigências.\n\n6.2 Gestão por metas e evidências\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Objetivos anuais públicos\n• Painéis de desempenho\n• Avaliação e encerramento/reformulação de programas ineficazes\nIndicadores sugeridos: metas cumpridas; programas avaliados; economia/ganho de eficiência; qualidade de\ndados.\n\n6.3 Integridade e transparência\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Compras públicas rastreáveis\n• Dados abertos e linguagem simples\n• Gestão de riscos e prevenção de fraude\nIndicadores sugeridos: competitividade de licitações; economia em compras; alertas tratados; transparência\nativa.\n\n6.4 Serviço público orientado à entrega\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n• Formação e liderança\n• Gestão de desempenho com critérios objetivos\n• Mobilidade de talentos e equipes de missão\nIndicadores sugeridos: capacitação; tempo de preenchimento de funções críticas; desempenho de serviços;\nengajamento.\n\n6.5 Federalismo de resultados\nObjetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras,\ncoordenação federativa e acompanhamento público.\n\nPágina 13"
+      },
+      {
+        "id": "pactos-com-estados-e-municipios",
+        "titulo": "• Pactos com estados e municípios",
+        "nivel": 1,
+        "paginaInicial": 14,
+        "paginaFinal": 14,
+        "origem": "pdftotext",
+        "conteudo": "• Pactos com estados e municípios\n• Transferências associadas a indicadores quando juridicamente cabível\n• Consórcios e compartilhamento de soluções\nIndicadores sugeridos: adesão federativa; metas compartilhadas; custo por serviço; redução de desigualdades\nregionais.\n\nPágina 14"
+      },
+      {
+        "id": "matriz-de-implementacao",
+        "titulo": "Matriz de implementação",
+        "nivel": 1,
+        "paginaInicial": 15,
+        "paginaFinal": 15,
+        "origem": "pdftotext",
+        "conteudo": "Matriz de implementação\nHorizonte\nPrimeiros\ndias\n\nPrioridade de gestão\n100\n\nDiagnóstico de linha de base; desenho de governança; revisão de programas\nexistentes; seleção de entregas rápidas; pactos federativos iniciais.\n\nAno 1\n\nImplantação dos painéis de indicadores; pilotos; ajustes\nprimeiras contratações e integrações; avaliação trimestral.\n\nregulatórios;\n\nAnos 2-3\n\nEscala nacional dos programas com evidência de resultado; correções de\ndesenho; expansão de infraestrutura e formação.\n\nAno 4\n\nConsolidação, avaliação independente, publicação de resultados e plano de\ncontinuidade.\n\nCritério transversal: cada política deverá explicitar impactos esperados sobre mulheres,\ncrianças e famílias, custo fiscal, responsabilidade institucional, riscos, salvaguardas de\ndireitos e método de avaliação.\nObservação sobre saúde e inovação: o documento não presume a incorporação de uma substância específica\nao SUS. Peptídeos e demais terapias inovadoras devem seguir avaliação regulatória e técnico-científica antes\nde qualquer oferta pública.\n\nPágina 15"
+      }
+    ]
+  },
+  "resumo": {
+    "texto": "O documento apresenta um plano de governo estruturado em seis capítulos integrados. O primeiro capítulo trata da proteção de mulheres e crianças como eixo transversal, enquanto os demais capítulos tratam dos meios para produzir autonomia, oportunidade, liberdade, saúde e capacidade de entrega. O plano propõe uma rede nacional de proteção e resposta à violência, no âmbito da proteção a mulheres e crianças. Na área econômica, o plano propõe simplificação regulatória para o ambiente de negócios. Na educação, o plano propõe a alfabetização na idade adequada. Na segurança, o plano propõe o uso de sensores, radares e monitoramento remoto para a vigilância de fronteiras. Na saúde, o plano propõe fortalecer a atenção primária por meio de equipes completas e acesso territorial ampliado. No capítulo sobre o Estado, o plano propõe o princípio de solicitar dados dos cidadãos ao poder público apenas uma única vez.",
+    "frases": [
+      {
+        "texto": "O documento apresenta um plano de governo estruturado em seis capítulos integrados.",
+        "evidencias": [
+          {
+            "pagina": 2,
+            "trecho": "O plano organiza a ação pública em seis capítulos integrados."
+          }
+        ]
+      },
+      {
+        "texto": "O primeiro capítulo trata da proteção de mulheres e crianças como eixo transversal, enquanto os demais capítulos tratam dos meios para produzir autonomia, oportunidade, liberdade, saúde e capacidade de entrega.",
+        "evidencias": [
+          {
+            "pagina": 2,
+            "trecho": "O primeiro - proteção de mulheres e crianças - funciona como eixo transversal."
+          },
+          {
+            "pagina": 2,
+            "trecho": "Os demais tratam dos meios necessários para produzir autonomia, oportunidade, liberdade, saúde e capacidade de entrega."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe uma rede nacional de proteção e resposta à violência, no âmbito da proteção a mulheres e crianças.",
+        "evidencias": [
+          {
+            "pagina": 3,
+            "trecho": "1. Mulheres e crianças em primeiro lugar"
+          },
+          {
+            "pagina": 3,
+            "trecho": "1.1 Rede nacional de proteção e resposta à violência"
+          }
+        ]
+      },
+      {
+        "texto": "Na área econômica, o plano propõe simplificação regulatória para o ambiente de negócios.",
+        "evidencias": [
+          {
+            "pagina": 5,
+            "trecho": "2.1 Ambiente de negócios simples e previsível"
+          },
+          {
+            "pagina": 5,
+            "trecho": "Simplificação regulatória"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o plano propõe a alfabetização na idade adequada.",
+        "evidencias": [
+          {
+            "pagina": 7,
+            "trecho": "3.2 Alfabetização e aprendizagem essencial"
+          },
+          {
+            "pagina": 7,
+            "trecho": "Alfabetização na idade adequada"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança, o plano propõe o uso de sensores, radares e monitoramento remoto para a vigilância de fronteiras.",
+        "evidencias": [
+          {
+            "pagina": 9,
+            "trecho": "4.1 Fronteiras inteligentes e integradas"
+          },
+          {
+            "pagina": 9,
+            "trecho": "Sensores, radares e monitoramento remoto"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o plano propõe fortalecer a atenção primária por meio de equipes completas e acesso territorial ampliado.",
+        "evidencias": [
+          {
+            "pagina": 11,
+            "trecho": "5.1 Atenção primária resolutiva"
+          },
+          {
+            "pagina": 11,
+            "trecho": "Equipes completas e acesso territorial"
+          }
+        ]
+      },
+      {
+        "texto": "No capítulo sobre o Estado, o plano propõe o princípio de solicitar dados dos cidadãos ao poder público apenas uma única vez.",
+        "evidencias": [
+          {
+            "pagina": 13,
+            "trecho": "6.1 Governo digital e simples"
+          },
+          {
+            "pagina": 13,
+            "trecho": "Princípio de pedir dados uma única vez"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "protecao-mulheres-criancas",
+        "titulo": "Proteção de mulheres e crianças",
+        "descricao": "O plano trata a proteção de mulheres e crianças como eixo transversal, incluindo uma rede nacional de proteção e resposta à violência, prioridade à primeira infância e ações voltadas à autonomia econômica das mulheres.",
+        "evidencias": [
+          {
+            "pagina": 2,
+            "trecho": "O primeiro - proteção de mulheres e crianças - funciona como eixo transversal."
+          },
+          {
+            "pagina": 3,
+            "trecho": "1.1 Rede nacional de proteção e resposta à violência"
+          },
+          {
+            "pagina": 3,
+            "trecho": "1.2 Primeira infância como prioridade nacional"
+          },
+          {
+            "pagina": 3,
+            "trecho": "1.3 Autonomia econômica das mulheres"
+          }
+        ]
+      },
+      {
+        "id": "economia",
+        "titulo": "Economia",
+        "descricao": "O capítulo econômico propõe simplificação regulatória para o ambiente de negócios, apoio a pequenos negócios, investimento em infraestrutura e logística, e responsabilidade fiscal com foco em resultado.",
+        "evidencias": [
+          {
+            "pagina": 5,
+            "trecho": "2.1 Ambiente de negócios simples e previsível"
+          },
+          {
+            "pagina": 5,
+            "trecho": "2.2 Pequenos negócios e empreendedorismo"
+          },
+          {
+            "pagina": 5,
+            "trecho": "2.3 Infraestrutura e logística"
+          },
+          {
+            "pagina": 6,
+            "trecho": "Objetivo. Transformar o eixo em uma agenda executável, com responsabilidades claras, coordenação"
+          }
+        ]
+      },
+      {
+        "id": "educacao",
+        "titulo": "Educação",
+        "descricao": "O capítulo de educação propõe ações voltadas à primeira infância, alfabetização na idade adequada, valorização do professor e expansão da formação técnica conectada ao mundo do trabalho.",
+        "evidencias": [
+          {
+            "pagina": 7,
+            "trecho": "3.1 Primeira infância e prontidão para aprender"
+          },
+          {
+            "pagina": 7,
+            "trecho": "3.2 Alfabetização e aprendizagem essencial"
+          },
+          {
+            "pagina": 7,
+            "trecho": "3.3 Professor valorizado e apoiado"
+          },
+          {
+            "pagina": 8,
+            "trecho": "• Orientação de carreira e aprendizagem profissional • Parcerias com setor produtivo e ensino"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "O capítulo de segurança propõe monitoramento de fronteiras com tecnologia, combate ao narcotráfico e ao tráfico de armas, ações contra o financiamento de facções criminosas e mudanças no sistema prisional.",
+        "evidencias": [
+          {
+            "pagina": 9,
+            "trecho": "4.1 Fronteiras inteligentes e integradas"
+          },
+          {
+            "pagina": 9,
+            "trecho": "4.2 Combate ao narcotráfico e ao tráfico de armas"
+          },
+          {
+            "pagina": 9,
+            "trecho": "4.3 Sufocamento financeiro das facções"
+          },
+          {
+            "pagina": 10,
+            "trecho": "qualificação • Inteligência penitenciária e controle de comunicações ilícitas Indicadores sugeridos: reincidência;"
+          }
+        ]
+      },
+      {
+        "id": "saude",
+        "titulo": "Saúde",
+        "descricao": "O capítulo de saúde propõe fortalecer a atenção primária e ampliar prevenção e diagnóstico precoce, condicionando a incorporação de terapias inovadoras ao SUS à avaliação regulatória e técnico-científica prévia.",
+        "evidencias": [
+          {
+            "pagina": 11,
+            "trecho": "5.1 Atenção primária resolutiva"
+          },
+          {
+            "pagina": 11,
+            "trecho": "5.2 Prevenção e diagnóstico precoce"
+          },
+          {
+            "pagina": 15,
+            "trecho": "o documento não presume a incorporação de uma substância específica ao SUS. Peptídeos e demais terapias inovadoras devem seguir avaliação regulatória e técnico-científica antes de qualquer oferta pública."
+          }
+        ]
+      },
+      {
+        "id": "estado-que-funciona",
+        "titulo": "Estado que funciona",
+        "descricao": "O capítulo sobre o Estado propõe governo digital com o princípio de solicitar dados uma única vez, gestão por metas e evidências, integridade e transparência, e pactos federativos com estados e municípios.",
+        "evidencias": [
+          {
+            "pagina": 13,
+            "trecho": "6.1 Governo digital e simples"
+          },
+          {
+            "pagina": 13,
+            "trecho": "Princípio de pedir dados uma única vez"
+          },
+          {
+            "pagina": 13,
+            "trecho": "6.2 Gestão por metas e evidências"
+          },
+          {
+            "pagina": 13,
+            "trecho": "6.3 Integridade e transparência"
+          },
+          {
+            "pagina": 14,
+            "trecho": "indicadores quando juridicamente cabível • Consórcios e compartilhamento de"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-resumo-v1",
+    "model": "Anthropic Claude Sonnet",
+    "generatedAt": "2026-08-26T02:50:44.401Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT-5.4",
+    "judgedAt": "2026-08-26T03:25:59.329Z",
+    "verdicts": [
+      {
+        "id": "clariana-barao:frase:1",
+        "verdict": "yes",
+        "reason": "A página 2 afirma que o plano se organiza em seis capítulos integrados."
+      },
+      {
+        "id": "clariana-barao:frase:2",
+        "verdict": "yes",
+        "reason": "A página 2 afirma que o primeiro capítulo é proteção de mulheres e crianças como eixo transversal e que os demais tratam de autonomia, oportunidade, liberdade, saúde e capacidade de entrega."
+      },
+      {
+        "id": "clariana-barao:frase:3",
+        "verdict": "yes",
+        "reason": "A página 3 propõe uma rede nacional de proteção e resposta à violência."
+      },
+      {
+        "id": "clariana-barao:frase:4",
+        "verdict": "yes",
+        "reason": "A página 5 propõe simplificação regulatória no ambiente de negócios."
+      },
+      {
+        "id": "clariana-barao:frase:5",
+        "verdict": "yes",
+        "reason": "A página 7 propõe alfabetização na idade adequada."
+      },
+      {
+        "id": "clariana-barao:frase:6",
+        "verdict": "yes",
+        "reason": "A página 9 propõe sensores, radares e monitoramento remoto para fronteiras inteligentes."
+      },
+      {
+        "id": "clariana-barao:frase:7",
+        "verdict": "yes",
+        "reason": "A página 11 propõe atenção primária resolutiva com equipes completas e acesso territorial."
+      },
+      {
+        "id": "clariana-barao:frase:8",
+        "verdict": "yes",
+        "reason": "A página 13 propõe o princípio de pedir dados uma única vez."
+      },
+      {
+        "id": "clariana-barao:tema:protecao-mulheres-criancas",
+        "verdict": "yes",
+        "reason": "As páginas 2 e 3 sustentam o eixo transversal de proteção, a rede contra violência, a prioridade à primeira infância e a autonomia econômica das mulheres."
+      },
+      {
+        "id": "clariana-barao:tema:economia",
+        "verdict": "yes",
+        "reason": "As páginas 5 e 6 sustentam simplificação regulatória, apoio a pequenos negócios, infraestrutura/logística e responsabilidade fiscal com foco em resultado."
+      },
+      {
+        "id": "clariana-barao:tema:educacao",
+        "verdict": "yes",
+        "reason": "As páginas 7 e 8 sustentam primeira infância, alfabetização, valorização do professor e expansão da formação técnica conectada ao trabalho."
+      },
+      {
+        "id": "clariana-barao:tema:seguranca-publica",
+        "verdict": "yes",
+        "reason": "As páginas 9 e 10 sustentam monitoramento de fronteiras, combate ao narcotráfico e tráfico de armas, sufocamento financeiro das facções e mudanças no sistema prisional."
+      },
+      {
+        "id": "clariana-barao:tema:saude",
+        "verdict": "yes",
+        "reason": "As páginas 11 e 15 sustentam atenção primária, prevenção e diagnóstico precoce e a exigência de avaliação regulatória e técnico-científica para terapias inovadoras no SUS."
+      },
+      {
+        "id": "clariana-barao:tema:estado-que-funciona",
+        "verdict": "yes",
+        "reason": "As páginas 13 e 14 sustentam governo digital com pedido único de dados, gestão por metas e evidências, integridade, transparência e pactos federativos."
+      }
+    ]
+  }
+}

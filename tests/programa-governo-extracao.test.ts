@@ -24,6 +24,7 @@ test("extracts textual PDF deterministically with page mapping", async () => {
   assert.equal(first.extractedTextSha256, second.extractedTextSha256)
   assert.deepEqual(first.secoes.map((section) => section.id), second.secoes.map((section) => section.id))
   assert.deepEqual(first.secoes.map((section) => section.paginaInicial), [1, 2])
+  assert.deepEqual(first.secoes.map((section) => section.origem), ["pdftotext", "pdftotext"])
   assert.match(first.secoes[0].conteudo, /Primeiro parágrafo/u)
   assert.match(first.secoes[0].conteudo, /• Item preservado/u)
   assert.match(first.secoes[1].conteudo, /Segundo parágrafo/u)

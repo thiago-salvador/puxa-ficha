@@ -1,0 +1,899 @@
+{
+  "version": 1,
+  "estado": "aguardando_revisao",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "PRESIDENTE",
+    "uf": "BR",
+    "sqCandidato": "280002538811",
+    "slug": "samara-martins",
+    "nomeUrna": "SAMARA",
+    "partido": "UP",
+    "arquivoNome": "2026BR280002538811_01.pdf",
+    "arquivoNoPacote": "BR/2026BR280002538811_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-25T09:46:00Z"
+  },
+  "extracao": {
+    "sourceSha256": "23c510d5b06bb149bb9390bbc144dcda9cfd2b6a677a854b3d993b16ed7a94e6",
+    "extractedTextSha256": "1d14ace31fdee029663df8b2a4d970804c726c47d84d8ffb6bd12f2b00cdc31e",
+    "paginas": 67,
+    "secoes": [
+      {
+        "id": "programa-da-unidade-popular-pelo-socialismo",
+        "titulo": "PROGRAMA DA UNIDADE POPULAR PELO SOCIALISMO",
+        "nivel": 1,
+        "paginaInicial": 1,
+        "paginaFinal": 1,
+        "origem": "pdftotext",
+        "conteudo": "PROGRAMA DA UNIDADE POPULAR PELO SOCIALISMO"
+      },
+      {
+        "id": "pro-grama-de-g-overno",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 2,
+        "paginaFinal": 2,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n2\n\n“Na sua luta contra o poder\ncoletivo das classes possuidoras,\no proletariado só pode agir\ncomo classe constituindo-se a\nsi próprio em partido político\ndistinto, oposto a todos os antigos\npartidos formados pelas classes\npossuidoras. Esta constituição do\nproletariado em partido político\né indispensável para assegurar o\ntriunfo da revolução social e do\nseu fim supremo: a abolição das\nclasses.”\n(Karl Marx e Friedrich Engels, Resoluções da\nConferência de Delegados da Associação\nInternacional dos Trabalhadores | Londres, 1871)"
+      },
+      {
+        "id": "pro-grama-de-g-overno-2",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 3,
+        "paginaFinal": 3,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n3"
+      },
+      {
+        "id": "pro-grama-de-g-overno-3",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 4,
+        "paginaFinal": 4,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n4\n\nCAPITALISMO\nCONDUZ A\nGUERRAS E À FOME\nNossa candidatura está a serviço\nda luta anti-imperialista, na defesa\nda autodeterminação dos povos\ne da soberania do nosso país.\nO capitalismo se impôs como modo\nde produção mundial. Mas, para\nquase 4 bilhões de pessoas, no lugar\nda prosperidade prometida, o que\nisso trouxe foi a pobreza. Dados de\n2025 do Programa das Nações Unidas\npara o Desenvolvimento (PNUD)\napontam que 1,1 bilhão de pessoas\nvivem em pobreza multidimensional\naguda, enfrentando privações que\nenvolvem necessidades básicas como\nnutrição,\nhabitação,\nsaneamento,\neletricidade e condições adequadas\npara cozinhar. Mais da metade das\npessoas nessa situação são crianças.\nMas qual é a causa da pobreza? A\nextrema desigualdade social. Segundo\no Relatório de Desigualdade Mundial\n2026, os 10% mais ricos concentram 75%\nde toda a riqueza mundial, enquanto\na metade mais pobre da humanidade\npossui apenas 2%. Ainda mais\nconcentrado é o topo: os 0,001% mais\nricos (menos de 60 mil multimilionários)\npossuem três vezes mais riqueza que\n\nmetade\n\nda\n\nhumanidade\n\nsomada.\n\nNão satisfeitos com essa desgraça\nmundial, as potências imperialistas\ndisputam o controle de mercados\ne dos recursos naturais de países,\npromovendo guerras e deixando um\nrastro de destruição e de sangue.\nSegundo a Agência da ONU para\nRefugiados (ACNUR), as guerras e\nperseguições continuam provocando\numa crise mundial de deslocamento.\nAo final de 2025, aproximadamente\n117,8 milhões de pessoas estavam\ndeslocadas à força no mundo, sendo\n41,6 milhões de refugiados. A Síria\nainda possui milhões de refugiados e\ndeslocados, enquanto o Sudão se tornou\na maior crise de deslocamento interno\ndo planeta, com 9,1 milhões de pessoas\ndeslocadas dentro do próprio país.\nA guerra da Ucrânia, iniciada em larga\nescala com a invasão russa em fevereiro\nde 2022, segue deixando milhares de\nmortos e feridos. Até 2026, a ONU já\nhavia verificado mais de 15 mil civis\nmortos e mais de 41 mil feridos desde\nfevereiro de 2022. Somente nos seis\nprimeiros meses de 2026, pelo menos\n1.396 civis foram mortos e 7.978 ficaram"
+      },
+      {
+        "id": "pro-grama-de-g-overno-4",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 5,
+        "paginaFinal": 5,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nferidos, números 37% superiores aos\nregistrados no mesmo período de 2025.\nO avanço do Exército Sionista de\nIsrael, financiado e apoiado pelos\nEstados Unidos, segue deixando\nmilhares de mortos e refugiados no\nterritório palestino. O povo palestino\ncontinua\nsubmetido\na\nataques\nmilitares e deslocamentos. Mesmo\napós o anúncio de um cessar-fogo em\noutubro de 2025, pelo menos 1.180\npalestinos haviam sido mortos e 3.810\nferidos em Gaza até 22 de julho de\n2026, segundo números do Ministério\nda Saúde de Gaza reproduzidos\npela\nONU,\nenquanto\nataques,\noperações militares e deslocamentos\ncontinuavam\nsendo\nregistrados.\nEssa política de guerra se amplia. Em 3\nde janeiro de 2026, os Estados Unidos\ninvadiram a Venezuela e sequestraram\no presidente Nicolás Maduro e Cilia\nFlores. Trump não omitiu o verdadeiro\ninteresse de controlar o petróleo\nvenezuelano, inclusive aumentando os\nataques ao povo cubano que dependia\ndo petróleo venezuelano para sua matriz\nenergética. O Irã também se tornou\nalvo direto da ofensiva imperialista\nnorte-americana, pelo controle sobre o\nEstreito de Ormuz, uma das principais\nrotas de petróleo e gás do mundo.\nPalestina, Venezuela, Iêmen, Saara\nOcidental e Irã mostram que a disputa\nimperialista por mercados, recursos\nnaturais, petróleo, rotas comerciais\ne áreas de influência continua\nproduzindo guerras e intervenções\nmilitares.\nEnquanto\nbilhões\nsão\ndestinados a armamentos e operações\nmilitares, milhões de trabalhadores\nem todo o mundo enfrentam fome,\ndeslocamentos forçados, desemprego,\nbaixos salários e falta de moradia.\n\n5\n\nApesar disso, os grandes meios\nde comunicação anunciam que a\npaz está sendo negociada, que as\ngrandes potências têm tentado\nresolver os conflitos armados. Mas\na verdade é que são essas mesmas\npotências que, para redividir o mundo\ne usurpar as riquezas dos países\nmais pobres, promovem as guerras.\nA luta contra a guerra, portanto, está\nligada à luta contra o imperialismo\ne contra um sistema econômico que\ncoloca os interesses das grandes\npotências e dos monopólios acima\nda soberania dos povos e das\nnecessidades da classe trabalhadora.\nPor isso, nossa candidatura está a\nserviço da luta anti-imperialista, na\ndefesa da autodeterminação dos\npovos e da soberania do nosso país.\nNesse\ncenário,\nSamara Martins:\n\ncomo\n\nafirma\n\n“É vergonhoso ver outros candidatos\nà Presidência do Brasil disputarem\nquem é mais amigo do presidente\nfascista Donald Trump, quem deles\né que vai entregar as terras raras\nbrasileiras aos Estados Unidos, que\nse apresenta cada vez mais como\numa\npotência\nem\ndecadência.”\n\nO povo brasileiro é anti-imperialista,\nnão admite que o nosso país seja\ncolonizado por nenhum imperialismo."
+      },
+      {
+        "id": "pro-grama-de-g-overno-5",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 6,
+        "paginaFinal": 6,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n6\n\nO BRASIL É UM DOS PAÍSES\nMAIS RICOS DO MUNDO,\nMAS O POVO VIVE NA POBREZA\nEssa desigualdade não é natural. Ela\nresulta de um modelo econômico que\ncoloca os interesses dos capitalistas\nacima das necessidades populares.\nO Brasil é a 10ª economia do mundo,\npossui um território continental, uma\nenorme diversidade ambiental, uma\ndas maiores bases agrícolas e minerais\ndo planeta, grandes reservas de\npetróleo, enorme potencial energético,\nuniversidades e institutos públicos\nde pesquisa, empresas estratégicas\ne uma classe trabalhadora com\ncapacidade\npara\nsustentar\num\nprojeto soberano de desenvolvimento.\nEm 2025, o Produto Interno Bruto\nbrasileiro alcançou R$ 12,7 trilhões.\nEssa riqueza, porém, permanece\nprofundamente concentrada e não\nretorna para quem a produz. No\nBrasil, o 1% mais rico ganha mais\nde 30 vezes o valor recebido pela\nmetade mais pobre da população.\nOs dados do IBGE, referentes ao\ntrimestre encerrado em maio de 2026,\nrevelam que 5,9 milhões de pessoas\npermanecem desempregadas e 13,6\nmilhões trabalham sem carteira\nassinada, ou seja, sem nenhum\ndireito garantido. Além disso, 38,3\nmilhões trabalham na informalidade.\n\nComo pertencemos a uma classe que\nnão sobrevive sem vender a sua força\nde trabalho, pois não somos donos\ndos meios de produção, o povo se vira\ncomo pode na informalidade e bicos\npara sustentar suas famílias, o que\ndemonstra que ter alguma ocupação\nno capitalismo não significa ter\nestabilidade, direitos, salário digno,\njornada humana e proteção social.\nA contradição é evidente: Um país\ntão rico continua sendo marcado por\ndesigualdade extrema, precarização\ndo trabalho, onde milhões de pessoas\nsão submetidas a salários insuficientes,\njornadas exaustivas, moradia precária,\ntransporte caro, insegurança alimentar\ne serviços públicos insuficientes.\nSegundo\nlevantamento\ndo\nDepartamento\nIntersindical\nde\nEstatística e Estudos Socioeconômicos\n(DIEESE), o salário mínimo necessário\npara sustentar uma família de quatro\npessoas deveria ser de R$ 7.892,55\n(referente a maio de 2026), valor cerca\nde 4,8 vezes maior que o atual salário\nmínimo. Assim, com um salário de\nR$ 1.621,00, não é possível comprar\numa cesta básica, pagar aluguel,\ngás de cozinha, energia e água ou\nroupas para nossos filhos e filhas. Os\ndeputados e senadores sabem que ele\né insuficiente, tanto que cada um deles"
+      },
+      {
+        "id": "pro-grama-de-g-overno-6",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 7,
+        "paginaFinal": 7,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nrecebe mais de R$ 46 mil, além de\nmilhões em emendas parlamentares.\nEssa desigualdade não é natural.\nEla resulta de escolhas políticas e de\num modelo econômico que coloca os\ninteresses dos bancos, dos grandes\nmonopólios, dos latifundiários, dos\nfundos de investimento e do mercado\nfinanceiro acima das necessidades\npopulares. Enquanto faltam recursos\npara universalizar direitos, uma parcela\nenorme da riqueza social é apropriada\nna forma de lucros, juros, dividendos,\nrenda da terra e especulação.\nDessa forma, o problema central não\né a ausência de riqueza, mas quem\ncontrola a riqueza, para quê ela é\nutilizada e quem decide as prioridades\ndo Estado. O capital financeiro\ncaptura parte crescente do excedente\nsocial por meio dos juros, da dívida,\nda especulação e da financeirização\nde serviços essenciais. Privatizações e\nconcessões transformam patrimônio\ncoletivo em fonte privada de lucros.\nDiante disso, nosso programa é\no programa da classe operária,\nisto é, governar para quem vive\ndo próprio trabalho. Um Governo\nPopular dos Trabalhadores, baseado\nna participação permanente do\npovo, no controle público dos setores\nestratégicos, na soberania nacional,\nna\nplanificação\ndemocrática\nda economia e na prioridade\nabsoluta às necessidades sociais.\nDefendemos que saúde, educação,\nágua, energia, saneamento, moradia,\ntransporte, cultura e comunicação\nsejam direitos, e não mercadorias.\nDefendemos o fim da escala 6x1, a\nredução da jornada com aumento\nsalarial, a elevação em 100% do\nsalário mínimo, a reindustrialização,\na reforma agrária, a soberania\n\n7\n\nnacional,\no\nfortalecimento\nda\nciência e a recuperação do controle\npúblico dos setores estratégicos.\nDefendemos que a riqueza produzida\npelo povo brasileiro esteja a serviço\ndo próprio povo e que o planejamento\nda economia seja democrático e\npopular. Vamos combater todas\nas formas de exploração, racismo,\nmachismo, LGBTfobia, capacitismo\ne opressão; defender os povos\nindígenas, quilombolas e comunidades\ntradicionais; e garantir soberania\ndiante dos interesses do grande\ncapital\nnacional\nestrangeiro.\nDessa forma, o objetivo não é\nadministrar\nas\ndesigualdades\nproduzidas pelo capitalismo, mas\ncriar condições políticas, econômicas\ne sociais para superá-las. Não\né possível ter um país justo com\narrocho salarial, jornadas exaustivas\nde trabalho, juros abusivos e uma\nminoria de ricos morando em mansões\ne possuindo centenas de prédios,\nenquanto os pobres moram em áreas\nde risco e pagam aluguéis altíssimos.\nPara lutar contra essa situação,\nSamara Martins é candidata da UP à\nPresidência do Brasil: “Nós queremos\nm país sem injustiças sociais e sem\nexploração dos trabalhadores por\numa minoria de bilionários. Chega\nde nossas riquezas serem roubadas\npelos EUA, pela China ou pela\nUnião Europeia. Junte-se a nós e\nvamos construir um país socialista!”\nPara resolver estes graves problemas\nsociais, a Unidade Popular apresenta o\nconjunto de medidas a seguir e defende\ntransformações\nestruturais\npara\nconstruir uma sociedade socialista."
+      },
+      {
+        "id": "pro-grama-de-g-overno-7",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 8,
+        "paginaFinal": 8,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n8\n\nEMPREGO, RENDA\nE TRABALHO\nAUMENTO DE 100%\nNO SALÁRIO MÍNIMO\nA contradição principal do sistema\ncapitalista é entre o capital e o\ntrabalho. Ela se expressa no roubo\nnão declarado do esforço da classe\ntrabalhadora\nna\nprodução\nde\nriquezas. Como explica Karl Marx em\nsua análise do Capitalismo, a diferença\nentre os valores que as trabalhadoras\ne trabalhadores produzem e os seus\nsalários com os demais custos de\nprodução forma a chamada maisvalia que é o roubo do trabalho.\n\nO que chamamos de salário mínimo\n(valor mínimo da força de trabalho)\ndeveria em tese ser o suficiente para\ngarantir o custo mínimo de vida de\ntrabalhadores para que na lógica do\nsistema capitalista eles seguissem\nproduzindo lucros aos burgueses.\nNo texto Salário, preço e lucro, de\n1865, capítulo 8, Marx descreve o\nmecanismo:\n\n“O valor da força de trabalho\nse determina pela quantidade\nde\ntrabalho\nnecessário\npara a sua conservação, ou\nreprodução, mas o uso desta\nforça só é limitado pela\nenergia vital e a força física\ndo operário. O valor diário ou\nsemanal da força de trabalho\ndifere completamente do\nfuncionamento\ndiário\nou\nsemanal desta mesma força"
+      },
+      {
+        "id": "pro-grama-de-g-overno-8",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 9,
+        "paginaFinal": 9,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nde trabalho, são duas\ncoisas\ncompletamente\ndistintas, como a ração\nconsumida por um cavalo e\no tempo em que este pode\ncarregar o cavaleiro.”\nMas ao longo da história este\nmínimo necessário para sobreviver\nmuda de acordo com a força que a\nburguesia tem de impor menores\nsalários frente à capacidade de\npressão da classe trabalhadora\npor\nmaiores\nvalores,\nesta\ncontradição é o início da luta de\nclasses na sociedade capitalista.\nNo Brasil de 2026, aproximadamente\n35 milhões de trabalhadores e\ntrabalhadoras recebem até um\nsalário mínimo de R$ 1621,00\n(IBGE 2025). Esse valor está\nlonge de garantir a subsistência\nbásica da classe dos assalariados.\n\n9\n\nPor isso, a Unidade Popular\napresenta\ncomo\nproposta\nemergencial o aumento de 100% do\nsalário mínimo, proposta que será\nexecutada no primeiro momento\nde governo, que marcará o início\nda elevação geral dos salários\ne mudanças sobre o controle da\neconomia por meio do controle\npopular e planejamento socialista.\nPara isso é necessário garantir:\n• Elevação Imediata dos salários\ne Aumento de 100% do Salário\nMínimo. Reajuste imediato para\ncobrir os custos reais da cesta\nbásica e da vida familiar (rumo\nao valor calculado pelo DIEESE ),\nacompanhado\nde\nvalorização\npermanente acima da inf lação.\n• Fim do Arcabouço Fiscal\ngarantindo o reajuste nos benefícios\nde aposentadoria e assistência social.\n\nSegundo\ndados\nda\nPesquisa\nNacional de Cesta Básica de\nAlimentos Conab/Dieese de julho\nde 2026, a cesta básica para uma\nfamília nas maiores capitais varia\nentre R$ 855,00 e R$ 915,00, com\ngrande parte das famílias vivendo\ncom aluguéis que chegam a mais de\nR$ 1.000,00 em bairros periféricos.\n\nF I M I M E D I ATO\n\nSomente nestes dois itens de custos\nde vida temos um acumulado maior\nque todo o valor do salário mínimo,\ncomo sabemos que para sobreviver\nem uma cidade são necessários\ncustos com transporte, vestuário,\nsaúde,\neducação,\nlazer\netc.\n\nA exploração capitalista está\ndiretamente\nrelacionada\nao\ntempo de trabalho dedicado pela\nclasse trabalhadora a serviço da\nburguesia. Ao mesmo tempo, o\navanço tecnológico e de métodos\ne técnicas de trabalho poderia\nresultar numa redução substancial\ndo tempo dedicado na produção\nsocial. Mas, como no capitalismo\na prioridade é sempre majoração\ndos lucros, a jornada não é\nreduzida apesar de ser possível.\n\nNão por acaso, o Dieese estima\nem quase R$ 8 mil o salário\nmínimo\nnecessário\npara\numa\nfamília sobreviver com dignidade.\n\nDA ESCALA 6X1\nE ESTABE LEC IME NTO\n\nDA ESCALA 4X3"
+      },
+      {
+        "id": "pro-grama-de-g-overno-9",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 10,
+        "paginaFinal": 10,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nNo Brasil, cerca de 14,8 milhões de\ntrabalhadores atuam na escala 6x1\n(seis dias de trabalho consecutivos\npara apenas um dia de descanso) ,\naproximadamente um terço (33,2%)\nda população ocupada no país. O\nfim da escala 6x1 tornou-se uma das\nprincipais reivindicações recentes\nda classe trabalhadora brasileira.\nA força da luta resultou na votação,\nem 27 de maio de 2026, na Câmara\ndos Deputados, uma proposta para\no fim da escala 6x1, com redução\nda jornada máxima para 40 horas\nsemanais, sem redução salarial,\ne dois dias de descanso. Mas, não\nhouve votação no Senado. Portanto,\na luta precisa continuar porque\na escala 6x1 ainda não acabou.\nMesmo sem o senado colocar para\nvotação o fim da 6x1, categorias\nespecíficas se mobilizaram por\numa escala que permitisse mais\ndias consecutivos de descanso,\na exemplo dos trabalhadores\nda Limpeza Urbana da Paraíba\nque conquistaram a escala 5x2\ne aumento salarial de mais 8%.\nOs trabalhadores portuários no\nPará, conquistaram a escala de 4x4\nno turno ininterrupto de revezamento\n(4 dias consecutivos de trabalho por\n4 de folga) e também conquistaram\na recomposição salarial.\nEsses avanços mostram que a\norganização, a luta e as greves dos\ntrabalhadores podem arrancar\nmais conquistas, mas é preciso\navançar ainda mais: defendemos\n36 horas semanais, sem redução\ndos salários, garantindo mais\ntempo para descanso, família,\nestudo, cultura e lazer.\n\n10\n\n• Fim da Escala 6x1 e Redução da\nJornada para 30 Horas Semanais:\nImplementação do regime de 30\nhoras sem redução salarial (escala\n4x3 ou turnos de 6 horas diárias),\npermitindo a criação de múltiplos\nturnos nas indústrias e serviços\npara gerar novos postos formais de\ntrabalho.\n\nGARANT IA DE EMPREG O\nE TRABALHO OBRIGATÓRIOS\nPARA TODAS AS PESSOAS\nADU LTAS CAPAZES DE\nPRO IBIÇÃO\nTRABAL HAR ;\nDA EXP LOR AÇÃ O DO\nTRABALHO INFANTIL\nO sistema capitalista gera grandes\nmassas de desempregados como\nresultado de sua contradição\nfundamental, que é a apropriação\nindividual da riqueza frente à\nprodução social pelas mãos da\nclasse trabalhadora. A burguesia\nutiliza este fato como instrumento\nde rebaixamento dos salários, afinal\nde contas caso um trabalhador\nrejeite um baixo salário ou condições\nde contrato existirão outros que\naceitem por necessidade urgente.\nAlém disso, a burguesia busca\nvalorizar seu capital em setores de\nbens ou serviços que possam utilizar os\nexcedentes de pessoas sem trabalho\npara novas formas de empregálas\nsob\ncondições\nprecárias.\nRealizam um grande investimento\nem propaganda ideológica contra a\nConsolidação das Leis Trabalhistas\n(CLT), contra a Carteira de Trabalho"
+      },
+      {
+        "id": "pro-grama-de-g-overno-10",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 11,
+        "paginaFinal": 11,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n11\n\ne para difundir termos como\n“empreendedorismo”,\nbuscando\nlevar à ilusão de que trabalhadores\ne burgueses são a mesma coisa.\nAs\nrelações\nde\ntrabalho\nconstituídas pelas multinacionais\nde serviços por aplicativos (Uber,\niFood,etc) demonstram o quanto\na burguesia busca mecanismos\nque escondam a real origem da\nriqueza produzida na sociedade,\nao mesmo tempo que lançam mão\nde práticas super exploratórias\npara garantir seus lucros.\nO\ndomínio\neconômico\ne,\nconsequentemente,\npolítico\nda\nburguesia sobre o trabalho social\npossibilita\nataques\ninclusive\na\nsetores\nque\nhistoricamente\nobtiveram conquistas pela luta\npopular e nos quais as trabalhadoras\ne\ntrabalhadores\ncontam\ncom\nestabilidade e condições mínimas de\nmanutenção, como no serviço público.\nSegundo o IBGE, 5,9 milhões\nde\npessoas\npermanecem\ndesempregadas no Brasil. Porém,\neste dado deve ser analisado\njunto ao número de trabalhadores\ninformais\nque\nrepresentam\no maior contingente do país:\nquase 40 milhões (IBGE 2025).\nA maior parte destes informais\nvive sob o jugo da incerteza de\nsua sobrevivência no dia seguinte,\nbuscando bicos para garantir sua\nsobrevivência. Vale ressaltar que\no desemprego no Brasil não é\nconsequência da falta de capacidade\nou da vontade de trabalhar do\nnosso povo. Pelo contrário, é uma\ndas armas para manter os salários\nde fome que se pagam atualmente.\nPor\n\nisso,\n\nqueremos\n\num\n\ngrande\n\nprograma de empregos públicos que\numa reindustrialização, infraestrutura,\nhabitação, saneamento, reprodução\nsocial\ne\ndoméstica,\nferrovias,\ntransição\nenergética,\nagricultura\nfamiliar, ciência e tecnologia:\n• Planejamento da produção orientado\nàs necessidades sociais, especialmente\nem setores estratégicos da indústria\ncom cadeias produtivas completas.\n• Realizar concursos públicos regulares,\nvalorizar carreiras, garantir formação\ncontinuada e mesas permanentes de\nnegociação, garantia da Data Base\npara os servidores públicos.\n• Fiscalização e combate aos modos\nde trabalho análogos à escravidão,\ncom expropriação dos criminosos.\n• Regulamentar de forma imediata o\ntrabalho em plataformas garantindo\nre m u n e ra çã o m í n i m a , p rote çã o\nprevidenciária, transparência algorítmica,\ndireito de organização e negociação\ncoletiva.\nFim\nda\npropriedade\nestrangeira sobre aplicativos, como\nocorre com Uber e 99 atualmente.\n• Organizar empresas públicas\ne\ncooperativas\nde\naplicativos\nsob controle das trabalhadoras\ne trabalhadores.\n• Garantia de trabalho no campo com\nreforma agrária e incentivo estatal à\nprodução camponesa e construção de\ncooperativas.\n\nFREN TES EME RGE NCIA IS\n\nDE TR AB AL HO\n\nO\nBrasil\npossui\nmilhões\nde\ntrabalhadores que ainda enfrentam"
+      },
+      {
+        "id": "pro-grama-de-g-overno-11",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 12,
+        "paginaFinal": 12,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\no desemprego, a informalidade e a\nprecarização, ao mesmo tempo em\nque acumula enormes necessidades\nsociais. 62 milhões de pessoas,\npermaneceram desempregadas em\n2025, segundo o IBGE.\nNa habitação, o déficit ainda era\nde aproximadamente 5,77 milhões\nde moradias em 2024, enquanto\ncerca de 28 milhões de domicílios\napresentavam\nalgum\ntipo\nde\ninadequação. Além disso, dados\ndo\nsaneamento\nmostram\nque\n44,8% da população não possuía\nacesso à coleta de esgoto.\nEssa realidade demonstra que há\nfalta trabalho para milhões de\npessoas ao mesmo tempo em que há\nmuito trabalho necessário a ser feito.\nPor isso, defendemos a criação de\nFrentes Emergenciais de Trabalho,\nempregos públicos com contratações\ndiretas voltados para um grande plano\nnacional de construção de moradias\npopulares, saneamento, creches,\npostos de saúde e infraestrutura\nnas periferias e no interior.\nAssim, em vez de deixar trabalhadores\nsem emprego e necessidades populares\nsem atendimento, o Estado deve\nmobilizar recursos para gerar milhões\nde empregos formais, com salário\ndigno e todos os direitos trabalhistas,\nenquanto melhora concretamente as\ncondições de vida da população.\nA UP defende a criação de Frentes\nEmergenciais de Emprego Público.\nA execução de um plano nacional de\nobras de infraestrutura, moradia,\nsaneamento básico, creches e postos de\nsaúde nos bairros periféricos e interior\ndo país, garantindo emprego formal\ncom todos os direitos da CLT.\n\n12\n\nREV OGA R AS REF ORM AS\nTRABALHISTA E PREVIDENCIÁRIA,\nA TERCEIRIZAÇÃO IRRESTRITA\n\nE O ARCABOUÇO FISCAL\n\nEm 2016, o Congresso Nacional, deu\num golpe, com apoio dos militares e\nda grande mídia: derrubaram a então\npresidente Dilma. Fruto deste golpe\ne da eleição do fascista Bolsonaro\nem 2018, implementaram reformas\nque retiraram direitos históricos\nda classe trabalhadora.\nDesde então, está mais difícil, para\nquem trabalhou a vida toda, se\naposentar. Os patrões fazem o que\nquerem nas fábricas, comércios e\noutros locais de trabalho porque a\nCLT, a organização sindical e a Justiça\ndo Trabalho foram enfraquecidas.\nA terceirização alcançou quase\ntodos os setores da economia.\nDepois de 6 anos de vigência do\nantigo Teto de Gastos, o atual\nGoverno Federal aprovou o chamado\n“Arcabouço Fiscal” que na prática\nsignificou pouca coisa na realidade\ndo orçamento público.\nPara termos um exemplo, o\norçamento público de 2026 para as\nUniversidades Federais e o setor de\nciência e tecnologia equivale a 53% do\norçamento destinado pelo Governo\nFederal em 2014 ao mesmo setor.\nOu seja, hoje o Estado brasileiro\ngasta menos com educação, ciência e\nsaúde do que gastava 12 anos atrás!\nPor isso, a UP defende:"
+      },
+      {
+        "id": "pro-grama-de-g-overno-12",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 13,
+        "paginaFinal": 13,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n13\n\n• Imediata a revogação de todas as\nreformas antipovo, para restaurar os\ndireitos dos trabalhadores e recompor\no Orçamento da União e atender\nas demandas da população.\n\nmagistrados analisados receberam\nacima do teto constitucional e que\nos gastos extrateto examinados\ncresceram de R$5,5 bilhões em 2022\npara R$17,5 bilhões em 2025.\n\n• Fim da Precarização do Trabalho por\nAplicativos: Regulamentação rigorosa\ndas plataformas, garantindo salário\nmínimo por hora, seguridade social,\ntransparência algorítmica e liberdade\nde organização sindical.\n\nReduzir os altos salários dos cargos\npolíticos e da alta magistratura é,\nportanto, uma medida de combate\naos privilégios e à enorme distância\nexistente entre os representantes do\nEstado e a população trabalhadora.\n\nFIM DO S ALT OS\nE\nSAL ÁR IOS\nPRI VIL ÉG IOS NO\nSET OR PÚ BLI CO\n\nDa mesma forma, defendemos que\ngovernantes e legisladores utilizem\na educação e a saúde pública. Quem\ngoverna e decide quanto será investido\nno SUS e nas escolas públicas deve\nconhecer diretamente esses serviços\ne ter interesse concreto em garantir\nque funcionem com qualidade.\n\nEnquanto milhões de trabalhadores têm\nque manter suas famílias com salários\nbaixos e dependem diariamente dos\nserviços públicos, uma parcela dos\nocupantes dos altos cargos do Estado\nrecebe remunerações imensamente\nsuperiores à realidade da população.\n\nÉ absurdo que os governantes sigam\nusufruindo de serviços inacessíveis à\nmaioria. Os políticos eleitos devem estar\nsubmetidos à mesma realidade e aos\nmesmos serviços que eles administram\ne destinam ao povo brasileiro.\n\nEm 2026, por exemplo, deputados\nfederais\ne\nsenadores\nrecebem\nR$ 46.366,19 mensais, valor que\ntambém corresponde ao atual teto\nconstitucional do funcionalismo e\nao subsídio dos ministros do STF.\nNo Judiciário, o problema é agravado\npelos\nchamados\n“supersalários”\ne\npenduricalhos.\nLevantamento\ndivulgado em 2026, com dados\nreferentes a 2025, apontou que\n91,6% dos magistrados analisados\nreceberam acima do teto constitucional\ne que os gastos extrateto examinados\ncresceram de R$ 5,5 bilhões em\n2022 para R$ 17,5 bilhões em 2025.\na 2025, apontou que 91,6% dos\n\nSão\n\nnossas\n\npropostas:\n\n• Fim dos Altos salários dos altos\nexecutivos\ndo\nEstado,\njuízes,\nparlamentares\ne\ngenerais,\neliminando penduricalhos, verbas\nindenizatórias e emendas secretas.\n• Obrigatoriedade de uso do SUS e\nda Educação Pública por Agentes\nPolíticos: Determinação legal para que\no Presidente, governadores, prefeitos,\ndeputados,\nsenadores\ne\njuízes\nutilizem exclusivamente o Sistema\nÚnico de Saúde (SUS) para seus\natendimentos e de seus dependentes."
+      },
+      {
+        "id": "pro-grama-de-g-overno-13",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 14,
+        "paginaFinal": 14,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n14\n\nDÍVIDA PÚBLICA, SISTEMA\nFINANCEIRO E TRIBUTAÇÃO\nIME DIA TA\nS USP ENS ÃO\nDE\nPAG AME NTO\nDO\nJUR OS E AMO RTIZ AÇÃ O\nDA DÍV IDA PÚB LICA ,\nSEG UID O DE PRO CES SO\nPÚB LICO DE AUD ITO RIA\nA dívida pública reúne todo o\nendividamento do Governo. Quando\no dinheiro disponível não é suficiente\npara pagar as contas, títulos do\nTesouro Nacional são emitidos para\nfinanciar despesas e investimentos.\nPorém, a maior parte desses títulos\nestá ligada à Selic, a taxa básica de\n\njuros da economia, atualmente em 14%\nao ano, uma das maiores do mundo.\nAssim, bancos e grandes capitalistas\ncompram esses títulos públicos e são\nremunerados com juros altíssimos.\nQuanto mais alta for a taxa de\njuros, maiores serão os rendimentos\ndesses sanguessugas das riquezas\ndo país. De fato, segundo o próprio\nBanco Central, a cada 1% de\naumento na Selic, o gasto com a\ndívida pública cresce R$ 55 bilhões.\nÉ por isso que a dívida pública não\npara de crescer. Não tem nada a\nver com os aposentados ou com os\nsalários dos servidores públicos.\nO negócio de investir dinheiro em\ntítulos da dívida é tão lucrativo"
+      },
+      {
+        "id": "pro-grama-de-g-overno-14",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 15,
+        "paginaFinal": 15,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nque\nespeculadores\nnacionais\ne\nestrangeiros\ntomam\ndinheiro\nemprestado nos países onde as taxas\nde juros são baixas para comprar\ntítulos da dívida pública brasileira.\nMas, apesar disso, quando se\ntrata de destinar mais verbas para\nmoradia, saúde e educação, ou ser\ncontra a privatização do patrimônio\npúblico, os analistas burgueses ficam\nescandalizados nos programas de TV\ncom o “desperdício do dinheiro público”.\nNenhum deles acha um escândalo\nque o Estado ajude com dinheiro do\npovo os bancos, o agronegócio ou\ngrandes empresas privadas que estão\nquebradas, nem que quase metade do\norçamento do governo seja sugado\npelo pagamento de juros escandalosos.\nE quem são esses parasitas que\nganham bilhões sem nada produzir?\nDados do Banco Central revelam que\nos bancos e os fundos de investimentos\n(nacionais e estrangeiros) possuem\n76,2% dos títulos da dívida interna:\ninstituições\nfinanceiras\n(31,7%),\nfundos\nde\nprevidência\n(22,5%)\ne fundos de investimento (22%).\nÉ sob o controle dessa reduzida\noligarquia financeira que se encontra\ngrande parte da economia do país.\nCom essa enorme quantidade de\ndinheiro em suas mãos, corrompem\npartidos, controlam o Congresso\nNacional, governadores e presidentes,\nnomeiam\nministros\ne\ndiretores\ndo Banco Central e definem toda\na política econômica do país.\nFoi para atender a esses vampiros\ndo orçamento público que os\ninvestimentos sociais e os salários\ndos servidores foram congelados\nno Brasil, seja pelo “Teto de\nGastos” ou pelo Arcabouço Fiscal.\nComo se não bastasse, todos os anos,\no Governo Federal deixa de arrecadar\n\n15\n\nmais de R$ 800 bilhões em impostos\ndas grandes empresas por meio de\nisenções fiscais e enquanto 42% do\nOrçamento Federal está comprometido\ncom juros e amortizações da dívida,\napenas 4,2% foram destinados à\nsaúde, 3,1% à educação, 0,04% à\ncultura, 0,008% à habitação e 0,004%\nao saneamento ambiental.\nOs\ntrabalhadores\nsentem\nas\nconsequências dessa política no dia a\ndia, com a falta de médicos e remédios\nnos postos de saúde, com longas filas\nnos hospitais, com a dificuldade de\nconseguir uma vaga na creche para\nsuas crianças, com a falta de moradia,\ncom o esgoto correndo a céu aberto\nnas periferias e com um dos menores\nsalários mínimos da América Latina.\nDiante dessa realidade insustentável\ne injusta, é urgente enfrentar os\nprivilégios da burguesia e colocar os\ninteresses dos trabalhadores e da\nmaioria do povo no centro, começando\npor suspender o pagamento de juros\nda dívida pública e promovendo\numa auditoria que ponha fim a\nessa farra com o dinheiro público.\nO Brasil não pode continuar pagando\numa dívida que compromete seu\ndesenvolvimento social e econômico em\nbenefício exclusivo de ricos banqueiros\ne agiotas do sistema financeiro.\nCom esta medida, podemos deslocar\naproximadamente R$ 2 trilhões do\norçamento público, que representa um\nterço do PIB nacional, para medidas\nem benefício do povo trabalhador.\nHoje o sistema da dívida cumpre o\npapel de desviar o orçamento público\nao grande capital financeiro privado.\nSão\n\npropostas\n\nda\n\nUP:\n\n• Suspensão Imediata do Pagamento\ne Auditoria Cidadã da Dívida\nPública: Interrupção da sangria dos\ncofres públicos para a remuneração"
+      },
+      {
+        "id": "pro-grama-de-g-overno-15",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 16,
+        "paginaFinal": 16,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nde banqueiros e especuladores,\ncanalizando centenas de bilhões para\nsaúde, educação e habitação.\n\nANULAÇÃO DOS IMPOSTOS\nCOBRADOS\nEXTORSIVOS\nIMPOSTO\nPOVO;\nDO\nGRANDES\nAS\nSOBRE\nFORTUNAS E PRO GRESSIVO.\nMAIS,\nGANHA\nQUEM\nPAGA MAIS; POR UMA\nTRIBUTÁRIA\nREFORMA\nQUE SEJA A FAVOR\nTRABALHADORES\nDOS\nO Estado arrecada dinheiro com\nos impostos que cobra. Mas quem\npaga esses impostos? Como a carga\ntributária brasileira é concentrada\nnos impostos indiretos, é o cidadão\nquem paga imposto toda vez\nque\ncompra\numa\nmercadoria.\n\n16\n\nDessa forma, quando um trabalhador\ncompra arroz, feijão ou pão, paga\no mesmo imposto que um rico ao\ncomprar o mesmo produto. Acontece\nque os gastos com alimentação\nconsomem 22,61% do orçamento das\nfamílias pobres (com renda de 1 a 1,5\nsalário mínimo), mas menos de 12% do\norçamento das famílias ricas (FGV).\nOs\nimpostos\nindiretos\nsão\nprofundamente\ninjustos\nporque\nrecaem sobre toda a população,\nnão importando se uma pessoa\nganha um salário mínimo ou se\nrecebe milhões, pois ambas pagam\no mesmo valor. Ou seja, as classes\nricas não pagam os impostos que\ndeveriam pagar graças à isenção\nfiscal que recebem do governo e ao\nrepasse dos impostos para os preços.\nComo está claro, os trabalhadores\ne\nos\npequenos\nagricultores\nsustentam os ricos até nos impostos,\numa vez que pagam até aqueles\ntributos que seriam de exclusiva\nobrigação da classe dos capitalistas.\n\nSegundo o Instituto Brasileiro de\nPlanejamento e Tributação (IBPT), uma\nconta de energia elétrica tem em seu\nvalor total 48,28% de impostos; uma\ncalça jeans, 34,1%; uma camisa, 34,6%.\n\nNão\npodemos\nadmitir\nque\ncontinuemos\nvivendo\nnum\npaís\nde massacre dos trabalhadores\npor uma política de impostos que\ncoloca sobre quem trabalha o peso\nfiscal, enquanto os milionários e\nbilionários sequer trabalham e ainda\nrepassam ao povo todos os impostos,\nembutidos nos produtos e serviços.\n\nA taxa sobre um quilo de arroz ou\nde feijão é de 17,2%; enquanto no\nfrango é de 26,8%; nos ovos de\ngalinha, 20,5%; no leite, 18,6%; no\ncafé, 16,2%; e na carne vermelha, 29%.\n\nQueremos redução de impostos,\ntributação das fortunas e redução\nda\njornada\nde\ntrabalho.\nPor\nisso, a Reforma Tributária que\na Unidade Popular defende fará:\n\nMesmo com a aprovação de uma\n“Reforma\ntributária”\nno\natual\nGoverno Federal, a previsão é\nque a alíquota média no Imposto\nsobre Valor Agregado (IVA, que\nsubstituirá o antigo ICMS) ficará\nem torno de 28% para os produtos\nque compramos no nosso dia a dia.\n\n• Tributação Progressiva e Fim\ndos Impostos Abusivos sobre os\nPobres: Isenção total de imposto\nde renda para os trabalhadores,\neliminação de impostos sobre itens\nda cesta básica e produtos essenciais\nde limpeza e higiene pessoal,"
+      },
+      {
+        "id": "pro-grama-de-g-overno-16",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 17,
+        "paginaFinal": 17,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n17\n\ninstituição do imposto progressivo\nsobre grandes fortunas, lucros,\ndividendos e heranças dos bilionários.\n\nadoção de medidas sérias para\nresolver as crises econômicas com\nos bancos privados no comando.\n\n• Rever a política do imposto sobre\ncirculação de mercadorias - ICMS/IVA\n- que taxa por igual ricos e pobres,\ncom uma redução imediata da alíquota\npara todos os produtos e isenção para\ntodos os produtos de higiene pessoal,\nmedicamentos e roupas (que não está\nprevisto na atual Reforma Tributária).\n\nTem mais: operação realizada pelo\nMinistério Público Federal e a Polícia\nFederal, em 30 de agosto de 2025,\ndescobriu que o Primeiro Comando da\nCapital (PCC), organização criminosa\nresponsável pela maior parte do\ntráfico de drogas no país, contou com\na cumplicidade do sistema financeiro\nnacional para legalizar todo o dinheiro\nproveniente do comércio de drogas por\nmeio de 40 fundos de investimentos,\ndas chamadas fintechs, e da B3.\n\nDO\nNAC ION ALIZ AÇÃ O\nSIST EMA BAN CÁR IO E\nCON TRO LE POP ULA R DO\nSIST EMA FIN ANC EIRO ;\nNa sociedade capitalista moderna,\nos bancos se tornaram organizações\neconômicas poderosas, que dispõem\nde todo o dinheiro de 170 milhões de\nbrasileiros que têm conta corrente,\nfazem pix ou usam um cartão de crédito.\nCom efeito, 95% das movimentações\nfinanceiras (transações cambiais,\nhedge,\npagamentos,\ntransações\ncomerciais, etc.) são realizadas por\nbancos e fundos de investimentos. Em\noutras palavras, um pequeno número\nde instituições financeiras controla\no capital monetário, apodera-se de\nindústrias, redes de lojas e da agricultura\ne determina uma hipervalorização\nfictícia\nda\nriqueza\nfinanceira.\nCom todo esse poder, os bancos se\ntransformaram em donos de boa parte\ndos meios de produção e das matériasprimas. Verifica-se, ainda, uma grande\nconcentração dos bancos, diminuindo\no número de estabelecimentos que\ntêm em suas mãos o controle das\noperações financeiras e da economia.\nDaí ser impossível o controle e a\n\nO escândalo do Banco Master, onde\npelo menos mais de 50 bilhões de\nreais foram roubados ou desviados\nmostra até onde o capital financeiro\npode ir para garantir seus lucros.\nPor isso, no período de dominação do\ncapital financeiro, a nacionalização\ndos bancos é uma medida decisiva\npara realizar a transformação da\nsociedade. Sem ela, os bancos farão\nde tudo para boicotar as medidas\neconômicas do governo popular.\nAlém do mais, toda vez que ocorre\numa crise os banqueiros recebem\ngenerosos empréstimos dos governos\na juros subsidiados. É o que vem\nacontecendo desde a crise mundial\nde 2008, com os bancos centrais\nda Inglaterra, dos EUA e da Europa\nfornecendo bilhões de euros e\ndólares em empréstimos subsidiados\naos bancos privados desses países.\nEste também foi o caso do\nfamoso Programa de Estímulo à\nReestruturação e ao Fortalecimento do\nSistema Financeiro Nacional (Proer), e\ncontinua sendo a razão para o Banco\nCentral do Brasil pagar religiosamente\nos\njuros\nda\ndívida\npública.\nQuando se trata de destinar verbas para\nmoradia, saúde, educação, ou para"
+      },
+      {
+        "id": "pro-grama-de-g-overno-17",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 18,
+        "paginaFinal": 18,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\naumentar o salário dos trabalhadores\ndo serviço público, etc., os capitalistas\nusam seus meios de comunicação\npara fazer uma campanha contra\no “desperdício do dinheiro público”.\nMas, nenhum burguês acha um\nescândalo que o Estado ajude os\nbancos que estão quebrados. Pelo\ncontrário,\nconsideram\nque\nsão\nmedidas justas e corretas para evitar\na crise e a economia voltar a crescer.\nPara atender aos interesses dos\nbancos e fundos de investimentos\nestrangeiros e, em particular, aos\nEstados Unidos, o Brasil mantém em\nbancos norte-americanos reservas\ninternacionais no valor total de\nUS$366 bilhões (R$ 1,9 trilhão).\nSe essa fortuna, que pertence ao\nEstado\nbrasileiro,\nfosse\nusada\nem nosso país em benefício do\npovo,\nseria\npossível\nconstruir\n12,5 milhões de casas populares\n(cada uma no valor de R$ 150 mil).\nComo o déficit habitacional brasileiro,\nsegundo o Ministério das Cidades, é\nde 6,9 milhões de moradias, em menos\nde um ano o país poderia garantir\nmoradia decente para todas as famílias\nbrasileiras sem casa e ainda construir\ncentenas de hospitais e universidades.\nPor último, a fusão de todos os bancos\nem um só em nada afetará os que têm\ncontas bancárias, uma vez que com a\nestatização dos bancos não será mais\num capitalista ou banco estrangeiro\nque terá a guarda desse dinheiro.\nEm síntese, a nacionalização dos\nbancos, dos fundos de pensão e\nseguros colocará o dinheiro público\nsob controle dos trabalhadores.\n• Nacionalização dos Bancos e\nEstatização do Sistema Financeiro:\nFusão do sistema bancário sob controle\ndo Estado e gestão dos trabalhadores.\n\n18\n\nFim da autonomia do Banco Central\nem relação ao governo e submissão\nda política monetária e cambial aos\ninteresses do desenvolvimento social."
+      },
+      {
+        "id": "pro-grama-de-g-overno-18",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 19,
+        "paginaFinal": 19,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n19\n\nSAÚDE PÚBLICA\n\nE VALORIZAÇÃO DO SUS\nGARANTIA DE SAÚDE PÚBLICA\nE GRATUITA PARA TODOS;\nFIM DA EXPLORAÇÃO DOS\nPLA NOS DE SAÚ DE PRIVADOS\n\nO Sistema Único de Saúde é uma das\nmaiores conquistas sociais do povo\nbrasileiro. Fruto de uma grandiosa luta\nda classe trabalhadora e inspirado\nnos modelos de saúde pública da\nInglaterra e Cuba, o Sistema Único de\nSaúde (SUS) foi criado na Constituição\nFederal de 1988 e efetivado em 1990,\npor meio da Lei nº 8.080/1990.\n\nAntes do SUS, a assistência à saúde\nhospitalar era restrita a quem tivesse\nemprego com carteira assinada\n(contribuintes\nda\nprevidência\nsocial) e a assistência primária\n(postos de saúde) não existia.\nOs desempregados e autônomos\nprecisavam recorrer às filantropias\npara conseguir atendimento médico.\nO SUS possibilitou o atendimento\nuniversal a toda a população. Ainda\nhoje, mais de 70% dos brasileiros e\nbrasileiras dependem exclusivamente\ndo SUS para ter acesso à saúde, já que\na classe trabalhadora em sua maioria\nnão consegue pagar os exorbitantes\npreços dos planos de saúde.\nMesmo\naqueles\nque\npagam\npontualmente seu plano ou seguro de"
+      },
+      {
+        "id": "pro-grama-de-g-overno-19",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 20,
+        "paginaFinal": 20,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nsaúde precisam recorrer ao SUS para\nter acesso a alguns procedimentos.\nIsso porque, como visam ao lucro,\nos donos dos planos de saúde e\nhospitais privados vivem negando\nprocedimentos mais onerosos aos\nseus usuários, que precisam recorrer\nà justiça ou buscar amparo no serviço\npúblico para conseguir atendimento.\nAinda assim, os donos dos planos\nde saúde seguem lucrando enormes\nquantias: apenas entre janeiro e\nsetembro de 2025, as operadoras de\nplanos de saúde tiveram um lucro líquido\nde R$ 17,9 bilhões (ANS, 11/12/2025).\nMas, além de lucrarem diretamente\ncom seus hospitais privados, os\nempresários da saúde têm ampliado\numa ofensiva contra o SUS, por meio do\ncrescente “desfinanciamento da saúde\npública” orquestrado em conjunto com\no Congresso Nacional e o governo.\nDessa forma, em nome do arcabouço\nfiscal (Teto de Gastos), se retira os\nrecursos da saúde e educação para o\npagamento da dívida pública: entre os\nanos de 2013 e 2023, o país investiu 64%\nmenos em saúde, com uma redução\nde R$ 10 bilhões nos investimentos do\nSUS, segundo o Instituto de Estudos\npara Políticas de Saúde (IEPS).\nA consequência disso é que o povo\nsofre com as enormes filas para\nconsultas e cirurgias, superlotação\nnos hospitais e falta de materiais e\nmedicamentos básicos.\nAté os governos da chamada socialdemocracia têm aprofundado o\nsucateamento e privatização da saúde\npública para assegurar privilégios para\no capital financeiro e o agronegócio.\nO governo de Dilma Rousseff (PT),\nem 2011, criou a Empresa Brasileira\nde Serviços Hospitalares (Ebserh),\nrepresentando a privatização da maior\nparte dos hospitais universitários\n\n20\n\ndas instituições federais do país.\nAgora, o processo de privatização da\nsaúde avança para a atenção básica\n(postos de saúde), com estudos de\nviabilidade organizados pelo BNDES.\nCom efeito, inúmeras empresas\nprivadas\ndenominadas\nde\nOrganizações Sociais de Saúde\n(OSS) administram grande parte\ndos serviços públicos de saúde\nvisando obter lucros à custa da\nprecarização da saúde pública.\nDe acordo com o Conselho Nacional\nde Saúde, o total de hospitais\nprivados atingiu 4.466, tornando o\nBrasil o segundo maior mercado de\nplanos privados de saúde do mundo.\nDefender o SUS é defender a vida,\na ciência e a soberania nacional.\nNenhuma pessoa deve ser privada\nde atendimento por sua renda\nou pelo lugar onde vive. A saúde\ndeve estar a serviço do povo, e\nnão do lucro. Por isso defendemos:\n• Fortalecimento e Unificação do\nSUS 100% Estatal: Fim da entrega da\ngestão hospitalar a Organizações\nSociais (OSs), fundações privadas\ne cooperativas empresariais. Toda\na rede sanitária deve ser de gestão\ndireta e pública. Fim da exploração\ndos planos de saúde privados.\n• Soberania Farmacêutica e Produção\nNacional de Remédios: Fortalecimento\ndos laboratórios oficiais do Estado\npara a fabricação massiva de\nmedicamentos, vacinas, equipamentos\ne insumos, para serem distribuídos\ngratuitamente\nà\npopulação.\n• Valorização dos Trabalhadores da\nSaúde: Concursos públicos com regime\nestatutário, fim da precarização e\naplicação integral dos pisos salariais\nnacionais das categorias."
+      },
+      {
+        "id": "pro-grama-de-g-overno-20",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 21,
+        "paginaFinal": 21,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n21\n\nEDUCAÇÃO\nPOPULAR E CIENTÍFICA\nPÚBLICA E\nEDUCAÇÃO\nGRATUITA PARA TODOS E\nEM TODOS OS NÍVEIS; FIM\nDO LUCRO NA EDUCAÇÃO.\nGARANTIA DE LIVRE ACESSO\nDO POVO À UNIVERSIDADE\nE/OU CURSOS TÉCNICOS\nPROFISSIONALIZANTES; FIM\nDO VESTIBULAR OU QUALQUER\nPROCESSO SELETIVO\n\nPara possibilitar que os capitalistas\nampliem o controle sobre mais setores da\neconomia, a educação foi transformada\nnuma mercadoria e fundos de\ninvestimentos compraram participações\nem empresas de educação.\nA Cogna Educação (antiga Kroton\nEducacional) é uma das 50 maiores\nempresas de educação do mundo e atua\nem todos os níveis escolares. Em 2022,\na empresa tinha 985 mil estudantes na\nmodalidade presencial e EaD distribuídos\nnos 124 campi, e 2 milhões de estudantes\nna educação básica em 5,4 mil escolas.\nA Inspira, em união com o BTG Pactual,\né dona de mais de 100 escolas no"
+      },
+      {
+        "id": "pro-grama-de-g-overno-21",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 22,
+        "paginaFinal": 22,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\npaís. A Salta, o maior grupo privado\nde educação básica do país, possui\nmais de 200 escolas e 140 mil alunos,\ne tem faturamento acima de R$ 3\nbilhões (Valor Econômico, 16/05/2025).\nNão bastasse, o setor empresarial\nda educação busca se apoderar dos\nrecursos públicos através das PPP,\ndisfarçadas de políticas de inovação\ne compartilhamento de gestão das\nescolas públicas. São exemplos disso\no que tem acontecido nos governos de\nMinas Gerais, Paraná e São Paulo, que\nentregam as gestões administrativas às\nOrganizações da Sociedade Civil (OSCs).\nTambém no ensino superior, os grandes\nempresários lucram enormes quantias\nanualmente. De acordo com o Censo\nda Educação Superior, 87,9% das\ninstituições de ensino superior no Brasil\nsão privadas e a educação superior\nEaD (Ensino a Distância) está quase\ninteiramente entregue ao capital privado.\nO Brasil é hoje o maior mercado de\nensino superior privado da América\nLatina e o quinto maior do mundo. Esses\nresultados são frutos de financiamentos\npúblicos ao setor privado, através de\nisenções fiscais e programas como o\nProuni e o Fundo de Financiamento\nEstudantil (Fies), sem necessariamente\nofertar um ensino de qualidade.\nPorém, longe de garantir melhor\nformação educacional para os mais\npobres, como dizem ser seu objetivo, esses\nprogramas não cumprem sua função, pois\ngrande parte das pessoas que entram\nnas universidades não consegue concluir\nseus cursos por falta de assistência\nestudantil e condições de permanência.\nAssim, a privatização da educação,\nalém de colocar a educação sob direção\nideológica de empresas capitalistas,\naumenta o endividamento da juventude.\nCom efeito, hoje, mais da metade dos\nestudantes que usaram o Fundo de\nFinanciamento Estudantil (Fies) têm\nparcelas em atraso, podendo chegar\n\n22\n\na 82% em alguns estados. Ao todo,\nsão mais de R$ 113 bilhões em dívidas.\nResumindo, o avanço da privatização\nna Educação aumenta a exclusão dos\nbrasileiros e os torna prisioneiros de\ndívidas milionárias com as empresas\nda educação. É preciso romper com\nessa lógica de mercado na educação.\n• Revogação do Novo Ensino Médio\ne\ndas\nReformas\nEmpresariais:\nRestauração de uma matriz curricular\nhumanística, científica e crítica para\ntodas as escolas públicas do país.\n• Destinação de pelo menos 10% do PIB\nnacional para a educação pública, desde\na educação infantil até a pós-graduação.\n• Efetivar programa de erradicação\ndo analfabetismo no país, envolvendo\nredes e mobilizadores populares ligados\naos movimentos sociais e educacionais.\n• Recompor os Orçamentos das\nUniversidades e Institutos Federais:\nReativação e ampliação de bolsas de\nensino, pesquisa, extensão e assistência\nestudantil. Garantir moradia estudantil,\nrestaurante universitário e transporte.\n•\nFim da Privatização do Ensino:\nSuspensão do envio de verbas públicas\npara o ensino privado e estatização\nprogressiva dos grandes conglomerados\neducacionais do capital financeiro.\nFederalização\ndas\nuniversidades\nendividadas, a estatização das que estão\nem débito com o Estado e anistia para todos\nos estudantes que têm dívidas com o FIES.\n• Valorização dos profissionais da\neducação,\nrecomposição\nsalarial,\ncumprimento integral do acordo com\nos servidores da última greve, abertura\nde concursos públicos e fim de toda\nforma de terceirização na educação.\n•\nAmpliar\nas\ninstituições\nde\npesquisa\ne\nintegrá-las\naos\nprogramas\nde\npós-graduação."
+      },
+      {
+        "id": "pro-grama-de-g-overno-22",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 23,
+        "paginaFinal": 23,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n23\n\n• Ampliar o número de bolsas de pesquisa\nnos cursos de graduação e pós-graduação.\n• Investir em ciência e tecnologia\ncom vistas a fortalecer a soberania\neconômica, criando mecanismos de\nmaior participação e controle popular na\nagenda de pesquisa e nos seus resultados.\nestudantes que têm dívidas com o FIES.\n• Valorização dos profissionais da\neducação,\nrecomposição\nsalarial,\ncumprimento integral do acordo com os\nservidores da última greve, abertura de\nconcursos públicos e fim de toda forma\nde terceirização na educação.\n•\nAmpliar\nas\ninstituições\npesquisa\ne\nintegrá-las\nprogramas de pós-graduação.\n\nde\naos\n\n• Ampliar o número de\nde\npesquisa\nnos\nde graduação e pós-graduação.\n\nbolsas\ncursos\n\n• Investir em ciência e tecnologia\ncom vistas a fortalecer a soberania\neconômica, criando mecanismos de\nmaior participação e controle popular na\nagenda de pesquisa e nos seus resultados."
+      },
+      {
+        "id": "pro-grama-de-g-overno-23",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 24,
+        "paginaFinal": 24,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n24\n\nCOMBATE RADICAL\nÀ CORRUPÇÃO\nJUL GAM ENT O, PRIS ÃO\nE CONFISCO DOS BENS\nDE TODOS OS CORRUPTOS\nOs altos índices corrupção no Brasil\nestão ligados a uma estrutura\neconômica e política em que grandes\nempresas,\ngrupos\nfinanceiros,\nempresários\ncompram\nfavores,\nfraudam licitações, superfaturam\ncontratos,\nutilizando\no\npoder\neconômico para capturar o Estado.\n\nNão é por acaso que a corrupção\nfigura consistentemente entre as\nmaiores preocupações da população\nem pesquisas de opinião pública\nno Brasil. Os trabalhadores se\nindignam quando observam que,\nenquanto vivem com baixos salários,\nenfrentam filas no SUS, falta de\nmoradia e transporte precário, os\ncorruptos e corruptores crescem\nseus patrimônios de forma ilícita.\nUm exemplo recente é o caso Banco\nMaster, em que, em novembro de\n2025, o Banco Central decretou a\nliquidação extrajudicial do banco e de\noutras instituições do conglomerado,\nporém, mesmo antes do BC intervir,"
+      },
+      {
+        "id": "pro-grama-de-g-overno-24",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 25,
+        "paginaFinal": 25,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nos\ninvestigadores\nperceberam\ndiversas movimentações irregulares.\nA maior delas foi uma operação de venda\nde carteira de crédito ao BRB (Banco\nRegional de Brasília), pertencente ao\nDistrito Federal, por R$ 12 bilhões.\nOs contratos vinculados eram falsos,\nresultando num prejuízo para o BRB.\nO caso Master é um exemplo concreto\nda dimensão que irregularidades\nfinanceiras podem alcançar, da\nimportância de recuperar patrimônio\nquando\nas\nresponsabilidades\nforem comprovadas e que o\ncombate à corrupção deve atingir\ntambém\nos\ngrandes\nesquemas\nfinanceiros e empresariais.\nA corrupção não pode continuar sendo\neconomicamente vantajosa. Quando\nbilhões de reais estão envolvidos, a\nsimples aplicação de multas pode\ntransformar a punição em mais um\ncusto empresarial. Assim, a corrupção\nsó deixa de ser lucrativa quando seus\nresponsáveis passarem a perder\naquilo que acumularam ilegalmente.\nPor isso, defendemos o julgamento\ne a responsabilização de corruptos\ne corruptores, independentemente\nde\npartido,\ncargo\nou\npoder\neconômico;\nprisão\nnos\ncasos\nprevistos em lei; confisco dos bens\ne valores provenientes dos crimes;\nressarcimento integral dos prejuízos\ncausados ao patrimônio público; e\ncassação ou suspensão dos direitos\npolíticos, após condenação.\nO patrimônio público deve estar\nsubmetido à máxima transparência,\nfiscalização e controle popular,\nfortalecendo os órgãos públicos\nde fiscalização e colocando o\norçamento, as empresas estatais\ne os recursos públicos sob efetivo\ncontrole democrático e popular.\n\n25\n\nEm resumo, quem rouba o povo\ndeve responder pelo crime; quem\ncompra, financia ou organiza a\ncorrupção também. O dinheiro\nroubado do povo deve voltar\npara o povo. Nossas propostas:\n• Confisco imediato dos bens de\nsonegadores, corruptos e empresas\nenvolvidas em fraudes contra o\npatrimônio\npúblico,\nrevertendo\nesses valores para o fundo público\nde infraestrutura social.\n• Extinção de lobby corporativo,\ndoações\nempresariais\nindiretas\ne\nemendas\nparlamentares\nvoltadas ao fisiologismo.\n• Fortalecer os órgãos públicos de\nfiscalização e estabelecer o controle\npopular sobre o orçamento público."
+      },
+      {
+        "id": "pro-grama-de-g-overno-25",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 26,
+        "paginaFinal": 26,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n26\n\nEMANCIPAÇÃO\nDAS MULHERES\nTRABALHADORAS\nIGUALDADE E AUTONOMIA\nPAR A AS MUL HER ES.\nCOM BAT E AO MAC HISM O\nE À VIOLÊNCIA DE GÊNERO\n\nA situação das mulheres no Brasil\nexpressa uma das contradições mais\nprofundas do mundo atual: são mais\nda metade da população e da classe\ntrabalhadora e parte fundamental\nda produção da riqueza do país,\nporém, recebem os menores salários,\nenfrentam maior desemprego e uma\nmaior precarização do trabalho.\nAcumulam a maior parte das tarefas\ndomésticas e sofrem cada vez"
+      },
+      {
+        "id": "pro-grama-de-g-overno-26",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 27,
+        "paginaFinal": 27,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n27\n\nmais com a violência de gênero.\n\ne\n\nEssa\nrealidade\nfoi\nconstruída\nhistoricamente e continua sendo\nreproduzida\npor\num\nsistema\neconômico que depende da exploração\ndo trabalho e da manutenção de\ndiversas formas de opressão.\n\nDefendemos que o cuidado deve ser\ntratado como uma responsabilidade\ncoletiva da sociedade e assumido\npelo poder público por meio de\npolíticas universais, como oferta\nde creches públicas, lavanderias\ncoletivas, restaurantes populares,\ncasas de convivência para idosos,\nescolas\nem\ntempo\nintegral.\n\nO\ncapitalismo\nencontrou\nno\npatriarcado um aliado para ampliar\nseus\nlucros,\ndesvalorizando\no\ntrabalho feminino, naturalizando\na sobrecarga das mulheres e\ndificultando sua plena participação\nna vida política, econômica e social.\nSegundo dados do Ministério da\nJustiça e Segurança Pública, no Brasil,\nocorre 1 estupro a cada 6 minutos e\num feminicídio a cada 6 horas. Em\n2025, 1.568 mulheres foram vítimas\nde feminicídio em nosso país, o\nque equivale a 4 mulheres por dia.\nEssas mulheres encontram enormes\ndificuldades para acessar atendimento\nespecializado e proteção efetiva, com\nequipamentos da rede de atendimento\ninsuficientes. Por isso, enfrentar a\nviolência contra as mulheres, além\nde endurecer penas ou ampliar a\nrepressão aos agressores, é preciso\ngarantir condições concretas para\nque as mulheres possam viver com\nautonomia, independência econômica\ne acesso pleno aos direitos sociais.\nÉ necessário construir uma rede\npública capaz de proteger as\nvítimas, assegurar oportunidades\nde trabalho, ampliar os serviços\npúblicos de cuidado e enfrentar\ntodas as formas de discriminação.\nA dependência econômica continua\nsendo um dos principais fatores que\nimpedem milhares de mulheres de\nromper o ciclo da violência. As mulheres\nempregadas no Brasil ganham em\nmédia 21,3% a menos que os homens\ne dedicam cerca de 10 horas a mais\npor semana ao trabalho doméstico\n\nde\n\ncuidado\n\nnão\n\nremunerado.\n\nAs mulheres sempre estiveram à\nfrente das grandes lutas populares\nde nosso país. Foram protagonistas\nna resistência à ditadura, na\nconstrução do SUS, na conquista\nde direitos trabalhistas, na luta por\nmoradia, educação e democracia.\nSustentam\ngrande\nparte\ndas\norganizações\ncomunitárias,\ndos\nmovimentos\npopulares\ne\ndas\niniciativas de solidariedade nas\nperiferias e, por isso, fortaleceremos\na participação das mulheres na\nformulação das políticas públicas.\nConstruir uma sociedade justa\nexige enfrentar todas as formas de\nexploração e opressão que atingem as\nmulheres trabalhadoras. Não basta\ncombater os efeitos da violência. É\npreciso transformar as condições que a\nproduzem e reproduzem diariamente.\nA emancipação das mulheres deve\nser uma prioridade permanente,\narticulando políticas de segurança,\nsaúde, assistência social, educação,\ntrabalho e habitação para garantir que\nnenhuma mulher tenha sua liberdade\nlimitada pela violência, pela pobreza\nou pela discriminação. Emancipar\nas mulheres é parte inseparável da\nemancipação da classe trabalhadora.\nNão haverá um Brasil verdadeiramente\ndemocrático enquanto metade do\npovo continuar submetida à violência,\nà desigualdade e à discriminação.\nPor isso, a luta pela igualdade"
+      },
+      {
+        "id": "pro-grama-de-g-overno-27",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 28,
+        "paginaFinal": 28,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\ndas mulheres também é parte\nfundamental\nda\nconstrução\nde\numa\nsociedade\nsocialista.\n•\nEnfrentamento\nsem\ntrégua\nà violência machista: Fortalecer\npolíticas de prevenção, combate e\nenfrentamento à violência contra a\nmulher. Criminalização da misoginia.\nExpansão das Delegacias da Mulher\ncom\nfuncionamento\n24\nhoras,\nfortalecimento de casas-abrigo e\ncasas de referência, suporte jurídico\ne psicológico e autonomia econômica\npara mulheres em situação de violência\ndoméstica e familiar. Fortalecimento\nde iniciativas populares já existentes.\nIntegrar União, estados e municípios\nem\nprotocolos\nnacionais\nde\nenfrentamento à violência;\n•\nIgualdade\nsalarial\nrígida:\nAplicação\nsevera\nde\npunição\nàs\nempresas\nque\npagarem\nsalários inferiores às mulheres no\ndesempenho das mesmas funções\nexercidas por homens.\n•\nCombater\ndiscriminação\ne\nassédio no trabalho e priorizar\nmulheres\nem\nprogramas\nde\nemprego,\ncrédito\npúblico,\nhabitação e economia solidária;\n•\nRede pública de cuidados:\nUniversalização do acesso a creches\ne pré-escolas públicas e em tempo\nintegral, lavanderias comunitárias e\nrestaurantes populares para retirar\ndas costas das mulheres o fardo\ndo trabalho doméstico não pago.\n•\nCampanhas\nnacionais\npermanentes de conscientização ev\nformação anti-machista nas escolas,\nbairros e locais de trabalho;\n•\nDireitos reprodutivos e saúde\nda mulher: Garantia de atenção\nintegral à saúde sexual e reprodutiva.\nDescriminalização\ne\nlegalização\ndo aborto, primando pela vida das\n\n28\n\nmulheres, tratando a saúde da mulher\ncomo questão de saúde pública."
+      },
+      {
+        "id": "pro-grama-de-g-overno-28",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 29,
+        "paginaFinal": 29,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n29\n\nJUVENTUDE\nGARANT IA DE EMP REG O,\nE\nESPORTE\nEDUCAÇÃO,\nCULTUR A PAR A TOD A\nA JUV ENT UDE . COM BAT E\nÀ VIO LÊN CIA CON TRA A\nJUVENTUDE NEGRA E PERIFÉRICA\nE FIM DA REPRESSÃO CONTRA\nA ORG ANI ZAÇ ÃO E A LUTA\nDA JUV ENT UDE .\n\nA juventude é uma das principais\nvítimas da exploração e da opressão\nproduzidas pelo capitalismo no\nBrasil. São quase 48 milhões de\n\npessoas entre 15 e 29 anos, cerca\nde 22,6% da população brasileira.\nMilhões de jovens são privados do\ndireito à educação, ao trabalho\ndigno, à cultura, ao esporte e ao\nlazer. Enquanto uma pequena parcela\nda sociedade concentra riqueza e\noportunidades, a maioria dos jovens\ntrabalhadores enfrenta o desemprego,\na informalidade, os baixos salários, a\ndificuldade de acesso à universidade e\na precarização dos serviços públicos.\nPara muitos jovens, a necessidade\nde trabalhar significa abandonar ou\nadiar os estudos e abrir mão de uma\nformação profissional e cultural.\nA informalidade e a precarização\nempurram milhões para empregos\nsem direitos, baixos salários e\njornadas exaustivas, ao mesmo"
+      },
+      {
+        "id": "pro-grama-de-g-overno-29",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 30,
+        "paginaFinal": 30,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\ntempo em que mais de 6 milhões de\njovens não estudam nem trabalham.\nO problema não está na juventude,\nque quer estudar, trabalhar e\nconstruir seu futuro, mas em uma\npolítica que condena milhões a\nescolher entre sobreviver e ter acesso\na uma formação e a uma vida digna.\nA violência também é uma marca brutal\nna vida dos jovens. Aproximadamente\n54 jovens são assassinados por dia.\nEntre 2014 e 2024, mais de 301 mil jovens\nperderam a vida de forma violenta,\nsendo mais de 70% jovens negros.\nEssa realidade atinge principalmente\na juventude trabalhadora, negra e\nperiférica, vítima de uma política de\nsegurança que, em vez de enfrentar\nas causas da violência, criminaliza\na pobreza, reprime as periferias e\ntrata a juventude pobre como inimiga.\nNa educação, a situação também é\nmarcada pela desigualdade: em 2024,\n24,2 milhões de jovens de 15 a 29 anos\nque não haviam concluído o ensino\nsuperior estavam fora da escola, da\neducação profissional e dos cursos prévestibulares. Entre eles, dois terços\neram pretos ou pardos. Ou seja, para\nmilhões de jovens, o acesso à educação\nainda é interrompido e limitado.\nA juventude brasileira não pode\naceitar ser condenada a essa\nsituação. No governo da Unidade\nPopular pelo Socialismo queremos\ngarantir aos jovens as condições\npara estudar, trabalhar, produzir,\ncriar e viver com dignidade, fazendo\nda força e da criatividade da\njuventude uma força para construir\num Brasil soberano e socialista.\nNossas propostas para a juventude:\n•\nUniversalização da educação em\ntodos os níveis de ensino, com políticas\nde acesso, assistência e permanência\nestudantil; Ampliar as políticas de\n\n30\n\nfinanciamento para ciência, tecnologia\ne inovação, colocando a juventude\nno centro da atuação nessas áreas;\n•\nGarantir\nemprego\ndigno\npara a juventude, com carteira\nassinada,\ndireitos\ntrabalhistas\ne previdenciários, salário digno\ne combate à informalidade e\nà precarização do trabalho;\n•\nEstabelecer\numa\npolítica\nnacional de aprendizagem e estágios\nque assegure formação de qualidade,\nremuneração e direitos, combatendo a\nutilização de estagiários e aprendizes\ncomo mão de obra barata;\n•\nPasse\nlivre\nirrestrito\nno\ntransporte para todos os estudantes e\njovens em busca de emprego;\n•\nCriação de espaços de cultura\ne lazer aos jovens, como bibliotecas,\npraças, ginásios esportivos, centros\nrecreativos etc. Ampliar a Meia\nEntrada com o fim da restrição\nde 40% da bilheteria\nIncentivar\ne apoiar a produção cultural e\niniciativas artísticas da juventude;\n•\nNão à redução da maioridade\npenal. Pelo fim da repressão e em\ndefesa da liberdade de organização e\nluta da juventude."
+      },
+      {
+        "id": "pro-grama-de-g-overno-30",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 31,
+        "paginaFinal": 31,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n31\n\nCOMBATE ÀS OPRESSÕES\nE LIBERDADE DE EXPRESSÃO\nCOM BAT E AO RAC ISM O\nA população negra no país é de\n56%. No entanto, mesmo sendo a\nmaioria da população brasileira,\nestá entre as principais vítimas\ndo capitalismo: são 73% entre os\ndesempregados, 43% da população\nque não tem acesso a esgotamento\nsanitário e constituem quase 90%\ndos mortos pela violência policial.\nSegundo o Atlas da Violência 2025,\nem 2023 uma pessoa negra tinha\n2,7 vezes mais chances de ser vítima\nde homicídio do que uma pessoa\n\nnão negra e o risco relativo de\numa pessoa negra ser assassinada\naumentou 15,6% entre 2013 e 2023.\nNo sistema prisional, não é diferente:\nSegundo o Anuário Brasileiro de\nSegurança Pública 2026, o Brasil chegou\na 964.668 pessoas encarceradas em\n2025, crescimento de 314,5% desde\n2000. Desse enorme contingente,\n69,6% dos presos são negros.\nVale lembrar que o racismo surgiu no\nperíodo da dominação europeia, com a\nescravização dos povos sequestrados\ndo continente africano, e continuou\ncom o sistema capitalista. Sua\nmanutenção visa sustentar a escravidão\nassalariada, controlar e hierarquizar"
+      },
+      {
+        "id": "pro-grama-de-g-overno-31",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 32,
+        "paginaFinal": 32,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n32\n\nos trabalhadores para diminuir os\nsalários e aumentar a exploração.\nA burguesia racista classifica negros\ne negras como inferiores e criminosos\npara defender o crescimento da\nrepressão e do fascismo na sociedade.\nDesse\nmodo,\na\nquestão\ndo\nracismo\ncontra\na\npopulação\nnegra permanece como um dos\nproblemas\nestruturais\nmais\nimportantes da sociedade brasileira.\nNão é possível superar as profundas\ndesigualdades sociais do país sem\nenfrentar o racismo, a violência\nque atinge desproporcionalmente a\npopulação negra e as desigualdades\nhistóricas\nde\nrenda,\ntrabalho,\neducação e acesso aos direitos.\nA luta contra o racismo é, portanto,\ninseparável da luta por profundas\ntransformações econômicas e sociais\ne pela construção de uma sociedade\nverdadeiramente igualitária.\nA\nUP\ntem\npropostas\nenfrentar essa situação:\n\npara\n\n• Estabelecer políticas de reparação\nhistórica e cultural, alterando nome de\nruas e monumentos que cultuam figuras\nde escravistas, ditadores e genocidas.\nNo seu lugar devemos levantar nomes\nde heróis explorados e oprimidos.\n• Efetivar as Leis 10.639/2003 e\n11.645/08, que asseguram o ensino\nde História e Cultura Africana,\nAfro-brasileira\ne\nIndígena\nem\ntodas as escolas da rede pública\ndo país garantindo os concursos e\no financiamento necessário para o\nensino da disciplina na grade curricular.\n• Acabar com a violência de Estado\nque atinge desproporcionalmente a\npopulação negra.\n• Ampliar vagas nos setores públicos\nreservadas para a população negra.\n\n• Assegurar a liberdade religiosa,\nespecialmente a promoção do respeito\nàs religiões de matriz afro-brasileira\n(candomblé e umbanda). Ter como\nprioridade o enfrentamento por parte\ndo governo dos crimes de intolerância\nreligiosa contra essas religiões.\n•\nGarantir o reconhecimento e\na titulação de terras quilombolas no\nBrasil. Garantir tudo que for necessário\npara o pleno funcionamento da\nFundação Cultural Palmares e do\nINCRA para acelerar os processos de\nemissão de certidão e para os estudos\ntécnicos, delimitação e emissão\ndo título de propriedade coletivo e\ndefinitivo à comunidade.\n\nCOM BAT E À LGB TFO BIA\nA burguesia trabalha para manter\na estrutura capitalista e aumentar\no nível de exploração da classe\ntrabalhadora.\nUsa\nmecanismos\nideológicos e estruturais como\no\nracismo,\no\npatriarcalismo\ne o cisheteronormativismo.\nPromove o controle reprodutivo, a\nviolência e a divisão social, sexual e\nracial do trabalho como estratégias\nfundamentais para gerar uma maisvalia cada vez maior e constante\npara a burguesia ao mesmo tempo\nque nos mantém acorrentados(as)\nnas atuais estruturas e relações de\nopressão, fortalecendo a divisão\nsocial baseada na propriedade\nprivada dos meios de produção.\nUsa todo seu aparato econômico,\npolítico e ideológico para oprimir\nLésbicas, Gays, Bissexuais, Trans,\nTravestis, Não-Bináries, Intersexo,\nAssexuais e as demais parcelas sociais\nque não se enquadram à norma social\nde gênero e de orientação sexual."
+      },
+      {
+        "id": "pro-grama-de-g-overno-32",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 33,
+        "paginaFinal": 33,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nApesar da opressão contra a\npopulação\nLGBTI+\natingir,\nem\nalguma medida, todas as pessoas,\nsão\nas\nLGBTI+\ntrabalhadoras,\npobres e proletárias que sofrem mais\nintensamente com o desemprego, os\ntrabalhos precarizados, o abandono\nfamiliar e o alto custo de vida.\nAlém das dificuldades no acesso à\nredesignação sexual, pessoas trans e\ndemais identidades LGBTI+ da classe\ntrabalhadora enfrentam barreiras\ncotidianas no acesso a cuidados\nbásicos de saúde, como tratamentos\nhormonais,\nacompanhamento\npsicológico, prevenção a ISTs, uso da\nPrEP e atendimento digno e informado\nem saúde sexual, especialmente no\ncaso de mulheres lésbicas e bissexuais.\nTambém vivenciam, nas comunidades\nonde vivem, situações frequentes de\nviolência, discriminação e descaso\npor parte dos serviços públicos:\numa realidade que a população\nLGBTI+ da burguesia não conhece.\nCom base nos dados obtidos pelas\ndenúncias recebidas por meio do\nDisque 100, estima-se que jovens\nrejeitados por sua família por serem\nLGBTI+ têm 8,4 vezes mais chances de\ntentarem suicídio. Essa estatística se\ntraduz em outra: adolescentes lésbicas,\ngays e bissexuais têm até cinco vezes\nmais chances de tirarem a própria\nvida do que jovens heterossexuais.\nAinda mais grave é a realidade vivida\npelas travestis e mulheres trans\ntrabalhadoras. Segundo pesquisa da\nAssociação Nacional de Travestis e\nTransexuais (Antra), apenas 4% das\nmulheres trans têm emprego formal,\n6% estão no trabalho informal,\nenquanto cerca de 90% se encontram\nem\nsituação\nde\nprostituição.\nIsso revela como, no capitalismo, o\ntrabalho não é garantido como um\ndireito, mas subordinado à lógica do\n\n33\n\nmercado, que reforça desigualdades,\npreconceitos e exclusões históricas.\nPor\n\nisso\n\ndefendemos:\n\n• Firme combate a todas as\nmanifestações\nLGBTfóbicas.\nFortalecer\no\nenfrentamento\ninstitucional à LGBTfobia, com\nacompanhamento regular dos dados\nsobre a violência LGBTfóbica, além\nde canais seguros de denúncia\ne mecanismos de apuração e\nresponsabilização\nde\nservidores\nque\npratiquem\nLGBTfobia.\n• Garantir uma educação pública\nlivre de LGBTfobia, com protocolos\nde prevenção e enfrentamento\nà discriminação e à violência,\nacolhimento\ne\nacompanhamento\npedagógico\ne\npsicossocial\nde\nestudantes\nLGBT.\nFormação\npermanente\nde\nprofessores,\ngestores e equipes pedagógicas para\npromoção dos direitos humanos\ne\nda\npermanência\nestudantil.\n•\nAmpliação\nde\ntodos\nos\nprogramas\ne\nserviços\nespecializados de saúde, assistência\ne seguridade social específicos\ndessa\nparcela\nda\npopulação.\n•\nCasas de acolhimento LGBTI+:\ncriação de casas e centros de\nacolhimento para jovens LGBTIA+\nexpulsos de casa, garantindo moradia,\nalimentação,\nacompanhamento\npsicológico e reinserção escolar ou\nprofissional."
+      },
+      {
+        "id": "pro-grama-de-g-overno-33",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 34,
+        "paginaFinal": 34,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nA LUTA ANTICAPACITISTA\nEM DEFESA DOS DIREITOS\nDA S PES SOA S CO M\nDEF ICIÊ NCI A\nA população de pessoas com\ndeficiência é de 14,4 milhões\n(IBGE, 2022). Somam-se a esses\ndados pessoas com dificuldade,\npermanente ou não, na visão, audição,\ncoordenação motora (equilíbrio e\nforça nas mãos, braços ou pernas,\npor exemplo), déficits sensoriais e\nna interação social, entre outros.\nEssa população não somente é vista\ncomo descartável pelo capitalismo,\ncomo também enfrenta barreiras no\nacesso à educação e no ingresso e\npermanência no mercado de trabalho.\nDas pessoas com deficiência acima de\n15 anos, 2,9 milhões são analfabetos,\nquatro vezes mais do que a média da\npopulação sem deficiência, e 63,1%\nnão concluíram o ensino fundamental.\nÉ urgente o combate ao capacitismo\nem todos os espaços e a luta por\numa sociedade onde haja respeito\na todas as pessoas. Por isso, a luta\nanticapacitista é parte da luta pelo\nsocialismo. Por isso, a UP defende:\ncom deficiência, ampliando centros\npúblicos de reabilitação, diagnóstico,\nfisioterapia, terapia ocupacional,\nfonoaudiologia, saúde mental e\nfornecimento gratuito de órteses,\npróteses e tecnologias assistivas.\n• Fortalecer e ampliar o Benefício\nde Prestação Continuada (BPC).\nAmpliar critério de renda para\nacesso ao benefício, considerando\nefetivamente os gastos da família\ncom medicamentos, alimentação\nespecial, transporte, cuidadores e\ntecnologias\nassistivas;\ncombater\n\n34\n\ncortes arbitrários e burocracias que\nexcluam quem necessita do benefício;\n• Garantir acesso à educação\ninclusiva desde a creche até a\nuniversidade para toda a população\nPCD. Ampliar o ensino de libras\nem toda a rede pública de ensino;\n• Ampliar a produção nacional de\nmateriais em braile para baratear\nseu acesso à população cega;\n• Programa Nacional de Acessibilidade\nUniversal,\ncom\nas\nfrentes\nemergenciais de trabalho, para\neliminar barreiras arquitetônicas,\nem escolas, universidades, hospitais,\npostos\nde\nsaúde,\ntransportes,\nmoradias e demais equipamentos\npúblicos e todo o espaço urbano;\n• Educação pública verdadeiramente\ninclusiva, garantindo profissionais\nde apoio, atendimento educacional\nespecializado,\nLibras,\nBraille,\ncomunicação\nalternativa,\nmateriais acessíveis e tecnologias\nassistivas\ngratuitamente\nem\ntodas as etapas da educação;\n• Defesa e ampliação das cotas\npara\npessoas\ncom\ndeficiência\nno\ntrabalho,\ncom\nfiscalização\nrigorosa das empresas, punição às\nque fraudarem ou descumprirem\na legislação e fortalecimento da\ninclusão no serviço público. Combater\na utilização da deficiência como\njustificativa para salários inferiores,\nterceirização,\nprecarização\nou\ndiscriminação profissional;\n• Fortalecimento do SUS para\natendimento integral às pessoas\ncom deficiência, ampliando centros\npúblicos de reabilitação, diagnóstico,\nfisioterapia, terapia ocupacional,\nfonoaudiologia, saúde mental e\nfornecimento gratuito de órteses,\npróteses e tecnologias assistivas."
+      },
+      {
+        "id": "pro-grama-de-g-overno-34",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 35,
+        "paginaFinal": 35,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nDEFESA E SOBERANIA\nDOS POVOS INDÍGENAS:\nE\nDEMARCAÇÃO\nTITULAÇÃO IMEDIATA\nDE TODAS AS TERRAS\nINDÍGENAS, RETIRANDO\nINVASORES, GRILEIROS E\nGARIMPEIROS ILEGAIS.\nAo longo dos séculos, milhões de\nindígenas foram mortos, suas terras\nforam roubadas e seus costumes\ne cultura foram impiedosamente\ndestruídos. Antes da invasão de\nPortugal, em 1500, a população\nbrasileira\nera\nintegralmente\ncomposta pelos povos indígenas,\ncerca de oito milhões de pessoas.\nHoje, resultado de um genocídio que se\nperpetua até os dias atuais, são pouco\nmais de 1,6 milhão. De acordo com o\nCimi, mais de 1.200 casos de violações\npatrimoniais cometidos contra a\npopulação indígena foram registrados\nem 2023, além de 404 ocorrências de\nataques contra pessoas indígenas,\nincluindo tentativas de assassinato,\nestupros, atentados e agressões.\nApenas em 2023, 1.040 crianças\nindígenas de até 4 anos morreram,\na maioria de causas evitáveis, como\ndiarreia, gripe e desnutrição, e das\n1.391 terras reivindicadas pelos povos\nindígenas no Brasil, 867 (62% do total)\napresentam alguma pendência para a\nfinalização do processo demarcatório.\nOs capitalistas do agronegócio e\nas mineradoras, apoiados pelas\nforças repressivas do Estado burguês\nou por milícias privadas, invadem\n\n35\n\nas terras indígenas e\nem\ndesrespeitar\nseus\n\ninsistem\ndireitos.\n\nApesar de toda essa violência, os\npovos indígenas seguem lutando por\ndireitos e pela liberdade e ocupam\num importante papel no exército\ndos explorados e oprimidos. Uma\ndas suas principais reivindicações\né a demarcação e posse de suas\nterras, o respeito à sua cultura,\nàs\nsuas\nlínguas\ne\ncostumes.\nRecentemente, os povos indígenas\ndo baixo e médio Tapajós deram um\ngrande exemplo de resistência e luta\nao derrotar o decreto nº 12.600/2025\nde 28 de agosto de 2025, que incluía\nno Plano Nacional de Desestatização\n3 “empreendimentos hidroviários”:\n(1). Rio Madeira: aproximadamente\n1.075\nkm;\n(2).\nRio Tocantins:\naproximadamente 1.731 km; e, (3). Rio\nTapajós: aproximadamente 250 km.\nO Governo Federal se viu obrigado\na revogar integralmente o decreto\nde privatização dos rios, diante\nde mais de 30 dias de ocupação\ndos povos indígenas\nno terminal\nportuário Cargill em Santarém-PA.\nSobre isso, defendemos:\n• Demarcação imediata de todas\nas terras indígenas e conclusão dos\nprocessos administrativos paralisados,\ngarantindo\nproteção\nterritorial\nefetiva e orçamento público suficiente\npara execução das demarcações.\nRetirada de grileiros, garimpeiros,\nmadeireiros e demais invasores.\n• Fim do marco temporal e de qualquer\nmedida que restrinja o direito originário\ndos povos indígenas às suas terras.\n• Fortalecimento da Funai e demais\nórgãos públicos responsáveis pela\npolítica indigenista, com concursos\npúblicos, orçamento adequado e fim da\nterceirização de funções estratégicas."
+      },
+      {
+        "id": "pro-grama-de-g-overno-35",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 36,
+        "paginaFinal": 36,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n• Garantia de saúde indígena\nintegralmente pública, fortalecendo\no SUS, ampliando equipes nos\nterritórios\ne\nrespeitando\nas\npráticas tradicionais de cuidado.\n\n36\n\nesses direitos devem ser garantidos\nna prática e defendidos de qualquer\ntentativa de impedir a organização\nindependente dos trabalhadores.\n\n• Educação indígena pública, gratuita\ne diferenciada, com escolas nos\nterritórios, formação e contratação\nde\nprofessores\nindígenas,\nvalorização das línguas originárias\ne das culturas dos diferentes povos.\n\nEssa liberdade política, embora\nformalmente reconhecida, perde\nforça quando o poder econômico\npermite que grandes empresários e\ngrupos privados tenham influência\nmuito maior sobre as eleições\ndo que a maioria da população.\n\n• Controle dos próprios povos\nindígenas sobre as políticas que lhes\ndizem respeito, fortalecendo suas\norganizações, conselhos e formas\npróprias de decisão. Nenhuma política\nterritorial deve ser definida sem sua\nparticipação direta.\n\nO\npróprio\nSupremo\nTribunal\nFederal, ao proibir as doações\nempresariais\nna\nADI\n4.650,\nconcluiu que esse modelo favorece\na influência do poder econômico\ne ameaçava a igualdade política.\n\nAMPLA LIBERDADE DE\nEXPRESSÃO E RELIGIOSA,\nLIV RE ORGANI ZAÇ ÃO\nPARA OS TRABALHADORES\nE O POVO; FIM DAS\nDOAÇÕES DE CAPITALISTAS\nPA RA C A M PA N H A S\nE L E I T O RA I S\nA liberdade de expressão, de\ncrença e de organização política e\nsindical são direitos indispensáveis\npara\nque\ntrabalhadores\ne\no\npovo\npossam\ndefender\nseus\ninteresses e busquem participar\nefetivamente da vida política.\nApesar da Constituição Federal\nassegurar a livre manifestação\ndo pensamento, a liberdade de\nconsciência e de crença, a liberdade\nde associação a autonomia sindical,\n\nNo entanto, apesar das empresas não\npoderem mais doar para as campanhas\neleitorais, ainda é permitido aos\nempresários\ne\nseus\n“laranjas”\nfazerem\ndoações\nde\nmaneira\ndescarada e volumosa, portanto\nfoi mantida a lógica da “captura\ndo político pelo poder econômico”.\nAssim, a máxima popular “quem\npaga a banda, escolhe a música” se\nmaterializa após a eleição quando\nos milionários, grandes doadores de\ncampanhas, querem seus retornos\nfinanceiros, afinal os super ricos não\nfazem doações, fazem investimentos.\nÉ preciso combater todas as formas de\nabuso do poder econômico, garantindo\nque a força de uma candidatura\nvenha de suas propostas, de sua\norganização e do apoio popular, e não\nda riqueza dos grandes capitalistas.\nPor isso, defendemos a ampla\nliberdade de expressão e religiosa e a\nlivre organização dos trabalhadores\ne do povo, ao mesmo tempo em\nque defendemos eleições livres da\ninterferência do grande capital.\nSão propostas da UP:"
+      },
+      {
+        "id": "pro-grama-de-g-overno-36",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 37,
+        "paginaFinal": 37,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n• Aplicar um amplo\nde\ndemocratização\nda\nEstrutura\nde\n\n37\n\nprocesso\npopular\nEstado.\n\n• Construir mecanismos efetivos de\ndemocracia direta e participativa:\nConselhos Populares para as áreas\nde Estado, com poder orçamentário.\n• Realizar plebiscitos, referendos\ne consultas públicas, para decidir\ndiretamente com o povo sobre\nassuntos\nde\namplo\ninteresse\npopular, sem qualquer intervenção\ndo poder do grande capital.\n• Combater a intolerância religiosa,\nataque a templos e local de culto, em\nespecial às religiões de matriz africana.\n• Garantir a laicidade do Estado em\ntodos aspectos de atuação estatal\n\nDEMOCRATIZAÇÃO DOS\nMEIOS DE COMUNICAÇÃO,\nCOM A SOCIALIZAÇÃO\nDE TODOS OS GRANDES\nCANAIS DE TELEVISÃO,\nJORNAIS, RÁDIOS E SITES;\nGARANTIA A TODOS OS\nCIDADÃOS DE ACESSO AOS\nMEIOS DE COMUNICAÇÃO\nTodos os importantes meios de\ncomunicação – as redes de televisão,\nas rádios, a internet, os grandes\njornais – são hoje propriedade\nde algumas famílias capitalistas.\nEssas mesmas famílias são também\ndonas de indústrias, fazendas e\n\nbancos e aplicam seus lucros na\nagiotagem do mercado financeiro.\nÉ evidente que essa minoria rica\nfaz de tudo nos seus noticiários,\nnos seus programas, novelas, etc.,\npara enganar e ludibriar o povo e\nesconder as informações, promover a\nmistificação e distorcer a realidade.\nCom esse poder em suas mãos,\na burguesia propaga o racismo,\ndefende o feminicídio e a exploração\ndo trabalhador e realiza uma grande\nmanipulação da opinião pública,\nocultando fatos dos noticiários\ncom o objetivo de levar o leitor ou\ntelespectador a ver o país e o mundo\ncomo eles querem que sejam vistos.\nAs novelas, os filmes, os programas\ne as entrevistas com seus artistas\nsão exemplos dessa manipulação. O\npoder desses veículos chega a influir\nsignificativamente nos resultados\ndas eleições, como mostra a atual\ncomposição do Congresso Nacional.\nDesse modo, é impossível qualquer\nefetiva\ndemocratização\nda\nsociedade mantendo-se os meios\nde comunicação nas mãos de um\nreduzido grupo de empresas privadas.\nPor isso, defendemos a liberdade de\nexpressão da classe trabalhadora e\ndo povo pobre e a democratização\ndos meios de comunicação, colocando\nas televisões, as rádios e a internet\nsob controle do poder popular.\nA UP defende:\n• Combater a censura corporativa e\no controle oligárquico dos grandes\nmeios de comunicação. Democratizar\nos meios de comunicação e apoio à\nimprensa comunitária e alternativa.\nEstatização dos monopólios de TV e\nRádio;"
+      },
+      {
+        "id": "pro-grama-de-g-overno-37",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 38,
+        "paginaFinal": 38,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n• Fim do monopólio estrangeiro\nsobre as redes digitais no Brasil;\n• Livre acesso dos trabalhadores aos\nmeios de comunicação de massa;\n• Proibição da propaganda de produtos\nnocivos à saúde e da influência de\npatrocinadores privados nos meios de\ncomunicação.\n\n38"
+      },
+      {
+        "id": "pro-grama-de-g-overno-38",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 39,
+        "paginaFinal": 39,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n39\n\nCULTURA POPULAR E\nSOBERANIA CULTURAL\nDAS\nNACIONALIZAÇÃO\nGRANDES GRAVADORAS\nPRO D U TO RAS\nE\nC I N E M ATO G RÁF I CAS .\nAs classes dominantes sempre\natuam no sentido de impedir o\ndesenvolvimento da cultura popular\ne revolucionária, utilizando a arte e\na cultura como formas de propagar\na ideologia, a moral e as ideias da\nburguesia por meio da música, dos\nfilmes, das artes visuais e da literatura.\n\nAlém disso, leis de fomento à cultura,\ncomo a Lei Rouanet, e os editais em\ngeral, não só são insuficientes, como\nbeneficiam principalmente as grandes\nempresas privadas, que decidem quais\nos filmes e peças que serão produzidos.\nApesar dessa situação, a arte e a cultura\npopular resistem, constituindo uma\nimportante trincheira de afirmação\nda nossa identidade e de propagação\nda ideologia revolucionária. Por\nisso, é fundamental um plano\nefetivo para defender e incentivar\ntodas as manifestações populares.\nPara possibilitar amplo acesso do\npovo à cultura, deve-se criar cinemas,"
+      },
+      {
+        "id": "pro-grama-de-g-overno-39",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 40,
+        "paginaFinal": 40,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nteatros, escolas de música e centros\npopulares de cultura nos bairros, vilas,\npovoados e favelas de todo o país.\nTambém será incluída nos currículos\nescolares a formação cultural e\nartística,\npossibilitando\ndesde\ncedo o acesso das crianças e da\njuventude à arte e à cultura em geral.\nA arte e a cultura precisam deixar de\nser uma mercadoria para gerar lucro\naos poderosos e dominar o povo.\n•\nAmpliar\nradicalmente\no\ninvestimento público em cultura,\ngarantindo\nequipamentos\nculturais gratuitos nas periferias,\ncidades do interior e zonas rurais;\n•\nFortalecer bibliotecas, cinemas,\nteatros, museus, centros culturais e\npontos de cultura, assegurando que os\ntrabalhadores e a juventude tenham\nacesso à produção artística e cultural.\n•\nFinanciamento da cultura popular\nbrasileira. Criar uma política nacional\npermanente\nde\nfinanciamento\npúblico\ndireto\npara\nartistas,\ngrupos e manifestações populares,\nvalorizando culturas indígenas, afrobrasileiras, periféricas, tradicionais\ne regionais, com prioridade aos\npequenos produtores culturais e\ncombate à concentração dos recursos\nnas grandes empresas do setor.\n•\nSoberania cultural contra o\ndomínio dos grandes monopólios.\nFortalecer a produção nacional\nde\ncinema,\nmúsica,\nliteratura,\naudiovisual\ne\ncomunicação;\n•\nNacionalização\ndas\ngrandes\ngravadoras\ne\nprodutoras\ncinematográficas;\n•\nAmpliar o papel das instituições\npúblicas de cultura e comunicação;\ncombater a concentração econômica\ndas grandes plataformas e empresas\n\n40\n\nculturais e garantir espaço para\na produção brasileira, popular\ne independente nos meios de\ncomunicação e plataformas digitais."
+      },
+      {
+        "id": "pro-grama-de-g-overno-40",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 41,
+        "paginaFinal": 41,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n41\n\nGARANTIR LIVRE\nACESSO DO POVO\nAO ESPORTE\nO esporte, no capitalismo, segue a\nmesma lógica de mercado. O caso\nmais escandaloso é o do futebol,\nonde fundos de especuladores se\napropriam de clubes que foram\nmuitas vezes construídos pelo esforço\ncoletivo das massas populares.\nNão bastasse, casas de apostas\npromovem um verdadeiro assalto do\nsalário do trabalhador prometendo\ndinheiro fácil a quem apostar em\n\njogos. O resultado é que milhões\nde pessoas estão endividadas e\nviciadas nas chamadas bets, um\ncrime contra a economia popular\nque fica impune dado o imenso\npoder do capital na sociedade.\nAssim, em vez de contribuir para\na saúde pública, o esporte se\ntransformou, no capitalismo, em mais\numa fonte de exploração do povo\ne enriquecimento da classe rica. É\npreciso acabar com essa roubalheira\ne promover a democratização e\nmassificação do esporte, garantindo\nacesso gratuito e universal às\npráticas esportivas, integrando-as"
+      },
+      {
+        "id": "pro-grama-de-g-overno-41",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 42,
+        "paginaFinal": 42,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n42\n\nao sistema educacional, ao local de\ntrabalho e aos bairros populares.\nA\n\nUnidade\n\nPopular\n\ndefende:\n\n•\nCriar um Sistema Nacional Público\nde Esporte e Lazer, para massificar\no esporte nos bairros populares e\nfortalecer o esporte amador e popular;\n•\nConstruir\ne\nrecuperar\nquadras, campos, piscinas, pistas,\nginásios\ne\ncentros\nesportivos\npúblicos,\npriorizando\nperiferias,\ncomunidades rurais, indígenas e\nregiões com menor infraestrutura.\n•\nGarantir\nesporte\npúblico\nnas escolas. Ampliar a educação\nfísica e as práticas esportivas na\nrede\npública,\ncom\nprofessores\nconcursados,\ninfraestrutura\nadequada, materiais gratuitos e\natividades esportivas no contraturno.\n•\nDemocratizar\nas\nentidades\nesportivas. Condicionar recursos e\nbenefícios públicos às confederações,\nfederações e demais entidades à\ntransparência das contas, eleições\ndemocráticas, participação de atletas\ne trabalhadores e combate à corrupção\ne aos privilégios de dirigentes.\n•\nValorizar atletas e trabalhadores\ndo\nesporte.\nGarantir\ndireitos\ntrabalhistas e previdenciários a atletas,\ntreinadores e demais profissionais,\ncombatendo contratos precários;\n•\nFortalecer o esporte feminino\ne\ncombater\na\ndesigualdade,\nassegurando igualdade de condições\nestruturais\naos\ncampeonatos\nfemininos."
+      },
+      {
+        "id": "pro-grama-de-g-overno-42",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 43,
+        "paginaFinal": 43,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n43\n\nREFORMA AGRÁRIA\nPOPULAR E REFORMA\nURBANA\nREFORMA AGRÁRIA POPULAR;\nNACIONALIZAÇÃO DA TERRA\nE FIM DO MON OPÓ LIO\nPRI VAD O DA TER RA\n\nAinda que a Constituição de\n1988 garanta que o Estado deve\ndesapropriar latifúndios improdutivos\n\ne garantir sua função social, o\nque vimos nos últimos anos foi a\nparalisação\nda\ndesapropriação\nde terras e, consequentemente, o\ncrescimento dos conflitos no campo\ne da exploração da sua população.\nA concentração fundiária permanece\ncomo uma das bases históricas da\ndesigualdade brasileira. Ao mesmo\ntempo, a agricultura familiar, praticada\npelos camponeses, é decisiva para o\nabastecimento interno, o emprego\nrural e a vida de milhares de municípios.\nO objetivo da reforma agrária realizada\npelo Estado deve ser, em primeiro"
+      },
+      {
+        "id": "pro-grama-de-g-overno-43",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 44,
+        "paginaFinal": 44,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n44\n\nlugar, pôr fim à enorme concentração\nfundiária existente no país e à\nelevação crescente do preço da terra.\n\ndos transgênicos, ou seja, pelo\nfim do controle privado do capital\nsobre a produção de alimentos.\n\nEm segundo lugar, garantir terra\naos camponeses e que as máquinas\nagrícolas,\nos\narmazéns,\nos\ntransportes, que hoje se encontram\nnas mãos das grandes empresas\ncapitalistas agroindustriais, passem\nàs mãos do Estado e dos camponeses.\n\nEm virtude da ameaça à vida e ao meio\nambiente causada pela economia\ncapitalista, é necessário ainda impedir\na utilização abusiva de transgênicos\ne\nagrotóxicos\nna\nalimentação,\ngarantindo de forma plena a\nsegurança e a soberania alimentar.\n\nDeve, também, assegurar crédito,\nassistência\ntécnica\nmoderna\ne\ntotal apoio à comercialização dos\nprodutos. Mas, o governo não garante\nabastecimento de água, financiamento\ne nem uma efetiva assistência técnica\naos pequenos produtores rurais.\n\nAlém disso, a reforma agrária\ntem por objetivo a defesa da\nagroecologia\ne\ndos\nsistemas\nagroflorestais. A agricultura deve\natender prioritariamente à soberania\nalimentar do povo brasileiro. Exportar\npode integrar o desenvolvimento,\nmas não pode se sobrepor ao direito\nà\nalimentação,\nà\npreservação\nambiental e à função social da terra.\n\nA reforma agrária popular também\ntem que levar em conta aspectos\ncomo a segurança e soberania\nalimentar, a questão social da\npropriedade, o limite do tamanho da\npropriedade privada, a demarcação\nde terras indígenas e o meio ambiente.\nÉ importante ainda, a defesa\nda atualização dos índices de\nprodutividade para que a terra possa ser\nconsiderada socialmente produtiva,\níndices que ficaram congelados\ndesde 1964. Aumentando este índice,\nampliamos os territórios considerados\nimprodutivos, tornando-os passíveis\nlegalmente\nde\ndesapropriação.\nÉ imprescindível, que a classe\ntrabalhadora tenha o controle dos\nmeios de produção e de recursos\nnaturais preservados, como água\npotável, sementes orgânicas, ar limpo,\nsol, domínio da técnica agroecológica\ne outras experiências, estabelecendo\napoio à agricultura familiar que é\no setor que mais gera empregos.\nNão se trata apenas da luta pela\nterra, mas em defesa da natureza\ncomo patrimônio da humanidade,\npor sementes crioulas, pelo fim\n\nA\nReforma\nque a UP defende prevê:\n\nAgrária\n\n• Executar um amplo programa nacional\nde reforma agrária, destinando\nterras improdutivas que não cumpram\na função social, terras públicas\nirregularmente apropriadas e áreas\nobtidas nos termos constitucionais\ne\nlegais\npara\nassentamentos.\n•\nAplicar\na\nexpropriação\nprevista\nconstitucionalmente\npara propriedades onde forem\nconstatados trabalho escravo ou\ncultivo ilegal de plantas psicotrópicas,\ngarantindo\ndestinação\nsocial.\n• Intervenção e desapropriação\ndas grandes terras controladas\npor empresas do agronegócio para\nque sirvam aos interesses do povo.\n•\nGarantia do acesso à terra com\ncrédito para os camponeses. Fomento\nàs pequenas culturas, à agricultura\nurbana e à agricultura familiar, para\no povo produzir e comprar alimento\nsaudável e barato."
+      },
+      {
+        "id": "pro-grama-de-g-overno-44",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 45,
+        "paginaFinal": 45,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n45\n\n•\nAmpliar\ncompras\npúblicas\nda\nagricultura\nfamiliar\npara\nalimentação\nescolar,\nhospitais,\nForças\nArmadas,\nuniversidades\ne demais equipamentos públicos.\n\ncom a poluição do ar e da água.\nReforça a carência de serviços públicos\npara quem vive nas periferias das\ngrandes cidades e reforça a divisão\ndas cidades entre ricos e pobres.\n\n•\nReforçar o funcionamento do\nINCRA visando encurtar o tempo\ndos processos de desapropriações\ne expropriações de imóveis que\nnão cumprem a função social;\n\nDe acordo com a Fundação João\nPinheiro, o déficit atual é de 5,7\nmilhões de moradias em todo\nBrasil. Por outro lado, segundo o\nCenso de 2022 do IBGE existem 11,4\nmilhões de imóveis vazios, sendo\n93% deles casas ou apartamentos.\n\n•\nQue os projetos de pesquisa\nda EMBRAPA não sejam voltados ao\nagronegócio e sim que seus recursos\ntécnicos, financeiros e humanos sejam\ndirecionados para o atendimento\ndas necessidades dos camponeses.\n•\nProibição da exportação de\nalimentos de primeira necessidade\nsem antes atender a demanda interna\nda população a preços baixos\n\nComo se vê, no capitalismo, a moradia\nse tornou uma mercadoria, e o mercado\nprefere deixar os imóveis vagos, para\ngarantir a especulação imobiliária\ne os preços dos aluguéis em alta.\nAlém disso, nas cidades brasileiras\ncresce o número de imóveis públicos\ne privados que se encontram\ncompletamente abandonados, sem\ncumprir nenhuma função social.\n\nREF ORM A URB ANA PAR A\nM O RA D I A\nGA RA N T I R\nD I G N A PA RA O P OVO E\nAC ESS O À C I D A D E\n\nLogo, é urgente uma profunda\nReforma Urbana que contemple\ne articule em sua plenitude os\ndireitos à moradia, ao transporte\npúblico, barato e de qualidade, à\neducação, à saúde, à cultura, ao\nsaneamento, a um meio ambiente\npreservado, ao esporte e lazer.\n\nAo invés de democratizar o espaço\nurbano\ne\npossibilitar\nmelhores\ncondições de vida para a população,\no crescimento das cidades brasileiras\nsem um planejamento que priorizasse os\nmais pobres, dando prioridade apenas\npara os que detinham muito dinheiro.\n\nE para realizar esta Reforma\nUrbana\né preciso um grande\nenfrentamento com a especulação\nimobiliária, ou seja, os ricos, donos\ndestas grandes propriedades e a\nadoção das\nseguintes medidas:\n\nEssa situação agravou a pobreza\ne\ncriou\ninúmeros\nproblemas\neconômicos, sociais e ambientais\ncomo a desigualdade social e o\ndesemprego. Aumentou o número de\nfavelas, aprofundou a violência e os\nengarrafamentos. Contribuiu para a\ncarestia e a a especulação imobiliária.\nA falta de ordenamento contribuiu\n\n•\nAmpliar\nmassivamente\na\nprodução pública e social de moradias,\npriorizando\nfamílias\nde\nbaixa\nrenda, mulheres chefes de família,\npessoas com deficiência, idosos\ne população em situação de rua.\n•\nFortalecer\nprogramas\nde\nurbanização de favelas, regularização\nfundiária\nde\ninteresse\nsocial,\nsaneamento, drenagem, iluminação,"
+      },
+      {
+        "id": "pro-grama-de-g-overno-45",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 46,
+        "paginaFinal": 46,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nequipamentos públicos e mobilidade.\n• Utilizar imóveis e terrenos da\nUnião\nociosos\nou\nsubutilizados\npara habitação\npopular\ne\nequipamentos\npúblicos.\n• Apoiar estados e municípios no uso\ndos instrumentos constitucionais e\nurbanísticos destinados a fazer cumprir\na função social da propriedade.\n• Priorizar a política de moradia\nfocada\nna\ndesapropriação\nda\ngrande propriedade, sejam em\nimóveis\npúblicos\nou\nprivados\nque não cumpram função social.\n•\nFinanciar\ndrenagem,\ncontenção de encostas, parques\nlineares,\nrecuperação\nde\nrios,\nreassentamento de áreas de risco\ne adaptação climática urbana.\n• Integrar habitação, mobilidade,\nsaneamento,\nmeio\nambiente,\nemprego, cultura, educação e saúde\nno planejamento urbano.\n\n46"
+      },
+      {
+        "id": "pro-grama-de-g-overno-46",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 47,
+        "paginaFinal": 47,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n47\n\nSEGURANÇA\nPÚBLICA, JUSTIÇA E\nDESMILITARIZAÇÃO\nSEG URA NÇA PÚB LICA\nE DES MIL ITAR IZAÇ ÃO\n\npaz, de circular com tranquilidade e\nde confiar que o Estado atuará para\nproteger sua vida e sua dignidade.\nNo entanto, a política de segurança\nimplementada há décadas fracassou.\n\nA segurança pública é um direito\nfundamental do povo. Toda pessoa\ntem o direito de viver sem medo da\nviolência, de criar seus filhos em\n\nApesar do aumento constante dos\ninvestimentos\nem\npoliciamento\nostensivo, armamentos e operações\npoliciais, o crime organizado se\nfortaleceu, a violência continua\natingindo milhares de famílias e a\nsensação de insegurança permanece\n\nDAS POL ÍCIA S"
+      },
+      {
+        "id": "pro-grama-de-g-overno-47",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 48,
+        "paginaFinal": 48,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\npresente em todas as regiões do estado.\nEsse fracasso não é resultado da\nfalta de ação do Estado, mas da\nadoção de um modelo baseado\nquase exclusivamente na repressão.\nEm vez de enfrentar as causas\nsociais da violência e fortalecer\na inteligência policial, sucessivos\ngovernos escolheram transformar a\nchamada “guerra ao crime” em uma\nguerra contra a população pobre.\nAs principais vítimas dessa política\nsão os moradores das periferias,\nespecialmente\na\njuventude\nnegra, submetida diariamente à\nviolência policial, às abordagens\nabusivas e às execuções cometidas\npor agentes do próprio Estado.\nA redemocratização não rompeu\ncom\nas\nestruturas\nconstruídas\ndurante a ditadura. O Brasil está\nentre os poucos países do mundo que\nmantêm uma polícia militarizada\nresponsável\npelo\npoliciamento\nostensivo\nda\npopulação\ncivil.\nAs polícias militares são uma\nherança do período colonial e foram\nestruturadas para defender a ordem\nestabelecida, e não para garantir\ndireitos. A lógica militar permanece\npresente nas polícias e na própria\nconcepção de segurança pública.\nA Comissão Nacional da Verdade\nrecomendou a desmilitarização das\npolícias militares estaduais, a extinção\nda Justiça Militar estadual e mudanças\nnos mecanismos de prevenção e\ncombate à tortura, mas o modelo de\nsegurança pública brasileiro segue\nsendo aquele que promove o genocídio\ndo povo preto e pobre nas favelas.\nDesmilitarizar não significa acabar\ncom a polícia ou deixar a população\nsem segurança. Significa construir\numa segurança pública orientada\npela proteção da vida e pelos direitos\n\n48\n\nhumanos, e não por uma lógica\nde guerra contra determinados\nterritórios e grupos sociais.\nHoje, a população pobre e negra das\nperiferias sofre simultaneamente com\na violência criminal e com a violência\nestatal. Em muitos locais, a presença do\nEstado se dá apenas através do braço\narmado, da prisão e da repressão.\nPor\nisso,\ndefendemos\na\ndesmilitarização da polícia, que\ndeve\nproteger\na\npopulação,\nrespeitar\ndireitos\nfundamentais\ne estar submetida a mecanismos\nefetivos\nde\ncontrole\ne\nresponsabilização. Nossas propostas:\n•\nDesmilitarização das Polícias:\nUnificação\ndas\npolícias\nsob\numa estrutura civil, preventiva,\ncomunitária e humanizada, treinada\nna defesa dos direitos humanos da\npopulação trabalhadora e periférica.\n•\nReorganização das carreiras\npoliciais,\nsuperando\nestruturas\nautoritárias e garantindo direitos\ne\nformação\npermanente,\ncom\nenfoque nos direitos humanos,\nnão\nletalidade,\nantirracismo\ne\nfeminismo. Adoção de mecanismos\ntransparentes\nde\npromoção.\n•\nFim da Lógica de Guerra nas\nPeriferias: Combate ao genocídio da\njuventude negra e periférica. Fim das\noperações policiais truculentas e sem\ninteligência preventiva, substituindoas por ações de inteligência, com forte\nfiscalização e controle das armas e\nmunições em controle do governo;\n•\nFim da Política de “Guerra às\nDrogas”: Transição do paradigma\npenal para o paradigma de saúde\npública e prevenção, atacando\na\nlavagem\nde\ndinheiro\ndas\ngrandes organizações criminosas\nno sistema financeiro."
+      },
+      {
+        "id": "pro-grama-de-g-overno-48",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 49,
+        "paginaFinal": 49,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n•\nReformulação\ndos\natuais\nCCS (Conselhos Comunitários de\nSegurança) em assembleias populares\ndedicadas à Segurança Popular.\n•\nArticular\nsegurança\ncom\nemprego, educação, cultura, esporte,\nassistência\nsocial,\nmoradia\ne\nurbanização das periferias\n\nJUSTIÇA E DIREITOS\nHUMANOS: JUÍZES E\nTRIBUNAIS ELEITOS PELO\nPOVO\nO sistema de Justiça brasileiro\nestá inserido em uma sociedade\nprofundamente desigual, marcada por\ndiferenças de classe, raça e gênero. A\ncomposição da magistratura revela\nessa desigualdade. Segundo dados do\nConselho Nacional de Justiça, a grande\nmaioria dos juízes no Brasil são homens,\nbrancos e provém de famílias ricas.\nNo capitalismo, o Estado protege a\npropriedade privada. O sistema de\nJustiça, como parte desse Estado,\natua dentro dessa estrutura e\ndefende os interesses da classe\ndominante, que é a burguesia.\nEssa desigualdade aparece de forma\nainda mais evidente no sistema penal.\nOs dados mais recentes da Secretaria\nNacional de Políticas Penais apontam\nque o Brasil possuía, no segundo\nsemestre de 2025, mais de 727 mil\npessoas presas em celas físicas. Desse\ntotal, 205.892 eram presos provisórios,\nou seja, pessoas privadas de\nliberdade sem condenação definitiva.\nA prisão antes do julgamento deveria ser\numa medida excepcional. Entretanto,\no encarceramento provisório tornouse uma realidade cotidiana para\n\n49\n\ncentenas de milhares de brasileiros.\nO sistema prisional não atinge todos de\nmaneira igual. A população carcerária\nbrasileira\né\nmajoritariamente\nformada por pessoas pobres e\nnegras,\nenquanto\nos\nespaços\nsuperiores do sistema de Justiça\npermanecem\npredominantemente\nbrancos e socialmente privilegiados.\nQuem decide sobre a liberdade\né muito diferente de quem está\nmajoritariamente atrás das grades.\nDiscutir o sistema de Justiça brasileiro,\nportanto, exige ir além da ideia de que\nbasta aplicar a lei igualmente. É preciso\nquestionar quem faz as leis, quem\nas interpreta, quem é preso, quem\nconsegue se defender e quem possui\npoder para fazer valer seus direitos.\nNesse sentido, nossas propostas são:\n•\nEleição\ndireta\npara\ne Tribunais Superiores;\n\nJuízes\n\n• Fim dos privilégios e dos chamados\n“penduricalhos” dos magistrados;\n•\nValorização\ndos\nservidores\ndo\njudiciário\ne\ngarantia\nde\nlivre acesso do povo à justiça;\n• Fortalecimento da Justiça do\nTrabalho, garantindo representação\nde trabalhadores nas instâncias;\n• Debater a reforma do Sistema de\nJustiça e do Sistema Penitenciário a\nfim de promover a democratização\ndo acesso à justiça, debater\na ampliação de cotas para os\ncargos\ndo\nPoder\nJudiciário;\n• Transformar as penitenciárias e\ncadeias em Unidades de Reeducação.\nSerão centros para a formação,\nacompanhamento\npsicossocial\ne\nprofissionalização de pessoas em\nconflito com a lei;"
+      },
+      {
+        "id": "pro-grama-de-g-overno-49",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 50,
+        "paginaFinal": 50,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n•\nCombate ao racismo e à\nseletividade penal; Enfrentamento\ndo encarceramento em massa e\ndo abuso da prisão provisória.\nResponsabilização dos agentes do\nEstado que cometeram violações de\ndireitos humanos.\n\n50"
+      },
+      {
+        "id": "pro-grama-de-g-overno-50",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 51,
+        "paginaFinal": 51,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n51\n\nTRANSPORTE PÚBLICO\nE MOBILIDADE URBANA\nDOS\nEST ATI ZAÇ ÃO\nMEI OS DE TRA NSP ORT E\nCOL ETIV O\nO povo brasileiro gasta, em média, 2\nhoras por dia no transporte coletivo.\nNas grandes capitais, essa média\npode chegar até 3 horas por dia.\nIsto acontece porque a burguesia\nbrasileira e seus representantes no\nEstado decidiram que a prioridade\nnas cidades é em transporte individual\npor carro ou o transporte coletivo\nrodoviário.\n\nOs\ncapitalistas\nimpuseram\nseu\ncontrole sobre as empresas de ônibus\nem várias cidades e a cada ano se\naliam a governos e prefeituras para\nimpor ao povo aumentos abusivos na\npassagem. No Brasil, quem ganha\nsalário mínimo gasta, em média, 18%\nda renda com o transporte público,\nsegundo um estudo publicado pela UnB.\nOs monopólios privados do transporte\ncoletivo impedem também qualquer\nexpansão da rede de metrôs e trens\nno Brasil, e para isso conta com apoio\ndos governos de plantão. Para se ter\numa ideia, segundo a ANPTrilhos,\nem 2023 foram construídos apenas"
+      },
+      {
+        "id": "pro-grama-de-g-overno-51",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 52,
+        "paginaFinal": 52,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n4,1Km de novas linhas de metrô\ne trem urbano no Brasil inteiro.\nO governo federal também tem culpa\nno cartório: não só não combateu\nos barões do transporte, como\ntambém tem dado seguimento ao\nprojeto de privatização das linhas\nde metrôs da CBTU em Recife\ne da Transurb em Porto Alegre.\nA única alternativa para superar\nesses problemas, portanto, é reverter\ncompletamente a atual tendência\ndas políticas de transporte coletivo\nno país. Por isso defendemos:\n•\nEstatização\ndas\nEmpresas\nde Transporte Coletivo: Fim das\nconcessões e dos cartéis privados\nde ônibus. Criação de empresas\npúblicas municipais e estaduais\npara operar frotas estatizadas.\n•\nPasse Livre para Toda a\nPopulação: O transporte deve ser\ntratado como direito fundamental\nconstitucional,\ne\nnão\ncomo\nnegócio.\nTransição\nprogressiva\npara a tarifa zero no transporte\ncoletivo urbano e intermunicipal.\n•\nFortalecimento e reestatização\nintegral das unidades da CBTU\n(Companhia\nBrasileira\nde\nTrens\nUrbanos),\nreestatizando\ntodas as linhas e empresas de\nmetrôs\ne\ntrens\nprivatizadas\n•\nPlano\nNacional\nde\nMalha\nFerroviária\ne\nMetroviária:\nInvestimento prioritário em trens,\nmetrôs e VLTs elétricos e de alta\ncapacidade, integrando o país e\nreduzindo a emissão de poluentes.\n\n52"
+      },
+      {
+        "id": "pro-grama-de-g-overno-52",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 53,
+        "paginaFinal": 53,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n53\n\nMEMÓRIA, VERDADE,\nJUSTIÇA E REPARAÇÃO\nREV ISÃO DA LEI DA\nANI STIA E PUN IÇÃO\nPAR A TOR TUR ADO RES\nE ASS ASS INO S DA\nDIT ADU RA MIL ITA R\nFAS CIST A\nDurante a Ditadura Militar Fascista\niniciada em 1964, o Estado brasileiro\nutilizou prisões ilegais, torturas,\n\nassassinatos e desaparecimentos para\nperseguir aqueles que lutavam pela\ndemocracia. A Comissão Nacional\nda Verdade reconheceu 434 mortos\ne desaparecidos políticos e estimou\naproximadamente 20 mil pessoas\ntorturadas durante a ditadura.\nA luta por memória, verdade e justiça\nnasceu principalmente da resistência\ndos próprios familiares das vítimas,\nque durante décadas buscaram seus\nmortos, denunciaram a violência do\nEstado e exigiram o reconhecimento\nde\nsua\nresponsabilidade.\nAté\nhoje,\na\njustiça\nde\ntransição\nbrasileira permanece incompleta,"
+      },
+      {
+        "id": "pro-grama-de-g-overno-53",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 54,
+        "paginaFinal": 54,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\ncom\nmuitos\ndos\nresponsáveis\npelas\ntorturas,\nassassinatos\ne\ndesaparecimentos impunes.\nApós a tentativa de golpe de 8 de janeiro\nde 2023, foi a primeira vez, no Brasil,\nque golpistas, entre eles Bolsonaro\ne membros da cúpula das Forças\nArmadas, foram presos por atentarem\ncontra as liberdades democráticas.\nEssa vitória só foi possível graças às\ndenúncias, manifestações, protestos\ne lutas travadas nos últimos anos pelo\npovo brasileiro e é uma prova de que\nas massas podem derrotar o fascismo.\nEm contraposição, a Câmara chegou\na aprovar PEC da Impunidade, que\nbuscava\nblindar\nparlamentares,\nmas, tiveram que recuar diante\nda pressão popular que ocupou as\nruas para demonstrar que o povo\né contra a anistia de fascista e\nblindagem de bandido político. Mas,\nainda tramita no Congresso o PL da\nAnistia, que visa conceder perdão\na envolvidos em atos golpistas,\nincluindo os ataques de 8 de janeiro.\nA impunidade de ontem, dos crimes\nda ditadura militar, inspira e encoraja,\naqueles que anseiam e planejam novos\ngolpes. Por isso, eles querem garantir\nimpunidade para os responsáveis\npelos\nataques\nàs\ninstituições\ndemocráticas,\nenfraquecendo\na\nresponsabilização dos criminosos\nenquanto o povo segue sendo alvo da\nrepressão e da violência do Estado.\nPor isso, defender memória, verdade,\njustiça e reparação, significa enfrentar\nas estruturas que permitiram a\nviolência de Estado e impedir que elas\nse repitam. Para que não se esqueça e\nnunca mais aconteça: Ditadura nunca\nmais!\n\n54\n\nNossas propostas:\n• Punição aos Crimes da Ditadura\nMilitar\nFascista\n(1964-1985):\nRevogação da interpretação da\nLei de Anistia para torturadores e\ngolpistas. Abertura total dos arquivos\ndas Forças Armadas e identificação\ndos mortos e desaparecidos políticos;\n• Implementação das recomendações\ndo relatório final da Comissão\nNacional\nda\nVerdade\n(CNV),\nrelacionadas\nà\nefetivação\nda\njustiça de transição, consolidação\ndemocrática e reparação às vítimas\nda\nditadura\nmilitar\nbrasileira;\n• Julgamento e Punição de Golpistas\ne Fascistas: Sem anistia para\nconspiradores,\nfinanciadores\ne\nagentes do estado que tentaram\nou\ntentam\nimpor\ngolpes\nantidemocráticos, desmontar direitos\nou promover atentados contra o povo;\n• Remover nomes de agentes e\napoiadores da Ditadura Militar de ruas,\nescolas e prédios públicos, e substituir\npor heróis da luta contra a ditadura;\n• Fortalecer a posição Antifascista\nna sociedade, punir e desarticular\norganizações de cunho nazifascista."
+      },
+      {
+        "id": "pro-grama-de-g-overno-54",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 55,
+        "paginaFinal": 55,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n55\n\nSOBERANIA\nNACIONAL E FIM\nDAS PRIVATIZAÇÕES\nCONTROLE SOCIAL DOS\nMONOPÓLIOS E CONSÓRCIOS\nDOS\nE\nCAPITALISTAS\nMEIOS DE PRODUÇÃO NOS\nESTRATÉGICOS\nSETORES\nDA ECONOMIA\n\nComo sabemos, os principais e decisivos\nsetores da economia estão dominados\npelos consórcios capitalistas, como é\no caso dos remédios, alimentação,\nhigiene e limpeza, automóveis, etc.\nAs pequenas empresas que surgem,\nem pouco tempo são compradas pelos\nmonopólios ou fecham as portas.\nPorém, o grande monopólio capitalista\né uma empresa “socializada”, nela\ntrabalham milhares de pessoas e"
+      },
+      {
+        "id": "pro-grama-de-g-overno-55",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 56,
+        "paginaFinal": 56,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\ntodas as operações que realizam\nunem direta e indiretamente dezenas\nde milhões de famílias. Ocorre que\no lucro que é produzido por esse\ntrabalho social é apropriado apenas\npor uma dezena de acionistas.\nSem dúvida, as grandes empresas\nnacionais e estrangeiras, sejam\nindustriais,\nfinanceiras,\nde\ncomunicação, recebem empréstimos\nsubsidiados\ndo\nEstado,\nmas\nos\nlucros\ndesses\nmonopólios\nficam\ncom\nos\nseus\ndonos.\nAdemais, frente a qualquer prejuízo\nou dificuldade que ameacem a grande\nempresa, surge o Estado burguês\npara salvá-las com o dinheiro que os\ntrabalhadores pagam de impostos.\nSe é assim, então que os monopólios\nsejam transformados em propriedade\nsocial, isto é, sejam estatizados.\nCom essa socialização, toda a\nprodução passa a ser utilizada em\nbenefício da sociedade em vez da\nminoria de ricaços. Dito de outro\nmodo, sem a passagem dos meios\nde produção para o controle dos\ntrabalhadores não é possível a\neliminação do poder do capital.\nPara ter um governo realmente\nsoberano é indispensável a socialização\ndos grandes monopólios capitalistas\ne dos consórcios comerciais e\nindustriais,\nque\nobtêm\nlucros\nimensos e fixam preços exorbitantes.\nEm\nresumo,\nao\nsocializar\na\npropriedade dos monopólios, o que se\nfaz é tão somente colocar os meios de\nprodução sob controle dos verdadeiros\nprodutores. Por isso, propomos:\n• Encampação pelo Estado de\nplantas industriais em processo de\nfalência judicial ou fechamento.\n\n56\n\nElaborar um plano de utilização e\nadequação de fábricas fechadas\nou falidas para gerenciamento\ncooperativo\nentre\ntrabalhadores\ne em benefício da população;\n• Planificação da economia para\natender às necessidades da população\ne acabar com as desigualdades\nregionais\ne\nsociais.\nDirecionar\na produção para atividades que\natendam\nprioritariamente\nàs\nnecessidades básicas da população;\n• Política econômica a serviço\nda população: utilizar todos os\ninstrumentos de política e gestão\neconômica para garantir o controle\ne estabilidade de preços e o poder\nde compra do povo trabalhador;\n• Política Industrial Ativa e Direcionada\na Setores Estratégicos: ações conjuntas\ne articuladas de financiamento,\nestímulo à realização de pesquisa\ne desenvolvimento e transferência\nde tecnologia para a integração de\natividades e polos industriais às cadeias\nprodutivas de maior valor agregado;\n• Estímulo à construção de redes de\neconomia local e solidária: apoio à\norganização de feiras agroecológicas,\nde artesanato e de pequenos\nprodutores locais de bens e serviços,\nde modo a favorecer a cultura de\napoio mútuo e descentralizado dentro\ndas comunidades/bairros;\n\nESPOLIAÇÃO\nDA\nFIM\nIMPERIALISTA SOBRE A\n\nECONOMIA NACIONAL\n\nOs defensores da dominação do\ncapital estrangeiro dizem que é muito"
+      },
+      {
+        "id": "pro-grama-de-g-overno-56",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 57,
+        "paginaFinal": 57,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nimportante o ingresso desse capital,\nporque ele traz novas tecnologias,\ngera empregos e aumenta a\nindustrialização do país. Mas, a\nmaior parte dos capitais externos\ninvestidos no Brasil são empregados\nem aquisições de empresas nacionais\nou simplesmente na especulação.\nDe fato, a oligarquia financeira\ninternacional é dona de parcela\nsignificativa dos títulos da dívida\npública\ninterna\npor\nmeio\nde\nbancos ou de fundos globais, o que\nacarreta uma enorme transferência\npara\nos\npaíses\nimperialistas\ndos nossos recursos nacionais.\nEssa dominação aumenta a cada ano\ncom a criação de várias leis para\nfacilitar a remessa de dividendos,\nlucros e royalties para o exterior\ne para facilitar o ingresso desse\ncapital em todos os setores da\neconomia, como empresas aéreas,\neducação,\nsaúde\ne\npetróleo.\nVale ressaltar ainda que a crescente\ndominação do capital estrangeiro\nsobre a economia brasileira foi\npossível graças à associação da\nburguesia nacional com a burguesia\ninternacional e à subordinação\ndos\ngovernos\nbrasileiros.\nCom efeito, vastos setores da\nclasse capitalista brasileira têm\nlaços estruturais com a burguesia\nmundial e os mercados financeiros\ninternacionais. Um exemplo foi a\nassociação da 3G Capital, pertencente\na Jorge Paulo Lemann, Marcel Telles\ne Carlos Sicupira, com o fundo\nBerkshire Hathaway, do especulador\nWarren Buffett, tornando-se dona\ndo Burger King, da Ambev, da Kraft\nHeinz e das Lojas Americanas.\nA subordinação do Brasil ao grande\n\n57\n\ncapital financeiro internacional e\nàs potências imperialistas acelerou\no processo de desnacionalização\ne\nde\ndesindustrialização\nda economia brasileira.\nPor isso, o lucro capitalista obtido\nna venda de carros, computadores,\ncomida e até de produtos de\nhigiene pessoal vai direto para o\nbolso de algum bilionário de Nova\nIorque, Berlim ou Shanghai. Nós\nvamos acabar com essa farra!\nDefendemos\no\nimediato\nestancamento\nda\nsangria\nde\nnossos recursos para o exterior,\npondo fim às remessas de lucros,\ndividendos, pagamento de royalties\ne pagamentos da dívida externa.\nÉ necessário a anulação dos acordos\ne das dívidas do Estado com os\ncapitalistas estrangeiros que foram\ncontraídos contra a soberania e\nos interesses dos trabalhadores.\nA UP defende a total independência\neconômica do Brasil frente aos\npaíses\nimperialistas,\npor\nisso,\ndefende a transferência do comércio\nexterior para os órgãos do Estado.\nSão necessárias a adoção de medidas\nque possam colocar os recursos\nhumanos e naturais do nosso país\nao serviço do desenvolvimento da\nvida do povo brasileiro.\nPropostas:\n• Proibição da remessa de qualquer\nrecurso financeiro para o exterior\nsem\nautorização\ndo\nEstado;\n• Rompimento de relações de\ndependência comercial, militar ou\nfinanceira com qualquer empresa ou\nEstado estrangeiro;"
+      },
+      {
+        "id": "pro-grama-de-g-overno-57",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 58,
+        "paginaFinal": 58,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n• Proibição de atuação do capital\nestrangeiro dentro da economia\nnacional;\n\nDAS\nREESTATIZAÇÃO\nESTATAIS PRIVATIZADAS; FIM\nDOS LEILÕES DO PETRÓLEO;\nREVISÃO E REVOGAÇÃO DAS\nCONCESSÕES DOS PORTOS,\nAEROPORTOS E ESTRADAS\nBRASILEIRAS ENTREGUES\nA EMPRESAS PRIVADAS\nNuma\nsociedade\ncapitalista,\no\nEstado está a serviço das classes\ndominantes. Defendem um estado\nmínimo para o povo, mas para as\nelites bilionárias o Estado é enorme.\nAs empresas capitalistas sempre\ncontaram com o apoio e o incentivo\ndo Estado para desenvolver seus\nprojetos, espalhar seus produtos\npelo mundo, dominar mercados.\nPara atender aos interesses dos\ncapitalistas nacionais e estrangeiros,\nvariados governos, nos últimos 35\nanos, têm vendido abaixo do preço\nlucrativas e estratégicas empresas\nestatais e realizado uma verdadeira\ntransferência\nde\npatrimônio\npúblico\npara\ngrupos\nprivados.\nEm 1991, o governo de Fernando\nCollor de Mello (1990-1992) vendeu a\nUsiminas, a Petrofertil, a Petrominas\ne a Petroquisa. Em seguida, o governo\nde\nItamar\nFranco\n(1992-1994)\nentregou a Companhia Siderúrgica\nNacional (CSN) a Benjamin Steinbruch\ne privatizou a Açominas e a Embraer.\n\n58\n\nNos dois governos do PSDB, sob a\npresidência de Fernando Henrique\nCardoso (1995-2002), a corrupção da\nprivatização continuou: a Companhia\nVale do Rio Doce, por exemplo, foi\nvendida por apenas 1% do seu valor,\nmíseros R$ 3,298 bilhões, apesar de ser\na maior produtora global de minério\nde ferro. A Vale registrou lucro líquido\nde R$ 45,9 bilhões, em 2025, uma alta\nde 28% em relação ao ano anterior.\nTambém\nforam\nprivatizadas\na\nEletropaulo, Telerj, Telesp, Embratel\ne a maioria dos bancos estaduais, que\nforam adquiridos pelo Bradesco e Itaú.\nNos primeiros governos Lula e Dilma,\nesse crime contra o patrimônio\nnacional continuou. Várias rodovias\nfederais, hidrelétricas e bancos\nestaduais também foram privatizados.\nA espanhola OHL adquiriu o controle\nde cinco trechos de rodovias federais,\nentre eles, a Fernão Dias (BR-381,\nentre São Paulo e Belo Horizonte)\ne a Régis Bittencourt (BR-116, entre\nCuritiba e São Paulo), a Acciona, ficou\ncom a BR-393, e a BRVias, empresa de\npropriedade do dono da companhia\naérea Gol, com o trecho da BR-153.\nCom a privatização, todos os motoristas\nque trafegarem nas rodovias deixam\nnos cofres dessas empresas o dinheiro\ndo pedágio. Assim, o trabalho da OHL,\nda Acciona e da BRVias será construir\nvárias cabines para cobrar o pedágio\nde cada carro que passar nas estradas.\nAs hidrelétricas de Santo Antônio e\nJirau também foram privatizadas e\nvários leilões de aeroportos e bacias\nde petróleo foram concretizados.\nO governo de Michel Temer seguiu\nrealizando\nprivatizações\nde\naeroportos, vendeu a Companhia"
+      },
+      {
+        "id": "pro-grama-de-g-overno-58",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 59,
+        "paginaFinal": 59,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nEnergética do Piauí (Cepisa), a\nBoa Vista Energia de Roraima, a\nCentrais Elétricas de Rondônia\n(Ceron), a Companhia de Eletricidade\ndo Acre (Eletroacre) e deu início\nà\nprivatização\nda\nEletrobras,\nfinalizada por Bolsonaro, em 2022.\nEm 2019, o governo do ex-capitão\nfascista entregou ao capital privado\nmetade da capacidade nacional\nde refino com a venda de oito\nrefinarias da Petrobras, além da\nunidade de industrialização de\nxisto no Paraná e da fábrica de\nlubrificantes Lubnor, no Ceará.\nFoi mais um crime contra o povo\nbrasileiro, pois, segundo a Associação\ndos\nEngenheiros\nda\nPetrobras\n(Aepet), nenhuma grande petroleira\nno mundo se desfaz de suas unidades\nde refino, uma das partes mais\nrentáveis da exploração do petróleo.\nEm abril de 2019, o governo vendeu\n90% da Transportadora Associada\nde Gás (TAG), rede de gasodutos\ndo Norte e Nordeste, subsidiária da\nPetrobras, à francesa Engie. Agora, a\nPetrobras vai alugar essa rede e pagar\ndurante 30 anos um valor altíssimo.\nEm julho do mesmo ano, o governo\nprivatizou a BR Distribuidora, que\ntinha 27,4% de participação no\nmercado nacional, 7.703 postos de\ngasolina, 95 unidades operacionais\ne\natua\nem\n99\naeroportos.\nO atual governo Lula seguiu a política\nde concessões e parcerias públicoprivadas (PPPs) e Programa de\nParcerias de Investimentos” (PPI),\nque, de fato, entregam a interesses\nprivados o grosso da infraestrutura\ndo país, como privatização de\nrodovias, e a tentativa de privatização\ndos sistemas de trens urbanos e\n\n59\n\nmetrôs nas regiões metropolitanas\nde\nPorto\nAlegre\ne\nRecife.\nAlém disso, o BNDES tem participado\nde forma ativa do processo de\ntransferência\ndas\ncompanhias\nestaduais de saneamento para o setor\nprivado. Até os rios da Amazônia, o\ngoverno federal tentou privatizar com\no decreto nº 12.600/2025 de 28 de\nagosto de 2025, mas, foi obrigado a\nrevogar integralmente o decreto após\nmais de 30 dias de ocupação feita\npelos povos indígenas no terminal\nportuário Cargill em Santarém-PA.\nSem estatais estratégicas, vemos\ngrandes\nempresas\nestrangeiras\ndos EUA, da União Europeia e da\nChina disputarem a exploração\nde nossas reservas de nióbio e de\nterras raras (conjunto de elementos\nusados na fabricação de telas\nde\nsmartphones,\nequipamentos\nmilitares\ne\nmotores\nelétricos).\nA privatização das estatais foi um\ngrande crime contra a soberania e\numa enorme corrupção dos partidos\nda burguesia. Um rico patrimônio do\npovo brasileiro foi transferido para um\npequeno grupo de empresas privadas.\nIsso aconteceu com total apoio dos\nmeios de comunicação da burguesia\n(rádio, televisão e grandes jornais),\nque\ndespejaram\ncentenas\nde\nmentiras em ricas campanhas na\ntelevisão e milhares de artigos na\nimprensa dizendo que o dinheiro das\nprivatizações iria para educação,\nsaúde, para o social. Tudo mentira.\nA vida se encarregou de desmascarar\na burguesia e mostrou que o\nserviço piorou, os preços foram\nsubstancialmente aumentados e mais\nde um milhão de trabalhadores foram\ndemitidos."
+      },
+      {
+        "id": "pro-grama-de-g-overno-59",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 60,
+        "paginaFinal": 60,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nPara piorar, cresce o número de\n“acidentes”, inclusive com vítimas\nfatais, em empresas privatizadas,\nconsequência\nda\nlógica\nde\neconomizar\nem\nmanutenção,\nmão de obra qualificada e em\nsegurança, para maximizar os lucros.\nA UP luta contra as privatizações,\npela reestatização das estatais e\npela punição exemplar de todos\nos responsáveis por esse crime,\npois só quando as riquezas do\npaís estiverem nacionalizadas e\nsob controle dos trabalhadores\nteremos\num\nBrasil\nsoberano.\nPor\n\nisso,\n\npropomos:\n\n• Reestatização das Empresas\nEstratégicas: Estatização imediata\nda Eletrobras, da Petrobrás (com\ncontrole 100% estatal e integração\ndas refinarias), da Vale, das malhas\nferroviárias, das companhias de\nsaneamento e de telecomunicações;\n• Monopólio público em áreas\nestratégicas como geração de energia,\nmineração, produção e distribuição de\ncombustíveis, indústria de defesa.\n\n60"
+      },
+      {
+        "id": "pro-grama-de-g-overno-60",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 61,
+        "paginaFinal": 61,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n61\n\nMEIO AMBIENTE,\nTRANSIÇÃO ECOLÓGICA\nE DEFESA DA NATUREZA\nDEFESA E PROTEÇÃO DO MEIO\nAMBIENTE E DA NATUREZA;\nPROIBIÇÃO DA DESTRUIÇÃO DE\nFLORESTAS; ESTABELECIMENTO\nDO CONTROLE POPULAR SOBRE\nA AMAZÔNIA E EXPULSÃO\nDE TODOS OS MONOPÓLIOS\nESTRANGEIROS DA REGIÃO;\n\nDEMARCAÇÃO E POSSE IMEDIATA\nDAS TER RAS IND ÍGE NAS\nE QUI LOM BOL AS.\nO modo de produção capitalista\ntambém coloca em risco a natureza\ne a vida no planeta. São cada\nvez\nmais\nfrequentes\ndesastres\nnaturais, resultados diretos da\nação predatória dos monopólios e\ndos países imperialistas."
+      },
+      {
+        "id": "pro-grama-de-g-overno-61",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 62,
+        "paginaFinal": 62,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nA intensificação da exploração da\nTerra\naumenta\na\npoluição,\no desmatamento, a destruição\nde milhares de espécies animais\ne\nvegetais\ne\no\naquecimento\nglobal. Além disso, a apropriação\nda\nnatureza\npelos\nmonopólios\nimpede uma gestão coletiva e\nsustentável dos recursos, reforçando\ndesigualdades sociais e agravando\nos impactos da crise ambiental\nsobre populações mais pobres.\nNos últimos 50 anos, a quantidade\nde desastres climáticos aumentou\ncinco vezes, segundo a Organização\nMeteorológica\nMundial\n(OMM).\nEntre 1970 e 2019, foram registrados\nonze\nmil\neventos\nclimáticos\nextremos,\nque\nresultaram\nna\nmorte de mais de dois milhões de\npessoas e em perdas econômicas\nsuperiores a 4,3 trilhões de dólares.\nEntre os exemplos mais marcantes\ndessa\nescalada\nestão\nondas\nde calor e incêndios florestais,\nenchentes e tempestades, secas\ne crise hídrica, degelo e elevação\ndo nível do mar, entre outros.\nO Brasil registrou 7.539 desastres\nclimáticos apenas entre 2020 e 2023,\no que representa um aumento de\n222% em relação aos 2.335 eventos\ncomputados durante toda a década\nde 1990, segundo dados oficiais\ndo Cemaden. Os efeitos destes\ndesastres atingem com maior força\ntrabalhadores, periferias urbanas,\npovos\nindígenas,\ncomunidades\ntradicionais\ne\npopulações\ncom\nmenor acesso à infraestrutura.\nNos últimos 7 anos o Brasil perdeu\nmais de 10,9 milhões de hectares\nde vegetação nativa, o que reduz\na capacidade de retenção da\numidade no solo e altera o regime\n\n62\n\nde chuvas, afetando o equilíbrio\nclimático\nde\nregiões\ninteiras,\nintensificando o aquecimento global.\nE os eventos climáticos se tornam\nmais\nintensos\ne\nimprevisíveis.\nJá a queima de combustíveis fósseis\naumenta a concentração de gases\nde efeito estufa na atmosfera e\neleva a temperatura global. Assim,\na transição energética, embora\nurgente, segue sendo retardada por\ninteresses econômicos, pois são os\nlucros das petrolíferas que seguem\nditando as políticas energéticas\ndos\ngovernos\nda\nburguesia.\nDessa maneira, apesar das inúmeras\nconferências climáticas e promessas\nde redução de emissões, os dados\nmostram um cenário alarmante: a\nconcentração de gás carbônico (CO²)\nna atmosfera já ultrapassou 420\nppm (número de moléculas de CO²\nem um milhão de moléculas de ar), e\na temperatura global já ultrapassou\n1,5° C acima do período pré-industrial.\nTorna-se,\nassim,\nevidente\nque\na superação da crise climática\nexige\ntransformações\nprofundas\ne uma nova ordem econômica e\nsocial, que não esteja subordinada\naos lucros da burguesia, mas à\npreservação das condições materiais\nque garantem a vida no planeta.\nA demarcação de Terras Indígenas\ntambém tem se revelado como uma\npolítica ambiental extremamente\neficaz. Segundo o MapBiomas, entre\n1985 e 2023, as Terras Indígenas no\nBrasil perderam apenas 1% de sua\nvegetação nativa, no mesmo período,\nas\náreas\nprivadas\nregistraram\numa perda de 28%, evidenciando\nque os territórios ocupados pelos\npovos indígenas são as regiões mais\npreservadas do país."
+      },
+      {
+        "id": "pro-grama-de-g-overno-62",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 63,
+        "paginaFinal": 63,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n63\n\nA verdade é que o capitalismo esgotou\nqualquer possibilidade de desenvolver\nde forma harmônica e profunda a\nsociedade, pois suas invenções técnicas\nservem somente a uma minoria e não\nestão à disposição da sociedade.\n\n•\nCriar\nfrentes\nemergenciais\nde\ntrabalho\npara\nrecuperação\nambiental,\nreflorestamento,\nproteção de nascentes, prevenção\nde\nincêndios,\nmanejo\nde\nresíduos e adaptação urbana;\n\nDefendemos um modelo de produção\nque\npossibilite\ndesenvolvimento\neconômico,\nsocial,\nhumano,\ntecnológico\ne\nbiotecnológico,\nmas mantendo a floresta em pé,\ngarantindo que os recursos minerais\ne toda biodiversidade ainda existente\npermitam ao povo o usufruto\ndos seus benefícios climáticos,\nmedicinais, culturais e etc.\n\n•\nProibição\nde\nAgrotóxicos\nBanidos no Exterior: Banimento\ndo uso de pesticidas perigosos à\nsaúde e ao meio ambiente, com\nincentivo à transição para a produção\nagroecológica\ne\ndiversificada;\n\nSão propostas da UP:\n• Vincular a reindustrialização a\nmetas de redução de poluentes,\neficiência\nenergética,\neconomia\nsolidária,\ntecnologias\nlimpas\ne\nrecuperação de áreas degradadas;\n• Realizar programa de transição\nde matrizes energéticas e de\nextração de matérias primas que\nrespeite a conservação da natureza\ne evite catástrofes ambientais;\n•\nCombater\ndesmatamento\nilegal,\ngarimpo,\ngrilagem,\ncontaminação por mercúrio e crimes\nambientais de grandes empresas;\n• Proteger Amazônia, Cerrado,\nCaatinga, Mata Atlântica, Pantanal e\nPampa, reconhecendo que cada bioma\nexige políticas próprias e participação\ndas populações que nele vivem;\n•\nGarantir que as decisões sobre\nterras, florestas, rios e riquezas\nminerais\nsejam\nsubmetidas\nao\ninteresse público e à participação das\npopulações amazônicas e dos demais\nbiomas;\n\n• Demarcação e posse imediata\nde todas as terras indígenas e\nquilombolas; garantir aos indígenas\nescolas diferenciadas, incentivar e\napoiar às línguas indígenas; defender\na cultura e os direitos dos povos\noriginários e tradicionais."
+      },
+      {
+        "id": "pro-grama-de-g-overno-63",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 64,
+        "paginaFinal": 64,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n64\n\nSOLIDARIEDADE\nINTERNACIONALISTA\nApoio à luta de todos os povos\ne\npaíses\npela\nlibertação\nda\ndominação\ncapitalista\ne\nda\nespoliação\nimperialista.\nDefesa\nda soberania, independência e\nautodeterminação\ndos\npovos.\nAlém das guerras e ocupações militares,\na dominação imperialista se expressa\npor pressões econômicas, controle\nde recursos naturais, endividamento\ne\nrelações\ninternacionais\nprofundamente desiguais.\nSegundo\na\nONU\nComércio\ne\nDesenvolvimento (UNCTAD), a dívida\nexterna dos países em desenvolvimento\nchegou a US$11,7 trilhões em\n\n2024, com cerca de US$1,6 trilhão\ndestinado ao serviço dessa dívida\nnaquele ano, retirando recursos que\npoderiam financiar saúde, educação,\ninfraestrutura e desenvolvimento.\nAs riquezas e recursos naturais\ndos países devem ser utilizados\nem\nbenefício\nde\nseu\npróprio\ndesenvolvimento\ne\nbem-estar.\nApesar\ndisso,\nas\npotências\nimperialistas seguem desrespeitando\no que deveria ser um princípio\ndo direito internacional.\nOs chamados acordos de livre\ncomércio, como o firmado entre o\nMercosul e a União Europeia, priorizam"
+      },
+      {
+        "id": "pro-grama-de-g-overno-64",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 65,
+        "paginaFinal": 65,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nrelações de dependência em relação\nao capital imperialista internacional.\nO mesmo ocorre com o acordo que\nestá em discussão com a China.\nO fascismo, por sua vez, quer\ncolocar nosso país de joelhos para\no\nimperialismo\nestadunidense,\naceitando inclusive uma posição\nde\nsubserviência\ndescarada\nnos\norganismos\ninternacionais.\nOutro elemento que se apresenta na\natual política externa do Brasil é a\ninfluência dos lobistas do sionismo no\nItamaraty. Mesmo Israel cometendo\nos piores crimes contra a humanidade\nem Gaza, a pressão da grande mídia\ne de altos diplomatas brasileiros\né por “moderação” e as atitudes\ndo Brasil para isolar a ditadura de\nIsrael são na prática inexistentes.\nA submissão ao imperialismo também\nse expressa na posição brasileira em\nrelação ao criminoso bloqueio contra\nCuba. De acordo com os sindicatos\ndos petroleiros, com uma semana\nde produção de petróleo seria\npossível garantir o abastecimento\nde combustível em Cuba por um ano.\nMesmo assim, o atual governo federal\ne o Itamaraty se recusam a fazer um\nmovimento no sentido de romper o\nbloqueio contra Cuba, tudo isso para\natender ao interesse dos acionistas\nda Petrobras na Bolsa de Nova Iorque.\nCada povo deve ter o direito de\ndecidir\nlivremente\nseu\nsistema\npolítico, econômico e social, controlar\nsuas riquezas e construir seu próprio\ncaminho\nde\ndesenvolvimento,\nsem\nintervenções\nestrangeiras,\nocupações militares, bloqueios ou\nimposições das grandes potências\ne dos monopólios internacionais.\nA verdadeira cooperação entre as\nnações deve se basear na igualdade, na\nsoberania e no respeito à independência\n\n65\n\ne à autodeterminação dos povos.\nNesse sentido, queremos transformar\nradicalmente a estrutura e a\npolítica de relações internacionais\ndo Brasil. Por isso, propomos:\n•\nSolidariedade Internacionalista\nà Causa Palestina: Rompimento de\nrelações diplomáticas, militares e\ncomerciais com o Estado Sionista\nde Israel enquanto perdurar o\ngenocídio do povo palestino e o\nregime de Apartheid em Israel;\n•\nFortalecer\nna\narena\ninternacional todos os povos que\nlutam pela sua libertação. Apoio\naberto à luta do povo da Venezuela,\nCuba, Irã, Saara Ocidental, Iêmen\ne demais povos do mundo contra\no cerco e as sanções imperialistas;\n•\nPolítica\nExterna\nAntiImperialista: Rompimento de tratados\nde submissão militar e econômica\naos Estados Unidos, OTAN ou China.\nDefesa intransigente do direito à\nautodeterminação dos povos."
+      },
+      {
+        "id": "pro-grama-de-g-overno-65",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 66,
+        "paginaFinal": 66,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\nA LUTA PELO\nSOCIALISMO\n\n66"
+      },
+      {
+        "id": "pro-grama-de-g-overno-66",
+        "titulo": "PRO GRAMA DE G OVERNO",
+        "nivel": 1,
+        "paginaInicial": 67,
+        "paginaFinal": 67,
+        "origem": "pdftotext",
+        "conteudo": "PRO GRAMA DE G OVERNO\n\n67\n\nTodas as medidas propostas pelo\nprograma da Unidade Popular (UP)\nconvergem para um objetivo claro:\ndemonstrar que o capitalismo é\num sistema esgotado, incapaz de\noferecer um futuro digno, sustentável\ne justo para a classe trabalhadora.\nNão aceitaremos que o povo viva\nna miséria enquanto meia dúzia\nde bilionários acumula fortunas\nincalculáveis. O controle dos setores\nestratégicos, o fim do arrocho\nsalarial e o rompimento com a\npilhagem imperialista exigem a\norganização, a consciência de classe\ne a mobilização direta das massas.\nCom a candidatura de Samara\nMartins e Raquel Brício (UP 80),\ncolocamos o programa da classe\noperária no centro do debate político\ndo país. Nosso compromisso não é\ncom a conciliação de classes, mas\ncom a superação da exploração.\nJunte-se à Unidade Popular! Vamos\nconstruir um Brasil Soberano,\nPopular e Socialista!\n\nLute\ncontra\nas\ninjustiças\nsociais,\nos\nfeminicídios,\na\nexploração dos trabalhadores\n\u0003e pelos direitos da juventude!\nFilie-se ao Partido da Unidade\nPopular e participe das plenárias\ndo socialismo em sua cidade!\nUN IDA DE PO PU LA R.O RG.BR /FI\n\nLIE-SE"
+      }
+    ]
+  },
+  "resumo": {
+    "texto": "O documento apresenta o programa de governo da Unidade Popular pelo Socialismo (UP), tendo Samara Martins como candidata à Presidência do Brasil. O texto defende uma posição anti-imperialista, incluindo o rompimento de relações com Israel e apoio às lutas de Cuba, Venezuela e Irã. Na área econômica, propõe a nacionalização dos bancos e a suspensão imediata do pagamento da dívida pública, acompanhada de auditoria cidadã. Para o trabalho, defende aumento de 100% no salário mínimo e redução da jornada para 30 horas semanais sem redução salarial. Na saúde, propõe que o SUS seja 100% estatal, com fim da gestão hospitalar por Organizações Sociais. Na educação, defende o fim do lucro no ensino e a destinação de pelo menos 10% do PIB à educação pública. O programa também propõe a desmilitarização das polícias e a reestatização de empresas privatizadas, como Petrobras, Eletrobras e Vale. Defende ainda uma reforma agrária popular baseada na nacionalização da terra e no fim do seu monopólio privado.",
+    "frases": [
+      {
+        "texto": "O documento apresenta o programa de governo da Unidade Popular pelo Socialismo (UP), tendo Samara Martins como candidata à Presidência do Brasil.",
+        "evidencias": [
+          {
+            "pagina": 1,
+            "trecho": "PROGRAMA DA UNIDADE POPULAR PELO SOCIALISMO"
+          },
+          {
+            "pagina": 7,
+            "trecho": "Samara Martins é candidata da UP à Presidência do Brasil"
+          }
+        ]
+      },
+      {
+        "texto": "O texto defende uma posição anti-imperialista, incluindo o rompimento de relações com Israel e apoio às lutas de Cuba, Venezuela e Irã.",
+        "evidencias": [
+          {
+            "pagina": 65,
+            "trecho": "Rompimento de relações diplomáticas, militares e comerciais com o Estado Sionista de Israel enquanto perdurar o genocídio do povo palestino e o regime de Apartheid em Israel"
+          },
+          {
+            "pagina": 65,
+            "trecho": "Apoio aberto à luta do povo da Venezuela, Cuba, Irã, Saara Ocidental, Iêmen e demais povos do mundo contra o cerco e as sanções imperialistas"
+          }
+        ]
+      },
+      {
+        "texto": "Na área econômica, propõe a nacionalização dos bancos e a suspensão imediata do pagamento da dívida pública, acompanhada de auditoria cidadã.",
+        "evidencias": [
+          {
+            "pagina": 18,
+            "trecho": "Nacionalização dos Bancos e Estatização do Sistema Financeiro: Fusão do sistema bancário sob controle do Estado e gestão dos trabalhadores."
+          },
+          {
+            "pagina": 15,
+            "trecho": "Suspensão Imediata do Pagamento e Auditoria Cidadã da Dívida Pública: Interrupção da sangria dos cofres públicos para a remuneração"
+          }
+        ]
+      },
+      {
+        "texto": "Para o trabalho, defende aumento de 100% no salário mínimo e redução da jornada para 30 horas semanais sem redução salarial.",
+        "evidencias": [
+          {
+            "pagina": 9,
+            "trecho": "Elevação Imediata dos salários e Aumento de 100% do Salário Mínimo."
+          },
+          {
+            "pagina": 10,
+            "trecho": "Fim da Escala 6x1 e Redução da Jornada para 30 Horas Semanais: Implementação do regime de 30 horas sem redução salarial"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, propõe que o SUS seja 100% estatal, com fim da gestão hospitalar por Organizações Sociais.",
+        "evidencias": [
+          {
+            "pagina": 20,
+            "trecho": "Fortalecimento e Unificação do SUS 100% Estatal: Fim da entrega da gestão hospitalar a Organizações Sociais (OSs), fundações privadas e cooperativas empresariais."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, defende o fim do lucro no ensino e a destinação de pelo menos 10% do PIB à educação pública.",
+        "evidencias": [
+          {
+            "pagina": 21,
+            "trecho": "21 EDUCAÇÃO POPULAR E CIENTÍFICA PÚBLICA E EDUCAÇÃO GRATUITA PARA TODOS E EM TODOS OS NÍVEIS; FIM DO LUCRO NA"
+          },
+          {
+            "pagina": 22,
+            "trecho": "Destinação de pelo menos 10% do PIB nacional para a educação pública, desde a educação infantil até a pós-graduação."
+          }
+        ]
+      },
+      {
+        "texto": "O programa também propõe a desmilitarização das polícias e a reestatização de empresas privatizadas, como Petrobras, Eletrobras e Vale.",
+        "evidencias": [
+          {
+            "pagina": 48,
+            "trecho": "Desmilitarização das Polícias: Unificação das polícias sob uma estrutura civil, preventiva, comunitária e humanizada"
+          },
+          {
+            "pagina": 60,
+            "trecho": "Reestatização das Empresas Estratégicas: Estatização imediata da Eletrobras, da Petrobrás (com controle 100% estatal e integração das refinarias), da Vale"
+          }
+        ]
+      },
+      {
+        "texto": "Defende ainda uma reforma agrária popular baseada na nacionalização da terra e no fim do seu monopólio privado.",
+        "evidencias": [
+          {
+            "pagina": 43,
+            "trecho": "OVERNO 43 REFORMA AGRÁRIA POPULAR E REFORMA URBANA REFORMA AGRÁRIA POPULAR; NACIONALIZAÇÃO DA TERRA E FIM DO"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "politica-externa-anti-imperialista",
+        "titulo": "Política externa anti-imperialista",
+        "descricao": "O programa defende uma política externa de oposição ao imperialismo, incluindo o rompimento de relações com o Estado de Israel e apoio às lutas de Venezuela, Cuba, Irã e outros povos contra sanções e cerco imperialistas.",
+        "evidencias": [
+          {
+            "pagina": 65,
+            "trecho": "Rompimento de relações diplomáticas, militares e comerciais com o Estado Sionista de Israel enquanto perdurar o genocídio do povo palestino e o regime de Apartheid em Israel"
+          },
+          {
+            "pagina": 65,
+            "trecho": "Apoio aberto à luta do povo da Venezuela, Cuba, Irã, Saara Ocidental, Iêmen e demais povos do mundo contra o cerco e as sanções imperialistas"
+          }
+        ]
+      },
+      {
+        "id": "nacionalizacao-bancos-divida",
+        "titulo": "Nacionalização do sistema financeiro e dívida pública",
+        "descricao": "O programa propõe a nacionalização dos bancos sob controle estatal e a suspensão imediata do pagamento da dívida pública, acompanhada de auditoria cidadã.",
+        "evidencias": [
+          {
+            "pagina": 18,
+            "trecho": "Nacionalização dos Bancos e Estatização do Sistema Financeiro: Fusão do sistema bancário sob controle do Estado e gestão dos trabalhadores."
+          },
+          {
+            "pagina": 15,
+            "trecho": "capital financeiro privado. São propostas da UP: • Suspensão Imediata do Pagamento e Auditoria Cidadã da Dívida Pública: Interrupção da sangria dos cofres públicos para a remuneração"
+          }
+        ]
+      },
+      {
+        "id": "trabalho-salario-minimo",
+        "titulo": "Emprego, renda e jornada de trabalho",
+        "descricao": "O programa defende o aumento de 100% do salário mínimo, o fim da escala 6x1 e a redução da jornada de trabalho para 30 horas semanais sem redução salarial.",
+        "evidencias": [
+          {
+            "pagina": 9,
+            "trecho": "Elevação Imediata dos salários e Aumento de 100% do Salário Mínimo."
+          },
+          {
+            "pagina": 10,
+            "trecho": "Fim da Escala 6x1 e Redução da Jornada para 30 Horas Semanais: Implementação do regime de 30 horas sem redução salarial (escala 4x3 ou turnos de 6 horas diárias)"
+          }
+        ]
+      },
+      {
+        "id": "saude-educacao-publicas",
+        "titulo": "Saúde e educação públicas e estatais",
+        "descricao": "O programa propõe um SUS 100% estatal, sem gestão hospitalar por Organizações Sociais, e destinação de pelo menos 10% do PIB à educação pública.",
+        "evidencias": [
+          {
+            "pagina": 20,
+            "trecho": "Fortalecimento e Unificação do SUS 100% Estatal: Fim da entrega da gestão hospitalar a Organizações Sociais (OSs), fundações privadas e cooperativas empresariais."
+          },
+          {
+            "pagina": 22,
+            "trecho": "Destinação de pelo menos 10% do PIB nacional para a educação pública, desde a educação infantil até a pós-graduação."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica-desmilitarizacao",
+        "titulo": "Segurança pública e desmilitarização das polícias",
+        "descricao": "O programa defende a desmilitarização das polícias, unificando-as sob uma estrutura civil orientada pela proteção da vida e pelos direitos humanos, com fim da lógica de guerra nas periferias.",
+        "evidencias": [
+          {
+            "pagina": 48,
+            "trecho": "Desmilitarização das Polícias: Unificação das polícias sob uma estrutura civil, preventiva, comunitária e humanizada, treinada na defesa dos direitos humanos da população trabalhadora e periférica."
+          }
+        ]
+      },
+      {
+        "id": "reforma-agraria-terra",
+        "titulo": "Reforma agrária popular e nacionalização da terra",
+        "descricao": "O programa propõe uma reforma agrária popular voltada à nacionalização da terra e ao fim do monopólio privado sobre ela, incluindo a desapropriação de latifúndios improdutivos.",
+        "evidencias": [
+          {
+            "pagina": 43,
+            "trecho": "OVERNO 43 REFORMA AGRÁRIA POPULAR E REFORMA URBANA REFORMA AGRÁRIA POPULAR; NACIONALIZAÇÃO DA TERRA E FIM DO"
+          },
+          {
+            "pagina": 44,
+            "trecho": "Executar um amplo programa nacional de reforma agrária, destinando terras improdutivas que não cumpram a função social"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-resumo-v1",
+    "model": "Anthropic Claude Sonnet",
+    "generatedAt": "2026-08-26T02:29:08.571Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT-5.4",
+    "judgedAt": "2026-08-26T03:25:59.329Z",
+    "verdicts": [
+      {
+        "id": "samara-martins:frase:1",
+        "verdict": "yes",
+        "reason": "As páginas citadas identificam o documento como programa da UP e afirmam que Samara Martins é candidata da UP à Presidência do Brasil."
+      },
+      {
+        "id": "samara-martins:frase:2",
+        "verdict": "yes",
+        "reason": "A página 65 defende explicitamente rompimento com Israel e apoio às lutas de Venezuela, Cuba, Irã e outros povos contra sanções imperialistas."
+      },
+      {
+        "id": "samara-martins:frase:3",
+        "verdict": "yes",
+        "reason": "As páginas 15 e 18 trazem literalmente a suspensão imediata do pagamento com auditoria cidadã e a nacionalização dos bancos."
+      },
+      {
+        "id": "samara-martins:frase:4",
+        "verdict": "yes",
+        "reason": "As páginas 9 e 10 sustentam aumento de 100% do salário mínimo e redução da jornada para 30 horas semanais sem redução salarial."
+      },
+      {
+        "id": "samara-martins:frase:5",
+        "verdict": "yes",
+        "reason": "A página 20 propõe SUS 100% estatal e o fim da gestão hospitalar por Organizações Sociais."
+      },
+      {
+        "id": "samara-martins:frase:6",
+        "verdict": "yes",
+        "reason": "As páginas 21 e 22 defendem o fim do lucro na educação e a destinação de pelo menos 10% do PIB à educação pública."
+      },
+      {
+        "id": "samara-martins:frase:7",
+        "verdict": "yes",
+        "reason": "As páginas 48 e 60 defendem desmilitarização das polícias e reestatização de empresas como Eletrobras, Petrobrás e Vale."
+      },
+      {
+        "id": "samara-martins:frase:8",
+        "verdict": "yes",
+        "reason": "A página 43 apresenta a reforma agrária popular baseada em nacionalização da terra e fim do monopólio privado da terra."
+      },
+      {
+        "id": "samara-martins:tema:politica-externa-anti-imperialista",
+        "verdict": "yes",
+        "reason": "A página 65 sustenta a política externa anti-imperialista, com rompimento com Israel e apoio a Venezuela, Cuba, Irã e outros povos."
+      },
+      {
+        "id": "samara-martins:tema:nacionalizacao-bancos-divida",
+        "verdict": "yes",
+        "reason": "As páginas 15 e 18 sustentam a suspensão imediata do pagamento da dívida com auditoria cidadã e a nacionalização do sistema bancário."
+      },
+      {
+        "id": "samara-martins:tema:trabalho-salario-minimo",
+        "verdict": "yes",
+        "reason": "As páginas 9 e 10 sustentam aumento de 100% do salário mínimo, fim da escala 6x1 e jornada de 30 horas sem redução salarial."
+      },
+      {
+        "id": "samara-martins:tema:saude-educacao-publicas",
+        "verdict": "yes",
+        "reason": "A página 20 propõe SUS 100% estatal sem OSs, e a página 22 propõe pelo menos 10% do PIB para a educação pública."
+      },
+      {
+        "id": "samara-martins:tema:seguranca-publica-desmilitarizacao",
+        "verdict": "yes",
+        "reason": "A página 48 defende desmilitarização, unificação civil, proteção da vida, direitos humanos e fim da lógica de guerra nas periferias."
+      },
+      {
+        "id": "samara-martins:tema:reforma-agraria-terra",
+        "verdict": "yes",
+        "reason": "As páginas 43 e 44 sustentam reforma agrária popular, nacionalização da terra, fim do monopólio privado e destinação de terras improdutivas."
+      }
+    ]
+  }
+}

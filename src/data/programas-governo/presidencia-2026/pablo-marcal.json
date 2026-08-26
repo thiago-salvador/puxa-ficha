@@ -1,0 +1,536 @@
+{
+  "version": 1,
+  "estado": "aguardando_revisao",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "PRESIDENTE",
+    "uf": "BR",
+    "sqCandidato": "280002553884",
+    "slug": "pablo-marcal",
+    "nomeUrna": "PABLO MARÇAL",
+    "partido": "PRTB",
+    "arquivoNome": "2026BR280002553884_01.pdf",
+    "arquivoNoPacote": "BR/2026BR280002553884_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-25T09:46:00Z"
+  },
+  "extracao": {
+    "sourceSha256": "0159b1f854deec5ec1fe9d28784807353bd61c249680ddaa143b9891b034f33d",
+    "extractedTextSha256": "d441afca2a2a03c9e134d7071a87b3ce75935ee0984b0471ce4ffb3a5531fc10",
+    "paginas": 28,
+    "secoes": [
+      {
+        "id": "marcal",
+        "titulo": "MARÇAL",
+        "nivel": 1,
+        "paginaInicial": 1,
+        "paginaFinal": 1,
+        "origem": "pdftotext",
+        "conteudo": "MARÇAL\nPRESIDENTE\nPLANO DE GOVERNO"
+      },
+      {
+        "id": "pablo-marcal-39-anos-casado-com-ana-carolina-marcal-pai-de-4",
+        "titulo": "Pablo Marçal, 39 anos, casado com Ana Carolina Marçal, pai de 4",
+        "nivel": 1,
+        "paginaInicial": 2,
+        "paginaFinal": 2,
+        "origem": "pdftotext",
+        "conteudo": "Pablo Marçal, 39 anos, casado com Ana Carolina Marçal, pai de 4\nfilhos, Lorenzo, Benjamin, Miguel e Isabela, escritor de 24 livros,\nsendo 5 best-sellers, e professor de mais de 400 mil alunos em\ninúmeros projetos e programas de treinamento presencial e online.\nMarçal nasceu na periferia de Goiânia-GO, passou a maior parte\nda sua vida acadêmica em escolas públicas, tendo se graduado\nem Direito pela Universidade Paulista, cursou MBA em gestão\nempresarial na UniAnhanguera.\nIniciou sua carreira profissional como atendente de call center\nem uma das maiores empresas de telecomunicações do Brasil,\nonde desenvolveu forte liderança, tornando-se o executivo mais\njovem do país pelas suas práticas inovadoras de desenvolvimento\npessoal e de equipe, com 1.100 colaboradores sob sua liderança.\nFez transição de carreira, sendo atualmente um dos maiores\nempreendedores da América Latina, investidor em diversos\nramos de negócio. Pablo Marçal transformou a realidade de\nmilhares de pessoas que saíram de uma posição e alcançaram\ncrescimento pessoal e financeiro, modificando a vida de suas\nfamílias e contribuindo com o avanço da economia brasileira."
+      },
+      {
+        "id": "roteiro",
+        "titulo": "ROTEIRO",
+        "nivel": 1,
+        "paginaInicial": 3,
+        "paginaFinal": 3,
+        "origem": "pdftotext",
+        "conteudo": "ROTEIRO\nDIAGNÓSTICO DO BRASIL\n•\n•\n•\n•\n\nPotência adormecida\nBaixa produtividade\nEstado excessivamente complexo\nA década decisiva para o Brasil\n\nPOTÊNCIA PARA LIDERAR. CAPACIDADE PARA\nPROSPERAR\nDIREITOS E GARANTIAS. COMPROMISSO COM A\nVIDA\nRESPONSABILIDADE FISCAL\n\nPLANO DE GOVERNO. 7 MISSÕES\n1.\n2.\n3.\n4.\n5.\n\nLibertar o potencial do povo brasileiro\nGerar prosperidade para todos\nReconstruir o governo brasileiro\nPreparar o Brasil para o século XXI\nModernizar os fundamentos produtivos\nbrasileiros\n6. Garantir paz, harmonia e convívio social\n7. Posicionar o Brasil entre as potencias\nglobais"
+      },
+      {
+        "id": "diagnostico-do-brasil",
+        "titulo": "DIAGNÓSTICO DO BRASIL",
+        "nivel": 1,
+        "paginaInicial": 4,
+        "paginaFinal": 4,
+        "origem": "pdftotext",
+        "conteudo": "DIAGNÓSTICO DO BRASIL"
+      },
+      {
+        "id": "potencia-adormecida",
+        "titulo": "POTÊNCIA ADORMECIDA.",
+        "nivel": 1,
+        "paginaInicial": 5,
+        "paginaFinal": 5,
+        "origem": "pdftotext",
+        "conteudo": "POTÊNCIA ADORMECIDA.\n\nPoucas nações receberam da história e da geografia condições tão favoráveis quanto o Brasil.\nSomos uma das maiores democracias do mundo, possuímos vasta extensão territorial, abundância de água doce, reservas\nminerais estratégicas, uma das maiores capacidades de produção de alimentos do planeta e uma matriz energética com\nenorme potencial de expansão.\nAlém de suas riquezas naturais, o Brasil possui seu maior ativo: seu povo. Uma população jovem, criativa, resiliente e capaz de\nsuperar desafios que muitas vezes seriam intransponíveis para outras sociedades.\nAs condições para a prosperidade existem. Os recursos existem. O talento existe.\nO grande desafio brasileiro é transformar todo esse potencial em realização.\n\nEssa é a missão da próxima geração de líderes nacionais."
+      },
+      {
+        "id": "baixa-produtividade",
+        "titulo": "BAIXA PRODUTIVIDADE.",
+        "nivel": 1,
+        "paginaInicial": 6,
+        "paginaFinal": 6,
+        "origem": "pdftotext",
+        "conteudo": "BAIXA PRODUTIVIDADE.\n\nO Brasil ocupa posição de destaque em recursos naturais, produção agrícola, reservas minerais e dimensão de mercado\nconsumidor. Entretanto, esses ativos não se converteram, na mesma proporção, em produtividade, renda e prosperidade para a\npopulação.\nAo longo das últimas décadas, o país cresceu abaixo de seu potencial e viu sua participação relativa na economia global\ndiminuir.\nO resultado desse processo é percebido diariamente pelos brasileiros: baixo crescimento da renda, mobilidade social limitada,\nserviços públicos insuficientes e perda de competitividade frente a economias que há poucas décadas possuíam condições\ninferiores às nossas.\nA verdadeira medida do desenvolvimento não está apenas na riqueza que uma nação possui, mas na capacidade de\ntransformar essa riqueza em oportunidades para seus cidadãos.\nPor isso, o Brasil precisa iniciar uma nova etapa baseada na empresarização da sociedade: uma cultura nacional que incentive\ncada brasileiro a desenvolver sua autonomia econômica, criar negócios, gerar empregos e construir prosperidade para sua\nfamília e para sua comunidade."
+      },
+      {
+        "id": "estado-excessivamente-complexo",
+        "titulo": "ESTADO EXCESSIVAMENTE COMPLEXO.",
+        "nivel": 1,
+        "paginaInicial": 7,
+        "paginaFinal": 7,
+        "origem": "pdftotext",
+        "conteudo": "ESTADO EXCESSIVAMENTE COMPLEXO.\n\nO modelo de desenvolvimento predominante nas últimas décadas concentrou excessiva confiança na capacidade do Estado de\ninduzir crescimento econômico, direcionar investimentos e definir prioridades produtivas.\nEsse modelo revelou limitações estruturais cada vez mais evidentes.\nA expansão contínua da burocracia, a crescente complexidade regulatória, a elevada carga tributária e a insegurança jurídica\naumentaram os custos de produção e reduziram a velocidade de adaptação da economia brasileira às transformações do\nmundo moderno.\nAo mesmo tempo, consolidou-se uma cultura de dependência institucional que enfraqueceu valores fundamentais para o\ndesenvolvimento sustentável, como autonomia, responsabilidade individual, mérito, inovação e empreendedorismo.\nO desafio do século XXI é construir instituições mais eficientes, previsíveis e capazes de liberar a energia produtiva da sociedade\nbrasileira.\nNenhuma nação prospera quando o Estado cresce seu próprio custo e estrutura mais rapidamente do que a capacidade de\ngeração de riqueza de seu povo."
+      },
+      {
+        "id": "a-decada-decisiva-para-o-brasil",
+        "titulo": "A DÉCADA DECISIVA PARA O BRASIL.",
+        "nivel": 1,
+        "paginaInicial": 8,
+        "paginaFinal": 8,
+        "origem": "pdftotext",
+        "conteudo": "A DÉCADA DECISIVA PARA O BRASIL.\n\nO mundo está entrando em uma nova era econômica.\nA reorganização das cadeias globais de produção, a ascensão da inteligência artificial, a corrida por minerais críticos, a busca\npor segurança energética e alimentar e a transformação digital das economias estão redefinindo a distribuição global de riqueza\ne poder.\nEssa mudança cria uma oportunidade histórica para países capazes de oferecer estabilidade institucional, liberdade econômica,\ncapacidade produtiva e capital humano qualificado. O Brasil reúne atributos raramente encontrados de forma simultânea: um\npovo capaz, abundância de recursos naturais, escala de mercado, capacidade agrícola, potencial energético, diversidade\nprodutiva e posição geopolítica privilegiada.\nMas o novo ciclo de prosperidade não será construído apenas sobre recursos naturais. Será construído sobre conhecimento,\ntecnologia, inovação e uma nova mentalidade nacional. A próxima década exigirá uma profunda transformação cultural\nbaseada em produtividade, empresarização da sociedade, fortalecimento das famílias, domínio das tecnologias emergentes e\npreparação para uma economia cada vez mais digital.\nO século XXI poderá ser lembrado como o século em que o Brasil finalmente assumiu seu lugar entre as grandes potências\nglobais — ou como mais uma oportunidade perdida.\n\nA escolha começa agora!"
+      },
+      {
+        "id": "potencia-para-liderar",
+        "titulo": "POTÊNCIA PARA LIDERAR.",
+        "nivel": 1,
+        "paginaInicial": 9,
+        "paginaFinal": 9,
+        "origem": "pdftotext",
+        "conteudo": "POTÊNCIA PARA LIDERAR.\nCAPACIDADE PARA PROSPERAR"
+      },
+      {
+        "id": "brasil-potencia-para-liderar-capacidade-para-prosperar",
+        "titulo": "BRASIL: POTÊNCIA PARA LIDERAR. CAPACIDADE PARA PROSPERAR.",
+        "nivel": 1,
+        "paginaInicial": 10,
+        "paginaFinal": 10,
+        "origem": "ocr",
+        "conteudo": "BRASIL: POTÊNCIA PARA LIDERAR. CAPACIDADE PARA PROSPERAR.\nDiagnóstico que revela a realidade. Oportunidade que aponta o caminho.\n1\nTEMOS POTENCIAL\n2\nMAS PRODUZIMOS\nPORQUE O AMBIENTE\nE AGORA SURGE UMA\nEXTRAORDINÁRIO\nMENOS DO QUE\nINSTITUCIONAL\nOPORTUNIDADE HISTÓRICA\nPODERÍAMOS\nNOS LIMITA\nPARA MUDAR ESSA TRAJETÓRIA\nO Brasil reúne vantagens competitivas\nNosso desempenho econômico está\nExcesso de burocracia, carga tributária\nO mundo está em transformação.\núnicas que poucos países possuem.\nabaixo do nosso potencial.\ne insegurança jurídica travam o país.\nO Brasil pode liderar essa nova era.\nNOSSAS VANTAGENS COMPETITIVAS\nDESEMPENNO ABAIXO DO POTENCIAL\nTRAVAS QUE LIMITAM O BRASIL\nO MUNDO ESTA MUDANDO\n6ª maior população do mundo\nCRESCIMENTO DO PIB\nBurocracia excessiva\nReorganização das cadeias globais\nMais de 203 milhões de brasileiros\nMÉDIO ANUAL (2010-2023)\nTempo e custo elevados para abrir, operar\nde produção\n5° maior área territorial\n1,4%\ne expandir empresas.\n2,6% Média\n1.8% MEdia\nBusca por segurança alimentar,\n8,5 milhões de km2\nBrasil\nEmergentes\nMundo\nenergética e mineral\nCarga tributária complexa e elevada\nMaior reserva de água doce do mundo\nAvanço acelerado da tecnologia\nCerca de 12% da água superficial do planeta\nSistema tributário caro, regressivo e que\ne da inteligência artificial\nPIB PER CAPITA (USS)\npenaliza quem produz e gera empregos.\nLíder global em alimentos\nPREÇOS CONSTANTES\nTransição energética e economia verde\nEntre os 3 maiores produtores de grãos,\nproteínas e fibras\nUs$ 9.1 mil\nUss 22,5 mil\nUSS 31,5 mil\nInsegurança jurídica\nNovos fluxos de investimento\nBrasil (2023)\nEmergentes\nMundo\nLeis instáveis, decisões imprevisíveis e\nemergem no mundo\nRiquezas minerais estratégicas\nbaixa confiança nas instituições.\nGrandes reservas de niobio, terras raras,\nO BRASIL ESTÁ NO CENTRO DESSA\nminério de ferro, cobre, ouro e muito mais\nPRODUTIVIDADE DO TRABALHO\nBaixa eficiência do Estado\nNOVA OPORTUNIDADE\nMatriz energética limpa e diversificada\n(PIB POR HORA TRABALHADA)\nGasto público elevado com retorno aquém\nPotencial em renováveis e bioenergia\ndo necessário à sociedade.\nAbundância de recursos naturais e alimentos\nUS$ 16,0\nUS$ 24,6\nUSs 37,0\nLocalização geográfica privilegiada\nBrasil (2023)\nEmergentes\nMundo\nEstabilidade democrática e institucional\nPorta de entrada para América do Sul\nInfraestrutura insuficiente e cara\ne rota natural de integração global\nLogistica ineficiente que aumenta o\nPopulação jovem e empreendedora\nCONSEQUÊNCIAS\ncusto Brasil e reduz a competitividade.\nMercado consumidor robusto\nCapacidade de liderança na agenda\nEntre os 10 maiores mercados do mundo\nambiental e energética\nRESULTADO:\nPOUCOS PAÍSES TÊM TANTO.\nSalários baixos\nDesigualdade\nBaixa\nMenos investimento\nPOUCOS PODEM IR TÃO LONGE.\npersistente\nMENOS INVESTIMENTO, MENOS PRODUTIVIDADE,\nPODEMOS SER PROTAGONISTAS\ncompetitividade\nMENOS OPORTUNIDADES, MENOS PROSPERIDADE.\nDO SÉCULO XXI.\nFontes: Banco Mundial, FMI, OCDE, CNI, IBGE (2023)\nO CAMINHO\nResponsabilidade\nLiberdade\nAmbiente de neaócios\nInvestimento em pessoas.\nInfraestrutura moderna\nEmpresariação e cultura\nÉ CLARO\nfiscal\neconômica\nsimples e previsível\ntecnologia e inovação\ne integrada\nde produtividade"
+      },
+      {
+        "id": "direitos-e-garantias",
+        "titulo": "DIREITOS E GARANTIAS.",
+        "nivel": 1,
+        "paginaInicial": 11,
+        "paginaFinal": 11,
+        "origem": "pdftotext",
+        "conteudo": "DIREITOS E GARANTIAS.\nCOMPROMISSO COM A VIDA"
+      },
+      {
+        "id": "compromisso-com-a-dignidade-a-cidadania-e-os-direitos-constitucionais",
+        "titulo": "COMPROMISSO COM A DIGNIDADE, A CIDADANIA E OS DIREITOS CONSTITUCIONAIS.",
+        "nivel": 1,
+        "paginaInicial": 12,
+        "paginaFinal": 12,
+        "origem": "pdftotext",
+        "conteudo": "COMPROMISSO COM A DIGNIDADE, A CIDADANIA E OS DIREITOS CONSTITUCIONAIS.\n\nO desenvolvimento econômico somente é legítimo quando alcança todos os brasileiros.\nO Governo terá como princípio inegociável a proteção dos direitos e garantias fundamentais previstos na Constituição Federal,\nassegurando igualdade perante a lei, respeito à dignidade humana e ampliação das oportunidades para todos os cidadãos.\nO Brasil é uma nação diversa, formada por diferentes povos, culturas, tradições e realidades regionais. Essa diversidade\nconstitui uma riqueza nacional e deve ser protegida e valorizada. Nosso compromisso é garantir:\n•\n•\n•\n•\n•\n•\n\nProteção integral à vida e à dignidade da pessoa humana, mantendo o Programa Bolsa Família;\nRespeito aos direitos constitucionais dos povos indígenas, comunidades quilombolas e povos tradicionais;\nAmpliação das oportunidades de educação, qualificação profissional e geração de renda para populações vulneráveis;\nPromoção da acessibilidade e inclusão das pessoas com deficiência;\nCombate à pobreza por meio da emancipação econômica e não da dependência permanente;\nPresença efetiva do Estado onde ele é mais necessário, especialmente nas regiões historicamente menos assistidas.\n\nA verdadeira justiça social não consiste em criar dependência, mas em garantir que cada cidadão tenha condições reais de\nprosperar com liberdade, dignidade e autonomia."
+      },
+      {
+        "id": "responsabilidade-fiscal",
+        "titulo": "RESPONSABILIDADE FISCAL",
+        "nivel": 1,
+        "paginaInicial": 13,
+        "paginaFinal": 13,
+        "origem": "pdftotext",
+        "conteudo": "RESPONSABILIDADE FISCAL"
+      },
+      {
+        "id": "responsabilidade-fiscal-compromisso-com-as-futuras-geracoes",
+        "titulo": "RESPONSABILIDADE FISCAL. COMPROMISSO COM AS FUTURAS GERAÇÕES",
+        "nivel": 1,
+        "paginaInicial": 14,
+        "paginaFinal": 14,
+        "origem": "pdftotext",
+        "conteudo": "RESPONSABILIDADE FISCAL. COMPROMISSO COM AS FUTURAS GERAÇÕES\n\nNão existe prosperidade duradoura sem responsabilidade fiscal.\nO Governo terá como princípio o respeito ao dinheiro do contribuinte, a sustentabilidade das contas públicas e a construção de\num ambiente econômico estável capaz de gerar crescimento, empregos, investimentos e aumento do poder de compra das\nfamílias brasileiras.\nValorizamos o trabalhador brasileiro que se empenha em trazer o sustento para sua família através do seu suor, de modo que\ndefiniremos e manteremos o valor do salário mínimo como o melhor da América do Sul.\nO nosso compromisso é garantir:\n•\n•\n•\n•\n•\n•\n\nFortalecimento de uma âncora fiscal baseada na redução gradual da relação dívida/PIB;\nRevisão permanente das despesas públicas para eliminar desperdícios e aumentar a eficiência do Estado;\nRedução progressiva da carga tributária sobre a produção, o investimento e a geração de empregos;\nFim dos subsídios e incentivos fiscais que não gerem retorno econômico ou social comprovado;\nPriorização dos investimentos públicos em infraestrutura, educação, segurança e tecnologia;\nEstímulo à formação de poupança, ao investimento produtivo e à redução do endividamento das famílias.\n\nA verdadeira justiça fiscal consiste em administrar com responsabilidade os recursos da sociedade, permitindo que famílias e\nempresas prosperem, invistam e construam um futuro melhor para as próximas gerações."
+      },
+      {
+        "id": "os-tres-pilares-da-economia-brasileira",
+        "titulo": "OS TRÊS PILARES DA ECONOMIA BRASILEIRA",
+        "nivel": 1,
+        "paginaInicial": 15,
+        "paginaFinal": 15,
+        "origem": "ocr",
+        "conteudo": "OS TRÊS PILARES DA ECONOMIA BRASILEIRA\nEntenda o PIB e a composição da economia nacional\nA economia do Brasil é dividida em três grandes setores que se complementam e impulsionam o desenvolvimento do país.\n1. SETOR PRIMÁRIO\n2. SETOR SECUNDÁRIO\n3. SETOR TERCIÁRIO\nCOMPOSIÇÃO DO PIB\nPequeno, mas Líder.\nA Força Industrial.\nO Motor dos Serviços e Comércio.\nRepresenta cerca de 6% do PIB, com\nCorresponde a 27% do PIB, focando em\nÉ o maior setor, composto por comércio\n6%\nliderança global em soja, café e mineração.\nalimentos, produtos petroquímicos e\nvarejista, servidores públicos e profissionais\nmontagem de veículos.\nliberais.\n27%\nLIDERANÇA GLOBAL\nPRINCIPAIS ATIVIDADES\nPRINCIPAIS ATIVIDADES\n67%\nComércio\nServidores\nProfissionais\nSoja\nCafé\nMineração\nAlimentos\nProdutos\nVarejista\nPúblicos\nLiberais\nPetroquímicos\n(g))\nSetor Primário\n6%\nTransporte\nRodoviário\nTelecomunicações\nServiços de Alta\nSetor Secundário\n27%\nComplexidade\nMontagem\nIndústria de\nde Veículos\nTransformação\nSetor Terciário\n67%\nLogística e\nIntegração\nTecnologia e\nConectividade\nEconômica\nInovação\n6%\nJuntos, esses três pilares\n27%\nmovimentam a economia,\ngeram empregos, renda e\nDO PIB\n67%\noportunidades para milhões\nDO PIB\nde brasileiros.\nDO PIB\nPIB - PRODUTO INTERNO BRUTO\nFonte: IBGE - Contas Nacionais\nÉ a soma de todos os bens e servicos finais produzidos no país em determinado período.\nDados referentes a 2023"
+      },
+      {
+        "id": "plano-de-governo",
+        "titulo": "PLANO DE GOVERNO.",
+        "nivel": 1,
+        "paginaInicial": 16,
+        "paginaFinal": 16,
+        "origem": "pdftotext",
+        "conteudo": "PLANO DE GOVERNO.\n7 MISSÕES"
+      },
+      {
+        "id": "missao-1-libertar-o-potencial-do-povo-brasileiro",
+        "titulo": "MISSÃO 1: Libertar o potencial do povo brasileiro",
+        "nivel": 1,
+        "paginaInicial": 17,
+        "paginaFinal": 17,
+        "origem": "pdftotext",
+        "conteudo": "MISSÃO 1: Libertar o potencial do povo brasileiro\nObjetivo: Transformar dependência em autonomia individual\nEstratégia: Fortalecer a família, desenvolver talentos, ampliar oportunidades e promover autonomia econômica e social\n\nFamília\nFortalecer a família como núcleo\ncentral da sociedade\nLançar o Programa Nacional de\nFortalecimento da Família\nLançar o Programa Nacional de\nCombate à Violência Domestica\nAmpliar a mediação familiar préjudicial\nInaugurar o Programa Nacional de\nPaternidade Responsável\nPrimeira infância\nUniversalização de creches para\nfamílias vulneráveis\nMonitoramento nacional do\ndesenvolvimento infantil\nExpandir visitação domiciliar na\nprimeira infância\n\nSaúde\nReduzir filas e ampliar acesso à\natenção básica\nGarantir prontuário único nacional\nTelemedicina nacional integrada\nao SUS\nLançar o Programa Nacional de\nSaúde Mental\nPrograma para prevenção de\ndoenças, mediante o incentivo da\nprática de hábitos saudáveis\nPró-Saúde: Programa destinado a\nconferir maior eficiência à rede de\nsaúde pública e atendimento\nrespeitoso aos usuários\nPolos Tecnológicos de Saúde - PTS:\nPromoveremos a criação de polos\ntecnológicos de saúde com\ninfraestrutura para o atendimento\naos usuários\n\nEducação\nImplantar educação sobre a vida,\ntrabalho e empreendedorismo\nLetrar empreendedorismo e\neducação financeira desde o\nensino fundamental\nAlphabyte: Fortalecer ensino de\ncomputação e IA nas escolas\nGarantir a alfabetização plena até\no 2º ano\nBolsa de estudo para engenharia,\nciências, matemática e TIC\nForSuper: Programa de formação\npara superdotados\nValorização dos professores:\nsalario, segurança e capacitação\nAlfabetização Precoce: Programa\nque visa estimular o\ndesenvolvimento cognitivo da\ncriança\n\nEducação\nCrédito Mirim: Criação de\nprograma de bonificação para\nalunos da rede publica\nUniversidade Federal Digital\n(UFD)\nGraduação, Virtualização e\nEmpresarização (GVE)\nIncentivo à troca de\nconhecimento e experiências\nentre empresas e academia\n\nTríade V.E.M.\nVirtualização da interface\ncidadão-Estado\nEmpresarização da periferia\nLançar programas comunitários\nde mudança de mentalidade"
+      },
+      {
+        "id": "missao-1-libertar-o-potencial-do-povo-brasileiro-2",
+        "titulo": "MISSÃO 1: Libertar o potencial do povo brasileiro",
+        "nivel": 1,
+        "paginaInicial": 18,
+        "paginaFinal": 18,
+        "origem": "pdftotext",
+        "conteudo": "MISSÃO 1: Libertar o potencial do povo brasileiro\nObjetivo: Transformar dependência em autonomia individual\nEstratégia: Fortalecer a família, desenvolver talentos, ampliar oportunidades e promover autonomia econômica e social\n\nEsporte\nMassificar o esporte de base\nFortalecer apoio aos esportistas\nprofissionais\n\nCultura\nFortalecer os diferentes traços\nculturais regionais\nFomentar apoio ao nascimento e\ncrescimento de novos talentos\n\nPovos Tradicionais\nPreservar a cultura de\ncomunidades tradicionais\nLançar programa de integração das\ncomunidades tradicionais\nRegularização fundiária de\nterritórios reconhecidos\nPrograma de bioeconomia para\ncomunidades tradicionais\nConectividade digital para áreas\nremotas"
+      },
+      {
+        "id": "missao-2-gerar-prosperidade-para-todos",
+        "titulo": "MISSÃO 2: Gerar prosperidade para todos",
+        "nivel": 1,
+        "paginaInicial": 19,
+        "paginaFinal": 19,
+        "origem": "pdftotext",
+        "conteudo": "MISSÃO 2: Gerar prosperidade para todos\nObjetivo: Transformar o Brasil na economia mais dinâmica do hemisfério sul\nEstratégia: Transformar o empreendedorismo em política nacional de desenvolvimento\n\nEmpresarização\nCriar o Ministério da\nEmpresarização\n\nStartups\n\nAbertura automática de empresas\ncom atividades de baixo risco\n\nDemocratização do investimento\nprodutivo\nMarco Nacional das Empresas\nInovadoras\nCompras governamentais de\ninovação\nFundo de coinvestimento públicoprivado\n\nCriar o Código de Defesa do\nEmpreendedor\n\nCidades inteligentes conectadas\npara o desenvolvimento regional\n\nLançar Programa Nacional de\nEmpresarização da Periferia\nEmpresa aberta automaticamente\npelo CPF Digital em 24h\n\nProdutividade\n\nEconomia Criativa\n\nMicroempreendedorismo\nCriar regime simplificado nacional\n\nCooperativismo\nLançar Programa Nacional de\nCooperativas Produtivas\n\nAssegurar isenção tributária\nprogressiva para novos negócios\nRenegocia Brasil\nEconomia Digital\nExpansão da economia de\nplataformas\nFundo Nacional de Inovação\nTecnológica\nMarco Legal da Economia de\nPlataformas\n\nLançar o Programa Nacional de\nProdutividade para pequenas\nempresas\n\nConstruir centros regionais para\ntransformação da criatividade em\nvalor\n\nIncentivos para empresas que\nprestam serviços e-commerce\n\nAmpliar empresas atendidas pelo\nPrograma Brasil Mais que visa\naumentar a produtividade das\nempresas\n\nCriar Polo Nacional de Economia\nCriativa\n\nRedução das barreiras regulatórias\nao e-commerce, como os modelos\nde venda multicanal\n\nPrograma de renegociação de\ndívidas dos quase 70 milhões de\nbrasileiros com nome no SPC e das\nmais de 30% das empresas que se\nencontram negativadas\nSementes para Governar\nPrograma de gamificação para a\npromoção dos beneficiados pelo\nassistencialismo, garantindo\ncrédito social para aqueles que\navançarem em mudança de\nmentalidade"
+      },
+      {
+        "id": "missao-3-reconstruir-o-governo-brasileiro",
+        "titulo": "MISSÃO 3: Reconstruir o governo brasileiro",
+        "nivel": 1,
+        "paginaInicial": 20,
+        "paginaFinal": 20,
+        "origem": "pdftotext",
+        "conteudo": "MISSÃO 3: Reconstruir o governo brasileiro\nObjetivo: Fazer o Estado funcionar para o cidadão\nEstratégia: Criar um Estado enxuto, eficiente, digital e focado em resultados\n\nGestão Pública\n\nImplantar gestão por resultados\nAgenda de governo unificada –\nfim do interesse particular\nPlanejamento estratégico\ncentralizado para foco e\nentrega de resultados\nImplantar Painel de Controle de\ngestão de KPIs em todos os\nórgãos de governo\n\nAdotar governança PDCA em\ntoda a administração pública\n\nTransformação Digital\nDigitalizar 100% dos serviços\nfederais\nImposto de Renda eletrônico\nautomático\nSistema Único de Informação\nDesburocratização\nMutirão anual de revogação de\nnormas obsoletas\n\nEscola Nacional de Liderança\nPública\n\nNormas somente serão editadas\nse outra for revogada – One in,\none out\n\nContratos de desempenho\nministerial\n\nPortal Único de Licenças\n\nCoordenação centralizada na\nCasa Civil, com tomada de\ndecisão e execução nas pastas\ntemáticas\n\nEstatais\nLançar o Programa de\nDesestatização Prioritária\nProfissionalizar gestão das estatais\npara gerar valor ao ativo e lançar\nabertura de capital\nContração de executivos do\nmercado com comprovada\nexperiência corporativa – fim do\ncompadrio nas indicações\nConselhos com maioria\nindependente\nReforma Tributária\n\nMarketplace nacional de compras\ngovernamentais\nIA para combate a fraudes em\nlicitações\nGoverno Itinerante\nLevar a administração federal para\ntodas regiões do país\nPresidente e ministros em\nmovimento em cada região do país\npor quadrimestre\nTripé Econômico\n\nGarantir simplificação do modelo\nRedução da carga tributária\n\nLicenciamento\n\nCompras Públicas\n\nCâmbio flutuante\n\nResponsabilidade fiscal\nAprovação tácita para processos\nsem manifestação do Estado\n\nMetas para conter a inflação"
+      },
+      {
+        "id": "missao-3-reconstruir-o-governo-brasileiro-2",
+        "titulo": "MISSÃO 3: Reconstruir o governo brasileiro",
+        "nivel": 1,
+        "paginaInicial": 21,
+        "paginaFinal": 21,
+        "origem": "pdftotext",
+        "conteudo": "MISSÃO 3: Reconstruir o governo brasileiro\nObjetivo: Fazer o Estado funcionar para o cidadão\nEstratégia: Criar um Estado enxuto, eficiente, digital e focado em resultados\n\nAplicativo Brasil\n\nCanal de comunicação do\ngoverno federal apresentando o\nBrasil para os brasileiros e para\no mundo\nBanco de Dados Nacional\nRedimensionar a oferta de serviços\npúblicos com base em Big Data\nCapital-Gov\n\nFintech-Bank\nIntensificar a digitalização e a\ndesburocratização do setor\nbancário por meio da\n\"fintechização\"\nCriar novas modalidades de\nempréstimo e garantias entre\npessoas físicas e jurídicas\nAcelerar as políticas de Open\nBanking\n\nMeio Ambiente\nLançar o Programa Nacional de\nBioeconomia para geração de\nrenda\nImplantar programa nacional de\nrecuperação de áreas degradadas\ne recomposição de nascentes\nestratégicas para segurança hídrica\nRegulamentar e consolidar o\nmercado brasileiro de carbono,\natraindo investimentos privados\npara conservação ambiental e\ndesenvolvimento sustentável\nCombater o desmatamento ilegal\n\nCriação de Fundos de Venture\nCapital com recursos públicos\nque sirvam como contrapartida\naos investimentos privados em\nstartups, mediante o benefício\nde isenção tributária\nescalonada\n\nCriar política que remunere os\nserviços ambientais prestados\npelas florestas em pé\nImplementar políticas de\ncombate ao comércio ilegal e\nproteção ao direito dos\nanimais"
+      },
+      {
+        "id": "missao-4-preparar-o-brasil-para-o-seculo-xxi",
+        "titulo": "MISSÃO 4: Preparar o Brasil para o século XXI",
+        "nivel": 1,
+        "paginaInicial": 22,
+        "paginaFinal": 22,
+        "origem": "pdftotext",
+        "conteudo": "MISSÃO 4: Preparar o Brasil para o século XXI\nObjetivo: Transformar tecnologia em soberania\nEstratégia: Posicionar o Brasil entre as nações líderes da nova economia digital\n\nVirtualização\nDigitalizar a relação cidadãoEstado\nInteligência Artificial\nLançar a Estratégia Nacional de IA\n\nConectividade\nDisponibilizar Internet de alta\nvelocidade para todos\nCobertura 5G em todos os\nmunicípios\nInternet em 100% das escolas\npúblicas\nPrograma Amazônia Conectada\n\nLaboratório Nacional de IA\nIncentivar parcerias com centros\nglobais de IA\nCriar o Laboratório Nacional de IA\nIA aplicada ao SUS\nIA aplicada à educação pública\nIA para na vida das favelas\n\nUniversidade Federal Digital\nPromover capacitação em escala\nnacional\nGraduação tecnológica online\nnacional\nCertificações profissionais rápidas\nPlataforma de educação\ncontinuada\n\nPesquisa e Desenvolvimento\nIncentivar inovação aplicada a\nindústria\nCibersegurança\nProteger infraestrutura nacional\nComando Nacional de Defesa\nDigital\nDatacenters\nPolítica de atração de\ninvestimentos globais\nRegime tributário competitivo\nEnergia dedicada para grandes\ndatacenters\nPolítica nacional de computação\nem nuvem\n\nSistema S\nReorientar formação profissional\nReorientação para a indústria do\nfuturo\nPrograma V.E.T.\nLançar estratégia de Vocação,\nEducação e Treinamento\nMapeamento técnico de talentos\npara direcionamento de capital\nhumano\nTech Gamer\nIncentivo e condições tecnológicas\npara a produção de jogos digitais\nDesenvolvimento de polo nacional\nde produção de games"
+      },
+      {
+        "id": "missao-5-modernizar-os-fundamentos-produtivos-brasileiros",
+        "titulo": "MISSÃO 5: Modernizar os fundamentos produtivos brasileiros",
+        "nivel": 1,
+        "paginaInicial": 23,
+        "paginaFinal": 23,
+        "origem": "pdftotext",
+        "conteudo": "MISSÃO 5: Modernizar os fundamentos produtivos brasileiros\nObjetivo: Reposicionar o Brasil entre as nações mais influentes do mundo\nEstratégia: Recuperar a competitividade nacional e aumentar a produtividade\n\nInfraestrutura\nLançar o Plano Nacional de\nInfraestrutura Integrada\nModernizar modelo de concessão\nde infraestrutura\nPromover a finalização das mais de\n20 mil obras públicas federais\ninacabadas\nModernizar modelo de concessão\nde infraestrutura\nFerrovias\nIntegração ferroviária nacional\nCorredor Norte-Sul completo\nIntegração ferroviária\nagroindustrial\n\nEnergia\nGarantir segurança energética de\nlongo prazo\n\nPetróleo e Gás\nElaborar modelo de exploração da\nMargem Equatorial\n\nIncentivar produção de energia a\npartir de resíduos, waste to energy\n(WTE)\n\nMineração\nNovo marco de minerais críticos\nDestravar o potencial de\ncrescimento mineral brasileiro\n\nPrograma Nacional de Terras Raras\nAutomotivo\nSemicondutores\n\nÁgua\nPrograma Brasil Mobilidade 2035\nInfraestrutura hídrica estratégica\n\nRevogar normas complexas\n\nUniversalizar o acesso a agua e\nesgoto\n\nPolítica nacional para híbridos flex\n\nEstratégia Nacional de\nMicroeletrônica\nParcerias internacionais para\ntransferência tecnológica\n\nDefesa\nAeroportos\n\nRodovias\nConcessão e duplicação de eixos\nestratégicos\n\nModernização tecnológica das\nForças Armadas\nDefinição do claro papel das Forcas\nArmadas no desenvolvimento e\nproteção da nação\n\nAmpliação da conectividade\nregional"
+      },
+      {
+        "id": "missao-5-modernizar-os-fundamentos-produtivos-brasileiros-2",
+        "titulo": "MISSÃO 5: Modernizar os fundamentos produtivos brasileiros",
+        "nivel": 1,
+        "paginaInicial": 24,
+        "paginaFinal": 24,
+        "origem": "pdftotext",
+        "conteudo": "MISSÃO 5: Modernizar os fundamentos produtivos brasileiros\nObjetivo: Reposicionar o Brasil entre as nações mais influentes do mundo\nEstratégia: Recuperar a competitividade nacional e aumentar a produtividade\n\nAgronegócio\n\nTurismo\n\nLiderança global em segurança\nalimentar\nIntegrar agronegócio a cadeia\nlogística nacional\n\nDobrar fluxo turístico internacional\n\nPlano Nacional de Irrigação\n\nIsenção de visto para mercados\nestratégicos\n\nSeguro rural universal\nExpansão da armazenagem\nagrícola\nDesenvolvimento tecnológico\ndas cadeias produtivas que\ncontemplem características\nregionais e outros\ndiferenciais competitivos dos\nmicro e pequenos produtores\nrurais\n\nPosicionar o Brasil como destino\npreferencial do turismo global\n\nPrograma Nacional de Aviação\nRegional\nDobrar conectividade internacional\nIntensificar campanhas de marketing\nnacional e internacional para tornar\nas cinco regiões do país mais\nconhecidas e desejadas pelos\nvisitantes\n\nIndústria\nLançar a Nova Política Industrial\nBrasileira\nAdensar cadeia de suprimento de\npartes, pecas e componentes\nApoiar a competitividade de\nindustrias de forte capital e de\nmão de obra intensiva\nHabitação\nPrograma de Liberdade para\nAdquirir Residência (LAR) para\nadequar e corrigir as imperfeições\ndos programas habitacionais\n\nPortos\nJanela única portuária\nModernização dos corredores de\nexportação"
+      },
+      {
+        "id": "missao-6-garantir-paz-harmonia-e-convivio-social",
+        "titulo": "MISSÃO 6: Garantir paz, harmonia e convívio social",
+        "nivel": 1,
+        "paginaInicial": 25,
+        "paginaFinal": 25,
+        "origem": "pdftotext",
+        "conteudo": "MISSÃO 6: Garantir paz, harmonia e convívio social\nObjetivo: Assegurar serviço de segurança pública eficiente para todos os brasileiros\nEstratégia: Garantir liberdade, propriedade e paz social\n\nCrime organizado\nPlano Nacional de Combate às\nFacções\nIntegração de inteligência\nfinanceira\n\nLegislação Penal\nModernização das leis penais\ncontra organizações criminosas\nSegurança Rural\n\nConfisco ampliado de patrimônio\ncriminoso\nFronteiras\n\nDrones e satélites de\nmonitoramento\n\nDefesa da Mulher\nRede Nacional de Proteção\nCombate à Corrupção\n\nPolicia\n\nReabilitação e Readaptação de\nPoliciais\n\nEnsino técnico obrigatório\n\nSegurança Pública Digital\nPrograma de treinamento e\neducação em segurança\nInteligência analítica, comunicação\nvirtual integrada entre os diversos\nórgãos\n\nFurto\n\nPPPs para gestão prisional\n\nControle inteligente de cargas\n\nIntegração nacional de inteligência\n\nTransformar presídios em centros\nde ressocialização\nFortalecer capacitação profissional\nobrigatória para ressocialização\nTrabalho remunerado\n\nProteção da propriedade produtiva\n\nSistema Integrado de Vigilância\n\nSistema prisional\n\nTransparência total dos gastos\npúblicos\nUtilização de IA para identificar\ncasos de corrupção\n\nDependência química\nExpandir recuperação e reinserção\nsocial\nAmpliar comunidades terapêuticas\nReinserção produtiva póstratamento\nAtendimento integrado saúdeassistência-social\n\nPrograma Nacional de\nCombate ao Furto e ao Roubo\nde Veículos e Celulares\nMBVES\nMapa Brasileiro das\nVulnerabilidades Estruturais,\nSociais e Criminais"
+      },
+      {
+        "id": "missao-7-posicionar-o-brasil-entre-as-potencias-globais",
+        "titulo": "MISSÃO 7: Posicionar o Brasil entre as potencias globais",
+        "nivel": 1,
+        "paginaInicial": 26,
+        "paginaFinal": 26,
+        "origem": "pdftotext",
+        "conteudo": "MISSÃO 7: Posicionar o Brasil entre as potencias globais\nObjetivo: Ocupar o espaço naturalmente reservado ao Brasil na arena global em função dos nossos diferenciais competitivos\nEstratégia: Inserir o Brasil entre as principais economias e lideranças mundiais\n\nAmérica Latina\nRessignificar relacionamento do\nBrasil com seus vizinhos\nDobrar fluxo comercial na região\nHarmonização regulatória regional\nReconhecimento mútuo de\ncertificações\nIntegração logística regional\nApoio a cadeia do turismo\nTrocas culturais e diplomáticas\nentre os países\nFortalecer o papel da América\nLatina no arranjo global\nIntegração industrial\nEstratégia de complementariedade\ncomercial\n\nEstados Unidos\n\nÁsia\n\nComércio Exterior\n\nRetomada do convívio diplomático\ne de colaboração\nCooperação em IA e\nsemicondutores\n\nDiversificação de mercados\nAmpliação do comércio com ASEAN\n\nDobrar as exportações brasileiras\n\nAmpliação de investimentos\nprodutivos\nExpansão de P&D conjunto\n\nAtração de cadeias produtivas\ndeslocadas da China\n\nJanela Única de Comércio Exterior\n\nDesenvolvimento de uma agenda\nestratégica para minerais raros,\nenergia limpa, tecnologia e\nagronegócio\nEuropa\nDestravar o potencial do Acordo\nMercosul-Uniao Europeia\nCooperação em hidrogênio verde\nParcerias industriais avançadas\n\nDesenhar estratégia Brasil-Índia\n\nAtualizar modelo de relacionamento\ndiplomático e comercial com a China\nÁfrica\nCriar novo eixo geopolitico Sul-Sul\n\nImplementar novo modelo\nestratégico de integração Brasil –\nÁfrica\n\nImplementar foco comercial no\npapel do Itamaraty\n\nAmpliar a atuação da Agência\nBrasileira de Promoção de\nExportações e Investimentos –\nAPEX Brasil"
+      },
+      {
+        "id": "pagina-sem-conteudo-textual-no-documento-original",
+        "titulo": "[Página sem conteúdo textual no documento original.]",
+        "nivel": 1,
+        "paginaInicial": 27,
+        "paginaFinal": 27,
+        "origem": "sem-texto",
+        "conteudo": "[Página sem conteúdo textual no documento original.]"
+      },
+      {
+        "id": "um-governo",
+        "titulo": "UM GOVERNO",
+        "nivel": 1,
+        "paginaInicial": 28,
+        "paginaFinal": 28,
+        "origem": "pdftotext",
+        "conteudo": "UM GOVERNO\nDO BRASIL\nPARA TODOS OS BRASILEIROS"
+      }
+    ]
+  },
+  "resumo": {
+    "texto": "O plano de governo de Pablo Marçal está organizado em um diagnóstico do Brasil seguido por sete missões. O diagnóstico caracteriza o Brasil como uma potência adormecida com abundância de recursos naturais e população jovem. O texto atribui o baixo crescimento econômico do país a uma produtividade inferior ao seu potencial. O documento propõe uma empresarização da sociedade como estratégia para ampliar a autonomia econômica dos brasileiros. O plano propõe reduzir a carga tributária sobre produção e investimento e simplificar barreiras regulatórias. O documento declara compromisso em manter o Programa Bolsa Família como parte da proteção à dignidade da pessoa humana. O plano propõe uma âncora fiscal baseada na redução gradual da relação dívida/PIB. O documento prevê a criação de um Ministério da Empresarização como parte da estratégia para gerar prosperidade econômica.",
+    "frases": [
+      {
+        "texto": "O plano de governo de Pablo Marçal está organizado em um diagnóstico do Brasil seguido por sete missões.",
+        "evidencias": [
+          {
+            "pagina": 3,
+            "trecho": "A VIDA RESPONSABILIDADE FISCAL PLANO DE GOVERNO. 7 MISSÕES 1. 2. 3. 4. 5. Libertar o potencial do povo brasileiro Gerar prosperidade para todos Reconstruir o governo brasileiro Preparar o Brasil para o século XXI Modernizar os fundamentos produtivos brasileiros 6. Garantir paz, harmonia e convívio social 7. Posicionar o Brasil entre as potencias globais"
+          }
+        ]
+      },
+      {
+        "texto": "O diagnóstico caracteriza o Brasil como uma potência adormecida com abundância de recursos naturais e população jovem.",
+        "evidencias": [
+          {
+            "pagina": 5,
+            "trecho": "POTÊNCIA ADORMECIDA. Poucas nações receberam da história e da geografia condições tão favoráveis quanto o Brasil."
+          },
+          {
+            "pagina": 5,
+            "trecho": "enorme potencial de expansão. Além de suas riquezas naturais, o Brasil possui seu maior ativo: seu povo. Uma população jovem, criativa, resiliente e capaz de superar desafios"
+          }
+        ]
+      },
+      {
+        "texto": "O texto atribui o baixo crescimento econômico do país a uma produtividade inferior ao seu potencial.",
+        "evidencias": [
+          {
+            "pagina": 6,
+            "trecho": "O Brasil ocupa posição de destaque em recursos naturais, produção agrícola, reservas minerais e dimensão de mercado consumidor. Entretanto, esses ativos não se converteram, na mesma proporção, em produtividade, renda e prosperidade para a população."
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe uma empresarização da sociedade como estratégia para ampliar a autonomia econômica dos brasileiros.",
+        "evidencias": [
+          {
+            "pagina": 6,
+            "trecho": "o Brasil precisa iniciar uma nova etapa baseada na empresarização da sociedade: uma cultura nacional que incentive cada brasileiro a desenvolver sua autonomia econômica, criar negócios, gerar empregos e construir prosperidade para sua família e para sua comunidade."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe reduzir a carga tributária sobre produção e investimento e simplificar barreiras regulatórias.",
+        "evidencias": [
+          {
+            "pagina": 14,
+            "trecho": "Redução progressiva da carga tributária sobre a produção, o investimento e a geração de empregos;"
+          },
+          {
+            "pagina": 19,
+            "trecho": "Redução das barreiras regulatórias"
+          }
+        ]
+      },
+      {
+        "texto": "O documento declara compromisso em manter o Programa Bolsa Família como parte da proteção à dignidade da pessoa humana.",
+        "evidencias": [
+          {
+            "pagina": 12,
+            "trecho": "Proteção integral à vida e à dignidade da pessoa humana, mantendo o Programa Bolsa Família;"
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe uma âncora fiscal baseada na redução gradual da relação dívida/PIB.",
+        "evidencias": [
+          {
+            "pagina": 14,
+            "trecho": "Fortalecimento de uma âncora fiscal baseada na redução gradual da relação dívida/PIB;"
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê a criação de um Ministério da Empresarização como parte da estratégia para gerar prosperidade econômica.",
+        "evidencias": [
+          {
+            "pagina": 19,
+            "trecho": "MISSÃO 2: Gerar prosperidade para todos Objetivo: Transformar o Brasil na economia mais dinâmica do hemisfério"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "diagnostico-potencial-nao-realizado",
+        "titulo": "Diagnóstico de potencial não realizado",
+        "descricao": "O documento descreve o Brasil como dotado de recursos naturais, extensão territorial e população jovem, mas afirma que esses ativos não se converteram, na mesma proporção, em produtividade, renda e crescimento econômico.",
+        "evidencias": [
+          {
+            "pagina": 5,
+            "trecho": "Poucas nações receberam da história e da geografia condições tão favoráveis quanto o Brasil."
+          },
+          {
+            "pagina": 6,
+            "trecho": "esses ativos não se converteram, na mesma proporção, em produtividade, renda e prosperidade para a população."
+          }
+        ]
+      },
+      {
+        "id": "reforma-do-estado-e-desburocratizacao",
+        "titulo": "Reforma do Estado e desburocratização",
+        "descricao": "O plano associa burocracia, complexidade regulatória, carga tributária e insegurança jurídica ao aumento de custos de produção, e propõe medidas como revisão de normas obsoletas, reforma tributária e desestatização de empresas públicas.",
+        "evidencias": [
+          {
+            "pagina": 7,
+            "trecho": "cada vez mais evidentes. A expansão contínua da burocracia, a crescente complexidade regulatória, a elevada carga tributária e a insegurança jurídica aumentaram os custos de produção"
+          },
+          {
+            "pagina": 20,
+            "trecho": "para todas regiões do país Presidente e ministros em movimento em cada região do país por quadrimestre Tripé Econômico Garantir simplificação do modelo Redução da carga tributária"
+          }
+        ]
+      },
+      {
+        "id": "empresarizacao-e-empreendedorismo",
+        "titulo": "Empresarização da sociedade e empreendedorismo",
+        "descricao": "O documento propõe a empresarização da sociedade como cultura nacional e prevê a criação de um Ministério da Empresarização, além de medidas voltadas a microempreendedores, startups e cooperativas.",
+        "evidencias": [
+          {
+            "pagina": 6,
+            "trecho": "seus cidadãos. Por isso, o Brasil precisa iniciar uma nova etapa baseada na empresarização da sociedade: uma cultura nacional que incentive cada brasileiro a desenvolver sua autonomia econômica,"
+          },
+          {
+            "pagina": 19,
+            "trecho": "Empresarização Criar o Ministério da Empresarização"
+          }
+        ]
+      },
+      {
+        "id": "direitos-e-programas-sociais",
+        "titulo": "Direitos e programas sociais",
+        "descricao": "O plano declara compromisso com a manutenção do Programa Bolsa Família e com o respeito aos direitos constitucionais de povos indígenas, comunidades quilombolas e povos tradicionais.",
+        "evidencias": [
+          {
+            "pagina": 12,
+            "trecho": "Proteção integral à vida e à dignidade da pessoa humana, mantendo o Programa Bolsa Família;"
+          },
+          {
+            "pagina": 12,
+            "trecho": "Respeito aos direitos constitucionais dos povos indígenas, comunidades quilombolas e povos tradicionais;"
+          }
+        ]
+      },
+      {
+        "id": "responsabilidade-fiscal",
+        "titulo": "Responsabilidade fiscal",
+        "descricao": "O documento propõe uma âncora fiscal baseada na redução gradual da relação dívida/PIB e a revisão permanente das despesas públicas para eliminar desperdícios.",
+        "evidencias": [
+          {
+            "pagina": 14,
+            "trecho": "Fortalecimento de uma âncora fiscal baseada na redução gradual da relação dívida/PIB;"
+          },
+          {
+            "pagina": 14,
+            "trecho": "Revisão permanente das despesas públicas para eliminar desperdícios e aumentar a eficiência do Estado;"
+          }
+        ]
+      },
+      {
+        "id": "posicionamento-internacional",
+        "titulo": "Posicionamento internacional do Brasil",
+        "descricao": "O plano descreve estratégias de relacionamento comercial e diplomático com América Latina, Estados Unidos, Ásia, Europa e África, associadas ao objetivo de posicionar o Brasil entre as potências globais.",
+        "evidencias": [
+          {
+            "pagina": 26,
+            "trecho": "MISSÃO 7: Posicionar o Brasil entre as potencias globais Objetivo: Ocupar o espaço naturalmente reservado ao Brasil na arena global em função dos nossos"
+          },
+          {
+            "pagina": 26,
+            "trecho": "Destravar o potencial do Acordo Mercosul-Uniao Europeia Cooperação em hidrogênio verde Parcerias industriais avançadas Desenhar estratégia Brasil-Índia Atualizar modelo de relacionamento diplomático e comercial"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-resumo-v1",
+    "model": "Anthropic Claude Sonnet",
+    "generatedAt": "2026-08-26T02:53:42.619Z"
+  },
+  "julgamento": {
+    "model": "OpenAI GPT-5.4",
+    "judgedAt": "2026-08-26T03:25:59.329Z",
+    "verdicts": [
+      {
+        "id": "pablo-marcal:frase:1",
+        "verdict": "yes",
+        "reason": "A página 3 mostra o diagnóstico do Brasil seguido por 7 missões."
+      },
+      {
+        "id": "pablo-marcal:frase:2",
+        "verdict": "yes",
+        "reason": "A página 5 caracteriza o Brasil como potência adormecida com abundância de recursos e população jovem."
+      },
+      {
+        "id": "pablo-marcal:frase:3",
+        "verdict": "yes",
+        "reason": "A página 6 afirma que os ativos do país não se converteram proporcionalmente em produtividade, renda e prosperidade, sustentando a ideia de baixo crescimento ligado à produtividade insuficiente."
+      },
+      {
+        "id": "pablo-marcal:frase:4",
+        "verdict": "yes",
+        "reason": "A página 6 propõe a empresarização da sociedade para ampliar autonomia econômica, criação de negócios e prosperidade."
+      },
+      {
+        "id": "pablo-marcal:frase:5",
+        "verdict": "yes",
+        "reason": "As páginas 14 e 19 propõem redução da carga tributária sobre produção e investimento e redução de barreiras regulatórias."
+      },
+      {
+        "id": "pablo-marcal:frase:6",
+        "verdict": "yes",
+        "reason": "A página 12 declara a manutenção do Programa Bolsa Família como parte da proteção à dignidade humana."
+      },
+      {
+        "id": "pablo-marcal:frase:7",
+        "verdict": "yes",
+        "reason": "A página 14 propõe uma âncora fiscal baseada na redução gradual da relação dívida/PIB."
+      },
+      {
+        "id": "pablo-marcal:frase:8",
+        "verdict": "yes",
+        "reason": "A página 19 prevê explicitamente a criação do Ministério da Empresarização."
+      },
+      {
+        "id": "pablo-marcal:tema:diagnostico-potencial-nao-realizado",
+        "verdict": "yes",
+        "reason": "As páginas 5 e 6 sustentam o diagnóstico de grande potencial nacional não convertido proporcionalmente em produtividade, renda e prosperidade."
+      },
+      {
+        "id": "pablo-marcal:tema:reforma-do-estado-e-desburocratizacao",
+        "verdict": "yes",
+        "reason": "As páginas 7, 19 e 20 associam burocracia, complexidade regulatória, carga tributária e insegurança jurídica ao aumento de custos e propõem revogação de normas obsoletas, simplificação tributária e desestatização."
+      },
+      {
+        "id": "pablo-marcal:tema:empresarizacao-e-empreendedorismo",
+        "verdict": "yes",
+        "reason": "As páginas 6 e 19 sustentam a empresarização da sociedade, a criação do Ministério da Empresarização e medidas voltadas a microempreendedores, startups e cooperativas."
+      },
+      {
+        "id": "pablo-marcal:tema:direitos-e-programas-sociais",
+        "verdict": "yes",
+        "reason": "A página 12 sustenta a manutenção do Bolsa Família e o respeito aos direitos de povos indígenas, quilombolas e povos tradicionais."
+      },
+      {
+        "id": "pablo-marcal:tema:responsabilidade-fiscal",
+        "verdict": "yes",
+        "reason": "A página 14 sustenta a âncora fiscal baseada na redução gradual da dívida/PIB e a revisão permanente das despesas públicas."
+      },
+      {
+        "id": "pablo-marcal:tema:posicionamento-internacional",
+        "verdict": "yes",
+        "reason": "A página 26 sustenta estratégias de relacionamento comercial e diplomático com América Latina, Estados Unidos, Ásia, Europa e África para posicionar o Brasil entre as potências globais."
+      }
+    ]
+  }
+}

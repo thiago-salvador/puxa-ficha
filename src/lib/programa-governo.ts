@@ -37,6 +37,7 @@ export type ProgramaGovernoSecao = {
   nivel: number
   paginaInicial: number
   paginaFinal: number
+  origem: "pdftotext" | "ocr" | "sem-texto"
   conteudo: string
 }
 
@@ -69,6 +70,16 @@ export type ProgramaGovernoGeracao = {
   generatedAt: string
 }
 
+export type ProgramaGovernoJulgamento = {
+  model: string
+  judgedAt: string
+  verdicts: Array<{
+    id: string
+    verdict: "yes" | "no" | "unknown"
+    reason: string
+  }>
+}
+
 export type ProgramaGovernoRevisao = {
   reviewer: string
   reviewedAt: string
@@ -83,6 +94,7 @@ export type ProgramaGovernoRegistro = {
   extracao?: ProgramaGovernoExtracao
   resumo?: ProgramaGovernoResumo
   geracao?: ProgramaGovernoGeracao
+  julgamento?: ProgramaGovernoJulgamento
   revisao?: ProgramaGovernoRevisao
 }
 
@@ -219,6 +231,9 @@ export function assertProgramaGovernoRegistro(value: unknown): asserts value is 
     const inicio = integerAt(section.paginaInicial, `${path}.paginaInicial`)
     const fim = integerAt(section.paginaFinal, `${path}.paginaFinal`)
     if (fim < inicio || fim > paginas) fail(`${path}.paginaFinal`, "intervalo de paginas invalido")
+    if (section.origem !== "pdftotext" && section.origem !== "ocr" && section.origem !== "sem-texto") {
+      fail(`${path}.origem`, "origem de texto invalida")
+    }
     stringAt(section.conteudo, `${path}.conteudo`)
   }
 
@@ -226,7 +241,9 @@ export function assertProgramaGovernoRegistro(value: unknown): asserts value is 
   const texto = stringAt(resumo.texto, "registro.resumo.texto")
   const words = wordCount(texto)
   if (words < 120 || words > 180) fail("registro.resumo.texto", "deve ter entre 120 e 180 palavras")
-  if (!Array.isArray(resumo.frases) || resumo.frases.length === 0) fail("registro.resumo.frases", "deve mapear as frases materiais")
+  if (!Array.isArray(resumo.frases) || resumo.frases.length < 6 || resumo.frases.length > 8) {
+    fail("registro.resumo.frases", "deve conter entre 6 e 8 frases materiais")
+  }
   for (const [index, raw] of resumo.frases.entries()) {
     const sentence = objectAt(raw, `registro.resumo.frases[${index}]`)
     const sentenceText = stringAt(sentence.texto, `registro.resumo.frases[${index}].texto`)

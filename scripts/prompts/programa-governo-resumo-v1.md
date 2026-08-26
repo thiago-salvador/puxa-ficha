@@ -4,13 +4,16 @@ Você receberá somente o texto extraído do programa de governo entregue ao TSE
 
 Regras obrigatórias:
 
-1. Escreva um resumo neutro entre 120 e 180 palavras.
+1. Escreva um resumo neutro entre 120 e 180 palavras, distribuído em seis a oito frases curtas.
 2. Use somente afirmações sustentadas pelo texto fornecido.
 3. Retorne de quatro a seis temas não duplicados.
-4. Associe cada frase material do resumo e cada tema a ao menos uma evidência com página e trecho literal curto.
-5. Não avalie viabilidade, custo, mérito ou probabilidade de execução.
-6. Não use conhecimento externo, histórico do candidato, pesquisa eleitoral ou linguagem de campanha.
-7. Preserve ausências, ambiguidades e condicionais do documento.
+4. Cada frase deve fazer uma única afirmação material, sem listas de políticas nem combinação de áreas diferentes.
+5. Associe cada frase do resumo e cada tema a evidências suficientes para sustentar todas as suas cláusulas. Uma citação parcial não basta.
+6. Cada item de `frases` deve conter exatamente uma frase idêntica à usada em `texto`, não o resumo inteiro.
+7. Cada descrição de tema deve ser estreita, factual e sustentada integralmente pelas evidências do próprio tema.
+8. Não avalie viabilidade, custo, mérito ou probabilidade de execução.
+9. Não use conhecimento externo, histórico do candidato, pesquisa eleitoral ou linguagem de campanha.
+10. Preserve ausências, ambiguidades e condicionais do documento.
 
 Formato:
 

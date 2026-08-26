@@ -2,7 +2,7 @@ import { createHash } from "node:crypto"
 import { execFile } from "node:child_process"
 import { mkdtemp, readFile, rm } from "node:fs/promises"
 import { tmpdir } from "node:os"
-import { join } from "node:path"
+import { join, resolve } from "node:path"
 import { promisify } from "node:util"
 
 import type { ProgramaGovernoExtracao, ProgramaGovernoSecao } from "../../src/lib/programa-governo"
@@ -74,7 +74,8 @@ function stableId(title: string, page: number, used: Set<string>): string {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
-    .slice(0, 72) || `pagina-${page}`
+    .slice(0, 72)
+    .replace(/-$/g, "") || `pagina-${page}`
   let candidate = base
   let suffix = 2
   while (used.has(candidate)) candidate = `${base}-${suffix++}`
@@ -82,9 +83,11 @@ function stableId(title: string, page: number, used: Set<string>): string {
   return candidate
 }
 
-function sectionsFromPages(pages: string[]): ProgramaGovernoSecao[] {
+type ExtractedPage = { text: string; origin: "pdftotext" | "ocr" | "sem-texto" }
+
+function sectionsFromPages(pages: ExtractedPage[]): ProgramaGovernoSecao[] {
   const used = new Set<string>()
-  return pages.map((content, index) => {
+  return pages.map(({ text: content, origin }, index) => {
     const page = index + 1
     const firstLine = content.split("\n").find((line) => line.trim().length > 0)?.trim() ?? `Página ${page}`
     const title = firstLine.length > 120 ? `Página ${page}` : firstLine
@@ -94,6 +97,7 @@ function sectionsFromPages(pages: string[]): ProgramaGovernoSecao[] {
       nivel: 1,
       paginaInicial: page,
       paginaFinal: page,
+      origem: origin,
       conteudo: content,
     }
   })
@@ -148,20 +152,45 @@ export async function extractProgramaPdf(
   const paginas = Number(pageMatch[1])
   if (!Number.isInteger(paginas) || paginas < 1) throw new ProgramaGovernoExtractionError("numero de paginas invalido")
 
-  const pageTexts: string[] = []
-  for (let page = 1; page <= paginas; page += 1) {
+  const pageTexts: ExtractedPage[] = []
+  let ocrWorkspace: Awaited<ReturnType<typeof createProgramaTempWorkspace>> | null = null
+  try {
+    for (let page = 1; page <= paginas; page += 1) {
     let raw: string
     try {
-      raw = (await adapters.run("pdftotext", ["-f", String(page), "-l", String(page), "-layout", "-enc", "UTF-8", pdfPath, "-"])).toString("utf8")
+      raw = (await adapters.run("pdftotext", ["-f", String(page), "-l", String(page), "-enc", "UTF-8", pdfPath, "-"])).toString("utf8")
     } catch (error) {
       throw new ProgramaGovernoExtractionError(`pagina ${page} nao pôde ser extraida: ${String(error)}`)
     }
-    const text = normalizePageText(raw)
-    if (!isTrustworthyText(text)) throw new ProgramaGovernoExtractionError(`pagina ${page} sem texto confiavel`)
-    pageTexts.push(text)
+      let text = normalizePageText(raw)
+      let origin: ExtractedPage["origin"] = "pdftotext"
+      if (!isTrustworthyText(text)) {
+        ocrWorkspace ??= await createProgramaTempWorkspace(adapters)
+        const prefix = resolve(ocrWorkspace.directory, `pagina-${page}`)
+        try {
+          await adapters.run("pdftoppm", ["-f", String(page), "-l", String(page), "-png", "-r", "150", "-singlefile", pdfPath, prefix])
+          const script = resolve(import.meta.dirname, "ocr-programa-governo.swift")
+          text = normalizePageText((await adapters.run("xcrun", ["swift", script, `${prefix}.png`])).toString("utf8"))
+          origin = "ocr"
+        } catch (error) {
+          throw new ProgramaGovernoExtractionError(`pagina ${page} sem texto confiavel e OCR indisponivel: ${String(error)}`)
+        }
+      }
+      if (!isTrustworthyText(text)) {
+        text = "[Página sem conteúdo textual no documento original.]"
+        origin = "sem-texto"
+      }
+      pageTexts.push({ text, origin })
+    }
+  } finally {
+    await ocrWorkspace?.cleanup()
   }
 
-  const canonicalText = pageTexts.join("\n\f\n")
+  if (pageTexts.every((page) => page.origin === "sem-texto")) {
+    throw new ProgramaGovernoExtractionError("documento inteiro sem texto confiavel apos OCR")
+  }
+
+  const canonicalText = pageTexts.map((page) => page.text).join("\n\f\n")
   return {
     sourceSha256: sha256(bytes),
     extractedTextSha256: sha256(canonicalText),
