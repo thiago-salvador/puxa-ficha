@@ -34,9 +34,10 @@ function runProcess(
   args: string[],
   input: string,
   options: { cwd: string; timeoutMs: number },
+  env: NodeJS.ProcessEnv = process.env,
 ): Promise<ProcessResult> {
   return new Promise((resolvePromise, reject) => {
-    const child = spawn(command, args, { cwd: options.cwd, env: process.env, stdio: ["pipe", "pipe", "pipe"] })
+    const child = spawn(command, args, { cwd: options.cwd, env, stdio: ["pipe", "pipe", "pipe"] })
     const stdout: Buffer[] = []
     const stderr: Buffer[] = []
     const timeout = setTimeout(() => {
