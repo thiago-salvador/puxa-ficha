@@ -3,25 +3,7 @@ import {
   type ProgramaGovernoRegistro,
 } from "@/lib/programa-governo"
 
-export const PROGRAMA_GOVERNO_PRESIDENCIA_2026_SLUGS = [
-  "samara-martins",
-  "romeu-zema",
-  "renan-santos",
-  "hertz-dias",
-  "lula",
-  "wilson-grassi-junior",
-  "flavio-bolsonaro",
-  "augusto-cury",
-  "ronaldo-caiado",
-  "edmilson-costa",
-  "clariana-barao",
-  "rui-costa-pimenta",
-  "pablo-marcal",
-] as const
-
-export type ProgramaGovernoPresidencia2026Slug = (typeof PROGRAMA_GOVERNO_PRESIDENCIA_2026_SLUGS)[number]
-
-const loaders: Record<ProgramaGovernoPresidencia2026Slug, () => Promise<{ default: unknown }>> = {
+const loaders = {
   "samara-martins": () => import("./programas-governo/presidencia-2026/samara-martins.json"),
   "romeu-zema": () => import("./programas-governo/presidencia-2026/romeu-zema.json"),
   "renan-santos": () => import("./programas-governo/presidencia-2026/renan-santos.json"),
@@ -35,7 +17,9 @@ const loaders: Record<ProgramaGovernoPresidencia2026Slug, () => Promise<{ defaul
   "clariana-barao": () => import("./programas-governo/presidencia-2026/clariana-barao.json"),
   "rui-costa-pimenta": () => import("./programas-governo/presidencia-2026/rui-costa-pimenta.json"),
   "pablo-marcal": () => import("./programas-governo/presidencia-2026/pablo-marcal.json"),
-}
+} satisfies Record<string, () => Promise<{ default: unknown }>>
+
+export type ProgramaGovernoPresidencia2026Slug = keyof typeof loaders
 
 export function isProgramaGovernoPresidencia2026Slug(value: string): value is ProgramaGovernoPresidencia2026Slug {
   return Object.hasOwn(loaders, value)

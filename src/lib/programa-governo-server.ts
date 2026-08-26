@@ -24,7 +24,7 @@ export type ProgramaGovernoPublicResource = {
 
 export type ProgramaGovernoRecordLoader = (slug: string) => Promise<ProgramaGovernoRegistro | null>
 
-export const loadProgramaGovernoRecord: ProgramaGovernoRecordLoader = async (slug) => {
+const loadProgramaGovernoRecord: ProgramaGovernoRecordLoader = async (slug) => {
   if (!isProgramaGovernoPresidencia2026Slug(slug)) return null
   return loadProgramaGovernoPresidencia2026(slug)
 }

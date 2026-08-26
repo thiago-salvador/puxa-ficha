@@ -1,4 +1,4 @@
-export const PROGRAMA_GOVERNO_ESTADOS = [
+const PROGRAMA_GOVERNO_ESTADOS = [
   "nao_coletado",
   "fonte_ausente",
   "extracao_falhou",
