@@ -1,0 +1,10 @@
+{"case_id":"sem-mudanca","mode":"no_changes","expected_status":"no_changes","expected_draft_prs":0}
+{"case_id":"mudanca-valida","mode":"valid_change","expected_status":"ready","expected_draft_prs":1}
+{"case_id":"fonte-indisponivel","mode":"blocked","classification":"fonte indisponivel","reason":"source_unavailable","expected_status":"blocked","expected_draft_prs":0}
+{"case_id":"conflito-tse","mode":"blocked","classification":"conflitante","reason":"registry_conflict","expected_status":"blocked","expected_draft_prs":0}
+{"case_id":"dado-vencido","mode":"blocked","classification":"vencido","reason":"evidence_stale","expected_status":"blocked","expected_draft_prs":0}
+{"case_id":"identidade-ambigua","mode":"blocked","classification":"identidade nao resolvida","reason":"identity_unresolved","expected_status":"blocked","expected_draft_prs":0}
+{"case_id":"metadado-ausente","mode":"missing_metadata","expected_status":"blocked","expected_draft_prs":0}
+{"case_id":"verify-falhou","mode":"verify_failure","expected_status":"ready","expected_draft_prs":0}
+{"case_id":"draft-existente","mode":"existing_draft","expected_status":"ready","expected_draft_prs":0}
+{"case_id":"arquivo-fora-allowlist","mode":"forbidden_file","expected_status":"blocked","expected_draft_prs":0}
