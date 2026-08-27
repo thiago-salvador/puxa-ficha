@@ -111,6 +111,7 @@
     "audit:seed-sq-identity:gate": "tsx scripts/audit-seed-sq-identity.ts --gate",
     "audit:candidaturas:gate": "tsx scripts/audit/check-candidatura-resultados.ts",
     "data:identidade-etapa2:fontes": "tsx scripts/audit/fetch-tse-fontes-2026.ts",
+    "data:sites-candidato:tse": "tsx scripts/collect-candidate-sites-tse-2026.ts",
     "data:identidade-etapa2:gerar": "tsx scripts/audit/gerar-identidade-etapa2.ts",
     "audit:ids-cohort": "tsx scripts/check-ids-cohort.ts",
     "audit:ids-cohort:gate": "tsx scripts/check-ids-cohort.ts --fail-on-mismatch",

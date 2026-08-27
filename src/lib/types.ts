@@ -46,12 +46,64 @@ export interface Candidato {
   foto_credito?: FotoCredito | null;
   site_campanha: string | null;
   redes_sociais: Record<string, string>;
+  /** Lista integral declarada no TSE, exclusiva do box da Visao Geral. */
+  sites_candidato?: CandidatoSitesCollection | null;
 
   // Meta
   fonte_dados: string[];
   ultima_atualizacao: string;
   /** Datas de frescor e recibos de estado por aba; não substitui a data do próprio dado. */
   verificacao_campos?: VerificacaoCampos | null;
+}
+
+export interface CandidatoSitesCollection {
+  ano_eleicao: number;
+  fonte_url: string;
+  fonte_sha256: string;
+  coletado_em: string;
+  gerado_em_tse: string | null;
+  sites: Array<{
+    ordem: number;
+    url: string;
+  }>;
+}
+
+/** Snapshot versionado dos sites declarados no TSE para os perfis conhecidos. */
+export interface CandidateSitesTseDataset {
+  schema_version: 1;
+  election_year: 2026;
+  source: {
+    catalog_url: string;
+    candidate_resource_url: string;
+    candidate_resource_sha256: string;
+    resource_url: string;
+    resource_sha256: string;
+    license: string | null;
+    collected_at: string;
+    generated_at_tse: string | null;
+  };
+  counts: {
+    profiles_total: number;
+    profiles_matched: number;
+    profiles_with_sites: number;
+    site_rows: number;
+    unique_entries: number;
+    unique_sites: number;
+    non_linkable_entries: number;
+    duplicate_rows_removed: number;
+    ambiguous_profiles: number;
+    declared_sq_missing: number;
+  };
+  ambiguous_profiles: Array<{ slug: string; sq_candidato: string[] }>;
+  unmatched_declared_profiles: Array<{ slug: string; sq_candidato: string }>;
+  candidates: Record<
+    string,
+    {
+      sq_candidato: string;
+      match_method: 'sq_candidato' | 'nome_completo_exato_unico';
+      sites: Array<{ order: number; url: string | null; original_url: string }>;
+    }
+  >;
 }
 
 export interface FotoCredito {
