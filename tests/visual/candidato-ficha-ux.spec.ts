@@ -9,7 +9,9 @@ const GLOBAL_PROGRAM_PATHS = [
 ]
 
 async function waitForProfile(page: Page) {
-  await page.locator("[data-pf-profile-overview-grid]").waitFor({ state: "visible", timeout: 20_000 })
+  const overview = page.locator("[data-pf-profile-overview-grid]")
+  await overview.waitFor({ state: "visible", timeout: 20_000 })
+  await expect(overview).toHaveAttribute("data-pf-profile-overview-layout", /^(masonry|single-column)$/)
 }
 
 async function expectNoPageOverflow(page: Page) {
@@ -23,23 +25,71 @@ async function captureAccessiblePage(page: Page, path: string) {
   await page.screenshot({ path, fullPage: true })
 }
 
-async function expectCareerAndProgramPair(page: Page) {
-  const pair = page.locator("[data-pf-profile-overview-paired-cards]")
-  const careerCard = pair.locator(":scope > *").filter({
-    has: page.getByRole("heading", { name: "Carreira Política" }),
+async function expectIntrinsicMasonry(page: Page) {
+  const overview = page.locator("[data-pf-profile-overview-grid]")
+  await expect(overview).toHaveAttribute("data-pf-profile-overview-layout", "masonry")
+  const geometry = await overview.evaluate((node) => {
+    const container = node.getBoundingClientRect()
+    const items = Array.from(node.querySelectorAll<HTMLElement>(":scope > [data-pf-profile-overview-item]"))
+      .map((item) => {
+        const rect = item.getBoundingClientRect()
+        return {
+          column: item.dataset.pfProfileOverviewColumn,
+          height: rect.height,
+          width: rect.width,
+          x: rect.x,
+          y: rect.y,
+          bottom: rect.bottom,
+        }
+      })
+      .filter((item) => item.width > 0 && item.height > 0)
+    return { container: { bottom: container.bottom, width: container.width }, items }
   })
-  const programCard = pair.locator(":scope > [data-pf-programa-overview]")
-  await expect(careerCard).toHaveCount(1)
-  await expect(programCard).toHaveCount(1)
-  const [careerBox, programBox] = await Promise.all([
-    careerCard.boundingBox(),
-    programCard.boundingBox(),
+
+  expect(geometry.items.length).toBeGreaterThan(1)
+  expect(new Set(geometry.items.map((item) => item.column))).toEqual(new Set(["1", "2"]))
+  const expectedWidth = (geometry.container.width - 24) / 2
+  for (const item of geometry.items) {
+    expect(Math.abs(item.width - expectedWidth)).toBeLessThanOrEqual(1)
+    expect(item.bottom).toBeLessThanOrEqual(geometry.container.bottom + 1)
+  }
+  for (const column of ["1", "2"]) {
+    const items = geometry.items.filter((item) => item.column === column).sort((a, b) => a.y - b.y)
+    for (let index = 1; index < items.length; index += 1) {
+      expect(items[index].y - items[index - 1].bottom).toBeGreaterThanOrEqual(23)
+    }
+  }
+}
+
+async function expectZemaIndependentStack(page: Page) {
+  const items = page.locator("[data-pf-profile-overview-item]")
+  const program = items.filter({ has: page.locator("[data-pf-programa-overview]") })
+  const sites = items.filter({ has: page.locator("[data-pf-candidate-sites-card]") })
+  const career = items.filter({ has: page.getByRole("heading", { name: "Carreira Política" }) })
+  await expect(program).toHaveCount(1)
+  await expect(sites).toHaveCount(1)
+  await expect(career).toHaveCount(1)
+
+  const [programColumn, sitesColumn, careerColumn] = await Promise.all([
+    program.getAttribute("data-pf-profile-overview-column"),
+    sites.getAttribute("data-pf-profile-overview-column"),
+    career.getAttribute("data-pf-profile-overview-column"),
   ])
-  expect(careerBox).not.toBeNull()
+  expect(sitesColumn).toBe(careerColumn)
+  expect(programColumn).not.toBe(sitesColumn)
+
+  const [programBox, sitesBox, careerBox] = await Promise.all([
+    program.boundingBox(),
+    sites.boundingBox(),
+    career.boundingBox(),
+  ])
   expect(programBox).not.toBeNull()
-  expect(Math.abs(careerBox!.x - programBox!.x)).toBeGreaterThan(1)
-  expect(Math.abs(careerBox!.y - programBox!.y)).toBeLessThanOrEqual(1)
-  expect(Math.abs(careerBox!.width - programBox!.width)).toBeLessThanOrEqual(1)
+  expect(sitesBox).not.toBeNull()
+  expect(careerBox).not.toBeNull()
+  expect(Math.abs(programBox!.width - sitesBox!.width)).toBeLessThanOrEqual(1)
+  expect(Math.abs(programBox!.width - careerBox!.width)).toBeLessThanOrEqual(1)
+  expect(sitesBox!.y + sitesBox!.height).toBeLessThan(careerBox!.y)
+  expect(careerBox!.height).toBeLessThan(programBox!.height)
 }
 
 test.describe("polimento da ficha de candidatos", () => {
@@ -50,6 +100,17 @@ test.describe("polimento da ficha de candidatos", () => {
     await expect(page.getByText("Carregando indicadores e seções da ficha...")).toBeVisible()
     await page.waitForTimeout(4_500)
     await waitForProfile(page)
+
+    const overview = page.locator("[data-pf-profile-overview-grid]")
+    await expect(overview).toHaveAttribute("data-pf-profile-overview-layout", "single-column")
+    const mobileItemsFit = await overview.locator(":scope > [data-pf-profile-overview-item]:visible").evaluateAll(
+      (items) => items.every((item) => {
+        const rect = item.getBoundingClientRect()
+        const parent = item.parentElement?.getBoundingClientRect()
+        return parent != null && Math.abs(rect.width - parent.width) <= 1 && getComputedStyle(item).position === "static"
+      }),
+    )
+    expect(mobileItemsFit).toBe(true)
 
     const primaryTabs = page.getByRole("tablist", { name: "Seções principais do perfil" })
     await expect(primaryTabs).toBeVisible()
@@ -87,30 +148,13 @@ test.describe("polimento da ficha de candidatos", () => {
     await captureAccessiblePage(page, testInfo.outputPath("ficha-mobile.png"))
   })
 
-  test("desktop mantém ritmo de grid e leitor progressivo", async ({ page }, testInfo) => {
+  test("desktop mantém masonry intrínseco e leitor progressivo", async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== "desktop", "cenário específico de viewport desktop")
     await page.goto(CANDIDATE_PATH, { waitUntil: "domcontentloaded" })
     await waitForProfile(page)
 
     const overview = page.locator("[data-pf-profile-overview-grid]")
-    const primaryGrid = page.locator("[data-pf-profile-overview-primary-grid]")
-    const rows = await primaryGrid.evaluate((node) => {
-      const cards = Array.from(node.children).map((card) => {
-        const rect = card.getBoundingClientRect()
-        return { top: Math.round(rect.top), height: Math.round(rect.height), width: Math.round(rect.width) }
-      }).filter((rect) => rect.width > 0 && rect.height > 0)
-      return Object.values(cards.reduce<Record<string, typeof cards>>((groups, card) => {
-        const key = String(card.top)
-        groups[key] = [...(groups[key] ?? []), card]
-        return groups
-      }, {}))
-    })
-    expect(rows.length).toBeGreaterThan(1)
-    for (const row of rows.filter((items) => items.length === 2)) {
-      expect(Math.abs(row[0].height - row[1].height)).toBeLessThanOrEqual(1)
-      expect(Math.abs(row[0].width - row[1].width)).toBeLessThanOrEqual(1)
-    }
-    await expectCareerAndProgramPair(page)
+    await expectIntrinsicMasonry(page)
     await overview.screenshot({ path: testInfo.outputPath("ficha-overview-desktop.png") })
 
     await page.getByRole("tab", { name: /^Programa/ }).click()
@@ -124,13 +168,14 @@ test.describe("polimento da ficha de candidatos", () => {
     await captureAccessiblePage(page, testInfo.outputPath("ficha-programa-desktop.png"))
   })
 
-  test("grid compartilhado mantém Carreira e Programa em meia largura nas demais fichas", async ({ page }, testInfo) => {
+  test("masonry compartilhado mantém qualquer card em meia largura e altura própria", async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== "desktop", "cenário específico de viewport desktop")
     test.setTimeout(60_000)
     for (const candidatePath of GLOBAL_PROGRAM_PATHS) {
       await page.goto(candidatePath, { waitUntil: "domcontentloaded" })
       await waitForProfile(page)
-      await expectCareerAndProgramPair(page)
+      await expectIntrinsicMasonry(page)
+      if (candidatePath === "/candidato/romeu-zema") await expectZemaIndependentStack(page)
       await expectNoPageOverflow(page)
     }
   })
