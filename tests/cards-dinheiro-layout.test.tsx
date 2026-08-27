@@ -493,7 +493,7 @@ test("patrimônio e cota mostram a cifra na mesma altura tipográfica do financi
 
 /* ─── Visão geral ───────────────────────────────── */
 
-test("a grade da visão geral não estica card curto até a altura do vizinho", () => {
+test("a grade da visão geral mantém cards da mesma linha com altura consistente", () => {
   const ficha = buildFicha({
     patrimonio: [patrimonioRow({ id: "pat-2018" })],
     financiamento: [financiamentoRow({ id: "fin-2022" })],
@@ -503,8 +503,8 @@ test("a grade da visão geral não estica card curto até a altura do vizinho", 
 
   assert.match(
     html,
-    /class="grid grid-cols-1 items-start gap-6 md:grid-cols-2"/,
-    "sem items-start a caixa do card curto cresce até o card denso ao lado",
+    /data-pf-profile-overview-primary-grid="" class="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 \[&amp;&gt;\*\]:h-full/,
+    "a grade principal deve alinhar a altura dos cards que compartilham a linha",
   )
   assert.ok(html.includes('data-pf-money-overview-card="patrimonio"'))
   assert.ok(html.includes('data-pf-money-overview-card="financiamento"'))
