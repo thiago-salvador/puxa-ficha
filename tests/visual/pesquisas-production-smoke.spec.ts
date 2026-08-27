@@ -41,7 +41,7 @@ async function installReadOnlyBrowserGuard(page: Page): Promise<BrowserGuard> {
 }
 
 async function waitForProfile(page: Page) {
-  await expect(page.getByRole("tablist", { name: /Seções do perfil/ })).toBeVisible({
+  await expect(page.getByRole("navigation", { name: /Seções do perfil/ })).toBeVisible({
     timeout: 20_000,
   })
   await page.waitForLoadState("networkidle")
