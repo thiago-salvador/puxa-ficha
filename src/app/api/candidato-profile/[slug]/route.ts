@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
 import { getCandidatoBySlugResource } from "@/lib/api"
 import { toPublicCandidatoProfileDto } from "@/lib/public-profile-dto"
+import { getCandidateSitesTseBySlug } from "@/lib/candidate-sites-data"
 import {
   createFixedWindowIpRateLimiter,
   rateLimitExceededResponse,
@@ -41,11 +42,13 @@ type CandidatoProfileResource = Awaited<ReturnType<typeof getCandidatoBySlugReso
 
 interface CandidatoProfileRouteDeps {
   getCandidatoBySlugResource: (slug: string) => Promise<CandidatoProfileResource>
+  getCandidateSitesTseBySlug?: typeof getCandidateSitesTseBySlug
   rateLimiter: RequestRateLimiter
 }
 
 const defaultCandidatoProfileRouteDeps: CandidatoProfileRouteDeps = {
   getCandidatoBySlugResource,
+  getCandidateSitesTseBySlug,
   rateLimiter: perfilRateLimiter,
 }
 
@@ -73,9 +76,17 @@ export function createCandidatoProfileGetHandler(
       )
     }
 
+    const sitesCandidato = await (deps.getCandidateSitesTseBySlug ?? getCandidateSitesTseBySlug)(slug).catch((error) => {
+      console.error("falha ao carregar sites do TSE", { slug, error })
+      return null
+    })
+
     return NextResponse.json(
       {
-        data: toPublicCandidatoProfileDto(resource.data),
+        data: {
+          ...toPublicCandidatoProfileDto(resource.data),
+          sites_candidato: sitesCandidato,
+        },
         sourceStatus: resource.sourceStatus,
         sourceMessage: resource.sourceMessage ?? null,
       },
