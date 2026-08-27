@@ -352,12 +352,15 @@ function stringValue(value: unknown, path: string): string {
 }
 
 function modelFamily(name: string): string {
-  const tokens = stringValue(name, "modelo.name")
-    .trim()
-    .toLocaleLowerCase("pt-BR")
-    .split(/[\s/:@-]+/u)
-    .filter(Boolean)
-  if (tokens.some((token) => /^(?:openai|gpt|codex|o[1-9]|muse|luna)(?:\d.*)?$/u.test(token))) return "openai"
+  const raw = stringValue(name, "modelo.name").trim().toLocaleLowerCase("pt-BR")
+  const tokens = raw.split(/[\s/:@-]+/u).filter(Boolean)
+  // Apenas gpt-5.6-luna é OpenAI no escopo deste pipeline; Muse nao é Luna nem OpenAI
+  if (raw.includes("gpt-5.6-luna")) return "openai"
+  if (tokens.some((token) => /^(?:openai|gpt|codex|o[1-9])(?:\d.*)?$/u.test(token))) {
+    // Evitar que "muse" ou "luna" isolados caiam aqui; ja tratado acima para gpt-5.6-luna especifico
+    if (raw.includes("muse")) return tokens[0]
+    return "openai"
+  }
   if (tokens.some((token) => /^(?:anthropic|claude)$/u.test(token))) return "anthropic"
   if (tokens.some((token) => /^(?:google|gemini)$/u.test(token))) return "google"
   if (tokens.some((token) => /^mistral/u.test(token))) return "mistral"
@@ -378,6 +381,24 @@ function assertCommand(config: ProgramaGovernoModelCommand, path: string): void 
   if (!Number.isInteger(config.maxAttempts) || config.maxAttempts < 1 || config.maxAttempts > PROGRAMA_GOVERNO_GOV_MODEL_MAX_ATTEMPTS) {
     throw new Error(`${path}.maxAttempts: maximo ${PROGRAMA_GOVERNO_GOV_MODEL_MAX_ATTEMPTS}`)
   }
+  // Consistencia nome/versao: Luna deve ser gpt-5.6-luna, nao muse; DeepSeek deve ser deepseek-v4-flash, etc.
+  const nomeLower = config.name.toLocaleLowerCase("pt-BR")
+  const versaoLower = config.version.toLocaleLowerCase("pt-BR")
+  const comandoLower = config.command.toLocaleLowerCase("pt-BR")
+  if (nomeLower.includes("luna")) {
+    if (!versaoLower.includes("gpt-5.6-luna")) throw new Error(`${path}.version: Luna deve ser gpt-5.6-luna, nao ${config.version}`)
+    if (versaoLower.includes("muse")) throw new Error(`${path}.version: Muse nao e Luna`)
+  }
+  if (nomeLower.includes("deepseek") && !versaoLower.includes("deepseek")) {
+    throw new Error(`${path}.version: DeepSeek inconsistente com nome`)
+  }
+  if (nomeLower.includes("glm") && !versaoLower.includes("glm")) {
+    throw new Error(`${path}.version: GLM inconsistente`)
+  }
+  // Comando deve refletir modelo real: se comando contem luna, nome deve conter luna; etc. Evita registrar DeepSeek quando chama GLM
+  if (comandoLower.includes("luna") && !nomeLower.includes("luna")) throw new Error(`${path}.command: runner Luna exige nome Luna`)
+  if (comandoLower.includes("deepseek") && !nomeLower.includes("deepseek")) throw new Error(`${path}.command: runner DeepSeek exige nome DeepSeek`)
+  if (comandoLower.includes("glm") && !nomeLower.includes("glm")) throw new Error(`${path}.command: runner GLM exige nome GLM`)
 }
 
 function isObject(value: unknown): value is Record<string, unknown> {

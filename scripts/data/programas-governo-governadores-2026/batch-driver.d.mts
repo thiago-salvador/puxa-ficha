@@ -13,9 +13,16 @@ export declare function eErroCota(texto: unknown): boolean
 export declare function regiaoDaUf(uf: string): string | null
 export declare function slotsDeItem(item: { multipassagem: boolean; passagensPlanejadas?: number }): number
 export declare function classificarRegistro(registro: unknown): { estado: "complete" | "blocked" | "retryable_error"; motivo: string }
+export declare function reconciliarParaRetomada(params: {
+  registro: unknown
+  estadoAnterior: { estado: string; tentativas?: number; familia?: string | null; motivo?: string } | null
+  familiaAtual: string | null
+}): { estado: "complete" | "blocked" | "retryable_error" | "pending"; motivo: string; tentativas: number; familia: string | null }
+
 export declare function escaladaPermitida(metricas: {
   errosCota: number
   tentativas: number
+  conclusoes?: number
   errosTecnicos: number
   latenciaP95Ultimos?: number
   latenciaP95Base?: number
@@ -23,7 +30,7 @@ export declare function escaladaPermitida(metricas: {
 
 export declare function definirProbeRecursos(fn: () => boolean): void
 export declare function concorrenciaAlvo(params: {
-  disparos: number
+  conclusoes: number
   concorrenciaAtual: number
   metricas: Parameters<typeof escaladaPermitida>[0]
 }): number

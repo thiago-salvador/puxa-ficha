@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Driver do batch nacional restante dos programas de governo (governadores 2026).
-// Fila por candidato (nunca por UF), concorrencia adaptativa com rampa 2->4->6,
-// retomada granular com estados atomicos e semaforo global de processos geradores.
+// Fila por candidato (nunca por UF), concorrencia adaptativa com rampa 3->4
+// (inicial 3, sobe para 4 apenas apos 3 conclusoes), retomada granular com
+// estados atomicos e semaforo global de processos geradores.
 // Este arquivo so orquestra processos do CLI canonico; nenhuma chamada de modelo aqui.
 //
 // Uso (node24 = binario Node 24 resolvido em node24.json):
@@ -10,7 +11,8 @@
 //        --models-config=<json> [--max-minutos=<n>]
 //   node24 batch-driver.mjs consolidar --run-dir=<dir> --inventory=<json> [--norte-ondas-dir=<dir>]
 import { spawn } from "node:child_process"
-import { existsSync } from "node:fs"
+import { randomUUID } from "node:crypto"
+import { existsSync, statSync } from "node:fs"
 import { copyFile, mkdir, readFile, readdir, rename, rm, writeFile } from "node:fs/promises"
 import os from "node:os"
 import path from "node:path"
@@ -38,11 +40,24 @@ export const DISPAROS_RAMPA = { para4: 3, fimRampa: 6 }
 export const THROUGHPUT_NORTE_CAND_H = 13.8
 export const MS_MINUTO = 60_000
 
-const PADRAO_COTA = /quota|rate.?limit|429|401|403|unauthor|forbidden|credit|billing|usage.?limit|insufficient|token.?plan|exhausted/iu
+const PADRAO_COTA = /quota|token.?plan|usage.?limit|billing|insufficient|rate.?limit|429|401|403|unauthor|forbidden|credit/iu
 const PADRAO_SQ = /^\d{11,12}$/u
 
 export function eErroCota(texto) {
   return PADRAO_COTA.test(String(texto ?? ""))
+}
+
+function familiaDoModelo(nome) {
+  const raw = String(nome ?? "").trim().toLocaleLowerCase("pt-BR")
+  if (raw.includes("gpt-5.6-luna")) return "openai"
+  const tokens = raw.split(/[\s/:@-]+/u).filter(Boolean)
+  if (tokens.some((t) => /^(?:openai|gpt|codex|o[1-9])(?:\d.*)?$/u.test(t))) {
+    if (raw.includes("muse")) return tokens[0]
+    return "openai"
+  }
+  if (tokens.some((t) => /^(?:deepseek)$/u.test(t))) return "deepseek"
+  if (tokens.some((t) => /^(?:glm|z\.?ai|zhipu)$/u.test(t))) return "glm"
+  return tokens[0] ?? "unknown"
 }
 
 export function regiaoDaUf(uf) {
@@ -100,18 +115,77 @@ export function definirProbeRecursos(fn) {
   probeRecursos = fn
 }
 
+// Funcao pura de reconciliacao compartilhada com a prova.
+// Recebe item, registro materializado e estado anterior (se houver) e devolve
+// o estado reconciliado para a proxima execucao, com contagem por familia.
+// Generator_pending sem lease vivo vira retryable (recuperavel).
+export function reconciliarParaRetomada({ registro, estadoAnterior, familiaAtual }) {
+  const familiaAnterior = estadoAnterior?.familia ?? null
+  const tentativaBase = estadoAnterior?.tentativas ?? 1
+  // Mudanca de familia reseta contador: tentativas GLM nao bloqueiam Luna
+  const tentativasEfetivas = familiaAnterior && familiaAtual && familiaAnterior !== familiaAtual ? 1 : tentativaBase
+  const familiaEfetiva = familiaAtual ?? familiaAnterior ?? null
+
+  if (registro) {
+    const classificacao = classificarRegistro(registro)
+    // aprovado nunca deve existir; se existir, bloqueia para auditoria
+    if (registro.estado === "aprovado") {
+      return { estado: "blocked", motivo: "registro aprovado inesperado", tentativas: tentativasEfetivas, familia: familiaEfetiva }
+    }
+    if (classificacao.estado === "complete") {
+      return { estado: "complete", motivo: classificacao.motivo, tentativas: tentativasEfetivas, familia: familiaEfetiva }
+    }
+    if (classificacao.estado === "blocked") {
+      return { estado: "blocked", motivo: classificacao.motivo, tentativas: tentativasEfetivas, familia: familiaEfetiva }
+    }
+    // retryable_error
+    if (tentativasEfetivas >= MAX_TENTATIVAS_CANDIDATO) {
+      return { estado: "blocked", motivo: `falha tecnica apos ${tentativasEfetivas} tentativas: ${classificacao.motivo}`, tentativas: tentativasEfetivas, familia: familiaEfetiva }
+    }
+    return { estado: "retryable_error", motivo: classificacao.motivo, tentativas: tentativasEfetivas, familia: familiaEfetiva }
+  }
+
+  // Sem registro: usa estado anterior se terminal
+  if (estadoAnterior?.estado === "complete" || estadoAnterior?.estado === "blocked") {
+    // Se estado anterior era complete, verifica se registro existe e e valido; se nao, mantem complete mas prova deve falhar se registro ausente
+    return { estado: estadoAnterior.estado, motivo: estadoAnterior.motivo ?? estadoAnterior.estado, tentativas: tentativasEfetivas, familia: familiaEfetiva }
+  }
+
+  // generator_pending sem processo/lease vivo -> recuperavel como retryable
+  if (estadoAnterior?.estado === "generator_pending") {
+    if (tentativasEfetivas >= MAX_TENTATIVAS_CANDIDATO) {
+      return { estado: "blocked", motivo: "generator_pending sem lease e limite de tentativas atingido", tentativas: tentativasEfetivas, familia: familiaEfetiva }
+    }
+    return { estado: "retryable_error", motivo: "generator_pending recuperavel", tentativas: tentativasEfetivas, familia: familiaEfetiva }
+  }
+
+  if (estadoAnterior?.estado === "retryable_error") {
+    if (tentativasEfetivas >= MAX_TENTATIVAS_CANDIDATO) {
+      return { estado: "blocked", motivo: `falha tecnica apos ${tentativasEfetivas} tentativas: ${estadoAnterior.motivo ?? ""}`, tentativas: tentativasEfetivas, familia: familiaEfetiva }
+    }
+    return { estado: "retryable_error", motivo: estadoAnterior.motivo ?? "retryable", tentativas: tentativasEfetivas, familia: familiaEfetiva }
+  }
+
+  // pending ou sem estado
+  if (tentativasEfetivas >= MAX_TENTATIVAS_CANDIDATO) {
+    return { estado: "blocked", motivo: "falha tecnica antes do registro; limite de tentativas atingido na retomada", tentativas: tentativasEfetivas, familia: familiaEfetiva }
+  }
+  return { estado: "pending", motivo: "sem registro", tentativas: tentativasEfetivas, familia: familiaEfetiva }
+}
+
 export function escaladaPermitida(metricas) {
   if (!metricas) return false
   if (metricas.errosCota > 0) return false
-  if (metricas.tentativas < 3) return false
+  if ((metricas.conclusoes ?? 0) < 3) return false
   if (metricas.tentativas > 0 && metricas.errosTecnicos / metricas.tentativas > 0.05) return false
   if (metricas.latenciaP95Base > 0 && metricas.latenciaP95Ultimos > metricas.latenciaP95Base * 1.5) return false
   return probeRecursos()
 }
 
-export function concorrenciaAlvo({ disparos, concorrenciaAtual, metricas }) {
-  const alvoRampa = disparos < DISPAROS_RAMPA.para4 ? 3 : 4
-  if (disparos < DISPAROS_RAMPA.fimRampa) {
+export function concorrenciaAlvo({ conclusoes, concorrenciaAtual, metricas }) {
+  const alvoRampa = (conclusoes ?? 0) < 3 ? 3 : 4
+  // Rampa por conclusoes, nao por disparos; apos 3 conclusoes pode subir para 4 se estavel
+  if ((conclusoes ?? 0) < 6) {
     if (alvoRampa > concorrenciaAtual && !escaladaPermitida(metricas)) return concorrenciaAtual
     return alvoRampa
   }
@@ -172,6 +246,7 @@ async function gravarEstado(runDir, item, campos) {
     ...(campos.tentativas !== undefined ? { tentativas: campos.tentativas } : {}),
     ...(campos.motivo !== undefined ? { motivo: campos.motivo } : {}),
     ...(campos.duracaoMs !== undefined ? { duracaoMs: campos.duracaoMs } : {}),
+    ...(campos.familia !== undefined ? { familia: campos.familia } : {}),
     atualizadoEm: new Date().toISOString(),
   }
   await escreverAtomico(path.join(dir, "estado.json"), `${JSON.stringify(registro, null, 2)}\n`)
@@ -324,6 +399,7 @@ function metricasParaRampa(contexto) {
   const base = contexto.latenciasBase.slice(0, 4)
   return {
     tentativas: contexto.metricas.tentativas,
+    conclusoes: contexto.metricas.concluidos + contexto.metricas.bloqueados,
     errosTecnicos: contexto.metricas.errosTecnicos,
     errosCota: contexto.metricas.errosCota,
     latenciaP95Ultimos: percentil(ultimas, 0.95),
@@ -332,6 +408,8 @@ function metricasParaRampa(contexto) {
 }
 
 function proximoAgendavel(contexto) {
+  // Freeze apos primeiro erro de quota: nao iniciar novos ate emVoo esvaziar ou segunda quota parar
+  if (contexto.metricas.errosCota > 0 && contexto.emVoo.size > 0) return null
   const emVoo = [...contexto.emVoo.values()]
   const slotsEmUso = emVoo.reduce((soma, unidade) => soma + unidade.slots, 0)
   const multipassagemEmVoo = emVoo.filter((unidade) => unidade.multipassagem).length
@@ -353,6 +431,20 @@ export async function executarBatch(params) {
   const itens = (await readFile(filaCaminho, "utf8")).trim().split("\n").filter(Boolean).map((linha) => JSON.parse(linha))
   const node24 = await node24Resolver(runDir)
   await mkdir(path.join(runDir, "logs"), { recursive: true })
+  const executionId = randomUUID()
+  const startedAt = new Date().toISOString()
+  let metricsOffset = 0
+  try {
+    const metricsPath = path.join(runDir, "logs", "metricas-opencode.ndjson")
+    if (existsSync(metricsPath)) metricsOffset = statSync(metricsPath).size
+  } catch {}
+  let familiaAtual = null
+  try {
+    if (modelsConfig && existsSync(modelsConfig)) {
+      const cfg = JSON.parse(await readFile(modelsConfig, "utf8"))
+      familiaAtual = familiaDoModelo(cfg.generator?.name ?? "")
+    }
+  } catch {}
   const inicio = Date.now()
   const limiteWall = maxMinutos * MS_MINUTO
 
@@ -385,33 +477,24 @@ export async function executarBatch(params) {
     },
   }
 
-  // retomada: reconcilia cada item com registro/estado persistidos
+  // retomada: reconcilia cada item com registro/estado persistidos via funcao pura
   for (const item of itens) {
-    const unidade = { item, estado: "pending", tentativas: 1, slots: slotsDeItem(item), multipassagem: item.multipassagem, estadoObservado: null }
     const registro = await lerRegistro(runDir, item)
     const estadoAnterior = await lerEstadoArquivo(runDir, item)
-    if (registro) {
-      const classificacao = classificarRegistro(registro)
-      if (classificacao.estado === "retryable_error" && (estadoAnterior?.tentativas ?? 1) >= MAX_TENTATIVAS_CANDIDATO) {
-        unidade.estado = "blocked"
-        await gravarEstado(runDir, item, { estado: "blocked", motivo: `falha tecnica apos ${estadoAnterior.tentativas} tentativas: ${classificacao.motivo}`, tentativas: estadoAnterior.tentativas })
-      } else {
-        unidade.estado = classificacao.estado
-        unidade.tentativas = estadoAnterior?.tentativas ?? 1
-        await gravarEstado(runDir, item, { estado: classificacao.estado, motivo: classificacao.motivo, tentativas: unidade.tentativas })
+    const reconciliado = reconciliarParaRetomada({ registro, estadoAnterior, familiaAtual })
+    const unidade = { item, estado: reconciliado.estado, tentativas: reconciliado.tentativas, familia: reconciliado.familia, slots: slotsDeItem(item), multipassagem: item.multipassagem, estadoObservado: null }
+    // Persiste reconciliacao apenas se mudou ou se estado anterior era generator_pending fantasma
+    const precisaGravar = !estadoAnterior || estadoAnterior.estado !== reconciliado.estado || estadoAnterior.tentativas !== reconciliado.tentativas || estadoAnterior.familia !== reconciliado.familia
+    if (precisaGravar) {
+      await gravarEstado(runDir, item, { estado: reconciliado.estado, motivo: reconciliado.motivo, tentativas: reconciliado.tentativas, familia: reconciliado.familia })
+    }
+    // Validacao: complete deve ter registro valido; aprovado nunca
+    if (reconciliado.estado === "complete") {
+      if (!registro || registro.estado === "aprovado") {
+        throw new Error(`reconciliacao: ${item.chave} complete sem registro valido`)
       }
-    } else if (estadoAnterior?.estado === "blocked" || estadoAnterior?.estado === "complete") {
-      unidade.estado = estadoAnterior.estado
-      unidade.tentativas = estadoAnterior?.tentativas ?? 1
-    } else {
-      unidade.tentativas = estadoAnterior?.tentativas ?? 1
-      if (unidade.tentativas >= MAX_TENTATIVAS_CANDIDATO) {
-        unidade.estado = "blocked"
-        await gravarEstado(runDir, item, { estado: "blocked", motivo: "falha tecnica antes do registro; limite de tentativas atingido na retomada", tentativas: unidade.tentativas })
-      } else {
-        unidade.estado = "pending"
-        await gravarEstado(runDir, item, { estado: "pending", tentativas: unidade.tentativas })
-      }
+      // Garante que Norte nunca foi reprocessado e que aprovados nao existem
+      if (registro.estado === "aprovado") throw new Error(`registro aprovado inesperado ${item.chave}`)
     }
     if (unidade.estado === "complete") contexto.metricas.concluidos += 1
     if (unidade.estado === "blocked") contexto.metricas.bloqueados += 1
@@ -419,9 +502,15 @@ export async function executarBatch(params) {
   }
   const totalEsperado = itens.length
 
+  // Inicializa contexto com executionId para separar historico vs esta execucao
+  contexto.executionId = executionId
+  contexto.startedAt = startedAt
+  contexto.metricsOffset = metricsOffset
+  contexto.familiaAtual = familiaAtual
+
   while (!contexto.parada) {
     const alvo = concorrenciaAlvo({
-      disparos: contexto.disparos,
+      conclusoes: contexto.metricas.concluidos + contexto.metricas.bloqueados,
       concorrenciaAtual: contexto.concorrencia,
       metricas: metricasParaRampa(contexto),
     })
@@ -474,7 +563,7 @@ async function disparar(contexto, unidade, inventoryPath) {
   await mkdir(path.join(candDir, "fases"), { recursive: true })
   unidade.estado = "inflight"
   unidade.estadoObservado = "extracting"
-  await gravarEstado(runDir, item, { estado: "extracting", tentativas: unidade.tentativas })
+  await gravarEstado(runDir, item, { estado: "extracting", tentativas: unidade.tentativas, familia: contexto.familiaAtual })
   const args = [
     "--conditions", "react-server", "--import", "tsx", CLI,
     `--ufs=${item.uf}`,
@@ -528,12 +617,12 @@ async function finalizar(contexto, unidade, { code, stderr, inicioProcesso }) {
     contexto.latencias.push(duracao)
     if (contexto.latenciasBase.length < 4) contexto.latenciasBase.push(duracao)
     await contabilizarSucesso(contexto, item, registro)
-    await gravarEstado(runDir, item, { estado: "complete", motivo: classificacao.motivo, tentativas: unidade.tentativas, duracaoMs: duracao })
+    await gravarEstado(runDir, item, { estado: "complete", motivo: classificacao.motivo, tentativas: unidade.tentativas, familia: contexto.familiaAtual, duracaoMs: duracao })
   } else if (classificacao.estado === "blocked" && !cota) {
     unidade.estado = "blocked"
     contexto.metricas.bloqueados += 1
     contexto.errosCotaConsecutivos = 0
-    await gravarEstado(runDir, item, { estado: "blocked", motivo: classificacao.motivo, tentativas: unidade.tentativas, duracaoMs: duracao })
+    await gravarEstado(runDir, item, { estado: "blocked", motivo: classificacao.motivo, tentativas: unidade.tentativas, familia: contexto.familiaAtual, duracaoMs: duracao })
   } else {
     const motivo = classificacao.motivo || (code === 0 ? "exit 0 sem registro" : `exit ${code}`)
     if (cota) {
@@ -546,11 +635,11 @@ async function finalizar(contexto, unidade, { code, stderr, inicioProcesso }) {
     if (unidade.tentativas < MAX_TENTATIVAS_CANDIDATO) {
       unidade.estado = "retryable_error"
       unidade.tentativas += 1
-      await gravarEstado(runDir, item, { estado: "retryable_error", motivo, tentativas: unidade.tentativas, duracaoMs: duracao })
+      await gravarEstado(runDir, item, { estado: "retryable_error", motivo, tentativas: unidade.tentativas, familia: contexto.familiaAtual, duracaoMs: duracao })
     } else {
       unidade.estado = "blocked"
       contexto.metricas.bloqueados += 1
-      await gravarEstado(runDir, item, { estado: "blocked", motivo: `falha tecnica apos ${unidade.tentativas} tentativas: ${motivo}`, tentativas: unidade.tentativas, duracaoMs: duracao })
+      await gravarEstado(runDir, item, { estado: "blocked", motivo: `falha tecnica apos ${unidade.tentativas} tentativas: ${motivo}`, tentativas: unidade.tentativas, familia: contexto.familiaAtual, duracaoMs: duracao })
     }
   }
   if (contexto.errosCotaConsecutivos >= 2 && !contexto.parada) {
@@ -593,6 +682,10 @@ async function atualizarProgress(contexto, totalEsperado, inicio) {
   const medianaRecente = mediana(contexto.latencias.slice(-10))
   const etaMs = porHora > 0 ? (pendentes / porHora) * 3_600_000 : null
   const progresso = {
+    executionId: contexto.executionId ?? null,
+    startedAt: contexto.startedAt ?? null,
+    familiaAtual: contexto.familiaAtual ?? null,
+    metricsOffset: contexto.metricsOffset ?? 0,
     totalEsperado,
     concluidos,
     bloqueados,

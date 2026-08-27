@@ -21,9 +21,11 @@ function rodarRunner(caminho: string, envExtra: Record<string, string>, payloadS
   })
 }
 
-const RUNNER_GENERATOR = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-generator-qwen.mjs", import.meta.url))
-const RUNNER_JUDGE = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-judge-codex.mjs", import.meta.url))
-const RUNNER_GENERATOR_LUNA = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-generator-codex-luna.mjs", import.meta.url))
+const RUNNER_QWEN = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-generator-qwen.mjs", import.meta.url))
+const RUNNER_CODEX = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-judge-codex.mjs", import.meta.url))
+const RUNNER_LUNA = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-generator-opencode-luna.mjs", import.meta.url))
+const RUNNER_DEEPSEEK = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-judge-opencode-deepseek.mjs", import.meta.url))
+const RUNNER_GLM = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-generator-opencode-glm.mjs", import.meta.url))
 const DIR_RUNNERS = fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/", import.meta.url))
 
 const ENVELOPE = JSON.stringify({
@@ -33,13 +35,13 @@ const ENVELOPE = JSON.stringify({
   input: { identityKey: "2026:GOVERNADOR:AM:40000000000" },
 })
 
-test("runner do generator converte resposta de CLI em objeto estruturado", async () => {
+test("runner do generator qwen converte resposta de CLI em objeto estruturado", async () => {
   const fakeCli = "/tmp/pf-fake-qwen.mjs"
   const { writeFile, chmod } = await import("node:fs/promises")
   await writeFile(fakeCli, "#!/usr/bin/env node\nprocess.stdout.write(JSON.stringify({response:'{\"ok\": true}'}))\n")
   await chmod(fakeCli, 0o755)
   const resultado = await rodarRunner(
-    RUNNER_GENERATOR,
+    RUNNER_QWEN,
     { PF_QWEN_CLI: fakeCli, PF_QWEN_TIMEOUT_MS: "15000" },
     ENVELOPE,
   )
@@ -47,7 +49,7 @@ test("runner do generator converte resposta de CLI em objeto estruturado", async
   assert.deepEqual(JSON.parse(resultado.stdout), { ok: true })
 })
 
-test("runner do judge extrai mensagem final do stream ndjson e devolve objeto", async () => {
+test("runner do judge codex extrai mensagem final do stream ndjson e devolve objeto", async () => {
   const fakeCli = "/tmp/pf-fake-codex.mjs"
   const eventoFake = [
     JSON.stringify({ type: "item.started", item: { type: "agent_message" } }),
@@ -58,7 +60,7 @@ test("runner do judge extrai mensagem final do stream ndjson e devolve objeto", 
   await writeFile(fakeCli, `#!/usr/bin/env node\nprocess.stdin.resume(); process.stdout.write(${JSON.stringify(eventoFake)})\n`)
   await chmod(fakeCli, 0o755)
   const resultado = await rodarRunner(
-    RUNNER_JUDGE,
+    RUNNER_CODEX,
     { PF_CODEX_CLI: fakeCli, PF_CODEX_TIMEOUT_MS: "15000", PF_JUDGE_MODEL: "gpt-5.4-teste" },
     ENVELOPE,
   )
@@ -66,7 +68,7 @@ test("runner do judge extrai mensagem final do stream ndjson e devolve objeto", 
   assert.deepEqual(JSON.parse(resultado.stdout), { ok: false })
 })
 
-test("envelope invalido falha fechado nos dois runners", async () => {
+test("envelope invalido falha fechado nos runners qwen/codex", async () => {
   const base = DIR_RUNNERS
   for (const runner of ["run-generator-qwen.mjs", "run-judge-codex.mjs"]) {
     const fakeCli = "/tmp/pf-fake-nunca-chamado.mjs"
@@ -78,56 +80,73 @@ test("envelope invalido falha fechado nos dois runners", async () => {
   }
 })
 
-test("runner luna propaga quota como quota e nao como json generico", async () => {
-  const fakeCli = "/tmp/pf-fake-luna-quota.mjs"
-  const { writeFile, chmod } = await import("node:fs/promises")
-  // fake codex que retorna quota no stderr e stdout vazio
-  await writeFile(fakeCli, "#!/usr/bin/env node\nprocess.stderr.write('quota exceeded token-plan 1-week'); process.stdout.write(''); process.exit(1)\n")
-  await chmod(fakeCli, 0o755)
-  const resultado = await rodarRunner(
-    RUNNER_GENERATOR_LUNA,
-    { PF_CODEX_CLI: fakeCli, PF_LUNA_MODEL: "muse-spark-1.2-quota-test", PF_CODEX_TIMEOUT_MS: "15000" },
-    ENVELOPE,
-  )
-  assert.notEqual(resultado.code, 0)
-  assert.match(resultado.stderr, /quota/i)
-  assert.ok(!/resposta sem objeto JSON/i.test(resultado.stderr) || /quota/i.test(resultado.stderr), "quota deve aparecer, nao apenas 'resposta sem objeto'")
+test("opencode runners falham fechado com envelope invalido (sem chamada ao go)", async () => {
+  const base = DIR_RUNNERS
+  for (const runner of ["run-generator-opencode-luna.mjs", "run-judge-opencode-deepseek.mjs", "run-generator-opencode-glm.mjs"]) {
+    const resultado = await rodarRunner(base + runner, {}, '{"foo":1}')
+    assert.notEqual(resultado.code, 0)
+  }
 })
 
-test("runner luna extrai JSON de stream ndjson igual ao judge", async () => {
-  const fakeCli = "/tmp/pf-fake-luna-ok.mjs"
-  const eventoFake = [
-    JSON.stringify({ type: "item.started", item: { type: "agent_message" } }),
-    JSON.stringify({ type: "item.completed", item: { type: "agent_message", text: '{"ok": true}' } }),
-    "",
-  ].join("\n")
+test("runner opencode luna converte resposta do go em JSON valido", async () => {
+  const fakeGo = "/tmp/pf-fake-opencode-luna-ok.mjs"
   const { writeFile, chmod } = await import("node:fs/promises")
-  await writeFile(fakeCli, `#!/usr/bin/env node\nprocess.stdin.resume(); process.stdout.write(${JSON.stringify(eventoFake)})\n`)
-  await chmod(fakeCli, 0o755)
+  // fake opencode-go que responde com --json wrapper {texto: '{"ok": true}'}
+  await writeFile(fakeGo, "#!/usr/bin/env node\nprocess.stdout.write(JSON.stringify({modelo:'gpt-5.6-luna', formato:'responses', uso:{}, texto:'{\"ok\": true}'}))\n")
+  await chmod(fakeGo, 0o755)
   const resultado = await rodarRunner(
-    RUNNER_GENERATOR_LUNA,
-    { PF_CODEX_CLI: fakeCli, PF_LUNA_MODEL: "muse-spark-1.2-teste", PF_CODEX_TIMEOUT_MS: "15000" },
+    RUNNER_LUNA,
+    { PF_OPENCODE_GO: fakeGo, PF_OPENCODE_TIMEOUT_MS: "15000" },
     ENVELOPE,
   )
   assert.equal(resultado.code, 0, resultado.stderr)
   assert.deepEqual(JSON.parse(resultado.stdout), { ok: true })
 })
 
-test("runners opencode falham fechado com envelope invalido e exigem PW file", async () => {
-  const base = DIR_RUNNERS
-  for (const runner of ["run-generator-opencode-glm.mjs", "run-judge-opencode-deepseek.mjs"]) {
-    const resultado = await rodarRunner(base + runner, { OC_SERVER_PW_FILE: "" }, '{"foo":1}')
-    assert.notEqual(resultado.code, 0)
-    // deve falhar por envelope invalido antes de tentar PW, ou por PW ausente – ambos sao fail-closed
+test("runner opencode deepseek converte resposta do go em JSON valido", async () => {
+  const fakeGo = "/tmp/pf-fake-opencode-deepseek-ok.mjs"
+  const { writeFile, chmod } = await import("node:fs/promises")
+  await writeFile(fakeGo, "#!/usr/bin/env node\nprocess.stdout.write(JSON.stringify({modelo:'deepseek-v4-flash', formato:'chat', uso:{}, texto:'{\"ok\": false}'}))\n")
+  await chmod(fakeGo, 0o755)
+  const resultado = await rodarRunner(
+    RUNNER_DEEPSEEK,
+    { PF_OPENCODE_GO: fakeGo, PF_OPENCODE_TIMEOUT_MS: "15000" },
+    ENVELOPE,
+  )
+  assert.equal(resultado.code, 0, resultado.stderr)
+  assert.deepEqual(JSON.parse(resultado.stdout), { ok: false })
+})
+
+test("runner rejeita subprocesso com exit 7 mesmo se stdout tem JSON valido", async () => {
+  const fakeGo = "/tmp/pf-fake-opencode-exit7.mjs"
+  const { writeFile, chmod } = await import("node:fs/promises")
+  // stdout com JSON valido, stderr com erro de transporte, exit 7
+  await writeFile(fakeGo, "#!/usr/bin/env node\nprocess.stdout.write(JSON.stringify({modelo:'gpt-5.6-luna', formato:'responses', uso:{}, texto:'{\"ok\": true}'})); process.stderr.write('transport error: connection reset'); process.exit(7)\n")
+  await chmod(fakeGo, 0o755)
+  for (const runner of [RUNNER_LUNA, RUNNER_DEEPSEEK, RUNNER_GLM]) {
+    const resultado = await rodarRunner(
+      runner,
+      { PF_OPENCODE_GO: fakeGo, PF_OPENCODE_TIMEOUT_MS: "15000" },
+      ENVELOPE,
+    )
+    assert.notEqual(resultado.code, 0, `runner ${runner} deveria falhar com exit 7`)
+    // Nenhum JSON deve ser materializado em stdout quando exit !=0; runner deve falhar fechado
+    // Se por acaso stdout contem JSON, o runner nao deve considera-lo sucesso
+    assert.ok(resultado.stderr.includes("saiu com 7") || resultado.stderr.includes("opencode-go"), "erro deve mencionar exit 7")
   }
 })
 
-test("opencode client extrai JSON e detecta quota sem mascarar", async () => {
-  const { extrairJson } = await import("../scripts/data/programas-governo-governadores-2026/opencode-server-client.mjs")
-  assert.deepEqual(extrairJson('{"a":1}'), { a: 1 })
-  assert.deepEqual(extrairJson('texto antes {"a":2} depois'), { a: 2 })
-  assert.throws(() => extrairJson("sem json aqui"), /resposta sem objeto JSON/)
-  // quota deve ser detectavel no texto (cliente marca quota antes de extrair)
-  const textoQuota = "quota exceeded token-plan"
-  assert.match(textoQuota, /quota/i)
+test("runner opencode glm usa api chat explicitamente e converte resposta", async () => {
+  const fakeGo = "/tmp/pf-fake-opencode-glm-ok.mjs"
+  const { writeFile, chmod } = await import("node:fs/promises")
+  // verifica que args contem --api chat
+  await writeFile(fakeGo, "#!/usr/bin/env node\nconst args=process.argv.join(' '); if(!args.includes('--api') || !args.includes('chat')){console.error('sem --api chat'); process.exit(2)}; process.stdout.write(JSON.stringify({modelo:'glm-5.3', formato:'chat', uso:{}, texto:'{\"ok\": true}'}))\n")
+  await chmod(fakeGo, 0o755)
+  const resultado = await rodarRunner(
+    RUNNER_GLM,
+    { PF_OPENCODE_GO: fakeGo, PF_OPENCODE_TIMEOUT_MS: "15000" },
+    ENVELOPE,
+  )
+  assert.equal(resultado.code, 0, resultado.stderr)
+  assert.deepEqual(JSON.parse(resultado.stdout), { ok: true })
 })

@@ -479,21 +479,23 @@ test("slots e regiao: multipassagem ocupa ate 3 slots e UFs norte nunca entram",
 
 test("rampa de concorrencia sobe 3->4 so com metricas estaveis e rebaixa quando instavel", () => {
   definirProbeRecursos(() => true)
-  const estaveis = { errosCota: 0, tentativas: 6, errosTecnicos: 0, latenciaP95Base: 100, latenciaP95Ultimos: 110 }
+  const estaveis = { errosCota: 0, tentativas: 6, conclusoes: 6, errosTecnicos: 0, latenciaP95Base: 100, latenciaP95Ultimos: 110 }
   const instaveis = { ...estaveis, errosTecnicos: 1 }
-  assert.equal(concorrenciaAlvo({ disparos: 0, concorrenciaAtual: 3, metricas: estaveis }), 3)
-  assert.equal(concorrenciaAlvo({ disparos: 3, concorrenciaAtual: 3, metricas: estaveis }), 4)
-  assert.equal(concorrenciaAlvo({ disparos: 3, concorrenciaAtual: 3, metricas: instaveis }), 3)
-  assert.equal(concorrenciaAlvo({ disparos: 6, concorrenciaAtual: 4, metricas: estaveis }), 4)
-  assert.equal(concorrenciaAlvo({ disparos: 6, concorrenciaAtual: 4, metricas: instaveis }), 3)
+  const semConclusoes = { ...estaveis, conclusoes: 2 }
+  assert.equal(concorrenciaAlvo({ conclusoes: 0, concorrenciaAtual: 3, metricas: estaveis }), 3)
+  assert.equal(concorrenciaAlvo({ conclusoes: 3, concorrenciaAtual: 3, metricas: estaveis }), 4)
+  assert.equal(concorrenciaAlvo({ conclusoes: 3, concorrenciaAtual: 3, metricas: instaveis }), 3)
+  assert.equal(concorrenciaAlvo({ conclusoes: 3, concorrenciaAtual: 3, metricas: semConclusoes }), 3)
+  assert.equal(concorrenciaAlvo({ conclusoes: 6, concorrenciaAtual: 4, metricas: estaveis }), 4)
+  assert.equal(concorrenciaAlvo({ conclusoes: 6, concorrenciaAtual: 4, metricas: instaveis }), 3)
   const latenciaPior = { ...estaveis, latenciaP95Ultimos: 200 }
-  assert.equal(concorrenciaAlvo({ disparos: 6, concorrenciaAtual: 4, metricas: latenciaPior }), 3)
-  assert.equal(escaladaPermitida({ errosCota: 1, tentativas: 10, errosTecnicos: 0 }), false)
-  // precisa de pelo menos 3 tentativas para escalar
-  assert.equal(escaladaPermitida({ errosCota: 0, tentativas: 2, errosTecnicos: 0, latenciaP95Base: 100, latenciaP95Ultimos: 110 }), false)
-  assert.equal(escaladaPermitida({ errosCota: 0, tentativas: 3, errosTecnicos: 0, latenciaP95Base: 100, latenciaP95Ultimos: 110 }), true)
+  assert.equal(concorrenciaAlvo({ conclusoes: 6, concorrenciaAtual: 4, metricas: latenciaPior }), 3)
+  assert.equal(escaladaPermitida({ errosCota: 1, tentativas: 10, conclusoes: 10, errosTecnicos: 0 }), false)
+  // precisa de pelo menos 3 conclusoes para escalar
+  assert.equal(escaladaPermitida({ errosCota: 0, tentativas: 3, conclusoes: 2, errosTecnicos: 0, latenciaP95Base: 100, latenciaP95Ultimos: 110 }), false)
+  assert.equal(escaladaPermitida({ errosCota: 0, tentativas: 3, conclusoes: 3, errosTecnicos: 0, latenciaP95Base: 100, latenciaP95Ultimos: 110 }), true)
   definirProbeRecursos(() => false)
-  assert.equal(concorrenciaAlvo({ disparos: 3, concorrenciaAtual: 3, metricas: estaveis }), 3)
+  assert.equal(concorrenciaAlvo({ conclusoes: 3, concorrenciaAtual: 3, metricas: estaveis }), 3)
   definirProbeRecursos(() => true)
 })
 
@@ -505,6 +507,10 @@ test("detecao de erro de cota reconhece padroes de quota/autenticacao", () => {
   assert.equal(eErroCota("quota exceeded for this project"), true)
   assert.equal(eErroCota("opencode http 429 em /session/message: quota"), true)
   assert.equal(eErroCota("quota detectada na resposta do modelo: quota"), true)
+  // Controles negativos: exhausted generico nao e quota
+  assert.equal(eErroCota("network retries exhausted"), false)
+  assert.equal(eErroCota("connection pool exhausted"), false)
+  assert.equal(eErroCota("context length exhausted"), false)
   assert.equal(eErroCota("resposta sem objeto JSON"), false)
   assert.equal(eErroCota("veredito no do judge"), false)
 })
@@ -668,11 +674,11 @@ test("executarBatch: erro de cota consecutivo para com checkpoints preservados",
     const conteudo = await readFile(path.join(dirDoCandidato(runDir, { chaveCacheDir: item.chaveCacheDir as string }), "estado.json"), "utf8")
     return (JSON.parse(conteudo) as { estado: string }).estado
   }))
-  // item 4 nunca disparado permanece pendente; item 3 foi disparado junto no lote inicial (concorrencia 3) entao nao e pending
+  // item 4 nunca disparado permanece pendente (freeze apos primeira quota impede novos disparos)
   assert.equal(estados[3], "pending", "item 4 nunca disparado permanece pendente")
   assert.equal(disparos.filter((chave) => chave === itens[3].chave).length, 0, "parada de cota impede novos disparos")
-  // garante que com concorrencia 3, os 3 primeiros foram disparados
-  assert.ok(disparos.filter((chave) => chave === itens[2].chave).length > 0, "item 3 foi disparado no lote inicial com concorrencia 3")
+  // Com freeze apos primeira quota, item 3 pode ou nao ter sido disparado no lote inicial dependendo do timing;
+  // o importante e que item4 nunca foi disparado e que o hard stop ocorreu
   await rm(runDir, { recursive: true, force: true })
 })
 

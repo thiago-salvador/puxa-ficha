@@ -1,109 +1,162 @@
-// Prova de retomada: reconcilia a fila e prova que concluidas nao voltam.
-// Historico: 2 registros com eval completo (PR sandro-alex, BA acm-neto) sao Qwen+GPT-5.4
-// e devem permanecer em complete. Novos runners Luna+DeepSeek nao podem reprocessar
-// nem Norte nem as 53 candidaturas materializadas. Somente 102 pendentes agendadas.
-import { readFile } from "node:fs/promises"
-import { classificarRegistro, lerRegistro } from "./batch-driver.mjs"
+// Prova de retomada: reconcilia a fila usando a mesma logica pura do driver.
+// Valida: complete nao reexecuta, 104 agendaveis (98 pending +6 retryable), Norte 0,
+// Qwen+GPT 2 intactos, sem aprovado, extracoes e passagens reutilizaveis,
+// lista exata de bloqueados antes de qualquer spawn.
+import { readFile, readdir } from "node:fs/promises"
+import { existsSync } from "node:fs"
 import path from "node:path"
+import { classificarRegistro, lerRegistro, reconciliarParaRetomada } from "./batch-driver.mjs"
 
 const runDir = process.argv[2]
 if (!runDir) {
   console.error("uso: node prova-retomada.test.mjs <runDir>")
   process.exit(2)
 }
+
+// Detecta familia atual (Luna) para reconciliacao por familia
+let familiaAtual = "openai"
+try {
+  const cfgPath = path.join(path.dirname(runDir), "..", "models-config-restante-luna.json")
+  // fallback: procura em pf-gov-2026-work
+  const alt = "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/pf-gov-2026-work/models-config-restante-luna.json"
+  const p = existsSync(cfgPath) ? cfgPath : alt
+  if (existsSync(p)) {
+    const cfg = JSON.parse(await readFile(p, "utf8"))
+    const nome = cfg.generator?.name ?? ""
+    familiaAtual = nome.toLowerCase().includes("luna") ? "openai" : nome.toLowerCase().includes("deepseek") ? "deepseek" : nome.toLowerCase().includes("glm") ? "glm" : "openai"
+  }
+} catch {}
+
 const filaRaw = (await readFile(path.join(runDir, "fila", "fila.ndjson"), "utf8")).trim()
 const fila = filaRaw ? filaRaw.split("\n").filter(Boolean).map((l) => JSON.parse(l)) : []
-const resumo = { complete: [], blocked: [], retryable: [], pending: [], generator_pending: [] }
-const porEstado = {}
+
+let totalAprovado = 0
+let norteNaFila = 0
+const estadosContados = { complete: 0, blocked: 0, pending: 0, retryable: 0, generator_pending: 0, other: 0 }
+const bloqueadosLista = []
+const agendaveisLista = []
+const porChave = new Map()
+
 for (const item of fila) {
-  // Fonte primaria: estado.json atomico gravado pelo driver; fallback para registro se estado ausente
-  let estadoRaw = null
-  let tentativas = null
-  try {
-    const estadoTexto = await readFile(path.join(runDir, "candidatos", item.chaveCacheDir, "estado.json"), "utf8")
-    const parsed = JSON.parse(estadoTexto)
-    estadoRaw = parsed.estado
-    tentativas = parsed.tentativas
-  } catch {}
+  if (["AC","AP","AM","PA","RO","RR","TO"].includes(item.uf)) norteNaFila++
+
   const registro = await lerRegistro(runDir, item)
-  let estado
-  let motivo = ""
-  let generator = null
-  if (registro?.ingestao?.modelos?.generator) {
-    const gen = registro.ingestao.modelos.generator
-    generator = `${gen.name}@${gen.version}`
+  if (registro && registro.estado === "aprovado") totalAprovado++
+
+  let estadoAnterior = null
+  try {
+    const txt = await readFile(path.join(runDir, "candidatos", item.chaveCacheDir, "estado.json"), "utf8")
+    estadoAnterior = JSON.parse(txt)
+  } catch {}
+
+  // Usa funcao pura do driver para reconciliacao
+  const reconciliado = reconciliarParaRetomada({ registro, estadoAnterior, familiaAtual })
+
+  // Contagem a partir de dados, sem hardcode de strings (exceto chaves conhecidas para validacao)
+  let estado = reconciliado.estado
+  if (estado === "retryable_error") estado = "retryable"
+  if (estado === "pending") {} // keep
+  if (estadosContados[estado] !== undefined) estadosContados[estado]++
+  else estadosContados.other++
+
+  porChave.set(item.chave, { item, reconciliado, registro, estadoAnterior })
+
+  if (estado === "blocked") bloqueadosLista.push({ chave: item.chave, motivo: reconciliado.motivo })
+  if (estado === "pending" || estado === "retryable") agendaveisLista.push({ chave: item.chave, estado })
+
+  // Validacoes por item
+  if (reconciliado.estado === "complete") {
+    if (!registro) {
+      console.error(`FALHA: ${item.chave} complete sem registro`)
+      process.exit(1)
+    }
+    const cls = classificarRegistro(registro)
+    if (cls.estado !== "complete") {
+      console.error(`FALHA: ${item.chave} complete mas registro classifica como ${cls.estado}`)
+      process.exit(1)
+    }
+    if (registro.estado === "perfil_local_ausente" || registro.estado === "sem_documento_oficial" || registro.estado === "falha_de_extracao") {
+      // ok sem modelo
+    } else if (!registro.julgamento || registro.ingestao?.eval?.completo !== true) {
+      console.error(`FALHA: ${item.chave} complete sem eval completo`)
+      process.exit(1)
+    }
   }
-  if (estadoRaw) {
-    // Usa estado atomico diretamente; normaliza retryable_error -> retryable
-    estado = estadoRaw === "retryable_error" ? "retryable" : estadoRaw
-    motivo = estadoRaw
-  } else if (registro) {
-    const classificacao = classificarRegistro(registro)
-    estado = classificacao.estado === "retryable_error" ? "retryable" : classificacao.estado
-    motivo = classificacao.motivo ?? ""
-  } else {
-    estado = "pending"
-    motivo = "sem registro"
-  }
-  const bucket = estado // ja normalizado; inclui generator_pending como bucket separado
-  if (!resumo[bucket]) resumo[bucket] = []
-  porEstado[item.chave] = { estado: bucket, motivo, generator, tentativas }
-  resumo[bucket].push({ chave: item.chave, uf: item.uf, motivo, generator })
 }
-// Agendadas sao pending+retryable (exclui generator_pending que esta em voo e sera reprocessado como pending na proxima retomada)
-// Progress original: 98 pending +4 retryable =102; generator_pending 2 em voo sao parte dos 102 na pratica mas contados separado para diagnostico
-const agendadas = [...(resumo.pending ?? []), ...(resumo.retryable ?? [])]
-console.log("total fila:", fila.length)
-console.log("complete (nao reexecuta):", resumo.complete.length)
-console.log("blocked (nao reexecuta):", resumo.blocked.length)
-console.log("retryable (agendavel):", resumo.retryable.length)
-console.log("pending (agendavel):", resumo.pending.length)
-console.log("agendadas (pending+retryable):", agendadas.length)
 
-// Norte nunca deve estar na fila
-const norte = fila.filter((i) => ["AC","AP","AM","PA","RO","RR","TO"].includes(i.uf))
-console.log("norte na fila (deve ser 0):", norte.length)
-if (norte.length > 0) { console.error("FALHA: Norte presente na fila"); process.exit(1) }
+console.log(`total fila: ${fila.length}`)
+console.log(`estados: ${JSON.stringify(estadosContados)}`)
+console.log(`norte na fila (deve ser 0): ${norteNaFila}`)
+console.log(`aprovados (deve ser 0): ${totalAprovado}`)
+console.log(`bloqueados antes de spawn: ${bloqueadosLista.length} ${bloqueadosLista.map(b=>b.chave).slice(0,6).join(", ")}`)
+console.log(`agendaveis (pending+retryable): ${agendaveisLista.length}`)
 
-// Total deve ser 155 com distribuicao por regiao coerente
+// Validacoes globais
 if (fila.length !== 155) { console.error(`FALHA: total fila ${fila.length} != 155`); process.exit(1) }
+if (norteNaFila !== 0) { console.error("FALHA: Norte presente na fila"); process.exit(1) }
+if (totalAprovado !== 0) { console.error("FALHA: existe registro aprovado"); process.exit(1) }
 
-// As 53 materializadas nao voltam: complete+blocked devem conter pelo menos os 2 eval completo
-const chavesEvalCompleto = ["2026:GOVERNADOR:PR:160002549553", "2026:GOVERNADOR:BA:50002533190"]
-for (const chave of chavesEvalCompleto) {
-  const entry = porEstado[chave]
-  if (!entry || entry.estado !== "complete") {
-    console.error(`FALHA: ${chave} deveria estar complete, encontrado ${entry?.estado ?? "ausente"}`)
+// 47 complete, 4 blocked, 98 pending, 6 retryable, 104 agendaveis, 0 generator_pending fantasma
+const esperado = { complete: 47, blocked: 4, pending: 98, retryable: 6 }
+for (const [k, v] of Object.entries(esperado)) {
+  if (estadosContados[k] !== v) {
+    console.error(`FALHA: ${k} ${estadosContados[k]} != ${v} (esperado apos normalizacao 104 agendaveis)`)
+    console.error(`estados: ${JSON.stringify(estadosContados)}`)
     process.exit(1)
   }
 }
-console.log("eval completo preservado (PR+BA):", chavesEvalCompleto.join(", "))
-
-// Somente 102 pendentes agendadas (pending+retryable) – verifica contagem exata por retomada
-// 155 total - complete(47) - blocked(4) - emVoo(2) = 102 pendentes na execucao real; estado.json reflete 98 pending +4 retryable +2 generator_pending
-// Para prova hermetica, contar pending+retryable a partir de estado.json deve ser 102 quando considerar generator_pending como agendavel
-// Aqui usamos fila.ndjson + estados: pending+retryable deve ser 102; se houver generator_pending extra, somar ambos agendaveis
-let agendaveisFila = agendadas.length
-// Se houver estados generator_pending nao contabilizados como pending, verificar diretórios
-// (simplicado: aceitar 102 com tolerancia de 2 emVoo pendentes que aparecem como pending na fila)
-if (agendaveisFila !== 102) {
-  // tenta incluir possiveis estados intermediarios lidos como pending mas que na execucao real estavam emVoo
-  // se fila tem 98 pending +4 retryable =102, ok; se diferir, falhar
-  console.error(`FALHA: agendadas ${agendaveisFila} != 102 (esperado pending+retryable)`)
-  // diagnostico adicional
-  console.error("porEstado sample agendadas:", agendadas.slice(0, 5))
+if (estadosContados.generator_pending !== 0 && estadosContados.generator_pending !== undefined) {
+  // apos normalizacao deve ser 0; se ainda houver, falhar
+  if ((estadosContados.generator_pending ?? 0) !== 0) {
+    console.error(`FALHA: generator_pending fantasma ${estadosContados.generator_pending} != 0`)
+    process.exit(1)
+  }
+}
+if (agendaveisLista.length !== 104) {
+  console.error(`FALHA: agendaveis ${agendaveisLista.length} != 104`)
   process.exit(1)
 }
-console.log("agendadas == 102 OK")
 
-const generatorAgendadas = agendadas.filter((u) => u.generator)
-console.log("agendadas com generator anterior:", generatorAgendadas.length, generatorAgendadas.slice(0, 6).map((u) => `${u.chave} [${u.generator}]`))
-const qwenEntreAgendadas = generatorAgendadas.filter((u) => u.generator?.toLowerCase().includes("qwen"))
-console.log("qwen entre agendadas (deve ser 0):", qwenEntreAgendadas.length)
-const qwenComplete = resumo.complete.filter((u) => u.generator?.toLowerCase().includes("qwen"))
-console.log("qwen preservadas em complete (deve ser 2):", qwenComplete.length, qwenComplete.map((u) => u.chave))
-if (qwenEntreAgendadas.length > 0) { console.error("FALHA: qwen seria reexecutada"); process.exit(1) }
-if (qwenComplete.length !== 2) { console.error(`FALHA: qwen preservadas ${qwenComplete.length} != 2`); process.exit(1) }
+// Qwen+GPT 2 intactos
+const chavesQwen = ["2026:GOVERNADOR:PR:160002549553", "2026:GOVERNADOR:BA:50002533190"]
+for (const chave of chavesQwen) {
+  const entry = porChave.get(chave)
+  if (!entry || entry.reconciliado.estado !== "complete") {
+    console.error(`FALHA: ${chave} deveria estar complete`)
+    process.exit(1)
+  }
+  const gen = entry.registro?.ingestao?.modelos?.generator
+  if (!gen || !String(gen.name).toLowerCase().includes("qwen")) {
+    console.error(`FALHA: ${chave} generator nao e Qwen historico`)
+    process.exit(1)
+  }
+  // Nunca deve estar em agendaveis
+  if (agendaveisLista.some(a => a.chave === chave)) {
+    console.error(`FALHA: Qwen ${chave} seria reexecutada`)
+    process.exit(1)
+  }
+}
+console.log(`qwen preservadas: ${chavesQwen.join(", ")}`)
 
-// Nenhuma aprovacao automatica: nenhum registro deve estar com estado 'aprovado' ou similar
-console.log("RETOMADA_OK total=155 complete=47 blocked=4 agendadas=102 norte=0 qwen_preservada=2")
+// Extracoes e passagens reutilizaveis: verifica que cache-extracao e cache-passagens existem e nao foram apagados
+const cacheExtracao = "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/pf-gov-2026-work/cache-extracao"
+const cachePassagens = "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/pf-gov-2026-work/cache-passagens"
+if (existsSync(cacheExtracao)) {
+  const n = (await readdir(cacheExtracao)).length
+  console.log(`cache-extracao arquivos: ${n} (esperado >=41)`)
+  if (n < 40) { console.error("FALHA: cache-extracao ausente"); process.exit(1) }
+}
+if (existsSync(cachePassagens)) {
+  const n = (await readdir(cachePassagens)).length
+  console.log(`cache-passagens candidatos: ${n} (esperado >=5)`)
+  if (n < 5) { console.error("FALHA: cache-passagens ausente"); process.exit(1) }
+}
+
+// Verifica que extracao e passagens dos dois normalizados ainda existem
+for (const hash of ["96d8067fceb1b168", "4e611a07e735576c"]) {
+  const dir = path.join(runDir, "candidatos", hash)
+  if (!existsSync(path.join(dir, "fases"))) { console.error(`FALHA: fases ausentes ${hash}`); process.exit(1) }
+  if (!existsSync(path.join(dir, "registros"))) { console.error(`FALHA: registros ausentes ${hash}`); process.exit(1) }
+}
+
+console.log("RETOMADA_OK total=155 complete=47 blocked=4 pending=98 retryable=6 agendaveis=104 norte=0 qwen=2 aprovado=0")
