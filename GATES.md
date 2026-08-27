@@ -1,50 +1,35 @@
-# Gates: atualização agendada de pesquisas eleitorais
+# Gates: polimento ponta a ponta da ficha de candidatos
 
-OWNS: .github/workflows/pesquisas-monitoramento.yml, GATES.md, docs/operations/pesquisas-monitoramento-automatizado-eval.md, package.json, scripts/pesquisas-atualizacao-agendada/**, scripts/audit/verify-pesquisas-atualizacao-agendada-scope.mjs, tests/pesquisas-atualizacao-agendada.test.ts, tests/pesquisas-monitoramento-workflow.test.ts, tests/fixtures/pesquisas-atualizacao-agendada/**
+OWNS: GATES.md, docs/operations/ficha-candidatos-ux-eval.md, playwright.candidato-ficha-ux.config.ts, src/app/(site)/candidato/[slug]/CandidatoFichaView.tsx, src/components/CandidateSitesCard.tsx, src/components/CandidatoProfile.tsx, src/components/DeferredCandidateClientWidgets.tsx, src/components/DeferredCandidatoProfileClient.tsx, src/components/ProfileOverview.tsx, src/components/ProfileTabs.tsx, src/components/ProgramaGovernoSection.tsx, src/components/ShareButtons.tsx, src/components/SocialCardModal.tsx, src/components/alerts/FollowCandidateButton.tsx, tests/candidato-profile-ux.test.tsx, tests/visual/candidato-ficha-ux.spec.ts
 
-Scope: executar diariamente a coleta aprovada e preparar, sem merge ou publicação, um único draft PR somente quando toda mudança passar pelos gates.
+Scope: entregar as quatro ondas aprovadas de polimento da ficha com navegação mobile compacta, estados claros, leitor progressivo, hero reorganizado, cards consistentes e microestados acessíveis.
 
-- [x] G0: o eval e este ledger definem outcomes verificáveis de automação, política, routing e custo
-  CHECK: python3 "${CODEX_HOME:-$HOME/.codex}/skills/eval/scripts/eval_lint.py" docs/operations/pesquisas-monitoramento-automatizado-eval.md && node "${CODEX_HOME:-$HOME/.codex}/skills/unlazy/scripts/gate-lint.mjs" GATES.md && node -e "console.log('SCHEDULED_EVAL_LEDGER_PASS')"
-  EXPECT: SCHEDULED_EVAL_LEDGER_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=9425e83c6536f3d7438db34356642fd681eeb1ddbd8988a2c9ab61b4740c57f1; output-bytes=40
+- [x] G0: o eval e o ledger cobrem todos os outcomes aprovados sem placeholder
+  CHECK: python3 "/Users/thiagosalvador/.codex/skills/eval/scripts/eval_lint.py" docs/operations/ficha-candidatos-ux-eval.md && npx --yes node@24 "/Users/thiagosalvador/.codex/skills/unlazy/scripts/gate-lint.mjs" GATES.md && npx --yes node@24 -e "console.log('FICHA_UX_LEDGER_PASS')"
+  EXPECT: FICHA_UX_LEDGER_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=34a0c52bb5af/37 entries; EXPECT=matched; output-sha256=51d9222bd20e140a7e12ce481c6d3729a99bb95a1851751ac4dcf6c29eff6566; output-bytes=34
 
-- [x] G1: workflow diário preserva dispatch, usa matriz completa, consolida após todos os adaptadores e isola permissões de escrita
-  CHECK: npm run test:pesquisas:monitoramento:workflow && node -e "console.log('SCHEDULED_WORKFLOW_PASS')"
-  EXPECT: SCHEDULED_WORKFLOW_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=9ad4edf0a03deebfd81868c002b73ef66e1b1948b1f344739477595446885e29; output-bytes=1487
+- [x] G1: navegação mobile, leitor progressivo, cards e microestados passam nos testes focados
+  CHECK: npx --yes node@24 --import tsx --test tests/candidato-profile-ux.test.tsx tests/candidato-profile-tabs.test.ts tests/programa-governo-ui.test.tsx tests/candidate-sites-card.test.tsx && npx --yes node@24 -e "console.log('FICHA_UX_FOCUSED_PASS')"
+  EXPECT: FICHA_UX_FOCUSED_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=34a0c52bb5af/37 entries; EXPECT=matched; output-sha256=3712706285b19786d028aa9f40cf996af5271daf3b09c2b442097c1bef18718a; output-bytes=3455
 
-- [x] G2: golden set de promoção passa para no-change, mudança válida e todos os bloqueios fail-closed
-  CHECK: npm run test:pesquisas:atualizacao-agendada && node -e "console.log('SCHEDULED_GOLDEN_PASS')"
-  EXPECT: SCHEDULED_GOLDEN_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=9db4112ffb764c26f4bf8f89f1b74d0eb36cbf43ef905baa6f8c6a74c7c9b2a4; output-bytes=4031
+- [x] G2: a implementação mantém tipos e lint sem erro
+  CHECK: npx --yes node@24 "/Users/thiagosalvador/.local/bin/npm" run typecheck && npx --yes node@24 "/Users/thiagosalvador/.local/bin/npm" run lint && npx --yes node@24 -e "console.log('FICHA_UX_STATIC_PASS')"
+  EXPECT: FICHA_UX_STATIC_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=34a0c52bb5af/37 entries; EXPECT=matched; output-sha256=bfb022026755c5baef56600d1cac9f1388272f2b70f5cfae5ea9efeb6d6c8bc8; output-bytes=136
 
-- [x] G3: falha do verificador e draft existente impedem push e duplicação
-  CHECK: npm run test:pesquisas:atualizacao-agendada && node -e "console.log('SCHEDULED_GUARDS_PASS')"
-  EXPECT: SCHEDULED_GUARDS_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=8c8b7e257c4cadbf495d6b94e5cd8924d1bcbd87b9cef578395e5c724707a552; output-bytes=4027
+- [x] G3: a aplicação gera o build de produção
+  CHECK: VERCEL=0 npx --yes node@24 "/Users/thiagosalvador/.local/bin/npm" run build && npx --yes node@24 -e "console.log('FICHA_UX_BUILD_PASS')"
+  EXPECT: FICHA_UX_BUILD_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=34a0c52bb5af/37 entries; EXPECT=matched; output-sha256=476c7e04bd0fb665c7f026d0b175830fece1cb9d00d311492fae23dac6b9184d; output-bytes=2917
 
-- [x] G4: nenhum caminho executa merge, deploy, Supabase, revalidação de produção ou force-push
-  CHECK: npm run test:pesquisas:atualizacao-agendada && node -e "console.log('SCHEDULED_POLICY_PASS')"
-  EXPECT: SCHEDULED_POLICY_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=c10a14f25c15d6ed100c1b89311bd6d2c033aef3681031384419fea4ffc4aa7c; output-bytes=4027
+- [x] G4: a ficha real passa em desktop e mobile sem overflow, com alvos de toque, grid consistente, leitor progressivo e zero violação Axe
+  CHECK: npx --yes node@24 node_modules/playwright/cli.js test -c playwright.candidato-ficha-ux.config.ts && npx --yes node@24 -e "console.log('FICHA_UX_VISUAL_PASS')"
+  EXPECT: FICHA_UX_VISUAL_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=34a0c52bb5af/37 entries; EXPECT=matched; output-sha256=503c0a2ecd72d002966d21308ed11f303ba3fff61119c415a31cca65010862ff; output-bytes=1868
 
-- [x] G5: o diff final altera somente o workflow, testes, fixtures, documentação e scripts permitidos
-  CHECK: npm run audit:pesquisas:atualizacao-agendada:scope && node -e "console.log('SCHEDULED_SCOPE_PASS')"
-  EXPECT: SCHEDULED_SCOPE_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=57d6a64b0c16d232968158c2222b7cf42234573903dd2b2c6bbf88a0532521f5; output-bytes=247
-
-- [x] G6: todos os gates específicos da atualização agendada passam no estado final
-  CHECK: npm run verify:pesquisas:atualizacao-agendada && node -e "console.log('SCHEDULED_VERIFY_PASS')"
-  EXPECT: SCHEDULED_VERIFY_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=391c2c82a5fe8808bc78ff26342d2d2daeda4898a52d3086ba14907f9b60d2e4; output-bytes=6144
-
-- [x] G7: o gate canônico de pesquisas passa integralmente no diff final
-  CHECK: npm run verify:pesquisas && node -e "console.log('SCHEDULED_VERIFY_PESQUISAS_PASS')"
-  EXPECT: SCHEDULED_VERIFY_PESQUISAS_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=25633413605d36dcbb9e326a10e4f4282abb1341feff1ba3f6f998d463208eb8; output-bytes=20681
-
-- [x] G8: autoria e branch local correspondem exatamente ao contrato do PR
-  CHECK: test "$(git branch --show-current)" = "codex/pesquisas-atualizacao-agendada" && test "$(git config user.name)" = "Thiago Salvador" && test "$(git config user.email)" = "contato.thiagosalvador@gmail.com" && node -e "console.log('SCHEDULED_AUTHORSHIP_PASS')"
-  EXPECT: SCHEDULED_AUTHORSHIP_PASS
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=e66251be9113/28 entries; EXPECT=matched; output-sha256=06cbda863b00115d87b6a3b01a9cea73ed50b5d758be8174289ac843c187f807; output-bytes=26
+- [x] G5: o diff final está íntegro e limitado aos arquivos declarados em OWNS
+  CHECK: git diff --check && npx --yes node@24 -e "const{execFileSync}=require('child_process');const allowed=new Set(['GATES.md','docs/operations/ficha-candidatos-ux-eval.md','playwright.candidato-ficha-ux.config.ts','src/app/(site)/candidato/[slug]/CandidatoFichaView.tsx','src/components/CandidateSitesCard.tsx','src/components/CandidatoProfile.tsx','src/components/DeferredCandidateClientWidgets.tsx','src/components/DeferredCandidatoProfileClient.tsx','src/components/ProfileOverview.tsx','src/components/ProfileTabs.tsx','src/components/ProgramaGovernoSection.tsx','src/components/ShareButtons.tsx','src/components/SocialCardModal.tsx','src/components/alerts/FollowCandidateButton.tsx','tests/candidato-profile-ux.test.tsx','tests/visual/candidato-ficha-ux.spec.ts']);const files=execFileSync('git',['diff','--name-only']).toString().trim().split(/\n/).filter(Boolean);const extra=files.filter(f=>!allowed.has(f));if(extra.length){console.error(extra.join('\n'));process.exit(1)}console.log('FICHA_UX_SCOPE_PASS')"
+  EXPECT: FICHA_UX_SCOPE_PASS
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha; path=34a0c52bb5af/37 entries; EXPECT=matched; output-sha256=a80db62752c384adf678f58522264da28690b1e2cc726a7fb19dbe211126aeb8; output-bytes=20

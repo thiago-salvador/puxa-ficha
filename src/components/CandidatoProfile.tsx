@@ -170,7 +170,7 @@ const StatCard = memo(function StatCard({
   return (
     <div
       {...(rootDataAttrs ?? {})}
-      className="flex flex-col gap-1.5 rounded-[12px] border border-border/50 bg-card px-4 py-3"
+      className="flex h-full min-h-[112px] flex-col gap-1.5 rounded-[12px] border border-border/50 bg-card px-4 py-3"
     >
       <div className="flex items-center gap-2">
         <Icon className="size-4 shrink-0 text-muted-foreground" />
@@ -696,7 +696,7 @@ export function CandidatoProfile({
       )}
       {/* Stats strip */}
       <section className="mx-auto max-w-7xl px-5 py-4 sm:py-6 md:px-12">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5 [&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
+        <div className="grid grid-cols-2 items-stretch gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5 [&>*]:h-full [&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
             <StatCard
               value={processosOverview.value}
               label="Processos"
@@ -770,7 +770,7 @@ export function CandidatoProfile({
             />
             ) : (
             <div
-              className="min-w-0"
+              className="h-full min-w-0"
               title="Soma de total_gasto em todos os anos com registro CEAP nesta ficha. Na visão geral, o cartão de cota parlamentar destaca o ano mais recente com dados."
             >
             <StatCard
@@ -811,13 +811,15 @@ export function CandidatoProfile({
                       />
                     ) : undefined
                   }
+                  trailingCard={
+                    programaEnabled && programaGoverno ? (
+                      <ProgramaGovernoOverview
+                        manifesto={programaGoverno}
+                        onOpenTab={() => navigateToTab("programa")}
+                      />
+                    ) : undefined
+                  }
                 />
-                {programaEnabled && programaGoverno && (
-                  <ProgramaGovernoOverview
-                    manifesto={programaGoverno}
-                    onOpenTab={() => navigateToTab("programa")}
-                  />
-                )}
                 {ficha.cargo_disputado === "Governador" && (ficha.indicadores_estaduais ?? []).length > 0 && (
                   <StateIndicators indicadores={ficha.indicadores_estaduais!} estado={ficha.estado ?? ""} />
                 )}

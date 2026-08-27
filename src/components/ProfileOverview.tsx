@@ -179,19 +179,19 @@ function TeaserCard({
   return (
     <div
       data-pf-money-overview-card={moneyCardKind}
-      className={`rounded-[12px] border border-border/50 bg-card px-5 py-4 ${className ?? ""}`}
+      className={`flex h-full min-h-[220px] flex-col rounded-[12px] border border-border/50 bg-card px-5 py-4 ${className ?? ""}`}
     >
       <div className="mb-3 flex items-center justify-between">
         <h2 className="text-[13px] font-semibold text-foreground">{title}</h2>
         <button
           type="button"
           onClick={onNavigate}
-          className="inline-flex items-center gap-0.5 text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:text-foreground"
+          className="inline-flex min-h-11 items-center gap-0.5 rounded-[8px] px-2 text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           {linkLabel} <ChevronRight className="size-3" />
         </button>
       </div>
-      <div data-pf-money-overview-content={moneyCardKind}>{children}</div>
+      <div className="min-h-0 flex-1" data-pf-money-overview-content={moneyCardKind}>{children}</div>
     </div>
   )
 }
@@ -682,14 +682,16 @@ export function ProfileOverview({
   ficha,
   onNavigateTab,
   leadingCard,
+  trailingCard,
 }: {
   ficha: FichaCandidato
   onNavigateTab: (tabId: string) => void
   leadingCard?: React.ReactNode
+  trailingCard?: React.ReactNode
 }) {
   const hasDebateQuotes = hasCandidateDebatePressQuotes(ficha.slug, ficha.id)
 
-  if (!hasOverviewData(ficha) && !leadingCard && !hasDebateQuotes) {
+  if (!hasOverviewData(ficha) && !leadingCard && !trailingCard && !hasDebateQuotes) {
     return <EmptyOverviewState />
   }
 
@@ -715,50 +717,54 @@ export function ProfileOverview({
   const topGastos = getLatestSpending(gastos)
 
   return (
-    // `items-start` porque a grade esticava cada card até a altura do vizinho:
-    // um card curto (patrimônio de registro único) ao lado do card denso de
-    // financiamento virava uma caixa com centenas de pixels vazios dentro.
-    <div data-pf-profile-overview-grid="" className="grid grid-cols-1 items-start gap-6 md:grid-cols-2">
-      <PatrimonioTeaser
-        patrimonio={patrimonio}
-        summary={patrimonioSummary}
-        eleicoes={patrimonioEleicoes}
-        onNavigate={() => onNavigateTab("dinheiro")}
-      />
-      {leadingCard}
-      <FinancingTeaser
-        latestFin={latestFin}
-        pleitoLabel={latestFinPleitoLabel}
-        segments={finSegments}
-        onNavigate={() => onNavigateTab("dinheiro")}
-      />
-      <ContradictionsHighlight
-        votosContradicao={contradicoes}
-        pontosContradicao={pontosContradicao}
-        onNavigateTab={onNavigateTab}
-      />
-      <ProcessesTeaser processos={processos} onNavigate={() => onNavigateTab("justica")} />
-      <CandidateSitesCard
-        sites={ficha.sites_candidato?.sites}
-      />
-      <VotesTeaser
-        votos={votos}
-        contradicoes={contradicoes}
-        onNavigate={() => onNavigateTab("votos")}
-      />
-      <ParliamentarySpendingTeaser
-        topGastos={topGastos}
-        onNavigate={() => onNavigateTab("dinheiro")}
-      />
-      <ExecutiveSpendingTeaser
-        gastosExecutivo={gastosExecutivo}
-        onNavigate={() => onNavigateTab("dinheiro")}
-      />
-      <CareerTeaser
-        historico={historico}
-        historicoOrdenado={historicoOrdenado}
-        onNavigate={() => onNavigateTab("trajetoria")}
-      />
+    <div data-pf-profile-overview-grid="" className="space-y-6">
+      <div data-pf-profile-overview-primary-grid="" className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 [&>*]:h-full md:[&>*:last-child:nth-child(odd)]:col-span-2">
+        <PatrimonioTeaser
+          patrimonio={patrimonio}
+          summary={patrimonioSummary}
+          eleicoes={patrimonioEleicoes}
+          onNavigate={() => onNavigateTab("dinheiro")}
+        />
+        {leadingCard}
+        <FinancingTeaser
+          latestFin={latestFin}
+          pleitoLabel={latestFinPleitoLabel}
+          segments={finSegments}
+          onNavigate={() => onNavigateTab("dinheiro")}
+        />
+        <ContradictionsHighlight
+          votosContradicao={contradicoes}
+          pontosContradicao={pontosContradicao}
+          onNavigateTab={onNavigateTab}
+        />
+        <ProcessesTeaser processos={processos} onNavigate={() => onNavigateTab("justica")} />
+        <CandidateSitesCard
+          sites={ficha.sites_candidato?.sites}
+        />
+        <VotesTeaser
+          votos={votos}
+          contradicoes={contradicoes}
+          onNavigate={() => onNavigateTab("votos")}
+        />
+        <ParliamentarySpendingTeaser
+          topGastos={topGastos}
+          onNavigate={() => onNavigateTab("dinheiro")}
+        />
+        <ExecutiveSpendingTeaser
+          gastosExecutivo={gastosExecutivo}
+          onNavigate={() => onNavigateTab("dinheiro")}
+        />
+      </div>
+      {(historico.length > 0 || trailingCard) && (
+        <div data-pf-profile-overview-paired-cards="" className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 [&>*]:h-full">
+          <CareerTeaser
+            historico={historico}
+            historicoOrdenado={historicoOrdenado}
+            onNavigate={() => onNavigateTab("trajetoria")}
+          />
+          {trailingCard}
+        </div>
+      )}
       {hasDebateQuotes && (
         <CandidateDebatesBentoCard candidateSlug={ficha.slug} candidateId={ficha.id} />
       )}

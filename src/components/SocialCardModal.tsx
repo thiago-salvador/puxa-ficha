@@ -1,6 +1,6 @@
 "use client"
 
-import { Download, Share2, X } from "lucide-react"
+import { Download, ImageIcon, Share2, X } from "lucide-react"
 import { useCallback, useEffect, useState } from "react"
 
 interface SocialCardModalProps {
@@ -84,8 +84,8 @@ function SocialCardModalContent({
   }, [])
 
   const btnBase =
-    "rounded-full border border-border bg-background px-4 py-2 text-[length:var(--text-caption)] font-semibold text-foreground transition-colors hover:bg-muted"
-  const btnActive = "rounded-full border border-foreground bg-foreground px-4 py-2 text-[length:var(--text-caption)] font-semibold text-background transition-colors"
+    "inline-flex min-h-11 items-center justify-center rounded-full border border-border bg-background px-4 py-2 text-[length:var(--text-caption)] font-semibold text-foreground transition-colors hover:bg-muted"
+  const btnActive = "inline-flex min-h-11 items-center justify-center rounded-full border border-foreground bg-foreground px-4 py-2 text-[length:var(--text-caption)] font-semibold text-background transition-colors"
   const previewSize = "min(70vh, 420px)"
   const previewStyle =
     format === "feed"
@@ -112,7 +112,7 @@ function SocialCardModalContent({
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-3 top-3 rounded-full p-1.5 text-foreground transition-colors hover:bg-muted"
+          className="absolute right-2 top-2 grid size-11 place-items-center rounded-full text-foreground transition-colors hover:bg-muted"
           aria-label="Fechar"
         >
           <X className="size-5" />
@@ -143,7 +143,11 @@ function SocialCardModalContent({
             style={previewStyle}
           >
             {!imgLoaded && !imgError && (
-              <div className="absolute inset-0 animate-pulse bg-muted" />
+              <div role="status" aria-live="polite" aria-busy="true" className="absolute inset-0 flex animate-pulse flex-col items-center justify-center gap-2 bg-muted px-4 text-center">
+                <ImageIcon className="size-8 text-muted-foreground" aria-hidden="true" />
+                <span className="text-sm font-semibold text-foreground">Gerando prévia...</span>
+                <span className="text-xs text-muted-foreground">Isso pode levar alguns segundos.</span>
+              </div>
             )}
 
             {imgError ? (

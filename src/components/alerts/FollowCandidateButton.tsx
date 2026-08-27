@@ -231,7 +231,8 @@ export function FollowCandidateButton({
       size="lg"
       onClick={handleToggleFollow}
       disabled={sessionLoading || submitting}
-      className={variant === "compact" ? "rounded-full px-4" : "w-full sm:w-auto"}
+      aria-busy={sessionLoading || submitting}
+      className={variant === "compact" ? "min-h-11 rounded-full px-4" : "min-h-11 w-full sm:w-auto"}
     >
       {sessionLoading || submitting ? (
         <LoaderCircle className="size-4 animate-spin" />
@@ -240,7 +241,15 @@ export function FollowCandidateButton({
       ) : (
         <Bell className="size-4" />
       )}
-      {following ? "Seguindo por email" : variant === "compact" ? "Seguir candidato" : "Receber alertas"}
+      {sessionLoading
+        ? "Verificando alertas"
+        : submitting
+          ? "Atualizando alerta"
+          : following
+            ? "Seguindo por email"
+            : variant === "compact"
+              ? "Seguir candidato"
+              : "Receber alertas"}
     </Button>
   )
 

@@ -308,7 +308,19 @@ export async function CandidatoFichaView({
                 fallbackClassName="flex h-[128px] w-[96px] rounded-[12px] sm:h-[360px] sm:w-[270px] sm:rounded-[20px] lg:h-[420px] lg:w-[315px]"
                 initialsClassName="text-2xl sm:text-6xl"
               />
-              <CandidatePhotoCredit credit={ficha.foto_credito} />
+              <div className="hidden sm:block">
+                <CandidatePhotoCredit credit={ficha.foto_credito} />
+              </div>
+              {ficha.foto_credito && (
+                <details className="group mt-2 w-[96px] sm:hidden" data-pf-photo-credit-collapsible="">
+                  <summary className="flex min-h-11 cursor-pointer list-none items-center rounded-[8px] border border-border px-2 text-[10px] font-bold leading-tight text-muted-foreground outline-none marker:content-none focus-visible:ring-2 focus-visible:ring-ring">
+                    Foto e licença
+                  </summary>
+                  <div className="w-[min(78vw,280px)] rounded-[8px] bg-card p-2 shadow-lg">
+                    <CandidatePhotoCredit credit={ficha.foto_credito} variant="footer" />
+                  </div>
+                </details>
+              )}
             </figure>
           )}
 
@@ -397,11 +409,11 @@ export async function CandidatoFichaView({
                 {sanitizePtBrText(ficha.biografia)}
               </p>
             )}
-            <div className="mt-4 space-y-3">
+            <div className="mt-4 space-y-3 border-t border-border/60 pt-4 sm:border-0 sm:pt-0">
               {hasSocialLinks && (
                 <SocialLinks redes={ficha.redes_sociais ?? {}} site={ficha.site_campanha} />
               )}
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3" aria-label="Ações da ficha">
                 <DeferredShareButtons
                   shareUrl={fichaUrl}
                   title={shareTitle}

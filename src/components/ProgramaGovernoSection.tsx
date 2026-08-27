@@ -526,8 +526,12 @@ function HighlightedText({
 }
 
 function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
+  const INITIAL_VISIBLE_SECTIONS = 12
+  const SECTION_BATCH_SIZE = 12
   const [query, setQuery] = useState("")
   const [activeResult, setActiveResult] = useState(-1)
+  const [visibleSectionCount, setVisibleSectionCount] = useState(INITIAL_VISIBLE_SECTIONS)
+  const [pendingResult, setPendingResult] = useState<number | null>(null)
   const markRefs = useRef<Array<HTMLElement | null>>([])
   const plans = useMemo(() => {
     const matchesBySection = secoes.map((section) =>
@@ -536,6 +540,8 @@ function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
     return buildSearchPlans(matchesBySection)
   }, [secoes, query])
   const resultCount = plans.reduce((total, plan) => total + plan.matches.length, 0)
+  const visibleSections = secoes.slice(0, visibleSectionCount)
+  const remainingSections = Math.max(0, secoes.length - visibleSections.length)
   const toc = useMemo(() => {
     const seen = new Set<string>()
     return secoes.filter((section) => {
@@ -547,15 +553,26 @@ function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
     })
   }, [secoes])
 
+  useEffect(() => {
+    if (pendingResult === null) return
+    const frame = requestAnimationFrame(() => {
+      const mark = markRefs.current[pendingResult]
+      if (!mark) return
+      mark.focus({ preventScroll: true })
+      mark.scrollIntoView({ behavior: "smooth", block: "center" })
+      setPendingResult(null)
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [pendingResult, visibleSectionCount])
+
   const moveTo = useCallback((index: number) => {
     if (resultCount === 0) return
     const next = (index + resultCount) % resultCount
+    const sectionIndex = plans.findIndex((plan) => next >= plan.offset && next < plan.offset + plan.matches.length)
+    if (sectionIndex >= 0) setVisibleSectionCount((current) => Math.max(current, sectionIndex + 1))
     setActiveResult(next)
-    requestAnimationFrame(() => {
-      markRefs.current[next]?.focus({ preventScroll: true })
-      markRefs.current[next]?.scrollIntoView({ behavior: "smooth", block: "center" })
-    })
-  }, [resultCount])
+    setPendingResult(next)
+  }, [plans, resultCount])
 
   const registerMark = useCallback((index: number, element: HTMLElement | null) => {
     markRefs.current[index] = element
@@ -565,6 +582,13 @@ function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
     setQuery(value)
     setActiveResult(-1)
     markRefs.current = []
+  }, [])
+
+  const revealSection = useCallback((sectionIndex: number, sectionId: string) => {
+    setVisibleSectionCount((current) => Math.max(current, sectionIndex + 1))
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      document.getElementById(`programa-${sectionId}`)?.scrollIntoView({ behavior: "smooth", block: "start" })
+    }))
   }, [])
 
   return (
@@ -612,7 +636,14 @@ function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
           <ol className="mt-3 columns-1 gap-x-8 space-y-2 text-sm sm:columns-2">
             {toc.map((section) => (
               <li key={section.id} className="break-inside-avoid">
-                <a href={`#programa-${section.id}`} className="break-words text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground">
+                <a
+                  href={`#programa-${section.id}`}
+                  onClick={(event) => {
+                    event.preventDefault()
+                    revealSection(secoes.findIndex((item) => item.id === section.id), section.id)
+                  }}
+                  className="break-words text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground"
+                >
                   {section.titulo}
                 </a>
               </li>
@@ -622,7 +653,7 @@ function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
       )}
 
       <article className="mt-10 space-y-10" aria-label="Texto integral do programa de governo">
-        {secoes.map((section, sectionIndex) => {
+        {visibleSections.map((section, sectionIndex) => {
           const level = Math.min(4, Math.max(2, section.nivel + 1))
           const Heading = `h${level}` as "h2" | "h3" | "h4"
           return (
@@ -638,6 +669,24 @@ function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
           )
         })}
       </article>
+
+      {remainingSections > 0 && (
+        <div className="mt-8 rounded-[12px] border border-border bg-card p-5 text-center" data-pf-programa-progressive-reader="">
+          <p className="text-sm font-semibold text-foreground">
+            {visibleSections.length} de {secoes.length} capítulos exibidos
+          </p>
+          <p className="mt-1 text-xs leading-5 text-muted-foreground">
+            A busca acima já considera o documento completo. Abra os próximos capítulos conforme precisar.
+          </p>
+          <button
+            type="button"
+            onClick={() => setVisibleSectionCount((current) => Math.min(secoes.length, current + SECTION_BATCH_SIZE))}
+            className="mt-4 min-h-11 rounded-[8px] bg-foreground px-5 py-2 text-sm font-semibold text-background outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          >
+            Carregar mais {Math.min(SECTION_BATCH_SIZE, remainingSections)} capítulos
+          </button>
+        </div>
+      )}
     </div>
   )
 }
@@ -715,7 +764,7 @@ export function ProgramaGovernoTab({
 
         <div className="mt-8" data-pf-programa-document-state={documentLoadState}>
           {documentLoadState === "idle" || documentLoadState === "loading" ? (
-            <div role="status" className="animate-pulse rounded-[12px] border border-border bg-muted/25 p-6 text-sm text-muted-foreground">
+            <div role="status" aria-busy="true" className="animate-pulse rounded-[12px] border border-border bg-muted/25 p-6 text-sm text-muted-foreground">
               Carregando o documento selecionado...
             </div>
           ) : documentLoadState === "failed" ? (
@@ -742,7 +791,7 @@ export function ProgramaGovernoTab({
   }
 
   if (loadState === "idle" || loadState === "loading") {
-    return <div role="status" className="animate-pulse rounded-[12px] border border-border bg-muted/25 p-6 text-sm text-muted-foreground">Carregando programa de governo...</div>
+    return <div role="status" aria-busy="true" className="animate-pulse rounded-[12px] border border-border bg-muted/25 p-6 text-sm text-muted-foreground">Carregando programa de governo...</div>
   }
   if (loadState === "failed") {
     return (
