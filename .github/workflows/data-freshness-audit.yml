@@ -68,12 +68,8 @@ jobs:
           if-no-files-found: error
           retention-days: 30
       - name: Bloquear quando houver erro de fonte ou revisão pendente
-        if: always()
-        env:
-          AUDIT_OUTCOME: ${{ steps.audit.outcome }}
+        if: always() && steps.audit.outcome != 'success'
         run: |
           set -euo pipefail
-          if [ "$AUDIT_OUTCOME" != "success" ]; then
-            echo "::error::A auditoria exige revisão. Consulte summary.md e diff.json no artefato." >&2
-            exit 1
-          fi
+          echo "::error::A auditoria exige revisão. Consulte summary.md e diff.json no artefato." >&2
+          exit 1
