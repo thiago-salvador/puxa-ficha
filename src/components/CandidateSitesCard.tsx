@@ -14,7 +14,7 @@ export function CandidateSitesCard({
   return (
     <section
       aria-labelledby="candidate-sites-title"
-      className="flex h-full min-h-[220px] min-w-0 flex-col rounded-[12px] border border-border/50 bg-card px-5 py-4"
+      className="flex min-h-[220px] min-w-0 flex-col rounded-[12px] border border-border/50 bg-card px-5 py-4"
       data-pf-candidate-sites-card=""
       data-pf-candidate-sites-count={links.length}
     >
