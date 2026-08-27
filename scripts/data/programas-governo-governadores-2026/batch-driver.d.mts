@@ -6,7 +6,7 @@ export declare const LIMITE_SLOTS_GERADOR: number
 export declare const MAX_MULTIPASSAGEM_SIMULTANEOS: number
 export declare const MAX_TENTATIVAS_CANDIDATO: number
 export declare const PASSAGENS_CONCORRENCIA_INTERNA: number
-export declare const DISPAROS_RAMPA: { para4: number; para6: number; fimRampa: number }
+export declare const DISPAROS_RAMPA: { para4: number; fimRampa: number }
 export declare const THROUGHPUT_NORTE_CAND_H: number
 
 export declare function eErroCota(texto: unknown): boolean

@@ -54,6 +54,48 @@ test("recusa tentativas fracionárias e aliases da mesma família", () => {
   assert.throws(() => createProgramaGovernoModelAdapters(sameFamily), /familias diferentes/)
 })
 
+test("familias GLM e DeepSeek sao distintas entre si e de OpenAI Luna", () => {
+  // Luna (OpenAI) vs DeepSeek deve passar
+  const lunaDeepSeek = config()
+  lunaDeepSeek.generator.name = "OpenAI Luna"
+  lunaDeepSeek.judge.name = "DeepSeek"
+  assert.doesNotThrow(() => createProgramaGovernoModelAdapters(lunaDeepSeek))
+
+  // DeepSeek vs DeepSeek deve falhar
+  const deepseekSame = config()
+  deepseekSame.generator.name = "DeepSeek V4 Flash"
+  deepseekSame.judge.name = "DeepSeek Chat"
+  assert.throws(() => createProgramaGovernoModelAdapters(deepseekSame), /familias diferentes/)
+
+  // GLM vs DeepSeek distintos
+  const glmDeepSeek = config()
+  glmDeepSeek.generator.name = "Z.ai GLM"
+  glmDeepSeek.judge.name = "DeepSeek"
+  assert.doesNotThrow(() => createProgramaGovernoModelAdapters(glmDeepSeek))
+
+  // GLM vs GLM mesma familia
+  const glmSame = config()
+  glmSame.generator.name = "Z.ai GLM 5.3"
+  glmSame.judge.name = "GLM-4"
+  assert.throws(() => createProgramaGovernoModelAdapters(glmSame), /familias diferentes/)
+
+  // Qwen historico (Alibaba) vs OpenAI distinto
+  const qwenOpenAI = config()
+  qwenOpenAI.generator.name = "Alibaba Qwen"
+  qwenOpenAI.judge.name = "OpenAI GPT"
+  assert.doesNotThrow(() => createProgramaGovernoModelAdapters(qwenOpenAI))
+
+  // Muse Luna alias deve mapear para openai
+  const museDeepSeek = config()
+  museDeepSeek.generator.name = "Muse Spark"
+  museDeepSeek.judge.name = "DeepSeek"
+  assert.doesNotThrow(() => createProgramaGovernoModelAdapters(museDeepSeek))
+  const museMuse = config()
+  museMuse.generator.name = "Muse Spark"
+  museMuse.judge.name = "OpenAI Luna"
+  assert.throws(() => createProgramaGovernoModelAdapters(museMuse), /familias diferentes/)
+})
+
 test("recusa IDs de tema duplicados", async () => {
   const adapters = createProgramaGovernoModelAdapters(config(), async () => ({
     stdout: JSON.stringify(summary(["saude", "saude", "seguranca", "economia"])),

@@ -357,11 +357,13 @@ function modelFamily(name: string): string {
     .toLocaleLowerCase("pt-BR")
     .split(/[\s/:@-]+/u)
     .filter(Boolean)
-  if (tokens.some((token) => /^(?:openai|gpt|codex|o[1-9])(?:\d.*)?$/u.test(token))) return "openai"
+  if (tokens.some((token) => /^(?:openai|gpt|codex|o[1-9]|muse|luna)(?:\d.*)?$/u.test(token))) return "openai"
   if (tokens.some((token) => /^(?:anthropic|claude)$/u.test(token))) return "anthropic"
   if (tokens.some((token) => /^(?:google|gemini)$/u.test(token))) return "google"
   if (tokens.some((token) => /^mistral/u.test(token))) return "mistral"
   if (tokens.some((token) => /^(?:meta|llama)$/u.test(token))) return "meta"
+  if (tokens.some((token) => /^(?:deepseek)$/u.test(token))) return "deepseek"
+  if (tokens.some((token) => /^(?:glm|z\.?ai|zhipu|glmassistant)$/u.test(token))) return "glm"
   return tokens[0]
 }
 

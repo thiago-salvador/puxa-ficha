@@ -477,21 +477,23 @@ test("slots e regiao: multipassagem ocupa ate 3 slots e UFs norte nunca entram",
   for (const uf of UFS_NORTE) assert.equal(UFS_RESTANTES.includes(uf), false)
 })
 
-test("rampa de concorrencia sobe 2->4->6 so com metricas estaveis e rebaixa quando instavel", () => {
+test("rampa de concorrencia sobe 3->4 so com metricas estaveis e rebaixa quando instavel", () => {
   definirProbeRecursos(() => true)
   const estaveis = { errosCota: 0, tentativas: 6, errosTecnicos: 0, latenciaP95Base: 100, latenciaP95Ultimos: 110 }
   const instaveis = { ...estaveis, errosTecnicos: 1 }
-  assert.equal(concorrenciaAlvo({ disparos: 0, concorrenciaAtual: 2, metricas: estaveis }), 2)
-  assert.equal(concorrenciaAlvo({ disparos: 4, concorrenciaAtual: 2, metricas: estaveis }), 4)
-  assert.equal(concorrenciaAlvo({ disparos: 4, concorrenciaAtual: 2, metricas: instaveis }), 2)
-  assert.equal(concorrenciaAlvo({ disparos: 10, concorrenciaAtual: 4, metricas: estaveis }), 6)
-  assert.equal(concorrenciaAlvo({ disparos: 10, concorrenciaAtual: 4, metricas: instaveis }), 4)
-  assert.equal(concorrenciaAlvo({ disparos: 18, concorrenciaAtual: 6, metricas: estaveis }), 6)
+  assert.equal(concorrenciaAlvo({ disparos: 0, concorrenciaAtual: 3, metricas: estaveis }), 3)
+  assert.equal(concorrenciaAlvo({ disparos: 3, concorrenciaAtual: 3, metricas: estaveis }), 4)
+  assert.equal(concorrenciaAlvo({ disparos: 3, concorrenciaAtual: 3, metricas: instaveis }), 3)
+  assert.equal(concorrenciaAlvo({ disparos: 6, concorrenciaAtual: 4, metricas: estaveis }), 4)
+  assert.equal(concorrenciaAlvo({ disparos: 6, concorrenciaAtual: 4, metricas: instaveis }), 3)
   const latenciaPior = { ...estaveis, latenciaP95Ultimos: 200 }
-  assert.equal(concorrenciaAlvo({ disparos: 18, concorrenciaAtual: 6, metricas: latenciaPior }), 4)
+  assert.equal(concorrenciaAlvo({ disparos: 6, concorrenciaAtual: 4, metricas: latenciaPior }), 3)
   assert.equal(escaladaPermitida({ errosCota: 1, tentativas: 10, errosTecnicos: 0 }), false)
+  // precisa de pelo menos 3 tentativas para escalar
+  assert.equal(escaladaPermitida({ errosCota: 0, tentativas: 2, errosTecnicos: 0, latenciaP95Base: 100, latenciaP95Ultimos: 110 }), false)
+  assert.equal(escaladaPermitida({ errosCota: 0, tentativas: 3, errosTecnicos: 0, latenciaP95Base: 100, latenciaP95Ultimos: 110 }), true)
   definirProbeRecursos(() => false)
-  assert.equal(concorrenciaAlvo({ disparos: 10, concorrenciaAtual: 4, metricas: estaveis }), 4)
+  assert.equal(concorrenciaAlvo({ disparos: 3, concorrenciaAtual: 3, metricas: estaveis }), 3)
   definirProbeRecursos(() => true)
 })
 
@@ -499,6 +501,10 @@ test("detecao de erro de cota reconhece padroes de quota/autenticacao", () => {
   assert.equal(eErroCota("qwen: 429 rate limit exceeded"), true)
   assert.equal(eErroCota("unauthorized: token expired"), true)
   assert.equal(eErroCota("credit balance exhausted"), true)
+  assert.equal(eErroCota("token-plan 1-week quota exhausted, reset 2026-09-03"), true)
+  assert.equal(eErroCota("quota exceeded for this project"), true)
+  assert.equal(eErroCota("opencode http 429 em /session/message: quota"), true)
+  assert.equal(eErroCota("quota detectada na resposta do modelo: quota"), true)
   assert.equal(eErroCota("resposta sem objeto JSON"), false)
   assert.equal(eErroCota("veredito no do judge"), false)
 })
@@ -647,7 +653,8 @@ test("executarBatch: retomada nao repete candidato concluido e estados sao atomi
 })
 
 test("executarBatch: erro de cota consecutivo para com checkpoints preservados", async () => {
-  const itens = [itemFila("PE", "44000000001", "cota-1"), itemFila("PE", "44000000002", "cota-2"), itemFila("PE", "44000000003", "cota-3")]
+  // Com concorrencia 3, inicialmente 3 candidatos entram em voo; o 4o deve ficar pendente apos parada por 2 quotas consecutivas
+  const itens = [itemFila("PE", "44000000001", "cota-1"), itemFila("PE", "44000000002", "cota-2"), itemFila("PE", "44000000003", "cota-3"), itemFila("PE", "44000000004", "cota-4")]
   const unidades = new Map<string, UnidadeFake>([
     ["2026:GOVERNADOR:PE:44000000001", { chamadas: 0, acao: "erro-cota" }],
     ["2026:GOVERNADOR:PE:44000000002", { chamadas: 0, acao: "erro-cota" }],
@@ -661,8 +668,11 @@ test("executarBatch: erro de cota consecutivo para com checkpoints preservados",
     const conteudo = await readFile(path.join(dirDoCandidato(runDir, { chaveCacheDir: item.chaveCacheDir as string }), "estado.json"), "utf8")
     return (JSON.parse(conteudo) as { estado: string }).estado
   }))
-  assert.equal(estados[2], "pending", "item nunca disparado permanece pendente")
-  assert.equal(disparos.filter((chave) => chave === itens[2].chave).length, 0, "parada de cota impede novos disparos")
+  // item 4 nunca disparado permanece pendente; item 3 foi disparado junto no lote inicial (concorrencia 3) entao nao e pending
+  assert.equal(estados[3], "pending", "item 4 nunca disparado permanece pendente")
+  assert.equal(disparos.filter((chave) => chave === itens[3].chave).length, 0, "parada de cota impede novos disparos")
+  // garante que com concorrencia 3, os 3 primeiros foram disparados
+  assert.ok(disparos.filter((chave) => chave === itens[2].chave).length > 0, "item 3 foi disparado no lote inicial com concorrencia 3")
   await rm(runDir, { recursive: true, force: true })
 })
 
@@ -698,7 +708,7 @@ test("executarBatch: veredito no bloqueia sem contar erro tecnico e sem retry", 
   await rm(runDir, { recursive: true, force: true })
 })
 
-test("executarBatch: concorrencia nunca excede 6 candidatos e multipassagem maximo 2 simultaneos", async () => {
+test("executarBatch: concorrencia nunca excede 4 candidatos e multipassagem maximo 2 simultaneos", async () => {
   const itens: Array<Record<string, unknown>> = []
   for (let indice = 1; indice <= 14; indice += 1) {
     const sq = `770000000${String(indice).padStart(2, "0")}`
@@ -708,10 +718,10 @@ test("executarBatch: concorrencia nunca excede 6 candidatos e multipassagem maxi
   const { runDir, resultado, maximosConcorrentes } = await testeBatch({ itens, unidades, pollMs: 5, delayMs: 25 })
   assert.equal(resultado.concluidos, 14)
   assert.equal(resultado.bloqueados, 0)
-  assert.ok(maximosConcorrentes.candidatos <= 6, `candidatos simultaneos ${maximosConcorrentes.candidatos} <= 6`)
+  assert.ok(maximosConcorrentes.candidatos <= 4, `candidatos simultaneos ${maximosConcorrentes.candidatos} <= 4`)
   assert.ok(maximosConcorrentes.slots <= 6, `slots simultaneos ${maximosConcorrentes.slots} <= 6`)
   assert.ok(maximosConcorrentes.multipassagem <= 2, `multipassagem simultanea ${maximosConcorrentes.multipassagem} <= 2`)
-  assert.ok(maximosConcorrentes.candidatos >= 4, `paralelismo real observado (${maximosConcorrentes.candidatos} candidatos simultaneos)`)
+  assert.ok(maximosConcorrentes.candidatos >= 3, `paralelismo real observado (${maximosConcorrentes.candidatos} candidatos simultaneos)`)
   assert.ok(maximosConcorrentes.multipassagem >= 1, "multipassagem exerceu semaforo dedicado")
   const dirs = new Set(itens.map((item) => (item.chaveCacheDir as string)))
   assert.equal(dirs.size, itens.length, "cada candidato em diretorio isolado")

@@ -29,16 +29,16 @@ export const REGIOES = {
 export const UFS_NORTE = REGIOES.norte
 export const UFS_RESTANTES = ["nordeste", "centro-oeste", "sudeste", "sul"].flatMap((regiao) => REGIOES[regiao])
 
-export const LIMITE_CONCORRENCIA = 6
+export const LIMITE_CONCORRENCIA = 4
 export const LIMITE_SLOTS_GERADOR = 6
 export const MAX_MULTIPASSAGEM_SIMULTANEOS = 2
 export const MAX_TENTATIVAS_CANDIDATO = 2
 export const PASSAGENS_CONCORRENCIA_INTERNA = 3
-export const DISPAROS_RAMPA = { para4: 4, para6: 10, fimRampa: 18 }
+export const DISPAROS_RAMPA = { para4: 3, fimRampa: 6 }
 export const THROUGHPUT_NORTE_CAND_H = 13.8
 export const MS_MINUTO = 60_000
 
-const PADRAO_COTA = /quota|rate.?limit|429|401|403|unauthor|forbidden|credit|billing|usage.?limit|insufficient/iu
+const PADRAO_COTA = /quota|rate.?limit|429|401|403|unauthor|forbidden|credit|billing|usage.?limit|insufficient|token.?plan|exhausted/iu
 const PADRAO_SQ = /^\d{11,12}$/u
 
 export function eErroCota(texto) {
@@ -103,20 +103,20 @@ export function definirProbeRecursos(fn) {
 export function escaladaPermitida(metricas) {
   if (!metricas) return false
   if (metricas.errosCota > 0) return false
-  if (metricas.tentativas < 4) return false
+  if (metricas.tentativas < 3) return false
   if (metricas.tentativas > 0 && metricas.errosTecnicos / metricas.tentativas > 0.05) return false
   if (metricas.latenciaP95Base > 0 && metricas.latenciaP95Ultimos > metricas.latenciaP95Base * 1.5) return false
   return probeRecursos()
 }
 
 export function concorrenciaAlvo({ disparos, concorrenciaAtual, metricas }) {
-  const alvoRampa = disparos < DISPAROS_RAMPA.para4 ? 2 : disparos < DISPAROS_RAMPA.para6 ? 4 : 6
+  const alvoRampa = disparos < DISPAROS_RAMPA.para4 ? 3 : 4
   if (disparos < DISPAROS_RAMPA.fimRampa) {
     if (alvoRampa > concorrenciaAtual && !escaladaPermitida(metricas)) return concorrenciaAtual
     return alvoRampa
   }
-  if (!escaladaPermitida(metricas)) return Math.max(2, concorrenciaAtual - 2)
-  if (concorrenciaAtual < 6) return Math.min(6, concorrenciaAtual + 2)
+  if (!escaladaPermitida(metricas)) return Math.max(3, concorrenciaAtual - 1)
+  if (concorrenciaAtual < 4) return 4
   return concorrenciaAtual
 }
 
@@ -368,7 +368,7 @@ export async function executarBatch(params) {
     itens,
     ordem: [],
     emVoo: new Map(),
-    concorrencia: 2,
+    concorrencia: 3,
     disparos: 0,
     latencias: [],
     latenciasBase: [],
