@@ -179,4 +179,18 @@ test.describe("polimento da ficha de candidatos", () => {
       await expectNoPageOverflow(page)
     }
   })
+
+  test("masonry mantém a composição inicial sem ResizeObserver", async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== "desktop", "cenário específico de viewport desktop")
+    await page.addInitScript(() => {
+      Object.defineProperty(window, "ResizeObserver", {
+        configurable: true,
+        value: undefined,
+      })
+    })
+    await page.goto(CANDIDATE_PATH, { waitUntil: "domcontentloaded" })
+    await waitForProfile(page)
+    await expectIntrinsicMasonry(page)
+    await expectNoPageOverflow(page)
+  })
 })
