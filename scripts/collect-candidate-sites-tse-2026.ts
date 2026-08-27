@@ -79,8 +79,18 @@ function main(): void {
   const socialRows = readBrasilCsv<LinhaSiteCandidatoTse>(socialZipPath)
 
   const dataset = buildCandidateSitesTseDataset({ profiles, candidates, socialRows, receipt })
-  writeFileSync(outputPath, `${JSON.stringify(dataset, null, 2)}\n`)
-  console.log(JSON.stringify({ output: outputPath, ...dataset.counts }, null, 2))
+  const payload = `${JSON.stringify(dataset, null, 2)}\n`
+  if (process.argv.includes("--dry-run")) {
+    console.log(JSON.stringify({ dry_run: true, output: outputPath, ...dataset.counts }, null, 2))
+    return
+  }
+
+  writeFileSync(outputPath, payload)
+  const readback = JSON.parse(readFileSync(outputPath, "utf8")) as typeof dataset
+  if (JSON.stringify(readback) !== JSON.stringify(dataset)) {
+    throw new Error(`${outputPath}: readback diverge do dataset gerado`)
+  }
+  console.log(JSON.stringify({ output: outputPath, readback: "ok", ...readback.counts }, null, 2))
 }
 
 main()

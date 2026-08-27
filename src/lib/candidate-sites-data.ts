@@ -1,27 +1,21 @@
 import "server-only"
-import type { CandidatoSitesCollection } from "@/lib/types"
+import type { CandidateSitesTseDataset, CandidatoSitesCollection } from "@/lib/types"
 
-type Dataset = {
-  election_year: number
-  source: {
-    resource_url: string
-    resource_sha256: string
-    collected_at: string
-    generated_at_tse: string | null
-  }
-  candidates: Record<
-    string,
-    {
-      sites: Array<{ order: number; url: string | null }>
-    }
-  >
-}
+let datasetPromise: Promise<CandidateSitesTseDataset> | null = null
 
-let datasetPromise: Promise<Dataset> | null = null
-
-function loadDataset(): Promise<Dataset> {
+function loadDataset(): Promise<CandidateSitesTseDataset> {
   datasetPromise ??= import("@/data/candidate-sites-tse-2026.json")
-    .then((module) => module.default as Dataset)
+    .then((module) => {
+      const dataset = module.default as { schema_version?: unknown }
+      if (dataset.schema_version !== 1) {
+        throw new Error(`snapshot de sites do TSE incompativel: ${String(dataset.schema_version)}`)
+      }
+      return dataset as CandidateSitesTseDataset
+    })
+    .catch((error) => {
+      datasetPromise = null
+      throw error
+    })
   return datasetPromise
 }
 
@@ -30,7 +24,7 @@ export async function getCandidateSitesTseBySlug(
 ): Promise<CandidatoSitesCollection | null> {
   const dataset = await loadDataset()
   const sites = dataset.candidates[slug]?.sites
-    .filter((site): site is { order: number; url: string } => Boolean(site.url))
+    .filter((site): site is typeof site & { url: string } => Boolean(site.url))
     .map((site) => ({ ordem: site.order, url: site.url }))
   if (!sites?.length) return null
 

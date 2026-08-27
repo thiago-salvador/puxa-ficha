@@ -3,6 +3,7 @@ import {
   canonicalCandidateSiteUrlKey,
   parsePublicCandidateSiteUrl,
 } from "../../src/lib/candidate-sites"
+import type { CandidateSitesTseDataset } from "../../src/lib/types"
 
 export interface PerfilSitesTse {
   slug: string
@@ -32,41 +33,6 @@ export interface ReciboSitesTse {
   catalog_url: string
   catalog_license?: string | null
   resources: Array<{ name: string; url: string; sha256: string }>
-}
-
-export interface CandidateSitesTseDataset {
-  schema_version: 1
-  election_year: 2026
-  source: {
-    catalog_url: string
-    candidate_resource_url: string
-    candidate_resource_sha256: string
-    resource_url: string
-    resource_sha256: string
-    license: string | null
-    collected_at: string
-    generated_at_tse: string | null
-  }
-  counts: {
-    profiles_total: number
-    profiles_matched: number
-    profiles_with_sites: number
-    site_rows: number
-    unique_entries: number
-    unique_sites: number
-    non_linkable_entries: number
-    duplicate_rows_removed: number
-    ambiguous_profiles: number
-  }
-  ambiguous_profiles: Array<{ slug: string; sq_candidato: string[] }>
-  candidates: Record<
-    string,
-    {
-      sq_candidato: string
-      match_method: "sq_candidato" | "nome_completo_exato_unico"
-      sites: Array<{ order: number; url: string | null; original_url: string }>
-    }
-  >
 }
 
 const HTTP_SCHEME_RE = /^https?:\/\//i
@@ -118,10 +84,30 @@ function parseOrder(value: string): number {
 }
 
 function latestTseGeneration(rows: LinhaSiteCandidatoTse[]): string | null {
-  const values = rows
-    .map((row) => `${row.DT_GERACAO.trim()} ${row.HH_GERACAO.trim()}`.trim())
-    .filter(Boolean)
-  return values.sort((a, b) => a.localeCompare(b, "pt-BR", { numeric: true })).at(-1) ?? null
+  const values = rows.flatMap((row) => {
+    const date = row.DT_GERACAO.trim()
+    const time = row.HH_GERACAO.trim()
+    const match = `${date} ${time}`.match(
+      /^(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2})$/,
+    )
+    if (!match) return []
+
+    const [, day, month, year, hour, minute, second] = match.map(Number)
+    const timestamp = Date.UTC(year, month - 1, day, hour, minute, second)
+    const parsed = new Date(timestamp)
+    if (
+      parsed.getUTCFullYear() !== year ||
+      parsed.getUTCMonth() !== month - 1 ||
+      parsed.getUTCDate() !== day ||
+      parsed.getUTCHours() !== hour ||
+      parsed.getUTCMinutes() !== minute ||
+      parsed.getUTCSeconds() !== second
+    ) {
+      return []
+    }
+    return [{ value: `${date} ${time}`, timestamp }]
+  })
+  return values.sort((a, b) => a.timestamp - b.timestamp).at(-1)?.value ?? null
 }
 
 export function buildCandidateSitesTseDataset({
@@ -165,6 +151,7 @@ export function buildCandidateSitesTseDataset({
 
   const output: CandidateSitesTseDataset["candidates"] = {}
   const ambiguousProfiles: CandidateSitesTseDataset["ambiguous_profiles"] = []
+  const unmatchedDeclaredProfiles: CandidateSitesTseDataset["unmatched_declared_profiles"] = []
   let matchedProfiles = 0
   let sourceSiteRows = 0
   let uniqueEntries = 0
@@ -180,6 +167,9 @@ export function buildCandidateSitesTseDataset({
     // se o SQ não existir no pacote atual, falha fechado sem fallback nominal.
     if (declaredSq) {
       match = candidateBySq.get(declaredSq) ?? null
+      if (!match) {
+        unmatchedDeclaredProfiles.push({ slug: profile.slug, sq_candidato: declaredSq })
+      }
     } else {
       const exactNameMatches = (candidatesByName.get(normalizeName(profile.nome_completo)) ?? [])
         .filter((candidate) => matchesProfileScope(profile, candidate))
@@ -255,8 +245,12 @@ export function buildCandidateSitesTseDataset({
       non_linkable_entries: nonLinkableEntries,
       duplicate_rows_removed: sourceSiteRows - uniqueEntries,
       ambiguous_profiles: ambiguousProfiles.length,
+      declared_sq_missing: unmatchedDeclaredProfiles.length,
     },
     ambiguous_profiles: ambiguousProfiles.sort((a, b) => a.slug.localeCompare(b.slug)),
+    unmatched_declared_profiles: unmatchedDeclaredProfiles.sort((a, b) =>
+      a.slug.localeCompare(b.slug),
+    ),
     candidates: Object.fromEntries(
       Object.entries(output).sort(([slugA], [slugB]) => slugA.localeCompare(slugB)),
     ),

@@ -42,11 +42,13 @@ type CandidatoProfileResource = Awaited<ReturnType<typeof getCandidatoBySlugReso
 
 interface CandidatoProfileRouteDeps {
   getCandidatoBySlugResource: (slug: string) => Promise<CandidatoProfileResource>
+  getCandidateSitesTseBySlug?: typeof getCandidateSitesTseBySlug
   rateLimiter: RequestRateLimiter
 }
 
 const defaultCandidatoProfileRouteDeps: CandidatoProfileRouteDeps = {
   getCandidatoBySlugResource,
+  getCandidateSitesTseBySlug,
   rateLimiter: perfilRateLimiter,
 }
 
@@ -74,11 +76,16 @@ export function createCandidatoProfileGetHandler(
       )
     }
 
+    const sitesCandidato = await (deps.getCandidateSitesTseBySlug ?? getCandidateSitesTseBySlug)(slug).catch((error) => {
+      console.error("falha ao carregar sites do TSE", { slug, error })
+      return null
+    })
+
     return NextResponse.json(
       {
         data: {
           ...toPublicCandidatoProfileDto(resource.data),
-          sites_candidato: await getCandidateSitesTseBySlug(slug),
+          sites_candidato: sitesCandidato,
         },
         sourceStatus: resource.sourceStatus,
         sourceMessage: resource.sourceMessage ?? null,

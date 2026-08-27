@@ -141,7 +141,29 @@ test("coletor casa por SQ, usa nome exato unico como fallback e falha fechado na
   assert.equal(dataset.candidates.ambiguo, undefined)
   assert.equal(dataset.candidates["escopo-incompativel"], undefined)
   assert.deepEqual(dataset.ambiguous_profiles, [{ slug: "ambiguo", sq_candidato: ["3", "4"] }])
+  assert.deepEqual(dataset.unmatched_declared_profiles, [
+    { slug: "sq-ausente", sq_candidato: "999" },
+  ])
+  assert.equal(dataset.counts.declared_sq_missing, 1)
   assert.equal(dataset.counts.duplicate_rows_removed, 1)
+})
+
+test("coletor seleciona a geracao mais recente pela data cronologica do TSE", () => {
+  const dataset = buildCandidateSitesTseDataset({
+    profiles: [
+      { slug: "perfil", nome_completo: "Pessoa Um", ids: { tse_sq_candidato: { "2026": "1" } } },
+    ],
+    candidates: [
+      { SQ_CANDIDATO: "1", NM_CANDIDATO: "Pessoa Um", SG_UF: "SP", DS_CARGO: "DEPUTADO FEDERAL" },
+    ],
+    socialRows: [
+      { DT_GERACAO: "31/12/2025", HH_GERACAO: "22:00:00", SQ_CANDIDATO: "1", NR_ORDEM_REDE_SOCIAL: "1", DS_URL: "https://example.org" },
+      { DT_GERACAO: "01/01/2026", HH_GERACAO: "08:00:00", SQ_CANDIDATO: "1", NR_ORDEM_REDE_SOCIAL: "2", DS_URL: "https://example.com" },
+    ],
+    receipt: collectorReceipt,
+  })
+
+  assert.equal(dataset.source.generated_at_tse, "01/01/2026 08:00:00")
 })
 
 test("coletor preserva declaracao sem URL, mas nao a transforma em link", () => {

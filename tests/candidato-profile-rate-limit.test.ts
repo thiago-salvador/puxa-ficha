@@ -110,6 +110,43 @@ test("a rota recusa antes de repetir a leitura pesada com service role", async (
   assert.equal(leituras, 1)
 })
 
+test("falha no snapshot complementar nao derruba a ficha", async () => {
+  const handler = createCandidatoProfileGetHandler({
+    rateLimiter: createFixedWindowIpRateLimiter({
+      namespace: "candidate-sites-fallback-test",
+      max: 10,
+      windowMs: 60_000,
+    }),
+    getCandidatoBySlugResource: async () => ({
+      data: {
+        id: "1",
+        nome_completo: "Pessoa Um",
+        nome_urna: "Pessoa",
+        slug: "pessoa-um",
+        redes_sociais: {},
+      } as never,
+      sourceStatus: "live",
+      sourceMessage: null,
+    }),
+    getCandidateSitesTseBySlug: async () => {
+      throw new Error("snapshot indisponivel")
+    },
+  })
+  const originalConsoleError = console.error
+  console.error = () => undefined
+  try {
+    const response = await handler(new Request("http://localhost/api/candidato-profile/pessoa-um"), {
+      params: Promise.resolve({ slug: "pessoa-um" }),
+    })
+    assert.equal(response.status, 200)
+    const payload = await response.json()
+    assert.equal(payload.data.sites_candidato, null)
+    assert.equal(payload.data.slug, "pessoa-um")
+  } finally {
+    console.error = originalConsoleError
+  }
+})
+
 test("as quatro rotas de leitura de ficha declaram limitador", async () => {
   const { readFile } = await import("node:fs/promises")
   const rotas = [

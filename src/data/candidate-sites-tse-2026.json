@@ -20,7 +20,8 @@
     "unique_sites": 830,
     "non_linkable_entries": 29,
     "duplicate_rows_removed": 17,
-    "ambiguous_profiles": 1
+    "ambiguous_profiles": 1,
+    "declared_sq_missing": 2
   },
   "ambiguous_profiles": [
     {
@@ -29,6 +30,16 @@
         "110002553937",
         "110002554073"
       ]
+    }
+  ],
+  "unmatched_declared_profiles": [
+    {
+      "slug": "elizeu-aguiar",
+      "sq_candidato": "180002533958"
+    },
+    {
+      "slug": "ismar-marques",
+      "sq_candidato": "180002533957"
     }
   ],
   "candidates": {
