@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
 import { getCandidatoBySlugResource } from "@/lib/api"
 import { toPublicCandidatoProfileDto } from "@/lib/public-profile-dto"
+import { getCandidateSitesTseBySlug } from "@/lib/candidate-sites-data"
 import {
   createFixedWindowIpRateLimiter,
   rateLimitExceededResponse,
@@ -75,7 +76,10 @@ export function createCandidatoProfileGetHandler(
 
     return NextResponse.json(
       {
-        data: toPublicCandidatoProfileDto(resource.data),
+        data: {
+          ...toPublicCandidatoProfileDto(resource.data),
+          sites_candidato: await getCandidateSitesTseBySlug(slug),
+        },
         sourceStatus: resource.sourceStatus,
         sourceMessage: resource.sourceMessage ?? null,
       },

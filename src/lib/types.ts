@@ -46,12 +46,26 @@ export interface Candidato {
   foto_credito?: FotoCredito | null;
   site_campanha: string | null;
   redes_sociais: Record<string, string>;
+  /** Lista integral declarada no TSE, exclusiva do box da Visao Geral. */
+  sites_candidato?: CandidatoSitesCollection | null;
 
   // Meta
   fonte_dados: string[];
   ultima_atualizacao: string;
   /** Datas de frescor e recibos de estado por aba; não substitui a data do próprio dado. */
   verificacao_campos?: VerificacaoCampos | null;
+}
+
+export interface CandidatoSitesCollection {
+  ano_eleicao: number;
+  fonte_url: string;
+  fonte_sha256: string;
+  coletado_em: string;
+  gerado_em_tse: string | null;
+  sites: Array<{
+    ordem: number;
+    url: string;
+  }>;
 }
 
 export interface FotoCredito {

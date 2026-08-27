@@ -62,6 +62,8 @@ import {
   groupGastosExecutivoPorOrgao,
   pickOrgaoMaisRecente,
 } from "@/lib/gastos-executivo-display"
+import { buildCandidateSiteLinks } from "@/lib/candidate-sites"
+import { CandidateSitesCard } from "./CandidateSitesCard"
 
 /* ─── Pure helpers ──────────────────────────────────── */
 
@@ -116,6 +118,9 @@ function getFinancingSegments(latestFin: Financiamento | null): FinancingSegment
 
 function hasOverviewData(ficha: FichaCandidato): boolean {
   return (
+    buildCandidateSiteLinks({
+      sites: ficha.sites_candidato?.sites,
+    }).length > 0 ||
     (ficha.patrimonio?.length ?? 0) > 0 ||
     resolvePatrimonioEleicoes(ficha).length > 0 ||
     (ficha.financiamento?.length ?? 0) > 0 ||
@@ -733,6 +738,9 @@ export function ProfileOverview({
         onNavigateTab={onNavigateTab}
       />
       <ProcessesTeaser processos={processos} onNavigate={() => onNavigateTab("justica")} />
+      <CandidateSitesCard
+        sites={ficha.sites_candidato?.sites}
+      />
       <VotesTeaser
         votos={votos}
         contradicoes={contradicoes}
