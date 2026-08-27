@@ -312,11 +312,11 @@ export async function CandidatoFichaView({
                 <CandidatePhotoCredit credit={ficha.foto_credito} />
               </div>
               {ficha.foto_credito && (
-                <details className="group mt-2 w-[96px] sm:hidden" data-pf-photo-credit-collapsible="">
+                <details className="group relative mt-2 w-[96px] sm:hidden" data-pf-photo-credit-collapsible="">
                   <summary className="flex min-h-11 cursor-pointer list-none items-center rounded-[8px] border border-border px-2 text-[10px] font-bold leading-tight text-muted-foreground outline-none marker:content-none focus-visible:ring-2 focus-visible:ring-ring">
                     Foto e licença
                   </summary>
-                  <div className="w-[min(78vw,280px)] rounded-[8px] bg-card p-2 shadow-lg">
+                  <div className="absolute left-0 top-full z-10 mt-2 w-[min(78vw,280px)] rounded-[8px] bg-card p-2 shadow-lg">
                     <CandidatePhotoCredit credit={ficha.foto_credito} variant="footer" />
                   </div>
                 </details>
@@ -413,7 +413,7 @@ export async function CandidatoFichaView({
               {hasSocialLinks && (
                 <SocialLinks redes={ficha.redes_sociais ?? {}} site={ficha.site_campanha} />
               )}
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3" aria-label="Ações da ficha">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3" role="group" aria-label="Ações da ficha">
                 <DeferredShareButtons
                   shareUrl={fichaUrl}
                   title={shareTitle}

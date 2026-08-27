@@ -202,6 +202,7 @@ function MoreTabs({ tabs, activeTab, onTabChange }: { tabs: Tab[]; activeTab: st
       {activeMoreTab && <span id={`profile-tab-${activeMoreTab.id}`} className="sr-only">{activeMoreTab.label}</span>}
       <button
         type="button"
+        aria-label={activeMoreTab ? `Mais: ${activeMoreTab.label}` : "Mais"}
         aria-haspopup="menu"
         aria-expanded={open}
         aria-controls="profile-tabs-more-menu"

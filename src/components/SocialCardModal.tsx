@@ -143,7 +143,7 @@ function SocialCardModalContent({
             style={previewStyle}
           >
             {!imgLoaded && !imgError && (
-              <div role="status" aria-live="polite" aria-busy="true" className="absolute inset-0 flex animate-pulse flex-col items-center justify-center gap-2 bg-muted px-4 text-center">
+              <div role="status" aria-live="polite" aria-busy="true" className="absolute inset-0 flex motion-safe:animate-pulse flex-col items-center justify-center gap-2 bg-muted px-4 text-center">
                 <ImageIcon className="size-8 text-muted-foreground" aria-hidden="true" />
                 <span className="text-sm font-semibold text-foreground">Gerando prévia...</span>
                 <span className="text-xs text-muted-foreground">Isso pode levar alguns segundos.</span>

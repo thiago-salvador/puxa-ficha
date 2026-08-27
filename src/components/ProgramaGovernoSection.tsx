@@ -640,6 +640,7 @@ function ProgramaDocument({ secoes }: { secoes: ProgramaGovernoSecao[] }) {
                   href={`#programa-${section.id}`}
                   onClick={(event) => {
                     event.preventDefault()
+                    window.history.pushState(null, "", `#programa-${section.id}`)
                     revealSection(secoes.findIndex((item) => item.id === section.id), section.id)
                   }}
                   className="break-words text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground"
@@ -764,7 +765,7 @@ export function ProgramaGovernoTab({
 
         <div className="mt-8" data-pf-programa-document-state={documentLoadState}>
           {documentLoadState === "idle" || documentLoadState === "loading" ? (
-            <div role="status" aria-busy="true" className="animate-pulse rounded-[12px] border border-border bg-muted/25 p-6 text-sm text-muted-foreground">
+            <div role="status" aria-busy="true" className="motion-safe:animate-pulse rounded-[12px] border border-border bg-muted/25 p-6 text-sm text-muted-foreground">
               Carregando o documento selecionado...
             </div>
           ) : documentLoadState === "failed" ? (
@@ -791,7 +792,7 @@ export function ProgramaGovernoTab({
   }
 
   if (loadState === "idle" || loadState === "loading") {
-    return <div role="status" aria-busy="true" className="animate-pulse rounded-[12px] border border-border bg-muted/25 p-6 text-sm text-muted-foreground">Carregando programa de governo...</div>
+    return <div role="status" aria-busy="true" className="motion-safe:animate-pulse rounded-[12px] border border-border bg-muted/25 p-6 text-sm text-muted-foreground">Carregando programa de governo...</div>
   }
   if (loadState === "failed") {
     return (

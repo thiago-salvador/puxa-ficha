@@ -119,10 +119,10 @@ function CandidatoProfileSkeleton({ overview }: { overview: DeferredProfileOverv
           )}
         </div>
       </div>
-      <div className="mt-6 h-12 animate-pulse rounded-[8px] border border-border bg-muted/25" />
+      <div className="mt-6 h-12 motion-safe:animate-pulse rounded-[8px] border border-border bg-muted/25" />
       <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {Array.from({ length: 4 }).map((_, index) => (
-          <div key={index} className="h-24 animate-pulse rounded-[8px] border border-border bg-muted/25" />
+          <div key={index} className="h-24 motion-safe:animate-pulse rounded-[8px] border border-border bg-muted/25" />
         ))}
       </div>
     </section>

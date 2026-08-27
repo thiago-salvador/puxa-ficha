@@ -103,7 +103,7 @@ import {
 
 // --- Dynamic imports: tabs that are NOT visible on first paint ---
 function TabSkeleton() {
-  return <div className="animate-pulse space-y-4 py-4"><div className="h-5 w-1/3 rounded bg-muted" /><div className="h-4 w-full rounded bg-muted" /><div className="h-4 w-2/3 rounded bg-muted" /></div>
+  return <div className="motion-safe:animate-pulse space-y-4 py-4"><div className="h-5 w-1/3 rounded bg-muted" /><div className="h-4 w-full rounded bg-muted" /><div className="h-4 w-2/3 rounded bg-muted" /></div>
 }
 
 const MoneyTabSection = dynamic(

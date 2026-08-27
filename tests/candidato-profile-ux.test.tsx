@@ -66,9 +66,11 @@ describe("ondas de UX da ficha", () => {
       ["justica", "Justiça"],
     ].map(([id, label]) => ({ id, label }))
     const html = renderToStaticMarkup(<ProfileTabs tabs={tabs} activeTab="geral" onTabChange={() => {}} />)
+    const moreActiveHtml = renderToStaticMarkup(<ProfileTabs tabs={tabs} activeTab="justica" onTabChange={() => {}} />)
 
     assert.match(html, /Seções principais do perfil/)
     assert.match(html, />Mais</)
+    assert.match(moreActiveHtml, /aria-label="Mais: Justiça"/)
     assert.doesNotMatch(html, /Role na horizontal/)
     assert.match(html, /min-h-12/)
     assert.equal((html.match(/id="profile-tab-(geral|pesquisas|programa)"/g) ?? []).length, 3)
@@ -86,6 +88,7 @@ describe("ondas de UX da ficha", () => {
     assert.doesNotMatch(html, /TERMO_QUE_EXISTE_APENAS_NO_ULTIMO_CAPITULO/)
     assert.match(source, /secoes\.map\(\(section\) =>\s*findProgramaTextMatches/)
     assert.match(source, /setVisibleSectionCount\(\(current\) => Math\.max\(current, sectionIndex \+ 1\)\)/)
+    assert.match(source, /window\.history\.pushState\(null, "", `#programa-\$\{section\.id\}`\)/)
   })
 
   it("explica carregamentos em vez de exibir apenas placeholders visuais", () => {
@@ -107,9 +110,12 @@ describe("ondas de UX da ficha", () => {
 
     assert.match(programLoading, /aria-busy="true"/)
     assert.match(programLoading, /Carregando programa de governo/)
+    assert.match(programLoading, /motion-safe:animate-pulse/)
     assert.match(modalLoading, /Gerando prévia/)
     assert.match(modalLoading, /role="status"/)
+    assert.match(modalLoading, /motion-safe:animate-pulse/)
     assert.match(deferredProfile, /Carregando indicadores e seções da ficha/)
+    assert.match(deferredProfile, /motion-safe:animate-pulse/)
     assert.match(follow, /Verificando alertas/)
   })
 
@@ -127,6 +133,8 @@ describe("ondas de UX da ficha", () => {
     assert.match(hero, /data-pf-chapa-2026/)
     assert.match(hero, /PesquisasPresidenciaisHero/)
     assert.match(hero, /data-pf-photo-credit-collapsible/)
+    assert.match(hero, /absolute left-0 top-full z-10/)
+    assert.match(hero, /role="group" aria-label="Ações da ficha"/)
     assert.doesNotMatch(overview, /ranking de candidatos/i)
   })
 })
