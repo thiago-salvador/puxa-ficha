@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import { spawnSync } from "node:child_process"
-import { mkdtempSync, rmSync, writeFileSync } from "node:fs"
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { resolve } from "node:path"
 import { describe, it } from "node:test"
@@ -26,6 +26,8 @@ function fichaIntegra(slug = "candidato-ok"): LinhaSuperficie {
     verificacao_campos: { existing_profile_aggregate: "2026-08-14" },
     ultima_atualizacao: "2026-08-14T12:00:00Z",
     pontos_visiveis: 2,
+    destaques_totais: 2,
+    destaques_ocultos_revisados: 0,
     coletas: { ...COLETAS_OK },
     linhas_abas: { votacoes_chave: 1, historico_politico: 1 },
     textos_publicos: [],
@@ -63,11 +65,42 @@ describe("avaliarSuperficie", () => {
     assert.equal(violacoes[0].slug, "augusto-cury")
   })
 
-  it("R2: zero pontos visíveis reprova", () => {
+  it("R2: zero pontos visíveis sem revisão editorial reprova", () => {
     const ficha = fichaIntegra()
     ficha.pontos_visiveis = 0
     const violacoes = avaliarSuperficie([ficha])
     assert.deepEqual(violacoes.map((v) => v.regra), ["R2_destaques"])
+  })
+
+  it("R2: vazio editorial auditável preserva a despublicação da issue 96", () => {
+    for (const slug of ["dr-luisinho", "eudo-raffael"]) {
+      const ficha = fichaIntegra(slug)
+      ficha.pontos_visiveis = 0
+      ficha.destaques_totais = 1
+      ficha.destaques_ocultos_revisados = 1
+      assert.deepEqual(avaliarSuperficie([ficha]), [])
+    }
+  })
+
+  it("R2: um destaque oculto sem revisão mantém o vazio em fail-closed", () => {
+    const ficha = fichaIntegra("vazio-parcialmente-revisado")
+    ficha.pontos_visiveis = 0
+    ficha.destaques_totais = 2
+    ficha.destaques_ocultos_revisados = 1
+    assert.deepEqual(avaliarSuperficie([ficha]).map((v) => v.regra), ["R2_destaques"])
+  })
+
+  it("snapshot só reconhece vazio editorial com revisão, motivo e data", () => {
+    const sql = readFileSync(
+      resolve(import.meta.dirname, "../scripts/audit/superficie-snapshot.sql"),
+      "utf8",
+    )
+    assert.match(sql, /'destaques_totais'/)
+    assert.match(sql, /'destaques_ocultos_revisados'/)
+    assert.match(sql, /p\.visivel = false/)
+    assert.match(sql, /p\.verificado = true/)
+    assert.match(sql, /p\.despublicacao_motivo is not null/)
+    assert.match(sql, /p\.despublicado_em is not null/)
   })
 
   it("R3: fonte sem linha ou com resultado inválido reprova por fonte", () => {

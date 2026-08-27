@@ -14,8 +14,9 @@
  *                  (as três frentes, `resolverFrescorTsePerfil`) OU o agregado
  *                  curado (`existing_profile_aggregate`) com data válida.
  *                  Sem isso o selo cai em fallback frágil (Cury: junho).
- *   R2 destaques   >= 1 ponto de atenção visível (decisão de 15/08: toda ficha
- *                  tem ao menos alertas, positivos ou o padrão de trajetória).
+ *   R2 destaques   >= 1 ponto de atenção visível OU vazio editorial deliberado,
+ *                  provado por item verificado e despublicado com motivo/data.
+ *                  Zero sem essa trilha continua sendo falha de materialização.
  *   R3 coletas     As DUAS fontes que a ficha consulta em `coleta_log_ultima`
  *                  (`transparencia-sanctions`, `processos-curadoria`) têm linha
  *                  com resultado válido. Sem linha o card vira "não foi
@@ -89,6 +90,8 @@ export interface LinhaSuperficie {
   verificacao_campos: Record<string, unknown> | null
   ultima_atualizacao: string | null
   pontos_visiveis: number
+  destaques_totais?: number
+  destaques_ocultos_revisados?: number
   coletas: Record<string, { resultado?: unknown; executado_em?: unknown }>
   linhas_abas: {
     votacoes_chave: number
@@ -345,11 +348,17 @@ export function avaliarSuperficie(linhas: LinhaSuperficie[]): Violacao[] {
       })
     }
 
-    if (!(linha.pontos_visiveis >= 1)) {
+    const destaquesTotais = linha.destaques_totais ?? 0
+    const ocultosRevisados = linha.destaques_ocultos_revisados ?? 0
+    const vazioEditorialAuditado =
+      linha.pontos_visiveis === 0 &&
+      destaquesTotais >= 1 &&
+      ocultosRevisados === destaquesTotais
+    if (!(linha.pontos_visiveis >= 1) && !vazioEditorialAuditado) {
       violacoes.push({
         slug: linha.slug,
         regra: "R2_destaques",
-        detalhe: "nenhum ponto de atenção visível (aba Destaques vazia)",
+        detalhe: "nenhum destaque visível nem despublicação editorial auditável",
       })
     }
 
