@@ -34,7 +34,7 @@ const ALERTS_EMAIL_ENABLED = process.env.NEXT_PUBLIC_ALERTS_EMAIL_ENABLED === "t
 // tamanho exato do conteúdo final, senão a troca pós-hidratação causa layout shift
 // (e um pill vazio visível por até 7s no mobile enquanto o defer segura o load).
 const pillButtonClass =
-  "inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-[length:var(--text-caption)] font-semibold text-foreground"
+  "inline-flex min-h-11 items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-[length:var(--text-caption)] font-semibold text-foreground"
 
 function useDeferredClientWidgetLoad() {
   const [shouldLoad, setShouldLoad] = useState(false)

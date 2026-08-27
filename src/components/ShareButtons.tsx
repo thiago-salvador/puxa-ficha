@@ -56,7 +56,7 @@ export function ShareButtons({
   const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(shareUrl)}`
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(`${title} ${shareUrl}`)}`
   const btnClass =
-    "rounded-full border border-border bg-background px-4 py-2 text-[length:var(--text-caption)] font-semibold text-foreground transition-colors hover:bg-muted"
+    "inline-flex min-h-11 items-center justify-center rounded-full border border-border bg-background px-4 py-2 text-[length:var(--text-caption)] font-semibold text-foreground transition-colors hover:bg-muted"
 
   if (variant === "compact") {
     return (

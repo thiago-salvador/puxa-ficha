@@ -14,7 +14,7 @@ export function CandidateSitesCard({
   return (
     <section
       aria-labelledby="candidate-sites-title"
-      className="min-w-0 rounded-[12px] border border-border/50 bg-card px-5 py-4"
+      className="flex h-full min-h-[220px] min-w-0 flex-col rounded-[12px] border border-border/50 bg-card px-5 py-4"
       data-pf-candidate-sites-card=""
       data-pf-candidate-sites-count={links.length}
     >
@@ -29,7 +29,7 @@ export function CandidateSitesCard({
 
       <div
         aria-label="Lista de sites do candidato"
-        className="max-h-[245px] divide-y divide-border/60 overflow-y-auto overscroll-contain rounded-lg border border-border/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30"
+        className="max-h-[245px] min-h-0 flex-1 divide-y divide-border/60 overflow-y-auto overscroll-contain rounded-lg border border-border/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30"
         data-pf-candidate-sites-list=""
         data-pf-candidate-sites-scrollable={isScrollable ? "true" : "false"}
         role="region"
