@@ -97,6 +97,17 @@ O stage e o approval operam em dry-run por padrão. `--apply` é obrigatório pa
 
 O fingerprint humano cobre identidade completa, incluindo nome de urna e partido, fonte completa, conjunto ordenado de documentos, hashes, extrações, resumo e metadados separados de generator e judge. Qualquer mudança torna a decisão stale. Nenhuma das duas etapas cria uma decisão humana automaticamente.
 
+## Driver de batch nacional
+
+O processamento de muitas candidaturas usa o driver `scripts/data/programas-governo-governadores-2026/batch-driver.mjs`, executado com o binário Node 24 resolvido uma única vez. O driver nunca chama modelo: apenas orquestra processos do CLI canônico, um processo por candidato.
+
+- `plan` deriva a fila NDJSON do inventário com `--plan-only`, valida contagens por UF contra o inventário (fail-closed), exclui as UFs de uma onda já concluída e ordena por custo estimado decrescente, calculado a partir de páginas e passagens planejadas.
+- `run` consome a fila com rampa de concorrência 2, 4 e 6 por disparos, semáforo global de seis processos geradores e no máximo dois candidatos multipassagem simultâneos. Cada item grava `estado.json` atomicamente (`pending`, `extracting`, `generator_pending`, `generator_complete`, `judge_pending`, `complete`, `blocked`, `retryable_error`), o que permite retomada sem repetir candidato concluído.
+- Duas falhas consecutivas de cota ou autenticação param o driver com checkpoints preservados; o mesmo vale para taxa de erro técnico acima de 5% e para o limite de wall time. A parada escreve `parada.json` com as unidades pendentes.
+- As extrações são cacheadas por SHA-256 do PDF, método e versão do extrator; as passagens multipassagem usam o cache compartilhado de passagens. Retries repetem somente a unidade que falhou.
+- `consolidar` copia os registros para a árvore regional (`ondas/<regiao>/<UF>/`) verificando identidade e recusa mistura de candidato.
+- `PF_QWEN_EXTRA_ARGS` e `PF_CODEX_EXTRA_ARGS` permitem argumentos extras aos CLIs de modelo, como `--safe-mode` no Qwen, que evita carregar MCP servers em chamadas batch.
+
 ## Teste hermético
 
 ```bash

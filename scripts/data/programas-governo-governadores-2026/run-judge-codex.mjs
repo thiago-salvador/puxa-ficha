@@ -21,6 +21,9 @@ function lerStdin() {
 
 function chamarCodex(promptTexto) {
   return new Promise((resolvePromise, rejectPromise) => {
+    // Extra args via ambiente (ex.: PF_CODEX_EXTRA_ARGS="-c mcp_servers={}"
+    // para nao carregar MCP servers em chamadas batch).
+    const extras = (process.env.PF_CODEX_EXTRA_ARGS ?? "").split(" ").filter(Boolean)
     const args = [
       "exec",
       "--json",
@@ -30,6 +33,7 @@ function chamarCodex(promptTexto) {
       "-c", 'model_reasoning_effort="low"',
       "-c", 'shell_environment_policy.inherit=none',
       "-c", 'features.web_search_request=false',
+      ...extras,
       "-", // prompt via stdin
     ]
     const child = spawn(CODEX_BIN, args, { stdio: ["pipe", "pipe", "pipe"] })

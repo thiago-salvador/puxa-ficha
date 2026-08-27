@@ -7,7 +7,9 @@
 import { spawn } from "node:child_process"
 
 const MODELO_CLI = process.env.PF_QWEN_CLI ?? "qwen"
-const MODELO_ARGS_BASE = ["--output-format", "json"]
+// Extra args via ambiente (ex.: PF_QWEN_EXTRA_ARGS="--safe-mode" para nao
+// carregar MCP servers em chamadas batch). Argumentos sem espacos internos.
+const MODELO_ARGS_BASE = ["--output-format", "json", ...(process.env.PF_QWEN_EXTRA_ARGS ?? "").split(" ").filter(Boolean), "-p", ""]
 
 function lerStdin() {
   return new Promise((resolvePromise, rejectPromise) => {
@@ -122,7 +124,25 @@ async function main() {
   try {
     resposta = extrairRespostaCli(stdout)
   } catch {
-    throw new Error(`resposta qwen nao estruturada: ${(stdout || stderr).slice(0, 300)}`)
+    // Sem evento result aproveitavel: extrai a mensagem de erro do evento
+    // result (is_error) ou a cauda do stream para diagnostico.
+    const eventos = (() => {
+      try {
+        const bruto = extrairJson(stdout)
+        return Array.isArray(bruto) ? bruto : [bruto]
+      } catch {
+        return stdout.split("\n").flatMap((linha) => {
+          try { return [JSON.parse(linha)] } catch { return [] }
+        })
+      }
+    })()
+    const eventoResultado = [...eventos].reverse()
+      .find((evento) => evento && typeof evento === "object" && (evento.type === "result" || evento.subtype === "success" || evento.is_error === true))
+    const textoResultado = eventoResultado?.result
+    const motivoErro = typeof textoResultado === "string" && textoResultado.trim()
+      ? textoResultado.slice(0, 400)
+      : `${stdout || stderr}`.slice(-500)
+    throw new Error(`resposta qwen nao estruturada (${eventoResultado?.is_error ? "is_error" : "sem-result"}): ${motivoErro}`)
   }
   // Formatos aceitos: wrapper {response:"<texto json>"} do CLI ou o proprio objeto.
   const payload = typeof resposta.response === "string"

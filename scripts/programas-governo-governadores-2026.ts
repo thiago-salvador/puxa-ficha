@@ -58,6 +58,7 @@ export type ProgramaGovernoGovInventoryCandidate = {
   nomeCompleto: string
   nomeUrna: string
   partido: string
+  numero?: string
   slug: string | null
   perfilEstado: string
   identidadeEstado: string
@@ -78,6 +79,8 @@ export type ProgramaGovernoGovInventoryDocument = {
   bytes: number
   sha256: string
   paginas: number
+  textoExtraidoBytes?: number
+  textoExtraidoCaracteres?: number
   textoEstado: "extraivel" | "requer_ocr"
   candidaturaAtual: boolean
 }
@@ -151,6 +154,10 @@ export type ProgramaGovernoGovCliOptions = {
   modelsConfigPath?: string
   cachePassagensDir?: string
   multipassagemLimiteBytes?: number
+  sqCandidato?: string
+  planOnly?: boolean
+  faseDir?: string
+  extractCacheDir?: string
 }
 
 export type ProgramaGovernoGovIngestionAdapters = {
@@ -208,13 +215,21 @@ export function parseProgramaGovernoGovernadoresArgs(argv: readonly string[]): P
   }
   const ufs = [...new Set(ufsValue.split(",").map((uf) => uf.trim().toLocaleUpperCase("pt-BR")).filter(Boolean))]
   if (ufs.length === 0 || ufs.some((uf) => !UF_PATTERN.test(uf))) throw new Error("--ufs contem UF invalida")
+  const sqCandidato = valueArg(argv, "--sq-candidato")
+  if (sqCandidato !== undefined && !/^\d{11,12}$/u.test(sqCandidato.trim())) {
+    throw new Error("--sq-candidato deve ser o SQ_CANDIDATO oficial de 11 ou 12 digitos")
+  }
   return {
     ufs: ufs.sort(),
     inventoryPath: resolve(inventoryPath),
     archiveDir: resolve(archiveDir),
     outputDir: resolve(outputDir),
+    ...(sqCandidato !== undefined ? { sqCandidato: sqCandidato.trim() } : {}),
+    ...(argv.includes("--plan-only") ? { planOnly: true } : {}),
     ...(valueArg(argv, "--models-config") ? { modelsConfigPath: resolve(valueArg(argv, "--models-config")!) } : {}),
     ...(valueArg(argv, "--cache-dir") ? { cachePassagensDir: resolve(valueArg(argv, "--cache-dir")!) } : {}),
+    ...(valueArg(argv, "--fase-dir") ? { faseDir: resolve(valueArg(argv, "--fase-dir")!) } : {}),
+    ...(valueArg(argv, "--extract-cache-dir") ? { extractCacheDir: resolve(valueArg(argv, "--extract-cache-dir")!) } : {}),
   }
 }
 
@@ -256,6 +271,121 @@ function assertInventoryScope(inventory: ProgramaGovernoGovInventory, requestedU
     }
   }
   for (const uf of requestedUfs) if (!candidateUfs.has(uf)) throw new Error(`UF ${uf} sem candidaturas no inventario`)
+}
+
+export type ProgramaGovernoGovFilaDocumento = {
+  documentoId: string
+  sha256: string
+  bytes: number
+  paginas: number
+  textoExtraidoBytes: number
+  textoEstado: string
+}
+
+export type ProgramaGovernoGovFilaItem = {
+  chave: string
+  uf: string
+  sqCandidato: string
+  slug: string | null
+  nomeCompleto: string
+  nomeUrna: string
+  partido: string
+  numero: string
+  fonteEstado: string
+  perfilEstado: string
+  identidadeEstado: string
+  documentos: ProgramaGovernoGovFilaDocumento[]
+  totalPaginas: number
+  bytesTextoExtraidos: number
+  bytesEntradaEstimados: number
+  multipassagem: boolean
+  passagensPlanejadas: number
+  chaveCacheDir: string
+  usaModelos: boolean
+  custoEstimado: number
+}
+
+function estimarPassagens(
+  documentos: readonly { paginas: number; textoExtraidoBytes: number }[],
+  limite: number,
+): { multipassagem: boolean; passagens: number; bytesEntrada: number } {
+  const paginasPorDocumento = documentos.map((documento) => {
+    const porPagina = documento.paginas > 0
+      ? Math.max(1, Math.floor(documento.textoExtraidoBytes / documento.paginas))
+      : 1
+    return Array.from({ length: documento.paginas }, () => "x".repeat(porPagina))
+  })
+  const bytesEntrada = Buffer.byteLength(JSON.stringify(paginasPorDocumento), "utf8")
+  if (documentos.length === 0 || bytesEntrada <= limite) {
+    return { multipassagem: false, passagens: 1, bytesEntrada }
+  }
+  const entrada = documentos.map((documento, indice) => ({
+    documentoId: `${indice}`,
+    paginas: paginasPorDocumento[indice].map((texto, pagina) => ({ pagina: pagina + 1, origem: "planejamento", texto })),
+  }))
+  return { multipassagem: true, passagens: planejarProgramaGovernoPassagens(entrada, limite).length, bytesEntrada }
+}
+
+export function planejarFilaProgramaGovernoGovernadores(
+  options: Pick<ProgramaGovernoGovCliOptions, "ufs" | "sqCandidato" | "multipassagemLimiteBytes">,
+  inventory: ProgramaGovernoGovInventory,
+): ProgramaGovernoGovFilaItem[] {
+  assertInventoryScope(inventory, options.ufs)
+  const documentsById = new Map(inventory.documentos.map((documento) => [documento.id, documento]))
+  const limite = options.multipassagemLimiteBytes ?? PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_LIMITE_BYTES
+  let candidates = inventory.candidaturas
+    .filter(({ uf }) => options.ufs.includes(uf))
+    .sort((a, b) => a.chave.localeCompare(b.chave, "pt-BR"))
+  if (options.sqCandidato !== undefined) {
+    const achados = candidates.filter(({ sqCandidato }) => sqCandidato === options.sqCandidato)
+    if (achados.length !== 1) {
+      throw new Error(`--sq-candidato ${options.sqCandidato}: ${achados.length} correspondencia(s) nas UFs solicitadas; esperado exatamente 1`)
+    }
+    candidates = achados
+  }
+  return candidates.map((candidate) => {
+    const documentos = candidate.documentoIds.map((id) => {
+      const documento = documentsById.get(id)
+      if (!documento) throw new Error(`${candidate.chave}: documento ${id} ausente do inventario`)
+      return {
+        documentoId: documento.id,
+        sha256: documento.sha256,
+        bytes: documento.bytes,
+        paginas: documento.paginas,
+        textoExtraidoBytes: documento.textoExtraidoBytes ?? 0,
+        textoEstado: documento.textoEstado,
+      }
+    })
+    const totalPaginas = documentos.reduce((acumulado, documento) => acumulado + documento.paginas, 0)
+    const bytesTextoExtraidos = documentos.reduce((acumulado, documento) => acumulado + documento.textoExtraidoBytes, 0)
+    const estimativa = estimarPassagens(documentos, limite)
+    const usaModelos = candidate.fonteEstado === "documento_oficial_encontrado"
+      && candidate.identidadeEstado === "confirmada"
+      && candidate.perfilEstado === "vinculado"
+      && candidate.slug !== null
+    return {
+      chave: candidate.chave,
+      uf: candidate.uf,
+      sqCandidato: candidate.sqCandidato,
+      slug: candidate.slug,
+      nomeCompleto: candidate.nomeCompleto,
+      nomeUrna: candidate.nomeUrna,
+      partido: candidate.partido,
+      numero: candidate.numero ?? "",
+      fonteEstado: candidate.fonteEstado,
+      perfilEstado: candidate.perfilEstado,
+      identidadeEstado: candidate.identidadeEstado,
+      documentos,
+      totalPaginas,
+      bytesTextoExtraidos,
+      bytesEntradaEstimados: estimativa.bytesEntrada,
+      multipassagem: estimativa.multipassagem,
+      passagensPlanejadas: estimativa.passagens,
+      chaveCacheDir: createHash("sha256").update(candidate.chave).digest("hex").slice(0, 16),
+      usaModelos,
+      custoEstimado: Number((estimativa.passagens + totalPaginas / 300).toFixed(3)),
+    }
+  })
 }
 
 function assertSequentialDocuments(
@@ -657,6 +787,39 @@ function terminalRecord(
   }
 }
 
+async function extrairDocumentoComCache(
+  document: ProgramaGovernoGovInventoryDocument,
+  bytes: Buffer,
+  adapters: ProgramaGovernoGovIngestionAdapters,
+  extractCacheDir: string | undefined,
+): Promise<{ extracao: ProgramaGovernoExtracaoRastreavel; cacheHit: boolean }> {
+  if (!extractCacheDir) {
+    return { extracao: await adapters.extractPdf(bytes, document.arquivoNome), cacheHit: false }
+  }
+  const chaveCache = `${document.sha256}:${PROGRAMA_GOVERNO_EXTRACTION_METHOD}:${PROGRAMA_GOVERNO_EXTRACTION_VERSION}`
+  const caminhoCache = resolve(extractCacheDir, `${sha256(chaveCache)}.json`)
+  try {
+    const cru = JSON.parse(await adapters.readText(caminhoCache)) as unknown
+    const valido = !!cru
+      && typeof cru === "object"
+      && (cru as Record<string, unknown>).sourceSha256 === document.sha256
+      && (cru as Record<string, unknown>).paginas === document.paginas
+      && Array.isArray((cru as Record<string, unknown>).pageMap)
+      && ((cru as Record<string, unknown>).pageMap as unknown[]).length === document.paginas
+      && Array.isArray((cru as Record<string, unknown>).secoes)
+      && typeof (cru as Record<string, unknown>).extractedTextSha256 === "string"
+    if (valido) return { extracao: cru as ProgramaGovernoExtracaoRastreavel, cacheHit: true }
+  } catch {
+    // cache ausente ou corrompido: extrai e grava uma unica vez
+  }
+  const extracao = await adapters.extractPdf(bytes, document.arquivoNome)
+  await adapters.ensureDir(extractCacheDir)
+  const temporario = `${caminhoCache}.tmp-${process.pid}`
+  await adapters.writeText(temporario, JSON.stringify(extracao))
+  await (adapters.rename ? adapters.rename(temporario, caminhoCache) : Promise.resolve())
+  return { extracao, cacheHit: false }
+}
+
 async function extractDocuments(
   candidate: ProgramaGovernoGovInventoryCandidate,
   inventory: ProgramaGovernoGovInventory,
@@ -665,26 +828,45 @@ async function extractDocuments(
   archiveDir: string,
   archiveBytes: Buffer,
   adapters: ProgramaGovernoGovIngestionAdapters,
-): Promise<ProgramaGovernoDocumento[]> {
+  extractCacheDir?: string,
+): Promise<{ documentos: ProgramaGovernoDocumento[]; cacheHits: number }> {
   const archivePath = resolve(archiveDir, packageInfo.arquivoNome)
   const extracted: ProgramaGovernoDocumento[] = []
+  let cacheHits = 0
   const identity = sourceFor(candidate, inventory, packageInfo, documents[0])
   for (const [index, document] of documents.entries()) {
     const bytes = await adapters.extractArchiveEntry(archivePath, document.arquivoNoPacote)
     if (bytes.length !== document.bytes || sha256(bytes) !== document.sha256) {
       throw new Error(`${document.id}: PDF diverge em bytes ou hash`)
     }
-    const extraction = await adapters.extractPdf(bytes, document.arquivoNome)
-    assertPageSafeExtraction(document, extraction)
+    const { extracao, cacheHit } = await extrairDocumentoComCache(document, bytes, adapters, extractCacheDir)
+    if (cacheHit) cacheHits += 1
+    assertPageSafeExtraction(document, extracao)
     const value = {
       documentoId: document.id,
       fonte: documentSource(document, inventory),
-      extracao: extraction,
+      extracao,
     }
     assertProgramaGovernoDocumento(value, identity, index + 1, `documentos[${index}]`)
     extracted.push(value)
   }
-  return extracted
+  return { documentos: extracted, cacheHits }
+}
+
+async function gravarFase(
+  adapters: ProgramaGovernoGovIngestionAdapters,
+  faseDir: string | undefined,
+  candidate: ProgramaGovernoGovInventoryCandidate,
+  fase: "extracao.concluida" | "gerador.iniciado" | "gerador.concluido" | "julgamento.iniciado",
+  conteudo: Record<string, unknown> = {},
+): Promise<void> {
+  if (!faseDir) return
+  const destino = resolve(faseDir, `${candidate.uf}-${candidate.sqCandidato}.${fase}.json`)
+  const registro = JSON.stringify({ identityKey: candidate.chave, fase, em: adapters.now(), ...conteudo })
+  await adapters.ensureDir(faseDir)
+  const temporario = `${destino}.tmp-${process.pid}`
+  await adapters.writeText(temporario, registro)
+  await (adapters.rename ? adapters.rename(temporario, destino) : Promise.resolve())
 }
 
 async function ingestCandidate(
@@ -698,6 +880,8 @@ async function ingestCandidate(
   adapters: ProgramaGovernoGovIngestionAdapters,
   passagensCacheDir: string,
   multipassagemLimiteBytes: number,
+  faseDir?: string,
+  extractCacheDir?: string,
 ): Promise<ProgramaGovernoGovIngestionRecord> {
   const profileMissing = candidate.perfilEstado !== "vinculado" || candidate.slug === null
   if (candidate.fonteEstado !== "documento_oficial_encontrado" || documents.length === 0) {
@@ -710,9 +894,17 @@ async function ingestCandidate(
   const source = sourceFor(candidate, inventory, packageInfo, documents[0]) as ProgramaGovernoFonte
   assertProgramaGovernoFonte(source, `fonte.${candidate.chave}`)
   let extracted: ProgramaGovernoDocumento[]
+  let cacheHits = 0
   try {
     const archiveBytes = await loadArchive()
-    extracted = await extractDocuments(candidate, inventory, documents, packageInfo, archiveDir, archiveBytes, adapters)
+    const resultadoExtracao = await extractDocuments(candidate, inventory, documents, packageInfo, archiveDir, archiveBytes, adapters, extractCacheDir)
+    extracted = resultadoExtracao.documentos
+    cacheHits = resultadoExtracao.cacheHits
+    await gravarFase(adapters, faseDir, candidate, "extracao.concluida", {
+      documentos: documents.map(({ id }) => id),
+      cacheHits,
+      total: documents.length,
+    })
     if (candidate.identidadeEstado !== "confirmada") {
       return terminalRecord("falha_de_extracao", candidate, inventory, source, "identidade oficial ambigua", "extracao", extracted)
     }
@@ -735,6 +927,7 @@ async function ingestCandidate(
     if (!models) throw new Error("configuracao de generator e judge ausente")
     const expectedPrompts = programaGovernoExpectedPromptVersions(source)
     const entradaCompleta = generatorInput(candidate.chave, extracted)
+    await gravarFase(adapters, faseDir, candidate, "gerador.iniciado")
     let generated: { output: ProgramaGovernoResumo; metadata: { name: string; version: string; promptVersion: string; attempts: number } }
     let metricasMultipassagem: ProgramaGovernoMultipassagemMetrics | undefined
     if (contarBytesDocumentosEntrada(entradaCompleta) > multipassagemLimiteBytes) {
@@ -767,6 +960,13 @@ async function ingestCandidate(
       }
     }
     assertLiteralEvidence(generated.output, extracted)
+    await gravarFase(adapters, faseDir, candidate, "gerador.concluido", {
+      multipassagem: metricasMultipassagem ? metricasMultipassagem.passagens > 1 : false,
+      passagens: metricasMultipassagem?.passagens ?? 1,
+      chamadasGeracao: metricasMultipassagem
+        ? metricasMultipassagem.chamadasGeracao + metricasMultipassagem.chamadasSintese
+        : generated.metadata.attempts,
+    })
     const draft: ProgramaGovernoRegistro = {
       version: 1,
       estado: "em_revisao",
@@ -781,6 +981,7 @@ async function ingestCandidate(
     }
     assertProgramaGovernoRegistro(draft)
     const claims = judgeItems(candidate.chave, generated.output)
+    await gravarFase(adapters, faseDir, candidate, "julgamento.iniciado")
     const judged = await models.judgeClaims({ claims, paginasCitadas: citedPages(claims, extracted) })
     if (judged.metadata.promptVersion !== expectedPrompts.judgePromptVersion) {
       throw new Error(`judge prompt stale: ${judged.metadata.promptVersion}`)
@@ -843,9 +1044,16 @@ export async function ingestProgramaGovernoGovernadores(
   const adapters = { ...defaultAdapters, ...dependencies.adapters }
   const inventory = parseInventory(await adapters.readText(options.inventoryPath))
   assertInventoryScope(inventory, options.ufs)
-  const candidates = inventory.candidaturas
+  let candidates = inventory.candidaturas
     .filter(({ uf }) => options.ufs.includes(uf))
     .sort((a, b) => a.chave.localeCompare(b.chave, "pt-BR"))
+  if (options.sqCandidato !== undefined) {
+    const achados = candidates.filter(({ sqCandidato }) => sqCandidato === options.sqCandidato)
+    if (achados.length !== 1) {
+      throw new Error(`--sq-candidato ${options.sqCandidato}: ${achados.length} correspondencia(s) nas UFs solicitadas; esperado exatamente 1`)
+    }
+    candidates = achados
+  }
   const documentsById = new Map<string, ProgramaGovernoGovInventoryDocument>()
   for (const document of inventory.documentos) {
     if (documentsById.has(document.id)) throw new Error(`${document.id}: documento duplicado no inventario`)
@@ -905,6 +1113,8 @@ export async function ingestProgramaGovernoGovernadores(
       adapters,
       options.cachePassagensDir ? resolve(options.cachePassagensDir) : resolve(options.outputDir, ".cache-passagens"),
       options.multipassagemLimiteBytes ?? PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_LIMITE_BYTES,
+      options.faseDir ? resolve(options.faseDir) : undefined,
+      options.extractCacheDir ? resolve(options.extractCacheDir) : undefined,
     )
     const ufDir = resolve(options.outputDir, candidate.uf)
     await adapters.ensureDir(ufDir)
@@ -974,6 +1184,13 @@ export async function runProgramaGovernoGovernadoresCli(
 ): Promise<ProgramaGovernoGovIngestionResult> {
   if (Number(process.versions.node.split(".")[0]) !== 24) throw new Error(`Node 24 obrigatorio; atual ${process.versions.node}`)
   const options = parseProgramaGovernoGovernadoresArgs(argv)
+  if (options.planOnly) {
+    const adapters = { ...defaultAdapters, ...dependencies.adapters }
+    const inventory = parseInventory(await adapters.readText(options.inventoryPath))
+    const itens = planejarFilaProgramaGovernoGovernadores(options, inventory)
+    for (const item of itens) console.log(JSON.stringify(item))
+    return { ufs: options.ufs, records: [], counts: { em_revisao: 0, perfil_local_ausente: 0, sem_documento_oficial: 0, falha_de_extracao: 0 }, blockers: [] }
+  }
   let models = dependencies.models
   if (models === undefined && options.modelsConfigPath) {
     const adapters = { ...defaultAdapters, ...dependencies.adapters }

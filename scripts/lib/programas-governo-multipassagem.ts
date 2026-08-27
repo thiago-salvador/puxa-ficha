@@ -55,11 +55,6 @@ export function planejarProgramaGovernoPassagens(
   let atualBytes = 0
   let avancou = false
 
-  const abrirPassagem = () => {
-    atual = { indice: planos.length, documentos: [], bytes: 0 }
-    atualBytes = 0
-    planos.push(atual)
-  }
   const fecharPaginaNaPassagem = (documentoId: string, pagina: ProgramaGovernoPaginaEntrada) => {
     if (!atual || atualBytes === 0 || atualBytes + bytesTexto(pagina.texto) > limiteBytes) {
       atual = { indice: planos.length, documentos: [], bytes: 0 }
