@@ -36,7 +36,7 @@ const legacyLocalDir = resolve(repository, ".codex-local/programas-governo-presi
 export const PROGRAMA_GOVERNO_GENERATOR_PROMPT_VERSION = "programa-governo-resumo-v1" as const
 export const PROGRAMA_GOVERNO_JUDGE_PROMPT_VERSION = "programa-governo-judge-v2" as const
 export const PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION = "programa-governo-governadores-generator-v1" as const
-export const PROGRAMA_GOVERNO_GOV_JUDGE_PROMPT_VERSION = "programa-governo-governadores-judge-v1" as const
+export const PROGRAMA_GOVERNO_GOV_JUDGE_PROMPT_VERSION = "programa-governo-governadores-judge-v2" as const
 
 export type ProgramaGovernoExpectedPromptVersions = {
   generatorPromptVersion: string

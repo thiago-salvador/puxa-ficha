@@ -16,6 +16,7 @@
           "dimension",
           "identityKey",
           "documentoIds",
+          "claimTexto",
           "evidencias",
           "verdict",
           "reason"
@@ -28,6 +29,7 @@
             "enum": ["suporte", "numeros", "neutralidade", "mistura", "identidade", "cobertura"]
           },
           "identityKey": { "type": "string", "pattern": "^2026:GOVERNADOR:[A-Z]{2}:[0-9]{11,12}$" },
+          "claimTexto": { "type": "string", "minLength": 1 },
           "documentoIds": {
             "type": "array",
             "minItems": 1,

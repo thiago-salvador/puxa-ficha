@@ -205,11 +205,16 @@ function hermeticModels(documentoId: string, observations: string[], firstVerdic
     const claims = envelope.input.claims ?? []
     return {
       stdout: JSON.stringify({
-        avaliacoes: claims.map((claim, index) => ({
-          ...(claim as object),
-          verdict: index === 0 ? firstVerdict : "yes",
-          reason: firstVerdict === "yes" || index > 0 ? "evidencia sintetica suficiente" : "evidencia sintetica bloqueada",
-        })),
+        avaliacoes: claims.map((rawClaim, index) => {
+          const { claimTexto: _claimTexto, ...claim } = rawClaim as Record<string, unknown>
+          void _claimTexto
+          return {
+            ...claim,
+            claimTexto: typeof _claimTexto === "string" && _claimTexto.trim() ? _claimTexto : "afirmacao sintetica",
+            verdict: index === 0 ? firstVerdict : "yes",
+            reason: firstVerdict === "yes" || index > 0 ? "evidencia sintetica suficiente" : "evidencia sintetica bloqueada",
+          }
+        }),
       }),
       stderr: "",
     }
@@ -312,7 +317,7 @@ test("ingere todos os documentos sequenciais com hash, paginas, modelos separado
   assert.equal(record.ingestao.modelos?.generator.attempts, 2)
   assert.equal(record.ingestao.modelos?.generator.name, "Anthropic Claude")
   assert.equal(record.ingestao.modelos?.judge.name, "OpenAI GPT")
-  assert.equal(record.julgamento?.promptVersion, "programa-governo-governadores-judge-v1")
+  assert.equal(record.julgamento?.promptVersion, "programa-governo-governadores-judge-v2")
   assert.deepEqual(record.ingestao.eval?.dimensoes, PROGRAMA_GOVERNO_GOV_EVAL_DIMENSIONS)
   assert.equal(record.julgamento?.verdicts.length, (6 + 4) * 6)
   assert.equal(record.julgamento?.verdicts.every(({ verdict }) => verdict === "yes"), true)

@@ -28,7 +28,7 @@ const EXACT = new Set([
   "scripts/programas-governo-stage.ts",
   "scripts/test-fixtures/generate-programa-pdfs.mjs",
   "scripts/prompts/programa-governo-judge-v1.schema.json",
-  "scripts/prompts/programa-governo-governadores-judge-v1.schema.json",
+  "scripts/prompts/programa-governo-governadores-judge-v2.schema.json",
   "scripts/prompts/programa-governo-resumo-v1.md",
   "scripts/prompts/programa-governo-resumo-v1.schema.json",
   "src/app/(site)/candidato/[slug]/CandidatoFichaView.tsx",

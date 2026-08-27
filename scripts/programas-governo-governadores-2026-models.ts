@@ -1,10 +1,10 @@
 import { spawn } from "node:child_process"
 
-import judgeSchema from "./prompts/programa-governo-governadores-judge-v1.schema.json"
+import judgeSchema from "./prompts/programa-governo-governadores-judge-v2.schema.json"
 import type { ProgramaGovernoEvidencia, ProgramaGovernoResumo } from "../src/lib/programa-governo"
 
 export const PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION = "programa-governo-governadores-generator-v1" as const
-export const PROGRAMA_GOVERNO_GOV_JUDGE_PROMPT_VERSION = "programa-governo-governadores-judge-v1" as const
+export const PROGRAMA_GOVERNO_GOV_JUDGE_PROMPT_VERSION = "programa-governo-governadores-judge-v2" as const
 export const PROGRAMA_GOVERNO_GOV_MODEL_MAX_ATTEMPTS = 2
 export const PROGRAMA_GOVERNO_GOV_MODEL_MAX_OUTPUT_BYTES = 8 * 1024 * 1024
 
@@ -16,6 +16,7 @@ const GENERATOR_INSTRUCTIONS = [
 ].join(" ")
 
 const JUDGE_INSTRUCTIONS = [
+  "Cada item traz a redacao da afirmacao em claimTexto; avalie a rubric da dimensao sobre essa afirmacao junto das evidencias e das paginas citadas.",
   "Avalie cada item separadamente e devolva exatamente um resultado para cada id recebido, sem alterar identidade, claimId, dimension, documentoIds ou evidencias.",
   "suporte: yes somente quando a evidencia sustenta integralmente a afirmacao.",
   "numeros: yes quando numeros, prazos, percentuais e quantidades estao literalmente sustentados, ou quando nao existem numeros.",
@@ -73,6 +74,7 @@ export type ProgramaGovernoJudgeItem = {
   dimension: ProgramaGovernoGovEvalDimension
   identityKey: string
   documentoIds: string[]
+  claimTexto: string
   evidencias: Array<Required<ProgramaGovernoEvidencia>>
 }
 
@@ -280,10 +282,12 @@ function validateJudge(value: unknown): ProgramaGovernoJudgeOutput {
         "dimension",
         "identityKey",
         "documentoIds",
+        "claimTexto",
         "evidencias",
         "verdict",
         "reason",
       ], `judge.avaliacoes[${index}]`)
+      const claimTexto = stringValue(item.claimTexto, `judge.avaliacoes[${index}].claimTexto`)
       const dimension = stringValue(item.dimension, `judge.avaliacoes[${index}].dimension`)
       if (!(PROGRAMA_GOVERNO_GOV_EVAL_DIMENSIONS as readonly string[]).includes(dimension)) {
         throw new Error(`judge.avaliacoes[${index}].dimension: invalida`)
@@ -307,6 +311,7 @@ function validateJudge(value: unknown): ProgramaGovernoJudgeOutput {
           documentoId,
           `judge.avaliacoes[${index}].documentoIds[${documentIndex}]`,
         )),
+        claimTexto,
         evidencias: item.evidencias.map((itemEvidence, evidenceIndex) => evidence(
           itemEvidence,
           `judge.avaliacoes[${index}].evidencias[${evidenceIndex}]`,

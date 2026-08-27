@@ -50,9 +50,9 @@ O arquivo de configuração contém comandos externos explícitos:
 
 Generator e judge devem pertencer a famílias diferentes. Cada comando recebe no `stdin` um JSON com `schema`, `promptVersion` e `input`, e devolve somente o objeto JSON pedido no `stdout`. O adapter limita timeout, resposta a 8 MiB e tentativas a duas. Nome, versão, prompt e número de tentativas ficam registrados no artefato.
 
-As versões esperadas de prompt são definidas uma única vez pelo cargo e compartilhadas por ingestão, auditoria e aprovação. Para governador, o contrato exige `programa-governo-governadores-generator-v1` e `programa-governo-governadores-judge-v1`. O caminho presidencial mantém as versões legadas.
+As versões esperadas de prompt são definidas uma única vez pelo cargo e compartilhadas por ingestão, auditoria e aprovação. Para governador, o contrato exige `programa-governo-governadores-generator-v1` e `programa-governo-governadores-judge-v2`. O caminho presidencial mantém as versões legadas. A revisão v2 do judge acrescenta o texto da afirmação (`claimTexto`) em cada item, sem o qual não é possível avaliar suporte, números, neutralidade, mistura ou cobertura.
 
-O generator deve produzir resumo, frases, temas e evidências com `documentoId`, página e trecho literal. O judge usa `scripts/prompts/programa-governo-governadores-judge-v1.schema.json` e devolve uma avaliação para cada claim em cada uma das seis dimensões: suporte, números, neutralidade, mistura, identidade e cobertura. Os vínculos de documento, página e evidência devem ser cópias exatas da entrada. ID ausente, extra, duplicado ou vínculo alterado falha fechado.
+O generator deve produzir resumo, frases, temas e evidências com `documentoId`, página e trecho literal. O judge usa `scripts/prompts/programa-governo-governadores-judge-v2.schema.json` e devolve uma avaliação para cada claim em cada uma das seis dimensões: suporte, números, neutralidade, mistura, identidade e cobertura. Os vínculos de documento, página e evidência devem ser cópias exatas da entrada. ID ausente, extra, duplicado ou vínculo alterado falha fechado.
 
 ## Integridade e extração
 

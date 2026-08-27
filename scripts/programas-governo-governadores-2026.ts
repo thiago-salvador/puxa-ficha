@@ -383,10 +383,12 @@ function judgeItems(
   const claims = [
     ...summary.frases.map((sentence, index) => ({
       claimId: `frase:${index + 1}`,
+      claimTexto: sentence.texto,
       evidencias: sentence.evidencias.map((item, evidenceIndex) => requiredEvidence(item, `frase:${index + 1}:${evidenceIndex}`)),
     })),
     ...summary.temas.map((theme) => ({
       claimId: `tema:${theme.id}`,
+      claimTexto: `${theme.titulo}: ${theme.descricao}`,
       evidencias: theme.evidencias.map((item, evidenceIndex) => requiredEvidence(item, `tema:${theme.id}:${evidenceIndex}`)),
     })),
   ]
@@ -398,6 +400,7 @@ function judgeItems(
       dimension,
       identityKey,
       documentoIds,
+      claimTexto: claim.claimTexto,
       evidencias: claim.evidencias,
     }))
   })
