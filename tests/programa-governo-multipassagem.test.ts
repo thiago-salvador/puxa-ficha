@@ -124,8 +124,11 @@ test("substitui evidencias dos fatos referenciados e falha fechado", () => {
     temas: [{ id: "educacao", titulo: "Educacao", descricao: "d", fatos: [{ id: "f-1-1" }] }],
   }
   const substituted = substituirEvidenciasFato(base, fatos)
-  assert.deepEqual(substituted.frases[0], { texto: "resumo fr", evidencias: [fatos[0].evidencias[0]] })
-  assert.ok(!("fatos" in substituted.temas[0]))
+  assert.deepEqual(
+    (substituted.frases as unknown[])[0],
+    { texto: "resumo fr", evidencias: [fatos[0].evidencias[0]] },
+  )
+  assert.ok(!("fatos" in ((substituted.temas as unknown[])[0] as object)))
   validarResultadoProgramaGovernoMultipassagem(base, fatos)
 
   const desconhecido = {

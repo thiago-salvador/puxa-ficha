@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto"
 import { execFile } from "node:child_process"
-import { mkdir, readFile, writeFile } from "node:fs/promises"
+import { mkdir, readFile, rename, writeFile } from "node:fs/promises"
 import { basename, resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 import { promisify } from "node:util"
@@ -13,8 +13,17 @@ import {
   type ProgramaGovernoExtracaoRastreavel,
 } from "./lib/programas-governo-extracao"
 import {
+  calcularFingerprintProgramaGovernoPassagens,
+  coletarFatosProgramaGovernoPassagens,
+  filtrarFatosLiterais,
+  planejarProgramaGovernoPassagens,
+  type ProgramaGovernoFato,
+} from "./lib/programas-governo-multipassagem"
+import {
   createProgramaGovernoModelAdapters,
   PROGRAMA_GOVERNO_GOV_EVAL_DIMENSIONS,
+  PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_LIMITE_BYTES,
+  PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_PLANNER_VERSION,
   type ProgramaGovernoGeneratorInput,
   type ProgramaGovernoJudgeItem,
   type ProgramaGovernoModelAdapters,
@@ -107,6 +116,17 @@ export type ProgramaGovernoGovIngestionRecord = Omit<ProgramaGovernoRegistro, "j
     modelos: null | {
       generator: { name: string; version: string; promptVersion: string; attempts: number }
       judge: { name: string; version: string; promptVersion: string; attempts: number }
+      geracaoMultipassagem?: {
+        planejador: string
+        limiteBytes: number
+        passagens: number
+        passagensCacheadas: number
+        chamadasGeracao: number
+        retriesPassagem: number
+        chamadasSintese: number
+        retriesSintese: number
+        fingerprint: string
+      }
     }
     eval: null | { completo: boolean; blockers: number; dimensoes: readonly string[] }
   }
@@ -129,6 +149,8 @@ export type ProgramaGovernoGovCliOptions = {
   archiveDir: string
   outputDir: string
   modelsConfigPath?: string
+  cachePassagensDir?: string
+  multipassagemLimiteBytes?: number
 }
 
 export type ProgramaGovernoGovIngestionAdapters = {
@@ -138,6 +160,7 @@ export type ProgramaGovernoGovIngestionAdapters = {
   extractPdf(bytes: Buffer, filename: string): Promise<ProgramaGovernoExtracaoRastreavel>
   ensureDir(path: string): Promise<void>
   writeText(path: string, value: string): Promise<void>
+  rename?(from: string, to: string): Promise<void>
   now(): string
 }
 
@@ -163,6 +186,7 @@ const defaultAdapters: ProgramaGovernoGovIngestionAdapters = {
   },
   ensureDir: (path) => mkdir(path, { recursive: true }).then(() => undefined),
   writeText: (path, value) => writeFile(path, value, "utf8"),
+  rename: (from, to) => rename(from, to),
   now: () => new Date().toISOString(),
 }
 
@@ -190,6 +214,7 @@ export function parseProgramaGovernoGovernadoresArgs(argv: readonly string[]): P
     archiveDir: resolve(archiveDir),
     outputDir: resolve(outputDir),
     ...(valueArg(argv, "--models-config") ? { modelsConfigPath: resolve(valueArg(argv, "--models-config")!) } : {}),
+    ...(valueArg(argv, "--cache-dir") ? { cachePassagensDir: resolve(valueArg(argv, "--cache-dir")!) } : {}),
   }
 }
 
@@ -413,6 +438,170 @@ function citedPages(items: readonly ProgramaGovernoJudgeItem[], documents: reado
     .map((section) => ({ documentoId: document.documentoId, pagina: section.paginaInicial, texto: section.conteudo })))
 }
 
+function contarBytesDocumentosEntrada(input: ProgramaGovernoGeneratorInput): number {
+  return Buffer.byteLength(JSON.stringify(input.documentos.map(({ paginas }) => paginas.map(({ texto }) => texto))), "utf8")
+}
+
+const PROGRAMA_GOVERNO_PASSAGENS_CONCORRENCIA = 3
+
+export type ProgramaGovernoMultipassagemMetrics = {
+  planejador: string
+  limiteBytes: number
+  passagens: number
+  passagensCacheadas: number
+  chamadasGeracao: number
+  retriesPassagem: number
+  chamadasSintese: number
+  retriesSintese: number
+  fingerprint: string
+}
+
+async function mapearComConcorrencia<TItem, TResult>(
+  itens: readonly TItem[],
+  limite: number,
+  tarefa: (item: TItem, indice: number) => Promise<TResult>,
+): Promise<TResult[]> {
+  const resultados = new Array<TResult>(itens.length)
+  let proximoIndice = 0
+  let primeiraFalha: unknown = null
+  const worker = async (): Promise<void> => {
+    while (proximoIndice < itens.length && primeiraFalha === null) {
+      const indice = proximoIndice
+      proximoIndice += 1
+      try {
+        resultados[indice] = await tarefa(itens[indice]!, indice)
+      } catch (error) {
+        primeiraFalha ??= error
+      }
+    }
+  }
+  await Promise.all(Array.from({ length: Math.max(1, Math.min(limite, itens.length)) }, worker))
+  if (primeiraFalha !== null) throw primeiraFalha
+  return resultados
+}
+
+function entradaMultipassagem(extracted: readonly ProgramaGovernoDocumento[]) {
+  return extracted.map((documento) => ({
+    documentoId: documento.documentoId,
+    paginas: documento.extracao.secoes.map((secao) => ({
+      pagina: secao.paginaInicial,
+      origem: secao.origem,
+      texto: secao.conteudo,
+    })),
+  }))
+}
+
+async function gerarResumoProgramaGovernoMultipassagem(params: {
+  identityKey: string
+  nomeUrna: string
+  partido: string
+  documentosHashes: readonly string[]
+  extracted: readonly ProgramaGovernoDocumento[]
+  promptVersion: string
+  cacheDir: string
+  modelos: ProgramaGovernoModelAdapters
+  adapters: ProgramaGovernoGovIngestionAdapters
+  limiteBytes: number
+}): Promise<{ output: ProgramaGovernoResumo; metrics: ProgramaGovernoMultipassagemMetrics }> {
+  const { identityKey, extracted, modelos, adapters } = params
+  const extrairFatos = modelos.extrairFatosPassagem
+  const sintetizarDeFatos = modelos.sintetizarDeFatos
+  if (!extrairFatos || !sintetizarDeFatos) {
+    throw new Error("multipassagem: configuracao do generator nao suporta extrairFatosPassagem/sintetizarDeFatos")
+  }
+  const limiteBytes = params.limiteBytes
+  const documentosEntrada = entradaMultipassagem(extracted)
+  const planos = planejarProgramaGovernoPassagens(documentosEntrada, limiteBytes)
+  const subDiretorio = resolve(params.cacheDir, createHash("sha256").update(identityKey).digest("hex").slice(0, 16))
+  await adapters.ensureDir(subDiretorio)
+  const metrics: ProgramaGovernoMultipassagemMetrics = {
+    planejador: PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_PLANNER_VERSION,
+    limiteBytes,
+    passagens: planos.length,
+    passagensCacheadas: 0,
+    chamadasGeracao: 0,
+    retriesPassagem: 0,
+    chamadasSintese: 0,
+    retriesSintese: 0,
+    fingerprint: calcularFingerprintProgramaGovernoPassagens(planos, {
+      name: modelos.generator.name,
+      version: modelos.generator.version,
+      promptVersion: params.promptVersion,
+    }),
+  }
+
+  async function chaveCacheDaPassagem(plano: ReturnType<typeof planejarProgramaGovernoPassagens>[number]): Promise<{ chave: string; caminho: string }> {
+    const hashPassagem = calcularFingerprintProgramaGovernoPassagens([plano])
+    const chave = sha256(JSON.stringify({
+      identityKey,
+      nomeUrna: params.nomeUrna,
+      partido: params.partido,
+      documentosHashes: params.documentosHashes,
+      modelo: { name: modelos.generator.name, version: modelos.generator.version },
+      promptVersion: params.promptVersion,
+      planejador: PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_PLANNER_VERSION,
+      limiteBytes,
+      indice: plano.indice,
+      hashPassagem,
+    }))
+    return { chave, caminho: resolve(subDiretorio, `${chave}.json`) }
+  }
+
+  const porPassagem = new Map<number, ProgramaGovernoFato[]>()
+  await mapearComConcorrencia(planos, PROGRAMA_GOVERNO_PASSAGENS_CONCORRENCIA, async (plano) => {
+    const { chave, caminho } = await chaveCacheDaPassagem(plano)
+    try {
+      const cru = JSON.parse(await adapters.readText(caminho)) as unknown
+      if (
+        cru && typeof cru === "object"
+        && (cru as Record<string, unknown>).chaveCache === chave
+        && Array.isArray((cru as Record<string, unknown>).fatos)
+        && ((cru as Record<string, unknown>).fatos as unknown[]).length > 0
+      ) {
+        porPassagem.set(plano.indice, (cru as { fatos: ProgramaGovernoFato[] }).fatos)
+        metrics.passagensCacheadas += 1
+        return
+      }
+    } catch {
+      // cache miss ou corrompido: reexecuta apenas esta passagem
+    }
+    const resultado = await extrairFatos.call(modelos, { identityKey, documentos: plano.documentos })
+    metrics.chamadasGeracao += resultado.metadata.attempts
+    if (resultado.metadata.attempts > 1) metrics.retriesPassagem += 1
+    if (resultado.output.length === 0) {
+      throw new Error(`multipassagem: passagem ${plano.indice + 1}/${planos.length} nao produziu fato literal`)
+    }
+    porPassagem.set(plano.indice, resultado.output)
+    const registro = `${JSON.stringify({
+      chaveCache: chave,
+      identityKey,
+      indice: plano.indice,
+      hashPassagem: calcularFingerprintProgramaGovernoPassagens([plano]),
+      modelo: `${modelos.generator.name}@${modelos.generator.version}`,
+      promptVersion: params.promptVersion,
+      fatos: resultado.output,
+    }, null, 2)}\n`
+    const temporario = `${caminho}.tmp-${process.pid}`
+    await adapters.writeText(temporario, registro)
+    await (adapters.rename ? adapters.rename(temporario, caminho) : Promise.resolve())
+  })
+
+  const fatosLiterais = filtrarFatosLiterais(
+    coletarFatosProgramaGovernoPassagens(porPassagem, planos),
+    documentosEntrada,
+  )
+  if (fatosLiterais.length === 0) {
+    throw new Error(`multipassagem: nenhum fato literal sobreviveu das ${planos.length} passagem(oes)`)
+  }
+  const sintese = await sintetizarDeFatos.call(modelos, { identityKey, fatos: fatosLiterais })
+  metrics.chamadasSintese += sintese.metadata.attempts
+  if (sintese.metadata.attempts > 1) metrics.retriesSintese += 1
+  return {
+    output: sintese.output,
+    metrics,
+  }
+}
+
 function assertJudgeCoverage(expected: readonly ProgramaGovernoJudgeItem[], actual: Awaited<ReturnType<ProgramaGovernoModelAdapters["judgeClaims"]>>["output"]): void {
   if (actual.avaliacoes.length !== expected.length) throw new Error("judge: cobertura incompleta das seis dimensoes")
   const byId = new Map(actual.avaliacoes.map((item) => [item.id, item]))
@@ -420,7 +609,7 @@ function assertJudgeCoverage(expected: readonly ProgramaGovernoJudgeItem[], actu
   for (const item of expected) {
     const evaluated = byId.get(item.id)
     if (!evaluated) throw new Error(`judge: id ausente ${item.id}`)
-    for (const key of ["claimId", "dimension", "identityKey"] as const) {
+    for (const key of ["claimId", "dimension", "identityKey", "claimTexto"] as const) {
       if (evaluated[key] !== item[key]) throw new Error(`judge: ${key} divergente em ${item.id}`)
     }
     if (
@@ -507,6 +696,8 @@ async function ingestCandidate(
   loadArchive: () => Promise<Buffer>,
   models: ProgramaGovernoModelAdapters | null,
   adapters: ProgramaGovernoGovIngestionAdapters,
+  passagensCacheDir: string,
+  multipassagemLimiteBytes: number,
 ): Promise<ProgramaGovernoGovIngestionRecord> {
   const profileMissing = candidate.perfilEstado !== "vinculado" || candidate.slug === null
   if (candidate.fonteEstado !== "documento_oficial_encontrado" || documents.length === 0) {
@@ -543,9 +734,37 @@ async function ingestCandidate(
   try {
     if (!models) throw new Error("configuracao de generator e judge ausente")
     const expectedPrompts = programaGovernoExpectedPromptVersions(source)
-    const generated = await models.generate(generatorInput(candidate.chave, extracted))
-    if (generated.metadata.promptVersion !== expectedPrompts.generatorPromptVersion) {
-      throw new Error(`generator prompt stale: ${generated.metadata.promptVersion}`)
+    const entradaCompleta = generatorInput(candidate.chave, extracted)
+    let generated: { output: ProgramaGovernoResumo; metadata: { name: string; version: string; promptVersion: string; attempts: number } }
+    let metricasMultipassagem: ProgramaGovernoMultipassagemMetrics | undefined
+    if (contarBytesDocumentosEntrada(entradaCompleta) > multipassagemLimiteBytes) {
+      const multipass = await gerarResumoProgramaGovernoMultipassagem({
+        identityKey: candidate.chave,
+        nomeUrna: candidate.nomeUrna,
+        partido: candidate.partido,
+        documentosHashes: documents.map(({ sha256 }) => sha256),
+        extracted,
+        promptVersion: expectedPrompts.generatorPromptVersion,
+        cacheDir: passagensCacheDir,
+        modelos: models,
+        adapters,
+        limiteBytes: multipassagemLimiteBytes,
+      })
+      generated = {
+        output: multipass.output,
+        metadata: {
+          name: models.generator.name,
+          version: models.generator.version,
+          promptVersion: expectedPrompts.generatorPromptVersion,
+          attempts: Math.min(2, multipass.metrics.retriesPassagem + multipass.metrics.retriesSintese + 1),
+        },
+      }
+      metricasMultipassagem = multipass.metrics
+    } else {
+      generated = await models.generate(entradaCompleta)
+      if (generated.metadata.promptVersion !== expectedPrompts.generatorPromptVersion) {
+        throw new Error(`generator prompt stale: ${generated.metadata.promptVersion}`)
+      }
     }
     assertLiteralEvidence(generated.output, extracted)
     const draft: ProgramaGovernoRegistro = {
@@ -585,7 +804,11 @@ async function ingestCandidate(
           evalCompleto ? "concluida" : "modelos",
           evalCompleto ? null : `Eval bloqueado por ${blockers} veredito(s) no/unknown`,
         ),
-        modelos: { generator: generated.metadata, judge: judged.metadata },
+        modelos: {
+          generator: generated.metadata,
+          judge: judged.metadata,
+          ...(metricasMultipassagem ? { geracaoMultipassagem: metricasMultipassagem } : {}),
+        },
         eval: {
           completo: evalCompleto,
           blockers,
@@ -680,6 +903,8 @@ export async function ingestProgramaGovernoGovernadores(
       () => loadArchive(packageInfo),
       dependencies.models ?? null,
       adapters,
+      options.cachePassagensDir ? resolve(options.cachePassagensDir) : resolve(options.outputDir, ".cache-passagens"),
+      options.multipassagemLimiteBytes ?? PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_LIMITE_BYTES,
     )
     const ufDir = resolve(options.outputDir, candidate.uf)
     await adapters.ensureDir(ufDir)
@@ -705,10 +930,37 @@ export async function ingestProgramaGovernoGovernadores(
         }]
       : []
   })
+  const geracaoMultipassagem = records.reduce((acumulado, record) => {
+    const metricas = record.ingestao.modelos?.geracaoMultipassagem
+    if (!metricas) return acumulado
+    return {
+      candidaturasComMultipassagem: acumulado.candidaturasComMultipassagem + 1,
+      passagens: acumulado.passagens + metricas.passagens,
+      passagensCacheadas: acumulado.passagensCacheadas + metricas.passagensCacheadas,
+      chamadasGeracao: acumulado.chamadasGeracao + metricas.chamadasGeracao,
+      retriesPassagem: acumulado.retriesPassagem + metricas.retriesPassagem,
+      chamadasSintese: acumulado.chamadasSintese + metricas.chamadasSintese,
+      retriesSintese: acumulado.retriesSintese + metricas.retriesSintese,
+    }
+  }, {
+    candidaturasComMultipassagem: 0,
+    passagens: 0,
+    passagensCacheadas: 0,
+    chamadasGeracao: 0,
+    retriesPassagem: 0,
+    chamadasSintese: 0,
+    retriesSintese: 0,
+  })
   const result = { ufs: [...options.ufs], records, counts, blockers }
   await adapters.writeText(
     resolve(options.outputDir, "manifesto-ingestao.json"),
-    `${JSON.stringify({ ufs: result.ufs, counts, blockers }, null, 2)}\n`,
+    `${JSON.stringify({
+      ufs: result.ufs,
+      counts,
+      blockers,
+      nodeVersion: process.versions.node,
+      geracaoMultipassagem,
+    }, null, 2)}\n`,
   )
   return result
 }

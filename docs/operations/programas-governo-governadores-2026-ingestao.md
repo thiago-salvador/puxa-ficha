@@ -11,7 +11,7 @@ A associação usa somente a chave `2026:GOVERNADOR:<UF>:<SQ_CANDIDATO>`. O `SQ_
 Executar com Node 24:
 
 ```bash
-npx -y -p node@24 -c 'node --conditions react-server --import tsx scripts/programas-governo-governadores-2026.ts --ufs=AC,AM --inventory=scripts/data/programas-governo-governadores-2026/inventario-2026-08-26.json --archive-dir=/caminho/para/zips --output-dir=/caminho/server-only --models-config=/caminho/modelos.json'
+npx -y -p node@24 -c 'node --conditions react-server --import tsx scripts/programas-governo-governadores-2026.ts --ufs=AC,AM --inventory=scripts/data/programas-governo-governadores-2026/inventario-2026-08-26.json --archive-dir=/caminho/para/zips --output-dir=/caminho/server-only --models-config=/caminho/modelos.json --cache-dir=/caminho/cache-passagens'
 ```
 
 Os quatro argumentos de escopo e arquivos são obrigatórios:
@@ -22,6 +22,21 @@ Os quatro argumentos de escopo e arquivos são obrigatórios:
 - `--output-dir`: destino isolado dos registros e do `manifesto-ingestao.json`.
 
 `--models-config` é necessário para candidaturas extraíveis. Ausências podem ser materializadas sem modelos.
+
+`--cache-dir` é opcional e define onde ficam os checkpoints por passagem da geração multipassagem; sem ele o padrão é `<output-dir>/.cache-passagens`. Cada chave de checkpoint deriva de identidade completa do candidato, hashes dos documentos, versão do prompt, modelo e planejador multipassagem, índice e hash da passagem. Passagem concluída nunca é reenviada ao modelo: a mesma execução ou uma retomada reutilizam o checkpoint e apenas a passagem pendente (ou sintese pendente) consome chamada nova.
+
+## Geração em lote e multipassagem
+
+Quando o texto total do candidato excede `380_000` bytes UTF-8, o importador não envia tudo numa única chamada. O plano multipassagem (`scripts/lib/programas-governo-multipassagem.ts`) fatia páginas inteiras em passagens de no máximo esse limite, executa até três passagens em paralelo com concorrência limitada, grava cada passagem no cache imediatamente após a resposta válida e depois faz uma única síntese por candidato usando somente os fatos literais sobreviventes (`extrairFatosPassagem` + `sintetizarDeFatos`, mesmos comandos externos declarados na configuração).
+
+Orçamento de chamadas, registrado no registro via `ingestao.modelos.geracaoMultipassagem` e agregado no manifesto:
+
+- uma chamada inicial por passagem e, no máximo, uma repetição só da passagem que falhou;
+- uma síntese por candidato e, no máximo, uma repetição só da síntese;
+- nenhuma repetição integral de candidato dentro de uma execução;
+- falha persistente de passagem bloqueia o candidato em `em_revisao` com erro explícito mantendo checkpoints; a retomada executa só o que falta.
+
+O manifesto também inclui a soma real de chamadas internas por etapa e a versão de Node usada pelo processo.
 
 ## Contrato dos modelos
 

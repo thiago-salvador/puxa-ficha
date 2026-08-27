@@ -211,12 +211,14 @@ export function substituirEvidenciasFato(resumo: unknown, fatos: readonly Progra
   }
   return {
     ...value,
-    frases: (value.frases as unknown[]).map((frase) => {
+    frases: (value.frases as unknown[]).map((itemFrase) => {
+      const frase = itemFrase as Record<string, unknown>
       const resolved = resolver(frase)
       if (typeof frase.texto !== "string") throw new Error("multipassagem: frase sem texto")
       return { texto: frase.texto, evidencias: resolved }
     }),
-    temas: (value.temas as unknown[]).map((tema) => {
+    temas: (value.temas as unknown[]).map((itemTema) => {
+      const tema = itemTema as Record<string, unknown>
       const resolved = resolver(tema)
       if (
         typeof tema.id !== "string"

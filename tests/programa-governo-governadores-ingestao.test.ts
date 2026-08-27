@@ -23,7 +23,10 @@ import {
   type ProgramaGovernoModelProcessRunner,
   type ProgramaGovernoModelsConfig,
 } from "../scripts/programas-governo-governadores-2026-models"
-import { auditProgramaGovernoRecordSet } from "../scripts/audit/audit-programas-governo"
+import {
+  auditProgramaGovernoRecordSet,
+} from "../scripts/audit/audit-programas-governo"
+import { planejarProgramaGovernoPassagens } from "../scripts/lib/programas-governo-multipassagem"
 import {
   prepareProgramaGovernoApproval,
   programaGovernoApprovalFingerprint,
@@ -347,6 +350,238 @@ test("ingere todos os documentos sequenciais com hash, paginas, modelos separado
     reviewedAt: "2026-08-26T17:00:00.000Z",
   })
   assert.equal(approved.estado, "aprovado")
+})
+
+test("judge que mantem claimId mas altera claimTexto bloqueia o Eval e falha fechado", async () => {
+  const archive = Buffer.from("archive-AM")
+  const pdf1 = Buffer.from("pdf-one")
+  const pdf2 = Buffer.from("pdf-two")
+  const sq = "40000000001"
+  const docs = [document("AM", sq, 1, pdf1), document("AM", sq, 2, pdf2)]
+  const item = candidate("AM", sq, {
+    slug: "candidatura-claimtexto-teste",
+    perfilEstado: "vinculado",
+    fonteEstado: "documento_oficial_encontrado",
+    estadoInventario: "documento_oficial_encontrado",
+    documentoIds: docs.map(({ id }) => id),
+  })
+  const source = inventory([item], docs, new Map([["AM", archive]]))
+  let generatorAttempts = 0
+  const runner: ProgramaGovernoModelProcessRunner = async (command, _args, rawInput) => {
+    const envelope = JSON.parse(rawInput) as { input: { claims?: unknown[] } }
+    if (command === "generator-mock") {
+      generatorAttempts += 1
+      if (generatorAttempts === 1) return { stdout: "{}", stderr: "" }
+      return { stdout: JSON.stringify(summary(docs[0].id)), stderr: "" }
+    }
+    let primeiraDevolvida = false
+    return {
+      stdout: JSON.stringify({
+        avaliacoes: (envelope.input.claims ?? []).map((rawClaim) => {
+          const { claimTexto, ...claim } = rawClaim as Record<string, unknown>
+          if (!primeiraDevolvida) {
+            primeiraDevolvida = true
+            return {
+              ...claim,
+              claimTexto: `${String(claimTexto)} (alterado pelo judge)`,
+              verdict: "yes",
+              reason: "tentativa de adulteracao do texto original",
+            }
+          }
+          return { ...claim, claimTexto, verdict: "yes", reason: "evidencia sintetica suficiente" }
+        }),
+      }),
+      stderr: "",
+    }
+  }
+  const models = createProgramaGovernoModelAdapters(modelConfig(), runner)
+  const result = await ingestProgramaGovernoGovernadores({
+    ufs: ["AM"],
+    inventoryPath: "/inventory.json",
+    archiveDir: "/archives",
+    outputDir: "/output",
+  }, {
+    models,
+    adapters: {
+      readText: async () => JSON.stringify(source),
+      readBytes: async () => archive,
+      extractArchiveEntry: async (_path, entry) => entry.endsWith("_01.pdf") ? pdf1 : pdf2,
+      extractPdf: async (bytes, filename) => extraction(
+        bytes,
+        filename.endsWith("_01.pdf") ? "parte-1" : "parte-2",
+      ),
+      ensureDir: async () => undefined,
+      writeText: async () => undefined,
+      now: () => "2026-08-26T16:00:00Z",
+    },
+  })
+  const record = result.records[0]
+  assert.equal(record.estado, "em_revisao")
+  assert.equal(record.julgamento, undefined)
+  assert.equal(record.resumo, undefined)
+  assert.equal(record.ingestao.etapa, "modelos")
+  assert.match(String(record.ingestao.erro), /claimTexto divergente/)
+  assert.equal(record.ingestao.eval?.completo, false)
+  assert.equal(result.blockers.length, 1)
+  assert.match(result.blockers[0].motivo, /claimTexto divergente/)
+})
+
+test("multipassagem retomavel: cache evita re-chamada e retries por passagem ficam no orcamento", async () => {
+  const archive = Buffer.from("archive-AM")
+  const pdf1 = Buffer.from("pdf-one")
+  const sq = "40000000002"
+  const docs = [document("AM", sq, 1, pdf1)]
+  const item = candidate("AM", sq, {
+    slug: "candidatura-retomavel-teste",
+    perfilEstado: "vinculado",
+    fonteEstado: "documento_oficial_encontrado",
+    estadoInventario: "documento_oficial_encontrado",
+    documentoIds: docs.map(({ id }) => id),
+  })
+  const source = inventory([item], docs, new Map([["AM", archive]]))
+  const store = new Map<string, string>()
+  let chamadasFatosPassagem = 0
+  let primeiraTentativaDeFatosFeita = false
+  const textoPaginaGrande = "x".repeat(300)
+  const extracaoGrande = {
+    extractionVersion: PROGRAMA_GOVERNO_EXTRACTION_VERSION,
+    method: PROGRAMA_GOVERNO_EXTRACTION_METHOD,
+    sourceSha256: sha256(pdf1),
+    extractedTextSha256: sha256(`${textoPaginaGrande}\n\f\n${textoPaginaGrande}`),
+    paginas: 2,
+    secoes: [1, 2].map((pagina) => ({
+      id: `parte-1-pagina-${pagina}`,
+      titulo: `Pagina ${pagina}`,
+      nivel: 1,
+      paginaInicial: pagina,
+      paginaFinal: pagina,
+      origem: "pdftotext",
+      conteudo: textoPaginaGrande,
+    })),
+    pageMap: [1, 2].map((pagina) => ({ pagina, origem: "pdftotext", textSha256: sha256(textoPaginaGrande) })),
+  } satisfies ProgramaGovernoExtracaoRastreavel
+  const runner: ProgramaGovernoModelProcessRunner = async (command, _args, rawInput) => {
+    const envelope = JSON.parse(rawInput) as {
+      promptVersion: string
+      input: { identityKey?: string; documentos?: Array<{ documentoId: string; paginas: Array<{ pagina: number; texto: string }> }>; FATOS?: unknown[]; claims?: unknown[] }
+    }
+    if (envelope.promptVersion.endsWith("/fatos-passagem")) {
+      chamadasFatosPassagem += 1
+      if (!primeiraTentativaDeFatosFeita) {
+        // Erro transitorio unico de toda a execucao: exatamente UMA passagem
+        // faz uma segunda tentativa.
+        primeiraTentativaDeFatosFeita = true
+        return { stdout: "{}", stderr: "" }
+      }
+      const documento = envelope.input.documentos?.[0]
+      const pagina = documento?.paginas[0]
+      assert.ok(documento && pagina)
+      const trecho = pagina.texto.slice(0, 30)
+      return {
+        stdout: JSON.stringify({
+          fatos: [{
+            texto: `afirmacao material da passagem do documento ${documento.documentoId}`,
+            evidencias: [{ documentoId: documento.documentoId, pagina: pagina.pagina, trecho }],
+          }],
+        }),
+        stderr: "",
+      }
+    }
+    if (envelope.promptVersion.endsWith("/sintese-fatos")) {
+      const fatoIds = (envelope.input.FATOS ?? []).map((fato) => String((fato as { id: unknown }).id))
+      const textoBase = Array.from({ length: 140 }, (_, index) => `palavra${index + 1}`).join(" ")
+      const pedacos = textoBase.split(" ")
+      return {
+        stdout: JSON.stringify({
+          texto: textoBase,
+          frases: Array.from({ length: 6 }, (_, index) => ({
+            texto: pedacos.slice(index * 8, index * 8 + 8).join(" "),
+            fatoIds: [fatoIds[index % fatoIds.length]],
+          })),
+          temas: Array.from({ length: 4 }, (_, index) => ({
+            id: index === 0 ? "saude" : `tema-${index}`,
+            titulo: `Tema ${index}`,
+            descricao: "Descricao sintetica",
+            fatoIds: [fatoIds[index % fatoIds.length]],
+          })),
+        }),
+        stderr: "",
+      }
+    }
+    if (command === "generator-mock") {
+      // Fluxo multipassagem nao deve passar pelo generator monolitico.
+      return { stdout: "{}", stderr: "" }
+    }
+    const claims = envelope.input.claims ?? []
+    return {
+      stdout: JSON.stringify({
+        avaliacoes: claims.map((rawClaim) => ({ ...(rawClaim as Record<string, unknown>), verdict: "yes", reason: "ok" })),
+      }),
+      stderr: "",
+    }
+  }
+  const baseAdaptersMultipass = () => ({
+    readText: async (path: string) => {
+      if (path === "/inventory.json") return JSON.stringify(source)
+      if (!store.has(path)) throw new Error(`ENOENT ${path}`)
+      return store.get(path)!
+    },
+    readBytes: async () => archive,
+    extractArchiveEntry: async (_path: string, entry: string) => entry.endsWith("_01.pdf") ? pdf1 : Buffer.from("x"),
+    extractPdf: async () => extracaoGrande,
+    ensureDir: async () => undefined,
+    writeText: async (path: string, value: string) => { store.set(path, value) },
+    rename: async (from: string, to: string) => {
+      const value = store.get(from)
+      assert.ok(value)
+      store.delete(from)
+      store.set(to, value)
+    },
+    now: () => "2026-08-26T16:00:00Z",
+  })
+  const opcoesComuns = {
+    ufs: ["AM"],
+    inventoryPath: "/inventory.json",
+    archiveDir: "/archives",
+    outputDir: "/output",
+    cachePassagensDir: "/cache-passagens",
+    multipassagemLimiteBytes: 300,
+  }
+
+  // Primeira execucao: gera com retry em UMA passagem (a segunda chamada de
+  // /fatos-passagem falha vazia uma vez), grava checkpoints.
+  const primeira = await ingestProgramaGovernoGovernadores(opcoesComuns, {
+    models: createProgramaGovernoModelAdapters(modelConfig(), runner),
+    adapters: baseAdaptersMultipass(),
+  })
+  assert.equal(primeira.records[0].estado, "em_revisao")
+  assert.equal(primeira.blockers.length, 0, primeira.records[0].ingestao.erro ?? "")
+  const metricasPrimeira = primeira.records[0].ingestao.modelos?.geracaoMultipassagem
+  assert.ok(metricasPrimeira)
+  const planosEsperados = planejarProgramaGovernoPassagens([{
+    documentoId: docs[0].id,
+    paginas: extracaoGrande.secoes.map((secao) => ({
+      pagina: secao.paginaInicial,
+      origem: secao.origem,
+      texto: secao.conteudo,
+    })),
+  }], 300).length
+  assert.equal(metricasPrimeira.passagens, planosEsperados)
+  assert.equal(metricasPrimeira.passagensCacheadas, 0)
+  assert.equal(chamadasFatosPassagem, planosEsperados + 1)
+  assert.equal(metricasPrimeira.retriesPassagem, 1)
+
+  // Segunda execucao: zero chamadas novas de passagem; tudo vem do cache.
+  const chamadasAntesDaSegunda = chamadasFatosPassagem
+  const segunda = await ingestProgramaGovernoGovernadores(opcoesComuns, {
+    models: createProgramaGovernoModelAdapters(modelConfig(), runner),
+    adapters: baseAdaptersMultipass(),
+  })
+  assert.equal(segunda.records[0].estado, "em_revisao")
+  assert.equal(chamadasFatosPassagem - chamadasAntesDaSegunda, 0, "passagem concluida nao pode ser repetida")
+  const metricasSegunda = segunda.records[0].ingestao.modelos?.geracaoMultipassagem
+  assert.ok(metricasSegunda)
+  assert.equal(metricasSegunda.passagensCacheadas, planosEsperados)
 })
 
 test("Eval incompleto e falha de modelo ficam em revisao bloqueada e o batch termina nonzero", async () => {
