@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T19:12:05Z",
+  "reviewedAt": "2026-08-28T19:19:12Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 108,
-    "human_review_required": 36
+    "approved": 109,
+    "human_review_required": 35
   },
   "items": [
     {
@@ -693,14 +693,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PB:150002544133",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PB",
       "slug": "cicero-lucena",
       "sqCandidato": "150002544133",
       "nomeUrna": "CÍCERO LUCENA",
       "partido": "MDB",
       "sourceState": "em_revisao",
-      "reason": "cicero-lucena: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PB:150002538692",
