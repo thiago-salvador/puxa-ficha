@@ -3,7 +3,12 @@ import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "nod
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { test } from "node:test"
-import { financiamentoSourceFileUf, validarCoberturaPacoteReceitas } from "../scripts/lib/ingest-tse"
+import {
+  financiamentoSourceFileUf,
+  isDoadorOriginarioReceiptSource,
+  sanitizeTseLegacyAssetText,
+  validarCoberturaPacoteReceitas,
+} from "../scripts/lib/ingest-tse"
 
 const source = readFileSync("scripts/lib/ingest-tse.ts", "utf8")
 
@@ -83,6 +88,7 @@ test("pacote parcial nunca habilita ausencia oficial", () => {
     const complete = join(root, "complete")
     mkdirSync(complete)
     writeFileSync(join(complete, "receitas_candidatos_2012_brasil.txt"), "")
+    writeFileSync(join(complete, "receitas_candidatos_doador_originario_2018_BRASIL.csv"), "")
     assert.equal(validarCoberturaPacoteReceitas(2012, complete, ["SE", "MG"]).length, 1)
 
     const legacy = join(root, "legacy")
@@ -99,4 +105,21 @@ test("UF da candidatura e inferida de arquivos nacionais e estaduais em todos os
   assert.equal(financiamentoSourceFileUf("/tmp/pacote/RJ/receitas_candidatos.csv", ["RJ"]), "RJ")
   assert.equal(financiamentoSourceFileUf("/tmp/prestacao_contas_2008_BRASIL.txt", ["SP"]), "BR")
   assert.equal(financiamentoSourceFileUf("/tmp/receitas_candidatos.csv", ["RJ"]), undefined)
+})
+
+test("pacote 2018 ignora a cadeia auxiliar de doador originario", () => {
+  assert.equal(isDoadorOriginarioReceiptSource("receitas_candidatos_2018_BRASIL.csv"), false)
+  assert.equal(
+    isDoadorOriginarioReceiptSource("receitas_candidatos_doador_originario_2018_BRASIL.csv"),
+    true,
+  )
+})
+
+test("patrimonio historico normaliza somente o separador U+00BF do TSE", () => {
+  assert.equal(
+    sanitizeTseLegacyAssetText("Saldo a receber ¿ Banco do Brasil", "fixture"),
+    "Saldo a receber - Banco do Brasil",
+  )
+  assert.equal(sanitizeTseLegacyAssetText("¿ FRACAO DE 5%", "fixture"), "- FRACAO DE 5%")
+  assert.throws(() => sanitizeTseLegacyAssetText("texto � quebrado", "fixture"), /artefato de encoding/)
 })
