@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>17 programas que ainda exigem revisão</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18251f;
+      --muted: #5d6b64;
+      --paper: #f4f1e8;
+      --card: #fffdf7;
+      --line: #d9d3c4;
+      --accent: #176b52;
+      --warn: #9a4c16;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.55 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main { width: min(1120px, calc(100% - 32px)); margin: 40px auto 72px; }
+    header { max-width: 780px; margin-bottom: 28px; }
+    h1 { margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.02; letter-spacing: -0.04em; }
+    h2 { margin: 0; font-size: 1.15rem; }
+    p { margin: 0; }
+    .lede { color: var(--muted); font-size: 1.08rem; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 26px 0 30px;
+    }
+    .metric { padding: 18px; border: 1px solid var(--line); background: var(--card); border-radius: 14px; }
+    .metric strong { display: block; font-size: 2rem; line-height: 1; margin-bottom: 6px; }
+    .metric span { color: var(--muted); }
+    .cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    article { border: 1px solid var(--line); background: var(--card); border-radius: 16px; padding: 20px; }
+    .meta { margin: 4px 0 14px; color: var(--muted); font-size: .9rem; }
+    .label { display: block; margin-top: 12px; color: var(--warn); font-weight: 700; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; }
+    .recommendation { color: var(--accent); font-weight: 650; }
+    code { font-size: .9em; }
+    @media (max-width: 760px) {
+      main { margin-top: 24px; }
+      .summary, .cases { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>17 programas que ainda exigem revisão</h1>
+    <p class="lede">O rerun com Luna no Codex e julgamento independente terminou com 20 aprovações e 17 bloqueios reais. Nenhum caso abaixo foi publicado. Cada card traz o problema que restou e a ação recomendada.</p>
+  </header>
+
+  <section class="summary" aria-label="Resumo do lote">
+    <div class="metric"><strong>20</strong><span>aprovados e commitados</span></div>
+    <div class="metric"><strong>17</strong><span>mantidos fora da publicação</span></div>
+    <div class="metric"><strong>0</strong><span>falhas técnicas ou pendências</span></div>
+  </section>
+
+  <section class="cases" aria-label="Casos para revisão">
+    <article>
+      <h2>Daniel Vilela</h2><p class="meta">GO · <code>daniel-vilela</code></p>
+      <span class="label">Problema</span><p>A evidência literal continuou divergente nas duas tentativas e nenhum resumo válido foi persistido.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Executar multipassagem por fatos, limitando a síntese aos trechos recuperados por documento e página.</p>
+    </article>
+    <article>
+      <h2>Lucien Rezende</h2><p class="meta">MS · <code>lucien-rezende</code></p>
+      <span class="label">Problema</span><p>O span citado ainda não cobre a cláusula sobre regiões de fronteira.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Refazer apenas o claim com um trecho contínuo que inclua a condição territorial completa.</p>
+    </article>
+    <article>
+      <h2>Otaviano Pivetta</h2><p class="meta">MT · <code>otaviano-pivetta</code></p>
+      <span class="label">Problema</span><p>A geração falhou novamente na validação literal e não produziu resumo publicável.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Migrar o caso para extração de fatos por página antes de qualquer síntese.</p>
+    </article>
+    <article>
+      <h2>Efraim Filho</h2><p class="meta">PB · <code>efraim-filho</code></p>
+      <span class="label">Problema</span><p>Persistem paráfrases sem suporte e falta o span necessário da página 6.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Excluir as três ampliações e reconstruir os claims a partir dos trechos literais, incluindo a página 6.</p>
+    </article>
+    <article>
+      <h2>Lucas Ribeiro</h2><p class="meta">PB · <code>lucas-ribeiro</code></p>
+      <span class="label">Problema</span><p>O texto ainda atribui uma finalidade à transformação digital que a fonte não declara.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Remover a finalidade inferida e manter somente a medida administrativa explicitamente descrita.</p>
+    </article>
+    <article>
+      <h2>Geraldo Carvalho</h2><p class="meta">PI · <code>geraldo-carvalho</code></p>
+      <span class="label">Problema</span><p>Faltam evidências das páginas 7 e 9, e o julgamento volta a penalizar um claim mais estreito que a fonte.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Separar os claims por página e julgar cada cláusula contra seu próprio trecho, sem exigir toda a seção.</p>
+    </article>
+    <article>
+      <h2>Alysson Bezerra</h2><p class="meta">RN · <code>alysson-bezerra</code></p>
+      <span class="label">Problema</span><p>A divergência literal persistiu e nenhum resumo válido foi materializado.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Usar multipassagem por fatos e bloquear qualquer síntese que não referencie fatos validados.</p>
+    </article>
+    <article>
+      <h2>Mailza Assis</h2><p class="meta">AC · <code>mailza-assis</code></p>
+      <span class="label">Problema</span><p>O trecho continua cortado antes da menção a pequenos produtores.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Ampliar o span até cobrir a cláusula completa ou retirar pequenos produtores do claim.</p>
+    </article>
+    <article>
+      <h2>Thor Dantas</h2><p class="meta">AC · <code>thor-dantas</code></p>
+      <span class="label">Problema</span><p>A geração não conseguiu produzir evidências literais válidas em duas tentativas.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Trocar a síntese direta por extração de fatos com documento, página e trecho fixados antes da redação.</p>
+    </article>
+    <article>
+      <h2>Gilberto Vasconcelos</h2><p class="meta">AM · <code>gilberto-vasconcelos</code></p>
+      <span class="label">Problema</span><p>O claim diz bloquear o desmatamento, enquanto a fonte usa combater.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Preservar o verbo da fonte e impedir substituições que aumentem a intensidade da proposta.</p>
+    </article>
+    <article>
+      <h2>Hildon Chaves</h2><p class="meta">RO · <code>hildon-chaves</code></p>
+      <span class="label">Problema</span><p>A expressão levar oportunidades não é neutra e o tema de saúde continua amplo demais.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Reescrever em linguagem descritiva e dividir saúde em claims menores, cada um com evidência própria.</p>
+    </article>
+    <article>
+      <h2>Marcos Rogério</h2><p class="meta">RO · <code>marcos-rogerio</code></p>
+      <span class="label">Problema</span><p>Os spans ainda não cobrem integralmente a fila de saúde e o programa de pavimentação.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Capturar as sentenças completas da fonte ou reduzir cada claim ao fragmento efetivamente citado.</p>
+    </article>
+    <article>
+      <h2>Pedro Abib</h2><p class="meta">RO · <code>pedro-abib</code></p>
+      <span class="label">Problema</span><p>A evidência literal divergiu nas duas tentativas e o resumo não pôde ser persistido.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Reprocessar por fatos atômicos e sintetizar somente após a validação de cada trecho.</p>
+    </article>
+    <article>
+      <h2>Helder Salomão</h2><p class="meta">ES · <code>helder-salomao</code></p>
+      <span class="label">Problema</span><p>A transição sustentável não está coberta e há uma cláusula de integração em saúde sem suporte.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Adicionar evidência literal da transição ou removê-la, e excluir a integração em saúde se não houver trecho direto.</p>
+    </article>
+    <article>
+      <h2>Vivian Mendes</h2><p class="meta">SP · <code>vivian-mendes</code></p>
+      <span class="label">Problema</span><p>O caso continua complexo, com divergências distribuídas por oito frases e dois temas.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Descartar a síntese atual e reconstruir tudo por fatos atômicos, com um claim por cláusula e spans completos.</p>
+    </article>
+    <article>
+      <h2>Samuel de Mattos</h2><p class="meta">PR · <code>samuel-de-mattos</code></p>
+      <span class="label">Problema</span><p>A geração voltou a falhar na validação literal e não produziu resumo aproveitável.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Executar multipassagem por fatos, sem reaproveitar a resposta atual.</p>
+    </article>
+    <article>
+      <h2>Priscila Voigt</h2><p class="meta">RS · <code>priscila-voigt</code></p>
+      <span class="label">Problema</span><p>Os spans omitem contratação direta, tarifas e atividades do SUS mencionadas nos claims.</p>
+      <span class="label">Sugestão</span><p class="recommendation">Separar as três cláusulas e exigir um trecho completo e específico para cada uma.</p>
+    </article>
+  </section>
+</main>
+</body>
+</html>
