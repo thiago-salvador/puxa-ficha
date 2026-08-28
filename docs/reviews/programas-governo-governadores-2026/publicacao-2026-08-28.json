@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T19:22:14Z",
+  "reviewedAt": "2026-08-28T19:26:25Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 110,
-    "human_review_required": 34
+    "approved": 112,
+    "human_review_required": 32
   },
   "items": [
     {
@@ -770,14 +770,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PE:170002536575",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PE",
       "slug": "guilherme-fonseca",
       "sqCandidato": "170002536575",
       "nomeUrna": "GUILHERME FONSECA",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PE:170002538097",
@@ -814,14 +814,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PE:170002537227",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PE",
       "slug": "raquel-lyra",
       "sqCandidato": "170002537227",
       "nomeUrna": "RAQUEL LYRA",
       "partido": "PSD",
       "sourceState": "em_revisao",
-      "reason": "raquel-lyra: Eval tem 1 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PI:180002548565",
