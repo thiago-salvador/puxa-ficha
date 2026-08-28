@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T19:46:34Z",
+  "reviewedAt": "2026-08-28T19:53:25Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 118,
-    "human_review_required": 26
+    "approved": 119,
+    "human_review_required": 25
   },
   "items": [
     {
@@ -1397,14 +1397,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002542185",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RO",
       "slug": "expedito-netto",
       "sqCandidato": "220002542185",
       "nomeUrna": "EXPEDITO NETTO",
       "partido": "PT",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002542916",

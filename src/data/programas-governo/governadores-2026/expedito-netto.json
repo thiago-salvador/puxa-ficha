@@ -1,0 +1,1074 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RO",
+    "sqCandidato": "220002542185",
+    "slug": "expedito-netto",
+    "nomeUrna": "EXPEDITO NETTO",
+    "partido": "PT",
+    "arquivoNome": "2026RO220002542185_01.pdf",
+    "arquivoNoPacote": "RO/2026RO220002542185_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RO.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RO:220002542185:01",
+      "fonte": {
+        "arquivoNome": "2026RO220002542185_01.pdf",
+        "arquivoNoPacote": "RO/2026RO220002542185_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RO.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "e72ce3dff33991e91de51e512b2061b816e69346d0dbe8e92e5627203b85e670",
+        "extractedTextSha256": "92f77e229131a2d96f9c562db33e460da8ac084f170eea4735938eea005e98fc",
+        "paginas": 31,
+        "secoes": [
+          {
+            "id": "plano-de-governo-2027-2030",
+            "titulo": "PLANO DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027–2030\nRONDÔNIA QUE PRODUZ,\nGOVERNO QUE ENTREGA\nO primeiro plano de governo de Rondônia formalmente ancorado no diagnóstico do controle externo\n\nEXPEDITO NETTO — Governador\nLuís Carlos Teodoro — Vice-Governador\nColigação Fé Rondônia (Federação Brasil da Esperança / PSOL-Rede)\nDocumento apresentado à Justiça Eleitoral nos termos do art. 11, § 1º, IX, da Lei nº 9.504/1997\n\nCarta ao povo de Rondônia\nRondoniense gosta de conta que fecha. Nossa gente acorda cedo, tira leite, colhe café, planta\nsoja, cria gado, abre comércio, dirige caminhão — e sabe, melhor do que qualquer político, que\npromessa sem número é conversa fiada.\nPor isso este plano é diferente de tudo o que já foi apresentado numa eleição em Rondônia.\nEle não nasceu num escritório de marketing. Nasceu de um fato: em 7 de agosto de 2026, o\nTribunal de Contas do Estado reuniu todos os candidatos ao Governo e entregou o\ndiagnóstico mais completo já produzido sobre a realidade fiscal, econômica e social do nosso\nestado — o Guia Consolidado do controle externo, com dez eixos, construído sobre\nauditorias, indicadores oficiais e anos de fiscalização.\nNós pegamos esse diagnóstico e fizemos o que um gestor sério faz: transformamos cada\nevidência em compromisso. Este plano segue, capítulo por capítulo, os dez eixos do Guia do\nTCE-RO. Cada proposta declara a fonte do dado que a justifica e a fonte do dinheiro que a\npaga. Ao final, assumimos por escrito: as recomendações e determinações do Tribunal de\nContas se tornarão metas do nosso Plano Plurianual, com relatório público anual de\ncumprimento. Seremos o primeiro governo de Rondônia a aceitar, de véspera, ser medido pelo\ncontrole externo.\n\n1"
+          },
+          {
+            "id": "os-numeros-contam-uma-historia-que-precisa-ser-dita-com-franqueza-rondon",
+            "titulo": "Os números contam uma história que precisa ser dita com franqueza. Rondônia tem nota",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Os números contam uma história que precisa ser dita com franqueza. Rondônia tem nota\nmáxima de crédito pelo sexto ano seguido, dívida de apenas 2% da receita e acaba de zerar os\njuros do refinanciamento federal. E, ao mesmo tempo: 119 obras paradas com mais de R$ 350\nmilhões enterrados; cirurgia cancelada por falta de anestesista; a segunda pior mortalidade\ninfantil do Brasil; o ensino médio ultrapassado pela média nacional pela primeira vez na\nhistória; a segunda maior taxa de feminicídio do país. Pagamos as contas em dia — e não\nentregamos os serviços. É a família de nome limpo com o telhado furado.\nMinha trajetória me preparou para esse desafio específico. Como deputado federal, não fiz\ndiscurso: entreguei 59 secadores de café que transformaram grão fermentado em café\npremiado, e ajudei a articular, com a bancada federal de Rondônia, mais de 1.800 máquinas\npesadas para as estradas vicinais dos nossos municípios. Como Secretário Nacional de Pesca,\nabri 19 mercados internacionais e negociei o pescado brasileiro com a China, a União\nEuropeia, a Rússia e a Coreia. Aprendi, na prática e em inglês, que mercado não se ganha com\nideologia — se ganha com sanidade, logística, qualidade e insistência.\nE aprendi a lição que orienta cada página deste plano: Rondônia produz, e quem governa\nprecisa saber buscar. Os fatos são públicos e estão documentados: o Fundo Amazônia\ndestinou ao nosso estado, apenas nos últimos três anos, o mesmo volume de recursos dos oito\nanos anteriores à sua retomada; o Propag, sancionado em 2025, zera os juros da nossa dívida e\neconomiza mais de R$ 11 bilhões. Não peço que ninguém mude de lado. Peço que façamos a\nconta. Vou tratar Brasília como trato um mercado internacional: com planilha, projeto e mão\nestendida — porque cada real que deixa de vir para Rondônia por birra política é um real a\nmenos na estrada, no hospital e na escola do seu filho.\nEste plano cabe numa frase: o problema de Rondônia não é dinheiro que falta — é entrega que\nnão acontece. Vamos consertar a máquina de entregar.\nExpedito Netto\n\nO método: governo captador-executor\nA Lei de Diretrizes Orçamentárias de 2027 (Lei estadual 6.465/2026) fixa em zero a margem\npara novas despesas obrigatórias continuadas. Em 2025, de tudo o que o Estado gastou, 91%\nfoi pessoal e custeio; só 7,29% virou investimento — e apenas cerca de 3% desse investimento\nsaiu de recursos próprios do Tesouro. Esses três números, todos do Guia do TCE-RO, definem\no único modelo de governo possível para o próximo quadriênio, que assumimos como\ndoutrina:\n2"
+          },
+          {
+            "id": "pagina-3",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nToda proposta declara sua natureza: investimento (obra, equipamento, tecnologia\n— viável por captação) ou custeio permanente (só entra acompanhado da fonte de\ncompensação, como exige a LDO).\n\n•\n\nToda proposta nomeia sua fonte: neste documento, cada eixo termina com a seção\n\"De onde vem o dinheiro\". Proposta sem fonte não entrou neste plano.\n\n•\n\nExecutar antes de construir: a primeira fonte de recurso novo é a carteira parada —\n119 obras paralisadas, mais de R$ 350 milhões já gastos, quase metade com origem\nfederal (levantamento TCE-RO). Retomar é mais rápido e mais barato do que\ninaugurar terreno.\n\n•\n\nTecnologia antes de folha: onde o Estado provou eficiência com tecnologia,\nexpandimos o modelo; onde a folha é inevitável, o concurso vem com a compensação\ndemonstrada.\n\n•\n\nO controle externo como aliado: determinações e recomendações do TCE-RO viram\nmetas do PPA 2028–2031, com relatório anual público de cumprimento.\n\n•\n\nEvidência viva: governar por evidência inclui atualizar a evidência. Cada diagnóstico\nque fundamenta este plano será revalidado por estudo técnico próprio no início do\ngoverno — atuarial, fiscal ou setorial — antes de se converter em meta do PPA 2028–\n2031. Números públicos são o ponto de partida da decisão, não o ponto final: quando a\nrealidade se mover, o plano se recalibra, com a mesma transparência com que foi\nescrito. A âncora não existe para impedir o navio de navegar — existe para impedir que\nele vá à deriva; a evidência viva é o guincho que a levanta quando a maré muda.\nRegra de leitura deste plano: os compromissos são numerados em sequência única\n(C1, C2, C3…) do início ao fim do documento, para que qualquer cidadão, jornalista\nou auditor possa cobrá-los um a um. Não há promessa solta: há lista verificável.\n\nEixo 1 · Economia, agroindústria e comércio exterior\nO que as evidências mostram. O PIB de Rondônia saltou de R$ 36,6 bilhões (2015) para R$\n66,8 bilhões (2022), com estimativa de R$ 77,8 bilhões em 2024; nossas exportações\ncresceram 17,21% em 2025 — quase cinco vezes a média nacional (3,45%) — e o estado\nacumula uma década de superávits comerciais. Mas o PIB por habitante ainda é 19% menor\nque o brasileiro, a pauta se concentra em carne, soja e milho, e o próprio Guia do TCE\nidentificou, na lista de importações, o retrato da riqueza que escapa: laticínios industrializados\nsão 7,20% do que Rondônia compra de fora — numa das maiores bacias leiteiras do país —,\n3"
+          },
+          {
+            "id": "alem-de-legumes-3-70-e-pneus-2-60-e-o-campo-importa-geradores-eletricos",
+            "titulo": "além de legumes (3,70%) e pneus (2,60%). E o campo importa geradores elétricos porque a",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "além de legumes (3,70%) e pneus (2,60%). E o campo importa geradores elétricos porque a\nenergia não chega à porteira. Rondônia vende o leite de manhã e compra o queijo à tarde —\npagando o frete duas vezes. Agroindústria é fazer o queijo aqui.\n\nCompromissos\nC1. Programa Fábrica Perto da Porteira: política estadual de substituição de importações e\nverticalização, priorizando as cadeias que o próprio TCE mapeou — derivados lácteos,\nhortifruti processado e insumos — com incentivo condicionado a transformação local,\nemprego e prazo, e cláusula de avaliação periódica de resultado.\nC2. Reforma do incentivo de ICMS: transição do modelo de crédito presumido para o\nmodelo de contrapartida verificável (quem industrializa aqui, ganha; quem apenas entrepõe,\nnão), antecipando de forma ordenada os efeitos da reforma tributária sobre os benefícios\nestaduais.\nC3. Rota do Café e do Cacau de Origem: indicação geográfica, torrefação e chocolate\nproduzidos em Rondônia, apoiados na base já contratada — o projeto internacional de\nbioeconomia do Fundo Brasil-ONU (café e cacau, 2026–2027, 600 beneficiários) e os projetos\ndo Fundo Amazônia na cadeia do cacau ao longo da BR-364, região que concentra 85% da\nprodução estadual. E o alicerce de tudo: agricultura familiar com ATER de verdade — EmaterRO fortalecida com quadro próprio — e mercado garantido nas compras institucionais (PAA e\nmerenda escolar do PNAE), porque quem planta precisa de técnico na porteira e comprador\nna colheita. A ponte federal está aberta — Plano Safra da Agricultura Familiar, PAA ampliado\ne plataforma Contrata+Brasil — e a merenda tem compromisso próprio neste plano.\nC4. Energia na porteira: programa de energização rural trifásica e geração distribuída (solar)\nnas bacias produtoras, atacando o sintoma que a pauta de importações denuncia — sem\nenergia não há resfriador de leite, secador de café nem câmara fria. Fonte federal declarada: o\nLuz para Todos, recolocado como política de combate à pobreza energética com foco em áreas\nrurais e na Amazônia Legal.\nC5. Pescado de Rondônia para o mundo: aplicar ao tambaqui e à piscicultura rondoniense a\nmesma engenharia de abertura de mercados executada pelo candidato na Secretaria Nacional\nde Pesca — sanidade, certificação, logística e diplomacia comercial — integrando o estado às\nrotas já abertas.\nC6. Governança fundiária como política econômica: programa permanente de\nregularização, integrando cadastros estaduais e federais — terra regularizada é crédito rural\n\n4"
+          },
+          {
+            "id": "liberado-e-conflito-evitado-como-aponta-o-guia-instrumentos-mutiroes-de",
+            "titulo": "liberado e conflito evitado, como aponta o Guia. Instrumentos: mutirões de titulação rural e",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "liberado e conflito evitado, como aponta o Guia. Instrumentos: mutirões de titulação rural e\nurbana nos 52 municípios em parceria com Incra e SPU (Lei federal 11.952/2009, da\nregularização na Amazônia Legal), gratuidade para o pequeno e cartório itinerante — título na\nmão é crédito no banco, investimento no lote e paz na linha.\nDe onde vem o dinheiro. Fundo de Equalização Federativa (áreas elegíveis incluem\ninfraestrutura e desenvolvimento regional, ~R$ 250 milhões já em 2026); crédito com\ngarantia da União viabilizado pela nota máxima na CAPAG — sempre para investimento;\nFundo Amazônia e Fundo Brasil-ONU já contratados nas cadeias de café e cacau; e a\nenergização rural como projeto prioritário junto aos programas federais de infraestrutura\nelétrica no campo.\n\nEixo 2 · Responsabilidade fiscal\nO que as evidências mostram. Rondônia mantém nota máxima de capacidade de pagamento\npelo sexto ano consecutivo e dívida consolidada de ~2% da RCL (limite: 200%). A adesão ao\nPropag (LC federal 212/2025) reduziu os juros da dívida de 4% a.a. para 0% e trocou a Selic\npelo IPCA — economia estimada superior a R$ 11 bilhões. Mas a despesa com pessoal do\nExecutivo subiu de 37,55% para 39,14% da RCL em seis meses, a margem para novas despesas\ncontinuadas é zero, e a CAERD, agora estatal dependente, adiciona um passivo de R$ 1,58\nbilhão e o risco de retenção do FPE pelo acordo com a PGFN. Nome limpo no banco com\ndespesa subindo é cartão estourando em câmera lenta: o crédito que levou seis anos para\nconstruir se perde em um.\n\nCompromissos\nC7. Regra de ouro interna: operação de crédito somente para investimento, nunca para\ncusteio — publicada como diretriz de governo no primeiro dia.\nC8. Blindagem do FPE: cumprimento rigoroso do acordo com a PGFN relativo às dívidas da\nCAERD, com monitoramento público das parcelas, para eliminar o risco de retenção da\nprincipal transferência do estado.\nC9. Disciplina de pessoal com transparência: todo reajuste ou expansão de quadro nasce\ncom a fonte de compensação demonstrada, como exige a LDO — e apresentada à sociedade\nantes do envio à Assembleia. E com trava de trajetória: nenhum reajuste ou expansão será\nproposto se a projeção levar a despesa de pessoal do Executivo acima do limite de alerta da\n\n5"
+          },
+          {
+            "id": "lrf-44-1-da-rcl-no-exercicio-seguinte-a-disciplina-nao-e-contra-o-servid",
+            "titulo": "LRF — 44,1% da RCL — no exercício seguinte. A disciplina não é contra o servidor: é o que",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "LRF — 44,1% da RCL — no exercício seguinte. A disciplina não é contra o servidor: é o que\ngarante que o concurso prometido caiba no contracheque do Estado.\nC10. Aplicação integral e transparente dos recursos do Propag e do FEF, com painel\npúblico de destinação e cumprimento das contrapartidas legais, inclusive o demonstrativo\nexigido pela Portaria STN 369/2026.\nDe onde vem o dinheiro. Este eixo não gasta — organiza. O espaço fiscal aberto pelo Propag\n(serviço da dívida zerado) e o FEF são o combustível dos demais eixos; a disciplina aqui\ndescrita é o que garante que ele chegue lá.\n\nEixo 3 · Previdência e proteção social dos militares\nO que as evidências mostram. O déficit atuarial do regime próprio saltou de R$ 10,27\nbilhões (2021) para R$ 14,63 bilhões (2026) — alta de 42,4%. O plano de amortização (Lei\nestadual 5.111/2021) obriga aportes de aproximadamente R$ 2,82 bilhões entre 2027 e 2030\n— recursos carimbados que já pertencem ao próximo governo. As despesas com o sistema de\nproteção dos militares, que não possui fundo constituído, cresceram 165,4% em quatro anos\n(R$ 179,5 mi → R$ 476,2 mi) e saem diretamente do caixa. Déficit atuarial é cupim na viga:\nnão aparece na fachada, mas derruba a casa — e a gente já ouviu o barulho.\n\nCompromissos\nC11. Cumprimento integral do plano de amortização, sem manobras nem adiamentos — o\nnão recolhimento agrava o déficit e empurra a conta para os filhos dos servidores de hoje.\nC12. Estudo atuarial específico do sistema de proteção dos militares no primeiro ano de\ngoverno, com apresentação pública dos cenários — nenhum estado enfrenta o que não mede.\nC13. Gestão previdenciária profissional: dirigente do Iperon escolhido por lista tríplice com\ncertificação, conforme determinação do TCE-RO nas contas de 2024.\nDe onde vem o dinheiro. Não há fonte externa: este eixo consome margem, e dizemos isso\ncom franqueza — quem promete o contrário está escondendo a conta.\n\nEixo 4 · Saúde — começando por quem começa a vida\nO que as evidências mostram. Rondônia tem a 3ª pior expectativa de vida do país (72,79\nanos contra 77,60) e a 2ª pior mortalidade infantil (17,1 por mil nascidos vivos, atrás apenas\n6"
+          },
+          {
+            "id": "do-amapa-a-mortalidade-materna-62-27-por-100-mil-e-o-dobro-da-meta-dos-o",
+            "titulo": "do Amapá). A mortalidade materna, 62,27 por 100 mil, é o dobro da meta dos ODS e pior do",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "do Amapá). A mortalidade materna, 62,27 por 100 mil, é o dobro da meta dos ODS e pior do\nque era em 2006. Em 2025, 1.250 gestantes não fizeram nenhuma consulta de pré-natal; a\nurocultura não era ofertada pelo SUS na capital; 71,87% dos partos foram cesarianas; e os 31\nleitos de UTI neonatal do SUS estão todos em Porto Velho, impondo viagens de mais de 600\nkm a recém-nascidos do Cone Sul. Na gestão, a SESAU opera com orçamento\nreconhecidamente subestimado, déficit de 7.082 postos de trabalho e reconhecimento de\ndívida transformado em rotina (PCe 01484/2025 e 01073/2026); o Hospital João Paulo II —\nque atende inclusive pacientes do Acre e da fronteira com a Bolívia — foi classificado como\nCrítico, e o novo HEURO acumula uma década de modelos anunciados e não entregues.\nColheita nenhuma vinga sem cuidar da muda. Hoje, o recém-nascido do Cone Sul viaja 600\nkm atrás de uma UTI: é viveiro longe demais da roça.\n\nCompromissos\nC14. Pacto Mãe-Bebê Rondônia: pré-natal completo com exames garantidos (urocultura e\nultrassom obstétrico em todas as regiões de saúde), busca ativa de gestantes sem\nacompanhamento e meta pública de redução da mortalidade materna e neonatal, com\nrelatório anual. Em articulação com a Rede Alyne, incluindo a formação e a fixação de\nenfermeiras obstétricas na Amazônia Legal previstas na política federal.\nC15. Conclusão da maternidade de alto risco de Ji-Paraná — que, como registra o próprio\nTCE, já possui recursos federais liberados — e pleito estruturado dos recursos para a\nmaternidade de alto risco de Porto Velho.\nC16. Regionalização da UTI neonatal: ao menos um polo de terapia intensiva neonatal fora\nda capital, encerrando as viagens de 600 km de recém-nascidos em risco.\nC17. Fim do orçamento fictício: a lei orçamentária da saúde será elaborada pelas\nnecessidades reais da rede, encerrando o ciclo de créditos adicionais e reconhecimentos de\ndívida como prática ordinária.\nC18. João Paulo II e HEURO como missões de governo: recuperação imediata da unidade\ncrítica e solução definitiva para o HEURO com modelo técnico, jurídico e financeiro\nsustentável, governança própria e cronograma público — e pleito de recursos federais de\nfronteira, pois o João Paulo II é, de fato, um hospital regional que serve ao Acre e à faixa de\nfronteira com a Bolívia.\nC19. Regulação que funciona — fila com protocolo, prazo e painel público: modernização\nda central estadual de regulação com fila única transparente por especialidade e região de\n\n7"
+          },
+          {
+            "id": "saude-protocolos-vinculantes-de-transferencia-entre-unidades-e-telessaud",
+            "titulo": "saúde, protocolos vinculantes de transferência entre unidades e telessaúde de apoio ao",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "saúde, protocolos vinculantes de transferência entre unidades e telessaúde de apoio ao\ninterior. As fiscalizações do TCE registram como rotina macas em corredores, filas para\nregulação e transferências travadas — e fila que ninguém vê é fila que ninguém resolve. A\nregulação será integrada à Rede Nacional de Dados em Saúde (RNDS) e ao prontuário único\ndo cidadão, em adesão ao programa federal Agora tem Especialistas — que já zerou filas de\nprocedimentos em 52 municípios de 21 estados. O painel público é agregado e anonimizado —\na posição na fila é acompanhada por protocolo; o nome do paciente aparece apenas no seu\npróprio acesso individual, como exige a Lei Geral de Proteção de Dados para dados de saúde.\nTransparência para quem espera, sigilo para todos os demais.\nC20. Plano de força de trabalho da SESAU: recomposição gradual por concurso com\ncompensação fiscal demonstrada, redução da rotatividade e das contratações temporárias\n(que cresceram 2.515% desde 2018), e redistribuição por demanda assistencial.\nDe onde vem o dinheiro. Transferências fundo a fundo do SUS (média e alta complexidade e\nrede materno-infantil); recursos federais já liberados da maternidade de Ji-Paraná; emendas\nde bancada orientadas a UTI neonatal e maternidades regionais; recursos de fronteira (a\nvocação regional do João Paulo II é argumento, não fraqueza); e a Sala de Situação de obras\nparalisadas — hospital inacabado é o caso clássico de retomada pactuada com o ministério.\nPara a regulação: os programas federais de saúde digital e informatização do SUS — e a\nexpansão federal da rede hospitalar universitária, que já alcançou Rondônia e seguirá no\npróximo ciclo.\n\nEixo 5 · Educação — levar ao ensino médio o método que\nsalvou a alfabetização\nO que as evidências mostram. Rondônia aprendeu a alfabetizar com método: nas redes\nmunicipais, o PAIC do TCE-RO com a Busca Ativa Escolar do UNICEF; na rede estadual, o\nPROALFA da Seduc com indução do Tribunal — e os anos iniciais subiram de 5,6 para 6,1 no\nIdeb entre 2023 e 2025 (Inep) — o melhor resultado da série histórica. Mas os anos finais\nestão estagnados em 4,8, abaixo da média nacional de 5,3; e, no ensino médio, Rondônia (4,2)\nsegue abaixo do Brasil (4,5), com a rede pública estadual em 4,0. O SAERO 2025 mede o\ntamanho do buraco: no 9º ano, apenas 22% dos estudantes têm aprendizagem adequada em\nportuguês e 9% em matemática; ao fim do ensino médio, 95 em cada 100 jovens não sabem a\nmatemática esperada. Nossa lavoura pega bem na muda e definha na engorda: o método que\nsalvou a alfabetização precisa acompanhar o pé até a colheita — o ensino médio.\n\n8"
+          },
+          {
+            "id": "compromissos",
+            "titulo": "Compromissos",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Compromissos\nC21. PROALFA dos Anos Finais e do Ensino Médio: a mesma engenharia que funcionou —\ndiagnóstico pelo SAERO, metas por escola e região, material estruturado, tutoria,\nrecomposição de aprendizagem e formação docente orientada pelos resultados — aplicada à\netapa em queda, exatamente como recomenda o Guia do TCE. Em adesão à estratégia\nnacional permanente de recomposição e aceleração das aprendizagens, cujo foco declarado\nsão exatamente os anos finais e o ensino médio.\nC22. Educação profissional integrada ao ensino médio como eixo estruturante: cursos\ntécnicos alinhados às cadeias reais da economia rondoniense (agroindústria, laticínios, café,\ncacau, pesca, logística, energia), formando a mão de obra do Eixo 1. E com a escala que a lei já\nexige: ao aderir ao Propag, Rondônia assumiu a obrigação de aplicar, todo ano, no mínimo\n60% dos seus investimentos vinculados em educação profissional técnica de nível médio (LC\n212/2025, art. 5º, § 2º, III) — sobre uma rede que hoje tem apenas 1.184 matrículas técnicas,\nenquanto o IFRO sozinho oferta quinze vezes mais ensino médio integrado. Implantaremos o\nitinerário técnico nas escolas de tempo integral, em parceria com o IFRO; no Fundeb, cada\ndupla matrícula técnica soma fator 1,35. Cumprir a lei e financiar a escola passam a ser o\nmesmo ato.\nC23. Valorização com método: calendário permanente de formação continuada com datas e\ncarga horária definidas, alinhado às fragilidades diagnosticadas — a formação deixa de ser\ngenérica e passa a responder ao que a avaliação mostrou.\nC24. Plano de sucessão docente: a própria Seduc estima entre 1.000 e 1.200 aposentadorias\nde professores nos próximos anos — cerca de 10% do quadro, como registra o Guia. Concurso\ntempestivo com cadastro de reserva, calendário previsível integrado ao Plano Quadrienal de\nConcursos e transição organizada, com a compensação fiscal demonstrada como exige a\nLDO. Temporário é aluguel, concurso é casa própria — e a sala de aula não pode esperar a\nemergência para ter professor. O Pé-de-Meia Licenciatura e o Bolsa Mais Professores entram\ncomo instrumentos de atração e fixação de docentes no interior.\nC25. Busca ativa permanente: consolidação da BAE/UNICEF como política de Estado\ncontra a evasão, do pré-escolar à 3ª série do ensino médio.\nC26. Escola sem goteira — manutenção como política pedagógica: plano quadrienal de\nmanutenção predial da rede estadual construído sobre o levantamento de 305 escolas do TCE\n(PCe 02952/24): 60% das unidades avaliadas precisam de algum nível de intervenção e 20%\nestão em condição ruim, exigindo investimento prioritário. Priorização técnica pública,\n9"
+          },
+          {
+            "id": "brigadas-regionais-de-manutencao-preventiva-e-meta-anual-auditavel-de-re",
+            "titulo": "brigadas regionais de manutenção preventiva e meta anual auditável de recuperação — prédio",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "brigadas regionais de manutenção preventiva e meta anual auditável de recuperação — prédio\nque se deteriora sem conserto custa mais caro do que telhado consertado a tempo. Inclui a\nadesão à meta federal de universalização da conectividade escolar: prédio conservado sem\ninternet é escola pela metade.\nC27. Compra que ensina: implantação da governança de aquisições apontada pela auditoria\ndo TCE na Seduc (Processo nº 00149/24): carteira permanente de projetos, comitê de\naquisições, sistema informatizado e vínculo obrigatório entre cada compra e a prioridade\npedagógica que a justifica. Acaba a corrida de fim de exercício que compra o que dá tempo — e\nnão o que a escola precisa.\nC28. Ensino médio em tempo integral — de um em quinze para um em cinco: Rondônia\ntem 6,70% do ensino médio estadual em tempo integral (4.204 de 62.767 matrículas, Censo\nEscolar 2025), contra 26,15% da média das redes estaduais do país — e essa distância de quase\nvinte pontos explica, mais do que qualquer outro número, o resultado da etapa. Elevaremos a\ncobertura para 20% até 2030, com prioridade para as escolas de pior resultado no SAERO e\npara os 7 municípios-chave. A conversão destrava receita na própria matrícula: o Fundeb paga\nfator 1,52 pela matrícula em tempo integral contra 1,25 pela parcial (Resolução CIF nº\n26/2026); a adequação predial é aplicação expressamente elegível do investimento vinculado\ndo Propag — \"infraestrutura para universalização do ensino infantil e educação em tempo\nintegral\" (LC 212/2025, art. 5º, § 2º) —; e construção e retomada de unidades entram pelos\nprogramas federais de infraestrutura educacional e pelo Pacto pela Retomada das Obras (Lei\n14.719/2023), somadas à Sala de Situação já prevista neste plano.\nC29. Merenda de quem planta aqui — piso auditável e pacto com os municípios: entre\n2018 e 2022, a compra da agricultura familiar pela rede estadual oscilou de 53,67% a 21,10%\ndos recursos do PNAE — e 22 dos 52 municípios ficaram abaixo dos 45% que a Lei nº\n15.226/2025 tornou obrigatórios desde 2026, três deles em praticamente zero. Fixaremos piso\nde 50% para a rede estadual — cinco pontos acima da lei — com apuração trimestral publicada\nno painel de dados abertos deste plano, calendário anual de chamadas públicas divulgado até\n31 de janeiro, uso padrão da plataforma Contrata+Brasil e cumprimento integral da Resolução\nCD/FNDE nº 4/2026: no mínimo 85% dos recursos em alimentos in natura ou minimamente\nprocessados. E, porque município não compra de quem não existe, o Estado organizará a\noferta: assessoria da Emater-RO para constituição e habilitação de cooperativas fornecedoras\n— com a prioridade legal para grupos de mulheres —, modelo padronizado de chamada\npública cedido às prefeituras e pacto estadual da merenda com meta pública por município.\nFonte: os R$ 50,4 milhões que o FNDE já repassa anualmente ao PNAE em Rondônia —\nmuda o fornecedor, não a despesa.\n10"
+          },
+          {
+            "id": "de-onde-vem-o-dinheiro-o-encaixe-mais-importante-deste-plano-em-troca-da",
+            "titulo": "De onde vem o dinheiro. O encaixe mais importante deste plano: em troca da redução dos",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "De onde vem o dinheiro. O encaixe mais importante deste plano: em troca da redução dos\njuros reais da dívida, o Propag obriga o Estado a investir, anualmente, entre 0,5 e 2 pontos\npercentuais do saldo devedor — e, desse montante, no mínimo 60% obrigatoriamente em\neducação profissional técnica de nível médio, enquanto as metas pactuadas não forem\natingidas (LC 212/2025, art. 5º, § 2º). A infraestrutura de tempo integral está expressamente\nentre as aplicações elegíveis do mesmo investimento vinculado. A proposta central deste eixo\njá nasce, portanto, com fonte e obrigação definidas em lei federal. Somam-se o FEF — que\nreplica o mesmo piso —, o Fundeb, que paga fator 1,52 pela matrícula de ensino médio em\ntempo integral contra 1,25 pela parcial e dupla matrícula de 1,35 pelo itinerário técnico\n(Resolução CIF nº 26/2026), os repasses do FNDE ao PNAE e os programas federais de\ninfraestrutura educacional. Para as escolas: a Sala de Situação, porque escola inacabada\ntambém é obra parada. A sucessão docente segue a regra da LDO: concurso com compensação\ndemonstrada.\n\nEixo 6 · Segurança pública — proteger quem mais morre\nO que as evidências mostram. Enquanto as mortes violentas caíram 8,2% no Brasil (menor\npatamar desde 2012), Rondônia subiu 7,5% — o segundo maior aumento do país. As mulheres\npagam a conta mais alta: taxa de homicídios femininos 66% acima da média nacional;\nfeminicídio de 2,9 por 100 mil (2,07 vezes o Brasil), respondendo por 54,3% dos assassinatos\nde mulheres; estupro 2,33 vezes a média nacional e estupro de vulnerável — crimes contra\ncrianças — 2,49 vezes (75,9 contra 30,5). Roubos a residência estão em 3,8 vezes a média do\npaís. Na direção oposta, roubos e furtos de veículos estão 38,2% abaixo da média nacional — e\no Guia credita o resultado ao videomonitoramento, à integração de dados e à inteligência\nartificial, concluindo que a tecnologia rendeu mais que a expansão de efetivo. Cerca com vão\nnão segura rebanho — e o vão de Rondônia hoje é a porta de casa, onde morrem mulheres e\ncrianças. É lá que a cerca se fecha primeiro.\n\nCompromissos\nC30. Programa Rondônia Protege as Mulheres — proteção ativa: implantação do modelo\nfederal Alerta Mulher Segura (Lei 15.383/2026 e Decreto 13.084/2026): tornozeleira\neletrônica imediata no agressor como medida protetiva autônoma, Unidade Portátil de\nRastreamento com a vítima, alerta automático e simultâneo à mulher e à polícia ao\nrompimento do perímetro, central de monitoramento 24h e Patrulha Maria da Penha em\ntodas as regiões — com aplicação pelo delegado onde não há juiz, essencial num estado de 52\n\n11"
+          },
+          {
+            "id": "municipios-e-poucas-comarcas-quem-carrega-a-tecnologia-e-o-agressor-a-mu",
+            "titulo": "municípios e poucas comarcas. Quem carrega a tecnologia é o agressor; a mulher recebe",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "municípios e poucas comarcas. Quem carrega a tecnologia é o agressor; a mulher recebe\nproteção. Com adesão ao programa federal de distribuição aos Estados de kits de\nmonitoramento de agressores e articulação com as Casas da Mulher Brasileira e as Salas Lilás.\nC31. Porta de Saída — autonomia econômica da mulher: articulação do auxílio-aluguel (Lei\n14.674/2023), da prioridade habitacional para mulheres chefes de família, da transferência\nautomática da pensão alimentícia e do microcrédito com cooperativismo — em costura direta\ncom o projeto internacional de bioeconomia já contratado, cujo público central são 450\nmulheres empreendedoras do café e do cacau. Segurança e renda são a mesma política.\nC32. Escudo da Infância: frente estadual contra o estupro de vulnerável — escuta\nespecializada e depoimento especial em todas as regiões, capacitação das redes de ensino e\nsaúde para identificação precoce, e integração com os conselhos tutelares. Um estado onde\ncrianças sofrem violência sexual a 2,5 vezes a média nacional não pode tratar o tema como\nrodapé.\nC33. Expansão do modelo tecnológico comprovado: videomonitoramento com IA,\ncercamento eletrônico e integração de bancos de dados estendidos aos crimes contra o\npatrimônio e à faixa de fronteira — investimento de capital, que a evidência mostrou render\nmais que promessas genéricas de efetivo.\nC34. Fronteira e corredor logístico: programa integrado de enfrentamento ao crime\norganizado na fronteira com a Bolívia e nos eixos rodoviários — o Guia registra a expansão das\norganizações criminosas e a integração de Rondônia às rotas nacionais e internacionais do\ntráfico —, em cooperação com as forças federais e os programas federais de fronteira.\nC35. Chão de Fábrica — Polos Industriais Prisionais com escola dentro: Rondônia lidera o\npaís em presos em atividade laboral (69,40% no 1º semestre de 2024, Sisdepen), mas tinha, em\njunho de 2025, apenas 2.216 vagas conveniadas — mais da metade do trabalho prisional é\nocupação interna, sem salário nem ofício. Instalaremos Polos Industriais Prisionais nos 7\nmunicípios-chave, com galpões operados por empresas, cooperativas e organizações da\nsociedade civil dentro das unidades (LEP, art. 34, § 2º), meta de 4.000 vagas de trabalho\nprodutivo até 2030 e remuneração mínima de um salário mínimo integral — acima do piso\nlegal de três quartos. Toda unidade produtiva terá ensino formal ou qualificação certificada\nacoplada, com meta de 100% dos reeducandos em polo matriculados: auditoria do Tribunal de\nContas de Santa Catarina mediu que o trabalho reduz a reincidência em 18,1% e, somado ao\nestudo, em 30,7%. Duas vedações expressas: custódia, segurança e disciplina permanecem\nindelegáveis, com a Polícia Penal — não haverá privatização de presídio em Rondônia —, e o\ntrabalho prisional jamais ocupará posto correspondente a cargo efetivo vago ou atribuição de\n12"
+          },
+          {
+            "id": "carreira-do-estado-quem-defende-o-fim-da-precarizacao-nao-a-pratica-pela",
+            "titulo": "carreira do Estado: quem defende o fim da precarização não a pratica pela porta dos fundos.",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "carreira do Estado: quem defende o fim da precarização não a pratica pela porta dos fundos.\nFontes: Funpen (LC 79/1994) e FUPEN-RO (LC estadual 945/2017) para galpões e\nequipamentos; a remuneração é encargo do parceiro, não do Tesouro (LEP, arts. 34, § 1º, e 36,\n§ 2º); e o próprio fundo estadual arrecada com a comercialização do que o trabalho prisional\nproduz (LC 945/2017, art. 4º, X) — o programa se autoalimenta, em sintonia com o Pena\nJusta e o Pacto Nacional de Execução Penal.\nC36. Painel de Transparência Prisional — contar quem está empregado, não quem está\nocupado: painel público trimestral separando trabalho institucional, industrial, interno e\nexterno, com remuneração média, escolaridade e — pela primeira vez em Rondônia — taxa de\nreincidência medida e auditável. O estado que aparece em 1º lugar nacional em presos\nocupados não sabe dizer hoje quantos estão de fato empregados nem quantos voltam a ser\npresos. Quem publica o próprio número aceita ser cobrado por ele. Custo de gestão, na mesma\nestrutura de dados abertos deste plano.\nC37. Cuidotecas — para que estudar à noite deixe de ser privilégio de quem não cuida:\nespaços gratuitos e seguros de acolhida noturna de crianças de 3 a 12 anos, com e sem\ndeficiência, nos 7 municípios-chave, no modelo da Política Nacional de Cuidados (Lei\n15.069/2024) e das diretrizes do Ministério do Desenvolvimento e Assistência Social, para\nque mães, pais e avós possam estudar, qualificar-se nas trilhas deste plano ou trabalhar no\ncomércio noturno — com prioridade para famílias monoparentais chefiadas por mulheres e\ninscritas no CadÚnico. A Cuidoteca não substitui a escola nem amplia a jornada da criança:\nrespeita o teto de 10 horas diárias de atividades somadas (Parecer CNE/CEB nº 17/2012),\ncom turno reduzido para quem já estuda em tempo integral. Ocupa prédio público que já\nexiste e está vazio à noite — escola, CRAS, campus — e a equipe vem de convênio com o\nIFRO e a UNIR, com estudantes de Pedagogia, Psicologia, Serviço Social, Nutrição e\nEducação Física atuando como agentes de cuidado sob supervisão, porque o repasse federal\nveda obras e pagamento a servidor público. Fontes: transferências da Política Nacional de\nCuidados e cofinanciamento do SUAS — sem despesa obrigatória continuada.\nDe onde vem o dinheiro. Fundo Nacional de Segurança Pública (que financia inclusive\nprojetos de enfrentamento à violência contra a mulher, como aponta o próprio Guia); dever\nlegal de priorização orçamentária dos equipamentos de monitoração (art. 39 da Lei Maria da\nPenha, redação da Lei 15.383/2026); FEF (segurança é área elegível); programas federais de\nfronteira; referência de custo do modelo capixaba: kits de tornozeleira + UPR a R$ 255/mês —\n500 kits custam ~R$ 1,5 milhão/ano, menos que qualquer campanha publicitária de governo.\nSomam-se, como articulação federativa a pactuar: o Fundo Nacional de Investimento em\nInfraestrutura Social (FIIS) — R$ 10 bilhões previstos para investimentos de estados e\n13"
+          },
+          {
+            "id": "municipios-em-equipamentos-e-infraestrutura-de-seguranca-e-para-o-trabal",
+            "titulo": "municípios em equipamentos e infraestrutura de segurança — e, para o trabalho prisional, o",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "municípios em equipamentos e infraestrutura de segurança — e, para o trabalho prisional, o\nFunpen (LC 79/1994), o FUPEN-RO (LC estadual 945/2017) e o Pacto Nacional de\nExecução Penal.\n\nEixo 7 · Infraestrutura e logística\nO que as evidências mostram. Rondônia tem a pior malha rodoviária entre os 19 estados\nanalisados pelo estudo citado no Guia: 76% sem pavimentação, contra média de 38,17%. O\ncusto de transporte consome 15,24% do PIB — quase o dobro da referência — num estado cuja\neconomia vive de escoar produção. O DER-RO investe R$ 1,03 em obra para cada R$ 1,00\ngasto na própria estrutura (o DNIT investe R$ 3,00; a SINFRA de Mato Grosso, R$ 5,81),\npreso a um modelo de execução direta que consome o orçamento em custeio administrativo.\nEstrada ruim é imposto invisível: cada buraco cobra pedágio em pneu, frete e tempo — e o\nprodutor paga sem recibo.\n\nCompromissos\nC38. Sala de Situação das Obras Paralisadas nos primeiros 100 dias: usando o\nlevantamento do TCE e o portal Tô no Controle como linha de base, com meta pública de\nretomada e prestação de contas trimestral — metade das 119 obras tem origem federal e será\nrepactuada com os ministérios.\nC39. Reforma do DER-RO: migração gradual para execução indireta com contratos por\ndesempenho, meta pública de elevar a relação obra/custeio e priorização técnica dos\ncorredores logísticos do agronegócio.\nC40. Plano Estadual de Logística Integrada: rodovias, pontes, hidrovia do Madeira e\nplataformas de armazenagem tratados como uma estratégia única de escoamento, incluídos os\ncorredores estaduais que servem de alternativa à BR-364 (C41) — cada ponto de custo\nlogístico devolvido ao produtor vira competitividade e arrecadação. E a logística do século\nXXI entra no mesmo plano: conectividade rural — internet nas linhas e nos distritos, via\nobrigações do leilão do 5G, programas federais de conectividade e parcerias — porque\nprodução sem sinal não acha preço, nem aluno estuda, nem telessaúde chega.\nC41. BR-364 — a concessão é federal, mas quem paga o pedágio é rondoniense: o Governo\ndo Estado deixará de ser espectador do contrato de 30 anos já em vigor. Frente institucional\npermanente, com a PGE e a representação do Estado, para atuar junto à ANTT, ao TCU e ao\nMinistério dos Transportes: fiscalização pública do cronograma de investimentos da\n14"
+          },
+          {
+            "id": "concessionaria-defesa-de-tarifa-diferenciada-para-moradores-lindeiros-e",
+            "titulo": "concessionária, defesa de tarifa diferenciada para moradores lindeiros e para o transporte",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "concessionária, defesa de tarifa diferenciada para moradores lindeiros e para o transporte\nlocal, e painel estadual com os indicadores do contrato. E, no que é competência nossa,\nprioridade aos corredores estaduais que ofereçam alternativa real de escoamento. Pedágio não\nse enfrenta com discurso — se enfrenta com fiscalização, alternativa logística e presença\ninstitucional.\nDe onde vem o dinheiro. Programas federais de infraestrutura e logística; operações de\ncrédito para investimento amparadas na CAPAG máxima; FEF (infraestrutura é elegível); e a\nexperiência comprovada do candidato na articulação de maquinário e obras via programas\nfederais — mais de 1.800 máquinas entregues aos municípios pelo Calha Norte. A frente\ninstitucional da BR-364 custa articulação e corpo técnico, não orçamento novo.\n\nEixo 8 · Saneamento e o futuro da CAERD\nO que as evidências mostram. O marco legal do saneamento (Lei 14.026/2020) exige\nuniversalização até 2033: 99% de água e 90% de esgoto. Rondônia está abaixo das médias\nnacional e regional nas duas coberturas. O governo atual publicou edital de concessão dos\nserviços em 40 municípios — R$ 8,477 bilhões por 35 anos — com leilão marcado para 29 de\nsetembro de 2026, dias antes da eleição. A CAERD, tornada estatal dependente, carrega\npassivo de R$ 1,58 bilhão (não auditado) que agora pressiona diretamente o orçamento do\nEstado. O Marco Legal, porém, não impõe privatização — impõe comprovação de capacidade\neconômico-financeira para investir (Decreto 10.710/2021). Capacidade não se vende: se\nconstrói. A CAERD é uma fazenda produtiva com o trator quebrado: privatizar é vender a\nfazenda por causa do trator. Nosso plano conserta o trator — e a fazenda continua da família.\n\nCompromissos\nC42. Água e esgoto não se decidem na véspera da eleição: defenderemos, pelas vias\ninstitucionais, que um contrato de 35 anos seja debatido com a sociedade e decidido pelo\ngoverno que vai executá-lo — não assinado às pressas entre o leilão e a posse.\nC43. Programa Água Pública Sustentável — a alternativa que dizem não existir:\nrecuperação da CAERD por três instrumentos combinados: Adiantamento para Futuro\nAumento de Capital (AFAC) do Tesouro para sanear o passivo, inclusive precatórios — aporte\nde capital, não operação de crédito; financiamento de longo prazo junto a BNDES, Caixa\n(FGTS — Saneamento Para Todos) e organismos multilaterais, com aval do Estado lastreado\nem contragarantias de recebíveis (LRF, arts. 32 a 40); e mútuo estadual ponte para\n\n15"
+          },
+          {
+            "id": "modernizacao-da-gestao-hidrometracao-telemetria-combate-a-fraudes-pacote",
+            "titulo": "modernização da gestão (hidrometração, telemetria, combate a fraudes). Pacote de referência",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "modernização da gestão (hidrometração, telemetria, combate a fraudes). Pacote de referência\nde R$ 800 milhões em seis anos — valor ilustrativo, a calibrar pela auditoria independente e\ndue diligence contratadas nos primeiros 90 dias —, com todo desembolso condicionado a\nmetas auditadas pelo TCE-RO e pela agência reguladora AGERO — perdas ≤ 35% até 2032,\ncobertura de água ≥ 85% em 2031 —, suspensão automática em caso de descumprimento,\nvedação absoluta de uso em custeio e folha, governança da Lei das Estatais (13.303/2016) —\ndiretoria técnica com mandato e requisitos, comitê de auditoria estatutário e conselheiro\nindependente —, e tarifa social protegida: famílias do CadÚnico isentas do componente de\ninvestimento. E o reajuste às claras: proporemos à AGERO, como estimativa ilustrativa a\ncalibrar na revisão tarifária, componente de investimento com reajuste real escalonado de 8%\na 12% em três parcelas anuais — sempre menor do que o embutido numa privatização, que\nprecisa pagar leilão, capital privado e lucro — e cada parcela só entra em vigor depois de\ncertificado, pela reguladora e pelo verificador independente, o cumprimento dos marcos de\nserviço da etapa anterior. Primeiro a água chega; depois a conta acompanha. Todo o\ncomponente transita pela conta vinculada e destina-se exclusivamente ao pagamento do\nfinanciamento: quitado o empréstimo, o componente sai da tarifa. Com perdas próximas de\n50%, metade da água produzida hoje não vira receita — o programa se paga recuperando o que\njá se perde. E, com a franqueza que rege este plano: o aval transfere risco ao Tesouro se as\nmetas falharem — é exatamente por isso que existem a conta vinculada de recebíveis (escrow),\no desembolso por marcos certificados por verificador independente e a suspensão automática.\nC44. Compromisso de responsabilidade em qualquer cenário: se o contrato de concessão\nestiver juridicamente consolidado ao assumirmos, ele será governado com rigor máximo —\nagência reguladora fortalecida, painel público de metas de universalização, proteção tarifária\ndas famílias de baixa renda, plano para os servidores da CAERD e atendimento às áreas rurais\ne localidades fora da concessão. Rondônia não ficará refém nem da pressa de quem sai, nem de\nimproviso de quem chega.\nDe onde vem o dinheiro. No cenário de reestruturação pública, a engenharia do Programa\nÁgua Pública Sustentável: AFAC do Tesouro, financiamento BNDES/FGTS com aval e\ncontragarantias, e mútuo ponte — pagos por três alavancas: componente tarifário de\ninvestimento aprovado pela reguladora, redução de perdas (~20 pontos percentuais em seis\nanos) e expansão da base de usuários. Na simulação ilustrativa do cenário-base, o ganho\nincremental de receita cobre o serviço da dívida com folga mínima de 2,5 vezes em todo o\nhorizonte. E a comparação que o eleitor merece ver: na concessão, a tarifa embute as mesmas\nobras mais o custo do leilão, a remuneração do capital do acionista privado e o lucro; no\nmodelo público, embute obras a custo BNDES/FGTS — estruturalmente menor. Em\n\n16"
+          },
+          {
+            "id": "igualdade-de-metas-a-conta-de-agua-sobe-menos-sob-gestao-publica-financi",
+            "titulo": "igualdade de metas, a conta de água sobe menos sob gestão pública financiada do que sob",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "igualdade de metas, a conta de água sobe menos sob gestão pública financiada do que sob\nprivatização: não escondemos o reajuste, nós o comparamos. No cenário de concessão\nconsolidada: o investimento é privado e o papel do Estado é regulatório — barato e decisivo.\nEm ambos: programas federais de saneamento rural para as áreas que nenhum contrato cobre.\nE o escudo federativo: o programa federal declara que seguirá apoiando estados e municípios a\nuniversalizar o acesso à água tratada e ao esgotamento sanitário — saneamento como dever de\napoio ao ente público, não como mercadoria de leilão.\n\nEixo 9 · Meio ambiente como ativo econômico\nO que as evidências mostram. Em outubro de 2024, 573,5 mil hectares queimaram em\nRondônia e a população respirou ar insalubre por semanas. Em 2025, com ação coordenada e\npreventiva, a área queimada de outubro caiu para 23 mil hectares — redução de 96% — e os\ndias de ar prejudicial despencaram (31 → 8 em agosto; 28 → 2 em setembro). O modelo que\nfunciona foi encontrado; falta transformá-lo em política de Estado permanente, porque o Guia\nregistra que parte significativa das Unidades de Conservação estaduais ainda não tem plano de\nmanejo aprovado — e, sem plano de manejo, o Estado não previne fogo, não fiscaliza e não\ncapta recursos ambientais. Incêndio se apaga em setembro, mas se evita em março: quem faz\naceiro não precisa de milagre na seca. Política de Estado é o aceiro permanente.\n\nCompromissos\nC45. Perenizar a vitória contra as queimadas: institucionalizar por lei o sistema estadual de\nprevenção e resposta — sala de situação sazonal, brigadas, sensoriamento e mobilização\nantecipada — para que a redução de 96% não dependa de governo, e sim de Estado.\nC46. Mutirão dos Planos de Manejo: aprovar os planos de manejo das Unidades de\nConservação estaduais no quadriênio — a chave que destrava fiscalização, segurança jurídica e\ncaptação (o Fundo Amazônia já atua em 37 das 84 UCs do estado).\nC47. Bioeconomia com selo e rastreabilidade: integração da agenda ambiental à econômica\n— o comprador internacional da carne, da soja, do café e do cacau de Rondônia paga mais por\norigem comprovada, e a rastreabilidade é passaporte de mercado, não burocracia.\nC48. Governança climática limpa: fortalecimento do Funclima com transparência integral e\ncontroles reforçados sobre projetos e conflitos de interesse, habilitando o estado à captação\njunto aos fundos climáticos internacionais.\n\n17"
+          },
+          {
+            "id": "c49-programa-rondoniense-de-carbono-publico-jurisdicional-acordar-a-lei",
+            "titulo": "C49. Programa Rondoniense de Carbono Público Jurisdicional — acordar a lei que",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "C49. Programa Rondoniense de Carbono Público Jurisdicional — acordar a lei que\ndorme desde 2018: a Lei estadual nº 4.437/2018 criou o Sistema de Governança Climática e o\nRegistro Estadual de Reduções de Emissões e mandou regulamentar o pagamento por serviços\nambientais em três anos — prazo vencido em 2021 e descumprido até hoje.\nRegulamentaremos a lei integralmente no primeiro ano de mandato, com registro público\nauditável espelhado no Registro Central da Lei federal nº 15.042/2024, nível de referência de\nemissões florestais (FREL) estadual próprio — hoje inexistente — e a titularidade estadual dos\ncréditos gerados em unidades de conservação estaduais, expressamente reconhecida pelo art.\n43, II, da mesma lei. Três travas de integridade: checagem prévia contra requerimentos\nminerários na ANM como condição de admissibilidade de qualquer projeto — 61% dos\ncréditos já vendidos na Amazônia se sobrepõem a processos minerários —; defesa da\nintegridade territorial das unidades restabelecida pelo Judiciário, porque ninguém compra\ncrédito de trinta anos sobre unidade que se tentou extinguir por lei; e Consentimento Livre,\nPrévio e Informado (Convenção nº 169 da OIT), com parcela fixa das receitas do Estado\ndestinada aos Planos de Vida das comunidades tradicionais. A floresta não se vende: vende-se\no resultado de tê-la mantido em pé — e quem recebe primeiro é quem a manteve. Fontes:\nFundo Amazônia e Fundo Clima, em modalidade não reembolsável de estruturação\ninstitucional — sem despesa obrigatória continuada. Nenhuma receita de carbono é prometida\npara o primeiro biênio: a lei só permite vender resultado passado e verificado.\nC50. Concessão florestal com carbono — o inventário antes do anúncio: a Lei federal nº\n14.590/2023 autorizou incluir a comercialização de créditos de carbono nas concessões\nflorestais, mas exige regulamento e adaptação da legislação estadual — e Rondônia não dispõe\nsequer de inventário público confiável de suas Florestas Estaduais de Rendimento\nSustentável. Faremos na ordem certa: inventário georreferenciado completo das florestas\npúblicas estaduais no primeiro ano; lei estadual de adaptação; e editais dimensionados pela\nbase efetivamente inventariada, livre de litígio e de sobreposição minerária, com manejo de\nbaixo impacto, produtos não madeireiros e créditos de carbono. No mínimo 30% da\nparticipação devida ao Estado irá ao fundo da Lei 4.437/2018, respeitadas a repartição de\nreceitas com as comunidades locais e a ressalva das áreas por elas ocupadas (Lei 11.284/2006,\narts. 16, § 2º, e 30, IX). Compromisso arrecadatório, não deficitário: outorga por hectare mais\nparticipação na receita. Não prometemos hectare que ainda não medimos.\nC51. Rondônia Restaura: restauração florestal com remoção de carbono (ARR) em áreas\ndegradadas no interior de unidades de conservação estaduais — meta de 50.000 hectares em\nrestauração ativa ou regeneração assistida até 2030 —, priorizando o Parque Estadual de\nGuajará-Mirim e as unidades com situação territorial pacificada e degradação mapeada.\n\n18"
+          },
+          {
+            "id": "nenhum-projeto-sera-estruturado-em-unidade-sub-judice-nao-se-planta-flor",
+            "titulo": "Nenhum projeto será estruturado em unidade sub judice: não se planta floresta de trinta anos",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Nenhum projeto será estruturado em unidade sub judice: não se planta floresta de trinta anos\nem terreno cuja posse está em julgamento. Execução por parceiro selecionado em licitação\n(Lei 15.042/2024, art. 43, § 3º), com espécies nativas e prioridade de contratação de coletores\nde sementes e viveiristas locais. Fontes: Fundo Amazônia e Fundo Clima/BNDES na\nimplantação; mercado de remoção de carbono somente sobre resultado verificado.\nC52. Consórcios Intermunicipais de Transição Ecológica: as áreas protegidas municipais\nsão pequenas demais, isoladamente, para pagar auditoria internacional e inventário de\nbiomassa. Induziremos e daremos assistência técnica georreferenciada à criação de pelo\nmenos 3 consórcios intermunicipais até 2029 (Lei 11.107/2005), agrupando áreas de proteção\nambiental e unidades municipais em portfólios de projetos agrupados — modelo\nexpressamente autorizado pelo art. 43, § 2º, da Lei nº 15.042/2024. Uma auditoria, um\ninventário, uma certificação: o custo fixo que inviabiliza cada município isolado torna-se\nsuportável dividido por seis. O consórcio, pessoa jurídica de direito público, arrecada e\ncontrata por conta própria — sem transferência do Tesouro estadual.\nDe onde vem o dinheiro. Fundo Amazônia (R$ 178 milhões já aprovados para Rondônia;\npresença em 25 municípios e 11 terras indígenas); Fundo Clima/BNDES (financiamento\nreembolsável para projetos de mitigação e adaptação); cooperação internacional na esteira do\nprojeto ONU já conquistado; e Funclima estadual reestruturado. Somam-se a linha do Fundo\nAmazônia de fortalecimento da capacidade operacional dos Estados — meio bilhão de reais\nmobilizados no ciclo federal atual —, o Programa União com Municípios, o AdaptaCidades e\nas fontes próprias dos compromissos de carbono deste eixo.\n\nEixo 10 · Servidor de carreira, Estado que funciona\nO que as evidências mostram. O mesmo problema atravessa os dez eixos do Guia: a máquina\nestadual funciona sobre vínculos provisórios. A SESAU opera com déficit de 7.082 postos e\ncontratações temporárias que cresceram 2.515% desde 2018; a Seduc verá 1.000 a 1.200\nprofessores se aposentarem nos próximos anos; e, segundo o Portal da Transparência do\nEstado (consulta em agosto de 2026), não houve homologação de concurso público no\nexercício para as unidades do Poder Executivo — enquanto a SESAU publicava a 13ª\nconvocação de um seletivo temporário de médicos (Edital nº 105/2026/SEGEP-GCP, ref.\nEdital nº 346/2024). A Constituição exige concurso para o cargo efetivo (art. 37, II) e só\nadmite contratação temporária para necessidade transitória de excepcional interesse público\n(art. 37, IX); o STF já assentou que renovar seletivos sucessivamente para necessidade\npermanente é inconstitucional. Temporário renovado para sempre é aluguel: todo mês sai\n19"
+          },
+          {
+            "id": "dinheiro-e-nunca-se-constroi-patrimonio-concurso-e-a-casa-propria-do-ser",
+            "titulo": "dinheiro e nunca se constrói patrimônio. Concurso é a casa própria do serviço público. Por",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "dinheiro e nunca se constrói patrimônio. Concurso é a casa própria do serviço público. Por\nisso este eixo é transversal — ele dá lastro aos compromissos C20 e C24 e a todos os serviços\nque os demais eixos prometem entregar.\n\nCompromissos\nC53. Censo da Precarização nos primeiros 90 dias: auditoria completa, com a CGE e em\ndiálogo com o TCE-RO, mapeando temporários por secretaria, tempo de renovação de cada\nseletivo, terceirizados em atividade-fim, custo total comparado ao do efetivo equivalente e\naprovados em concursos anteriores aguardando nomeação dentro da validade. O censo será\ndocumento público — a base transparente de todo o resto.\nC54. Plano Quadrienal de Concursos, com calendário em lei: projeto de lei instituindo o\nPlano Estadual de Reposição de Pessoal, com cronograma vinculante de certames por área e\nano, priorizados pela criticidade: saúde, educação, segurança, socioassistencial e carreiras\ntécnicas de gestão. Calendário publicado dá previsibilidade ao candidato e blinda o programa\ncontra conveniências eleitorais — anúncio de véspera de eleição não é homologação.\nC55. Transição sem demissão em massa: nenhum temporário é dispensado antes de o\nefetivo aprovado assumir; os contratos vigentes correm até o fim de seus prazos legais; e os\natuais temporários e terceirizados são incentivados a disputar os concursos, com cursinho\npreparatório gratuito em parceria com IFRO e UNIR e isenção de taxa para inscritos no\nCadÚnico e para quem já presta serviço ao Estado. Não se pune quem segurou a máquina\ndurante a precarização — abre-se a porta da efetivação pela via constitucional, com\nmodelagem de editais validada pela PGE, respeitada a isonomia entre candidatos.\nC56. Terceirização só onde ela cabe: marco estadual delimitando a terceirização às\natividades-meio genuínas (vigilância, limpeza, manutenção predial), com vedação expressa\nem atividade-fim de saúde, educação e segurança. Nos contratos mantidos: fiscalização\nreforçada do cumprimento trabalhista — evitando a responsabilização subsidiária do Tesouro\n— e cláusulas de barreira contra a pejotização disfarçada.\nC57. Responsabilidade fiscal como aliada, não como desculpa: o gasto com temporários e\ncom terceirização substitutiva de mão de obra já é despesa de pessoal para fins da LRF (art.\n18, § 1º) — o dinheiro já está sendo gasto, da forma mais cara e mais frágil. O Censo trará a\nmatriz de custo comparativo, e as nomeações serão faseadas dentro do limite de 49% da RCL\ndo Executivo, com relatório quadrimestral público de impacto.\n\n20"
+          },
+          {
+            "id": "c58-valorizacao-de-quem-ja-e-efetivo-concurso-sem-carreira-atrativa-enxu",
+            "titulo": "C58. Valorização de quem já é efetivo: concurso sem carreira atrativa enxuga gelo. Revisão",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "C58. Valorização de quem já é efetivo: concurso sem carreira atrativa enxuga gelo. Revisão\ndos planos de cargos e carreiras das áreas críticas — sempre com a compensação demonstrada\nque a LDO exige —, gratificação de lotação em municípios de difícil provimento, banco de\ntalentos interno e formação permanente pela escola de governo.\nC59. Concurso limpo e acessível: banca selecionada por critérios técnicos públicos; provas\naplicadas em polos regionais, para que o candidato de Vilhena ou de Guajará-Mirim não\nprecise viajar a Porto Velho; reserva legal de vagas (PCD, negros e indígenas); e nomeação\ndentro da validade como regra administrativa, não como favor. Metas ilustrativas do\nquadriênio: censo publicado em 90 dias; primeiro grande certame (saúde e educação) lançado\nno primeiro ano; redução de ao menos 60% dos contratos temporários em atividade\npermanente até 2030; nenhum seletivo renovado além do limite legal a partir do segundo ano.\nDe onde vem o dinheiro. Este eixo realoca mais do que gasta: substitui despesa já existente —\ntemporários e terceirização substitutiva, contabilizadas como pessoal — por vínculo efetivo\nmais estável e, no agregado, mais barato, dentro do limite de 49% da RCL. Os custos novos\nsão pequenos e identificados: cursinho e isenções via parcerias com IFRO e UNIR e taxas dos\npróprios certames; a gratificação de interiorização só nasce com compensação demonstrada,\ncomo exige a LDO. Os números de meta são ilustrativos e serão calibrados pelo Censo da\nPrecarização. Em sintonia com a regulamentação federal da negociação coletiva no setor\npúblico, que dará amparo nacional à mesa permanente com os servidores.\n\nEixo 11 · Trabalho autônomo com dignidade\nO que as evidências mostram. Parcela enorme da força de trabalho rondoniense é autônoma\nou informal: motoristas e entregadores de aplicativo, ambulantes, feirantes, diaristas,\ncostureiras, manicures, pedreiros, eletricistas, pescadores artesanais, mototaxistas. O Guia do\nTCE dá o pano de fundo — PIB por habitante 19% abaixo do brasileiro e o desafio de\ntransformar vocação produtiva em renda e capital humano. Esse trabalhador enfrenta três\nmuros ao mesmo tempo: crédito caro ou inexistente, ausência de proteção e falta de\nqualificação e de mercado. O autônomo é um agricultor com semente boa mas sem estrada: o\nEstado não precisa plantar por ele — precisa construir a estrada. Este eixo respeita as\ncompetências: o que é federal (INSS, regras do MEI) entra como articulação; o que é estadual\nentra como entrega. Quem trabalha por conta própria não pode continuar por conta própria.\n\n21"
+          },
+          {
+            "id": "compromissos-2",
+            "titulo": "Compromissos",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Compromissos\nC60. Banco do Trabalhador — microcrédito estadual: linha de microcrédito produtivo\norientado pela agência de fomento estadual, com agente de crédito que vai até o trabalhador,\ntíquetes de R$ 1 mil a R$ 21 mil para capital de giro e equipamento (moto, máquina de\ncostura, carrinho de lanche, ferramentas) e fundo de aval estadual que dispensa fiador do bom\npagador. Meta ilustrativa: 40 mil operações no quadriênio, com prioridade para mulheres\nchefes de família e jovens — em costura direta com o compromisso C31.\nC61. Rede Estadual de Qualificação Profissional: cursos gratuitos permanentes com\nSistema S, IFRO e escolas estaduais no contraturno, em trilhas curtas e práticas (elétrica,\nrefrigeração, estética, gastronomia, manutenção de celulares, marketing digital do pequeno\nnegócio), com bolsa-permanência para o autônomo de baixa renda — quem vive de diária não\npode parar de ganhar para estudar — e certificação com selo estadual reconhecido nas\ncompras públicas, na mesma engrenagem da educação profissional do compromisso C22.\nC62. Compras públicas como mercado garantido: regulamentação estadual do tratamento\ndiferenciado da Lei 14.133/2021 e da LC 123/2006 para destinar percentual das compras do\nEstado (uniformes escolares, merenda, pequenos reparos, manutenção) a MEIs, autônomos\nformalizados e cooperativas rondonienses, com portal simplificado de credenciamento: o\nautônomo se cadastra uma vez e recebe convites de cotação no celular. O mesmo instrumento\nganha dois braços novos. Primeiro: decreto regulamentando o art. 25, § 9º, II, da Lei\n14.133/2021, com cota de 3% a 6% de pessoas egressas do sistema prisional na mão de obra\ndos contratos de serviço do Estado — espelhando o Decreto federal 9.450/2018 — e a mesma\nalavanca do inciso I em favor de mulheres vítimas de violência doméstica, a custo\norçamentário zero. Segundo: a extensão da compra da agricultura familiar às demais\naquisições de alimento do Estado — hospitais, restaurantes populares, unidades\nsocioeducativas e prisionais — pela modalidade compra institucional do PAA, que admite até\nR$ 30 mil por família e por órgão comprador ao ano (Decreto 11.802/2023). Essa comida já é\ncomprada: muda o fornecedor, não a despesa.\nC63. Estatuto Estadual do Trabalhador de Aplicativo: no que é competência estadual:\npontos de apoio públicos (água, banheiro, sombra, tomada, wi-fi) nos grandes centros —\nmodelo que o Recife inaugurou em março de 2026 em parceria com plataforma, e que\nRondônia pode ser a primeira da Amazônia a adotar —, seguro coletivo contra acidentes para\ntrabalhadores cadastrados (custeio que só nasce com a fonte de compensação demonstrada,\ncomo exige a LDO), campanhas de segurança viária e mesa permanente de diálogo com\nplataformas e sindicatos. Com articulação às linhas federais de crédito para aquisição de\n22"
+          },
+          {
+            "id": "veiculos-e-motos-por-trabalhadores-de-aplicativo-e-a-agenda-federal-de-p",
+            "titulo": "veículos e motos por trabalhadores de aplicativo e à agenda federal de previdência do",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "veículos e motos por trabalhadores de aplicativo e à agenda federal de previdência do\ntrabalhador de plataforma.\nC64. Autônomo Legal — formalização assistida: mutirões itinerantes nos 52 municípios,\nem balcão único móvel com SEBRAE, Receita Federal e INSS — atuação por articulação, pois\nMEI e previdência são competência federal: formalização, regularização de débitos,\norientação previdenciária (o autônomo que não contribui está a um acidente da miséria) e\nemissão de documentos.\nC65. Cooperativismo e economia solidária: incubadora estadual de cooperativas de trabalho\n(costureiras, catadores, artesãos, pescadores artesanais), com assessoria jurídica e contábil\ngratuita nos dois primeiros anos, e feiras permanentes de economia solidária com logística\nsubsidiada. Dez autônomos frágeis viram um negócio com escala — na mesma costura do\ncompromisso C31 e do projeto internacional de bioeconomia já contratado. A incubadora\nganha linha específica para as agricultoras: apoio à obtenção do CAF jurídica, adequação\nsanitária das agroindústrias familiares e armazenagem e logística refrigerada compartilhada\nnos polos regionais — porque o gargalo documentado em Rondônia não é papel (95% das\nagroindústrias familiares já têm cadastro), é logística. A base social já está contratada: as 450\nmulheres do café e do cacau do projeto de bioeconomia. E a Lei 15.226/2025 dá prioridade\nexpressa a grupos de mulheres nas compras da alimentação escolar — prioridade que hoje está\nparada.\nC66. IPVA da ferramenta de trabalho: isenção ou redução de IPVA para motos de\nentregadores e mototaxistas cadastrados e para veículos de motoristas de aplicativo de baixa\nrenda, no modelo já aplicado aos taxistas — renúncia instituída nos termos do art. 14 da LRF,\ncom estimativa de impacto e medida de compensação demonstradas. Custo fiscal baixo,\nimpacto direto no bolso de quem trabalha com o próprio veículo. Cláusula de adaptação\ntributária: com a transição da reforma do consumo (CBS/IBS), o benefício será revisto e\nreenquadrado a cada exercício, para preservar seu efeito e sua legalidade no novo sistema.\nDe onde vem o dinheiro. Fundos constitucionais do Norte (FNO/Basa) — vocação natural\ndo microcrédito na região; parcerias com o Sistema S para a qualificação; emendas de\nbancada; e orçamento estadual com governança enxuta: superintendência do Trabalho e\nEmpreendedorismo Popular alocada em estrutura existente, com conselho paritário que inclui\nautônomos e trabalhadores de aplicativo — sem criar despesa obrigatória nova. Metas\npúblicas anuais auditáveis: operações de crédito, alunos certificados, autônomos formalizados\ne valor de compras públicas destinado ao segmento. Todos os números deste eixo são\nilustrativos, a calibrar na modelagem financeira.\n\n23"
+          },
+          {
+            "id": "eixo-12-esporte-e-lazer",
+            "titulo": "Eixo 12 · Esporte e lazer",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 12 · Esporte e lazer\nO que as evidências mostram. Rondônia tem uma política esportiva de outubro: o JIR —\ncriado em 1983 e tornado política pública permanente pela Lei estadual 3.665/2015 —\nmobiliza delegações de dezenas de municípios e revela talentos todos os anos. Mas o Bolsa\nAtleta estadual contempla apenas 58 atletas, paratletas e técnicos; as equipes do interior\nenfrentam falta de estrutura de treino e de recursos para transporte, alimentação e\nhospedagem; e a pasta responsável, a SEJUCEL, tem 119 servidores e nenhum efetivo — 88\nsão comissionados. A Lei Geral do Esporte (Lei federal 14.597/2023) condiciona os repasses\ndo Sistema Nacional do Esporte a três requisitos — conselho paritário em funcionamento,\nfundo estadual com recursos próprios e plano estadual do esporte — e esse tripé incompleto\nsignifica dinheiro federal parado na mesa. O talento aparece no JIR e se perde na falta de\npolítica: celeiro cheio, porteira fechada.\n\nCompromissos\nC67. Sistema Estadual do Esporte — a chave do cofre federal: plano estadual do esporte\nconstruído com o Conedel, fundo estadual com dotação própria e conselho paritário em pleno\nfuncionamento, habilitando Rondônia às transferências do Sistema Nacional do Esporte (Lei\n14.597/2023) e à captação da Lei de Incentivo ao Esporte (Lei 11.438/2006).\nC68. Bolsa Atleta 10x: ampliação progressiva das 58 bolsas atuais para a casa das centenas —\natleta, paratleta e técnico —, com trilha completa (jogos escolares, JIR, rendimento), critérios\npúblicos e pagamento em calendário fixo.\nC69. Quadra aberta, bairro vivo: cofinanciamento estadual para reforma, iluminação e\ngestão comunitária de quadras e ginásios nos 52 municípios, com horários públicos garantidos\n— com faixas dedicadas a idosos, pessoas com deficiência e juventude — — lazer de bairro é a\npolítica de prevenção mais barata que a segurança pública conhece. Fonte federal declarada:\ncofinanciamento do programa Arenas Brasil, que apoiou 500 unidades no ciclo atual e declara\nampliação no próximo.\nC70. Interior joga: dotação orçamentária anual, em calendário fixo, para a logística esportiva\n(transporte, alimentação e hospedagem) das delegações do interior no JIR e nas competições\nestaduais — a queixa número um do esporte amador resolvida no orçamento, não no\nimproviso.\n\n24"
+          },
+          {
+            "id": "c71-servidor-de-carreira-no-esporte-e-na-cultura-inclusao-da-sejucel-no",
+            "titulo": "C71. Servidor de carreira no esporte e na cultura: inclusão da SEJUCEL no Plano",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "C71. Servidor de carreira no esporte e na cultura: inclusão da SEJUCEL no Plano\nQuadrienal de Concursos — uma pasta com zero servidores efetivos não executa política\npública, executa evento.\nC72. Rondônia na Rota da Pesca Esportiva — o rio como emprego e lazer: inserção do\nestado na Rota da Pesca Amadora e Esportiva — protocolo firmado entre o Ministério da\nPesca, na gestão do candidato como Secretário Nacional, e os Ministérios do Turismo e da\nIntegração — com o Vale do Guaporé como destino âncora: ordenamento e licenciamento da\npesca esportiva, credenciamento de pousadas e guias locais, calendário de torneios integrado\nao JIR e aos festivais, e regra de ouro do pesque e solte com monitoramento. Turismo de pesca\né a indústria que paga quem mora no rio para conservar o rio — dinheiro de fora, peixe no\nlugar.\nC73. Jogos dos Povos Indígenas de Rondônia: instituição dos Jogos no calendário oficial\ndo Estado, com apoio logístico de transporte entre aldeias e centros urbanos, e\nreconhecimento das celebrações e dos jogos tradicionais dos povos Paiter Suruí, Cinta Larga,\nGavião e Kawazá como parte da política estadual de esporte e cultura, com apoio direto às\nassociações indígenas de artesanato e audiovisual.\nDe onde vem o dinheiro. Transferências do Sistema Nacional do Esporte, destravadas pelo\nC67; captação privada via Lei de Incentivo ao Esporte; programas federais e emendas de\ninfraestrutura esportiva; cofinanciamento municipal nas obras de bairro; e dotação própria do\nfundo estadual. Despesa nova modesta: o eixo é de estruturação e captação, não de gasto. O\nturismo da pesca esportiva entra por articulação federal (Rota da Pesca Amadora e Esportiva:\nPesca, Turismo e Integração) e investimento privado em pousadas e serviços — ao Estado\ncabem ordenamento, licenciamento e promoção.\n\nEixo 13 · Cultura do nosso estado\nO que as evidências mostram. A cultura de Rondônia tem palco e tem plateia: o Duelo na\nFronteira, em Guajará-Mirim, põe os bois-bumbás Flor do Campo e Malhadinho num\nbumbódromo lotado, com entrada gratuita; o Arraial Flor do Maracujá reúne mais de 40\ngrupos folclóricos e quadrilhas em Porto Velho; as quadrilhas juninas são, por lei federal (Lei\n14.900/2024), manifestação da cultura nacional; e o complexo da Estrada de Ferro MadeiraMamoré, revitalizado, iniciou em 2026 a candidatura a Patrimônio Mundial da UNESCO. O\nque falta não é verba, é execução: Rondônia é o último estado do país na execução da Política\nNacional Aldir Blanc — cerca de R$ 23 milhões federais deixaram de ser executados em 2025,\n\n25"
+          },
+          {
+            "id": "de-r-92-milhoes-previstos-e-o-ministerio-publico-federal-abriu-investiga",
+            "titulo": "de R$ 92 milhões previstos, e o Ministério Público Federal abriu investigação; da Lei Paulo",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "de R$ 92 milhões previstos, e o Ministério Público Federal abriu investigação; da Lei Paulo\nGustavo, estado e municípios executaram 39% dos R$ 42,68 milhões recebidos. Dinheiro\ndevolvido é festival que não aconteceu, fantasia que não foi costurada, artista que não foi\npago. A cultura rondoniense não sofre de falta de recurso — sofre de verba devolvida.\nDevolver verba da cultura é deixar a chuva bater no telhado sem calha: a água veio — e foi\nembora sem encher a caixa. Calendário de editais e painel público são a calha.\n\nCompromissos\nC74. Devolução zero — execução 100% da Aldir Blanc: força-tarefa de execução cultural\ncom calendário anual fixo de editais, equipe dedicada e painel público de execução da PNAB,\ncom meta declarada: nenhum real federal da cultura devolvido a partir de 2027.\nC75. Circuito Estadual da Cultura Popular: financiamento plurianual, via FEDEC-RO,\npara o Duelo na Fronteira, o Arraial Flor do Maracujá e os festivais dos 52 municípios, com\nedital específico para bois-bumbás, quadrilhas juninas e grupos folclóricos, incluídas as\nexpressões culturais dos povos indígenas, quilombolas e ribeirinhos do Guaporé, do Madeira e\ndo Mamoré — e uma regra de ouro: o recurso chega ao brincante, ao artesão e ao músico, não\napenas à estrutura do evento. Inclui o carnaval de rua — a Banda do Vai Quem Quer,\npatrimônio cultural imaterial do Estado (Lei 4.676/2019) e de Porto Velho (Lei 2.576/2019)\n— e os blocos tradicionais dos 52 municípios.\nC76. Madeira-Mamoré Patrimônio Mundial — parceria sem disputa de paternidade:\nadesão formal do Estado à candidatura à UNESCO liderada pela Prefeitura de Porto Velho\ncom o IPHAN, com contrapartida estadual nas restaurações da estação de Guajará-Mirim e da\nlocomotiva de Abunã. Patrimônio não tem lado: a ferrovia que custou uma vida por dormente\npertence a todos os rondonienses.\nC77. Cultura que dá emprego: trilhas de qualificação da economia criativa (costura de\nfantasias, alegorias, som, luz, produção de eventos) nos 7 municípios-chave, casadas com as\ncompras públicas e o microcrédito do Banco do Trabalhador já previstos neste plano.\nC78. Editais em linguagem simples: padronização e simplificação dos editais culturais, com\nmodelo único e prestação de contas simplificada nos termos da PNAB, para que o grupo de\nquadrilha do interior dispute em igualdade com o produtor profissional. Admitida a inscrição\npor vídeo gravado, relato oral e em língua materna, para que aldeia, quilombo e comunidade\nribeirinha não sejam excluídos pelo formulário.\n\n26"
+          },
+          {
+            "id": "c79-mecenato-rondoniense-a-empresa-entra-o-imposto-trabalha-aqui-projeto",
+            "titulo": "C79. Mecenato Rondoniense — a empresa entra, o imposto trabalha aqui: projeto de lei",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "C79. Mecenato Rondoniense — a empresa entra, o imposto trabalha aqui: projeto de lei\nestadual de incentivo à cultura e ao esporte via ICMS, nos moldes dos programas de São\nPaulo, Rio de Janeiro, Paraná e Rio Grande do Sul: a empresa contribuinte patrocina projeto\ncredenciado e compensa o valor no imposto, dentro de teto anual global fixado em lei, com\nconvênio CONFAZ, estimativa de impacto e compensação exigidas pelo art. 14 da LRF e\nrenúncia publicada no mesmo painel do C74. Completam o pacote: balcão estadual de\ncaptação nas leis federais de incentivo (Rouanet e Lei do Esporte), mirando empresas com\nsede fora do estado; venda em edital público de cotas de patrocínio e direitos de nome de\nequipamentos e festivais — receita sem nenhuma renúncia; e o selo Empresa do Esporte e da\nCultura de Rondônia, reputacional, sem qualquer vantagem em licitação. Começa pequeno\npor honestidade fiscal: a LDO 2027 tem margem zero, o teto inicial é baixo e cresce conforme\no resultado comprovado. Cláusula de adaptação tributária: com a transição da reforma do\nconsumo (CBS/IBS), o mecanismo será ajustado ao novo sistema, com validação de\nconsultoria tributária, para que o incentivo não vire litígio.\nC80. A cultura sai da capital — cota do interior e dinheiro na hora certa: no mínimo 50%\ndos recursos do FEDEC-RO e da PNAB destinados a proponentes sediados fora de Porto\nVelho, com reserva, dentro dessa cota, para coletivos indígenas, quilombolas e ribeirinhos, e\nantecedência mínima de seis meses entre o repasse e a data do evento apoiado — contada da\ndisponibilidade do recurso no exercício, com calendário de editais publicado até 31 de janeiro\nde cada ano. Verba que chega na véspera não vira festa: vira dívida.\nC81. Casa da Cultura Regional — quem escreve o projeto perto de quem faz: escritórios\nregionais de apoio ao produtor cultural em Ariquemes, Ji-Paraná, Cacoal, Vilhena, Rolim de\nMoura e Guajará-Mirim, com assessoria gratuita para elaboração de projeto e prestação de\ncontas, operando por contrato de serviço técnico e convênio de extensão com o IFRO e as\nuniversidades públicas, custeados pelo percentual de operacionalização da PNAB (Decreto\n11.740/2023, art. 13), em estrutura física já existente — sem criação de cargo e sem despesa\nobrigatória continuada. Rondônia não devolveu R$ 23 milhões da cultura por falta de projeto:\ndevolveu por falta de quem ajudasse a escrevê-lo.\nC82. Rondônia de todos os sotaques — a cultura de quem chegou: linha permanente de\napoio às culturas de migração que formaram o interior do estado — pomerana, gaúcha,\nparanaense, capixaba, mineira, nordestina e as demais —, com salvaguarda da língua\npomerana de Espigão d'Oeste, apoio à Pomer Fest e às festas de colonização e registro dessas\nmanifestações no patrimônio imaterial estadual. Rondônia é o estado onde a Amazônia fala\npomerano, gaúcho e nordestino na mesma feira — e nenhuma política cultural até hoje olhou\npara isso.\n27"
+          },
+          {
+            "id": "c83-galpoes-da-cultura-e-equipamento-que-nao-vira-ruina-galpoes-de-cultu",
+            "titulo": "C83. Galpões da Cultura e equipamento que não vira ruína: galpões de cultura folclórica",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "C83. Galpões da Cultura e equipamento que não vira ruína: galpões de cultura folclórica\nem Porto Velho e Guajará-Mirim para ensaio, confecção de alegorias e guarda de acervo em\nuso compartilhado; conclusão da reforma do Bumbódromo Márcio Paz Menacho —\nequipamento estadual (Lei 6.285/2025) —; e pavilhões culturais multiuso em municípios sem\nequipamento algum, a começar por Cabixi. Todo equipamento nasce com plano e custo de\nmanutenção identificados desde o projeto, na regra de governança deste plano. Fonte: a\nPNAB custeia construção e ampliação de equipamentos culturais (Lei 14.399/2022, art. 5º,\nX), somada a emendas parlamentares e ao FEDEC-RO. Alegoria guardada na chuva é\ndinheiro público derretendo em silêncio.\nC84. Circuito das Festas do Interior: linha de apoio própria, com edital específico e\nprestação de contas simplificada nos termos da PNAB e do Marco Regulatório das\nOrganizações da Sociedade Civil (Lei 13.019/2014), para as festas comunitárias do interior —\nas Festas do Milho de Ouro Preto do Oeste, Pimenta Bueno e Cabixi, a Festa do Peixe de\nPimenteiras do Oeste, a Cafecau de Cacoal, os festejos ribeirinhos do Baixo Madeira e as\nfestas de padroeiro dos 52 municípios —, com prioridade e contrapartida ampliada para as que\nrevertem receita a entidades de assistência social, e apoio da Casa da Cultura Regional na\nelaboração e no acerto de contas. A Festa do Peixe integra-se à Rota da Pesca Esportiva deste\nplano e a Cafecau ao território da Denominação de Origem Matas de Rondônia: cultura,\nturismo e renda no mesmo calendário.\nC85. Patrimônio Vivo com previsão orçamentária — calendário em lei, dinheiro no\nplanejamento: projeto de lei criando o Calendário Oficial do Patrimônio Cultural de\nRondônia, com o financiamento das manifestações nele registradas inscrito como programa\npróprio do PPA 2028–2031, dotação anual na LDO e na LOA de cada exercício e repasse em\ncalendário fixo publicado no painel deste eixo; conclusão do registro de salvaguarda de pelo\nmenos cinco manifestações no quadriênio; e apoio ao processo de reconhecimento federal da\nFesta do Divino do Vale do Guaporé junto ao IPHAN — que já é patrimônio estadual pela Lei\nnº 5.252/2022. Tradição de 130 anos não pode depender de emenda de última hora.\nDe onde vem o dinheiro. Recursos federais já destinados a Rondônia: parcelas anuais da\nPNAB (Lei 14.399/2022), saldos da Lei Paulo Gustavo, FEDEC-RO e emendas\nparlamentares. O custo estadual é majoritariamente de gestão — equipe, calendário e painel. É\no eixo mais barato deste plano: consiste em parar de devolver dinheiro. Aprovado o Mecenato\nRondoniense (C79), soma-se o patrocínio privado com compensação de ICMS, dentro de teto\nanual público.\n\n28"
+          },
+          {
+            "id": "eixo-14-governanca-o-eixo-que-amarra-todos-os-outros",
+            "titulo": "Eixo 14 · Governança — o eixo que amarra todos os outros",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 14 · Governança — o eixo que amarra todos os outros\nO que as evidências mostram. A conclusão transversal do Guia do TCE é que o problema de\nRondônia é institucional antes de ser setorial: planejamento de curto prazo, órgãos que não\nconversam, decisões sem evidência e execução sem acompanhamento. O Tribunal propõe um\nSistema Integrado de Governança — centro de governo forte, metas e painéis públicos, gestão\nde riscos, decisão baseada em evidências e profissionalização da alta administração. Governo\nsem centro é mutirão sem mestre de obras: todo mundo trabalha e a parede sai torta. O centro\nde governo é o mestre de obras com a planta na mão.\n\nCompromissos\nC86. Adoção declarada do Sistema Integrado de Governança proposto pelo controle\nexterno, com centro de governo responsável por coordenar prioridades transversais e painéis\npúblicos de metas.\nC87. Determinações do TCE viram metas de PPA: as recomendações e determinações do\nTribunal de Contas serão incorporadas ao PPA 2028–2031, com relatório anual público de\ncumprimento — o compromisso assumido diante da Corte e de todos os candidatos no\nencontro de 7 de agosto.\nC88. Profissionalização da alta administração: critérios técnicos de seleção e avaliação para\nos cargos estratégicos (CGE, Sefin, Sepog, Coges, PGE), preservando memória institucional e\ncontinuidade.\nC89. Governo de dados abertos: painéis públicos de execução — obras, filas de saúde, metas\nde educação, segurança e concessões — porque cobrança fácil é o melhor fiscal. Aproveitando\no compartilhamento federal de infraestrutura pública digital e com trilha estadual de\nletramento digital para servidores e cidadãos.\nC90. Manutenção antes da inauguração: adoção da governança da infraestrutura pública\nproposta pelo Guia — todo ativo do Estado (escola, hospital, rodovia, unidade de segurança)\npassa a ser gerido pelo ciclo de vida completo, com plano de manutenção e custo de\nconservação identificados desde o projeto. Patrimônio sem manutenção é obra parada em\ncâmera lenta; conservar é o investimento mais barato que existe.\nDe onde vem o dinheiro. Este é o eixo mais barato e mais rentável do plano: governança\ncusta decisão, não orçamento — e multiplica o retorno de todos os reais dos outros nove eixos.\n\n29"
+          },
+          {
+            "id": "os-primeiros-100-dias",
+            "titulo": "Os primeiros 100 dias",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "Os primeiros 100 dias\n•\n\nSala de Situação das Obras Paralisadas instalada, com a lista do TCE como linha de\nbase e o primeiro relatório público de repactuação federal.\n\n•\n\nPrograma Rondônia Protege as Mulheres lançado: adesão formal ao Alerta Mulher\nSegura, contratação dos primeiros kits de monitoramento e central 24h em operação.\n\n•\n\nOrçamento realista da SESAU apresentado, com auditoria dos reconhecimentos de\ndívida em curso e cronograma público do João Paulo II e do HEURO.\n\n•\n\nPROALFA dos Anos Finais e do Ensino Médio desenhado com a Seduc e pactuado\ncom o GAEPE-RO, com metas publicadas por região.\n\n•\n\nAuditoria independente do passivo da CAERD contratada, projetos de lei do\nPrograma Água Pública Sustentável (AFAC, aval e mútuo) prontos para envio à\nAssembleia, e posição pública definitiva sobre a concessão apresentada à sociedade.\n\n•\n\nSistema permanente de prevenção a queimadas enviado à Assembleia como projeto\nde lei, antes da estação seca.\n\n•\n\nFrente institucional da BR-364 instalada, com agenda protocolada junto à ANTT e\nao TCU e primeiro relatório público sobre o contrato de concessão.\n\n•\n\nCenso da Precarização em campo, com apoio da CGE, e projeto de lei do Plano\nQuadrienal de Concursos em elaboração para envio à Assembleia.\n\n•\n\nBanco do Trabalhador modelado junto à agência de fomento e ao Basa (FNO), com\nprimeiro mutirão Autônomo Legal realizado.\n\n•\n\nProjetos de lei do Sistema Estadual do Esporte (fundo e plano) e do Mecenato\nRondoniense enviados à Assembleia, calendário anual de editais da cultura\npublicado e painel de execução da PNAB no ar.\n\n•\n\nPainel público de metas no ar, com todos os compromissos numerados deste plano e\nseus indicadores de acompanhamento.\n\nNota metodológica e de fontes\nOs dados citados neste plano têm origem, salvo indicação expressa, no Guia Consolidado e na\napresentação oficial do Tribunal de Contas do Estado de Rondônia entregues aos candidatos\nno encontro técnico de 7 de agosto de 2026 (\"Os desafios dos próximos 4 anos\"), que\nconsolidam fontes oficiais: IBGE, Siconfi, Relatórios de Gestão Fiscal, LDO 2027, avaliações\n30"
+          },
+          {
+            "id": "atuariais-inep-saeb-saero-anuario-brasileiro-de-seguranca-publica-2026-f",
+            "titulo": "atuariais, INEP/Saeb, SAERO, Anuário Brasileiro de Segurança Pública 2026 (FBSP) e",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "atuariais, INEP/Saeb, SAERO, Anuário Brasileiro de Segurança Pública 2026 (FBSP) e\nprocessos de controle externo identificados no texto. Dados complementares: legislação\nfederal citada nominalmente (LC 212/2025; Leis 14.026/2020, 14.674/2023, 15.125/2025 e\n15.383/2026; Decreto 13.084/2026), páginas oficiais do BNDES, do Ministério do Meio\nAmbiente e do Governo de Rondônia. A coordenação de campanha mantém dossiê integral\ndas fontes, arquivado com data, à disposição da Justiça Eleitoral, da imprensa e da sociedade.\nOs diagnósticos adotados refletem a melhor evidência disponível na data de elaboração; nos\ntermos da doutrina de método deste plano (\"Evidência viva\"), cada diagnóstico será\nrevalidado tecnicamente antes de sua conversão em meta de PPA, e eventuais atualizações\nserão publicadas com a mesma transparência. Os valores e metas do Eixo 8 têm origem no\nPlano de Financiamento Estadual à CAERD — Programa Água Pública Sustentável\n(documento de trabalho da coligação, agosto de 2026), cujos montantes são ilustrativos e\nserão calibrados por diagnóstico técnico independente. O eixo transversal de pessoal cita\nainda o Portal da Transparência do Estado (consulta de agosto de 2026) e o Edital nº\n105/2026/SEGEP-GCP (13ª convocação do Processo Seletivo SESAU, Edital nº 346/2024),\ndocumentos arquivados no dossiê. O eixo do trabalho autônomo cita o precedente do Ponto\nde Apoio a entregadores do Recife (Prefeitura do Recife, março de 2026), arquivado no\ndossiê. Os dados dos Eixos 12 e 13 (esporte e cultura) foram verificados em agosto de 2026\nem fontes oficiais: Ministério Público Federal (apuração sobre a execução da PNAB em\nRondônia), Secom/Governo Federal (execução da Lei Paulo Gustavo), Portal da\nTransparência de Rondônia (quadro de pessoal da SEJUCEL) e portais do Governo de\nRondônia e da Prefeitura de Porto Velho. A proposta de mecenato estadual (C79) referência\nos programas de incentivo via ICMS de São Paulo (PROAC), Rio de Janeiro, Paraná\n(Profice) e Rio Grande do Sul (Pró-Cultura), verificados em fontes oficiais em agosto de\n2026.\n\nCompromisso final: este plano contém 90 compromissos\nnumerados e verificáveis (C1 a C90). Governar por evidência não\né elogiar dados em auditório — é aceitar ser medido por eles\ndepois. Aceitamos.\n\n31"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "b3fc0ecdd280d84b566559bc91c10e7ea2f35ce9bc367ade84e38e48b6585aa5"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "5ae751f7946101e67b0851af98c846b7c4e45da465381806381bb1c22d87a38a"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "b617e0ea4423cf9d8734073a0e5ed55492532d98e26d98ba040f2d672152c3f0"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "206794a30e00a14192fe4b16ad057d5b2f5169d3ee5bb4c65a7a1ac5f25f7316"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "e7aace6acf015bbb17e45f4380f2c063570e5780cc6c7c1744e23779966c838d"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "88a1bd4986897af3f54c93cb4dd7f534f8c399d353f23e421b5bc1b937096e27"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "515e03d31f61059c808dc6e0587e21319a3998e233b191fe2a334970ca8143cd"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "f726c696621e7cbd020861fd4b45c1a0fb7e7072ac2822f170d672d45b55af03"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "a0bc6619abd53835c74cebe91f0d8b3d6c00218b2af05437c3ca071b4653b864"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "22f8c702e7af06c50756347b1d2269cad594abc068a8e5cd42fab42a45acae1a"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "4c9bb49c391bb7213bdb2234bc134e322bad52823d2cbf0e01d284e9bd5c3f97"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "e0f16c402b50b256cdbe6e899fb2674ab3ad2d7b3ef8df8dc509877783d362a0"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "614c3e010086e179a5860b0c8ba52977391a23ef4c755b17c0f8fc3ee74da454"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "58bdb926859f9bbac0f01766fb9ad09422a67b78b2624241aa90189433ad2c74"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "ed86fff797dd9bd165e33a8016e0a114d1687a27f242493bfc50de94589b0817"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "e6ad9ed9da11e059b673bbad7833dce07aebf92f32c95495535b3c0ffd8bb91a"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "62f5bfc0a7947420ef31a21c8fd695119c531b1e458e11505830450ed48a6dad"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "98632370e9f77c07f5543c8204bb767d238fc7f20a2cea441a9079a67114419e"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "369c19b45990914abf768108bd5556a25b63544cc03c7cb1137a1a419023245b"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "311fb8b7b53a0f4e17370552632224e4a3d5cfe345176fa645a8e751050ea0db"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "8f738bc3b3423d4df0a84f8118656c1dde2343a7ce19dd489952eea574619502"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "be215da5c97cbe97f51b47870aea7a8f4665bcb7fdcee1f1dd28626d06e4ff62"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "cd3d1d40f8f6194b0b0f2eaaf74b18a1eb4fe02ddd3ec051cfe3642086f55bb6"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "d69dacc2968ff605d356d20d25d3b7e2bd6e1413bc9b0e68457c631812ea8aa1"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "555222517d5c056f04aac949b5d545a2287c565db6163be61712cb21e1f4bba2"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "931f3e94ddd899fc1a374e8c0f2e2143a205bbff7459a2e73cb7a511b58792c7"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "d62fd15b869172f915aea98aa8accac506d483c8b113b4f91956174d7f3b65d4"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "19465bfc1384484132a3189b9bc6fbcc59325be9f9fb83b50ca83425e36274d7"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "46ccc9f52d194a7a065018436f1b8a1417633171cc4d9e50e44356a7cc7bf7ed"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "e95765182409c226ec9dcd58a53cb4f606bd37796e327653e4592f7b93ff9f79"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "049d12d96ea1ab0373ada85d9a7e8b45755f4d92ee3bc47cb6bf8b88d45eba8d"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano prevê a implantação do Programa Fábrica Perto da Porteira para priorizar transformação local de derivados lácteos, hortifruti processado, insumos. O plano propõe a regionalização da UTI neonatal mediante um polo de terapia intensiva neonatal fora da capital, reduzindo deslocamentos de recém-nascidos. O plano prevê aplicar o PROALFA aos anos finais do ensino médio, com diagnóstico pelo SAERO, metas por escola, região, material estruturado. O plano propõe expandir videomonitoramento com IA, cercamento eletrônico, integração de bancos de dados para crimes patrimoniais, faixa de fronteira. O plano prevê instalar a Sala de Situação das Obras Paralisadas nos primeiros 100 dias, usando o levantamento do TCE como linha de base. O plano propõe regulamentar integralmente o sistema estadual de carbono jurisdicional no primeiro ano de mandato, com registro público auditável.",
+    "frases": [
+      {
+        "texto": "O plano prevê a implantação do Programa Fábrica Perto da Porteira para priorizar transformação local de derivados lácteos, hortifruti processado, insumos.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002542185:01",
+            "pagina": 4,
+            "trecho": "C1. Programa Fábrica Perto da Porteira: política estadual de substituição de importações e verticalização, priorizando as cadeias que o próprio TCE mapeou — derivados lácteos, hortifruti processado e insumos — com incentivo condicionado a transformação local, emprego e prazo, e cláusula de avaliação periódica de resultado."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe a regionalização da UTI neonatal mediante um polo de terapia intensiva neonatal fora da capital, reduzindo deslocamentos de recém-nascidos.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002542185:01",
+            "pagina": 7,
+            "trecho": "C16. Regionalização da UTI neonatal: ao menos um polo de terapia intensiva neonatal fora da capital, encerrando as viagens de 600 km de recém-nascidos em risco."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê aplicar o PROALFA aos anos finais do ensino médio, com diagnóstico pelo SAERO, metas por escola, região, material estruturado.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002542185:01",
+            "pagina": 9,
+            "trecho": "C21. PROALFA dos Anos Finais e do Ensino Médio: a mesma engenharia que funcionou — diagnóstico pelo SAERO, metas por escola e região, material estruturado, tutoria, recomposição de aprendizagem e formação docente orientada pelos resultados — aplicada à etapa em queda, exatamente como recomenda o Guia do TCE."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe expandir videomonitoramento com IA, cercamento eletrônico, integração de bancos de dados para crimes patrimoniais, faixa de fronteira.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002542185:01",
+            "pagina": 12,
+            "trecho": "C33. Expansão do modelo tecnológico comprovado: videomonitoramento com IA, cercamento eletrônico e integração de bancos de dados estendidos aos crimes contra o patrimônio e à faixa de fronteira — investimento de capital, que a evidência mostrou render mais que promessas genéricas de efetivo."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê instalar a Sala de Situação das Obras Paralisadas nos primeiros 100 dias, usando o levantamento do TCE como linha de base.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002542185:01",
+            "pagina": 14,
+            "trecho": "C38. Sala de Situação das Obras Paralisadas nos primeiros 100 dias: usando o levantamento do TCE e o portal Tô no Controle como linha de base, com meta pública de retomada e prestação de contas trimestral — metade das 119 obras tem origem federal e será repactuada com os ministérios."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe regulamentar integralmente o sistema estadual de carbono jurisdicional no primeiro ano de mandato, com registro público auditável.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002542185:01",
+            "pagina": 18,
+            "trecho": "Regulamentaremos a lei integralmente no primeiro ano de mandato, com registro público auditável espelhado no Registro Central da Lei federal nº 15.042/2024, nível de referência de emissões florestais (FREL) estadual próprio — hoje inexistente — e a titularidade estadual dos créditos gerados em unidades de conservação estaduais, expressamente reconhecida pelo art. 43, II, da mesma lei."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "agroindustria-local",
+        "titulo": "Agroindústria local",
+        "descricao": "Transformação local de cadeias produtivas.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002542185:01",
+            "pagina": 4,
+            "trecho": "C1. Programa Fábrica Perto da Porteira: política estadual de substituição de importações e verticalização, priorizando as cadeias que o próprio TCE mapeou — derivados lácteos, hortifruti processado e insumos — com incentivo condicionado a transformação local, emprego e prazo, e cláusula de avaliação periódica de resultado."
+          }
+        ]
+      },
+      {
+        "id": "uti-neonatal-regional",
+        "titulo": "UTI neonatal regional",
+        "descricao": "Regionalização da terapia intensiva neonatal.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002542185:01",
+            "pagina": 7,
+            "trecho": "C16. Regionalização da UTI neonatal: ao menos um polo de terapia intensiva neonatal fora da capital, encerrando as viagens de 600 km de recém-nascidos em risco."
+          }
+        ]
+      },
+      {
+        "id": "aprendizagem-escolar",
+        "titulo": "Aprendizagem escolar",
+        "descricao": "Aplicação do PROALFA aos anos finais do ensino médio.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002542185:01",
+            "pagina": 9,
+            "trecho": "C21. PROALFA dos Anos Finais e do Ensino Médio: a mesma engenharia que funcionou — diagnóstico pelo SAERO, metas por escola e região, material estruturado, tutoria, recomposição de aprendizagem e formação docente orientada pelos resultados — aplicada à etapa em queda, exatamente como recomenda o Guia do TCE."
+          }
+        ]
+      },
+      {
+        "id": "tecnologia-seguranca",
+        "titulo": "Tecnologia na segurança",
+        "descricao": "Expansão de ferramentas tecnológicas de monitoramento.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002542185:01",
+            "pagina": 12,
+            "trecho": "C33. Expansão do modelo tecnológico comprovado: videomonitoramento com IA, cercamento eletrônico e integração de bancos de dados estendidos aos crimes contra o patrimônio e à faixa de fronteira — investimento de capital, que a evidência mostrou render mais que promessas genéricas de efetivo."
+          }
+        ]
+      },
+      {
+        "id": "obras-paralisadas",
+        "titulo": "Obras paralisadas",
+        "descricao": "Instalação de uma sala de situação para acompanhamento das obras.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002542185:01",
+            "pagina": 14,
+            "trecho": "C38. Sala de Situação das Obras Paralisadas nos primeiros 100 dias: usando o levantamento do TCE e o portal Tô no Controle como linha de base, com meta pública de retomada e prestação de contas trimestral — metade das 119 obras tem origem federal e será repactuada com os ministérios."
+          }
+        ]
+      },
+      {
+        "id": "carbono-jurisdicional",
+        "titulo": "Carbono jurisdicional",
+        "descricao": "Regulamentação do sistema estadual de carbono jurisdicional.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002542185:01",
+            "pagina": 18,
+            "trecho": "Regulamentaremos a lei integralmente no primeiro ano de mandato, com registro público auditável espelhado no Registro Central da Lei federal nº 15.042/2024, nível de referência de emissões florestais (FREL) estadual próprio — hoje inexistente — e a titularidade estadual dos créditos gerados em unidades de conservação estaduais, expressamente reconhecida pelo art. 43, II, da mesma lei."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T19:46:32.292Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T19:49:17.741Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:1:documentos:RO:220002542185:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integralmente o compromisso C1 conforme descrito."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:1:documentos:RO:220002542185:01:numeros",
+        "verdict": "yes",
+        "reason": "Claim não contém números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:1:documentos:RO:220002542185:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:1:documentos:RO:220002542185:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (C1)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:1:documentos:RO:220002542185:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:1:documentos:RO:220002542185:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais do claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:2:documentos:RO:220002542185:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integralmente o compromisso C16."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:2:documentos:RO:220002542185:01:numeros",
+        "verdict": "yes",
+        "reason": "Claim não cita números específicos a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:2:documentos:RO:220002542185:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:2:documentos:RO:220002542185:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (C16)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:2:documentos:RO:220002542185:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:2:documentos:RO:220002542185:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais do claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:3:documentos:RO:220002542185:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma o compromisso C21 conforme descrito."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:3:documentos:RO:220002542185:01:numeros",
+        "verdict": "yes",
+        "reason": "Claim não contém números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:3:documentos:RO:220002542185:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor, mesmo que a fonte original tenha adjetivos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:3:documentos:RO:220002542185:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (C21)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:3:documentos:RO:220002542185:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:3:documentos:RO:220002542185:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais do claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:4:documentos:RO:220002542185:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integralmente o compromisso C33."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:4:documentos:RO:220002542185:01:numeros",
+        "verdict": "yes",
+        "reason": "Claim não contém números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:4:documentos:RO:220002542185:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:4:documentos:RO:220002542185:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (C33)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:4:documentos:RO:220002542185:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:4:documentos:RO:220002542185:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais do claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:5:documentos:RO:220002542185:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integralmente o compromisso C38."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:5:documentos:RO:220002542185:01:numeros",
+        "verdict": "yes",
+        "reason": "O prazo de 100 dias citado no claim está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:5:documentos:RO:220002542185:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:5:documentos:RO:220002542185:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (C38)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:5:documentos:RO:220002542185:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:5:documentos:RO:220002542185:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre as cláusulas materiais citadas no claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:6:documentos:RO:220002542185:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integralmente o compromisso C49 (carbono jurisdicional)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:6:documentos:RO:220002542185:01:numeros",
+        "verdict": "yes",
+        "reason": "O prazo 'primeiro ano de mandato' está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:6:documentos:RO:220002542185:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:6:documentos:RO:220002542185:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (carbono jurisdicional, C49)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:6:documentos:RO:220002542185:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:frase:6:documentos:RO:220002542185:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais citadas no claim."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:agroindustria-local:documentos:RO:220002542185:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo temático sustentado pela evidência do Programa Fábrica Perto da Porteira."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:agroindustria-local:documentos:RO:220002542185:01:numeros",
+        "verdict": "yes",
+        "reason": "Claim não contém números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:agroindustria-local:documentos:RO:220002542185:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:agroindustria-local:documentos:RO:220002542185:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (agroindústria)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:agroindustria-local:documentos:RO:220002542185:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:agroindustria-local:documentos:RO:220002542185:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo genérico coberto integralmente pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:uti-neonatal-regional:documentos:RO:220002542185:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo temático sustentado pela evidência do compromisso C16."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:uti-neonatal-regional:documentos:RO:220002542185:01:numeros",
+        "verdict": "yes",
+        "reason": "Claim não contém números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:uti-neonatal-regional:documentos:RO:220002542185:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:uti-neonatal-regional:documentos:RO:220002542185:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (saúde neonatal)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:uti-neonatal-regional:documentos:RO:220002542185:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:uti-neonatal-regional:documentos:RO:220002542185:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo genérico coberto integralmente pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:aprendizagem-escolar:documentos:RO:220002542185:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo temático sustentado pela evidência do compromisso C21."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:aprendizagem-escolar:documentos:RO:220002542185:01:numeros",
+        "verdict": "yes",
+        "reason": "Claim não contém números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:aprendizagem-escolar:documentos:RO:220002542185:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:aprendizagem-escolar:documentos:RO:220002542185:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (educação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:aprendizagem-escolar:documentos:RO:220002542185:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:aprendizagem-escolar:documentos:RO:220002542185:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo genérico coberto integralmente pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:tecnologia-seguranca:documentos:RO:220002542185:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo temático sustentado pela evidência do compromisso C33."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:tecnologia-seguranca:documentos:RO:220002542185:01:numeros",
+        "verdict": "yes",
+        "reason": "Claim não contém números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:tecnologia-seguranca:documentos:RO:220002542185:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:tecnologia-seguranca:documentos:RO:220002542185:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (segurança tecnológica)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:tecnologia-seguranca:documentos:RO:220002542185:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:tecnologia-seguranca:documentos:RO:220002542185:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo genérico coberto integralmente pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:obras-paralisadas:documentos:RO:220002542185:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo temático sustentado pela evidência do compromisso C38."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:obras-paralisadas:documentos:RO:220002542185:01:numeros",
+        "verdict": "yes",
+        "reason": "Claim não contém números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:obras-paralisadas:documentos:RO:220002542185:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:obras-paralisadas:documentos:RO:220002542185:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (obras públicas)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:obras-paralisadas:documentos:RO:220002542185:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:obras-paralisadas:documentos:RO:220002542185:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo genérico coberto integralmente pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:carbono-jurisdicional:documentos:RO:220002542185:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo temático sustentado pela evidência do compromisso C49."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:carbono-jurisdicional:documentos:RO:220002542185:01:numeros",
+        "verdict": "yes",
+        "reason": "Claim não contém números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:carbono-jurisdicional:documentos:RO:220002542185:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:carbono-jurisdicional:documentos:RO:220002542185:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente única (carbono jurisdicional)."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:carbono-jurisdicional:documentos:RO:220002542185:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542185:tema:carbono-jurisdicional:documentos:RO:220002542185:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo genérico coberto integralmente pela evidência."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RO:220002542185",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RO:220002542185:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 42032,
+          "cached_input_tokens": 15104,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3533,
+          "reasoning_output_tokens": 1829
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 31459,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 26641,
+          "output_tokens_details": {
+            "thinking_tokens": 711
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 31459,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 26641,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 31459,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 31459
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.41725540000000005
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T19:53:25Z",
+    "sourceSha256": "e72ce3dff33991e91de51e512b2061b816e69346d0dbe8e92e5627203b85e670",
+    "extractedTextSha256": "92f77e229131a2d96f9c562db33e460da8ac084f170eea4735938eea005e98fc",
+    "documentCount": 1,
+    "documentSetSha256": "faebc4507263a6d887f8c278e024726b93a7254fd210a4caa2edf0d5cf0f68f4",
+    "contentSha256": "ea9abb7cdd19f1849af8de3a1a8b7d53eae8aa6268589277392481f7b0e1fef9"
+  }
+}
