@@ -3,7 +3,9 @@
 -- Uma linha JSON por candidato público, com EXATAMENTE o que a ficha lê para
 -- montar selo, Destaques e cards de fonte:
 --   - verificacao_campos  (selo: chaves TSE + existing_profile_aggregate)
---   - pontos_visiveis     (aba Destaques exige >= 1; regra de 15/08)
+--   - pontos_visiveis     (itens editoriais publicados na aba Destaques)
+--   - destaques_totais    (controle para não mascarar item oculto sem revisão)
+--   - destaques_ocultos_revisados (vazio editorial deliberado e auditável)
 --   - coletas             (cards "Estado das outras fontes": as duas fontes
 --                          que src/lib/api.ts consulta em coleta_log_ultima)
 --   - ultima_atualizacao  (fallback do selo curado)
@@ -29,6 +31,20 @@ from (
       from pontos_atencao p
       where p.candidato_id = c.id
         and p.visivel = true
+    ),
+    'destaques_totais', (
+      select count(*)
+      from pontos_atencao p
+      where p.candidato_id = c.id
+    ),
+    'destaques_ocultos_revisados', (
+      select count(*)
+      from pontos_atencao p
+      where p.candidato_id = c.id
+        and p.visivel = false
+        and p.verificado = true
+        and p.despublicacao_motivo is not null
+        and p.despublicado_em is not null
     ),
     'coletas', (
       select coalesce(

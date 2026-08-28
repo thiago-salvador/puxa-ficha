@@ -1,5 +1,6 @@
 "use client"
 
+import { useLayoutEffect, useRef } from "react"
 import Link from "next/link"
 import type {
   GastoExecutivo,
@@ -179,19 +180,19 @@ function TeaserCard({
   return (
     <div
       data-pf-money-overview-card={moneyCardKind}
-      className={`rounded-[12px] border border-border/50 bg-card px-5 py-4 ${className ?? ""}`}
+      className={`flex min-h-[220px] flex-col rounded-[12px] border border-border/50 bg-card px-5 py-4 ${className ?? ""}`}
     >
       <div className="mb-3 flex items-center justify-between">
         <h2 className="text-[13px] font-semibold text-foreground">{title}</h2>
         <button
           type="button"
           onClick={onNavigate}
-          className="inline-flex items-center gap-0.5 text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:text-foreground"
+          className="inline-flex min-h-11 items-center gap-0.5 rounded-[8px] px-2 text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           {linkLabel} <ChevronRight className="size-3" />
         </button>
       </div>
-      <div data-pf-money-overview-content={moneyCardKind}>{children}</div>
+      <div className="min-h-0 flex-1" data-pf-money-overview-content={moneyCardKind}>{children}</div>
     </div>
   )
 }
@@ -203,6 +204,106 @@ function EmptyOverviewState() {
     <div className="rounded-[12px] border border-border/50 bg-card px-8 py-16 text-center">
       <h2 className="font-heading text-[28px] uppercase tracking-tight text-foreground">Perfil em construção</h2>
       <p className="mt-2 text-[15px] text-muted-foreground">Estamos coletando dados públicos sobre este candidato.</p>
+    </div>
+  )
+}
+
+const OVERVIEW_MASONRY_GAP_PX = 24
+
+function OverviewMasonryItem({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      className="min-w-0 w-full empty:hidden"
+      data-pf-profile-overview-item=""
+    >
+      {children}
+    </div>
+  )
+}
+
+function OverviewMasonry({ children }: { children: React.ReactNode }) {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useLayoutEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
+    const desktopQuery = window.matchMedia("(min-width: 768px)")
+    let animationFrame = 0
+
+    const resetItem = (item: HTMLElement) => {
+      item.style.position = ""
+      item.style.inset = ""
+      item.style.width = ""
+      item.style.transform = ""
+      delete item.dataset.pfProfileOverviewColumn
+    }
+
+    const layout = () => {
+      window.cancelAnimationFrame(animationFrame)
+      animationFrame = window.requestAnimationFrame(() => {
+        const items = Array.from(
+          container.querySelectorAll<HTMLElement>(":scope > [data-pf-profile-overview-item]"),
+        )
+
+        if (!desktopQuery.matches) {
+          items.forEach(resetItem)
+          container.style.height = ""
+          container.dataset.pfProfileOverviewLayout = "single-column"
+          return
+        }
+
+        const visibleItems = items.filter((item) => !item.matches(":empty"))
+        const columnWidth = (container.clientWidth - OVERVIEW_MASONRY_GAP_PX) / 2
+
+        for (const item of items) {
+          if (!visibleItems.includes(item)) {
+            resetItem(item)
+            continue
+          }
+          item.style.position = "absolute"
+          item.style.inset = "0 auto auto 0"
+          item.style.width = `${columnWidth}px`
+        }
+
+        const columnHeights = [0, 0]
+        for (const item of visibleItems) {
+          const column = columnHeights[0] <= columnHeights[1] ? 0 : 1
+          const x = column * (columnWidth + OVERVIEW_MASONRY_GAP_PX)
+          const y = columnHeights[column]
+          item.style.transform = `translate3d(${x}px, ${y}px, 0)`
+          item.dataset.pfProfileOverviewColumn = String(column + 1)
+          columnHeights[column] += item.getBoundingClientRect().height + OVERVIEW_MASONRY_GAP_PX
+        }
+
+        container.style.height = `${Math.max(...columnHeights, OVERVIEW_MASONRY_GAP_PX) - OVERVIEW_MASONRY_GAP_PX}px`
+        container.dataset.pfProfileOverviewLayout = "masonry"
+      })
+    }
+
+    const observer = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(layout)
+    observer?.observe(container)
+    container
+      .querySelectorAll<HTMLElement>(":scope > [data-pf-profile-overview-item]")
+      .forEach((item) => observer?.observe(item))
+    desktopQuery.addEventListener("change", layout)
+    layout()
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame)
+      observer?.disconnect()
+      desktopQuery.removeEventListener("change", layout)
+    }
+  }, [])
+
+  return (
+    <div
+      ref={containerRef}
+      data-pf-profile-overview-grid=""
+      data-pf-profile-overview-masonry=""
+      className="relative grid grid-cols-1 items-start gap-6 md:grid-cols-2"
+    >
+      {children}
     </div>
   )
 }
@@ -682,14 +783,16 @@ export function ProfileOverview({
   ficha,
   onNavigateTab,
   leadingCard,
+  trailingCard,
 }: {
   ficha: FichaCandidato
   onNavigateTab: (tabId: string) => void
   leadingCard?: React.ReactNode
+  trailingCard?: React.ReactNode
 }) {
   const hasDebateQuotes = hasCandidateDebatePressQuotes(ficha.slug, ficha.id)
 
-  if (!hasOverviewData(ficha) && !leadingCard && !hasDebateQuotes) {
+  if (!hasOverviewData(ficha) && !leadingCard && !trailingCard && !hasDebateQuotes) {
     return <EmptyOverviewState />
   }
 
@@ -715,53 +818,73 @@ export function ProfileOverview({
   const topGastos = getLatestSpending(gastos)
 
   return (
-    // `items-start` porque a grade esticava cada card até a altura do vizinho:
-    // um card curto (patrimônio de registro único) ao lado do card denso de
-    // financiamento virava uma caixa com centenas de pixels vazios dentro.
-    <div data-pf-profile-overview-grid="" className="grid grid-cols-1 items-start gap-6 md:grid-cols-2">
-      <PatrimonioTeaser
-        patrimonio={patrimonio}
-        summary={patrimonioSummary}
-        eleicoes={patrimonioEleicoes}
-        onNavigate={() => onNavigateTab("dinheiro")}
-      />
-      {leadingCard}
-      <FinancingTeaser
-        latestFin={latestFin}
-        pleitoLabel={latestFinPleitoLabel}
-        segments={finSegments}
-        onNavigate={() => onNavigateTab("dinheiro")}
-      />
-      <ContradictionsHighlight
-        votosContradicao={contradicoes}
-        pontosContradicao={pontosContradicao}
-        onNavigateTab={onNavigateTab}
-      />
-      <ProcessesTeaser processos={processos} onNavigate={() => onNavigateTab("justica")} />
-      <CandidateSitesCard
-        sites={ficha.sites_candidato?.sites}
-      />
-      <VotesTeaser
-        votos={votos}
-        contradicoes={contradicoes}
-        onNavigate={() => onNavigateTab("votos")}
-      />
-      <ParliamentarySpendingTeaser
-        topGastos={topGastos}
-        onNavigate={() => onNavigateTab("dinheiro")}
-      />
-      <ExecutiveSpendingTeaser
-        gastosExecutivo={gastosExecutivo}
-        onNavigate={() => onNavigateTab("dinheiro")}
-      />
-      <CareerTeaser
-        historico={historico}
-        historicoOrdenado={historicoOrdenado}
-        onNavigate={() => onNavigateTab("trajetoria")}
-      />
-      {hasDebateQuotes && (
-        <CandidateDebatesBentoCard candidateSlug={ficha.slug} candidateId={ficha.id} />
-      )}
-    </div>
+    <OverviewMasonry>
+      <OverviewMasonryItem>
+        <PatrimonioTeaser
+          patrimonio={patrimonio}
+          summary={patrimonioSummary}
+          eleicoes={patrimonioEleicoes}
+          onNavigate={() => onNavigateTab("dinheiro")}
+        />
+      </OverviewMasonryItem>
+      <OverviewMasonryItem>
+        {leadingCard}
+      </OverviewMasonryItem>
+      <OverviewMasonryItem>
+        <FinancingTeaser
+          latestFin={latestFin}
+          pleitoLabel={latestFinPleitoLabel}
+          segments={finSegments}
+          onNavigate={() => onNavigateTab("dinheiro")}
+        />
+      </OverviewMasonryItem>
+      <OverviewMasonryItem>
+        <ContradictionsHighlight
+          votosContradicao={contradicoes}
+          pontosContradicao={pontosContradicao}
+          onNavigateTab={onNavigateTab}
+        />
+      </OverviewMasonryItem>
+      <OverviewMasonryItem>
+        <ProcessesTeaser processos={processos} onNavigate={() => onNavigateTab("justica")} />
+      </OverviewMasonryItem>
+      <OverviewMasonryItem>{trailingCard}</OverviewMasonryItem>
+      <OverviewMasonryItem>
+        <CandidateSitesCard
+          sites={ficha.sites_candidato?.sites}
+        />
+      </OverviewMasonryItem>
+      <OverviewMasonryItem>
+        <VotesTeaser
+          votos={votos}
+          contradicoes={contradicoes}
+          onNavigate={() => onNavigateTab("votos")}
+        />
+      </OverviewMasonryItem>
+      <OverviewMasonryItem>
+        <ParliamentarySpendingTeaser
+          topGastos={topGastos}
+          onNavigate={() => onNavigateTab("dinheiro")}
+        />
+      </OverviewMasonryItem>
+      <OverviewMasonryItem>
+        <ExecutiveSpendingTeaser
+          gastosExecutivo={gastosExecutivo}
+          onNavigate={() => onNavigateTab("dinheiro")}
+        />
+      </OverviewMasonryItem>
+      <OverviewMasonryItem>
+        <CareerTeaser
+          historico={historico}
+          historicoOrdenado={historicoOrdenado}
+          onNavigate={() => onNavigateTab("trajetoria")}
+        />
+      </OverviewMasonryItem>
+      <OverviewMasonryItem>
+        {hasDebateQuotes && (
+          <CandidateDebatesBentoCard candidateSlug={ficha.slug} candidateId={ficha.id} />
+        )}
+      </OverviewMasonryItem>
+    </OverviewMasonry>
   )
 }

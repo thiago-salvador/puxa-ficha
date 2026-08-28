@@ -39,6 +39,33 @@ export function historicalCandidateRowMatches(
   return officialNames.some((official) => expectedNames.includes(official))
 }
 
+export function resolveLegacyReceiptSqIdentity(
+  row: Record<string, string>,
+  ano: number,
+  identities: Array<{
+    sqCandidato: string
+    uf?: string
+    candidato: { nome_completo: string; nome_urna: string }
+  }>,
+): { sqCandidato: string; uf: string } | undefined {
+  const uf = row.SG_UF_CANDIDATURA?.trim().toUpperCase()
+  if (!uf) return undefined
+
+  const matches = new Map<string, { sqCandidato: string; uf: string }>()
+  for (const identity of identities) {
+    const identityUf = identity.uf?.trim().toUpperCase()
+    if (!identityUf || identityUf !== uf) continue
+    if (!historicalCandidateRowMatches(row, identity.candidato)) continue
+    const match = { sqCandidato: identity.sqCandidato.trim(), uf: identityUf }
+    matches.set(financiamentoReceitaIdentityKey({ ...match, ano }), match)
+  }
+
+  if (matches.size > 1) {
+    throw new Error(`Financiamento ${ano}: identidade legada ambigua para nome e UF ${uf}`)
+  }
+  return matches.values().next().value
+}
+
 export function normalizeFinanciamentoReceitaRow(row: Record<string, string>): Record<string, string> {
   const sqCand = firstNonEmpty(row, [
     "SQ_CANDIDATO",

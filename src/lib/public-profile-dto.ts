@@ -360,14 +360,24 @@ export function gastoParlamentarExibivel(fonte: string | null | undefined): bool
 }
 
 function publicGastosParlamentares(row: FichaCandidato["gastos_parlamentares"][number], index: number) {
+  const detalhamentoBruto = row.detalhamento as unknown
+  const detalhamento = Array.isArray(detalhamentoBruto)
+    ? detalhamentoBruto
+    : detalhamentoBruto && typeof detalhamentoBruto === "object"
+      ? Object.entries(detalhamentoBruto).map(([categoria, valor]) => ({ categoria, valor }))
+      : []
+
   return {
     id: compactPublicId("gasto", row.id, index),
     ano: row.ano,
     total_gasto: row.total_gasto,
-    detalhamento: (row.detalhamento ?? []).map((item) => ({
-      categoria: item.categoria,
-      valor: item.valor,
-      fornecedor: item.fornecedor ? maskDocumentLikeSequences(item.fornecedor) : undefined,
+    detalhamento: detalhamento.map((item) => ({
+      categoria: typeof item.categoria === "string" ? item.categoria : "",
+      valor: typeof item.valor === "number" ? item.valor : Number(item.valor) || 0,
+      fornecedor:
+        "fornecedor" in item && typeof item.fornecedor === "string"
+          ? maskDocumentLikeSequences(item.fornecedor)
+          : undefined,
     })),
     gastos_destaque: (row.gastos_destaque ?? []).map((item) => ({
       descricao: maskDocumentLikeSequences(item.descricao),

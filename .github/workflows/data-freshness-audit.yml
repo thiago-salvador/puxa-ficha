@@ -1,0 +1,105 @@
+name: Atualização e completude dos dados
+
+on:
+  schedule:
+    - cron: "37 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: data-freshness-audit
+  cancel-in-progress: false
+
+jobs:
+  auditar:
+    name: Fonte oficial, candidaturas e SLA
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+      - uses: ./.github/actions/install-postgresql-client-17
+        timeout-minutes: 12
+      - name: Validar acesso de leitura
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SUPABASE_DB_URL:-}" ]; then
+            echo "::error::SUPABASE_DB_URL ausente. É o mesmo secret do backup-db.yml." >&2
+            exit 1
+          fi
+      - name: Gerar snapshot publicado em transação somente leitura
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          set -euo pipefail
+          mkdir -p reports/data-freshness
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -Atq \
+            -f scripts/audit/data-freshness-snapshot.sql \
+            > reports/data-freshness/published.json
+      - name: Comparar fonte oficial, catálogo e SLAs
+        id: audit
+        continue-on-error: true
+        run: npm run audit:data-freshness -- --published=reports/data-freshness/published.json
+      - name: Publicar resumo no run
+        if: always()
+        run: |
+          if [ -f reports/data-freshness/summary.md ]; then
+            cat reports/data-freshness/summary.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "## Auditoria sem resumo" >> "$GITHUB_STEP_SUMMARY"
+            echo "O snapshot ou o processo falhou antes de gerar os artefatos." >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Preservar evidências
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
+        with:
+          name: data-freshness-${{ github.run_id }}
+          path: reports/data-freshness/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bloquear quando houver erro de fonte ou revisão pendente
+        if: always() && steps.audit.outcome != 'success'
+        run: |
+          set -euo pipefail
+          echo "::error::A auditoria exige revisão. Consulte summary.md e diff.json no artefato." >&2
+          exit 1
+
+  notificar:
+    name: Criar ou encerrar alerta acionável
+    needs: auditar
+    if: always() && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: read
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Recuperar evidências da auditoria
+        continue-on-error: true
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: data-freshness-${{ github.run_id }}
+          path: reports/data-freshness/
+      - name: Sincronizar incidente destacado
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          scripts/audit/sync-data-freshness-issue.sh \
+            '${{ needs.auditar.result }}' \
+            '${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}' \
+            reports/data-freshness/summary.md \
+            thiago-salvador

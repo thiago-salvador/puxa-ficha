@@ -3,7 +3,11 @@ import test from "node:test"
 
 import { conferirReembolsos, declararJarbasNaoAplicavel } from "../scripts/lib/ingest-jarbas"
 import type { IngestResult } from "../scripts/lib/types"
-import { agregarDespesasDoAno } from "../scripts/lib/ingest-ceaps-senado"
+import {
+  agregarDespesasCeapsOficial,
+  agregarDespesasDoAno,
+  detalhamentoCeaps,
+} from "../scripts/lib/ingest-ceaps-senado"
 
 // Irmaos do incidente de 2026-08-04 (sancoes com `cpfCnpj`, parametro que a API
 // ignorava em silencio, devolvendo a lista nacional para todo candidato).
@@ -206,4 +210,40 @@ test("ceaps: so o ano pedido volta zerado quando todo valor e de outro ano", () 
   )
   assert.equal(conferencia.ok, true)
   assert.equal(conferencia.ok && conferencia.dados, null, "sem despesa do ano pedido, nada e gravado")
+})
+
+test("ceaps oficial: filtra senador e ano no conjunto anual", () => {
+  const conferencia = agregarDespesasCeapsOficial(
+    [
+      { codSenador: 456, ano: 2026, tipoDespesa: "Passagens", fornecedor: "A", data: "2026-02-01", valorReembolsado: 100.5 },
+      { codSenador: 999, ano: 2026, tipoDespesa: "Passagens", fornecedor: "B", data: "2026-02-02", valorReembolsado: 9000 },
+      { codSenador: 456, ano: 2025, tipoDespesa: "Passagens", fornecedor: "C", data: "2025-02-03", valorReembolsado: 8000 },
+      { codSenador: "456", ano: "2026", tipoDespesa: "Aluguel", fornecedor: "D", data: "2026-02-04", valorReembolsado: "200,25" },
+    ],
+    456,
+    2026,
+  )
+
+  assert.equal(conferencia.ok, true)
+  const dados = conferencia.ok ? conferencia.dados : null
+  assert.equal(dados?.total, 300.75)
+  assert.equal(dados?.porCategoria.PASSAGENS, 100.5)
+  assert.equal(dados?.porCategoria.ALUGUEL, 200.25)
+  assert.deepEqual(dados?.anosDescartados, ["2025"])
+})
+
+test("ceaps oficial: ausencia do senador no conjunto nao vira gasto de outra pessoa", () => {
+  const conferencia = agregarDespesasCeapsOficial(
+    [{ codSenador: 999, ano: 2026, tipoDespesa: "Passagens", valorReembolsado: 5000 }],
+    456,
+    2026,
+  )
+  assert.deepEqual(conferencia, { ok: true, dados: null })
+})
+
+test("ceaps grava detalhamento no contrato de lista consumido pela ficha", () => {
+  assert.deepEqual(detalhamentoCeaps({ PASSAGENS: 100.567, ALUGUEL: 200 }), [
+    { categoria: "PASSAGENS", valor: 100.57 },
+    { categoria: "ALUGUEL", valor: 200 },
+  ])
 })

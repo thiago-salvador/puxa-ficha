@@ -5,7 +5,8 @@ import { log, warn } from "./logger"
 import type { IngestResult } from "./types"
 import { motivoRecusaDeFonte } from "../../src/lib/public-attention-point"
 
-const TCU_BASE = "https://contas.tcu.gov.br/ords"
+const TCU_INABILITADOS_URL =
+  "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-inabilitados"
 
 function stripCPF(cpf: string): string {
   return cpf.replace(/[.\-]/g, "")
@@ -13,27 +14,79 @@ function stripCPF(cpf: string): string {
 
 interface TCUInabilitado {
   nome?: string
-  cpf?: string
-  dt_inicio?: string
-  dt_fim?: string
-  fundamentacao?: string
-  numero_acordao?: string
+  numeroRegistro?: string
+  dataAcordao?: string
+  dataFinalSancao?: string
+  numeroAcordaoFormatado?: string
+  linkDeliberacoesProcesso?: string
+  linkAcompanhamentoProcesso?: string
 }
 
 interface TCUCadirreg {
   nome?: string
   cpf?: string
-  tribunal?: string
-  numero_acordao?: string
-  exercicio?: string
+  numeroAcordaoFormatado?: string
+  numeroProcessoFormatado?: string
+  dataTransitoEmJulgado?: string
+  linkDeliberacoesProcesso?: string
+  linkAcompanhamentoProcesso?: string
+}
+
+interface FonteTCU {
+  titulo: string
+  url: string
+  data: string
+}
+
+const HOSTS_PUBLICOS_TCU = new Set(["contas.tcu.gov.br", "conecta-tcu.apps.tcu.gov.br"])
+
+/**
+ * A API oficial devolve links públicos do próprio processo. Preferimos o TVP,
+ * cuja URL tem o identificador no caminho, e recusamos host ou raiz genérica.
+ * CPF nunca entra na fonte pública.
+ */
+export function fontePublicaTCU(
+  registro: Pick<TCUInabilitado, "linkAcompanhamentoProcesso" | "linkDeliberacoesProcesso">,
+  titulo: string,
+  data = new Date(),
+): FonteTCU[] {
+  const candidatos = [registro.linkAcompanhamentoProcesso, registro.linkDeliberacoesProcesso]
+
+  for (const raw of candidatos) {
+    if (!raw) continue
+    try {
+      const url = new URL(raw)
+      const segmentos = url.pathname.split("/").filter(Boolean)
+      if (
+        url.protocol !== "https:" ||
+        !HOSTS_PUBLICOS_TCU.has(url.hostname) ||
+        segmentos.length < 2 ||
+        url.username ||
+        url.password ||
+        url.search
+      ) {
+        continue
+      }
+      return [{ titulo, url: url.toString(), data: data.toISOString().slice(0, 10) }]
+    } catch {
+      continue
+    }
+  }
+
+  return []
 }
 
 // Retorno null = fonte indisponível (HTTP != 200, payload inválido, rede).
 // null NUNCA pode ser tratado como lista vazia: vazio verdadeiro é 200 + [].
-async function fetchTCUInabilitados(cpf: string): Promise<TCUInabilitado[] | null> {
+export async function fetchTCUInabilitados(
+  cpf: string,
+  fetchImpl: typeof fetch = fetch,
+): Promise<TCUInabilitado[] | null> {
   try {
-    const res = await fetch(`${TCU_BASE}/condenacao/consulta/inabilitados/${cpf}`, {
-      headers: { Accept: "application/json" },
+    const res = await fetchImpl(TCU_INABILITADOS_URL, {
+      method: "POST",
+      headers: { Accept: "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify({ cpf }),
     })
     if (!res.ok) return null
     const data = await res.json()
@@ -50,9 +103,12 @@ async function fetchTCUInabilitados(cpf: string): Promise<TCUInabilitado[] | nul
 const TCU_CADIRREG_URL =
   "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-contas-irregulares"
 
-async function fetchTCUCadirreg(cpf: string): Promise<TCUCadirreg[] | null> {
+export async function fetchTCUCadirreg(
+  cpf: string,
+  fetchImpl: typeof fetch = fetch,
+): Promise<TCUCadirreg[] | null> {
   try {
-    const res = await fetch(TCU_CADIRREG_URL, {
+    const res = await fetchImpl(TCU_CADIRREG_URL, {
       method: "POST",
       headers: { Accept: "application/json", "Content-Type": "application/json" },
       body: JSON.stringify({ cpf }),
@@ -69,8 +125,9 @@ async function fetchTCUCadirreg(cpf: string): Promise<TCUCadirreg[] | null> {
 async function upsertPontoAtencao(
   candidatoId: string,
   titulo: string,
-  descricao: string
-): Promise<void> {
+  descricao: string,
+  fontes: FonteTCU[],
+): Promise<boolean> {
   const { data: existing } = await supabase
     .from("pontos_atencao")
     .select("id")
@@ -86,6 +143,7 @@ async function upsertPontoAtencao(
     gravidade: "critica",
     verificado: false,
     gerado_por: "automatico",
+    fontes,
   }
 
   // Guard de fonte (auditoria de 2026-07-24, achados V1 e A3).
@@ -96,20 +154,20 @@ async function upsertPontoAtencao(
   // Aqui a gente para ANTES, com aviso legivel, em vez de deixar o pipeline
   // estourar no meio.
   //
-  // Para religar esta rota: anexar em `fontes` a URL publica do TCU que
-  // sustenta a inabilitacao, com caminho (dominio nu nao passa) e SEM CPF na
-  // query string, que e dado pessoal e `fontes` e superficie publica.
-  const recusa = motivoRecusaDeFonte(row.gravidade, undefined)
+  const recusa = motivoRecusaDeFonte(row.gravidade, row.fontes)
   if (recusa) {
     warn("tcu", `ponto de atencao nao gravado (${recusa}): ${titulo}`)
-    return
+    return false
   }
 
+  let error
   if (existing) {
-    await supabase.from("pontos_atencao").update(row).eq("id", existing.id)
+    ;({ error } = await supabase.from("pontos_atencao").update(row).eq("id", existing.id))
   } else {
-    await supabase.from("pontos_atencao").insert(row)
+    ;({ error } = await supabase.from("pontos_atencao").insert(row))
   }
+  if (error) throw new Error(`Erro ao gravar ponto de atencao TCU: ${error.message}`)
+  return true
 }
 
 export async function ingestTCU(): Promise<IngestResult[]> {
@@ -191,48 +249,59 @@ export async function ingestTCU(): Promise<IngestResult[]> {
 
       if (tcuInabilitado) {
         const primeiro = inabilitados[0]
+        const fontes = fontePublicaTCU(primeiro, "TCU — processo de inabilitação")
         const descricao = [
-          primeiro.numero_acordao ? `Acórdão: ${primeiro.numero_acordao}` : null,
-          primeiro.dt_inicio ? `Início: ${primeiro.dt_inicio}` : null,
-          primeiro.dt_fim ? `Fim: ${primeiro.dt_fim}` : null,
-          primeiro.fundamentacao ? `Fundamento: ${primeiro.fundamentacao}` : null,
+          primeiro.numeroAcordaoFormatado ? `Acórdão: ${primeiro.numeroAcordaoFormatado}` : null,
+          primeiro.dataAcordao ? `Data do acórdão: ${primeiro.dataAcordao}` : null,
+          primeiro.dataFinalSancao ? `Fim da sanção: ${primeiro.dataFinalSancao}` : null,
         ]
           .filter(Boolean)
           .join(" | ")
 
-        await upsertPontoAtencao(
+        const gravado = await upsertPontoAtencao(
           candidatoId,
           "Inabilitado pelo TCU",
-          descricao || "Condenação de inabilitação registrada no TCU"
+          descricao || "Condenação de inabilitação registrada no TCU",
+          fontes,
         )
 
-        if (!result.tables_updated.includes("pontos_atencao")) {
-          result.tables_updated.push("pontos_atencao")
+        if (gravado) {
+          if (!result.tables_updated.includes("pontos_atencao")) {
+            result.tables_updated.push("pontos_atencao")
+          }
+          result.rows_upserted++
+        } else {
+          result.errors.push("Inabilitacao encontrada, mas sem link publico de processo do TCU")
         }
-        result.rows_upserted++
         log("tcu", `  ${cand.slug}: INABILITADO (${inabilitados.length} registro(s))`)
       }
 
       if (tcuContasIrregulares) {
         const primeiro = cadirreg[0]
+        const fontes = fontePublicaTCU(primeiro, "TCU — processo com contas julgadas irregulares")
         const descricao = [
-          primeiro.numero_acordao ? `Acórdão: ${primeiro.numero_acordao}` : null,
-          primeiro.tribunal ? `Tribunal: ${primeiro.tribunal}` : null,
-          primeiro.exercicio ? `Exercício: ${primeiro.exercicio}` : null,
+          primeiro.numeroAcordaoFormatado ? `Acórdão: ${primeiro.numeroAcordaoFormatado}` : null,
+          primeiro.numeroProcessoFormatado ? `Processo: ${primeiro.numeroProcessoFormatado}` : null,
+          primeiro.dataTransitoEmJulgado ? `Trânsito em julgado: ${primeiro.dataTransitoEmJulgado}` : null,
         ]
           .filter(Boolean)
           .join(" | ")
 
-        await upsertPontoAtencao(
+        const gravado = await upsertPontoAtencao(
           candidatoId,
           "Contas irregulares no TCU",
-          descricao || "Contas julgadas irregulares registradas no CADIRREG/TCU"
+          descricao || "Contas julgadas irregulares registradas no CADIRREG/TCU",
+          fontes,
         )
 
-        if (!result.tables_updated.includes("pontos_atencao")) {
-          result.tables_updated.push("pontos_atencao")
+        if (gravado) {
+          if (!result.tables_updated.includes("pontos_atencao")) {
+            result.tables_updated.push("pontos_atencao")
+          }
+          result.rows_upserted++
+        } else {
+          result.errors.push("Contas irregulares encontradas, mas sem link publico de processo do TCU")
         }
-        result.rows_upserted++
         log("tcu", `  ${cand.slug}: CONTAS IRREGULARES (${cadirreg.length} registro(s))`)
       }
 

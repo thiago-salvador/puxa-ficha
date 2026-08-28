@@ -1,0 +1,85 @@
+{
+  "_comentario": "Autoriza o schema de quarentena e a substituição atômica do snapshot oficial de chapas pelo pacote TSE gerado em 27/08/2026. Reaproveita 44 fichas por nome civil exato, cria somente Rico Pinheiro e Well Macedo e mantém combinações ambíguas fora da view pública.",
+  "recorte": "chapas-tse-20260827",
+  "migrations": [
+    "20260828025028_chapas_2026_quarentena_schema.sql",
+    "20260828025037_chapas_2026_tse_20260827.sql"
+  ],
+  "fonte": "TSE Dados Abertos candidatos 2026, consulta_cand_2026.zip, SHA-256 eae2178d1d87c6f66c81ac5c6a56f10118a0bff373068135531315cec6f74a27, Last-Modified Thu, 27 Aug 2026 15:35:38 GMT.",
+  "coorte": [
+    "rico-pinheiro",
+    "well-macedo"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "rico-pinheiro",
+      "campos": [
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "data_nascimento",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "verificacao_campos",
+        "ultima_atualizacao"
+      ]
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "well-macedo",
+      "campos": [
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "data_nascimento",
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "fonte_dados",
+        "verificacao_campos",
+        "ultima_atualizacao"
+      ]
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "chapas_2026",
+      "ref": "snapshot-20260827",
+      "campos": [
+        "payload",
+        "chave",
+        "eleicao_codigo",
+        "eleicao_data",
+        "uf",
+        "cargo_titular",
+        "sq_coligacao",
+        "identidade_status",
+        "vinculo_titular_status",
+        "tse_situacao_codigo",
+        "titular_candidato_id",
+        "vice_candidato_id",
+        "titular_sq_candidato",
+        "vice_sq_candidato",
+        "nomes",
+        "partidos",
+        "fonte_url",
+        "fonte_sha256",
+        "snapshot_em"
+      ]
+    }
+  ]
+}

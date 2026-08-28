@@ -29,12 +29,58 @@ import {
   financiamentoReceitaIdentityKey,
   historicalCandidateRowMatches,
   normalizeFinanciamentoReceitaRow,
+  resolveLegacyReceiptSqIdentity,
 } from "./financiamento-receita-legacy-row"
 import { downloadToFile } from "./download-to-file"
 
 const DATA_DIR = resolve(process.cwd(), "data/tse")
-const DEFAULT_ANOS = [2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024]
+export const DEFAULT_TSE_ANOS = [
+  2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024,
+]
 const KEEP_TSE_DOWNLOADS = process.env.PF_KEEP_TSE_DOWNLOADS === "1"
+
+/**
+ * Recorte explícito usado pelos shards do workflow. Ausente ou vazio preserva
+ * o lote completo; valores declarados falham fechado para ano estranho,
+ * repetido ou item vazio, evitando cobertura aparentemente completa e incorreta.
+ */
+export function parseTseYearsEnv(value: string | undefined): number[] {
+  if (value === undefined || value.trim() === "") return [...DEFAULT_TSE_ANOS]
+
+  const rawYears = value.split(",").map((year) => year.trim())
+  if (rawYears.length === 0 || rawYears.some((year) => year === "")) {
+    throw new Error("PF_TSE_ANOS deve listar anos separados por virgula")
+  }
+
+  const years = rawYears.map((year) => Number(year))
+  if (years.some((year) => !Number.isInteger(year) || !DEFAULT_TSE_ANOS.includes(year))) {
+    throw new Error(`PF_TSE_ANOS contem ano invalido: ${value}`)
+  }
+  if (new Set(years).size !== years.length) {
+    throw new Error(`PF_TSE_ANOS contem ano repetido: ${value}`)
+  }
+
+  return years
+}
+
+/**
+ * O pacote de 2018 inclui arquivos auxiliares de doador originario junto das
+ * receitas principais. Eles descrevem a cadeia do recurso, mas nao carregam a
+ * identidade da candidatura e nao podem entrar na soma por SQ_CANDIDATO.
+ */
+export function isDoadorOriginarioReceiptSource(pathOrName: string): boolean {
+  return /doador[ _-]*originario/i.test(pathOrName)
+}
+
+/**
+ * Alguns CSVs historicos do proprio TSE usam U+00BF como marcador de lista ou
+ * separador. Normalizamos apenas esse caractere documentado para hifen e ainda
+ * submetemos o resultado ao guard geral de texto publico.
+ */
+export function sanitizeTseLegacyAssetText(value: string, context: string): string {
+  const normalized = value.replace(/\s*¿\s*/g, " - ").trim()
+  return sanitizePublicTextOrThrow(normalized, context)
+}
 
 function getGovernorUFs(candidatos: CandidatoConfig[], slugAllowlist?: Set<string> | null): string[] {
   return [
@@ -139,7 +185,13 @@ function collectReceitasCandidatoSourceFiles(rootDir: string): string[] {
       else if (d.isFile()) {
         const lower = d.name.toLowerCase()
         if (!(lower.endsWith(".csv") || lower.endsWith(".txt"))) continue
-        if (lower.includes("receita") && lower.includes("candidat")) results.push(p)
+        if (
+          lower.includes("receita") &&
+          lower.includes("candidat") &&
+          !isDoadorOriginarioReceiptSource(lower)
+        ) {
+          results.push(p)
+        }
       }
     }
   }
@@ -393,11 +445,11 @@ async function processPatrimonio(
         slug: cand.slug,
         sourceKey: csvPath,
         ordem: row.NR_ORDEM_BEM_CANDIDATO || "",
-        tipo: sanitizePublicTextOrThrow(
+        tipo: sanitizeTseLegacyAssetText(
           row.DS_TIPO_BEM_CANDIDATO,
           `bem-candidato:${cand.slug}:${ano}:${sq}:tipo`,
         ),
-        descricao: sanitizePublicTextOrThrow(
+        descricao: sanitizeTseLegacyAssetText(
           maskDocumentLikeSequences(row.DS_BEM_CANDIDATO || ""),
           `bem-candidato:${cand.slug}:${ano}:${sq}:descricao`,
         ),
@@ -555,6 +607,14 @@ async function processFinanciamento(
   const aggregated = new Map<string, FinData>()
   // Dedup: mesma receita pode aparecer em CSV _BR e _UF; SQ_RECEITA e unico por linha TSE.
   const seenReceipts = new Set<string>()
+  const legacyIdentityTargetsByUf = new Map<string, SqCandidateIdentity[]>()
+  for (const identity of sqMap.values()) {
+    const uf = identity.uf?.trim().toUpperCase()
+    if (!uf) continue
+    const targets = legacyIdentityTargetsByUf.get(uf) ?? []
+    targets.push(identity)
+    legacyIdentityTargetsByUf.set(uf, targets)
+  }
 
   log(
     "tse",
@@ -565,6 +625,15 @@ async function processFinanciamento(
     await parseCSV(csvPath, (raw) => {
       const row = normalizeFinanciamentoReceitaRow(raw)
       if (!row.SG_UF_CANDIDATURA && ufFromPath) row.SG_UF_CANDIDATURA = ufFromPath
+      if (!row.SQ_CANDIDATO?.trim()) {
+        const legacyTargets = legacyIdentityTargetsByUf.get(
+          row.SG_UF_CANDIDATURA?.trim().toUpperCase() ?? "",
+        ) ?? []
+        const legacyIdentity = resolveLegacyReceiptSqIdentity(row, ano, legacyTargets)
+        if (!legacyIdentity) return
+        row.SQ_CANDIDATO = legacyIdentity.sqCandidato
+        row.SG_UF_CANDIDATURA = legacyIdentity.uf
+      }
       const identidadeDaLinha = financiamentoReceitaIdentity(row, ano)
       const sq = identidadeDaLinha.sqCandidato
 
@@ -883,7 +952,7 @@ export type IngestTseOptions = {
 }
 
 export async function ingestTSE(
-  anos: number[] = DEFAULT_ANOS,
+  anos: number[] = [...DEFAULT_TSE_ANOS],
   options: IngestTseOptions = {}
 ): Promise<IngestResult[]> {
   const candidatos = await loadCandidatosPublicos()
@@ -1135,7 +1204,7 @@ function parseIngestTseCli(): { anos: number[]; options: IngestTseOptions } {
           )
         : null
   return {
-    anos: anos.length > 0 ? anos : DEFAULT_ANOS,
+    anos: anos.length > 0 ? anos : [...DEFAULT_TSE_ANOS],
     options: {
       skipPatrimonio,
       patrimonioSlugAllowlist: patrimonioAllow,

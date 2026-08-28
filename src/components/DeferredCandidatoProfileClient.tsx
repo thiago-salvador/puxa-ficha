@@ -66,9 +66,13 @@ function CandidatoProfileSkeleton({ overview }: { overview: DeferredProfileOverv
     overview.processosVerificacao,
   )
   return (
-    <section className="mx-auto max-w-7xl px-5 py-8 md:px-12 lg:py-12">
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5 [&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
-        <div className="flex flex-col gap-1.5 rounded-[12px] border border-border/50 bg-card px-4 py-3">
+    <section className="mx-auto max-w-7xl px-5 py-8 md:px-12 lg:py-12" aria-busy="true" aria-labelledby="candidate-profile-loading-title">
+      <h2 id="candidate-profile-loading-title" className="sr-only">Carregando detalhes da ficha</h2>
+      <div role="status" className="mb-4 rounded-[8px] border border-border bg-muted/25 px-4 py-3 text-sm font-semibold text-muted-foreground">
+        Carregando indicadores e seções da ficha...
+      </div>
+      <div className="grid grid-cols-2 items-stretch gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5 [&>*]:h-full [&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
+        <div className="flex min-h-[112px] flex-col gap-1.5 rounded-[12px] border border-border/50 bg-card px-4 py-3">
           <span
             data-pf-overview-processos={String(processosDisplay.value)}
             data-pf-overview-raw={overview.processos}
@@ -85,7 +89,7 @@ function CandidatoProfileSkeleton({ overview }: { overview: DeferredProfileOverv
             </span>
           )}
         </div>
-        <div className="flex flex-col gap-1.5 rounded-[12px] border border-border/50 bg-card px-4 py-3">
+        <div className="flex min-h-[112px] flex-col gap-1.5 rounded-[12px] border border-border/50 bg-card px-4 py-3">
           <span
             data-pf-overview-patrimonio={formatOverviewNumber(overview.patrimonio)}
             data-pf-overview-raw={overview.patrimonio ?? undefined}
@@ -97,7 +101,7 @@ function CandidatoProfileSkeleton({ overview }: { overview: DeferredProfileOverv
             Patrimônio
           </span>
         </div>
-        <div className="flex flex-col gap-1.5 rounded-[12px] border border-border/50 bg-card px-4 py-3">
+        <div className="flex min-h-[112px] flex-col gap-1.5 rounded-[12px] border border-border/50 bg-card px-4 py-3">
           <span
             data-pf-overview-mudancas={overview.mudancas ?? "—"}
             data-pf-overview-raw={overview.mudancas ?? undefined}
@@ -115,10 +119,10 @@ function CandidatoProfileSkeleton({ overview }: { overview: DeferredProfileOverv
           )}
         </div>
       </div>
-      <div className="mt-6 h-12 rounded-[8px] border border-border bg-muted/25" />
+      <div className="mt-6 h-12 motion-safe:animate-pulse rounded-[8px] border border-border bg-muted/25" />
       <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {Array.from({ length: 4 }).map((_, index) => (
-          <div key={index} className="h-24 rounded-[8px] border border-border bg-muted/25" />
+          <div key={index} className="h-24 motion-safe:animate-pulse rounded-[8px] border border-border bg-muted/25" />
         ))}
       </div>
     </section>
