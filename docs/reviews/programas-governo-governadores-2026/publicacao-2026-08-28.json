@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T19:19:12Z",
+  "reviewedAt": "2026-08-28T19:22:14Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 109,
-    "human_review_required": 35
+    "approved": 110,
+    "human_review_required": 34
   },
   "items": [
     {
@@ -726,14 +726,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PB:150002540204",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PB",
       "slug": "yuri-ezequiel",
       "sqCandidato": "150002540204",
       "nomeUrna": "YURI EZEQUIEL",
       "partido": "UP",
       "sourceState": "em_revisao",
-      "reason": "yuri-ezequiel: Eval tem 3 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PE:170002537320",

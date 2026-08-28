@@ -1,0 +1,818 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PB",
+    "sqCandidato": "150002540204",
+    "slug": "yuri-ezequiel",
+    "nomeUrna": "YURI EZEQUIEL",
+    "partido": "UP",
+    "arquivoNome": "2026PB150002540204_01.pdf",
+    "arquivoNoPacote": "PB/2026PB150002540204_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PB.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PB:150002540204:01",
+      "fonte": {
+        "arquivoNome": "2026PB150002540204_01.pdf",
+        "arquivoNoPacote": "PB/2026PB150002540204_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PB.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "0e8924b4a2abfc473c83dde63632c96e06105f3eb96df8e011d94a2163451dcb",
+        "extractedTextSha256": "ebe0855e610a04dec3c34543ac50f78bbe0817a4c24db024d4703dab29ae1b0a",
+        "paginas": 7,
+        "secoes": [
+          {
+            "id": "paraiba-para-quem-trabalha",
+            "titulo": "PARAÍBA PARA QUEM TRABALHA",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PARAÍBA PARA QUEM TRABALHA\nPlano de governo da Unidade Popular para o Estado da Paraíba\nA Paraíba é um estado profundamente marcado pela concentração da riqueza, pelo\ndomínio histórico das oligarquias e pela dependência econômica e pela submissão aos interesses\ndo grande capital nacional e internacional. Enquanto uma minoria acumula lucros por meio da\nexploração do trabalho, da privatização do patrimônio público e da captura do Estado, a imensa\nmaioria do povo trabalhador enfrenta baixos salários, desemprego, precarização dos serviços\npúblicos, concentração fundiária e a negação de direitos fundamentais. Essa realidade é\nconsequência direta do capitalismo e do imperialismo, que transformam nossas riquezas naturais,\nnosso trabalho e nosso território em fontes permanentes de exploração.\nA Unidade Popular pelo Socialismo apresenta este programa como um instrumento de luta\ne organização do povo paraibano. Nosso compromisso é construir um governo dos trabalhadores\ne das trabalhadoras, orientado pelos princípios do socialismo, do anti-imperialismo, da soberania\npopular e da democracia de participação direta, colocando a economia, o Estado e os recursos\npúblicos a serviço da maioria da população. Nosso programa aponta para um novo projeto de\ndesenvolvimento baseado no fortalecimento das empresas públicas, na planificação democrática\nda economia, na reforma agrária e urbana populares, na ampliação dos direitos sociais e na\nconstrução do poder popular como caminho para superar o domínio das oligarquias e abrir\nperspectivas para uma sociedade socialista.\n\n1. ECONOMIA, TRABALHO E DESENVOLVIMENTO REGIONAL\nO desenvolvimento da Paraíba deve servir aos interesses da classe trabalhadora e não à\nacumulação privada de grandes empresários e grupos financeiros. Nossa proposta rompe com a\nlógica neoliberal, fortalece o papel do Estado na economia e garante que a riqueza produzida pelo\npovo permaneça na Paraíba para financiar emprego, direitos e desenvolvimento regional\nequilibrado.\n1"
+          },
+          {
+            "id": "pagina-2",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "●\n\nEmprego e jornada: Redução da jornada de trabalho para o regime geral de 30 horas\nsemanais (e limite máximo de 6 horas diárias) para todo o funcionalismo público estadual,\nsem redução salarial.\n\n●\n\nEstabilidade e valorização: Realização de concurso público para preenchimento das vagas\ndispostas no funcionalismo público estadual. Fim das Organizações Sociais e da\nterceirização do serviço público.\n\n●\n\nCombate ao desemprego: Criação de frentes estaduais de trabalho para garantir emprego a\ntodos os jovens e adultos paraibanos, focadas em infraestrutura social.\n\n●\n\nRenda: Implementação do salário mínimo regional com reajuste de 100% do salário mínimo.\n\n●\n\nControle social e fim dos subsídios: Criação de Conselhos Populares de Planejamento na\nParaíba para gerir o orçamento estadual e combater as desigualdades entre Litoral,\nAgreste, Borborema e Sertão. Fim imediato de todos os subsídios e incentivos fiscais e\nfinanceiros concedidos pelo Estado aos monopólios, grandes empresários e\nagroexportadores, substituídos por auditoria popular.\n\n●\n\nDesenvolvimento estratégico: Fortalecimento da economia através das políticas de\ndesenvolvimento das empresas públicas em setores estratégicos da indústria, serviços e\nturismo.\n\n●\n\nReforma Bancária e Financeira: Fim da submissão do Estado aos donos do dinheiro e ao\ncontrole de grupos como o Banco Master. Criação do Banco Estadual da Paraíba sob\ncontrole popular para combater juros abusivos.\n\n●\n\nCombate à espoliação: Fim do envio de riquezas e lucros gerados na Paraíba para grandes\nempresas e acionistas estrangeiros.\n\n●\n\nAuditoria e suspensão da dívida pública estadual: Garantia de orçamento para os setores\nsociais.\n\n2"
+          },
+          {
+            "id": "pagina-3",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "●\n\nCentralização do comércio exterior: Garantir o desenvolvimento econômico com base nos\nprincípios do internacionalismo, sem negócios com países que praticam a guerra e\npromovem genocídios.\n\n2. REESTATIZAÇÃO E INFRAESTRUTURA ESTADUAL\nOs serviços essenciais e a infraestrutura estratégica não podem permanecer\nsubordinados ao lucro privado. Defendemos a retomada do controle público sobre os setores\nfundamentais da economia, garantindo planejamento estatal, eficiência social e acesso universal à\npopulação.\n●\n\nReestatização de empresas estratégicas: Fim definitivo de leilões, parcerias públicoprivadas (PPPs) e concessões ao capital financeiro.\n\n●\n\nInfraestrutura e transportes: Criação da Empresa Paraibana de Portos, Aeroportos,\nRodovias e Ferrovias para retomar a administração pública sobre os eixos logísticos da\nescoação da produção.\n\n●\n\nEstatização do transporte e Passe Livre: Criação da Empresa Pública de Transporte Coletivo\nIntermunicipal ligando as microrregiões do estado, assegurando as gratuidades (Passe\nLivre) e os descontos previstos em lei.\n\n●\n\nEmpresa pública de transporte municipal, garantindo que todas as cidades com mais de 50\nmil habitantes tenham frotas públicas com a implementação do Passe Livre.\n\n●\n\nCriação da Empresa Pública de Infraestrutura e Obras: Fim dos contratos espúrios com as\ngrandes empreiteiras.\n\n3. REFORMA AGRÁRIA, URBANA E HABITAÇÃO NA PARAÍBA\nA terra e a cidade devem cumprir função social. Nosso programa enfrenta o latifúndio, a\nespeculação imobiliária e o abandono de imóveis, assegurando moradia digna, soberania alimentar\ne desenvolvimento baseado na agricultura popular e na justiça social.\n3"
+          },
+          {
+            "id": "pagina-4",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "●\n\nReforma Agrária Popular e combate ao latifúndio: Desapropriação imediata de todos os\nlatifúndios improdutivos e estatização das terras. Apoio total à agricultura familiar com\nfoco na soberania alimentar.\n\n●\n\nCumprimento da Constituição contra o trabalho escravo: Confisco imediato das terras e\npropriedades de empresários envolvidos em trabalho análogo à escravidão, destinando\nessas áreas diretamente para o assentamento e reforma agrária, conforme determina o\nArtigo 243 da Constituição Federal.\n\n●\n\nSoberania alimentar e Agroecologia: Implementação do controle estatal de preços dos\nalimentos básicos através da revitalização, reorganização e fortalecimento da EMPASA e\ncriação dos Mercados Populares com controle de preço e incentivo do Estado, combatendo\na inflação e o lucro da fome, com redução rigorosa e proibição do uso de agrotóxicos já\nproibidos internacionalmente.\n\n●\n\nReforma Urbana: Mapeamento e confisco de imóveis urbanos abandonados e vazios\ndemográficos na Paraíba, destinando-os para moradia popular e zerando o déficit\nhabitacional.\n\n4. DIREITOS SOCIAIS: EDUCAÇÃO, SAÚDE E CULTURA\nEducação, saúde e cultura são direitos universais, não mercadorias. O Estado deve garantir\nserviços públicos gratuitos, de qualidade e acessíveis a toda a população, valorizando o\nconhecimento, a ciência, a cultura popular e a formação crítica do povo paraibano.\n●\n\nEducação pública e fim do ENEM: Ampliação do orçamento público estadual em direção à\nmeta nacional de 10% do orçamento exclusivamente para a educação pública. Fim do lucro\nno setor de ensino, fim do vestibular e da obrigatoriedade do ENEM para ingresso nas\ninstituições estaduais, assegurando o livre acesso e vagas automáticas aos egressos da\nrede pública na UEPB e nas escolas técnicas, garantindo-lhes também a oportunidade do\nprimeiro emprego.\n\n4"
+          },
+          {
+            "id": "pagina-5",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "●\n\nDefesa do SUS: Orçamento que garanta o funcionamento de 100% da saúde pública. Fim das\nterceirizações e rescisão imediata dos contratos com a iniciativa privada, garantindo 100%\ndos leitos nos setores públicos ou sem fins lucrativos. Descentralização da estrutura de\nsaúde com a criação de hospitais e policlínicas regionais.\n\n●\n\nCultura Popular: Fomento direto à cultura paraibana, a exemplo de manifestações como\nmaracatu, coco de roda, forró tradicional, cordel, artesanato de Picuí e arte do Cariri, La Ursa\netc. Criação de uma Empresa Pública de Produção Cultural utilizando a estrutura da EPC.\n\n5. SEGURANÇA PÚBLICA E DIREITOS HUMANOS\nA violência que atinge a população trabalhadora não será enfrentada com mais repressão,\nmas com direitos sociais, prevenção e combate às estruturas econômicas que alimentam o crime\norganizado. Defendemos uma política de segurança comprometida com os direitos humanos, a\nproteção da vida e o enfrentamento de todas as formas de opressão.\n●\n\nFim imediato do extermínio da juventude pobre e negra nas periferias e desmilitarização da\nPolícia Militar: Criação da Polícia Cidadã, fundamentada nos direitos humanos, atuando com\nprevenção e estratégia no combate ao crime organizado, em especial as denúncias de\nvinculação com o setor público e financeiro.\n\n●\n\nCombate ao machismo e ao feminicídio: Enfrentamento firme ao feminicídio por meio da\ncriação de um Programa Público contra o Machismo e a Misoginia obrigatório em todas as\nescolas da rede estadual. Criação de delegacias especializadas (DEAMs) 24h em todas as\nregiões, orçamento para Casas-Abrigo e defesa intransigente da legalização ao direito ao\naborto legal na rede de saúde pública.\n\n6. MEIO AMBIENTE E POVOS ORIGINÁRIOS/TRADICIONAIS\nA defesa da natureza e dos povos tradicionais é parte inseparável da luta pela soberania\nnacional e pela justiça social. É necessário proteger nossos biomas, respeitar os direitos dos povos\nindígenas e quilombolas e enfrentar a exploração predatória promovida pelo capital.\n\n5"
+          },
+          {
+            "id": "pagina-6",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "●\n\nProteção ambiental: Combate rigoroso ao desmatamento na Caatinga, Mata Atlântica e\nmanguezais.\n\n●\n\nTerras Indígenas e Quilombolas: Apoio irrestrito à demarcação e posse imediata das terras\ndos povos Potiguara e Tabajara, bem como a titulação das comunidades quilombolas,\nprotegendo-as da especulação imobiliária. Escolas diferenciadas com respeito à\nancestralidade e criação do Museu em Serra Grande.\n\n7. DEMOCRATIZAÇÃO DO ESTADO, JUSTIÇA E COMBATE À CORRUPÇÃO\nO Estado deve deixar de servir às elites econômicas e passar a responder diretamente aos\ninteresses da maioria da população. Defendemos mecanismos de democracia popular, controle\nsocial permanente e combate rigoroso à corrupção, aos privilégios e à impunidade.\n●\n\nCombate à corrupção: Julgamento, prisão de corruptos e golpistas de ontem e de hoje, com\no confisco integral dos bens e de suas empresas para ressarcimento dos cofres públicos.\n\n●\n\nJustiça Popular: Implementação de plebiscitos e eleições diretas para a escolha de juízes e\nmembros dos tribunais do estado.\n\n●\n\nDemocratização da comunicação: Fortalecimento da EPC e criação da rede de televisão\nestatal da paraíba, com conteúdo educativo e cultural, garantindo conteúdos pedagógicos\npara as crianças e divulgação e cobertura dos eventos culturais realizados em todo o\nestado, como o carnaval de João Pessoa, São João de Campina Grande, festivais de\nquadrilhas juninas, competições esportivas, além de entregar a população um noticiário\npautado na realidade local.\n\n●\n\nMemória, Verdade e Justiça: Punição exemplar para os torturadores e assassinos da\nditadura militar (1964 – 1985) e apoio irrestrito à reparação histórica e à memória das lutas\npopulares na Paraíba, fim das alusões apologéticas desse período e renomeação das\nescolas, logradouros e demais endereços públicos que ainda façam referência a\npersonagens ligados à ditadura militar.\n\n6"
+          },
+          {
+            "id": "8-politica-internacional-e-soberania",
+            "titulo": "8. POLÍTICA INTERNACIONAL E SOBERANIA",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "8. POLÍTICA INTERNACIONAL E SOBERANIA\nA Paraíba deve afirmar seu compromisso com a soberania nacional, a solidariedade entre\nos povos e a resistência ao imperialismo. Defendemos relações internacionais baseadas na\ncooperação, na autodeterminação dos povos e na rejeição de toda forma de dominação\neconômica, militar ou política exercida pelas grandes potências.\n●\n\nSolidariedade e anti-imperialismo: Apoio à luta de todos os povos contra a dominação\ncapitalista e a exploração internacional. Declaração de total e ativa solidariedade com a\nRevolução Cubana, exigindo o fim do bloqueio econômico imperialista.\n\n●\n\nFim da espoliação imperialista na economia, auditando todos os contratos e parcerias e\nencerrando com os países promotores das guerras e genocídios.\n\n7"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "96db876171d3709101fcf3803738b84677c77abccf89ac2c4083a18d4215a201"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "f8d6317768ff8fe967b81f86e2e46300453a9ef1cde93e93909736c1e3385796"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "ae681c0a4a7fa1b11c560f8ff1135ac7869e42c59715a5f232dce49b7d33fdac"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "d3d7cc962c647997c472e0426fd33b669376a05f541ee062483f01b8b9139495"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "eefa92c0280626c09a90ca006a57579e73617ec11c3afacd1581f83ecf8df4fc"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "a1c54f81bbd0c38d5c1af63f07e5e0cacde5d185eb089b5ea15efdcf783e736d"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "c731f4019ad2b585705dfd16560d3699ce4738b98a90bedb30840047444b5613"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O documento apresenta um plano de governo para o Estado da Paraíba. Na área do trabalho, prevê a redução da jornada de trabalho para o regime geral de 30 horas semanais para todo o funcionalismo público estadual, sem redução salarial. Na administração pública, propõe a realização de concurso público para preenchimento das vagas dispostas no funcionalismo público estadual. Para o emprego, planeja a criação de frentes estaduais de trabalho para garantir emprego a todos os jovens e adultos paraibanos, focadas em infraestrutura social. Na política financeira, propõe a criação do Banco Estadual da Paraíba sob controle popular para combater juros abusivos. Nos transportes, prevê a criação da Empresa Pública de Transporte Coletivo Intermunicipal ligando as microrregiões do estado, assegurando as gratuidades (Passe Livre). Na saúde, propõe a descentralização da estrutura de saúde com a criação de hospitais e policlínicas regionais. Na cultura, planeja a criação de uma Empresa Pública de Produção Cultural utilizando a estrutura da EPC. No meio ambiente, prevê combate rigoroso ao desmatamento na Caatinga, Mata Atlântica e manguezais.",
+    "frases": [
+      {
+        "texto": "Na área do trabalho, prevê a redução da jornada de trabalho para o regime geral de 30 horas semanais para todo o funcionalismo público estadual, sem redução salarial.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 2,
+            "trecho": "Redução da jornada de trabalho para o regime geral de 30 horas semanais (e limite máximo de 6 horas diárias) para todo o funcionalismo público estadual, sem redução salarial."
+          }
+        ]
+      },
+      {
+        "texto": "Na administração pública, propõe a realização de concurso público para preenchimento das vagas dispostas no funcionalismo público estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 2,
+            "trecho": "Realização de concurso público para preenchimento das vagas dispostas no funcionalismo público estadual."
+          }
+        ]
+      },
+      {
+        "texto": "Para o emprego, planeja a criação de frentes estaduais de trabalho para garantir emprego a todos os jovens e adultos paraibanos, focadas em infraestrutura social.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 2,
+            "trecho": "Criação de frentes estaduais de trabalho para garantir emprego a todos os jovens e adultos paraibanos, focadas em infraestrutura social."
+          }
+        ]
+      },
+      {
+        "texto": "Na política financeira, propõe a criação do Banco Estadual da Paraíba sob controle popular para combater juros abusivos.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 2,
+            "trecho": "Criação do Banco Estadual da Paraíba sob controle popular para combater juros abusivos."
+          }
+        ]
+      },
+      {
+        "texto": "Nos transportes, prevê a criação da Empresa Pública de Transporte Coletivo Intermunicipal ligando as microrregiões do estado, assegurando as gratuidades (Passe Livre).",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 3,
+            "trecho": "Criação da Empresa Pública de Transporte Coletivo Intermunicipal ligando as microrregiões do estado, assegurando as gratuidades (Passe Livre)"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, propõe a descentralização da estrutura de saúde com a criação de hospitais e policlínicas regionais.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 5,
+            "trecho": "Descentralização da estrutura de saúde com a criação de hospitais e policlínicas regionais."
+          }
+        ]
+      },
+      {
+        "texto": "Na cultura, planeja a criação de uma Empresa Pública de Produção Cultural utilizando a estrutura da EPC.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 5,
+            "trecho": "Criação de uma Empresa Pública de Produção Cultural utilizando a estrutura da EPC."
+          }
+        ]
+      },
+      {
+        "texto": "No meio ambiente, prevê combate rigoroso ao desmatamento na Caatinga, Mata Atlântica e manguezais.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 6,
+            "trecho": "Combate rigoroso ao desmatamento na Caatinga, Mata Atlântica e manguezais."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "jornada-de-trabalho",
+        "titulo": "Jornada de trabalho",
+        "descricao": "Redução da jornada do funcionalismo público estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 2,
+            "trecho": "Redução da jornada de trabalho para o regime geral de 30 horas semanais (e limite máximo de 6 horas diárias) para todo o funcionalismo público estadual, sem redução salarial."
+          }
+        ]
+      },
+      {
+        "id": "emprego-publico",
+        "titulo": "Emprego público",
+        "descricao": "Criação de frentes estaduais de trabalho.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 2,
+            "trecho": "Criação de frentes estaduais de trabalho para garantir emprego a todos os jovens e adultos paraibanos, focadas em infraestrutura social."
+          }
+        ]
+      },
+      {
+        "id": "banco-estadual",
+        "titulo": "Banco estadual",
+        "descricao": "Criação de banco estadual sob controle popular.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 2,
+            "trecho": "Criação do Banco Estadual da Paraíba sob controle popular para combater juros abusivos."
+          }
+        ]
+      },
+      {
+        "id": "transporte-intermunicipal",
+        "titulo": "Transporte intermunicipal",
+        "descricao": "Criação de empresa pública de transporte coletivo intermunicipal.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 3,
+            "trecho": "Criação da Empresa Pública de Transporte Coletivo Intermunicipal ligando as microrregiões do estado, assegurando as gratuidades (Passe Livre)"
+          }
+        ]
+      },
+      {
+        "id": "saude-regional",
+        "titulo": "Saúde regional",
+        "descricao": "Descentralização da estrutura de saúde por meio de hospitais e policlínicas regionais.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 5,
+            "trecho": "Descentralização da estrutura de saúde com a criação de hospitais e policlínicas regionais."
+          }
+        ]
+      },
+      {
+        "id": "protecao-ambiental",
+        "titulo": "Proteção ambiental",
+        "descricao": "Combate ao desmatamento em biomas e áreas costeiras.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 6,
+            "trecho": "Combate rigoroso ao desmatamento na Caatinga, Mata Atlântica e manguezais."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T19:19:17.138Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T19:21:42.500Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:1:documentos:PB:150002540204:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:1:documentos:PB:150002540204:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 30 horas semanais é literal ao documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:1:documentos:PB:150002540204:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:1:documentos:PB:150002540204:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre jornada de trabalho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:1:documentos:PB:150002540204:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:1:documentos:PB:150002540204:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:2:documentos:PB:150002540204:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:2:documentos:PB:150002540204:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:2:documentos:PB:150002540204:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:2:documentos:PB:150002540204:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:2:documentos:PB:150002540204:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:2:documentos:PB:150002540204:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:3:documentos:PB:150002540204:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:3:documentos:PB:150002540204:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:3:documentos:PB:150002540204:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:3:documentos:PB:150002540204:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre emprego."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:3:documentos:PB:150002540204:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:3:documentos:PB:150002540204:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:4:documentos:PB:150002540204:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:4:documentos:PB:150002540204:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:4:documentos:PB:150002540204:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:4:documentos:PB:150002540204:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:4:documentos:PB:150002540204:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:4:documentos:PB:150002540204:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:5:documentos:PB:150002540204:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:5:documentos:PB:150002540204:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:5:documentos:PB:150002540204:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:5:documentos:PB:150002540204:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre transporte."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:5:documentos:PB:150002540204:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:5:documentos:PB:150002540204:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:6:documentos:PB:150002540204:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:6:documentos:PB:150002540204:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:6:documentos:PB:150002540204:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:6:documentos:PB:150002540204:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:6:documentos:PB:150002540204:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:6:documentos:PB:150002540204:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:7:documentos:PB:150002540204:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:7:documentos:PB:150002540204:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:7:documentos:PB:150002540204:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:7:documentos:PB:150002540204:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre cultura."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:7:documentos:PB:150002540204:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:7:documentos:PB:150002540204:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:8:documentos:PB:150002540204:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:8:documentos:PB:150002540204:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:8:documentos:PB:150002540204:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação replica linguagem do documento sem juízo de valor adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:8:documentos:PB:150002540204:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre meio ambiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:8:documentos:PB:150002540204:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:frase:8:documentos:PB:150002540204:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:jornada-de-trabalho:documentos:PB:150002540204:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo do tema é sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:jornada-de-trabalho:documentos:PB:150002540204:01:numeros",
+        "verdict": "yes",
+        "reason": "Resumo não cita números que contradigam o documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:jornada-de-trabalho:documentos:PB:150002540204:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:jornada-de-trabalho:documentos:PB:150002540204:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:jornada-de-trabalho:documentos:PB:150002540204:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:jornada-de-trabalho:documentos:PB:150002540204:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo simplificado cobre o núcleo da proposta original."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-publico:documentos:PB:150002540204:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-publico:documentos:PB:150002540204:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-publico:documentos:PB:150002540204:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-publico:documentos:PB:150002540204:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-publico:documentos:PB:150002540204:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-publico:documentos:PB:150002540204:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre o núcleo da proposta original."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:banco-estadual:documentos:PB:150002540204:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:banco-estadual:documentos:PB:150002540204:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:banco-estadual:documentos:PB:150002540204:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:banco-estadual:documentos:PB:150002540204:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:banco-estadual:documentos:PB:150002540204:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:banco-estadual:documentos:PB:150002540204:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre o núcleo da proposta original."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:transporte-intermunicipal:documentos:PB:150002540204:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:transporte-intermunicipal:documentos:PB:150002540204:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:transporte-intermunicipal:documentos:PB:150002540204:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:transporte-intermunicipal:documentos:PB:150002540204:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:transporte-intermunicipal:documentos:PB:150002540204:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:transporte-intermunicipal:documentos:PB:150002540204:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre o núcleo da proposta original."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:saude-regional:documentos:PB:150002540204:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:saude-regional:documentos:PB:150002540204:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:saude-regional:documentos:PB:150002540204:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:saude-regional:documentos:PB:150002540204:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:saude-regional:documentos:PB:150002540204:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:saude-regional:documentos:PB:150002540204:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre o núcleo da proposta original."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:protecao-ambiental:documentos:PB:150002540204:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pela evidência (biomas = Caatinga/Mata Atlântica; manguezais = área costeira)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:protecao-ambiental:documentos:PB:150002540204:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:protecao-ambiental:documentos:PB:150002540204:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:protecao-ambiental:documentos:PB:150002540204:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:protecao-ambiental:documentos:PB:150002540204:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:protecao-ambiental:documentos:PB:150002540204:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre o núcleo da proposta original."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PB:150002540204",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PB:150002540204:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 22877,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2617,
+          "reasoning_output_tokens": 1213
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 25546,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 24168,
+          "output_tokens_details": {
+            "thinking_tokens": 364
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 25546,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 24168,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 25546,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 25546
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.36442839999999993
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T19:22:14Z",
+    "sourceSha256": "0e8924b4a2abfc473c83dde63632c96e06105f3eb96df8e011d94a2163451dcb",
+    "extractedTextSha256": "ebe0855e610a04dec3c34543ac50f78bbe0817a4c24db024d4703dab29ae1b0a",
+    "documentCount": 1,
+    "documentSetSha256": "0aaba4dfdcf2b9e5e9aa405639312a3201a130ee01f9e2ff5f57109b2bdabc2d",
+    "contentSha256": "20d141a9ce43fd52ac34a5ff9fadedca6a40637cb08b4c6551bfaab328fd05d9"
+  }
+}
