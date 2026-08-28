@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T23:24:46.422Z",
+  "reviewedAt": "2026-08-28T23:27:51.573Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 131,
-    "human_review_required": 13
+    "approved": 133,
+    "human_review_required": 11
   },
   "items": [
     {
@@ -161,7 +161,7 @@
       "nomeUrna": "DANIEL VILELA",
       "partido": "MDB",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:GO:90002545476",
@@ -282,7 +282,7 @@
       "nomeUrna": "LUCIEN REZENDE",
       "partido": "PSOL",
       "sourceState": "em_revisao",
-      "reason": "lucien-rezende: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:MT:110002553937",
@@ -330,14 +330,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:MT:110002551480",
-      "outcome": "approved",
+      "outcome": "human_review_required",
       "uf": "MT",
       "slug": "otaviano-pivetta",
       "sqCandidato": "110002551480",
       "nomeUrna": "OTAVIANO PIVETTA",
       "partido": "REPUBLICANOS",
       "sourceState": "em_revisao",
-      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
+      "reason": "registro.resumo: deve ser um objeto"
     },
     {
       "identityKey": "2026:GOVERNADOR:MT:110002543953",
@@ -1144,7 +1144,7 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:AC:10002544107",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "AC",
       "slug": "mailza-assis",
       "sqCandidato": "10002544107",
@@ -1155,14 +1155,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:AC:10002550719",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "AC",
       "slug": "thor-dantas",
       "sqCandidato": "10002550719",
       "nomeUrna": "THOR DANTAS",
       "partido": "PSB",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:AC:10002544015",
@@ -1199,7 +1199,7 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:AM:40002535267",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "AM",
       "slug": "gilberto-vasconcelos",
       "sqCandidato": "40002535267",
@@ -1408,7 +1408,7 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002542916",
-      "outcome": "approved",
+      "outcome": "human_review_required",
       "uf": "RO",
       "slug": "hildon-chaves",
       "sqCandidato": "220002542916",
@@ -1617,7 +1617,7 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:ES:80002551833",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "ES",
       "slug": "helder-salomao",
       "sqCandidato": "80002551833",
