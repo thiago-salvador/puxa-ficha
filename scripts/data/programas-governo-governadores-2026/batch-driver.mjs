@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Driver do batch nacional restante dos programas de governo (governadores 2026).
+// Driver do batch nacional restante dos programas de governo (governadores 2026) - corrigido para 11 itens: envelope 190k, fila 106, rampa por conclusoes, quota prova unica, checkpoints familia, telemetria, orfaos, atomico.
 // Fila por candidato (nunca por UF), concorrencia adaptativa com rampa 3->4
 // (inicial 3, sobe para 4 apenas apos 3 conclusoes), retomada granular com
 // estados atomicos e semaforo global de processos geradores.
@@ -195,7 +195,7 @@ export function concorrenciaAlvo({ conclusoes, concorrenciaAtual, metricas }) {
 }
 
 async function escreverAtomico(destino, conteudo) {
-  const temporario = `${destino}.tmp-${process.pid}`
+  const temporario = `${destino}.tmp-${process.pid}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
   await writeFile(temporario, conteudo)
   await rename(temporario, destino)
 }
