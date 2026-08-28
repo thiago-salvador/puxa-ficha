@@ -16,7 +16,6 @@ WITH candidacies AS (
   ) AS record
   FROM public.chapas_2026 ch
   LEFT JOIN public.candidatos titular ON titular.id = ch.titular_candidato_id
-  WHERE ch.identidade_status <> 'duplicidade_oficial'
 
   UNION ALL
 
@@ -33,7 +32,6 @@ WITH candidacies AS (
   ) AS record
   FROM public.chapas_2026 ch
   LEFT JOIN public.candidatos vice ON vice.id = ch.vice_candidato_id
-  WHERE ch.identidade_status <> 'duplicidade_oficial'
 ), evidence AS (
   SELECT jsonb_build_object(
     'source_id', fonte,
@@ -49,6 +47,9 @@ WITH candidacies AS (
 )
 SELECT jsonb_build_object(
   'generated_at', now(),
-  'records', COALESCE((SELECT jsonb_agg(record) FROM candidacies), '[]'::jsonb),
+  -- Chapas em duplicidade continuam fora da superfície pública, mas cada
+  -- candidatura oficial precisa constar na auditoria. DISTINCT evita contar o
+  -- mesmo titular duas vezes quando o TSE publica duas combinações de vice.
+  'records', COALESCE((SELECT jsonb_agg(DISTINCT record) FROM candidacies), '[]'::jsonb),
   'collection_evidence', COALESCE((SELECT jsonb_agg(item) FROM evidence), '[]'::jsonb)
 );

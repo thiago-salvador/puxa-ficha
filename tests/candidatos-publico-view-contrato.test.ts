@@ -321,6 +321,11 @@ describe("contrato da view candidatos_publico", () => {
       // Curadoria da issue #96: corrige fontes em pontos_atencao e despublica
       // cinco claims sem lastro. Não redefine candidatos_publico.
       "20260825123000_fix_public_attention_sources_issue_96.sql",
+      // Quarentena expandida e snapshot TSE de 27/08. O schema só relaxa as
+      // constraints internas de chapas_2026; a view pública continua
+      // excluindo identidade_status='duplicidade_oficial'.
+      "20260828020500_chapas_2026_quarentena_schema.sql",
+      "20260828020600_chapas_2026_tse_20260827.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

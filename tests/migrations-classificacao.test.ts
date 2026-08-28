@@ -324,7 +324,7 @@ describe("classificador puro (#136)", () => {
     // 324 -> 325 em 25/08/2026: a curadoria da issue #96 aceita coorte vazia
     // no replay e preserva guards exatos para as 15 linhas de produção.
     // Conservação medida: 325 + 103 = 428.
-    assert.equal(manifesto.aplicadas_esperadas, 325)
+    assert.equal(manifesto.aplicadas_esperadas, 327)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
